@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
+with org.allbinary.game.input.J2MEKeyFactory_Package; use org.allbinary.game.input.J2MEKeyFactory_Package;
+with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+
 package body org.allbinary.game.input.J2MEGameInputMapping_Package is
 
+   package GamePersistanceStrings_Package renames Standard.org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
    procedure Initialize_Fields (This : in out J2MEGameInputMapping'Class) is
    begin
       null;

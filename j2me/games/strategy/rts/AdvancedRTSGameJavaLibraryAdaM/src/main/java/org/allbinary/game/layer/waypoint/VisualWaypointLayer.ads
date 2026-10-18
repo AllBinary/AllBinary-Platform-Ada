@@ -27,8 +27,6 @@ with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbina
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package; use org.allbinary.game.layer.waypoint.WaypointLayer_Package;
-with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package;
-with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 
 package org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package is
 
@@ -44,6 +42,8 @@ package org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package is
    type VisualWaypointLayer_Access is access all VisualWaypointLayer'Class;
    type VisualWaypointLayer_Access_Array is array (Natural range <>) of VisualWaypointLayer_Access;
    type VisualWaypointLayer_Access_Array_Access is access all VisualWaypointLayer_Access_Array;
+   type VisualWaypointLayer_Access_Array_Access_Array is array (Natural range <>) of VisualWaypointLayer_Access_Array_Access;
+   type VisualWaypointLayer_Access_Array_Access_Array_Access is access all VisualWaypointLayer_Access_Array_Access_Array;
 
    type VisualWaypointLayer is new WaypointLayer with null record;
 

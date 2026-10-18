@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.math.PrimitiveFloatUtil_Package is
 
    procedure Initialize_Fields (This : in out PrimitiveFloatUtil'Class) is

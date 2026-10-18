@@ -34,6 +34,8 @@ package org.allbinary.animation.AdjustedVectorAnimation_Package is
    type AdjustedVectorAnimation_Access is access all AdjustedVectorAnimation'Class;
    type AdjustedVectorAnimation_Access_Array is array (Natural range <>) of AdjustedVectorAnimation_Access;
    type AdjustedVectorAnimation_Access_Array_Access is access all AdjustedVectorAnimation_Access_Array;
+   type AdjustedVectorAnimation_Access_Array_Access_Array is array (Natural range <>) of AdjustedVectorAnimation_Access_Array_Access;
+   type AdjustedVectorAnimation_Access_Array_Access_Array_Access is access all AdjustedVectorAnimation_Access_Array_Access_Array;
 
    type AdjustedVectorAnimation is new VectorAnimation with record
       dx : Integer;

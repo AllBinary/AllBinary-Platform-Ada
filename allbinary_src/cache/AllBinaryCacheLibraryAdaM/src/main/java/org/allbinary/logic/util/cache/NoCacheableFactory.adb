@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.util.cache.NoCacheableFactory_Package is
 
    procedure Initialize_Fields (This : in out NoCacheableFactory'Class) is
@@ -44,6 +45,18 @@ package body org.allbinary.logic.util.cache.NoCacheableFactory_Package is
 
    procedure getInstance (This : in out NoCacheableFactory; key_Param : access Java_Object'Class) is
       Java_Result : constant CacheableInterface_Access := NoCacheableFactory'Class (This).getInstance (key_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   function getInstance (This : in out NoCacheableFactory; Value : Unbounded_String) return CacheableInterface_Access is
+   begin
+      return NoCacheableFactory'Class (This).getInstance (Java_Box (Value));
+   end getInstance;
+
+   procedure getInstance (This : in out NoCacheableFactory; Value : Unbounded_String) is
+      Java_Result : constant CacheableInterface_Access := NoCacheableFactory'Class (This).getInstance (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

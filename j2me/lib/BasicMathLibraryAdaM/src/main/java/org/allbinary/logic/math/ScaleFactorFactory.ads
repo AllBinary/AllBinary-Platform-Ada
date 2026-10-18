@@ -28,6 +28,8 @@ package org.allbinary.logic.math.ScaleFactorFactory_Package is
    type ScaleFactorFactory_Access is access all ScaleFactorFactory'Class;
    type ScaleFactorFactory_Access_Array is array (Natural range <>) of ScaleFactorFactory_Access;
    type ScaleFactorFactory_Access_Array_Access is access all ScaleFactorFactory_Access_Array;
+   type ScaleFactorFactory_Access_Array_Access_Array is array (Natural range <>) of ScaleFactorFactory_Access_Array_Access;
+   type ScaleFactorFactory_Access_Array_Access_Array_Access is access all ScaleFactorFactory_Access_Array_Access_Array;
 
    type ScaleFactorFactory is new Java_Object with record
       DEFAULT_SCALE_FACTOR : Integer;

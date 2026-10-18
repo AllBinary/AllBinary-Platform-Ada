@@ -31,6 +31,8 @@ package org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Packag
    type AbeLicenseInterface_Access is access all AbeLicenseInterface'Class;
    type AbeLicenseInterface_Access_Array is array (Natural range <>) of AbeLicenseInterface_Access;
    type AbeLicenseInterface_Access_Array_Access is access all AbeLicenseInterface_Access_Array;
+   type AbeLicenseInterface_Access_Array_Access_Array is array (Natural range <>) of AbeLicenseInterface_Access_Array_Access;
+   type AbeLicenseInterface_Access_Array_Access_Array_Access is access all AbeLicenseInterface_Access_Array_Access_Array;
    function hasKey (This : in out AbeLicenseInterface) return Boolean is abstract;
    function getKey (This : in out AbeLicenseInterface; keyName : Unbounded_String) return Unbounded_String is abstract;
    function getLicenseId (This : in out AbeLicenseInterface) return Unbounded_String is abstract;

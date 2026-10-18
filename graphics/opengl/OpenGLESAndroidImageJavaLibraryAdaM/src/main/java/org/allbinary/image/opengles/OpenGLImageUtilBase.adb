@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
 
    procedure Initialize_Fields (This : in out OpenGLImageUtilBase'Class) is

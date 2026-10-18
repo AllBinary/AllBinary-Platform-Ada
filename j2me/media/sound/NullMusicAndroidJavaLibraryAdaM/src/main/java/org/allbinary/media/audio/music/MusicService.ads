@@ -30,6 +30,8 @@ package org.allbinary.media.audio.music.MusicService_Package is
    type MusicService_Access is access all MusicService'Class;
    type MusicService_Access_Array is array (Natural range <>) of MusicService_Access;
    type MusicService_Access_Array_Access is access all MusicService_Access_Array;
+   type MusicService_Access_Array_Access_Array is array (Natural range <>) of MusicService_Access_Array_Access;
+   type MusicService_Access_Array_Access_Array_Access is access all MusicService_Access_Array_Access_Array;
 
    type MusicService is new BaseMusicService with null record;
 

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+
 package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
 
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
    procedure Initialize_Fields (This : in out ExceptionUtil'Class) is
    begin
       null;

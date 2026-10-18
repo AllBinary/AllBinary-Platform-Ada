@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
+
 package body org.allbinary.physics.movement.NoBasicConstantVelocityMovement_Package is
 
+   package BasicVelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
    procedure Initialize_Fields (This : in out NoBasicConstantVelocityMovement'Class) is
    begin
       null;

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+
 package body org.allbinary.string_Id.CommonPhoneStrings_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    procedure Initialize_Fields (This : in out CommonPhoneStrings'Class) is
    begin
       null;

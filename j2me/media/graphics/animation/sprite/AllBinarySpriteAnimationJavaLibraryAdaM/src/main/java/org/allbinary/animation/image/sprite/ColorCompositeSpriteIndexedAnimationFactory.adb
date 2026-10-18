@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
+
 package body org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAnimationFactory_Package is
 
+   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out ColorCompositeSpriteIndexedAnimationFactory'Class) is
    begin
       null;
@@ -44,7 +50,7 @@ package body org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAni
       sprite : Sprite_Access;
    begin
         sprite := This.animationFactorySpriteScaleUtil.createImage (ColorCompositeSpriteIndexedAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
-        return SpriteIndexedAnimation_Package.Create (sprite, ColorCompositeSpriteIndexedAnimationFactory'Class (This).getImage, This.basicColorArray, This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (SpriteIndexedAnimation_Package.Create (sprite, ColorCompositeSpriteIndexedAnimationFactory'Class (This).getImage, This.basicColorArray, This.animationBehaviorFactory.getOrCreateInstance));
    end getInstance;
 
    --  throws Exception

@@ -27,29 +27,21 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.crypto.SecretKeyFactory_Package; use javax.crypto.SecretKeyFactory_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.bouncycastle.jce.provider.BouncyCastleProvider_Package; use org.bouncycastle.jce.provider.BouncyCastleProvider_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package; use org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Package;
-with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
-with org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package; use org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package;
 
 package org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package is
 
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package BouncyCastleProvider_Package renames Standard.org.bouncycastle.jce.provider.BouncyCastleProvider_Package;
 
    type AbCrypt is tagged;
    type AbCrypt_Access is access all AbCrypt'Class;
    type AbCrypt_Access_Array is array (Natural range <>) of AbCrypt_Access;
    type AbCrypt_Access_Array_Access is access all AbCrypt_Access_Array;
+   type AbCrypt_Access_Array_Access_Array is array (Natural range <>) of AbCrypt_Access_Array_Access;
+   type AbCrypt_Access_Array_Access_Array_Access is access all AbCrypt_Access_Array_Access_Array;
 
-   type AbCrypt is new CryptInterface with record
+   type AbCrypt is new Java_Object and CryptInterface with record
       tsUtil : TsUtil_Access;
       secretComposite : BaseSecretComposite_Access;
       algorithm : Unbounded_String;

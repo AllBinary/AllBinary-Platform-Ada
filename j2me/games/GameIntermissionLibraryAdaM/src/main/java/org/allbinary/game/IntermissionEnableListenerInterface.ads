@@ -28,6 +28,8 @@ package org.allbinary.game.IntermissionEnableListenerInterface_Package is
    type IntermissionEnableListenerInterface_Access is access all IntermissionEnableListenerInterface'Class;
    type IntermissionEnableListenerInterface_Access_Array is array (Natural range <>) of IntermissionEnableListenerInterface_Access;
    type IntermissionEnableListenerInterface_Access_Array_Access is access all IntermissionEnableListenerInterface_Access_Array;
+   type IntermissionEnableListenerInterface_Access_Array_Access_Array is array (Natural range <>) of IntermissionEnableListenerInterface_Access_Array_Access;
+   type IntermissionEnableListenerInterface_Access_Array_Access_Array_Access is access all IntermissionEnableListenerInterface_Access_Array_Access_Array;
    procedure notifyIntermission (This : in out IntermissionEnableListenerInterface; enable : Boolean) is abstract;
 
 end org.allbinary.game.IntermissionEnableListenerInterface_Package;

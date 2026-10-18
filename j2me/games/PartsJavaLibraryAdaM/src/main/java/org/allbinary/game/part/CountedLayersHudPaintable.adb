@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package; use org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
+
 package body org.allbinary.game.part.CountedLayersHudPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package PickedUpLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    procedure Initialize_Fields (This : in out CountedLayersHudPaintable'Class) is
    begin
       null;
@@ -24,7 +34,7 @@ package body org.allbinary.game.part.CountedLayersHudPaintable_Package is
       
       
       
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (CountedLayersHudPaintable_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (CountedLayersHudPaintable_Access'(This'Unchecked_Access)));
       This.height := 0;
    end Initialize_Fields;
 

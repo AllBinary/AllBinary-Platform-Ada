@@ -29,6 +29,8 @@ package org.allbinary.game.physics.velocity.VelocityInterface_Package is
    type VelocityInterface_Access is access all VelocityInterface'Class;
    type VelocityInterface_Access_Array is array (Natural range <>) of VelocityInterface_Access;
    type VelocityInterface_Access_Array_Access is access all VelocityInterface_Access_Array;
+   type VelocityInterface_Access_Array_Access_Array is array (Natural range <>) of VelocityInterface_Access_Array_Access;
+   type VelocityInterface_Access_Array_Access_Array_Access is access all VelocityInterface_Access_Array_Access_Array;
    function getMaxForwardVelocity (This : in out VelocityInterface) return Integer is abstract;
    function getMaxReverseVelocity (This : in out VelocityInterface) return Integer is abstract;
    procedure limitMaxXYForwardVelocity (This : in out VelocityInterface) is abstract;

@@ -22,20 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
 package org.allbinary.layer.event.LayerManagerEvent_Package is
 
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type LayerManagerEvent is tagged;
    type LayerManagerEvent_Access is access all LayerManagerEvent'Class;
    type LayerManagerEvent_Access_Array is array (Natural range <>) of LayerManagerEvent_Access;
    type LayerManagerEvent_Access_Array_Access is access all LayerManagerEvent_Access_Array;
+   type LayerManagerEvent_Access_Array_Access_Array is array (Natural range <>) of LayerManagerEvent_Access_Array_Access;
+   type LayerManagerEvent_Access_Array_Access_Array_Access is access all LayerManagerEvent_Access_Array_Access_Array;
 
    type LayerManagerEvent is new AllBinaryEventObject with record
       layerInterface : AllBinaryLayer_Access;

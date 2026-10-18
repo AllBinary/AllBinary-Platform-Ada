@@ -32,6 +32,8 @@ package org.allbinary.game.score.HighScoresHelper_Package is
    type HighScoresHelper_Access is access all HighScoresHelper'Class;
    type HighScoresHelper_Access_Array is array (Natural range <>) of HighScoresHelper_Access;
    type HighScoresHelper_Access_Array_Access is access all HighScoresHelper_Access_Array;
+   type HighScoresHelper_Access_Array_Access_Array is array (Natural range <>) of HighScoresHelper_Access_Array_Access;
+   type HighScoresHelper_Access_Array_Access_Array_Access is access all HighScoresHelper_Access_Array_Access_Array;
 
    type HighScoresHelper is new HighScoresHelperBase with record
       circularIndexUtil : CircularIndexUtil_Access;

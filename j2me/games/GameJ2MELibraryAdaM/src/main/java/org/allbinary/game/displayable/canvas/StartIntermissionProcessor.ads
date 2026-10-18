@@ -35,6 +35,8 @@ package org.allbinary.game.displayable.canvas.StartIntermissionProcessor_Package
    type StartIntermissionProcessor_Access is access all StartIntermissionProcessor'Class;
    type StartIntermissionProcessor_Access_Array is array (Natural range <>) of StartIntermissionProcessor_Access;
    type StartIntermissionProcessor_Access_Array_Access is access all StartIntermissionProcessor_Access_Array;
+   type StartIntermissionProcessor_Access_Array_Access_Array is array (Natural range <>) of StartIntermissionProcessor_Access_Array_Access;
+   type StartIntermissionProcessor_Access_Array_Access_Array_Access is access all StartIntermissionProcessor_Access_Array_Access_Array;
 
    type StartIntermissionProcessor is new Processor with record
       logUtil : LogUtil_Access;

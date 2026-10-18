@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
-with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.KeySingletonFactory_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.KeyNameDefaultComboBoxModelFactory_Package is
 
-   package KeySingletonFactory_Package renames Standard.org.allbinary.input.KeySingletonFactory_Package;
 
    type KeyNameDefaultComboBoxModelFactory is tagged;
    type KeyNameDefaultComboBoxModelFactory_Access is access all KeyNameDefaultComboBoxModelFactory'Class;
    type KeyNameDefaultComboBoxModelFactory_Access_Array is array (Natural range <>) of KeyNameDefaultComboBoxModelFactory_Access;
    type KeyNameDefaultComboBoxModelFactory_Access_Array_Access is access all KeyNameDefaultComboBoxModelFactory_Access_Array;
+   type KeyNameDefaultComboBoxModelFactory_Access_Array_Access_Array is array (Natural range <>) of KeyNameDefaultComboBoxModelFactory_Access_Array_Access;
+   type KeyNameDefaultComboBoxModelFactory_Access_Array_Access_Array_Access is access all KeyNameDefaultComboBoxModelFactory_Access_Array_Access_Array;
 
    type KeyNameDefaultComboBoxModelFactory is new Java_Object with null record;
 

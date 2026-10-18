@@ -37,6 +37,8 @@ package org.allbinary.game.ag.ai.sequence.ComboSequenceAI_Package is
    type ComboSequenceAI_Access is access all ComboSequenceAI'Class;
    type ComboSequenceAI_Access_Array is array (Natural range <>) of ComboSequenceAI_Access;
    type ComboSequenceAI_Access_Array_Access is access all ComboSequenceAI_Access_Array;
+   type ComboSequenceAI_Access_Array_Access_Array is array (Natural range <>) of ComboSequenceAI_Access_Array_Access;
+   type ComboSequenceAI_Access_Array_Access_Array_Access is access all ComboSequenceAI_Access_Array_Access_Array;
 
    type ComboSequenceAI is new SequenceAI with null record;
 

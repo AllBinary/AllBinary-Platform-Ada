@@ -29,6 +29,8 @@ package org.allbinary.emulator.swt.SWTProcessorUtil_Package is
    type SWTProcessorUtil_Access is access all SWTProcessorUtil'Class;
    type SWTProcessorUtil_Access_Array is array (Natural range <>) of SWTProcessorUtil_Access;
    type SWTProcessorUtil_Access_Array_Access is access all SWTProcessorUtil_Access_Array;
+   type SWTProcessorUtil_Access_Array_Access_Array is array (Natural range <>) of SWTProcessorUtil_Access_Array_Access;
+   type SWTProcessorUtil_Access_Array_Access_Array_Access is access all SWTProcessorUtil_Access_Array_Access_Array;
 
    type SWTProcessorUtil is new Java_Object with record
       swtProcessor : SWTProcessor_Access;

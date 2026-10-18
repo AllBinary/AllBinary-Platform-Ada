@@ -28,6 +28,8 @@ package org.allbinary.ThreedResources_Package is
    type ThreedResources_Access is access all ThreedResources'Class;
    type ThreedResources_Access_Array is array (Natural range <>) of ThreedResources_Access;
    type ThreedResources_Access_Array_Access is access all ThreedResources_Access_Array;
+   type ThreedResources_Access_Array_Access_Array is array (Natural range <>) of ThreedResources_Access_Array_Access;
+   type ThreedResources_Access_Array_Access_Array_Access is access all ThreedResources_Access_Array_Access_Array;
 
    type ThreedResources is new Java_Object with null record;
    threedResources : ThreedResources_Access;

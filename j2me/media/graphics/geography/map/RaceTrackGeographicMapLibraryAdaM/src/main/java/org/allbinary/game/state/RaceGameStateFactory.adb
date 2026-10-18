@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
+
 package body org.allbinary.game.state.RaceGameStateFactory_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out RaceGameStateFactory'Class) is
    begin
       null;

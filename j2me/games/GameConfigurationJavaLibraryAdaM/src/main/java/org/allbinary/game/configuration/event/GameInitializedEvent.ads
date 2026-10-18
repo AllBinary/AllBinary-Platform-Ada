@@ -21,19 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.resource.ResourceLoadingLevel_Package; use org.allbinary.game.resource.ResourceLoadingLevel_Package;
-with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
 package org.allbinary.game.configuration.event.GameInitializedEvent_Package is
 
    package ResourceLoadingLevel_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevel_Package;
-   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type GameInitializedEvent is tagged;
    type GameInitializedEvent_Access is access all GameInitializedEvent'Class;
    type GameInitializedEvent_Access_Array is array (Natural range <>) of GameInitializedEvent_Access;
    type GameInitializedEvent_Access_Array_Access is access all GameInitializedEvent_Access_Array;
+   type GameInitializedEvent_Access_Array_Access_Array is array (Natural range <>) of GameInitializedEvent_Access_Array_Access;
+   type GameInitializedEvent_Access_Array_Access_Array_Access is access all GameInitializedEvent_Access_Array_Access_Array;
 
    type GameInitializedEvent is new AllBinaryEventObject with record
       resourceLoadingLevel : ResourceLoadingLevel_Access;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.vector.RectangleAnimation_Package is
 
    procedure Initialize_Fields (This : in out RectangleAnimation'Class) is

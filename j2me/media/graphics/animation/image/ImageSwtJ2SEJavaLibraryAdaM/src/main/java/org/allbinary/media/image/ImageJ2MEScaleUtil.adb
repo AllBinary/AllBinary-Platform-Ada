@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
+
 package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 
    procedure Initialize_Fields (This : in out ImageJ2MEScaleUtil'Class) is

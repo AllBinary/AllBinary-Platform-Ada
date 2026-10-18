@@ -24,8 +24,6 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
-with org.allbinary.logic.visual.transform.TransformFactory_Package; use org.allbinary.logic.visual.transform.TransformFactory_Package;
 with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
 with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package; use org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -37,8 +35,6 @@ package taghelpers.ViewHelper_Package is
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
-   package TransformFactory_Package renames Standard.org.allbinary.logic.visual.transform.TransformFactory_Package;
    package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
    package TransformDocumentInterface_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -49,8 +45,10 @@ package taghelpers.ViewHelper_Package is
    type ViewHelper_Access is access all ViewHelper'Class;
    type ViewHelper_Access_Array is array (Natural range <>) of ViewHelper_Access;
    type ViewHelper_Access_Array_Access is access all ViewHelper_Access_Array;
+   type ViewHelper_Access_Array_Access_Array is array (Natural range <>) of ViewHelper_Access_Array_Access;
+   type ViewHelper_Access_Array_Access_Array_Access is access all ViewHelper_Access_Array_Access_Array;
 
-   type ViewHelper is new TransformInterface with record
+   type ViewHelper is new Java_Object and TransformInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       abeClientInformation : AbeClientInformationInterface_Access;

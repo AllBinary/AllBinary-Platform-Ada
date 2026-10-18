@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.commerce.inventory.item.option.XmlOptionItemData_Package is
 
    procedure Initialize_Fields (This : in out XmlOptionItemData'Class) is

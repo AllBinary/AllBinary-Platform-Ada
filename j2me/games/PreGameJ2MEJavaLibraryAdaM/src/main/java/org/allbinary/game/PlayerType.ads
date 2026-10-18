@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.game.PlayerType_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type PlayerType is tagged;
    type PlayerType_Access is access all PlayerType'Class;
    type PlayerType_Access_Array is array (Natural range <>) of PlayerType_Access;
    type PlayerType_Access_Array_Access is access all PlayerType_Access_Array;
+   type PlayerType_Access_Array_Access_Array is array (Natural range <>) of PlayerType_Access_Array_Access;
+   type PlayerType_Access_Array_Access_Array_Access is access all PlayerType_Access_Array_Access_Array;
 
    type PlayerType is new Java_Object with record
       id : Integer;

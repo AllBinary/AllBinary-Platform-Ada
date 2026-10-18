@@ -28,6 +28,8 @@ package org.allbinary.business.advertisement.search.AdvertisementSearchData_Pack
    type AdvertisementSearchData_Access is access all AdvertisementSearchData'Class;
    type AdvertisementSearchData_Access_Array is array (Natural range <>) of AdvertisementSearchData_Access;
    type AdvertisementSearchData_Access_Array_Access is access all AdvertisementSearchData_Access_Array;
+   type AdvertisementSearchData_Access_Array_Access_Array is array (Natural range <>) of AdvertisementSearchData_Access_Array_Access;
+   type AdvertisementSearchData_Access_Array_Access_Array_Access is access all AdvertisementSearchData_Access_Array_Access_Array;
 
    type AdvertisementSearchData is new Java_Object with record
       TITLE : Unbounded_String;

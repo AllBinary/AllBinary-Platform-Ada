@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out RaceTrackData'Class) is
    begin
       null;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.string_Id.StringValidationJSEUtil_Package is
 
    procedure Initialize_Fields (This : in out StringValidationJSEUtil'Class) is

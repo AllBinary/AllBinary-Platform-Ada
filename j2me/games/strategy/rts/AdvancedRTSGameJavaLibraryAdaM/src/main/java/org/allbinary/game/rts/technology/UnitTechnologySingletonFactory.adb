@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package is
 
    procedure Initialize_Fields (This : in out UnitTechnologySingletonFactory'Class) is

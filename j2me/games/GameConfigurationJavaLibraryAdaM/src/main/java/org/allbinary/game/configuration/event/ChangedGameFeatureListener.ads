@@ -31,6 +31,8 @@ package org.allbinary.game.configuration.event.ChangedGameFeatureListener_Packag
    type ChangedGameFeatureListener_Access is access all ChangedGameFeatureListener'Class;
    type ChangedGameFeatureListener_Access_Array is array (Natural range <>) of ChangedGameFeatureListener_Access;
    type ChangedGameFeatureListener_Access_Array_Access is access all ChangedGameFeatureListener_Access_Array;
+   type ChangedGameFeatureListener_Access_Array_Access_Array is array (Natural range <>) of ChangedGameFeatureListener_Access_Array_Access;
+   type ChangedGameFeatureListener_Access_Array_Access_Array_Access is access all ChangedGameFeatureListener_Access_Array_Access_Array;
 
    type ChangedGameFeatureListener is new BaseChangedGameFeatureListener with null record;
    gameFeatureListener : ChangedGameFeatureListener_Access;

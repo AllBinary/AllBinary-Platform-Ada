@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.platform.graphics.OpenGLImageUtil_Package is
 
    procedure Initialize_Fields (This : in out OpenGLImageUtil'Class) is

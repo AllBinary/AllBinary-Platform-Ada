@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.data.resource.ResourceUtil_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out ResourceUtil'Class) is
    begin
       null;
@@ -75,7 +84,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
       classLoader : ClassLoader_Access;
    begin
         commonSeps := CommonSeps_Package.getInstance;
-        index := (Index (resource, Java_Image (commonSeps.COLON)) - 1);
+        index := Java_Index_Of (resource, Java_Image (commonSeps.COLON));
         resourcePath := Unbounded_Slice (resource, ((index) + (startIndex)) + 1, Length (resource));
         inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
         if (inputStream) /= (null) then

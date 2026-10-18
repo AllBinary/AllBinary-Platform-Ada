@@ -13,8 +13,37 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.AndroidResources_Package; use org.allbinary.AndroidResources_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
+with org.allbinary.input.motion.button.TouchButtonBlankResource_Package; use org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
+with org.allbinary.input.motion.button.TouchButtonDownResource_Package; use org.allbinary.input.motion.button.TouchButtonDownResource_Package;
+with org.allbinary.input.motion.button.TouchButtonGenericActionResource_Package; use org.allbinary.input.motion.button.TouchButtonGenericActionResource_Package;
+with org.allbinary.input.motion.button.TouchButtonResource_Package; use org.allbinary.input.motion.button.TouchButtonResource_Package;
+with org.allbinary.input.motion.button.TouchButtonStartResource_Package; use org.allbinary.input.motion.button.TouchButtonStartResource_Package;
+with org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package; use org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package;
+with org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package; use org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package;
+with org.allbinary.input.motion.button.TouchButtonTurnLeftResource_Package; use org.allbinary.input.motion.button.TouchButtonTurnLeftResource_Package;
+with org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package; use org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package;
+with org.allbinary.input.motion.button.TouchButtonUpResource_Package; use org.allbinary.input.motion.button.TouchButtonUpResource_Package;
+with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+
 package body org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Package is
 
+   package AndroidResources_Package renames Standard.org.allbinary.AndroidResources_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package CommonButtons_Package renames Standard.org.allbinary.input.motion.button.CommonButtons_Package;
+   package TouchButtonBlankResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
+   package TouchButtonDownResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonDownResource_Package;
+   package TouchButtonGenericActionResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonGenericActionResource_Package;
+   package TouchButtonResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonResource_Package;
+   package TouchButtonStartResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonStartResource_Package;
+   package TouchButtonStrafeLeftResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package;
+   package TouchButtonStrafeRightResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package;
+   package TouchButtonTurnLeftResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonTurnLeftResource_Package;
+   package TouchButtonTurnRightResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package;
+   package TouchButtonUpResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonUpResource_Package;
+   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
    procedure Initialize_Fields (This : in out TouchButtonAndroidResources'Class) is
    begin
       null;

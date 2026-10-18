@@ -15,7 +15,6 @@ with org.allbinary.graphics.font.FontDebugBase_Package; use org.allbinary.graphi
 with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package; use org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.device.GraphicsInterface_Package; use org.allbinary.device.GraphicsInterface_Package;
-with org.allbinary.device.NullGL10_Package; use org.allbinary.device.NullGL10_Package;
 
 package org.allbinary.device.OpenGLESGraphics_Package is
 
@@ -30,8 +29,10 @@ package org.allbinary.device.OpenGLESGraphics_Package is
    type OpenGLESGraphics_Access is access all OpenGLESGraphics'Class;
    type OpenGLESGraphics_Access_Array is array (Natural range <>) of OpenGLESGraphics_Access;
    type OpenGLESGraphics_Access_Array_Access is access all OpenGLESGraphics_Access_Array;
+   type OpenGLESGraphics_Access_Array_Access_Array is array (Natural range <>) of OpenGLESGraphics_Access_Array_Access;
+   type OpenGLESGraphics_Access_Array_Access_Array_Access is access all OpenGLESGraphics_Access_Array_Access_Array;
 
-   type OpenGLESGraphics is new OpenGLSurfaceChangedInterface and GraphicsInterface with record
+   type OpenGLESGraphics is new Java_Object and OpenGLSurfaceChangedInterface and GraphicsInterface with record
       commonStrings : CommonStrings_Access;
       gl : GL10_Access;
    end record;

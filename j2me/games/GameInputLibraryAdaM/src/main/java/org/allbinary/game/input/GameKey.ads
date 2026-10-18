@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 
 package org.allbinary.game.input.GameKey_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type GameKey is tagged;
    type GameKey_Access is access all GameKey'Class;
    type GameKey_Access_Array is array (Natural range <>) of GameKey_Access;
    type GameKey_Access_Array_Access is access all GameKey_Access_Array;
+   type GameKey_Access_Array_Access_Array is array (Natural range <>) of GameKey_Access_Array_Access;
+   type GameKey_Access_Array_Access_Array_Access is access all GameKey_Access_Array_Access_Array;
 
    type GameKey is new Input with null record;
    NULL_GAME_KEY : GameKey_Access;

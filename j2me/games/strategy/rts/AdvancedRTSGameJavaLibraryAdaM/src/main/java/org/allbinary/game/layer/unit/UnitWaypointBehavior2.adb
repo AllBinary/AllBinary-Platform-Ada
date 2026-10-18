@@ -13,8 +13,39 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package; use org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
+with org.allbinary.game.layer.WaypointPathRunnable_Package; use org.allbinary.game.layer.WaypointPathRunnable_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.waypoint.WaypointBase_Package; use org.allbinary.game.layer.waypoint.WaypointBase_Package;
+with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+with org.allbinary.thread.PathFindingThreadPool_Package; use org.allbinary.thread.PathFindingThreadPool_Package;
+
 package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
 
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package MultipassWaypointPathRunnable_Package renames Standard.org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
+   package WaypointPathRunnable_Package renames Standard.org.allbinary.game.layer.WaypointPathRunnable_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
+   package WaypointBase_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointBase_Package;
+   package TrackingEventHandler_Package renames Standard.org.allbinary.game.tracking.TrackingEventHandler_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package SimpleGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+   package PathFindingThreadPool_Package renames Standard.org.allbinary.thread.PathFindingThreadPool_Package;
    procedure Initialize_Fields (This : in out UnitWaypointBehavior2'Class) is
    begin
       null;
@@ -45,7 +76,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
         UnitWaypointBehavior_Package.Initialize (This, ownerAdvancedRTSGameLayer, fakeWaypoint);
         Initialize_Fields (This);
         This.progressTimeDelayHelper := TimeDelayHelper_Package.Create (5000);
-        This.wanderPathsList := BasicArrayListD_Package.Create;
+        This.wanderPathsList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         features := Features_Package.getInstance;
         This.waypointPathRunnable := (if J2MEUtil_Package.isHTML then MultipassWaypointPathRunnable_Package.Create else WaypointPathRunnable_Package.Create);
    end Initialize;
@@ -325,7 +356,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
         for index in reverse 0 .. (UnitWaypointBehavior2'Class (This).getPossibleTargetList.size) - (1) loop
             layerInterface := AdvancedRTSGameLayer_Access (UnitWaypointBehavior2'Class (This).getPossibleTargetList.get (index));
             if layerInterface.isDestroyed then
-                UnitWaypointBehavior2'Class (This).getPossibleTargetList.remove (layerInterface);
+                UnitWaypointBehavior2'Class (This).getPossibleTargetList.remove (Java_Object_Access (layerInterface));
             else
                 UnitWaypointBehavior2'Class (This).onEnemyMovement (layerInterface);
             end if;
@@ -395,7 +426,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    begin
         if (This.waypointPathsListP.size) /= (0) then
             UnitWaypointBehavior2'Class (This).setCurrentTargetLayerInterface (waypointLayer);
-            MAX := Integer_Package.MAX_VALUE;
+            MAX := Integer'Last;
             UnitWaypointBehavior2'Class (This).setCurrentTargetDistance (MAX);
             UnitWaypointBehavior2'Class (This).setRandomGeographicMapCellHistory (This.waypointPathsListP);
         else
@@ -424,7 +455,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       waypointLayer : constant RTSLayer_Access := RTSLayer_Access (waypointLayer_Param);
    begin
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.removeWaypoint (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), waypointLayer, reason);
-        This.targetList.remove (waypointLayer);
+        This.targetList.remove (Java_Object_Access (waypointLayer));
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.removeWaypointList (This.associatedAdvancedRTSGameLayer, UnitWaypointBehavior2_Access'(This'Unchecked_Access), This.targetList);
         if (This.currentTargetLayerInterfaceP) = (waypointLayer) then
             This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.removeWaypointClear (This.associatedAdvancedRTSGameLayer);
@@ -439,7 +470,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.clearTarget (This.associatedAdvancedRTSGameLayer);
         UnitWaypointBehavior2'Class (This).setCurrentTargetLayerInterface (CollidableDestroyableDamageableLayer_Package.getNullInstance);
         UnitWaypointBehavior2'Class (This).setTrackingWaypoint (False);
-        MAX := Integer_Package.MAX_VALUE;
+        MAX := Integer'Last;
         UnitWaypointBehavior2'Class (This).setCurrentTargetDistance (MAX);
         TrackingEventHandler_Package.getInstance.fireEvent (This.associatedAdvancedRTSGameLayer.getTrackingEvent);
    end clearTarget;
@@ -499,7 +530,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
         end if;
         This.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.addWaypointFromUser (This.associatedAdvancedRTSGameLayer, advancedRTSGameLayer);
         This.targetList.clear;
-        This.targetList.add (advancedRTSGameLayer);
+        This.targetList.add (Java_Object_Access (advancedRTSGameLayer));
         UnitWaypointBehavior2'Class (This).clearTarget;
    end addWaypointFromUser;
 
@@ -508,12 +539,12 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       allbinaryLayer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (allbinaryLayer_Param);
       cellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
    begin
-        if not (This.buildingSteeringVisitor.getList.contains (allbinaryLayer)) then
-            This.buildingSteeringVisitor.getList.add (allbinaryLayer);
-            This.buildingSteeringVisitor.getPositionList.add (cellPosition);
+        if not (This.buildingSteeringVisitor.getList.contains (Java_Object_Access (allbinaryLayer))) then
+            This.buildingSteeringVisitor.getList.add (Java_Object_Access (allbinaryLayer));
+            This.buildingSteeringVisitor.getPositionList.add (Java_Object_Access (cellPosition));
         end if;
-        if not (UnitWaypointBehavior2'Class (This).getSteeringVisitorList.contains (This.buildingSteeringVisitor)) then
-            UnitWaypointBehavior2'Class (This).getSteeringVisitorList.add (This.buildingSteeringVisitor);
+        if not (UnitWaypointBehavior2'Class (This).getSteeringVisitorList.contains (Java_Object_Access (This.buildingSteeringVisitor))) then
+            UnitWaypointBehavior2'Class (This).getSteeringVisitorList.add (Java_Object_Access (This.buildingSteeringVisitor));
         end if;
    end addBuildingChase;
 
@@ -555,19 +586,50 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
 
 begin
    null;
-   runningWaypointPathList := BasicArrayListD_Package.Create;
+   runningWaypointPathList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    TARGET_DISTANCE := To_Unbounded_String ("Target Distance");
    TARGET_LAYER := To_Unbounded_String ("Target Layer");
 
 end org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 
 
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package; use org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
+with org.allbinary.game.layer.WaypointPathRunnable_Package; use org.allbinary.game.layer.WaypointPathRunnable_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with org.allbinary.game.layer.waypoint.WaypointBase_Package; use org.allbinary.game.layer.waypoint.WaypointBase_Package;
+with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+with org.allbinary.thread.PathFindingThreadPool_Package; use org.allbinary.thread.PathFindingThreadPool_Package;
+
 package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
 
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package MultipassWaypointPathRunnable_Package renames Standard.org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
+   package WaypointPathRunnable_Package renames Standard.org.allbinary.game.layer.WaypointPathRunnable_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
+   package WaypointBase_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointBase_Package;
+   package TrackingEventHandler_Package renames Standard.org.allbinary.game.tracking.TrackingEventHandler_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package SimpleGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+   package PathFindingThreadPool_Package renames Standard.org.allbinary.thread.PathFindingThreadPool_Package;
    procedure Initialize_Fields (This : in out BuildingSteeringVisitor'Class) is
    begin
       null;
-      This.positionList := BasicArrayListD_Package.Create;
+      This.positionList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out BuildingSteeringVisitor'Class) is
@@ -625,6 +687,18 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
 
    procedure visit (This : in out BuildingSteeringVisitor; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Java_Object_Access := BuildingSteeringVisitor'Class (This).visit (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end visit;
+
+   function visit (This : in out BuildingSteeringVisitor; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return BuildingSteeringVisitor'Class (This).visit (Java_Box (Value));
+   end visit;
+
+   procedure visit (This : in out BuildingSteeringVisitor; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := BuildingSteeringVisitor'Class (This).visit (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+
 package body org.allbinary.business.user.commerce.money.Money_Package is
 
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
    procedure Initialize_Fields (This : in out Money'Class) is
    begin
       null;
@@ -80,7 +91,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
 
    function isValid (This : in out Money) return Boolean is
    begin
-        if (((This.units) /= (null)) and then ((Long_Long_Integer (This.units)) > (0))) and then ((Long_Long_Integer (This.units)) < (Long_Package.MAX_VALUE)) then
+        if (((This.units) /= (null)) and then ((Long_Long_Integer (This.units)) > (0))) and then ((Long_Long_Integer (This.units)) < (Long_Long_Integer'Last)) then
             return True;
         else
             return False;
@@ -140,7 +151,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
       centsStr : Unbounded_String;
    begin
         localUnit := 0;
-        index := (Index (usDollarStr, Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP)) - 1);
+        index := Java_Index_Of (usDollarStr, Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP));
         stringUtil := StringUtil_Package.getInstance;
         dollarStr := stringUtil.EMPTY_STRING;
         centsStr := stringUtil.EMPTY_STRING;

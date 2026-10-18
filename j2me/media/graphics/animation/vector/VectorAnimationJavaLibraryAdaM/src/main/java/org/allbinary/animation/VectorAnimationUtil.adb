@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+
 package body org.allbinary.animation.VectorAnimationUtil_Package is
 
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    procedure Initialize_Fields (This : in out VectorAnimationUtil'Class) is
    begin
       null;

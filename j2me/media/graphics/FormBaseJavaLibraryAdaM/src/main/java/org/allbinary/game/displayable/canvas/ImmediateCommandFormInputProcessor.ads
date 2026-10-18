@@ -40,6 +40,8 @@ package org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProcessor
    type ImmediateCommandFormInputProcessor_Access is access all ImmediateCommandFormInputProcessor'Class;
    type ImmediateCommandFormInputProcessor_Access_Array is array (Natural range <>) of ImmediateCommandFormInputProcessor_Access;
    type ImmediateCommandFormInputProcessor_Access_Array_Access is access all ImmediateCommandFormInputProcessor_Access_Array;
+   type ImmediateCommandFormInputProcessor_Access_Array_Access_Array is array (Natural range <>) of ImmediateCommandFormInputProcessor_Access_Array_Access;
+   type ImmediateCommandFormInputProcessor_Access_Array_Access_Array_Access is access all ImmediateCommandFormInputProcessor_Access_Array_Access_Array;
 
    type ImmediateCommandFormInputProcessor is new CommandFormInputProcessor with record
       timeHelper : TimeDelayHelper_Access;

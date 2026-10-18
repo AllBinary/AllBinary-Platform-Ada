@@ -21,16 +21,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.game.input.ABKeyEventWrapper_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ABKeyEventWrapper is tagged;
    type ABKeyEventWrapper_Access is access all ABKeyEventWrapper'Class;
    type ABKeyEventWrapper_Access_Array is array (Natural range <>) of ABKeyEventWrapper_Access;
    type ABKeyEventWrapper_Access_Array_Access is access all ABKeyEventWrapper_Access_Array;
+   type ABKeyEventWrapper_Access_Array_Access_Array is array (Natural range <>) of ABKeyEventWrapper_Access_Array_Access;
+   type ABKeyEventWrapper_Access_Array_Access_Array_Access is access all ABKeyEventWrapper_Access_Array_Access_Array;
 
    type ABKeyEventWrapper is new Java_Object with record
       VK_ENTER : Integer;

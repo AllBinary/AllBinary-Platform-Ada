@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
 
    procedure Initialize_Fields (This : in out ImageJ2SERotationUtil'Class) is

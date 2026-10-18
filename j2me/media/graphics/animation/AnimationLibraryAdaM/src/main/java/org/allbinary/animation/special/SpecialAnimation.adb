@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+
 package body org.allbinary.animation.special.SpecialAnimation_Package is
 
+   package IndexedAnimationBehavior_Package renames Standard.org.allbinary.animation.IndexedAnimationBehavior_Package;
    procedure Initialize_Fields (This : in out SpecialAnimation'Class) is
    begin
       null;

@@ -21,19 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
 
 package org.allbinary.data.tables.log.LogTableEntityInterface_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
    type LogTableEntityInterface is interface and BasicDataTableInterface;
    type LogTableEntityInterface_Access is access all LogTableEntityInterface'Class;
    type LogTableEntityInterface_Access_Array is array (Natural range <>) of LogTableEntityInterface_Access;
    type LogTableEntityInterface_Access_Array_Access is access all LogTableEntityInterface_Access_Array;
+   type LogTableEntityInterface_Access_Array_Access_Array is array (Natural range <>) of LogTableEntityInterface_Access_Array_Access;
+   type LogTableEntityInterface_Access_Array_Access_Array_Access is access all LogTableEntityInterface_Access_Array_Access_Array;
    procedure deleteWhere (This : in out LogTableEntityInterface; key : Unbounded_String; value : Unbounded_String) is abstract;
    procedure insert (This : in out LogTableEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
 

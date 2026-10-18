@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.physics.friction.FrictionData_Package is
 
    procedure Initialize_Fields (This : in out FrictionData'Class) is

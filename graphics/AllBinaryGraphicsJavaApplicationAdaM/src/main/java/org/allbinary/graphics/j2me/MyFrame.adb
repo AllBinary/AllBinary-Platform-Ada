@@ -13,8 +13,36 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
+with org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package; use org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
+with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.allbinary.graphics.j2me.Dimension_Package; use org.allbinary.graphics.j2me.Dimension_Package;
+with org.allbinary.graphics.j2me.GridLayout_Package; use org.allbinary.graphics.j2me.GridLayout_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
+
 package body org.allbinary.graphics.j2me.MyFrame_Package is
 
+   package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
+   package NewWorkAreaJDialog_Package renames Standard.org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package;
+   package WorkAreaDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
+   package WorkAreaJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+   package MyCanvasEvent_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+   package MyCanvasEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+   package MyCanvasEventSource_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
+   package LOGGING_Package renames Standard.org.allbinary.log.LOGGING_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
    procedure Initialize_Fields (This : in out MyFrame'Class) is
    begin
       null;
@@ -622,7 +650,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if LOGGING.contains (LOGGING.MENUEVENT) then
+            if LOGGING_Package.contains (LOGGING_Package.MENUEVENT) then
                 This.guiLog.put (This.commonStrings.EXCEPTION_Id, MyFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("newJMenuItemActionPerformed"), e);
             end if;
                 end;
@@ -639,7 +667,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if LOGGING.contains (LOGGING.MENUEVENT) then
+            if LOGGING_Package.contains (LOGGING_Package.MENUEVENT) then
                 This.guiLog.put (This.commonStrings.EXCEPTION_Id, MyFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("open"), e);
             end if;
                 end;
@@ -662,7 +690,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if LOGGING.contains (LOGGING.MENUEVENT) then
+            if LOGGING_Package.contains (LOGGING_Package.MENUEVENT) then
                 This.guiLog.put (This.commonStrings.EXCEPTION_Id, MyFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("export"), e);
             end if;
                 end;
@@ -680,7 +708,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if LOGGING.contains (LOGGING.MENUEVENT) then
+            if LOGGING_Package.contains (LOGGING_Package.MENUEVENT) then
                 This.guiLog.put (This.commonStrings.EXCEPTION_Id, MyFrame_Access'(This'Unchecked_Access), This.commonStrings.SAVE, e);
             end if;
                 end;
@@ -739,7 +767,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if LOGGING.contains (LOGGING.GRAPHICSCREATION) then
+            if LOGGING_Package.contains (LOGGING_Package.GRAPHICSCREATION) then
                 This.guiLog.put (This.commonStrings.EXCEPTION_Id, MyFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("addNewCanvas"), e);
             end if;
                 end;

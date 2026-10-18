@@ -13,15 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package; use org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
+
 package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    procedure Initialize_Fields (This : in out SaveCapturedImageWorker'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
       This.running := False;
-      This.capturedImageWorkerResultsEventVector := BasicArrayListD_Package.Create;
+      This.capturedImageWorkerResultsEventVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -52,7 +62,7 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
    procedure onCaptureEvent (This : in out SaveCapturedImageWorker; capturedImageEvent_Param : access CapturedImageWorkerResultsEvent_Package.CapturedImageWorkerResultsEvent'Class) is
       capturedImageEvent : constant CapturedImageWorkerResultsEvent_Access := CapturedImageWorkerResultsEvent_Access (capturedImageEvent_Param);
    begin
-        This.capturedImageWorkerResultsEventVector.add (capturedImageEvent);
+        This.capturedImageWorkerResultsEventVector.add (Java_Object_Access (capturedImageEvent));
         SaveCapturedImageWorker'Class (This).run;
    end onCaptureEvent;
 
@@ -75,7 +85,7 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
             capturedImageWorkerResultsEvent := (CapturedImageWorkerResultsEvent_Access (This.capturedImageWorkerResultsEventVector.get (0)));
             screenBufferedImage := capturedImageWorkerResultsEvent.getBufferedImage;
             CapturedImageInputOutput_Package.Create.save (screenBufferedImage, capturedImageWorkerResultsEvent.getFrame);
-            This.capturedImageWorkerResultsEventVector.remove (capturedImageWorkerResultsEvent);
+            This.capturedImageWorkerResultsEventVector.remove (Java_Object_Access (capturedImageWorkerResultsEvent));
             This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             SaveCapturedImageWorker'Class (This).setRunning (False);
             This.logUtil.putF (This.commonStrings.END_Id, SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);

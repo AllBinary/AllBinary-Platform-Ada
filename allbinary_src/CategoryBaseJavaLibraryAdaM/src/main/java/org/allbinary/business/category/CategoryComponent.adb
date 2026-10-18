@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+
 package body org.allbinary.business.category.CategoryComponent_Package is
 
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
    procedure Initialize_Fields (This : in out CategoryComponent'Class) is
    begin
       null;

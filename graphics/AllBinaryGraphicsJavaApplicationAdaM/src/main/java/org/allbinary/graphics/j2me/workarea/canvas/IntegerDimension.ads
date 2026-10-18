@@ -28,6 +28,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package is
    type IntegerDimension_Access is access all IntegerDimension'Class;
    type IntegerDimension_Access_Array is array (Natural range <>) of IntegerDimension_Access;
    type IntegerDimension_Access_Array_Access is access all IntegerDimension_Access_Array;
+   type IntegerDimension_Access_Array_Access_Array is array (Natural range <>) of IntegerDimension_Access_Array_Access;
+   type IntegerDimension_Access_Array_Access_Array_Access is access all IntegerDimension_Access_Array_Access_Array;
 
    type IntegerDimension is new Java_Object with record
       width : Integer;

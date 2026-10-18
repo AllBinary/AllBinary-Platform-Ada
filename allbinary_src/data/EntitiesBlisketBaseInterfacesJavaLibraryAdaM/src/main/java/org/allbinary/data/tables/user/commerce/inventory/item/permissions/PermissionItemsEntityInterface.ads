@@ -22,20 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
 
 package org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntityInterface_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
    type PermissionItemsEntityInterface is interface and BasicDataTableInterface;
    type PermissionItemsEntityInterface_Access is access all PermissionItemsEntityInterface'Class;
    type PermissionItemsEntityInterface_Access_Array is array (Natural range <>) of PermissionItemsEntityInterface_Access;
    type PermissionItemsEntityInterface_Access_Array_Access is access all PermissionItemsEntityInterface_Access_Array;
+   type PermissionItemsEntityInterface_Access_Array_Access_Array is array (Natural range <>) of PermissionItemsEntityInterface_Access_Array_Access;
+   type PermissionItemsEntityInterface_Access_Array_Access_Array_Access is access all PermissionItemsEntityInterface_Access_Array_Access_Array;
    procedure delete (This : in out PermissionItemsEntityInterface; value : Unbounded_String) is abstract;
    procedure insert (This : in out PermissionItemsEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    procedure update (This : in out PermissionItemsEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;

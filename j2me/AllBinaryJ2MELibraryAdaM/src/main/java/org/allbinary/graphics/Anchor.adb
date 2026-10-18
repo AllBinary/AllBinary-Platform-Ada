@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+
 package body org.allbinary.graphics.Anchor_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    procedure Initialize_Fields (This : in out Anchor'Class) is
    begin
       null;

@@ -31,8 +31,10 @@ package org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
    type InterfaceCastProxy_Access is access all InterfaceCastProxy'Class;
    type InterfaceCastProxy_Access_Array is array (Natural range <>) of InterfaceCastProxy_Access;
    type InterfaceCastProxy_Access_Array_Access is access all InterfaceCastProxy_Access_Array;
+   type InterfaceCastProxy_Access_Array_Access_Array is array (Natural range <>) of InterfaceCastProxy_Access_Array_Access;
+   type InterfaceCastProxy_Access_Array_Access_Array_Access is access all InterfaceCastProxy_Access_Array_Access_Array;
 
-   type InterfaceCastProxy is new InvocationHandler with record
+   type InterfaceCastProxy is new Java_Object and InvocationHandler with record
       anyType : Java_Object_Access;
    end record;
 
@@ -42,6 +44,8 @@ package org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
    procedure newInstance (anyType_Param : access Java_Object'Class);
    function invoke (This : in out InterfaceCastProxy; proxyObject_Param : access Java_Object'Class; proxyMethod_Param : access Method_Package.Method'Class; proxyArgs : Java_Object_Access_Array_Access) return Java_Object_Access;
    procedure invoke (This : in out InterfaceCastProxy; proxyObject_Param : access Java_Object'Class; proxyMethod_Param : access Method_Package.Method'Class; proxyArgs : Java_Object_Access_Array_Access);
+   function newInstance (Value : Unbounded_String) return Java_Object_Access;
+   procedure newInstance (Value : Unbounded_String);
 
 end org.allbinary.logic.java.proxy.InterfaceCastProxy_Package;
 

@@ -13,8 +13,28 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package;
+with org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsView_Package; use org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsView_Package;
+with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package;
+with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsView_Package; use org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsView_Package;
+with org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package;
+with org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsView_Package; use org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsView_Package;
+with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
+with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package;
+with org.allbinary.business.user.role.UserRoleFactory_Package; use org.allbinary.business.user.role.UserRoleFactory_Package;
+with org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsData_Package; use org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsData_Package;
+
 package body org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package is
 
+   package StoreFrontAdvertisementsStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package;
+   package StoreFrontAdvertisementsStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsView_Package;
+   package StoreFrontInventoryStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package;
+   package StoreFrontInventoryStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsView_Package;
+   package StoreFrontOrdersHistoryStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package;
+   package StoreFrontOrdersHistoryStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsView_Package;
+   package StoreFrontUsersStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
+   package StoreFrontUsersStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package;
+   package UserRoleFactory_Package renames Standard.org.allbinary.business.user.role.UserRoleFactory_Package;
    procedure Initialize_Fields (This : in out RealTimeStoreFrontStatisticsView'Class) is
    begin
       null;
@@ -54,17 +74,17 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
    begin
         node := document.createElement (StoreFrontStatisticsData_Package.getInstance.NAME);
         storeFrontAdvertisementsStatisticsInterface := This.storeFrontStatisticsInterface.getAdvertisements;
-        storeFrontAdvertisementsStatisticsDomNodeInterface := StoreFrontAdvertisementsStatisticsView_Package.Create (storeFrontAdvertisementsStatisticsInterface);
+        storeFrontAdvertisementsStatisticsDomNodeInterface := DomNodeInterface_Access (StoreFrontAdvertisementsStatisticsView_Package.Create (storeFrontAdvertisementsStatisticsInterface));
         node.appendChild (storeFrontAdvertisementsStatisticsDomNodeInterface.toXmlNode (document));
         storeFrontInventoryStatisticsInterface := This.storeFrontStatisticsInterface.getInventory;
-        storeFrontInventoryStatisticsDomNodeInterface := StoreFrontInventoryStatisticsView_Package.Create (storeFrontInventoryStatisticsInterface);
+        storeFrontInventoryStatisticsDomNodeInterface := DomNodeInterface_Access (StoreFrontInventoryStatisticsView_Package.Create (storeFrontInventoryStatisticsInterface));
         node.appendChild (storeFrontInventoryStatisticsDomNodeInterface.toXmlNode (document));
         storeFrontOrdersHistoryStatisticsInterface := This.storeFrontStatisticsInterface.getOrders;
-        storeFrontOrdersHistoryStatisticsDomNodeInterface := StoreFrontOrdersHistoryStatisticsView_Package.Create (storeFrontOrdersHistoryStatisticsInterface);
+        storeFrontOrdersHistoryStatisticsDomNodeInterface := DomNodeInterface_Access (StoreFrontOrdersHistoryStatisticsView_Package.Create (storeFrontOrdersHistoryStatisticsInterface));
         node.appendChild (storeFrontOrdersHistoryStatisticsDomNodeInterface.toXmlNode (document));
         if (This.userRole) = (UserRoleFactory_Package.getInstance.ADMINISTRATOR) then
             storeFrontUsersStatisticsInterface := This.storeFrontStatisticsInterface.getUsers;
-            storeFrontUsersStatisticsDomNodeInterface := StoreFrontUsersStatisticsView_Package.Create (storeFrontUsersStatisticsInterface);
+            storeFrontUsersStatisticsDomNodeInterface := DomNodeInterface_Access (StoreFrontUsersStatisticsView_Package.Create (storeFrontUsersStatisticsInterface));
             node.appendChild (storeFrontUsersStatisticsDomNodeInterface.toXmlNode (document));
         end if;
         return node;

@@ -21,18 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.business.user.role.BasicUserRoleFactory_Package; use org.allbinary.business.user.role.BasicUserRoleFactory_Package;
 
 package org.allbinary.business.user.role.AdminRoleFactory_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AdminRoleFactory is tagged;
    type AdminRoleFactory_Access is access all AdminRoleFactory'Class;
    type AdminRoleFactory_Access_Array is array (Natural range <>) of AdminRoleFactory_Access;
    type AdminRoleFactory_Access_Array_Access is access all AdminRoleFactory_Access_Array;
+   type AdminRoleFactory_Access_Array_Access_Array is array (Natural range <>) of AdminRoleFactory_Access_Array_Access;
+   type AdminRoleFactory_Access_Array_Access_Array_Access is access all AdminRoleFactory_Access_Array_Access_Array;
 
    type AdminRoleFactory is new Java_Object with record
       adminRoles : BasicArrayList_Access;

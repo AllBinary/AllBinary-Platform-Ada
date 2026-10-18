@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.view.View_Package; use android.view.View_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.canvas.AndroidGameStatistics_Package; use org.allbinary.canvas.AndroidGameStatistics_Package;
 
 package org.allbinary.canvas.ProfilingRefreshHelper_Package is
 
    package View_Package renames Standard.android.view.View_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type ProfilingRefreshHelper is tagged;
    type ProfilingRefreshHelper_Access is access all ProfilingRefreshHelper'Class;
    type ProfilingRefreshHelper_Access_Array is array (Natural range <>) of ProfilingRefreshHelper_Access;
    type ProfilingRefreshHelper_Access_Array_Access is access all ProfilingRefreshHelper_Access_Array;
+   type ProfilingRefreshHelper_Access_Array_Access_Array is array (Natural range <>) of ProfilingRefreshHelper_Access_Array_Access;
+   type ProfilingRefreshHelper_Access_Array_Access_Array_Access is access all ProfilingRefreshHelper_Access_Array_Access_Array;
 
    type ProfilingRefreshHelper is new AndroidGameStatistics with record
       firstTime : Boolean;

@@ -29,6 +29,8 @@ package org.allbinary.game.configuration.feature.MainFeatureFactory_Package is
    type MainFeatureFactory_Access is access all MainFeatureFactory'Class;
    type MainFeatureFactory_Access_Array is array (Natural range <>) of MainFeatureFactory_Access;
    type MainFeatureFactory_Access_Array_Access is access all MainFeatureFactory_Access_Array;
+   type MainFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of MainFeatureFactory_Access_Array_Access;
+   type MainFeatureFactory_Access_Array_Access_Array_Access is access all MainFeatureFactory_Access_Array_Access_Array;
 
    type MainFeatureFactory is new Java_Object with record
       FULL_SCREEN : Feature_Access;

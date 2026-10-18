@@ -30,6 +30,8 @@ package org.allbinary.game.combat.damage.DamageFloaters_Package is
    type DamageFloaters_Access is access all DamageFloaters'Class;
    type DamageFloaters_Access_Array is array (Natural range <>) of DamageFloaters_Access;
    type DamageFloaters_Access_Array_Access is access all DamageFloaters_Access_Array;
+   type DamageFloaters_Access_Array_Access_Array is array (Natural range <>) of DamageFloaters_Access_Array_Access;
+   type DamageFloaters_Access_Array_Access_Array_Access is access all DamageFloaters_Access_Array_Access_Array;
 
    type DamageFloaters is new Paintable with null record;
    SINGLETON : DamageFloaters_Access;

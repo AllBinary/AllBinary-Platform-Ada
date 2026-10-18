@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.image.AllBinaryPlatformImageRotationAnimationFactory_Package is
 
    procedure Initialize_Fields (This : in out AllBinaryPlatformImageRotationAnimationFactory'Class) is

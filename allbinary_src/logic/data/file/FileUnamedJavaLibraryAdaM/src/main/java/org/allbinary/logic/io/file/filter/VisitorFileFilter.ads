@@ -20,24 +20,25 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileFilter_Package; use java.io.FileFilter_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
 with org.allbinary.logic.util.visitor.VisitorInterface_Package; use org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
 package org.allbinary.logic.io.file.filter.VisitorFileFilter_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package FileWrapperUtil_Package renames Standard.org.allbinary.logic.io.file.FileWrapperUtil_Package;
    package VisitorInterface_Package renames Standard.org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
    type VisitorFileFilter is tagged;
    type VisitorFileFilter_Access is access all VisitorFileFilter'Class;
    type VisitorFileFilter_Access_Array is array (Natural range <>) of VisitorFileFilter_Access;
    type VisitorFileFilter_Access_Array_Access is access all VisitorFileFilter_Access_Array;
+   type VisitorFileFilter_Access_Array_Access_Array is array (Natural range <>) of VisitorFileFilter_Access_Array_Access;
+   type VisitorFileFilter_Access_Array_Access_Array_Access is access all VisitorFileFilter_Access_Array_Access_Array;
 
-   type VisitorFileFilter is new FileFilter with record
+   type VisitorFileFilter is new Java_Object and FileFilter with record
       booleanVisitorInterface : VisitorInterface_Access;
    end record;
 

@@ -29,6 +29,8 @@ package org.allbinary.game.GameInfoCopyFactory_Package is
    type GameInfoCopyFactory_Access is access all GameInfoCopyFactory'Class;
    type GameInfoCopyFactory_Access_Array is array (Natural range <>) of GameInfoCopyFactory_Access;
    type GameInfoCopyFactory_Access_Array_Access is access all GameInfoCopyFactory_Access_Array;
+   type GameInfoCopyFactory_Access_Array_Access_Array is array (Natural range <>) of GameInfoCopyFactory_Access_Array_Access;
+   type GameInfoCopyFactory_Access_Array_Access_Array_Access is access all GameInfoCopyFactory_Access_Array_Access_Array;
 
    type GameInfoCopyFactory is new Java_Object with null record;
 

@@ -13,8 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.media.Manager_Package; use javax.microedition.media.Manager_Package;
+with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.audio.AudioContentTypeDataFactory_Package; use org.allbinary.audio.AudioContentTypeDataFactory_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.audio.Sounds_Package; use org.allbinary.media.audio.Sounds_Package;
+with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.NoPlayer_Package;
+
 package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package Manager_Package renames Standard.javax.microedition.media.Manager_Package;
+   package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package AudioContentTypeDataFactory_Package renames Standard.org.allbinary.audio.AudioContentTypeDataFactory_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out AllBinaryMediaManager'Class) is
    begin
       null;

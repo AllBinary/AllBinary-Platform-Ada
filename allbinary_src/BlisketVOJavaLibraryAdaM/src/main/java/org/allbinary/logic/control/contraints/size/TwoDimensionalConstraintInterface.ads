@@ -29,6 +29,8 @@ package org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInte
    type TwoDimensionalConstraintInterface_Access is access all TwoDimensionalConstraintInterface'Class;
    type TwoDimensionalConstraintInterface_Access_Array is array (Natural range <>) of TwoDimensionalConstraintInterface_Access;
    type TwoDimensionalConstraintInterface_Access_Array_Access is access all TwoDimensionalConstraintInterface_Access_Array;
+   type TwoDimensionalConstraintInterface_Access_Array_Access_Array is array (Natural range <>) of TwoDimensionalConstraintInterface_Access_Array_Access;
+   type TwoDimensionalConstraintInterface_Access_Array_Access_Array_Access is access all TwoDimensionalConstraintInterface_Access_Array_Access_Array;
    function getHeight (This : in out TwoDimensionalConstraintInterface) return SizeConstraintInterface_Access is abstract;
    function getWidth (This : in out TwoDimensionalConstraintInterface) return SizeConstraintInterface_Access is abstract;
    procedure setHeight (This : in out TwoDimensionalConstraintInterface; heightSizeConstraintInterface_Param : access SizeConstraintInterface_Package.SizeConstraintInterface'Class) is abstract;

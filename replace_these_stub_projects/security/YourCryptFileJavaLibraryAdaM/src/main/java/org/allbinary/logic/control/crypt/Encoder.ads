@@ -16,6 +16,8 @@ package org.allbinary.logic.control.crypt.Encoder_Package is
    type Encoder_Access is access all Encoder'Class;
    type Encoder_Access_Array is array (Natural range <>) of Encoder_Access;
    type Encoder_Access_Array_Access is access all Encoder_Access_Array;
+   type Encoder_Access_Array_Access_Array is array (Natural range <>) of Encoder_Access_Array_Access;
+   type Encoder_Access_Array_Access_Array_Access is access all Encoder_Access_Array_Access_Array;
 
    type Encoder is new Java_Object with null record;
 

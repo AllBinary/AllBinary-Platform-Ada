@@ -28,6 +28,8 @@ package org.allbinary.business.DynamicObjectData_Package is
    type DynamicObjectData_Access is access all DynamicObjectData'Class;
    type DynamicObjectData_Access_Array is array (Natural range <>) of DynamicObjectData_Access;
    type DynamicObjectData_Access_Array_Access is access all DynamicObjectData_Access_Array;
+   type DynamicObjectData_Access_Array_Access_Array is array (Natural range <>) of DynamicObjectData_Access_Array_Access;
+   type DynamicObjectData_Access_Array_Access_Array_Access is access all DynamicObjectData_Access_Array_Access_Array;
 
    type DynamicObjectData is new Java_Object with null record;
    NAME : Unbounded_String;

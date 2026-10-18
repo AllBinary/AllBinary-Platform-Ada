@@ -28,6 +28,8 @@ package org.allbinary.media.image.io.ImageIOInterface_Package is
    type ImageIOInterface_Access is access all ImageIOInterface'Class;
    type ImageIOInterface_Access_Array is array (Natural range <>) of ImageIOInterface_Access;
    type ImageIOInterface_Access_Array_Access is access all ImageIOInterface_Access_Array;
+   type ImageIOInterface_Access_Array_Access_Array is array (Natural range <>) of ImageIOInterface_Access_Array_Access;
+   type ImageIOInterface_Access_Array_Access_Array_Access is access all ImageIOInterface_Access_Array_Access_Array;
    procedure save (This : in out ImageIOInterface; frame : Long_Long_Integer) is abstract;
 
 end org.allbinary.media.image.io.ImageIOInterface_Package;

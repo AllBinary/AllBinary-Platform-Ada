@@ -28,6 +28,8 @@ package org.allbinary.business.context.modules.storefront.statistics.orders.hist
    type StoreFrontOrdersHistoryStatisticsData_Access is access all StoreFrontOrdersHistoryStatisticsData'Class;
    type StoreFrontOrdersHistoryStatisticsData_Access_Array is array (Natural range <>) of StoreFrontOrdersHistoryStatisticsData_Access;
    type StoreFrontOrdersHistoryStatisticsData_Access_Array_Access is access all StoreFrontOrdersHistoryStatisticsData_Access_Array;
+   type StoreFrontOrdersHistoryStatisticsData_Access_Array_Access_Array is array (Natural range <>) of StoreFrontOrdersHistoryStatisticsData_Access_Array_Access;
+   type StoreFrontOrdersHistoryStatisticsData_Access_Array_Access_Array_Access is access all StoreFrontOrdersHistoryStatisticsData_Access_Array_Access_Array;
 
    type StoreFrontOrdersHistoryStatisticsData is new Java_Object with record
       NAME : Unbounded_String;

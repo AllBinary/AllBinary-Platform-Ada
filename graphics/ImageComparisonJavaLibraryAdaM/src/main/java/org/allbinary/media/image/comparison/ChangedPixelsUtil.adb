@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.logic.util.cache.PoolInterface_Package;
+with org.allbinary.media.image.cache.BufferedImageInfo_Package; use org.allbinary.media.image.cache.BufferedImageInfo_Package;
+with org.allbinary.media.image.cache.BufferedImageInfoFactory_Package; use org.allbinary.media.image.cache.BufferedImageInfoFactory_Package;
+with org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package; use org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+
 package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package PoolInterface_Package renames Standard.org.allbinary.logic.util.cache.PoolInterface_Package;
+   package BufferedImageInfo_Package renames Standard.org.allbinary.media.image.cache.BufferedImageInfo_Package;
+   package BufferedImageInfoFactory_Package renames Standard.org.allbinary.media.image.cache.BufferedImageInfoFactory_Package;
+   package BufferedImagePoolSingleton_Package renames Standard.org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package;
+   package PixelDelta_Package renames Standard.org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
    procedure Initialize_Fields (This : in out ChangedPixelsUtil'Class) is
    begin
       null;

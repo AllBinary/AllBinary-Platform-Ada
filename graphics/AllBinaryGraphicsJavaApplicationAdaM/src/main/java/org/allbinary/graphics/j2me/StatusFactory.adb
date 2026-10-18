@@ -13,13 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.j2me.MyFrame_Package; use org.allbinary.graphics.j2me.MyFrame_Package;
+
 package body org.allbinary.graphics.j2me.StatusFactory_Package is
 
    procedure Initialize_Fields (This : in out StatusFactory'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.SETSTATUS := To_Unbounded_String ("setStatus");
+      This.SETSTATUS_Field := To_Unbounded_String ("setStatus");
       This.STATUS_LABEL := To_Unbounded_String ("Status: ");
    end Initialize_Fields;
 
@@ -46,11 +48,11 @@ package body org.allbinary.graphics.j2me.StatusFactory_Package is
         MyFrame_Package.statusJLabel.setText (status);
    end setStatusNoLog;
 
-   procedure setStatus_Case (This : in out StatusFactory; status : Unbounded_String) is
+   procedure setStatus (This : in out StatusFactory; status : Unbounded_String) is
    begin
         StatusFactory'Class (This).setStatusNoLog (status);
-        This.logUtil.putF (This.STATUS_LABEL & status, StatusFactory_Access'(This'Unchecked_Access), This.SETSTATUS);
-   end setStatus_Case;
+        This.logUtil.putF (This.STATUS_LABEL & status, StatusFactory_Access'(This'Unchecked_Access), This.SETSTATUS_Field);
+   end setStatus;
 
 begin
    null;

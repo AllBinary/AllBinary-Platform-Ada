@@ -20,11 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package; use org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.control.workflow.WorkFlowData_Package; use org.allbinary.logic.control.workflow.WorkFlowData_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
@@ -32,11 +29,8 @@ with views.admin.workflow.WorkFlowView_Package; use views.admin.workflow.WorkFlo
 
 package views.admin.workflow.DeleteValidationView_Package is
 
-   package WorkFlowEntityFactory_Package renames Standard.org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package WorkFlowData_Package renames Standard.org.allbinary.logic.control.workflow.WorkFlowData_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -45,6 +39,8 @@ package views.admin.workflow.DeleteValidationView_Package is
    type DeleteValidationView_Access is access all DeleteValidationView'Class;
    type DeleteValidationView_Access_Array is array (Natural range <>) of DeleteValidationView_Access;
    type DeleteValidationView_Access_Array_Access is access all DeleteValidationView_Access_Array;
+   type DeleteValidationView_Access_Array_Access_Array is array (Natural range <>) of DeleteValidationView_Access_Array_Access;
+   type DeleteValidationView_Access_Array_Access_Array_Access is access all DeleteValidationView_Access_Array_Access_Array;
 
    type DeleteValidationView is new WorkFlowView and ValidationComponentInterface with record
       logUtil : LogUtil_Access;

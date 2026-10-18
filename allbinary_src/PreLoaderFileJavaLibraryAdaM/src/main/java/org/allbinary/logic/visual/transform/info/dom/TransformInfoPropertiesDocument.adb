@@ -13,8 +13,35 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoProperties_Package; use org.allbinary.logic.visual.transform.info.TransformInfoProperties_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFactory_Package; use org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFactory_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfosData_Package; use org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+
 package body org.allbinary.logic.visual.transform.info.dom.TransformInfoPropertiesDocument_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package DomDocumentFileHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package TransformInfoProperties_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoProperties_Package;
+   package TransformInfoPropertiesFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFactory_Package;
+   package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out TransformInfoPropertiesDocument'Class) is
    begin
       null;

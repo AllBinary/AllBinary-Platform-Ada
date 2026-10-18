@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.UserDomNode_Package; use org.allbinary.business.user.UserDomNode_Package;
+with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
+
 package body views.admin.user.UserView_Package is
 
+   package UserDomNode_Package renames Standard.org.allbinary.business.user.UserDomNode_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    procedure Initialize_Fields (This : in out UserView'Class) is
    begin
       null;

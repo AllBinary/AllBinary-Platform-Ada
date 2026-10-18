@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.http.request.MultipartRequestParamsDat
    type MultipartRequestParamsData_Access is access all MultipartRequestParamsData'Class;
    type MultipartRequestParamsData_Access_Array is array (Natural range <>) of MultipartRequestParamsData_Access;
    type MultipartRequestParamsData_Access_Array_Access is access all MultipartRequestParamsData_Access_Array;
+   type MultipartRequestParamsData_Access_Array_Access_Array is array (Natural range <>) of MultipartRequestParamsData_Access_Array_Access;
+   type MultipartRequestParamsData_Access_Array_Access_Array_Access is access all MultipartRequestParamsData_Access_Array_Access_Array;
 
    type MultipartRequestParamsData is new Java_Object with null record;
    HASHMAP : Unbounded_String;

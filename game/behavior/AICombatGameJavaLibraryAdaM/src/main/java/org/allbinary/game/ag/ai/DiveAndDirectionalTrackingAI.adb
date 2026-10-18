@@ -13,8 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.direction.DirectionalCompositeInterface_Package; use org.allbinary.direction.DirectionalCompositeInterface_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
+with org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package DirectionalCompositeInterface_Package renames Standard.org.allbinary.direction.DirectionalCompositeInterface_Package;
+   package DestroyedEventHandler_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
+   package VelocityInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+   package TrackingEventHandler_Package renames Standard.org.allbinary.game.tracking.TrackingEventHandler_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out DiveAndDirectionalTrackingAI'Class) is
    begin
       null;
@@ -22,7 +45,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
       This.directionFactory := DirectionFactory_Package.getInstance;
       This.gameTickTimeDelayHelper := GameTickTimeDelayHelperFactory_Package.getInstance;
       This.timeDelayHelper := TimeDelayHelper_Package.Create (500);
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
       
       This.directionToKeyMap := new Integer_Array'(Canvas_Package.LEFT, Canvas_Package.DOWN, Canvas_Package.UP, Canvas_Package.RIGHT);
@@ -275,7 +298,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    procedure onMovement (This : in out DiveAndDirectionalTrackingAI; trackingEvent_Param : access TrackingEvent_Package.TrackingEvent'Class) is
       trackingEvent : constant TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
    begin
-        This.list.add (trackingEvent);
+        This.list.add (Java_Object_Access (trackingEvent));
    end onMovement;
 
    procedure onDestroyed (This : in out DiveAndDirectionalTrackingAI; destroyedEvent_Param : access DestroyedEvent_Package.DestroyedEvent'Class) is

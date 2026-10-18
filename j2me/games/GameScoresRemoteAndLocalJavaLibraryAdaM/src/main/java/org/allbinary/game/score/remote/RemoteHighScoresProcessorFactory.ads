@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.score.remote.RemoteHighScoresProcessor_Package; use org.allbinary.game.score.remote.RemoteHighScoresProcessor_Package;
 with org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package; use org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package;
 
 package org.allbinary.game.score.remote.RemoteHighScoresProcessorFactory_Package is
@@ -30,6 +29,8 @@ package org.allbinary.game.score.remote.RemoteHighScoresProcessorFactory_Package
    type RemoteHighScoresProcessorFactory_Access is access all RemoteHighScoresProcessorFactory'Class;
    type RemoteHighScoresProcessorFactory_Access_Array is array (Natural range <>) of RemoteHighScoresProcessorFactory_Access;
    type RemoteHighScoresProcessorFactory_Access_Array_Access is access all RemoteHighScoresProcessorFactory_Access_Array;
+   type RemoteHighScoresProcessorFactory_Access_Array_Access_Array is array (Natural range <>) of RemoteHighScoresProcessorFactory_Access_Array_Access;
+   type RemoteHighScoresProcessorFactory_Access_Array_Access_Array_Access is access all RemoteHighScoresProcessorFactory_Access_Array_Access_Array;
 
    type RemoteHighScoresProcessorFactory is new Java_Object with null record;
    SINGLETON : RemoteHighScoresProcessorInterface_Access;

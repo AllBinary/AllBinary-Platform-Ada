@@ -24,7 +24,6 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.ColorCompositeInterface_Package; use org.allbinary.graphics.color.ColorCompositeInterface_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 
 package org.allbinary.animation.vector.CircleAnimation_Package is
 
@@ -32,12 +31,13 @@ package org.allbinary.animation.vector.CircleAnimation_Package is
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package ColorCompositeInterface_Package renames Standard.org.allbinary.graphics.color.ColorCompositeInterface_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
 
    type CircleAnimation is tagged;
    type CircleAnimation_Access is access all CircleAnimation'Class;
    type CircleAnimation_Access_Array is array (Natural range <>) of CircleAnimation_Access;
    type CircleAnimation_Access_Array_Access is access all CircleAnimation_Access_Array;
+   type CircleAnimation_Access_Array_Access_Array is array (Natural range <>) of CircleAnimation_Access_Array_Access;
+   type CircleAnimation_Access_Array_Access_Array_Access is access all CircleAnimation_Access_Array_Access_Array;
 
    type CircleAnimation is new Animation and ColorCompositeInterface with record
       TOTAL_ANGLE : Integer;

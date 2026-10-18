@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.opengles.shader.SimpleShaderInitializer_Package is
 
    procedure Initialize_Fields (This : in out SimpleShaderInitializer'Class) is

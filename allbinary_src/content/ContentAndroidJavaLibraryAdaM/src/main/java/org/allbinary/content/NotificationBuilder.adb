@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.NullParcelable_Package; use org.allbinary.android.NullParcelable_Package;
+
 package body org.allbinary.content.NotificationBuilder_Package is
 
+   package NullParcelable_Package renames Standard.org.allbinary.android.NullParcelable_Package;
    procedure Initialize_Fields (This : in out NotificationBuilder'Class) is
    begin
       null;

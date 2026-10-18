@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package; use org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
+
 package body org.allbinary.logic.system.security.AbCryptUtil_Package is
 
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package AbCrypt_Package renames Standard.org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
+   package KeySpecFactory_Package renames Standard.org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
    procedure Initialize_Fields (This : in out AbCryptUtil'Class) is
    begin
       null;

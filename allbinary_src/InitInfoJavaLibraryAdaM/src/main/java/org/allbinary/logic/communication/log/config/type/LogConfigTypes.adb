@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.communication.log.config.LoggingInitInfo_Package; use org.allbinary.logic.communication.log.config.LoggingInitInfo_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeData_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeData_Package;
+
 package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package is
 
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package LoggingInitInfo_Package renames Standard.org.allbinary.logic.communication.log.config.LoggingInitInfo_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out LogConfigTypes'Class) is
    begin
       null;
@@ -103,7 +116,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
 begin
    null;
    JSP_ERROR_NO_FUNCTION := To_Unbounded_String ("in JSP Not In Function");
-   LOGGING := BasicArrayListD_Package.Create;
+   LOGGING := BasicArrayList_Access (BasicArrayListD_Package.Create);
 
 end org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 

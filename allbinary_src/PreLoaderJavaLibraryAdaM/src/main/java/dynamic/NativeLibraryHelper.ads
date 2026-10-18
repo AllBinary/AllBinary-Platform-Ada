@@ -28,6 +28,8 @@ package dynamic.NativeLibraryHelper_Package is
    type NativeLibraryHelper_Access is access all NativeLibraryHelper'Class;
    type NativeLibraryHelper_Access_Array is array (Natural range <>) of NativeLibraryHelper_Access;
    type NativeLibraryHelper_Access_Array_Access is access all NativeLibraryHelper_Access_Array;
+   type NativeLibraryHelper_Access_Array_Access_Array is array (Natural range <>) of NativeLibraryHelper_Access_Array_Access;
+   type NativeLibraryHelper_Access_Array_Access_Array_Access is access all NativeLibraryHelper_Access_Array_Access_Array;
 
    type NativeLibraryHelper is new Java_Object with record
       library : Unbounded_String;

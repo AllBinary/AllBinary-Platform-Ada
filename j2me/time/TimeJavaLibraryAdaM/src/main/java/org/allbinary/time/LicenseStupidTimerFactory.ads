@@ -29,6 +29,8 @@ package org.allbinary.time.LicenseStupidTimerFactory_Package is
    type LicenseStupidTimerFactory_Access is access all LicenseStupidTimerFactory'Class;
    type LicenseStupidTimerFactory_Access_Array is array (Natural range <>) of LicenseStupidTimerFactory_Access;
    type LicenseStupidTimerFactory_Access_Array_Access is access all LicenseStupidTimerFactory_Access_Array;
+   type LicenseStupidTimerFactory_Access_Array_Access_Array is array (Natural range <>) of LicenseStupidTimerFactory_Access_Array_Access;
+   type LicenseStupidTimerFactory_Access_Array_Access_Array_Access is access all LicenseStupidTimerFactory_Access_Array_Access_Array;
 
    type LicenseStupidTimerFactory is new Java_Object with null record;
    instance : StupidTimer_Access;

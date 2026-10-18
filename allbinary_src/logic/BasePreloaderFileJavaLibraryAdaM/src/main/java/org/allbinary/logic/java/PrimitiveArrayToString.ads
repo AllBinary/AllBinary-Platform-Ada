@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
 package org.allbinary.logic.java.PrimitiveArrayToString_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type PrimitiveArrayToString is tagged;
    type PrimitiveArrayToString_Access is access all PrimitiveArrayToString'Class;
    type PrimitiveArrayToString_Access_Array is array (Natural range <>) of PrimitiveArrayToString_Access;
    type PrimitiveArrayToString_Access_Array_Access is access all PrimitiveArrayToString_Access_Array;
+   type PrimitiveArrayToString_Access_Array_Access_Array is array (Natural range <>) of PrimitiveArrayToString_Access_Array_Access;
+   type PrimitiveArrayToString_Access_Array_Access_Array_Access is access all PrimitiveArrayToString_Access_Array_Access_Array;
 
    type PrimitiveArrayToString is new Java_Object with null record;
 

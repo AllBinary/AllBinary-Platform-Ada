@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.commerce.inventory.basket.Basket_Package; use org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
+
 package body views.generic_Id.order.OrderView_Package is
 
+   package Basket_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
+   package OrderData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
    procedure Initialize_Fields (This : in out OrderView'Class) is
    begin
       null;

@@ -30,6 +30,8 @@ package org.allbinary.logic.system.security.licensing.LicenseUtil_Package is
    type LicenseUtil_Access is access all LicenseUtil'Class;
    type LicenseUtil_Access_Array is array (Natural range <>) of LicenseUtil_Access;
    type LicenseUtil_Access_Array_Access is access all LicenseUtil_Access_Array;
+   type LicenseUtil_Access_Array_Access_Array is array (Natural range <>) of LicenseUtil_Access_Array_Access;
+   type LicenseUtil_Access_Array_Access_Array_Access is access all LicenseUtil_Access_Array_Access_Array;
 
    type LicenseUtil is new Java_Object with null record;
    instance : LicenseUtil_Access;

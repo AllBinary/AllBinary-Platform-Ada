@@ -28,6 +28,8 @@ package org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package
    type UnitTechnologySingletonFactory_Access is access all UnitTechnologySingletonFactory'Class;
    type UnitTechnologySingletonFactory_Access_Array is array (Natural range <>) of UnitTechnologySingletonFactory_Access;
    type UnitTechnologySingletonFactory_Access_Array_Access is access all UnitTechnologySingletonFactory_Access_Array;
+   type UnitTechnologySingletonFactory_Access_Array_Access_Array is array (Natural range <>) of UnitTechnologySingletonFactory_Access_Array_Access;
+   type UnitTechnologySingletonFactory_Access_Array_Access_Array_Access is access all UnitTechnologySingletonFactory_Access_Array_Access_Array;
 
    type UnitTechnologySingletonFactory is new Java_Object with record
       damage : Integer;

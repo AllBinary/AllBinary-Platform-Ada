@@ -29,6 +29,8 @@ package org.allbinary.business.init.db.LogDbInitInfo_Package is
    type LogDbInitInfo_Access is access all LogDbInitInfo'Class;
    type LogDbInitInfo_Access_Array is array (Natural range <>) of LogDbInitInfo_Access;
    type LogDbInitInfo_Access_Array_Access is access all LogDbInitInfo_Access_Array;
+   type LogDbInitInfo_Access_Array_Access_Array is array (Natural range <>) of LogDbInitInfo_Access_Array_Access;
+   type LogDbInitInfo_Access_Array_Access_Array_Access is access all LogDbInitInfo_Access_Array_Access_Array;
 
    type LogDbInitInfo is new DbInitInfo with null record;
    INITFILE : Unbounded_String;

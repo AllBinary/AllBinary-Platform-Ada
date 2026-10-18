@@ -28,6 +28,8 @@ package org.allbinary.game.behavior.topview.InitialJumpBehavior_Package is
    type InitialJumpBehavior_Access is access all InitialJumpBehavior'Class;
    type InitialJumpBehavior_Access_Array is array (Natural range <>) of InitialJumpBehavior_Access;
    type InitialJumpBehavior_Access_Array_Access is access all InitialJumpBehavior_Access_Array;
+   type InitialJumpBehavior_Access_Array_Access_Array is array (Natural range <>) of InitialJumpBehavior_Access_Array_Access;
+   type InitialJumpBehavior_Access_Array_Access_Array_Access is access all InitialJumpBehavior_Access_Array_Access_Array;
 
    type InitialJumpBehavior is new Java_Object with null record;
 

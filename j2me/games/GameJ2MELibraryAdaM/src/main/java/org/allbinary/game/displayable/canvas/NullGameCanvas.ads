@@ -22,31 +22,21 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
-with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package; use org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-with org.allbinary.game.score.NoHighScoresFactory_Package; use org.allbinary.game.score.NoHighScoresFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
 
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package NullCommandListener_Package renames Standard.javax.microedition.lcdui.NullCommandListener_Package;
-   package BasicBuildGameInitializerFactory_Package renames Standard.org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
    package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package NoHighScoresFactory_Package renames Standard.org.allbinary.game.score.NoHighScoresFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type NullGameCanvas is tagged;
    type NullGameCanvas_Access is access all NullGameCanvas'Class;
    type NullGameCanvas_Access_Array is array (Natural range <>) of NullGameCanvas_Access;
    type NullGameCanvas_Access_Array_Access is access all NullGameCanvas_Access_Array;
+   type NullGameCanvas_Access_Array_Access_Array is array (Natural range <>) of NullGameCanvas_Access_Array_Access;
+   type NullGameCanvas_Access_Array_Access_Array_Access is access all NullGameCanvas_Access_Array_Access_Array;
 
    type NullGameCanvas is new AllBinaryGameCanvas with record
       runningNull : Boolean;

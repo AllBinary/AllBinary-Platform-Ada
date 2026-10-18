@@ -24,13 +24,10 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.collision.CollidableInterface_Package; use org.allbinary.game.collision.CollidableInterface_Package;
 with org.allbinary.game.collision.LayerCollisionUtil_Package; use org.allbinary.game.collision.LayerCollisionUtil_Package;
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
 with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
 
 package org.allbinary.game.collision.CollidableBaseBehavior_Package is
@@ -39,16 +36,16 @@ package org.allbinary.game.collision.CollidableBaseBehavior_Package is
    package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CollidableBaseBehavior is tagged;
    type CollidableBaseBehavior_Access is access all CollidableBaseBehavior'Class;
    type CollidableBaseBehavior_Access_Array is array (Natural range <>) of CollidableBaseBehavior_Access;
    type CollidableBaseBehavior_Access_Array_Access is access all CollidableBaseBehavior_Access_Array;
+   type CollidableBaseBehavior_Access_Array_Access_Array is array (Natural range <>) of CollidableBaseBehavior_Access_Array_Access;
+   type CollidableBaseBehavior_Access_Array_Access_Array_Access is access all CollidableBaseBehavior_Access_Array_Access_Array;
 
-   type CollidableBaseBehavior is new CollidableInterface with record
+   type CollidableBaseBehavior is new Java_Object and CollidableInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       layerCollisionUtil : LayerCollisionUtil_Access;

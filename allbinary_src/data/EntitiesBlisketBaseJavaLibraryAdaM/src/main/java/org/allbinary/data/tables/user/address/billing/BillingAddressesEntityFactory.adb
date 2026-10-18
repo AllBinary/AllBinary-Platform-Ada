@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package; use org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package;
+
 package body org.allbinary.data.tables.user.address.billing.BillingAddressesEntityFactory_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out BillingAddressesEntityFactory'Class) is
    begin
       null;
@@ -44,7 +48,7 @@ package body org.allbinary.data.tables.user.address.billing.BillingAddressesEnti
       commonStrings : CommonStrings_Access;
    begin
         begin
-            return BillingAddressesEntity_Package.Create (userName);
+            return StreetAddressesEntity_Access (BillingAddressesEntity_Package.Create (userName));
         exception
             when Java_Occurrence : others =>
                 declare

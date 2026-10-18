@@ -21,6 +21,8 @@ package org.allbinary.game.testgamedemo.R_Package is
    type R_Access is access all R'Class;
    type R_Access_Array is array (Natural range <>) of R_Access;
    type R_Access_Array_Access is access all R_Access_Array;
+   type R_Access_Array_Access_Array is array (Natural range <>) of R_Access_Array_Access;
+   type R_Access_Array_Access_Array_Access is access all R_Access_Array_Access_Array;
 
    type R is new Java_Object with null record;
 
@@ -45,6 +47,8 @@ package org.allbinary.game.testgamedemo.attr_Package is
    type attr_Access is access all attr'Class;
    type attr_Access_Array is array (Natural range <>) of attr_Access;
    type attr_Access_Array_Access is access all attr_Access_Array;
+   type attr_Access_Array_Access_Array is array (Natural range <>) of attr_Access_Array_Access;
+   type attr_Access_Array_Access_Array_Access is access all attr_Access_Array_Access_Array;
 
    type attr is new Java_Object with null record;
 
@@ -69,6 +73,8 @@ package org.allbinary.game.testgamedemo.drawable_Package is
    type drawable_Access is access all drawable'Class;
    type drawable_Access_Array is array (Natural range <>) of drawable_Access;
    type drawable_Access_Array_Access is access all drawable_Access_Array;
+   type drawable_Access_Array_Access_Array is array (Natural range <>) of drawable_Access_Array_Access;
+   type drawable_Access_Array_Access_Array_Access is access all drawable_Access_Array_Access_Array;
 
    type drawable is new Java_Object with null record;
    testgamedemo_icon : Integer;
@@ -95,6 +101,8 @@ package org.allbinary.game.testgamedemo.id_Package is
    type id_Access is access all id'Class;
    type id_Access_Array is array (Natural range <>) of id_Access;
    type id_Access_Array_Access is access all id_Access_Array;
+   type id_Access_Array_Access_Array is array (Natural range <>) of id_Access_Array_Access;
+   type id_Access_Array_Access_Array_Access is access all id_Access_Array_Access_Array;
 
    type id is new Java_Object with null record;
    ad_area_bottom : Integer;
@@ -125,6 +133,8 @@ package org.allbinary.game.testgamedemo.layout_Package is
    type layout_Access is access all layout'Class;
    type layout_Access_Array is array (Natural range <>) of layout_Access;
    type layout_Access_Array_Access is access all layout_Access_Array;
+   type layout_Access_Array_Access_Array is array (Natural range <>) of layout_Access_Array_Access;
+   type layout_Access_Array_Access_Array_Access is access all layout_Access_Array_Access_Array;
 
    type layout is new Java_Object with null record;
    testgamedemo_ad_overlay_layout : Integer;
@@ -152,6 +162,8 @@ package org.allbinary.game.testgamedemo.raw_Package is
    type raw_Access is access all raw'Class;
    type raw_Access_Array is array (Natural range <>) of raw_Access;
    type raw_Access_Array_Access is access all raw_Access_Array;
+   type raw_Access_Array_Access_Array is array (Natural range <>) of raw_Access_Array_Access;
+   type raw_Access_Array_Access_Array_Access is access all raw_Access_Array_Access_Array;
 
    type raw is new Java_Object with null record;
    error : Integer;
@@ -220,6 +232,8 @@ package org.allbinary.game.testgamedemo.string_Package is
    type string_Access is access all string'Class;
    type string_Access_Array is array (Natural range <>) of string_Access;
    type string_Access_Array_Access is access all string_Access_Array;
+   type string_Access_Array_Access_Array is array (Natural range <>) of string_Access_Array_Access;
+   type string_Access_Array_Access_Array_Access is access all string_Access_Array_Access_Array;
 
    type string is new Java_Object with null record;
    progressbar_in_title_string : Integer;

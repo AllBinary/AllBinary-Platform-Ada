@@ -13,13 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
+
 package body org.allbinary.media.audio.PlayerQueue_Package is
 
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out PlayerQueue'Class) is
    begin
       null;
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
    end Initialize_Fields;
 
@@ -41,8 +51,8 @@ package body org.allbinary.media.audio.PlayerQueue_Package is
       sound : constant Sound_Access := Sound_Access (sound_Param);
    begin
         begin
-            if not (This.list.contains (sound)) then
-                This.list.add (sound);
+            if not (This.list.contains (Java_Object_Access (sound))) then
+                This.list.add (Java_Object_Access (sound));
             end if;
         exception
             when Java_Occurrence : others =>

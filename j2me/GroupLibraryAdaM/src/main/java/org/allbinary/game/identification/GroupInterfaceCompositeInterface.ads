@@ -29,6 +29,8 @@ package org.allbinary.game.identification.GroupInterfaceCompositeInterface_Packa
    type GroupInterfaceCompositeInterface_Access is access all GroupInterfaceCompositeInterface'Class;
    type GroupInterfaceCompositeInterface_Access_Array is array (Natural range <>) of GroupInterfaceCompositeInterface_Access;
    type GroupInterfaceCompositeInterface_Access_Array_Access is access all GroupInterfaceCompositeInterface_Access_Array;
+   type GroupInterfaceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of GroupInterfaceCompositeInterface_Access_Array_Access;
+   type GroupInterfaceCompositeInterface_Access_Array_Access_Array_Access is access all GroupInterfaceCompositeInterface_Access_Array_Access_Array;
    function getGroupInterface (This : in out GroupInterfaceCompositeInterface) return Group_Access_Array_Access is abstract;
 
 end org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package;

@@ -26,11 +26,8 @@ with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animat
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
-with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.compound.CompoundAnimationInterface_Package; use org.allbinary.animation.compound.CompoundAnimationInterface_Package;
 
 package org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package is
@@ -41,16 +38,15 @@ package org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package i
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
    package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
    package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
-   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type AutoCompoundRotationAnimation is tagged;
    type AutoCompoundRotationAnimation_Access is access all AutoCompoundRotationAnimation'Class;
    type AutoCompoundRotationAnimation_Access_Array is array (Natural range <>) of AutoCompoundRotationAnimation_Access;
    type AutoCompoundRotationAnimation_Access_Array_Access is access all AutoCompoundRotationAnimation_Access_Array;
+   type AutoCompoundRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AutoCompoundRotationAnimation_Access_Array_Access;
+   type AutoCompoundRotationAnimation_Access_Array_Access_Array_Access is access all AutoCompoundRotationAnimation_Access_Array_Access_Array;
 
    type AutoCompoundRotationAnimation is new RotationAnimation and CompoundAnimationInterface with record
       animationInterfaceArray : RotationAnimation_Access_Array_Access;

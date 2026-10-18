@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.LockablePaintable_Package; use org.allbinary.graphics.form.LockablePaintable_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
 
@@ -32,6 +31,8 @@ package org.allbinary.graphics.form.LockableFormPaintableFactory_Package is
    type LockableFormPaintableFactory_Access is access all LockableFormPaintableFactory'Class;
    type LockableFormPaintableFactory_Access_Array is array (Natural range <>) of LockableFormPaintableFactory_Access;
    type LockableFormPaintableFactory_Access_Array_Access is access all LockableFormPaintableFactory_Access_Array;
+   type LockableFormPaintableFactory_Access_Array_Access_Array is array (Natural range <>) of LockableFormPaintableFactory_Access_Array_Access;
+   type LockableFormPaintableFactory_Access_Array_Access_Array_Access is access all LockableFormPaintableFactory_Access_Array_Access_Array;
 
    type LockableFormPaintableFactory is new ItemPaintableFactory with record
       lockedIndex : Integer;

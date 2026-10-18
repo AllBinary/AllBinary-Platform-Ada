@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graph.V_Package is
 
    procedure Initialize_Fields (This : in out V'Class) is

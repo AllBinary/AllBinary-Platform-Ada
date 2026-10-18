@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.item.special.SpecialItemD
    type SpecialItemData_Access is access all SpecialItemData'Class;
    type SpecialItemData_Access_Array is array (Natural range <>) of SpecialItemData_Access;
    type SpecialItemData_Access_Array_Access is access all SpecialItemData_Access_Array;
+   type SpecialItemData_Access_Array_Access_Array is array (Natural range <>) of SpecialItemData_Access_Array_Access;
+   type SpecialItemData_Access_Array_Access_Array_Access is access all SpecialItemData_Access_Array_Access_Array;
 
    type SpecialItemData is new Java_Object with null record;
    START_TIME : Unbounded_String;

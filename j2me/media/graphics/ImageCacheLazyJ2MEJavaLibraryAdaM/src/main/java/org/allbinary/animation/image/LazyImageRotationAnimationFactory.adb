@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.animation.image.LazyImageRotationAnimation_Package; use org.allbinary.animation.image.LazyImageRotationAnimation_Package;
+
 package body org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package is
 
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    procedure Initialize_Fields (This : in out LazyImageRotationAnimationFactory'Class) is
    begin
       null;
@@ -50,7 +58,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimationFactory_Pac
             This.animationInterfaceFactoryInterface.setInitialScale (This.scaleProperties);
             return This.animationInterfaceFactoryInterface.getInstance (instanceId);
         else
-            return LazyImageRotationAnimation_Package.Create (This.layoutIndex, instanceId, This.scaleProperties, This.animationInterfaceFactoryInterface, This.animationInterfaceFactoryInterface.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (LazyImageRotationAnimation_Package.Create (This.layoutIndex, instanceId, This.scaleProperties, This.animationInterfaceFactoryInterface, This.animationInterfaceFactoryInterface.animationBehaviorFactory.getOrCreateInstance));
         end if;
    end getInstance;
 

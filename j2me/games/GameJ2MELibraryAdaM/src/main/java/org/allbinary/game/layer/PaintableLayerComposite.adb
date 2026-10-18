@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
+
 package body org.allbinary.game.layer.PaintableLayerComposite_Package is
 
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
    procedure Initialize_Fields (This : in out PaintableLayerComposite'Class) is
    begin
       null;

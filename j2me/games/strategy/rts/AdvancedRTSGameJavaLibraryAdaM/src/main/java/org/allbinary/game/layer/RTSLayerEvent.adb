@@ -12,8 +12,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
+
 package body org.allbinary.game.layer.RTSLayerEvent_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out RTSLayerEvent'Class) is
    begin
       null;

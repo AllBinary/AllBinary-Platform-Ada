@@ -28,6 +28,8 @@ package org.allbinary.android.input.motion.GameInputMotionInfo_Package is
    type GameInputMotionInfo_Access is access all GameInputMotionInfo'Class;
    type GameInputMotionInfo_Access_Array is array (Natural range <>) of GameInputMotionInfo_Access;
    type GameInputMotionInfo_Access_Array_Access is access all GameInputMotionInfo_Access_Array;
+   type GameInputMotionInfo_Access_Array_Access_Array is array (Natural range <>) of GameInputMotionInfo_Access_Array_Access;
+   type GameInputMotionInfo_Access_Array_Access_Array_Access is access all GameInputMotionInfo_Access_Array_Access_Array;
 
    type GameInputMotionInfo is new Java_Object with record
       MAX_API : Integer;

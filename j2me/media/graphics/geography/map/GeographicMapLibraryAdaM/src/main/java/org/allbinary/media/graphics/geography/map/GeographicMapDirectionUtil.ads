@@ -20,23 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
-with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
-with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
-   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
-   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
 
    type GeographicMapDirectionUtil is tagged;
    type GeographicMapDirectionUtil_Access is access all GeographicMapDirectionUtil'Class;
    type GeographicMapDirectionUtil_Access_Array is array (Natural range <>) of GeographicMapDirectionUtil_Access;
    type GeographicMapDirectionUtil_Access_Array_Access is access all GeographicMapDirectionUtil_Access_Array;
+   type GeographicMapDirectionUtil_Access_Array_Access_Array is array (Natural range <>) of GeographicMapDirectionUtil_Access_Array_Access;
+   type GeographicMapDirectionUtil_Access_Array_Access_Array_Access is access all GeographicMapDirectionUtil_Access_Array_Access_Array;
 
    type GeographicMapDirectionUtil is new Java_Object with record
       MESSAGE : Unbounded_String;

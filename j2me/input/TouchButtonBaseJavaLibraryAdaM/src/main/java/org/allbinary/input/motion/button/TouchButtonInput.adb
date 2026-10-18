@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.input.motion.button.TouchButtonInput_Package is
 
+   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out TouchButtonInput'Class) is
    begin
       null;

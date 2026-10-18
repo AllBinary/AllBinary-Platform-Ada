@@ -20,21 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.loader.AbeFactory_Package; use org.allbinary.logic.system.loader.AbeFactory_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
 
 package org.allbinary.business.init.db.InitDbHelperFactory_Package is
 
-   package AbeFactory_Package renames Standard.org.allbinary.logic.system.loader.AbeFactory_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type InitDbHelperFactory is tagged;
    type InitDbHelperFactory_Access is access all InitDbHelperFactory'Class;
    type InitDbHelperFactory_Access_Array is array (Natural range <>) of InitDbHelperFactory_Access;
    type InitDbHelperFactory_Access_Array_Access is access all InitDbHelperFactory_Access_Array;
+   type InitDbHelperFactory_Access_Array_Access_Array is array (Natural range <>) of InitDbHelperFactory_Access_Array_Access;
+   type InitDbHelperFactory_Access_Array_Access_Array_Access is access all InitDbHelperFactory_Access_Array_Access_Array;
 
    type InitDbHelperFactory is new Java_Object with null record;
    CLASSNAME : Unbounded_String;

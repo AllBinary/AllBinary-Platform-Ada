@@ -22,20 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.logic.control.workflow.StoreWorkFlowInterface_Package; use org.allbinary.logic.control.workflow.StoreWorkFlowInterface_Package;
 with workflows.template.data.BasicWorkFlow_Package; use workflows.template.data.BasicWorkFlow_Package;
 
 package workflows.template.data.BasicStoreWorkFlow_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package StoreWorkFlowInterface_Package renames Standard.org.allbinary.logic.control.workflow.StoreWorkFlowInterface_Package;
 
    type BasicStoreWorkFlow is tagged;
    type BasicStoreWorkFlow_Access is access all BasicStoreWorkFlow'Class;
    type BasicStoreWorkFlow_Access_Array is array (Natural range <>) of BasicStoreWorkFlow_Access;
    type BasicStoreWorkFlow_Access_Array_Access is access all BasicStoreWorkFlow_Access_Array;
+   type BasicStoreWorkFlow_Access_Array_Access_Array is array (Natural range <>) of BasicStoreWorkFlow_Access_Array_Access;
+   type BasicStoreWorkFlow_Access_Array_Access_Array_Access is access all BasicStoreWorkFlow_Access_Array_Access_Array;
 
    type BasicStoreWorkFlow is new BasicWorkFlow and StoreWorkFlowInterface with null record;
 

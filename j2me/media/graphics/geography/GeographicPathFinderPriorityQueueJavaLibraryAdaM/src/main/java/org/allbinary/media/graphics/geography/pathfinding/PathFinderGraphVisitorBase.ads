@@ -30,6 +30,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisito
    type PathFinderGraphVisitorBase_Access is access all PathFinderGraphVisitorBase'Class;
    type PathFinderGraphVisitorBase_Access_Array is array (Natural range <>) of PathFinderGraphVisitorBase_Access;
    type PathFinderGraphVisitorBase_Access_Array_Access is access all PathFinderGraphVisitorBase_Access_Array;
+   type PathFinderGraphVisitorBase_Access_Array_Access_Array is array (Natural range <>) of PathFinderGraphVisitorBase_Access_Array_Access;
+   type PathFinderGraphVisitorBase_Access_Array_Access_Array_Access is access all PathFinderGraphVisitorBase_Access_Array_Access_Array;
 
    type PathFinderGraphVisitorBase is new Java_Object with null record;
 
@@ -41,6 +43,10 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisito
    procedure isValid (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class);
    function getInvalidReason (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) return Unbounded_String;
    procedure getInvalidReason (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class);
+   function isValid (This : in out PathFinderGraphVisitorBase; Value : Unbounded_String) return Boolean;
+   procedure isValid (This : in out PathFinderGraphVisitorBase; Value : Unbounded_String);
+   function getInvalidReason (This : in out PathFinderGraphVisitorBase; Value : Unbounded_String) return Unbounded_String;
+   procedure getInvalidReason (This : in out PathFinderGraphVisitorBase; Value : Unbounded_String);
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
 

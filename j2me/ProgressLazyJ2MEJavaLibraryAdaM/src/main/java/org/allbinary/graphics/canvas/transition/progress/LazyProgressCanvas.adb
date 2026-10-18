@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package is
 
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
    procedure Initialize_Fields (This : in out LazyProgressCanvas'Class) is
    begin
       null;

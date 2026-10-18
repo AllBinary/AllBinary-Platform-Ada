@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+
 package body org.allbinary.logic.io.FileStreamFactory_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    procedure Initialize_Fields (This : in out FileStreamFactory'Class) is
    begin
       null;

@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.item.option.XmlOptionItem
    type XmlOptionItemData_Access is access all XmlOptionItemData'Class;
    type XmlOptionItemData_Access_Array is array (Natural range <>) of XmlOptionItemData_Access;
    type XmlOptionItemData_Access_Array_Access is access all XmlOptionItemData_Access_Array;
+   type XmlOptionItemData_Access_Array_Access_Array is array (Natural range <>) of XmlOptionItemData_Access_Array_Access;
+   type XmlOptionItemData_Access_Array_Access_Array_Access is access all XmlOptionItemData_Access_Array_Access_Array;
 
    type XmlOptionItemData is new Java_Object with null record;
    XML_FILE_STATUS : Unbounded_String;

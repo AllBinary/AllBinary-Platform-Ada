@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package is
 
    procedure Initialize_Fields (This : in out TouchButtonStrafeRightResource'Class) is
@@ -40,7 +41,7 @@ package body org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Pa
 
 begin
    null;
-   instance := TouchButtonStrafeRightResource_Package.Create;
+   instance := TouchButtonResource_Access (TouchButtonStrafeRightResource_Package.Create);
 
 end org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package;
 

@@ -21,27 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package; use org.allbinary.logic.java.character_Id.CharacterSet_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.system.os.OperatingSystemInterface_Package; use org.allbinary.logic.system.os.OperatingSystemInterface_Package;
-with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
 
 package org.allbinary.logic.system.os.GenericOperatingSystem_Package is
 
    package CharacterSet_Package renames Standard.org.allbinary.logic.java.character_Id.CharacterSet_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type GenericOperatingSystem is tagged;
    type GenericOperatingSystem_Access is access all GenericOperatingSystem'Class;
    type GenericOperatingSystem_Access_Array is array (Natural range <>) of GenericOperatingSystem_Access;
    type GenericOperatingSystem_Access_Array_Access is access all GenericOperatingSystem_Access_Array;
+   type GenericOperatingSystem_Access_Array_Access_Array is array (Natural range <>) of GenericOperatingSystem_Access_Array_Access;
+   type GenericOperatingSystem_Access_Array_Access_Array_Access is access all GenericOperatingSystem_Access_Array_Access_Array;
 
-   type GenericOperatingSystem is new OperatingSystemInterface with record
+   type GenericOperatingSystem is new Java_Object and OperatingSystemInterface with record
       osName : Unbounded_String;
       osArch : Unbounded_String;
       osVersion : Unbounded_String;

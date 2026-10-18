@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
+
 package body org.allbinary.game.configuration.GameSpeed_Package is
 
    procedure Initialize_Fields (This : in out GameSpeed'Class) is

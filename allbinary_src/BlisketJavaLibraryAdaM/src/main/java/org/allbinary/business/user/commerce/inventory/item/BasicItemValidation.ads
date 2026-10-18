@@ -21,10 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.sql.AbSqlData_Package; use org.allbinary.logic.communication.sql.AbSqlData_Package;
 with org.allbinary.logic.control.validate.Validation_Package; use org.allbinary.logic.control.validate.Validation_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
@@ -32,10 +29,7 @@ with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; 
 package org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlData_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlData_Package;
    package Validation_Package renames Standard.org.allbinary.logic.control.validate.Validation_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -43,6 +37,8 @@ package org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_
    type BasicItemValidation_Access is access all BasicItemValidation'Class;
    type BasicItemValidation_Access_Array is array (Natural range <>) of BasicItemValidation_Access;
    type BasicItemValidation_Access_Array_Access is access all BasicItemValidation_Access_Array;
+   type BasicItemValidation_Access_Array_Access_Array is array (Natural range <>) of BasicItemValidation_Access_Array_Access;
+   type BasicItemValidation_Access_Array_Access_Array_Access is access all BasicItemValidation_Access_Array_Access_Array;
 
    type BasicItemValidation is new Validation with record
       logUtil : LogUtil_Access;

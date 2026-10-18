@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
 package org.allbinary.logic.system.security.licensing.registration.RegistrationConfiguration_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type RegistrationConfiguration is tagged;
    type RegistrationConfiguration_Access is access all RegistrationConfiguration'Class;
    type RegistrationConfiguration_Access_Array is array (Natural range <>) of RegistrationConfiguration_Access;
    type RegistrationConfiguration_Access_Array_Access is access all RegistrationConfiguration_Access_Array;
+   type RegistrationConfiguration_Access_Array_Access_Array is array (Natural range <>) of RegistrationConfiguration_Access_Array_Access;
+   type RegistrationConfiguration_Access_Array_Access_Array_Access is access all RegistrationConfiguration_Access_Array_Access_Array;
 
    type RegistrationConfiguration is new Java_Object with record
       registrationCode : Unbounded_String;

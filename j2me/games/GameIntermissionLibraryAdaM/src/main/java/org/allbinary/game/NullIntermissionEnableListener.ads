@@ -29,8 +29,10 @@ package org.allbinary.game.NullIntermissionEnableListener_Package is
    type NullIntermissionEnableListener_Access is access all NullIntermissionEnableListener'Class;
    type NullIntermissionEnableListener_Access_Array is array (Natural range <>) of NullIntermissionEnableListener_Access;
    type NullIntermissionEnableListener_Access_Array_Access is access all NullIntermissionEnableListener_Access_Array;
+   type NullIntermissionEnableListener_Access_Array_Access_Array is array (Natural range <>) of NullIntermissionEnableListener_Access_Array_Access;
+   type NullIntermissionEnableListener_Access_Array_Access_Array_Access is access all NullIntermissionEnableListener_Access_Array_Access_Array;
 
-   type NullIntermissionEnableListener is new IntermissionEnableListenerInterface with null record;
+   type NullIntermissionEnableListener is new Java_Object and IntermissionEnableListenerInterface with null record;
    SINGLETON : IntermissionEnableListenerInterface_Access;
 
    procedure Initialize (This : in out NullIntermissionEnableListener'Class);

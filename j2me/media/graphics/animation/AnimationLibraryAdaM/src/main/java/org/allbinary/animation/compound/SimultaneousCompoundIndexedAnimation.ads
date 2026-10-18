@@ -24,7 +24,6 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
 package org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package is
 
@@ -32,12 +31,13 @@ package org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Pa
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
    type SimultaneousCompoundIndexedAnimation is tagged;
    type SimultaneousCompoundIndexedAnimation_Access is access all SimultaneousCompoundIndexedAnimation'Class;
    type SimultaneousCompoundIndexedAnimation_Access_Array is array (Natural range <>) of SimultaneousCompoundIndexedAnimation_Access;
    type SimultaneousCompoundIndexedAnimation_Access_Array_Access is access all SimultaneousCompoundIndexedAnimation_Access_Array;
+   type SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of SimultaneousCompoundIndexedAnimation_Access_Array_Access;
+   type SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array_Access is access all SimultaneousCompoundIndexedAnimation_Access_Array_Access_Array;
 
    type SimultaneousCompoundIndexedAnimation is new IndexedAnimation with record
       animationInterfaceArray : Animation_Access_Array_Access;

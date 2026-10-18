@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.button.TouchButtonsPaintable_Package; use org.allbinary.input.motion.button.TouchButtonsPaintable_Package;
+
 package body org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Package is
 
    procedure Initialize_Fields (This : in out TouchButtonsPaintableFactory'Class) is
@@ -36,7 +38,7 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Pack
    function getInstance (basicColor_Param : access BasicColor_Package.BasicColor'Class) return Paintable_Access is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
-        return TouchButtonsPaintable_Package.Create (basicColor);
+        return Paintable_Access (TouchButtonsPaintable_Package.Create (basicColor));
    end getInstance;
 
    procedure getInstance (basicColor_Param : access BasicColor_Package.BasicColor'Class) is

@@ -29,6 +29,8 @@ package org.allbinary.graphics.paint.ProcessPaintableSingletonFactory_Package is
    type ProcessPaintableSingletonFactory_Access is access all ProcessPaintableSingletonFactory'Class;
    type ProcessPaintableSingletonFactory_Access_Array is array (Natural range <>) of ProcessPaintableSingletonFactory_Access;
    type ProcessPaintableSingletonFactory_Access_Array_Access is access all ProcessPaintableSingletonFactory_Access_Array;
+   type ProcessPaintableSingletonFactory_Access_Array_Access_Array is array (Natural range <>) of ProcessPaintableSingletonFactory_Access_Array_Access;
+   type ProcessPaintableSingletonFactory_Access_Array_Access_Array_Access is access all ProcessPaintableSingletonFactory_Access_Array_Access_Array;
 
    type ProcessPaintableSingletonFactory is new Java_Object with null record;
    SINGLETON : ProcessPaintable_Access;

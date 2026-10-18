@@ -29,6 +29,8 @@ package org.allbinary.game.score.HighScoresResultsListener_Package is
    type HighScoresResultsListener_Access is access all HighScoresResultsListener'Class;
    type HighScoresResultsListener_Access_Array is array (Natural range <>) of HighScoresResultsListener_Access;
    type HighScoresResultsListener_Access_Array_Access is access all HighScoresResultsListener_Access_Array;
+   type HighScoresResultsListener_Access_Array_Access_Array is array (Natural range <>) of HighScoresResultsListener_Access_Array_Access;
+   type HighScoresResultsListener_Access_Array_Access_Array_Access is access all HighScoresResultsListener_Access_Array_Access_Array;
    procedure setHighScoresArray (This : in out HighScoresResultsListener; highScoresArrayP : HighScores_Access_Array_Access) is abstract;
 
 end org.allbinary.game.score.HighScoresResultsListener_Package;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.LayerManagerNoDebug_Package;
+
 package body org.allbinary.layer.SingleLayerLayerManager_Package is
 
    procedure Initialize_Fields (This : in out SingleLayerLayerManager'Class) is

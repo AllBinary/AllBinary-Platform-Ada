@@ -29,6 +29,8 @@ package org.allbinary.graphics.form.item.CustomItemUtil_Package is
    type CustomItemUtil_Access is access all CustomItemUtil'Class;
    type CustomItemUtil_Access_Array is array (Natural range <>) of CustomItemUtil_Access;
    type CustomItemUtil_Access_Array_Access is access all CustomItemUtil_Access_Array;
+   type CustomItemUtil_Access_Array_Access_Array is array (Natural range <>) of CustomItemUtil_Access_Array_Access;
+   type CustomItemUtil_Access_Array_Access_Array_Access is access all CustomItemUtil_Access_Array_Access_Array;
 
    type CustomItemUtil is new Java_Object with record
       CUSTOM_ITEM_ARRAY : ABCustomItem_Access_Array_Access;

@@ -32,6 +32,8 @@ package org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package is
    type ExplosionBasicSound_Access is access all ExplosionBasicSound'Class;
    type ExplosionBasicSound_Access_Array is array (Natural range <>) of ExplosionBasicSound_Access;
    type ExplosionBasicSound_Access_Array_Access is access all ExplosionBasicSound_Access_Array;
+   type ExplosionBasicSound_Access_Array_Access_Array is array (Natural range <>) of ExplosionBasicSound_Access_Array_Access;
+   type ExplosionBasicSound_Access_Array_Access_Array_Access is access all ExplosionBasicSound_Access_Array_Access_Array;
 
    type ExplosionBasicSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

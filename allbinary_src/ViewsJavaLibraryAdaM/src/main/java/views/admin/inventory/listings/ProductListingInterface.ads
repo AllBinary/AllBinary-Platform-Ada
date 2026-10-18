@@ -28,6 +28,8 @@ package views.admin.inventory.listings.ProductListingInterface_Package is
    type ProductListingInterface_Access is access all ProductListingInterface'Class;
    type ProductListingInterface_Access_Array is array (Natural range <>) of ProductListingInterface_Access;
    type ProductListingInterface_Access_Array_Access is access all ProductListingInterface_Access_Array;
+   type ProductListingInterface_Access_Array_Access_Array is array (Natural range <>) of ProductListingInterface_Access_Array_Access;
+   type ProductListingInterface_Access_Array_Access_Array_Access is access all ProductListingInterface_Access_Array_Access_Array;
    function generateAll (This : in out ProductListingInterface) return Unbounded_String is abstract;
    function generateAll (This : in out ProductListingInterface; storeName : Unbounded_String) return Unbounded_String is abstract;
 

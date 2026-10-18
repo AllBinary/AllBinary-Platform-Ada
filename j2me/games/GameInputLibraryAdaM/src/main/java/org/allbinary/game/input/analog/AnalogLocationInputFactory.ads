@@ -9,18 +9,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.input.analog.AnalogLocationInput_Package; use org.allbinary.game.input.analog.AnalogLocationInput_Package;
 
 package org.allbinary.game.input.analog.AnalogLocationInputFactory_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AnalogLocationInputFactory is tagged;
    type AnalogLocationInputFactory_Access is access all AnalogLocationInputFactory'Class;
    type AnalogLocationInputFactory_Access_Array is array (Natural range <>) of AnalogLocationInputFactory_Access;
    type AnalogLocationInputFactory_Access_Array_Access is access all AnalogLocationInputFactory_Access_Array;
+   type AnalogLocationInputFactory_Access_Array_Access_Array is array (Natural range <>) of AnalogLocationInputFactory_Access_Array_Access;
+   type AnalogLocationInputFactory_Access_Array_Access_Array_Access is access all AnalogLocationInputFactory_Access_Array_Access_Array;
 
    type AnalogLocationInputFactory is new Java_Object with record
       list : BasicArrayList_Access;

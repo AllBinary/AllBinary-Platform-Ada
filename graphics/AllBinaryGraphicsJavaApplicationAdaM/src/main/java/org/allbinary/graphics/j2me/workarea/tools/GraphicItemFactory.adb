@@ -13,13 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Package;
+with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
+
 package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package is
 
+   package LOGGING_Package renames Standard.org.allbinary.log.LOGGING_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
    procedure Initialize_Fields (This : in out GraphicItemFactory'Class) is
    begin
       null;
       
-      This.DEFAULT := SelectionToolFactory_Package.Create;
+      This.DEFAULT := GraphicsItemInterfaceFactoryInterface_Access (SelectionToolFactory_Package.Create);
    end Initialize_Fields;
 
 
@@ -62,7 +74,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
    begin
         numberOfItems := graphicItemNodeList.size;
         graphicItemHashMap := StdUtil_Package.getInstance.createHashMap;
-        if LOGGING.contains (LOGGING.MENUEVENT) then
+        if LOGGING_Package.contains (LOGGING_Package.MENUEVENT) then
             null;
         end if;
         for index in 0 .. (numberOfItems) - 1 loop

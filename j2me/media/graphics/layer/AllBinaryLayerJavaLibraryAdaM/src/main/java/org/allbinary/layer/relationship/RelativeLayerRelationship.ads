@@ -36,6 +36,8 @@ package org.allbinary.layer.relationship.RelativeLayerRelationship_Package is
    type RelativeLayerRelationship_Access is access all RelativeLayerRelationship'Class;
    type RelativeLayerRelationship_Access_Array is array (Natural range <>) of RelativeLayerRelationship_Access;
    type RelativeLayerRelationship_Access_Array_Access is access all RelativeLayerRelationship_Access_Array;
+   type RelativeLayerRelationship_Access_Array_Access_Array is array (Natural range <>) of RelativeLayerRelationship_Access_Array_Access;
+   type RelativeLayerRelationship_Access_Array_Access_Array_Access is access all RelativeLayerRelationship_Access_Array_Access_Array;
 
    type RelativeLayerRelationship is new RelativeRelationship with record
       layer : AllBinaryLayer_Access;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.NullIntermissionEnableListener_Package is
 
    procedure Initialize_Fields (This : in out NullIntermissionEnableListener'Class) is
@@ -46,7 +47,7 @@ package body org.allbinary.game.NullIntermissionEnableListener_Package is
 
 begin
    null;
-   SINGLETON := NullIntermissionEnableListener_Package.Create;
+   SINGLETON := IntermissionEnableListenerInterface_Access (NullIntermissionEnableListener_Package.Create);
 
 end org.allbinary.game.NullIntermissionEnableListener_Package;
 

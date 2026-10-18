@@ -29,6 +29,8 @@ package org.allbinary.logic.control.workflow.StoreWorkFlowInterface_Package is
    type StoreWorkFlowInterface_Access is access all StoreWorkFlowInterface'Class;
    type StoreWorkFlowInterface_Access_Array is array (Natural range <>) of StoreWorkFlowInterface_Access;
    type StoreWorkFlowInterface_Access_Array_Access is access all StoreWorkFlowInterface_Access_Array;
+   type StoreWorkFlowInterface_Access_Array_Access_Array is array (Natural range <>) of StoreWorkFlowInterface_Access_Array_Access;
+   type StoreWorkFlowInterface_Access_Array_Access_Array_Access is access all StoreWorkFlowInterface_Access_Array_Access_Array;
    function getStoreName (This : in out StoreWorkFlowInterface) return Unbounded_String is abstract;
 
 end org.allbinary.logic.control.workflow.StoreWorkFlowInterface_Package;

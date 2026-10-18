@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with admin.taghelpers.UpdateOrderHelperFactory_Package; use admin.taghelpers.UpdateOrderHelperFactory_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.UpdateOrderTag_Package is
 
-   package UpdateOrderHelperFactory_Package renames Standard.admin.taghelpers.UpdateOrderHelperFactory_Package;
 
    type UpdateOrderTag is tagged;
    type UpdateOrderTag_Access is access all UpdateOrderTag'Class;
    type UpdateOrderTag_Access_Array is array (Natural range <>) of UpdateOrderTag_Access;
    type UpdateOrderTag_Access_Array_Access is access all UpdateOrderTag_Access_Array;
+   type UpdateOrderTag_Access_Array_Access_Array is array (Natural range <>) of UpdateOrderTag_Access_Array_Access;
+   type UpdateOrderTag_Access_Array_Access_Array_Access is access all UpdateOrderTag_Access_Array_Access_Array;
 
    type UpdateOrderTag is new TableTag with null record;
 

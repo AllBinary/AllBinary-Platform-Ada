@@ -28,6 +28,8 @@ package org.allbinary.game.layer.geological.resources.GeologicalResource_Package
    type GeologicalResource_Access is access all GeologicalResource'Class;
    type GeologicalResource_Access_Array is array (Natural range <>) of GeologicalResource_Access;
    type GeologicalResource_Access_Array_Access is access all GeologicalResource_Access_Array;
+   type GeologicalResource_Access_Array_Access_Array is array (Natural range <>) of GeologicalResource_Access_Array_Access;
+   type GeologicalResource_Access_Array_Access_Array_Access is access all GeologicalResource_Access_Array_Access_Array;
 
    type GeologicalResource is new Java_Object with record
       total : Integer;

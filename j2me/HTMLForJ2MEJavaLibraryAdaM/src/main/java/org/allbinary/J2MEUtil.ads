@@ -28,6 +28,8 @@ package org.allbinary.J2MEUtil_Package is
    type J2MEUtil_Access is access all J2MEUtil'Class;
    type J2MEUtil_Access_Array is array (Natural range <>) of J2MEUtil_Access;
    type J2MEUtil_Access_Array_Access is access all J2MEUtil_Access_Array;
+   type J2MEUtil_Access_Array_Access_Array is array (Natural range <>) of J2MEUtil_Access_Array_Access;
+   type J2MEUtil_Access_Array_Access_Array_Access is access all J2MEUtil_Access_Array_Access_Array;
 
    type J2MEUtil is new Java_Object with null record;
 

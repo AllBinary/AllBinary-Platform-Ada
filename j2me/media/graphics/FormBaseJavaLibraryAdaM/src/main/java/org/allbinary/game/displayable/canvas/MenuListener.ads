@@ -30,6 +30,8 @@ package org.allbinary.game.displayable.canvas.MenuListener_Package is
    type MenuListener_Access is access all MenuListener'Class;
    type MenuListener_Access_Array is array (Natural range <>) of MenuListener_Access;
    type MenuListener_Access_Array_Access is access all MenuListener_Access_Array;
+   type MenuListener_Access_Array_Access_Array is array (Natural range <>) of MenuListener_Access_Array_Access;
+   type MenuListener_Access_Array_Access_Array_Access is access all MenuListener_Access_Array_Access_Array;
    procedure open (This : in out MenuListener) is abstract;
    procedure close (This : in out MenuListener) is abstract;
 

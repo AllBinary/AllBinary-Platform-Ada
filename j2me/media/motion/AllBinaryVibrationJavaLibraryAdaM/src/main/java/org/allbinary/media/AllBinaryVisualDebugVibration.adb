@@ -13,15 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+
 package body org.allbinary.media.AllBinaryVisualDebugVibration_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out AllBinaryVisualDebugVibration'Class) is
    begin
       null;
       This.displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
-      This.timeDelayHelper := TimeDelayHelper_Package.Create (Integer_Package.MAX_VALUE);
+      This.timeDelayHelper := TimeDelayHelper_Package.Create (Integer'Last);
       This.VIBRATING := To_Unbounded_String ("Vibrating");
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (AllBinaryVisualDebugVibration_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (AllBinaryVisualDebugVibration_Access'(This'Unchecked_Access)));
       This.anchor := Anchor_Package.TOP_LEFT;
       This.width := 0;
    end Initialize_Fields;
@@ -58,7 +65,7 @@ package body org.allbinary.media.AllBinaryVisualDebugVibration_Package is
       graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         if This.timeDelayHelper.isTimeTNT then
-            This.timeDelayHelper.delay_Id := Integer_Package.MAX_VALUE;
+            This.timeDelayHelper.delay_Id := Integer'Last;
             This.myFontProcessor.process (graphics);
             graphics.drawString (This.VIBRATING, (This.displayInfoSingleton.getLastHalfWidth) - ((Java_Shift_Right_Arithmetic (This.width, 1))), 0, This.anchor);
         end if;

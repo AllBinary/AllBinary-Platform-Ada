@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.java.runtime.process.git.ProcessBuilder_Package; use org.allbinary.java.runtime.process.git.ProcessBuilder_Package;
+with org.allbinary.java.runtime.process.git.Process_Package; use org.allbinary.java.runtime.process.git.Process_Package;
+
 package body org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out GitProcessHelper'Class) is
    begin
       null;
@@ -68,13 +81,13 @@ package body org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
         if (exitCode) /= (0) then
             Java_Throw (Java_New_Exception ("IllegalStateException", StringMaker_Package.Create.append (To_Unbounded_String ("git ls-files failed for ")).append (rootAsString).append (To_Unbounded_String (" with exit code ")).appendint (exitCode).toString));
         end if;
-        files := ArrayList_Package.Create;
+        files := List_Access (ArrayList_Package.Create);
         start := 0;
         relativePath := Null_Unbounded_String;
         for index in 0 .. (output'Length) - 1 loop
             if (Integer (output (index))) = (0) then
                 relativePath := Java_New_String (output, start, (index) - (start), StandardCharsets_Package.UTF_8);
-                if relativePath.endsWith (suffix) then
+                if Java_Ends_With (relativePath, suffix) then
                     files.add (relativePath);
                 end if;
                 start := (index) + (1);

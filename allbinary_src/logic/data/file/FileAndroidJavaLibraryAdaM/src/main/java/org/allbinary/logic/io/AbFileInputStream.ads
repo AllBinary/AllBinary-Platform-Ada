@@ -34,6 +34,8 @@ package org.allbinary.logic.io.AbFileInputStream_Package is
    type AbFileInputStream_Access is access all AbFileInputStream'Class;
    type AbFileInputStream_Access_Array is array (Natural range <>) of AbFileInputStream_Access;
    type AbFileInputStream_Access_Array_Access is access all AbFileInputStream_Access_Array;
+   type AbFileInputStream_Access_Array_Access_Array is array (Natural range <>) of AbFileInputStream_Access_Array_Access;
+   type AbFileInputStream_Access_Array_Access_Array_Access is access all AbFileInputStream_Access_Array_Access_Array;
 
    type AbFileInputStream is new InputStream with record
       fileInputStream : FileInputStream_Access;

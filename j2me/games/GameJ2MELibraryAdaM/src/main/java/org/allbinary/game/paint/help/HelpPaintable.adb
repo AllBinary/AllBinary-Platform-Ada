@@ -13,13 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.game.paint.help.HelpPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out HelpPaintable'Class) is
    begin
       null;
       This.displayInfo := DisplayInfoSingleton_Package.getInstance;
-      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (HelpPaintable_Access'(This'Unchecked_Access));
+      This.updateMyFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (HelpPaintable_Access'(This'Unchecked_Access)));
       This.myFontProcessor := This.updateMyFontProcessor;
       This.anchor := Anchor_Package.TOP_LEFT;
       

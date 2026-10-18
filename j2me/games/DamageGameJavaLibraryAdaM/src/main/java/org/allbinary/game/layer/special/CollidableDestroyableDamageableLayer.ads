@@ -21,11 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package; use org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package;
 with org.allbinary.game.combat.damage.DamageableInterface_Package; use org.allbinary.game.combat.damage.DamageableInterface_Package;
 with org.allbinary.game.combat.destroy.DestroyableInterface_Package; use org.allbinary.game.combat.destroy.DestroyableInterface_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
-with org.allbinary.game.identification.BasicGroupFactory_Package; use org.allbinary.game.identification.BasicGroupFactory_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
@@ -34,26 +32,18 @@ with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Pack
 with org.allbinary.game.layer.pickup.PickupBehavior_Package; use org.allbinary.game.layer.pickup.PickupBehavior_Package;
 with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package; use org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
 with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
-with org.allbinary.game.part.PartInterfaceUtil_Package; use org.allbinary.game.part.PartInterfaceUtil_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
-with org.allbinary.graphics.RectangleFactory_Package; use org.allbinary.graphics.RectangleFactory_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.game.layer.special.SpecialGameInputInterface_Package; use org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
 
 package org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package CollidableNeverCollideBehaviorFactory_Package renames Standard.org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package;
    package DamageableInterface_Package renames Standard.org.allbinary.game.combat.damage.DamageableInterface_Package;
    package DestroyableInterface_Package renames Standard.org.allbinary.game.combat.destroy.DestroyableInterface_Package;
    package DestroyedEvent_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
-   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
    package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
    package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
    package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
@@ -62,21 +52,17 @@ package org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Pa
    package PickupBehavior_Package renames Standard.org.allbinary.game.layer.pickup.PickupBehavior_Package;
    package PickupCompositeInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
    package PartInterface_Package renames Standard.org.allbinary.game.part.PartInterface_Package;
-   package PartInterfaceUtil_Package renames Standard.org.allbinary.game.part.PartInterfaceUtil_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
-   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type CollidableDestroyableDamageableLayer is tagged;
    type CollidableDestroyableDamageableLayer_Access is access all CollidableDestroyableDamageableLayer'Class;
    type CollidableDestroyableDamageableLayer_Access_Array is array (Natural range <>) of CollidableDestroyableDamageableLayer_Access;
    type CollidableDestroyableDamageableLayer_Access_Array_Access is access all CollidableDestroyableDamageableLayer_Access_Array;
+   type CollidableDestroyableDamageableLayer_Access_Array_Access_Array is array (Natural range <>) of CollidableDestroyableDamageableLayer_Access_Array_Access;
+   type CollidableDestroyableDamageableLayer_Access_Array_Access_Array_Access is access all CollidableDestroyableDamageableLayer_Access_Array_Access_Array;
 
    type CollidableDestroyableDamageableLayer is new CollidableCompositeLayer and DestroyableInterface and DamageableInterface and PickupCompositeInterface and SpecialGameInputInterface with record
       groupInterface : Group_Access_Array_Access;

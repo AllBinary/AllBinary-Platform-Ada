@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+
 package body org.allbinary.game.score.HighScoreCommandsBaseFactory_Package is
 
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    procedure Initialize_Fields (This : in out HighScoreCommandsBaseFactory'Class) is
    begin
       null;

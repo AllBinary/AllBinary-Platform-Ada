@@ -13,12 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+
 package body org.allbinary.data.tables.TableDataFactory_Package is
 
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
    procedure Initialize_Fields (This : in out TableDataFactory'Class) is
    begin
       null;
-      This.INTEGER_MAX_VALUE_STRING := To_Unbounded_String (Java_Image (Integer_Package.MAX_VALUE));
+      This.INTEGER_MAX_VALUE_STRING := To_Unbounded_String (Java_Image (Integer'Last));
       This.ZERO_STRING := CommonPhoneStrings_Package.getInstance.ZERO;
    end Initialize_Fields;
 

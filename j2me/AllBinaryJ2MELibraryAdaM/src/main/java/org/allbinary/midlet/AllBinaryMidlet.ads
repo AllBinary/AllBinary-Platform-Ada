@@ -24,20 +24,9 @@ with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Comm
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 with javax.microedition.lcdui.Display_Package; use javax.microedition.lcdui.Display_Package;
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
-with javax.microedition.lcdui.NullCanvas_Package; use javax.microedition.lcdui.NullCanvas_Package;
 with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
-with javax.microedition.midlet.MIDletStateChangeException_Package; use javax.microedition.midlet.MIDletStateChangeException_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package org.allbinary.midlet.AllBinaryMidlet_Package is
@@ -46,26 +35,17 @@ package org.allbinary.midlet.AllBinaryMidlet_Package is
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
    package Display_Package renames Standard.javax.microedition.lcdui.Display_Package;
    package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
-   package NullCanvas_Package renames Standard.javax.microedition.lcdui.NullCanvas_Package;
    package MIDlet_Package renames Standard.javax.microedition.midlet.MIDlet_Package;
-   package MIDletStateChangeException_Package renames Standard.javax.microedition.midlet.MIDletStateChangeException_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type AllBinaryMidlet is tagged;
    type AllBinaryMidlet_Access is access all AllBinaryMidlet'Class;
    type AllBinaryMidlet_Access_Array is array (Natural range <>) of AllBinaryMidlet_Access;
    type AllBinaryMidlet_Access_Array_Access is access all AllBinaryMidlet_Access_Array;
+   type AllBinaryMidlet_Access_Array_Access_Array is array (Natural range <>) of AllBinaryMidlet_Access_Array_Access;
+   type AllBinaryMidlet_Access_Array_Access_Array_Access is access all AllBinaryMidlet_Access_Array_Access_Array;
 
    type AllBinaryMidlet is new MIDlet and CommandListener with record
       logUtil : LogUtil_Access;

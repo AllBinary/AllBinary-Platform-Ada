@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package; use org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
-with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
 
 package org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package is
    type DestroyEventFactory_Access is access all DestroyEventFactory'Class;
    type DestroyEventFactory_Access_Array is array (Natural range <>) of DestroyEventFactory_Access;
    type DestroyEventFactory_Access_Array_Access is access all DestroyEventFactory_Access_Array;
+   type DestroyEventFactory_Access_Array_Access_Array is array (Natural range <>) of DestroyEventFactory_Access_Array_Access;
+   type DestroyEventFactory_Access_Array_Access_Array_Access is access all DestroyEventFactory_Access_Array_Access_Array;
 
-   type DestroyEventFactory is new AllBinaryEventObjectFactoryInterface with record
+   type DestroyEventFactory is new Java_Object and AllBinaryEventObjectFactoryInterface with record
       combatGameCanvas : AllBinaryGameCanvas_Access;
    end record;
 

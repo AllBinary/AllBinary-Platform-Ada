@@ -21,26 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.SingletonAnimationInterfaceFactory_Package; use org.allbinary.animation.SingletonAnimationInterfaceFactory_Package;
-with org.allbinary.image.IndexedAnimationToImageArrayUtil_Package; use org.allbinary.image.IndexedAnimationToImageArrayUtil_Package;
-with org.allbinary.animation.image.ImageArrayAnimation_Package; use org.allbinary.animation.image.ImageArrayAnimation_Package;
 
 package org.allbinary.animation.image.ImageArraySingletonAnimationInterfaceFactory_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
-   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
-   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
    package SingletonAnimationInterfaceFactory_Package renames Standard.org.allbinary.animation.SingletonAnimationInterfaceFactory_Package;
-   package IndexedAnimationToImageArrayUtil_Package renames Standard.org.allbinary.image.IndexedAnimationToImageArrayUtil_Package;
 
    type ImageArraySingletonAnimationInterfaceFactory is tagged;
    type ImageArraySingletonAnimationInterfaceFactory_Access is access all ImageArraySingletonAnimationInterfaceFactory'Class;
    type ImageArraySingletonAnimationInterfaceFactory_Access_Array is array (Natural range <>) of ImageArraySingletonAnimationInterfaceFactory_Access;
    type ImageArraySingletonAnimationInterfaceFactory_Access_Array_Access is access all ImageArraySingletonAnimationInterfaceFactory_Access_Array;
+   type ImageArraySingletonAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of ImageArraySingletonAnimationInterfaceFactory_Access_Array_Access;
+   type ImageArraySingletonAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all ImageArraySingletonAnimationInterfaceFactory_Access_Array_Access_Array;
 
    type ImageArraySingletonAnimationInterfaceFactory is new SingletonAnimationInterfaceFactory with null record;
 

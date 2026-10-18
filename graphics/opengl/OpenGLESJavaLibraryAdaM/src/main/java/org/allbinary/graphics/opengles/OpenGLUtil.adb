@@ -1,8 +1,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
+with org.allbinary.image.opengles.OpenGLImageCache_Package; use org.allbinary.image.opengles.OpenGLImageCache_Package;
+with org.allbinary.image.opengles.OpenGLImageCacheFactory_Package; use org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.graphics.opengles.OpenGLCapabilities_Package; use org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
+with org.allbinary.graphics.opengles.OpenGLLogUtil_Package; use org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+
 package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
 
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
+   package OpenGLImageCache_Package renames Standard.org.allbinary.image.opengles.OpenGLImageCache_Package;
+   package OpenGLImageCacheFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out OpenGLUtil'Class) is
    begin
       null;
@@ -14,8 +33,8 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
       This.preResourceImageUtil := PreResourceImageUtil_Package.getInstance;
       This.lockObject := SynchObject_Package.Create;
       This.anyType := SynchObject_Package.Create;
-      This.list := BasicArrayListD_Package.Create;
-      This.runnableList := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.runnableList := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.created := False;
       This.surfaceCreatedAndInitialized := False;
    end Initialize_Fields;
@@ -98,7 +117,7 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
         encapsulateImage := This.preResourceImageUtil.encapsulate (image);
         if (encapsulateImage) /= (image) then
             begin  --  synchronized
-                This.list.add (encapsulateImage);
+                This.list.add (Java_Object_Access (encapsulateImage));
             end;
             return encapsulateImage;
         end if;
@@ -116,8 +135,8 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
       runnable : constant Runnable_Access := Runnable_Access (runnable_Param);
    begin
         begin  --  synchronized
-            if not (This.runnableList.contains (runnable)) then
-                This.runnableList.add (runnable);
+            if not (This.runnableList.contains (Java_Object_Access (runnable))) then
+                This.runnableList.add (Java_Object_Access (runnable));
                 This.displayInfoSingleton.add (This.canvasStrings.SCALED_IMAGES);
             end if;
         end;

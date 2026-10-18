@@ -21,27 +21,25 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.vector.VectorInfo_Package; use org.allbinary.vector.VectorInfo_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.VectorAnimationFactoryInterface_Package; use org.allbinary.animation.VectorAnimationFactoryInterface_Package;
-with org.allbinary.animation.VectorRotationGenerator_Package; use org.allbinary.animation.VectorRotationGenerator_Package;
 with org.allbinary.animation.VectorExplosionGenerator_Package; use org.allbinary.animation.VectorExplosionGenerator_Package;
-with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.IndependentVectorExplosionRotationAnimationFactory_Package is
 
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package VectorInfo_Package renames Standard.org.allbinary.vector.VectorInfo_Package;
 
    type IndependentVectorExplosionRotationAnimationFactory is tagged;
    type IndependentVectorExplosionRotationAnimationFactory_Access is access all IndependentVectorExplosionRotationAnimationFactory'Class;
    type IndependentVectorExplosionRotationAnimationFactory_Access_Array is array (Natural range <>) of IndependentVectorExplosionRotationAnimationFactory_Access;
    type IndependentVectorExplosionRotationAnimationFactory_Access_Array_Access is access all IndependentVectorExplosionRotationAnimationFactory_Access_Array;
+   type IndependentVectorExplosionRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of IndependentVectorExplosionRotationAnimationFactory_Access_Array_Access;
+   type IndependentVectorExplosionRotationAnimationFactory_Access_Array_Access_Array_Access is access all IndependentVectorExplosionRotationAnimationFactory_Access_Array_Access_Array;
 
-   type IndependentVectorExplosionRotationAnimationFactory is new ProceduralAnimationInterfaceFactoryInterface with record
+   type IndependentVectorExplosionRotationAnimationFactory is new Java_Object and ProceduralAnimationInterfaceFactoryInterface with record
       framePoints : Integer_Array_Access_Array_Access_Array_Access;
       vectorInfo : VectorInfo_Access;
       basicColor : BasicColor_Access;

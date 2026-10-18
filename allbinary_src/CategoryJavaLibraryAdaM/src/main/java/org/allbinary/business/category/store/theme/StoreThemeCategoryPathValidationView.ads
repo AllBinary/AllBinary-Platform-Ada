@@ -36,6 +36,8 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryPathValida
    type StoreThemeCategoryPathValidationView_Access is access all StoreThemeCategoryPathValidationView'Class;
    type StoreThemeCategoryPathValidationView_Access_Array is array (Natural range <>) of StoreThemeCategoryPathValidationView_Access;
    type StoreThemeCategoryPathValidationView_Access_Array_Access is access all StoreThemeCategoryPathValidationView_Access_Array;
+   type StoreThemeCategoryPathValidationView_Access_Array_Access_Array is array (Natural range <>) of StoreThemeCategoryPathValidationView_Access_Array_Access;
+   type StoreThemeCategoryPathValidationView_Access_Array_Access_Array_Access is access all StoreThemeCategoryPathValidationView_Access_Array_Access_Array;
 
    type StoreThemeCategoryPathValidationView is new StoreThemeCategoryPathView and ValidationInterface with null record;
 

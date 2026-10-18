@@ -29,6 +29,8 @@ package org.allbinary.media.image.ImageJ2SEUtil_Package is
    type ImageJ2SEUtil_Access is access all ImageJ2SEUtil'Class;
    type ImageJ2SEUtil_Access_Array is array (Natural range <>) of ImageJ2SEUtil_Access;
    type ImageJ2SEUtil_Access_Array_Access is access all ImageJ2SEUtil_Access_Array;
+   type ImageJ2SEUtil_Access_Array_Access_Array is array (Natural range <>) of ImageJ2SEUtil_Access_Array_Access;
+   type ImageJ2SEUtil_Access_Array_Access_Array_Access is access all ImageJ2SEUtil_Access_Array_Access_Array;
 
    type ImageJ2SEUtil is new Java_Object with record
       TRANSPARENT_COLOR : Color_Access;

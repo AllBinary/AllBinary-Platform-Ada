@@ -30,6 +30,8 @@ package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfi
    type UserEmailConfigurationInterface_Access is access all UserEmailConfigurationInterface'Class;
    type UserEmailConfigurationInterface_Access_Array is array (Natural range <>) of UserEmailConfigurationInterface_Access;
    type UserEmailConfigurationInterface_Access_Array_Access is access all UserEmailConfigurationInterface_Access_Array;
+   type UserEmailConfigurationInterface_Access_Array_Access_Array is array (Natural range <>) of UserEmailConfigurationInterface_Access_Array_Access;
+   type UserEmailConfigurationInterface_Access_Array_Access_Array_Access is access all UserEmailConfigurationInterface_Access_Array_Access_Array;
    function getUserEmailEventsConfigurationInterface (This : in out UserEmailConfigurationInterface) return UserEmailEventsConfigurationInterface_Access is abstract;
    procedure setUserEmailEventsConfigurationInterface (This : in out UserEmailConfigurationInterface; emailEventsConfigurationInterface_Param : access UserEmailEventsConfigurationInterface_Package.UserEmailEventsConfigurationInterface'Class) is abstract;
 

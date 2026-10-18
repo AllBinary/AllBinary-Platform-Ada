@@ -28,6 +28,8 @@ package org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package is
    type CloseJDialogListenerInterface_Access is access all CloseJDialogListenerInterface'Class;
    type CloseJDialogListenerInterface_Access_Array is array (Natural range <>) of CloseJDialogListenerInterface_Access;
    type CloseJDialogListenerInterface_Access_Array_Access is access all CloseJDialogListenerInterface_Access_Array;
+   type CloseJDialogListenerInterface_Access_Array_Access_Array is array (Natural range <>) of CloseJDialogListenerInterface_Access_Array_Access;
+   type CloseJDialogListenerInterface_Access_Array_Access_Array_Access is access all CloseJDialogListenerInterface_Access_Array_Access_Array;
    procedure onClose (This : in out CloseJDialogListenerInterface) is abstract;
 
 end org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package;

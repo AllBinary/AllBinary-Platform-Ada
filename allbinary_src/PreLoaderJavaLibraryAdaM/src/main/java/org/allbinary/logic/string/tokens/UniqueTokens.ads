@@ -21,27 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashSet_Package; use java.util.HashSet_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
-with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
 
 package org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
 
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
-   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
-   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type UniqueTokens is tagged;
    type UniqueTokens_Access is access all UniqueTokens'Class;
    type UniqueTokens_Access_Array is array (Natural range <>) of UniqueTokens_Access;
    type UniqueTokens_Access_Array_Access is access all UniqueTokens_Access_Array;
+   type UniqueTokens_Access_Array_Access_Array is array (Natural range <>) of UniqueTokens_Access_Array_Access;
+   type UniqueTokens_Access_Array_Access_Array_Access is access all UniqueTokens_Access_Array_Access_Array;
 
    type UniqueTokens is new Java_Object with record
       specialCharacters : BasicArrayList_Access;

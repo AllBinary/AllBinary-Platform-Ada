@@ -33,6 +33,8 @@ package org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Package 
    type GameCanvasNonBotPaintable_Access is access all GameCanvasNonBotPaintable'Class;
    type GameCanvasNonBotPaintable_Access_Array is array (Natural range <>) of GameCanvasNonBotPaintable_Access;
    type GameCanvasNonBotPaintable_Access_Array_Access is access all GameCanvasNonBotPaintable_Access_Array;
+   type GameCanvasNonBotPaintable_Access_Array_Access_Array is array (Natural range <>) of GameCanvasNonBotPaintable_Access_Array_Access;
+   type GameCanvasNonBotPaintable_Access_Array_Access_Array_Access is access all GameCanvasNonBotPaintable_Access_Array_Access_Array;
 
    type GameCanvasNonBotPaintable is new Paintable with record
       gameCanvas : AllBinaryGameCanvas_Access;

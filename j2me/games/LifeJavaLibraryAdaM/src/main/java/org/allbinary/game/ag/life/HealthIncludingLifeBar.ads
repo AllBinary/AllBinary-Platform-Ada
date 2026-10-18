@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.health.Health_Package; use org.allbinary.game.health.Health_Package;
 with org.allbinary.game.health.HealthBarAnimation_Package; use org.allbinary.game.health.HealthBarAnimation_Package;
-with org.allbinary.game.health.HealthBarTwodAnimation_Package; use org.allbinary.game.health.HealthBarTwodAnimation_Package;
 with org.allbinary.game.health.HealthInterface_Package; use org.allbinary.game.health.HealthInterface_Package;
 with org.allbinary.game.health.HealthListenerInterface_Package; use org.allbinary.game.health.HealthListenerInterface_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
@@ -35,7 +34,6 @@ package org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Health_Package renames Standard.org.allbinary.game.health.Health_Package;
    package HealthBarAnimation_Package renames Standard.org.allbinary.game.health.HealthBarAnimation_Package;
-   package HealthBarTwodAnimation_Package renames Standard.org.allbinary.game.health.HealthBarTwodAnimation_Package;
    package HealthInterface_Package renames Standard.org.allbinary.game.health.HealthInterface_Package;
    package HealthListenerInterface_Package renames Standard.org.allbinary.game.health.HealthListenerInterface_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
@@ -45,6 +43,8 @@ package org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
    type HealthIncludingLifeBar_Access is access all HealthIncludingLifeBar'Class;
    type HealthIncludingLifeBar_Access_Array is array (Natural range <>) of HealthIncludingLifeBar_Access;
    type HealthIncludingLifeBar_Access_Array_Access is access all HealthIncludingLifeBar_Access_Array;
+   type HealthIncludingLifeBar_Access_Array_Access_Array is array (Natural range <>) of HealthIncludingLifeBar_Access_Array_Access;
+   type HealthIncludingLifeBar_Access_Array_Access_Array_Access is access all HealthIncludingLifeBar_Access_Array_Access_Array;
 
    type HealthIncludingLifeBar is new Paintable and HealthListenerInterface with record
       animationInterface : HealthBarAnimation_Access;

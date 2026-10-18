@@ -30,8 +30,10 @@ package org.allbinary.media.audio.BaseSoundsFactory_Package is
    type BaseSoundsFactory_Access is access all BaseSoundsFactory'Class;
    type BaseSoundsFactory_Access_Array is array (Natural range <>) of BaseSoundsFactory_Access;
    type BaseSoundsFactory_Access_Array_Access is access all BaseSoundsFactory_Access_Array;
+   type BaseSoundsFactory_Access_Array_Access_Array is array (Natural range <>) of BaseSoundsFactory_Access_Array_Access;
+   type BaseSoundsFactory_Access_Array_Access_Array_Access is access all BaseSoundsFactory_Access_Array_Access_Array;
 
-   type BaseSoundsFactory is new SoundsFactoryInterface with record
+   type BaseSoundsFactory is new Java_Object and SoundsFactoryInterface with record
       initialized : Boolean;
    end record;
 

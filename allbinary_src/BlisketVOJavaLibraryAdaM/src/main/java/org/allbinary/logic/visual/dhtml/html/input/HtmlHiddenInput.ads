@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlHiddenInput_Package is
    type HtmlHiddenInput_Access is access all HtmlHiddenInput'Class;
    type HtmlHiddenInput_Access_Array is array (Natural range <>) of HtmlHiddenInput_Access;
    type HtmlHiddenInput_Access_Array_Access is access all HtmlHiddenInput_Access_Array;
+   type HtmlHiddenInput_Access_Array_Access_Array is array (Natural range <>) of HtmlHiddenInput_Access_Array_Access;
+   type HtmlHiddenInput_Access_Array_Access_Array_Access is access all HtmlHiddenInput_Access_Array_Access_Array;
 
    type HtmlHiddenInput is new Java_Object with null record;
 

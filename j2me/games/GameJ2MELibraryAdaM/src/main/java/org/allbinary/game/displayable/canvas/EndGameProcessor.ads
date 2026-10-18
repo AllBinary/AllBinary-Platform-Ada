@@ -21,26 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
-with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
-with org.allbinary.game.score.HighScoresHelperBase_Package; use org.allbinary.game.score.HighScoresHelperBase_Package;
-with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
 with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.EndGameProcessor_Package is
 
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
-   package HighScores_Package renames Standard.org.allbinary.game.score.HighScores_Package;
-   package HighScoresHelperBase_Package renames Standard.org.allbinary.game.score.HighScoresHelperBase_Package;
-   package NullHighScoresSingletonFactory_Package renames Standard.org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
    package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
 
    type EndGameProcessor is tagged;
    type EndGameProcessor_Access is access all EndGameProcessor'Class;
    type EndGameProcessor_Access_Array is array (Natural range <>) of EndGameProcessor_Access;
    type EndGameProcessor_Access_Array_Access is access all EndGameProcessor_Access_Array;
+   type EndGameProcessor_Access_Array_Access_Array is array (Natural range <>) of EndGameProcessor_Access_Array_Access;
+   type EndGameProcessor_Access_Array_Access_Array_Access is access all EndGameProcessor_Access_Array_Access_Array;
 
    type EndGameProcessor is new Processor with record
       gameStateFactory : GameStateFactory_Access;

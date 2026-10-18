@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.microemu.device.playn.PlaynImmutableImage_Package; use org.microemu.device.playn.PlaynImmutableImage_Package;
+with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
+with playn.core.CoreImage_Package; use playn.core.CoreImage_Package;
+with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
+with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
+
 package body org.allbinary.media.image.ImageRotationUtil_Package is
 
+   package PlaynImmutableImage_Package renames Standard.org.microemu.device.playn.PlaynImmutableImage_Package;
+   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
+   package CoreImage_Package renames Standard.playn.core.CoreImage_Package;
+   package ImageImpl_Package renames Standard.playn.core.ImageImpl_Package;
    procedure Initialize_Fields (This : in out ImageRotationUtil'Class) is
    begin
       null;

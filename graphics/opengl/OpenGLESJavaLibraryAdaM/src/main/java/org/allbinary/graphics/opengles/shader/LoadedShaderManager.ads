@@ -29,6 +29,8 @@ package org.allbinary.graphics.opengles.shader.LoadedShaderManager_Package is
    type LoadedShaderManager_Access is access all LoadedShaderManager'Class;
    type LoadedShaderManager_Access_Array is array (Natural range <>) of LoadedShaderManager_Access;
    type LoadedShaderManager_Access_Array_Access is access all LoadedShaderManager_Access_Array;
+   type LoadedShaderManager_Access_Array_Access_Array is array (Natural range <>) of LoadedShaderManager_Access_Array_Access;
+   type LoadedShaderManager_Access_Array_Access_Array_Access is access all LoadedShaderManager_Access_Array_Access_Array;
 
    type LoadedShaderManager is new Java_Object with null record;
    instance : ShaderManager_Access;

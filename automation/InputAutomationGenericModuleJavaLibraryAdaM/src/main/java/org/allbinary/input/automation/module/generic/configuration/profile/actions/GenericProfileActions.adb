@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfiles_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfiles_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsData_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package;
+
 package body org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package is
 
+   package DataOutputStream_Package renames Standard.java.io.DataOutputStream_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package GenericProfiles_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfiles_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out GenericProfileActions'Class) is
    begin
       null;
@@ -133,7 +146,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         bytes := new Short_Short_Integer_Array'(0 .. (100000) - 1 => 0);
         length := fileInputStream.read (bytes);
         data := Java_New_String (bytes);
-        endIndex := data.lastIndexOf ('>');
+        endIndex := Java_Last_Index_Of (data, Java_Image ('>'));
         document := DomDocumentHelper_Package.create (Unbounded_Slice (data, (0) + 1, (endIndex) + (1)));
         nameNodeList := document.getElementsByTagName (GenericProfileActionsData_Package.NAME);
         This.logUtil.putF (To_Unbounded_String ("Number Of Profiles Specified: ") & Java_Image (nameNodeList.getLength), GenericProfileActions_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));

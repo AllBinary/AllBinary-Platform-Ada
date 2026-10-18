@@ -24,8 +24,6 @@ with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbin
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
 with org.allbinary.game.combat.damage.DamageUtil_Package; use org.allbinary.game.combat.damage.DamageUtil_Package;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 
 package org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package is
 
@@ -33,12 +31,13 @@ package org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior
    package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
    package DamageUtil_Package renames Standard.org.allbinary.game.combat.damage.DamageUtil_Package;
    package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 
    type CollidableDestroyableDamageableBehavior is tagged;
    type CollidableDestroyableDamageableBehavior_Access is access all CollidableDestroyableDamageableBehavior'Class;
    type CollidableDestroyableDamageableBehavior_Access_Array is array (Natural range <>) of CollidableDestroyableDamageableBehavior_Access;
    type CollidableDestroyableDamageableBehavior_Access_Array_Access is access all CollidableDestroyableDamageableBehavior_Access_Array;
+   type CollidableDestroyableDamageableBehavior_Access_Array_Access_Array is array (Natural range <>) of CollidableDestroyableDamageableBehavior_Access_Array_Access;
+   type CollidableDestroyableDamageableBehavior_Access_Array_Access_Array_Access is access all CollidableDestroyableDamageableBehavior_Access_Array_Access_Array;
 
    type CollidableDestroyableDamageableBehavior is new CollidableBaseBehavior with record
       damageUtil : DamageUtil_Access;

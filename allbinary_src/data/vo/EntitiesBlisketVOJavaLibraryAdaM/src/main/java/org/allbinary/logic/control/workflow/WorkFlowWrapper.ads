@@ -34,8 +34,10 @@ package org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
    type WorkFlowWrapper_Access is access all WorkFlowWrapper'Class;
    type WorkFlowWrapper_Access_Array is array (Natural range <>) of WorkFlowWrapper_Access;
    type WorkFlowWrapper_Access_Array_Access is access all WorkFlowWrapper_Access_Array;
+   type WorkFlowWrapper_Access_Array_Access_Array is array (Natural range <>) of WorkFlowWrapper_Access_Array_Access;
+   type WorkFlowWrapper_Access_Array_Access_Array_Access is access all WorkFlowWrapper_Access_Array_Access_Array;
 
-   type WorkFlowWrapper is new WorkFlowInterface with record
+   type WorkFlowWrapper is new Java_Object and WorkFlowInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       anyType : Java_Object_Access;

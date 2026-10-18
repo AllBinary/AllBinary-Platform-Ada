@@ -18,6 +18,8 @@ package org.allbinary.game.collision.CollisionProcessor_Package is
    type CollisionProcessor_Access is access all CollisionProcessor'Class;
    type CollisionProcessor_Access_Array is array (Natural range <>) of CollisionProcessor_Access;
    type CollisionProcessor_Access_Array_Access is access all CollisionProcessor_Access_Array;
+   type CollisionProcessor_Access_Array_Access_Array is array (Natural range <>) of CollisionProcessor_Access_Array_Access;
+   type CollisionProcessor_Access_Array_Access_Array_Access is access all CollisionProcessor_Access_Array_Access_Array;
 
    type CollisionProcessor is new Java_Object with null record;
 

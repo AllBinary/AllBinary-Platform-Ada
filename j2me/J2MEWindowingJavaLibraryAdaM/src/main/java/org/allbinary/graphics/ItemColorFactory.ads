@@ -28,6 +28,8 @@ package org.allbinary.graphics.ItemColorFactory_Package is
    type ItemColorFactory_Access is access all ItemColorFactory'Class;
    type ItemColorFactory_Access_Array is array (Natural range <>) of ItemColorFactory_Access;
    type ItemColorFactory_Access_Array_Access is access all ItemColorFactory_Access_Array;
+   type ItemColorFactory_Access_Array_Access_Array is array (Natural range <>) of ItemColorFactory_Access_Array_Access;
+   type ItemColorFactory_Access_Array_Access_Array_Access is access all ItemColorFactory_Access_Array_Access_Array;
 
    type ItemColorFactory is new Java_Object with record
       INVERT_PAINT : Integer;

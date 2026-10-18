@@ -28,6 +28,8 @@ package org.allbinary.media.audio.Controllable2_Package is
    type Controllable2_Access is access all Controllable2'Class;
    type Controllable2_Access_Array is array (Natural range <>) of Controllable2_Access;
    type Controllable2_Access_Array_Access is access all Controllable2_Access_Array;
+   type Controllable2_Access_Array_Access_Array is array (Natural range <>) of Controllable2_Access_Array_Access;
+   type Controllable2_Access_Array_Access_Array_Access is access all Controllable2_Access_Array_Access_Array;
    procedure setVolume (This : in out Controllable2; leftVolume : Integer; rightVolume : Integer) is abstract;
 
 end org.allbinary.media.audio.Controllable2_Package;

@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package; use org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;
+with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package; use org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
+
 package body org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package is
 
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package DisplayInBrowserContraints_Package renames Standard.org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;
+   package TwoDimensionalConstraint_Package renames Standard.org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
    procedure Initialize_Fields (This : in out AdvertisementAreaConstraints'Class) is
    begin
       null;
@@ -29,8 +39,8 @@ package body org.allbinary.business.advertisement.area.AdvertisementAreaConstrai
    begin
       Initialize_Fields (This);
         node := DomSearchHelper_Package.getNode (AdvertisementAreaData_Package.getInstance.NAME, document.getChildNodes);
-        This.displayInBrowserContraintsInterface := DisplayInBrowserContraints_Package.Create (node);
-        This.twoDimensionConstraintsInterface := TwoDimensionalConstraint_Package.Create (node);
+        This.displayInBrowserContraintsInterface := DisplayInBrowserContraintsInterface_Access (DisplayInBrowserContraints_Package.Create (node));
+        This.twoDimensionConstraintsInterface := TwoDimensionalConstraintInterface_Access (TwoDimensionalConstraint_Package.Create (node));
    end Initialize;
 
    function Create (document_Param : access Document_Package.Document'Class) return AdvertisementAreaConstraints_Access is

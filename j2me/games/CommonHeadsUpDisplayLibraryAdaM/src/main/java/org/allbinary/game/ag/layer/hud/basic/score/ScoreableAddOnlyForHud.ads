@@ -31,6 +31,8 @@ package org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_Packa
    type ScoreableAddOnlyForHud_Access is access all ScoreableAddOnlyForHud'Class;
    type ScoreableAddOnlyForHud_Access_Array is array (Natural range <>) of ScoreableAddOnlyForHud_Access;
    type ScoreableAddOnlyForHud_Access_Array_Access is access all ScoreableAddOnlyForHud_Access_Array;
+   type ScoreableAddOnlyForHud_Access_Array_Access_Array is array (Natural range <>) of ScoreableAddOnlyForHud_Access_Array_Access;
+   type ScoreableAddOnlyForHud_Access_Array_Access_Array_Access is access all ScoreableAddOnlyForHud_Access_Array_Access_Array;
 
    type ScoreableAddOnlyForHud is new Scoreable with record
       scoreHudWidget : ScoreHudWidget_Access;

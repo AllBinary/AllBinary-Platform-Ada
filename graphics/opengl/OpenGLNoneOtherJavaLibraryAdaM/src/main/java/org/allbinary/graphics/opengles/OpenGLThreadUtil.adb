@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.opengles.OpenGLThreadUtil_Package is
 
    procedure Initialize_Fields (This : in out OpenGLThreadUtil'Class) is
@@ -41,6 +42,11 @@ package body org.allbinary.graphics.opengles.OpenGLThreadUtil_Package is
    begin
         null;
    end onResume;
+
+   procedure set (This : in out OpenGLThreadUtil; Value : Unbounded_String) is
+   begin
+      OpenGLThreadUtil'Class (This).set (Java_Box (Value));
+   end set;
 
 begin
    null;

@@ -21,19 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 
 package org.allbinary.direction.DirectionUtil_Package is
 
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
 
    type DirectionUtil is tagged;
    type DirectionUtil_Access is access all DirectionUtil'Class;
    type DirectionUtil_Access_Array is array (Natural range <>) of DirectionUtil_Access;
    type DirectionUtil_Access_Array_Access is access all DirectionUtil_Access_Array;
+   type DirectionUtil_Access_Array_Access_Array is array (Natural range <>) of DirectionUtil_Access_Array_Access;
+   type DirectionUtil_Access_Array_Access_Array_Access is access all DirectionUtil_Access_Array_Access_Array;
 
    type DirectionUtil is new Java_Object with record
       directionArray : Angle_Access_Array_Access;

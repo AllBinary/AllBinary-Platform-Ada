@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package is
 
    procedure Initialize_Fields (This : in out DirectoryBooleanFileVisitor'Class) is
@@ -58,6 +59,18 @@ package body org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_P
 
    procedure visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant Boolean := DirectoryBooleanFileVisitor'Class (This).visit (file_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end visit;
+
+   function visit (This : in out DirectoryBooleanFileVisitor; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return DirectoryBooleanFileVisitor'Class (This).visit (Java_Box (Value));
+   end visit;
+
+   procedure visit (This : in out DirectoryBooleanFileVisitor; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := DirectoryBooleanFileVisitor'Class (This).visit (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -21,19 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
-with org.allbinary.AvianUtil_Package; use org.allbinary.AvianUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
 
    package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
-   package AvianUtil_Package renames Standard.org.allbinary.AvianUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type TrueTypeFontUtilBase is tagged;
    type TrueTypeFontUtilBase_Access is access all TrueTypeFontUtilBase'Class;
    type TrueTypeFontUtilBase_Access_Array is array (Natural range <>) of TrueTypeFontUtilBase_Access;
    type TrueTypeFontUtilBase_Access_Array_Access is access all TrueTypeFontUtilBase_Access_Array;
+   type TrueTypeFontUtilBase_Access_Array_Access_Array is array (Natural range <>) of TrueTypeFontUtilBase_Access_Array_Access;
+   type TrueTypeFontUtilBase_Access_Array_Access_Array_Access is access all TrueTypeFontUtilBase_Access_Array_Access_Array;
 
    type TrueTypeFontUtilBase is new Java_Object with record
       shortPattern : Unbounded_String;

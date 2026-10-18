@@ -23,20 +23,19 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with admin.taghelpers.TagHelperFactory_Package; use admin.taghelpers.TagHelperFactory_Package;
-with admin.taghelpers.UserHelper_Package; use admin.taghelpers.UserHelper_Package;
 
 package admin.taghelpers.UserHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type UserHelperFactory is tagged;
    type UserHelperFactory_Access is access all UserHelperFactory'Class;
    type UserHelperFactory_Access_Array is array (Natural range <>) of UserHelperFactory_Access;
    type UserHelperFactory_Access_Array_Access is access all UserHelperFactory_Access_Array;
+   type UserHelperFactory_Access_Array_Access_Array is array (Natural range <>) of UserHelperFactory_Access_Array_Access;
+   type UserHelperFactory_Access_Array_Access_Array_Access is access all UserHelperFactory_Access_Array_Access_Array;
 
    type UserHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

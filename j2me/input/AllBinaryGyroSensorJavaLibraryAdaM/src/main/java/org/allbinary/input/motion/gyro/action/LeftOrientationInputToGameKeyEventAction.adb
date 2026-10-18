@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
+with org.allbinary.input.gyro.OrientationMotionGestureFactory_Package; use org.allbinary.input.gyro.OrientationMotionGestureFactory_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+
 package body org.allbinary.input.motion.gyro.action.LeftOrientationInputToGameKeyEventAction_Package is
 
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package OrientationMotionGestureFactory_Package renames Standard.org.allbinary.input.gyro.OrientationMotionGestureFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out LeftOrientationInputToGameKeyEventAction'Class) is
    begin
       null;

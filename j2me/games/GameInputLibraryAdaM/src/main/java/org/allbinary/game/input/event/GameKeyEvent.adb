@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.game.input.event.GameKeyEvent_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out GameKeyEvent'Class) is
    begin
       null;
@@ -112,6 +117,11 @@ package body org.allbinary.game.input.event.GameKeyEvent_Package is
    begin
       null;
    end createEvent;
+
+   procedure init (This : in out GameKeyEvent; Value : Unbounded_String) is
+   begin
+      GameKeyEvent'Class (This).init (Java_Box (Value));
+   end init;
 
 begin
    null;

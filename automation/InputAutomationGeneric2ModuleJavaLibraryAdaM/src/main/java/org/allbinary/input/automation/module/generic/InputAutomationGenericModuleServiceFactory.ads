@@ -20,14 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 with org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package; use org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package; use org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package;
 
 package org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package is
 
-   package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
    package InputAutomationModuleServiceFactory_Package renames Standard.org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
@@ -35,6 +32,8 @@ package org.allbinary.input.automation.module.generic_Id.InputAutomationGenericM
    type InputAutomationGenericModuleServiceFactory_Access is access all InputAutomationGenericModuleServiceFactory'Class;
    type InputAutomationGenericModuleServiceFactory_Access_Array is array (Natural range <>) of InputAutomationGenericModuleServiceFactory_Access;
    type InputAutomationGenericModuleServiceFactory_Access_Array_Access is access all InputAutomationGenericModuleServiceFactory_Access_Array;
+   type InputAutomationGenericModuleServiceFactory_Access_Array_Access_Array is array (Natural range <>) of InputAutomationGenericModuleServiceFactory_Access_Array_Access;
+   type InputAutomationGenericModuleServiceFactory_Access_Array_Access_Array_Access is access all InputAutomationGenericModuleServiceFactory_Access_Array_Access_Array;
 
    type InputAutomationGenericModuleServiceFactory is new InputAutomationModuleServiceFactory with record
       logUtil : LogUtil_Access;

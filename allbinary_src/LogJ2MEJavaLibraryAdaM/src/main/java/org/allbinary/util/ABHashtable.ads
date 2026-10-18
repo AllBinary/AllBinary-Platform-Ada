@@ -30,6 +30,8 @@ package org.allbinary.util.ABHashtable_Package is
    type ABHashtable_Access is access all ABHashtable'Class;
    type ABHashtable_Access_Array is array (Natural range <>) of ABHashtable_Access;
    type ABHashtable_Access_Array_Access is access all ABHashtable_Access_Array;
+   type ABHashtable_Access_Array_Access_Array is array (Natural range <>) of ABHashtable_Access_Array_Access;
+   type ABHashtable_Access_Array_Access_Array_Access is access all ABHashtable_Access_Array_Access_Array;
 
    type ABHashtable is new Hashtable with null record;
 

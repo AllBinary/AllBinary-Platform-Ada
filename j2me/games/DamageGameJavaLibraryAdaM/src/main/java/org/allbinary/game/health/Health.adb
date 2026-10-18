@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.game.health.NullHealthListener_Package; use org.allbinary.game.health.NullHealthListener_Package;
+
 package body org.allbinary.game.health.Health_Package is
 
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out Health'Class) is
    begin
       null;

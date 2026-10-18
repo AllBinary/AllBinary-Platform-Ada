@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package is
 
    procedure Initialize_Fields (This : in out VirtualKeyboardAPI1'Class) is

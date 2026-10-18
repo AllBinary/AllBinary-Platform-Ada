@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.globals.UrlGlobalsView_Package; use org.allbinary.globals.UrlGlobalsView_Package;
+
 package body org.allbinary.globals.UrlGlobalsViewFactory_Package is
 
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out UrlGlobalsViewFactory'Class) is
    begin
       null;

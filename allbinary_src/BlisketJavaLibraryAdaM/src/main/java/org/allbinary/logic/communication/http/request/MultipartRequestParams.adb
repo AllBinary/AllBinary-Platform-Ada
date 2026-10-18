@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package; use org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
+with org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package; use org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package;
+
 package body org.allbinary.logic.communication.http.request.MultipartRequestParams_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbFileUploadFactory_Package renames Standard.org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
+   package InvalidContentTypeException_Package renames Standard.org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package;
    procedure Initialize_Fields (This : in out MultipartRequestParams'Class) is
    begin
       null;

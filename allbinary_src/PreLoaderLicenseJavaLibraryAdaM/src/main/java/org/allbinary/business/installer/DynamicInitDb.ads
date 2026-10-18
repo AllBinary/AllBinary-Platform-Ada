@@ -21,22 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
-with org.allbinary.business.init.db.InitDbHelperFactory_Package; use org.allbinary.business.init.db.InitDbHelperFactory_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.business.installer.InitDb_Package; use org.allbinary.business.installer.InitDb_Package;
 
 package org.allbinary.business.installer.DynamicInitDb_Package is
 
    package DatabaseConnectionInfoInterface_Package renames Standard.org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
-   package InitDbHelperFactory_Package renames Standard.org.allbinary.business.init.db.InitDbHelperFactory_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type DynamicInitDb is tagged;
    type DynamicInitDb_Access is access all DynamicInitDb'Class;
    type DynamicInitDb_Access_Array is array (Natural range <>) of DynamicInitDb_Access;
    type DynamicInitDb_Access_Array_Access is access all DynamicInitDb_Access_Array;
+   type DynamicInitDb_Access_Array_Access_Array is array (Natural range <>) of DynamicInitDb_Access_Array_Access;
+   type DynamicInitDb_Access_Array_Access_Array_Access is access all DynamicInitDb_Access_Array_Access_Array;
 
    type DynamicInitDb is new InitDb with null record;
 

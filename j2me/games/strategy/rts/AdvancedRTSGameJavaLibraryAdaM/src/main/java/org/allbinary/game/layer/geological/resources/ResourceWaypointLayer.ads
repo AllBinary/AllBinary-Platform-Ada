@@ -28,8 +28,6 @@ with org.allbinary.game.identification.Group_Package; use org.allbinary.game.ide
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package; use org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package;
-with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package; use org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
 
 package org.allbinary.game.layer.geological.resources.ResourceWaypointLayer_Package is
 
@@ -46,6 +44,8 @@ package org.allbinary.game.layer.geological.resources.ResourceWaypointLayer_Pack
    type ResourceWaypointLayer_Access is access all ResourceWaypointLayer'Class;
    type ResourceWaypointLayer_Access_Array is array (Natural range <>) of ResourceWaypointLayer_Access;
    type ResourceWaypointLayer_Access_Array_Access is access all ResourceWaypointLayer_Access_Array;
+   type ResourceWaypointLayer_Access_Array_Access_Array is array (Natural range <>) of ResourceWaypointLayer_Access_Array_Access;
+   type ResourceWaypointLayer_Access_Array_Access_Array_Access is access all ResourceWaypointLayer_Access_Array_Access_Array;
 
    type ResourceWaypointLayer is new WaypointLayer with null record;
 

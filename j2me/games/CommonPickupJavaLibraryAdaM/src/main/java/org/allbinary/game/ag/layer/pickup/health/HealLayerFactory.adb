@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.layer.pickup.health.HealLayer_Package; use org.allbinary.game.ag.layer.pickup.health.HealLayer_Package;
+
 package body org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package is
 
    procedure Initialize_Fields (This : in out HealLayerFactory'Class) is
@@ -36,7 +38,7 @@ package body org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package 
    --  throws Exception
    function getInstance (This : in out HealLayerFactory) return AllBinaryLayer_Access is
    begin
-        return HealLayer_Package.Create;
+        return AllBinaryLayer_Access (HealLayer_Package.Create);
    end getInstance;
 
 end org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package;

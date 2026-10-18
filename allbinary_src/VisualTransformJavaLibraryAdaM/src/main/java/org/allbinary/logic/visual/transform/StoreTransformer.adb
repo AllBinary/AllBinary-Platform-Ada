@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
+with org.allbinary.data.tree.dom.StoreUriResolver_Package; use org.allbinary.data.tree.dom.StoreUriResolver_Package;
+
 package body org.allbinary.logic.visual.transform.StoreTransformer_Package is
 
+   package BasicUriResolver_Package renames Standard.org.allbinary.data.tree.dom.BasicUriResolver_Package;
+   package StoreUriResolver_Package renames Standard.org.allbinary.data.tree.dom.StoreUriResolver_Package;
    procedure Initialize_Fields (This : in out StoreTransformer'Class) is
    begin
       null;

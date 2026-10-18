@@ -32,6 +32,8 @@ package org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package i
    type CaptureWorkerInterface_Access is access all CaptureWorkerInterface'Class;
    type CaptureWorkerInterface_Access_Array is array (Natural range <>) of CaptureWorkerInterface_Access;
    type CaptureWorkerInterface_Access_Array_Access is access all CaptureWorkerInterface_Access_Array;
+   type CaptureWorkerInterface_Access_Array_Access_Array is array (Natural range <>) of CaptureWorkerInterface_Access_Array_Access;
+   type CaptureWorkerInterface_Access_Array_Access_Array_Access is access all CaptureWorkerInterface_Access_Array_Access_Array;
 
 end org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
 

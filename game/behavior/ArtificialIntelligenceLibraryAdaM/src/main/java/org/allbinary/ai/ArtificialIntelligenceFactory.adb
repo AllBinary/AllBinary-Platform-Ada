@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.ai.ArtificialIntelligenceFactory_Package is
 
    procedure Initialize_Fields (This : in out ArtificialIntelligenceFactory'Class) is
@@ -43,6 +44,18 @@ package body org.allbinary.ai.ArtificialIntelligenceFactory_Package is
 
    procedure getInstance (This : in out ArtificialIntelligenceFactory; anyType_Param : access Java_Object'Class) is
       Java_Result : constant ArtificialIntelligence_Access := ArtificialIntelligenceFactory'Class (This).getInstance (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   function getInstance (This : in out ArtificialIntelligenceFactory; Value : Unbounded_String) return ArtificialIntelligence_Access is
+   begin
+      return ArtificialIntelligenceFactory'Class (This).getInstance (Java_Box (Value));
+   end getInstance;
+
+   procedure getInstance (This : in out ArtificialIntelligenceFactory; Value : Unbounded_String) is
+      Java_Result : constant ArtificialIntelligence_Access := ArtificialIntelligenceFactory'Class (This).getInstance (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -32,6 +32,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostIn
    type PathFindingNodeCostInfoFactoryBaseInterface_Access is access all PathFindingNodeCostInfoFactoryBaseInterface'Class;
    type PathFindingNodeCostInfoFactoryBaseInterface_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoFactoryBaseInterface_Access;
    type PathFindingNodeCostInfoFactoryBaseInterface_Access_Array_Access is access all PathFindingNodeCostInfoFactoryBaseInterface_Access_Array;
+   type PathFindingNodeCostInfoFactoryBaseInterface_Access_Array_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoFactoryBaseInterface_Access_Array_Access;
+   type PathFindingNodeCostInfoFactoryBaseInterface_Access_Array_Access_Array_Access is access all PathFindingNodeCostInfoFactoryBaseInterface_Access_Array_Access_Array;
    procedure create (This : in out PathFindingNodeCostInfoFactoryBaseInterface; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; costFromStart : Long_Long_Integer; costToEnd : Long_Long_Integer) is abstract;
    function getTotalCost (This : in out PathFindingNodeCostInfoFactoryBaseInterface; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return Long_Long_Integer is abstract;
 

@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out IdGeneratorEntity'Class) is
    begin
       null;
@@ -42,19 +51,19 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    end Create;
 
    --  throws Exception
-   function get (This : in out IdGeneratorEntity; name_Case : Unbounded_String) return Long_Long_Integer is
+   function get (This : in out IdGeneratorEntity; name : Unbounded_String) return Long_Long_Integer is
       keysAndValues : HashMap_Access;
       hashMap : HashMap_Access;
-      value_Case : Unbounded_String;
+      value : Unbounded_String;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        keysAndValues.put (Java_Box (This.NAME), Java_Box (name_Case));
+        keysAndValues.put (Java_Box (This.NAME), Java_Box (name));
         hashMap := AbSqlBean (This).getRow (keysAndValues);
-        if ((Java_Unbox (hashMap.get (Java_Box (This.NAME)))).compareTo (name_Case)) /= (0) then
+        if ((Java_Unbox (hashMap.get (Java_Box (This.NAME)))).compareTo (name)) /= (0) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("results do not match")));
         end if;
-        value_Case := Java_Unbox (hashMap.get (Java_Box (This.VALUE)));
-        return Long_Long_Integer'Value (To_String (value_Case));
+        value := Java_Unbox (hashMap.get (Java_Box (This.VALUE)));
+        return Long_Long_Integer'Value (To_String (value));
    end get;
 
    procedure insert (This : in out IdGeneratorEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
@@ -73,10 +82,10 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
         end;
    end insert;
 
-   procedure delete (This : in out IdGeneratorEntity; value_Case : Unbounded_String) is
+   procedure delete (This : in out IdGeneratorEntity; value : Unbounded_String) is
    begin
         begin
-            AbSqlBean (This).deleteWhere (This.NAME, value_Case);
+            AbSqlBean (This).deleteWhere (This.NAME, value);
             This.logUtil.putF (This.commonStrings.SUCCESS, IdGeneratorEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
         exception
             when Java_Occurrence : others =>
@@ -88,12 +97,12 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
         end;
    end delete;
 
-   procedure update (This : in out IdGeneratorEntity; name_Case : Unbounded_String; value_Case : Long_Long_Integer) is
+   procedure update (This : in out IdGeneratorEntity; name : Unbounded_String; value : Long_Long_Integer) is
       map : HashMap_Access;
    begin
         map := StdUtil_Package.getInstance.createHashMap;
-        map.put (Java_Box (This.NAME), Java_Box (name_Case));
-        map.put (Java_Box (This.VALUE), Java_Box (value_Case));
+        map.put (Java_Box (This.NAME), Java_Box (name));
+        map.put (Java_Box (This.VALUE), Java_Box (value));
         IdGeneratorEntity'Class (This).update (map);
    end update;
 
@@ -115,8 +124,8 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
         return AbSqlBean (This).dropTable;
    end dropTable;
 
-   procedure get (This : in out IdGeneratorEntity; name_Case : Unbounded_String) is
-      Java_Result : constant Long_Long_Integer := IdGeneratorEntity'Class (This).get (name_Case);
+   procedure get (This : in out IdGeneratorEntity; name : Unbounded_String) is
+      Java_Result : constant Long_Long_Integer := IdGeneratorEntity'Class (This).get (name);
       pragma Unreferenced (Java_Result);
    begin
       null;

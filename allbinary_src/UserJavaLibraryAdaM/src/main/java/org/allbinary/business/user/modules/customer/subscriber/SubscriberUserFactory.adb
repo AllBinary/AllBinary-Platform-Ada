@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package; use org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package;
+
 package body org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package is
 
    procedure Initialize_Fields (This : in out SubscriberUserFactory'Class) is
@@ -37,14 +39,14 @@ package body org.allbinary.business.user.modules.customer.subscriber.SubscriberU
    --  throws Exception
    function getInstance (This : in out SubscriberUserFactory) return UserInterface_Access is
    begin
-        return SubscriberUser_Package.Create;
+        return UserInterface_Access (SubscriberUser_Package.Create);
    end getInstance;
 
    --  throws Exception
    function getInstance (This : in out SubscriberUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        return SubscriberUser_Package.Create (hashMap);
+        return UserInterface_Access (SubscriberUser_Package.Create (hashMap));
    end getInstance;
 
    procedure getInstance (This : in out SubscriberUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) is

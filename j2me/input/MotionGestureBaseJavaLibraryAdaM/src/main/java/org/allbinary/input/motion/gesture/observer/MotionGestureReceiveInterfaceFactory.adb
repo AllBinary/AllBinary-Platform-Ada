@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+with org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package; use org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package;
+with org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package; use org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package;
+
 package body org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package is
 
+   package MotionGestureConfiguration_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+   package MotionGestureConfigurationFactory_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
    procedure Initialize_Fields (This : in out MotionGestureReceiveInterfaceFactory'Class) is
    begin
       null;
@@ -38,9 +45,9 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInt
    begin
         configuration := MotionGestureConfigurationFactory_Package.getInstance;
         if not (configuration.isExecutingActionsAllowed) then
-            return NullCompleteMotionGestureReceiver_Package.Create;
+            return CompleteMotionGestureListenerInterface_Access (NullCompleteMotionGestureReceiver_Package.Create);
         else
-            return ResolveCompleteMotionGestureListener_Package.Create;
+            return CompleteMotionGestureListenerInterface_Access (ResolveCompleteMotionGestureListener_Package.Create);
         end if;
    end getInstance;
 

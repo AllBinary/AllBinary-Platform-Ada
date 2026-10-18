@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+
 package body org.allbinary.graphics.RelativeRelationship_Package is
 
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    procedure Initialize_Fields (This : in out RelativeRelationship'Class) is
    begin
       null;

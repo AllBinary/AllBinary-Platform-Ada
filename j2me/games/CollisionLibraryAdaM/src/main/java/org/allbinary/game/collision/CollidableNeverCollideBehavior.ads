@@ -32,6 +32,8 @@ package org.allbinary.game.collision.CollidableNeverCollideBehavior_Package is
    type CollidableNeverCollideBehavior_Access is access all CollidableNeverCollideBehavior'Class;
    type CollidableNeverCollideBehavior_Access_Array is array (Natural range <>) of CollidableNeverCollideBehavior_Access;
    type CollidableNeverCollideBehavior_Access_Array_Access is access all CollidableNeverCollideBehavior_Access_Array;
+   type CollidableNeverCollideBehavior_Access_Array_Access_Array is array (Natural range <>) of CollidableNeverCollideBehavior_Access_Array_Access;
+   type CollidableNeverCollideBehavior_Access_Array_Access_Array_Access is access all CollidableNeverCollideBehavior_Access_Array_Access_Array;
 
    type CollidableNeverCollideBehavior is new CollidableBaseBehavior with null record;
 

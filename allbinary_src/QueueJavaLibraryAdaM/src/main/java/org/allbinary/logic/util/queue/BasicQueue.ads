@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.logic.util.queue.BasicQueue_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicQueue is tagged;
    type BasicQueue_Access is access all BasicQueue'Class;
    type BasicQueue_Access_Array is array (Natural range <>) of BasicQueue_Access;
    type BasicQueue_Access_Array_Access is access all BasicQueue_Access_Array;
+   type BasicQueue_Access_Array_Access_Array is array (Natural range <>) of BasicQueue_Access_Array_Access;
+   type BasicQueue_Access_Array_Access_Array_Access is access all BasicQueue_Access_Array_Access_Array;
 
    type BasicQueue is new Java_Object with record
       queueVector : BasicArrayList_Access;
@@ -43,6 +43,9 @@ package org.allbinary.logic.util.queue.BasicQueue_Package is
    procedure offer (This : in out BasicQueue; anyType_Param : access Java_Object'Class);
    procedure remove (This : in out BasicQueue; anyType_Param : access Java_Object'Class);
    function removeLast (This : in out BasicQueue) return Java_Object_Access;
+   function offer (This : in out BasicQueue; Value : Unbounded_String) return Boolean;
+   procedure offer (This : in out BasicQueue; Value : Unbounded_String);
+   procedure remove (This : in out BasicQueue; Value : Unbounded_String);
 
 end org.allbinary.logic.util.queue.BasicQueue_Package;
 

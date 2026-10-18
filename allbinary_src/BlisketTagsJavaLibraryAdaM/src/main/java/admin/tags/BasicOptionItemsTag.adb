@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.BasicOptionItemsHelperFactory_Package; use admin.taghelpers.BasicOptionItemsHelperFactory_Package;
+with admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package; use admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package;
+
 package body admin.tags.BasicOptionItemsTag_Package is
 
+   package BasicOptionItemsHelperFactory_Package renames Standard.admin.taghelpers.BasicOptionItemsHelperFactory_Package;
+   package BasicOptionItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package;
    procedure Initialize_Fields (This : in out BasicOptionItemsTag'Class) is
    begin
       null;

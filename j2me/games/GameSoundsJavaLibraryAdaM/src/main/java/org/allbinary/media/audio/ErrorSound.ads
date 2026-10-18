@@ -30,6 +30,8 @@ package org.allbinary.media.audio.ErrorSound_Package is
    type ErrorSound_Access is access all ErrorSound'Class;
    type ErrorSound_Access_Array is array (Natural range <>) of ErrorSound_Access;
    type ErrorSound_Access_Array_Access is access all ErrorSound_Access_Array;
+   type ErrorSound_Access_Array_Access_Array is array (Natural range <>) of ErrorSound_Access_Array_Access;
+   type ErrorSound_Access_Array_Access_Array_Access is access all ErrorSound_Access_Array_Access_Array;
 
    type ErrorSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+
 package body org.allbinary.game.input.ABKeyEventWrapper_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    procedure Initialize_Fields (This : in out ABKeyEventWrapper'Class) is
    begin
       null;

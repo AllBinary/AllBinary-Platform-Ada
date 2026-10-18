@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.opengles.EnableFacesShaderOpenGLProcessor_Package is
 
    procedure Initialize_Fields (This : in out EnableFacesShaderOpenGLProcessor'Class) is

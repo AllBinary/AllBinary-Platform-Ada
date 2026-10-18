@@ -31,6 +31,8 @@ package org.allbinary.direction.DirectionalInterface_Package is
    type DirectionalInterface_Access is access all DirectionalInterface'Class;
    type DirectionalInterface_Access_Array is array (Natural range <>) of DirectionalInterface_Access;
    type DirectionalInterface_Access_Array_Access is access all DirectionalInterface_Access_Array;
+   type DirectionalInterface_Access_Array_Access_Array is array (Natural range <>) of DirectionalInterface_Access_Array_Access;
+   type DirectionalInterface_Access_Array_Access_Array_Access is access all DirectionalInterface_Access_Array_Access_Array;
    procedure setFrameByDirection (This : in out DirectionalInterface; direction_Param : access Direction_Package.Direction'Class) is abstract;
    procedure setFrameToAngle (This : in out DirectionalInterface; angle_Param : access Angle_Package.Angle'Class) is abstract;
    procedure adjustFrameToAngle (This : in out DirectionalInterface; newAngle_Param : access Angle_Package.Angle'Class) is abstract;

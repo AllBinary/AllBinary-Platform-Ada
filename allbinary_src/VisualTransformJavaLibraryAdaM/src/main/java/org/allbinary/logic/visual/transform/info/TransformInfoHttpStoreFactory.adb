@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package;
+
 package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package is
 
    procedure Initialize_Fields (This : in out TransformInfoHttpStoreFactory'Class) is
@@ -45,7 +47,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFac
       propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
       pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
-        return TransformInfoHttpStore_Package.Create (databaseHashMap, propertiesHashMap, pageContext);
+        return TransformInfoInterface_Access (TransformInfoHttpStore_Package.Create (databaseHashMap, propertiesHashMap, pageContext));
    end getInstance;
 
    procedure getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is

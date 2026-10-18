@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.AbKeys_Package; use org.allbinary.logic.system.security.AbKeys_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body org.allbinary.logic.system.loader.SecuredNativeLibraryHelperWrapper_Package is
 
+   package AbKeys_Package renames Standard.org.allbinary.logic.system.security.AbKeys_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out SecuredNativeLibraryHelperWrapper'Class) is
    begin
       null;

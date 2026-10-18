@@ -34,6 +34,8 @@ package admin.taghelpers.AdminConfigurationHelper_Package is
    type AdminConfigurationHelper_Access is access all AdminConfigurationHelper'Class;
    type AdminConfigurationHelper_Access_Array is array (Natural range <>) of AdminConfigurationHelper_Access;
    type AdminConfigurationHelper_Access_Array_Access is access all AdminConfigurationHelper_Access_Array;
+   type AdminConfigurationHelper_Access_Array_Access_Array is array (Natural range <>) of AdminConfigurationHelper_Access_Array_Access;
+   type AdminConfigurationHelper_Access_Array_Access_Array_Access is access all AdminConfigurationHelper_Access_Array_Access_Array;
 
    type AdminConfigurationHelper is new BasicTable with record
       logUtil : LogUtil_Access;

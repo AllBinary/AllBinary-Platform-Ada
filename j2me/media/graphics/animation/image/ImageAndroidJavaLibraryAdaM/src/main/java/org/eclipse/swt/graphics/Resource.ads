@@ -16,6 +16,8 @@ package org.eclipse.swt.graphics.Resource_Package is
    type Resource_Access is access all Resource'Class;
    type Resource_Access_Array is array (Natural range <>) of Resource_Access;
    type Resource_Access_Array_Access is access all Resource_Access_Array;
+   type Resource_Access_Array_Access_Array is array (Natural range <>) of Resource_Access_Array_Access;
+   type Resource_Access_Array_Access_Array_Access is access all Resource_Access_Array_Access_Array;
 
    type Resource is new Java_Object with null record;
 

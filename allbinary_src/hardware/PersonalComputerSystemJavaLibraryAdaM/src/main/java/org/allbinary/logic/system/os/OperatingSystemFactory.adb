@@ -13,8 +13,30 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.Log_Package; use org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFactory_Package; use org.allbinary.logic.communication.log.LogFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Package; use org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Package;
+with org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Package; use org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Package;
+with org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package; use org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package;
+with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.logic.system.os.NoOperatingSystem_Package;
+with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
+with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
+
 package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
 
+   package Log_Package renames Standard.org.allbinary.logic.communication.log.Log_Package;
+   package LogFactory_Package renames Standard.org.allbinary.logic.communication.log.LogFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LinuxOperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Package;
+   package SolarisOperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Package;
+   package WindowsOperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package;
    procedure Initialize_Fields (This : in out OperatingSystemFactory'Class) is
    begin
       null;
@@ -60,17 +82,17 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
             if not (This.hasDetected) then
                 This.logUtil.putF (To_Unbounded_String ("osName: ") & osName, OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                 This.hasDetected := True;
-                if ((Index (osName, Java_Image (operatingSystems.LINUX)) - 1)) >= (0) then
+                if (Java_Index_Of (osName, Java_Image (operatingSystems.LINUX))) >= (0) then
                     if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
                         This.logUtil.putF (To_Unbounded_String ("Found a Linux OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                     end if;
                     This.genericOperatingSystem := LinuxOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
-                elsif ((Index (osName, Java_Image (operatingSystems.WINDOWS)) - 1)) >= (0) then
+                elsif (Java_Index_Of (osName, Java_Image (operatingSystems.WINDOWS))) >= (0) then
                     if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
                         This.logUtil.putF (To_Unbounded_String ("Found a Windows OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                     end if;
                     This.genericOperatingSystem := WindowsOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
-                elsif ((Index (osName, Java_Image (operatingSystems.SOLARIS)) - 1)) >= (0) then
+                elsif (Java_Index_Of (osName, Java_Image (operatingSystems.SOLARIS))) >= (0) then
                     if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
                         This.logUtil.putF (To_Unbounded_String ("Found a Solaris OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                     end if;

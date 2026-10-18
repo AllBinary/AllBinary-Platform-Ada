@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangle_Package; use org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
+with org.allbinary.media.image.comparison.motion.Rectangle_Package; use org.allbinary.media.image.comparison.motion.Rectangle_Package;
+
 package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectangles_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out ConsolidateMotionRectangles'Class) is
    begin
       null;
@@ -64,7 +71,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
    begin
         vector := ConsolidateMotionRectangles'Class (This).getVector;
         This.logUtil.putF (To_Unbounded_String ("Start - Size Before: ") & Java_Image (vector.size), ConsolidateMotionRectangles_Access'(This'Unchecked_Access), To_Unbounded_String ("consolidateMotionRectangleConstraints"));
-        removeVector := BasicArrayListD_Package.Create;
+        removeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             motionRectangle := MotionRectangle_Access (vector.get (index));
@@ -77,7 +84,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
                 rightX := (rectangle2.x) + (rectangle2.width);
                 bottomY := (rectangle2.y) + (rectangle2.height);
                 if ((((rectangle.x) <= (rectangle2.x)) and then ((rectangle.y) <= (rectangle2.y))) and then ((x2) >= (rightX))) and then ((y2) >= (bottomY)) then
-                    removeVector.add (motionRectangle2);
+                    removeVector.add (Java_Object_Access (motionRectangle2));
                 end if;
             end loop;
         end loop;

@@ -21,19 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 
 package org.allbinary.media.image.comparison.motion.MotionRectangles_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package ImageComparisonResult_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 
    type MotionRectangles is tagged;
    type MotionRectangles_Access is access all MotionRectangles'Class;
    type MotionRectangles_Access_Array is array (Natural range <>) of MotionRectangles_Access;
    type MotionRectangles_Access_Array_Access is access all MotionRectangles_Access_Array;
+   type MotionRectangles_Access_Array_Access_Array is array (Natural range <>) of MotionRectangles_Access_Array_Access;
+   type MotionRectangles_Access_Array_Access_Array_Access is access all MotionRectangles_Access_Array_Access_Array;
 
    type MotionRectangles is new Java_Object with record
       name : Unbounded_String;

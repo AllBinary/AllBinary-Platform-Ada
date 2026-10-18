@@ -37,6 +37,8 @@ package org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimatio
    type AllBinaryAdjustedHTMLImageRotationAnimation_Access is access all AllBinaryAdjustedHTMLImageRotationAnimation'Class;
    type AllBinaryAdjustedHTMLImageRotationAnimation_Access_Array is array (Natural range <>) of AllBinaryAdjustedHTMLImageRotationAnimation_Access;
    type AllBinaryAdjustedHTMLImageRotationAnimation_Access_Array_Access is access all AllBinaryAdjustedHTMLImageRotationAnimation_Access_Array;
+   type AllBinaryAdjustedHTMLImageRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AllBinaryAdjustedHTMLImageRotationAnimation_Access_Array_Access;
+   type AllBinaryAdjustedHTMLImageRotationAnimation_Access_Array_Access_Array_Access is access all AllBinaryAdjustedHTMLImageRotationAnimation_Access_Array_Access_Array;
 
    type AllBinaryAdjustedHTMLImageRotationAnimation is new AllBinaryHTMLImageRotationAnimation with record
       dx : Integer;

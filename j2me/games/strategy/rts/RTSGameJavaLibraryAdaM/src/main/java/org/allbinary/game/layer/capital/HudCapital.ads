@@ -31,6 +31,8 @@ package org.allbinary.game.layer.capital.HudCapital_Package is
    type HudCapital_Access is access all HudCapital'Class;
    type HudCapital_Access_Array is array (Natural range <>) of HudCapital_Access;
    type HudCapital_Access_Array_Access is access all HudCapital_Access_Array;
+   type HudCapital_Access_Array_Access_Array is array (Natural range <>) of HudCapital_Access_Array_Access;
+   type HudCapital_Access_Array_Access_Array_Access is access all HudCapital_Access_Array_Access_Array;
 
    type HudCapital is new Capital with record
       capitalGraphic : NumberStringHud_Access;

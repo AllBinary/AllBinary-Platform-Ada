@@ -20,10 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.inventory.item.BasicItem_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItem_Package;
-with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
@@ -31,10 +28,7 @@ with views.admin.inventory.InventoryItemView_Package; use views.admin.inventory.
 
 package views.admin.inventory.NewValidationView_Package is
 
-   package BasicItem_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItem_Package;
-   package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -43,6 +37,8 @@ package views.admin.inventory.NewValidationView_Package is
    type NewValidationView_Access is access all NewValidationView'Class;
    type NewValidationView_Access_Array is array (Natural range <>) of NewValidationView_Access;
    type NewValidationView_Access_Array_Access is access all NewValidationView_Access_Array;
+   type NewValidationView_Access_Array_Access_Array is array (Natural range <>) of NewValidationView_Access_Array_Access;
+   type NewValidationView_Access_Array_Access_Array_Access is access all NewValidationView_Access_Array_Access_Array;
 
    type NewValidationView is new InventoryItemView and ValidationComponentInterface with null record;
 

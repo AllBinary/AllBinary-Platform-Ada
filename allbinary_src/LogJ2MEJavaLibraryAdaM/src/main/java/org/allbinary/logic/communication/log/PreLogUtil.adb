@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
+
 package body org.allbinary.logic.communication.log.PreLogUtil_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out PreLogUtil'Class) is
    begin
       null;
@@ -77,6 +85,18 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
 
    procedure getClassName (anyType_Param : access Java_Object'Class) is
       Java_Result : constant Unbounded_String := getClassName (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getClassName;
+
+   function getClassName (Value : Unbounded_String) return Unbounded_String is
+   begin
+      return getClassName (Java_Box (Value));
+   end getClassName;
+
+   procedure getClassName (Value : Unbounded_String) is
+      Java_Result : constant Unbounded_String := getClassName (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

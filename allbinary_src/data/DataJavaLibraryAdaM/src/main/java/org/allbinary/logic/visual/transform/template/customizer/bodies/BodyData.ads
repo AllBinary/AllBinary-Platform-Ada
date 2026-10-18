@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData
    type BodyData_Access is access all BodyData'Class;
    type BodyData_Access_Array is array (Natural range <>) of BodyData_Access;
    type BodyData_Access_Array_Access is access all BodyData_Access_Array;
+   type BodyData_Access_Array_Access_Array is array (Natural range <>) of BodyData_Access_Array_Access;
+   type BodyData_Access_Array_Access_Array_Access is access all BodyData_Access_Array_Access_Array;
 
    type BodyData is new Java_Object with record
       NAME : Unbounded_String;

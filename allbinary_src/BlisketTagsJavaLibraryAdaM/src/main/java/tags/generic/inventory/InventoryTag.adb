@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with taghelpers.InventoryHelperFactory_Package; use taghelpers.InventoryHelperFactory_Package;
+
 package body tags.generic_Id.inventory.InventoryTag_Package is
 
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package InventoryHelperFactory_Package renames Standard.taghelpers.InventoryHelperFactory_Package;
    procedure Initialize_Fields (This : in out InventoryTag'Class) is
    begin
       null;

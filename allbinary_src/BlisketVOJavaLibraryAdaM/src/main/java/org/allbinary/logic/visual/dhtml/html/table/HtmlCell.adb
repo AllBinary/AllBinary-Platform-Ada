@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out HtmlCell'Class) is
    begin
       null;
@@ -31,22 +34,22 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlCell_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HtmlCell'Class; before : Unbounded_String; width_Case : Unbounded_String; height_Case : Unbounded_String; after : Unbounded_String) is
+   procedure Initialize (This : in out HtmlCell'Class; before : Unbounded_String; width : Unbounded_String; height : Unbounded_String; after : Unbounded_String) is
    begin
       HtmlTag_Package.Initialize (This);
       Initialize_Fields (This);
         This.before := Java_New_String (before);
         This.after := Java_New_String (after);
-        This.height_Case := Java_New_String (height_Case);
-        This.width_Case := Java_New_String (width_Case);
+        This.height_Case := Java_New_String (height);
+        This.width_Case := Java_New_String (width);
         HtmlCell'Class (This).addAttribute (This.HEIGHT, This.height_Case);
         HtmlCell'Class (This).addAttribute (This.WIDTH, This.width_Case);
    end Initialize;
 
-   function Create (before : Unbounded_String; width_Case : Unbounded_String; height_Case : Unbounded_String; after : Unbounded_String) return HtmlCell_Access is
+   function Create (before : Unbounded_String; width : Unbounded_String; height : Unbounded_String; after : Unbounded_String) return HtmlCell_Access is
       This : constant HtmlCell_Access := new HtmlCell;
    begin
-      HtmlCell_Package.Initialize (This.all, before, width_Case, height_Case, after);
+      HtmlCell_Package.Initialize (This.all, before, width, height, after);
       return This;
    end Create;
 

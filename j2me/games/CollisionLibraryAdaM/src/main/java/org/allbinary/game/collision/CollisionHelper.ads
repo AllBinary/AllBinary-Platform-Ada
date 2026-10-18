@@ -32,6 +32,8 @@ package org.allbinary.game.collision.CollisionHelper_Package is
    type CollisionHelper_Access is access all CollisionHelper'Class;
    type CollisionHelper_Access_Array is array (Natural range <>) of CollisionHelper_Access;
    type CollisionHelper_Access_Array_Access is access all CollisionHelper_Access_Array;
+   type CollisionHelper_Access_Array_Access_Array is array (Natural range <>) of CollisionHelper_Access_Array_Access;
+   type CollisionHelper_Access_Array_Access_Array_Access is access all CollisionHelper_Access_Array_Access_Array;
 
    type CollisionHelper is new Java_Object with record
       sourceLayerInterface : AllBinaryLayer_Access;

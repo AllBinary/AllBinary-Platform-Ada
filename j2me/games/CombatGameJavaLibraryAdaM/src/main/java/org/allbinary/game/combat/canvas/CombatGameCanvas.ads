@@ -21,36 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package; use org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
-with org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package; use org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package;
-with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package; use org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-with org.allbinary.game.layer.drop.DropLayerProcessor_Package; use org.allbinary.game.layer.drop.DropLayerProcessor_Package;
-with org.allbinary.game.layer.identification.GroupLayerManagerListener_Package; use org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
 with org.allbinary.game.score.HighScoresFactoryInterface_Package; use org.allbinary.game.score.HighScoresFactoryInterface_Package;
-with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
 with org.allbinary.layer.BasicLayerProcessor_Package; use org.allbinary.layer.BasicLayerProcessor_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
 package org.allbinary.game.combat.canvas.CombatGameCanvas_Package is
 
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
-   package DestroyedLayerProcessor_Package renames Standard.org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
-   package DestroyEventCircularStaticPool_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package;
-   package DestroyedEventHandler_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
    package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
    package BasicBuildGameInitializerFactory_Package renames Standard.org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
    package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package DropLayerProcessor_Package renames Standard.org.allbinary.game.layer.drop.DropLayerProcessor_Package;
-   package GroupLayerManagerListener_Package renames Standard.org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
    package HighScoresFactoryInterface_Package renames Standard.org.allbinary.game.score.HighScoresFactoryInterface_Package;
-   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
    package BasicLayerProcessor_Package renames Standard.org.allbinary.layer.BasicLayerProcessor_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
@@ -58,6 +42,8 @@ package org.allbinary.game.combat.canvas.CombatGameCanvas_Package is
    type CombatGameCanvas_Access is access all CombatGameCanvas'Class;
    type CombatGameCanvas_Access_Array is array (Natural range <>) of CombatGameCanvas_Access;
    type CombatGameCanvas_Access_Array_Access is access all CombatGameCanvas_Access_Array;
+   type CombatGameCanvas_Access_Array_Access_Array is array (Natural range <>) of CombatGameCanvas_Access_Array_Access;
+   type CombatGameCanvas_Access_Array_Access_Array_Access is access all CombatGameCanvas_Access_Array_Access_Array;
 
    type CombatGameCanvas is new AllBinaryGameCanvas with null record;
    basicLayerProcessor : BasicLayerProcessor_Access_Array_Access;

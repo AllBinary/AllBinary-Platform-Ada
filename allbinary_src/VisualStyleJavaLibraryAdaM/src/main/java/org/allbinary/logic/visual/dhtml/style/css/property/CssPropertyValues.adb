@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tree.dom.DomData_Package; use org.allbinary.data.tree.dom.DomData_Package;
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValueData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValueData_Package;
+with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package;
+
 package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValues_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomData_Package renames Standard.org.allbinary.data.tree.dom.DomData_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out CssPropertyValues'Class) is
    begin
       null;
@@ -26,7 +45,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
    procedure Initialize (This : in out CssPropertyValues'Class) is
    begin
       Initialize_Fields (This);
-        This.propertyValueVector := BasicArrayListD_Package.Create;
+        This.propertyValueVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create return CssPropertyValues_Access is
@@ -52,7 +71,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
    begin
       Initialize_Fields (This);
         indexPropertyValueHashMap := StdUtil_Package.getInstance.createHashMap;
-        This.propertyValueVector := BasicArrayListD_Package.Create;
+        This.propertyValueVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         cssPropertyNodeVector := DomSearchHelper_Package.getAllNodes (CssPropertyValueData_Package.getInstance.NAME, node.getChildNodes);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STYLE) then
             This.logUtil.putF (To_Unbounded_String ("Number Of Properties: ") & Java_Image (cssPropertyNodeVector.size), CssPropertyValues_Access'(This'Unchecked_Access), To_Unbounded_String ("CssProperties()"));

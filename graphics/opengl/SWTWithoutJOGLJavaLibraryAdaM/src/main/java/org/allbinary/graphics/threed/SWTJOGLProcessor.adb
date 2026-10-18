@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
 
    procedure Initialize_Fields (This : in out SWTJOGLProcessor'Class) is
@@ -182,6 +183,16 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
    begin
       null;
    end substringWidth;
+
+   procedure setRenderer (This : in out SWTJOGLProcessor; Value : Unbounded_String) is
+   begin
+      SWTJOGLProcessor'Class (This).setRenderer (Java_Box (Value));
+   end setRenderer;
+
+   procedure onSurfaceChangedForEvent (This : in out SWTJOGLProcessor; Value : Unbounded_String) is
+   begin
+      SWTJOGLProcessor'Class (This).onSurfaceChangedForEvent (Java_Box (Value));
+   end onSurfaceChangedForEvent;
 
 begin
    null;

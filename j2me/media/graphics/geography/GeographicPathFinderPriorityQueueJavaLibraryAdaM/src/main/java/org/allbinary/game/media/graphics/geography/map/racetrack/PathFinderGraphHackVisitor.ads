@@ -33,6 +33,8 @@ package org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGrap
    type PathFinderGraphHackVisitor_Access is access all PathFinderGraphHackVisitor'Class;
    type PathFinderGraphHackVisitor_Access_Array is array (Natural range <>) of PathFinderGraphHackVisitor_Access;
    type PathFinderGraphHackVisitor_Access_Array_Access is access all PathFinderGraphHackVisitor_Access_Array;
+   type PathFinderGraphHackVisitor_Access_Array_Access_Array is array (Natural range <>) of PathFinderGraphHackVisitor_Access_Array_Access;
+   type PathFinderGraphHackVisitor_Access_Array_Access_Array_Access is access all PathFinderGraphHackVisitor_Access_Array_Access_Array;
 
    type PathFinderGraphHackVisitor is new BasePathFinderGraphVisitor with null record;
 
@@ -46,6 +48,9 @@ package org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGrap
    procedure removeOverPassEdges (This : in out PathFinderGraphHackVisitor; pathList_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function isValid (This : in out PathFinderGraphHackVisitor; graphPath_Param : access Java_Object'Class) return Boolean;
    procedure isValid (This : in out PathFinderGraphHackVisitor; graphPath_Param : access Java_Object'Class);
+   procedure fixOverPassEdges (This : in out PathFinderGraphHackVisitor; Value : Unbounded_String);
+   function isValid (This : in out PathFinderGraphHackVisitor; Value : Unbounded_String) return Boolean;
+   procedure isValid (This : in out PathFinderGraphHackVisitor; Value : Unbounded_String);
 
 end org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitor_Package;
 

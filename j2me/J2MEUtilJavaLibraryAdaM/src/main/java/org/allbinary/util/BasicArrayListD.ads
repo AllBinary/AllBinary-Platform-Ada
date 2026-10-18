@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 
 package org.allbinary.util.BasicArrayListD_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type BasicArrayListD is tagged;
    type BasicArrayListD_Access is access all BasicArrayListD'Class;
    type BasicArrayListD_Access_Array is array (Natural range <>) of BasicArrayListD_Access;
    type BasicArrayListD_Access_Array_Access is access all BasicArrayListD_Access_Array;
+   type BasicArrayListD_Access_Array_Access_Array is array (Natural range <>) of BasicArrayListD_Access_Array_Access;
+   type BasicArrayListD_Access_Array_Access_Array_Access is access all BasicArrayListD_Access_Array_Access_Array;
 
    type BasicArrayListD is new BasicArrayListS with null record;
 

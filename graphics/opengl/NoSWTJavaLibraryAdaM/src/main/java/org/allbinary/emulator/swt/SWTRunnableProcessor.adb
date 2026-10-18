@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.emulator.swt.SWTRunnableProcessor_Package is
 
    procedure Initialize_Fields (This : in out SWTRunnableProcessor'Class) is

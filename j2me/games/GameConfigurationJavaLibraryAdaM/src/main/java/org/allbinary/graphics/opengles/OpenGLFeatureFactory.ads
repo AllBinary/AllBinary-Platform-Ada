@@ -29,6 +29,8 @@ package org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package is
    type OpenGLFeatureFactory_Access is access all OpenGLFeatureFactory'Class;
    type OpenGLFeatureFactory_Access_Array is array (Natural range <>) of OpenGLFeatureFactory_Access;
    type OpenGLFeatureFactory_Access_Array_Access is access all OpenGLFeatureFactory_Access_Array;
+   type OpenGLFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLFeatureFactory_Access_Array_Access;
+   type OpenGLFeatureFactory_Access_Array_Access_Array_Access is access all OpenGLFeatureFactory_Access_Array_Access_Array;
 
    type OpenGLFeatureFactory is new Java_Object with record
       OPENGL_OPTIONS : OpenGLFeature_Access;

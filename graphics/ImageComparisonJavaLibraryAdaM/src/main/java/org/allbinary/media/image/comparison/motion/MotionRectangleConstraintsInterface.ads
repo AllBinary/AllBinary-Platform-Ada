@@ -31,6 +31,8 @@ package org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsIn
    type MotionRectangleConstraintsInterface_Access is access all MotionRectangleConstraintsInterface'Class;
    type MotionRectangleConstraintsInterface_Access_Array is array (Natural range <>) of MotionRectangleConstraintsInterface_Access;
    type MotionRectangleConstraintsInterface_Access_Array_Access is access all MotionRectangleConstraintsInterface_Access_Array;
+   type MotionRectangleConstraintsInterface_Access_Array_Access_Array is array (Natural range <>) of MotionRectangleConstraintsInterface_Access_Array_Access;
+   type MotionRectangleConstraintsInterface_Access_Array_Access_Array_Access is access all MotionRectangleConstraintsInterface_Access_Array_Access_Array;
    function getMaxMotionRectangles (This : in out MotionRectangleConstraintsInterface) return Integer is abstract;
    function getMinDimension (This : in out MotionRectangleConstraintsInterface) return Dimension_Access is abstract;
    function getMinArea (This : in out MotionRectangleConstraintsInterface) return Integer is abstract;

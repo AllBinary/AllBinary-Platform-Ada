@@ -29,6 +29,8 @@ package org.allbinary.graphics.ScreenCaptureNoneFactory_Package is
    type ScreenCaptureNoneFactory_Access is access all ScreenCaptureNoneFactory'Class;
    type ScreenCaptureNoneFactory_Access_Array is array (Natural range <>) of ScreenCaptureNoneFactory_Access;
    type ScreenCaptureNoneFactory_Access_Array_Access is access all ScreenCaptureNoneFactory_Access_Array;
+   type ScreenCaptureNoneFactory_Access_Array_Access_Array is array (Natural range <>) of ScreenCaptureNoneFactory_Access_Array_Access;
+   type ScreenCaptureNoneFactory_Access_Array_Access_Array_Access is access all ScreenCaptureNoneFactory_Access_Array_Access_Array;
 
    type ScreenCaptureNoneFactory is new Java_Object with null record;
    instance : ScreenCapture_Access;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.init.BaseGameInitialization_Package; use org.allbinary.game.init.BaseGameInitialization_Package;
+
 package body org.allbinary.game.init.BasicBuildGameInitializerFactory_Package is
 
    procedure Initialize_Fields (This : in out BasicBuildGameInitializerFactory'Class) is

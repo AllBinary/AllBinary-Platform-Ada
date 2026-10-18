@@ -28,6 +28,8 @@ package org.allbinary.game.midlet.LicenseLoadingType_Package is
    type LicenseLoadingType_Access is access all LicenseLoadingType'Class;
    type LicenseLoadingType_Access_Array is array (Natural range <>) of LicenseLoadingType_Access;
    type LicenseLoadingType_Access_Array_Access is access all LicenseLoadingType_Access_Array;
+   type LicenseLoadingType_Access_Array_Access_Array is array (Natural range <>) of LicenseLoadingType_Access_Array_Access;
+   type LicenseLoadingType_Access_Array_Access_Array_Access is access all LicenseLoadingType_Access_Array_Access_Array;
 
    type LicenseLoadingType is new Java_Object with null record;
 

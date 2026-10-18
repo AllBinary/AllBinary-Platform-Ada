@@ -20,34 +20,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package; use org.allbinary.logic.system.security.licensing.LicenseType_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
-with org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package; use org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package;
 
 package org.allbinary.logic.system.security.licensing.AbeClientLicense_Package is
 
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AbeClientLicense is tagged;
    type AbeClientLicense_Access is access all AbeClientLicense'Class;
    type AbeClientLicense_Access_Array is array (Natural range <>) of AbeClientLicense_Access;
    type AbeClientLicense_Access_Array_Access is access all AbeClientLicense_Access_Array;
+   type AbeClientLicense_Access_Array_Access_Array is array (Natural range <>) of AbeClientLicense_Access_Array_Access;
+   type AbeClientLicense_Access_Array_Access_Array_Access is access all AbeClientLicense_Access_Array_Access_Array;
 
-   type AbeClientLicense is new AbeLicenseInterface with record
+   type AbeClientLicense is new Java_Object and AbeLicenseInterface with record
       hashtable : ABHashtable_Access;
       id : Unbounded_String;
       servers : BasicArrayList_Access;

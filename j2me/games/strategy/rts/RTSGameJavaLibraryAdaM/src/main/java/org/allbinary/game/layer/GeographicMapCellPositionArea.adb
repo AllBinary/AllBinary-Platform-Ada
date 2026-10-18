@@ -13,15 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+
 package body org.allbinary.game.layer.GeographicMapCellPositionArea_Package is
 
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    procedure Initialize_Fields (This : in out GeographicMapCellPositionArea'Class) is
    begin
       null;
       This.cellPositionsUtil := CellPositionsUtil_Package.getInstance;
       This.layerCoveringCellPositionsUtil := LayerCoveringCellPositionsUtil_Package.getInstance;
-      This.reusableOccupyingGeographicMapCellPositionList := BasicArrayListS_Package.Create (4);
-      This.reusableSurroundingGeographicMapCellPositionList := BasicArrayListS_Package.Create (12);
+      This.reusableOccupyingGeographicMapCellPositionList := BasicArrayList_Access (BasicArrayListS_Package.Create (4));
+      This.reusableSurroundingGeographicMapCellPositionList := BasicArrayList_Access (BasicArrayListS_Package.Create (12));
       This.surroundingCircularIndexUtil := CircularIndexUtil_Package.createInstance (0);
       
       This.LIST := BasicArrayListUtil_Package.getInstance.getImmutableInstance;
@@ -68,7 +73,7 @@ package body org.allbinary.game.layer.GeographicMapCellPositionArea_Package is
       geographicMapCellPosition : GeographicMapCellPosition_Access;
    begin
         geographicMapCellPosition := GeographicMapCellPosition_Access (This.surroundingGeographicMapCellPositionList.get (This.surroundingCircularIndexUtil.getIndex));
-        This.surroundingCircularIndexUtil.next;
+        declare Java_Result renames This.surroundingCircularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
         return geographicMapCellPosition;
    end getNextSurroundingGeographicMapCellPosition;
 

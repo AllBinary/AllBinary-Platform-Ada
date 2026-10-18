@@ -13,12 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.logic.util.queue.BasicQueue_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BasicQueue'Class) is
    begin
       null;
-      This.queueVector := BasicArrayListD_Package.Create;
+      This.queueVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -63,6 +66,23 @@ package body org.allbinary.logic.util.queue.BasicQueue_Package is
    begin
       null;
    end offer;
+
+   function offer (This : in out BasicQueue; Value : Unbounded_String) return Boolean is
+   begin
+      return BasicQueue'Class (This).offer (Java_Box (Value));
+   end offer;
+
+   procedure offer (This : in out BasicQueue; Value : Unbounded_String) is
+      Java_Result : constant Boolean := BasicQueue'Class (This).offer (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end offer;
+
+   procedure remove (This : in out BasicQueue; Value : Unbounded_String) is
+   begin
+      BasicQueue'Class (This).remove (Java_Box (Value));
+   end remove;
 
 end org.allbinary.logic.util.queue.BasicQueue_Package;
 

@@ -28,6 +28,8 @@ package org.allbinary.logic.system.security.licensing.AbeClientInformationData_P
    type AbeClientInformationData_Access is access all AbeClientInformationData'Class;
    type AbeClientInformationData_Access_Array is array (Natural range <>) of AbeClientInformationData_Access;
    type AbeClientInformationData_Access_Array_Access is access all AbeClientInformationData_Access_Array;
+   type AbeClientInformationData_Access_Array_Access_Array is array (Natural range <>) of AbeClientInformationData_Access_Array_Access;
+   type AbeClientInformationData_Access_Array_Access_Array_Access is access all AbeClientInformationData_Access_Array_Access_Array;
 
    type AbeClientInformationData is new Java_Object with record
       KEY : Unbounded_String;

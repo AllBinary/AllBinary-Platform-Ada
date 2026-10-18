@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
+with org.allbinary.game.ag.ai.InputProbability_Package; use org.allbinary.game.ag.ai.InputProbability_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package; use org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package;
+
 package body org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package is
 
+   package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
+   package InputProbability_Package renames Standard.org.allbinary.game.ag.ai.InputProbability_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
    procedure Initialize_Fields (This : in out BasicRandomAIFactory'Class) is
    begin
       null;
@@ -46,7 +54,7 @@ package body org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package is
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Visitor Provided")));
         end if;
         inputProbability := InputProbability_Access (hashtable.get (Java_Object_Access (InputProbability_Package.INPUT_PROBABILITY)));
-        return BasicRandomAI_Package.Create (ownerLayerInterface, gameInput, inputProbability, visitor);
+        return ArtificialIntelligenceInterface_Access (BasicRandomAI_Package.Create (ownerLayerInterface, gameInput, inputProbability, visitor));
    end getInstance;
 
    procedure getInstance (This : in out BasicRandomAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is

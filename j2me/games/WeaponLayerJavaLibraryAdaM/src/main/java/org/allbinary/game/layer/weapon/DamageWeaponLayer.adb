@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Package; use org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Package;
+
 package body org.allbinary.game.layer.weapon.DamageWeaponLayer_Package is
 
    procedure Initialize_Fields (This : in out DamageWeaponLayer'Class) is

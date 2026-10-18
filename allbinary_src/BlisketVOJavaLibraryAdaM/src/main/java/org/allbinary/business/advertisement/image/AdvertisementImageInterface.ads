@@ -30,6 +30,8 @@ package org.allbinary.business.advertisement.image.AdvertisementImageInterface_P
    type AdvertisementImageInterface_Access is access all AdvertisementImageInterface'Class;
    type AdvertisementImageInterface_Access_Array is array (Natural range <>) of AdvertisementImageInterface_Access;
    type AdvertisementImageInterface_Access_Array_Access is access all AdvertisementImageInterface_Access_Array;
+   type AdvertisementImageInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementImageInterface_Access_Array_Access;
+   type AdvertisementImageInterface_Access_Array_Access_Array_Access is access all AdvertisementImageInterface_Access_Array_Access_Array;
    function getFileName (This : in out AdvertisementImageInterface) return Unbounded_String is abstract;
    function getUrl (This : in out AdvertisementImageInterface) return Unbounded_String is abstract;
    function getTwoDimensionalConstraint (This : in out AdvertisementImageInterface) return TwoDimensionalConstraintInterface_Access is abstract;

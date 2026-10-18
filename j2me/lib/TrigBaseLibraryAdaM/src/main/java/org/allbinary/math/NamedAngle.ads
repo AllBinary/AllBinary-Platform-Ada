@@ -20,21 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
-with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 
 package org.allbinary.math.NamedAngle_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
-   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type NamedAngle is tagged;
    type NamedAngle_Access is access all NamedAngle'Class;
    type NamedAngle_Access_Array is array (Natural range <>) of NamedAngle_Access;
    type NamedAngle_Access_Array_Access is access all NamedAngle_Access_Array;
+   type NamedAngle_Access_Array_Access_Array is array (Natural range <>) of NamedAngle_Access_Array_Access;
+   type NamedAngle_Access_Array_Access_Array_Access is access all NamedAngle_Access_Array_Access_Array;
 
    type NamedAngle is new Angle with record
       name : Unbounded_String;

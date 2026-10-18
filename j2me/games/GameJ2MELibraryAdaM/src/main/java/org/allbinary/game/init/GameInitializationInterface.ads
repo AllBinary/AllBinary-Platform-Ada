@@ -32,6 +32,8 @@ package org.allbinary.game.init.GameInitializationInterface_Package is
    type GameInitializationInterface_Access is access all GameInitializationInterface'Class;
    type GameInitializationInterface_Access_Array is array (Natural range <>) of GameInitializationInterface_Access;
    type GameInitializationInterface_Access_Array_Access is access all GameInitializationInterface_Access_Array;
+   type GameInitializationInterface_Access_Array_Access_Array is array (Natural range <>) of GameInitializationInterface_Access_Array_Access;
+   type GameInitializationInterface_Access_Array_Access_Array_Access is access all GameInitializationInterface_Access_Array_Access_Array;
    procedure init (This : in out GameInitializationInterface; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; level : Integer) is abstract;
 
 end org.allbinary.game.init.GameInitializationInterface_Package;

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+
 package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package is
 
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    procedure Initialize_Fields (This : in out LogConfigTypeFactory'Class) is
    begin
       null;

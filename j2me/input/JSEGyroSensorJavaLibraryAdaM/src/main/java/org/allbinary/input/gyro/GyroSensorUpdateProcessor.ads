@@ -30,6 +30,8 @@ package org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package is
    type GyroSensorUpdateProcessor_Access is access all GyroSensorUpdateProcessor'Class;
    type GyroSensorUpdateProcessor_Access_Array is array (Natural range <>) of GyroSensorUpdateProcessor_Access;
    type GyroSensorUpdateProcessor_Access_Array_Access is access all GyroSensorUpdateProcessor_Access_Array;
+   type GyroSensorUpdateProcessor_Access_Array_Access_Array is array (Natural range <>) of GyroSensorUpdateProcessor_Access_Array_Access;
+   type GyroSensorUpdateProcessor_Access_Array_Access_Array_Access is access all GyroSensorUpdateProcessor_Access_Array_Access_Array;
 
    type GyroSensorUpdateProcessor is new Processor with null record;
 

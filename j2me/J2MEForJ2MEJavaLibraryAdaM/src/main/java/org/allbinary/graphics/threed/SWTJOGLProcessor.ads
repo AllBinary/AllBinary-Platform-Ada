@@ -22,7 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
-with org.allbinary.graphics.threed.Runnable_Package; use org.allbinary.graphics.threed.Runnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 with org.allbinary.graphics.threed.RatioProcessor_Package; use org.allbinary.graphics.threed.RatioProcessor_Package;
 
 package org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
@@ -34,8 +34,10 @@ package org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
    type SWTJOGLProcessor_Access is access all SWTJOGLProcessor'Class;
    type SWTJOGLProcessor_Access_Array is array (Natural range <>) of SWTJOGLProcessor_Access;
    type SWTJOGLProcessor_Access_Array_Access is access all SWTJOGLProcessor_Access_Array;
+   type SWTJOGLProcessor_Access_Array_Access_Array is array (Natural range <>) of SWTJOGLProcessor_Access_Array_Access;
+   type SWTJOGLProcessor_Access_Array_Access_Array_Access is access all SWTJOGLProcessor_Access_Array_Access_Array;
 
-   type SWTJOGLProcessor is new Runnable with null record;
+   type SWTJOGLProcessor is new Java_Object and Runnable with null record;
    instance : SWTJOGLProcessor_Access;
 
    procedure Initialize (This : in out SWTJOGLProcessor'Class);
@@ -65,6 +67,8 @@ package org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
    procedure stringWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; str : Unbounded_String);
    function substringWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; str : Unbounded_String; offset : Integer; len : Integer) return Integer;
    procedure substringWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; str : Unbounded_String; offset : Integer; len : Integer);
+   procedure setRenderer (This : in out SWTJOGLProcessor; Value : Unbounded_String);
+   procedure onSurfaceChangedForEvent (This : in out SWTJOGLProcessor; Value : Unbounded_String);
 
 end org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
 

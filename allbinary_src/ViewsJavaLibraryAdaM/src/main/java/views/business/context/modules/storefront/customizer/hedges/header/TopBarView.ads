@@ -42,6 +42,8 @@ package views.business.context.modules.storefront.customizer.hedges.header.TopBa
    type TopBarView_Access is access all TopBarView'Class;
    type TopBarView_Access_Array is array (Natural range <>) of TopBarView_Access;
    type TopBarView_Access_Array_Access is access all TopBarView_Access_Array;
+   type TopBarView_Access_Array_Access_Array is array (Natural range <>) of TopBarView_Access_Array_Access;
+   type TopBarView_Access_Array_Access_Array_Access is access all TopBarView_Access_Array_Access_Array;
 
    type TopBarView is new HttpStoreComponentView and DomNodeInterface with record
       logUtil : LogUtil_Access;

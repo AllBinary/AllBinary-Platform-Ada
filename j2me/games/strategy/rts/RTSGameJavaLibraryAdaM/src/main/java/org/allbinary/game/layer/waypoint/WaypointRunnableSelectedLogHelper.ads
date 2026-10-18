@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package; use org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
 
 package org.allbinary.game.layer.waypoint.WaypointRunnableSelectedLogHelper_Package is
@@ -31,12 +30,13 @@ package org.allbinary.game.layer.waypoint.WaypointRunnableSelectedLogHelper_Pack
    package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type WaypointRunnableSelectedLogHelper is tagged;
    type WaypointRunnableSelectedLogHelper_Access is access all WaypointRunnableSelectedLogHelper'Class;
    type WaypointRunnableSelectedLogHelper_Access_Array is array (Natural range <>) of WaypointRunnableSelectedLogHelper_Access;
    type WaypointRunnableSelectedLogHelper_Access_Array_Access is access all WaypointRunnableSelectedLogHelper_Access_Array;
+   type WaypointRunnableSelectedLogHelper_Access_Array_Access_Array is array (Natural range <>) of WaypointRunnableSelectedLogHelper_Access_Array_Access;
+   type WaypointRunnableSelectedLogHelper_Access_Array_Access_Array_Access is access all WaypointRunnableSelectedLogHelper_Access_Array_Access_Array;
 
    type WaypointRunnableSelectedLogHelper is new WaypointRunnableLogHelper with record
       logUtil : LogUtil_Access;

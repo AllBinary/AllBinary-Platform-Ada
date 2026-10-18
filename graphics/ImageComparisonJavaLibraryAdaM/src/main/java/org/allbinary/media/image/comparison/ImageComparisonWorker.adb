@@ -13,14 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package; use org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResultCacheSingleton_Package; use org.allbinary.media.image.comparison.ImageComparisonResultCacheSingleton_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package; use org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package;
+
 package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    procedure Initialize_Fields (This : in out ImageComparisonWorker'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.bufferedImageVector := BasicArrayListD_Package.Create;
+      This.bufferedImageVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
       
       This.running := False;
@@ -57,7 +72,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
    procedure onCaptureEvent (This : in out ImageComparisonWorker; capturedImageWorkerResultsEvent_Param : access CapturedImageWorkerResultsEvent_Package.CapturedImageWorkerResultsEvent'Class) is
       capturedImageWorkerResultsEvent : constant CapturedImageWorkerResultsEvent_Access := CapturedImageWorkerResultsEvent_Access (capturedImageWorkerResultsEvent_Param);
    begin
-        This.bufferedImageVector.add (capturedImageWorkerResultsEvent);
+        This.bufferedImageVector.add (Java_Object_Access (capturedImageWorkerResultsEvent));
         if (This.bufferedImageVector.size) > (1) then
             ImageComparisonWorker'Class (This).run;
         end if;

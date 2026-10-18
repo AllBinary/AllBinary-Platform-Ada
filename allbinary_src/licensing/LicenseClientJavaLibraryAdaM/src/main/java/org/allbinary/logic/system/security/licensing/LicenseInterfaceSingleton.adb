@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
+
 package body org.allbinary.logic.system.security.licensing.LicenseInterfaceSingleton_Package is
 
    procedure Initialize_Fields (This : in out LicenseInterfaceSingleton'Class) is

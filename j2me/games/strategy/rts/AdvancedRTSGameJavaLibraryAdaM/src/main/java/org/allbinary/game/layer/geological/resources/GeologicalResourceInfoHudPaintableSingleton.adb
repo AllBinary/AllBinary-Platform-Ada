@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package is
 
    procedure Initialize_Fields (This : in out GeologicalResourceInfoHudPaintableSingleton'Class) is

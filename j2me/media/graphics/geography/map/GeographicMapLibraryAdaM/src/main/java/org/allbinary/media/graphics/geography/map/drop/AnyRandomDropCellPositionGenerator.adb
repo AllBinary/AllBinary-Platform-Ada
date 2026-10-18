@@ -13,12 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+
 package body org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    procedure Initialize_Fields (This : in out AnyRandomDropCellPositionGenerator'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.geographicMapInterface := NullUtil_Package.getInstance.NULL_OBJECT;
    end Initialize_Fields;
 
@@ -49,7 +62,7 @@ package body org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPo
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       index : Integer;
    begin
-        This.geographicMapInterface := geographicMapInterface;
+        This.geographicMapInterface := Java_Object_Access (geographicMapInterface);
         basicGeographicMapCellPositionFactory := geographicMapInterface.getGeographicMapCellPositionFactory;
         randomFactory := MyRandomFactory_Package.getInstance;
         tiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
@@ -63,7 +76,7 @@ package body org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPo
             randomRow := randomFactory.getAbsoluteNextInt (tiledLayer.getRows);
             geographicMapCellPosition := basicGeographicMapCellPositionFactory.getAt (randomColumn, randomRow);
             if AnyRandomDropCellPositionGenerator'Class (This).isDropAllowedAt (geographicMapCellPosition) then
-                This.list.add (geographicMapCellPosition);
+                This.list.add (Java_Object_Access (geographicMapCellPosition));
             end if;
         end loop;
    end update;

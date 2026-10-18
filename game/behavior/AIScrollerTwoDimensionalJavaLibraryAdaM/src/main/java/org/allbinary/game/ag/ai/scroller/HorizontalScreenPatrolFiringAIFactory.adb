@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package; use org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package;
+
 package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolFiringAIFactory_Package is
 
    procedure Initialize_Fields (This : in out HorizontalScreenPatrolFiringAIFactory'Class) is
@@ -39,7 +41,7 @@ package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolFiringAIFac
       ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
       gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
    begin
-        return HorizontalScreenPatrolAI_Package.Create (hashtable, ownerLayerInterface, gameInput);
+        return ArtificialIntelligenceInterface_Access (HorizontalScreenPatrolAI_Package.Create (hashtable, ownerLayerInterface, gameInput));
    end getInstance;
 
    procedure getInstance (This : in out HorizontalScreenPatrolFiringAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is

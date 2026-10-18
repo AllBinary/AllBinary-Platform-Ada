@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io.file.FileFactory_Package;
+with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.logic.io.file.directory.Directory_Package is
 
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
+   package FileWrapperUtil_Package renames Standard.org.allbinary.logic.io.file.FileWrapperUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out Directory'Class) is
    begin
       null;
@@ -108,7 +117,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
       size : Integer;
       index : Integer;
    begin
-        fileList := BasicArrayListD_Package.Create;
+        fileList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         recursiveFileList := null;
         if file.isDirectory then
             fileArray := file.listFilesFileFilter (fileFilter);
@@ -145,7 +154,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
       files : AbFile_Access_Array_Access;
       index : Integer;
    begin
-        fileList := BasicArrayListD_Package.Create;
+        fileList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         recursiveFileList := null;
         if file.isDirectory then
             fileArray := file.listFiles;
@@ -181,7 +190,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
       files : AbFile_Access_Array_Access;
       index : Integer;
    begin
-        fileList := BasicArrayListD_Package.Create;
+        fileList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         recursiveFileList := null;
         if file.isDirectory then
             fileArray := file.listFiles;
@@ -219,7 +228,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
       files : AbFile_Access_Array_Access;
       index : Integer;
    begin
-        fileList := BasicArrayListD_Package.Create;
+        fileList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         recursiveFileList := null;
         if file.isDirectory then
             fileArray := file.listFiles;

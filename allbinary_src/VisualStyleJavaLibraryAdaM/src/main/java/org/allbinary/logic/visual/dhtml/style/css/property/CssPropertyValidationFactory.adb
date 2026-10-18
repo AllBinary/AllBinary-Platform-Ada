@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyValidation_Package; use org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyValidation_Package;
+
 package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidationFactory_Package is
 
+   package FontFamilyValidation_Package renames Standard.org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyValidation_Package;
    procedure Initialize_Fields (This : in out CssPropertyValidationFactory'Class) is
    begin
       null;

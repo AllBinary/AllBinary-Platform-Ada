@@ -13,14 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
+with org.allbinary.game.identification.BasicGroupFactory_Package; use org.allbinary.game.identification.BasicGroupFactory_Package;
+with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
+with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.game.part.weapon.BasicWeaponPart_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.game.layer.FakeLayerManager_Package; use org.allbinary.game.layer.FakeLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+
 package body org.allbinary.game.layer.RTSLayerUtil_Package is
 
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
+   package PartInterface_Package renames Standard.org.allbinary.game.part.PartInterface_Package;
+   package BasicWeaponPart_Package renames Standard.org.allbinary.game.part.weapon.BasicWeaponPart_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    procedure Initialize_Fields (This : in out RTSLayerUtil'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.groupCommonFactory := GroupCommonFactory_Package.getInstance;
-      This.MAX_RELOAD_TIME := (Long_Long_Integer (Integer_Package.MAX_VALUE)) / (100000);
+      This.MAX_RELOAD_TIME := (Long_Long_Integer (Integer'Last)) / (100000);
    end Initialize_Fields;
 
    procedure Initialize (This : in out RTSLayerUtil'Class) is

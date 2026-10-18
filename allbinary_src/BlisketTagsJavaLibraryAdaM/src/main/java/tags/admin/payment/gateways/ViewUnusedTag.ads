@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
 
 package tags.admin.payment.gateways.ViewUnusedTag_Package is
 
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type ViewUnusedTag is tagged;
    type ViewUnusedTag_Access is access all ViewUnusedTag'Class;
    type ViewUnusedTag_Access_Array is array (Natural range <>) of ViewUnusedTag_Access;
    type ViewUnusedTag_Access_Array_Access is access all ViewUnusedTag_Access_Array;
+   type ViewUnusedTag_Access_Array_Access_Array is array (Natural range <>) of ViewUnusedTag_Access_Array_Access;
+   type ViewUnusedTag_Access_Array_Access_Array_Access is access all ViewUnusedTag_Access_Array_Access_Array;
 
    type ViewUnusedTag is new StoreValidationTransformTag with null record;
 

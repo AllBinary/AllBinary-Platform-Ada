@@ -31,6 +31,8 @@ package org.allbinary.game.displayable.canvas.GameProcessor_Package is
    type GameProcessor_Access is access all GameProcessor'Class;
    type GameProcessor_Access_Array is array (Natural range <>) of GameProcessor_Access;
    type GameProcessor_Access_Array_Access is access all GameProcessor_Access_Array;
+   type GameProcessor_Access_Array_Access_Array is array (Natural range <>) of GameProcessor_Access_Array_Access;
+   type GameProcessor_Access_Array_Access_Array_Access is access all GameProcessor_Access_Array_Access_Array;
 
    type GameProcessor is new Processor with record
       gameCanvas : AllBinaryGameCanvas_Access;

@@ -16,6 +16,8 @@ package java.lang.Deprecated_Package is
    type Deprecated_Access is access all Deprecated'Class;
    type Deprecated_Access_Array is array (Natural range <>) of Deprecated_Access;
    type Deprecated_Access_Array_Access is access all Deprecated_Access_Array;
+   type Deprecated_Access_Array_Access_Array is array (Natural range <>) of Deprecated_Access_Array_Access;
+   type Deprecated_Access_Array_Access_Array_Access is access all Deprecated_Access_Array_Access_Array;
 
    type Deprecated is new Java_Object with null record;
 

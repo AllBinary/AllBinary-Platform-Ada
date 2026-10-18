@@ -13,12 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package is
 
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out GeographicMapEventHandler'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -44,8 +49,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapEventHandle
    procedure addListener (This : in out GeographicMapEventHandler; gameLayer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is
       gameLayer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (gameLayer_Param);
    begin
-        if not (This.list.contains (gameLayer)) then
-            This.list.add (gameLayer);
+        if not (This.list.contains (Java_Object_Access (gameLayer))) then
+            This.list.add (Java_Object_Access (gameLayer));
         end if;
    end addListener;
 
@@ -58,7 +63,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapEventHandle
    procedure removeListener (This : in out GeographicMapEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.list.remove (eventListenerInterface);
+        This.list.remove (Java_Object_Access (eventListenerInterface));
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 

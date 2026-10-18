@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 
 package org.allbinary.graphics.opengles.shader.ModelViewProjection_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type ModelViewProjection is tagged;
    type ModelViewProjection_Access is access all ModelViewProjection'Class;
    type ModelViewProjection_Access_Array is array (Natural range <>) of ModelViewProjection_Access;
    type ModelViewProjection_Access_Array_Access is access all ModelViewProjection_Access_Array;
+   type ModelViewProjection_Access_Array_Access_Array is array (Natural range <>) of ModelViewProjection_Access_Array_Access;
+   type ModelViewProjection_Access_Array_Access_Array_Access is access all ModelViewProjection_Access_Array_Access_Array;
 
    type ModelViewProjection is new Java_Object with null record;
    instance : ModelViewProjection_Access;

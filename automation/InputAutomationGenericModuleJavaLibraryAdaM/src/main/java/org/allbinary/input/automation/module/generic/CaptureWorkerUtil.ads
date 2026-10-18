@@ -21,23 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.input.automation.module.generic_Id.CaptureWorkerUtil_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package ProfileActionScriptConditionInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CaptureWorkerUtil is tagged;
    type CaptureWorkerUtil_Access is access all CaptureWorkerUtil'Class;
    type CaptureWorkerUtil_Access_Array is array (Natural range <>) of CaptureWorkerUtil_Access;
    type CaptureWorkerUtil_Access_Array_Access is access all CaptureWorkerUtil_Access_Array;
+   type CaptureWorkerUtil_Access_Array_Access_Array is array (Natural range <>) of CaptureWorkerUtil_Access_Array_Access;
+   type CaptureWorkerUtil_Access_Array_Access_Array_Access is access all CaptureWorkerUtil_Access_Array_Access_Array;
 
    type CaptureWorkerUtil is new Java_Object with record
       logUtil : LogUtil_Access;

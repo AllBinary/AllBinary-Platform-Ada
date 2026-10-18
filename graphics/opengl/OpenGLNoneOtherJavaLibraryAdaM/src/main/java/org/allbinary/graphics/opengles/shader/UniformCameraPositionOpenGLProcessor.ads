@@ -32,6 +32,8 @@ package org.allbinary.graphics.opengles.shader.UniformCameraPositionOpenGLProces
    type UniformCameraPositionOpenGLProcessor_Access is access all UniformCameraPositionOpenGLProcessor'Class;
    type UniformCameraPositionOpenGLProcessor_Access_Array is array (Natural range <>) of UniformCameraPositionOpenGLProcessor_Access;
    type UniformCameraPositionOpenGLProcessor_Access_Array_Access is access all UniformCameraPositionOpenGLProcessor_Access_Array;
+   type UniformCameraPositionOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of UniformCameraPositionOpenGLProcessor_Access_Array_Access;
+   type UniformCameraPositionOpenGLProcessor_Access_Array_Access_Array_Access is access all UniformCameraPositionOpenGLProcessor_Access_Array_Access_Array;
 
    type UniformCameraPositionOpenGLProcessor is new OpenGLObject3dProcessor with null record;
 

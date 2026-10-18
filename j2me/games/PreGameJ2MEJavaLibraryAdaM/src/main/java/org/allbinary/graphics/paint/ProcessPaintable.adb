@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.paint.ProcessPaintable_Package is
 
    procedure Initialize_Fields (This : in out ProcessPaintable'Class) is

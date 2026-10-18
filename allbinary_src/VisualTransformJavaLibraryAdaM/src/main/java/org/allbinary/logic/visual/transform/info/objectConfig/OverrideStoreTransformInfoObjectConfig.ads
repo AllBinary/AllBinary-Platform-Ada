@@ -35,6 +35,8 @@ package org.allbinary.logic.visual.transform.info.objectConfig.OverrideStoreTran
    type OverrideStoreTransformInfoObjectConfig_Access is access all OverrideStoreTransformInfoObjectConfig'Class;
    type OverrideStoreTransformInfoObjectConfig_Access_Array is array (Natural range <>) of OverrideStoreTransformInfoObjectConfig_Access;
    type OverrideStoreTransformInfoObjectConfig_Access_Array_Access is access all OverrideStoreTransformInfoObjectConfig_Access_Array;
+   type OverrideStoreTransformInfoObjectConfig_Access_Array_Access_Array is array (Natural range <>) of OverrideStoreTransformInfoObjectConfig_Access_Array_Access;
+   type OverrideStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access is access all OverrideStoreTransformInfoObjectConfig_Access_Array_Access_Array;
 
    type OverrideStoreTransformInfoObjectConfig is new GenericStoreTransformInfoObjectConfig with null record;
 

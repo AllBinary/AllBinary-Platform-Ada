@@ -20,37 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.persistance.GameConfigurationPersistanceSingleton_Package; use org.allbinary.game.configuration.persistance.GameConfigurationPersistanceSingleton_Package;
-with org.allbinary.game.configuration.persistance.KeyValuePersistance_Package; use org.allbinary.game.configuration.persistance.KeyValuePersistance_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package; use org.allbinary.game.configuration.GameConfiguration_Package;
 
 package org.allbinary.game.configuration.GameConfigurationCentral_Package is
 
-   package GameConfigurationPersistanceSingleton_Package renames Standard.org.allbinary.game.configuration.persistance.GameConfigurationPersistanceSingleton_Package;
-   package KeyValuePersistance_Package renames Standard.org.allbinary.game.configuration.persistance.KeyValuePersistance_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type GameConfigurationCentral is tagged;
    type GameConfigurationCentral_Access is access all GameConfigurationCentral'Class;
    type GameConfigurationCentral_Access_Array is array (Natural range <>) of GameConfigurationCentral_Access;
    type GameConfigurationCentral_Access_Array_Access is access all GameConfigurationCentral_Access_Array;
+   type GameConfigurationCentral_Access_Array_Access_Array is array (Natural range <>) of GameConfigurationCentral_Access_Array_Access;
+   type GameConfigurationCentral_Access_Array_Access_Array_Access is access all GameConfigurationCentral_Access_Array_Access_Array;
 
    type GameConfigurationCentral is new Java_Object with record
       logUtil : LogUtil_Access;

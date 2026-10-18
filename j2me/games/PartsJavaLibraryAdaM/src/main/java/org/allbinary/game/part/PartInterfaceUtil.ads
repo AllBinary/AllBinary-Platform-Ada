@@ -29,6 +29,8 @@ package org.allbinary.game.part.PartInterfaceUtil_Package is
    type PartInterfaceUtil_Access is access all PartInterfaceUtil'Class;
    type PartInterfaceUtil_Access_Array is array (Natural range <>) of PartInterfaceUtil_Access;
    type PartInterfaceUtil_Access_Array_Access is access all PartInterfaceUtil_Access_Array;
+   type PartInterfaceUtil_Access_Array_Access_Array is array (Natural range <>) of PartInterfaceUtil_Access_Array_Access;
+   type PartInterfaceUtil_Access_Array_Access_Array_Access is access all PartInterfaceUtil_Access_Array_Access_Array;
 
    type PartInterfaceUtil is new Java_Object with null record;
    SINGLETON : PartInterface_Access_Array_Access;

@@ -29,8 +29,10 @@ package org.allbinary.game.combat.damage.DamageableBaseBehavior_Package is
    type DamageableBaseBehavior_Access is access all DamageableBaseBehavior'Class;
    type DamageableBaseBehavior_Access_Array is array (Natural range <>) of DamageableBaseBehavior_Access;
    type DamageableBaseBehavior_Access_Array_Access is access all DamageableBaseBehavior_Access_Array;
+   type DamageableBaseBehavior_Access_Array_Access_Array is array (Natural range <>) of DamageableBaseBehavior_Access_Array_Access;
+   type DamageableBaseBehavior_Access_Array_Access_Array_Access is access all DamageableBaseBehavior_Access_Array_Access_Array;
 
-   type DamageableBaseBehavior is new DamageableInterface with null record;
+   type DamageableBaseBehavior is new Java_Object and DamageableInterface with null record;
    instance : DamageableBaseBehavior_Access;
 
    procedure Initialize (This : in out DamageableBaseBehavior'Class);

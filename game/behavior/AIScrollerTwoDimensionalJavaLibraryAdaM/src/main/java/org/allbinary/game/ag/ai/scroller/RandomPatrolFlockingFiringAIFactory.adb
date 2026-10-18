@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.ai.ArrayAI_Package; use org.allbinary.game.ag.ai.ArrayAI_Package;
+with org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package; use org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package;
+with org.allbinary.game.ag.ai.scroller.TimedFireAI_Package; use org.allbinary.game.ag.ai.scroller.TimedFireAI_Package;
+
 package body org.allbinary.game.ag.ai.scroller.RandomPatrolFlockingFiringAIFactory_Package is
 
+   package ArrayAI_Package renames Standard.org.allbinary.game.ag.ai.ArrayAI_Package;
    procedure Initialize_Fields (This : in out RandomPatrolFlockingFiringAIFactory'Class) is
    begin
       null;
@@ -43,7 +48,7 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolFlockingFiringAIFacto
         artificialIntelligenceInterface := new ArtificialIntelligenceInterface_Access_Array'(0 .. (2) - 1 => null);
         artificialIntelligenceInterface (0) := RandomPatrolAI_Package.Create (hashtable, ownerLayerInterface, gameInput);
         artificialIntelligenceInterface (1) := TimedFireAI_Package.Create (1800, ownerLayerInterface, gameInput);
-        return ArrayAI_Package.Create (artificialIntelligenceInterface, ownerLayerInterface, gameInput);
+        return ArtificialIntelligenceInterface_Access (ArrayAI_Package.Create (artificialIntelligenceInterface, ownerLayerInterface, gameInput));
    end getInstance;
 
    procedure getInstance (This : in out RandomPatrolFlockingFiringAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is

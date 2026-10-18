@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 
 package org.allbinary.game.input.GameInputProcessorUtil_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.game.input.GameInputProcessorUtil_Package is
    type GameInputProcessorUtil_Access is access all GameInputProcessorUtil'Class;
    type GameInputProcessorUtil_Access_Array is array (Natural range <>) of GameInputProcessorUtil_Access;
    type GameInputProcessorUtil_Access_Array_Access is access all GameInputProcessorUtil_Access_Array;
+   type GameInputProcessorUtil_Access_Array_Access_Array is array (Natural range <>) of GameInputProcessorUtil_Access_Array_Access;
+   type GameInputProcessorUtil_Access_Array_Access_Array_Access is access all GameInputProcessorUtil_Access_Array_Access_Array;
 
    type GameInputProcessorUtil is new Java_Object with null record;
 

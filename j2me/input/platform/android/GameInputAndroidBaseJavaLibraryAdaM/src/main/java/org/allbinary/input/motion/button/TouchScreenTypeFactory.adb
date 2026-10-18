@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with android.content.res.Configuration_Package; use android.content.res.Configuration_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
+with org.allbinary.input.motion.button.TouchScreenTypesFactory_Package; use org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
+
 package body org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
 
+   package Configuration_Package renames Standard.android.content.res.Configuration_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    procedure Initialize_Fields (This : in out TouchScreenTypeFactory'Class) is
    begin
       null;

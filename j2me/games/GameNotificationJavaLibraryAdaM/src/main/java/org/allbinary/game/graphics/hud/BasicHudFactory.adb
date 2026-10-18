@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.graphics.hud.BasicHudFactory_Package is
 
    procedure Initialize_Fields (This : in out BasicHudFactory'Class) is

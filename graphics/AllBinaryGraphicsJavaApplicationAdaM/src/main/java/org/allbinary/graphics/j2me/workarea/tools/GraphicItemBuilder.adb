@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package; use org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package;
+with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+
 package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Package is
 
    procedure Initialize_Fields (This : in out GraphicItemBuilder'Class) is
@@ -41,7 +44,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Packa
    begin
         graphicItemName := node.getNodeName;
         if (Java_Compare_To (graphicItemName, PointsDomUtil_Package.getInstance.LINES)) = (0) then
-            return LinesGraphicItem_Package.Create (node);
+            return GraphicItemInterface_Access (LinesGraphicItem_Package.Create (node));
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Graphic Item Does Not Exist: ") & graphicItemName));
         end if;

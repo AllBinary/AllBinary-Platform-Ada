@@ -33,6 +33,8 @@ package org.allbinary.graphics.form.FormPaintable_Package is
    type FormPaintable_Access is access all FormPaintable'Class;
    type FormPaintable_Access_Array is array (Natural range <>) of FormPaintable_Access;
    type FormPaintable_Access_Array_Access is access all FormPaintable_Access_Array;
+   type FormPaintable_Access_Array_Access_Array is array (Natural range <>) of FormPaintable_Access_Array_Access;
+   type FormPaintable_Access_Array_Access_Array_Access is access all FormPaintable_Access_Array_Access_Array;
 
    type FormPaintable is new Paintable with record
       form : PaintableForm_Access;

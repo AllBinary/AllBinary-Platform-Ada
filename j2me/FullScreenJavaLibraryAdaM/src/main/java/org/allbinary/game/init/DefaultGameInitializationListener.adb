@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.game.configuration.event.GameInitializedEventHandler_Package; use org.allbinary.game.configuration.event.GameInitializedEventHandler_Package;
+with org.allbinary.game.resource.FeatureResourceInitializationUtil_Package; use org.allbinary.game.resource.FeatureResourceInitializationUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+
 package body org.allbinary.game.init.DefaultGameInitializationListener_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package GameInitializedEventHandler_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedEventHandler_Package;
+   package FeatureResourceInitializationUtil_Package renames Standard.org.allbinary.game.resource.FeatureResourceInitializationUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    procedure Initialize_Fields (This : in out DefaultGameInitializationListener'Class) is
    begin
       null;

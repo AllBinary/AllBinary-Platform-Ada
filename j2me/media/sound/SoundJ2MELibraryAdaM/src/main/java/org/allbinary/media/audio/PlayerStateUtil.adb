@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+
 package body org.allbinary.media.audio.PlayerStateUtil_Package is
 
+   package Player_Package renames Standard.javax.microedition.media.Player_Package;
    procedure Initialize_Fields (This : in out PlayerStateUtil'Class) is
    begin
       null;

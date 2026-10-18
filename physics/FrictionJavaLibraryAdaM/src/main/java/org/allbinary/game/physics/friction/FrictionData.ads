@@ -28,6 +28,8 @@ package org.allbinary.game.physics.friction.FrictionData_Package is
    type FrictionData_Access is access all FrictionData'Class;
    type FrictionData_Access_Array is array (Natural range <>) of FrictionData_Access;
    type FrictionData_Access_Array_Access is access all FrictionData_Access_Array;
+   type FrictionData_Access_Array_Access_Array is array (Natural range <>) of FrictionData_Access_Array_Access;
+   type FrictionData_Access_Array_Access_Array_Access is access all FrictionData_Access_Array_Access_Array;
 
    type FrictionData is new Java_Object with null record;
    FRICTION_DENOMINATOR : Integer;

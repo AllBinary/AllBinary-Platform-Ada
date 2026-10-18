@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
@@ -29,7 +28,6 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 package org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
    package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
@@ -38,6 +36,8 @@ package org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_
    type DropCellPositionHistory_Access is access all DropCellPositionHistory'Class;
    type DropCellPositionHistory_Access_Array is array (Natural range <>) of DropCellPositionHistory_Access;
    type DropCellPositionHistory_Access_Array_Access is access all DropCellPositionHistory_Access_Array;
+   type DropCellPositionHistory_Access_Array_Access_Array is array (Natural range <>) of DropCellPositionHistory_Access_Array_Access;
+   type DropCellPositionHistory_Access_Array_Access_Array_Access is access all DropCellPositionHistory_Access_Array_Access_Array;
 
    type DropCellPositionHistory is new Java_Object with record
       cellPositionFactory : CellPositionFactory_Access;

@@ -28,6 +28,8 @@ package org.allbinary.logic.util.cache.CachePolicy_Package is
    type CachePolicy_Access is access all CachePolicy'Class;
    type CachePolicy_Access_Array is array (Natural range <>) of CachePolicy_Access;
    type CachePolicy_Access_Array_Access is access all CachePolicy_Access_Array;
+   type CachePolicy_Access_Array_Access_Array is array (Natural range <>) of CachePolicy_Access_Array_Access;
+   type CachePolicy_Access_Array_Access_Array_Access is access all CachePolicy_Access_Array_Access_Array;
 
    type CachePolicy is new Java_Object with record
       name : Unbounded_String;

@@ -30,6 +30,8 @@ package org.allbinary.game.physics.acceleration.GravityUtil_Package is
    type GravityUtil_Access is access all GravityUtil'Class;
    type GravityUtil_Access_Array is array (Natural range <>) of GravityUtil_Access;
    type GravityUtil_Access_Array_Access is access all GravityUtil_Access_Array;
+   type GravityUtil_Access_Array_Access_Array is array (Natural range <>) of GravityUtil_Access_Array_Access;
+   type GravityUtil_Access_Array_Access_Array_Access is access all GravityUtil_Access_Array_Access_Array;
 
    type GravityUtil is new Java_Object with record
       GAME_GRAVITY_VELOCITY : Integer;

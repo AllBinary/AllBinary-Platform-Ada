@@ -28,6 +28,8 @@ package org.allbinary.logic.io.file.FileData_Package is
    type FileData_Access is access all FileData'Class;
    type FileData_Access_Array is array (Natural range <>) of FileData_Access;
    type FileData_Access_Array_Access is access all FileData_Access_Array;
+   type FileData_Access_Array_Access_Array is array (Natural range <>) of FileData_Access_Array_Access;
+   type FileData_Access_Array_Access_Array_Access is access all FileData_Access_Array_Access_Array;
 
    type FileData is new Java_Object with record
       NAME : Unbounded_String;

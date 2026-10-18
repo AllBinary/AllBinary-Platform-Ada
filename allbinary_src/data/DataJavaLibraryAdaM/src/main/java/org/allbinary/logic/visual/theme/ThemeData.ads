@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.theme.ThemeData_Package is
    type ThemeData_Access is access all ThemeData'Class;
    type ThemeData_Access_Array is array (Natural range <>) of ThemeData_Access;
    type ThemeData_Access_Array_Access is access all ThemeData_Access_Array;
+   type ThemeData_Access_Array_Access_Array is array (Natural range <>) of ThemeData_Access_Array_Access;
+   type ThemeData_Access_Array_Access_Array_Access is access all ThemeData_Access_Array_Access_Array;
 
    type ThemeData is new Java_Object with record
       NAME : Unbounded_String;

@@ -32,6 +32,8 @@ package org.allbinary.android.NullAndroidCanvas_Package is
    type NullAndroidCanvas_Access is access all NullAndroidCanvas'Class;
    type NullAndroidCanvas_Access_Array is array (Natural range <>) of NullAndroidCanvas_Access;
    type NullAndroidCanvas_Access_Array_Access is access all NullAndroidCanvas_Access_Array;
+   type NullAndroidCanvas_Access_Array_Access_Array is array (Natural range <>) of NullAndroidCanvas_Access_Array_Access;
+   type NullAndroidCanvas_Access_Array_Access_Array_Access is access all NullAndroidCanvas_Access_Array_Access_Array;
 
    type NullAndroidCanvas is new Java_Object with null record;
    NULL_CANVAS : Canvas_Access;

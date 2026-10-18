@@ -1,8 +1,11 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+
 package body org.allbinary.graphics.form.item.ABCustomImageItem_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    procedure Initialize_Fields (This : in out ABCustomImageItem'Class) is
    begin
       null;

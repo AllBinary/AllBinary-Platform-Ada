@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package is
 
    procedure Initialize_Fields (This : in out InputAutomationRobotInterfaceWrapper'Class) is

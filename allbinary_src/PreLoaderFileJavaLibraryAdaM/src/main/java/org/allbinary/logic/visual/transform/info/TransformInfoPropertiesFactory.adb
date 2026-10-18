@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.w3c.dom.Attr_Package; use org.w3c.dom.Attr_Package;
+with org.w3c.dom.NamedNodeMap_Package; use org.w3c.dom.NamedNodeMap_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+
 package body org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFactory_Package is
 
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package Attr_Package renames Standard.org.w3c.dom.Attr_Package;
+   package NamedNodeMap_Package renames Standard.org.w3c.dom.NamedNodeMap_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out TransformInfoPropertiesFactory'Class) is
    begin
       null;

@@ -28,6 +28,8 @@ package org.allbinary.logic.util.queue.QueueInterface_Package is
    type QueueInterface_Access is access all QueueInterface'Class;
    type QueueInterface_Access_Array is array (Natural range <>) of QueueInterface_Access;
    type QueueInterface_Access_Array_Access is access all QueueInterface_Access_Array;
+   type QueueInterface_Access_Array_Access_Array is array (Natural range <>) of QueueInterface_Access_Array_Access;
+   type QueueInterface_Access_Array_Access_Array_Access is access all QueueInterface_Access_Array_Access_Array;
    function offer (This : in out QueueInterface; anyType_Param : access Java_Object'Class) return Boolean is abstract;
    procedure remove (This : in out QueueInterface; anyType_Param : access Java_Object'Class) is abstract;
    function remove (This : in out QueueInterface) return Java_Object_Access is abstract;

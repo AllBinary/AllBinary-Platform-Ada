@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with admin.taghelpers.AuthenticationHelper_Package; use admin.taghelpers.AuthenticationHelper_Package;
+
 package body admin.taghelpers.AuthenticationHelperFactory_Package is
 
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out AuthenticationHelperFactory'Class) is
    begin
       null;
@@ -42,7 +46,7 @@ package body admin.taghelpers.AuthenticationHelperFactory_Package is
       pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         begin
-            return AuthenticationHelper_Package.Create (hashMap, pageContext);
+            return Java_Object_Access (AuthenticationHelper_Package.Create (hashMap, pageContext));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -62,7 +66,7 @@ package body admin.taghelpers.AuthenticationHelperFactory_Package is
       httpServletRequest : constant HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
    begin
         begin
-            return AuthenticationHelper_Package.Create (hashMap, httpServletRequest);
+            return Java_Object_Access (AuthenticationHelper_Package.Create (hashMap, httpServletRequest));
         exception
             when Java_Occurrence : others =>
                 declare

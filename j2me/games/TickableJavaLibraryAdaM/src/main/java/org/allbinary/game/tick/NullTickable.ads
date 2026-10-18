@@ -31,8 +31,10 @@ package org.allbinary.game.tick.NullTickable_Package is
    type NullTickable_Access is access all NullTickable'Class;
    type NullTickable_Access_Array is array (Natural range <>) of NullTickable_Access;
    type NullTickable_Access_Array_Access is access all NullTickable_Access_Array;
+   type NullTickable_Access_Array_Access_Array is array (Natural range <>) of NullTickable_Access_Array_Access;
+   type NullTickable_Access_Array_Access_Array_Access is access all NullTickable_Access_Array_Access_Array;
 
-   type NullTickable is new TickableInterface with record
+   type NullTickable is new Java_Object and TickableInterface with record
       NAME : Unbounded_String;
    end record;
    SINGLETON : NullTickable_Access;

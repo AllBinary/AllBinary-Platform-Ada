@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+
 package body org.allbinary.media.image.CanvasExpandUtil_Package is
 
    procedure Initialize_Fields (This : in out CanvasExpandUtil'Class) is

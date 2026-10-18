@@ -13,15 +13,28 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package is
 
+   package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out GameMotionGestureListener'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.motionGestureCollection := BasicArrayListD_Package.Create;
-      This.touchGestureCollection := BasicArrayListD_Package.Create;
+      This.motionGestureCollection := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.touchGestureCollection := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
    end Initialize_Fields;
 
@@ -140,7 +153,7 @@ package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListen
             elsif (motionGestureInput) = (TouchMotionGestureFactory_Package.getInstance.RELEASED) then
                 GameMotionGestureListener'Class (This).released (ev);
             else
-                This.motionGestureCollection.add (motionGestureInput);
+                This.motionGestureCollection.add (Java_Object_Access (motionGestureInput));
                 This.signed.onMotionGestureCompleted (This.motionGestureCollection);
                 This.motionGestureCollection.clear;
                 This.touchGestureCollection.clear;

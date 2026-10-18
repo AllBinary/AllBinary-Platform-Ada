@@ -22,22 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package EmailServerConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BasicEmailInfo is tagged;
    type BasicEmailInfo_Access is access all BasicEmailInfo'Class;
    type BasicEmailInfo_Access_Array is array (Natural range <>) of BasicEmailInfo_Access;
    type BasicEmailInfo_Access_Array_Access is access all BasicEmailInfo_Access_Array;
+   type BasicEmailInfo_Access_Array_Access_Array is array (Natural range <>) of BasicEmailInfo_Access_Array_Access;
+   type BasicEmailInfo_Access_Array_Access_Array_Access is access all BasicEmailInfo_Access_Array_Access_Array;
 
    type BasicEmailInfo is new Java_Object with record
       logUtil : LogUtil_Access;

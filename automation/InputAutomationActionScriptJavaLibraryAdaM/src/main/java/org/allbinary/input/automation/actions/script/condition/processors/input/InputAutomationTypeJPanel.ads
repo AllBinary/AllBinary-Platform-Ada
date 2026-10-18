@@ -29,6 +29,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    type InputAutomationTypeJPanel_Access is access all InputAutomationTypeJPanel'Class;
    type InputAutomationTypeJPanel_Access_Array is array (Natural range <>) of InputAutomationTypeJPanel_Access;
    type InputAutomationTypeJPanel_Access_Array_Access is access all InputAutomationTypeJPanel_Access_Array;
+   type InputAutomationTypeJPanel_Access_Array_Access_Array is array (Natural range <>) of InputAutomationTypeJPanel_Access_Array_Access;
+   type InputAutomationTypeJPanel_Access_Array_Access_Array_Access is access all InputAutomationTypeJPanel_Access_Array_Access_Array;
 
    type InputAutomationTypeJPanel is new JPanel with record
       inputAutomationTypeJComboBox : JComboBox_Access;

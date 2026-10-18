@@ -28,6 +28,8 @@ package org.allbinary.animation.text.TextChangeListener_Package is
    type TextChangeListener_Access is access all TextChangeListener'Class;
    type TextChangeListener_Access_Array is array (Natural range <>) of TextChangeListener_Access;
    type TextChangeListener_Access_Array_Access is access all TextChangeListener_Access_Array;
+   type TextChangeListener_Access_Array_Access_Array is array (Natural range <>) of TextChangeListener_Access_Array_Access;
+   type TextChangeListener_Access_Array_Access_Array_Access is access all TextChangeListener_Access_Array_Access_Array;
 
    type TextChangeListener is new Java_Object with null record;
    instance : TextChangeListener_Access;

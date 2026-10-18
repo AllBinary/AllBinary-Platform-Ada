@@ -28,6 +28,8 @@ package org.allbinary.game.ag.layer.pickup.life.LifeResources_Package is
    type LifeResources_Access is access all LifeResources'Class;
    type LifeResources_Access_Array is array (Natural range <>) of LifeResources_Access;
    type LifeResources_Access_Array_Access is access all LifeResources_Access_Array;
+   type LifeResources_Access_Array_Access_Array is array (Natural range <>) of LifeResources_Access_Array_Access;
+   type LifeResources_Access_Array_Access_Array_Access is access all LifeResources_Access_Array_Access_Array;
 
    type LifeResources is new Java_Object with record
       RESOURCE : Unbounded_String;

@@ -28,6 +28,8 @@ package org.allbinary.logic.io.AbIOSystem_Package is
    type AbIOSystem_Access is access all AbIOSystem'Class;
    type AbIOSystem_Access_Array is array (Natural range <>) of AbIOSystem_Access;
    type AbIOSystem_Access_Array_Access is access all AbIOSystem_Access_Array;
+   type AbIOSystem_Access_Array_Access_Array is array (Natural range <>) of AbIOSystem_Access_Array_Access;
+   type AbIOSystem_Access_Array_Access_Array_Access is access all AbIOSystem_Access_Array_Access_Array;
 
    type AbIOSystem is new Java_Object with record
       type_Id : Unbounded_String;

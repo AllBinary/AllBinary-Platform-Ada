@@ -30,6 +30,8 @@ package org.allbinary.graphics.displayable.command.MyCommandInterface_Package is
    type MyCommandInterface_Access is access all MyCommandInterface'Class;
    type MyCommandInterface_Access_Array is array (Natural range <>) of MyCommandInterface_Access;
    type MyCommandInterface_Access_Array_Access is access all MyCommandInterface_Access_Array;
+   type MyCommandInterface_Access_Array_Access_Array is array (Natural range <>) of MyCommandInterface_Access_Array_Access;
+   type MyCommandInterface_Access_Array_Access_Array_Access is access all MyCommandInterface_Access_Array_Access_Array;
    procedure addCommand (This : in out MyCommandInterface; command_Param : access Command_Package.Command'Class) is abstract;
    procedure removeAllCommands (This : in out MyCommandInterface) is abstract;
 

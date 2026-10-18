@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.collision.RectangleCollisionUtil_Package; use org.allbinary.collision.RectangleCollisionUtil_Package;
+
 package body org.allbinary.input.automation.module.ImageComparatorConstraints_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package RectangleCollisionUtil_Package renames Standard.org.allbinary.collision.RectangleCollisionUtil_Package;
    procedure Initialize_Fields (This : in out ImageComparatorConstraints'Class) is
    begin
       null;

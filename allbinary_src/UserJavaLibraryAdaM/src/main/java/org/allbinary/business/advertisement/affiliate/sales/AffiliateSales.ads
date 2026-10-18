@@ -28,6 +28,8 @@ package org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Pack
    type AffiliateSales_Access is access all AffiliateSales'Class;
    type AffiliateSales_Access_Array is array (Natural range <>) of AffiliateSales_Access;
    type AffiliateSales_Access_Array_Access is access all AffiliateSales_Access_Array;
+   type AffiliateSales_Access_Array_Access_Array is array (Natural range <>) of AffiliateSales_Access_Array_Access;
+   type AffiliateSales_Access_Array_Access_Array_Access is access all AffiliateSales_Access_Array_Access_Array;
 
    type AffiliateSales is new Java_Object with null record;
 

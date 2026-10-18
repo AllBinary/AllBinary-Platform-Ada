@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
+
 package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package is
 
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out AbBasicCrypt'Class) is
    begin
       null;
@@ -58,7 +64,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
       commonStrings : CommonStrings_Access;
    begin
         begin
-            sunJce := SunJCE_Package.Create;
+            sunJce := Provider_Access (SunJCE_Package.Create);
             Security_Package.addProvider (sunJce);
             keySpec := KeySpecFactory_Package.getInstance.getInstance (This.algorithm, This.key);
             keyFactory := SecretKeyFactory_Package.getInstance (This.algorithm);

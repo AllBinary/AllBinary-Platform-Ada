@@ -20,22 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package is
 
-   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PartnerIdentifierFileUtil is tagged;
    type PartnerIdentifierFileUtil_Access is access all PartnerIdentifierFileUtil'Class;
    type PartnerIdentifierFileUtil_Access_Array is array (Natural range <>) of PartnerIdentifierFileUtil_Access;
    type PartnerIdentifierFileUtil_Access_Array_Access is access all PartnerIdentifierFileUtil_Access_Array;
+   type PartnerIdentifierFileUtil_Access_Array_Access_Array is array (Natural range <>) of PartnerIdentifierFileUtil_Access_Array_Access;
+   type PartnerIdentifierFileUtil_Access_Array_Access_Array_Access is access all PartnerIdentifierFileUtil_Access_Array_Access_Array;
 
    type PartnerIdentifierFileUtil is new Java_Object with record
       logUtil : LogUtil_Access;

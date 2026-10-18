@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
+
 package body views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
 
+   package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
    procedure Initialize_Fields (This : in out PaymentGatewayViewAbstract'Class) is
    begin
       null;

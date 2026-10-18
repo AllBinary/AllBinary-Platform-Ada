@@ -30,6 +30,8 @@ package org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Pac
    type ProceduralAnimationInterfaceFactoryInterface_Access is access all ProceduralAnimationInterfaceFactoryInterface'Class;
    type ProceduralAnimationInterfaceFactoryInterface_Access_Array is array (Natural range <>) of ProceduralAnimationInterfaceFactoryInterface_Access;
    type ProceduralAnimationInterfaceFactoryInterface_Access_Array_Access is access all ProceduralAnimationInterfaceFactoryInterface_Access_Array;
+   type ProceduralAnimationInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of ProceduralAnimationInterfaceFactoryInterface_Access_Array_Access;
+   type ProceduralAnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all ProceduralAnimationInterfaceFactoryInterface_Access_Array_Access_Array;
    function getInstanceAnimation (This : in out ProceduralAnimationInterfaceFactoryInterface; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is abstract;
 
 end org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;

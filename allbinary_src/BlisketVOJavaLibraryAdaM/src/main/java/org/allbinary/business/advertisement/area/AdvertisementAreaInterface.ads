@@ -29,6 +29,8 @@ package org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Pac
    type AdvertisementAreaInterface_Access is access all AdvertisementAreaInterface'Class;
    type AdvertisementAreaInterface_Access_Array is array (Natural range <>) of AdvertisementAreaInterface_Access;
    type AdvertisementAreaInterface_Access_Array_Access is access all AdvertisementAreaInterface_Access_Array;
+   type AdvertisementAreaInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementAreaInterface_Access_Array_Access;
+   type AdvertisementAreaInterface_Access_Array_Access_Array_Access is access all AdvertisementAreaInterface_Access_Array_Access_Array;
    function getName (This : in out AdvertisementAreaInterface) return Unbounded_String is abstract;
    function getStoreName (This : in out AdvertisementAreaInterface) return Unbounded_String is abstract;
    function getDescription (This : in out AdvertisementAreaInterface) return Unbounded_String is abstract;

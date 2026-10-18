@@ -21,23 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.input.motion.button.TouchScreenTypesFactory_Package; use org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
 with org.allbinary.input.motion.button.TouchScreenType_Package; use org.allbinary.input.motion.button.TouchScreenType_Package;
 
 package org.allbinary.input.motion.button.TouchScreenFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TouchScreenFactory is tagged;
    type TouchScreenFactory_Access is access all TouchScreenFactory'Class;
    type TouchScreenFactory_Access_Array is array (Natural range <>) of TouchScreenFactory_Access;
    type TouchScreenFactory_Access_Array_Access is access all TouchScreenFactory_Access_Array;
+   type TouchScreenFactory_Access_Array_Access_Array is array (Natural range <>) of TouchScreenFactory_Access_Array_Access;
+   type TouchScreenFactory_Access_Array_Access_Array_Access is access all TouchScreenFactory_Access_Array_Access_Array;
 
    type TouchScreenFactory is new Java_Object with record
       logUtil : LogUtil_Access;

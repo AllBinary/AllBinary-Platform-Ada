@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.file.CommonDataFileStrings_Package; use org.allbinary.logic.io.file.CommonDataFileStrings_Package;
+
 package body org.allbinary.business.context.configuration.ContextConfigurationData_Package is
 
+   package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
    procedure Initialize_Fields (This : in out ContextConfigurationData'Class) is
    begin
       null;

@@ -33,6 +33,8 @@ package org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Pack
    type SecretComposite_Access is access all SecretComposite'Class;
    type SecretComposite_Access_Array is array (Natural range <>) of SecretComposite_Access;
    type SecretComposite_Access_Array_Access is access all SecretComposite_Access_Array;
+   type SecretComposite_Access_Array_Access_Array is array (Natural range <>) of SecretComposite_Access_Array_Access;
+   type SecretComposite_Access_Array_Access_Array_Access is access all SecretComposite_Access_Array_Access_Array;
 
    type SecretComposite is new BaseSecretComposite with record
       byteUtil : ByteUtil_Access;

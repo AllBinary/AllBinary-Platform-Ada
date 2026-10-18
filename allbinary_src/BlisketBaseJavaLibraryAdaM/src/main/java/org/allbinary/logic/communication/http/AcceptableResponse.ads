@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.communication.http.AcceptableResponseUtil_Package; use org.allbinary.logic.communication.http.AcceptableResponseUtil_Package;
 
 package org.allbinary.logic.communication.http.AcceptableResponse_Package is
 
@@ -33,6 +32,8 @@ package org.allbinary.logic.communication.http.AcceptableResponse_Package is
    type AcceptableResponse_Access is access all AcceptableResponse'Class;
    type AcceptableResponse_Access_Array is array (Natural range <>) of AcceptableResponse_Access;
    type AcceptableResponse_Access_Array_Access is access all AcceptableResponse_Access_Array;
+   type AcceptableResponse_Access_Array_Access_Array is array (Natural range <>) of AcceptableResponse_Access_Array_Access;
+   type AcceptableResponse_Access_Array_Access_Array_Access is access all AcceptableResponse_Access_Array_Access_Array;
 
    type AcceptableResponse is new Java_Object with record
       logUtil : LogUtil_Access;

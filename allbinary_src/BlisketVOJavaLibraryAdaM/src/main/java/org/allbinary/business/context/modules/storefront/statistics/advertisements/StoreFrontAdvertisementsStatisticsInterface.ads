@@ -30,6 +30,8 @@ package org.allbinary.business.context.modules.storefront.statistics.advertiseme
    type StoreFrontAdvertisementsStatisticsInterface_Access is access all StoreFrontAdvertisementsStatisticsInterface'Class;
    type StoreFrontAdvertisementsStatisticsInterface_Access_Array is array (Natural range <>) of StoreFrontAdvertisementsStatisticsInterface_Access;
    type StoreFrontAdvertisementsStatisticsInterface_Access_Array_Access is access all StoreFrontAdvertisementsStatisticsInterface_Access_Array;
+   type StoreFrontAdvertisementsStatisticsInterface_Access_Array_Access_Array is array (Natural range <>) of StoreFrontAdvertisementsStatisticsInterface_Access_Array_Access;
+   type StoreFrontAdvertisementsStatisticsInterface_Access_Array_Access_Array_Access is access all StoreFrontAdvertisementsStatisticsInterface_Access_Array_Access_Array;
 
 end org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package;
 

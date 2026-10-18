@@ -34,6 +34,8 @@ package org.allbinary.business.context.modules.storefront.StoreFrontInterface_Pa
    type StoreFrontInterface_Access is access all StoreFrontInterface'Class;
    type StoreFrontInterface_Access_Array is array (Natural range <>) of StoreFrontInterface_Access;
    type StoreFrontInterface_Access_Array_Access is access all StoreFrontInterface_Access_Array;
+   type StoreFrontInterface_Access_Array_Access_Array is array (Natural range <>) of StoreFrontInterface_Access_Array_Access;
+   type StoreFrontInterface_Access_Array_Access_Array_Access is access all StoreFrontInterface_Access_Array_Access_Array;
    function isNameValid (This : in out StoreFrontInterface) return Boolean is abstract;
    function isValid (This : in out StoreFrontInterface) return Boolean is abstract;
    function nameValidationInfo (This : in out StoreFrontInterface) return Unbounded_String is abstract;

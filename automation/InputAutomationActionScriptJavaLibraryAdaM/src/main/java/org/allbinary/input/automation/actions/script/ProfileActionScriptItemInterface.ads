@@ -28,6 +28,8 @@ package org.allbinary.input.automation.actions.script.ProfileActionScriptItemInt
    type ProfileActionScriptItemInterface_Access is access all ProfileActionScriptItemInterface'Class;
    type ProfileActionScriptItemInterface_Access_Array is array (Natural range <>) of ProfileActionScriptItemInterface_Access;
    type ProfileActionScriptItemInterface_Access_Array_Access is access all ProfileActionScriptItemInterface_Access_Array;
+   type ProfileActionScriptItemInterface_Access_Array_Access_Array is array (Natural range <>) of ProfileActionScriptItemInterface_Access_Array_Access;
+   type ProfileActionScriptItemInterface_Access_Array_Access_Array_Access is access all ProfileActionScriptItemInterface_Access_Array_Access_Array;
    procedure process (This : in out ProfileActionScriptItemInterface; frame : Long_Long_Integer) is abstract;
 
 end org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package;

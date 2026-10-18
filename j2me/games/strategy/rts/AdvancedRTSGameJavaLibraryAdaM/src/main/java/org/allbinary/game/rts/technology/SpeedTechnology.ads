@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
-with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package; use org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
 
 package org.allbinary.game.rts.technology.SpeedTechnology_Package is
 
@@ -31,8 +30,10 @@ package org.allbinary.game.rts.technology.SpeedTechnology_Package is
    type SpeedTechnology_Access is access all SpeedTechnology'Class;
    type SpeedTechnology_Access_Array is array (Natural range <>) of SpeedTechnology_Access;
    type SpeedTechnology_Access_Array_Access is access all SpeedTechnology_Access_Array;
+   type SpeedTechnology_Access_Array_Access_Array is array (Natural range <>) of SpeedTechnology_Access_Array_Access;
+   type SpeedTechnology_Access_Array_Access_Array_Access is access all SpeedTechnology_Access_Array_Access_Array;
 
-   type SpeedTechnology is new RTSInterface with record
+   type SpeedTechnology is new Java_Object and RTSInterface with record
       level : Integer;
       maxLevel : Integer;
    end record;

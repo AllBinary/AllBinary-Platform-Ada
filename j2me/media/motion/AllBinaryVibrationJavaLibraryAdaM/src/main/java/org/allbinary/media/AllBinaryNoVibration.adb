@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.AllBinaryNoVibration_Package is
 
    procedure Initialize_Fields (This : in out AllBinaryNoVibration'Class) is
@@ -41,7 +42,7 @@ package body org.allbinary.media.AllBinaryNoVibration_Package is
 
 begin
    null;
-   NO_VIBRATION := AllBinaryNoVibration_Package.Create;
+   NO_VIBRATION := AllBinaryVibrationME_Access (AllBinaryNoVibration_Package.Create);
 
 end org.allbinary.media.AllBinaryNoVibration_Package;
 

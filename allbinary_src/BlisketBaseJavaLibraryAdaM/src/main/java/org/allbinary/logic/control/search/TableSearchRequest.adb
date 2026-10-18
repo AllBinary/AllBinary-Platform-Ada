@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.logic.control.search.SearchData_Package;
+
 package body org.allbinary.logic.control.search.TableSearchRequest_Package is
 
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    procedure Initialize_Fields (This : in out TableSearchRequest'Class) is
    begin
       null;
@@ -84,7 +92,7 @@ package body org.allbinary.logic.control.search.TableSearchRequest_Package is
    function getXslFile (This : in out TableSearchRequest) return Unbounded_String is
       path : Unbounded_String;
    begin
-        path := Java_Image ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH)) & This.xslFile;
+        path := Java_Image ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH)) & This.xslFile;
         return path;
    end getXslFile;
 

@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+
 package body org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
    procedure Initialize_Fields (This : in out IndexedBasicArrayListCache'Class) is
    begin
       null;
@@ -82,7 +91,7 @@ package body org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package i
    procedure add (This : in out IndexedBasicArrayListCache; cacheableInterface_Param : access CacheableInterface_Package.CacheableInterface'Class) is
       cacheableInterface : constant CacheableInterface_Access := CacheableInterface_Access (cacheableInterface_Param);
    begin
-        This.list.add (cacheableInterface);
+        This.list.add (Java_Object_Access (cacheableInterface));
    end add;
 
    --  throws Exception
@@ -109,6 +118,11 @@ package body org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package i
    begin
       null;
    end getAt;
+
+   procedure addObject (This : in out IndexedBasicArrayListCache; Value : Unbounded_String) is
+   begin
+      IndexedBasicArrayListCache'Class (This).addObject (Java_Box (Value));
+   end addObject;
 
 end org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package;
 

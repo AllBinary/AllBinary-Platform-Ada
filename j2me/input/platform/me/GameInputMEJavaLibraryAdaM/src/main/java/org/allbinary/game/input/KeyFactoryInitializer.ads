@@ -32,6 +32,8 @@ package org.allbinary.game.input.KeyFactoryInitializer_Package is
    type KeyFactoryInitializer_Access is access all KeyFactoryInitializer'Class;
    type KeyFactoryInitializer_Access_Array is array (Natural range <>) of KeyFactoryInitializer_Access;
    type KeyFactoryInitializer_Access_Array_Access is access all KeyFactoryInitializer_Access_Array;
+   type KeyFactoryInitializer_Access_Array_Access_Array is array (Natural range <>) of KeyFactoryInitializer_Access_Array_Access;
+   type KeyFactoryInitializer_Access_Array_Access_Array_Access is access all KeyFactoryInitializer_Access_Array_Access_Array;
 
    type KeyFactoryInitializer is new Init with record
       logUtil : LogUtil_Access;

@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.types.AuthorizationTy
    type AuthorizationType_Access is access all AuthorizationType'Class;
    type AuthorizationType_Access_Array is array (Natural range <>) of AuthorizationType_Access;
    type AuthorizationType_Access_Array_Access is access all AuthorizationType_Access_Array;
+   type AuthorizationType_Access_Array_Access_Array is array (Natural range <>) of AuthorizationType_Access_Array_Access;
+   type AuthorizationType_Access_Array_Access_Array_Access is access all AuthorizationType_Access_Array_Access_Array;
 
    type AuthorizationType is new Java_Object with record
       name : Unbounded_String;

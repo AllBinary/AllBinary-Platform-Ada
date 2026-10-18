@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
-with org.allbinary.media.image.io.IIOImageCacheable_Package; use org.allbinary.media.image.io.IIOImageCacheable_Package;
 
 package org.allbinary.media.image.io.IIOImageCacheableFactory_Package is
 
@@ -33,13 +32,17 @@ package org.allbinary.media.image.io.IIOImageCacheableFactory_Package is
    type IIOImageCacheableFactory_Access is access all IIOImageCacheableFactory'Class;
    type IIOImageCacheableFactory_Access_Array is array (Natural range <>) of IIOImageCacheableFactory_Access;
    type IIOImageCacheableFactory_Access_Array_Access is access all IIOImageCacheableFactory_Access_Array;
+   type IIOImageCacheableFactory_Access_Array_Access_Array is array (Natural range <>) of IIOImageCacheableFactory_Access_Array_Access;
+   type IIOImageCacheableFactory_Access_Array_Access_Array_Access is access all IIOImageCacheableFactory_Access_Array_Access_Array;
 
-   type IIOImageCacheableFactory is new CacheableInterfaceFactoryInterface with null record;
+   type IIOImageCacheableFactory is new Java_Object and CacheableInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out IIOImageCacheableFactory'Class);
    function Create return IIOImageCacheableFactory_Access;
    function getInstance (This : in out IIOImageCacheableFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access;
    procedure getInstance (This : in out IIOImageCacheableFactory; key_Param : access Java_Object'Class);
+   function getInstance (This : in out IIOImageCacheableFactory; Value : Unbounded_String) return CacheableInterface_Access;
+   procedure getInstance (This : in out IIOImageCacheableFactory; Value : Unbounded_String);
 
 end org.allbinary.media.image.io.IIOImageCacheableFactory_Package;
 

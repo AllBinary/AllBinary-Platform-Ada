@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
+
 package body org.allbinary.view.ViewPositionFactory_Package is
 
    procedure Initialize_Fields (This : in out ViewPositionFactory'Class) is

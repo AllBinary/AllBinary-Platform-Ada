@@ -21,36 +21,23 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
 with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
-with org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with tags.HelperTag_Package; use tags.HelperTag_Package;
-with views.admin.inventory.download.DownloadableInventoryItemView_Package; use views.admin.inventory.download.DownloadableInventoryItemView_Package;
 with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Package;
-with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghelpers.InventoryItemViewParentTagHelper_Package;
 
 package admin.taghelpers.DownloadItemsRequestHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package AbTagData_Package renames Standard.admin.tags.AbTagData_Package;
    package DownloadableItem_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
-   package DownloadItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package HelperTag_Package renames Standard.tags.HelperTag_Package;
-   package DownloadableInventoryItemView_Package renames Standard.views.admin.inventory.download.DownloadableInventoryItemView_Package;
 
    type DownloadItemsRequestHelper is tagged;
    type DownloadItemsRequestHelper_Access is access all DownloadItemsRequestHelper'Class;
    type DownloadItemsRequestHelper_Access_Array is array (Natural range <>) of DownloadItemsRequestHelper_Access;
    type DownloadItemsRequestHelper_Access_Array_Access is access all DownloadItemsRequestHelper_Access_Array;
+   type DownloadItemsRequestHelper_Access_Array_Access_Array is array (Natural range <>) of DownloadItemsRequestHelper_Access_Array_Access;
+   type DownloadItemsRequestHelper_Access_Array_Access_Array_Access is access all DownloadItemsRequestHelper_Access_Array_Access_Array;
 
    type DownloadItemsRequestHelper is new ModifyTable with record
       logUtil : LogUtil_Access;

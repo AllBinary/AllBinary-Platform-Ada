@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body bundle.input.automation.ServiceReferenceMap_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out ServiceReferenceMap'Class) is
    begin
       null;
@@ -154,6 +157,54 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
    begin
       null;
    end toString;
+
+   function containsKey (This : in out ServiceReferenceMap; Value : Unbounded_String) return Boolean is
+   begin
+      return ServiceReferenceMap'Class (This).containsKey (Java_Box (Value));
+   end containsKey;
+
+   procedure containsKey (This : in out ServiceReferenceMap; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ServiceReferenceMap'Class (This).containsKey (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end containsKey;
+
+   function containsValue (This : in out ServiceReferenceMap; Value : Unbounded_String) return Boolean is
+   begin
+      return ServiceReferenceMap'Class (This).containsValue (Java_Box (Value));
+   end containsValue;
+
+   procedure containsValue (This : in out ServiceReferenceMap; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ServiceReferenceMap'Class (This).containsValue (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end containsValue;
+
+   function get (This : in out ServiceReferenceMap; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return ServiceReferenceMap'Class (This).get (Java_Box (Value));
+   end get;
+
+   procedure get (This : in out ServiceReferenceMap; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).get (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end get;
+
+   function remove (This : in out ServiceReferenceMap; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return ServiceReferenceMap'Class (This).remove (Java_Box (Value));
+   end remove;
+
+   procedure remove (This : in out ServiceReferenceMap; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).remove (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end remove;
 
 end bundle.input.automation.ServiceReferenceMap_Package;
 

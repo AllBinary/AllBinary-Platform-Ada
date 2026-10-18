@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+
 package body org.allbinary.game.input.GameInputProcessorUtil_Package is
 
    procedure Initialize_Fields (This : in out GameInputProcessorUtil'Class) is

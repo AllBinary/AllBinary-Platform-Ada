@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
+
 package body org.allbinary.input.motion.AllMotionRecognizer_Package is
 
+   package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
    procedure Initialize_Fields (This : in out AllMotionRecognizer'Class) is
    begin
       null;

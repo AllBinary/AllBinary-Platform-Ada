@@ -20,20 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchaseInterface_Package; use org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchaseInterface_Package;
 with org.allbinary.logic.system.security.licensing.LockableFeature_Package; use org.allbinary.logic.system.security.licensing.LockableFeature_Package;
 
 package org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ThirdPartyInApplicationPurchase is tagged;
    type ThirdPartyInApplicationPurchase_Access is access all ThirdPartyInApplicationPurchase'Class;
    type ThirdPartyInApplicationPurchase_Access_Array is array (Natural range <>) of ThirdPartyInApplicationPurchase_Access;
    type ThirdPartyInApplicationPurchase_Access_Array_Access is access all ThirdPartyInApplicationPurchase_Access_Array;
+   type ThirdPartyInApplicationPurchase_Access_Array_Access_Array is array (Natural range <>) of ThirdPartyInApplicationPurchase_Access_Array_Access;
+   type ThirdPartyInApplicationPurchase_Access_Array_Access_Array_Access is access all ThirdPartyInApplicationPurchase_Access_Array_Access_Array;
 
-   type ThirdPartyInApplicationPurchase is new ThirdPartyInApplicationPurchaseInterface with null record;
+   type ThirdPartyInApplicationPurchase is new Java_Object and ThirdPartyInApplicationPurchaseInterface with null record;
 
    procedure Initialize (This : in out ThirdPartyInApplicationPurchase'Class);
    function Create return ThirdPartyInApplicationPurchase_Access;
@@ -51,6 +51,7 @@ package org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPur
    function getUserName (This : in out ThirdPartyInApplicationPurchase) return Unbounded_String;
    function isEnabled (This : in out ThirdPartyInApplicationPurchase) return Boolean;
    procedure requestProducts (This : in out ThirdPartyInApplicationPurchase);
+   procedure onSaveInstanceState (This : in out ThirdPartyInApplicationPurchase; Value : Unbounded_String);
 
 end org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package;
 

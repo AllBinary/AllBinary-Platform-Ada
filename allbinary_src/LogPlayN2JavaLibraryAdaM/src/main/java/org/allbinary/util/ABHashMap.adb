@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+
 package body org.allbinary.util.ABHashMap_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    procedure Initialize_Fields (This : in out ABHashMap'Class) is
    begin
       null;
@@ -163,6 +166,54 @@ package body org.allbinary.util.ABHashMap_Package is
    begin
       null;
    end putIfAbsent;
+
+   function get (This : in out ABHashMap; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return ABHashMap'Class (This).get (Java_Box (Value));
+   end get;
+
+   procedure get (This : in out ABHashMap; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).get (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end get;
+
+   function containsKey (This : in out ABHashMap; Value : Unbounded_String) return Boolean is
+   begin
+      return ABHashMap'Class (This).containsKey (Java_Box (Value));
+   end containsKey;
+
+   procedure containsKey (This : in out ABHashMap; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ABHashMap'Class (This).containsKey (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end containsKey;
+
+   function remove (This : in out ABHashMap; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return ABHashMap'Class (This).remove (Java_Box (Value));
+   end remove;
+
+   procedure remove (This : in out ABHashMap; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).remove (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end remove;
+
+   function containsValue (This : in out ABHashMap; Value : Unbounded_String) return Boolean is
+   begin
+      return ABHashMap'Class (This).containsValue (Java_Box (Value));
+   end containsValue;
+
+   procedure containsValue (This : in out ABHashMap; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ABHashMap'Class (This).containsValue (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end containsValue;
 
 end org.allbinary.util.ABHashMap_Package;
 

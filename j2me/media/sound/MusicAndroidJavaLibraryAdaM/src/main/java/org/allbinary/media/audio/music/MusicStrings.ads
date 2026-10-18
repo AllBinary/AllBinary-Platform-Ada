@@ -28,6 +28,8 @@ package org.allbinary.media.audio.music.MusicStrings_Package is
    type MusicStrings_Access is access all MusicStrings'Class;
    type MusicStrings_Access_Array is array (Natural range <>) of MusicStrings_Access;
    type MusicStrings_Access_Array_Access is access all MusicStrings_Access_Array;
+   type MusicStrings_Access_Array_Access_Array is array (Natural range <>) of MusicStrings_Access_Array_Access;
+   type MusicStrings_Access_Array_Access_Array_Access is access all MusicStrings_Access_Array_Access_Array;
 
    type MusicStrings is new Java_Object with record
       SONG_EXTRA : Unbounded_String;

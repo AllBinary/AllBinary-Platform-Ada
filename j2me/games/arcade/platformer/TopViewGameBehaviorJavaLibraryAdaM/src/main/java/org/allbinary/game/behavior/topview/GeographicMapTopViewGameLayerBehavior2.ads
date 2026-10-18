@@ -21,33 +21,30 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.graphics.geography.map.MultiGeographicMapBehavior_Package; use org.allbinary.media.graphics.geography.map.MultiGeographicMapBehavior_Package;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.game.physics.acceleration.GravityUtil_Package; use org.allbinary.game.physics.acceleration.GravityUtil_Package;
 with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 with org.allbinary.game.behavior.topview.GeographicMapTopViewLayerBehavior_Package; use org.allbinary.game.behavior.topview.GeographicMapTopViewLayerBehavior_Package;
-with org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package; use org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package;
 
 package org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBehavior2_Package is
 
    package MultiGeographicMapBehavior_Package renames Standard.org.allbinary.media.graphics.geography.map.MultiGeographicMapBehavior_Package;
-   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
    package GravityUtil_Package renames Standard.org.allbinary.game.physics.acceleration.GravityUtil_Package;
    package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-   package SimpleGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 
    type GeographicMapTopViewGameLayerBehavior2 is tagged;
    type GeographicMapTopViewGameLayerBehavior2_Access is access all GeographicMapTopViewGameLayerBehavior2'Class;
    type GeographicMapTopViewGameLayerBehavior2_Access_Array is array (Natural range <>) of GeographicMapTopViewGameLayerBehavior2_Access;
    type GeographicMapTopViewGameLayerBehavior2_Access_Array_Access is access all GeographicMapTopViewGameLayerBehavior2_Access_Array;
+   type GeographicMapTopViewGameLayerBehavior2_Access_Array_Access_Array is array (Natural range <>) of GeographicMapTopViewGameLayerBehavior2_Access_Array_Access;
+   type GeographicMapTopViewGameLayerBehavior2_Access_Array_Access_Array_Access is access all GeographicMapTopViewGameLayerBehavior2_Access_Array_Access_Array;
 
    type GeographicMapTopViewGameLayerBehavior2 is new GeographicMapTopViewLayerBehavior with record
       gravityUtil : GravityUtil_Access;

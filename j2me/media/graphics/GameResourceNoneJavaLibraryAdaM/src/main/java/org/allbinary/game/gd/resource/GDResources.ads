@@ -28,6 +28,8 @@ package org.allbinary.game.gd.resource.GDResources_Package is
    type GDResources_Access is access all GDResources'Class;
    type GDResources_Access_Array is array (Natural range <>) of GDResources_Access;
    type GDResources_Access_Array_Access is access all GDResources_Access_Array;
+   type GDResources_Access_Array_Access_Array is array (Natural range <>) of GDResources_Access_Array_Access;
+   type GDResources_Access_Array_Access_Array_Access is access all GDResources_Access_Array_Access_Array;
 
    type GDResources is new Java_Object with record
       resourceStringArray : Unbounded_String_Array_Access;

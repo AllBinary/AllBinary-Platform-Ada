@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
+
 package body org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package is
 
    procedure Initialize_Fields (This : in out GamePersistanceSingleton'Class) is

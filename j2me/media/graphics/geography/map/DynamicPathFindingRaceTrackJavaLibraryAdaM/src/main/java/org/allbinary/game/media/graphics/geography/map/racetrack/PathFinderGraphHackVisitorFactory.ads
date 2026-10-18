@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
-with org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitor_Package; use org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitor_Package;
 
 package org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitorFactory_Package is
 
@@ -35,6 +34,8 @@ package org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGrap
    type PathFinderGraphHackVisitorFactory_Access is access all PathFinderGraphHackVisitorFactory'Class;
    type PathFinderGraphHackVisitorFactory_Access_Array is array (Natural range <>) of PathFinderGraphHackVisitorFactory_Access;
    type PathFinderGraphHackVisitorFactory_Access_Array_Access is access all PathFinderGraphHackVisitorFactory_Access_Array;
+   type PathFinderGraphHackVisitorFactory_Access_Array_Access_Array is array (Natural range <>) of PathFinderGraphHackVisitorFactory_Access_Array_Access;
+   type PathFinderGraphHackVisitorFactory_Access_Array_Access_Array_Access is access all PathFinderGraphHackVisitorFactory_Access_Array_Access_Array;
 
    type PathFinderGraphHackVisitorFactory is new PathFinderGraphVisitorFactoryBase with record
       edgeMinimum : Integer;

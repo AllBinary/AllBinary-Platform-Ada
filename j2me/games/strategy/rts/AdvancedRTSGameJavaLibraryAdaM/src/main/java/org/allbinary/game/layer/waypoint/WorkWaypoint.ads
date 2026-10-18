@@ -21,33 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
-with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
-with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package; use org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
-with org.allbinary.game.layer.geological.resources.GeologicalResource_Package; use org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
 with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
-with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
-with org.allbinary.media.audio.WorkSound_Package; use org.allbinary.media.audio.WorkSound_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.game.layer.waypoint.Waypoint_Package; use org.allbinary.game.layer.waypoint.Waypoint_Package;
-with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 
 package org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
 
    package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
-   package RTSLayer_Package renames Standard.org.allbinary.game.layer.RTSLayer_Package;
-   package GeologicalGeographicMapCellPosition_Package renames Standard.org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
-   package GeologicalResource_Package renames Standard.org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
    package UnitLayer_Package renames Standard.org.allbinary.game.layer.unit.UnitLayer_Package;
-   package UnitWaypointBehavior_Package renames Standard.org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
-   package WorkSound_Package renames Standard.org.allbinary.media.audio.WorkSound_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type WorkWaypoint is tagged;
    type WorkWaypoint_Access is access all WorkWaypoint'Class;
    type WorkWaypoint_Access_Array is array (Natural range <>) of WorkWaypoint_Access;
    type WorkWaypoint_Access_Array_Access is access all WorkWaypoint_Access_Array;
+   type WorkWaypoint_Access_Array_Access_Array is array (Natural range <>) of WorkWaypoint_Access_Array_Access;
+   type WorkWaypoint_Access_Array_Access_Array_Access is access all WorkWaypoint_Access_Array_Access_Array;
 
    type WorkWaypoint is new Waypoint with null record;
    ID : Integer;

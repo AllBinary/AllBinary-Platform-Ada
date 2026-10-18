@@ -30,6 +30,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
    type Grid_Access is access all Grid'Class;
    type Grid_Access_Array is array (Natural range <>) of Grid_Access;
    type Grid_Access_Array_Access is access all Grid_Access_Array;
+   type Grid_Access_Array_Access_Array is array (Natural range <>) of Grid_Access_Array_Access;
+   type Grid_Access_Array_Access_Array_Access is access all Grid_Access_Array_Access_Array;
 
    type Grid is new Java_Object with record
       grid : GPoint_Access;

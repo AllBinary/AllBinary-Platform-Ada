@@ -34,7 +34,6 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.sql.SqlTypeStrings_Package; use org.allbinary.logic.communication.sql.SqlTypeStrings_Package;
 with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
-with org.allbinary.logic.communication.sql.ClassLoader_Package; use org.allbinary.logic.communication.sql.ClassLoader_Package;
 
 package org.allbinary.logic.communication.sql.AbSqlBasic_Package is
 
@@ -51,6 +50,8 @@ package org.allbinary.logic.communication.sql.AbSqlBasic_Package is
    type AbSqlBasic_Access is access all AbSqlBasic'Class;
    type AbSqlBasic_Access_Array is array (Natural range <>) of AbSqlBasic_Access;
    type AbSqlBasic_Access_Array_Access is access all AbSqlBasic_Access_Array;
+   type AbSqlBasic_Access_Array_Access_Array is array (Natural range <>) of AbSqlBasic_Access_Array_Access;
+   type AbSqlBasic_Access_Array_Access_Array_Access is access all AbSqlBasic_Access_Array_Access_Array;
 
    type AbSqlBasic is new Java_Object with record
       logUtil : LogUtil_Access;

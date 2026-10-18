@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.terrain.TerrainEvent_Package;
+with org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package; use org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package;
+with org.allbinary.game.terrain.TerrainEventHandler_Package; use org.allbinary.game.terrain.TerrainEventHandler_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+
 package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
 
+   package TerrainEvent_Package renames Standard.org.allbinary.game.terrain.TerrainEvent_Package;
+   package TerrainEventCircularStaticPool_Package renames Standard.org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package;
+   package TerrainEventHandler_Package renames Standard.org.allbinary.game.terrain.TerrainEventHandler_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out TerrainPatrolAI'Class) is
    begin
       null;

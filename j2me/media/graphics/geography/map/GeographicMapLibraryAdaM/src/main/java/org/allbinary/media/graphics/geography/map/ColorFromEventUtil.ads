@@ -22,20 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 
 package org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Package is
 
    package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
 
    type ColorFromEventUtil is tagged;
    type ColorFromEventUtil_Access is access all ColorFromEventUtil'Class;
    type ColorFromEventUtil_Access_Array is array (Natural range <>) of ColorFromEventUtil_Access;
    type ColorFromEventUtil_Access_Array_Access is access all ColorFromEventUtil_Access_Array;
+   type ColorFromEventUtil_Access_Array_Access_Array is array (Natural range <>) of ColorFromEventUtil_Access_Array_Access;
+   type ColorFromEventUtil_Access_Array_Access_Array_Access is access all ColorFromEventUtil_Access_Array_Access_Array;
 
    type ColorFromEventUtil is new Java_Object with record
       YELLOW : BasicColor_Access;

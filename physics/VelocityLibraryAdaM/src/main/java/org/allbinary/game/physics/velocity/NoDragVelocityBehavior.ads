@@ -29,6 +29,8 @@ package org.allbinary.game.physics.velocity.NoDragVelocityBehavior_Package is
    type NoDragVelocityBehavior_Access is access all NoDragVelocityBehavior'Class;
    type NoDragVelocityBehavior_Access_Array is array (Natural range <>) of NoDragVelocityBehavior_Access;
    type NoDragVelocityBehavior_Access_Array_Access is access all NoDragVelocityBehavior_Access_Array;
+   type NoDragVelocityBehavior_Access_Array_Access_Array is array (Natural range <>) of NoDragVelocityBehavior_Access_Array_Access;
+   type NoDragVelocityBehavior_Access_Array_Access_Array_Access is access all NoDragVelocityBehavior_Access_Array_Access_Array;
 
    type NoDragVelocityBehavior is new VelocityBehaviorBase with null record;
    instance : NoDragVelocityBehavior_Access;

@@ -28,6 +28,8 @@ package org.allbinary.game.input.GameInputStrings_Package is
    type GameInputStrings_Access is access all GameInputStrings'Class;
    type GameInputStrings_Access_Array is array (Natural range <>) of GameInputStrings_Access;
    type GameInputStrings_Access_Array_Access is access all GameInputStrings_Access_Array;
+   type GameInputStrings_Access_Array_Access_Array is array (Natural range <>) of GameInputStrings_Access_Array_Access;
+   type GameInputStrings_Access_Array_Access_Array_Access is access all GameInputStrings_Access_Array_Access_Array;
 
    type GameInputStrings is new Java_Object with record
       PROCESS_INPUT : Unbounded_String;

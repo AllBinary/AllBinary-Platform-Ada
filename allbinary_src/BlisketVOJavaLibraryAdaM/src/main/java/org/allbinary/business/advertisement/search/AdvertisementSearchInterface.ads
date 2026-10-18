@@ -38,6 +38,8 @@ package org.allbinary.business.advertisement.search.AdvertisementSearchInterface
    type AdvertisementSearchInterface_Access is access all AdvertisementSearchInterface'Class;
    type AdvertisementSearchInterface_Access_Array is array (Natural range <>) of AdvertisementSearchInterface_Access;
    type AdvertisementSearchInterface_Access_Array_Access is access all AdvertisementSearchInterface_Access_Array;
+   type AdvertisementSearchInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementSearchInterface_Access_Array_Access;
+   type AdvertisementSearchInterface_Access_Array_Access_Array_Access is access all AdvertisementSearchInterface_Access_Array_Access_Array;
    function getWebSite (This : in out AdvertisementSearchInterface) return AdvertisementWebsiteInterface_Access is abstract;
    function getCategory (This : in out AdvertisementSearchInterface) return AdvertisementCategoryInterface_Access is abstract;
    function getSizeConstraints (This : in out AdvertisementSearchInterface) return TwoDimensionalConstraintInterface_Access is abstract;

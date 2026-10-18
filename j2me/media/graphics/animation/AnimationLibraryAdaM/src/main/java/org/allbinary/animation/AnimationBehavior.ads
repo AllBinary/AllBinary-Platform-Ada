@@ -28,6 +28,8 @@ package org.allbinary.animation.AnimationBehavior_Package is
    type AnimationBehavior_Access is access all AnimationBehavior'Class;
    type AnimationBehavior_Access_Array is array (Natural range <>) of AnimationBehavior_Access;
    type AnimationBehavior_Access_Array_Access is access all AnimationBehavior_Access_Array;
+   type AnimationBehavior_Access_Array_Access_Array is array (Natural range <>) of AnimationBehavior_Access_Array_Access;
+   type AnimationBehavior_Access_Array_Access_Array_Access is access all AnimationBehavior_Access_Array_Access_Array;
 
    type AnimationBehavior is new Java_Object with null record;
    instance : AnimationBehavior_Access;

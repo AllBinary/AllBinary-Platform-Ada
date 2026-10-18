@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.visual.transform.data.TransformDocument_Package; use org.allbinary.logic.visual.transform.data.TransformDocument_Package;
 with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package; use org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
 
 package org.allbinary.logic.visual.transform.data.TransformDocumentFactory_Package is
@@ -30,6 +29,8 @@ package org.allbinary.logic.visual.transform.data.TransformDocumentFactory_Packa
    type TransformDocumentFactory_Access is access all TransformDocumentFactory'Class;
    type TransformDocumentFactory_Access_Array is array (Natural range <>) of TransformDocumentFactory_Access;
    type TransformDocumentFactory_Access_Array_Access is access all TransformDocumentFactory_Access_Array;
+   type TransformDocumentFactory_Access_Array_Access_Array is array (Natural range <>) of TransformDocumentFactory_Access_Array_Access;
+   type TransformDocumentFactory_Access_Array_Access_Array_Access is access all TransformDocumentFactory_Access_Array_Access_Array;
 
    type TransformDocumentFactory is new Java_Object with null record;
 

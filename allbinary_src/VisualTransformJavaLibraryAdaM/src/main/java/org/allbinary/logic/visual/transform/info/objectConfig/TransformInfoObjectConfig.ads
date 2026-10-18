@@ -21,59 +21,32 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
-with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
-with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.InputOutputTypeData_Package; use org.allbinary.logic.io.InputOutputTypeData_Package;
-with org.allbinary.logic.io.OutputTypeData_Package; use org.allbinary.logic.io.OutputTypeData_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package; use org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfosData_Package; use org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
-with org.allbinary.logic.visual.transform.template.XslData_Package; use org.allbinary.logic.visual.transform.template.XslData_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.w3c.dom.Attr_Package; use org.w3c.dom.Attr_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.NamedNodeMap_Package; use org.w3c.dom.NamedNodeMap_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
-with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
 
 package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
-   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
-   package OutputTypeData_Package renames Standard.org.allbinary.logic.io.OutputTypeData_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-   package TransformInfoDomNode_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
-   package XslData_Package renames Standard.org.allbinary.logic.visual.transform.template.XslData_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package Attr_Package renames Standard.org.w3c.dom.Attr_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package NamedNodeMap_Package renames Standard.org.w3c.dom.NamedNodeMap_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
-   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type TransformInfoObjectConfig is tagged;
    type TransformInfoObjectConfig_Access is access all TransformInfoObjectConfig'Class;
    type TransformInfoObjectConfig_Access_Array is array (Natural range <>) of TransformInfoObjectConfig_Access;
    type TransformInfoObjectConfig_Access_Array_Access is access all TransformInfoObjectConfig_Access_Array;
+   type TransformInfoObjectConfig_Access_Array_Access_Array is array (Natural range <>) of TransformInfoObjectConfig_Access_Array_Access;
+   type TransformInfoObjectConfig_Access_Array_Access_Array_Access is access all TransformInfoObjectConfig_Access_Array_Access_Array;
 
-   type TransformInfoObjectConfig is new TransformInfoObjectConfigInterface with record
+   type TransformInfoObjectConfig is new Java_Object and TransformInfoObjectConfigInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       ownerTransformInfoInterface : TransformInfoInterface_Access;

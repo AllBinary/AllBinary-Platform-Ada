@@ -28,6 +28,8 @@ package org.allbinary.input.automation.module.game.MeteredGameObjectInterface_Pa
    type MeteredGameObjectInterface_Access is access all MeteredGameObjectInterface'Class;
    type MeteredGameObjectInterface_Access_Array is array (Natural range <>) of MeteredGameObjectInterface_Access;
    type MeteredGameObjectInterface_Access_Array_Access is access all MeteredGameObjectInterface_Access_Array;
+   type MeteredGameObjectInterface_Access_Array_Access_Array is array (Natural range <>) of MeteredGameObjectInterface_Access_Array_Access;
+   type MeteredGameObjectInterface_Access_Array_Access_Array_Access is access all MeteredGameObjectInterface_Access_Array_Access_Array;
    function getRatios (This : in out MeteredGameObjectInterface) return Long_Float_Array_Access is abstract;
    function isGood (This : in out MeteredGameObjectInterface) return Boolean is abstract;
    function isDropping (This : in out MeteredGameObjectInterface) return Boolean is abstract;

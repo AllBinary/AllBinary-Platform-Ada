@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.trackball.action.DownTrackballInputToGameKeyEventAction_Package; use org.allbinary.input.motion.trackball.action.DownTrackballInputToGameKeyEventAction_Package;
+with org.allbinary.input.motion.trackball.action.LeftTrackballInputToGameKeyEventAction_Package; use org.allbinary.input.motion.trackball.action.LeftTrackballInputToGameKeyEventAction_Package;
+with org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package; use org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package;
+with org.allbinary.input.motion.trackball.action.UpTrackballInputToGameKeyEventAction_Package; use org.allbinary.input.motion.trackball.action.UpTrackballInputToGameKeyEventAction_Package;
+
 package body org.allbinary.android.input.motion.TrackballGameInputMotionEventProcessor_Package is
 
+   package DownTrackballInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.trackball.action.DownTrackballInputToGameKeyEventAction_Package;
+   package LeftTrackballInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.trackball.action.LeftTrackballInputToGameKeyEventAction_Package;
+   package RightTrackballInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package;
+   package UpTrackballInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.trackball.action.UpTrackballInputToGameKeyEventAction_Package;
    procedure Initialize_Fields (This : in out TrackballGameInputMotionEventProcessor'Class) is
    begin
       null;

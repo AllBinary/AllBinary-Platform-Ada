@@ -30,6 +30,8 @@ package org.allbinary.game.layer.LayerPlacementInterfaceBasicArrayListFactoryInt
    type LayerPlacementInterfaceBasicArrayListFactoryInterface_Access is access all LayerPlacementInterfaceBasicArrayListFactoryInterface'Class;
    type LayerPlacementInterfaceBasicArrayListFactoryInterface_Access_Array is array (Natural range <>) of LayerPlacementInterfaceBasicArrayListFactoryInterface_Access;
    type LayerPlacementInterfaceBasicArrayListFactoryInterface_Access_Array_Access is access all LayerPlacementInterfaceBasicArrayListFactoryInterface_Access_Array;
+   type LayerPlacementInterfaceBasicArrayListFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of LayerPlacementInterfaceBasicArrayListFactoryInterface_Access_Array_Access;
+   type LayerPlacementInterfaceBasicArrayListFactoryInterface_Access_Array_Access_Array_Access is access all LayerPlacementInterfaceBasicArrayListFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out LayerPlacementInterfaceBasicArrayListFactoryInterface) return BasicArrayList_Access is abstract;
    function getOnDemandResources (This : in out LayerPlacementInterfaceBasicArrayListFactoryInterface) return Integer_Array_Access is abstract;
 

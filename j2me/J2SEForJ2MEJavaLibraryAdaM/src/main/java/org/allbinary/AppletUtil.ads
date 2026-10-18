@@ -28,6 +28,8 @@ package org.allbinary.AppletUtil_Package is
    type AppletUtil_Access is access all AppletUtil'Class;
    type AppletUtil_Access_Array is array (Natural range <>) of AppletUtil_Access;
    type AppletUtil_Access_Array_Access is access all AppletUtil_Access_Array;
+   type AppletUtil_Access_Array_Access_Array is array (Natural range <>) of AppletUtil_Access_Array_Access;
+   type AppletUtil_Access_Array_Access_Array_Access is access all AppletUtil_Access_Array_Access_Array;
 
    type AppletUtil is new Java_Object with null record;
    applet : Boolean;
@@ -37,6 +39,8 @@ package org.allbinary.AppletUtil_Package is
    procedure setApplet;
    function isAppletLoader (anyType_Param : access Java_Object'Class) return Boolean;
    procedure isAppletLoader (anyType_Param : access Java_Object'Class);
+   function isAppletLoader (Value : Unbounded_String) return Boolean;
+   procedure isAppletLoader (Value : Unbounded_String);
 
 end org.allbinary.AppletUtil_Package;
 

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package is
 
+   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out CategoryHierarchy'Class) is
    begin
       null;

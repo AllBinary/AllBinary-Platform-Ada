@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.audio.SoundsFactoryInterface_Package; use org.allbinary.media.audio.SoundsFactoryInterface_Package;
 
 package org.allbinary.media.audio.AllBinaryMediaManagerShutdown_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type AllBinaryMediaManagerShutdown is tagged;
    type AllBinaryMediaManagerShutdown_Access is access all AllBinaryMediaManagerShutdown'Class;
    type AllBinaryMediaManagerShutdown_Access_Array is array (Natural range <>) of AllBinaryMediaManagerShutdown_Access;
    type AllBinaryMediaManagerShutdown_Access_Array_Access is access all AllBinaryMediaManagerShutdown_Access_Array;
+   type AllBinaryMediaManagerShutdown_Access_Array_Access_Array is array (Natural range <>) of AllBinaryMediaManagerShutdown_Access_Array_Access;
+   type AllBinaryMediaManagerShutdown_Access_Array_Access_Array_Access is access all AllBinaryMediaManagerShutdown_Access_Array_Access_Array;
 
    type AllBinaryMediaManagerShutdown is new Java_Object with null record;
    instance : AllBinaryMediaManagerShutdown_Access;

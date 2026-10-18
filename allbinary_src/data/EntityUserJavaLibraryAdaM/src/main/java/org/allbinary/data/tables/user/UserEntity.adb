@@ -13,8 +13,37 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
+with org.allbinary.business.user.CreateUserFactory_Package; use org.allbinary.business.user.CreateUserFactory_Package;
+with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
+with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
+with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
+with org.allbinary.business.user.role.UserRoleFactory_Package; use org.allbinary.business.user.role.UserRoleFactory_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.data.tables.user.UserEntity_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package CreateUserFactory_Package renames Standard.org.allbinary.business.user.CreateUserFactory_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
+   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
+   package UserRoleFactory_Package renames Standard.org.allbinary.business.user.role.UserRoleFactory_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package SuperCrypt_Package renames Standard.org.allbinary.logic.control.crypt.SuperCrypt_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out UserEntity'Class) is
    begin
       null;
@@ -81,7 +110,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
       i : Integer;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        usersVector := BasicArrayListD_Package.Create;
+        usersVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (UserRoleFactory_Package.getInstance.STOREMANAGER.toString));
         keysAndValues.put (UserData_Package.PERMISSIONS, Java_Box (storeFrontInterface.getName));
         usersHashMapVector := AbSqlBean (This).getRows (keysAndValues);
@@ -89,7 +118,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
         for i in 0 .. (size) - 1 loop
             userHashMap := HashMap_Access (usersHashMapVector.get (i));
             if (userHashMap) /= (null) then
-                usersVector.add (User_Package.Create (userHashMap));
+                usersVector.add (Java_Object_Access (User_Package.Create (userHashMap)));
             end if;
         end loop;
         return usersVector;
@@ -112,14 +141,14 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
       index : Integer;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        usersVector := BasicArrayListD_Package.Create;
+        usersVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (userRole.toString));
         usersHashMapVector := AbSqlBean (This).getRows (keysAndValues);
         size := usersHashMapVector.size;
         for index in 0 .. (size) - 1 loop
             userHashMap := HashMap_Access (usersHashMapVector.get (index));
             if (userHashMap) /= (null) then
-                usersVector.add (User_Package.Create (userHashMap));
+                usersVector.add (Java_Object_Access (User_Package.Create (userHashMap)));
             end if;
         end loop;
         return usersVector;
@@ -136,14 +165,14 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
       index : Integer;
    begin
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
-        usersVector := BasicArrayListD_Package.Create;
+        usersVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeFrontInterface.getName));
         usersHashMapVector := AbSqlBean (This).getRows (keysAndValues);
         size := usersHashMapVector.size;
         for index in 0 .. (size) - 1 loop
             userHashMap := HashMap_Access (usersHashMapVector.get (index));
             if (userHashMap) /= (null) then
-                usersVector.add (User_Package.Create (userHashMap));
+                usersVector.add (Java_Object_Access (User_Package.Create (userHashMap)));
             end if;
         end loop;
         return usersVector;
@@ -199,7 +228,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (To_Unbounded_String ("Command Success but login failed for user: ") & userName & To_Unbounded_String (" because user did not exist"), UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("login"));
                 end if;
-                return GLOBALS2.LOGINFAILED;
+                return GLOBALS2_Package.LOGINFAILED;
             end if;
             if (isUserNameAndPasswordCorrect) = (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
@@ -212,7 +241,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                     stringBuffer.append (result);
                     This.logUtil.putF (stringBuffer.toString, UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("login"));
                 end if;
-                return GLOBALS2.LOGINSUCCESS;
+                return GLOBALS2_Package.LOGINSUCCESS;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     stringBuffer := StringMaker_Package.Create;
@@ -225,7 +254,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                     stringBuffer.append (This.END_QUOTES);
                     This.logUtil.putF (stringBuffer.toString, UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("login"));
                 end if;
-                return GLOBALS2.LOGINFAILED;
+                return GLOBALS2_Package.LOGINFAILED;
             end if;
         exception
             when Java_Occurrence : others =>

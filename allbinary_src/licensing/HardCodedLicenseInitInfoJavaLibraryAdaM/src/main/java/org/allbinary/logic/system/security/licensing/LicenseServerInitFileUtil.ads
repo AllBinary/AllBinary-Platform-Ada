@@ -28,6 +28,8 @@ package org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_
    type LicenseServerInitFileUtil_Access is access all LicenseServerInitFileUtil'Class;
    type LicenseServerInitFileUtil_Access_Array is array (Natural range <>) of LicenseServerInitFileUtil_Access;
    type LicenseServerInitFileUtil_Access_Array_Access is access all LicenseServerInitFileUtil_Access_Array;
+   type LicenseServerInitFileUtil_Access_Array_Access_Array is array (Natural range <>) of LicenseServerInitFileUtil_Access_Array_Access;
+   type LicenseServerInitFileUtil_Access_Array_Access_Array_Access is access all LicenseServerInitFileUtil_Access_Array_Access_Array;
 
    type LicenseServerInitFileUtil is new Java_Object with null record;
 

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+with org.allbinary.animation.NullRotationAnimationFactory_Package; use org.allbinary.animation.NullRotationAnimationFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+
 package body org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Package is
 
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package NullRotationAnimationFactory_Package renames Standard.org.allbinary.animation.NullRotationAnimationFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    procedure Initialize_Fields (This : in out DecalAnimationInterfaceFactory'Class) is
    begin
       null;

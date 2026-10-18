@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+
 package body org.allbinary.logic.io.file.FileWrapperUtil_Package is
 
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    procedure Initialize_Fields (This : in out FileWrapperUtil'Class) is
    begin
       null;

@@ -21,8 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
-with org.allbinary.media.audio.PlayerComposite_Package; use org.allbinary.media.audio.PlayerComposite_Package;
-with org.allbinary.media.audio.AllBinaryMediaManager_Package; use org.allbinary.media.audio.AllBinaryMediaManager_Package;
 
 package org.allbinary.media.audio.CompositeSound_Package is
 
@@ -31,6 +29,8 @@ package org.allbinary.media.audio.CompositeSound_Package is
    type CompositeSound_Access is access all CompositeSound'Class;
    type CompositeSound_Access_Array is array (Natural range <>) of CompositeSound_Access;
    type CompositeSound_Access_Array_Access is access all CompositeSound_Access_Array;
+   type CompositeSound_Access_Array_Access_Array is array (Natural range <>) of CompositeSound_Access_Array_Access;
+   type CompositeSound_Access_Array_Access_Array_Access is access all CompositeSound_Access_Array_Access_Array;
 
    type CompositeSound is new Sound with null record;
 

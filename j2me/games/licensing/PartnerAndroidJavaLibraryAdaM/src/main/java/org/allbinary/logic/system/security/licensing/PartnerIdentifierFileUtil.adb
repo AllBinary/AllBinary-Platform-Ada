@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out PartnerIdentifierFileUtil'Class) is
    begin
       null;

@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with android.content.Context_Package; use android.content.Context_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.media.AllBinaryNoVibration_Package; use org.allbinary.media.AllBinaryNoVibration_Package;
+
 package body org.allbinary.media.AllBinaryVibration_Package is
 
+   package Context_Package renames Standard.android.content.Context_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
    procedure Initialize_Fields (This : in out AllBinaryVibration'Class) is
    begin
       null;

@@ -22,24 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
-with org.allbinary.logic.util.event.NullEventListener_Package; use org.allbinary.logic.util.event.NullEventListener_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.game.layer.hud.event.GameNotificationListenerInterface_Package; use org.allbinary.game.layer.hud.event.GameNotificationListenerInterface_Package;
-with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package; use org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
 
 package org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package is
 
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
-   package NullEventListener_Package renames Standard.org.allbinary.logic.util.event.NullEventListener_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type GameNotificationEventHandler is tagged;
    type GameNotificationEventHandler_Access is access all GameNotificationEventHandler'Class;
    type GameNotificationEventHandler_Access_Array is array (Natural range <>) of GameNotificationEventHandler_Access;
    type GameNotificationEventHandler_Access_Array_Access is access all GameNotificationEventHandler_Access_Array;
+   type GameNotificationEventHandler_Access_Array_Access_Array is array (Natural range <>) of GameNotificationEventHandler_Access_Array_Access;
+   type GameNotificationEventHandler_Access_Array_Access_Array_Access is access all GameNotificationEventHandler_Access_Array_Access_Array;
 
    type GameNotificationEventHandler is new BasicEventHandler with record
       enabled : Boolean;

@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
+with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
+with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
+with org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package;
+
 package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_Package is
 
+   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package BasicColorUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorUtil_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out SpriteIndexedAnimationFactory'Class) is
    begin
       null;
@@ -81,9 +92,9 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_
    begin
         sprite := This.animationFactorySpriteScaleUtil.createImage (SpriteIndexedAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            return AdjustedSpriteIndexedAnimation_Package.Create (sprite, SpriteIndexedAnimationFactory'Class (This).getImage, This.basicColorArray, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (AdjustedSpriteIndexedAnimation_Package.Create (sprite, SpriteIndexedAnimationFactory'Class (This).getImage, This.basicColorArray, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
         else
-            return SpriteIndexedAnimation_Package.Create (sprite, SpriteIndexedAnimationFactory'Class (This).getImage, This.basicColorArray, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (SpriteIndexedAnimation_Package.Create (sprite, SpriteIndexedAnimationFactory'Class (This).getImage, This.basicColorArray, This.animationBehaviorFactory.getOrCreateInstance));
         end if;
    end getInstance;
 

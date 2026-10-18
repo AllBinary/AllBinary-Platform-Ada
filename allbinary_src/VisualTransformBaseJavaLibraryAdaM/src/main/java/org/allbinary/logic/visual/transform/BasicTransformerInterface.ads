@@ -34,6 +34,8 @@ package org.allbinary.logic.visual.transform.BasicTransformerInterface_Package i
    type BasicTransformerInterface_Access is access all BasicTransformerInterface'Class;
    type BasicTransformerInterface_Access_Array is array (Natural range <>) of BasicTransformerInterface_Access;
    type BasicTransformerInterface_Access_Array_Access is access all BasicTransformerInterface_Access_Array;
+   type BasicTransformerInterface_Access_Array_Access_Array is array (Natural range <>) of BasicTransformerInterface_Access_Array_Access;
+   type BasicTransformerInterface_Access_Array_Access_Array_Access is access all BasicTransformerInterface_Access_Array_Access_Array;
    procedure setInputStream (This : in out BasicTransformerInterface; inputStream_Param : access InputStream_Package.InputStream'Class) is abstract;
    procedure setURIResolver (This : in out BasicTransformerInterface; uriResolver_Param : access URIResolver_Package.URIResolver'Class) is abstract;
    function getStreamSource (This : in out BasicTransformerInterface) return StreamSource_Access is abstract;

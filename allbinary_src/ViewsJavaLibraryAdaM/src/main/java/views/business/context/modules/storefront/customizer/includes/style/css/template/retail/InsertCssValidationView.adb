@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
+with org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package; use org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package; use org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package;
+with views.business.context.modules.storefront.customizer.CustomizerUtil_Package; use views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
+with views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package; use views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package;
+
 package body views.business.context.modules.storefront.customizer.includes.style.css.template.retail.InsertCssValidationView_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package NameSpaceRequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CssStyleValidation_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package;
+   package CustomizerUtil_Package renames Standard.views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
+   package StoreCustomizerComponentUtil_Package renames Standard.views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package;
    procedure Initialize_Fields (This : in out InsertCssValidationView'Class) is
    begin
       null;

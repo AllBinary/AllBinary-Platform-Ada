@@ -30,6 +30,8 @@ package org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface
    type DomDocumentMappingInterface_Access is access all DomDocumentMappingInterface'Class;
    type DomDocumentMappingInterface_Access_Array is array (Natural range <>) of DomDocumentMappingInterface_Access;
    type DomDocumentMappingInterface_Access_Array_Access is access all DomDocumentMappingInterface_Access_Array;
+   type DomDocumentMappingInterface_Access_Array_Access_Array is array (Natural range <>) of DomDocumentMappingInterface_Access_Array_Access;
+   type DomDocumentMappingInterface_Access_Array_Access_Array_Access is access all DomDocumentMappingInterface_Access_Array_Access_Array;
    function toXmlDoc (This : in out DomDocumentMappingInterface) return Document_Access is abstract;
 
 end org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;

@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.graphics.RectangleFactory_Package; use org.allbinary.graphics.RectangleFactory_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
+
 package body org.allbinary.game.input.TestingInputSingleton_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
    procedure Initialize_Fields (This : in out TestingInputSingleton'Class) is
    begin
       null;
@@ -52,7 +67,7 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
       testInputInterface : TestInputInterface_Access;
    begin
         testInputInterface := aTestInputInterface;
-        This.paintable := testInputInterface;
+        This.paintable := PaintableInterface_Access (testInputInterface);
         This.inputProcessorArray (Canvas_Package.UP) := GameInputProcessor_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     --  throws Exception

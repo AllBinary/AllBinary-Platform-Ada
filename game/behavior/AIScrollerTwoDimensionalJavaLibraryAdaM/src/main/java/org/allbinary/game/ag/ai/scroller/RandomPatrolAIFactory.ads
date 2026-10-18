@@ -25,7 +25,6 @@ with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Packa
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package; use org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package;
 
 package org.allbinary.game.ag.ai.scroller.RandomPatrolAIFactory_Package is
 
@@ -39,8 +38,10 @@ package org.allbinary.game.ag.ai.scroller.RandomPatrolAIFactory_Package is
    type RandomPatrolAIFactory_Access is access all RandomPatrolAIFactory'Class;
    type RandomPatrolAIFactory_Access_Array is array (Natural range <>) of RandomPatrolAIFactory_Access;
    type RandomPatrolAIFactory_Access_Array_Access is access all RandomPatrolAIFactory_Access_Array;
+   type RandomPatrolAIFactory_Access_Array_Access_Array is array (Natural range <>) of RandomPatrolAIFactory_Access_Array_Access;
+   type RandomPatrolAIFactory_Access_Array_Access_Array_Access is access all RandomPatrolAIFactory_Access_Array_Access_Array;
 
-   type RandomPatrolAIFactory is new ArtificialIntelligenceInterfaceFactoryInterface with null record;
+   type RandomPatrolAIFactory is new Java_Object and ArtificialIntelligenceInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out RandomPatrolAIFactory'Class);
    function Create return RandomPatrolAIFactory_Access;

@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with admin.taghelpers.StoreFrontsRequestHelper_Package; use admin.taghelpers.StoreFrontsRequestHelper_Package;
+
 package body admin.taghelpers.StoreFrontsRequestHelperFactory_Package is
 
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out StoreFrontsRequestHelperFactory'Class) is
    begin
       null;
@@ -42,7 +46,7 @@ package body admin.taghelpers.StoreFrontsRequestHelperFactory_Package is
       pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         begin
-            return StoreFrontsRequestHelper_Package.Create (hashMap, pageContext);
+            return Java_Object_Access (StoreFrontsRequestHelper_Package.Create (hashMap, pageContext));
         exception
             when Java_Occurrence : others =>
                 declare

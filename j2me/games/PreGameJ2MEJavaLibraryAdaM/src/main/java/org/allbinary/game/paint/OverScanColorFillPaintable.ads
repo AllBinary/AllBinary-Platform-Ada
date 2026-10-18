@@ -33,6 +33,8 @@ package org.allbinary.game.paint.OverScanColorFillPaintable_Package is
    type OverScanColorFillPaintable_Access is access all OverScanColorFillPaintable'Class;
    type OverScanColorFillPaintable_Access_Array is array (Natural range <>) of OverScanColorFillPaintable_Access;
    type OverScanColorFillPaintable_Access_Array_Access is access all OverScanColorFillPaintable_Access_Array;
+   type OverScanColorFillPaintable_Access_Array_Access_Array is array (Natural range <>) of OverScanColorFillPaintable_Access_Array_Access;
+   type OverScanColorFillPaintable_Access_Array_Access_Array_Access is access all OverScanColorFillPaintable_Access_Array_Access_Array;
 
    type OverScanColorFillPaintable is new ColorFillPaintable with null record;
 

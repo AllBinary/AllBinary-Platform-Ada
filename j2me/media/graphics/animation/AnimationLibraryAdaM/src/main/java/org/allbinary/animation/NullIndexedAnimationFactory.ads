@@ -26,7 +26,6 @@ with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.NullIndexedAnimation_Package; use org.allbinary.animation.NullIndexedAnimation_Package;
-with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullIndexedAnimationFactory_Package is
@@ -38,8 +37,10 @@ package org.allbinary.animation.NullIndexedAnimationFactory_Package is
    type NullIndexedAnimationFactory_Access is access all NullIndexedAnimationFactory'Class;
    type NullIndexedAnimationFactory_Access_Array is array (Natural range <>) of NullIndexedAnimationFactory_Access;
    type NullIndexedAnimationFactory_Access_Array_Access is access all NullIndexedAnimationFactory_Access_Array;
+   type NullIndexedAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of NullIndexedAnimationFactory_Access_Array_Access;
+   type NullIndexedAnimationFactory_Access_Array_Access_Array_Access is access all NullIndexedAnimationFactory_Access_Array_Access_Array;
 
-   type NullIndexedAnimationFactory is new AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
+   type NullIndexedAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
       NULL_ANIMATION : Animation_Access;
    end record;
    NULL_INDEXED_ANIMATION_ARRAY : IndexedAnimation_Access_Array_Access;
@@ -70,7 +71,6 @@ with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.NullIndexedAnimation_Package; use org.allbinary.animation.NullIndexedAnimation_Package;
-with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullIndexedAnimationInner_Package is
@@ -82,6 +82,8 @@ package org.allbinary.animation.NullIndexedAnimationInner_Package is
    type NullIndexedAnimationInner_Access is access all NullIndexedAnimationInner'Class;
    type NullIndexedAnimationInner_Access_Array is array (Natural range <>) of NullIndexedAnimationInner_Access;
    type NullIndexedAnimationInner_Access_Array_Access is access all NullIndexedAnimationInner_Access_Array;
+   type NullIndexedAnimationInner_Access_Array_Access_Array is array (Natural range <>) of NullIndexedAnimationInner_Access_Array_Access;
+   type NullIndexedAnimationInner_Access_Array_Access_Array_Access is access all NullIndexedAnimationInner_Access_Array_Access_Array;
 
    type NullIndexedAnimationInner is new NullIndexedAnimation with null record;
 

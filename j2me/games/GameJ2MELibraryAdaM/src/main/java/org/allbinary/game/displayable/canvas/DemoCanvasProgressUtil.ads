@@ -20,23 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-with org.allbinary.graphics.paint.PaintableComposite_Package; use org.allbinary.graphics.paint.PaintableComposite_Package;
-with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.game.displayable.canvas.DemoCanvas_Package; use org.allbinary.game.displayable.canvas.DemoCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package is
 
-   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package PaintableComposite_Package renames Standard.org.allbinary.graphics.paint.PaintableComposite_Package;
-   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
 
    type DemoCanvasProgressUtil is tagged;
    type DemoCanvasProgressUtil_Access is access all DemoCanvasProgressUtil'Class;
    type DemoCanvasProgressUtil_Access_Array is array (Natural range <>) of DemoCanvasProgressUtil_Access;
    type DemoCanvasProgressUtil_Access_Array_Access is access all DemoCanvasProgressUtil_Access_Array;
+   type DemoCanvasProgressUtil_Access_Array_Access_Array is array (Natural range <>) of DemoCanvasProgressUtil_Access_Array_Access;
+   type DemoCanvasProgressUtil_Access_Array_Access_Array_Access is access all DemoCanvasProgressUtil_Access_Array_Access_Array;
 
    type DemoCanvasProgressUtil is new Java_Object with null record;
 

@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.game.input.PCGameInputMapping_Package; use org.allbinary.game.input.PCGameInputMapping_Package;
-with org.allbinary.game.input.MotionLaptopDefaultGameInputMapping_Package; use org.allbinary.game.input.MotionLaptopDefaultGameInputMapping_Package;
 
 package org.allbinary.game.input.MotionLaptopGameInputMapping_Package is
 
@@ -32,6 +31,8 @@ package org.allbinary.game.input.MotionLaptopGameInputMapping_Package is
    type MotionLaptopGameInputMapping_Access is access all MotionLaptopGameInputMapping'Class;
    type MotionLaptopGameInputMapping_Access_Array is array (Natural range <>) of MotionLaptopGameInputMapping_Access;
    type MotionLaptopGameInputMapping_Access_Array_Access is access all MotionLaptopGameInputMapping_Access_Array;
+   type MotionLaptopGameInputMapping_Access_Array_Access_Array is array (Natural range <>) of MotionLaptopGameInputMapping_Access_Array_Access;
+   type MotionLaptopGameInputMapping_Access_Array_Access_Array_Access is access all MotionLaptopGameInputMapping_Access_Array_Access_Array;
 
    type MotionLaptopGameInputMapping is new PCGameInputMapping with null record;
 

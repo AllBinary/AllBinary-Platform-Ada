@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package; use org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLProcessor_Package; use org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 
 package org.allbinary.graphics.opengles.OrthogonalLightingOpenGLProcessorFactory_Package is
@@ -30,6 +29,8 @@ package org.allbinary.graphics.opengles.OrthogonalLightingOpenGLProcessorFactory
    type OrthogonalLightingOpenGLProcessorFactory_Access is access all OrthogonalLightingOpenGLProcessorFactory'Class;
    type OrthogonalLightingOpenGLProcessorFactory_Access_Array is array (Natural range <>) of OrthogonalLightingOpenGLProcessorFactory_Access;
    type OrthogonalLightingOpenGLProcessorFactory_Access_Array_Access is access all OrthogonalLightingOpenGLProcessorFactory_Access_Array;
+   type OrthogonalLightingOpenGLProcessorFactory_Access_Array_Access_Array is array (Natural range <>) of OrthogonalLightingOpenGLProcessorFactory_Access_Array_Access;
+   type OrthogonalLightingOpenGLProcessorFactory_Access_Array_Access_Array_Access is access all OrthogonalLightingOpenGLProcessorFactory_Access_Array_Access_Array;
 
    type OrthogonalLightingOpenGLProcessorFactory is new Java_Object with record
       sceneLightingOrthogonalModeOpenGLProcessor : OpenGLProcessor_Access;

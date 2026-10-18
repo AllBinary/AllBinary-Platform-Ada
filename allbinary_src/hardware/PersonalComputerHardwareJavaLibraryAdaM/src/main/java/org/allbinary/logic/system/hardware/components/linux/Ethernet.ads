@@ -32,8 +32,10 @@ package org.allbinary.logic.system.hardware.components.linux.Ethernet_Package is
    type Ethernet_Access is access all Ethernet'Class;
    type Ethernet_Access_Array is array (Natural range <>) of Ethernet_Access;
    type Ethernet_Access_Array_Access is access all Ethernet_Access_Array;
+   type Ethernet_Access_Array_Access_Array is array (Natural range <>) of Ethernet_Access_Array_Access;
+   type Ethernet_Access_Array_Access_Array_Access is access all Ethernet_Access_Array_Access_Array;
 
-   type Ethernet is new HardwareComponentInterface and EthernetInterface with record
+   type Ethernet is new Java_Object and HardwareComponentInterface and EthernetInterface with record
       data : Unbounded_String;
    end record;
 

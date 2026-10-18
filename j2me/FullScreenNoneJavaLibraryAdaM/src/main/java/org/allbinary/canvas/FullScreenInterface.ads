@@ -28,6 +28,8 @@ package org.allbinary.canvas.FullScreenInterface_Package is
    type FullScreenInterface_Access is access all FullScreenInterface'Class;
    type FullScreenInterface_Access_Array is array (Natural range <>) of FullScreenInterface_Access;
    type FullScreenInterface_Access_Array_Access is access all FullScreenInterface_Access_Array;
+   type FullScreenInterface_Access_Array_Access_Array is array (Natural range <>) of FullScreenInterface_Access_Array_Access;
+   type FullScreenInterface_Access_Array_Access_Array_Access is access all FullScreenInterface_Access_Array_Access_Array;
 
 end org.allbinary.canvas.FullScreenInterface_Package;
 

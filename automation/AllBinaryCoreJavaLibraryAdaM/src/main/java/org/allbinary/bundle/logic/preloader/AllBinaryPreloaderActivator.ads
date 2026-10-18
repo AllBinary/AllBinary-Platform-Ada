@@ -22,32 +22,24 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.osgi.framework.BundleActivator_Package; use org.osgi.framework.BundleActivator_Package;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
-with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
-with org.osgi.framework.ServiceRegistration_Package; use org.osgi.framework.ServiceRegistration_Package;
-with org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package; use org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Package is
 
    package BundleActivator_Package renames Standard.org.osgi.framework.BundleActivator_Package;
    package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
-   package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
-   package ServiceRegistration_Package renames Standard.org.osgi.framework.ServiceRegistration_Package;
-   package CryptServiceFactory_Package renames Standard.org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type AllBinaryPreloaderActivator is tagged;
    type AllBinaryPreloaderActivator_Access is access all AllBinaryPreloaderActivator'Class;
    type AllBinaryPreloaderActivator_Access_Array is array (Natural range <>) of AllBinaryPreloaderActivator_Access;
    type AllBinaryPreloaderActivator_Access_Array_Access is access all AllBinaryPreloaderActivator_Access_Array;
+   type AllBinaryPreloaderActivator_Access_Array_Access_Array is array (Natural range <>) of AllBinaryPreloaderActivator_Access_Array_Access;
+   type AllBinaryPreloaderActivator_Access_Array_Access_Array_Access is access all AllBinaryPreloaderActivator_Access_Array_Access_Array;
 
-   type AllBinaryPreloaderActivator is new BundleActivator with record
+   type AllBinaryPreloaderActivator is new Java_Object and BundleActivator with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;

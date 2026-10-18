@@ -32,8 +32,10 @@ package org.allbinary.logic.system.hardware.components.linux.Video_Package is
    type Video_Access is access all Video'Class;
    type Video_Access_Array is array (Natural range <>) of Video_Access;
    type Video_Access_Array_Access is access all Video_Access_Array;
+   type Video_Access_Array_Access_Array is array (Natural range <>) of Video_Access_Array_Access;
+   type Video_Access_Array_Access_Array_Access is access all Video_Access_Array_Access_Array;
 
-   type Video is new HardwareComponentInterface and VideoInterface with record
+   type Video is new Java_Object and HardwareComponentInterface and VideoInterface with record
       data : Unbounded_String;
    end record;
 

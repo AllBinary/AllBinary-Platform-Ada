@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 
    procedure Initialize_Fields (This : in out ImageModifierUtil'Class) is

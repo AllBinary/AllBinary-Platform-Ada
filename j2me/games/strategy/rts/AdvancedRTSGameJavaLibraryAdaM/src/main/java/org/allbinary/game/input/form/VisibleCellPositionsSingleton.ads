@@ -24,16 +24,11 @@ with javax.microedition.lcdui.game.SimpleTiledLayer_Package; use javax.microedit
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.layer.RTSLayerEvent_Package; use org.allbinary.game.layer.RTSLayerEvent_Package;
 with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package; use org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
-with org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package; use org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.layer.event.ScrollMapEvent_Package; use org.allbinary.layer.event.ScrollMapEvent_Package;
-with org.allbinary.layer.event.ScrollMapEventHandler_Package; use org.allbinary.layer.event.ScrollMapEventHandler_Package;
 with org.allbinary.layer.event.ScrollMapEventListenerInterface_Package; use org.allbinary.layer.event.ScrollMapEventListenerInterface_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 
 package org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package is
 
@@ -41,23 +36,20 @@ package org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package is
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package RTSLayerEvent_Package renames Standard.org.allbinary.game.layer.RTSLayerEvent_Package;
    package BuildingEventListenerInterface_Package renames Standard.org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
-   package LocalPlayerBuildingEventHandler_Package renames Standard.org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
    package ScrollMapEvent_Package renames Standard.org.allbinary.layer.event.ScrollMapEvent_Package;
-   package ScrollMapEventHandler_Package renames Standard.org.allbinary.layer.event.ScrollMapEventHandler_Package;
    package ScrollMapEventListenerInterface_Package renames Standard.org.allbinary.layer.event.ScrollMapEventListenerInterface_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type VisibleCellPositionsSingleton is tagged;
    type VisibleCellPositionsSingleton_Access is access all VisibleCellPositionsSingleton'Class;
    type VisibleCellPositionsSingleton_Access_Array is array (Natural range <>) of VisibleCellPositionsSingleton_Access;
    type VisibleCellPositionsSingleton_Access_Array_Access is access all VisibleCellPositionsSingleton_Access_Array;
+   type VisibleCellPositionsSingleton_Access_Array_Access_Array is array (Natural range <>) of VisibleCellPositionsSingleton_Access_Array_Access;
+   type VisibleCellPositionsSingleton_Access_Array_Access_Array_Access is access all VisibleCellPositionsSingleton_Access_Array_Access_Array;
 
-   type VisibleCellPositionsSingleton is new BuildingEventListenerInterface and ScrollMapEventListenerInterface with record
+   type VisibleCellPositionsSingleton is new Java_Object and BuildingEventListenerInterface and ScrollMapEventListenerInterface with record
       stationaryVisibleCellPositions : Short_Integer_Array_Access_Array_Access;
       visibleCellPositions : Short_Integer_Array_Access_Array_Access;
       currentlyVisibleCellPositions : Short_Integer_Array_Access_Array_Access;

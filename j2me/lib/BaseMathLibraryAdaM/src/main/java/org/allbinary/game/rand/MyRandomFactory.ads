@@ -20,27 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Random_Package; use java.util.Random_Package;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
-with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with java.util.Random_Package; use java.util.Random_Package;
 with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.game.rand.MyRandomFactory_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package Random_Package renames Standard.java.util.Random_Package;
    package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type MyRandomFactory is tagged;
    type MyRandomFactory_Access is access all MyRandomFactory'Class;
    type MyRandomFactory_Access_Array is array (Natural range <>) of MyRandomFactory_Access;
    type MyRandomFactory_Access_Array_Access is access all MyRandomFactory_Access_Array;
+   type MyRandomFactory_Access_Array_Access_Array is array (Natural range <>) of MyRandomFactory_Access_Array_Access;
+   type MyRandomFactory_Access_Array_Access_Array_Access is access all MyRandomFactory_Access_Array_Access_Array;
 
    type MyRandomFactory is new Java_Object with record
       mathUtil : MathUtil_Access;

@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.view.ViewPositionFactoryInterface_Package;
-with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 
 package org.allbinary.view.ViewPositionFactory_Package is
@@ -31,8 +30,10 @@ package org.allbinary.view.ViewPositionFactory_Package is
    type ViewPositionFactory_Access is access all ViewPositionFactory'Class;
    type ViewPositionFactory_Access_Array is array (Natural range <>) of ViewPositionFactory_Access;
    type ViewPositionFactory_Access_Array_Access is access all ViewPositionFactory_Access_Array;
+   type ViewPositionFactory_Access_Array_Access_Array is array (Natural range <>) of ViewPositionFactory_Access_Array_Access;
+   type ViewPositionFactory_Access_Array_Access_Array_Access is access all ViewPositionFactory_Access_Array_Access_Array;
 
-   type ViewPositionFactory is new ViewPositionFactoryInterface with null record;
+   type ViewPositionFactory is new Java_Object and ViewPositionFactoryInterface with null record;
 
    procedure Initialize (This : in out ViewPositionFactory'Class);
    function Create return ViewPositionFactory_Access;

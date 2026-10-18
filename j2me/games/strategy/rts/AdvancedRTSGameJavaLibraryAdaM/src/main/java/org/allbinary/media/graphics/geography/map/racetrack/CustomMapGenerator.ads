@@ -20,11 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.AdvancedRTSGameLayer_Package; use org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
-with org.allbinary.game.layer.waypoint.WaypointLayer_Package; use org.allbinary.game.layer.waypoint.WaypointLayer_Package;
-with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package;
@@ -32,11 +27,6 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap
 
 package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package is
 
-   package AdvancedRTSGameLayer_Package renames Standard.org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
-   package WaypointLayer_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointLayer_Package;
-   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
-   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
    package GeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
    package DropCellPositionHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 
@@ -44,6 +34,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_
    type CustomMapGenerator_Access is access all CustomMapGenerator'Class;
    type CustomMapGenerator_Access_Array is array (Natural range <>) of CustomMapGenerator_Access;
    type CustomMapGenerator_Access_Array_Access is access all CustomMapGenerator_Access_Array;
+   type CustomMapGenerator_Access_Array_Access_Array is array (Natural range <>) of CustomMapGenerator_Access_Array_Access;
+   type CustomMapGenerator_Access_Array_Access_Array_Access is access all CustomMapGenerator_Access_Array_Access_Array;
 
    type CustomMapGenerator is new CustomMapGeneratorBase with record
       customMapArray : Integer_Array_Access_Array_Access;

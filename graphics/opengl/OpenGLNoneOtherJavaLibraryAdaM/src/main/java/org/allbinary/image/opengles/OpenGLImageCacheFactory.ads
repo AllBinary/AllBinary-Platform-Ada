@@ -30,6 +30,8 @@ package org.allbinary.image.opengles.OpenGLImageCacheFactory_Package is
    type OpenGLImageCacheFactory_Access is access all OpenGLImageCacheFactory'Class;
    type OpenGLImageCacheFactory_Access_Array is array (Natural range <>) of OpenGLImageCacheFactory_Access;
    type OpenGLImageCacheFactory_Access_Array_Access is access all OpenGLImageCacheFactory_Access_Array;
+   type OpenGLImageCacheFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLImageCacheFactory_Access_Array_Access;
+   type OpenGLImageCacheFactory_Access_Array_Access_Array_Access is access all OpenGLImageCacheFactory_Access_Array_Access_Array;
 
    type OpenGLImageCacheFactory is new Java_Object with null record;
    IMAGE_CACHE : ImageCache_Access;

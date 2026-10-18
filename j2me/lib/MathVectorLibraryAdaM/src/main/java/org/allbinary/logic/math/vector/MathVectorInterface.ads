@@ -30,6 +30,8 @@ package org.allbinary.logic.math.vector.MathVectorInterface_Package is
    type MathVectorInterface_Access is access all MathVectorInterface'Class;
    type MathVectorInterface_Access_Array is array (Natural range <>) of MathVectorInterface_Access;
    type MathVectorInterface_Access_Array_Access is access all MathVectorInterface_Access_Array;
+   type MathVectorInterface_Access_Array_Access_Array is array (Natural range <>) of MathVectorInterface_Access_Array_Access;
+   type MathVectorInterface_Access_Array_Access_Array_Access is access all MathVectorInterface_Access_Array_Access_Array;
    function getDirection (This : in out MathVectorInterface) return Integer is abstract;
    function getMagnitude (This : in out MathVectorInterface) return BasicDecimal_Access is abstract;
    function getResult (This : in out MathVectorInterface) return BasicDecimal_Access is abstract;

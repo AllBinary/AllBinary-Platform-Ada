@@ -30,6 +30,8 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    type ProfileActionScriptOutputInterface_Access is access all ProfileActionScriptOutputInterface'Class;
    type ProfileActionScriptOutputInterface_Access_Array is array (Natural range <>) of ProfileActionScriptOutputInterface_Access;
    type ProfileActionScriptOutputInterface_Access_Array_Access is access all ProfileActionScriptOutputInterface_Access_Array;
+   type ProfileActionScriptOutputInterface_Access_Array_Access_Array is array (Natural range <>) of ProfileActionScriptOutputInterface_Access_Array_Access;
+   type ProfileActionScriptOutputInterface_Access_Array_Access_Array_Access is access all ProfileActionScriptOutputInterface_Access_Array_Access_Array;
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputInterface_Package;
 

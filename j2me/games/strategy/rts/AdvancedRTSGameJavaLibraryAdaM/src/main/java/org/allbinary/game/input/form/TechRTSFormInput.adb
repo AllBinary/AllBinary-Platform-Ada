@@ -13,8 +13,39 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.RTSGameStrings_Package; use org.allbinary.game.layer.RTSGameStrings_Package;
+with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
+with org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package; use org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package;
+with org.allbinary.game.layer.capital.Capital_Package; use org.allbinary.game.layer.capital.Capital_Package;
+with org.allbinary.game.rts.technology.event.TechEventHandler_Package; use org.allbinary.game.rts.technology.event.TechEventHandler_Package;
+with org.allbinary.media.audio.BuildingSound_Package; use org.allbinary.media.audio.BuildingSound_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+
 package body org.allbinary.game.input.form.TechRTSFormInput_Package is
 
+   package RTSGameStrings_Package renames Standard.org.allbinary.game.layer.RTSGameStrings_Package;
+   package RTSInterface_Package renames Standard.org.allbinary.game.layer.RTSInterface_Package;
+   package TechnologyRTSInterfaceImageItem_Package renames Standard.org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package;
+   package Capital_Package renames Standard.org.allbinary.game.layer.capital.Capital_Package;
+   package TechEventHandler_Package renames Standard.org.allbinary.game.rts.technology.event.TechEventHandler_Package;
+   package BuildingSound_Package renames Standard.org.allbinary.media.audio.BuildingSound_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ErrorSound_Package renames Standard.org.allbinary.media.audio.ErrorSound_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
    procedure Initialize_Fields (This : in out TechRTSFormInput'Class) is
    begin
       null;

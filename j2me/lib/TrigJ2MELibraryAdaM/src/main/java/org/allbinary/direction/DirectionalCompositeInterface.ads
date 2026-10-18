@@ -29,6 +29,8 @@ package org.allbinary.direction.DirectionalCompositeInterface_Package is
    type DirectionalCompositeInterface_Access is access all DirectionalCompositeInterface'Class;
    type DirectionalCompositeInterface_Access_Array is array (Natural range <>) of DirectionalCompositeInterface_Access;
    type DirectionalCompositeInterface_Access_Array_Access is access all DirectionalCompositeInterface_Access_Array;
+   type DirectionalCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of DirectionalCompositeInterface_Access_Array_Access;
+   type DirectionalCompositeInterface_Access_Array_Access_Array_Access is access all DirectionalCompositeInterface_Access_Array_Access_Array;
    function getDirectionalInterface (This : in out DirectionalCompositeInterface) return DirectionalInterface_Access is abstract;
 
 end org.allbinary.direction.DirectionalCompositeInterface_Package;

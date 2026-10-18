@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
+with org.allbinary.graphics.displayable.command.MyCommandsFactory_Package; use org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+
 package body org.allbinary.graphics.displayable.MyCanvas_Package is
 
+   package NullCommandListener_Package renames Standard.javax.microedition.lcdui.NullCommandListener_Package;
+   package MyCommandsFactory_Package renames Standard.org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out MyCanvas'Class) is
    begin
       null;

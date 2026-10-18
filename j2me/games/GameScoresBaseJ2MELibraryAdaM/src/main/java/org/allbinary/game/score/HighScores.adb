@@ -13,12 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.score.HighScores_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out HighScores'Class) is
    begin
       null;
-      This.orderedHighScoresList := BasicArrayListD_Package.Create;
+      This.orderedHighScoresList := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
       
       This.columnOneHeading := To_Unbounded_String ("Name");
@@ -65,7 +74,7 @@ package body org.allbinary.game.score.HighScores_Package is
    procedure addHighScore (This : in out HighScores; newHighScore_Param : access HighScore_Package.HighScore'Class) is
       newHighScore : constant HighScore_Access := HighScore_Access (newHighScore_Param);
    begin
-        This.orderedHighScoresList.add (newHighScore);
+        This.orderedHighScoresList.add (Java_Object_Access (newHighScore));
    end addHighScore;
 
    function getHeading (This : in out HighScores) return Unbounded_String is

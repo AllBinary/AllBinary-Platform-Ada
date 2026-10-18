@@ -16,6 +16,8 @@ package org.allbinary.graphics.form.item.TextFieldItemHelper_Package is
    type TextFieldItemHelper_Access is access all TextFieldItemHelper'Class;
    type TextFieldItemHelper_Access_Array is array (Natural range <>) of TextFieldItemHelper_Access;
    type TextFieldItemHelper_Access_Array_Access is access all TextFieldItemHelper_Access_Array;
+   type TextFieldItemHelper_Access_Array_Access_Array is array (Natural range <>) of TextFieldItemHelper_Access_Array_Access;
+   type TextFieldItemHelper_Access_Array_Access_Array_Access is access all TextFieldItemHelper_Access_Array_Access_Array;
 
    type TextFieldItemHelper is new Java_Object with null record;
 

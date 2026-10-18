@@ -30,6 +30,8 @@ package org.allbinary.thirdparty.store.ThirdPartyStore_Package is
    type ThirdPartyStore_Access is access all ThirdPartyStore'Class;
    type ThirdPartyStore_Access_Array is array (Natural range <>) of ThirdPartyStore_Access;
    type ThirdPartyStore_Access_Array_Access is access all ThirdPartyStore_Access_Array;
+   type ThirdPartyStore_Access_Array_Access_Array is array (Natural range <>) of ThirdPartyStore_Access_Array_Access;
+   type ThirdPartyStore_Access_Array_Access_Array_Access is access all ThirdPartyStore_Access_Array_Access_Array;
 
    type ThirdPartyStore is new Java_Object with record
       authorized : Boolean;

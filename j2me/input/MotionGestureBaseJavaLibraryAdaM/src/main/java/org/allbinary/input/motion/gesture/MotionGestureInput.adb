@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+
 package body org.allbinary.input.motion.gesture.MotionGestureInput_Package is
 
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
    procedure Initialize_Fields (This : in out MotionGestureInput'Class) is
    begin
       null;

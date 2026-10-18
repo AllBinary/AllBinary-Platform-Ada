@@ -21,27 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
-with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 
 package org.allbinary.input.motion.button.TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Package is
 
    package BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
-   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
    package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
-   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory is tagged;
    type TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access is access all TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory'Class;
    type TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array is array (Natural range <>) of TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access;
    type TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access is access all TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array;
+   type TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access;
+   type TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array_Access is access all TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array;
 
    type TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory is new BaseResourceAnimationInterfaceFactoryInterfaceFactory with null record;
 

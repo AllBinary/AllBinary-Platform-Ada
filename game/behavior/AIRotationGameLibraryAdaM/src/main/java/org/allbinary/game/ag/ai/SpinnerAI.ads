@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
@@ -28,7 +27,6 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 
 package org.allbinary.game.ag.ai.SpinnerAI_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
@@ -38,6 +36,8 @@ package org.allbinary.game.ag.ai.SpinnerAI_Package is
    type SpinnerAI_Access is access all SpinnerAI'Class;
    type SpinnerAI_Access_Array is array (Natural range <>) of SpinnerAI_Access;
    type SpinnerAI_Access_Array_Access is access all SpinnerAI_Access_Array;
+   type SpinnerAI_Access_Array_Access_Array is array (Natural range <>) of SpinnerAI_Access_Array_Access;
+   type SpinnerAI_Access_Array_Access_Array_Access is access all SpinnerAI_Access_Array_Access_Array;
 
    type SpinnerAI is new BasicAI with record
       isEven : Boolean;

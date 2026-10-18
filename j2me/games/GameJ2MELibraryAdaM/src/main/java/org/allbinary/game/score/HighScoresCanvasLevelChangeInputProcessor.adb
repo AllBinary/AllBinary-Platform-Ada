@@ -13,14 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.game.input.event.GameKeyEventHandler_Package; use org.allbinary.game.input.event.GameKeyEventHandler_Package;
+with org.allbinary.game.input.event.GameKeyEventUtil_Package; use org.allbinary.game.input.event.GameKeyEventUtil_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+
 package body org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package GameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.GameKeyEventHandler_Package;
+   package GameKeyEventUtil_Package renames Standard.org.allbinary.game.input.event.GameKeyEventUtil_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out HighScoresCanvasLevelChangeInputProcessor'Class) is
    begin
       null;
       This.displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
       This.INSTRUCTIONS := To_Unbounded_String ("(Right = Next Track, Left = Previous Track)");
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (HighScoresCanvasLevelChangeInputProcessor_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (HighScoresCanvasLevelChangeInputProcessor_Access'(This'Unchecked_Access)));
       This.anchor := Anchor_Package.TOP_LEFT;
       This.fontHeight := 0;
    end Initialize_Fields;

@@ -31,6 +31,8 @@ package org.allbinary.animation.VectorAnimationInterface_Package is
    type VectorAnimationInterface_Access is access all VectorAnimationInterface'Class;
    type VectorAnimationInterface_Access_Array is array (Natural range <>) of VectorAnimationInterface_Access;
    type VectorAnimationInterface_Access_Array_Access is access all VectorAnimationInterface_Access_Array;
+   type VectorAnimationInterface_Access_Array_Access_Array is array (Natural range <>) of VectorAnimationInterface_Access_Array_Access;
+   type VectorAnimationInterface_Access_Array_Access_Array_Access is access all VectorAnimationInterface_Access_Array_Access_Array;
    function getPoints (This : in out VectorAnimationInterface; frame : Integer) return Integer_Array_Access_Array_Access is abstract;
 
 end org.allbinary.animation.VectorAnimationInterface_Package;

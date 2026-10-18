@@ -20,23 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
-with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.input.ABKeyEventWrapper_Package; use org.allbinary.game.input.ABKeyEventWrapper_Package;
 with org.allbinary.game.input.PCGameKey_Package; use org.allbinary.game.input.PCGameKey_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 
 package org.allbinary.game.input.PCKeyFactory_Package is
 
-   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
-   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type PCKeyFactory is tagged;
    type PCKeyFactory_Access is access all PCKeyFactory'Class;
    type PCKeyFactory_Access_Array is array (Natural range <>) of PCKeyFactory_Access;
    type PCKeyFactory_Access_Array_Access is access all PCKeyFactory_Access_Array;
+   type PCKeyFactory_Access_Array_Access_Array is array (Natural range <>) of PCKeyFactory_Access_Array_Access;
+   type PCKeyFactory_Access_Array_Access_Array_Access is access all PCKeyFactory_Access_Array_Access_Array;
 
    type PCKeyFactory is new Java_Object with record
       keyEventWrapper : ABKeyEventWrapper_Access;

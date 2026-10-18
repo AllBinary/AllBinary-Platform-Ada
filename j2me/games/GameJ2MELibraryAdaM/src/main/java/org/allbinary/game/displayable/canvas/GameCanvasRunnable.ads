@@ -22,9 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbinary.game.displayable.canvas.GameRunnable_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
@@ -32,14 +30,14 @@ package org.allbinary.game.displayable.canvas.GameCanvasRunnable_Package is
 
    package GameTickDisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 
    type GameCanvasRunnable is tagged;
    type GameCanvasRunnable_Access is access all GameCanvasRunnable'Class;
    type GameCanvasRunnable_Access_Array is array (Natural range <>) of GameCanvasRunnable_Access;
    type GameCanvasRunnable_Access_Array_Access is access all GameCanvasRunnable_Access_Array;
+   type GameCanvasRunnable_Access_Array_Access_Array is array (Natural range <>) of GameCanvasRunnable_Access_Array_Access;
+   type GameCanvasRunnable_Access_Array_Access_Array_Access is access all GameCanvasRunnable_Access_Array_Access_Array;
 
    type GameCanvasRunnable is new GameRunnable with record
       logUtil : LogUtil_Access;

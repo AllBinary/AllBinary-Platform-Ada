@@ -29,8 +29,10 @@ package org.allbinary.graphics.displayable.BaseScalable_Package is
    type BaseScalable_Access is access all BaseScalable'Class;
    type BaseScalable_Access_Array is array (Natural range <>) of BaseScalable_Access;
    type BaseScalable_Access_Array_Access is access all BaseScalable_Access_Array;
+   type BaseScalable_Access_Array_Access_Array is array (Natural range <>) of BaseScalable_Access_Array_Access;
+   type BaseScalable_Access_Array_Access_Array_Access is access all BaseScalable_Access_Array_Access_Array;
 
-   type BaseScalable is new ScalableListener with null record;
+   type BaseScalable is new Java_Object and ScalableListener with null record;
 
    procedure Initialize (This : in out BaseScalable'Class);
    function Create return BaseScalable_Access;

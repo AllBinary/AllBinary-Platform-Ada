@@ -20,26 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
-with java.io.InputStream_Package; use java.io.InputStream_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.logic.io.file.AbFileSystem_Package is
 
-   package InputStream_Package renames Standard.java.io.InputStream_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AbFileSystem is tagged;
    type AbFileSystem_Access is access all AbFileSystem'Class;
    type AbFileSystem_Access_Array is array (Natural range <>) of AbFileSystem_Access;
    type AbFileSystem_Access_Array_Access is access all AbFileSystem_Access_Array;
+   type AbFileSystem_Access_Array_Access_Array is array (Natural range <>) of AbFileSystem_Access_Array_Access;
+   type AbFileSystem_Access_Array_Access_Array_Access is access all AbFileSystem_Access_Array_Access_Array;
 
    type AbFileSystem is new Java_Object with record
       logUtil : LogUtil_Access;
@@ -62,6 +57,8 @@ package org.allbinary.logic.io.file.AbFileSystem_Package is
    procedure readAsString (This : in out AbFileSystem; fileName : Unbounded_String; bytes : Short_Short_Integer_Array_Access);
    function close (This : in out AbFileSystem; closeable_Param : access Java_Object'Class) return Boolean;
    procedure close (This : in out AbFileSystem; closeable_Param : access Java_Object'Class);
+   function close (This : in out AbFileSystem; Value : Unbounded_String) return Boolean;
+   procedure close (This : in out AbFileSystem; Value : Unbounded_String);
 
 end org.allbinary.logic.io.file.AbFileSystem_Package;
 

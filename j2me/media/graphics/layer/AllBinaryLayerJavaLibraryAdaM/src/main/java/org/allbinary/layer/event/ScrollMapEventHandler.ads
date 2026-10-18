@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.layer.event.ScrollMapEventListenerInterface_Package; use org.allbinary.layer.event.ScrollMapEventListenerInterface_Package;
-with org.allbinary.layer.event.ScrollMapEvent_Package; use org.allbinary.layer.event.ScrollMapEvent_Package;
 
 package org.allbinary.layer.event.ScrollMapEventHandler_Package is
 
@@ -36,6 +34,8 @@ package org.allbinary.layer.event.ScrollMapEventHandler_Package is
    type ScrollMapEventHandler_Access is access all ScrollMapEventHandler'Class;
    type ScrollMapEventHandler_Access_Array is array (Natural range <>) of ScrollMapEventHandler_Access;
    type ScrollMapEventHandler_Access_Array_Access is access all ScrollMapEventHandler_Access_Array;
+   type ScrollMapEventHandler_Access_Array_Access_Array is array (Natural range <>) of ScrollMapEventHandler_Access_Array_Access;
+   type ScrollMapEventHandler_Access_Array_Access_Array_Access is access all ScrollMapEventHandler_Access_Array_Access_Array;
 
    type ScrollMapEventHandler is new BasicEventHandler with null record;
    SINGLETON : ScrollMapEventHandler_Access;

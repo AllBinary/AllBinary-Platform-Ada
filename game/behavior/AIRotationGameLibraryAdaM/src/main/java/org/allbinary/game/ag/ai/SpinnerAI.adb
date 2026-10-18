@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+
 package body org.allbinary.game.ag.ai.SpinnerAI_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    procedure Initialize_Fields (This : in out SpinnerAI'Class) is
    begin
       null;

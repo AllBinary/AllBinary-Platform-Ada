@@ -22,18 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.EventObject_Package; use java.util.EventObject_Package;
 with org.allbinary.logic.communication.smtp.info.EmailInfo_Package; use org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
 
 package org.allbinary.logic.communication.smtp.event.EmailEvent_Package is
 
    package EmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type EmailEvent is tagged;
    type EmailEvent_Access is access all EmailEvent'Class;
    type EmailEvent_Access_Array is array (Natural range <>) of EmailEvent_Access;
    type EmailEvent_Access_Array_Access is access all EmailEvent_Access_Array;
+   type EmailEvent_Access_Array_Access_Array is array (Natural range <>) of EmailEvent_Access_Array_Access;
+   type EmailEvent_Access_Array_Access_Array_Access is access all EmailEvent_Access_Array_Access_Array;
 
    type EmailEvent is new EventObject with record
       emailInfo : EmailInfo_Access;

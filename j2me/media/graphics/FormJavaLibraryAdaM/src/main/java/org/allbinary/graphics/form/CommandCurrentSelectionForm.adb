@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.animation.vector.RectangleAdjustedAnimation_Package; use org.allbinary.animation.vector.RectangleAdjustedAnimation_Package;
+with org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package; use org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.form.item.CommandTextItem_Package; use org.allbinary.graphics.form.item.CommandTextItem_Package;
+with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
+
 package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
 
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package RectangleAdjustedAnimation_Package renames Standard.org.allbinary.animation.vector.RectangleAdjustedAnimation_Package;
+   package RectangleFilledAdjustedAnimation_Package renames Standard.org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package CommandTextItem_Package renames Standard.org.allbinary.graphics.form.item.CommandTextItem_Package;
    procedure Initialize_Fields (This : in out CommandCurrentSelectionForm'Class) is
    begin
       null;

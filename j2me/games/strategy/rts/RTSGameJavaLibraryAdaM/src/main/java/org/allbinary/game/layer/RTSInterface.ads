@@ -28,6 +28,8 @@ package org.allbinary.game.layer.RTSInterface_Package is
    type RTSInterface_Access is access all RTSInterface'Class;
    type RTSInterface_Access_Array is array (Natural range <>) of RTSInterface_Access;
    type RTSInterface_Access_Array_Access is access all RTSInterface_Access_Array;
+   type RTSInterface_Access_Array_Access_Array is array (Natural range <>) of RTSInterface_Access_Array_Access;
+   type RTSInterface_Access_Array_Access_Array_Access is access all RTSInterface_Access_Array_Access_Array;
    function isSelfUpgradeable (This : in out RTSInterface) return Boolean is abstract;
    function isCompleted (This : in out RTSInterface) return Boolean is abstract;
    function getPercentComplete (This : in out RTSInterface) return Integer is abstract;

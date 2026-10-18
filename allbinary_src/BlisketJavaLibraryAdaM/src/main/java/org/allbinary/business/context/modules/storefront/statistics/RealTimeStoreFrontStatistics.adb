@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package; use org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package;
+with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package; use org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package;
+with org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatistics_Package; use org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatistics_Package;
+with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package;
+
 package body org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package is
 
+   package StoreFrontAdvertisementsStatistics_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package;
+   package StoreFrontInventoryStatistics_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package;
+   package StoreFrontOrdersHistoryStatistics_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatistics_Package;
+   package StoreFrontUsersStatistics_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package;
    procedure Initialize_Fields (This : in out RealTimeStoreFrontStatistics'Class) is
    begin
       null;

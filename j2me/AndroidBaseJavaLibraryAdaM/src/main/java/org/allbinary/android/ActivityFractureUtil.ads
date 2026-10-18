@@ -30,6 +30,8 @@ package org.allbinary.android.ActivityFractureUtil_Package is
    type ActivityFractureUtil_Access is access all ActivityFractureUtil'Class;
    type ActivityFractureUtil_Access_Array is array (Natural range <>) of ActivityFractureUtil_Access;
    type ActivityFractureUtil_Access_Array_Access is access all ActivityFractureUtil_Access_Array;
+   type ActivityFractureUtil_Access_Array_Access_Array is array (Natural range <>) of ActivityFractureUtil_Access_Array_Access;
+   type ActivityFractureUtil_Access_Array_Access_Array_Access is access all ActivityFractureUtil_Access_Array_Access_Array;
 
    type ActivityFractureUtil is new Java_Object with null record;
 

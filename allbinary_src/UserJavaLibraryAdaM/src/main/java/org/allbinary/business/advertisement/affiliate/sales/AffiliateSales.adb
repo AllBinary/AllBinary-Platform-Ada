@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package is
 
    procedure Initialize_Fields (This : in out AffiliateSales'Class) is

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.image.opengles.OpenGLESGL10Image_Package; use org.allbinary.image.opengles.OpenGLESGL10Image_Package;
+
 package body org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package is
 
    procedure Initialize_Fields (This : in out OpenGLESGL10ImageFactory'Class) is
@@ -39,7 +41,7 @@ package body org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package is
       bitmapFactory : constant PlatformBitmapBaseFactory_Access := PlatformBitmapBaseFactory_Access (bitmapFactory_Param);
       textureFactory : constant PlatformTextureBaseFactory_Access := PlatformTextureBaseFactory_Access (textureFactory_Param);
    begin
-        return OpenGLESGL10Image_Package.Create (image, bitmapFactory, textureFactory);
+        return Image_Access (OpenGLESGL10Image_Package.Create (image, bitmapFactory, textureFactory));
    end getInstance;
 
    procedure getInstance (This : in out OpenGLESGL10ImageFactory; image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) is

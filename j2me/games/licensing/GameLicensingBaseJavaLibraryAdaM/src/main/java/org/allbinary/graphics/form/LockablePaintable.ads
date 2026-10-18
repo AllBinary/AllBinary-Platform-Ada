@@ -22,23 +22,19 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-with org.allbinary.logic.system.security.licensing.LockedResources_Package; use org.allbinary.logic.system.security.licensing.LockedResources_Package;
-with org.allbinary.logic.system.security.licensing.LockedUtil_Package; use org.allbinary.logic.system.security.licensing.LockedUtil_Package;
 with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
 
 package org.allbinary.graphics.form.LockablePaintable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package LockedResources_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedResources_Package;
-   package LockedUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedUtil_Package;
 
    type LockablePaintable is tagged;
    type LockablePaintable_Access is access all LockablePaintable'Class;
    type LockablePaintable_Access_Array is array (Natural range <>) of LockablePaintable_Access;
    type LockablePaintable_Access_Array_Access is access all LockablePaintable_Access_Array;
+   type LockablePaintable_Access_Array_Access_Array is array (Natural range <>) of LockablePaintable_Access_Array_Access;
+   type LockablePaintable_Access_Array_Access_Array_Access is access all LockablePaintable_Access_Array_Access_Array;
 
    type LockablePaintable is new ItemPaintable with record
       animation : Animation_Access;

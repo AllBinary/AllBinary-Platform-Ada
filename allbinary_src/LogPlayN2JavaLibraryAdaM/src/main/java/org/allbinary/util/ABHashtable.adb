@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Map_Package; use java.util.Map_Package;
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+
 package body org.allbinary.util.ABHashtable_Package is
 
+   package Map_Package renames Standard.java.util.Map_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    procedure Initialize_Fields (This : in out ABHashtable'Class) is
    begin
       null;
@@ -128,6 +133,66 @@ package body org.allbinary.util.ABHashtable_Package is
 
    procedure equals (This : in out ABHashtable; obj_Param : access Java_Object'Class) is
       Java_Result : constant Boolean := ABHashtable'Class (This).equals (obj_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end equals;
+
+   function contains (This : in out ABHashtable; Value : Unbounded_String) return Boolean is
+   begin
+      return ABHashtable'Class (This).contains (Java_Box (Value));
+   end contains;
+
+   procedure contains (This : in out ABHashtable; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ABHashtable'Class (This).contains (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end contains;
+
+   function containsValue (This : in out ABHashtable; Value : Unbounded_String) return Boolean is
+   begin
+      return ABHashtable'Class (This).containsValue (Java_Box (Value));
+   end containsValue;
+
+   procedure containsValue (This : in out ABHashtable; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ABHashtable'Class (This).containsValue (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end containsValue;
+
+   function containsKey (This : in out ABHashtable; Value : Unbounded_String) return Boolean is
+   begin
+      return ABHashtable'Class (This).containsKey (Java_Box (Value));
+   end containsKey;
+
+   procedure containsKey (This : in out ABHashtable; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ABHashtable'Class (This).containsKey (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end containsKey;
+
+   function get (This : in out ABHashtable; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return ABHashtable'Class (This).get (Java_Box (Value));
+   end get;
+
+   procedure get (This : in out ABHashtable; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := ABHashtable'Class (This).get (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end get;
+
+   function equals (This : in out ABHashtable; Value : Unbounded_String) return Boolean is
+   begin
+      return ABHashtable'Class (This).equals (Java_Box (Value));
+   end equals;
+
+   procedure equals (This : in out ABHashtable; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ABHashtable'Class (This).equals (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

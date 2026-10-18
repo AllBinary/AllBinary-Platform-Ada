@@ -23,6 +23,8 @@ package org.allbinary.view.AllBinaryMidletViewInterface_Package is
    type AllBinaryMidletViewInterface_Access is access all AllBinaryMidletViewInterface'Class;
    type AllBinaryMidletViewInterface_Access_Array is array (Natural range <>) of AllBinaryMidletViewInterface_Access;
    type AllBinaryMidletViewInterface_Access_Array_Access is access all AllBinaryMidletViewInterface_Access_Array;
+   type AllBinaryMidletViewInterface_Access_Array_Access_Array is array (Natural range <>) of AllBinaryMidletViewInterface_Access_Array_Access;
+   type AllBinaryMidletViewInterface_Access_Array_Access_Array_Access is access all AllBinaryMidletViewInterface_Access_Array_Access_Array;
    procedure onResume (This : in out AllBinaryMidletViewInterface) is abstract;
    procedure onPause (This : in out AllBinaryMidletViewInterface) is abstract;
    procedure onDestroy (This : in out AllBinaryMidletViewInterface) is abstract;

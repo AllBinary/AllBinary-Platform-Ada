@@ -29,6 +29,8 @@ package org.allbinary.animation.AnimationInterfaceCompositeInterface_Package is
    type AnimationInterfaceCompositeInterface_Access is access all AnimationInterfaceCompositeInterface'Class;
    type AnimationInterfaceCompositeInterface_Access_Array is array (Natural range <>) of AnimationInterfaceCompositeInterface_Access;
    type AnimationInterfaceCompositeInterface_Access_Array_Access is access all AnimationInterfaceCompositeInterface_Access_Array;
+   type AnimationInterfaceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of AnimationInterfaceCompositeInterface_Access_Array_Access;
+   type AnimationInterfaceCompositeInterface_Access_Array_Access_Array_Access is access all AnimationInterfaceCompositeInterface_Access_Array_Access_Array;
    function getAnimationInterface (This : in out AnimationInterfaceCompositeInterface) return Animation_Access is abstract;
 
 end org.allbinary.animation.AnimationInterfaceCompositeInterface_Package;

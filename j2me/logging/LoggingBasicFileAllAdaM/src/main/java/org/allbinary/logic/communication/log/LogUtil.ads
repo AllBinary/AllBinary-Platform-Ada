@@ -20,23 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.log.FileLog_Package; use org.allbinary.log.FileLog_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.communication.log.Log_Package; use org.allbinary.logic.communication.log.Log_Package;
 
 package org.allbinary.logic.communication.log.LogUtil_Package is
 
-   package FileLog_Package renames Standard.org.allbinary.log.FileLog_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type LogUtil is tagged;
    type LogUtil_Access is access all LogUtil'Class;
    type LogUtil_Access_Array is array (Natural range <>) of LogUtil_Access;
    type LogUtil_Access_Array_Access is access all LogUtil_Access_Array;
+   type LogUtil_Access_Array_Access_Array is array (Natural range <>) of LogUtil_Access_Array_Access;
+   type LogUtil_Access_Array_Access_Array_Access is access all LogUtil_Access_Array_Access_Array;
 
    type LogUtil is new Java_Object with null record;
    instance : LogUtil_Access;

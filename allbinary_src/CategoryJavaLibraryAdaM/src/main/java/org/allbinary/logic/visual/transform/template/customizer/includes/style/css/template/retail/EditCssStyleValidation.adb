@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.dhtml.style.StyleData_Package; use org.allbinary.logic.visual.dhtml.style.StyleData_Package;
+with org.allbinary.logic.visual.dhtml.style.StylesData_Package; use org.allbinary.logic.visual.dhtml.style.StylesData_Package;
+with org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package; use org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package;
+
 package body org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package is
 
+   package StyleData_Package renames Standard.org.allbinary.logic.visual.dhtml.style.StyleData_Package;
+   package StylesData_Package renames Standard.org.allbinary.logic.visual.dhtml.style.StylesData_Package;
+   package ColorsView_Package renames Standard.org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package;
    procedure Initialize_Fields (This : in out EditCssStyleValidation'Class) is
    begin
       null;

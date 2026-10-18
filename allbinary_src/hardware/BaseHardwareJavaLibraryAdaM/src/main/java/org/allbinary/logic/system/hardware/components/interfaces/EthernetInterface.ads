@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.interfaces.EthernetInterf
    type EthernetInterface_Access is access all EthernetInterface'Class;
    type EthernetInterface_Access_Array is array (Natural range <>) of EthernetInterface_Access;
    type EthernetInterface_Access_Array_Access is access all EthernetInterface_Access_Array;
+   type EthernetInterface_Access_Array_Access_Array is array (Natural range <>) of EthernetInterface_Access_Array_Access;
+   type EthernetInterface_Access_Array_Access_Array_Access is access all EthernetInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.system.hardware.components.interfaces.EthernetInterface_Package;
 

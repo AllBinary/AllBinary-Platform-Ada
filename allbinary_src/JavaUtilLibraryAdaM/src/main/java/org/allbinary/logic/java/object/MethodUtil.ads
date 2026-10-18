@@ -21,17 +21,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.java.anyType.ParamsUtil_Package; use org.allbinary.logic.java.anyType.ParamsUtil_Package;
 
 package org.allbinary.logic.java.anyType.MethodUtil_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type MethodUtil is tagged;
    type MethodUtil_Access is access all MethodUtil'Class;
    type MethodUtil_Access_Array is array (Natural range <>) of MethodUtil_Access;
    type MethodUtil_Access_Array_Access is access all MethodUtil_Access_Array;
+   type MethodUtil_Access_Array_Access_Array is array (Natural range <>) of MethodUtil_Access_Array_Access;
+   type MethodUtil_Access_Array_Access_Array_Access is access all MethodUtil_Access_Array_Access_Array;
 
    type MethodUtil is new Java_Object with null record;
 

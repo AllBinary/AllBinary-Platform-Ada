@@ -13,8 +13,26 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
+with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with tags.HelperTag_Package; use tags.HelperTag_Package;
+with views.admin.inventory.InventoryItemView_Package; use views.admin.inventory.InventoryItemView_Package;
+with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghelpers.InventoryItemViewParentTagHelper_Package;
+
 package body admin.taghelpers.InventoryRequestHelper_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package AbTagData_Package renames Standard.admin.tags.AbTagData_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package HelperTag_Package renames Standard.tags.HelperTag_Package;
+   package InventoryItemView_Package renames Standard.views.admin.inventory.InventoryItemView_Package;
    procedure Initialize_Fields (This : in out InventoryRequestHelper'Class) is
    begin
       null;
@@ -115,8 +133,8 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            InventoryRequestHelper'Class (This).delete;
-            InventoryRequestHelper'Class (This).insert;
+            declare Java_Result renames InventoryRequestHelper'Class (This).delete; pragma Unreferenced (Java_Result); begin null; end;
+            declare Java_Result renames InventoryRequestHelper'Class (This).insert; pragma Unreferenced (Java_Result); begin null; end;
             success := To_Unbounded_String ("Item Successfully Updated");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, InventoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));

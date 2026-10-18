@@ -22,26 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.form.item.ABTextFieldItem_Package; use org.allbinary.graphics.form.item.ABTextFieldItem_Package;
 with org.allbinary.logic.control.validate.ValidatorBase_Package; use org.allbinary.logic.control.validate.ValidatorBase_Package;
-with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.graphics.form.item.validation.NumberTextFieldItemValidator_Package is
 
    package ABTextFieldItem_Package renames Standard.org.allbinary.graphics.form.item.ABTextFieldItem_Package;
    package ValidatorBase_Package renames Standard.org.allbinary.logic.control.validate.ValidatorBase_Package;
-   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type NumberTextFieldItemValidator is tagged;
    type NumberTextFieldItemValidator_Access is access all NumberTextFieldItemValidator'Class;
    type NumberTextFieldItemValidator_Access_Array is array (Natural range <>) of NumberTextFieldItemValidator_Access;
    type NumberTextFieldItemValidator_Access_Array_Access is access all NumberTextFieldItemValidator_Access_Array;
+   type NumberTextFieldItemValidator_Access_Array_Access_Array is array (Natural range <>) of NumberTextFieldItemValidator_Access_Array_Access;
+   type NumberTextFieldItemValidator_Access_Array_Access_Array_Access is access all NumberTextFieldItemValidator_Access_Array_Access_Array;
 
    type NumberTextFieldItemValidator is new ValidatorBase with record
       textFieldItem : ABTextFieldItem_Access;

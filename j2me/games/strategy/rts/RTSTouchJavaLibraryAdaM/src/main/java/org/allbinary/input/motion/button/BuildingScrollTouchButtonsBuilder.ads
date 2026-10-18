@@ -21,29 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
-with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
-with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
-with org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package; use org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package;
-with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
-with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-with org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package; use org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package;
-with org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package; use org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package;
 
 package org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type BuildingScrollTouchButtonsBuilder is tagged;
    type BuildingScrollTouchButtonsBuilder_Access is access all BuildingScrollTouchButtonsBuilder'Class;
    type BuildingScrollTouchButtonsBuilder_Access_Array is array (Natural range <>) of BuildingScrollTouchButtonsBuilder_Access;
    type BuildingScrollTouchButtonsBuilder_Access_Array_Access is access all BuildingScrollTouchButtonsBuilder_Access_Array;
+   type BuildingScrollTouchButtonsBuilder_Access_Array_Access_Array is array (Natural range <>) of BuildingScrollTouchButtonsBuilder_Access_Array_Access;
+   type BuildingScrollTouchButtonsBuilder_Access_Array_Access_Array_Access is access all BuildingScrollTouchButtonsBuilder_Access_Array_Access_Array;
 
    type BuildingScrollTouchButtonsBuilder is new BaseTouchInput with record
       logUtil : LogUtil_Access;

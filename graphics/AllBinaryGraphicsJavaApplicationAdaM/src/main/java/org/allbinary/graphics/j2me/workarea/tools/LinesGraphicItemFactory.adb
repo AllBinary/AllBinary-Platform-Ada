@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+
 package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_Package is
 
    procedure Initialize_Fields (This : in out LinesGraphicItemFactory'Class) is
@@ -36,7 +38,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_
    function getInstance (This : in out LinesGraphicItemFactory; canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) return GraphicItemInterface_Access is
       canvasJPanel : constant CanvasJPanel_Access := CanvasJPanel_Access (canvasJPanel_Param);
    begin
-        return LinesGraphicItem_Package.Create;
+        return GraphicItemInterface_Access (LinesGraphicItem_Package.Create);
    end getInstance;
 
    procedure getInstance (This : in out LinesGraphicItemFactory; canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) is

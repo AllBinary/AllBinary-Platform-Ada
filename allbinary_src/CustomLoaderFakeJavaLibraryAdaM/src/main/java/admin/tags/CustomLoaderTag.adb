@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body admin.tags.CustomLoaderTag_Package is
 
+   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out CustomLoaderTag'Class) is
    begin
       null;
@@ -55,7 +66,7 @@ package body admin.tags.CustomLoaderTag_Package is
         begin
             urlGlobals := AppUrlGlobals_Package.Create;
             urlGlobals.setWebappPath (This.webappPath);
-            URLGLOBALS.init (urlGlobals);
+            URLGLOBALS_Package.init (urlGlobals);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -76,7 +87,7 @@ package body admin.tags.CustomLoaderTag_Package is
                 This.logUtil.putF (This.commonStrings.START, CustomLoaderTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             if (This.command) /= (Null_Unbounded_String) then
-                if (Java_Compare_To (This.command, GLOBALS2.SET)) = (0) then
+                if (Java_Compare_To (This.command, GLOBALS2_Package.SET)) = (0) then
                     CustomLoaderTag'Class (This).setCustomLoaderWebappPath;
                 end if;
             end if;

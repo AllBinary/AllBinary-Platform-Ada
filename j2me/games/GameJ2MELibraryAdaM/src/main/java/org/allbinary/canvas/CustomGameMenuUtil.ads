@@ -20,22 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.AppletUtil_Package; use org.allbinary.AppletUtil_Package;
-with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
-with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
 
 package org.allbinary.canvas.CustomGameMenuUtil_Package is
 
-   package AppletUtil_Package renames Standard.org.allbinary.AppletUtil_Package;
-   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
-   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
    package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
 
    type CustomGameMenuUtil is tagged;
    type CustomGameMenuUtil_Access is access all CustomGameMenuUtil'Class;
    type CustomGameMenuUtil_Access_Array is array (Natural range <>) of CustomGameMenuUtil_Access;
    type CustomGameMenuUtil_Access_Array_Access is access all CustomGameMenuUtil_Access_Array;
+   type CustomGameMenuUtil_Access_Array_Access_Array is array (Natural range <>) of CustomGameMenuUtil_Access_Array_Access;
+   type CustomGameMenuUtil_Access_Array_Access_Array_Access is access all CustomGameMenuUtil_Access_Array_Access_Array;
 
    type CustomGameMenuUtil is new Java_Object with null record;
 

@@ -26,11 +26,8 @@ with org.allbinary.game.input.GameKeyEventSourceInterface_Package; use org.allbi
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.game.input.analog.AnalogLocationInput_Package; use org.allbinary.game.input.analog.AnalogLocationInput_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
-with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbinary.game.input.event.GameKeyEventFactory_Package;
-with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package is
 
@@ -40,16 +37,15 @@ package org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package is
    package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
    package AnalogLocationInput_Package renames Standard.org.allbinary.game.input.analog.AnalogLocationInput_Package;
    package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
-   package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
-   package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type DirectionalAnalogLocationInputProcessor is tagged;
    type DirectionalAnalogLocationInputProcessor_Access is access all DirectionalAnalogLocationInputProcessor'Class;
    type DirectionalAnalogLocationInputProcessor_Access_Array is array (Natural range <>) of DirectionalAnalogLocationInputProcessor_Access;
    type DirectionalAnalogLocationInputProcessor_Access_Array_Access is access all DirectionalAnalogLocationInputProcessor_Access_Array;
+   type DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array is array (Natural range <>) of DirectionalAnalogLocationInputProcessor_Access_Array_Access;
+   type DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array_Access is access all DirectionalAnalogLocationInputProcessor_Access_Array_Access_Array;
 
    type DirectionalAnalogLocationInputProcessor is new AnalogLocationInputProcessor and GameKeyEventSourceInterface with record
       logUtil : LogUtil_Access;

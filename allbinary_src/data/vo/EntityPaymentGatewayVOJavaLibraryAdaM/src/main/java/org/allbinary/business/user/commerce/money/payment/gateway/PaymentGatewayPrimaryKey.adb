@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.StoreFront_Package; use org.allbinary.business.context.modules.storefront.StoreFront_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGateway_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGateway_Package;
+
 package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package is
 
+   package StoreFront_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFront_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out PaymentGatewayPrimaryKey'Class) is
    begin
       null;

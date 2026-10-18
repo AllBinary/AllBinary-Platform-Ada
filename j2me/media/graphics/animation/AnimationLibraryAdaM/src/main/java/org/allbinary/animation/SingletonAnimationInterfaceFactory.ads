@@ -33,8 +33,10 @@ package org.allbinary.animation.SingletonAnimationInterfaceFactory_Package is
    type SingletonAnimationInterfaceFactory_Access is access all SingletonAnimationInterfaceFactory'Class;
    type SingletonAnimationInterfaceFactory_Access_Array is array (Natural range <>) of SingletonAnimationInterfaceFactory_Access;
    type SingletonAnimationInterfaceFactory_Access_Array_Access is access all SingletonAnimationInterfaceFactory_Access_Array;
+   type SingletonAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of SingletonAnimationInterfaceFactory_Access_Array_Access;
+   type SingletonAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all SingletonAnimationInterfaceFactory_Access_Array_Access_Array;
 
-   type SingletonAnimationInterfaceFactory is new AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
+   type SingletonAnimationInterfaceFactory is new Java_Object and AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
       animationInterface : Animation_Access;
    end record;
 

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.configuration.persistance.NullRecordStore_Package is
 
    procedure Initialize_Fields (This : in out NullRecordStore'Class) is

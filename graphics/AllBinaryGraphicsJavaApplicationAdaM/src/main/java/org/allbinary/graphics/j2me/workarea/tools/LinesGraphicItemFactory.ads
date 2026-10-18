@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;
-with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_Package is
@@ -33,8 +32,10 @@ package org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_Packa
    type LinesGraphicItemFactory_Access is access all LinesGraphicItemFactory'Class;
    type LinesGraphicItemFactory_Access_Array is array (Natural range <>) of LinesGraphicItemFactory_Access;
    type LinesGraphicItemFactory_Access_Array_Access is access all LinesGraphicItemFactory_Access_Array;
+   type LinesGraphicItemFactory_Access_Array_Access_Array is array (Natural range <>) of LinesGraphicItemFactory_Access_Array_Access;
+   type LinesGraphicItemFactory_Access_Array_Access_Array_Access is access all LinesGraphicItemFactory_Access_Array_Access_Array;
 
-   type LinesGraphicItemFactory is new GraphicsItemInterfaceFactoryInterface with null record;
+   type LinesGraphicItemFactory is new Java_Object and GraphicsItemInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out LinesGraphicItemFactory'Class);
    function Create return LinesGraphicItemFactory_Access;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUser_Package;
+
 package body org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUserFactory_Package is
 
    procedure Initialize_Fields (This : in out CustomerStoreAdminUserFactory'Class) is
@@ -37,14 +39,14 @@ package body org.allbinary.business.user.modules.admin.store.customer.CustomerSt
    --  throws Exception
    function getInstance (This : in out CustomerStoreAdminUserFactory) return UserInterface_Access is
    begin
-        return CustomerStoreAdminUser_Package.Create;
+        return UserInterface_Access (CustomerStoreAdminUser_Package.Create);
    end getInstance;
 
    --  throws Exception
    function getInstance (This : in out CustomerStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        return CustomerStoreAdminUser_Package.Create (hashMap);
+        return UserInterface_Access (CustomerStoreAdminUser_Package.Create (hashMap));
    end getInstance;
 
    procedure getInstance (This : in out CustomerStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) is

@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package; use org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.apache.xmlrpc.XmlRpcClient_Package; use org.apache.xmlrpc.XmlRpcClient_Package;
+with org.apache.xmlrpc.XmlRpcException_Package; use org.apache.xmlrpc.XmlRpcException_Package;
+
 package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ExceptionUtil_Package renames Standard.org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package XmlRpcClient_Package renames Standard.org.apache.xmlrpc.XmlRpcClient_Package;
+   package XmlRpcException_Package renames Standard.org.apache.xmlrpc.XmlRpcException_Package;
    procedure Initialize_Fields (This : in out XmlRpcRemoteHighScoresClient'Class) is
    begin
       null;
@@ -52,9 +67,9 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
       result : Java_Object_Access;
    begin
         begin
-            param := BasicArrayListD_Package.Create;
+            param := BasicArrayList_Access (BasicArrayListD_Package.Create);
             serverUrl := XmlRpcRemoteHighScoresClient'Class (This).getClientInfo.getLicenseServer (XmlRpcRemoteHighScoresClient'Class (This).getServer);
-            index := serverUrl.lastIndexOf ('/');
+            index := Java_Last_Index_Of (serverUrl, Java_Image ('/'));
             serverUrl := Unbounded_Slice (serverUrl, (0) + 1, (index) + (1)) & This.page;
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (TRYING);
@@ -67,7 +82,7 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
             xmlRpcClient.setBasicAuthentication (null, null);
             hashtable := ABHashtable_Access (anyType);
             This.logUtil.putF (Java_Image (CLIENT_INFO) & hashtable.toString, XmlRpcRemoteHighScoresClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
-            param.add (hashtable);
+            param.add (Java_Object_Access (hashtable));
             result := xmlRpcClient.execute (XmlRpcRemoteHighScoresClient'Class (This).getRemoteMethod, param, cryptInterface);
             This.logUtil.putF (Java_Image (RESULT) & result.toString, XmlRpcRemoteHighScoresClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             This.isOnline := True;

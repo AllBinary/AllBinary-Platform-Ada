@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out OpenGLCapabilities'Class) is
    begin
       null;
@@ -82,6 +85,11 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    begin
       null;
    end isTextureSizeValid;
+
+   procedure initCapabilities (This : in out OpenGLCapabilities; Value : Unbounded_String) is
+   begin
+      OpenGLCapabilities'Class (This).initCapabilities (Java_Box (Value));
+   end initCapabilities;
 
 begin
    null;

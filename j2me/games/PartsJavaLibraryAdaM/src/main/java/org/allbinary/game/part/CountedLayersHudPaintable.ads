@@ -20,36 +20,29 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
-with org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package; use org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
 
 package org.allbinary.game.part.CountedLayersHudPaintable_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package PickedUpLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
-   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type CountedLayersHudPaintable is tagged;
    type CountedLayersHudPaintable_Access is access all CountedLayersHudPaintable'Class;
    type CountedLayersHudPaintable_Access_Array is array (Natural range <>) of CountedLayersHudPaintable_Access;
    type CountedLayersHudPaintable_Access_Array_Access is access all CountedLayersHudPaintable_Access_Array;
+   type CountedLayersHudPaintable_Access_Array_Access_Array is array (Natural range <>) of CountedLayersHudPaintable_Access_Array_Access;
+   type CountedLayersHudPaintable_Access_Array_Access_Array_Access is access all CountedLayersHudPaintable_Access_Array_Access_Array;
 
-   type CountedLayersHudPaintable is new PaintableInterface and UpdateMyFontInterface with record
+   type CountedLayersHudPaintable is new Java_Object and PaintableInterface and UpdateMyFontInterface with record
       displayInfoSingleton : DisplayInfoSingleton_Access;
       partInterfaceArray : PartInterface_Access_Array_Access;
       countedTotalStringColor : Integer;

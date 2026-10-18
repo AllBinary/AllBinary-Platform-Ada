@@ -29,6 +29,8 @@ package org.allbinary.logic.system.security.licensing.InputAutomationClientInfor
    type InputAutomationClientInformation_Access is access all InputAutomationClientInformation'Class;
    type InputAutomationClientInformation_Access_Array is array (Natural range <>) of InputAutomationClientInformation_Access;
    type InputAutomationClientInformation_Access_Array_Access is access all InputAutomationClientInformation_Access_Array;
+   type InputAutomationClientInformation_Access_Array_Access_Array is array (Natural range <>) of InputAutomationClientInformation_Access_Array_Access;
+   type InputAutomationClientInformation_Access_Array_Access_Array_Access is access all InputAutomationClientInformation_Access_Array_Access_Array;
 
    type InputAutomationClientInformation is new AbeClientInformation with null record;
 

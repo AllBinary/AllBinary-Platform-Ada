@@ -28,6 +28,8 @@ package org.allbinary.business.advertisement.search.website.AdvertisementWebsite
    type AdvertisementWebsiteInterface_Access is access all AdvertisementWebsiteInterface'Class;
    type AdvertisementWebsiteInterface_Access_Array is array (Natural range <>) of AdvertisementWebsiteInterface_Access;
    type AdvertisementWebsiteInterface_Access_Array_Access is access all AdvertisementWebsiteInterface_Access_Array;
+   type AdvertisementWebsiteInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementWebsiteInterface_Access_Array_Access;
+   type AdvertisementWebsiteInterface_Access_Array_Access_Array_Access is access all AdvertisementWebsiteInterface_Access_Array_Access_Array;
    function toString (This : in out AdvertisementWebsiteInterface) return Unbounded_String is abstract;
 
 end org.allbinary.business.advertisement.search.website.AdvertisementWebsiteInterface_Package;

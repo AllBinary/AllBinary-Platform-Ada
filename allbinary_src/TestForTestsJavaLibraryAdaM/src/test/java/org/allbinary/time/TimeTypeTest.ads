@@ -8,23 +8,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.Calendar_Package; use java.util.Calendar_Package;
-with org.junit.jupiter.api.Assertions_Package; use org.junit.jupiter.api.Assertions_Package;
-with org.junit.jupiter.api.DisplayName_Package; use org.junit.jupiter.api.DisplayName_Package;
-with org.junit.jupiter.api.Test_Package; use org.junit.jupiter.api.Test_Package;
 with org.allbinary.time.TimeTypeUtil_Package; use org.allbinary.time.TimeTypeUtil_Package;
 
 package org.allbinary.time.TimeTypeTest_Package is
 
-   package Calendar_Package renames Standard.java.util.Calendar_Package;
-   package Assertions_Package renames Standard.org.junit.jupiter.api.Assertions_Package;
-   package DisplayName_Package renames Standard.org.junit.jupiter.api.DisplayName_Package;
-   package Test_Package renames Standard.org.junit.jupiter.api.Test_Package;
 
    type TimeTypeTest is tagged;
    type TimeTypeTest_Access is access all TimeTypeTest'Class;
    type TimeTypeTest_Access_Array is array (Natural range <>) of TimeTypeTest_Access;
    type TimeTypeTest_Access_Array_Access is access all TimeTypeTest_Access_Array;
+   type TimeTypeTest_Access_Array_Access_Array is array (Natural range <>) of TimeTypeTest_Access_Array_Access;
+   type TimeTypeTest_Access_Array_Access_Array_Access is access all TimeTypeTest_Access_Array_Access_Array;
 
    type TimeTypeTest is new Java_Object with null record;
 
@@ -53,23 +47,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.Calendar_Package; use java.util.Calendar_Package;
-with org.junit.jupiter.api.Assertions_Package; use org.junit.jupiter.api.Assertions_Package;
-with org.junit.jupiter.api.DisplayName_Package; use org.junit.jupiter.api.DisplayName_Package;
-with org.junit.jupiter.api.Test_Package; use org.junit.jupiter.api.Test_Package;
 with org.allbinary.time.TimeTypeUtil_Package; use org.allbinary.time.TimeTypeUtil_Package;
 
 package org.allbinary.time.TestableTimeTypeUtil_Package is
 
-   package Calendar_Package renames Standard.java.util.Calendar_Package;
-   package Assertions_Package renames Standard.org.junit.jupiter.api.Assertions_Package;
-   package DisplayName_Package renames Standard.org.junit.jupiter.api.DisplayName_Package;
-   package Test_Package renames Standard.org.junit.jupiter.api.Test_Package;
 
    type TestableTimeTypeUtil is tagged;
    type TestableTimeTypeUtil_Access is access all TestableTimeTypeUtil'Class;
    type TestableTimeTypeUtil_Access_Array is array (Natural range <>) of TestableTimeTypeUtil_Access;
    type TestableTimeTypeUtil_Access_Array_Access is access all TestableTimeTypeUtil_Access_Array;
+   type TestableTimeTypeUtil_Access_Array_Access_Array is array (Natural range <>) of TestableTimeTypeUtil_Access_Array_Access;
+   type TestableTimeTypeUtil_Access_Array_Access_Array_Access is access all TestableTimeTypeUtil_Access_Array_Access_Array;
 
    type TestableTimeTypeUtil is new TimeTypeUtil with record
       hour : Integer;

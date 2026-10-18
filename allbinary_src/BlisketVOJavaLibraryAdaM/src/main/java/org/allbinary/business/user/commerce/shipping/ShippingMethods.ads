@@ -21,19 +21,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package; use org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.user.commerce.shipping.ShippingMethodsInterface_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodsInterface_Package;
-with org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package;
 
 package org.allbinary.business.user.commerce.shipping.ShippingMethods_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
    package ShippingInterface_Package renames Standard.org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
@@ -44,8 +41,10 @@ package org.allbinary.business.user.commerce.shipping.ShippingMethods_Package is
    type ShippingMethods_Access is access all ShippingMethods'Class;
    type ShippingMethods_Access_Array is array (Natural range <>) of ShippingMethods_Access;
    type ShippingMethods_Access_Array_Access is access all ShippingMethods_Access_Array;
+   type ShippingMethods_Access_Array_Access_Array is array (Natural range <>) of ShippingMethods_Access_Array_Access;
+   type ShippingMethods_Access_Array_Access_Array_Access is access all ShippingMethods_Access_Array_Access_Array;
 
-   type ShippingMethods is new ShippingMethodsInterface with record
+   type ShippingMethods is new Java_Object and ShippingMethodsInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       shippingVector : BasicArrayList_Access;

@@ -31,6 +31,8 @@ package org.allbinary.game.midlet.DemoGameMidletEvent_Package is
    type DemoGameMidletEvent_Access is access all DemoGameMidletEvent'Class;
    type DemoGameMidletEvent_Access_Array is array (Natural range <>) of DemoGameMidletEvent_Access;
    type DemoGameMidletEvent_Access_Array_Access is access all DemoGameMidletEvent_Access_Array;
+   type DemoGameMidletEvent_Access_Array_Access_Array is array (Natural range <>) of DemoGameMidletEvent_Access_Array_Access;
+   type DemoGameMidletEvent_Access_Array_Access_Array_Access is access all DemoGameMidletEvent_Access_Array_Access_Array;
 
    type DemoGameMidletEvent is new AllBinaryEventObject with record
       demoGameMidletState : DemoGameMidletState_Access;
@@ -41,6 +43,7 @@ package org.allbinary.game.midlet.DemoGameMidletEvent_Package is
    procedure init (This : in out DemoGameMidletEvent; anyType_Param : access Java_Object'Class);
    procedure setDemoGameMidletState (This : in out DemoGameMidletEvent; demoGameMidletState_Param : access DemoGameMidletState_Package.DemoGameMidletState'Class);
    function getDemoGameMidletState (This : in out DemoGameMidletEvent) return DemoGameMidletState_Access;
+   procedure init (This : in out DemoGameMidletEvent; Value : Unbounded_String);
 
 end org.allbinary.game.midlet.DemoGameMidletEvent_Package;
 

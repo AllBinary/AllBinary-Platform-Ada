@@ -28,6 +28,8 @@ package org.allbinary.canvas.Processor_Package is
    type Processor_Access is access all Processor'Class;
    type Processor_Access_Array is array (Natural range <>) of Processor_Access;
    type Processor_Access_Array_Access is access all Processor_Access_Array;
+   type Processor_Access_Array_Access_Array is array (Natural range <>) of Processor_Access_Array_Access;
+   type Processor_Access_Array_Access_Array_Access is access all Processor_Access_Array_Access_Array;
 
    type Processor is new Java_Object with null record;
    SINGLETON : Processor_Access;

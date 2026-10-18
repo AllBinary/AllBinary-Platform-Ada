@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.AppletUtil_Package; use org.allbinary.AppletUtil_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+
 package body org.allbinary.canvas.CustomGameMenuUtil_Package is
 
+   package AppletUtil_Package renames Standard.org.allbinary.AppletUtil_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
    procedure Initialize_Fields (This : in out CustomGameMenuUtil'Class) is
    begin
       null;

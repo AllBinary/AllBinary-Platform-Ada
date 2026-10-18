@@ -29,8 +29,10 @@ package org.allbinary.gui.dialog.ExitCloseListener_Package is
    type ExitCloseListener_Access is access all ExitCloseListener'Class;
    type ExitCloseListener_Access_Array is array (Natural range <>) of ExitCloseListener_Access;
    type ExitCloseListener_Access_Array_Access is access all ExitCloseListener_Access_Array;
+   type ExitCloseListener_Access_Array_Access_Array is array (Natural range <>) of ExitCloseListener_Access_Array_Access;
+   type ExitCloseListener_Access_Array_Access_Array_Access is access all ExitCloseListener_Access_Array_Access_Array;
 
-   type ExitCloseListener is new CloseJDialogListenerInterface with null record;
+   type ExitCloseListener is new Java_Object and CloseJDialogListenerInterface with null record;
 
    procedure Initialize (This : in out ExitCloseListener'Class);
    function Create return ExitCloseListener_Access;

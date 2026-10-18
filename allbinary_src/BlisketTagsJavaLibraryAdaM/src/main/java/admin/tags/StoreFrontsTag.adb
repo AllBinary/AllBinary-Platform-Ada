@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.StoreFrontsHelperFactory_Package; use admin.taghelpers.StoreFrontsHelperFactory_Package;
+with admin.taghelpers.StoreFrontsRequestHelperFactory_Package; use admin.taghelpers.StoreFrontsRequestHelperFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body admin.tags.StoreFrontsTag_Package is
 
+   package StoreFrontsHelperFactory_Package renames Standard.admin.taghelpers.StoreFrontsHelperFactory_Package;
+   package StoreFrontsRequestHelperFactory_Package renames Standard.admin.taghelpers.StoreFrontsRequestHelperFactory_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out StoreFrontsTag'Class) is
    begin
       null;
@@ -119,9 +130,9 @@ package body admin.tags.StoreFrontsTag_Package is
                         if (StoreFrontsTag'Class (This).getCurrent.intValue) = (StoreFrontsTag'Class (This).getTotal.intValue) then
                             return TagSupport_Package.EVAL_BODY_INCLUDE;
                         end if;
-                        StoreFrontsTag'Class (This).install;
+                        declare Java_Result renames StoreFrontsTag'Class (This).install; pragma Unreferenced (Java_Result); begin null; end;
                     elsif (StoreFrontsTag'Class (This).getCommand.compareTo (storeFrontData.INSTALL_COMPLETE)) = (0) then
-                        StoreFrontsTag'Class (This).sendStoreCreatedEmails;
+                        declare Java_Result renames StoreFrontsTag'Class (This).sendStoreCreatedEmails; pragma Unreferenced (Java_Result); begin null; end;
                     else
                         return TableTag (This).doStartTag;
                     end if;

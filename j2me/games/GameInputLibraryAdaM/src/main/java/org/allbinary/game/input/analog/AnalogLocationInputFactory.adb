@@ -1,12 +1,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.input.analog.AnalogLocationInputFactory_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out AnalogLocationInputFactory'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -37,7 +40,7 @@ package body org.allbinary.game.input.analog.AnalogLocationInputFactory_Package 
         end if;
         if (analogLocationInput) = (AnalogLocationInput_Package.NULL_ANALOG_LOCATION_INPUT) then
             analogLocationInput := AnalogLocationInput_Package.Create (playerInputId);
-            This.list.add (analogLocationInput);
+            This.list.add (Java_Object_Access (analogLocationInput));
         end if;
    end addPlayer;
 

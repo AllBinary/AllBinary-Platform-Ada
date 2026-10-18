@@ -20,8 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
-with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package; use org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
@@ -30,8 +28,6 @@ with views.generic_Id.address.shipping.ShippingAddressesView_Package; use views.
 
 package views.generic_Id.address.shipping.ValidationView_Package is
 
-   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
-   package ShippingAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
@@ -41,6 +37,8 @@ package views.generic_Id.address.shipping.ValidationView_Package is
    type ValidationView_Access is access all ValidationView'Class;
    type ValidationView_Access_Array is array (Natural range <>) of ValidationView_Access;
    type ValidationView_Access_Array_Access is access all ValidationView_Access_Array;
+   type ValidationView_Access_Array_Access_Array is array (Natural range <>) of ValidationView_Access_Array_Access;
+   type ValidationView_Access_Array_Access_Array_Access is access all ValidationView_Access_Array_Access_Array;
 
    type ValidationView is new ShippingAddressesView and ValidationComponentInterface with null record;
 

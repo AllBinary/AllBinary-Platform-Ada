@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 
 package org.allbinary.graphics.Line_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.graphics.Line_Package is
    type Line_Access is access all Line'Class;
    type Line_Access_Array is array (Natural range <>) of Line_Access;
    type Line_Access_Array_Access is access all Line_Access_Array;
+   type Line_Access_Array_Access_Array is array (Natural range <>) of Line_Access_Array_Access;
+   type Line_Access_Array_Access_Array_Access is access all Line_Access_Array_Access_Array;
 
    type Line is new Java_Object with record
       p1 : GPoint_Access;

@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.animation.VectorAnimationFactoryInterface_Package; use org.allbinary.animation.VectorAnimationFactoryInterface_Package;
 with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animation.VectorAnimation_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 
 package org.allbinary.animation.VectorAnimationFactory_Package is
 
@@ -33,8 +32,10 @@ package org.allbinary.animation.VectorAnimationFactory_Package is
    type VectorAnimationFactory_Access is access all VectorAnimationFactory'Class;
    type VectorAnimationFactory_Access_Array is array (Natural range <>) of VectorAnimationFactory_Access;
    type VectorAnimationFactory_Access_Array_Access is access all VectorAnimationFactory_Access_Array;
+   type VectorAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of VectorAnimationFactory_Access_Array_Access;
+   type VectorAnimationFactory_Access_Array_Access_Array_Access is access all VectorAnimationFactory_Access_Array_Access_Array;
 
-   type VectorAnimationFactory is new VectorAnimationFactoryInterface with null record;
+   type VectorAnimationFactory is new Java_Object and VectorAnimationFactoryInterface with null record;
 
    procedure Initialize (This : in out VectorAnimationFactory'Class);
    function Create return VectorAnimationFactory_Access;

@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with admin.taghelpers.InventoryRequestHelper_Package; use admin.taghelpers.InventoryRequestHelper_Package;
+
 package body admin.taghelpers.InventoryRequestHelperFactory_Package is
 
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out InventoryRequestHelperFactory'Class) is
    begin
       null;
@@ -42,7 +46,7 @@ package body admin.taghelpers.InventoryRequestHelperFactory_Package is
       pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         begin
-            return InventoryRequestHelper_Package.Create (hashMap, pageContext);
+            return Java_Object_Access (InventoryRequestHelper_Package.Create (hashMap, pageContext));
         exception
             when Java_Occurrence : others =>
                 declare

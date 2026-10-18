@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+with org.allbinary.input.gyro.NoGyroSensor_Package; use org.allbinary.input.gyro.NoGyroSensor_Package;
+
 package body org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
 
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package SensorFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
    procedure Initialize_Fields (This : in out OrientationToGameKeyEvent'Class) is
    begin
       null;
@@ -27,7 +33,7 @@ package body org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
    begin
       Initialize_Fields (This);
         if Features_Package.getInstance.isFeature (SensorFeatureFactory_Package.getInstance.NO_ORIENTATION) then
-            This.allBinaryGyroSensor := NoGyroSensor_Package.Create;
+            This.allBinaryGyroSensor := AllBinaryOrientationSensor_Access (NoGyroSensor_Package.Create);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Such Feature")));
         end if;

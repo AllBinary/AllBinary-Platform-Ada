@@ -30,6 +30,8 @@ package org.allbinary.image.gui.ImageIconUnique_Package is
    type ImageIconUnique_Access is access all ImageIconUnique'Class;
    type ImageIconUnique_Access_Array is array (Natural range <>) of ImageIconUnique_Access;
    type ImageIconUnique_Access_Array_Access is access all ImageIconUnique_Access_Array;
+   type ImageIconUnique_Access_Array_Access_Array is array (Natural range <>) of ImageIconUnique_Access_Array_Access;
+   type ImageIconUnique_Access_Array_Access_Array_Access is access all ImageIconUnique_Access_Array_Access_Array;
 
    type ImageIconUnique is new ImageIcon with record
       id : Integer;

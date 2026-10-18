@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 
 package org.allbinary.logic.util.cache.CacheInterface_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
 
    type CacheInterface is interface;
    type CacheInterface_Access is access all CacheInterface'Class;
    type CacheInterface_Access_Array is array (Natural range <>) of CacheInterface_Access;
    type CacheInterface_Access_Array_Access is access all CacheInterface_Access_Array;
+   type CacheInterface_Access_Array_Access_Array is array (Natural range <>) of CacheInterface_Access_Array_Access;
+   type CacheInterface_Access_Array_Access_Array_Access is access all CacheInterface_Access_Array_Access_Array;
    procedure add (This : in out CacheInterface; cacheableInterface_Param : access CacheableInterface_Package.CacheableInterface'Class) is abstract;
    procedure addArray (This : in out CacheInterface; cacheableInterfaces : CacheableInterface_Access_Array_Access) is abstract;
    procedure clear (This : in out CacheInterface) is abstract;

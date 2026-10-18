@@ -28,6 +28,8 @@ package org.allbinary.input.TouchJ2ME_Package is
    type TouchJ2ME_Access is access all TouchJ2ME'Class;
    type TouchJ2ME_Access_Array is array (Natural range <>) of TouchJ2ME_Access;
    type TouchJ2ME_Access_Array_Access is access all TouchJ2ME_Access_Array;
+   type TouchJ2ME_Access_Array_Access_Array is array (Natural range <>) of TouchJ2ME_Access_Array_Access;
+   type TouchJ2ME_Access_Array_Access_Array_Access is access all TouchJ2ME_Access_Array_Access_Array;
 
    type TouchJ2ME is new Java_Object with null record;
 

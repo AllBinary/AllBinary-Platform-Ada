@@ -20,42 +20,29 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.health.HealthInterfaceCompositeInterface_Package; use org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
-with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package; use org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
-with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package; use org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package;
 with org.allbinary.game.layer.pickup.PickupProcessorInterface_Package; use org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
-with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
-with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
-with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
 
 package org.allbinary.game.layer.pickup.PickupBehavior_Package is
 
-   package HealthInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
    package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
    package CountedLayerInterfaceFactoryPart_Package renames Standard.org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
-   package PartInterface_Package renames Standard.org.allbinary.game.part.PartInterface_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PickupBehavior is tagged;
    type PickupBehavior_Access is access all PickupBehavior'Class;
    type PickupBehavior_Access_Array is array (Natural range <>) of PickupBehavior_Access;
    type PickupBehavior_Access_Array_Access is access all PickupBehavior_Access_Array;
+   type PickupBehavior_Access_Array_Access_Array is array (Natural range <>) of PickupBehavior_Access_Array_Access;
+   type PickupBehavior_Access_Array_Access_Array_Access is access all PickupBehavior_Access_Array_Access_Array;
 
-   type PickupBehavior is new PickupBehaviorInterface with record
+   type PickupBehavior is new Java_Object and PickupBehaviorInterface with record
       logUtil : LogUtil_Access;
       countedIndex : Integer;
       ownerLayerInterface : CollidableCompositeLayer_Access;

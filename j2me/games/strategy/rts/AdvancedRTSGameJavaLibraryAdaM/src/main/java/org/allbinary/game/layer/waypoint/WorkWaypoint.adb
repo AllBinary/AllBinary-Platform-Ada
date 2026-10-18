@@ -13,8 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
+with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package; use org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
+with org.allbinary.game.layer.geological.resources.GeologicalResource_Package; use org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
+with org.allbinary.game.layer.unit.UnitWaypointBehavior_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
+with org.allbinary.media.audio.WorkSound_Package; use org.allbinary.media.audio.WorkSound_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
+
 package body org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
 
+   package RTSLayer_Package renames Standard.org.allbinary.game.layer.RTSLayer_Package;
+   package GeologicalGeographicMapCellPosition_Package renames Standard.org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
+   package GeologicalResource_Package renames Standard.org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
+   package UnitWaypointBehavior_Package renames Standard.org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
+   package WorkSound_Package renames Standard.org.allbinary.media.audio.WorkSound_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    procedure Initialize_Fields (This : in out WorkWaypoint'Class) is
    begin
       null;
@@ -78,7 +94,7 @@ package body org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
                 while (WorkWaypoint'Class (This).getConnectedWaypointList.size) > (0) loop
                     rtsLayer := RTSLayer_Access (WorkWaypoint'Class (This).getConnectedWaypointList.get (0));
                     if rtsLayer.isDestroyed then
-                        WorkWaypoint'Class (This).getConnectedWaypointList.remove (rtsLayer);
+                        WorkWaypoint'Class (This).getConnectedWaypointList.remove (Java_Object_Access (rtsLayer));
                     else
                         unitWaypointBehavior.insertWaypoint (0, rtsLayer);
                         exit;

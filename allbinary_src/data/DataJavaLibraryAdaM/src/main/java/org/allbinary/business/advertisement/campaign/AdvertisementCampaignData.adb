@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package is
 
    procedure Initialize_Fields (This : in out AdvertisementCampaignData'Class) is

@@ -31,6 +31,8 @@ package org.allbinary.game.behavior.topview.placement.AllAnimationsEverywhereTil
    type AllAnimationsEverywhereTileMapPlacementVisitor_Access is access all AllAnimationsEverywhereTileMapPlacementVisitor'Class;
    type AllAnimationsEverywhereTileMapPlacementVisitor_Access_Array is array (Natural range <>) of AllAnimationsEverywhereTileMapPlacementVisitor_Access;
    type AllAnimationsEverywhereTileMapPlacementVisitor_Access_Array_Access is access all AllAnimationsEverywhereTileMapPlacementVisitor_Access_Array;
+   type AllAnimationsEverywhereTileMapPlacementVisitor_Access_Array_Access_Array is array (Natural range <>) of AllAnimationsEverywhereTileMapPlacementVisitor_Access_Array_Access;
+   type AllAnimationsEverywhereTileMapPlacementVisitor_Access_Array_Access_Array_Access is access all AllAnimationsEverywhereTileMapPlacementVisitor_Access_Array_Access_Array;
 
    type AllAnimationsEverywhereTileMapPlacementVisitor is new TileMapPlacementVisitor with null record;
 

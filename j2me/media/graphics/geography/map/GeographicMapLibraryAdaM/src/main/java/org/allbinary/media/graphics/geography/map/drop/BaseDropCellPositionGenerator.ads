@@ -37,8 +37,10 @@ package org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGene
    type BaseDropCellPositionGenerator_Access is access all BaseDropCellPositionGenerator'Class;
    type BaseDropCellPositionGenerator_Access_Array is array (Natural range <>) of BaseDropCellPositionGenerator_Access;
    type BaseDropCellPositionGenerator_Access_Array_Access is access all BaseDropCellPositionGenerator_Access_Array;
+   type BaseDropCellPositionGenerator_Access_Array_Access_Array is array (Natural range <>) of BaseDropCellPositionGenerator_Access_Array_Access;
+   type BaseDropCellPositionGenerator_Access_Array_Access_Array_Access is access all BaseDropCellPositionGenerator_Access_Array_Access_Array;
 
-   type BaseDropCellPositionGenerator is new DropCellPositionGeneratorInterface with null record;
+   type BaseDropCellPositionGenerator is new Java_Object and DropCellPositionGeneratorInterface with null record;
 
    procedure Initialize (This : in out BaseDropCellPositionGenerator'Class);
    function Create return BaseDropCellPositionGenerator_Access;

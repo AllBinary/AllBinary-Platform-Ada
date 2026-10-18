@@ -21,18 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type GeographicMapCellType is tagged;
    type GeographicMapCellType_Access is access all GeographicMapCellType'Class;
    type GeographicMapCellType_Access_Array is array (Natural range <>) of GeographicMapCellType_Access;
    type GeographicMapCellType_Access_Array_Access is access all GeographicMapCellType_Access_Array;
+   type GeographicMapCellType_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellType_Access_Array_Access;
+   type GeographicMapCellType_Access_Array_Access_Array_Access is access all GeographicMapCellType_Access_Array_Access_Array;
 
    type GeographicMapCellType is new Java_Object with record
       logUtil : LogUtil_Access;

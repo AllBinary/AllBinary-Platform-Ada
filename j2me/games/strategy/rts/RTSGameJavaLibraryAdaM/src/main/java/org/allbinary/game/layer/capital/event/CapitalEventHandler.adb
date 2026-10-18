@@ -12,6 +12,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package; use org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package;
+with org.allbinary.game.layer.capital.event.CapitalEvent_Package; use org.allbinary.game.layer.capital.event.CapitalEvent_Package;
+
 package body org.allbinary.game.layer.capital.event.CapitalEventHandler_Package is
 
    procedure Initialize_Fields (This : in out CapitalEventHandler'Class) is

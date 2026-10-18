@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.form.NullRTSFormInputFactory_Package; use org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
+
 package body org.allbinary.game.layer.NullRTSLayer_Package is
 
+   package NullRTSFormInputFactory_Package renames Standard.org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
    procedure Initialize_Fields (This : in out NullRTSLayer'Class) is
    begin
       null;

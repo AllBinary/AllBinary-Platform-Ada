@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
+
 package body org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
    procedure Initialize_Fields (This : in out RandomPatrolAI'Class) is
    begin
       null;

@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.item.ItemInfo_Package is
    type ItemInfo_Access is access all ItemInfo'Class;
    type ItemInfo_Access_Array is array (Natural range <>) of ItemInfo_Access;
    type ItemInfo_Access_Array_Access is access all ItemInfo_Access_Array;
+   type ItemInfo_Access_Array_Access_Array is array (Natural range <>) of ItemInfo_Access_Array_Access;
+   type ItemInfo_Access_Array_Access_Array_Access is access all ItemInfo_Access_Array_Access_Array;
 
    type ItemInfo is new Java_Object with record
       type_Id : Unbounded_String_Array_Access;

@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.smtp.configuration.server.EmailServerC
    type EmailServerConfigurationInterface_Access is access all EmailServerConfigurationInterface'Class;
    type EmailServerConfigurationInterface_Access_Array is array (Natural range <>) of EmailServerConfigurationInterface_Access;
    type EmailServerConfigurationInterface_Access_Array_Access is access all EmailServerConfigurationInterface_Access_Array;
+   type EmailServerConfigurationInterface_Access_Array_Access_Array is array (Natural range <>) of EmailServerConfigurationInterface_Access_Array_Access;
+   type EmailServerConfigurationInterface_Access_Array_Access_Array_Access is access all EmailServerConfigurationInterface_Access_Array_Access_Array;
    procedure setSmtpServer (This : in out EmailServerConfigurationInterface; value : Unbounded_String) is abstract;
    function getSmtpServer (This : in out EmailServerConfigurationInterface) return Unbounded_String is abstract;
    function getAccountName (This : in out EmailServerConfigurationInterface) return Unbounded_String is abstract;

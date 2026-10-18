@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+
 package body org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
 
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
    procedure Initialize_Fields (This : in out BasicCryptUtil'Class) is
    begin
       null;
@@ -62,11 +65,11 @@ package body org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
         end loop;
         decrypted := cryptInterface.decrypt (buffer.toByteArray);
         decryptedString := Java_New_String (decrypted);
-        index := (Index (decryptedString, Java_Image (This.XML_START)) - 1);
+        index := Java_Index_Of (decryptedString, Java_Image (This.XML_START));
         if (index) > (0) then
             decryptedString := Unbounded_Slice (decryptedString, (index) + 1, Length (decryptedString));
         end if;
-        return ByteArrayInputStream_Package.Create (This.tsUtil.getByteArray (decryptedString));
+        return InputStream_Access (ByteArrayInputStream_Package.Create (This.tsUtil.getByteArray (decryptedString)));
    end getDecryptedInputStream;
 
    procedure getDecryptedInputStream (This : in out BasicCryptUtil; inputStream_Param : access InputStream_Package.InputStream'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) is

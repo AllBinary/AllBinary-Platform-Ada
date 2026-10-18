@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package;
+with org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package;
+
 package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimationFactory_Package is
 
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    procedure Initialize_Fields (This : in out AllBinaryAndroidImageRotationAnimationFactory'Class) is
    begin
       null;
@@ -120,9 +137,9 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
         copyOfScaledImage := ImageCopyUtil_Package.getInstance.createImage (scaledImage);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
             This.animationFactoryImageScaleUtil.processAdjust (AllBinaryAndroidImageRotationAnimationFactory_Access'(This'Unchecked_Access));
-            return AllBinaryAdjustedAndroidImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (AllBinaryAdjustedAndroidImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
         else
-            return AllBinaryFlickerAndroidImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (AllBinaryFlickerAndroidImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationBehaviorFactory.getOrCreateInstance));
         end if;
    end getInstance;
 

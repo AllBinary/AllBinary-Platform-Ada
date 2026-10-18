@@ -29,6 +29,8 @@ package org.allbinary.view.ViewPositionFactoryInterface_Package is
    type ViewPositionFactoryInterface_Access is access all ViewPositionFactoryInterface'Class;
    type ViewPositionFactoryInterface_Access_Array is array (Natural range <>) of ViewPositionFactoryInterface_Access;
    type ViewPositionFactoryInterface_Access_Array_Access is access all ViewPositionFactoryInterface_Access_Array;
+   type ViewPositionFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of ViewPositionFactoryInterface_Access_Array_Access;
+   type ViewPositionFactoryInterface_Access_Array_Access_Array_Access is access all ViewPositionFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out ViewPositionFactoryInterface) return ViewPositionBase_Access is abstract;
 
 end org.allbinary.view.ViewPositionFactoryInterface_Package;

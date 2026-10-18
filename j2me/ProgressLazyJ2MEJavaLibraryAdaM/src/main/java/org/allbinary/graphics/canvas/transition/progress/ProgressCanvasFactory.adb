@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out ProgressCanvasFactory'Class) is
    begin
       null;

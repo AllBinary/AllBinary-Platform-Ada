@@ -30,6 +30,8 @@ package org.allbinary.device.LoadTextures_Package is
    type LoadTextures_Access is access all LoadTextures'Class;
    type LoadTextures_Access_Array is array (Natural range <>) of LoadTextures_Access;
    type LoadTextures_Access_Array_Access is access all LoadTextures_Access_Array;
+   type LoadTextures_Access_Array_Access_Array is array (Natural range <>) of LoadTextures_Access_Array_Access;
+   type LoadTextures_Access_Array_Access_Array_Access is access all LoadTextures_Access_Array_Access_Array;
 
    type LoadTextures is new Java_Object with null record;
 

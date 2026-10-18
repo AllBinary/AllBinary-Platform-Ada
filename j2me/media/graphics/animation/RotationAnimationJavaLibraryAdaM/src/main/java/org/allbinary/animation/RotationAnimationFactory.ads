@@ -20,29 +20,23 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.NullRotationAnimation_Package; use org.allbinary.animation.NullRotationAnimation_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.RotationAnimationFactory_Package is
 
-   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type RotationAnimationFactory is tagged;
    type RotationAnimationFactory_Access is access all RotationAnimationFactory'Class;
    type RotationAnimationFactory_Access_Array is array (Natural range <>) of RotationAnimationFactory_Access;
    type RotationAnimationFactory_Access_Array_Access is access all RotationAnimationFactory_Access_Array;
+   type RotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of RotationAnimationFactory_Access_Array_Access;
+   type RotationAnimationFactory_Access_Array_Access_Array_Access is access all RotationAnimationFactory_Access_Array_Access_Array;
 
-   type RotationAnimationFactory is new AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
+   type RotationAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
       totalAngle : Short_Integer;
       angleIncrement : Short_Integer;
    end record;

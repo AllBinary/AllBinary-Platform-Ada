@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.StoreFront_Package; use org.allbinary.business.context.modules.storefront.StoreFront_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+with org.allbinary.business.user.commerce.inventory.basket.BasketData_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
+with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
+
 package body admin.taghelpers.BasketRequestHelper_Package is
 
+   package StoreFront_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFront_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package BasketData_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
+   package BasketInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+   package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
    procedure Initialize_Fields (This : in out BasketRequestHelper'Class) is
    begin
       null;
@@ -45,7 +58,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
         if (storeName) /= (Null_Unbounded_String) then
             This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
         else
-            This.storeFrontInterface := StoreFront_Package.Create;
+            This.storeFrontInterface := StoreFrontInterface_Access (StoreFront_Package.Create);
         end if;
         This.weblisketSession := WeblisketSession_Package.Create (propertiesHashMap, pageContext);
         BasketRequestHelper'Class (This).getFormData;

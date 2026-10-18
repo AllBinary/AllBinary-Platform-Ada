@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUserFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStor
    type WizardWebStoreAdminUserFactory_Access is access all WizardWebStoreAdminUserFactory'Class;
    type WizardWebStoreAdminUserFactory_Access_Array is array (Natural range <>) of WizardWebStoreAdminUserFactory_Access;
    type WizardWebStoreAdminUserFactory_Access_Array_Access is access all WizardWebStoreAdminUserFactory_Access_Array;
+   type WizardWebStoreAdminUserFactory_Access_Array_Access_Array is array (Natural range <>) of WizardWebStoreAdminUserFactory_Access_Array_Access;
+   type WizardWebStoreAdminUserFactory_Access_Array_Access_Array_Access is access all WizardWebStoreAdminUserFactory_Access_Array_Access_Array;
 
-   type WizardWebStoreAdminUserFactory is new UserFactoryInterface with null record;
+   type WizardWebStoreAdminUserFactory is new Java_Object and UserFactoryInterface with null record;
 
    procedure Initialize (This : in out WizardWebStoreAdminUserFactory'Class);
    function Create return WizardWebStoreAdminUserFactory_Access;

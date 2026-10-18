@@ -31,6 +31,8 @@ package org.allbinary.game.IntermissionInterface_Package is
    type IntermissionInterface_Access is access all IntermissionInterface'Class;
    type IntermissionInterface_Access_Array is array (Natural range <>) of IntermissionInterface_Access;
    type IntermissionInterface_Access_Array_Access is access all IntermissionInterface_Access_Array;
+   type IntermissionInterface_Access_Array_Access_Array is array (Natural range <>) of IntermissionInterface_Access_Array_Access;
+   type IntermissionInterface_Access_Array_Access_Array_Access is access all IntermissionInterface_Access_Array_Access_Array;
    function getTimeDelayHelper (This : in out IntermissionInterface) return TimeDelayHelper_Access is abstract;
    function isEnabled (This : in out IntermissionInterface) return Boolean is abstract;
    procedure setEnabled (This : in out IntermissionInterface; value : Boolean) is abstract;

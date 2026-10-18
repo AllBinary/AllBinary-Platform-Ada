@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+
 package body org.allbinary.game.configuration.SaveGameForm_Package is
 
+   package TextField_Package renames Standard.javax.microedition.lcdui.TextField_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    procedure Initialize_Fields (This : in out SaveGameForm'Class) is
    begin
       null;

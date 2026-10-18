@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package; use org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package;
+with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+
 package body admin.taghelpers.PaymentTransactionResultHelper_Package is
 
+   package TransactionResultEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
    procedure Initialize_Fields (This : in out PaymentTransactionResultHelper'Class) is
    begin
       null;

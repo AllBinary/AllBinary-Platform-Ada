@@ -33,6 +33,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.P
    type PaymentTransactionInterfaceFactoryInterface_Access is access all PaymentTransactionInterfaceFactoryInterface'Class;
    type PaymentTransactionInterfaceFactoryInterface_Access_Array is array (Natural range <>) of PaymentTransactionInterfaceFactoryInterface_Access;
    type PaymentTransactionInterfaceFactoryInterface_Access_Array_Access is access all PaymentTransactionInterfaceFactoryInterface_Access_Array;
+   type PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionInterfaceFactoryInterface_Access_Array_Access;
+   type PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all PaymentTransactionInterfaceFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out PaymentTransactionInterfaceFactoryInterface; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) return PaymentTransactionInterface_Access is abstract;
    function getSaleTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) return PaymentTransactionInterface_Access is abstract;
    function getCreditTransaction (This : in out PaymentTransactionInterfaceFactoryInterface; tenderType_Param : access TenderType_Package.TenderType'Class) return PaymentTransactionInterface_Access is abstract;

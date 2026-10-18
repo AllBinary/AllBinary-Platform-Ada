@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.media.image.search.ImageComparisonSearchConstraintsInterface_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type ImageComparisonSearchConstraintsInterface is interface;
    type ImageComparisonSearchConstraintsInterface_Access is access all ImageComparisonSearchConstraintsInterface'Class;
    type ImageComparisonSearchConstraintsInterface_Access_Array is array (Natural range <>) of ImageComparisonSearchConstraintsInterface_Access;
    type ImageComparisonSearchConstraintsInterface_Access_Array_Access is access all ImageComparisonSearchConstraintsInterface_Access_Array;
+   type ImageComparisonSearchConstraintsInterface_Access_Array_Access_Array is array (Natural range <>) of ImageComparisonSearchConstraintsInterface_Access_Array_Access;
+   type ImageComparisonSearchConstraintsInterface_Access_Array_Access_Array_Access is access all ImageComparisonSearchConstraintsInterface_Access_Array_Access_Array;
    function getStatisticalMatchConstraintsVector (This : in out ImageComparisonSearchConstraintsInterface) return BasicArrayList_Access is abstract;
 
 end org.allbinary.media.image.search.ImageComparisonSearchConstraintsInterface_Package;

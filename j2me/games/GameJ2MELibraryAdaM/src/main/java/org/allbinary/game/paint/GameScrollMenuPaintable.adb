@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.ColorChangeEventHandler_Package; use org.allbinary.graphics.color.ColorChangeEventHandler_Package;
+with org.allbinary.graphics.form.FormPaintable_Package; use org.allbinary.graphics.form.FormPaintable_Package;
+with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
+with org.allbinary.graphics.form.item.ABStringComponent_Package; use org.allbinary.graphics.form.item.ABStringComponent_Package;
+with org.allbinary.graphics.form.item.ABTextItem_Package; use org.allbinary.graphics.form.item.ABTextItem_Package;
+with org.allbinary.game.paint.MainGameDemoStatePaintable_Package; use org.allbinary.game.paint.MainGameDemoStatePaintable_Package;
+
 package body org.allbinary.game.paint.GameScrollMenuPaintable_Package is
 
+   package ColorChangeEventHandler_Package renames Standard.org.allbinary.graphics.color.ColorChangeEventHandler_Package;
+   package FormPaintable_Package renames Standard.org.allbinary.graphics.form.FormPaintable_Package;
+   package ScrollSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionForm_Package;
+   package ABStringComponent_Package renames Standard.org.allbinary.graphics.form.item.ABStringComponent_Package;
+   package ABTextItem_Package renames Standard.org.allbinary.graphics.form.item.ABTextItem_Package;
    procedure Initialize_Fields (This : in out GameScrollMenuPaintable'Class) is
    begin
       null;

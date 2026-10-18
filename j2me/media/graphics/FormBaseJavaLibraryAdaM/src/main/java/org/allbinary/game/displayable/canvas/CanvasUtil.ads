@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
-with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 
 package org.allbinary.game.displayable.canvas.CanvasUtil_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
-   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
 
    type CanvasUtil is tagged;
    type CanvasUtil_Access is access all CanvasUtil'Class;
    type CanvasUtil_Access_Array is array (Natural range <>) of CanvasUtil_Access;
    type CanvasUtil_Access_Array_Access is access all CanvasUtil_Access_Array;
+   type CanvasUtil_Access_Array_Access_Array is array (Natural range <>) of CanvasUtil_Access_Array_Access;
+   type CanvasUtil_Access_Array_Access_Array_Access is access all CanvasUtil_Access_Array_Access_Array;
 
    type CanvasUtil is new Java_Object with null record;
 

@@ -21,20 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
 
 package tags.generic_Id.basket.MiniBasketTag_Package is
 
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type MiniBasketTag is tagged;
    type MiniBasketTag_Access is access all MiniBasketTag'Class;
    type MiniBasketTag_Access_Array is array (Natural range <>) of MiniBasketTag_Access;
    type MiniBasketTag_Access_Array_Access is access all MiniBasketTag_Access_Array;
+   type MiniBasketTag_Access_Array_Access_Array is array (Natural range <>) of MiniBasketTag_Access_Array_Access;
+   type MiniBasketTag_Access_Array_Access_Array_Access is access all MiniBasketTag_Access_Array_Access_Array;
 
    type MiniBasketTag is new StoreValidationTransformTag with null record;
 

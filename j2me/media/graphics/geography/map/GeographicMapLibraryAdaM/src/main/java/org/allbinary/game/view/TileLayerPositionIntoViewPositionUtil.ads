@@ -22,22 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package; use org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 
 package org.allbinary.game.view.TileLayerPositionIntoViewPositionUtil_Package is
 
    package TileLayerPositionIntoViewPosition_Package renames Standard.org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
    package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 
    type TileLayerPositionIntoViewPositionUtil is tagged;
    type TileLayerPositionIntoViewPositionUtil_Access is access all TileLayerPositionIntoViewPositionUtil'Class;
    type TileLayerPositionIntoViewPositionUtil_Access_Array is array (Natural range <>) of TileLayerPositionIntoViewPositionUtil_Access;
    type TileLayerPositionIntoViewPositionUtil_Access_Array_Access is access all TileLayerPositionIntoViewPositionUtil_Access_Array;
+   type TileLayerPositionIntoViewPositionUtil_Access_Array_Access_Array is array (Natural range <>) of TileLayerPositionIntoViewPositionUtil_Access_Array_Access;
+   type TileLayerPositionIntoViewPositionUtil_Access_Array_Access_Array_Access is access all TileLayerPositionIntoViewPositionUtil_Access_Array_Access_Array;
 
    type TileLayerPositionIntoViewPositionUtil is new Java_Object with null record;
 

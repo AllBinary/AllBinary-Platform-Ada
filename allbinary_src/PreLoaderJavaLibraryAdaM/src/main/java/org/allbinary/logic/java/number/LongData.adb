@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.java.number.LongData_Package is
 
    procedure Initialize_Fields (This : in out LongData'Class) is
@@ -36,7 +37,7 @@ package body org.allbinary.logic.java.number.LongData_Package is
 
 begin
    null;
-   MAX_LONG_LENGTH := Length (Long_Package.MAX_VALUE.toString);
+   MAX_LONG_LENGTH := Length (Long_Long_Integer'Last.toString);
 
 end org.allbinary.logic.java.number.LongData_Package;
 

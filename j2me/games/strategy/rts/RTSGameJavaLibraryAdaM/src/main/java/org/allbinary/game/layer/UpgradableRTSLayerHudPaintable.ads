@@ -20,32 +20,23 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-with org.allbinary.logic.java.character_Id.CharArrayFactory_Package; use org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
-with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.game.layer.SelectionHudPaintable_Package;
 with org.allbinary.game.layer.RTSLayerCompositePaintable_Package; use org.allbinary.game.layer.RTSLayerCompositePaintable_Package;
-with org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package; use org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
 
 package org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-   package CharArrayFactory_Package renames Standard.org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
-   package CommonButtons_Package renames Standard.org.allbinary.input.motion.button.CommonButtons_Package;
 
    type UpgradableRTSLayerHudPaintable is tagged;
    type UpgradableRTSLayerHudPaintable_Access is access all UpgradableRTSLayerHudPaintable'Class;
    type UpgradableRTSLayerHudPaintable_Access_Array is array (Natural range <>) of UpgradableRTSLayerHudPaintable_Access;
    type UpgradableRTSLayerHudPaintable_Access_Array_Access is access all UpgradableRTSLayerHudPaintable_Access_Array;
+   type UpgradableRTSLayerHudPaintable_Access_Array_Access_Array is array (Natural range <>) of UpgradableRTSLayerHudPaintable_Access_Array_Access;
+   type UpgradableRTSLayerHudPaintable_Access_Array_Access_Array_Access is access all UpgradableRTSLayerHudPaintable_Access_Array_Access_Array;
 
    type UpgradableRTSLayerHudPaintable is new SelectionHudPaintable with record
       PERCENT : Unbounded_String;

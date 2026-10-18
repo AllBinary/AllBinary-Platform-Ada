@@ -28,6 +28,8 @@ package org.allbinary.emulator.InitEmulatorFactory_Package is
    type InitEmulatorFactory_Access is access all InitEmulatorFactory'Class;
    type InitEmulatorFactory_Access_Array is array (Natural range <>) of InitEmulatorFactory_Access;
    type InitEmulatorFactory_Access_Array_Access is access all InitEmulatorFactory_Access_Array;
+   type InitEmulatorFactory_Access_Array_Access_Array is array (Natural range <>) of InitEmulatorFactory_Access_Array_Access;
+   type InitEmulatorFactory_Access_Array_Access_Array_Access is access all InitEmulatorFactory_Access_Array_Access_Array;
 
    type InitEmulatorFactory is new Java_Object with record
       initEmulator : Boolean;

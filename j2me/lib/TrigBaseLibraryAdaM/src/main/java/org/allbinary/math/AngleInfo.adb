@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with org.allbinary.math.AngleIncrementInfoFactory_Package; use org.allbinary.math.AngleIncrementInfoFactory_Package;
+
 package body org.allbinary.math.AngleInfo_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
    procedure Initialize_Fields (This : in out AngleInfo'Class) is
    begin
       null;
@@ -55,9 +69,9 @@ package body org.allbinary.math.AngleInfo_Package is
         return This.angle_Case;
    end getAngle;
 
-   procedure setAngle (This : in out AngleInfo; angle_Case : Short_Integer) is
+   procedure setAngle (This : in out AngleInfo; angle : Short_Integer) is
    begin
-        This.angle_Case := angle_Case;
+        This.angle_Case := angle;
    end setAngle;
 
    function getAngleIncrementInfo (This : in out AngleInfo) return AngleIncrementInfo_Access is

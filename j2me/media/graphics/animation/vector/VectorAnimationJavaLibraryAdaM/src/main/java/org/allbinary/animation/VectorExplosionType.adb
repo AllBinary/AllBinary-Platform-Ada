@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.VectorExplosionType_Package is
 
    procedure Initialize_Fields (This : in out VectorExplosionType'Class) is

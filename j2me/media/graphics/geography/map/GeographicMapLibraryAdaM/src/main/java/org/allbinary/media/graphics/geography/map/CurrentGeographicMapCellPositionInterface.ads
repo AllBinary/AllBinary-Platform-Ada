@@ -29,6 +29,8 @@ package org.allbinary.media.graphics.geography.map.CurrentGeographicMapCellPosit
    type CurrentGeographicMapCellPositionInterface_Access is access all CurrentGeographicMapCellPositionInterface'Class;
    type CurrentGeographicMapCellPositionInterface_Access_Array is array (Natural range <>) of CurrentGeographicMapCellPositionInterface_Access;
    type CurrentGeographicMapCellPositionInterface_Access_Array_Access is access all CurrentGeographicMapCellPositionInterface_Access_Array;
+   type CurrentGeographicMapCellPositionInterface_Access_Array_Access_Array is array (Natural range <>) of CurrentGeographicMapCellPositionInterface_Access_Array_Access;
+   type CurrentGeographicMapCellPositionInterface_Access_Array_Access_Array_Access is access all CurrentGeographicMapCellPositionInterface_Access_Array_Access_Array;
    function getCurrentGeographicMapCellPosition (This : in out CurrentGeographicMapCellPositionInterface) return GeographicMapCellPosition_Access is abstract;
 
 end org.allbinary.media.graphics.geography.map.CurrentGeographicMapCellPositionInterface_Package;

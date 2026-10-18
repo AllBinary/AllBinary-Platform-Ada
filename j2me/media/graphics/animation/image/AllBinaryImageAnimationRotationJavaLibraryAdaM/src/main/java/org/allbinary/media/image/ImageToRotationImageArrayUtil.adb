@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.ImageRotationUtil_Package; use org.allbinary.media.image.ImageRotationUtil_Package;
+
 package body org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
 
    procedure Initialize_Fields (This : in out ImageToRotationImageArrayUtil'Class) is

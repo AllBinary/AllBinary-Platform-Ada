@@ -21,15 +21,11 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with org.allbinary.business.DynamicObjectData_Package; use org.allbinary.business.DynamicObjectData_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with tags.StoreWorkFlowTag_Package; use tags.StoreWorkFlowTag_Package;
 
 package tags.workflow.processing.basic.BasicWorkFlowTag_Package is
 
-   package DynamicObjectData_Package renames Standard.org.allbinary.business.DynamicObjectData_Package;
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StoreWorkFlowTag_Package renames Standard.tags.StoreWorkFlowTag_Package;
 
@@ -37,6 +33,8 @@ package tags.workflow.processing.basic.BasicWorkFlowTag_Package is
    type BasicWorkFlowTag_Access is access all BasicWorkFlowTag'Class;
    type BasicWorkFlowTag_Access_Array is array (Natural range <>) of BasicWorkFlowTag_Access;
    type BasicWorkFlowTag_Access_Array_Access is access all BasicWorkFlowTag_Access_Array;
+   type BasicWorkFlowTag_Access_Array_Access_Array is array (Natural range <>) of BasicWorkFlowTag_Access_Array_Access;
+   type BasicWorkFlowTag_Access_Array_Access_Array_Access is access all BasicWorkFlowTag_Access_Array_Access_Array;
 
    type BasicWorkFlowTag is new StoreWorkFlowTag with record
       logUtil : LogUtil_Access;

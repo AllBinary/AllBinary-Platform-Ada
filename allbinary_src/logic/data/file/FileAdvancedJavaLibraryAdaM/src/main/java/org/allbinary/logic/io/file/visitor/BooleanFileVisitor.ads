@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.util.visitor.VisitorInterface_Package; use org.allbinary.logic.util.visitor.VisitorInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
@@ -28,7 +27,6 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
 
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package VisitorInterface_Package renames Standard.org.allbinary.logic.util.visitor.VisitorInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
@@ -38,8 +36,10 @@ package org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
    type BooleanFileVisitor_Access is access all BooleanFileVisitor'Class;
    type BooleanFileVisitor_Access_Array is array (Natural range <>) of BooleanFileVisitor_Access;
    type BooleanFileVisitor_Access_Array_Access is access all BooleanFileVisitor_Access_Array;
+   type BooleanFileVisitor_Access_Array_Access_Array is array (Natural range <>) of BooleanFileVisitor_Access_Array_Access;
+   type BooleanFileVisitor_Access_Array_Access_Array_Access is access all BooleanFileVisitor_Access_Array_Access_Array;
 
-   type BooleanFileVisitor is new VisitorInterface with record
+   type BooleanFileVisitor is new Java_Object and VisitorInterface with record
       commonStrings : CommonStrings_Access;
       filterStringBasicArrayList : BasicArrayList_Access;
    end record;
@@ -54,6 +54,8 @@ package org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
    procedure setFilterStringBasicArrayList (This : in out BooleanFileVisitor; filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function visit (This : in out BooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String) return Boolean;
    procedure visit (This : in out BooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String);
+   function visit (This : in out BooleanFileVisitor; Value : Unbounded_String) return Java_Object_Access;
+   procedure visit (This : in out BooleanFileVisitor; Value : Unbounded_String);
 
 end org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package;
 

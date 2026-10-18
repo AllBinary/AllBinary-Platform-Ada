@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+
 package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
    procedure Initialize_Fields (This : in out AbSqlRow'Class) is
    begin
       null;
@@ -415,7 +426,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
         stringBuffer.append (AbSqlRow'Class (This).getTableName);
         stringBuffer.append (This.sqlStrings.WHERE);
         begin
-            rows := BasicArrayListD_Package.Create;
+            rows := BasicArrayList_Access (BasicArrayListD_Package.Create);
             set := keysAndValues.keySet;
             keyArray := set.toArray;
             size := keyArray'Length;
@@ -449,7 +460,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (This.GET_ROW & resultAsString, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS);
                 end if;
-                rows.add (result);
+                rows.add (Java_Object_Access (result));
             end loop;
             return rows;
         exception
@@ -484,7 +495,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF ((This.sqlStrings.SQL_STATEMENT_LABEL) + (stringBuffer), AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ALL_ROWS);
             end if;
-            rows := BasicArrayListD_Package.Create;
+            rows := BasicArrayList_Access (BasicArrayListD_Package.Create);
             sqlStatement := stringBuffer.toString;
             rset := AbSqlRow'Class (This).executeSQLStatement (sqlStatement);
             resultSetMetaData := rset.getMetaData;
@@ -499,7 +510,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (This.ROW_VALUES_LABEL & result.toString, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ALL_ROWS);
                 end if;
-                rows.add (result);
+                rows.add (Java_Object_Access (result));
             end loop;
             return rows;
         exception
@@ -538,7 +549,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
         stringBuffer.append (This.sqlStrings.SELECT_ALL_FROM);
         stringBuffer.append (AbSqlRow'Class (This).getTableName);
         begin
-            rows := BasicArrayListD_Package.Create;
+            rows := BasicArrayList_Access (BasicArrayListD_Package.Create);
             stringBuffer.append (This.sqlStrings.WHERE);
             set := whereKeyValuePairs.keySet;
             key := Null_Unbounded_String;
@@ -576,7 +587,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             field := Null_Unbounded_String;
             while rset.next loop
                 result := This.stdUtil.createHashMap;
-                columnNames := BasicArrayListD_Package.Create;
+                columnNames := BasicArrayList_Access (BasicArrayListD_Package.Create);
                 columnCount := resultSetMetaData.getColumnCount;
                 for index in 1 .. columnCount loop
                     columnName := resultSetMetaData.getColumnName (index);
@@ -586,7 +597,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (This.ROW_VALUE_LABEL & result.toString, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS_WHERE_BETWEEN);
                 end if;
-                rows.add (result);
+                rows.add (Java_Object_Access (result));
             end loop;
             return rows;
         exception
@@ -619,7 +630,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
         stringBuffer.append (This.sqlStrings.SELECT_ALL_FROM);
         stringBuffer.append (AbSqlRow'Class (This).getTableName);
         begin
-            rows := BasicArrayListD_Package.Create;
+            rows := BasicArrayList_Access (BasicArrayListD_Package.Create);
             stringBuffer.append (This.sqlStrings.WHERE);
             stringBuffer.append (betweenColumn);
             stringBuffer.append (This.sqlStrings.MORE_THAN_QUOTE);
@@ -643,7 +654,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             columnCount := 0;
             while rset.next loop
                 result := This.stdUtil.createHashMap;
-                columnNames := BasicArrayListD_Package.Create;
+                columnNames := BasicArrayList_Access (BasicArrayListD_Package.Create);
                 columnCount := resultSetMetaData.getColumnCount;
                 for index in 1 .. columnCount loop
                     columnName := resultSetMetaData.getColumnName (index);
@@ -653,7 +664,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (This.ROW_VALUE_LABEL & result.toString, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS_WHERE_BETWEEN);
                 end if;
-                rows.add (result);
+                rows.add (Java_Object_Access (result));
             end loop;
             return rows;
         exception

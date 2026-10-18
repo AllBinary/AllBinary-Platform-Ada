@@ -24,28 +24,20 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package; use org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
-with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
-with org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package; use org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package;
 with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
 
 package org.allbinary.logic.communication.http.request.MultipartRequestParams_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package AbFileUploadFactory_Package renames Standard.org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
-   package InvalidContentTypeException_Package renames Standard.org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package;
 
    type MultipartRequestParams is tagged;
    type MultipartRequestParams_Access is access all MultipartRequestParams'Class;
    type MultipartRequestParams_Access_Array is array (Natural range <>) of MultipartRequestParams_Access;
    type MultipartRequestParams_Access_Array_Access is access all MultipartRequestParams_Access_Array;
+   type MultipartRequestParams_Access_Array_Access_Array is array (Natural range <>) of MultipartRequestParams_Access_Array_Access;
+   type MultipartRequestParams_Access_Array_Access_Array_Access is access all MultipartRequestParams_Access_Array_Access_Array;
 
    type MultipartRequestParams is new RequestParams with record
       logUtil : LogUtil_Access;

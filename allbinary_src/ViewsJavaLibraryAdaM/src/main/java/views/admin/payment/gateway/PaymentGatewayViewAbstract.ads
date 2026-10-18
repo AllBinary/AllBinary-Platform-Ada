@@ -21,14 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
-with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
 package views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
 
-   package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
    package PaymentGatewayPrimaryKey_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package;
    package TransformInfoHttpComposite_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -37,6 +35,8 @@ package views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
    type PaymentGatewayViewAbstract_Access is access all PaymentGatewayViewAbstract'Class;
    type PaymentGatewayViewAbstract_Access_Array is array (Natural range <>) of PaymentGatewayViewAbstract_Access;
    type PaymentGatewayViewAbstract_Access_Array_Access is access all PaymentGatewayViewAbstract_Access_Array;
+   type PaymentGatewayViewAbstract_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayViewAbstract_Access_Array_Access;
+   type PaymentGatewayViewAbstract_Access_Array_Access_Array_Access is access all PaymentGatewayViewAbstract_Access_Array_Access_Array;
 
    type PaymentGatewayViewAbstract is new TransformInfoHttpComposite with record
       paymentGatewayPrimaryKey : PaymentGatewayPrimaryKey_Access;

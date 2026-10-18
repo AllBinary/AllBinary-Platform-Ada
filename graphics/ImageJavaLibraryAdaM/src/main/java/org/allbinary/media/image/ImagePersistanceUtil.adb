@@ -5,8 +5,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
+with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.apache.batik.ext.awt.image.codec.png.PNGImageWriter_Package; use org.apache.batik.ext.awt.image.codec.png.PNGImageWriter_Package;
+
 package body org.allbinary.media.image.ImagePersistanceUtil_Package is
 
+   package AbFileOutputStream_Package renames Standard.org.allbinary.logic.io.AbFileOutputStream_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package PNGImageWriter_Package renames Standard.org.apache.batik.ext.awt.image.codec.png.PNGImageWriter_Package;
    procedure Initialize_Fields (This : in out ImagePersistanceUtil'Class) is
    begin
       null;

@@ -13,8 +13,35 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
+with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.password.Password_Package; use org.allbinary.business.user.password.Password_Package;
+with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
+with org.allbinary.data.tables.user.UserEntityFactory_Package; use org.allbinary.data.tables.user.UserEntityFactory_Package;
+with org.allbinary.data.tables.user.UserEntityInterface_Package; use org.allbinary.data.tables.user.UserEntityInterface_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+with org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Package; use org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+
 package body admin.taghelpers.AuthenticationRequestHelper_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
+   package Password_Package renames Standard.org.allbinary.business.user.password.Password_Package;
+   package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
+   package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
+   package UserEntityInterface_Package renames Standard.org.allbinary.data.tables.user.UserEntityInterface_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package WeblisketSessionData_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
+   package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+   package NewPasswordEmail_Package renames Standard.org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
    procedure Initialize_Fields (This : in out AuthenticationRequestHelper'Class) is
    begin
       null;
@@ -158,7 +185,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
             userEntityInterface := UserEntityFactory_Package.getInstance;
             userInterface := userEntityInterface.getUser (userName);
             login := userEntityInterface.login (userName, passwordString);
-            if (Java_Compare_To (login, GLOBALS2.LOGINSUCCESS)) = (0) then
+            if (Java_Compare_To (login, GLOBALS2_Package.LOGINSUCCESS)) = (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
                     This.logUtil.putF (To_Unbounded_String ("Authentication Successful"), AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("changePassword()"));
                 end if;

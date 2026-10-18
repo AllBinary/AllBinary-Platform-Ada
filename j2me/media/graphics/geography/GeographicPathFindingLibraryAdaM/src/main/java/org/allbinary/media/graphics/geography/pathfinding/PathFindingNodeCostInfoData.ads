@@ -28,6 +28,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostIn
    type PathFindingNodeCostInfoData_Access is access all PathFindingNodeCostInfoData'Class;
    type PathFindingNodeCostInfoData_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoData_Access;
    type PathFindingNodeCostInfoData_Access_Array_Access is access all PathFindingNodeCostInfoData_Access_Array;
+   type PathFindingNodeCostInfoData_Access_Array_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoData_Access_Array_Access;
+   type PathFindingNodeCostInfoData_Access_Array_Access_Array_Access is access all PathFindingNodeCostInfoData_Access_Array_Access_Array;
 
    type PathFindingNodeCostInfoData is new Java_Object with record
       MAX_TOTAL_COST : Integer;

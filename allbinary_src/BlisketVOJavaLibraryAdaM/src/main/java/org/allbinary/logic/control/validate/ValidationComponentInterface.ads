@@ -31,6 +31,8 @@ package org.allbinary.logic.control.validate.ValidationComponentInterface_Packag
    type ValidationComponentInterface_Access is access all ValidationComponentInterface'Class;
    type ValidationComponentInterface_Access_Array is array (Natural range <>) of ValidationComponentInterface_Access;
    type ValidationComponentInterface_Access_Array_Access is access all ValidationComponentInterface_Access_Array;
+   type ValidationComponentInterface_Access_Array_Access_Array is array (Natural range <>) of ValidationComponentInterface_Access_Array_Access;
+   type ValidationComponentInterface_Access_Array_Access_Array_Access is access all ValidationComponentInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
 

@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package; use org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimation_Package;
+
 package body org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimationInterfaceFactory_Package is
 
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    procedure Initialize_Fields (This : in out SimultaneousCompoundIndexedAnimationInterfaceFactory'Class) is
    begin
       null;
@@ -41,7 +45,7 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimati
 
    function createAnimation (This : in out SimultaneousCompoundIndexedAnimationInterfaceFactory; animationArray : Animation_Access_Array_Access) return Animation_Access is
    begin
-        return SimultaneousCompoundIndexedAnimation_Package.Create (animationArray, This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (SimultaneousCompoundIndexedAnimation_Package.Create (animationArray, This.animationBehaviorFactory.getOrCreateInstance));
    end createAnimation;
 
    procedure createArray (This : in out SimultaneousCompoundIndexedAnimationInterfaceFactory; size : Integer) is

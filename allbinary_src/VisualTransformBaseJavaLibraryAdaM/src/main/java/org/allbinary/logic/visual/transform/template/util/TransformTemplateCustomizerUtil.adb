@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+with org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package; use org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package;
+with org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package; use org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package;
+with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+   package CustomizerTransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package;
+   package BodyData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package;
+   package TitleData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out TransformTemplateCustomizerUtil'Class) is
    begin
       null;
@@ -45,10 +66,10 @@ package body org.allbinary.logic.visual.transform.template.util.TransformTemplat
         This.CUSTOMIZER_NAME := SPACE & Java_Image (CustomizerTransformInfoData_Package.NAME);
         This.BODY_VIEWNAMEKEY := SPACE & Java_Image (BodyData_Package.getInstance.VIEWNAMEKEY);
         This.TITLE_VIEWNAMEKEY := SPACE & Java_Image (TitleData_Package.getInstance.VIEWNAMEKEY);
-        This.GLOBALS_NEW := Java_Image (GLOBALS2.NEW_Id) & SPACE;
+        This.GLOBALS_NEW := Java_Image (GLOBALS2_Package.NEW_Id) & SPACE;
         This.GLOBALS_INSERT := Java_Image (commonStrings.INSERT) & SPACE;
         This.GLOBALS_DELETE := Java_Image (commonStrings.DELETE) & SPACE;
-        This.GLOBALS_EDIT := Java_Image (GLOBALS2.EDIT) & SPACE;
+        This.GLOBALS_EDIT := Java_Image (GLOBALS2_Package.EDIT) & SPACE;
         This.GLOBALS_UPDATE := Java_Image (commonStrings.UPDATE) & SPACE;
    end Initialize;
 

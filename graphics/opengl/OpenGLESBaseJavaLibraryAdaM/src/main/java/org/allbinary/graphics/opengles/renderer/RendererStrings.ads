@@ -28,6 +28,8 @@ package org.allbinary.graphics.opengles.renderer.RendererStrings_Package is
    type RendererStrings_Access is access all RendererStrings'Class;
    type RendererStrings_Access_Array is array (Natural range <>) of RendererStrings_Access;
    type RendererStrings_Access_Array_Access is access all RendererStrings_Access_Array;
+   type RendererStrings_Access_Array_Access_Array is array (Natural range <>) of RendererStrings_Access_Array_Access;
+   type RendererStrings_Access_Array_Access_Array_Access is access all RendererStrings_Access_Array_Access_Array;
 
    type RendererStrings is new Java_Object with record
       ON_SURFACE_CREATED : Unbounded_String;

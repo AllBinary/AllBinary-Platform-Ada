@@ -22,41 +22,31 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.category.Category_Package; use org.allbinary.business.category.Category_Package;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
-with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.visual.theme.ThemeData_Package; use org.allbinary.logic.visual.theme.ThemeData_Package;
 with org.allbinary.logic.visual.theme.ThemeValidation_Package; use org.allbinary.logic.visual.theme.ThemeValidation_Package;
-with org.allbinary.logic.visual.theme.ThemesData_Package; use org.allbinary.logic.visual.theme.ThemesData_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package Category_Package renames Standard.org.allbinary.business.category.Category_Package;
    package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
    package CategoryPropertiesFactoryInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
-   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package ThemeData_Package renames Standard.org.allbinary.logic.visual.theme.ThemeData_Package;
    package ThemeValidation_Package renames Standard.org.allbinary.logic.visual.theme.ThemeValidation_Package;
-   package ThemesData_Package renames Standard.org.allbinary.logic.visual.theme.ThemesData_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
-   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type StoreThemeCategory is tagged;
    type StoreThemeCategory_Access is access all StoreThemeCategory'Class;
    type StoreThemeCategory_Access_Array is array (Natural range <>) of StoreThemeCategory_Access;
    type StoreThemeCategory_Access_Array_Access is access all StoreThemeCategory_Access_Array;
+   type StoreThemeCategory_Access_Array_Access_Array is array (Natural range <>) of StoreThemeCategory_Access_Array_Access;
+   type StoreThemeCategory_Access_Array_Access_Array_Access is access all StoreThemeCategory_Access_Array_Access_Array;
 
    type StoreThemeCategory is new Category and StoreThemeCategoryInterface with record
       transformInfoInterface : TransformInfoInterface_Access;

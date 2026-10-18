@@ -29,6 +29,8 @@ package org.allbinary.game.health.HealthVisitorInterface_Package is
    type HealthVisitorInterface_Access is access all HealthVisitorInterface'Class;
    type HealthVisitorInterface_Access_Array is array (Natural range <>) of HealthVisitorInterface_Access;
    type HealthVisitorInterface_Access_Array_Access is access all HealthVisitorInterface_Access_Array;
+   type HealthVisitorInterface_Access_Array_Access_Array is array (Natural range <>) of HealthVisitorInterface_Access_Array_Access;
+   type HealthVisitorInterface_Access_Array_Access_Array_Access is access all HealthVisitorInterface_Access_Array_Access_Array;
    procedure visit (This : in out HealthVisitorInterface; healthInterface_Param : access HealthInterface_Package.HealthInterface'Class) is abstract;
 
 end org.allbinary.game.health.HealthVisitorInterface_Package;

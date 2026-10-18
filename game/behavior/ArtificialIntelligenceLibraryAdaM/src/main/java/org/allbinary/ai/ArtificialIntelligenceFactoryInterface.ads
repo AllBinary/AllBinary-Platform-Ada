@@ -29,6 +29,8 @@ package org.allbinary.ai.ArtificialIntelligenceFactoryInterface_Package is
    type ArtificialIntelligenceFactoryInterface_Access is access all ArtificialIntelligenceFactoryInterface'Class;
    type ArtificialIntelligenceFactoryInterface_Access_Array is array (Natural range <>) of ArtificialIntelligenceFactoryInterface_Access;
    type ArtificialIntelligenceFactoryInterface_Access_Array_Access is access all ArtificialIntelligenceFactoryInterface_Access_Array;
+   type ArtificialIntelligenceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of ArtificialIntelligenceFactoryInterface_Access_Array_Access;
+   type ArtificialIntelligenceFactoryInterface_Access_Array_Access_Array_Access is access all ArtificialIntelligenceFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out ArtificialIntelligenceFactoryInterface; anyType_Param : access Java_Object'Class) return ArtificialIntelligence_Access is abstract;
 
 end org.allbinary.ai.ArtificialIntelligenceFactoryInterface_Package;

@@ -36,6 +36,8 @@ package org.allbinary.business.context.modules.storefront.statistics.StoreFrontS
    type StoreFrontStatisticsInterface_Access is access all StoreFrontStatisticsInterface'Class;
    type StoreFrontStatisticsInterface_Access_Array is array (Natural range <>) of StoreFrontStatisticsInterface_Access;
    type StoreFrontStatisticsInterface_Access_Array_Access is access all StoreFrontStatisticsInterface_Access_Array;
+   type StoreFrontStatisticsInterface_Access_Array_Access_Array is array (Natural range <>) of StoreFrontStatisticsInterface_Access_Array_Access;
+   type StoreFrontStatisticsInterface_Access_Array_Access_Array_Access is access all StoreFrontStatisticsInterface_Access_Array_Access_Array;
    function getAdvertisements (This : in out StoreFrontStatisticsInterface) return StoreFrontAdvertisementsStatisticsInterface_Access is abstract;
    function getUsers (This : in out StoreFrontStatisticsInterface) return StoreFrontUsersStatisticsInterface_Access is abstract;
    function getInventory (This : in out StoreFrontStatisticsInterface) return StoreFrontInventoryStatisticsInterface_Access is abstract;

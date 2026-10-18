@@ -22,31 +22,26 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
-with org.allbinary.input.automation.PointHelper_Package; use org.allbinary.input.automation.PointHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
 with org.allbinary.input.automation.robot.Robot_Package; use org.allbinary.input.automation.robot.Robot_Package;
 with org.allbinary.input.automation.robot.GraphicsDevice_Package; use org.allbinary.input.automation.robot.GraphicsDevice_Package;
-with org.allbinary.input.automation.robot.MouseInfo_Package; use org.allbinary.input.automation.robot.MouseInfo_Package;
 with org.allbinary.input.automation.robot.Point_Package; use org.allbinary.input.automation.robot.Point_Package;
 with org.allbinary.input.automation.robot.Rectangle_Package; use org.allbinary.input.automation.robot.Rectangle_Package;
 with org.allbinary.input.automation.robot.Color_Package; use org.allbinary.input.automation.robot.Color_Package;
 
 package org.allbinary.input.automation.robot.InputRobot_Package is
 
-   package PointHelper_Package renames Standard.org.allbinary.input.automation.PointHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type InputRobot is tagged;
    type InputRobot_Access is access all InputRobot'Class;
    type InputRobot_Access_Array is array (Natural range <>) of InputRobot_Access;
    type InputRobot_Access_Array_Access is access all InputRobot_Access_Array;
+   type InputRobot_Access_Array_Access_Array is array (Natural range <>) of InputRobot_Access_Array_Access;
+   type InputRobot_Access_Array_Access_Array_Access is access all InputRobot_Access_Array_Access_Array;
 
-   type InputRobot is new InputRobotInterface with record
+   type InputRobot is new Java_Object and InputRobotInterface with record
       logUtil : LogUtil_Access;
       robot : Robot_Access;
    end record;

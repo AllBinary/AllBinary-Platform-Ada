@@ -22,24 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allbinary.game.layer.resources.BasicGameResources_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-with org.allbinary.animation.NullRotationAnimationFactory_Package; use org.allbinary.animation.NullRotationAnimationFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 
 package org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Package is
 
    package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package NullRotationAnimationFactory_Package renames Standard.org.allbinary.animation.NullRotationAnimationFactory_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
 
    type DecalAnimationInterfaceFactory is tagged;
    type DecalAnimationInterfaceFactory_Access is access all DecalAnimationInterfaceFactory'Class;
    type DecalAnimationInterfaceFactory_Access_Array is array (Natural range <>) of DecalAnimationInterfaceFactory_Access;
    type DecalAnimationInterfaceFactory_Access_Array_Access is access all DecalAnimationInterfaceFactory_Access_Array;
+   type DecalAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of DecalAnimationInterfaceFactory_Access_Array_Access;
+   type DecalAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all DecalAnimationInterfaceFactory_Access_Array_Access_Array;
 
    type DecalAnimationInterfaceFactory is new Java_Object with null record;
    instance : DecalAnimationInterfaceFactory_Access;

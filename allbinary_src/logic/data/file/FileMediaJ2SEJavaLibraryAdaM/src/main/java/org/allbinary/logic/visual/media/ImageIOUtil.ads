@@ -12,17 +12,17 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.RenderedImage_Package; use java.awt.image.RenderedImage_Package;
 --  with javax.imageio.ImageIO_Package; use javax.imageio.ImageIO_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
 package org.allbinary.logic.visual.media.ImageIOUtil_Package is
 
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
    type ImageIOUtil is tagged;
    type ImageIOUtil_Access is access all ImageIOUtil'Class;
    type ImageIOUtil_Access_Array is array (Natural range <>) of ImageIOUtil_Access;
    type ImageIOUtil_Access_Array_Access is access all ImageIOUtil_Access_Array;
+   type ImageIOUtil_Access_Array_Access_Array is array (Natural range <>) of ImageIOUtil_Access_Array_Access;
+   type ImageIOUtil_Access_Array_Access_Array_Access is access all ImageIOUtil_Access_Array_Access_Array;
 
    type ImageIOUtil is new Java_Object with null record;
 

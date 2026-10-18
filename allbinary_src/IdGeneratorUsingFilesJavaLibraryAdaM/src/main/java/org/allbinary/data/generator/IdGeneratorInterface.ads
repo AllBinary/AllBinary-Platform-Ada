@@ -29,6 +29,8 @@ package org.allbinary.data.generator.IdGeneratorInterface_Package is
    type IdGeneratorInterface_Access is access all IdGeneratorInterface'Class;
    type IdGeneratorInterface_Access_Array is array (Natural range <>) of IdGeneratorInterface_Access;
    type IdGeneratorInterface_Access_Array_Access is access all IdGeneratorInterface_Access_Array;
+   type IdGeneratorInterface_Access_Array_Access_Array is array (Natural range <>) of IdGeneratorInterface_Access_Array_Access;
+   type IdGeneratorInterface_Access_Array_Access_Array_Access is access all IdGeneratorInterface_Access_Array_Access_Array;
    function getNext (This : in out IdGeneratorInterface) return Unbounded_String is abstract;
 
 end org.allbinary.data.generator.IdGeneratorInterface_Package;

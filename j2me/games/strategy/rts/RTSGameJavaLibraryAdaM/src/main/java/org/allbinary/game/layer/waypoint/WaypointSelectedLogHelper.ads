@@ -24,9 +24,7 @@ with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbina
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
@@ -38,9 +36,7 @@ package org.allbinary.game.layer.waypoint.WaypointSelectedLogHelper_Package is
    package WaypointBehaviorBase_Package renames Standard.org.allbinary.game.layer.WaypointBehaviorBase_Package;
    package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
@@ -49,6 +45,8 @@ package org.allbinary.game.layer.waypoint.WaypointSelectedLogHelper_Package is
    type WaypointSelectedLogHelper_Access is access all WaypointSelectedLogHelper'Class;
    type WaypointSelectedLogHelper_Access_Array is array (Natural range <>) of WaypointSelectedLogHelper_Access;
    type WaypointSelectedLogHelper_Access_Array_Access is access all WaypointSelectedLogHelper_Access_Array;
+   type WaypointSelectedLogHelper_Access_Array_Access_Array is array (Natural range <>) of WaypointSelectedLogHelper_Access_Array_Access;
+   type WaypointSelectedLogHelper_Access_Array_Access_Array_Access is access all WaypointSelectedLogHelper_Access_Array_Access_Array;
 
    type WaypointSelectedLogHelper is new WaypointLogHelper with record
       logUtil : LogUtil_Access;

@@ -22,12 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.GameKeyEventListenerInterface_Package; use org.allbinary.game.input.event.GameKeyEventListenerInterface_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.game.input.GameInputStrings_Package; use org.allbinary.game.input.GameInputStrings_Package;
@@ -36,18 +31,15 @@ package org.allbinary.game.input.PlayerGameInput_Package is
 
    package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
    package GameKeyEventListenerInterface_Package renames Standard.org.allbinary.game.input.event.GameKeyEventListenerInterface_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type PlayerGameInput is tagged;
    type PlayerGameInput_Access is access all PlayerGameInput'Class;
    type PlayerGameInput_Access_Array is array (Natural range <>) of PlayerGameInput_Access;
    type PlayerGameInput_Access_Array_Access is access all PlayerGameInput_Access_Array;
+   type PlayerGameInput_Access_Array_Access_Array is array (Natural range <>) of PlayerGameInput_Access_Array_Access;
+   type PlayerGameInput_Access_Array_Access_Array_Access is access all PlayerGameInput_Access_Array_Access_Array;
 
    type PlayerGameInput is new GameInput and GameKeyEventListenerInterface with record
       gameInputStrings : GameInputStrings_Access;

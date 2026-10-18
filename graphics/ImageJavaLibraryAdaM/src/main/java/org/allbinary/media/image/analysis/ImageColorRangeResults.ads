@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
-with org.allbinary.media.image.analysis.ColorRange_Package; use org.allbinary.media.image.analysis.ColorRange_Package;
 
 package org.allbinary.media.image.analysis.ImageColorRangeResults_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.media.image.analysis.ImageColorRangeResults_Package is
    type ImageColorRangeResults_Access is access all ImageColorRangeResults'Class;
    type ImageColorRangeResults_Access_Array is array (Natural range <>) of ImageColorRangeResults_Access;
    type ImageColorRangeResults_Access_Array_Access is access all ImageColorRangeResults_Access_Array;
+   type ImageColorRangeResults_Access_Array_Access_Array is array (Natural range <>) of ImageColorRangeResults_Access_Array_Access;
+   type ImageColorRangeResults_Access_Array_Access_Array_Access is access all ImageColorRangeResults_Access_Array_Access_Array;
 
    type ImageColorRangeResults is new Java_Object with record
       colorRangeInterface : ColorRangeInterface_Access;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitor_Package is
 
    procedure Initialize_Fields (This : in out PathFinderGraphHackVisitor'Class) is
@@ -92,6 +93,23 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
 
    procedure isValid (This : in out PathFinderGraphHackVisitor; graphPath_Param : access Java_Object'Class) is
       Java_Result : constant Boolean := PathFinderGraphHackVisitor'Class (This).isValid (graphPath_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   procedure fixOverPassEdges (This : in out PathFinderGraphHackVisitor; Value : Unbounded_String) is
+   begin
+      PathFinderGraphHackVisitor'Class (This).fixOverPassEdges (Java_Box (Value));
+   end fixOverPassEdges;
+
+   function isValid (This : in out PathFinderGraphHackVisitor; Value : Unbounded_String) return Boolean is
+   begin
+      return PathFinderGraphHackVisitor'Class (This).isValid (Java_Box (Value));
+   end isValid;
+
+   procedure isValid (This : in out PathFinderGraphHackVisitor; Value : Unbounded_String) is
+      Java_Result : constant Boolean := PathFinderGraphHackVisitor'Class (This).isValid (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

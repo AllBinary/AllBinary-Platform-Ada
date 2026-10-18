@@ -23,27 +23,19 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
 --  with javax.servlet.jsp.tagext.TagSupport_Package; use javax.servlet.jsp.tagext.TagSupport_Package;
-with admin.taghelpers.StoreFrontsHelperFactory_Package; use admin.taghelpers.StoreFrontsHelperFactory_Package;
-with admin.taghelpers.StoreFrontsRequestHelperFactory_Package; use admin.taghelpers.StoreFrontsRequestHelperFactory_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.StoreFrontsTag_Package is
 
-   package StoreFrontsHelperFactory_Package renames Standard.admin.taghelpers.StoreFrontsHelperFactory_Package;
-   package StoreFrontsRequestHelperFactory_Package renames Standard.admin.taghelpers.StoreFrontsRequestHelperFactory_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type StoreFrontsTag is tagged;
    type StoreFrontsTag_Access is access all StoreFrontsTag'Class;
    type StoreFrontsTag_Access_Array is array (Natural range <>) of StoreFrontsTag_Access;
    type StoreFrontsTag_Access_Array_Access is access all StoreFrontsTag_Access_Array;
+   type StoreFrontsTag_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsTag_Access_Array_Access;
+   type StoreFrontsTag_Access_Array_Access_Array_Access is access all StoreFrontsTag_Access_Array_Access_Array;
 
    type StoreFrontsTag is new TableTag with record
       logUtil : LogUtil_Access;

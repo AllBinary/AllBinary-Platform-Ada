@@ -29,6 +29,8 @@ package org.osgi.framework.NullServiceReferenceFactory_Package is
    type NullServiceReferenceFactory_Access is access all NullServiceReferenceFactory'Class;
    type NullServiceReferenceFactory_Access_Array is array (Natural range <>) of NullServiceReferenceFactory_Access;
    type NullServiceReferenceFactory_Access_Array_Access is access all NullServiceReferenceFactory_Access_Array;
+   type NullServiceReferenceFactory_Access_Array_Access_Array is array (Natural range <>) of NullServiceReferenceFactory_Access_Array_Access;
+   type NullServiceReferenceFactory_Access_Array_Access_Array_Access is access all NullServiceReferenceFactory_Access_Array_Access_Array;
 
    type NullServiceReferenceFactory is new Java_Object with record
       NULL_SERVICE_REFERENCE : NullServiceReference_Access;

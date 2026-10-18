@@ -10,19 +10,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package; use org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package;
-with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
-with org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapExtractedPathCacheFactory_Package; use org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapExtractedPathCacheFactory_Package;
 
 package org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapExtractedPathsCacheFactory_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BaseBasicArrayListCache_Package renames Standard.org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package;
-   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
 
    type BasicGeographicMapExtractedPathsCacheFactory is tagged;
    type BasicGeographicMapExtractedPathsCacheFactory_Access is access all BasicGeographicMapExtractedPathsCacheFactory'Class;
    type BasicGeographicMapExtractedPathsCacheFactory_Access_Array is array (Natural range <>) of BasicGeographicMapExtractedPathsCacheFactory_Access;
    type BasicGeographicMapExtractedPathsCacheFactory_Access_Array_Access is access all BasicGeographicMapExtractedPathsCacheFactory_Access_Array;
+   type BasicGeographicMapExtractedPathsCacheFactory_Access_Array_Access_Array is array (Natural range <>) of BasicGeographicMapExtractedPathsCacheFactory_Access_Array_Access;
+   type BasicGeographicMapExtractedPathsCacheFactory_Access_Array_Access_Array_Access is access all BasicGeographicMapExtractedPathsCacheFactory_Access_Array_Access_Array;
 
    type BasicGeographicMapExtractedPathsCacheFactory is new BaseBasicArrayListCache with record
       maxConcurrentPaths : Integer;

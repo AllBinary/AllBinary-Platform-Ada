@@ -20,26 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
-with org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerManager_Package; use org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerManager_Package;
-with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbinary.game.collision.CollidableBaseBehavior_Package;
 
 package org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Package is
 
-   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
-   package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
    package LayerProcessor_Package renames Standard.org.allbinary.layer.LayerProcessor_Package;
 
    type OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer is tagged;
    type OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access is access all OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer'Class;
    type OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access_Array is array (Natural range <>) of OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access;
    type OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access_Array_Access is access all OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access_Array;
+   type OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access_Array_Access_Array is array (Natural range <>) of OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access_Array_Access;
+   type OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access_Array_Access_Array_Access is access all OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access_Array_Access_Array;
 
    type OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer is new LayerProcessor with null record;
 

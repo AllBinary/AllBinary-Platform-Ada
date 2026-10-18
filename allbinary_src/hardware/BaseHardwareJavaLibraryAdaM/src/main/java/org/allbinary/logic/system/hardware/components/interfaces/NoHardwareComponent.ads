@@ -20,19 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
 
 package org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type NoHardwareComponent is tagged;
    type NoHardwareComponent_Access is access all NoHardwareComponent'Class;
    type NoHardwareComponent_Access_Array is array (Natural range <>) of NoHardwareComponent_Access;
    type NoHardwareComponent_Access_Array_Access is access all NoHardwareComponent_Access_Array;
+   type NoHardwareComponent_Access_Array_Access_Array is array (Natural range <>) of NoHardwareComponent_Access_Array_Access;
+   type NoHardwareComponent_Access_Array_Access_Array_Access is access all NoHardwareComponent_Access_Array_Access_Array;
 
-   type NoHardwareComponent is new HardwareComponentInterface with null record;
+   type NoHardwareComponent is new Java_Object and HardwareComponentInterface with null record;
    instance : NoHardwareComponent_Access;
 
    procedure Initialize (This : in out NoHardwareComponent'Class);

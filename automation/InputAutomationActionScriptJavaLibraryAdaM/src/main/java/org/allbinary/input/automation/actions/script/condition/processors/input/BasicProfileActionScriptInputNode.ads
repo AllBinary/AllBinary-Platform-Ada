@@ -20,14 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.BasicProfileActionScriptInputNode_Package is
 
-   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -35,6 +32,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    type BasicProfileActionScriptInputNode_Access is access all BasicProfileActionScriptInputNode'Class;
    type BasicProfileActionScriptInputNode_Access_Array is array (Natural range <>) of BasicProfileActionScriptInputNode_Access;
    type BasicProfileActionScriptInputNode_Access_Array_Access is access all BasicProfileActionScriptInputNode_Access_Array;
+   type BasicProfileActionScriptInputNode_Access_Array_Access_Array is array (Natural range <>) of BasicProfileActionScriptInputNode_Access_Array_Access;
+   type BasicProfileActionScriptInputNode_Access_Array_Access_Array_Access is access all BasicProfileActionScriptInputNode_Access_Array_Access_Array;
 
    type BasicProfileActionScriptInputNode is new Java_Object with null record;
 

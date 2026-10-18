@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+
 package body tags.PropertiesTag_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out PropertiesTag'Class) is
    begin
       null;

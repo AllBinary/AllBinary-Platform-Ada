@@ -19,6 +19,8 @@ package org.allbinary.game.collision.CollisionThreedProcessor_Package is
    type CollisionThreedProcessor_Access is access all CollisionThreedProcessor'Class;
    type CollisionThreedProcessor_Access_Array is array (Natural range <>) of CollisionThreedProcessor_Access;
    type CollisionThreedProcessor_Access_Array_Access is access all CollisionThreedProcessor_Access_Array;
+   type CollisionThreedProcessor_Access_Array_Access_Array is array (Natural range <>) of CollisionThreedProcessor_Access_Array_Access;
+   type CollisionThreedProcessor_Access_Array_Access_Array_Access is access all CollisionThreedProcessor_Access_Array_Access_Array;
 
    type CollisionThreedProcessor is new CollisionProcessor with null record;
 

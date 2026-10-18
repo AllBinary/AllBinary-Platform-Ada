@@ -16,6 +16,8 @@ package javax.microedition.khronos.opengles.GL_Package is
    type GL_Access is access all GL'Class;
    type GL_Access_Array is array (Natural range <>) of GL_Access;
    type GL_Access_Array_Access is access all GL_Access_Array;
+   type GL_Access_Array_Access_Array is array (Natural range <>) of GL_Access_Array_Access;
+   type GL_Access_Array_Access_Array_Access is access all GL_Access_Array_Access_Array;
 
 end javax.microedition.khronos.opengles.GL_Package;
 

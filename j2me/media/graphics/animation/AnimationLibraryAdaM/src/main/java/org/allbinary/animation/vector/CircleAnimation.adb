@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+
 package body org.allbinary.animation.vector.CircleAnimation_Package is
 
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    procedure Initialize_Fields (This : in out CircleAnimation'Class) is
    begin
       null;

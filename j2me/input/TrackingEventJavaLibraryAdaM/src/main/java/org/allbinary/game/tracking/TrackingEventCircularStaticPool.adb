@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.tracking.TrackingEventFactory_Package; use org.allbinary.game.tracking.TrackingEventFactory_Package;
+
 package body org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package is
 
    procedure Initialize_Fields (This : in out TrackingEventCircularStaticPool'Class) is

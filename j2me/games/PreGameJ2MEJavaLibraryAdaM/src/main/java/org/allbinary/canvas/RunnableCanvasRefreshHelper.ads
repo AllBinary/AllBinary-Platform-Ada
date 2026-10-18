@@ -31,6 +31,8 @@ package org.allbinary.canvas.RunnableCanvasRefreshHelper_Package is
    type RunnableCanvasRefreshHelper_Access is access all RunnableCanvasRefreshHelper'Class;
    type RunnableCanvasRefreshHelper_Access_Array is array (Natural range <>) of RunnableCanvasRefreshHelper_Access;
    type RunnableCanvasRefreshHelper_Access_Array_Access is access all RunnableCanvasRefreshHelper_Access_Array;
+   type RunnableCanvasRefreshHelper_Access_Array_Access_Array is array (Natural range <>) of RunnableCanvasRefreshHelper_Access_Array_Access;
+   type RunnableCanvasRefreshHelper_Access_Array_Access_Array_Access is access all RunnableCanvasRefreshHelper_Access_Array_Access_Array;
 
    type RunnableCanvasRefreshHelper is new Processor with record
       runnableCanvas : MyCanvas_Access;

@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.quoterequest.QuoteRequestData_Package; use org.allbinary.business.quoterequest.QuoteRequestData_Package;
+with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
+with org.allbinary.data.generator.QuoteRequestIdGenerator_Package; use org.allbinary.data.generator.QuoteRequestIdGenerator_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.sql.AbSqlData_Package; use org.allbinary.logic.communication.sql.AbSqlData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package QuoteRequestData_Package renames Standard.org.allbinary.business.quoterequest.QuoteRequestData_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package QuoteRequestIdGenerator_Package renames Standard.org.allbinary.data.generator.QuoteRequestIdGenerator_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbSqlData_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out QuoteRequest'Class) is
    begin
       null;
@@ -159,7 +180,7 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
       calendar : Calendar_Access;
       time : Unbounded_String;
    begin
-        values := BasicArrayListD_Package.Create;
+        values := BasicArrayList_Access (BasicArrayListD_Package.Create);
         values.add (This.id);
         values.add (This.userName);
         values.add (This.projectInfo);

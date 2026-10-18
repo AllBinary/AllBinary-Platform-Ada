@@ -40,8 +40,10 @@ package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObje
    type TransformInfoObjectConfigAndManipulatorFactoryBase_Access is access all TransformInfoObjectConfigAndManipulatorFactoryBase'Class;
    type TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array is array (Natural range <>) of TransformInfoObjectConfigAndManipulatorFactoryBase_Access;
    type TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access is access all TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array;
+   type TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access_Array is array (Natural range <>) of TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access;
+   type TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access_Array_Access is access all TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access_Array;
 
-   type TransformInfoObjectConfigAndManipulatorFactoryBase is new TransformInfoObjectConfigAndManipulatorFactoryInterface with record
+   type TransformInfoObjectConfigAndManipulatorFactoryBase is new Java_Object and TransformInfoObjectConfigAndManipulatorFactoryInterface with record
       commonStrings : CommonStrings_Access;
    end record;
 

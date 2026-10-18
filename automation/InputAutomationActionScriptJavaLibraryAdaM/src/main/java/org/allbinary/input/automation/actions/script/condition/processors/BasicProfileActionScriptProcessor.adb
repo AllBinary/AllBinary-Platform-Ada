@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package; use org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.GenericProfileActionScriptProcessorData_Package; use org.allbinary.input.automation.actions.script.condition.processors.GenericProfileActionScriptProcessorData_Package;
+
 package body org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package is
 
+   package JTreeInterfaceFactory_Package renames Standard.org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
+   package ProfileActionScriptConditionInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
    procedure Initialize_Fields (This : in out BasicProfileActionScriptProcessor'Class) is
    begin
       null;

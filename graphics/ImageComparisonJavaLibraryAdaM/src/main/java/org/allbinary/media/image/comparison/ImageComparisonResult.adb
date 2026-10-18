@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+
 package body org.allbinary.media.image.comparison.ImageComparisonResult_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ImageUtil_Package renames Standard.org.allbinary.media.image.ImageUtil_Package;
    procedure Initialize_Fields (This : in out ImageComparisonResult'Class) is
    begin
       null;
@@ -45,7 +54,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResult_Package 
    begin
       Initialize_Fields (This);
         This.name := name;
-        This.nonMatchingPixelVector := BasicArrayListD_Package.Create;
+        This.nonMatchingPixelVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         This.bufferedImages (0) := bufferedImage;
         This.bufferedImages (1) := bufferedImage2;
         This.frameOne := frameOne;
@@ -97,7 +106,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResult_Package 
    procedure add (This : in out ImageComparisonResult; pixel_Param : access PixelDelta_Package.PixelDelta'Class) is
       pixel : constant PixelDelta_Access := PixelDelta_Access (pixel_Param);
    begin
-        This.nonMatchingPixelVector.add (pixel);
+        This.nonMatchingPixelVector.add (Java_Object_Access (pixel));
    end add;
 
    function getNonMatchingPixelVector (This : in out ImageComparisonResult) return BasicArrayList_Access is

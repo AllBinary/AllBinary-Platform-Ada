@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.text.CustomTextBox2_Package is
 
    procedure Initialize_Fields (This : in out CustomTextBox2'Class) is

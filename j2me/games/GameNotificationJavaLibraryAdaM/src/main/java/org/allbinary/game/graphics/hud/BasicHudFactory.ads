@@ -28,6 +28,8 @@ package org.allbinary.game.graphics.hud.BasicHudFactory_Package is
    type BasicHudFactory_Access is access all BasicHudFactory'Class;
    type BasicHudFactory_Access_Array is array (Natural range <>) of BasicHudFactory_Access;
    type BasicHudFactory_Access_Array_Access is access all BasicHudFactory_Access_Array;
+   type BasicHudFactory_Access_Array_Access_Array is array (Natural range <>) of BasicHudFactory_Access_Array_Access;
+   type BasicHudFactory_Access_Array_Access_Array_Access is access all BasicHudFactory_Access_Array_Access_Array;
 
    type BasicHudFactory is new Java_Object with record
       DIRECTION_EXCEPTION : Unbounded_String;

@@ -28,6 +28,8 @@ package org.allbinary.globals.GLOBALS2_Package is
    type GLOBALS2_Access is access all GLOBALS2'Class;
    type GLOBALS2_Access_Array is array (Natural range <>) of GLOBALS2_Access;
    type GLOBALS2_Access_Array_Access is access all GLOBALS2_Access_Array;
+   type GLOBALS2_Access_Array_Access_Array is array (Natural range <>) of GLOBALS2_Access_Array_Access;
+   type GLOBALS2_Access_Array_Access_Array_Access is access all GLOBALS2_Access_Array_Access_Array;
 
    type GLOBALS2 is new Java_Object with null record;
    GETCURRENTLOCATION : Unbounded_String;

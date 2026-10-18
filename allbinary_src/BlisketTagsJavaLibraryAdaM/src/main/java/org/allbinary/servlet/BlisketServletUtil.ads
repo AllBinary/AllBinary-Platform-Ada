@@ -21,22 +21,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
-with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
-with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
 
 package org.allbinary.servlet.BlisketServletUtil_Package is
 
-   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
-   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
-   package WebappClassLoaderInfo_Package renames Standard.org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
 
    type BlisketServletUtil is tagged;
    type BlisketServletUtil_Access is access all BlisketServletUtil'Class;
    type BlisketServletUtil_Access_Array is array (Natural range <>) of BlisketServletUtil_Access;
    type BlisketServletUtil_Access_Array_Access is access all BlisketServletUtil_Access_Array;
+   type BlisketServletUtil_Access_Array_Access_Array is array (Natural range <>) of BlisketServletUtil_Access_Array_Access;
+   type BlisketServletUtil_Access_Array_Access_Array_Access is access all BlisketServletUtil_Access_Array_Access_Array;
 
    type BlisketServletUtil is new Java_Object with null record;
    instance : BlisketServletUtil_Access;

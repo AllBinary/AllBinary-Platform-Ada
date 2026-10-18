@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.subscription.Subscription_Package is
 
    procedure Initialize_Fields (This : in out Subscription'Class) is

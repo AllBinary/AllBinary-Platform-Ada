@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.image.opengles.OpenGLImageCache_Package; use org.allbinary.image.opengles.OpenGLImageCache_Package;
+
 package body org.allbinary.image.opengles.OpenGLImageCacheFactory_Package is
 
    procedure Initialize_Fields (This : in out OpenGLImageCacheFactory'Class) is
@@ -45,7 +47,7 @@ package body org.allbinary.image.opengles.OpenGLImageCacheFactory_Package is
 
 begin
    null;
-   IMAGE_CACHE := OpenGLImageCache_Package.Create;
+   IMAGE_CACHE := ImageCache_Access (OpenGLImageCache_Package.Create);
 
 end org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
 

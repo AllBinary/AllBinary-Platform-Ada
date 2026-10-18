@@ -13,8 +13,38 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.allbinary.logic.io.InputOutputTypeData_Package; use org.allbinary.logic.io.InputOutputTypeData_Package;
+with org.allbinary.logic.io.OutputTypeData_Package; use org.allbinary.logic.io.OutputTypeData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package; use org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfosData_Package; use org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+with org.allbinary.logic.visual.transform.template.XslData_Package; use org.allbinary.logic.visual.transform.template.XslData_Package;
+with org.w3c.dom.Attr_Package; use org.w3c.dom.Attr_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
+
 package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
+   package OutputTypeData_Package renames Standard.org.allbinary.logic.io.OutputTypeData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package TransformInfoDomNode_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
+   package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+   package XslData_Package renames Standard.org.allbinary.logic.visual.transform.template.XslData_Package;
+   package Attr_Package renames Standard.org.w3c.dom.Attr_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out TransformInfoObjectConfig'Class) is
    begin
       null;
@@ -216,7 +246,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             end if;
             return viewNodeVector;
         end if;
-        return BasicArrayListD_Package.Create;
+        return BasicArrayList_Access (BasicArrayListD_Package.Create);
    end getNodeVector;
 
    --  throws Exception
@@ -227,12 +257,12 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       viewNode : Node_Access;
       index : Integer;
    begin
-        viewVector := BasicArrayListD_Package.Create;
+        viewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         viewNodeVector := TransformInfoObjectConfig'Class (This).getNodeVector (nodeName);
         size := viewNodeVector.size;
         for index in 0 .. (size) - 1 loop
             viewNode := Node_Access (viewNodeVector.get (index));
-            viewVector.add (TransformInfoDomNode_Package.Create (viewNode));
+            viewVector.add (Java_Object_Access (TransformInfoDomNode_Package.Create (viewNode)));
         end loop;
         return viewVector;
    end getTransformDomNodes;
@@ -245,7 +275,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       viewNode : Node_Access;
       index : Integer;
    begin
-        viewVector := BasicArrayListD_Package.Create;
+        viewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         viewNodeVector := TransformInfoObjectConfig'Class (This).getNodeVector (nodeName);
         size := viewNodeVector.size;
         for index in 0 .. (size) - 1 loop
@@ -275,7 +305,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Started: ") & group, TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformsGroup()"));
         end if;
-        viewVector := BasicArrayListD_Package.Create;
+        viewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         GROUP := TransformInfosData_Package.getInstance.GROUP;
         componentsNodeList := This.document.getElementsByTagName (GROUP);
         if ((componentsNodeList) /= (null)) and then ((componentsNodeList.getLength) > (0)) then
@@ -299,7 +329,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             size := viewNodeVector.size;
             for index in 0 .. (size) - 1 loop
                 viewNode := Node_Access (viewNodeVector.get (index));
-                viewVector.add (TransformInfoDomNode_Package.Create (viewNode));
+                viewVector.add (Java_Object_Access (TransformInfoDomNode_Package.Create (viewNode)));
             end loop;
         else
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then

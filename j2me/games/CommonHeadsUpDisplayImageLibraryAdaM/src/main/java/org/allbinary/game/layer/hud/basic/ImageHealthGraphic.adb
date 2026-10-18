@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+
 package body org.allbinary.game.layer.hud.basic.ImageHealthGraphic_Package is
 
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
    procedure Initialize_Fields (This : in out ImageHealthGraphic'Class) is
    begin
       null;

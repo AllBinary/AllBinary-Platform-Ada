@@ -34,6 +34,8 @@ package org.allbinary.input.automation.module.generic_Id.constraints.NoImageComp
    type NoImageComparatorConstraints_Access is access all NoImageComparatorConstraints'Class;
    type NoImageComparatorConstraints_Access_Array is array (Natural range <>) of NoImageComparatorConstraints_Access;
    type NoImageComparatorConstraints_Access_Array_Access is access all NoImageComparatorConstraints_Access_Array;
+   type NoImageComparatorConstraints_Access_Array_Access_Array is array (Natural range <>) of NoImageComparatorConstraints_Access_Array_Access;
+   type NoImageComparatorConstraints_Access_Array_Access_Array_Access is access all NoImageComparatorConstraints_Access_Array_Access_Array;
 
    type NoImageComparatorConstraints is new ImageComparatorConstraints with null record;
 

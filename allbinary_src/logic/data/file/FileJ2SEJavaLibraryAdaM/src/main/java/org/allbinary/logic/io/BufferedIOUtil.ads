@@ -25,19 +25,17 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileReader_Package; use java.io.FileReader_Package;
 --  with java.io.FileWriter_Package; use java.io.FileWriter_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.logic.io.BufferedIOUtil_Package is
 
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type BufferedIOUtil is tagged;
    type BufferedIOUtil_Access is access all BufferedIOUtil'Class;
    type BufferedIOUtil_Access_Array is array (Natural range <>) of BufferedIOUtil_Access;
    type BufferedIOUtil_Access_Array_Access is access all BufferedIOUtil_Access_Array;
+   type BufferedIOUtil_Access_Array_Access_Array is array (Natural range <>) of BufferedIOUtil_Access_Array_Access;
+   type BufferedIOUtil_Access_Array_Access_Array_Access is access all BufferedIOUtil_Access_Array_Access_Array;
 
    type BufferedIOUtil is new Java_Object with null record;
 

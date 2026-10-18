@@ -29,6 +29,8 @@ package org.allbinary.game.configuration.feature.TouchFeatureFactory_Package is
    type TouchFeatureFactory_Access is access all TouchFeatureFactory'Class;
    type TouchFeatureFactory_Access_Array is array (Natural range <>) of TouchFeatureFactory_Access;
    type TouchFeatureFactory_Access_Array_Access is access all TouchFeatureFactory_Access_Array;
+   type TouchFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of TouchFeatureFactory_Access_Array_Access;
+   type TouchFeatureFactory_Access_Array_Access_Array_Access is access all TouchFeatureFactory_Access_Array_Access_Array;
 
    type TouchFeatureFactory is new Java_Object with record
       TOUCH_ENABLED : TouchFeature_Access;

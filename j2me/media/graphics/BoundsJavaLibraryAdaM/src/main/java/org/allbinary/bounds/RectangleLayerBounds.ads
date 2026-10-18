@@ -32,6 +32,8 @@ package org.allbinary.bounds.RectangleLayerBounds_Package is
    type RectangleLayerBounds_Access is access all RectangleLayerBounds'Class;
    type RectangleLayerBounds_Access_Array is array (Natural range <>) of RectangleLayerBounds_Access;
    type RectangleLayerBounds_Access_Array_Access is access all RectangleLayerBounds_Access_Array;
+   type RectangleLayerBounds_Access_Array_Access_Array is array (Natural range <>) of RectangleLayerBounds_Access_Array_Access;
+   type RectangleLayerBounds_Access_Array_Access_Array_Access is access all RectangleLayerBounds_Access_Array_Access_Array;
 
    type RectangleLayerBounds is new LayerBounds with null record;
 

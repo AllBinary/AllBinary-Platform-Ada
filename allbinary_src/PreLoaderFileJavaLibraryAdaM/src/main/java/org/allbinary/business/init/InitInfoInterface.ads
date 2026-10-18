@@ -30,6 +30,8 @@ package org.allbinary.business.init.InitInfoInterface_Package is
    type InitInfoInterface_Access is access all InitInfoInterface'Class;
    type InitInfoInterface_Access_Array is array (Natural range <>) of InitInfoInterface_Access;
    type InitInfoInterface_Access_Array_Access is access all InitInfoInterface_Access_Array;
+   type InitInfoInterface_Access_Array_Access_Array is array (Natural range <>) of InitInfoInterface_Access_Array_Access;
+   type InitInfoInterface_Access_Array_Access_Array_Access is access all InitInfoInterface_Access_Array_Access_Array;
    function isTesting (This : in out InitInfoInterface) return Boolean is abstract;
    function getTesting (This : in out InitInfoInterface) return Unbounded_String is abstract;
    function getTestHtmlPath (This : in out InitInfoInterface) return Unbounded_String is abstract;

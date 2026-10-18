@@ -22,10 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.combat.damage.DamageFloaters_Package; use org.allbinary.game.combat.damage.DamageFloaters_Package;
 with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
-with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package; use org.allbinary.game.layer.building.BuildingPropertiesFactory_Package;
 with org.allbinary.game.layer.building.BuildingLayer_Package; use org.allbinary.game.layer.building.BuildingLayer_Package;
@@ -34,16 +31,15 @@ package org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Pac
 
    package DamageFloaters_Package renames Standard.org.allbinary.game.combat.damage.DamageFloaters_Package;
    package TrackingEvent_Package renames Standard.org.allbinary.game.tracking.TrackingEvent_Package;
-   package TrackingEventHandler_Package renames Standard.org.allbinary.game.tracking.TrackingEventHandler_Package;
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type SimulatedBuildingPropertiesFactory is tagged;
    type SimulatedBuildingPropertiesFactory_Access is access all SimulatedBuildingPropertiesFactory'Class;
    type SimulatedBuildingPropertiesFactory_Access_Array is array (Natural range <>) of SimulatedBuildingPropertiesFactory_Access;
    type SimulatedBuildingPropertiesFactory_Access_Array_Access is access all SimulatedBuildingPropertiesFactory_Access_Array;
+   type SimulatedBuildingPropertiesFactory_Access_Array_Access_Array is array (Natural range <>) of SimulatedBuildingPropertiesFactory_Access_Array_Access;
+   type SimulatedBuildingPropertiesFactory_Access_Array_Access_Array_Access is access all SimulatedBuildingPropertiesFactory_Access_Array_Access_Array;
 
    type SimulatedBuildingPropertiesFactory is new BuildingPropertiesFactory with null record;
    instanceC : SimulatedBuildingPropertiesFactory_Access;

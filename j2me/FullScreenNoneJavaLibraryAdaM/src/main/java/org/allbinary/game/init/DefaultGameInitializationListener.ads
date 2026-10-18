@@ -21,35 +21,27 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.configuration.event.GameInitializedEvent_Package; use org.allbinary.game.configuration.event.GameInitializedEvent_Package;
-with org.allbinary.game.configuration.event.GameInitializedEventHandler_Package; use org.allbinary.game.configuration.event.GameInitializedEventHandler_Package;
 with org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package; use org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
-with org.allbinary.game.resource.FeatureResourceInitializationUtil_Package; use org.allbinary.game.resource.FeatureResourceInitializationUtil_Package;
 with org.allbinary.graphics.threed.SWTJOGLProcessor_Package; use org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.game.init.DefaultGameInitializationListener_Package is
 
    package GameInitializedEvent_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedEvent_Package;
-   package GameInitializedEventHandler_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedEventHandler_Package;
    package GameInitializedListenerInterface_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
-   package FeatureResourceInitializationUtil_Package renames Standard.org.allbinary.game.resource.FeatureResourceInitializationUtil_Package;
    package SWTJOGLProcessor_Package renames Standard.org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type DefaultGameInitializationListener is tagged;
    type DefaultGameInitializationListener_Access is access all DefaultGameInitializationListener'Class;
    type DefaultGameInitializationListener_Access_Array is array (Natural range <>) of DefaultGameInitializationListener_Access;
    type DefaultGameInitializationListener_Access_Array_Access is access all DefaultGameInitializationListener_Access_Array;
+   type DefaultGameInitializationListener_Access_Array_Access_Array is array (Natural range <>) of DefaultGameInitializationListener_Access_Array_Access;
+   type DefaultGameInitializationListener_Access_Array_Access_Array_Access is access all DefaultGameInitializationListener_Access_Array_Access_Array;
 
-   type DefaultGameInitializationListener is new GameInitializedListenerInterface with record
+   type DefaultGameInitializationListener is new Java_Object and GameInitializedListenerInterface with record
       logUtil : LogUtil_Access;
       swtJOGLProcessor : SWTJOGLProcessor_Access;
       firstTime : Boolean;

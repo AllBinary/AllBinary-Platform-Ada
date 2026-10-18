@@ -28,6 +28,8 @@ package org.allbinary.business.user.address.ShippingAddressData_Package is
    type ShippingAddressData_Access is access all ShippingAddressData'Class;
    type ShippingAddressData_Access_Array is array (Natural range <>) of ShippingAddressData_Access;
    type ShippingAddressData_Access_Array_Access is access all ShippingAddressData_Access_Array;
+   type ShippingAddressData_Access_Array_Access_Array is array (Natural range <>) of ShippingAddressData_Access_Array_Access;
+   type ShippingAddressData_Access_Array_Access_Array_Access is access all ShippingAddressData_Access_Array_Access_Array;
 
    type ShippingAddressData is new Java_Object with null record;
    SETTOBILLINGADDRESS : Unbounded_String;

@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.data.tree.dom.ToDomHelper_Package; use org.allbinary.data.tree.dom.ToDomHelper_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.logic.control.search.SearchData_Package;
+
 package body org.allbinary.logic.control.search.SearchParams_Package is
 
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package ToDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ToDomHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out SearchParams'Class) is
    begin
       null;

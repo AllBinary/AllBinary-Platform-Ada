@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
-with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 
 package org.allbinary.logic.system.PlatformAssetManager_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
-   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
 
    type PlatformAssetManager is tagged;
    type PlatformAssetManager_Access is access all PlatformAssetManager'Class;
    type PlatformAssetManager_Access_Array is array (Natural range <>) of PlatformAssetManager_Access;
    type PlatformAssetManager_Access_Array_Access is access all PlatformAssetManager_Access_Array;
+   type PlatformAssetManager_Access_Array_Access_Array is array (Natural range <>) of PlatformAssetManager_Access_Array_Access;
+   type PlatformAssetManager_Access_Array_Access_Array_Access is access all PlatformAssetManager_Access_Array_Access_Array;
 
    type PlatformAssetManager is new Java_Object with null record;
    instance : PlatformAssetManager_Access;

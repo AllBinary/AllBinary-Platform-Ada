@@ -30,6 +30,8 @@ package org.allbinary.logic.communication.smtp.queue.FileEmailQueue_Package is
    type FileEmailQueue_Access is access all FileEmailQueue'Class;
    type FileEmailQueue_Access_Array is array (Natural range <>) of FileEmailQueue_Access;
    type FileEmailQueue_Access_Array_Access is access all FileEmailQueue_Access_Array;
+   type FileEmailQueue_Access_Array_Access_Array is array (Natural range <>) of FileEmailQueue_Access_Array_Access;
+   type FileEmailQueue_Access_Array_Access_Array_Access is access all FileEmailQueue_Access_Array_Access_Array;
 
    type FileEmailQueue is new Java_Object with record
       domDocumentQueueInterface : DomDocumentQueueInterface_Access;

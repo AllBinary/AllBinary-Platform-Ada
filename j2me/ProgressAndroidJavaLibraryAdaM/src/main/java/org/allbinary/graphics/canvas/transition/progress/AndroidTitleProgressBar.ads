@@ -21,26 +21,23 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
 with org.allbinary.android.activity.ProgressActivityInterface_Package; use org.allbinary.android.activity.ProgressActivityInterface_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package NullProgressActivity_Package renames Standard.org.allbinary.android.activity.NullProgressActivity_Package;
    package ProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.ProgressActivityInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AndroidTitleProgressBar is tagged;
    type AndroidTitleProgressBar_Access is access all AndroidTitleProgressBar'Class;
    type AndroidTitleProgressBar_Access_Array is array (Natural range <>) of AndroidTitleProgressBar_Access;
    type AndroidTitleProgressBar_Access_Array_Access is access all AndroidTitleProgressBar_Access_Array;
+   type AndroidTitleProgressBar_Access_Array_Access_Array is array (Natural range <>) of AndroidTitleProgressBar_Access_Array_Access;
+   type AndroidTitleProgressBar_Access_Array_Access_Array_Access is access all AndroidTitleProgressBar_Access_Array_Access_Array;
 
    type AndroidTitleProgressBar is new ProgressCanvas with record
       showTitleProgressBarRunnable : ShowTitleProgressBarRunnable_Access;
@@ -74,28 +71,25 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
 with org.allbinary.android.activity.ProgressActivityInterface_Package; use org.allbinary.android.activity.ProgressActivityInterface_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package NullProgressActivity_Package renames Standard.org.allbinary.android.activity.NullProgressActivity_Package;
    package ProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.ProgressActivityInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TitleProgressBarSetProgressRunnable is tagged;
    type TitleProgressBarSetProgressRunnable_Access is access all TitleProgressBarSetProgressRunnable'Class;
    type TitleProgressBarSetProgressRunnable_Access_Array is array (Natural range <>) of TitleProgressBarSetProgressRunnable_Access;
    type TitleProgressBarSetProgressRunnable_Access_Array_Access is access all TitleProgressBarSetProgressRunnable_Access_Array;
+   type TitleProgressBarSetProgressRunnable_Access_Array_Access_Array is array (Natural range <>) of TitleProgressBarSetProgressRunnable_Access_Array_Access;
+   type TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access is access all TitleProgressBarSetProgressRunnable_Access_Array_Access_Array;
 
-   type TitleProgressBarSetProgressRunnable is new Runnable with record
+   type TitleProgressBarSetProgressRunnable is new Java_Object and Runnable with record
       androidTitleProgressBar : AndroidTitleProgressBar_Access;
    end record;
 
@@ -114,28 +108,25 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
 with org.allbinary.android.activity.ProgressActivityInterface_Package; use org.allbinary.android.activity.ProgressActivityInterface_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package NullProgressActivity_Package renames Standard.org.allbinary.android.activity.NullProgressActivity_Package;
    package ProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.ProgressActivityInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TitleProgressBarPortionSetProgressRunnable is tagged;
    type TitleProgressBarPortionSetProgressRunnable_Access is access all TitleProgressBarPortionSetProgressRunnable'Class;
    type TitleProgressBarPortionSetProgressRunnable_Access_Array is array (Natural range <>) of TitleProgressBarPortionSetProgressRunnable_Access;
    type TitleProgressBarPortionSetProgressRunnable_Access_Array_Access is access all TitleProgressBarPortionSetProgressRunnable_Access_Array;
+   type TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array is array (Natural range <>) of TitleProgressBarPortionSetProgressRunnable_Access_Array_Access;
+   type TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access is access all TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array;
 
-   type TitleProgressBarPortionSetProgressRunnable is new Runnable with record
+   type TitleProgressBarPortionSetProgressRunnable is new Java_Object and Runnable with record
       androidTitleProgressBar : AndroidTitleProgressBar_Access;
    end record;
 
@@ -154,28 +145,25 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
 with org.allbinary.android.activity.ProgressActivityInterface_Package; use org.allbinary.android.activity.ProgressActivityInterface_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package NullProgressActivity_Package renames Standard.org.allbinary.android.activity.NullProgressActivity_Package;
    package ProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.ProgressActivityInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ShowTitleProgressBarRunnable is tagged;
    type ShowTitleProgressBarRunnable_Access is access all ShowTitleProgressBarRunnable'Class;
    type ShowTitleProgressBarRunnable_Access_Array is array (Natural range <>) of ShowTitleProgressBarRunnable_Access;
    type ShowTitleProgressBarRunnable_Access_Array_Access is access all ShowTitleProgressBarRunnable_Access_Array;
+   type ShowTitleProgressBarRunnable_Access_Array_Access_Array is array (Natural range <>) of ShowTitleProgressBarRunnable_Access_Array_Access;
+   type ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access is access all ShowTitleProgressBarRunnable_Access_Array_Access_Array;
 
-   type ShowTitleProgressBarRunnable is new Runnable with record
+   type ShowTitleProgressBarRunnable is new Java_Object and Runnable with record
       androidTitleProgressBar : AndroidTitleProgressBar_Access;
    end record;
 
@@ -194,28 +182,25 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
 with org.allbinary.android.activity.ProgressActivityInterface_Package; use org.allbinary.android.activity.ProgressActivityInterface_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package NullProgressActivity_Package renames Standard.org.allbinary.android.activity.NullProgressActivity_Package;
    package ProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.ProgressActivityInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type DismissTitleProgressBarRunnable is tagged;
    type DismissTitleProgressBarRunnable_Access is access all DismissTitleProgressBarRunnable'Class;
    type DismissTitleProgressBarRunnable_Access_Array is array (Natural range <>) of DismissTitleProgressBarRunnable_Access;
    type DismissTitleProgressBarRunnable_Access_Array_Access is access all DismissTitleProgressBarRunnable_Access_Array;
+   type DismissTitleProgressBarRunnable_Access_Array_Access_Array is array (Natural range <>) of DismissTitleProgressBarRunnable_Access_Array_Access;
+   type DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access is access all DismissTitleProgressBarRunnable_Access_Array_Access_Array;
 
-   type DismissTitleProgressBarRunnable is new Runnable with record
+   type DismissTitleProgressBarRunnable is new Java_Object and Runnable with record
       androidTitleProgressBar : AndroidTitleProgressBar_Access;
    end record;
 

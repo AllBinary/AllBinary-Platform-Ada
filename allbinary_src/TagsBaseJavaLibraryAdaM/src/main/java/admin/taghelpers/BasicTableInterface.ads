@@ -28,6 +28,8 @@ package admin.taghelpers.BasicTableInterface_Package is
    type BasicTableInterface_Access is access all BasicTableInterface'Class;
    type BasicTableInterface_Access_Array is array (Natural range <>) of BasicTableInterface_Access;
    type BasicTableInterface_Access_Array_Access is access all BasicTableInterface_Access_Array;
+   type BasicTableInterface_Access_Array_Access_Array is array (Natural range <>) of BasicTableInterface_Access_Array_Access;
+   type BasicTableInterface_Access_Array_Access_Array_Access is access all BasicTableInterface_Access_Array_Access_Array;
    function drop (This : in out BasicTableInterface) return Unbounded_String is abstract;
    function create (This : in out BasicTableInterface) return Unbounded_String is abstract;
    function restore (This : in out BasicTableInterface) return Unbounded_String is abstract;

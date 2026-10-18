@@ -32,6 +32,8 @@ package org.allbinary.animation.image.AlphaBaseProcessor_Package is
    type AlphaBaseProcessor_Access is access all AlphaBaseProcessor'Class;
    type AlphaBaseProcessor_Access_Array is array (Natural range <>) of AlphaBaseProcessor_Access;
    type AlphaBaseProcessor_Access_Array_Access is access all AlphaBaseProcessor_Access_Array;
+   type AlphaBaseProcessor_Access_Array_Access_Array is array (Natural range <>) of AlphaBaseProcessor_Access_Array_Access;
+   type AlphaBaseProcessor_Access_Array_Access_Array_Access is access all AlphaBaseProcessor_Access_Array_Access_Array;
 
    type AlphaBaseProcessor is new Java_Object with null record;
    instance : AlphaBaseProcessor_Access;

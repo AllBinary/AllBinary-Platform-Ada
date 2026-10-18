@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.paint.NullInitUpdatePaintable_Package is
 
    procedure Initialize_Fields (This : in out NullInitUpdatePaintable'Class) is

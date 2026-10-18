@@ -13,14 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.identification.GroupCommonFactory_Package; use org.allbinary.game.identification.GroupCommonFactory_Package;
+
 package body org.allbinary.game.identification.CompositeGroup_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out CompositeGroup'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -57,13 +67,13 @@ package body org.allbinary.game.identification.CompositeGroup_Package is
         stringBuffer.append (groupCommonFactory.TO_LABEL);
         stringBuffer.append (StringUtil_Package.getInstance.toString (This.groupInterface));
         This.logUtil.putF (stringBuffer.toString, CompositeGroup_Access'(This'Unchecked_Access), commonStrings.ADD);
-        This.list.add (groupInterface);
+        This.list.add (Java_Object_Access (groupInterface));
    end add;
 
    function isInGroup (This : in out CompositeGroup; groupInterface_Param : access Group_Package.Group'Class) return Boolean is
       groupInterface : constant Group_Access := Group_Access (groupInterface_Param);
    begin
-        if This.list.contains (groupInterface) then
+        if This.list.contains (Java_Object_Access (groupInterface)) then
             return True;
         else
             return False;

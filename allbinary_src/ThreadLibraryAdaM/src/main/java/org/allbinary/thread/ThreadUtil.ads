@@ -30,10 +30,12 @@ package org.allbinary.thread.ThreadUtil_Package is
    type ThreadUtil_Access is access all ThreadUtil'Class;
    type ThreadUtil_Access_Array is array (Natural range <>) of ThreadUtil_Access;
    type ThreadUtil_Access_Array_Access is access all ThreadUtil_Access_Array;
+   type ThreadUtil_Access_Array_Access_Array is array (Natural range <>) of ThreadUtil_Access_Array_Access;
+   type ThreadUtil_Access_Array_Access_Array_Access is access all ThreadUtil_Access_Array_Access_Array;
 
    type ThreadUtil is new Java_Object with record
       logUtil : LogUtil_Access;
-      JOIN : Unbounded_String;
+      JOIN_Field : Unbounded_String;
    end record;
    instance : ThreadUtil_Access;
 
@@ -42,7 +44,7 @@ package org.allbinary.thread.ThreadUtil_Package is
    function getInstance return ThreadUtil_Access;
    function isRunning (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class) return Boolean;
    procedure isRunning (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class);
-   procedure join_Case (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class);
+   procedure join (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class);
 
 end org.allbinary.thread.ThreadUtil_Package;
 

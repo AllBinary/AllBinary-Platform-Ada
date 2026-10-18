@@ -24,11 +24,8 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.animation.AnimationEventHandler_Package; use org.allbinary.animation.AnimationEventHandler_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 
 package org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
@@ -37,17 +34,16 @@ package org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
    package Player_Package renames Standard.javax.microedition.media.Player_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
-   package AnimationEventHandler_Package renames Standard.org.allbinary.animation.AnimationEventHandler_Package;
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type CaptionIndexedAnimation is tagged;
    type CaptionIndexedAnimation_Access is access all CaptionIndexedAnimation'Class;
    type CaptionIndexedAnimation_Access_Array is array (Natural range <>) of CaptionIndexedAnimation_Access;
    type CaptionIndexedAnimation_Access_Array_Access is access all CaptionIndexedAnimation_Access_Array;
+   type CaptionIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of CaptionIndexedAnimation_Access_Array_Access;
+   type CaptionIndexedAnimation_Access_Array_Access_Array_Access is access all CaptionIndexedAnimation_Access_Array_Access_Array;
 
    type CaptionIndexedAnimation is new IndexedAnimation with record
       animationInterface : Animation_Access;

@@ -20,6 +20,8 @@ package org.allbinary.graphics.opengles.EnableFacesShaderOpenGLProcessor_Package
    type EnableFacesShaderOpenGLProcessor_Access is access all EnableFacesShaderOpenGLProcessor'Class;
    type EnableFacesShaderOpenGLProcessor_Access_Array is array (Natural range <>) of EnableFacesShaderOpenGLProcessor_Access;
    type EnableFacesShaderOpenGLProcessor_Access_Array_Access is access all EnableFacesShaderOpenGLProcessor_Access_Array;
+   type EnableFacesShaderOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of EnableFacesShaderOpenGLProcessor_Access_Array_Access;
+   type EnableFacesShaderOpenGLProcessor_Access_Array_Access_Array_Access is access all EnableFacesShaderOpenGLProcessor_Access_Array_Access_Array;
 
    type EnableFacesShaderOpenGLProcessor is new ObjectThreedOpenGLProcessor with null record;
    instance : EnableFacesShaderOpenGLProcessor_Access;

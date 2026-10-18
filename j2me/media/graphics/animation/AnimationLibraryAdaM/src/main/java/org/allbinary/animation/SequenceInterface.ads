@@ -28,6 +28,8 @@ package org.allbinary.animation.SequenceInterface_Package is
    type SequenceInterface_Access is access all SequenceInterface'Class;
    type SequenceInterface_Access_Array is array (Natural range <>) of SequenceInterface_Access;
    type SequenceInterface_Access_Array_Access is access all SequenceInterface_Access_Array;
+   type SequenceInterface_Access_Array_Access_Array is array (Natural range <>) of SequenceInterface_Access_Array_Access;
+   type SequenceInterface_Access_Array_Access_Array_Access is access all SequenceInterface_Access_Array_Access_Array;
    procedure setSequence (This : in out SequenceInterface; sequence : Integer_Array_Access) is abstract;
    function getSequence (This : in out SequenceInterface) return Integer_Array_Access is abstract;
 

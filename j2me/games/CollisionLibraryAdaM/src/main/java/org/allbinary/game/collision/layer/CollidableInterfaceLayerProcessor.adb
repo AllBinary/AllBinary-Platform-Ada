@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.game.collision.layer.CollidableInterfaceLayerManager_Package; use org.allbinary.game.collision.layer.CollidableInterfaceLayerManager_Package;
+with org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package; use org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package;
+
 package body org.allbinary.game.collision.layer.CollidableInterfaceLayerProcessor_Package is
 
+   package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
    procedure Initialize_Fields (This : in out CollidableInterfaceLayerProcessor'Class) is
    begin
       null;

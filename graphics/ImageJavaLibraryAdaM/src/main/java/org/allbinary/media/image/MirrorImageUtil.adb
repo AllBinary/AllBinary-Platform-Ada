@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
+
 package body org.allbinary.media.image.MirrorImageUtil_Package is
 
    procedure Initialize_Fields (This : in out MirrorImageUtil'Class) is

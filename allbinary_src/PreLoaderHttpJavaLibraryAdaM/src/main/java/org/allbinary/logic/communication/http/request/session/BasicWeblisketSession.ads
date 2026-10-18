@@ -23,27 +23,18 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.http.HttpSession_Package; use javax.servlet.http.HttpSession_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
-with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
 with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
-with org.allbinary.business.user.role.BasicUserRoleData_Package; use org.allbinary.business.user.role.BasicUserRoleData_Package;
-with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
-with org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
 
 package org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package is
 
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
-   package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
    package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
-   package BasicUserRoleData_Package renames Standard.org.allbinary.business.user.role.BasicUserRoleData_Package;
-   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
 
    type BasicWeblisketSession is tagged;
    type BasicWeblisketSession_Access is access all BasicWeblisketSession'Class;
    type BasicWeblisketSession_Access_Array is array (Natural range <>) of BasicWeblisketSession_Access;
    type BasicWeblisketSession_Access_Array_Access is access all BasicWeblisketSession_Access_Array;
+   type BasicWeblisketSession_Access_Array_Access_Array is array (Natural range <>) of BasicWeblisketSession_Access_Array_Access;
+   type BasicWeblisketSession_Access_Array_Access_Array_Access is access all BasicWeblisketSession_Access_Array_Access_Array;
 
    type BasicWeblisketSession is new Java_Object with record
       session : HttpSession_Access;

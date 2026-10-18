@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game.layer.weapon.WeaponLayer_Package;
+with org.allbinary.game.score.NoScoreable_Package; use org.allbinary.game.score.NoScoreable_Package;
+
 package body org.allbinary.game.part.weapon.StraightMultiProjectileWeaponPart_Package is
 
+   package WeaponLayer_Package renames Standard.org.allbinary.game.layer.weapon.WeaponLayer_Package;
+   package NoScoreable_Package renames Standard.org.allbinary.game.score.NoScoreable_Package;
    procedure Initialize_Fields (This : in out StraightMultiProjectileWeaponPart'Class) is
    begin
       null;

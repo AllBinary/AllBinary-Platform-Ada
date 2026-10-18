@@ -20,25 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.context.configuration.ContextConfigurationInterface_Package; use org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package; use org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
 
 package org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package is
 
-   package ContextConfigurationInterface_Package renames Standard.org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package EmailServerConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type StoreEmailInfo is tagged;
    type StoreEmailInfo_Access is access all StoreEmailInfo'Class;
    type StoreEmailInfo_Access_Array is array (Natural range <>) of StoreEmailInfo_Access;
    type StoreEmailInfo_Access_Array_Access is access all StoreEmailInfo_Access_Array;
+   type StoreEmailInfo_Access_Array_Access_Array is array (Natural range <>) of StoreEmailInfo_Access_Array_Access;
+   type StoreEmailInfo_Access_Array_Access_Array_Access is access all StoreEmailInfo_Access_Array_Access_Array;
 
    type StoreEmailInfo is new BasicEmailInfo with record
       logUtil : LogUtil_Access;

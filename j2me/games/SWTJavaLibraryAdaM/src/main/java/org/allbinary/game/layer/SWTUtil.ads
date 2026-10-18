@@ -28,6 +28,8 @@ package org.allbinary.game.layer.SWTUtil_Package is
    type SWTUtil_Access is access all SWTUtil'Class;
    type SWTUtil_Access_Array is array (Natural range <>) of SWTUtil_Access;
    type SWTUtil_Access_Array_Access is access all SWTUtil_Access_Array;
+   type SWTUtil_Access_Array_Access_Array is array (Natural range <>) of SWTUtil_Access_Array_Access;
+   type SWTUtil_Access_Array_Access_Array_Access is access all SWTUtil_Access_Array_Access_Array;
 
    type SWTUtil is new Java_Object with null record;
    isSWT : Boolean;

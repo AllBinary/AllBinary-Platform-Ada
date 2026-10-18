@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.transaction.PaymentTr
    type PaymentTransactionData_Access is access all PaymentTransactionData'Class;
    type PaymentTransactionData_Access_Array is array (Natural range <>) of PaymentTransactionData_Access;
    type PaymentTransactionData_Access_Array_Access is access all PaymentTransactionData_Access_Array;
+   type PaymentTransactionData_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionData_Access_Array_Access;
+   type PaymentTransactionData_Access_Array_Access_Array_Access is access all PaymentTransactionData_Access_Array_Access_Array;
 
    type PaymentTransactionData is new Java_Object with null record;
    NAME : Unbounded_String;

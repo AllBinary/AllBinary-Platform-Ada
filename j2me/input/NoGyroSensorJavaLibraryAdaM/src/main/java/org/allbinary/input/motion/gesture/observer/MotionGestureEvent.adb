@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package is
 
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out MotionGestureEvent'Class) is
    begin
       null;
@@ -88,7 +99,7 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Pack
         stringBuffer.append (MotionGestureEvent_Package.PREVIOUS);
         stringBuffer.append (stringUtil.toString (This.previousPoint));
         stringBuffer.append (MotionGestureEvent_Package.HASHCODE);
-        stringBuffer.appendint (Integer (TsUtil_Package.getInstance.hashCode_Case (MotionGestureEvent_Access'(This'Unchecked_Access))));
+        stringBuffer.appendint (Integer (TsUtil_Package.getInstance.hashCode (MotionGestureEvent_Access'(This'Unchecked_Access))));
         return stringBuffer.toString;
    end toString;
 

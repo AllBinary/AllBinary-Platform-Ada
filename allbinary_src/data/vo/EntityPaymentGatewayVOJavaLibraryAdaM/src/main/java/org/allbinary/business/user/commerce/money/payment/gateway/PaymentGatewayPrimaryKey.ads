@@ -20,24 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.context.modules.storefront.StoreFront_Package; use org.allbinary.business.context.modules.storefront.StoreFront_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.Serializable_Package; use org.allbinary.business.user.commerce.money.payment.gateway.Serializable_Package;
-with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGateway_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGateway_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package is
 
-   package StoreFront_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFront_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type PaymentGatewayPrimaryKey is tagged;
    type PaymentGatewayPrimaryKey_Access is access all PaymentGatewayPrimaryKey'Class;
    type PaymentGatewayPrimaryKey_Access_Array is array (Natural range <>) of PaymentGatewayPrimaryKey_Access;
    type PaymentGatewayPrimaryKey_Access_Array_Access is access all PaymentGatewayPrimaryKey_Access_Array;
+   type PaymentGatewayPrimaryKey_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayPrimaryKey_Access_Array_Access;
+   type PaymentGatewayPrimaryKey_Access_Array_Access_Array_Access is access all PaymentGatewayPrimaryKey_Access_Array_Access_Array;
 
-   type PaymentGatewayPrimaryKey is new Serializable with record
+   type PaymentGatewayPrimaryKey is new Java_Object and Serializable with record
       storeName : Unbounded_String;
       name : Unbounded_String;
    end record;

@@ -33,8 +33,10 @@ package org.allbinary.view.NullEmulatorView_Package is
    type NullEmulatorView_Access is access all NullEmulatorView'Class;
    type NullEmulatorView_Access_Array is array (Natural range <>) of NullEmulatorView_Access;
    type NullEmulatorView_Access_Array_Access is access all NullEmulatorView_Access_Array;
+   type NullEmulatorView_Access_Array_Access_Array is array (Natural range <>) of NullEmulatorView_Access_Array_Access;
+   type NullEmulatorView_Access_Array_Access_Array_Access is access all NullEmulatorView_Access_Array_Access_Array;
 
-   type NullEmulatorView is new EmulatorViewInterface with null record;
+   type NullEmulatorView is new Java_Object and EmulatorViewInterface with null record;
    NULL_EMULATOR_VIEW : NullEmulatorView_Access;
 
    procedure Initialize (This : in out NullEmulatorView'Class);
@@ -42,6 +44,7 @@ package org.allbinary.view.NullEmulatorView_Package is
    procedure setMidlet (This : in out NullEmulatorView; midlet_Param : access MIDlet_Package.MIDlet'Class);
    procedure onEmulatorInitComplete (This : in out NullEmulatorView; midletActivity_Param : access Java_Object'Class);
    procedure onSetDisplayable (This : in out NullEmulatorView; displayable_Param : access Displayable_Package.Displayable'Class);
+   procedure onEmulatorInitComplete (This : in out NullEmulatorView; Value : Unbounded_String);
 
 end org.allbinary.view.NullEmulatorView_Package;
 

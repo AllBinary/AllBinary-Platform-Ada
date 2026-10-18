@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+with org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package; use org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package;
+
 package body org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package is
 
+   package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
    procedure Initialize_Fields (This : in out InputAutomationGenericModuleServiceFactory'Class) is
    begin
       null;

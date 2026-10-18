@@ -33,6 +33,8 @@ package org.allbinary.game.displayable.canvas.GameCanvasPaintHelper_Package is
    type GameCanvasPaintHelper_Access is access all GameCanvasPaintHelper'Class;
    type GameCanvasPaintHelper_Access_Array is array (Natural range <>) of GameCanvasPaintHelper_Access;
    type GameCanvasPaintHelper_Access_Array_Access is access all GameCanvasPaintHelper_Access_Array;
+   type GameCanvasPaintHelper_Access_Array_Access_Array is array (Natural range <>) of GameCanvasPaintHelper_Access_Array_Access;
+   type GameCanvasPaintHelper_Access_Array_Access_Array_Access is access all GameCanvasPaintHelper_Access_Array_Access_Array;
 
    type GameCanvasPaintHelper is new ProcessPaintable with record
       gameCanvas : AllBinaryGameCanvas_Access;

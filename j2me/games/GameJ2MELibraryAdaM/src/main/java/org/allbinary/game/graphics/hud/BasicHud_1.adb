@@ -13,8 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+
 package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
 
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    procedure Initialize_Fields (This : in out BasicHud_1'Class) is
    begin
       null;
@@ -23,7 +39,7 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
       This.canvasStrings := CanvasStrings_Package.getInstance;
       This.basicSetColorUtil := BasicColorSetUtil_Package.getInstance;
       This.displayInfo := DisplayInfoSingleton_Package.getInstance;
-      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (BasicHud_1_Access'(This'Unchecked_Access));
+      This.updateMyFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (BasicHud_1_Access'(This'Unchecked_Access)));
       This.myFontProcessor := This.updateMyFontProcessor;
       This.location := 0;
       This.direction := 0;

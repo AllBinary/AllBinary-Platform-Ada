@@ -28,6 +28,8 @@ package org.allbinary.logic.java.FileExtensionData_Package is
    type FileExtensionData_Access is access all FileExtensionData'Class;
    type FileExtensionData_Access_Array is array (Natural range <>) of FileExtensionData_Access;
    type FileExtensionData_Access_Array_Access is access all FileExtensionData_Access_Array;
+   type FileExtensionData_Access_Array_Access_Array is array (Natural range <>) of FileExtensionData_Access_Array_Access;
+   type FileExtensionData_Access_Array_Access_Array_Access is access all FileExtensionData_Access_Array_Access_Array;
 
    type FileExtensionData is new Java_Object with record
       DOT_JAVA_SOURCE : Unbounded_String;

@@ -1,8 +1,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+
 package body org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package is
 
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    procedure Initialize_Fields (This : in out TempExplosionWeaponLayer'Class) is
    begin
       null;

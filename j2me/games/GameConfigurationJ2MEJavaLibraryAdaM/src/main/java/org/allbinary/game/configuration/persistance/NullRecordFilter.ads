@@ -30,8 +30,10 @@ package org.allbinary.game.configuration.persistance.NullRecordFilter_Package is
    type NullRecordFilter_Access is access all NullRecordFilter'Class;
    type NullRecordFilter_Access_Array is array (Natural range <>) of NullRecordFilter_Access;
    type NullRecordFilter_Access_Array_Access is access all NullRecordFilter_Access_Array;
+   type NullRecordFilter_Access_Array_Access_Array is array (Natural range <>) of NullRecordFilter_Access_Array_Access;
+   type NullRecordFilter_Access_Array_Access_Array_Access is access all NullRecordFilter_Access_Array_Access_Array;
 
-   type NullRecordFilter is new RecordFilter with null record;
+   type NullRecordFilter is new Java_Object and RecordFilter with null record;
    NULL_RECORD_FILTER : NullRecordFilter_Access;
 
    procedure Initialize (This : in out NullRecordFilter'Class);

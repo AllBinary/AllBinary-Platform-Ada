@@ -34,6 +34,8 @@ package org.allbinary.animation.image.ModifierBaseProcessor_Package is
    type ModifierBaseProcessor_Access is access all ModifierBaseProcessor'Class;
    type ModifierBaseProcessor_Access_Array is array (Natural range <>) of ModifierBaseProcessor_Access;
    type ModifierBaseProcessor_Access_Array_Access is access all ModifierBaseProcessor_Access_Array;
+   type ModifierBaseProcessor_Access_Array_Access_Array is array (Natural range <>) of ModifierBaseProcessor_Access_Array_Access;
+   type ModifierBaseProcessor_Access_Array_Access_Array_Access is access all ModifierBaseProcessor_Access_Array_Access_Array;
 
    type ModifierBaseProcessor is new Java_Object with null record;
    instance : ModifierBaseProcessor_Access;

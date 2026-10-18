@@ -20,22 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 
 package org.allbinary.game.input.GameKeyFactory_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
 
    type GameKeyFactory is tagged;
    type GameKeyFactory_Access is access all GameKeyFactory'Class;
    type GameKeyFactory_Access_Array is array (Natural range <>) of GameKeyFactory_Access;
    type GameKeyFactory_Access_Array_Access is access all GameKeyFactory_Access_Array;
+   type GameKeyFactory_Access_Array_Access_Array is array (Natural range <>) of GameKeyFactory_Access_Array_Access;
+   type GameKeyFactory_Access_Array_Access_Array_Access is access all GameKeyFactory_Access_Array_Access_Array;
 
    type GameKeyFactory is new Java_Object with record
       NONE : GameKey_Access;

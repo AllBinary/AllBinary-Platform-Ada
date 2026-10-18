@@ -30,6 +30,8 @@ package org.allbinary.media.audio.SelectSound_Package is
    type SelectSound_Access is access all SelectSound'Class;
    type SelectSound_Access_Array is array (Natural range <>) of SelectSound_Access;
    type SelectSound_Access_Array_Access is access all SelectSound_Access_Array;
+   type SelectSound_Access_Array_Access_Array is array (Natural range <>) of SelectSound_Access_Array_Access;
+   type SelectSound_Access_Array_Access_Array_Access is access all SelectSound_Access_Array_Access_Array;
 
    type SelectSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

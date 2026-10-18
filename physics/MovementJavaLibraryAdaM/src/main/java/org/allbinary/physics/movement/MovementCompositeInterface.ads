@@ -29,6 +29,8 @@ package org.allbinary.physics.movement.MovementCompositeInterface_Package is
    type MovementCompositeInterface_Access is access all MovementCompositeInterface'Class;
    type MovementCompositeInterface_Access_Array is array (Natural range <>) of MovementCompositeInterface_Access;
    type MovementCompositeInterface_Access_Array_Access is access all MovementCompositeInterface_Access_Array;
+   type MovementCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of MovementCompositeInterface_Access_Array_Access;
+   type MovementCompositeInterface_Access_Array_Access_Array_Access is access all MovementCompositeInterface_Access_Array_Access_Array;
    function getMovement (This : in out MovementCompositeInterface) return Movement_Access is abstract;
 
 end org.allbinary.physics.movement.MovementCompositeInterface_Package;

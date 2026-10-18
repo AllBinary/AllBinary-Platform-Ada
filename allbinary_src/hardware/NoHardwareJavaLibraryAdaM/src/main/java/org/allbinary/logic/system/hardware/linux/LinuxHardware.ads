@@ -20,8 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package;
@@ -39,8 +37,6 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
 
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package HardwareInterface_Package renames Standard.org.allbinary.logic.system.hardware.HardwareInterface_Package;
    package BridgeInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
    package CpuInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package;
@@ -60,8 +56,10 @@ package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    type LinuxHardware_Access is access all LinuxHardware'Class;
    type LinuxHardware_Access_Array is array (Natural range <>) of LinuxHardware_Access;
    type LinuxHardware_Access_Array_Access is access all LinuxHardware_Access_Array;
+   type LinuxHardware_Access_Array_Access_Array is array (Natural range <>) of LinuxHardware_Access_Array_Access;
+   type LinuxHardware_Access_Array_Access_Array_Access is access all LinuxHardware_Access_Array_Access_Array;
 
-   type LinuxHardware is new HardwareInterface with null record;
+   type LinuxHardware is new Java_Object and HardwareInterface with null record;
 
    procedure Initialize (This : in out LinuxHardware'Class);
    function Create return LinuxHardware_Access;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.form.item.validation.UsernameValidator_Package is
 
    procedure Initialize_Fields (This : in out UsernameValidator'Class) is

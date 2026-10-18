@@ -21,26 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
-with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
-with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
 with android.graphics.Matrix_Package; use android.graphics.Matrix_Package;
-with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
-with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
 
 package org.allbinary.media.image.ImageRotationUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
-   package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
-   package Canvas_Package renames Standard.android.graphics.Canvas_Package;
    package Matrix_Package renames Standard.android.graphics.Matrix_Package;
-   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
 
    type ImageRotationUtil is tagged;
    type ImageRotationUtil_Access is access all ImageRotationUtil'Class;
    type ImageRotationUtil_Access_Array is array (Natural range <>) of ImageRotationUtil_Access;
    type ImageRotationUtil_Access_Array_Access is access all ImageRotationUtil_Access_Array;
+   type ImageRotationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageRotationUtil_Access_Array_Access;
+   type ImageRotationUtil_Access_Array_Access_Array_Access is access all ImageRotationUtil_Access_Array_Access_Array;
 
    type ImageRotationUtil is new Java_Object with record
       matrix : Matrix_Access;

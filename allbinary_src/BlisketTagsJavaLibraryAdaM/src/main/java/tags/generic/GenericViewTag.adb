@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.InputOutputTypeData_Package; use org.allbinary.logic.io.InputOutputTypeData_Package;
+
 package body tags.generic_Id.GenericViewTag_Package is
 
+   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
    procedure Initialize_Fields (This : in out GenericViewTag'Class) is
    begin
       null;

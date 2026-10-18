@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.user.UserEntity_Package; use org.allbinary.data.tables.user.UserEntity_Package;
 
 package org.allbinary.data.tables.user.UserEntityFactory_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type UserEntityFactory is tagged;
    type UserEntityFactory_Access is access all UserEntityFactory'Class;
    type UserEntityFactory_Access_Array is array (Natural range <>) of UserEntityFactory_Access;
    type UserEntityFactory_Access_Array_Access is access all UserEntityFactory_Access_Array;
+   type UserEntityFactory_Access_Array_Access_Array is array (Natural range <>) of UserEntityFactory_Access_Array_Access;
+   type UserEntityFactory_Access_Array_Access_Array_Access is access all UserEntityFactory_Access_Array_Access_Array;
 
    type UserEntityFactory is new Java_Object with null record;
 

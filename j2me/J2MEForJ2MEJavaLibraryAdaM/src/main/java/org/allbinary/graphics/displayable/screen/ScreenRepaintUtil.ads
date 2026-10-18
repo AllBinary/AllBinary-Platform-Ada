@@ -30,6 +30,8 @@ package org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package is
    type ScreenRepaintUtil_Access is access all ScreenRepaintUtil'Class;
    type ScreenRepaintUtil_Access_Array is array (Natural range <>) of ScreenRepaintUtil_Access;
    type ScreenRepaintUtil_Access_Array_Access is access all ScreenRepaintUtil_Access_Array;
+   type ScreenRepaintUtil_Access_Array_Access_Array is array (Natural range <>) of ScreenRepaintUtil_Access_Array_Access;
+   type ScreenRepaintUtil_Access_Array_Access_Array_Access is access all ScreenRepaintUtil_Access_Array_Access_Array;
 
    type ScreenRepaintUtil is new Java_Object with null record;
 

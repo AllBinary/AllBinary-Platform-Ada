@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.AdjustedVectorAnimation_Package is
 
    procedure Initialize_Fields (This : in out AdjustedVectorAnimation'Class) is

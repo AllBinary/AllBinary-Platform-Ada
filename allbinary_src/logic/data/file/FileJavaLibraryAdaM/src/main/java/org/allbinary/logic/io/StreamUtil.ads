@@ -25,7 +25,6 @@ with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Pa
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.logic.io.StreamUtil_Package is
 
@@ -33,12 +32,13 @@ package org.allbinary.logic.io.StreamUtil_Package is
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package OutputStream_Package renames Standard.java.io.OutputStream_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type StreamUtil is tagged;
    type StreamUtil_Access is access all StreamUtil'Class;
    type StreamUtil_Access_Array is array (Natural range <>) of StreamUtil_Access;
    type StreamUtil_Access_Array_Access is access all StreamUtil_Access_Array;
+   type StreamUtil_Access_Array_Access_Array is array (Natural range <>) of StreamUtil_Access_Array_Access;
+   type StreamUtil_Access_Array_Access_Array_Access is access all StreamUtil_Access_Array_Access_Array;
 
    type StreamUtil is new Java_Object with record
       logUtil : LogUtil_Access;

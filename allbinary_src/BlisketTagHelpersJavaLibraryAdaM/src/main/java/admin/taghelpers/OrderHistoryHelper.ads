@@ -23,23 +23,21 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
-with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Package;
 
 package admin.taghelpers.OrderHistoryHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
-   package OrderHistoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 
    type OrderHistoryHelper is tagged;
    type OrderHistoryHelper_Access is access all OrderHistoryHelper'Class;
    type OrderHistoryHelper_Access_Array is array (Natural range <>) of OrderHistoryHelper_Access;
    type OrderHistoryHelper_Access_Array_Access is access all OrderHistoryHelper_Access_Array;
+   type OrderHistoryHelper_Access_Array_Access_Array is array (Natural range <>) of OrderHistoryHelper_Access_Array_Access;
+   type OrderHistoryHelper_Access_Array_Access_Array_Access is access all OrderHistoryHelper_Access_Array_Access_Array;
 
    type OrderHistoryHelper is new BasicTable with record
       logUtil : LogUtil_Access;

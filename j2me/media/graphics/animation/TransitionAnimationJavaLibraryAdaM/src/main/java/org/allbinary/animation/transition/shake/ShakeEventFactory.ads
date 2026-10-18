@@ -29,6 +29,8 @@ package org.allbinary.animation.transition.shake.ShakeEventFactory_Package is
    type ShakeEventFactory_Access is access all ShakeEventFactory'Class;
    type ShakeEventFactory_Access_Array is array (Natural range <>) of ShakeEventFactory_Access;
    type ShakeEventFactory_Access_Array_Access is access all ShakeEventFactory_Access_Array;
+   type ShakeEventFactory_Access_Array_Access_Array is array (Natural range <>) of ShakeEventFactory_Access_Array_Access;
+   type ShakeEventFactory_Access_Array_Access_Array_Access is access all ShakeEventFactory_Access_Array_Access_Array;
 
    type ShakeEventFactory is new Java_Object with record
       MICRO : ShakeEvent_Access;

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.media.image.comparison.color.ColorDelta_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out ColorDelta'Class) is
    begin
       null;
@@ -46,7 +53,7 @@ package body org.allbinary.media.image.comparison.color.ColorDelta_Package is
 
    function getKey (rgb1 : Integer; rgb2 : Integer) return Java_Object_Access is
    begin
-        return StringMaker_Package.Create.append (To_Unbounded_String (Java_Image (rgb1))).append (CommonSeps_Package.getInstance.UNDERSCORE).append (To_Unbounded_String (Java_Image (rgb2))).toString;
+        return Java_Box (StringMaker_Package.Create.append (To_Unbounded_String (Java_Image (rgb1))).append (CommonSeps_Package.getInstance.UNDERSCORE).append (To_Unbounded_String (Java_Image (rgb2))).toString);
    end getKey;
 
    function getRgb1 (This : in out ColorDelta) return Integer is

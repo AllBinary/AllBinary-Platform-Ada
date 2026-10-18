@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package is
@@ -33,8 +32,10 @@ package org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Pack
    type AnimationInterfaceFactoryInterfaceComposite_Access is access all AnimationInterfaceFactoryInterfaceComposite'Class;
    type AnimationInterfaceFactoryInterfaceComposite_Access_Array is array (Natural range <>) of AnimationInterfaceFactoryInterfaceComposite_Access;
    type AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access is access all AnimationInterfaceFactoryInterfaceComposite_Access_Array;
+   type AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array is array (Natural range <>) of AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access;
+   type AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Access is access all AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array;
 
-   type AnimationInterfaceFactoryInterfaceComposite is new AnimationInterfaceFactoryInterface with record
+   type AnimationInterfaceFactoryInterfaceComposite is new Java_Object and AnimationInterfaceFactoryInterface with record
       animationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access;
    end record;
 

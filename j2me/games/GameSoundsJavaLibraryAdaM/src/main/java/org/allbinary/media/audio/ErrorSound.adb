@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.audio.ErrorSound_Package is
 
    procedure Initialize_Fields (This : in out ErrorSound'Class) is
@@ -40,7 +41,7 @@ package body org.allbinary.media.audio.ErrorSound_Package is
 
 begin
    null;
-   soundInterface := ErrorSound_Package.Create;
+   soundInterface := Sound_Access (ErrorSound_Package.Create);
 
 end org.allbinary.media.audio.ErrorSound_Package;
 

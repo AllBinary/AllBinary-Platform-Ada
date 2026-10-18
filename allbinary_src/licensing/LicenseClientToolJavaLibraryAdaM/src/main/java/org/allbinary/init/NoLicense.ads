@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Package;
 with org.allbinary.init.ClassLoader_Package; use org.allbinary.init.ClassLoader_Package;
 
 package org.allbinary.init.NoLicense_Package is
 
-   package Globals_Package renames Standard.org.allbinary.globals.Globals_Package;
 
    type NoLicense is tagged;
    type NoLicense_Access is access all NoLicense'Class;
    type NoLicense_Access_Array is array (Natural range <>) of NoLicense_Access;
    type NoLicense_Access_Array_Access is access all NoLicense_Access_Array;
+   type NoLicense_Access_Array_Access_Array is array (Natural range <>) of NoLicense_Access_Array_Access;
+   type NoLicense_Access_Array_Access_Array_Access is access all NoLicense_Access_Array_Access_Array;
 
    type NoLicense is new Java_Object with null record;
 

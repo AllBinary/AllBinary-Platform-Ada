@@ -20,32 +20,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Choice_Package; use javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
-with org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package; use org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package;
-with org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package; use org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.displayable.screen.CommandForm_Package; use org.allbinary.graphics.displayable.screen.CommandForm_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.game.configuration.InGameOptionsForm_Package is
 
-   package Choice_Package renames Standard.javax.microedition.lcdui.Choice_Package;
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
-   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
-   package GameFeatureFormUtil_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package;
-   package InGameFeatureChoiceGroups_Package renames Standard.org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package CommandForm_Package renames Standard.org.allbinary.graphics.displayable.screen.CommandForm_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type InGameOptionsForm is tagged;
    type InGameOptionsForm_Access is access all InGameOptionsForm'Class;
    type InGameOptionsForm_Access_Array is array (Natural range <>) of InGameOptionsForm_Access;
    type InGameOptionsForm_Access_Array_Access is access all InGameOptionsForm_Access_Array;
+   type InGameOptionsForm_Access_Array_Access_Array is array (Natural range <>) of InGameOptionsForm_Access_Array_Access;
+   type InGameOptionsForm_Access_Array_Access_Array_Access is access all InGameOptionsForm_Access_Array_Access_Array;
 
    type InGameOptionsForm is new CommandForm with null record;
    DISPLAY : Command_Access;

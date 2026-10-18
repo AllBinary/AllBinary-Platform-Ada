@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.media.image.ImageToRotationImageArrayUtil_Package; use org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
+with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package; use org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
+
 package body org.allbinary.animation.image.PooledImageArrayRotationAnimationFactory_Package is
 
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package ImageToRotationImageArrayUtil_Package renames Standard.org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
    procedure Initialize_Fields (This : in out PooledImageArrayRotationAnimationFactory'Class) is
    begin
       null;
@@ -57,7 +68,7 @@ package body org.allbinary.animation.image.PooledImageArrayRotationAnimationFact
         This.animationBehaviorFactory := animationBehaviorFactory;
         totalAngle := Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE);
         imageArray := ImageToRotationImageArrayUtil_Package.getInstance.generate (image, angleIncrement, totalAngle);
-        This.allBinaryImageRotationAnimationInfo := ImageArrayRotationAnimationInfo_Package.Create (imageArray, angleIncrement, totalAngle, dx, dy);
+        This.allBinaryImageRotationAnimationInfo := Java_Object_Access (ImageArrayRotationAnimationInfo_Package.Create (imageArray, angleIncrement, totalAngle, dx, dy));
    end Initialize;
 
    function Create (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return PooledImageArrayRotationAnimationFactory_Access is

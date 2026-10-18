@@ -1,8 +1,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+
 package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out OpenGLBitmapFactory'Class) is
    begin
       null;
@@ -44,7 +47,7 @@ package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
    function createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image_Package.Image'Class) return PlatformBitmapBase_Access is
       image : constant Image_Access := Image_Access (image_Param);
    begin
-        return OpenGLBitmap_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT);
+        return PlatformBitmapBase_Access (OpenGLBitmap_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT));
    end createBitmap;
 
    procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config_Package.Config'Class) is
@@ -75,8 +78,11 @@ begin
 end org.allbinary.graphics.OpenGLBitmapFactory_Package;
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+
 package body org.allbinary.graphics.Config_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out Config'Class) is
    begin
       null;

@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
+with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package; use org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
+
 package body org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Package is
 
+   package CountedPickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
+   package CountedPickedUpLayerInterfaceFactoryPool_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    procedure Initialize_Fields (This : in out MakeCountedPartsSingletonArrayFactory'Class) is
    begin
       null;
@@ -51,7 +65,7 @@ package body org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Packa
       newPartInterfaceArray : PartInterface_Access_Array_Access;
       newSize : Integer;
    begin
-        This.list := BasicArrayListD_Package.Create;
+        This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         for index in 0 .. (partInterfaceArray'Length) - 1 loop
             This.list.add (partInterfaceArray (index));
         end loop;
@@ -60,7 +74,7 @@ package body org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Packa
         size := countedBasicArrayList.size;
         for index in 0 .. (size) - 1 loop
             layerInterfaceFactoryInterface := CountedPickedUpLayerInterfaceFactory_Access (countedBasicArrayList.objectArray (index));
-            This.list.add (CountedLayerInterfaceFactoryPart_Package.Create (0, layerInterfaceFactoryInterface));
+            This.list.add (Java_Object_Access (CountedLayerInterfaceFactoryPart_Package.Create (0, layerInterfaceFactoryInterface)));
         end loop;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("Total Parts: "));

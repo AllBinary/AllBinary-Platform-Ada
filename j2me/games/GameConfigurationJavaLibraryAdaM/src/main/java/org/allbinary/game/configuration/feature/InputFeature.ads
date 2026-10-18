@@ -29,6 +29,8 @@ package org.allbinary.game.configuration.feature.InputFeature_Package is
    type InputFeature_Access is access all InputFeature'Class;
    type InputFeature_Access_Array is array (Natural range <>) of InputFeature_Access;
    type InputFeature_Access_Array_Access is access all InputFeature_Access_Array;
+   type InputFeature_Access_Array_Access_Array is array (Natural range <>) of InputFeature_Access_Array_Access;
+   type InputFeature_Access_Array_Access_Array_Access is access all InputFeature_Access_Array_Access_Array;
 
    type InputFeature is new Feature with null record;
 

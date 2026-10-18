@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
 
 package org.allbinary.data.tree.dom.document.DocumentToNode_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
 
    type DocumentToNode is tagged;
    type DocumentToNode_Access is access all DocumentToNode'Class;
    type DocumentToNode_Access_Array is array (Natural range <>) of DocumentToNode_Access;
    type DocumentToNode_Access_Array_Access is access all DocumentToNode_Access_Array;
+   type DocumentToNode_Access_Array_Access_Array is array (Natural range <>) of DocumentToNode_Access_Array_Access;
+   type DocumentToNode_Access_Array_Access_Array_Access is access all DocumentToNode_Access_Array_Access_Array;
 
    type DocumentToNode is new Java_Object with null record;
    XMLROOT : Unbounded_String;

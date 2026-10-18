@@ -33,6 +33,8 @@ package org.allbinary.input.automation.robot.InputRobotInterface_Package is
    type InputRobotInterface_Access is access all InputRobotInterface'Class;
    type InputRobotInterface_Access_Array is array (Natural range <>) of InputRobotInterface_Access;
    type InputRobotInterface_Access_Array_Access is access all InputRobotInterface_Access_Array;
+   type InputRobotInterface_Access_Array_Access_Array is array (Natural range <>) of InputRobotInterface_Access_Array_Access;
+   type InputRobotInterface_Access_Array_Access_Array_Access is access all InputRobotInterface_Access_Array_Access_Array;
    function getName (This : in out InputRobotInterface) return Unbounded_String is abstract;
    function getHelpSet (This : in out InputRobotInterface) return HelpSet_Access is abstract;
    function createScreenCapture (This : in out InputRobotInterface; screenRect_Param : access Rectangle_Package.Rectangle'Class) return BufferedImage_Access is abstract;

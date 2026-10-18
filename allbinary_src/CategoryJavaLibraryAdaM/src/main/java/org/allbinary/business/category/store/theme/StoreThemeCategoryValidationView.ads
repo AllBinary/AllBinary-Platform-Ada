@@ -36,6 +36,8 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryValidation
    type StoreThemeCategoryValidationView_Access is access all StoreThemeCategoryValidationView'Class;
    type StoreThemeCategoryValidationView_Access_Array is array (Natural range <>) of StoreThemeCategoryValidationView_Access;
    type StoreThemeCategoryValidationView_Access_Array_Access is access all StoreThemeCategoryValidationView_Access_Array;
+   type StoreThemeCategoryValidationView_Access_Array_Access_Array is array (Natural range <>) of StoreThemeCategoryValidationView_Access_Array_Access;
+   type StoreThemeCategoryValidationView_Access_Array_Access_Array_Access is access all StoreThemeCategoryValidationView_Access_Array_Access_Array;
 
    type StoreThemeCategoryValidationView is new StoreThemeCategoryView and ValidationInterface with null record;
 

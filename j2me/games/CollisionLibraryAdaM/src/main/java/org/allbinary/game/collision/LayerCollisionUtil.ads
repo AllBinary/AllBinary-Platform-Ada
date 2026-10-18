@@ -20,25 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.game.collision.CollisionProcessor_Package; use org.allbinary.game.collision.CollisionProcessor_Package;
-with org.allbinary.game.collision.Collision2DProcessor_Package; use org.allbinary.game.collision.Collision2DProcessor_Package;
-with org.allbinary.game.collision.CollisionThreedProcessor_Package; use org.allbinary.game.collision.CollisionThreedProcessor_Package;
 
 package org.allbinary.game.collision.LayerCollisionUtil_Package is
 
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
-   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type LayerCollisionUtil is tagged;
    type LayerCollisionUtil_Access is access all LayerCollisionUtil'Class;
    type LayerCollisionUtil_Access_Array is array (Natural range <>) of LayerCollisionUtil_Access;
    type LayerCollisionUtil_Access_Array_Access is access all LayerCollisionUtil_Access_Array;
+   type LayerCollisionUtil_Access_Array_Access_Array is array (Natural range <>) of LayerCollisionUtil_Access_Array_Access;
+   type LayerCollisionUtil_Access_Array_Access_Array_Access is access all LayerCollisionUtil_Access_Array_Access_Array;
 
    type LayerCollisionUtil is new Java_Object with record
       collisionProcessor : CollisionProcessor_Access;

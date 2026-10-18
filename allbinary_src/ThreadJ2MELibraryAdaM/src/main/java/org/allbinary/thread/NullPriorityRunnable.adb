@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.thread.NullPriorityRunnable_Package is
 
    procedure Initialize_Fields (This : in out NullPriorityRunnable'Class) is

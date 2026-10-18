@@ -32,6 +32,8 @@ package org.allbinary.animation.caption.CaptionAnimation_Package is
    type CaptionAnimation_Access is access all CaptionAnimation'Class;
    type CaptionAnimation_Access_Array is array (Natural range <>) of CaptionAnimation_Access;
    type CaptionAnimation_Access_Array_Access is access all CaptionAnimation_Access_Array;
+   type CaptionAnimation_Access_Array_Access_Array is array (Natural range <>) of CaptionAnimation_Access_Array_Access;
+   type CaptionAnimation_Access_Array_Access_Array_Access is access all CaptionAnimation_Access_Array_Access_Array;
 
    type CaptionAnimation is new Animation with record
       animationInterface : Animation_Access;

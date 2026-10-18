@@ -13,12 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.terrain.TerrainEvent_Package;
+with org.allbinary.game.terrain.TerrainEventListenerInterface_Package; use org.allbinary.game.terrain.TerrainEventListenerInterface_Package;
+
 package body org.allbinary.game.terrain.TerrainEventHandler_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out TerrainEventHandler'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -33,7 +42,7 @@ package body org.allbinary.game.terrain.TerrainEventHandler_Package is
    begin
         eventHandlerCanBeNull := TerrainEventHandler_Package.hashtable.get (anyType);
         if (eventHandlerCanBeNull) = (null) then
-            eventHandlerCanBeNull := TerrainEventHandler_Package.Create;
+            eventHandlerCanBeNull := Java_Object_Access (TerrainEventHandler_Package.Create);
             TerrainEventHandler_Package.hashtable.put (anyType, eventHandlerCanBeNull);
         end if;
         return TerrainEventHandler_Access (eventHandlerCanBeNull);
@@ -56,8 +65,8 @@ package body org.allbinary.game.terrain.TerrainEventHandler_Package is
    procedure addListener (This : in out TerrainEventHandler; terrainEventListener_Param : access TerrainEventListener_Package.TerrainEventListener'Class) is
       terrainEventListener : constant TerrainEventListener_Access := TerrainEventListener_Access (terrainEventListener_Param);
    begin
-        if not (This.list.contains (terrainEventListener)) then
-            This.list.add (terrainEventListener);
+        if not (This.list.contains (Java_Object_Access (terrainEventListener))) then
+            This.list.add (Java_Object_Access (terrainEventListener));
         end if;
    end addListener;
 
@@ -70,7 +79,7 @@ package body org.allbinary.game.terrain.TerrainEventHandler_Package is
    procedure removeListener (This : in out TerrainEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.list.remove (eventListenerInterface);
+        This.list.remove (Java_Object_Access (eventListenerInterface));
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
@@ -109,6 +118,18 @@ package body org.allbinary.game.terrain.TerrainEventHandler_Package is
 
    procedure getInstance (anyType_Param : access Java_Object'Class) is
       Java_Result : constant TerrainEventHandler_Access := getInstance (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   function getInstance (Value : Unbounded_String) return TerrainEventHandler_Access is
+   begin
+      return getInstance (Java_Box (Value));
+   end getInstance;
+
+   procedure getInstance (Value : Unbounded_String) is
+      Java_Result : constant TerrainEventHandler_Access := getInstance (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

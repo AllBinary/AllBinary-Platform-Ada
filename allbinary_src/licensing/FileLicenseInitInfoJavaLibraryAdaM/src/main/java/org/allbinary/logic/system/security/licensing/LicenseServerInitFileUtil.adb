@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with org.allbinary.business.init.LicenseInitInfoUtil_Package; use org.allbinary.business.init.LicenseInitInfoUtil_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.logic.io.FileStreamFactory_Package; use org.allbinary.logic.io.FileStreamFactory_Package;
+with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io.file.FileFactory_Package;
+with org.allbinary.logic.io.file.SimpleFileUtil_Package; use org.allbinary.logic.io.file.SimpleFileUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package FileStreamFactory_Package renames Standard.org.allbinary.logic.io.FileStreamFactory_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
+   package SimpleFileUtil_Package renames Standard.org.allbinary.logic.io.file.SimpleFileUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out LicenseServerInitFileUtil'Class) is
    begin
       null;

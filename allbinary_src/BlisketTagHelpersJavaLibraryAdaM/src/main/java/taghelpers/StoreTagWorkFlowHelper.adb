@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Package; use org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Package;
+with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+
 package body taghelpers.StoreTagWorkFlowHelper_Package is
 
+   package StoreTagWorkFlowFactory_Package renames Standard.org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
    procedure Initialize_Fields (This : in out StoreTagWorkFlowHelper'Class) is
    begin
       null;

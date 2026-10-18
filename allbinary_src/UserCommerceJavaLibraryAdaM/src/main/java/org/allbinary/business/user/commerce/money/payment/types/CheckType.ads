@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.types.CheckType_Packa
    type CheckType_Access is access all CheckType'Class;
    type CheckType_Access_Array is array (Natural range <>) of CheckType_Access;
    type CheckType_Access_Array_Access is access all CheckType_Access_Array;
+   type CheckType_Access_Array_Access_Array is array (Natural range <>) of CheckType_Access_Array_Access;
+   type CheckType_Access_Array_Access_Array_Access is access all CheckType_Access_Array_Access_Array;
 
    type CheckType is new Java_Object with record
       types : Unbounded_String_Array_Access;

@@ -20,32 +20,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
-with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-with org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
-   package BasicVelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-   package VelocityInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type BasePatrolAI is tagged;
    type BasePatrolAI_Access is access all BasePatrolAI'Class;
    type BasePatrolAI_Access_Array is array (Natural range <>) of BasePatrolAI_Access;
    type BasePatrolAI_Access_Array_Access is access all BasePatrolAI_Access_Array;
+   type BasePatrolAI_Access_Array_Access_Array is array (Natural range <>) of BasePatrolAI_Access_Array_Access;
+   type BasePatrolAI_Access_Array_Access_Array_Access is access all BasePatrolAI_Access_Array_Access_Array;
 
    type BasePatrolAI is new BasicAI with record
       maxDistance : Integer;

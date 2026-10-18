@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package is
 
    procedure Initialize_Fields (This : in out FtpConfigurationData'Class) is

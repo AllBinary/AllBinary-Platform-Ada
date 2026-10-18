@@ -20,17 +20,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
 with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package; use org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.ag.ai.SpinnerAI_Package; use org.allbinary.game.ag.ai.SpinnerAI_Package;
 
 package org.allbinary.game.ag.ai.SpinnerAIFactory_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package ArtificialIntelligenceInterface_Package renames Standard.org.allbinary.ai.ArtificialIntelligenceInterface_Package;
    package ArtificialIntelligenceInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
@@ -41,8 +38,10 @@ package org.allbinary.game.ag.ai.SpinnerAIFactory_Package is
    type SpinnerAIFactory_Access is access all SpinnerAIFactory'Class;
    type SpinnerAIFactory_Access_Array is array (Natural range <>) of SpinnerAIFactory_Access;
    type SpinnerAIFactory_Access_Array_Access is access all SpinnerAIFactory_Access_Array;
+   type SpinnerAIFactory_Access_Array_Access_Array is array (Natural range <>) of SpinnerAIFactory_Access_Array_Access;
+   type SpinnerAIFactory_Access_Array_Access_Array_Access is access all SpinnerAIFactory_Access_Array_Access_Array;
 
-   type SpinnerAIFactory is new ArtificialIntelligenceInterfaceFactoryInterface with null record;
+   type SpinnerAIFactory is new Java_Object and ArtificialIntelligenceInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out SpinnerAIFactory'Class);
    function Create return SpinnerAIFactory_Access;

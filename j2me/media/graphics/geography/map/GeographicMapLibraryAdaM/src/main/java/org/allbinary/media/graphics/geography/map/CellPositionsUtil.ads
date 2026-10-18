@@ -21,22 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 
 package org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
 
    type CellPositionsUtil is tagged;
    type CellPositionsUtil_Access is access all CellPositionsUtil'Class;
    type CellPositionsUtil_Access_Array is array (Natural range <>) of CellPositionsUtil_Access;
    type CellPositionsUtil_Access_Array_Access is access all CellPositionsUtil_Access_Array;
+   type CellPositionsUtil_Access_Array_Access_Array is array (Natural range <>) of CellPositionsUtil_Access_Array_Access;
+   type CellPositionsUtil_Access_Array_Access_Array_Access is access all CellPositionsUtil_Access_Array_Access_Array;
 
    type CellPositionsUtil is new Java_Object with record
       reusableSingleThreadedSurroundingList : BasicArrayList_Access;

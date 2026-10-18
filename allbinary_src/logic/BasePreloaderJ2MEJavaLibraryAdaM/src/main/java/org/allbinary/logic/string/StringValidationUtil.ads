@@ -31,6 +31,8 @@ package org.allbinary.logic.string_Id.StringValidationUtil_Package is
    type StringValidationUtil_Access is access all StringValidationUtil'Class;
    type StringValidationUtil_Access_Array is array (Natural range <>) of StringValidationUtil_Access;
    type StringValidationUtil_Access_Array_Access is access all StringValidationUtil_Access_Array;
+   type StringValidationUtil_Access_Array_Access_Array is array (Natural range <>) of StringValidationUtil_Access_Array_Access;
+   type StringValidationUtil_Access_Array_Access_Array_Access is access all StringValidationUtil_Access_Array_Access_Array;
 
    type StringValidationUtil is new Java_Object with record
       stringUtil : StringUtil_Access;

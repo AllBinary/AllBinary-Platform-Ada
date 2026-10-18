@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.info.template.TransformInfoTemplate
    type TransformInfoTemplateData_Access is access all TransformInfoTemplateData'Class;
    type TransformInfoTemplateData_Access_Array is array (Natural range <>) of TransformInfoTemplateData_Access;
    type TransformInfoTemplateData_Access_Array_Access is access all TransformInfoTemplateData_Access_Array;
+   type TransformInfoTemplateData_Access_Array_Access_Array is array (Natural range <>) of TransformInfoTemplateData_Access_Array_Access;
+   type TransformInfoTemplateData_Access_Array_Access_Array_Access is access all TransformInfoTemplateData_Access_Array_Access_Array;
 
    type TransformInfoTemplateData is new Java_Object with record
       UNCRYPTED_EXTENSION : Unbounded_String;

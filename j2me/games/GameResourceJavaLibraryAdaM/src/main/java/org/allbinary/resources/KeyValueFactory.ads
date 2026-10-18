@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package org.allbinary.resources.KeyValueFactory_Package is
 
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type KeyValueFactory is tagged;
    type KeyValueFactory_Access is access all KeyValueFactory'Class;
    type KeyValueFactory_Access_Array is array (Natural range <>) of KeyValueFactory_Access;
    type KeyValueFactory_Access_Array_Access is access all KeyValueFactory_Access_Array;
+   type KeyValueFactory_Access_Array_Access_Array is array (Natural range <>) of KeyValueFactory_Access_Array_Access;
+   type KeyValueFactory_Access_Array_Access_Array_Access is access all KeyValueFactory_Access_Array_Access_Array;
 
    type KeyValueFactory is new Java_Object with record
       MAP : ABHashtable_Access;

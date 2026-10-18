@@ -22,35 +22,25 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFront_Package; use org.allbinary.business.context.modules.storefront.StoreFront_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
-with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityInterface_Package; use org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityInterface_Package;
 
 package org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFront_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFront_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
-   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbSqlBean_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlBean_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type StoreFrontsEntity is tagged;
    type StoreFrontsEntity_Access is access all StoreFrontsEntity'Class;
    type StoreFrontsEntity_Access_Array is array (Natural range <>) of StoreFrontsEntity_Access;
    type StoreFrontsEntity_Access_Array_Access is access all StoreFrontsEntity_Access_Array;
+   type StoreFrontsEntity_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsEntity_Access_Array_Access;
+   type StoreFrontsEntity_Access_Array_Access_Array_Access is access all StoreFrontsEntity_Access_Array_Access_Array;
 
    type StoreFrontsEntity is new AbSqlBean and StoreFrontsEntityInterface with record
       logUtil : LogUtil_Access;

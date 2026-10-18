@@ -21,60 +21,29 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
-with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-with org.allbinary.game.displayable.canvas.DemoCanvas_Package; use org.allbinary.game.displayable.canvas.DemoCanvas_Package;
-with org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package; use org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package;
-with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package; use org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
 with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbinary.game.displayable.canvas.GameRunnable_Package;
-with org.allbinary.game.displayable.canvas.NullDisplayable_Package; use org.allbinary.game.displayable.canvas.NullDisplayable_Package;
-with org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package; use org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
-with org.allbinary.game.layer.SWTUtil_Package; use org.allbinary.game.layer.SWTUtil_Package;
-with org.allbinary.game.score.displayable.HighScoresCanvas_Package; use org.allbinary.game.score.displayable.HighScoresCanvas_Package;
-with org.allbinary.graphics.GraphicsStrings_Package; use org.allbinary.graphics.GraphicsStrings_Package;
 with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 
 package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
 
    package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
-   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-   package DemoCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.DemoCanvas_Package;
-   package GameInputMappingCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package;
-   package GameInputMappingInstructionsCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
    package GameRunnable_Package renames Standard.org.allbinary.game.displayable.canvas.GameRunnable_Package;
-   package NullDisplayable_Package renames Standard.org.allbinary.game.displayable.canvas.NullDisplayable_Package;
-   package NullWaitGameRunnable_Package renames Standard.org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
-   package SWTUtil_Package renames Standard.org.allbinary.game.layer.SWTUtil_Package;
-   package HighScoresCanvas_Package renames Standard.org.allbinary.game.score.displayable.HighScoresCanvas_Package;
-   package GraphicsStrings_Package renames Standard.org.allbinary.graphics.GraphicsStrings_Package;
    package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
    package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package NullRunnable_Package renames Standard.org.allbinary.thread.NullRunnable_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type CurrentDisplayableFactory is tagged;
    type CurrentDisplayableFactory_Access is access all CurrentDisplayableFactory'Class;
    type CurrentDisplayableFactory_Access_Array is array (Natural range <>) of CurrentDisplayableFactory_Access;
    type CurrentDisplayableFactory_Access_Array_Access is access all CurrentDisplayableFactory_Access_Array;
+   type CurrentDisplayableFactory_Access_Array_Access_Array is array (Natural range <>) of CurrentDisplayableFactory_Access_Array_Access;
+   type CurrentDisplayableFactory_Access_Array_Access_Array_Access is access all CurrentDisplayableFactory_Access_Array_Access_Array;
 
    type CurrentDisplayableFactory is new Java_Object with record
       commonStrings : CommonStrings_Access;
@@ -101,7 +70,7 @@ package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
    procedure setDisplayable (This : in out CurrentDisplayableFactory; displayable_Param : access Displayable_Package.Displayable'Class);
    procedure setOpenGlReadydisplayable (This : in out CurrentDisplayableFactory; openGlReadydisplayable_Param : access Displayable_Package.Displayable'Class);
    function getOpenGlReadydisplayable (This : in out CurrentDisplayableFactory) return Displayable_Access;
-   procedure setRunnable (This : in out CurrentDisplayableFactory; runnable_Case_Param : access GameRunnable_Package.GameRunnable'Class);
+   procedure setRunnable (This : in out CurrentDisplayableFactory; runnable_Param : access GameRunnable_Package.GameRunnable'Class);
    procedure clearRunnable (This : in out CurrentDisplayableFactory);
    procedure update (This : in out CurrentDisplayableFactory);
    function getDisplayable (This : in out CurrentDisplayableFactory) return Displayable_Access;

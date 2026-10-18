@@ -22,33 +22,25 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type TransformInfoHttpStore is tagged;
    type TransformInfoHttpStore_Access is access all TransformInfoHttpStore'Class;
    type TransformInfoHttpStore_Access_Array is array (Natural range <>) of TransformInfoHttpStore_Access;
    type TransformInfoHttpStore_Access_Array_Access is access all TransformInfoHttpStore_Access_Array;
+   type TransformInfoHttpStore_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHttpStore_Access_Array_Access;
+   type TransformInfoHttpStore_Access_Array_Access_Array_Access is access all TransformInfoHttpStore_Access_Array_Access_Array;
 
    type TransformInfoHttpStore is new TransformInfoHttp and TransformInfoHttpStoreInterface with record
       logUtil : LogUtil_Access;

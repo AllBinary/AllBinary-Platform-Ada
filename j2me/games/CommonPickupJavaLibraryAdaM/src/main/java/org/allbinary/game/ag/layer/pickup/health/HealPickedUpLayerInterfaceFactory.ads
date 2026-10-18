@@ -20,26 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
-with org.allbinary.game.layer.pickup.IconLayerFactory_Package; use org.allbinary.game.layer.pickup.IconLayerFactory_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
-with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
 with org.allbinary.game.layer.pickup.PickupProcessorInterface_Package; use org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPool_Package; use org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPool_Package;
-with org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package; use org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package;
-with org.allbinary.game.ag.layer.pickup.health.HealthResources_Package; use org.allbinary.game.ag.layer.pickup.health.HealthResources_Package;
 
 package org.allbinary.game.ag.layer.pickup.health.HealPickedUpLayerInterfaceFactory_Package is
 
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package CountedPickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
-   package IconLayerFactory_Package renames Standard.org.allbinary.game.layer.pickup.IconLayerFactory_Package;
    package PickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package;
    package PickedUpLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
-   package PickedUpLayerTypeFactory_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
    package PickupProcessorInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
@@ -47,6 +37,8 @@ package org.allbinary.game.ag.layer.pickup.health.HealPickedUpLayerInterfaceFact
    type HealPickedUpLayerInterfaceFactory_Access is access all HealPickedUpLayerInterfaceFactory'Class;
    type HealPickedUpLayerInterfaceFactory_Access_Array is array (Natural range <>) of HealPickedUpLayerInterfaceFactory_Access;
    type HealPickedUpLayerInterfaceFactory_Access_Array_Access is access all HealPickedUpLayerInterfaceFactory_Access_Array;
+   type HealPickedUpLayerInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of HealPickedUpLayerInterfaceFactory_Access_Array_Access;
+   type HealPickedUpLayerInterfaceFactory_Access_Array_Access_Array_Access is access all HealPickedUpLayerInterfaceFactory_Access_Array_Access_Array;
 
    type HealPickedUpLayerInterfaceFactory is new PickedUpLayerInterfaceFactory and PickupProcessorInterface with record
       pool : HealLayerCircularStaticPool_Access;

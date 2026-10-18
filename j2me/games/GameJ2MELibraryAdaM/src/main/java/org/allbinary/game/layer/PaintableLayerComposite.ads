@@ -22,20 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
 
 package org.allbinary.game.layer.PaintableLayerComposite_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
-   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
    package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
 
    type PaintableLayerComposite is tagged;
    type PaintableLayerComposite_Access is access all PaintableLayerComposite'Class;
    type PaintableLayerComposite_Access_Array is array (Natural range <>) of PaintableLayerComposite_Access;
    type PaintableLayerComposite_Access_Array_Access is access all PaintableLayerComposite_Access_Array;
+   type PaintableLayerComposite_Access_Array_Access_Array is array (Natural range <>) of PaintableLayerComposite_Access_Array_Access;
+   type PaintableLayerComposite_Access_Array_Access_Array_Access is access all PaintableLayerComposite_Access_Array_Access_Array;
 
    type PaintableLayerComposite is new Paintable with record
       paintableArray : Layer_Access_Array_Access;

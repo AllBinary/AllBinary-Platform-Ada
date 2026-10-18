@@ -31,6 +31,8 @@ package org.allbinary.android.view.ViewWrapper_Package is
    type ViewWrapper_Access is access all ViewWrapper'Class;
    type ViewWrapper_Access_Array is array (Natural range <>) of ViewWrapper_Access;
    type ViewWrapper_Access_Array_Access is access all ViewWrapper_Access_Array;
+   type ViewWrapper_Access_Array_Access_Array is array (Natural range <>) of ViewWrapper_Access_Array_Access;
+   type ViewWrapper_Access_Array_Access_Array_Access is access all ViewWrapper_Access_Array_Access_Array;
 
    type ViewWrapper is new BaseViewWrapper with record
       view : View_Access;

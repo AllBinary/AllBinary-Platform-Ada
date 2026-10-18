@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.health.HealthInterface_Package; use org.allbinary.game.health.HealthInterface_Package;
+with org.allbinary.game.health.HealthInterfaceCompositeInterface_Package; use org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
+with org.allbinary.game.ag.layer.pickup.health.HealLayer_Package; use org.allbinary.game.ag.layer.pickup.health.HealLayer_Package;
+
 package body org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPool_Package is
 
+   package HealthInterface_Package renames Standard.org.allbinary.game.health.HealthInterface_Package;
+   package HealthInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
    procedure Initialize_Fields (This : in out HealLayerCircularStaticPool'Class) is
    begin
       null;

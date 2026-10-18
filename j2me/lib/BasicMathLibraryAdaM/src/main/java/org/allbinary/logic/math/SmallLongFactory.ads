@@ -28,6 +28,8 @@ package org.allbinary.logic.math.SmallLongFactory_Package is
    type SmallLongFactory_Access is access all SmallLongFactory'Class;
    type SmallLongFactory_Access_Array is array (Natural range <>) of SmallLongFactory_Access;
    type SmallLongFactory_Access_Array_Access is access all SmallLongFactory_Access_Array;
+   type SmallLongFactory_Access_Array_Access_Array is array (Natural range <>) of SmallLongFactory_Access_Array_Access;
+   type SmallLongFactory_Access_Array_Access_Array_Access is access all SmallLongFactory_Access_Array_Access_Array;
 
    type SmallLongFactory is new Java_Object with record
       NEGATIVE_MAX : Integer;

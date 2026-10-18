@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.commerce.shipping.ShippingMethodsData_Package is
 
    procedure Initialize_Fields (This : in out ShippingMethodsData'Class) is

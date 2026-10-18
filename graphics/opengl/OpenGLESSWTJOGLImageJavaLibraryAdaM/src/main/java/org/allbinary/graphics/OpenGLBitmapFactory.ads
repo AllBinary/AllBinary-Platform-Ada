@@ -11,7 +11,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
@@ -20,7 +19,6 @@ package org.allbinary.graphics.OpenGLBitmapFactory_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package ImageFactory_Package renames Standard.org.allbinary.image.ImageFactory_Package;
    package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
    package PlatformBitmapBase_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
@@ -28,6 +26,8 @@ package org.allbinary.graphics.OpenGLBitmapFactory_Package is
    type OpenGLBitmapFactory_Access is access all OpenGLBitmapFactory'Class;
    type OpenGLBitmapFactory_Access_Array is array (Natural range <>) of OpenGLBitmapFactory_Access;
    type OpenGLBitmapFactory_Access_Array_Access is access all OpenGLBitmapFactory_Access_Array;
+   type OpenGLBitmapFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLBitmapFactory_Access_Array_Access;
+   type OpenGLBitmapFactory_Access_Array_Access_Array_Access is access all OpenGLBitmapFactory_Access_Array_Access_Array;
 
    type OpenGLBitmapFactory is new PlatformBitmapBaseFactory with record
       ARGB_8888 : Config_Access;
@@ -57,7 +57,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.OpenGLBitmap_Package;
@@ -66,7 +65,6 @@ package org.allbinary.graphics.Config_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package ImageFactory_Package renames Standard.org.allbinary.image.ImageFactory_Package;
    package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
    package PlatformBitmapBase_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
@@ -74,6 +72,8 @@ package org.allbinary.graphics.Config_Package is
    type Config_Access is access all Config'Class;
    type Config_Access_Array is array (Natural range <>) of Config_Access;
    type Config_Access_Array_Access is access all Config_Access_Array;
+   type Config_Access_Array_Access_Array is array (Natural range <>) of Config_Access_Array_Access;
+   type Config_Access_Array_Access_Array_Access is access all Config_Access_Array_Access_Array;
 
    type Config is new Java_Object with record
       bitmapConfig : Java_Object_Access;

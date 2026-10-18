@@ -20,34 +20,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.media.audio.PlayerQueue_Package; use org.allbinary.media.audio.PlayerQueue_Package;
-with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package; use org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
-   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    package PlayerQueue_Package renames Standard.org.allbinary.media.audio.PlayerQueue_Package;
-   package SecondaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
    package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
@@ -56,6 +46,8 @@ package org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package is
    type HorizontalScreenPatrolAI_Access is access all HorizontalScreenPatrolAI'Class;
    type HorizontalScreenPatrolAI_Access_Array is array (Natural range <>) of HorizontalScreenPatrolAI_Access;
    type HorizontalScreenPatrolAI_Access_Array_Access is access all HorizontalScreenPatrolAI_Access_Array;
+   type HorizontalScreenPatrolAI_Access_Array_Access_Array is array (Natural range <>) of HorizontalScreenPatrolAI_Access_Array_Access;
+   type HorizontalScreenPatrolAI_Access_Array_Access_Array_Access is access all HorizontalScreenPatrolAI_Access_Array_Access_Array;
 
    type HorizontalScreenPatrolAI is new BasicAI with record
       keyDirection : Integer;

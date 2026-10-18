@@ -22,11 +22,9 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package is
 
@@ -37,6 +35,8 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrac
    type GeographicMapCellPositionTracking_Access is access all GeographicMapCellPositionTracking'Class;
    type GeographicMapCellPositionTracking_Access_Array is array (Natural range <>) of GeographicMapCellPositionTracking_Access;
    type GeographicMapCellPositionTracking_Access_Array_Access is access all GeographicMapCellPositionTracking_Access_Array;
+   type GeographicMapCellPositionTracking_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionTracking_Access_Array_Access;
+   type GeographicMapCellPositionTracking_Access_Array_Access_Array_Access is access all GeographicMapCellPositionTracking_Access_Array_Access_Array;
 
    type GeographicMapCellPositionTracking is new Java_Object with record
       currentGeographicMapCellPosition : GeographicMapCellPosition_Access;

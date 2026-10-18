@@ -40,6 +40,8 @@ package org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package 
    type GraphicItemInterface_Access is access all GraphicItemInterface'Class;
    type GraphicItemInterface_Access_Array is array (Natural range <>) of GraphicItemInterface_Access;
    type GraphicItemInterface_Access_Array_Access is access all GraphicItemInterface_Access_Array;
+   type GraphicItemInterface_Access_Array_Access_Array is array (Natural range <>) of GraphicItemInterface_Access_Array_Access;
+   type GraphicItemInterface_Access_Array_Access_Array_Access is access all GraphicItemInterface_Access_Array_Access_Array;
    function getName (This : in out GraphicItemInterface) return Unbounded_String is abstract;
    procedure setColor (This : in out GraphicItemInterface; color_Param : access Color_Package.Color'Class) is abstract;
    function getTreeNode (This : in out GraphicItemInterface) return MutableTreeNode_Access is abstract;

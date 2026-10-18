@@ -21,9 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.layer.RTSLayerCompositePaintable_Package; use org.allbinary.game.layer.RTSLayerCompositePaintable_Package;
 with org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package; use org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
@@ -31,14 +28,13 @@ with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTS
 package org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type UpgradableWideRTSLayerPaintable is tagged;
    type UpgradableWideRTSLayerPaintable_Access is access all UpgradableWideRTSLayerPaintable'Class;
    type UpgradableWideRTSLayerPaintable_Access_Array is array (Natural range <>) of UpgradableWideRTSLayerPaintable_Access;
    type UpgradableWideRTSLayerPaintable_Access_Array_Access is access all UpgradableWideRTSLayerPaintable_Access_Array;
+   type UpgradableWideRTSLayerPaintable_Access_Array_Access_Array is array (Natural range <>) of UpgradableWideRTSLayerPaintable_Access_Array_Access;
+   type UpgradableWideRTSLayerPaintable_Access_Array_Access_Array_Access is access all UpgradableWideRTSLayerPaintable_Access_Array_Access_Array;
 
    type UpgradableWideRTSLayerPaintable is new RTSLayerCompositePaintable with record
       cost : Unbounded_String;

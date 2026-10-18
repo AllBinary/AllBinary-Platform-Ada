@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUserFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.business.user.modules.admin.store.order.review.ReviewOrder
    type ReviewOrderStoreAdminUserFactory_Access is access all ReviewOrderStoreAdminUserFactory'Class;
    type ReviewOrderStoreAdminUserFactory_Access_Array is array (Natural range <>) of ReviewOrderStoreAdminUserFactory_Access;
    type ReviewOrderStoreAdminUserFactory_Access_Array_Access is access all ReviewOrderStoreAdminUserFactory_Access_Array;
+   type ReviewOrderStoreAdminUserFactory_Access_Array_Access_Array is array (Natural range <>) of ReviewOrderStoreAdminUserFactory_Access_Array_Access;
+   type ReviewOrderStoreAdminUserFactory_Access_Array_Access_Array_Access is access all ReviewOrderStoreAdminUserFactory_Access_Array_Access_Array;
 
-   type ReviewOrderStoreAdminUserFactory is new UserFactoryInterface with null record;
+   type ReviewOrderStoreAdminUserFactory is new Java_Object and UserFactoryInterface with null record;
 
    procedure Initialize (This : in out ReviewOrderStoreAdminUserFactory'Class);
    function Create return ReviewOrderStoreAdminUserFactory_Access;

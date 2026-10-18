@@ -33,8 +33,10 @@ package org.allbinary.business.user.commerce.shipping.modules.FedExShippingModul
    type FedExShippingModule_Access is access all FedExShippingModule'Class;
    type FedExShippingModule_Access_Array is array (Natural range <>) of FedExShippingModule_Access;
    type FedExShippingModule_Access_Array_Access is access all FedExShippingModule_Access_Array;
+   type FedExShippingModule_Access_Array_Access_Array is array (Natural range <>) of FedExShippingModule_Access_Array_Access;
+   type FedExShippingModule_Access_Array_Access_Array_Access is access all FedExShippingModule_Access_Array_Access_Array;
 
-   type FedExShippingModule is new ShippingInterface with record
+   type FedExShippingModule is new Java_Object and ShippingInterface with record
       name : Unbounded_String;
       description : Unbounded_String;
    end record;

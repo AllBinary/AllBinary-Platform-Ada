@@ -1,8 +1,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.layer.LayerManager_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out LayerManager'Class) is
    begin
       null;
@@ -11,7 +14,7 @@ package body org.allbinary.layer.LayerManager_Package is
       This.systemWrapper := ABSystemWrapper_Package.getInstance;
       This.tsUtil := TsUtil_Package.getInstance;
       
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.anyType := SynchObject_Package.Create;
    end Initialize_Fields;
 
@@ -34,7 +37,7 @@ package body org.allbinary.layer.LayerManager_Package is
    function contains (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
-        return This.list.contains (layerInterface);
+        return This.list.contains (Java_Object_Access (layerInterface));
    end contains;
 
    --  throws Exception
@@ -45,18 +48,18 @@ package body org.allbinary.layer.LayerManager_Package is
       size : Integer;
       index : Integer;
    begin
-        had := This.list.remove (layerInterface);
+        had := This.list.remove (Java_Object_Access (layerInterface));
         if had then
             nextLayerInterface := null;
             size := This.list.size;
             for index in 0 .. (size) - 1 loop
                 nextLayerInterface := AllBinaryLayer_Access (This.list.get (index));
                 if (layerInterface.getZP) > (nextLayerInterface.getZP) then
-                    This.list.addAt (index, layerInterface);
+                    This.list.addAt (index, Java_Object_Access (layerInterface));
                     return;
                 end if;
             end loop;
-            This.list.add (layerInterface);
+            This.list.add (Java_Object_Access (layerInterface));
         end if;
    end update;
 
@@ -84,7 +87,7 @@ package body org.allbinary.layer.LayerManager_Package is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.layerManagerLogging.append (layerInterface);
-        This.list.add (layerInterface);
+        This.list.add (Java_Object_Access (layerInterface));
    end append;
 
    --  throws Exception
@@ -92,7 +95,7 @@ package body org.allbinary.layer.LayerManager_Package is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.layerManagerLogging.appendAt (layerInterface, index);
-        This.list.addAt (index, layerInterface);
+        This.list.addAt (index, Java_Object_Access (layerInterface));
    end appendAt;
 
    --  throws Exception
@@ -102,7 +105,7 @@ package body org.allbinary.layer.LayerManager_Package is
    begin
         begin  --  synchronized
             This.layerManagerLogging.remove (layerInterface);
-            result := This.list.remove (layerInterface);
+            result := This.list.remove (Java_Object_Access (layerInterface));
             This.layerManagerLogging.removeResult (LayerManager_Access'(This'Unchecked_Access), layerInterface, result);
         end;
    end remove;

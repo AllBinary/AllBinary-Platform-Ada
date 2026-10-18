@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.init.db.LogDbInitInfo_Package; use org.allbinary.business.init.db.LogDbInitInfo_Package;
+with org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package; use org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.data.tables.log.LogTableEntity_Package is
 
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package LogDbInitInfo_Package renames Standard.org.allbinary.business.init.db.LogDbInitInfo_Package;
+   package AbeHttpRequestInfoData_Package renames Standard.org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out LogTableEntity'Class) is
    begin
       null;

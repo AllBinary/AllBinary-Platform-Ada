@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.score.displayable.HighScoresCanvas_Package; use org.allbinary.game.score.displayable.HighScoresCanvas_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package; use org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
-with org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_Package; use org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_Package;
 with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package; use org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
 
 package org.allbinary.game.score.HighScoresCanvasChangeLevelInputProcessorFactory_Package is
@@ -33,8 +32,10 @@ package org.allbinary.game.score.HighScoresCanvasChangeLevelInputProcessorFactor
    type HighScoresCanvasChangeLevelInputProcessorFactory_Access is access all HighScoresCanvasChangeLevelInputProcessorFactory'Class;
    type HighScoresCanvasChangeLevelInputProcessorFactory_Access_Array is array (Natural range <>) of HighScoresCanvasChangeLevelInputProcessorFactory_Access;
    type HighScoresCanvasChangeLevelInputProcessorFactory_Access_Array_Access is access all HighScoresCanvasChangeLevelInputProcessorFactory_Access_Array;
+   type HighScoresCanvasChangeLevelInputProcessorFactory_Access_Array_Access_Array is array (Natural range <>) of HighScoresCanvasChangeLevelInputProcessorFactory_Access_Array_Access;
+   type HighScoresCanvasChangeLevelInputProcessorFactory_Access_Array_Access_Array_Access is access all HighScoresCanvasChangeLevelInputProcessorFactory_Access_Array_Access_Array;
 
-   type HighScoresCanvasChangeLevelInputProcessorFactory is new HighScoresCanvasInputProcessorFactoryInterface with null record;
+   type HighScoresCanvasChangeLevelInputProcessorFactory is new Java_Object and HighScoresCanvasInputProcessorFactoryInterface with null record;
 
    procedure Initialize (This : in out HighScoresCanvasChangeLevelInputProcessorFactory'Class);
    function Create return HighScoresCanvasChangeLevelInputProcessorFactory_Access;

@@ -21,24 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.thread.Thread_Package; use org.allbinary.thread.Thread_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.ThreadObjectUtil_Package;
 with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
 
 package org.allbinary.thread.PooledThread_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PooledThread is tagged;
    type PooledThread_Access is access all PooledThread'Class;
    type PooledThread_Access_Array is array (Natural range <>) of PooledThread_Access;
    type PooledThread_Access_Array_Access is access all PooledThread_Access_Array;
+   type PooledThread_Access_Array_Access_Array is array (Natural range <>) of PooledThread_Access_Array_Access;
+   type PooledThread_Access_Array_Access_Array_Access is access all PooledThread_Access_Array_Access_Array;
 
    type PooledThread is new Thread with record
       logUtil : LogUtil_Access;

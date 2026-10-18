@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.os.Build_Package; use android.os.Build_Package;
 
 package org.allbinary.android.AndroidInfoFactory_Package is
 
-   package Build_Package renames Standard.android.os.Build_Package;
 
    type AndroidInfoFactory is tagged;
    type AndroidInfoFactory_Access is access all AndroidInfoFactory'Class;
    type AndroidInfoFactory_Access_Array is array (Natural range <>) of AndroidInfoFactory_Access;
    type AndroidInfoFactory_Access_Array_Access is access all AndroidInfoFactory_Access_Array;
+   type AndroidInfoFactory_Access_Array_Access_Array is array (Natural range <>) of AndroidInfoFactory_Access_Array_Access;
+   type AndroidInfoFactory_Access_Array_Access_Array_Access is access all AndroidInfoFactory_Access_Array_Access_Array;
 
    type AndroidInfoFactory is new Java_Object with record
       version : Integer;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.image.AnimationFrameToImageUtil_Package; use org.allbinary.image.AnimationFrameToImageUtil_Package;
+
 package body org.allbinary.image.IndexedAnimationToImageArrayUtil_Package is
 
    procedure Initialize_Fields (This : in out IndexedAnimationToImageArrayUtil'Class) is

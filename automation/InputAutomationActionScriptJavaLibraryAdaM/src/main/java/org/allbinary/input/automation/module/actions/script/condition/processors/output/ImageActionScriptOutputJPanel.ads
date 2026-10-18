@@ -20,21 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.input.media.image.InputImageType_Package; use org.allbinary.input.media.image.InputImageType_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.JPanel_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.JPanel_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputInterface_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputInterface_Package;
-with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package;
-with org.allbinary.input.automation.module.actions.script.condition.processors.output.DefaultListModel_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.DefaultListModel_Package;
 
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputJPanel_Package is
 
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package InputImageType_Package renames Standard.org.allbinary.input.media.image.InputImageType_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -42,6 +34,8 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    type ImageActionScriptOutputJPanel_Access is access all ImageActionScriptOutputJPanel'Class;
    type ImageActionScriptOutputJPanel_Access_Array is array (Natural range <>) of ImageActionScriptOutputJPanel_Access;
    type ImageActionScriptOutputJPanel_Access_Array_Access is access all ImageActionScriptOutputJPanel_Access_Array;
+   type ImageActionScriptOutputJPanel_Access_Array_Access_Array is array (Natural range <>) of ImageActionScriptOutputJPanel_Access_Array_Access;
+   type ImageActionScriptOutputJPanel_Access_Array_Access_Array_Access is access all ImageActionScriptOutputJPanel_Access_Array_Access_Array;
 
    type ImageActionScriptOutputJPanel is new JPanel with record
       logUtil : LogUtil_Access;

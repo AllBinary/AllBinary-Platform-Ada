@@ -30,8 +30,10 @@ package org.allbinary.logic.system.hardware.components.linux.Unknown_Package is
    type Unknown_Access is access all Unknown'Class;
    type Unknown_Access_Array is array (Natural range <>) of Unknown_Access;
    type Unknown_Access_Array_Access is access all Unknown_Access_Array;
+   type Unknown_Access_Array_Access_Array is array (Natural range <>) of Unknown_Access_Array_Access;
+   type Unknown_Access_Array_Access_Array_Access is access all Unknown_Access_Array_Access_Array;
 
-   type Unknown is new HardwareComponentInterface with record
+   type Unknown is new Java_Object and HardwareComponentInterface with record
       data : Unbounded_String;
    end record;
 

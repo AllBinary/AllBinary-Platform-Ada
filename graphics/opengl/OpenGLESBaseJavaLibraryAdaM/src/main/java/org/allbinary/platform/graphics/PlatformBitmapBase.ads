@@ -21,21 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 
 package org.allbinary.platform.graphics.PlatformBitmapBase_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
 
    type PlatformBitmapBase is tagged;
    type PlatformBitmapBase_Access is access all PlatformBitmapBase'Class;
    type PlatformBitmapBase_Access_Array is array (Natural range <>) of PlatformBitmapBase_Access;
    type PlatformBitmapBase_Access_Array_Access is access all PlatformBitmapBase_Access_Array;
+   type PlatformBitmapBase_Access_Array_Access_Array is array (Natural range <>) of PlatformBitmapBase_Access_Array_Access;
+   type PlatformBitmapBase_Access_Array_Access_Array_Access is access all PlatformBitmapBase_Access_Array_Access_Array;
 
    type PlatformBitmapBase is new Java_Object with record
       alpha : Integer;

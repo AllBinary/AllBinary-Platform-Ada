@@ -34,6 +34,8 @@ package org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package 
    type GeographicMapCellPositionAreaInterface_Access is access all GeographicMapCellPositionAreaInterface'Class;
    type GeographicMapCellPositionAreaInterface_Access_Array is array (Natural range <>) of GeographicMapCellPositionAreaInterface_Access;
    type GeographicMapCellPositionAreaInterface_Access_Array_Access is access all GeographicMapCellPositionAreaInterface_Access_Array;
+   type GeographicMapCellPositionAreaInterface_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionAreaInterface_Access_Array_Access;
+   type GeographicMapCellPositionAreaInterface_Access_Array_Access_Array_Access is access all GeographicMapCellPositionAreaInterface_Access_Array_Access_Array;
    function getNextSurroundingGeographicMapCellPosition (This : in out GeographicMapCellPositionAreaInterface) return GeographicMapCellPosition_Access is abstract;
    function getOccupyingGeographicMapCellPositionList (This : in out GeographicMapCellPositionAreaInterface) return BasicArrayList_Access is abstract;
    function getSurroundingGeographicMapCellPositionList (This : in out GeographicMapCellPositionAreaInterface) return BasicArrayList_Access is abstract;

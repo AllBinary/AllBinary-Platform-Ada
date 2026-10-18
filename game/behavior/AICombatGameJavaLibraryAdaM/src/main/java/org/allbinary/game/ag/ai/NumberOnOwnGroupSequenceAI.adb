@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.identification.GroupLayerManagerListener_Package; use org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
+
 package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package is
 
+   package GroupLayerManagerListener_Package renames Standard.org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
    procedure Initialize_Fields (This : in out NumberOnOwnGroupSequenceAI'Class) is
    begin
       null;

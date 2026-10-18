@@ -34,6 +34,8 @@ package org.allbinary.business.user.modules.admin.AdminUser_Package is
    type AdminUser_Access is access all AdminUser'Class;
    type AdminUser_Access_Array is array (Natural range <>) of AdminUser_Access;
    type AdminUser_Access_Array_Access is access all AdminUser_Access_Array;
+   type AdminUser_Access_Array_Access_Array is array (Natural range <>) of AdminUser_Access_Array_Access;
+   type AdminUser_Access_Array_Access_Array_Access is access all AdminUser_Access_Array_Access_Array;
 
    type AdminUser is new User with null record;
 

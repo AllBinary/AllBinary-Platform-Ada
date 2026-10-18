@@ -28,6 +28,8 @@ package org.allbinary.input.motion.AllMotionRecognizer_Package is
    type AllMotionRecognizer_Access is access all AllMotionRecognizer'Class;
    type AllMotionRecognizer_Access_Array is array (Natural range <>) of AllMotionRecognizer_Access;
    type AllMotionRecognizer_Access_Array_Access is access all AllMotionRecognizer_Access_Array;
+   type AllMotionRecognizer_Access_Array_Access_Array is array (Natural range <>) of AllMotionRecognizer_Access_Array_Access;
+   type AllMotionRecognizer_Access_Array_Access_Array_Access is access all AllMotionRecognizer_Access_Array_Access_Array;
 
    type AllMotionRecognizer is new Java_Object with record
       id : Integer;

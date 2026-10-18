@@ -16,6 +16,8 @@ package java.lang.annotation.Annotation_Package is
    type Annotation_Access is access all Annotation'Class;
    type Annotation_Access_Array is array (Natural range <>) of Annotation_Access;
    type Annotation_Access_Array_Access is access all Annotation_Access_Array;
+   type Annotation_Access_Array_Access_Array is array (Natural range <>) of Annotation_Access_Array_Access;
+   type Annotation_Access_Array_Access_Array_Access is access all Annotation_Access_Array_Access_Array;
    function annotationType (This : in out Annotation) return Ada.Tags.Tag is abstract;
 
 end java.lang.annotation.Annotation_Package;

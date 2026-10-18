@@ -13,18 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
+with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
+
 package body org.allbinary.media.image.ImageScaleUtil_Package is
 
+   package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
+   package Canvas_Package renames Standard.android.graphics.Canvas_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
    procedure Initialize_Fields (This : in out ImageScaleUtil'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
       This.anchor := Anchor_Package.TOP_LEFT;
-      This.imageBasicArrayList := BasicArrayListD_Package.Create;
-      This.scaledImageBasicArrayList := BasicArrayListD_Package.Create;
-      This.scaleXBasicArrayList := BasicArrayListD_Package.Create;
-      This.scaleYBasicArrayList := BasicArrayListD_Package.Create;
+      This.imageBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.scaledImageBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.scaleXBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.scaleYBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -86,7 +99,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
         originalBitmap := originalAndroidImage.getBitmap;
         width := Integer (((originalBitmap.getWidth) * (scaleX)));
         height := Integer (((originalBitmap.getHeight) * (scaleY)));
-        index := This.imageBasicArrayList.indexOf (originalImage);
+        index := This.imageBasicArrayList.indexOf (Java_Object_Access (originalImage));
         alreadyAvailable := False;
         if (index) >= (0) then
             scaleX2Float := Float (This.scaleXBasicArrayList.get (index));
@@ -101,8 +114,8 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
             return Image_Access (This.scaledImageBasicArrayList.get (index));
         else
             scaledImage := ImageScaleUtil'Class (This).getScaledImage (imageCache, originalImage, scaleX, scaleY, width, height, cached);
-            This.imageBasicArrayList.add (originalImage);
-            This.scaledImageBasicArrayList.add (scaledImage);
+            This.imageBasicArrayList.add (Java_Object_Access (originalImage));
+            This.scaledImageBasicArrayList.add (Java_Object_Access (scaledImage));
             This.scaleXBasicArrayList.add (scaleX);
             This.scaleYBasicArrayList.add (scaleY);
             return scaledImage;

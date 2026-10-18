@@ -20,22 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTracksPathPrinter_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type RaceTracksPathPrinter is tagged;
    type RaceTracksPathPrinter_Access is access all RaceTracksPathPrinter'Class;
    type RaceTracksPathPrinter_Access_Array is array (Natural range <>) of RaceTracksPathPrinter_Access;
    type RaceTracksPathPrinter_Access_Array_Access is access all RaceTracksPathPrinter_Access_Array;
+   type RaceTracksPathPrinter_Access_Array_Access_Array is array (Natural range <>) of RaceTracksPathPrinter_Access_Array_Access;
+   type RaceTracksPathPrinter_Access_Array_Access_Array_Access is access all RaceTracksPathPrinter_Access_Array_Access_Array;
 
    type RaceTracksPathPrinter is new Java_Object with null record;
 

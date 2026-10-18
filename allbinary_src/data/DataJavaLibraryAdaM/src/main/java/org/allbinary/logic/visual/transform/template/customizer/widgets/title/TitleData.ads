@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.title.T
    type TitleData_Access is access all TitleData'Class;
    type TitleData_Access_Array is array (Natural range <>) of TitleData_Access;
    type TitleData_Access_Array_Access is access all TitleData_Access_Array;
+   type TitleData_Access_Array_Access_Array is array (Natural range <>) of TitleData_Access_Array_Access;
+   type TitleData_Access_Array_Access_Array_Access is access all TitleData_Access_Array_Access_Array;
 
    type TitleData is new Java_Object with record
       NAME : Unbounded_String;

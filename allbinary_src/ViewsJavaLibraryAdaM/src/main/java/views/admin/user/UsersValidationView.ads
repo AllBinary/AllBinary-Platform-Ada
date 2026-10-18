@@ -20,13 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
-with org.allbinary.business.user.role.UserRoleB_Package; use org.allbinary.business.user.role.UserRoleB_Package;
-with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
-with org.allbinary.data.tables.user.UserEntityFactory_Package; use org.allbinary.data.tables.user.UserEntityFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
@@ -34,13 +29,8 @@ with views.admin.user.UsersView_Package; use views.admin.user.UsersView_Package;
 
 package views.admin.user.UsersValidationView_Package is
 
-   package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
-   package UserRoleB_Package renames Standard.org.allbinary.business.user.role.UserRoleB_Package;
-   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
-   package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -49,6 +39,8 @@ package views.admin.user.UsersValidationView_Package is
    type UsersValidationView_Access is access all UsersValidationView'Class;
    type UsersValidationView_Access_Array is array (Natural range <>) of UsersValidationView_Access;
    type UsersValidationView_Access_Array_Access is access all UsersValidationView_Access_Array;
+   type UsersValidationView_Access_Array_Access_Array is array (Natural range <>) of UsersValidationView_Access_Array_Access;
+   type UsersValidationView_Access_Array_Access_Array_Access is access all UsersValidationView_Access_Array_Access_Array;
 
    type UsersValidationView is new UsersView and ValidationComponentInterface with record
       logUtil : LogUtil_Access;

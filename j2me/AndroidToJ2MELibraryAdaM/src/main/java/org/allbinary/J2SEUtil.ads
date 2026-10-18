@@ -33,6 +33,8 @@ package org.allbinary.J2SEUtil_Package is
    type J2SEUtil_Access is access all J2SEUtil'Class;
    type J2SEUtil_Access_Array is array (Natural range <>) of J2SEUtil_Access;
    type J2SEUtil_Access_Array_Access is access all J2SEUtil_Access_Array;
+   type J2SEUtil_Access_Array_Access_Array is array (Natural range <>) of J2SEUtil_Access_Array_Access;
+   type J2SEUtil_Access_Array_Access_Array_Access is access all J2SEUtil_Access_Array_Access_Array;
 
    type J2SEUtil is new Java_Object with null record;
    instance : J2SEUtil_Access;

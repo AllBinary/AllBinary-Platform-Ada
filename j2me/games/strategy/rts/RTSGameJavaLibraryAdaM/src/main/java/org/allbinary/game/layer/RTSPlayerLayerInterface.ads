@@ -46,6 +46,8 @@ package org.allbinary.game.layer.RTSPlayerLayerInterface_Package is
    type RTSPlayerLayerInterface_Access is access all RTSPlayerLayerInterface'Class;
    type RTSPlayerLayerInterface_Access_Array is array (Natural range <>) of RTSPlayerLayerInterface_Access;
    type RTSPlayerLayerInterface_Access_Array_Access is access all RTSPlayerLayerInterface_Access_Array;
+   type RTSPlayerLayerInterface_Access_Array_Access_Array is array (Natural range <>) of RTSPlayerLayerInterface_Access_Array_Access;
+   type RTSPlayerLayerInterface_Access_Array_Access_Array_Access is access all RTSPlayerLayerInterface_Access_Array_Access_Array;
    function getCapital (This : in out RTSPlayerLayerInterface) return Capital_Access is abstract;
    function getRTSFormInput (This : in out RTSPlayerLayerInterface) return RTSFormInput_Access is abstract;
    procedure add (This : in out RTSPlayerLayerInterface; sound_Param : access Sound_Package.Sound'Class) is abstract;

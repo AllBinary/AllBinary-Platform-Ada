@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.module.generic_Id.constraints.Dimension_Package; use org.allbinary.input.automation.module.generic_Id.constraints.Dimension_Package;
+
 package body org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package is
 
    procedure Initialize_Fields (This : in out NoMotionRectangleConstraints'Class) is
@@ -27,8 +29,8 @@ package body org.allbinary.input.automation.module.generic_Id.constraints.NoMoti
       Initialize_Fields (This);
         NoMotionRectangleConstraints'Class (This).setMinDimension (Dimension_Package.Create (0, 0));
         NoMotionRectangleConstraints'Class (This).setMinArea (0);
-        NoMotionRectangleConstraints'Class (This).setMaxDimension (Dimension_Package.Create (Integer_Package.MAX_VALUE, Integer_Package.MAX_VALUE));
-        NoMotionRectangleConstraints'Class (This).setMaxMotionRectangles (Integer_Package.MAX_VALUE);
+        NoMotionRectangleConstraints'Class (This).setMaxDimension (Dimension_Package.Create (Integer'Last, Integer'Last));
+        NoMotionRectangleConstraints'Class (This).setMaxMotionRectangles (Integer'Last);
    end Initialize;
 
    function Create return NoMotionRectangleConstraints_Access is

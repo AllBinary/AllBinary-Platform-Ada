@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.ColorCacheable_Package; use org.allbinary.graphics.color.ColorCacheable_Package;
+
 package body org.allbinary.graphics.color.ColorCacheableFactory_Package is
 
    procedure Initialize_Fields (This : in out ColorCacheableFactory'Class) is
@@ -37,11 +39,23 @@ package body org.allbinary.graphics.color.ColorCacheableFactory_Package is
    function getInstance (This : in out ColorCacheableFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
-        return ColorCacheable_Package.Create (key);
+        return CacheableInterface_Access (ColorCacheable_Package.Create (key));
    end getInstance;
 
    procedure getInstance (This : in out ColorCacheableFactory; key_Param : access Java_Object'Class) is
       Java_Result : constant CacheableInterface_Access := ColorCacheableFactory'Class (This).getInstance (key_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   function getInstance (This : in out ColorCacheableFactory; Value : Unbounded_String) return CacheableInterface_Access is
+   begin
+      return ColorCacheableFactory'Class (This).getInstance (Java_Box (Value));
+   end getInstance;
+
+   procedure getInstance (This : in out ColorCacheableFactory; Value : Unbounded_String) is
+      Java_Result : constant CacheableInterface_Access := ColorCacheableFactory'Class (This).getInstance (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

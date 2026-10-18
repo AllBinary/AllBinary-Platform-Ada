@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
+with bundle.input.automation.module.InputAutomationModuleServiceInterface_Package; use bundle.input.automation.module.InputAutomationModuleServiceInterface_Package;
+with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
+with org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
+with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
+
 package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package is
 
+   package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
+   package InputAutomationModuleServiceInterface_Package renames Standard.bundle.input.automation.module.InputAutomationModuleServiceInterface_Package;
+   package InputAutomationConfigurationModuleChangeEvent_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
+   package InputAutomationConfigurationUtil_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
+   package OSGIActivatorUtil_Package renames Standard.org.allbinary.osgi.OSGIActivatorUtil_Package;
    procedure Initialize_Fields (This : in out InputAutomationModuleBundleActivator'Class) is
    begin
       null;
@@ -149,7 +160,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
 
    function getServiceFactory (This : in out InputAutomationModuleBundleActivator) return Java_Object_Access is
    begin
-        return This.serviceFactory;
+        return Java_Object_Access (This.serviceFactory);
    end getServiceFactory;
 
    procedure setServiceFactory (This : in out InputAutomationModuleBundleActivator; serviceObject_Param : access ServiceFactory_Package.ServiceFactory'Class) is

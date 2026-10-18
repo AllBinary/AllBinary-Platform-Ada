@@ -20,20 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
-with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 
 package org.allbinary.math.PositionStrings_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
-   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type PositionStrings is tagged;
    type PositionStrings_Access is access all PositionStrings'Class;
    type PositionStrings_Access_Array is array (Natural range <>) of PositionStrings_Access;
    type PositionStrings_Access_Array_Access is access all PositionStrings_Access_Array;
+   type PositionStrings_Access_Array_Access_Array is array (Natural range <>) of PositionStrings_Access_Array_Access;
+   type PositionStrings_Access_Array_Access_Array_Access is access all PositionStrings_Access_Array_Access_Array;
 
    type PositionStrings is new Java_Object with record
       X : Unbounded_String;

@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
+with org.allbinary.game.input.OptimizedGameInputLayerManager_Package; use org.allbinary.game.input.OptimizedGameInputLayerManager_Package;
+
 package body org.allbinary.game.input.OptimizedGameInputLayerProcessorForCollidableLayer_Package is
 
+   package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
    procedure Initialize_Fields (This : in out OptimizedGameInputLayerProcessorForCollidableLayer'Class) is
    begin
       null;

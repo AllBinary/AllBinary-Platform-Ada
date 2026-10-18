@@ -31,6 +31,8 @@ package org.allbinary.logic.util.cache.CacheInterfaceFactory_Package is
    type CacheInterfaceFactory_Access is access all CacheInterfaceFactory'Class;
    type CacheInterfaceFactory_Access_Array is array (Natural range <>) of CacheInterfaceFactory_Access;
    type CacheInterfaceFactory_Access_Array_Access is access all CacheInterfaceFactory_Access_Array;
+   type CacheInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of CacheInterfaceFactory_Access_Array_Access;
+   type CacheInterfaceFactory_Access_Array_Access_Array_Access is access all CacheInterfaceFactory_Access_Array_Access_Array;
 
    type CacheInterfaceFactory is new Java_Object with null record;
 

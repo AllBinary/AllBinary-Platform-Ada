@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_Package; use org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_Package;
+
 package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsView_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    procedure Initialize_Fields (This : in out JvmStatisticsView'Class) is
    begin
       null;

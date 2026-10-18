@@ -31,6 +31,8 @@ package org.allbinary.logic.io.file.AbFileInterface_Package is
    type AbFileInterface_Access is access all AbFileInterface'Class;
    type AbFileInterface_Access_Array is array (Natural range <>) of AbFileInterface_Access;
    type AbFileInterface_Access_Array_Access is access all AbFileInterface_Access_Array;
+   type AbFileInterface_Access_Array_Access_Array is array (Natural range <>) of AbFileInterface_Access_Array_Access;
+   type AbFileInterface_Access_Array_Access_Array_Access is access all AbFileInterface_Access_Array_Access_Array;
    function canRead (This : in out AbFileInterface) return Boolean is abstract;
    function canWrite (This : in out AbFileInterface) return Boolean is abstract;
    function createNewFile (This : in out AbFileInterface) return Boolean is abstract;

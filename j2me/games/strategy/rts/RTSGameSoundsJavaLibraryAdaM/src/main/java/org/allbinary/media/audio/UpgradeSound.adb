@@ -12,6 +12,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.audio.UpgradeSound_Package is
 
    procedure Initialize_Fields (This : in out UpgradeSound'Class) is
@@ -39,7 +40,7 @@ package body org.allbinary.media.audio.UpgradeSound_Package is
 
 begin
    null;
-   soundInterface := UpgradeSound_Package.Create;
+   soundInterface := Sound_Access (UpgradeSound_Package.Create);
 
 end org.allbinary.media.audio.UpgradeSound_Package;
 

@@ -22,42 +22,28 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Line_Package; use org.allbinary.graphics.Line_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
-with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
-with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
 with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
 with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package; use org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
-with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
-with org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package;
-with org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.J2SEMath_Package; use org.allbinary.logic.math.J2SEMath_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 
 package org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package is
 
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package Line_Package renames Standard.org.allbinary.graphics.Line_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
-   package MotionGestureConfiguration_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
-   package MotionGestureConfigurationFactory_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
    package BasicMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
    package MotionEventCircularPool_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
-   package MotionGestureEvent_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
-   package MovedMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package;
-   package ScrolledMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package J2SEMath_Package renames Standard.org.allbinary.logic.math.J2SEMath_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type MotionGestureRecognizer is tagged;
    type MotionGestureRecognizer_Access is access all MotionGestureRecognizer'Class;
    type MotionGestureRecognizer_Access_Array is array (Natural range <>) of MotionGestureRecognizer_Access;
    type MotionGestureRecognizer_Access_Array_Access is access all MotionGestureRecognizer_Access_Array;
+   type MotionGestureRecognizer_Access_Array_Access_Array is array (Natural range <>) of MotionGestureRecognizer_Access_Array_Access;
+   type MotionGestureRecognizer_Access_Array_Access_Array_Access is access all MotionGestureRecognizer_Access_Array_Access_Array;
 
    type MotionGestureRecognizer is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package is
 
    procedure Initialize_Fields (This : in out PickedUpLayerInterfaceFactory'Class) is
@@ -45,7 +46,7 @@ package body org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Packa
 
    function getIconLayer (This : in out PickedUpLayerInterfaceFactory) return AllBinaryLayer_Access is
    begin
-        return This.iconLayer;
+        return AllBinaryLayer_Access (This.iconLayer);
    end getIconLayer;
 
    function getAnimationInterface (This : in out PickedUpLayerInterfaceFactory) return Animation_Access is

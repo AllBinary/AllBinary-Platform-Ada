@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+with org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package; use org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package;
+with org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package; use org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package;
+
 package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package is
 
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package RealTimeStoreFrontStatistics_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package;
+   package RealTimeStoreFrontStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package;
    procedure Initialize_Fields (This : in out StoreFrontStatisticsComponent'Class) is
    begin
       null;
@@ -30,7 +37,7 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.newStoreFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (transformInfoInterface.getStoreName));
-        This.domNodeInterface := RealTimeStoreFrontStatisticsView_Package.Create (RealTimeStoreFrontStatistics_Package.Create (This.newStoreFrontInterface), StoreFrontStatisticsComponent'Class (This).getWeblisketSession.getRole);
+        This.domNodeInterface := DomNodeInterface_Access (RealTimeStoreFrontStatisticsView_Package.Create (RealTimeStoreFrontStatistics_Package.Create (This.newStoreFrontInterface), StoreFrontStatisticsComponent'Class (This).getWeblisketSession.getRole));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return StoreFrontStatisticsComponent_Access is

@@ -33,6 +33,8 @@ package org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface
    type ImageComparatorConstraintsInterface_Access is access all ImageComparatorConstraintsInterface'Class;
    type ImageComparatorConstraintsInterface_Access_Array is array (Natural range <>) of ImageComparatorConstraintsInterface_Access;
    type ImageComparatorConstraintsInterface_Access_Array_Access is access all ImageComparatorConstraintsInterface_Access_Array;
+   type ImageComparatorConstraintsInterface_Access_Array_Access_Array is array (Natural range <>) of ImageComparatorConstraintsInterface_Access_Array_Access;
+   type ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access is access all ImageComparatorConstraintsInterface_Access_Array_Access_Array;
    function getMaxNonMatchingPixelDeltas (This : in out ImageComparatorConstraintsInterface) return Integer is abstract;
    function isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraintsInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is abstract;
    function isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraintsInterface; point_Param : access GPoint_Package.GPoint'Class) return Boolean is abstract;

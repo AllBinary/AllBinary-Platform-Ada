@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 
 package org.allbinary.media.image.ImageRotationUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
 
    type ImageRotationUtil is tagged;
    type ImageRotationUtil_Access is access all ImageRotationUtil'Class;
    type ImageRotationUtil_Access_Array is array (Natural range <>) of ImageRotationUtil_Access;
    type ImageRotationUtil_Access_Array_Access is access all ImageRotationUtil_Access_Array;
+   type ImageRotationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageRotationUtil_Access_Array_Access;
+   type ImageRotationUtil_Access_Array_Access_Array_Access is access all ImageRotationUtil_Access_Array_Access_Array;
 
    type ImageRotationUtil is new Java_Object with record
       anchor : Integer;

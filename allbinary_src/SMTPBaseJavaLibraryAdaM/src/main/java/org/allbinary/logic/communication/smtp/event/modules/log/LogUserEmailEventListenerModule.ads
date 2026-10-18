@@ -34,8 +34,10 @@ package org.allbinary.logic.communication.smtp.event.modules.log.LogUserEmailEve
    type LogUserEmailEventListenerModule_Access is access all LogUserEmailEventListenerModule'Class;
    type LogUserEmailEventListenerModule_Access_Array is array (Natural range <>) of LogUserEmailEventListenerModule_Access;
    type LogUserEmailEventListenerModule_Access_Array_Access is access all LogUserEmailEventListenerModule_Access_Array;
+   type LogUserEmailEventListenerModule_Access_Array_Access_Array is array (Natural range <>) of LogUserEmailEventListenerModule_Access_Array_Access;
+   type LogUserEmailEventListenerModule_Access_Array_Access_Array_Access is access all LogUserEmailEventListenerModule_Access_Array_Access_Array;
 
-   type LogUserEmailEventListenerModule is new UserEmailEventListenerInterface with record
+   type LogUserEmailEventListenerModule is new Java_Object and UserEmailEventListenerInterface with record
       logUtil : LogUtil_Access;
    end record;
 

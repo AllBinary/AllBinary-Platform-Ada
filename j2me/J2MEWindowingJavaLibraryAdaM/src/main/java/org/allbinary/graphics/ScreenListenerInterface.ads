@@ -28,6 +28,8 @@ package org.allbinary.graphics.ScreenListenerInterface_Package is
    type ScreenListenerInterface_Access is access all ScreenListenerInterface'Class;
    type ScreenListenerInterface_Access_Array is array (Natural range <>) of ScreenListenerInterface_Access;
    type ScreenListenerInterface_Access_Array_Access is access all ScreenListenerInterface_Access_Array;
+   type ScreenListenerInterface_Access_Array_Access_Array is array (Natural range <>) of ScreenListenerInterface_Access_Array_Access;
+   type ScreenListenerInterface_Access_Array_Access_Array_Access is access all ScreenListenerInterface_Access_Array_Access_Array;
    procedure onFullScreen (This : in out ScreenListenerInterface; isFullScreen : Boolean) is abstract;
    procedure onFullScreenDisplay (This : in out ScreenListenerInterface) is abstract;
 

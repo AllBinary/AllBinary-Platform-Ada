@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
 package org.allbinary.game.ag.ai.NumberInSameGroupSequence_Package is
 
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type NumberInSameGroupSequence is tagged;
    type NumberInSameGroupSequence_Access is access all NumberInSameGroupSequence'Class;
    type NumberInSameGroupSequence_Access_Array is array (Natural range <>) of NumberInSameGroupSequence_Access;
    type NumberInSameGroupSequence_Access_Array_Access is access all NumberInSameGroupSequence_Access_Array;
+   type NumberInSameGroupSequence_Access_Array_Access_Array is array (Natural range <>) of NumberInSameGroupSequence_Access_Array_Access;
+   type NumberInSameGroupSequence_Access_Array_Access_Array_Access is access all NumberInSameGroupSequence_Access_Array_Access_Array;
 
    type NumberInSameGroupSequence is new Java_Object with record
       NUMBER_ON_SAME_TEAM_SEQUENCE_ZERO : Integer;

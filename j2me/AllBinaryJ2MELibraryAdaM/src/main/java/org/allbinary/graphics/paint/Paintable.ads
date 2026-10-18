@@ -33,8 +33,10 @@ package org.allbinary.graphics.paint.Paintable_Package is
    type Paintable_Access is access all Paintable'Class;
    type Paintable_Access_Array is array (Natural range <>) of Paintable_Access;
    type Paintable_Access_Array_Access is access all Paintable_Access_Array;
+   type Paintable_Access_Array_Access_Array is array (Natural range <>) of Paintable_Access_Array_Access;
+   type Paintable_Access_Array_Access_Array_Access is access all Paintable_Access_Array_Access_Array;
 
-   type Paintable is new PaintableInterface with null record;
+   type Paintable is new Java_Object and PaintableInterface with null record;
 
    procedure Initialize (This : in out Paintable'Class);
    function Create return Paintable_Access;

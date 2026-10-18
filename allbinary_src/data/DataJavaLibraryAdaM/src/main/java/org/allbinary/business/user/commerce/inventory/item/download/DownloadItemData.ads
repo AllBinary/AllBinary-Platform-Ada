@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.item.download.DownloadIte
    type DownloadItemData_Access is access all DownloadItemData'Class;
    type DownloadItemData_Access_Array is array (Natural range <>) of DownloadItemData_Access;
    type DownloadItemData_Access_Array_Access is access all DownloadItemData_Access_Array;
+   type DownloadItemData_Access_Array_Access_Array is array (Natural range <>) of DownloadItemData_Access_Array_Access;
+   type DownloadItemData_Access_Array_Access_Array_Access is access all DownloadItemData_Access_Array_Access_Array;
 
    type DownloadItemData is new Java_Object with null record;
    NAME : Unbounded_String;

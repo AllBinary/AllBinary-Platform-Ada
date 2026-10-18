@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.health.HealthBar_Package is
 
    procedure Initialize_Fields (This : in out HealthBar'Class) is
@@ -33,7 +34,7 @@ package body org.allbinary.game.health.HealthBar_Package is
       Initialize_Fields (This);
         This.allbinaryLayer := layerInterface;
         This.animationInterface := animationInterface;
-        This.healthInterface := healthInterface;
+        This.healthInterface := HealthInterface_Access (healthInterface);
         This.healthInterface.addListener (HealthBar_Access'(This'Unchecked_Access));
         HealthBar'Class (This).onHealthChange;
    end Initialize;

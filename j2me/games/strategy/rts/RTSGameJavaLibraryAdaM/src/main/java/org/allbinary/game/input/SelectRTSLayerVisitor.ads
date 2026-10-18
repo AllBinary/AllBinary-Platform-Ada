@@ -30,6 +30,8 @@ package org.allbinary.game.input.SelectRTSLayerVisitor_Package is
    type SelectRTSLayerVisitor_Access is access all SelectRTSLayerVisitor'Class;
    type SelectRTSLayerVisitor_Access_Array is array (Natural range <>) of SelectRTSLayerVisitor_Access;
    type SelectRTSLayerVisitor_Access_Array_Access is access all SelectRTSLayerVisitor_Access_Array;
+   type SelectRTSLayerVisitor_Access_Array_Access_Array is array (Natural range <>) of SelectRTSLayerVisitor_Access_Array_Access;
+   type SelectRTSLayerVisitor_Access_Array_Access_Array_Access is access all SelectRTSLayerVisitor_Access_Array_Access_Array;
 
    type SelectRTSLayerVisitor is new Visitor with null record;
 

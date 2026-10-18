@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+
 package body org.allbinary.canvas.FullScreenUtil_Package is
 
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
    procedure Initialize_Fields (This : in out FullScreenUtil'Class) is
    begin
       null;

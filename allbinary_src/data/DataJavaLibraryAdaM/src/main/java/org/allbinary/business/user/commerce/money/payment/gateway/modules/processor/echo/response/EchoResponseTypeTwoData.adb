@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.echo.response.EchoResponseTypeTwoData_Package is
 
    procedure Initialize_Fields (This : in out EchoResponseTypeTwoData'Class) is

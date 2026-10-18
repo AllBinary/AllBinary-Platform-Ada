@@ -23,22 +23,20 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.user.modules.admin.configuration.AdminConfiguration_Package; use org.allbinary.business.user.modules.admin.configuration.AdminConfiguration_Package;
-with org.allbinary.business.user.modules.admin.configuration.AdminConfigurationInterface_Package; use org.allbinary.business.user.modules.admin.configuration.AdminConfigurationInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Package;
 
 package admin.taghelpers.AdminConfigurationRequestHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package AdminConfiguration_Package renames Standard.org.allbinary.business.user.modules.admin.configuration.AdminConfiguration_Package;
-   package AdminConfigurationInterface_Package renames Standard.org.allbinary.business.user.modules.admin.configuration.AdminConfigurationInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type AdminConfigurationRequestHelper is tagged;
    type AdminConfigurationRequestHelper_Access is access all AdminConfigurationRequestHelper'Class;
    type AdminConfigurationRequestHelper_Access_Array is array (Natural range <>) of AdminConfigurationRequestHelper_Access;
    type AdminConfigurationRequestHelper_Access_Array_Access is access all AdminConfigurationRequestHelper_Access_Array;
+   type AdminConfigurationRequestHelper_Access_Array_Access_Array is array (Natural range <>) of AdminConfigurationRequestHelper_Access_Array_Access;
+   type AdminConfigurationRequestHelper_Access_Array_Access_Array_Access is access all AdminConfigurationRequestHelper_Access_Array_Access_Array;
 
    type AdminConfigurationRequestHelper is new ModifyTable with record
       logUtil : LogUtil_Access;

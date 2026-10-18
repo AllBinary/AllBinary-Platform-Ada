@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
+
 package body org.allbinary.game.displayable.canvas.CommandRunnable_Package is
 
+   package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
    procedure Initialize_Fields (This : in out CommandRunnable'Class) is
    begin
       null;

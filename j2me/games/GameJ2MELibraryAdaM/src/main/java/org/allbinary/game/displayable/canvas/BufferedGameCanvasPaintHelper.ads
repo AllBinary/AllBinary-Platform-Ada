@@ -23,10 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.NullCanvas_Package; use javax.microedition.lcdui.NullCanvas_Package;
-with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
-with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
-with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
 with org.allbinary.graphics.paint.ProcessPaintable_Package; use org.allbinary.graphics.paint.ProcessPaintable_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
@@ -36,10 +32,6 @@ package org.allbinary.game.displayable.canvas.BufferedGameCanvasPaintHelper_Pack
    package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package NullCanvas_Package renames Standard.javax.microedition.lcdui.NullCanvas_Package;
-   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
-   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
-   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
    package ProcessPaintable_Package renames Standard.org.allbinary.graphics.paint.ProcessPaintable_Package;
    package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
@@ -47,6 +39,8 @@ package org.allbinary.game.displayable.canvas.BufferedGameCanvasPaintHelper_Pack
    type BufferedGameCanvasPaintHelper_Access is access all BufferedGameCanvasPaintHelper'Class;
    type BufferedGameCanvasPaintHelper_Access_Array is array (Natural range <>) of BufferedGameCanvasPaintHelper_Access;
    type BufferedGameCanvasPaintHelper_Access_Array_Access is access all BufferedGameCanvasPaintHelper_Access_Array;
+   type BufferedGameCanvasPaintHelper_Access_Array_Access_Array is array (Natural range <>) of BufferedGameCanvasPaintHelper_Access_Array_Access;
+   type BufferedGameCanvasPaintHelper_Access_Array_Access_Array_Access is access all BufferedGameCanvasPaintHelper_Access_Array_Access_Array;
 
    type BufferedGameCanvasPaintHelper is new ProcessPaintable with record
       gameCanvas : Canvas_Access;

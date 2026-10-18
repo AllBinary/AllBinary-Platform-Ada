@@ -21,34 +21,29 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
-with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
 with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
 with javax.microedition.media.TimeBase_Package; use javax.microedition.media.TimeBase_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.media.audio.TimeBaseInterface_Package; use org.allbinary.media.audio.TimeBaseInterface_Package;
 with org.allbinary.media.audio.Controllable2_Package; use org.allbinary.media.audio.Controllable2_Package;
-with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
 
 package org.allbinary.media.audio.BasicPlayer_Package is
 
    package Control_Package renames Standard.javax.microedition.media.Control_Package;
-   package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
    package Player_Package renames Standard.javax.microedition.media.Player_Package;
    package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
    package TimeBase_Package renames Standard.javax.microedition.media.TimeBase_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicPlayer is tagged;
    type BasicPlayer_Access is access all BasicPlayer'Class;
    type BasicPlayer_Access_Array is array (Natural range <>) of BasicPlayer_Access;
    type BasicPlayer_Access_Array_Access is access all BasicPlayer_Access_Array;
+   type BasicPlayer_Access_Array_Access_Array is array (Natural range <>) of BasicPlayer_Access_Array_Access;
+   type BasicPlayer_Access_Array_Access_Array_Access is access all BasicPlayer_Access_Array_Access_Array;
 
-   type BasicPlayer is new Player and TimeBaseInterface and Controllable2 with record
+   type BasicPlayer is new Java_Object and Player and TimeBaseInterface and Controllable2 with record
       listenersList : BasicArrayList_Access;
       timeBase : TimeBase_Access;
       stateP : Integer;

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+
 package body org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package is
 
+   package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out WorkAreaDom'Class) is
    begin
       null;

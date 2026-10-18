@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
-with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.LayerManagerNoDebug_Package;
 
 package org.allbinary.game.tick.TickableLayerManager_Package is
 
    package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
-   package LayerManagerNoDebug_Package renames Standard.org.allbinary.layer.LayerManagerNoDebug_Package;
 
    type TickableLayerManager is tagged;
    type TickableLayerManager_Access is access all TickableLayerManager'Class;
    type TickableLayerManager_Access_Array is array (Natural range <>) of TickableLayerManager_Access;
    type TickableLayerManager_Access_Array_Access is access all TickableLayerManager_Access_Array;
+   type TickableLayerManager_Access_Array_Access_Array is array (Natural range <>) of TickableLayerManager_Access_Array_Access;
+   type TickableLayerManager_Access_Array_Access_Array_Access is access all TickableLayerManager_Access_Array_Access_Array;
 
    type TickableLayerManager is new LayerManager with null record;
 

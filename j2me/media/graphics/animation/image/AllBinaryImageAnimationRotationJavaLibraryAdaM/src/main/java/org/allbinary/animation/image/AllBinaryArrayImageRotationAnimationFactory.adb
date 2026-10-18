@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.media.image.ImageToRotationImageArrayUtil_Package; use org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimation_Package; use org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
+with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package; use org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
+
 package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationFactory_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package ImageToRotationImageArrayUtil_Package renames Standard.org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
    procedure Initialize_Fields (This : in out AllBinaryArrayImageRotationAnimationFactory'Class) is
    begin
       null;
@@ -89,9 +104,9 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
         end loop;
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
             This.animationFactoryImageScaleUtil.processAdjust (AllBinaryArrayImageRotationAnimationFactory_Access'(This'Unchecked_Access));
-            return AdjustedImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (AdjustedImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
         else
-            return ImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (ImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (AllBinaryArrayImageRotationAnimationFactory'Class (This).getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationBehaviorFactory.getOrCreateInstance));
         end if;
    end getInstance;
 

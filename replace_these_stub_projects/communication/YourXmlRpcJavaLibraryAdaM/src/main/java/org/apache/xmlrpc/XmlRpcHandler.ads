@@ -9,17 +9,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.apache.xmlrpc.XmlRpcHandler_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type XmlRpcHandler is interface;
    type XmlRpcHandler_Access is access all XmlRpcHandler'Class;
    type XmlRpcHandler_Access_Array is array (Natural range <>) of XmlRpcHandler_Access;
    type XmlRpcHandler_Access_Array_Access is access all XmlRpcHandler_Access_Array;
+   type XmlRpcHandler_Access_Array_Access_Array is array (Natural range <>) of XmlRpcHandler_Access_Array_Access;
+   type XmlRpcHandler_Access_Array_Access_Array_Access is access all XmlRpcHandler_Access_Array_Access_Array;
    function execute (This : in out XmlRpcHandler; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) return Java_Object_Access is abstract;
 
 end org.apache.xmlrpc.XmlRpcHandler_Package;

@@ -13,14 +13,34 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package; use org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package;
+with org.allbinary.media.image.comparison.motion.AllMotionRectanglesResultsCacheSingleton_Package; use org.allbinary.media.image.comparison.motion.AllMotionRectanglesResultsCacheSingleton_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package;
+with org.allbinary.media.image.comparison.motion.ConsolidateMotionRectangles_Package; use org.allbinary.media.image.comparison.motion.ConsolidateMotionRectangles_Package;
+with org.allbinary.media.image.comparison.motion.ConsolidatedMotionRectanglesResultsCacheSingleton_Package; use org.allbinary.media.image.comparison.motion.ConsolidatedMotionRectanglesResultsCacheSingleton_Package;
+with org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package; use org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package;
+with org.allbinary.media.image.comparison.motion.ConstrainedMotionRectanglesResultsCacheSingleton_Package; use org.allbinary.media.image.comparison.motion.ConstrainedMotionRectanglesResultsCacheSingleton_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
+
 package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ImageComparisonResult_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    procedure Initialize_Fields (This : in out MotionRectanglesWorker'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.imageComparisonInfoVector := BasicArrayListD_Package.Create;
+      This.imageComparisonInfoVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
       This.index := 0;
       This.running := False;
@@ -45,7 +65,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
    procedure onImageComparisonResultsEvent (This : in out MotionRectanglesWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent_Package.ImageComparisonResultsEvent'Class) is
       imageComparisonResultsEvent : constant ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
    begin
-        This.imageComparisonInfoVector.add (imageComparisonResultsEvent);
+        This.imageComparisonInfoVector.add (Java_Object_Access (imageComparisonResultsEvent));
         MotionRectanglesWorker'Class (This).run;
    end onImageComparisonResultsEvent;
 
@@ -89,7 +109,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
             constrainedMotionRectangles.applyMotionRectangleConstraints (consolidatedMotionRectangles);
             ConstrainedMotionRectanglesResultsCacheSingleton_Package.getInstance.add (MotionRectanglesResultsFrameCacheable_Package.Create (constrainedMotionRectangles, imageComparisonInfo.getFrameTwo));
             MotionRectanglesWorker'Class (This).fireEvent (MotionRectanglesResultsEvent_Package.Create (MotionRectanglesWorker_Access'(This'Unchecked_Access), imageComparisonInfo.getFrameTwo, MotionRectangles_Access (constrainedMotionRectangles)));
-            This.imageComparisonInfoVector.remove (imageComparisonResultsEvent);
+            This.imageComparisonInfoVector.remove (Java_Object_Access (imageComparisonResultsEvent));
             This.index := This.index + 1;
             This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             MotionRectanglesWorker'Class (This).setRunning (False);

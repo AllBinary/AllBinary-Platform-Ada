@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+
 package body org.allbinary.math.NamedAngle_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
    procedure Initialize_Fields (This : in out NamedAngle'Class) is
    begin
       null;

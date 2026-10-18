@@ -39,6 +39,8 @@ package org.allbinary.game.layer.RTSLayerLogHelper_Package is
    type RTSLayerLogHelper_Access is access all RTSLayerLogHelper'Class;
    type RTSLayerLogHelper_Access_Array is array (Natural range <>) of RTSLayerLogHelper_Access;
    type RTSLayerLogHelper_Access_Array_Access is access all RTSLayerLogHelper_Access_Array;
+   type RTSLayerLogHelper_Access_Array_Access_Array is array (Natural range <>) of RTSLayerLogHelper_Access_Array_Access;
+   type RTSLayerLogHelper_Access_Array_Access_Array_Access is access all RTSLayerLogHelper_Access_Array_Access_Array;
 
    type RTSLayerLogHelper is new Java_Object with null record;
    instance : RTSLayerLogHelper_Access;

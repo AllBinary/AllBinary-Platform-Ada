@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package; use org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
+with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
+with org.allbinary.input.motion.button.TouchButtonFactory_Package; use org.allbinary.input.motion.button.TouchButtonFactory_Package;
+with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
+
 package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
 
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out TouchButtonRecognizer'Class) is
    begin
       null;
@@ -32,7 +46,7 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
    begin
       Initialize_Fields (This);
         if TouchScreenFactory_Package.getInstance.isMultiTouch then
-            This.releaseHelper := MultitouchReleaseHelper_Package.Create (TouchButtonRecognizer_Access'(This'Unchecked_Access));
+            This.releaseHelper := ReleaseHelper_Access (MultitouchReleaseHelper_Package.Create (TouchButtonRecognizer_Access'(This'Unchecked_Access)));
         else
             This.releaseHelper := ReleaseHelper_Package.Create (TouchButtonRecognizer_Access'(This'Unchecked_Access));
         end if;
@@ -143,8 +157,22 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
 end org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
 
 
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package; use org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
+with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
+with org.allbinary.input.motion.button.TouchButtonFactory_Package; use org.allbinary.input.motion.button.TouchButtonFactory_Package;
+with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
+
 package body org.allbinary.input.motion.button.ReleaseHelper_Package is
 
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out ReleaseHelper'Class) is
    begin
       null;
@@ -187,8 +215,22 @@ package body org.allbinary.input.motion.button.ReleaseHelper_Package is
 end org.allbinary.input.motion.button.ReleaseHelper_Package;
 
 
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package; use org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
+with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
+with org.allbinary.input.motion.button.TouchButtonFactory_Package; use org.allbinary.input.motion.button.TouchButtonFactory_Package;
+with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
+
 package body org.allbinary.input.motion.button.MultitouchReleaseHelper_Package is
 
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out MultitouchReleaseHelper'Class) is
    begin
       null;

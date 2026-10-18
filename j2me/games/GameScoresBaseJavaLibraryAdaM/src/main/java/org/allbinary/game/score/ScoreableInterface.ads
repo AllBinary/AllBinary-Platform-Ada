@@ -28,6 +28,8 @@ package org.allbinary.game.score.ScoreableInterface_Package is
    type ScoreableInterface_Access is access all ScoreableInterface'Class;
    type ScoreableInterface_Access_Array is array (Natural range <>) of ScoreableInterface_Access;
    type ScoreableInterface_Access_Array_Access is access all ScoreableInterface_Access_Array;
+   type ScoreableInterface_Access_Array_Access_Array is array (Natural range <>) of ScoreableInterface_Access_Array_Access;
+   type ScoreableInterface_Access_Array_Access_Array_Access is access all ScoreableInterface_Access_Array_Access_Array;
    function getPoints (This : in out ScoreableInterface) return Integer is abstract;
    procedure addPoints (This : in out ScoreableInterface; points : Integer) is abstract;
    procedure removePoints (This : in out ScoreableInterface; points : Integer) is abstract;

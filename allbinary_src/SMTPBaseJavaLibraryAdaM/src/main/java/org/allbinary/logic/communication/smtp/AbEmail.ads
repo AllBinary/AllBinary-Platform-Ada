@@ -37,8 +37,10 @@ package org.allbinary.logic.communication.smtp.AbEmail_Package is
    type AbEmail_Access is access all AbEmail'Class;
    type AbEmail_Access_Array is array (Natural range <>) of AbEmail_Access;
    type AbEmail_Access_Array_Access is access all AbEmail_Access_Array;
+   type AbEmail_Access_Array_Access_Array is array (Natural range <>) of AbEmail_Access_Array_Access;
+   type AbEmail_Access_Array_Access_Array_Access is access all AbEmail_Access_Array_Access_Array;
 
-   type AbEmail is new EmailInterface with record
+   type AbEmail is new Java_Object and EmailInterface with record
       email : Email_Access;
    end record;
 

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.image.gui.ImageJPanel_Package is
 
    procedure Initialize_Fields (This : in out ImageJPanel'Class) is
@@ -58,8 +59,8 @@ package body org.allbinary.image.gui.ImageJPanel_Package is
    begin
         layout := GroupLayout_Package.Create (ImageJPanel_Access'(This'Unchecked_Access));
         ImageJPanel'Class (This).setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 400, Short_Package.MAX_VALUE));
-        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 300, Short_Package.MAX_VALUE));
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 400, Short_Integer'Last));
+        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 300, Short_Integer'Last));
    end initComponents;
 
 end org.allbinary.image.gui.ImageJPanel_Package;

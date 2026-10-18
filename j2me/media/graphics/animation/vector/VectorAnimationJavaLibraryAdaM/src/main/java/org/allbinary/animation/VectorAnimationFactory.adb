@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+
 package body org.allbinary.animation.VectorAnimationFactory_Package is
 
    procedure Initialize_Fields (This : in out VectorAnimationFactory'Class) is

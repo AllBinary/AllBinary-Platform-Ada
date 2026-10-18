@@ -20,23 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.ImageThreadPool_Package is
 
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type ImageThreadPool is tagged;
    type ImageThreadPool_Access is access all ImageThreadPool'Class;
    type ImageThreadPool_Access_Array is array (Natural range <>) of ImageThreadPool_Access;
    type ImageThreadPool_Access_Array_Access is access all ImageThreadPool_Access_Array;
+   type ImageThreadPool_Access_Array_Access_Array is array (Natural range <>) of ImageThreadPool_Access_Array_Access;
+   type ImageThreadPool_Access_Array_Access_Array_Access is access all ImageThreadPool_Access_Array_Access_Array;
 
    type ImageThreadPool is new ThreadPool with record
       logUtil : LogUtil_Access;

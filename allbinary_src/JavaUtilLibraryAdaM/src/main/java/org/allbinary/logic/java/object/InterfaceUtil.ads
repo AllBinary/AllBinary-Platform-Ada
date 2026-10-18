@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.logic.java.anyType.InterfaceUtil_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type InterfaceUtil is tagged;
    type InterfaceUtil_Access is access all InterfaceUtil'Class;
    type InterfaceUtil_Access_Array is array (Natural range <>) of InterfaceUtil_Access;
    type InterfaceUtil_Access_Array_Access is access all InterfaceUtil_Access_Array;
+   type InterfaceUtil_Access_Array_Access_Array is array (Natural range <>) of InterfaceUtil_Access_Array_Access;
+   type InterfaceUtil_Access_Array_Access_Array_Access is access all InterfaceUtil_Access_Array_Access_Array;
 
    type InterfaceUtil is new Java_Object with null record;
 

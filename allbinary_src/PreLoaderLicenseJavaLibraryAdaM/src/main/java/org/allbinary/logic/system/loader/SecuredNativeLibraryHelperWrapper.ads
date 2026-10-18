@@ -20,22 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.security.AbKeys_Package; use org.allbinary.logic.system.security.AbKeys_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package; use org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package;
 with org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package; use org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package;
 
 package org.allbinary.logic.system.loader.SecuredNativeLibraryHelperWrapper_Package is
 
-   package AbKeys_Package renames Standard.org.allbinary.logic.system.security.AbKeys_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type SecuredNativeLibraryHelperWrapper is tagged;
    type SecuredNativeLibraryHelperWrapper_Access is access all SecuredNativeLibraryHelperWrapper'Class;
    type SecuredNativeLibraryHelperWrapper_Access_Array is array (Natural range <>) of SecuredNativeLibraryHelperWrapper_Access;
    type SecuredNativeLibraryHelperWrapper_Access_Array_Access is access all SecuredNativeLibraryHelperWrapper_Access_Array;
+   type SecuredNativeLibraryHelperWrapper_Access_Array_Access_Array is array (Natural range <>) of SecuredNativeLibraryHelperWrapper_Access_Array_Access;
+   type SecuredNativeLibraryHelperWrapper_Access_Array_Access_Array_Access is access all SecuredNativeLibraryHelperWrapper_Access_Array_Access_Array;
 
    type SecuredNativeLibraryHelperWrapper is new NativeLibraryHelperWrapper with record
       securedNativeLibraryInterface : SecuredNativeLibraryInterface_Access;

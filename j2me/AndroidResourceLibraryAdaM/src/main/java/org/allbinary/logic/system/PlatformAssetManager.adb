@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+
 package body org.allbinary.logic.system.PlatformAssetManager_Package is
 
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
    procedure Initialize_Fields (This : in out PlatformAssetManager'Class) is
    begin
       null;

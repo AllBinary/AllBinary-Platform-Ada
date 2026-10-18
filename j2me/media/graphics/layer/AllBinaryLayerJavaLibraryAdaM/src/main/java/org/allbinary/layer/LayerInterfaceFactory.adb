@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
+
 package body org.allbinary.layer.LayerInterfaceFactory_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    procedure Initialize_Fields (This : in out LayerInterfaceFactory'Class) is
    begin
       null;
@@ -43,7 +55,7 @@ package body org.allbinary.layer.LayerInterfaceFactory_Package is
 
    procedure init (This : in out LayerInterfaceFactory) is
    begin
-        This.list := BasicArrayListD_Package.Create;
+        This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end init;
 
    --  throws Exception
@@ -63,7 +75,7 @@ package body org.allbinary.layer.LayerInterfaceFactory_Package is
    procedure add (This : in out LayerInterfaceFactory; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) is
       layerInterfaceFactoryInterface : constant LayerInterfaceFactoryInterface_Access := LayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
    begin
-        This.list.add (layerInterfaceFactoryInterface);
+        This.list.add (Java_Object_Access (layerInterfaceFactoryInterface));
    end add;
 
    procedure getNexInstance (This : in out LayerInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) is

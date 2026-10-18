@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+
 package body org.allbinary.game.ag.ai.BoundBounceAI_Package is
 
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    procedure Initialize_Fields (This : in out BoundBounceAI'Class) is
    begin
       null;

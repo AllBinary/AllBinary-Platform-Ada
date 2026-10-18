@@ -30,6 +30,8 @@ package org.allbinary.logic.system.security.licensing.ServiceClientInformationIn
    type ServiceClientInformationInterfaceFactory_Access is access all ServiceClientInformationInterfaceFactory'Class;
    type ServiceClientInformationInterfaceFactory_Access_Array is array (Natural range <>) of ServiceClientInformationInterfaceFactory_Access;
    type ServiceClientInformationInterfaceFactory_Access_Array_Access is access all ServiceClientInformationInterfaceFactory_Access_Array;
+   type ServiceClientInformationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of ServiceClientInformationInterfaceFactory_Access_Array_Access;
+   type ServiceClientInformationInterfaceFactory_Access_Array_Access_Array_Access is access all ServiceClientInformationInterfaceFactory_Access_Array_Access_Array;
 
    type ServiceClientInformationInterfaceFactory is new Java_Object with null record;
    instance : TestClientInformation_Access;

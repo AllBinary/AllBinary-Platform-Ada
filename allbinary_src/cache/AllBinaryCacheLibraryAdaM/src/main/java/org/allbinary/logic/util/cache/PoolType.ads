@@ -29,6 +29,8 @@ package org.allbinary.logic.util.cache.PoolType_Package is
    type PoolType_Access is access all PoolType'Class;
    type PoolType_Access_Array is array (Natural range <>) of PoolType_Access;
    type PoolType_Access_Array_Access is access all PoolType_Access_Array;
+   type PoolType_Access_Array_Access_Array is array (Natural range <>) of PoolType_Access_Array_Access;
+   type PoolType_Access_Array_Access_Array_Access is access all PoolType_Access_Array_Access_Array;
 
    type PoolType is new Java_Object with record
       cacheType : CacheType_Access;

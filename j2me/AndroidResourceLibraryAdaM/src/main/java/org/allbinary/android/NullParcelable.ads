@@ -32,8 +32,10 @@ package org.allbinary.android.NullParcelable_Package is
    type NullParcelable_Access is access all NullParcelable'Class;
    type NullParcelable_Access_Array is array (Natural range <>) of NullParcelable_Access;
    type NullParcelable_Access_Array_Access is access all NullParcelable_Access_Array;
+   type NullParcelable_Access_Array_Access_Array is array (Natural range <>) of NullParcelable_Access_Array_Access;
+   type NullParcelable_Access_Array_Access_Array_Access is access all NullParcelable_Access_Array_Access_Array;
 
-   type NullParcelable is new Parcelable with null record;
+   type NullParcelable is new Java_Object and Parcelable with null record;
    NULL_PARCELABLE : NullParcelable_Access;
 
    procedure Initialize (This : in out NullParcelable'Class);

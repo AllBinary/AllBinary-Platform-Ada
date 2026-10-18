@@ -24,7 +24,6 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.game.ag.life.Life_Package; use org.allbinary.game.ag.life.Life_Package;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 
@@ -34,7 +33,6 @@ package org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package is
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package Life_Package renames Standard.org.allbinary.game.ag.life.Life_Package;
    package BasicHud_Package renames Standard.org.allbinary.game.graphics.hud.BasicHud_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package DisplayChangeEvent_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
    package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
 
@@ -42,6 +40,8 @@ package org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package is
    type LivesHudWidget_Access is access all LivesHudWidget'Class;
    type LivesHudWidget_Access_Array is array (Natural range <>) of LivesHudWidget_Access;
    type LivesHudWidget_Access_Array_Access is access all LivesHudWidget_Access_Array;
+   type LivesHudWidget_Access_Array_Access_Array is array (Natural range <>) of LivesHudWidget_Access_Array_Access;
+   type LivesHudWidget_Access_Array_Access_Array_Access is access all LivesHudWidget_Access_Array_Access_Array;
 
    type LivesHudWidget is new BasicHud and PaintableInterface with record
       lifeInterface : Life_Access;

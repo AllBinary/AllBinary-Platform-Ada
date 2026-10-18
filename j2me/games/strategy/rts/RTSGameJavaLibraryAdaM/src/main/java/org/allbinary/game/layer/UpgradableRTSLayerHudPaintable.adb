@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.logic.java.character_Id.CharArrayFactory_Package; use org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
+with org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package; use org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package;
+
 package body org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package CharArrayFactory_Package renames Standard.org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package CommonButtons_Package renames Standard.org.allbinary.input.motion.button.CommonButtons_Package;
    procedure Initialize_Fields (This : in out UpgradableRTSLayerHudPaintable'Class) is
    begin
       null;
@@ -73,7 +85,7 @@ package body org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
         This.percentCompleteX2 := ((This.imageX) + (commonButtons.STANDARD_BUTTON_SIZE)) - (This.charWidth);
         displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
         if (displayInfoSingleton.getLastWidth) > (320) then
-            This.rtsLayerCompositePaintableLateInit := UpgradableWideRTSLayerPaintable_Package.Create (UpgradableRTSLayerHudPaintable_Access'(This'Unchecked_Access));
+            This.rtsLayerCompositePaintableLateInit := RTSLayerCompositePaintable_Access (UpgradableWideRTSLayerPaintable_Package.Create (UpgradableRTSLayerHudPaintable_Access'(This'Unchecked_Access)));
         else
             This.rtsLayerCompositePaintableLateInit := RTSLayerCompositePaintable_Package.Create (UpgradableRTSLayerHudPaintable_Access'(This'Unchecked_Access));
         end if;
@@ -117,7 +129,7 @@ package body org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
    procedure setRtsLayer (This : in out UpgradableRTSLayerHudPaintable; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
       rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
-        This.rtsLayer := rtsLayer;
+        This.rtsLayer := CollidableDestroyableDamageableLayer_Access (rtsLayer);
    end setRtsLayer;
 
    function getRtsLayer (This : in out UpgradableRTSLayerHudPaintable) return CollidableDestroyableDamageableLayer_Access is

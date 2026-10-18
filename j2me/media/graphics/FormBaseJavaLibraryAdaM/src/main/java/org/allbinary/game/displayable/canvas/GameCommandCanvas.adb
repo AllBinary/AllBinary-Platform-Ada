@@ -13,8 +13,71 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEventHandler_Package; use org.allbinary.game.input.event.GameKeyEventHandler_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
+with org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package; use org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Package; use org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Package;
+with org.allbinary.graphics.form.FormPaintable_Package; use org.allbinary.graphics.form.FormPaintable_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package; use org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package;
+with org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package; use org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package; use org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProcessor_Package; use org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProcessor_Package;
+
 package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package NullCommandListener_Package renames Standard.javax.microedition.lcdui.NullCommandListener_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.GameKeyEventHandler_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package DisplayChangeEventHandler_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
+   package ScreenRepaintProcessorFactory_Package renames Standard.org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package CommandCurrentSelectionFormFactory_Package renames Standard.org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Package;
+   package FormPaintable_Package renames Standard.org.allbinary.graphics.form.FormPaintable_Package;
+   package FormTypeFactory_Package renames Standard.org.allbinary.graphics.form.FormTypeFactory_Package;
+   package ScrollSelectionFormNoneFactory_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package;
+   package CommandTextItemArrayFactory_Package renames Standard.org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package AllCommandsVisitor_Package renames Standard.org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package BasicMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out GameCommandCanvas'Class) is
    begin
       null;
@@ -28,7 +91,7 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
       This.downGameKeyEventHandler := DownGameKeyEventHandler_Package.getInstance;
       This.upGameKeyEventHandler := UpGameKeyEventHandler_Package.getInstance;
       
-      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (GameCommandCanvas_Access'(This'Unchecked_Access));
+      This.updateMyFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (GameCommandCanvas_Access'(This'Unchecked_Access)));
       This.myFontProcessor := This.updateMyFontProcessor;
       
       
@@ -124,10 +187,10 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
       form : ScrollSelectionForm_Access;
    begin
         form := GameCommandCanvas'Class (This).createForm;
-        This.menuForm := form;
+        This.menuForm := PaintableForm_Access (form);
         if (form) /= (ScrollSelectionFormNoneFactory_Package.getInstance) then
             GameCommandCanvas'Class (This).setMenuInputProcessor (ImmediateCommandFormInputProcessor_Package.Create (BasicArrayListD_Package.Create, -(1), GameCommandCanvas_Access'(This'Unchecked_Access), form));
-            This.menuPaintable := FormPaintable_Package.Create (form);
+            This.menuPaintable := Paintable_Access (FormPaintable_Package.Create (form));
         end if;
         This.repaintBehavior.onChangeRepaint (GameCommandCanvas_Access'(This'Unchecked_Access));
    end initMenu;

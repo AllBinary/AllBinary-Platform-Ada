@@ -20,23 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.layer.PlayerOwnedRTSLayers_Package; use org.allbinary.game.layer.PlayerOwnedRTSLayers_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
 
 package org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AdvancedPlayerOwnedRTSLayers is tagged;
    type AdvancedPlayerOwnedRTSLayers_Access is access all AdvancedPlayerOwnedRTSLayers'Class;
    type AdvancedPlayerOwnedRTSLayers_Access_Array is array (Natural range <>) of AdvancedPlayerOwnedRTSLayers_Access;
    type AdvancedPlayerOwnedRTSLayers_Access_Array_Access is access all AdvancedPlayerOwnedRTSLayers_Access_Array;
+   type AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array is array (Natural range <>) of AdvancedPlayerOwnedRTSLayers_Access_Array_Access;
+   type AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array_Access is access all AdvancedPlayerOwnedRTSLayers_Access_Array_Access_Array;
 
    type AdvancedPlayerOwnedRTSLayers is new PlayerOwnedRTSLayers with record
       unitsList : BasicArrayList_Access;

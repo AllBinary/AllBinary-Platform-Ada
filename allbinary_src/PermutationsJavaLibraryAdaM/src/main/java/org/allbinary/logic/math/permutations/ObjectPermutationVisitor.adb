@@ -1,8 +1,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package is
 
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out ObjectPermutationVisitor'Class) is
    begin
       null;
@@ -57,6 +64,18 @@ package body org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Pack
 
    procedure visit (This : in out ObjectPermutationVisitor; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Java_Object_Access := ObjectPermutationVisitor'Class (This).visit (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end visit;
+
+   function visit (This : in out ObjectPermutationVisitor; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return ObjectPermutationVisitor'Class (This).visit (Java_Box (Value));
+   end visit;
+
+   procedure visit (This : in out ObjectPermutationVisitor; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := ObjectPermutationVisitor'Class (This).visit (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

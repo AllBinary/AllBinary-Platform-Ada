@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package is
 
    procedure Initialize_Fields (This : in out ProcessingFrameIndexFactory'Class) is

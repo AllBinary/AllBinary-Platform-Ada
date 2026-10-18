@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package is
 
    procedure Initialize_Fields (This : in out PermissionItemData'Class) is

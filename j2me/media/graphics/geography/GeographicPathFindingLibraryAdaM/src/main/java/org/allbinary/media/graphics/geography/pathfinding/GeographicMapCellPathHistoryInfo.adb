@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+
 package body org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package is
 
+   package SimpleGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
    procedure Initialize_Fields (This : in out GeographicMapCellPathHistoryInfo'Class) is
    begin
       null;

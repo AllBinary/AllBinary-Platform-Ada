@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package is
 
    procedure Initialize_Fields (This : in out MyCanvasEventService'Class) is
@@ -57,19 +58,19 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventServ
         while (i) < (listeners'Length) loop
             if (listeners (i)) = (listeners ((i) + (1)).all'Tag) then
                 if (evt.getCommand.compareTo (MyCanvasEventService_Package.DELETE)) = (0) then
-                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).delete_Case (evt);
+                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).delete (evt);
                 elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.DUPLICATE)) = (0) then
-                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).duplicate_Case (evt);
+                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).duplicate (evt);
                 elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.SELECT_Id)) = (0) then
-                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).select_Case_Id (evt);
+                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).select_Id (evt);
                 elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.ROTATE)) = (0) then
-                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).rotate_Case (evt);
+                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).rotate (evt);
                 elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.EXPLODE)) = (0) then
-                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).explode_Case (evt);
+                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).explode (evt);
                 elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.AUTOEXPLODE)) = (0) then
-                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).autoExplode_Case (evt);
+                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).autoExplode (evt);
                 elsif (evt.getCommand.compareTo (MyCanvasEventService_Package.CENTER)) = (0) then
-                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).center_Case (evt);
+                    (MyCanvasEventListener_Access (listeners ((i) + (1)))).center (evt);
                 end if;
             end if;
             i := (i) + (2);

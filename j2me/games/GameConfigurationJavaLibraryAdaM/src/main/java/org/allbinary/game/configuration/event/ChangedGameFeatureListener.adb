@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package is
 
    procedure Initialize_Fields (This : in out ChangedGameFeatureListener'Class) is
@@ -42,7 +43,7 @@ package body org.allbinary.game.configuration.event.ChangedGameFeatureListener_P
    function isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class) return Boolean is
       gameConfiguration : constant GameConfiguration_Access := GameConfiguration_Access (gameConfiguration_Param);
    begin
-        return This.list.contains (gameConfiguration);
+        return This.list.contains (Java_Object_Access (gameConfiguration));
    end isChangedGameConfiguration;
 
    procedure isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class) is

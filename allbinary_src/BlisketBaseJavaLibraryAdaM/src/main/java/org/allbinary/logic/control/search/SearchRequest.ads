@@ -24,18 +24,15 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.business.context.AbContext_Package; use org.allbinary.business.context.AbContext_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.control.search.SearchParams_Package; use org.allbinary.logic.control.search.SearchParams_Package;
-with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.logic.control.search.SearchData_Package;
 
 package org.allbinary.logic.control.search.SearchRequest_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package AbContext_Package renames Standard.org.allbinary.business.context.AbContext_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -43,6 +40,8 @@ package org.allbinary.logic.control.search.SearchRequest_Package is
    type SearchRequest_Access is access all SearchRequest'Class;
    type SearchRequest_Access_Array is array (Natural range <>) of SearchRequest_Access;
    type SearchRequest_Access_Array_Access is access all SearchRequest_Access_Array;
+   type SearchRequest_Access_Array_Access_Array is array (Natural range <>) of SearchRequest_Access_Array_Access;
+   type SearchRequest_Access_Array_Access_Array_Access is access all SearchRequest_Access_Array_Access_Array;
 
    type SearchRequest is new AbContext with record
       xslFile : Unbounded_String;

@@ -31,8 +31,10 @@ package org.allbinary.graphics.paint.LocationPaintable_Package is
    type LocationPaintable_Access is access all LocationPaintable'Class;
    type LocationPaintable_Access_Array is array (Natural range <>) of LocationPaintable_Access;
    type LocationPaintable_Access_Array_Access is access all LocationPaintable_Access_Array;
+   type LocationPaintable_Access_Array_Access_Array is array (Natural range <>) of LocationPaintable_Access_Array_Access;
+   type LocationPaintable_Access_Array_Access_Array_Access is access all LocationPaintable_Access_Array_Access_Array;
 
-   type LocationPaintable is new LocationPaintableInterface with null record;
+   type LocationPaintable is new Java_Object and LocationPaintableInterface with null record;
    instance : LocationPaintable_Access;
 
    procedure Initialize (This : in out LocationPaintable'Class);

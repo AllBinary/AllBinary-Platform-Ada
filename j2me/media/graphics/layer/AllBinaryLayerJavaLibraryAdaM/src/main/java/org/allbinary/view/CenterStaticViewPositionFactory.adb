@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.view.StaticViewPosition_Package; use org.allbinary.view.StaticViewPosition_Package;
+
 package body org.allbinary.view.CenterStaticViewPositionFactory_Package is
 
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    procedure Initialize_Fields (This : in out CenterStaticViewPositionFactory'Class) is
    begin
       null;
@@ -38,7 +42,7 @@ package body org.allbinary.view.CenterStaticViewPositionFactory_Package is
       displayInfoSingleton : DisplayInfoSingleton_Access;
    begin
         displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
-        return StaticViewPosition_Package.Create ((Java_Shift_Right_Arithmetic (displayInfoSingleton.getLastWidth, 1)), (Java_Shift_Right_Arithmetic (displayInfoSingleton.getLastHeight, 1)), z);
+        return ViewPositionBase_Access (StaticViewPosition_Package.Create ((Java_Shift_Right_Arithmetic (displayInfoSingleton.getLastWidth, 1)), (Java_Shift_Right_Arithmetic (displayInfoSingleton.getLastHeight, 1)), z));
    end getInstance;
 
    procedure getInstance (This : in out CenterStaticViewPositionFactory; z : Integer) is

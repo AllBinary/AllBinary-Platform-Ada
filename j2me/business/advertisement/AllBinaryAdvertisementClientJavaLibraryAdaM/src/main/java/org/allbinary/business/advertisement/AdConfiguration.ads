@@ -32,6 +32,8 @@ package org.allbinary.business.advertisement.AdConfiguration_Package is
    type AdConfiguration_Access is access all AdConfiguration'Class;
    type AdConfiguration_Access_Array is array (Natural range <>) of AdConfiguration_Access;
    type AdConfiguration_Access_Array_Access is access all AdConfiguration_Access_Array;
+   type AdConfiguration_Access_Array_Access_Array is array (Natural range <>) of AdConfiguration_Access_Array_Access;
+   type AdConfiguration_Access_Array_Access_Array_Access is access all AdConfiguration_Access_Array_Access_Array;
 
    type AdConfiguration is new Java_Object with record
       INNERACTIVE : Unbounded_String;

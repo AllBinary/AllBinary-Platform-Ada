@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.SideScrollerAnimation_Package is
 
    procedure Initialize_Fields (This : in out SideScrollerAnimation'Class) is

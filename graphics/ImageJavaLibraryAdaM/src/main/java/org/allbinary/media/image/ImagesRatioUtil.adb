@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.media.image.Point_Package; use org.allbinary.media.image.Point_Package;
+with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
+
 package body org.allbinary.media.image.ImagesRatioUtil_Package is
 
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out ImagesRatioUtil'Class) is
    begin
       null;

@@ -28,6 +28,8 @@ package org.allbinary.game.ag.life.LifeInterface_Package is
    type LifeInterface_Access is access all LifeInterface'Class;
    type LifeInterface_Access_Array is array (Natural range <>) of LifeInterface_Access;
    type LifeInterface_Access_Array_Access is access all LifeInterface_Access_Array;
+   type LifeInterface_Access_Array_Access_Array is array (Natural range <>) of LifeInterface_Access_Array_Access;
+   type LifeInterface_Access_Array_Access_Array_Access is access all LifeInterface_Access_Array_Access_Array;
    function get (This : in out LifeInterface) return Short_Integer is abstract;
    procedure set (This : in out LifeInterface; lives : Short_Integer) is abstract;
    procedure reset (This : in out LifeInterface) is abstract;

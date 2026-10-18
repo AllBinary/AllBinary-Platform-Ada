@@ -20,28 +20,25 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Enumeration_Package; use java.util.Enumeration_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
 with org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package;
 
 package org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellTypeFactory_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
    package GeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package EnumerationUtil_Package renames Standard.org.allbinary.util.EnumerationUtil_Package;
 
    type BasicPlatormGeographicMapCellTypeFactory is tagged;
    type BasicPlatormGeographicMapCellTypeFactory_Access is access all BasicPlatormGeographicMapCellTypeFactory'Class;
    type BasicPlatormGeographicMapCellTypeFactory_Access_Array is array (Natural range <>) of BasicPlatormGeographicMapCellTypeFactory_Access;
    type BasicPlatormGeographicMapCellTypeFactory_Access_Array_Access is access all BasicPlatormGeographicMapCellTypeFactory_Access_Array;
+   type BasicPlatormGeographicMapCellTypeFactory_Access_Array_Access_Array is array (Natural range <>) of BasicPlatormGeographicMapCellTypeFactory_Access_Array_Access;
+   type BasicPlatormGeographicMapCellTypeFactory_Access_Array_Access_Array_Access is access all BasicPlatormGeographicMapCellTypeFactory_Access_Array_Access_Array;
 
    type BasicPlatormGeographicMapCellTypeFactory is new GeographicMapCellTypeFactory with record
       enumerationUtil : EnumerationUtil_Access;

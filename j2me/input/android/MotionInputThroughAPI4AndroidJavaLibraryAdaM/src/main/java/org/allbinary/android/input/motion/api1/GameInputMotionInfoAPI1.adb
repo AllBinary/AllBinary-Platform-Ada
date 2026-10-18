@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package is
 
    procedure Initialize_Fields (This : in out GameInputMotionInfoAPI1'Class) is

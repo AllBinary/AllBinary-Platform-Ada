@@ -34,6 +34,8 @@ package org.allbinary.logic.visual.transform.TransformInterface_Package is
    type TransformInterface_Access is access all TransformInterface'Class;
    type TransformInterface_Access_Array is array (Natural range <>) of TransformInterface_Access;
    type TransformInterface_Access_Array_Access is access all TransformInterface_Access_Array;
+   type TransformInterface_Access_Array_Access_Array is array (Natural range <>) of TransformInterface_Access_Array_Access;
+   type TransformInterface_Access_Array_Access_Array_Access is access all TransformInterface_Access_Array_Access_Array;
    function getTypeId (This : in out TransformInterface) return Integer is abstract;
    procedure setTransformDocumentInterface (This : in out TransformInterface; viewDocumentInterface_Param : access TransformDocumentInterface_Package.TransformDocumentInterface'Class) is abstract;
    function getTransformDocumentInterface (This : in out TransformInterface) return TransformDocumentInterface_Access is abstract;

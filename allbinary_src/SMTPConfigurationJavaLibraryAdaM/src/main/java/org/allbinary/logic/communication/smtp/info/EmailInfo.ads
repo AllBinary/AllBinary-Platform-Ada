@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package; use org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
 
 package org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type EmailInfo is tagged;
    type EmailInfo_Access is access all EmailInfo'Class;
    type EmailInfo_Access_Array is array (Natural range <>) of EmailInfo_Access;
    type EmailInfo_Access_Array_Access is access all EmailInfo_Access_Array;
+   type EmailInfo_Access_Array_Access_Array is array (Natural range <>) of EmailInfo_Access_Array_Access;
+   type EmailInfo_Access_Array_Access_Array_Access is access all EmailInfo_Access_Array_Access_Array;
 
    type EmailInfo is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with admin.taghelpers.LogHelperFactory_Package; use admin.taghelpers.LogHelperFactory_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.LogTag_Package is
 
-   package LogHelperFactory_Package renames Standard.admin.taghelpers.LogHelperFactory_Package;
 
    type LogTag is tagged;
    type LogTag_Access is access all LogTag'Class;
    type LogTag_Access_Array is array (Natural range <>) of LogTag_Access;
    type LogTag_Access_Array_Access is access all LogTag_Access_Array;
+   type LogTag_Access_Array_Access_Array is array (Natural range <>) of LogTag_Access_Array_Access;
+   type LogTag_Access_Array_Access_Array_Access is access all LogTag_Access_Array_Access_Array;
 
    type LogTag is new TableTag with null record;
 

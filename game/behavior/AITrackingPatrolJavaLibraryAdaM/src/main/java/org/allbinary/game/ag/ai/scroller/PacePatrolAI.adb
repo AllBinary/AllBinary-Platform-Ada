@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.direction.DirectionCompositeInterface_Package; use org.allbinary.direction.DirectionCompositeInterface_Package;
+with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
+with org.allbinary.layer.LayerInterface_Package; use org.allbinary.layer.LayerInterface_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package DirectionCompositeInterface_Package renames Standard.org.allbinary.direction.DirectionCompositeInterface_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package TrackingEventHandler_Package renames Standard.org.allbinary.game.tracking.TrackingEventHandler_Package;
+   package LayerInterface_Package renames Standard.org.allbinary.layer.LayerInterface_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out PacePatrolAI'Class) is
    begin
       null;
@@ -32,7 +49,7 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
         BasePatrolAI_Package.Initialize (This, hashtable, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
         TrackingEventHandler_Package.getInstance.addListenerInterface (PacePatrolAI_Access'(This'Unchecked_Access));
-        This.trackingList := BasicArrayListD_Package.Create;
+        This.trackingList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return PacePatrolAI_Access is
@@ -133,7 +150,7 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
       trackingEvent : constant TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
    begin
         This.trackingList.clear;
-        This.trackingList.add (trackingEvent);
+        This.trackingList.add (Java_Object_Access (trackingEvent));
    end onMovement;
 
    function getFiringDistance (This : in out PacePatrolAI) return Integer is

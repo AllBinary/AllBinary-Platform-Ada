@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
 with org.allbinary.media.image.ImageProcessedVisitor_Package; use org.allbinary.media.image.ImageProcessedVisitor_Package;
 
@@ -36,6 +35,8 @@ package org.allbinary.media.image.CanvasExpandUtil_Package is
    type CanvasExpandUtil_Access is access all CanvasExpandUtil'Class;
    type CanvasExpandUtil_Access_Array is array (Natural range <>) of CanvasExpandUtil_Access;
    type CanvasExpandUtil_Access_Array_Access is access all CanvasExpandUtil_Access_Array;
+   type CanvasExpandUtil_Access_Array_Access_Array is array (Natural range <>) of CanvasExpandUtil_Access_Array_Access;
+   type CanvasExpandUtil_Access_Array_Access_Array_Access is access all CanvasExpandUtil_Access_Array_Access_Array;
 
    type CanvasExpandUtil is new Java_Object with record
       logUtil : LogUtil_Access;

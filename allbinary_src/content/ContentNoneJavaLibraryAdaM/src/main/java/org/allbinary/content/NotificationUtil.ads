@@ -30,6 +30,8 @@ package org.allbinary.content.NotificationUtil_Package is
    type NotificationUtil_Access is access all NotificationUtil'Class;
    type NotificationUtil_Access_Array is array (Natural range <>) of NotificationUtil_Access;
    type NotificationUtil_Access_Array_Access is access all NotificationUtil_Access_Array;
+   type NotificationUtil_Access_Array_Access_Array is array (Natural range <>) of NotificationUtil_Access_Array_Access;
+   type NotificationUtil_Access_Array_Access_Array_Access is access all NotificationUtil_Access_Array_Access_Array;
 
    type NotificationUtil is new Java_Object with null record;
    SINGLETON : NotificationUtil_Access;

@@ -20,19 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
 
 package org.allbinary.logic.communication.log.PreLogUtil_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PreLogUtil is tagged;
    type PreLogUtil_Access is access all PreLogUtil'Class;
    type PreLogUtil_Access_Array is array (Natural range <>) of PreLogUtil_Access;
    type PreLogUtil_Access_Array_Access is access all PreLogUtil_Access_Array;
+   type PreLogUtil_Access_Array_Access_Array is array (Natural range <>) of PreLogUtil_Access_Array_Access;
+   type PreLogUtil_Access_Array_Access_Array_Access is access all PreLogUtil_Access_Array_Access_Array;
 
    type PreLogUtil is new Java_Object with null record;
    LOG_SUCCESS : Unbounded_String;

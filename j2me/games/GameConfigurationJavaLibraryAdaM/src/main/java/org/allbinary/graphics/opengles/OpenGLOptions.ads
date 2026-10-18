@@ -20,23 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package; use org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 
 package org.allbinary.graphics.opengles.OpenGLOptions_Package is
 
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package GameFeatureChoiceGroups_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type OpenGLOptions is tagged;
    type OpenGLOptions_Access is access all OpenGLOptions'Class;
    type OpenGLOptions_Access_Array is array (Natural range <>) of OpenGLOptions_Access;
    type OpenGLOptions_Access_Array_Access is access all OpenGLOptions_Access_Array;
+   type OpenGLOptions_Access_Array_Access_Array is array (Natural range <>) of OpenGLOptions_Access_Array_Access;
+   type OpenGLOptions_Access_Array_Access_Array_Access is access all OpenGLOptions_Access_Array_Access_Array;
 
    type OpenGLOptions is new Java_Object with null record;
 

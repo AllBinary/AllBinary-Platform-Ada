@@ -29,6 +29,8 @@ package org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package
    type PropertiesJPanel_Access is access all PropertiesJPanel'Class;
    type PropertiesJPanel_Access_Array is array (Natural range <>) of PropertiesJPanel_Access;
    type PropertiesJPanel_Access_Array_Access is access all PropertiesJPanel_Access_Array;
+   type PropertiesJPanel_Access_Array_Access_Array is array (Natural range <>) of PropertiesJPanel_Access_Array_Access;
+   type PropertiesJPanel_Access_Array_Access_Array_Access is access all PropertiesJPanel_Access_Array_Access_Array;
 
    type PropertiesJPanel is new JPanel with record
       rotateJButton : JButton_Access;

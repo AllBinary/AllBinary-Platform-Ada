@@ -22,18 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.android.ActivityFractureUtil_Package; use org.allbinary.android.ActivityFractureUtil_Package;
 with android.app.Activity_Package; use android.app.Activity_Package;
-with android.view.WindowManager_Package; use android.view.WindowManager_Package;
 
 package org.allbinary.android.api1.ActivityFractureUtilAPI1_Package is
 
    package ActivityFractureUtil_Package renames Standard.org.allbinary.android.ActivityFractureUtil_Package;
    package Activity_Package renames Standard.android.app.Activity_Package;
-   package WindowManager_Package renames Standard.android.view.WindowManager_Package;
 
    type ActivityFractureUtilAPI1 is tagged;
    type ActivityFractureUtilAPI1_Access is access all ActivityFractureUtilAPI1'Class;
    type ActivityFractureUtilAPI1_Access_Array is array (Natural range <>) of ActivityFractureUtilAPI1_Access;
    type ActivityFractureUtilAPI1_Access_Array_Access is access all ActivityFractureUtilAPI1_Access_Array;
+   type ActivityFractureUtilAPI1_Access_Array_Access_Array is array (Natural range <>) of ActivityFractureUtilAPI1_Access_Array_Access;
+   type ActivityFractureUtilAPI1_Access_Array_Access_Array_Access is access all ActivityFractureUtilAPI1_Access_Array_Access_Array;
 
    type ActivityFractureUtilAPI1 is new ActivityFractureUtil with null record;
    instance : ActivityFractureUtilAPI1_Access;

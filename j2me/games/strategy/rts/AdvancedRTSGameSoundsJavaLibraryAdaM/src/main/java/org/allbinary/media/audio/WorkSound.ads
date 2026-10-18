@@ -29,6 +29,8 @@ package org.allbinary.media.audio.WorkSound_Package is
    type WorkSound_Access is access all WorkSound'Class;
    type WorkSound_Access_Array is array (Natural range <>) of WorkSound_Access;
    type WorkSound_Access_Array_Access is access all WorkSound_Access_Array;
+   type WorkSound_Access_Array_Access_Array is array (Natural range <>) of WorkSound_Access_Array_Access;
+   type WorkSound_Access_Array_Access_Array_Access is access all WorkSound_Access_Array_Access_Array;
 
    type WorkSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

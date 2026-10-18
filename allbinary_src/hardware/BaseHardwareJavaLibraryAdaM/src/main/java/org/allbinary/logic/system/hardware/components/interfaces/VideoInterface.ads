@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.interfaces.VideoInterface
    type VideoInterface_Access is access all VideoInterface'Class;
    type VideoInterface_Access_Array is array (Natural range <>) of VideoInterface_Access;
    type VideoInterface_Access_Array_Access is access all VideoInterface_Access_Array;
+   type VideoInterface_Access_Array_Access_Array is array (Natural range <>) of VideoInterface_Access_Array_Access;
+   type VideoInterface_Access_Array_Access_Array_Access is access all VideoInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
 

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.java.jar.JarUtil_Package is
 
    procedure Initialize_Fields (This : in out JarUtil'Class) is

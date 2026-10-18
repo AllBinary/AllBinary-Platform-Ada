@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
 
 package org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
 
    type ScreenRepaintUtil is tagged;
    type ScreenRepaintUtil_Access is access all ScreenRepaintUtil'Class;
    type ScreenRepaintUtil_Access_Array is array (Natural range <>) of ScreenRepaintUtil_Access;
    type ScreenRepaintUtil_Access_Array_Access is access all ScreenRepaintUtil_Access_Array;
+   type ScreenRepaintUtil_Access_Array_Access_Array is array (Natural range <>) of ScreenRepaintUtil_Access_Array_Access;
+   type ScreenRepaintUtil_Access_Array_Access_Array_Access is access all ScreenRepaintUtil_Access_Array_Access_Array;
 
    type ScreenRepaintUtil is new Java_Object with null record;
 

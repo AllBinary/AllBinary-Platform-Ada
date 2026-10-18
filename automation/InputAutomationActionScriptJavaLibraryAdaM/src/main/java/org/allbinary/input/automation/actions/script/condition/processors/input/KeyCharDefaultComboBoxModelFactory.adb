@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with abbot.tester.KeyStrokeMap_Package; use abbot.tester.KeyStrokeMap_Package;
+with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.KeySingletonFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyStroke_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyStroke_Package;
+
 package body org.allbinary.input.automation.actions.script.condition.processors.input.KeyCharDefaultComboBoxModelFactory_Package is
 
+   package KeyStrokeMap_Package renames Standard.abbot.tester.KeyStrokeMap_Package;
+   package KeySingletonFactory_Package renames Standard.org.allbinary.input.KeySingletonFactory_Package;
    procedure Initialize_Fields (This : in out KeyCharDefaultComboBoxModelFactory'Class) is
    begin
       null;

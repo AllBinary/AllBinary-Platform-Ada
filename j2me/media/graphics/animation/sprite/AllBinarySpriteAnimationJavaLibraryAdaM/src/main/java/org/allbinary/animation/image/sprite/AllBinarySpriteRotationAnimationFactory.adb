@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+with org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Package; use org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Package;
+with org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnimation_Package; use org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnimation_Package;
+
 package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimationFactory_Package is
 
+   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out AllBinarySpriteRotationAnimationFactory'Class) is
    begin
       null;
@@ -116,9 +125,9 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
    begin
         sprite := This.animationFactorySpriteScaleUtil.createImage (AllBinarySpriteRotationAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            return AllBinaryAdjustedSpriteRotationAnimation_Package.Create (sprite, AllBinarySpriteRotationAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (AllBinaryAdjustedSpriteRotationAnimation_Package.Create (sprite, AllBinarySpriteRotationAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
         else
-            return AllBinarySpriteRotationAnimation_Package.Create (sprite, AllBinarySpriteRotationAnimationFactory'Class (This).getImage, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (AllBinarySpriteRotationAnimation_Package.Create (sprite, AllBinarySpriteRotationAnimationFactory'Class (This).getImage, This.animationBehaviorFactory.getOrCreateInstance));
         end if;
    end getInstance;
 

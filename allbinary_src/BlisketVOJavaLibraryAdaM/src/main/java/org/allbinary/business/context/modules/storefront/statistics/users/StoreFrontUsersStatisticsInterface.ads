@@ -30,6 +30,8 @@ package org.allbinary.business.context.modules.storefront.statistics.users.Store
    type StoreFrontUsersStatisticsInterface_Access is access all StoreFrontUsersStatisticsInterface'Class;
    type StoreFrontUsersStatisticsInterface_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsInterface_Access;
    type StoreFrontUsersStatisticsInterface_Access_Array_Access is access all StoreFrontUsersStatisticsInterface_Access_Array;
+   type StoreFrontUsersStatisticsInterface_Access_Array_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsInterface_Access_Array_Access;
+   type StoreFrontUsersStatisticsInterface_Access_Array_Access_Array_Access is access all StoreFrontUsersStatisticsInterface_Access_Array_Access_Array;
    function getNumberOfUsers (This : in out StoreFrontUsersStatisticsInterface) return Long_Long_Integer is abstract;
    function getNumberOfUsersByRole (This : in out StoreFrontUsersStatisticsInterface; role : Unbounded_String) return Long_Long_Integer is abstract;
 

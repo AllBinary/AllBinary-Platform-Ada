@@ -33,6 +33,8 @@ package org.allbinary.animation.image.AlphaProcessor_Package is
    type AlphaProcessor_Access is access all AlphaProcessor'Class;
    type AlphaProcessor_Access_Array is array (Natural range <>) of AlphaProcessor_Access;
    type AlphaProcessor_Access_Array_Access is access all AlphaProcessor_Access_Array;
+   type AlphaProcessor_Access_Array_Access_Array is array (Natural range <>) of AlphaProcessor_Access_Array_Access;
+   type AlphaProcessor_Access_Array_Access_Array_Access is access all AlphaProcessor_Access_Array_Access_Array;
 
    type AlphaProcessor is new AlphaBaseProcessor with null record;
    instanceC : AlphaProcessor_Access;

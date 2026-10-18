@@ -20,24 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
-with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.game.health.HealthBar_Package; use org.allbinary.game.health.HealthBar_Package;
-with org.allbinary.game.health.HealthBarTwodAnimation_Package; use org.allbinary.game.health.HealthBarTwodAnimation_Package;
 with org.allbinary.game.health.Health_Package; use org.allbinary.game.health.Health_Package;
-with org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package; use org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package;
 
 package org.allbinary.game.health.HealthBarFactory_Package is
 
-   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type HealthBarFactory is tagged;
    type HealthBarFactory_Access is access all HealthBarFactory'Class;
    type HealthBarFactory_Access_Array is array (Natural range <>) of HealthBarFactory_Access;
    type HealthBarFactory_Access_Array_Access is access all HealthBarFactory_Access_Array;
+   type HealthBarFactory_Access_Array_Access_Array is array (Natural range <>) of HealthBarFactory_Access_Array_Access;
+   type HealthBarFactory_Access_Array_Access_Array_Access is access all HealthBarFactory_Access_Array_Access_Array;
 
    type HealthBarFactory is new Java_Object with null record;
 

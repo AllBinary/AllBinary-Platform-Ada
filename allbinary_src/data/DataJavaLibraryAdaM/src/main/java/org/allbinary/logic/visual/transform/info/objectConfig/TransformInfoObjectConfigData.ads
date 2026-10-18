@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.file.CommonDataFileStrings_Package; use org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 
 package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package is
 
-   package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 
    type TransformInfoObjectConfigData is tagged;
    type TransformInfoObjectConfigData_Access is access all TransformInfoObjectConfigData'Class;
    type TransformInfoObjectConfigData_Access_Array is array (Natural range <>) of TransformInfoObjectConfigData_Access;
    type TransformInfoObjectConfigData_Access_Array_Access is access all TransformInfoObjectConfigData_Access_Array;
+   type TransformInfoObjectConfigData_Access_Array_Access_Array is array (Natural range <>) of TransformInfoObjectConfigData_Access_Array_Access;
+   type TransformInfoObjectConfigData_Access_Array_Access_Array_Access is access all TransformInfoObjectConfigData_Access_Array_Access_Array;
 
    type TransformInfoObjectConfigData is new Java_Object with record
       NAME : Unbounded_String;

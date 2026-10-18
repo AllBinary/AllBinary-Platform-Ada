@@ -30,6 +30,8 @@ package org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package
    type EmailQueueInterface_Access is access all EmailQueueInterface'Class;
    type EmailQueueInterface_Access_Array is array (Natural range <>) of EmailQueueInterface_Access;
    type EmailQueueInterface_Access_Array_Access is access all EmailQueueInterface_Access_Array;
+   type EmailQueueInterface_Access_Array_Access_Array is array (Natural range <>) of EmailQueueInterface_Access_Array_Access;
+   type EmailQueueInterface_Access_Array_Access_Array_Access is access all EmailQueueInterface_Access_Array_Access_Array;
    function offer (This : in out EmailQueueInterface; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) return Boolean is abstract;
    function remove (This : in out EmailQueueInterface) return EmailInterface_Access is abstract;
 

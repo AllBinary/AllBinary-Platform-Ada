@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+
 package body org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package PathFindingNodeCostInfoData_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package;
    procedure Initialize_Fields (This : in out EmptyRaceRaceTrackGeographicMapCellTypeFactory'Class) is
    begin
       null;

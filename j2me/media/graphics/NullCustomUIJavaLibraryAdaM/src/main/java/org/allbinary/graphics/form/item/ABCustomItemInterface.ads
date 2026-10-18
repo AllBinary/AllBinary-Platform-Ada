@@ -18,6 +18,8 @@ package org.allbinary.graphics.form.item.ABCustomItemInterface_Package is
    type ABCustomItemInterface_Access is access all ABCustomItemInterface'Class;
    type ABCustomItemInterface_Access_Array is array (Natural range <>) of ABCustomItemInterface_Access;
    type ABCustomItemInterface_Access_Array_Access is access all ABCustomItemInterface_Access_Array;
+   type ABCustomItemInterface_Access_Array_Access_Array is array (Natural range <>) of ABCustomItemInterface_Access_Array_Access;
+   type ABCustomItemInterface_Access_Array_Access_Array_Access is access all ABCustomItemInterface_Access_Array_Access_Array;
    function getMinimumWidth (This : in out ABCustomItemInterface) return Integer is abstract;
    function getMinimumHeight (This : in out ABCustomItemInterface) return Integer is abstract;
    function getLabel (This : in out ABCustomItemInterface) return Unbounded_String is abstract;

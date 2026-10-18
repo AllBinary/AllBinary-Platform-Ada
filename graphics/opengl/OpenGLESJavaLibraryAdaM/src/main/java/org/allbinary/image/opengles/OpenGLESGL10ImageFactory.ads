@@ -24,7 +24,6 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 with org.allbinary.image.opengles.OpenGLImageFactory_Package; use org.allbinary.image.opengles.OpenGLImageFactory_Package;
-with org.allbinary.image.opengles.OpenGLESGL10Image_Package; use org.allbinary.image.opengles.OpenGLESGL10Image_Package;
 
 package org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package is
 
@@ -36,6 +35,8 @@ package org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package is
    type OpenGLESGL10ImageFactory_Access is access all OpenGLESGL10ImageFactory'Class;
    type OpenGLESGL10ImageFactory_Access_Array is array (Natural range <>) of OpenGLESGL10ImageFactory_Access;
    type OpenGLESGL10ImageFactory_Access_Array_Access is access all OpenGLESGL10ImageFactory_Access_Array;
+   type OpenGLESGL10ImageFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLESGL10ImageFactory_Access_Array_Access;
+   type OpenGLESGL10ImageFactory_Access_Array_Access_Array_Access is access all OpenGLESGL10ImageFactory_Access_Array_Access_Array;
 
    type OpenGLESGL10ImageFactory is new OpenGLImageFactory with null record;
 

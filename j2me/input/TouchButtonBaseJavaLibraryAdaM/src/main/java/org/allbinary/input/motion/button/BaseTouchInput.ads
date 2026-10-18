@@ -34,6 +34,8 @@ package org.allbinary.input.motion.button.BaseTouchInput_Package is
    type BaseTouchInput_Access is access all BaseTouchInput'Class;
    type BaseTouchInput_Access_Array is array (Natural range <>) of BaseTouchInput_Access;
    type BaseTouchInput_Access_Array_Access is access all BaseTouchInput_Access_Array;
+   type BaseTouchInput_Access_Array_Access_Array is array (Natural range <>) of BaseTouchInput_Access_Array_Access;
+   type BaseTouchInput_Access_Array_Access_Array_Access is access all BaseTouchInput_Access_Array_Access_Array;
 
    type BaseTouchInput is new Java_Object with record
       commonStrings : CommonStrings_Access;

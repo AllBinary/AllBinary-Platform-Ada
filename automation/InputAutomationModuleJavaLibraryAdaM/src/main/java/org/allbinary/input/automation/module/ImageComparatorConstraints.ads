@@ -24,8 +24,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.Rectangle_Package; use java.awt.Rectangle_Package;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.collision.RectangleCollisionUtil_Package; use org.allbinary.collision.RectangleCollisionUtil_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package; use org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
@@ -33,8 +31,6 @@ with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Pa
 package org.allbinary.input.automation.module.ImageComparatorConstraints_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package RectangleCollisionUtil_Package renames Standard.org.allbinary.collision.RectangleCollisionUtil_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ImageComparatorConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
@@ -43,8 +39,10 @@ package org.allbinary.input.automation.module.ImageComparatorConstraints_Package
    type ImageComparatorConstraints_Access is access all ImageComparatorConstraints'Class;
    type ImageComparatorConstraints_Access_Array is array (Natural range <>) of ImageComparatorConstraints_Access;
    type ImageComparatorConstraints_Access_Array_Access is access all ImageComparatorConstraints_Access_Array;
+   type ImageComparatorConstraints_Access_Array_Access_Array is array (Natural range <>) of ImageComparatorConstraints_Access_Array_Access;
+   type ImageComparatorConstraints_Access_Array_Access_Array_Access is access all ImageComparatorConstraints_Access_Array_Access_Array;
 
-   type ImageComparatorConstraints is new ImageComparatorConstraintsInterface with record
+   type ImageComparatorConstraints is new Java_Object and ImageComparatorConstraintsInterface with record
       logUtil : LogUtil_Access;
       avoidVector : BasicArrayList_Access;
       maxNonMatchingPixelDeltas : Integer;

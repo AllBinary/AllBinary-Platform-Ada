@@ -20,20 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.persistance.PlatformRecordIdUtil_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type PlatformRecordIdUtil is tagged;
    type PlatformRecordIdUtil_Access is access all PlatformRecordIdUtil'Class;
    type PlatformRecordIdUtil_Access_Array is array (Natural range <>) of PlatformRecordIdUtil_Access;
    type PlatformRecordIdUtil_Access_Array_Access is access all PlatformRecordIdUtil_Access_Array;
+   type PlatformRecordIdUtil_Access_Array_Access_Array is array (Natural range <>) of PlatformRecordIdUtil_Access_Array_Access;
+   type PlatformRecordIdUtil_Access_Array_Access_Array_Access is access all PlatformRecordIdUtil_Access_Array_Access_Array;
 
    type PlatformRecordIdUtil is new Java_Object with record
       PLATFORM_SHORT_NAME : Unbounded_String;

@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.mail.internet.MimeMessage_Package; use javax.mail.internet.MimeMessage_Package;
-with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package; use org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
 with org.allbinary.logic.communication.smtp.info.EmailInfo_Package; use org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
@@ -33,7 +32,6 @@ with org.allbinary.logic.communication.smtp.Email_Package; use org.allbinary.log
 package org.allbinary.logic.communication.smtp.BasicEmail_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package BasicEmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
    package EmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -42,8 +40,10 @@ package org.allbinary.logic.communication.smtp.BasicEmail_Package is
    type BasicEmail_Access is access all BasicEmail'Class;
    type BasicEmail_Access_Array is array (Natural range <>) of BasicEmail_Access;
    type BasicEmail_Access_Array_Access is access all BasicEmail_Access_Array;
+   type BasicEmail_Access_Array_Access_Array is array (Natural range <>) of BasicEmail_Access_Array_Access;
+   type BasicEmail_Access_Array_Access_Array_Access is access all BasicEmail_Access_Array_Access_Array;
 
-   type BasicEmail is new EmailInterface with record
+   type BasicEmail is new Java_Object and EmailInterface with record
       email : AbEmail_Access;
    end record;
 

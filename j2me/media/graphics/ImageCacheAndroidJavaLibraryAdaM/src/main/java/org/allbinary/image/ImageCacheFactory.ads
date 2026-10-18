@@ -29,6 +29,8 @@ package org.allbinary.image.ImageCacheFactory_Package is
    type ImageCacheFactory_Access is access all ImageCacheFactory'Class;
    type ImageCacheFactory_Access_Array is array (Natural range <>) of ImageCacheFactory_Access;
    type ImageCacheFactory_Access_Array_Access is access all ImageCacheFactory_Access_Array;
+   type ImageCacheFactory_Access_Array_Access_Array is array (Natural range <>) of ImageCacheFactory_Access_Array_Access;
+   type ImageCacheFactory_Access_Array_Access_Array_Access is access all ImageCacheFactory_Access_Array_Access_Array;
 
    type ImageCacheFactory is new Java_Object with null record;
    IMAGE_CACHE : ImageCache_Access;

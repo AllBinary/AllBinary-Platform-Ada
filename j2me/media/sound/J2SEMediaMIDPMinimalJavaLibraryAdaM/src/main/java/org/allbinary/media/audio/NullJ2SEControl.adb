@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.audio.NullJ2SEControl_Package is
 
    procedure Initialize_Fields (This : in out NullJ2SEControl'Class) is

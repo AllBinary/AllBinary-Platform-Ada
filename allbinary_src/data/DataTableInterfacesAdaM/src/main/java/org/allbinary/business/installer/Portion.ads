@@ -30,6 +30,8 @@ package org.allbinary.business.installer.Portion_Package is
    type Portion_Access is access all Portion'Class;
    type Portion_Access_Array is array (Natural range <>) of Portion_Access;
    type Portion_Access_Array_Access is access all Portion_Access_Array;
+   type Portion_Access_Array_Access_Array is array (Natural range <>) of Portion_Access_Array_Access;
+   type Portion_Access_Array_Access_Array_Access is access all Portion_Access_Array_Access_Array;
 
    type Portion is new Java_Object with record
       current : Integer;

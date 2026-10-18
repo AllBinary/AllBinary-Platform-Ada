@@ -25,8 +25,6 @@ with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.i
 with org.allbinary.logic.io.path.AbFilePath_Package; use org.allbinary.logic.io.path.AbFilePath_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
 package org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
 
@@ -35,13 +33,13 @@ package org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
    package AbFilePath_Package renames Standard.org.allbinary.logic.io.path.AbFilePath_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type AbPathUtilOld is tagged;
    type AbPathUtilOld_Access is access all AbPathUtilOld'Class;
    type AbPathUtilOld_Access_Array is array (Natural range <>) of AbPathUtilOld_Access;
    type AbPathUtilOld_Access_Array_Access is access all AbPathUtilOld_Access_Array;
+   type AbPathUtilOld_Access_Array_Access_Array is array (Natural range <>) of AbPathUtilOld_Access_Array_Access;
+   type AbPathUtilOld_Access_Array_Access_Array_Access is access all AbPathUtilOld_Access_Array_Access_Array;
 
    type AbPathUtilOld is new Java_Object with record
       logUtil : LogUtil_Access;

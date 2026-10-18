@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.file.CommonDataFileStrings_Package; use org.allbinary.logic.io.file.CommonDataFileStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package is
 
+   package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class) is
    begin
       null;
@@ -97,7 +102,7 @@ package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensi
       result : Boolean;
    begin
         commonFileStrings := CommonDataFileStrings_Package.getInstance;
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         list.add (commonFileStrings.JAVA);
         filePath := To_Unbounded_String ("G:\mnt\bc\mydev\games\ZeptoRacer\platform\j2se\ZeptoRacerStaticPathsJ2SEM\" & ASCII.HT & "arget\dependency\org\allbinary\logic\system\security\licensing\ZeptoRacerPCClientInformation.java");
         result := DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package.Create (list).visit (AbFile_Package.createAbFileFromRawPath (filePath));

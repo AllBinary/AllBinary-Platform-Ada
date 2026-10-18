@@ -20,25 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package is
 
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
    package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ProgressCanvasFactory is tagged;
    type ProgressCanvasFactory_Access is access all ProgressCanvasFactory'Class;
    type ProgressCanvasFactory_Access_Array is array (Natural range <>) of ProgressCanvasFactory_Access;
    type ProgressCanvasFactory_Access_Array_Access is access all ProgressCanvasFactory_Access_Array;
+   type ProgressCanvasFactory_Access_Array_Access_Array is array (Natural range <>) of ProgressCanvasFactory_Access_Array_Access;
+   type ProgressCanvasFactory_Access_Array_Access_Array_Access is access all ProgressCanvasFactory_Access_Array_Access_Array;
 
    type ProgressCanvasFactory is new Java_Object with null record;
    PROGRESS_FORM_SCREEN : Java_Object_Access;

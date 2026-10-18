@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.category.Category_Package; use org.allbinary.business.category.Category_Package;
+with org.allbinary.business.category.CategoryUtil_Package; use org.allbinary.business.category.CategoryUtil_Package;
+with org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
+with org.allbinary.business.category.properties.root.store.RootStoreCategoryPropertiesFactory_Package; use org.allbinary.business.category.properties.root.store.RootStoreCategoryPropertiesFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.business.category.store.StoreCategoryFactory_Package is
 
+   package Category_Package renames Standard.org.allbinary.business.category.Category_Package;
+   package CategoryUtil_Package renames Standard.org.allbinary.business.category.CategoryUtil_Package;
+   package CategoryPropertiesFactoryInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
+   package RootStoreCategoryPropertiesFactory_Package renames Standard.org.allbinary.business.category.properties.root.store.RootStoreCategoryPropertiesFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out StoreCategoryFactory'Class) is
    begin
       null;

@@ -28,6 +28,8 @@ package org.allbinary.audio.AudioContentTypeData_Package is
    type AudioContentTypeData_Access is access all AudioContentTypeData'Class;
    type AudioContentTypeData_Access_Array is array (Natural range <>) of AudioContentTypeData_Access;
    type AudioContentTypeData_Access_Array_Access is access all AudioContentTypeData_Access_Array;
+   type AudioContentTypeData_Access_Array_Access_Array is array (Natural range <>) of AudioContentTypeData_Access_Array_Access;
+   type AudioContentTypeData_Access_Array_Access_Array_Access is access all AudioContentTypeData_Access_Array_Access_Array;
 
    type AudioContentTypeData is new Java_Object with record
       name : Unbounded_String;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.canvas.FullScreenUtil_Package is
 
    procedure Initialize_Fields (This : in out FullScreenUtil'Class) is

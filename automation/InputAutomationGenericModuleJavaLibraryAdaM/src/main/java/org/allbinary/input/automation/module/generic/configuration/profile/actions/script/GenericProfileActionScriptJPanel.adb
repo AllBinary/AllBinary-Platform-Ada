@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package; use org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JPopupMenu_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JPopupMenu_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JComponent_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JComponent_Package;
+
 package body org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package is
 
+   package CustomTreeNodeInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
    procedure Initialize_Fields (This : in out GenericProfileActionScriptJPanel'Class) is
    begin
       null;

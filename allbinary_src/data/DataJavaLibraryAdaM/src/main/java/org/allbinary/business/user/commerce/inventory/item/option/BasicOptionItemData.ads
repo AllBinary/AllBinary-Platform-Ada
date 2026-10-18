@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.item.option.BasicOptionIt
    type BasicOptionItemData_Access is access all BasicOptionItemData'Class;
    type BasicOptionItemData_Access_Array is array (Natural range <>) of BasicOptionItemData_Access;
    type BasicOptionItemData_Access_Array_Access is access all BasicOptionItemData_Access_Array;
+   type BasicOptionItemData_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemData_Access_Array_Access;
+   type BasicOptionItemData_Access_Array_Access_Array_Access is access all BasicOptionItemData_Access_Array_Access_Array;
 
    type BasicOptionItemData is new Java_Object with null record;
    OPTION_ONE_TITLE : Unbounded_String;

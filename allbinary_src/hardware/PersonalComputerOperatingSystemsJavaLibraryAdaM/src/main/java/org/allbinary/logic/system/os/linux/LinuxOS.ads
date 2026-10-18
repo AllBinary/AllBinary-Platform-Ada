@@ -30,6 +30,8 @@ package org.allbinary.logic.system.os.linux.LinuxOS_Package is
    type LinuxOS_Access is access all LinuxOS'Class;
    type LinuxOS_Access_Array is array (Natural range <>) of LinuxOS_Access;
    type LinuxOS_Access_Array_Access is access all LinuxOS_Access_Array;
+   type LinuxOS_Access_Array_Access_Array is array (Natural range <>) of LinuxOS_Access_Array_Access;
+   type LinuxOS_Access_Array_Access_Array_Access is access all LinuxOS_Access_Array_Access_Array;
 
    type LinuxOS is new GenericOperatingSystem with null record;
 

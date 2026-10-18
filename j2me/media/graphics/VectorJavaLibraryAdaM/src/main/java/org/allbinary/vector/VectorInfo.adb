@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.vector.VectorInfo_Package is
 
    procedure Initialize_Fields (This : in out VectorInfo'Class) is

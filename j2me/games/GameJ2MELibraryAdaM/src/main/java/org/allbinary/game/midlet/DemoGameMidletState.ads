@@ -28,6 +28,8 @@ package org.allbinary.game.midlet.DemoGameMidletState_Package is
    type DemoGameMidletState_Access is access all DemoGameMidletState'Class;
    type DemoGameMidletState_Access_Array is array (Natural range <>) of DemoGameMidletState_Access;
    type DemoGameMidletState_Access_Array_Access is access all DemoGameMidletState_Access_Array;
+   type DemoGameMidletState_Access_Array_Access_Array is array (Natural range <>) of DemoGameMidletState_Access_Array_Access;
+   type DemoGameMidletState_Access_Array_Access_Array_Access is access all DemoGameMidletState_Access_Array_Access_Array;
 
    type DemoGameMidletState is new Java_Object with null record;
 

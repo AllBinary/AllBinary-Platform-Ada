@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.AndroidUtil_Package is
 
    procedure Initialize_Fields (This : in out AndroidUtil'Class) is

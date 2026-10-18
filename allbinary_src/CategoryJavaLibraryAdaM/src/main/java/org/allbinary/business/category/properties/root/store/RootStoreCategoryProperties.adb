@@ -13,8 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
+with org.allbinary.business.category.CategoryUtil_Package; use org.allbinary.business.category.CategoryUtil_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+
 package body org.allbinary.business.category.properties.root.store.RootStoreCategoryProperties_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
+   package CategoryUtil_Package renames Standard.org.allbinary.business.category.CategoryUtil_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
    procedure Initialize_Fields (This : in out RootStoreCategoryProperties'Class) is
    begin
       null;
@@ -133,7 +156,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         postPath := (storeFrontInterface.getCurrentHostNamePath) + (storeFrontInterface.getCategoryPath);
         httpServletRequest := HttpServletRequest_Access (transformInfoHttpStoreInterface.getPageContext.getRequest);
         This.webAppAbPath := AbPath_Package.Create (Java_Image (httpServletRequest.getContextPath) & postPath, StringUtil_Package.getInstance.EMPTY_STRING);
-        RootStoreCategoryProperties'Class (This).setRootFilePath (AbPath_Package.Create (Java_Image (URLGLOBALS.getMainPath) & postPath, StringUtil_Package.getInstance.EMPTY_STRING));
+        RootStoreCategoryProperties'Class (This).setRootFilePath (AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getMainPath) & postPath, StringUtil_Package.getInstance.EMPTY_STRING));
    end initPath;
 
    function isRealRoot (This : in out RootStoreCategoryProperties) return Boolean is
@@ -211,7 +234,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    function toVector (This : in out RootStoreCategoryProperties) return BasicArrayList_Access is
       categoryVector : BasicArrayList_Access;
    begin
-        categoryVector := BasicArrayListD_Package.Create;
+        categoryVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         categoryVector.add (RootStoreCategoryProperties'Class (This).getValue);
         return categoryVector;
    end toVector;

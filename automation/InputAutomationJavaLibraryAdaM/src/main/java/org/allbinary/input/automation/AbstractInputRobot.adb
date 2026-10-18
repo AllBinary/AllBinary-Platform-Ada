@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.PointHelper_Package; use org.allbinary.input.automation.PointHelper_Package;
+
 package body org.allbinary.input.automation.AbstractInputRobot_Package is
 
    procedure Initialize_Fields (This : in out AbstractInputRobot'Class) is

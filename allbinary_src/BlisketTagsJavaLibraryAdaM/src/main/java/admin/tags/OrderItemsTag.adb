@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.OrderItemsHelperFactory_Package; use admin.taghelpers.OrderItemsHelperFactory_Package;
+with admin.taghelpers.OrderItemsRequestHelperFactory_Package; use admin.taghelpers.OrderItemsRequestHelperFactory_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body admin.tags.OrderItemsTag_Package is
 
+   package OrderItemsHelperFactory_Package renames Standard.admin.taghelpers.OrderItemsHelperFactory_Package;
+   package OrderItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.OrderItemsRequestHelperFactory_Package;
+   package OrderHistoryData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out OrderItemsTag'Class) is
    begin
       null;

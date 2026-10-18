@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.view.ViewPositionFactoryInterface_Package;
-with org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package; use org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package;
 
 package org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package is
    type MineLayerFactory_Access is access all MineLayerFactory'Class;
    type MineLayerFactory_Access_Array is array (Natural range <>) of MineLayerFactory_Access;
    type MineLayerFactory_Access_Array_Access is access all MineLayerFactory_Access_Array;
+   type MineLayerFactory_Access_Array_Access_Array is array (Natural range <>) of MineLayerFactory_Access_Array_Access;
+   type MineLayerFactory_Access_Array_Access_Array_Access is access all MineLayerFactory_Access_Array_Access_Array;
 
-   type MineLayerFactory is new AllBinaryLayerFactoryInterface with record
+   type MineLayerFactory is new Java_Object and AllBinaryLayerFactoryInterface with record
       viewPositionFactoryInterface : ViewPositionFactoryInterface_Access;
    end record;
 

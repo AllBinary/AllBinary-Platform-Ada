@@ -28,6 +28,8 @@ package org.allbinary.logic.system.os.OperatingSystems_Package is
    type OperatingSystems_Access is access all OperatingSystems'Class;
    type OperatingSystems_Access_Array is array (Natural range <>) of OperatingSystems_Access;
    type OperatingSystems_Access_Array_Access is access all OperatingSystems_Access_Array;
+   type OperatingSystems_Access_Array_Access_Array is array (Natural range <>) of OperatingSystems_Access_Array_Access;
+   type OperatingSystems_Access_Array_Access_Array_Access is access all OperatingSystems_Access_Array_Access_Array;
 
    type OperatingSystems is new Java_Object with record
       LINUX : Unbounded_String;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package; use org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
+
 package body org.allbinary.graphics.opengles.OrthogonalLightingOpenGLProcessorFactory_Package is
 
    procedure Initialize_Fields (This : in out OrthogonalLightingOpenGLProcessorFactory'Class) is

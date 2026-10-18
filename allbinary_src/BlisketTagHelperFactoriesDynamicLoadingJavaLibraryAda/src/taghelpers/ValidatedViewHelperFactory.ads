@@ -22,23 +22,21 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with admin.taghelpers.HelperFactory_Package; use admin.taghelpers.HelperFactory_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.TagHelperFactoryInterface_Package;
 
 package taghelpers.ValidatedViewHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package HelperFactory_Package renames Standard.admin.taghelpers.HelperFactory_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package TagHelperFactoryInterface_Package renames Standard.admin.taghelpers.TagHelperFactoryInterface_Package;
 
    type ValidatedViewHelperFactory is tagged;
    type ValidatedViewHelperFactory_Access is access all ValidatedViewHelperFactory'Class;
    type ValidatedViewHelperFactory_Access_Array is array (Natural range <>) of ValidatedViewHelperFactory_Access;
    type ValidatedViewHelperFactory_Access_Array_Access is access all ValidatedViewHelperFactory_Access_Array;
+   type ValidatedViewHelperFactory_Access_Array_Access_Array is array (Natural range <>) of ValidatedViewHelperFactory_Access_Array_Access;
+   type ValidatedViewHelperFactory_Access_Array_Access_Array_Access is access all ValidatedViewHelperFactory_Access_Array_Access_Array;
 
-   type ValidatedViewHelperFactory is new TagHelperFactoryInterface with null record;
+   type ValidatedViewHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;
    FACTORYNAME : Unbounded_String;
 

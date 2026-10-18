@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.PathFindingThreadPool_Package is
 
@@ -30,6 +31,8 @@ package org.allbinary.thread.PathFindingThreadPool_Package is
    type PathFindingThreadPool_Access is access all PathFindingThreadPool'Class;
    type PathFindingThreadPool_Access_Array is array (Natural range <>) of PathFindingThreadPool_Access;
    type PathFindingThreadPool_Access_Array_Access is access all PathFindingThreadPool_Access_Array;
+   type PathFindingThreadPool_Access_Array_Access_Array is array (Natural range <>) of PathFindingThreadPool_Access_Array_Access;
+   type PathFindingThreadPool_Access_Array_Access_Array_Access is access all PathFindingThreadPool_Access_Array_Access_Array;
 
    type PathFindingThreadPool is new ThreadPool with null record;
    instance : ThreadPool_Access;

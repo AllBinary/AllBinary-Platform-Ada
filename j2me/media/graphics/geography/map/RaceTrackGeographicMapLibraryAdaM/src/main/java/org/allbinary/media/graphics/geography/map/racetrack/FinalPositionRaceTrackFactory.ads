@@ -28,6 +28,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.FinalPositionRaceTr
    type FinalPositionRaceTrackFactory_Access is access all FinalPositionRaceTrackFactory'Class;
    type FinalPositionRaceTrackFactory_Access_Array is array (Natural range <>) of FinalPositionRaceTrackFactory_Access;
    type FinalPositionRaceTrackFactory_Access_Array_Access is access all FinalPositionRaceTrackFactory_Access_Array;
+   type FinalPositionRaceTrackFactory_Access_Array_Access_Array is array (Natural range <>) of FinalPositionRaceTrackFactory_Access_Array_Access;
+   type FinalPositionRaceTrackFactory_Access_Array_Access_Array_Access is access all FinalPositionRaceTrackFactory_Access_Array_Access_Array;
 
    type FinalPositionRaceTrackFactory is new Java_Object with null record;
    FIRST_POSITION : Integer;

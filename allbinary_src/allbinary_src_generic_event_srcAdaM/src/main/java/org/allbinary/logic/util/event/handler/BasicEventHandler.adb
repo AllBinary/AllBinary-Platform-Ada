@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BasicEventHandler'Class) is
    begin
       null;
@@ -26,7 +37,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
    procedure Initialize (This : in out BasicEventHandler'Class) is
    begin
       Initialize_Fields (This);
-        This.eventListenerInterfaceList := BasicArrayListD_Package.Create;
+        This.eventListenerInterfaceList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create return BasicEventHandler_Access is
@@ -70,35 +81,35 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
 
    procedure removeAllListeners (This : in out BasicEventHandler) is
    begin
-        This.eventListenerInterfaceList := BasicArrayListD_Package.Create;
+        This.eventListenerInterfaceList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end removeAllListeners;
 
    procedure addListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        if not (This.eventListenerInterfaceList.contains (eventListenerInterface)) then
-            This.eventListenerInterfaceList.add (eventListenerInterface);
+        if not (This.eventListenerInterfaceList.contains (Java_Object_Access (eventListenerInterface))) then
+            This.eventListenerInterfaceList.add (Java_Object_Access (eventListenerInterface));
         end if;
    end addListenerSingleThreaded;
 
    procedure addListenerInterface (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        if not (This.eventListenerInterfaceList.contains (eventListenerInterface)) then
-            This.eventListenerInterfaceList.add (eventListenerInterface);
+        if not (This.eventListenerInterfaceList.contains (Java_Object_Access (eventListenerInterface))) then
+            This.eventListenerInterfaceList.add (Java_Object_Access (eventListenerInterface));
         end if;
    end addListenerInterface;
 
    procedure removeListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.eventListenerInterfaceList.remove (eventListenerInterface);
+        This.eventListenerInterfaceList.remove (Java_Object_Access (eventListenerInterface));
    end removeListenerSingleThreaded;
 
    procedure removeListener (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.eventListenerInterfaceList.remove (eventListenerInterface);
+        This.eventListenerInterfaceList.remove (Java_Object_Access (eventListenerInterface));
    end removeListener;
 
    --  throws Exception

@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActionAssociation_Package; use org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActionAssociation_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package is
 
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package MotionGestureToMotionGestureActionAssociation_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActionAssociation_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out MotionGestureConfiguration'Class) is
    begin
       null;
@@ -25,7 +34,7 @@ package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfi
       This.color := BasicColorFactory_Package.getInstance.BLUE;
       This.executingActions := True;
       This.mouseButtonMask := 0;
-      This.activeCommands := BasicArrayListD_Package.Create;
+      This.activeCommands := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -46,7 +55,7 @@ package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfi
       list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       commandAction : constant CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (commandAction_Param);
    begin
-        This.activeCommands.add (MotionGestureToMotionGestureActionAssociation_Package.Create (list, commandAction));
+        This.activeCommands.add (Java_Object_Access (MotionGestureToMotionGestureActionAssociation_Package.Create (list, commandAction)));
    end addMotionGestureAction;
 
    procedure clearMotionGestureAction (This : in out MotionGestureConfiguration) is

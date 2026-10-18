@@ -19,20 +19,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 
 package org.allbinary.game.layer.RTSLayerEvent_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type RTSLayerEvent is tagged;
    type RTSLayerEvent_Access is access all RTSLayerEvent'Class;
    type RTSLayerEvent_Access_Array is array (Natural range <>) of RTSLayerEvent_Access;
    type RTSLayerEvent_Access_Array_Access is access all RTSLayerEvent_Access_Array;
+   type RTSLayerEvent_Access_Array_Access_Array is array (Natural range <>) of RTSLayerEvent_Access_Array_Access;
+   type RTSLayerEvent_Access_Array_Access_Array_Access is access all RTSLayerEvent_Access_Array_Access_Array;
 
    type RTSLayerEvent is new AllBinaryEventObject with record
       rtsLayer : PathFindingLayerInterface_Access;

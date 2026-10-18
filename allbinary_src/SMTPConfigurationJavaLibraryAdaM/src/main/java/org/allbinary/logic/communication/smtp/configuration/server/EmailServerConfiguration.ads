@@ -22,24 +22,21 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
-with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package;
 
 package org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type EmailServerConfiguration is tagged;
    type EmailServerConfiguration_Access is access all EmailServerConfiguration'Class;
    type EmailServerConfiguration_Access_Array is array (Natural range <>) of EmailServerConfiguration_Access;
    type EmailServerConfiguration_Access_Array_Access is access all EmailServerConfiguration_Access_Array;
+   type EmailServerConfiguration_Access_Array_Access_Array is array (Natural range <>) of EmailServerConfiguration_Access_Array_Access;
+   type EmailServerConfiguration_Access_Array_Access_Array_Access is access all EmailServerConfiguration_Access_Array_Access_Array;
 
-   type EmailServerConfiguration is new EmailServerConfigurationInterface with record
+   type EmailServerConfiguration is new Java_Object and EmailServerConfigurationInterface with record
       logUtil : LogUtil_Access;
       accountName : Unbounded_String;
       password : Unbounded_String;

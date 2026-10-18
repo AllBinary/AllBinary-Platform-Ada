@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
+
 package body org.allbinary.logic.io.BufferedLineReader_Package is
 
+   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
    procedure Initialize_Fields (This : in out BufferedLineReader'Class) is
    begin
       null;

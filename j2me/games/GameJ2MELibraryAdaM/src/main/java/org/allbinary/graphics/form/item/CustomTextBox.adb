@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.PlatformKeyFactory_Package; use org.allbinary.game.input.PlatformKeyFactory_Package;
+with org.allbinary.graphics.form.item.validation.TextItemVisitor_Package; use org.allbinary.graphics.form.item.validation.TextItemVisitor_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.graphics.form.item.CustomTextBox_Package is
 
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
+   package PlatformKeyFactory_Package renames Standard.org.allbinary.game.input.PlatformKeyFactory_Package;
+   package TextItemVisitor_Package renames Standard.org.allbinary.graphics.form.item.validation.TextItemVisitor_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out CustomTextBox'Class) is
    begin
       null;

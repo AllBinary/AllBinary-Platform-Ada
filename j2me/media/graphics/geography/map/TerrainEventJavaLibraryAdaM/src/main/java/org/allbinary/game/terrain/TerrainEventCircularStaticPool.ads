@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
-with org.allbinary.game.terrain.TerrainEventFactory_Package; use org.allbinary.game.terrain.TerrainEventFactory_Package;
 with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.terrain.TerrainEvent_Package;
 with org.allbinary.game.terrain.BasicTerrainInfo_Package; use org.allbinary.game.terrain.BasicTerrainInfo_Package;
 
@@ -33,6 +32,8 @@ package org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package is
    type TerrainEventCircularStaticPool_Access is access all TerrainEventCircularStaticPool'Class;
    type TerrainEventCircularStaticPool_Access_Array is array (Natural range <>) of TerrainEventCircularStaticPool_Access;
    type TerrainEventCircularStaticPool_Access_Array_Access is access all TerrainEventCircularStaticPool_Access_Array;
+   type TerrainEventCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of TerrainEventCircularStaticPool_Access_Array_Access;
+   type TerrainEventCircularStaticPool_Access_Array_Access_Array_Access is access all TerrainEventCircularStaticPool_Access_Array_Access_Array;
 
    type TerrainEventCircularStaticPool is new Java_Object with record
       EVENT_POOL : AllBinaryEventCircularPool_Access;

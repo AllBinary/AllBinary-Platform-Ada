@@ -22,25 +22,23 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.java.runtime.process.git.GitProcessHelper_Package; use org.allbinary.java.runtime.process.git.GitProcessHelper_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.CommonDataFileStrings_Package; use org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 with org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package; use org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.io.file.directory.TrackedStrings_Package; use org.allbinary.logic.io.file.directory.TrackedStrings_Package;
 
 package org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package is
 
    package GitProcessHelper_Package renames Standard.org.allbinary.java.runtime.process.git.GitProcessHelper_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
    package IncludeFileExtensionsBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor is tagged;
    type DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access is access all DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class;
    type DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access_Array is array (Natural range <>) of DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access;
    type DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access_Array_Access is access all DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access_Array;
+   type DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access_Array_Access_Array is array (Natural range <>) of DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access_Array_Access;
+   type DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access_Array_Access_Array_Access is access all DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access_Array_Access_Array;
 
    type DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor is new IncludeFileExtensionsBooleanFileVisitor with record
       trackedStrings : TrackedStrings_Access;

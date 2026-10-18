@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out HtmlInput'Class) is
    begin
       null;
@@ -30,20 +33,20 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HtmlInput'Class; before : Unbounded_String; type_Case_Id : Unbounded_String; name_Case : Unbounded_String; after : Unbounded_String) is
+   procedure Initialize (This : in out HtmlInput'Class; before : Unbounded_String; type_Id : Unbounded_String; name : Unbounded_String; after : Unbounded_String) is
    begin
       HtmlTag_Package.Initialize (This);
       Initialize_Fields (This);
         This.before := before;
-        This.type_Case_Id := type_Case_Id;
-        This.name_Case := name_Case;
+        This.type_Case_Id := type_Id;
+        This.name_Case := name;
         This.after := after;
    end Initialize;
 
-   function Create (before : Unbounded_String; type_Case_Id : Unbounded_String; name_Case : Unbounded_String; after : Unbounded_String) return HtmlInput_Access is
+   function Create (before : Unbounded_String; type_Id : Unbounded_String; name : Unbounded_String; after : Unbounded_String) return HtmlInput_Access is
       This : constant HtmlInput_Access := new HtmlInput;
    begin
-      HtmlInput_Package.Initialize (This.all, before, type_Case_Id, name_Case, after);
+      HtmlInput_Package.Initialize (This.all, before, type_Id, name, after);
       return This;
    end Create;
 

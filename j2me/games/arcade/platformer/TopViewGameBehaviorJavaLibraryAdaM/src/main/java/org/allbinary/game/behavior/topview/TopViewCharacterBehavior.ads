@@ -25,7 +25,6 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellTypeFactory_Package;
 
 package org.allbinary.game.behavior.topview.TopViewCharacterBehavior_Package is
 
@@ -34,12 +33,13 @@ package org.allbinary.game.behavior.topview.TopViewCharacterBehavior_Package is
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-   package BasicTopViewGeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellTypeFactory_Package;
 
    type TopViewCharacterBehavior is tagged;
    type TopViewCharacterBehavior_Access is access all TopViewCharacterBehavior'Class;
    type TopViewCharacterBehavior_Access_Array is array (Natural range <>) of TopViewCharacterBehavior_Access;
    type TopViewCharacterBehavior_Access_Array_Access is access all TopViewCharacterBehavior_Access_Array;
+   type TopViewCharacterBehavior_Access_Array_Access_Array is array (Natural range <>) of TopViewCharacterBehavior_Access_Array_Access;
+   type TopViewCharacterBehavior_Access_Array_Access_Array_Access is access all TopViewCharacterBehavior_Access_Array_Access_Array;
 
    type TopViewCharacterBehavior is new Java_Object with null record;
 

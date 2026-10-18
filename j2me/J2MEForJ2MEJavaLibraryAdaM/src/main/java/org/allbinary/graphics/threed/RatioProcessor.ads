@@ -28,6 +28,8 @@ package org.allbinary.graphics.threed.RatioProcessor_Package is
    type RatioProcessor_Access is access all RatioProcessor'Class;
    type RatioProcessor_Access_Array is array (Natural range <>) of RatioProcessor_Access;
    type RatioProcessor_Access_Array_Access is access all RatioProcessor_Access_Array;
+   type RatioProcessor_Access_Array_Access_Array is array (Natural range <>) of RatioProcessor_Access_Array_Access;
+   type RatioProcessor_Access_Array_Access_Array_Access is access all RatioProcessor_Access_Array_Access_Array;
 
    type RatioProcessor is new Java_Object with null record;
 

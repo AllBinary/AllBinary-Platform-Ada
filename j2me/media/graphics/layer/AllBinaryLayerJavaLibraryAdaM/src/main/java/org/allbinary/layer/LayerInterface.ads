@@ -34,6 +34,8 @@ package org.allbinary.layer.LayerInterface_Package is
    type LayerInterface_Access is access all LayerInterface'Class;
    type LayerInterface_Access_Array is array (Natural range <>) of LayerInterface_Access;
    type LayerInterface_Access_Array_Access is access all LayerInterface_Access_Array;
+   type LayerInterface_Access_Array_Access_Array is array (Natural range <>) of LayerInterface_Access_Array_Access;
+   type LayerInterface_Access_Array_Access_Array_Access is access all LayerInterface_Access_Array_Access_Array;
    function getHeight (This : in out LayerInterface) return Integer is abstract;
    function getWidth (This : in out LayerInterface) return Integer is abstract;
    function getHalfHeight (This : in out LayerInterface) return Integer is abstract;

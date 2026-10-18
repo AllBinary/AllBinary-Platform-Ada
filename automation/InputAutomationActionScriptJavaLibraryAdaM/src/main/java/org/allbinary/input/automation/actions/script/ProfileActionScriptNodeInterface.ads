@@ -31,6 +31,8 @@ package org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInt
    type ProfileActionScriptNodeInterface_Access is access all ProfileActionScriptNodeInterface'Class;
    type ProfileActionScriptNodeInterface_Access_Array is array (Natural range <>) of ProfileActionScriptNodeInterface_Access;
    type ProfileActionScriptNodeInterface_Access_Array_Access is access all ProfileActionScriptNodeInterface_Access_Array;
+   type ProfileActionScriptNodeInterface_Access_Array_Access_Array is array (Natural range <>) of ProfileActionScriptNodeInterface_Access_Array_Access;
+   type ProfileActionScriptNodeInterface_Access_Array_Access_Array_Access is access all ProfileActionScriptNodeInterface_Access_Array_Access_Array;
    procedure addCondition (This : in out ProfileActionScriptNodeInterface; profileActionConditionInterface_Param : access ProfileActionScriptNodeInterface_Package.ProfileActionScriptNodeInterface'Class) is abstract;
    procedure removeCondition (This : in out ProfileActionScriptNodeInterface; profileActionConditionInterface_Param : access ProfileActionScriptNodeInterface_Package.ProfileActionScriptNodeInterface'Class) is abstract;
 

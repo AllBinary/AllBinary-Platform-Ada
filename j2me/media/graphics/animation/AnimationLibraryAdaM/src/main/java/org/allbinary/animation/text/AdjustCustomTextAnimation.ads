@@ -33,6 +33,8 @@ package org.allbinary.animation.text.AdjustCustomTextAnimation_Package is
    type AdjustCustomTextAnimation_Access is access all AdjustCustomTextAnimation'Class;
    type AdjustCustomTextAnimation_Access_Array is array (Natural range <>) of AdjustCustomTextAnimation_Access;
    type AdjustCustomTextAnimation_Access_Array_Access is access all AdjustCustomTextAnimation_Access_Array;
+   type AdjustCustomTextAnimation_Access_Array_Access_Array is array (Natural range <>) of AdjustCustomTextAnimation_Access_Array_Access;
+   type AdjustCustomTextAnimation_Access_Array_Access_Array_Access is access all AdjustCustomTextAnimation_Access_Array_Access_Array;
 
    type AdjustCustomTextAnimation is new CustomTextAnimation with record
       dx : Integer;

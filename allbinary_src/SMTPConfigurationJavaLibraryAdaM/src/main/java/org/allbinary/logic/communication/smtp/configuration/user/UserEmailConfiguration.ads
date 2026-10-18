@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
@@ -31,7 +30,6 @@ package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfi
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package UserEmailEventsConfiguration_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package;
    package UserEmailEventsConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -39,8 +37,10 @@ package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfi
    type UserEmailConfiguration_Access is access all UserEmailConfiguration'Class;
    type UserEmailConfiguration_Access_Array is array (Natural range <>) of UserEmailConfiguration_Access;
    type UserEmailConfiguration_Access_Array_Access is access all UserEmailConfiguration_Access_Array;
+   type UserEmailConfiguration_Access_Array_Access_Array is array (Natural range <>) of UserEmailConfiguration_Access_Array_Access;
+   type UserEmailConfiguration_Access_Array_Access_Array_Access is access all UserEmailConfiguration_Access_Array_Access_Array;
 
-   type UserEmailConfiguration is new UserEmailConfigurationInterface with record
+   type UserEmailConfiguration is new Java_Object and UserEmailConfigurationInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access;

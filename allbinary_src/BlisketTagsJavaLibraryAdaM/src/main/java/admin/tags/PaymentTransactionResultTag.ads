@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with admin.taghelpers.PaymentTransactionResultHelperFactory_Package; use admin.taghelpers.PaymentTransactionResultHelperFactory_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.PaymentTransactionResultTag_Package is
 
-   package PaymentTransactionResultHelperFactory_Package renames Standard.admin.taghelpers.PaymentTransactionResultHelperFactory_Package;
 
    type PaymentTransactionResultTag is tagged;
    type PaymentTransactionResultTag_Access is access all PaymentTransactionResultTag'Class;
    type PaymentTransactionResultTag_Access_Array is array (Natural range <>) of PaymentTransactionResultTag_Access;
    type PaymentTransactionResultTag_Access_Array_Access is access all PaymentTransactionResultTag_Access_Array;
+   type PaymentTransactionResultTag_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionResultTag_Access_Array_Access;
+   type PaymentTransactionResultTag_Access_Array_Access_Array_Access is access all PaymentTransactionResultTag_Access_Array_Access_Array;
 
    type PaymentTransactionResultTag is new TableTag with null record;
 

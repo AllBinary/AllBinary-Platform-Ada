@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
+with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package; use bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
+with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
+
 package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActivator_Package is
 
+   package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
+   package InputAutomationRobotServiceInterface_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
+   package OSGIActivatorUtil_Package renames Standard.org.allbinary.osgi.OSGIActivatorUtil_Package;
    procedure Initialize_Fields (This : in out InputAutomationRobotBundleActivator'Class) is
    begin
       null;
@@ -139,7 +148,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
 
    function getServiceFactory (This : in out InputAutomationRobotBundleActivator) return Java_Object_Access is
    begin
-        return This.serviceFactory;
+        return Java_Object_Access (This.serviceFactory);
    end getServiceFactory;
 
    procedure setServiceFactory (This : in out InputAutomationRobotBundleActivator; serviceObject_Param : access ServiceFactory_Package.ServiceFactory'Class) is

@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package is
    type HtmlImageInput_Access is access all HtmlImageInput'Class;
    type HtmlImageInput_Access_Array is array (Natural range <>) of HtmlImageInput_Access;
    type HtmlImageInput_Access_Array_Access is access all HtmlImageInput_Access_Array;
+   type HtmlImageInput_Access_Array_Access_Array is array (Natural range <>) of HtmlImageInput_Access_Array_Access;
+   type HtmlImageInput_Access_Array_Access_Array_Access is access all HtmlImageInput_Access_Array_Access_Array;
 
    type HtmlImageInput is new Java_Object with null record;
 

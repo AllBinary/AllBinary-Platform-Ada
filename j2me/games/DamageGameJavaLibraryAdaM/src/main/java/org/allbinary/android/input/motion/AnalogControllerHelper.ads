@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
-with org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package; use org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package;
 
 package org.allbinary.android.input.motion.AnalogControllerHelper_Package is
 
@@ -33,6 +32,8 @@ package org.allbinary.android.input.motion.AnalogControllerHelper_Package is
    type AnalogControllerHelper_Access is access all AnalogControllerHelper'Class;
    type AnalogControllerHelper_Access_Array is array (Natural range <>) of AnalogControllerHelper_Access;
    type AnalogControllerHelper_Access_Array_Access is access all AnalogControllerHelper_Access_Array;
+   type AnalogControllerHelper_Access_Array_Access_Array is array (Natural range <>) of AnalogControllerHelper_Access_Array_Access;
+   type AnalogControllerHelper_Access_Array_Access_Array_Access is access all AnalogControllerHelper_Access_Array_Access_Array;
 
    type AnalogControllerHelper is new Java_Object with record
       reduceTimeFactor : Integer;

@@ -30,6 +30,8 @@ package org.allbinary.media.audio.GameYouLoseSound_Package is
    type GameYouLoseSound_Access is access all GameYouLoseSound'Class;
    type GameYouLoseSound_Access_Array is array (Natural range <>) of GameYouLoseSound_Access;
    type GameYouLoseSound_Access_Array_Access is access all GameYouLoseSound_Access_Array;
+   type GameYouLoseSound_Access_Array_Access_Array is array (Natural range <>) of GameYouLoseSound_Access_Array_Access;
+   type GameYouLoseSound_Access_Array_Access_Array_Access is access all GameYouLoseSound_Access_Array_Access_Array;
 
    type GameYouLoseSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

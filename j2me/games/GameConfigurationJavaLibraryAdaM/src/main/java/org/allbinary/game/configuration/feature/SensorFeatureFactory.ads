@@ -29,6 +29,8 @@ package org.allbinary.game.configuration.feature.SensorFeatureFactory_Package is
    type SensorFeatureFactory_Access is access all SensorFeatureFactory'Class;
    type SensorFeatureFactory_Access_Array is array (Natural range <>) of SensorFeatureFactory_Access;
    type SensorFeatureFactory_Access_Array_Access is access all SensorFeatureFactory_Access_Array;
+   type SensorFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of SensorFeatureFactory_Access_Array_Access;
+   type SensorFeatureFactory_Access_Array_Access_Array_Access is access all SensorFeatureFactory_Access_Array_Access_Array;
 
    type SensorFeatureFactory is new Java_Object with record
       NO_ORIENTATION : SensorFeature_Access;

@@ -29,6 +29,8 @@ package org.allbinary.logic.system.os.NoOperatingSystem_Package is
    type NoOperatingSystem_Access is access all NoOperatingSystem'Class;
    type NoOperatingSystem_Access_Array is array (Natural range <>) of NoOperatingSystem_Access;
    type NoOperatingSystem_Access_Array_Access is access all NoOperatingSystem_Access_Array;
+   type NoOperatingSystem_Access_Array_Access_Array is array (Natural range <>) of NoOperatingSystem_Access_Array_Access;
+   type NoOperatingSystem_Access_Array_Access_Array_Access is access all NoOperatingSystem_Access_Array_Access_Array;
 
    type NoOperatingSystem is new GenericOperatingSystem with null record;
    NO_OPERATING_SYSTEM : GenericOperatingSystem_Access;

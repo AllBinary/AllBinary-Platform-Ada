@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+
 package body org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_Package is
 
    procedure Initialize_Fields (This : in out LastDisplayChangeEventHandler'Class) is

@@ -21,20 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
-with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package; use bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
 with org.allbinary.osgi.service.InputAutomationServiceConsumer_Package; use org.allbinary.osgi.service.InputAutomationServiceConsumer_Package;
-with org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServiceVisitor_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServiceVisitor_Package;
 
 package org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package is
 
    package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
-   package InputAutomationRobotServiceInterface_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
    package InputAutomationServiceConsumer_Package renames Standard.org.allbinary.osgi.service.InputAutomationServiceConsumer_Package;
 
    type InputAutomationRobotServiceConsumer is tagged;
    type InputAutomationRobotServiceConsumer_Access is access all InputAutomationRobotServiceConsumer'Class;
    type InputAutomationRobotServiceConsumer_Access_Array is array (Natural range <>) of InputAutomationRobotServiceConsumer_Access;
    type InputAutomationRobotServiceConsumer_Access_Array_Access is access all InputAutomationRobotServiceConsumer_Access_Array;
+   type InputAutomationRobotServiceConsumer_Access_Array_Access_Array is array (Natural range <>) of InputAutomationRobotServiceConsumer_Access_Array_Access;
+   type InputAutomationRobotServiceConsumer_Access_Array_Access_Array_Access is access all InputAutomationRobotServiceConsumer_Access_Array_Access_Array;
 
    type InputAutomationRobotServiceConsumer is new InputAutomationServiceConsumer with null record;
 

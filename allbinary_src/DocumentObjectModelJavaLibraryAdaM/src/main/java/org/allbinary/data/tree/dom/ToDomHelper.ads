@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.data.tree.dom.ToDomHelper_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ToDomHelper is tagged;
    type ToDomHelper_Access is access all ToDomHelper'Class;
    type ToDomHelper_Access_Array is array (Natural range <>) of ToDomHelper_Access;
    type ToDomHelper_Access_Array_Access is access all ToDomHelper_Access_Array;
+   type ToDomHelper_Access_Array_Access_Array is array (Natural range <>) of ToDomHelper_Access_Array_Access;
+   type ToDomHelper_Access_Array_Access_Array_Access is access all ToDomHelper_Access_Array_Access_Array;
 
    type ToDomHelper is new Java_Object with null record;
 

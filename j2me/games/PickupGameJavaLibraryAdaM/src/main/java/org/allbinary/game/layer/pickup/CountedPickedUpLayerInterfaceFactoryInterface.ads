@@ -31,6 +31,8 @@ package org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInte
    type CountedPickedUpLayerInterfaceFactoryInterface_Access is access all CountedPickedUpLayerInterfaceFactoryInterface'Class;
    type CountedPickedUpLayerInterfaceFactoryInterface_Access_Array is array (Natural range <>) of CountedPickedUpLayerInterfaceFactoryInterface_Access;
    type CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access is access all CountedPickedUpLayerInterfaceFactoryInterface_Access_Array;
+   type CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access;
+   type CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all CountedPickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array;
    function getId (This : in out CountedPickedUpLayerInterfaceFactoryInterface) return Integer is abstract;
    function getTotal (This : in out CountedPickedUpLayerInterfaceFactoryInterface) return Integer is abstract;
 

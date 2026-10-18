@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package; use org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package;
+with org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package; use org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package;
+
 package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAIFactory_Package is
 
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    procedure Initialize_Fields (This : in out TerrainPatrolAIFactory'Class) is
    begin
       null;
@@ -40,7 +45,7 @@ package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAIFactory_Package is
       gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         hashtable.put (BasePatrolAI_Package.MAX_DISTANCE, SmallIntegerSingletonFactory_Package.getInstance.getAt (220));
-        return TerrainPatrolAI_Package.Create (hashtable, ownerLayerInterface, gameInput);
+        return ArtificialIntelligenceInterface_Access (TerrainPatrolAI_Package.Create (hashtable, ownerLayerInterface, gameInput));
    end getInstance;
 
    procedure getInstance (This : in out TerrainPatrolAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is

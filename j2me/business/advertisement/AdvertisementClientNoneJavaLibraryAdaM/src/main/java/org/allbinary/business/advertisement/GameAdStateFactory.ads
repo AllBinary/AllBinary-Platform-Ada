@@ -11,7 +11,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
 with org.allbinary.logic.system.SoftwareInformation_Package; use org.allbinary.logic.system.SoftwareInformation_Package;
 with org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package; use org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package;
-with org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package; use org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package;
 with org.allbinary.business.advertisement.GameAdStateBase_Package; use org.allbinary.business.advertisement.GameAdStateBase_Package;
 
 package org.allbinary.business.advertisement.GameAdStateFactory_Package is
@@ -23,8 +22,10 @@ package org.allbinary.business.advertisement.GameAdStateFactory_Package is
    type GameAdStateFactory_Access is access all GameAdStateFactory'Class;
    type GameAdStateFactory_Access_Array is array (Natural range <>) of GameAdStateFactory_Access;
    type GameAdStateFactory_Access_Array_Access is access all GameAdStateFactory_Access_Array;
+   type GameAdStateFactory_Access_Array_Access_Array is array (Natural range <>) of GameAdStateFactory_Access_Array_Access;
+   type GameAdStateFactory_Access_Array_Access_Array_Access is access all GameAdStateFactory_Access_Array_Access_Array;
 
-   type GameAdStateFactory is new GameAdStateFactoryInterface with record
+   type GameAdStateFactory is new Java_Object and GameAdStateFactoryInterface with record
       gameAdStateArray : GameAdState_Access_Array_Access;
       gameAdState : GameAdState_Access;
    end record;

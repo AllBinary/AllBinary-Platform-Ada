@@ -28,6 +28,8 @@ package views.admin.inventory.listings.InventoryViewSearchInterface_Package is
    type InventoryViewSearchInterface_Access is access all InventoryViewSearchInterface'Class;
    type InventoryViewSearchInterface_Access_Array is array (Natural range <>) of InventoryViewSearchInterface_Access;
    type InventoryViewSearchInterface_Access_Array_Access is access all InventoryViewSearchInterface_Access_Array;
+   type InventoryViewSearchInterface_Access_Array_Access_Array is array (Natural range <>) of InventoryViewSearchInterface_Access_Array_Access;
+   type InventoryViewSearchInterface_Access_Array_Access_Array_Access is access all InventoryViewSearchInterface_Access_Array_Access_Array;
    function searchSingleStaticPage (This : in out InventoryViewSearchInterface) return Unbounded_String is abstract;
    function searchSingleDynamicPage (This : in out InventoryViewSearchInterface) return Unbounded_String is abstract;
    function search (This : in out InventoryViewSearchInterface) return Unbounded_String_Array_Access is abstract;

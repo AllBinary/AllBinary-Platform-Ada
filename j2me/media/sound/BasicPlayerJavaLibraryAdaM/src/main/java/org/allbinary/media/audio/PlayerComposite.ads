@@ -27,9 +27,7 @@ with javax.microedition.media.PlayerListener_Package; use javax.microedition.med
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
-with org.allbinary.media.audio.Controllable2_Package; use org.allbinary.media.audio.Controllable2_Package;
 
 package org.allbinary.media.audio.PlayerComposite_Package is
 
@@ -40,15 +38,16 @@ package org.allbinary.media.audio.PlayerComposite_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type PlayerComposite is tagged;
    type PlayerComposite_Access is access all PlayerComposite'Class;
    type PlayerComposite_Access_Array is array (Natural range <>) of PlayerComposite_Access;
    type PlayerComposite_Access_Array_Access is access all PlayerComposite_Access_Array;
+   type PlayerComposite_Access_Array_Access_Array is array (Natural range <>) of PlayerComposite_Access_Array_Access;
+   type PlayerComposite_Access_Array_Access_Array_Access is access all PlayerComposite_Access_Array_Access_Array;
 
-   type PlayerComposite is new Controllable and Player with record
+   type PlayerComposite is new Java_Object and Controllable and Player with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       player : Player_Access;

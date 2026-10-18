@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.ai.ArtificialIntelligenceLayerManager_Package; use org.allbinary.ai.ArtificialIntelligenceLayerManager_Package;
+with org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package; use org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package;
+
 package body org.allbinary.ai.ArtificialIntelligenceLayerProcessor_Package is
 
    procedure Initialize_Fields (This : in out ArtificialIntelligenceLayerProcessor'Class) is

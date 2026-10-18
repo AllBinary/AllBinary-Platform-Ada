@@ -8,18 +8,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
-with android.view.KeyEvent_Package; use android.view.KeyEvent_Package;
 
 package org.allbinary.game.input.AndroidNumberKeyToJ2MECanvasNumberKey_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
-   package KeyEvent_Package renames Standard.android.view.KeyEvent_Package;
 
    type AndroidNumberKeyToJ2MECanvasNumberKey is tagged;
    type AndroidNumberKeyToJ2MECanvasNumberKey_Access is access all AndroidNumberKeyToJ2MECanvasNumberKey'Class;
    type AndroidNumberKeyToJ2MECanvasNumberKey_Access_Array is array (Natural range <>) of AndroidNumberKeyToJ2MECanvasNumberKey_Access;
    type AndroidNumberKeyToJ2MECanvasNumberKey_Access_Array_Access is access all AndroidNumberKeyToJ2MECanvasNumberKey_Access_Array;
+   type AndroidNumberKeyToJ2MECanvasNumberKey_Access_Array_Access_Array is array (Natural range <>) of AndroidNumberKeyToJ2MECanvasNumberKey_Access_Array_Access;
+   type AndroidNumberKeyToJ2MECanvasNumberKey_Access_Array_Access_Array_Access is access all AndroidNumberKeyToJ2MECanvasNumberKey_Access_Array_Access_Array;
 
    type AndroidNumberKeyToJ2MECanvasNumberKey is new Java_Object with null record;
    androidtoJavaMicroEditionKeyMap : Integer_Array_Access;

@@ -33,6 +33,8 @@ package org.allbinary.graphics.paint.InitUpdatePaintableInterface_Package is
    type InitUpdatePaintableInterface_Access is access all InitUpdatePaintableInterface'Class;
    type InitUpdatePaintableInterface_Access_Array is array (Natural range <>) of InitUpdatePaintableInterface_Access;
    type InitUpdatePaintableInterface_Access_Array_Access is access all InitUpdatePaintableInterface_Access_Array;
+   type InitUpdatePaintableInterface_Access_Array_Access_Array is array (Natural range <>) of InitUpdatePaintableInterface_Access_Array_Access;
+   type InitUpdatePaintableInterface_Access_Array_Access_Array_Access is access all InitUpdatePaintableInterface_Access_Array_Access_Array;
 
 end org.allbinary.graphics.paint.InitUpdatePaintableInterface_Package;
 

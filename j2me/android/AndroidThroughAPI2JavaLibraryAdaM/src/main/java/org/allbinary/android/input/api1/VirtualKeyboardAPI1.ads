@@ -34,6 +34,8 @@ package org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package is
    type VirtualKeyboardAPI1_Access is access all VirtualKeyboardAPI1'Class;
    type VirtualKeyboardAPI1_Access_Array is array (Natural range <>) of VirtualKeyboardAPI1_Access;
    type VirtualKeyboardAPI1_Access_Array_Access is access all VirtualKeyboardAPI1_Access_Array;
+   type VirtualKeyboardAPI1_Access_Array_Access_Array is array (Natural range <>) of VirtualKeyboardAPI1_Access_Array_Access;
+   type VirtualKeyboardAPI1_Access_Array_Access_Array_Access is access all VirtualKeyboardAPI1_Access_Array_Access_Array;
 
    type VirtualKeyboardAPI1 is new VirtualKeyboard and VirtualKeyboardEventListenerInterface with null record;
    MIN_API : Integer;

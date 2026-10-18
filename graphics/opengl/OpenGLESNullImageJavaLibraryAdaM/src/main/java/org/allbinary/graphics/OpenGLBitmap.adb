@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.OpenGLBitmap_Package is
 
    procedure Initialize_Fields (This : in out OpenGLBitmap'Class) is

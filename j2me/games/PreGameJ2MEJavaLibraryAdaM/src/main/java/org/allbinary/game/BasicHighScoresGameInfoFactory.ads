@@ -21,9 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
-with org.allbinary.game.GameTypeFactory_Package; use org.allbinary.game.GameTypeFactory_Package;
-with org.allbinary.game.GameMode_Package; use org.allbinary.game.GameMode_Package;
-with org.allbinary.game.PlayerTypesFactory_Package; use org.allbinary.game.PlayerTypesFactory_Package;
 
 package org.allbinary.game.BasicHighScoresGameInfoFactory_Package is
 
@@ -32,6 +29,8 @@ package org.allbinary.game.BasicHighScoresGameInfoFactory_Package is
    type BasicHighScoresGameInfoFactory_Access is access all BasicHighScoresGameInfoFactory'Class;
    type BasicHighScoresGameInfoFactory_Access_Array is array (Natural range <>) of BasicHighScoresGameInfoFactory_Access;
    type BasicHighScoresGameInfoFactory_Access_Array_Access is access all BasicHighScoresGameInfoFactory_Access_Array;
+   type BasicHighScoresGameInfoFactory_Access_Array_Access_Array is array (Natural range <>) of BasicHighScoresGameInfoFactory_Access_Array_Access;
+   type BasicHighScoresGameInfoFactory_Access_Array_Access_Array_Access is access all BasicHighScoresGameInfoFactory_Access_Array_Access_Array;
 
    type BasicHighScoresGameInfoFactory is new Java_Object with record
       MULTI_PLAYER_SERVER : GameInfo_Access;

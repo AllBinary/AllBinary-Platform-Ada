@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package is
 
    procedure Initialize_Fields (This : in out AllBinaryFlickerAndroidImageRotationAnimation'Class) is

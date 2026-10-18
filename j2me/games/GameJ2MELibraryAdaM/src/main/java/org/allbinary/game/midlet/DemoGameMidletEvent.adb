@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.midlet.DemoGameMidletEvent_Package is
 
    procedure Initialize_Fields (This : in out DemoGameMidletEvent'Class) is
@@ -54,6 +55,11 @@ package body org.allbinary.game.midlet.DemoGameMidletEvent_Package is
    begin
         return This.demoGameMidletState;
    end getDemoGameMidletState;
+
+   procedure init (This : in out DemoGameMidletEvent; Value : Unbounded_String) is
+   begin
+      DemoGameMidletEvent'Class (This).init (Java_Box (Value));
+   end init;
 
 end org.allbinary.game.midlet.DemoGameMidletEvent_Package;
 

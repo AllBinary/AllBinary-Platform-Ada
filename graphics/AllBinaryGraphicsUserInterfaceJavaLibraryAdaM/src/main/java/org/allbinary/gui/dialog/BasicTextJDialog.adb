@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+
 package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
 
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    procedure Initialize_Fields (This : in out BasicTextJDialog'Class) is
    begin
       null;
@@ -84,7 +87,7 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
         This.textJLabel.setText (To_Unbounded_String ("No Text Set"));
         layout := GroupLayout_Package.Create (BasicTextJDialog'Class (This).getContentPane);
         BasicTextJDialog'Class (This).getContentPane.setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGap (80, 80, 80).addComponent (This.jButton1)).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.textJLabel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 184, Short_Package.MAX_VALUE))).addContainerGap));
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGap (80, 80, 80).addComponent (This.jButton1)).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.textJLabel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 184, Short_Integer'Last))).addContainerGap));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGap (20, 20, 20).addComponent (This.textJLabel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 20, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addGap (30, 30, 30).addComponent (This.jButton1)));
         BasicTextJDialog'Class (This).pack;
    end initComponents;

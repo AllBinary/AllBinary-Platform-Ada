@@ -20,27 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.util.cache.AutomaticCacheInterface_Package; use org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
-with org.allbinary.logic.util.cache.AutomaticCacheInterfaceFactory_Package; use org.allbinary.logic.util.cache.AutomaticCacheInterfaceFactory_Package;
-with org.allbinary.logic.util.cache.CachePolicyFactory_Package; use org.allbinary.logic.util.cache.CachePolicyFactory_Package;
-with org.allbinary.logic.util.cache.CacheTypeFactory_Package; use org.allbinary.logic.util.cache.CacheTypeFactory_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.graphics.color.ColorCacheableFactory_Package; use org.allbinary.graphics.color.ColorCacheableFactory_Package;
 
 package org.allbinary.graphics.color.ColorCacheFactory_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AutomaticCacheInterface_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
-   package AutomaticCacheInterfaceFactory_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterfaceFactory_Package;
-   package CachePolicyFactory_Package renames Standard.org.allbinary.logic.util.cache.CachePolicyFactory_Package;
-   package CacheTypeFactory_Package renames Standard.org.allbinary.logic.util.cache.CacheTypeFactory_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ColorCacheFactory is tagged;
    type ColorCacheFactory_Access is access all ColorCacheFactory'Class;
    type ColorCacheFactory_Access_Array is array (Natural range <>) of ColorCacheFactory_Access;
    type ColorCacheFactory_Access_Array_Access is access all ColorCacheFactory_Access_Array;
+   type ColorCacheFactory_Access_Array_Access_Array is array (Natural range <>) of ColorCacheFactory_Access_Array_Access;
+   type ColorCacheFactory_Access_Array_Access_Array_Access is access all ColorCacheFactory_Access_Array_Access_Array;
 
    type ColorCacheFactory is new Java_Object with null record;
    cacheInterface : AutomaticCacheInterface_Access;

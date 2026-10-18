@@ -32,6 +32,8 @@ package org.allbinary.logic.communication.http.request.session.WeblisketSessionI
    type WeblisketSessionInterface_Access is access all WeblisketSessionInterface'Class;
    type WeblisketSessionInterface_Access_Array is array (Natural range <>) of WeblisketSessionInterface_Access;
    type WeblisketSessionInterface_Access_Array_Access is access all WeblisketSessionInterface_Access_Array;
+   type WeblisketSessionInterface_Access_Array_Access_Array is array (Natural range <>) of WeblisketSessionInterface_Access_Array_Access;
+   type WeblisketSessionInterface_Access_Array_Access_Array_Access is access all WeblisketSessionInterface_Access_Array_Access_Array;
    procedure clear (This : in out WeblisketSessionInterface) is abstract;
    function getAttempts (This : in out WeblisketSessionInterface) return Integer is abstract;
    function getAuthentication (This : in out WeblisketSessionInterface) return Unbounded_String is abstract;

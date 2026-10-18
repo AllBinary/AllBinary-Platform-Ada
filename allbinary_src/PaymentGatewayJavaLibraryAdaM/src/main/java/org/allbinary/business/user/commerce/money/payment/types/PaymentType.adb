@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil_Package; use org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil_Package;
+
 package body org.allbinary.business.user.commerce.money.payment.types.PaymentType_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out PaymentType'Class) is
    begin
       null;
@@ -81,7 +89,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    function toVector (This : in out PaymentType) return BasicArrayList_Access is
       vector : BasicArrayList_Access;
    begin
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         vector.addAllList (PaymentType'Class (This).getBasicPaymentType.toVector);
         if (This.paymentTransactionInterfaceFactoryInterface) /= (null) then
             vector.add (To_Unbounded_String (Ada.Tags.Expanded_Name (This.paymentTransactionInterfaceFactoryInterface.all'Tag)));

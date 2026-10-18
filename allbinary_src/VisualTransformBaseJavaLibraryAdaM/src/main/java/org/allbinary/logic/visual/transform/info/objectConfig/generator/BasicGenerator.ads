@@ -31,6 +31,8 @@ package org.allbinary.logic.visual.transform.info.objectConfig.generator.BasicGe
    type BasicGenerator_Access is access all BasicGenerator'Class;
    type BasicGenerator_Access_Array is array (Natural range <>) of BasicGenerator_Access;
    type BasicGenerator_Access_Array_Access is access all BasicGenerator_Access_Array;
+   type BasicGenerator_Access_Array_Access_Array is array (Natural range <>) of BasicGenerator_Access_Array_Access;
+   type BasicGenerator_Access_Array_Access_Array_Access is access all BasicGenerator_Access_Array_Access_Array;
 
    type BasicGenerator is new TransformInfoObjectConfigGenerator with record
       logUtil : LogUtil_Access;

@@ -28,6 +28,8 @@ package org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package is
    type DemoPaintableInterface_Access is access all DemoPaintableInterface'Class;
    type DemoPaintableInterface_Access_Array is array (Natural range <>) of DemoPaintableInterface_Access;
    type DemoPaintableInterface_Access_Array_Access is access all DemoPaintableInterface_Access_Array;
+   type DemoPaintableInterface_Access_Array_Access_Array is array (Natural range <>) of DemoPaintableInterface_Access_Array_Access;
+   type DemoPaintableInterface_Access_Array_Access_Array_Access is access all DemoPaintableInterface_Access_Array_Access_Array;
    procedure showGamePaintable (This : in out DemoPaintableInterface) is abstract;
 
 end org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package;

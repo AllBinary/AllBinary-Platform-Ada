@@ -20,18 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 
 package javax.microedition.lcdui.PlatformImage_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type PlatformImage is tagged;
    type PlatformImage_Access is access all PlatformImage'Class;
    type PlatformImage_Access_Array is array (Natural range <>) of PlatformImage_Access;
    type PlatformImage_Access_Array_Access is access all PlatformImage_Access_Array;
+   type PlatformImage_Access_Array_Access_Array is array (Natural range <>) of PlatformImage_Access_Array_Access;
+   type PlatformImage_Access_Array_Access_Array_Access is access all PlatformImage_Access_Array_Access_Array;
 
    type PlatformImage is new Java_Object with null record;
 
@@ -55,6 +54,8 @@ package javax.microedition.lcdui.PlatformImage_Package is
    procedure setRGB (This : in out PlatformImage; argb : Integer_Array_Access; offset : Integer; scanlength : Integer; x : Integer; y : Integer; width : Integer; height : Integer; image_Param : access Image_Package.Image'Class);
    function getData (This : in out PlatformImage; image_Param : access Image_Package.Image'Class) return Integer_Array_Access;
    procedure getData (This : in out PlatformImage; image_Param : access Image_Package.Image'Class);
+   function getImage (This : in out PlatformImage; Value : Unbounded_String) return Java_Object_Access;
+   procedure getImage (This : in out PlatformImage; Value : Unbounded_String);
 
 end javax.microedition.lcdui.PlatformImage_Package;
 

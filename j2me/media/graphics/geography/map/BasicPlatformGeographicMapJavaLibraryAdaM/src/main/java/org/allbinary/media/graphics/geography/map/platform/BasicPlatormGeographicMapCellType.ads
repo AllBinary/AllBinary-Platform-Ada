@@ -20,22 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 
 package org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package is
 
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
 
    type BasicPlatormGeographicMapCellType is tagged;
    type BasicPlatormGeographicMapCellType_Access is access all BasicPlatormGeographicMapCellType'Class;
    type BasicPlatormGeographicMapCellType_Access_Array is array (Natural range <>) of BasicPlatormGeographicMapCellType_Access;
    type BasicPlatormGeographicMapCellType_Access_Array_Access is access all BasicPlatormGeographicMapCellType_Access_Array;
+   type BasicPlatormGeographicMapCellType_Access_Array_Access_Array is array (Natural range <>) of BasicPlatormGeographicMapCellType_Access_Array_Access;
+   type BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Access is access all BasicPlatormGeographicMapCellType_Access_Array_Access_Array;
 
    type BasicPlatormGeographicMapCellType is new Java_Object with record
       types : Integer_Array_Access;

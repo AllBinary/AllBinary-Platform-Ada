@@ -28,6 +28,8 @@ package org.allbinary.business.user.role.BasicUserRoleData_Package is
    type BasicUserRoleData_Access is access all BasicUserRoleData'Class;
    type BasicUserRoleData_Access_Array is array (Natural range <>) of BasicUserRoleData_Access;
    type BasicUserRoleData_Access_Array_Access is access all BasicUserRoleData_Access_Array;
+   type BasicUserRoleData_Access_Array_Access_Array is array (Natural range <>) of BasicUserRoleData_Access_Array_Access;
+   type BasicUserRoleData_Access_Array_Access_Array_Access is access all BasicUserRoleData_Access_Array_Access_Array;
 
    type BasicUserRoleData is new Java_Object with null record;
    NAME : Unbounded_String;

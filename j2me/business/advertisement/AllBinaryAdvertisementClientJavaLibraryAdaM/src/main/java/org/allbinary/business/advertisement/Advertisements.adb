@@ -13,13 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.LockedUtil_Package; use org.allbinary.logic.system.security.licensing.LockedUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.business.advertisement.Advertisements_Package is
 
+   package LockedUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out Advertisements'Class) is
    begin
       null;
-      This.bannerList := BasicArrayListD_Package.Create;
-      This.pageList := BasicArrayListD_Package.Create;
+      This.bannerList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.pageList := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.myRandomFactory := MyRandomFactory_Package.getInstance;
    end Initialize_Fields;
 
@@ -39,8 +44,8 @@ package body org.allbinary.business.advertisement.Advertisements_Package is
    procedure addPage (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface_Package.AdvertisementProcessorInterface'Class) is
       advertisementProcessorInterface : constant AdvertisementProcessorInterface_Access := AdvertisementProcessorInterface_Access (advertisementProcessorInterface_Param);
    begin
-        if not (This.pageList.contains (advertisementProcessorInterface)) then
-            This.pageList.add (advertisementProcessorInterface);
+        if not (This.pageList.contains (Java_Object_Access (advertisementProcessorInterface))) then
+            This.pageList.add (Java_Object_Access (advertisementProcessorInterface));
         end if;
    end addPage;
 
@@ -86,8 +91,8 @@ package body org.allbinary.business.advertisement.Advertisements_Package is
    procedure addBanner (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface_Package.AdvertisementProcessorInterface'Class) is
       advertisementProcessorInterface : constant AdvertisementProcessorInterface_Access := AdvertisementProcessorInterface_Access (advertisementProcessorInterface_Param);
    begin
-        if not (This.bannerList.contains (advertisementProcessorInterface)) then
-            This.bannerList.add (advertisementProcessorInterface);
+        if not (This.bannerList.contains (Java_Object_Access (advertisementProcessorInterface))) then
+            This.bannerList.add (Java_Object_Access (advertisementProcessorInterface));
         end if;
    end addBanner;
 

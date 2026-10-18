@@ -11,19 +11,19 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.canvas.BaseGameStatistics_Package; use org.allbinary.canvas.BaseGameStatistics_Package;
-with org.allbinary.canvas.GameStatisticsFactory_Package; use org.allbinary.canvas.GameStatisticsFactory_Package;
 
 package org.allbinary.game.displayable.canvas.NullDisplayable_Package is
 
    package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package BaseGameStatistics_Package renames Standard.org.allbinary.canvas.BaseGameStatistics_Package;
-   package GameStatisticsFactory_Package renames Standard.org.allbinary.canvas.GameStatisticsFactory_Package;
 
    type NullDisplayable is tagged;
    type NullDisplayable_Access is access all NullDisplayable'Class;
    type NullDisplayable_Access_Array is array (Natural range <>) of NullDisplayable_Access;
    type NullDisplayable_Access_Array_Access is access all NullDisplayable_Access_Array;
+   type NullDisplayable_Access_Array_Access_Array is array (Natural range <>) of NullDisplayable_Access_Array_Access;
+   type NullDisplayable_Access_Array_Access_Array_Access is access all NullDisplayable_Access_Array_Access_Array;
 
    type NullDisplayable is new Canvas with record
       baseGameStatistics : BaseGameStatistics_Access;

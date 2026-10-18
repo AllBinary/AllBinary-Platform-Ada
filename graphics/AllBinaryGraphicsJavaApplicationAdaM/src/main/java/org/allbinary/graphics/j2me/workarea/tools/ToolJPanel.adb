@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+with org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package;
+
 package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 
    procedure Initialize_Fields (This : in out ToolJPanel'Class) is

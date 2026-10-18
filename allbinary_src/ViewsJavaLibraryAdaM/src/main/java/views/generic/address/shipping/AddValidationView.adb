@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
+
 package body views.generic_Id.address.shipping.AddValidationView_Package is
 
+   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
    procedure Initialize_Fields (This : in out AddValidationView'Class) is
    begin
       null;

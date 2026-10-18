@@ -12,17 +12,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.LockableFeature_Package; use org.allbinary.logic.system.security.licensing.LockableFeature_Package;
 
 package org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type InApplicationPurchaseFactory is tagged;
    type InApplicationPurchaseFactory_Access is access all InApplicationPurchaseFactory'Class;
    type InApplicationPurchaseFactory_Access_Array is array (Natural range <>) of InApplicationPurchaseFactory_Access;
    type InApplicationPurchaseFactory_Access_Array_Access is access all InApplicationPurchaseFactory_Access_Array;
+   type InApplicationPurchaseFactory_Access_Array_Access_Array is array (Natural range <>) of InApplicationPurchaseFactory_Access_Array_Access;
+   type InApplicationPurchaseFactory_Access_Array_Access_Array_Access is access all InApplicationPurchaseFactory_Access_Array_Access_Array;
 
    type InApplicationPurchaseFactory is new Java_Object with null record;
    instance : InApplicationPurchaseFactory_Access;
@@ -43,6 +43,7 @@ package org.allbinary.logic.system.security.licensing.InApplicationPurchaseFacto
    procedure add (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature_Package.LockableFeature'Class);
    function getUserName (This : in out InApplicationPurchaseFactory) return Unbounded_String;
    function isEnabled (This : in out InApplicationPurchaseFactory) return Boolean;
+   procedure onSaveState (This : in out InApplicationPurchaseFactory; Value : Unbounded_String);
 
 end org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package;
 

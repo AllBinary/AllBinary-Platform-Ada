@@ -20,18 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package; use org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package;
-with org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package; use org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package;
 
 package org.allbinary.logic.visual.dhtml.html.input.HtmlRadioInput_Package is
 
-   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
 
    type HtmlRadioInput is tagged;
    type HtmlRadioInput_Access is access all HtmlRadioInput'Class;
    type HtmlRadioInput_Access_Array is array (Natural range <>) of HtmlRadioInput_Access;
    type HtmlRadioInput_Access_Array_Access is access all HtmlRadioInput_Access_Array;
+   type HtmlRadioInput_Access_Array_Access_Array is array (Natural range <>) of HtmlRadioInput_Access_Array_Access;
+   type HtmlRadioInput_Access_Array_Access_Array_Access is access all HtmlRadioInput_Access_Array_Access_Array;
 
    type HtmlRadioInput is new HtmlValueInput with record
       CHECKED : Unbounded_String;

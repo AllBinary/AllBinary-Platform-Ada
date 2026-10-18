@@ -28,6 +28,8 @@ package org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package is
    type TimeFiredInterface_Access is access all TimeFiredInterface'Class;
    type TimeFiredInterface_Access_Array is array (Natural range <>) of TimeFiredInterface_Access;
    type TimeFiredInterface_Access_Array_Access is access all TimeFiredInterface_Access_Array;
+   type TimeFiredInterface_Access_Array_Access_Array is array (Natural range <>) of TimeFiredInterface_Access_Array_Access;
+   type TimeFiredInterface_Access_Array_Access_Array_Access is access all TimeFiredInterface_Access_Array_Access_Array;
    function getLastFireTime (This : in out TimeFiredInterface) return Long_Long_Integer is abstract;
 
 end org.allbinary.game.ag.ai.scroller.TimeFiredInterface_Package;

@@ -21,23 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package; use org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
-with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 
 package org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package is
 
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
 
    type ImageArrayRotationAnimationCacheable is tagged;
    type ImageArrayRotationAnimationCacheable_Access is access all ImageArrayRotationAnimationCacheable'Class;
    type ImageArrayRotationAnimationCacheable_Access_Array is array (Natural range <>) of ImageArrayRotationAnimationCacheable_Access;
    type ImageArrayRotationAnimationCacheable_Access_Array_Access is access all ImageArrayRotationAnimationCacheable_Access_Array;
+   type ImageArrayRotationAnimationCacheable_Access_Array_Access_Array is array (Natural range <>) of ImageArrayRotationAnimationCacheable_Access_Array_Access;
+   type ImageArrayRotationAnimationCacheable_Access_Array_Access_Array_Access is access all ImageArrayRotationAnimationCacheable_Access_Array_Access_Array;
 
    type ImageArrayRotationAnimationCacheable is new AdjustedImageArrayRotationAnimation and CacheableInterface with null record;
 

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.java.anyType.clazz.ClassUtil_Package; use org.allbinary.logic.java.anyType.clazz.ClassUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package is
 
+   package ClassUtil_Package renames Standard.org.allbinary.logic.java.anyType.clazz.ClassUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out HttpFileUploadUtil'Class) is
    begin
       null;
@@ -111,6 +118,18 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUt
 
    procedure isValid (This : in out HttpFileUploadUtil; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Boolean := HttpFileUploadUtil'Class (This).isValid (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   function isValid (This : in out HttpFileUploadUtil; Value : Unbounded_String) return Boolean is
+   begin
+      return HttpFileUploadUtil'Class (This).isValid (Java_Box (Value));
+   end isValid;
+
+   procedure isValid (This : in out HttpFileUploadUtil; Value : Unbounded_String) is
+      Java_Result : constant Boolean := HttpFileUploadUtil'Class (This).isValid (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.collision.CollidableHelperFactory_Package; use org.allbinary.game.collision.CollidableHelperFactory_Package;
+with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
+with org.allbinary.game.combat.damage.DamageableInterface_Package; use org.allbinary.game.combat.damage.DamageableInterface_Package;
+
 package body org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Package is
 
+   package CollidableHelperFactory_Package renames Standard.org.allbinary.game.collision.CollidableHelperFactory_Package;
+   package CollisionTypeFactory_Package renames Standard.org.allbinary.game.collision.CollisionTypeFactory_Package;
+   package DamageableInterface_Package renames Standard.org.allbinary.game.combat.damage.DamageableInterface_Package;
    procedure Initialize_Fields (This : in out CollidableDamageWeaponBehavior'Class) is
    begin
       null;

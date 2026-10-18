@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.NullPlayerGameInputComposite_Package; use org.allbinary.game.input.NullPlayerGameInputComposite_Package;
+with org.allbinary.graphics.ItemColorFactory_Package; use org.allbinary.graphics.ItemColorFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+
 package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
 
+   package NullPlayerGameInputComposite_Package renames Standard.org.allbinary.game.input.NullPlayerGameInputComposite_Package;
+   package ItemColorFactory_Package renames Standard.org.allbinary.graphics.ItemColorFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package LayerProcessor_Package renames Standard.org.allbinary.layer.LayerProcessor_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    procedure Initialize_Fields (This : in out AllBinaryGameLayerManager'Class) is
    begin
       null;

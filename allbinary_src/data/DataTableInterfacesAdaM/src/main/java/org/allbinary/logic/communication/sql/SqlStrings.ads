@@ -8,16 +8,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.logic.communication.sql.SqlStrings_Package is
 
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type SqlStrings is tagged;
    type SqlStrings_Access is access all SqlStrings'Class;
    type SqlStrings_Access_Array is array (Natural range <>) of SqlStrings_Access;
    type SqlStrings_Access_Array_Access is access all SqlStrings_Access_Array;
+   type SqlStrings_Access_Array_Access_Array is array (Natural range <>) of SqlStrings_Access_Array_Access;
+   type SqlStrings_Access_Array_Access_Array_Access is access all SqlStrings_Access_Array_Access_Array;
 
    type SqlStrings is new Java_Object with record
       CREATE_DATABASE : Unbounded_String;

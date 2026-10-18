@@ -16,6 +16,8 @@ package org.osgi.framework.Bundle_Package is
    type Bundle_Access is access all Bundle'Class;
    type Bundle_Access_Array is array (Natural range <>) of Bundle_Access;
    type Bundle_Access_Array_Access is access all Bundle_Access_Array;
+   type Bundle_Access_Array_Access_Array is array (Natural range <>) of Bundle_Access_Array_Access;
+   type Bundle_Access_Array_Access_Array_Access is access all Bundle_Access_Array_Access_Array;
    function getSymbolicName (This : in out Bundle) return Unbounded_String is abstract;
    procedure start (This : in out Bundle) is abstract;
    procedure start (This : in out Bundle; options : Integer) is abstract;

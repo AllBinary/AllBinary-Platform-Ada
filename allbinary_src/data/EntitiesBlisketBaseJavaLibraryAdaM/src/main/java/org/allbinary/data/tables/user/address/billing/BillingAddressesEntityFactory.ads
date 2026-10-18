@@ -22,19 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package; use org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package; use org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package;
 
 package org.allbinary.data.tables.user.address.billing.BillingAddressesEntityFactory_Package is
 
    package StreetAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BillingAddressesEntityFactory is tagged;
    type BillingAddressesEntityFactory_Access is access all BillingAddressesEntityFactory'Class;
    type BillingAddressesEntityFactory_Access_Array is array (Natural range <>) of BillingAddressesEntityFactory_Access;
    type BillingAddressesEntityFactory_Access_Array_Access is access all BillingAddressesEntityFactory_Access_Array;
+   type BillingAddressesEntityFactory_Access_Array_Access_Array is array (Natural range <>) of BillingAddressesEntityFactory_Access_Array_Access;
+   type BillingAddressesEntityFactory_Access_Array_Access_Array_Access is access all BillingAddressesEntityFactory_Access_Array_Access_Array;
 
    type BillingAddressesEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

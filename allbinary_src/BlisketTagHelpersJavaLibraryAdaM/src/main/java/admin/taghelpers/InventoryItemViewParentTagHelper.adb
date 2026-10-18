@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
+with taghelpers.ValidationViewHelper_Package; use taghelpers.ValidationViewHelper_Package;
+
 package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
+   package ValidationViewHelper_Package renames Standard.taghelpers.ValidationViewHelper_Package;
    procedure Initialize_Fields (This : in out InventoryItemViewParentTagHelper'Class) is
    begin
       null;
@@ -145,6 +152,11 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
    begin
       null;
    end getRequestMapInterface;
+
+   procedure checkForValidationViewHelper (This : in out InventoryItemViewParentTagHelper; Value : Unbounded_String) is
+   begin
+      InventoryItemViewParentTagHelper'Class (This).checkForValidationViewHelper (Java_Box (Value));
+   end checkForValidationViewHelper;
 
 begin
    null;

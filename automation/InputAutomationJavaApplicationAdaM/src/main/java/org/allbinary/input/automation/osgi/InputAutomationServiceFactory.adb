@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.InputAutomationJFrame_Package; use org.allbinary.input.automation.InputAutomationJFrame_Package;
+
 package body org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package is
 
+   package InputAutomationJFrame_Package renames Standard.org.allbinary.input.automation.InputAutomationJFrame_Package;
    procedure Initialize_Fields (This : in out InputAutomationServiceFactory'Class) is
    begin
       null;

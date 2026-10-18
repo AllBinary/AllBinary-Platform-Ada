@@ -28,6 +28,8 @@ package org.allbinary.input.automation.module.game.skill.GameSkillType_Package i
    type GameSkillType_Access is access all GameSkillType'Class;
    type GameSkillType_Access_Array is array (Natural range <>) of GameSkillType_Access;
    type GameSkillType_Access_Array_Access is access all GameSkillType_Access_Array;
+   type GameSkillType_Access_Array_Access_Array is array (Natural range <>) of GameSkillType_Access_Array_Access;
+   type GameSkillType_Access_Array_Access_Array_Access is access all GameSkillType_Access_Array_Access_Array;
 
    type GameSkillType is new Java_Object with record
       SPELL_GAME_SKILL_TYPE : Unbounded_String;

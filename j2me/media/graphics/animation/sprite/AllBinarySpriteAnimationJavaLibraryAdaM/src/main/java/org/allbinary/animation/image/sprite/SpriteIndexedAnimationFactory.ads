@@ -21,37 +21,29 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
-with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package; use org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
-with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
-with org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package;
 
 package org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
-   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
    package ProceduralAnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
    package BaseImageAnimationFactory_Package renames Standard.org.allbinary.animation.image.BaseImageAnimationFactory_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorUtil_Package;
    package AnimationFactorySpriteScaleUtil_Package renames Standard.org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
    type SpriteIndexedAnimationFactory is tagged;
    type SpriteIndexedAnimationFactory_Access is access all SpriteIndexedAnimationFactory'Class;
    type SpriteIndexedAnimationFactory_Access_Array is array (Natural range <>) of SpriteIndexedAnimationFactory_Access;
    type SpriteIndexedAnimationFactory_Access_Array_Access is access all SpriteIndexedAnimationFactory_Access_Array;
+   type SpriteIndexedAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of SpriteIndexedAnimationFactory_Access_Array_Access;
+   type SpriteIndexedAnimationFactory_Access_Array_Access_Array_Access is access all SpriteIndexedAnimationFactory_Access_Array_Access_Array;
 
    type SpriteIndexedAnimationFactory is new BaseImageAnimationFactory and ProceduralAnimationInterfaceFactoryInterface with record
       animationFactorySpriteScaleUtil : AnimationFactorySpriteScaleUtil_Access;

@@ -28,6 +28,8 @@ package org.allbinary.game.ag.layer.pickup.health.HealthResources_Package is
    type HealthResources_Access is access all HealthResources'Class;
    type HealthResources_Access_Array is array (Natural range <>) of HealthResources_Access;
    type HealthResources_Access_Array_Access is access all HealthResources_Access_Array;
+   type HealthResources_Access_Array_Access_Array is array (Natural range <>) of HealthResources_Access_Array_Access;
+   type HealthResources_Access_Array_Access_Array_Access is access all HealthResources_Access_Array_Access_Array;
 
    type HealthResources is new Java_Object with record
       RESOURCE : Unbounded_String;

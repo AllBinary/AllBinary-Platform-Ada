@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
 
 package org.allbinary.game.GameTypeFactory_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type GameTypeFactory is tagged;
    type GameTypeFactory_Access is access all GameTypeFactory'Class;
    type GameTypeFactory_Access_Array is array (Natural range <>) of GameTypeFactory_Access;
    type GameTypeFactory_Access_Array_Access is access all GameTypeFactory_Access_Array;
+   type GameTypeFactory_Access_Array_Access_Array is array (Natural range <>) of GameTypeFactory_Access_Array_Access;
+   type GameTypeFactory_Access_Array_Access_Array_Access is access all GameTypeFactory_Access_Array_Access_Array;
 
    type GameTypeFactory is new Java_Object with record
       NULL_GAME_TYPE_ARRAY : GameType_Access_Array_Access;

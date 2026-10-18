@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.DynamicObjectData_Package is
 
    procedure Initialize_Fields (This : in out DynamicObjectData'Class) is

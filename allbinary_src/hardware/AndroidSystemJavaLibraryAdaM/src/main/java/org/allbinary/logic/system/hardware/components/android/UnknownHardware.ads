@@ -30,8 +30,10 @@ package org.allbinary.logic.system.hardware.components.android.UnknownHardware_P
    type UnknownHardware_Access is access all UnknownHardware'Class;
    type UnknownHardware_Access_Array is array (Natural range <>) of UnknownHardware_Access;
    type UnknownHardware_Access_Array_Access is access all UnknownHardware_Access_Array;
+   type UnknownHardware_Access_Array_Access_Array is array (Natural range <>) of UnknownHardware_Access_Array_Access;
+   type UnknownHardware_Access_Array_Access_Array_Access is access all UnknownHardware_Access_Array_Access_Array;
 
-   type UnknownHardware is new HardwareComponentInterface with record
+   type UnknownHardware is new Java_Object and HardwareComponentInterface with record
       data : Unbounded_String;
    end record;
 

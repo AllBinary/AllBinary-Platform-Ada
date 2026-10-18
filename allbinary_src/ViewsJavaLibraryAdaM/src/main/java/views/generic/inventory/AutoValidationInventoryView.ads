@@ -37,6 +37,8 @@ package views.generic_Id.inventory.AutoValidationInventoryView_Package is
    type AutoValidationInventoryView_Access is access all AutoValidationInventoryView'Class;
    type AutoValidationInventoryView_Access_Array is array (Natural range <>) of AutoValidationInventoryView_Access;
    type AutoValidationInventoryView_Access_Array_Access is access all AutoValidationInventoryView_Access_Array;
+   type AutoValidationInventoryView_Access_Array_Access_Array is array (Natural range <>) of AutoValidationInventoryView_Access_Array_Access;
+   type AutoValidationInventoryView_Access_Array_Access_Array_Access is access all AutoValidationInventoryView_Access_Array_Access_Array;
 
    type AutoValidationInventoryView is new InventoryView and ValidationComponentInterface with null record;
 

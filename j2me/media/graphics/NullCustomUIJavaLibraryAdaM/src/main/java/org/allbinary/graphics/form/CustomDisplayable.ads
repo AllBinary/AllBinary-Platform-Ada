@@ -16,6 +16,8 @@ package org.allbinary.graphics.form.CustomDisplayable_Package is
    type CustomDisplayable_Access is access all CustomDisplayable'Class;
    type CustomDisplayable_Access_Array is array (Natural range <>) of CustomDisplayable_Access;
    type CustomDisplayable_Access_Array_Access is access all CustomDisplayable_Access_Array;
+   type CustomDisplayable_Access_Array_Access_Array is array (Natural range <>) of CustomDisplayable_Access_Array_Access;
+   type CustomDisplayable_Access_Array_Access_Array_Access is access all CustomDisplayable_Access_Array_Access_Array;
 
    type CustomDisplayable is new Java_Object with null record;
 

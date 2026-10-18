@@ -31,8 +31,10 @@ package admin.taghelpers.BasicTable_Package is
    type BasicTable_Access is access all BasicTable'Class;
    type BasicTable_Access_Array is array (Natural range <>) of BasicTable_Access;
    type BasicTable_Access_Array_Access is access all BasicTable_Access_Array;
+   type BasicTable_Access_Array_Access_Array is array (Natural range <>) of BasicTable_Access_Array_Access;
+   type BasicTable_Access_Array_Access_Array_Access is access all BasicTable_Access_Array_Access_Array;
 
-   type BasicTable is new BasicTableInterface with record
+   type BasicTable is new Java_Object and BasicTableInterface with record
       commonStrings : CommonStrings_Access;
    end record;
 

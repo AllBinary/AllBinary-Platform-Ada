@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+
 package body org.allbinary.business.init.InitSql_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    procedure Initialize_Fields (This : in out InitSql'Class) is
    begin
       null;
@@ -23,7 +36,7 @@ package body org.allbinary.business.init.InitSql_Package is
       This.sqlTypeStrings := SqlTypeStrings_Package.getInstance;
       This.sqlStrings := SqlStrings_Package.getInstance;
       This.stdUtil := StdUtil_Package.getInstance;
-      This.INSERT := To_Unbounded_String ("insert");
+      This.INSERT_Field := To_Unbounded_String ("insert");
       This.UPDATE := To_Unbounded_String ("update");
       This.databaseConnectionInfoInterface := null;
       This.userid := Null_Unbounded_String;
@@ -242,7 +255,7 @@ package body org.allbinary.business.init.InitSql_Package is
         end;
    end updateWhere;
 
-   procedure insert_Case (This : in out InitSql; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+   procedure insert (This : in out InitSql; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
       stringBuffer : StringMaker_Access;
       size : Integer;
@@ -267,7 +280,7 @@ package body org.allbinary.business.init.InitSql_Package is
             sqlStatement := stringBuffer.toString;
             InitSql'Class (This).executeSQLStatement (sqlStatement);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                PreLogUtil_Package.put (This.SUCCESS_SQL_STATEMENT & sqlStatement, This.INIT_SQL, This.INSERT);
+                PreLogUtil_Package.put (This.SUCCESS_SQL_STATEMENT & sqlStatement, This.INIT_SQL, This.INSERT_Field);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -275,11 +288,11 @@ package body org.allbinary.business.init.InitSql_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                PreLogUtil_Package.putOE (This.FAILED_SQL_STATEMENT & stringBuffer.toString, This.INIT_SQL, This.INSERT, e);
+                PreLogUtil_Package.putOE (This.FAILED_SQL_STATEMENT & stringBuffer.toString, This.INIT_SQL, This.INSERT_Field, e);
             end if;
                 end;
         end;
-   end insert_Case;
+   end insert;
 
    function getValue (This : in out InitSql; value : Unbounded_String) return Unbounded_String is
    begin
@@ -376,7 +389,7 @@ package body org.allbinary.business.init.InitSql_Package is
 
    function getDatabaseConnectionInfoInterface (This : in out InitSql) return DatabaseConnectionInfoInterface_Access is
    begin
-        return This.databaseConnectionInfoInterface;
+        return DatabaseConnectionInfoInterface_Access (This.databaseConnectionInfoInterface);
    end getDatabaseConnectionInfoInterface;
 
    procedure createTable (This : in out InitSql; tableData : Unbounded_String) is

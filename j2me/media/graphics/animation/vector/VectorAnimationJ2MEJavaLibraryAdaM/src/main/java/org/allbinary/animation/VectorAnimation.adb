@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+
 package body org.allbinary.animation.VectorAnimation_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out VectorAnimation'Class) is
    begin
       null;
@@ -135,12 +142,12 @@ package body org.allbinary.animation.VectorAnimation_Package is
 
    procedure nextFrame (This : in out VectorAnimation) is
    begin
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
    end nextFrame;
 
    procedure previousFrame (This : in out VectorAnimation) is
    begin
-        This.circularIndexUtil.previous;
+        declare Java_Result renames This.circularIndexUtil.previous; pragma Unreferenced (Java_Result); begin null; end;
    end previousFrame;
 
    procedure paintVectors (This : in out VectorAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is

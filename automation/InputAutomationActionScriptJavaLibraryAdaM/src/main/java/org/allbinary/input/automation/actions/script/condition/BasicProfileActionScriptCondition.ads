@@ -22,58 +22,32 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.swing.tree.TreePath_Package; use javax.swing.tree.TreePath_Package;
-with org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package; use org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package; use org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package; use org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputFactory_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputFactory_Package;
-with org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package;
-with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;
-with org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
-with org.allbinary.input.automation.actions.script.condition.GenericProfileActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.GenericProfileActionScriptConditionData_Package;
-with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package;
 with org.allbinary.input.automation.actions.script.condition.JMenu_Package; use org.allbinary.input.automation.actions.script.condition.JMenu_Package;
-with org.allbinary.input.automation.actions.script.condition.JMenuItem_Package; use org.allbinary.input.automation.actions.script.condition.JMenuItem_Package;
-with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package;
-with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package;
-with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package;
 
 package org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package JTreeInterfaceFactory_Package renames Standard.org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
    package ProfileActionScriptItem_Package renames Standard.org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
    package ProfileActionScriptNodeInterface_Package renames Standard.org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
    package ProfileActionScriptProcessorInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
-   package GenericProfileActionScriptInputData_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package;
-   package KeyboardActionScriptInput_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package;
-   package MouseActionScriptInput_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package;
-   package ProfileActionScriptInputFactory_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputFactory_Package;
-   package GenericProfileActionScriptOutputData_Package renames Standard.org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package;
-   package ImageActionScriptOutput_Package renames Standard.org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;
-   package ProfileActionScriptOutputFactory_Package renames Standard.org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
-   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type BasicProfileActionScriptCondition is tagged;
    type BasicProfileActionScriptCondition_Access is access all BasicProfileActionScriptCondition'Class;
    type BasicProfileActionScriptCondition_Access_Array is array (Natural range <>) of BasicProfileActionScriptCondition_Access;
    type BasicProfileActionScriptCondition_Access_Array_Access is access all BasicProfileActionScriptCondition_Access_Array;
+   type BasicProfileActionScriptCondition_Access_Array_Access_Array is array (Natural range <>) of BasicProfileActionScriptCondition_Access_Array_Access;
+   type BasicProfileActionScriptCondition_Access_Array_Access_Array_Access is access all BasicProfileActionScriptCondition_Access_Array_Access_Array;
 
    type BasicProfileActionScriptCondition is new ProfileActionScriptItem and ProfileActionScriptConditionInterface with record
       logUtil : LogUtil_Access;

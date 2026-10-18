@@ -28,6 +28,8 @@ package org.allbinary.game.configuration.persistance.GameDifficultyFactory_Packa
    type GameDifficultyFactory_Access is access all GameDifficultyFactory'Class;
    type GameDifficultyFactory_Access_Array is array (Natural range <>) of GameDifficultyFactory_Access;
    type GameDifficultyFactory_Access_Array_Access is access all GameDifficultyFactory_Access_Array;
+   type GameDifficultyFactory_Access_Array_Access_Array is array (Natural range <>) of GameDifficultyFactory_Access_Array_Access;
+   type GameDifficultyFactory_Access_Array_Access_Array_Access is access all GameDifficultyFactory_Access_Array_Access_Array;
 
    type GameDifficultyFactory is new Java_Object with record
       level : Integer;

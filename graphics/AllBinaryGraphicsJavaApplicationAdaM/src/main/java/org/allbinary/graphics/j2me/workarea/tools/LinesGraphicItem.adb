@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
+with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
+with org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package; use org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package;
+with org.allbinary.graphics.j2me.workarea.tools.Graphics2D_Package; use org.allbinary.graphics.j2me.workarea.tools.Graphics2D_Package;
+with org.allbinary.graphics.j2me.workarea.tools.BasicStroke_Package; use org.allbinary.graphics.j2me.workarea.tools.BasicStroke_Package;
+with org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package; use org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package;
+
 package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package StatusFactory_Package renames Standard.org.allbinary.graphics.j2me.StatusFactory_Package;
+   package BasicGraphicsPipeline_Package renames Standard.org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
    procedure Initialize_Fields (This : in out LinesGraphicItem'Class) is
    begin
       null;
@@ -100,7 +121,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
         This.treeNode := DefaultMutableTreeNode_Package.Create ((PointsDomUtil_Package.getInstance.LINES) + (LinesGraphicItem_Package.item));
         LinesGraphicItem_Package.item := LinesGraphicItem_Package.item + 1;
         This.points.init;
-        This.pointTreeNodeVector := BasicArrayListD_Package.Create;
+        This.pointTreeNodeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         This.fulcrumPoint := PointFactory_Package.getInstance.createXY (0, 0);
    end init;
 
@@ -185,7 +206,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
    begin
         This.points.getPoints.add (point);
         This.logUtil.putF (point.toString, LinesGraphicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("addPoint"));
-        This.pointTreeNodeVector.add (DefaultMutableTreeNode_Package.Create (point.toString));
+        This.pointTreeNodeVector.add (Java_Object_Access (DefaultMutableTreeNode_Package.Create (point.toString)));
         This.treeNode.add (DefaultMutableTreeNode_Access (This.pointTreeNodeVector.get ((This.pointTreeNodeVector.size) - (1))));
    end addPoint;
 
@@ -234,7 +255,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
             point := GPoint_Access (list.get (index));
             if (point) /= (null) then
                 This.points.getPoints.add (PointFactory_Package.getInstance.createXY (point.getX, point.getY));
-                This.pointTreeNodeVector.add (DefaultMutableTreeNode_Package.Create (point.toString));
+                This.pointTreeNodeVector.add (Java_Object_Access (DefaultMutableTreeNode_Package.Create (point.toString)));
                 This.treeNode.add (DefaultMutableTreeNode_Access (This.pointTreeNodeVector.get ((This.pointTreeNodeVector.size) - (1))));
             end if;
         end loop;
@@ -247,7 +268,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
         linesGraphicItem := LinesGraphicItem_Package.Create;
         linesGraphicItem.duplicatePoints (This.points.getPoints);
         linesGraphicItem.deactivate;
-        return linesGraphicItem;
+        return GraphicItemInterface_Access (linesGraphicItem);
    end duplicate;
 
    function getAngle (This : in out LinesGraphicItem) return Long_Float is
@@ -349,7 +370,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
                 LinesGraphicItem'Class (This).addPoint (point);
             elsif ((Java_And (mouseEvent.getModifiers, mouseEvent.BUTTON3_MASK))) = (mouseEvent.BUTTON3_MASK) then
                 StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Line Point Removed"));
-                LinesGraphicItem'Class (This).removePoint;
+                declare Java_Result renames LinesGraphicItem'Class (This).removePoint; pragma Unreferenced (Java_Result); begin null; end;
             end if;
             This.currentMousePoint := mousePoint;
         exception

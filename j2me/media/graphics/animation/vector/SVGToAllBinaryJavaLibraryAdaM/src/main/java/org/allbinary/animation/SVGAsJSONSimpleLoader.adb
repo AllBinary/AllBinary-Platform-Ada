@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.json.me.JSONArray_Package; use org.json.me.JSONArray_Package;
+with org.json.me.JSONException_Package; use org.json.me.JSONException_Package;
+
 package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
 
+   package Enumeration_Package renames Standard.java.util.Enumeration_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package JSONArray_Package renames Standard.org.json.me.JSONArray_Package;
+   package JSONException_Package renames Standard.org.json.me.JSONException_Package;
    procedure Initialize_Fields (This : in out SVGAsJSONSimpleLoader'Class) is
    begin
       null;
@@ -74,7 +91,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
             root := JSONObject_Package.Create (svgAsJson);
             svgValue := root.opt (This.KEY_SVG);
             svg := (if (svgValue) = (null) then root else SVGAsJSONSimpleLoader'Class (This).asObject (svgValue, This.KEY_SVG));
-            pointVector := BasicArrayListD_Package.Create;
+            pointVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             keys := svg.keys;
             while keys.hasMoreElements loop
                 key := Java_Unbox (keys.nextElement);

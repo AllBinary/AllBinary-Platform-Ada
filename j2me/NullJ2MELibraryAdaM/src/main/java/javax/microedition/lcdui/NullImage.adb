@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body javax.microedition.lcdui.NullImage_Package is
 
    procedure Initialize_Fields (This : in out NullImage'Class) is

@@ -13,14 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.NullCloseable_Package; use org.allbinary.logic.io.NullCloseable_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.system.hardware.components.android.UnknownHardware_Package; use org.allbinary.logic.system.hardware.components.android.UnknownHardware_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package is
 
+   package NullCloseable_Package renames Standard.org.allbinary.logic.io.NullCloseable_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package UnknownHardware_Package renames Standard.org.allbinary.logic.system.hardware.components.android.UnknownHardware_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out AndroidHardware'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.componentInterfaceVector := BasicArrayListD_Package.Create;
+      This.componentInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.PROC_BUS_INPUT_DIRECTORY := To_Unbounded_String ("/proc/bus/input/");
       This.DEVICES := This.PROC_BUS_INPUT_DIRECTORY & To_Unbounded_String ("devices/");
       This.MINHARDWARE := 3;
@@ -75,14 +88,14 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
       lineNumberReader : LineNumberReader_Access;
       nextLine : Unbounded_String;
    begin
-        This.componentInterfaceVector := BasicArrayListD_Package.Create;
+        This.componentInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         pciFile := FileReader_Package.Create (filePath);
         lineNumberReader := LineNumberReader_Package.Create (pciFile);
         This.logUtil.putF (To_Unbounded_String ("File Found"), AndroidHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         nextLine := lineNumberReader.readLine;
         while (nextLine) /= (Null_Unbounded_String) loop
             nextLine := lineNumberReader.readLine;
-            This.componentInterfaceVector.add (UnknownHardware_Package.Create (nextLine));
+            This.componentInterfaceVector.add (Java_Object_Access (UnknownHardware_Package.Create (nextLine)));
         end loop;
         return lineNumberReader;
    end get;

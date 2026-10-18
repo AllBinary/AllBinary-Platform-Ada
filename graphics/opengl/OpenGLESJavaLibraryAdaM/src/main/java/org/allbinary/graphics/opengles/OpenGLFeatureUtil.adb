@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.graphics.opengles.OpenGLConfiguration_Package; use org.allbinary.graphics.opengles.OpenGLConfiguration_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+
 package body org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package is
 
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
    procedure Initialize_Fields (This : in out OpenGLFeatureUtil'Class) is
    begin
       null;

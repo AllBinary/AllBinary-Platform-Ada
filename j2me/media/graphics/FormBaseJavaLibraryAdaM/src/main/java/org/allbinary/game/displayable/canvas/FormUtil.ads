@@ -20,22 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 
 package org.allbinary.game.displayable.canvas.FormUtil_Package is
 
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type FormUtil is tagged;
    type FormUtil_Access is access all FormUtil'Class;
    type FormUtil_Access_Array is array (Natural range <>) of FormUtil_Access;
    type FormUtil_Access_Array_Access is access all FormUtil_Access_Array;
+   type FormUtil_Access_Array_Access_Array is array (Natural range <>) of FormUtil_Access_Array_Access;
+   type FormUtil_Access_Array_Access_Array_Access is access all FormUtil_Access_Array_Access_Array;
 
    type FormUtil is new Java_Object with null record;
    instance : FormUtil_Access;

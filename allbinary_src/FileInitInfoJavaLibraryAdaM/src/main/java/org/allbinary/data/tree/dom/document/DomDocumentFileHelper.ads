@@ -24,20 +24,11 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.xml.transform.TransformerFactory_Package; use javax.xml.transform.TransformerFactory_Package;
 --  with javax.xml.transform.dom.DOMSource_Package; use javax.xml.transform.dom.DOMSource_Package;
 --  with javax.xml.transform.stream.StreamResult_Package; use javax.xml.transform.stream.StreamResult_Package;
-with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
-with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
-with org.allbinary.logic.io.DataOutputStreamFactory_Package; use org.allbinary.logic.io.DataOutputStreamFactory_Package;
-with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
 
 package org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package is
 
-   package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
-   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
-   package DataOutputStreamFactory_Package renames Standard.org.allbinary.logic.io.DataOutputStreamFactory_Package;
-   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
@@ -45,6 +36,8 @@ package org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package is
    type DomDocumentFileHelper_Access is access all DomDocumentFileHelper'Class;
    type DomDocumentFileHelper_Access_Array is array (Natural range <>) of DomDocumentFileHelper_Access;
    type DomDocumentFileHelper_Access_Array_Access is access all DomDocumentFileHelper_Access_Array;
+   type DomDocumentFileHelper_Access_Array_Access_Array is array (Natural range <>) of DomDocumentFileHelper_Access_Array_Access;
+   type DomDocumentFileHelper_Access_Array_Access_Array_Access is access all DomDocumentFileHelper_Access_Array_Access_Array;
 
    type DomDocumentFileHelper is new Java_Object with null record;
 

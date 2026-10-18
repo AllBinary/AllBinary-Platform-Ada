@@ -1,8 +1,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.game.midlet.GameMidletStateFactory_Package is
 
+   package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out GameMidletStateFactory'Class) is
    begin
       null;

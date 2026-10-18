@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.layer.NullLayer_Package is
 
    procedure Initialize_Fields (This : in out NullLayer'Class) is

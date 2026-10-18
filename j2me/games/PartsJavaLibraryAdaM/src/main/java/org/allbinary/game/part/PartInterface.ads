@@ -32,6 +32,8 @@ package org.allbinary.game.part.PartInterface_Package is
    type PartInterface_Access is access all PartInterface'Class;
    type PartInterface_Access_Array is array (Natural range <>) of PartInterface_Access;
    type PartInterface_Access_Array_Access is access all PartInterface_Access_Array;
+   type PartInterface_Access_Array_Access_Array is array (Natural range <>) of PartInterface_Access_Array_Access;
+   type PartInterface_Access_Array_Access_Array_Access is access all PartInterface_Access_Array_Access_Array;
 
 end org.allbinary.game.part.PartInterface_Package;
 

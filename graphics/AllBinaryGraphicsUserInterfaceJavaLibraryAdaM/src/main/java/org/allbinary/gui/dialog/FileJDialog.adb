@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with java.io.File_Package; use java.io.File_Package;
+
 package body org.allbinary.gui.dialog.FileJDialog_Package is
 
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package File_Package renames Standard.java.io.File_Package;
    procedure Initialize_Fields (This : in out FileJDialog'Class) is
    begin
       null;
@@ -76,8 +81,8 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
 );
         layout := GroupLayout_Package.Create (FileJDialog'Class (This).getContentPane);
         FileJDialog'Class (This).getContentPane.setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup.addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).add (This.jFileChooser1, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap));
-        layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.addContainerGap.add (This.jFileChooser1, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 357, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
+        layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup.addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last).add (This.jFileChooser1, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap));
+        layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.addContainerGap.add (This.jFileChooser1, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 357, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)));
         FileJDialog'Class (This).pack;
    end initComponents;
 

@@ -20,25 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with playn.core.PlayN_Package; use playn.core.PlayN_Package;
-with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
 
 package org.allbinary.logic.communication.log.PreLogUtil_Package is
 
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package PlayN_Package renames Standard.playn.core.PlayN_Package;
 
    type PreLogUtil is tagged;
    type PreLogUtil_Access is access all PreLogUtil'Class;
    type PreLogUtil_Access_Array is array (Natural range <>) of PreLogUtil_Access;
    type PreLogUtil_Access_Array_Access is access all PreLogUtil_Access_Array;
+   type PreLogUtil_Access_Array_Access_Array is array (Natural range <>) of PreLogUtil_Access_Array_Access;
+   type PreLogUtil_Access_Array_Access_Array_Access is access all PreLogUtil_Access_Array_Access_Array;
 
    type PreLogUtil is new Java_Object with null record;
    LOG_SUCCESS : Unbounded_String;
@@ -51,6 +42,8 @@ package org.allbinary.logic.communication.log.PreLogUtil_Package is
    procedure putSE (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class);
    function getClassName (anyType_Param : access Java_Object'Class) return Unbounded_String is abstract;
    procedure getClassName (anyType_Param : access Java_Object'Class);
+   function getClassName (Value : Unbounded_String) return Unbounded_String;
+   procedure getClassName (Value : Unbounded_String);
 
 end org.allbinary.logic.communication.log.PreLogUtil_Package;
 

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+
 package body org.allbinary.log.LOGGING_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out LOGGING'Class) is
    begin
       null;
@@ -26,7 +31,7 @@ package body org.allbinary.log.LOGGING_Package is
    begin
       Initialize_Fields (This);
         This.name := value;
-        LOGGING.logging.add (value);
+        LOGGING_Package.logging.add (value);
    end Initialize;
 
    function Create (value : Unbounded_String) return LOGGING_Access is
@@ -39,7 +44,7 @@ package body org.allbinary.log.LOGGING_Package is
    function contains (logType_Param : access LOGGING_Package.LOGGING'Class) return Boolean is
       logType : constant LOGGING_Access := LOGGING_Access (logType_Param);
    begin
-        return LOGGING.logging.contains (logType.toString);
+        return LOGGING_Package.logging.contains (logType.toString);
    end contains;
 
    function toString (This : in out LOGGING) return Unbounded_String is
@@ -56,7 +61,7 @@ package body org.allbinary.log.LOGGING_Package is
 
 begin
    null;
-   logging := BasicArrayListD_Package.Create;
+   logging := BasicArrayList_Access (BasicArrayListD_Package.Create);
    GRAPHICSPAINT := LOGGING_Package.Create (To_Unbounded_String ("Graphics Paint"));
    GRAPHICSCREATION := LOGGING_Package.Create (To_Unbounded_String ("Graphics Creation"));
    GRAPHICSDELETION := LOGGING_Package.Create (To_Unbounded_String ("Graphics Deletion"));

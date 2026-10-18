@@ -13,8 +13,35 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.time.TimeUtil_Package; use org.allbinary.time.TimeUtil_Package;
+
 package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package OrderData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
+   package OrderHistory_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
+   package OrderHistoryData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+   package OrderHistoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TimeUtil_Package renames Standard.org.allbinary.time.TimeUtil_Package;
    procedure Initialize_Fields (This : in out DateRangeOrderHistoryView'Class) is
    begin
       null;
@@ -79,7 +106,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
         This.toMonth := This.request.getParameter (OrderHistoryData_Package.TOMONTH);
         This.toDay := This.request.getParameter (OrderHistoryData_Package.TODAY);
         This.toHour := This.request.getParameter (OrderHistoryData_Package.TOHOUR);
-        This.command := This.request.getParameter (GLOBALS2.ADMINCOMMAND);
+        This.command := This.request.getParameter (GLOBALS2_Package.ADMINCOMMAND);
    end getFormData;
 
    procedure addDomNodeInterfaces (This : in out DateRangeOrderHistoryView) is
@@ -186,7 +213,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, OrderHistoryData_Package.CANCELLEDNAME, OrderHistoryData_Package.CANCELLED));
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, OrderHistoryData_Package.PARTIALLYSHIPPEDNAME, OrderHistoryData_Package.PARTIALLYSHIPPED));
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, OrderHistoryData_Package.SHIPPEDNAME, OrderHistoryData_Package.SHIPPED));
-            node.appendChild (ModDomHelper_Package.createNameValueNodes (document, GLOBALS2.VIEWNAME, GLOBALS2.VIEW));
+            node.appendChild (ModDomHelper_Package.createNameValueNodes (document, GLOBALS2_Package.VIEWNAME, GLOBALS2_Package.VIEW));
             return node;
         exception
             when Java_Occurrence : others =>

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.audio.GameYouWinSound_Package is
 
    procedure Initialize_Fields (This : in out GameYouWinSound'Class) is
@@ -40,7 +41,7 @@ package body org.allbinary.media.audio.GameYouWinSound_Package is
 
 begin
    null;
-   soundInterface := GameYouWinSound_Package.Create;
+   soundInterface := Sound_Access (GameYouWinSound_Package.Create);
 
 end org.allbinary.media.audio.GameYouWinSound_Package;
 

@@ -30,13 +30,17 @@ package org.allbinary.logic.util.cache.NoCacheableFactory_Package is
    type NoCacheableFactory_Access is access all NoCacheableFactory'Class;
    type NoCacheableFactory_Access_Array is array (Natural range <>) of NoCacheableFactory_Access;
    type NoCacheableFactory_Access_Array_Access is access all NoCacheableFactory_Access_Array;
+   type NoCacheableFactory_Access_Array_Access_Array is array (Natural range <>) of NoCacheableFactory_Access_Array_Access;
+   type NoCacheableFactory_Access_Array_Access_Array_Access is access all NoCacheableFactory_Access_Array_Access_Array;
 
-   type NoCacheableFactory is new CacheableInterfaceFactoryInterface with null record;
+   type NoCacheableFactory is new Java_Object and CacheableInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out NoCacheableFactory'Class);
    function Create return NoCacheableFactory_Access;
    function getInstance (This : in out NoCacheableFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access;
    procedure getInstance (This : in out NoCacheableFactory; key_Param : access Java_Object'Class);
+   function getInstance (This : in out NoCacheableFactory; Value : Unbounded_String) return CacheableInterface_Access;
+   procedure getInstance (This : in out NoCacheableFactory; Value : Unbounded_String);
 
 end org.allbinary.logic.util.cache.NoCacheableFactory_Package;
 

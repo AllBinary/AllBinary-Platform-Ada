@@ -29,6 +29,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoFactory_Package i
    type TransformInfoFactory_Access is access all TransformInfoFactory'Class;
    type TransformInfoFactory_Access_Array is array (Natural range <>) of TransformInfoFactory_Access;
    type TransformInfoFactory_Access_Array_Access is access all TransformInfoFactory_Access_Array;
+   type TransformInfoFactory_Access_Array_Access_Array is array (Natural range <>) of TransformInfoFactory_Access_Array_Access;
+   type TransformInfoFactory_Access_Array_Access_Array_Access is access all TransformInfoFactory_Access_Array_Access_Array;
 
    type TransformInfoFactory is new Java_Object with null record;
 

@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.device.OpenGLESGraphicsFactory_Package is
 
    procedure Initialize_Fields (This : in out OpenGLESGraphicsFactory'Class) is

@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with org.allbinary.animation.NullRotationAnimationFactory_Package; use org.allbinary.animation.NullRotationAnimationFactory_Package;
+with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+
 package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package NullRotationAnimationFactory_Package renames Standard.org.allbinary.animation.NullRotationAnimationFactory_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
    procedure Initialize_Fields (This : in out LazyImageRotationAnimation'Class) is
    begin
       null;
@@ -44,7 +63,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
         This.scaleProperties := scaleProperties;
         This.NULL_INDEX_ANIMATION := IndexedAnimation_Access (NullRotationAnimationFactory_Package.getFactoryInstance.getInstance (0));
         --  Java nested class ActualRotationAnimation: move it to its own package
-        This.animation := ActualRotationAnimation_Package.Create (LazyImageRotationAnimation_Access'(This'Unchecked_Access));
+        This.animation := IndexedAnimation_Access (ActualRotationAnimation_Package.Create (LazyImageRotationAnimation_Access'(This'Unchecked_Access)));
    end Initialize;
 
    function Create (layoutIndex : Integer; instanceId : Integer; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory_Package.BaseImageAnimationFactory'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return LazyImageRotationAnimation_Access is

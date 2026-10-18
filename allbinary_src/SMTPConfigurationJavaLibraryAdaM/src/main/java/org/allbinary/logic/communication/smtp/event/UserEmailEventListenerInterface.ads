@@ -30,6 +30,8 @@ package org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInter
    type UserEmailEventListenerInterface_Access is access all UserEmailEventListenerInterface'Class;
    type UserEmailEventListenerInterface_Access_Array is array (Natural range <>) of UserEmailEventListenerInterface_Access;
    type UserEmailEventListenerInterface_Access_Array_Access is access all UserEmailEventListenerInterface_Access_Array;
+   type UserEmailEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventListenerInterface_Access_Array_Access;
+   type UserEmailEventListenerInterface_Access_Array_Access_Array_Access is access all UserEmailEventListenerInterface_Access_Array_Access_Array;
    procedure onEmailSendRequest (This : in out UserEmailEventListenerInterface; userEmailInfoEvent_Param : access EmailEvent_Package.EmailEvent'Class) is abstract;
 
 end org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;

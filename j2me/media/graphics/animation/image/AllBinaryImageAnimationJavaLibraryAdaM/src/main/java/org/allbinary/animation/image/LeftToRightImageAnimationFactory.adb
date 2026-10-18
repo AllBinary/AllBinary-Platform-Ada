@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.image.LeftToRightImageAnimation_Package; use org.allbinary.animation.image.LeftToRightImageAnimation_Package;
+with org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Package; use org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Package;
+
 package body org.allbinary.animation.image.LeftToRightImageAnimationFactory_Package is
 
    procedure Initialize_Fields (This : in out LeftToRightImageAnimationFactory'Class) is
@@ -42,9 +45,9 @@ package body org.allbinary.animation.image.LeftToRightImageAnimationFactory_Pack
         scaledImage := This.animationFactoryImageScaleUtil.createImage (LeftToRightImageAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
             This.animationFactoryImageScaleUtil.processAdjust (LeftToRightImageAnimationFactory_Access'(This'Unchecked_Access));
-            return AdjustedLeftToRightImageAnimation_Package.Create (scaledImage, LeftToRightImageAnimationFactory'Class (This).getSequenceArray, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (AdjustedLeftToRightImageAnimation_Package.Create (scaledImage, LeftToRightImageAnimationFactory'Class (This).getSequenceArray, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
         else
-            return LeftToRightImageAnimation_Package.Create (scaledImage, LeftToRightImageAnimationFactory'Class (This).getSequenceArray, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (LeftToRightImageAnimation_Package.Create (scaledImage, LeftToRightImageAnimationFactory'Class (This).getSequenceArray, This.animationBehaviorFactory.getOrCreateInstance));
         end if;
    end getInstance;
 

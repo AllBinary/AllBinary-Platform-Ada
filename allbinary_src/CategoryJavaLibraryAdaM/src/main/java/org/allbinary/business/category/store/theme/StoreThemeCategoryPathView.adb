@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.theme.ThemeInterface_Package; use org.allbinary.logic.visual.theme.ThemeInterface_Package;
+with org.allbinary.logic.visual.theme.ThemePropertiesView_Package; use org.allbinary.logic.visual.theme.ThemePropertiesView_Package;
+with org.allbinary.logic.visual.theme.ThemeValidation_Package; use org.allbinary.logic.visual.theme.ThemeValidation_Package;
+
 package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package is
 
+   package ThemeInterface_Package renames Standard.org.allbinary.logic.visual.theme.ThemeInterface_Package;
+   package ThemePropertiesView_Package renames Standard.org.allbinary.logic.visual.theme.ThemePropertiesView_Package;
+   package ThemeValidation_Package renames Standard.org.allbinary.logic.visual.theme.ThemeValidation_Package;
    procedure Initialize_Fields (This : in out StoreThemeCategoryPathView'Class) is
    begin
       null;

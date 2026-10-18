@@ -20,6 +20,8 @@ package org.allbinary.graphics.OpenGLBitmap_Package is
    type OpenGLBitmap_Access is access all OpenGLBitmap'Class;
    type OpenGLBitmap_Access_Array is array (Natural range <>) of OpenGLBitmap_Access;
    type OpenGLBitmap_Access_Array_Access is access all OpenGLBitmap_Access_Array;
+   type OpenGLBitmap_Access_Array_Access_Array is array (Natural range <>) of OpenGLBitmap_Access_Array_Access;
+   type OpenGLBitmap_Access_Array_Access_Array_Access is access all OpenGLBitmap_Access_Array_Access_Array;
 
    type OpenGLBitmap is new PlatformBitmapBase with record
       bitmap : Bitmap_Access;

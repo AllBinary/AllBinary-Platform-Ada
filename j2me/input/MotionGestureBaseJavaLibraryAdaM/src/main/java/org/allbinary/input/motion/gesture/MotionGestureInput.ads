@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 
 package org.allbinary.input.motion.gesture.MotionGestureInput_Package is
 
    package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
-   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
 
    type MotionGestureInput is tagged;
    type MotionGestureInput_Access is access all MotionGestureInput'Class;
    type MotionGestureInput_Access_Array is array (Natural range <>) of MotionGestureInput_Access;
    type MotionGestureInput_Access_Array_Access is access all MotionGestureInput_Access_Array;
+   type MotionGestureInput_Access_Array_Access_Array is array (Natural range <>) of MotionGestureInput_Access_Array_Access;
+   type MotionGestureInput_Access_Array_Access_Array_Access is access all MotionGestureInput_Access_Array_Access_Array;
 
    type MotionGestureInput is new Input with null record;
 

@@ -24,9 +24,7 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package; use org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package;
 
 package org.allbinary.animation.compound.SimultaneousCompoundIndexAnimationInterfaceFactory_Package is
 
@@ -34,15 +32,16 @@ package org.allbinary.animation.compound.SimultaneousCompoundIndexAnimationInter
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type SimultaneousCompoundIndexAnimationInterfaceFactory is tagged;
    type SimultaneousCompoundIndexAnimationInterfaceFactory_Access is access all SimultaneousCompoundIndexAnimationInterfaceFactory'Class;
    type SimultaneousCompoundIndexAnimationInterfaceFactory_Access_Array is array (Natural range <>) of SimultaneousCompoundIndexAnimationInterfaceFactory_Access;
    type SimultaneousCompoundIndexAnimationInterfaceFactory_Access_Array_Access is access all SimultaneousCompoundIndexAnimationInterfaceFactory_Access_Array;
+   type SimultaneousCompoundIndexAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of SimultaneousCompoundIndexAnimationInterfaceFactory_Access_Array_Access;
+   type SimultaneousCompoundIndexAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all SimultaneousCompoundIndexAnimationInterfaceFactory_Access_Array_Access_Array;
 
-   type SimultaneousCompoundIndexAnimationInterfaceFactory is new AnimationInterfaceFactoryInterface with record
+   type SimultaneousCompoundIndexAnimationInterfaceFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access;
       animationBehaviorFactory : AnimationBehaviorFactory_Access;
    end record;

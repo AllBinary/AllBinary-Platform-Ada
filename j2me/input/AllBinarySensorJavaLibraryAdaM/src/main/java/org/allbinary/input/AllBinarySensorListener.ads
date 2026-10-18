@@ -28,6 +28,8 @@ package org.allbinary.input.AllBinarySensorListener_Package is
    type AllBinarySensorListener_Access is access all AllBinarySensorListener'Class;
    type AllBinarySensorListener_Access_Array is array (Natural range <>) of AllBinarySensorListener_Access;
    type AllBinarySensorListener_Access_Array_Access is access all AllBinarySensorListener_Access_Array;
+   type AllBinarySensorListener_Access_Array_Access_Array is array (Natural range <>) of AllBinarySensorListener_Access_Array_Access;
+   type AllBinarySensorListener_Access_Array_Access_Array_Access is access all AllBinarySensorListener_Access_Array_Access_Array;
    procedure onSensorChange (This : in out AllBinarySensorListener) is abstract;
 
 end org.allbinary.input.AllBinarySensorListener_Package;

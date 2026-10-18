@@ -30,8 +30,10 @@ package org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package is
    type CollidableBaseBehaviorFactory_Access is access all CollidableBaseBehaviorFactory'Class;
    type CollidableBaseBehaviorFactory_Access_Array is array (Natural range <>) of CollidableBaseBehaviorFactory_Access;
    type CollidableBaseBehaviorFactory_Access_Array_Access is access all CollidableBaseBehaviorFactory_Access_Array;
+   type CollidableBaseBehaviorFactory_Access_Array_Access_Array is array (Natural range <>) of CollidableBaseBehaviorFactory_Access_Array_Access;
+   type CollidableBaseBehaviorFactory_Access_Array_Access_Array_Access is access all CollidableBaseBehaviorFactory_Access_Array_Access_Array;
 
-   type CollidableBaseBehaviorFactory is new CollidableBaseBehaviorFactoryInterface with null record;
+   type CollidableBaseBehaviorFactory is new Java_Object and CollidableBaseBehaviorFactoryInterface with null record;
 
    procedure Initialize (This : in out CollidableBaseBehaviorFactory'Class);
    function Create return CollidableBaseBehaviorFactory_Access;

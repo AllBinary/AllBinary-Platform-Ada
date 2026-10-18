@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thread.NullABRunnable_Package; use org.allbinary.thread.NullABRunnable_Package;
+
 package body org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package is
 
+   package NullABRunnable_Package renames Standard.org.allbinary.thread.NullABRunnable_Package;
    procedure Initialize_Fields (This : in out LicenseCheckRunnableFactory'Class) is
    begin
       null;

@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.color.ColorCompositeInterface_Package; use org.allbinary.graphics.color.ColorCompositeInterface_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 
@@ -30,7 +29,6 @@ package org.allbinary.game.paint.ColorFillBasePaintable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package ColorCompositeInterface_Package renames Standard.org.allbinary.graphics.color.ColorCompositeInterface_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
@@ -38,6 +36,8 @@ package org.allbinary.game.paint.ColorFillBasePaintable_Package is
    type ColorFillBasePaintable_Access is access all ColorFillBasePaintable'Class;
    type ColorFillBasePaintable_Access_Array is array (Natural range <>) of ColorFillBasePaintable_Access;
    type ColorFillBasePaintable_Access_Array_Access is access all ColorFillBasePaintable_Access_Array;
+   type ColorFillBasePaintable_Access_Array_Access_Array is array (Natural range <>) of ColorFillBasePaintable_Access_Array_Access;
+   type ColorFillBasePaintable_Access_Array_Access_Array_Access is access all ColorFillBasePaintable_Access_Array_Access_Array;
 
    type ColorFillBasePaintable is new Paintable and ColorCompositeInterface with record
       basicColor : BasicColor_Access;

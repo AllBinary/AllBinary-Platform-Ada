@@ -22,47 +22,31 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.animation.NullRotationAnimationFactory_Package; use org.allbinary.animation.NullRotationAnimationFactory_Package;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
-with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 
 package org.allbinary.animation.image.LazyImageRotationAnimation_Package is
 
    package GL_Package renames Standard.javax.microedition.khronos.opengles.GL_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
-   package NullRotationAnimationFactory_Package renames Standard.org.allbinary.animation.NullRotationAnimationFactory_Package;
    package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
-   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
-   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type LazyImageRotationAnimation is tagged;
    type LazyImageRotationAnimation_Access is access all LazyImageRotationAnimation'Class;
    type LazyImageRotationAnimation_Access_Array is array (Natural range <>) of LazyImageRotationAnimation_Access;
    type LazyImageRotationAnimation_Access_Array_Access is access all LazyImageRotationAnimation_Access_Array;
+   type LazyImageRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of LazyImageRotationAnimation_Access_Array_Access;
+   type LazyImageRotationAnimation_Access_Array_Access_Array_Access is access all LazyImageRotationAnimation_Access_Array_Access_Array;
 
    type LazyImageRotationAnimation is new RotationAnimation with record
       logUtil : LogUtil_Access;

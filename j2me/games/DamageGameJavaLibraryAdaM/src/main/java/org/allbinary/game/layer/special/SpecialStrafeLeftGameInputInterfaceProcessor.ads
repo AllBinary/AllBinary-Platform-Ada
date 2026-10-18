@@ -34,6 +34,8 @@ package org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProc
    type SpecialStrafeLeftGameInputInterfaceProcessor_Access is access all SpecialStrafeLeftGameInputInterfaceProcessor'Class;
    type SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array is array (Natural range <>) of SpecialStrafeLeftGameInputInterfaceProcessor_Access;
    type SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access is access all SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array;
+   type SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array is array (Natural range <>) of SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access;
+   type SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Access is access all SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array;
 
    type SpecialStrafeLeftGameInputInterfaceProcessor is new SpecialGameInputInterfaceProcessor with null record;
 

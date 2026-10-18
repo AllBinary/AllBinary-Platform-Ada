@@ -29,6 +29,8 @@ package org.allbinary.android.input.motion.NoMotionEventProcessor_Package is
    type NoMotionEventProcessor_Access is access all NoMotionEventProcessor'Class;
    type NoMotionEventProcessor_Access_Array is array (Natural range <>) of NoMotionEventProcessor_Access;
    type NoMotionEventProcessor_Access_Array_Access is access all NoMotionEventProcessor_Access_Array;
+   type NoMotionEventProcessor_Access_Array_Access_Array is array (Natural range <>) of NoMotionEventProcessor_Access_Array_Access;
+   type NoMotionEventProcessor_Access_Array_Access_Array_Access is access all NoMotionEventProcessor_Access_Array_Access_Array;
 
    type NoMotionEventProcessor is new MotionEventProcessor with null record;
    SINGLETON : MotionEventProcessor_Access;

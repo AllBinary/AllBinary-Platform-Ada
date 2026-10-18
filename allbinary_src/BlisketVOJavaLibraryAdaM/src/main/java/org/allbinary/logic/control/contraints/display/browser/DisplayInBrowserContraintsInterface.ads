@@ -28,6 +28,8 @@ package org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserC
    type DisplayInBrowserContraintsInterface_Access is access all DisplayInBrowserContraintsInterface'Class;
    type DisplayInBrowserContraintsInterface_Access_Array is array (Natural range <>) of DisplayInBrowserContraintsInterface_Access;
    type DisplayInBrowserContraintsInterface_Access_Array_Access is access all DisplayInBrowserContraintsInterface_Access_Array;
+   type DisplayInBrowserContraintsInterface_Access_Array_Access_Array is array (Natural range <>) of DisplayInBrowserContraintsInterface_Access_Array_Access;
+   type DisplayInBrowserContraintsInterface_Access_Array_Access_Array_Access is access all DisplayInBrowserContraintsInterface_Access_Array_Access_Array;
    function isMountable (This : in out DisplayInBrowserContraintsInterface) return Boolean is abstract;
    function isFrameable (This : in out DisplayInBrowserContraintsInterface) return Boolean is abstract;
    function isQuickFrameable (This : in out DisplayInBrowserContraintsInterface) return Boolean is abstract;

@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
 
 package org.allbinary.logic.system.security.licensing.LicenseInterfaceSingleton_Package is
@@ -30,6 +29,8 @@ package org.allbinary.logic.system.security.licensing.LicenseInterfaceSingleton_
    type LicenseInterfaceSingleton_Access is access all LicenseInterfaceSingleton'Class;
    type LicenseInterfaceSingleton_Access_Array is array (Natural range <>) of LicenseInterfaceSingleton_Access;
    type LicenseInterfaceSingleton_Access_Array_Access is access all LicenseInterfaceSingleton_Access_Array;
+   type LicenseInterfaceSingleton_Access_Array_Access_Array is array (Natural range <>) of LicenseInterfaceSingleton_Access_Array_Access;
+   type LicenseInterfaceSingleton_Access_Array_Access_Array_Access is access all LicenseInterfaceSingleton_Access_Array_Access_Array;
 
    type LicenseInterfaceSingleton is new Java_Object with null record;
    licenseInterface : AbeLicenseInterface_Access;

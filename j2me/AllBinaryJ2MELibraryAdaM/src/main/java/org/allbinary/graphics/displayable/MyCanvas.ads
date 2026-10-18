@@ -24,16 +24,13 @@ with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canva
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
 with org.allbinary.graphics.displayable.command.MyCommandInterface_Package; use org.allbinary.graphics.displayable.command.MyCommandInterface_Package;
-with org.allbinary.graphics.displayable.command.MyCommandsFactory_Package; use org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
 with org.allbinary.input.TouchJ2ME_Package; use org.allbinary.input.TouchJ2ME_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABStack_Package; use org.allbinary.util.ABStack_Package;
 with org.allbinary.graphics.displayable.DisplayableInterface_Package; use org.allbinary.graphics.displayable.DisplayableInterface_Package;
 with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
@@ -45,22 +42,21 @@ package org.allbinary.graphics.displayable.MyCanvas_Package is
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package NullCommandListener_Package renames Standard.javax.microedition.lcdui.NullCommandListener_Package;
    package MyCommandInterface_Package renames Standard.org.allbinary.graphics.displayable.command.MyCommandInterface_Package;
-   package MyCommandsFactory_Package renames Standard.org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
    package TouchJ2ME_Package renames Standard.org.allbinary.input.TouchJ2ME_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ABStack_Package renames Standard.org.allbinary.util.ABStack_Package;
 
    type MyCanvas is tagged;
    type MyCanvas_Access is access all MyCanvas'Class;
    type MyCanvas_Access_Array is array (Natural range <>) of MyCanvas_Access;
    type MyCanvas_Access_Array_Access is access all MyCanvas_Access_Array;
+   type MyCanvas_Access_Array_Access_Array is array (Natural range <>) of MyCanvas_Access_Array_Access;
+   type MyCanvas_Access_Array_Access_Array_Access is access all MyCanvas_Access_Array_Access_Array;
 
    type MyCanvas is new Canvas and DisplayableInterface and MyCommandInterface with record
       logUtil : LogUtil_Access;

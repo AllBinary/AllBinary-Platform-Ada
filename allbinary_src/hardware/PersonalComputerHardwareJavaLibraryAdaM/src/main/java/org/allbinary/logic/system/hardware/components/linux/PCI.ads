@@ -32,8 +32,10 @@ package org.allbinary.logic.system.hardware.components.linux.PCI_Package is
    type PCI_Access is access all PCI'Class;
    type PCI_Access_Array is array (Natural range <>) of PCI_Access;
    type PCI_Access_Array_Access is access all PCI_Access_Array;
+   type PCI_Access_Array_Access_Array is array (Natural range <>) of PCI_Access_Array_Access;
+   type PCI_Access_Array_Access_Array_Access is access all PCI_Access_Array_Access_Array;
 
-   type PCI is new HardwareComponentInterface and VideoInterface with record
+   type PCI is new Java_Object and HardwareComponentInterface and VideoInterface with record
       data : Unbounded_String;
    end record;
 

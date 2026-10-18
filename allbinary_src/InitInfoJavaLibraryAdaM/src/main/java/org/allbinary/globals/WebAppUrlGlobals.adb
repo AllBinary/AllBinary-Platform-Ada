@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.init.InitInfo_Package; use org.allbinary.business.init.InitInfo_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+
 package body org.allbinary.globals.WebAppUrlGlobals_Package is
 
+   package InitInfo_Package renames Standard.org.allbinary.business.init.InitInfo_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    procedure Initialize_Fields (This : in out WebAppUrlGlobals'Class) is
    begin
       null;

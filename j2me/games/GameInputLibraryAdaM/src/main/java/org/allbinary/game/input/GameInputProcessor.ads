@@ -32,6 +32,8 @@ package org.allbinary.game.input.GameInputProcessor_Package is
    type GameInputProcessor_Access is access all GameInputProcessor'Class;
    type GameInputProcessor_Access_Array is array (Natural range <>) of GameInputProcessor_Access;
    type GameInputProcessor_Access_Array_Access is access all GameInputProcessor_Access_Array;
+   type GameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of GameInputProcessor_Access_Array_Access;
+   type GameInputProcessor_Access_Array_Access_Array_Access is access all GameInputProcessor_Access_Array_Access_Array;
 
    type GameInputProcessor is new Java_Object with null record;
    instance : GameInputProcessor_Access;

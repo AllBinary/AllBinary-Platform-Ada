@@ -21,16 +21,13 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.business.DynamicObjectData_Package; use org.allbinary.business.DynamicObjectData_Package;
 with org.allbinary.business.advertisement.AdvertisementsInterface_Package; use org.allbinary.business.advertisement.AdvertisementsInterface_Package;
 with org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package; use org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
 with org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
-with org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
 
 package org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package DynamicObjectData_Package renames Standard.org.allbinary.business.DynamicObjectData_Package;
    package AdvertisementsInterface_Package renames Standard.org.allbinary.business.advertisement.AdvertisementsInterface_Package;
    package AdvertisementSearchInterface_Package renames Standard.org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
 
@@ -38,8 +35,10 @@ package org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Pack
    type AdvertisementCampaign_Access is access all AdvertisementCampaign'Class;
    type AdvertisementCampaign_Access_Array is array (Natural range <>) of AdvertisementCampaign_Access;
    type AdvertisementCampaign_Access_Array_Access is access all AdvertisementCampaign_Access_Array;
+   type AdvertisementCampaign_Access_Array_Access_Array is array (Natural range <>) of AdvertisementCampaign_Access_Array_Access;
+   type AdvertisementCampaign_Access_Array_Access_Array_Access is access all AdvertisementCampaign_Access_Array_Access_Array;
 
-   type AdvertisementCampaign is new AdvertisementCampaignInterface with record
+   type AdvertisementCampaign is new Java_Object and AdvertisementCampaignInterface with record
       hashMap : HashMap_Access;
    end record;
 

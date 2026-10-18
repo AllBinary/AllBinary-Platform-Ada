@@ -32,7 +32,6 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 
 package org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package is
@@ -47,6 +46,8 @@ package org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package is
    type BasicGeographicMap_Access is access all BasicGeographicMap'Class;
    type BasicGeographicMap_Access_Array is array (Natural range <>) of BasicGeographicMap_Access;
    type BasicGeographicMap_Access_Array_Access is access all BasicGeographicMap_Access_Array;
+   type BasicGeographicMap_Access_Array_Access_Array is array (Natural range <>) of BasicGeographicMap_Access_Array_Access;
+   type BasicGeographicMap_Access_Array_Access_Array_Access is access all BasicGeographicMap_Access_Array_Access_Array;
 
    type BasicGeographicMap is new SimpleGeographicMap and GeographicMapInterface with record
       mathUtil : MathUtil_Access;

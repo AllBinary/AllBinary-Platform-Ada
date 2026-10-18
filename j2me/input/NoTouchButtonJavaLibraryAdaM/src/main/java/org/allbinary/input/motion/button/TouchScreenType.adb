@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.motion.button.TouchScreenType_Package is
 
    procedure Initialize_Fields (This : in out TouchScreenType'Class) is

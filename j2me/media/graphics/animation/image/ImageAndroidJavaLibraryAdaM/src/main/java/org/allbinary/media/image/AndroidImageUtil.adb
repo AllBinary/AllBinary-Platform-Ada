@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
+with android.graphics.Color_Package; use android.graphics.Color_Package;
+with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
+
 package body org.allbinary.media.image.AndroidImageUtil_Package is
 
+   package Canvas_Package renames Standard.android.graphics.Canvas_Package;
+   package Color_Package renames Standard.android.graphics.Color_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
    procedure Initialize_Fields (This : in out AndroidImageUtil'Class) is
    begin
       null;

@@ -29,6 +29,8 @@ package org.allbinary.physics.movement.NoMovementFactory_Package is
    type NoMovementFactory_Access is access all NoMovementFactory'Class;
    type NoMovementFactory_Access_Array is array (Natural range <>) of NoMovementFactory_Access;
    type NoMovementFactory_Access_Array_Access is access all NoMovementFactory_Access_Array;
+   type NoMovementFactory_Access_Array_Access_Array is array (Natural range <>) of NoMovementFactory_Access_Array_Access;
+   type NoMovementFactory_Access_Array_Access_Array_Access is access all NoMovementFactory_Access_Array_Access_Array;
 
    type NoMovementFactory is new Java_Object with record
       movement : Movement_Access;

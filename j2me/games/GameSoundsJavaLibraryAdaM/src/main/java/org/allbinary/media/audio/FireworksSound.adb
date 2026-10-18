@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.audio.FireworksSound_Package is
 
    procedure Initialize_Fields (This : in out FireworksSound'Class) is
@@ -40,7 +41,7 @@ package body org.allbinary.media.audio.FireworksSound_Package is
 
 begin
    null;
-   soundInterface := FireworksSound_Package.Create;
+   soundInterface := Sound_Access (FireworksSound_Package.Create);
 
 end org.allbinary.media.audio.FireworksSound_Package;
 

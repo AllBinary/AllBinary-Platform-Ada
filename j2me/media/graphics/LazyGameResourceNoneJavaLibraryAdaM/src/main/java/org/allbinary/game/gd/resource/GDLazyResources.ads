@@ -28,6 +28,8 @@ package org.allbinary.game.gd.resource.GDLazyResources_Package is
    type GDLazyResources_Access is access all GDLazyResources'Class;
    type GDLazyResources_Access_Array is array (Natural range <>) of GDLazyResources_Access;
    type GDLazyResources_Access_Array_Access is access all GDLazyResources_Access_Array;
+   type GDLazyResources_Access_Array_Access_Array is array (Natural range <>) of GDLazyResources_Access_Array_Access;
+   type GDLazyResources_Access_Array_Access_Array_Access is access all GDLazyResources_Access_Array_Access_Array;
 
    type GDLazyResources is new Java_Object with record
       imageResourceWidthArray : Integer_Array_Access;

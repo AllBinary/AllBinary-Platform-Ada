@@ -13,8 +13,143 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package; use org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package;
+with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.animation.NullIndexedAnimationFactory_Package; use org.allbinary.animation.NullIndexedAnimationFactory_Package;
+with org.allbinary.animation.caption.CaptionAnimationHelper_Package; use org.allbinary.animation.caption.CaptionAnimationHelper_Package;
+with org.allbinary.animation.vector.AdjustedCircleAnimation_Package; use org.allbinary.animation.vector.AdjustedCircleAnimation_Package;
+with org.allbinary.game.combat.damage.PtsDamageFloaters_Package; use org.allbinary.game.combat.damage.PtsDamageFloaters_Package;
+with org.allbinary.game.combat.weapon.WeaponProperties_Package; use org.allbinary.game.combat.weapon.WeaponProperties_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+with org.allbinary.game.health.HealthBar_Package; use org.allbinary.game.health.HealthBar_Package;
+with org.allbinary.game.health.HealthBarTwodAnimation_Package; use org.allbinary.game.health.HealthBarTwodAnimation_Package;
+with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbinary.game.input.event.GameKeyEventFactory_Package;
+with org.allbinary.game.input.event.GameKeyEventUtil_Package; use org.allbinary.game.input.event.GameKeyEventUtil_Package;
+with org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package; use org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package;
+with org.allbinary.game.input.form.WaypointRTSFormInput_Package; use org.allbinary.game.input.form.WaypointRTSFormInput_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.game.layer.CaptionResources_Package; use org.allbinary.game.layer.CaptionResources_Package;
+with org.allbinary.game.layer.LinePathRelativeAnimation_Package; use org.allbinary.game.layer.LinePathRelativeAnimation_Package;
+with org.allbinary.game.layer.RTSLayer2LogHelper_Package; use org.allbinary.game.layer.RTSLayer2LogHelper_Package;
+with org.allbinary.game.layer.RTSLayer2SelectedLogHelper_Package; use org.allbinary.game.layer.RTSLayer2SelectedLogHelper_Package;
+with org.allbinary.game.layer.RTSLayerHudPaintable_Package; use org.allbinary.game.layer.RTSLayerHudPaintable_Package;
+with org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package; use org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package;
+with org.allbinary.game.layer.SensorActionFactory_Package; use org.allbinary.game.layer.SensorActionFactory_Package;
+with org.allbinary.game.layer.SteeringVisitor_Package; use org.allbinary.game.layer.SteeringVisitor_Package;
+with org.allbinary.game.layer.TiledLayerUtil_Package; use org.allbinary.game.layer.TiledLayerUtil_Package;
+with org.allbinary.game.layer.VehicleFrictionProperties_Package; use org.allbinary.game.layer.VehicleFrictionProperties_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+with org.allbinary.game.layer.building.BuildingLayer_Package; use org.allbinary.game.layer.building.BuildingLayer_Package;
+with org.allbinary.game.layer.building.event.BuildingEventHandler_Package; use org.allbinary.game.layer.building.event.BuildingEventHandler_Package;
+with org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_Package; use org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_Package;
+with org.allbinary.game.layer.special.SpecialDownGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialDownGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialFireGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialFireGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package;
+with org.allbinary.game.layer.special.SpecialUpGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialUpGameInputProcessor_Package;
+with org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package; use org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package;
+with org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package; use org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package;
+with org.allbinary.game.layer.waypoint.WaypointBase_Package; use org.allbinary.game.layer.waypoint.WaypointBase_Package;
+with org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory_Package; use org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory_Package;
+with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.game.part.weapon.BasicWeaponPart_Package;
+with org.allbinary.game.part.weapon.SalvoInterface_Package; use org.allbinary.game.part.weapon.SalvoInterface_Package;
+with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
+with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.FrameUtil_Package; use org.allbinary.math.FrameUtil_Package;
+with org.allbinary.media.audio.AttackSound_Package; use org.allbinary.media.audio.AttackSound_Package;
+with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package; use org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.game.layer.unit.CollidableUnitBehavior_Package; use org.allbinary.game.layer.unit.CollidableUnitBehavior_Package;
+with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package; use org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
+
 package body org.allbinary.game.layer.unit.UnitLayer_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package ExplosionBasicSound_Package renames Standard.org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package;
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package NullIndexedAnimationFactory_Package renames Standard.org.allbinary.animation.NullIndexedAnimationFactory_Package;
+   package CaptionAnimationHelper_Package renames Standard.org.allbinary.animation.caption.CaptionAnimationHelper_Package;
+   package AdjustedCircleAnimation_Package renames Standard.org.allbinary.animation.vector.AdjustedCircleAnimation_Package;
+   package PtsDamageFloaters_Package renames Standard.org.allbinary.game.combat.damage.PtsDamageFloaters_Package;
+   package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package BasicHudFactory_Package renames Standard.org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+   package HealthBar_Package renames Standard.org.allbinary.game.health.HealthBar_Package;
+   package HealthBarTwodAnimation_Package renames Standard.org.allbinary.game.health.HealthBarTwodAnimation_Package;
+   package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
+   package GameKeyEventUtil_Package renames Standard.org.allbinary.game.input.event.GameKeyEventUtil_Package;
+   package VisibleCellPositionsSingleton_Package renames Standard.org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package;
+   package WaypointRTSFormInput_Package renames Standard.org.allbinary.game.input.form.WaypointRTSFormInput_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package CaptionResources_Package renames Standard.org.allbinary.game.layer.CaptionResources_Package;
+   package LinePathRelativeAnimation_Package renames Standard.org.allbinary.game.layer.LinePathRelativeAnimation_Package;
+   package RTSLayer2LogHelper_Package renames Standard.org.allbinary.game.layer.RTSLayer2LogHelper_Package;
+   package RTSLayer2SelectedLogHelper_Package renames Standard.org.allbinary.game.layer.RTSLayer2SelectedLogHelper_Package;
+   package RTSLayerHudPaintable_Package renames Standard.org.allbinary.game.layer.RTSLayerHudPaintable_Package;
+   package RTSLayerSelectedLogHelper_Package renames Standard.org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package;
+   package SensorActionFactory_Package renames Standard.org.allbinary.game.layer.SensorActionFactory_Package;
+   package SteeringVisitor_Package renames Standard.org.allbinary.game.layer.SteeringVisitor_Package;
+   package TiledLayerUtil_Package renames Standard.org.allbinary.game.layer.TiledLayerUtil_Package;
+   package VehicleFrictionProperties_Package renames Standard.org.allbinary.game.layer.VehicleFrictionProperties_Package;
+   package WaypointBehaviorBase_Package renames Standard.org.allbinary.game.layer.WaypointBehaviorBase_Package;
+   package BuildingLayer_Package renames Standard.org.allbinary.game.layer.building.BuildingLayer_Package;
+   package BuildingEventHandler_Package renames Standard.org.allbinary.game.layer.building.event.BuildingEventHandler_Package;
+   package CapitalEventHandlerFactory_Package renames Standard.org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_Package;
+   package SpecialDownGameInputProcessor_Package renames Standard.org.allbinary.game.layer.special.SpecialDownGameInputProcessor_Package;
+   package SpecialFireGameInputProcessor_Package renames Standard.org.allbinary.game.layer.special.SpecialFireGameInputProcessor_Package;
+   package SpecialLeftGameInputProcessor_Package renames Standard.org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package;
+   package SpecialRightGameInputProcessor_Package renames Standard.org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package;
+   package SpecialUpGameInputProcessor_Package renames Standard.org.allbinary.game.layer.special.SpecialUpGameInputProcessor_Package;
+   package MultipassNoCacheWaypoint_Package renames Standard.org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package;
+   package NoCacheWaypoint_Package renames Standard.org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package;
+   package WaypointBase_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointBase_Package;
+   package WaypointEventHandlerFactory_Package renames Standard.org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory_Package;
+   package BasicWeaponPart_Package renames Standard.org.allbinary.game.part.weapon.BasicWeaponPart_Package;
+   package SalvoInterface_Package renames Standard.org.allbinary.game.part.weapon.SalvoInterface_Package;
+   package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
+   package TrackingEventHandler_Package renames Standard.org.allbinary.game.tracking.TrackingEventHandler_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package FrameUtil_Package renames Standard.org.allbinary.math.FrameUtil_Package;
+   package AttackSound_Package renames Standard.org.allbinary.media.audio.AttackSound_Package;
+   package SecondaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+   package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+   package SimpleGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+   package DropCellPositionHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+   package RaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
    procedure Initialize_Fields (This : in out UnitLayer'Class) is
    begin
       null;
@@ -37,7 +172,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       This.resourceAnimation := IndexedAnimation_Access (NullIndexedAnimationFactory_Package.getFactoryInstance.getInstance (0));
       
       This.pathAnimation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
-      This.captionAnimationHelper := CaptionAnimationHelper_Package.Create (FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.getInstance.get (CaptionResources_Package.getInstance.RESOURCE).getInstance (0), -(23), -(25), 6, 0);
+      This.captionAnimationHelper := CaptionAnimationHelperBase_Access (CaptionAnimationHelper_Package.Create (FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.getInstance.get (CaptionResources_Package.getInstance.RESOURCE).getInstance (0), -(23), -(25), 6, 0));
       
       
       This.resourceLoad := 0;
@@ -46,7 +181,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       
       This.movementAngle := This.angleFactory.NOT_ANGLE;
       This.steeringInsideGeographicMapCellPosition := SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
-      This.sensorGeographicMapCellPositionList := BasicArrayListD_Package.Create;
+      This.sensorGeographicMapCellPositionList := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.CAPITAL_EVENT := CapitalEvent_Package.Create (UnitLayer_Access'(This'Unchecked_Access));
    end Initialize_Fields;
 
@@ -78,14 +213,14 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         This.maxResourceLoad := maxResourceLoad.shortValue;
         This.moveSoundInterface := moveSoundInterface;
         if Features_Package.getInstance.isFeature (GameFeatureFactory_Package.getInstance.DAMAGE_FLOATERS) then
-            This.damageFloaters := PtsDamageFloaters_Package.Create (UnitLayer_Access'(This'Unchecked_Access));
-            This.damageFloatersPaintableInterface := This.damageFloaters;
+            This.damageFloaters := DamageFloaters_Access (PtsDamageFloaters_Package.Create (UnitLayer_Access'(This'Unchecked_Access)));
+            This.damageFloatersPaintableInterface := Paintable_Access (This.damageFloaters);
         else
             This.damageFloatersPaintableInterface := NullPaintable_Package.getInstance;
             This.damageFloaters := DamageFloaters_Package.Create;
         end if;
         if Features_Package.getInstance.isFeature (GameFeatureFactory_Package.getInstance.HEALTH_BARS) then
-            This.healthBar := HealthBar_Package.Create (UnitLayer_Access'(This'Unchecked_Access), UnitLayer'Class (This).getHealthInterface, HealthBarTwodAnimation_Package.Create (AllBinaryLayer_Access (UnitLayer_Access'(This'Unchecked_Access)), BasicHudFactory_Package.getInstance.BOTTOMLEFT), -(1));
+            This.healthBar := Paintable_Access (HealthBar_Package.Create (UnitLayer_Access'(This'Unchecked_Access), UnitLayer'Class (This).getHealthInterface, HealthBarTwodAnimation_Package.Create (AllBinaryLayer_Access (UnitLayer_Access'(This'Unchecked_Access)), BasicHudFactory_Package.getInstance.BOTTOMLEFT), -(1)));
         else
             This.healthBar := NullPaintable_Package.getInstance;
         end if;
@@ -170,7 +305,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         if VisibleCellPositionsSingleton_Package.getInstance.shouldProcess then
             currentGeographicMapCellPosition := UnitLayer'Class (This).getCurrentGeographicMapCellPosition;
             This.sensorGeographicMapCellPositionList.clear;
-            This.sensorGeographicMapCellPositionList.add (currentGeographicMapCellPosition);
+            This.sensorGeographicMapCellPositionList.add (Java_Object_Access (currentGeographicMapCellPosition));
             sensorRange := (This.weaponRange) * (UnitLayer_Package.SENSOR_RANGE_MULTIPLIER);
             geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (This.allBinaryGameLayerManagerP);
             geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
@@ -198,8 +333,8 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
             for index in reverse firstColumn .. (lastColumn) - (1) loop
                 for index2 in reverse firstRow .. (lastRow) - (1) loop
                     geographicMapCellPosition := geographicMapCellPositionFactory.getAt (index, index2);
-                    if not (This.sensorGeographicMapCellPositionList.contains (geographicMapCellPosition)) then
-                        This.sensorGeographicMapCellPositionList.add (geographicMapCellPosition);
+                    if not (This.sensorGeographicMapCellPositionList.contains (Java_Object_Access (geographicMapCellPosition))) then
+                        This.sensorGeographicMapCellPositionList.add (Java_Object_Access (geographicMapCellPosition));
                     end if;
                 end loop;
             end loop;
@@ -213,7 +348,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
 
    procedure select_Id (This : in out UnitLayer) is
    begin
-        This.pathAnimation := This.initPathAnimation;
+        This.pathAnimation := Animation_Access (This.initPathAnimation);
         AdvancedRTSGameLayer (This).select_Id;
    end select_Id;
 
@@ -251,8 +386,8 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    begin
         This.rtsLogHelper.setClosestGeographicMapCellHistory (UnitLayer_Access'(This'Unchecked_Access), pathsList);
         closestIndex := -(1);
-        shortestDistance := Integer_Package.MAX_VALUE;
-        currentDistance := Integer_Package.MAX_VALUE;
+        shortestDistance := Integer'Last;
+        currentDistance := Integer'Last;
         for index in reverse 0 .. (pathsList.size) - (1) loop
             geographicMapCellPositionBasicArrayList := BasicArrayList_Access (pathsList.get (index));
             geographicMapCellPosition := GeographicMapCellPosition_Access (geographicMapCellPositionBasicArrayList.get ((geographicMapCellPositionBasicArrayList.size) - (1)));
@@ -284,7 +419,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         begin
             layerInterface := AdvancedRTSGameLayer_Access (trackingEvent.getLayerInterface);
             if (layerInterface.getGroupInterface (0)) /= (UnitLayer'Class (This).getGroupInterface (0)) then
-                UnitLayer'Class (This).getUnitWaypointBehavior.getPossibleTargetList.add (layerInterface);
+                UnitLayer'Class (This).getUnitWaypointBehavior.getPossibleTargetList.add (Java_Object_Access (layerInterface));
                 layerInterface.onMovementFound (UnitLayer'Class (This).getTrackingEvent);
             end if;
         exception
@@ -304,7 +439,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    begin
         layerInterface := AdvancedRTSGameLayer_Access (trackingEvent.getLayerInterface);
         if (layerInterface.getGroupInterface (0)) /= (UnitLayer'Class (This).getGroupInterface (0)) then
-            UnitLayer'Class (This).getUnitWaypointBehavior.getPossibleTargetList.add (layerInterface);
+            UnitLayer'Class (This).getUnitWaypointBehavior.getPossibleTargetList.add (Java_Object_Access (layerInterface));
         end if;
    end onMovementFound;
 
@@ -454,7 +589,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         end loop;
         list.clear;
         UnitLayer'Class (This).groundFriction;
-        UnitLayer'Class (This).move_Case;
+        UnitLayer'Class (This).move;
    end processInput;
 
    procedure accelerate (This : in out UnitLayer; accelerate_Param : access BasicDecimal_Package.BasicDecimal'Class) is
@@ -661,7 +796,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         if UnitLayer'Class (This).getUnitWaypointBehavior.needToMove then
             This.rtsLayer2LogHelper.steeringUp (UnitLayer_Access'(This'Unchecked_Access));
             if (This.showMoreCaptionStates) and then (not (This.captionAnimationHelper.isShowing)) then
-                This.captionAnimationHelper.update (UnitLayer_Package.MOVE, This.basicColorFactory.GREEN);
+                This.captionAnimationHelper.update (UnitLayer_Package.MOVE_Field, This.basicColorFactory.GREEN);
             end if;
             UnitLayer'Class (This).getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.UP));
         else
@@ -673,7 +808,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         end if;
    end fireOrMove;
 
-   procedure move_Case (This : in out UnitLayer) is
+   procedure move (This : in out UnitLayer) is
       velocityProperties : VelocityProperties_Access;
       velocityXScaled : Long_Long_Integer;
       velocityYScaled : Long_Long_Integer;
@@ -690,7 +825,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
             velocityProperties := UnitLayer'Class (This).getVehicleProperties.getVelocityProperties;
             velocityXScaled := Long_Long_Integer (velocityProperties.getVelocityXBasicDecimalP.getScaled);
             velocityYScaled := Long_Long_Integer (velocityProperties.getVelocityYBasicDecimalP.getScaled);
-            UnitLayer'Class (This).getUnitWaypointBehavior.move_Case;
+            UnitLayer'Class (This).getUnitWaypointBehavior.move;
             if ((velocityXScaled) /= (0)) or else ((velocityYScaled) /= (0)) then
                 UnitLayer'Class (This).getUnitWaypointBehavior.setMoving (True);
                 geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (This.allBinaryGameLayerManagerP);
@@ -727,7 +862,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, UnitLayer_Access'(This'Unchecked_Access), To_Unbounded_String ("move"), e);
                 end;
         end;
-   end move_Case;
+   end move;
 
    procedure allStop (This : in out UnitLayer) is
       velocityProperties : VelocityProperties_Access;
@@ -833,7 +968,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    procedure setLoad (This : in out UnitLayer; resource : Integer) is
    begin
         if (resource) > (0) then
-            This.resourceAnimation := This.initResourceAnimation;
+            This.resourceAnimation := IndexedAnimation_Access (This.initResourceAnimation);
         else
             UnitLayer'Class (This).clearResourceAnimation;
         end if;
@@ -862,14 +997,14 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         rtsLayerHudPaintable := RTSLayerHudPaintable_Package.getInstance;
         rtsLayerHudPaintable.setBasicColorP (This.allBinaryGameLayerManagerP.getForegroundBasicColor);
         rtsLayerHudPaintable.setRtsLayer (UnitLayer_Access'(This'Unchecked_Access));
-        return rtsLayerHudPaintable;
+        return SelectionHudPaintable_Access (rtsLayerHudPaintable);
    end createHudPaintable;
 
    function getHudPaintable (This : in out UnitLayer) return SelectionHudPaintable_Access is
       rtsLayerHudPaintable : RTSLayerHudPaintable_Access;
    begin
         rtsLayerHudPaintable := RTSLayerHudPaintable_Package.getInstance;
-        return rtsLayerHudPaintable;
+        return SelectionHudPaintable_Access (rtsLayerHudPaintable);
    end getHudPaintable;
 
    function getType (This : in out UnitLayer) return Integer is
@@ -928,9 +1063,9 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
 
 begin
    null;
-   partialPositionList := BasicArrayListS_Package.Create (4);
+   partialPositionList := BasicArrayList_Access (BasicArrayListS_Package.Create (4));
    SENSOR_RANGE_MULTIPLIER := 6;
-   MOVE := To_Unbounded_String ("Moving");
+   MOVE_Field := To_Unbounded_String ("Moving");
 
 end org.allbinary.game.layer.unit.UnitLayer_Package;
 

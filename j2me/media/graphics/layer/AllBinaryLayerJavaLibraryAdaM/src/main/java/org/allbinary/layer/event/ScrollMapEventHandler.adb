@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.layer.event.ScrollMapEventListenerInterface_Package; use org.allbinary.layer.event.ScrollMapEventListenerInterface_Package;
+with org.allbinary.layer.event.ScrollMapEvent_Package; use org.allbinary.layer.event.ScrollMapEvent_Package;
+
 package body org.allbinary.layer.event.ScrollMapEventHandler_Package is
 
    procedure Initialize_Fields (This : in out ScrollMapEventHandler'Class) is

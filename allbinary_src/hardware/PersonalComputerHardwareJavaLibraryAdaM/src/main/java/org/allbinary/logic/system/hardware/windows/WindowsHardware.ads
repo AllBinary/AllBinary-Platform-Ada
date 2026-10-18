@@ -21,9 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 with org.allbinary.logic.system.hardware.components.ComponentFactory_Package; use org.allbinary.logic.system.hardware.components.ComponentFactory_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
@@ -38,15 +35,11 @@ with org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Pa
 with org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package org.allbinary.logic.system.hardware.windows.WindowsHardware_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package HardwareInterface_Package renames Standard.org.allbinary.logic.system.hardware.HardwareInterface_Package;
    package ComponentFactory_Package renames Standard.org.allbinary.logic.system.hardware.components.ComponentFactory_Package;
    package BridgeInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
@@ -61,15 +54,16 @@ package org.allbinary.logic.system.hardware.windows.WindowsHardware_Package is
    package MonitorInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
    package UsbInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
    package VideoInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type WindowsHardware is tagged;
    type WindowsHardware_Access is access all WindowsHardware'Class;
    type WindowsHardware_Access_Array is array (Natural range <>) of WindowsHardware_Access;
    type WindowsHardware_Access_Array_Access is access all WindowsHardware_Access_Array;
+   type WindowsHardware_Access_Array_Access_Array is array (Natural range <>) of WindowsHardware_Access_Array_Access;
+   type WindowsHardware_Access_Array_Access_Array_Access is access all WindowsHardware_Access_Array_Access_Array;
 
-   type WindowsHardware is new HardwareInterface with record
+   type WindowsHardware is new Java_Object and HardwareInterface with record
       componentInterfaceVector : BasicArrayList_Access;
       videoInterfaceVector : BasicArrayList_Access;
       hardDriveControllerInterfaceVector : BasicArrayList_Access;

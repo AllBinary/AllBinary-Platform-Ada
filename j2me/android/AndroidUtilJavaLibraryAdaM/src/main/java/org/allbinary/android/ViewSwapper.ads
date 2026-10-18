@@ -10,18 +10,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.app.Activity_Package; use android.app.Activity_Package;
 with android.view.View_Package; use android.view.View_Package;
-with android.view.ViewGroup_Package; use android.view.ViewGroup_Package;
 
 package org.allbinary.android.ViewSwapper_Package is
 
    package Activity_Package renames Standard.android.app.Activity_Package;
    package View_Package renames Standard.android.view.View_Package;
-   package ViewGroup_Package renames Standard.android.view.ViewGroup_Package;
 
    type ViewSwapper is tagged;
    type ViewSwapper_Access is access all ViewSwapper'Class;
    type ViewSwapper_Access_Array is array (Natural range <>) of ViewSwapper_Access;
    type ViewSwapper_Access_Array_Access is access all ViewSwapper_Access_Array;
+   type ViewSwapper_Access_Array_Access_Array is array (Natural range <>) of ViewSwapper_Access_Array_Access;
+   type ViewSwapper_Access_Array_Access_Array_Access is access all ViewSwapper_Access_Array_Access_Array;
 
    type ViewSwapper is new Java_Object with record
       rootViewId : Integer;

@@ -20,10 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
@@ -31,10 +28,7 @@ with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Packag
 
 package org.allbinary.logic.visual.transform.data.TransformDocument_Package is
 
-   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -43,8 +37,10 @@ package org.allbinary.logic.visual.transform.data.TransformDocument_Package is
    type TransformDocument_Access is access all TransformDocument'Class;
    type TransformDocument_Access_Array is array (Natural range <>) of TransformDocument_Access;
    type TransformDocument_Access_Array_Access is access all TransformDocument_Access_Array;
+   type TransformDocument_Access_Array_Access_Array is array (Natural range <>) of TransformDocument_Access_Array_Access;
+   type TransformDocument_Access_Array_Access_Array_Access is access all TransformDocument_Access_Array_Access_Array;
 
-   type TransformDocument is new TransformDocumentInterface with record
+   type TransformDocument is new Java_Object and TransformDocumentInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       baseNode : Node_Access;

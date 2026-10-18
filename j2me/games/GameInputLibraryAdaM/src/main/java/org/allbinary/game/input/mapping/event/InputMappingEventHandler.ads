@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package; use org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package;
-with org.allbinary.game.input.mapping.event.InputMappingEvent_Package; use org.allbinary.game.input.mapping.event.InputMappingEvent_Package;
 
 package org.allbinary.game.input.mapping.event.InputMappingEventHandler_Package is
 
@@ -36,6 +34,8 @@ package org.allbinary.game.input.mapping.event.InputMappingEventHandler_Package 
    type InputMappingEventHandler_Access is access all InputMappingEventHandler'Class;
    type InputMappingEventHandler_Access_Array is array (Natural range <>) of InputMappingEventHandler_Access;
    type InputMappingEventHandler_Access_Array_Access is access all InputMappingEventHandler_Access_Array;
+   type InputMappingEventHandler_Access_Array_Access_Array is array (Natural range <>) of InputMappingEventHandler_Access_Array_Access;
+   type InputMappingEventHandler_Access_Array_Access_Array_Access is access all InputMappingEventHandler_Access_Array_Access_Array;
 
    type InputMappingEventHandler is new BasicEventHandler with null record;
    gameKeyEventHandler : InputMappingEventHandler_Access;

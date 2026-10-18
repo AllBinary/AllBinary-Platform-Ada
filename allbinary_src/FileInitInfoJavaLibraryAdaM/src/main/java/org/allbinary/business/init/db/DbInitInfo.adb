@@ -13,8 +13,39 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.logic.io.AbDataInputStream_Package; use org.allbinary.logic.io.AbDataInputStream_Package;
+with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.io.DataOutputStreamFactory_Package; use org.allbinary.logic.io.DataOutputStreamFactory_Package;
+with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package; use org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
+with org.allbinary.logic.system.security.crypt.WeakCrypt_Package; use org.allbinary.logic.system.security.crypt.WeakCrypt_Package;
+
 package body org.allbinary.business.init.db.DbInitInfo_Package is
 
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package AbDataInputStream_Package renames Standard.org.allbinary.logic.io.AbDataInputStream_Package;
+   package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
+   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
+   package DataOutputStreamFactory_Package renames Standard.org.allbinary.logic.io.DataOutputStreamFactory_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package DatabaseEncoder_Package renames Standard.org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
+   package WeakCrypt_Package renames Standard.org.allbinary.logic.system.security.crypt.WeakCrypt_Package;
    procedure Initialize_Fields (This : in out DbInitInfo'Class) is
    begin
       null;
@@ -22,7 +53,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
       This.directory := Directory_Package.getInstance;
       This.httpData := HttpData_Package.getInstance;
       This.GET_URL := To_Unbounded_String ("getUrl");
-      This.PACKAGE_Id := FREEBLISKET_PATH_GLOBALS.getInstance.DBINITPATH;
+      This.PACKAGE_Id := FREEBLISKET_PATH_GLOBALS_Package.getInstance.DBINITPATH;
       
       This.hasRead := False;
    end Initialize_Fields;
@@ -71,9 +102,9 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
       cryptedServer : Short_Short_Integer_Array_Access;
       cryptedPort : Short_Short_Integer_Array_Access;
    begin
-        PATH := AbPath_Package.Create (Java_Image (URLGLOBALS.getWebappPath) & This.PACKAGE_Id, StringUtil_Package.getInstance.EMPTY_STRING);
+        PATH := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & This.PACKAGE_Id, StringUtil_Package.getInstance.EMPTY_STRING);
         This.directory.create (PATH);
-        FILEABPATH := AbPath_Package.Create (Java_Image (URLGLOBALS.getWebappPath) & This.PACKAGE_Id, This.initFileName);
+        FILEABPATH := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & This.PACKAGE_Id, This.initFileName);
         begin
             newFile := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
             newFile.createNewFile;
@@ -126,7 +157,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
       decryptedPort : Unbounded_String;
       stringUtil : StringUtil_Access;
    begin
-        FILEABPATH := AbPath_Package.Create (Java_Image (URLGLOBALS.getWebappPath) & This.PACKAGE_Id, This.initFileName);
+        FILEABPATH := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & This.PACKAGE_Id, This.initFileName);
         begin
             file := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
             if file.isFile then

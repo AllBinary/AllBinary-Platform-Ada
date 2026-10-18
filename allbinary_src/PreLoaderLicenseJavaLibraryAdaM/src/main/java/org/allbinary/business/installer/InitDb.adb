@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body org.allbinary.business.installer.InitDb_Package is
 
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out InitDb'Class) is
    begin
       null;
@@ -185,6 +188,11 @@ package body org.allbinary.business.installer.InitDb_Package is
                 end;
         end;
    end useNormalMainPath;
+
+   procedure setHelper (This : in out InitDb; Value : Unbounded_String) is
+   begin
+      InitDb'Class (This).setHelper (Java_Box (Value));
+   end setHelper;
 
 end org.allbinary.business.installer.InitDb_Package;
 

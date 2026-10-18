@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.visual.dhtml.html.HtmlForm_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out HtmlForm'Class) is
    begin
       null;
@@ -32,17 +39,17 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlForm_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HtmlForm'Class; action_Case : Unbounded_String) is
+   procedure Initialize (This : in out HtmlForm'Class; action : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.action_Case := action_Case;
-        This.inputs := BasicArrayListD_Package.Create;
+        This.action_Case := action;
+        This.inputs := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
-   function Create (action_Case : Unbounded_String) return HtmlForm_Access is
+   function Create (action : Unbounded_String) return HtmlForm_Access is
       This : constant HtmlForm_Access := new HtmlForm;
    begin
-      HtmlForm_Package.Initialize (This.all, action_Case);
+      HtmlForm_Package.Initialize (This.all, action);
       return This;
    end Create;
 
@@ -59,13 +66,13 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlForm_Package is
    procedure addInput (This : in out HtmlForm; htmlInput_Param : access HtmlInput_Package.HtmlInput'Class) is
       htmlInput : constant HtmlInput_Access := HtmlInput_Access (htmlInput_Param);
    begin
-        This.inputs.add (htmlInput);
+        This.inputs.add (Java_Object_Access (htmlInput));
    end addInput;
 
    procedure addTable (This : in out HtmlForm; htmlTable_Param : access HtmlTable_Package.HtmlTable'Class) is
       htmlTable : constant HtmlTable_Access := HtmlTable_Access (htmlTable_Param);
    begin
-        This.inputs.add (htmlTable);
+        This.inputs.add (Java_Object_Access (htmlTable));
    end addTable;
 
    function toString (This : in out HtmlForm) return Unbounded_String is

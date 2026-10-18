@@ -21,48 +21,34 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
-with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
-with org.allbinary.game.input.GameKeyEventSourceInterface_Package; use org.allbinary.game.input.GameKeyEventSourceInterface_Package;
-with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
-with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.game.input.InputProcessor_Package; use org.allbinary.game.input.InputProcessor_Package;
 with org.allbinary.game.input.PlatformKeyFactory_Package; use org.allbinary.game.input.PlatformKeyFactory_Package;
 with org.allbinary.game.input.event.DownKeyEventHandler_Package; use org.allbinary.game.input.event.DownKeyEventHandler_Package;
-with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbinary.game.input.event.GameKeyEventFactory_Package;
 with org.allbinary.game.input.event.UpGameKeyEventHandler_Package; use org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
 
    package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
-   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
-   package GameKeyEventSourceInterface_Package renames Standard.org.allbinary.game.input.GameKeyEventSourceInterface_Package;
-   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
-   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
    package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
    package InputProcessor_Package renames Standard.org.allbinary.game.input.InputProcessor_Package;
    package PlatformKeyFactory_Package renames Standard.org.allbinary.game.input.PlatformKeyFactory_Package;
    package DownKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.DownKeyEventHandler_Package;
-   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
    package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
    package UpGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type FormInputProcessor is tagged;
    type FormInputProcessor_Access is access all FormInputProcessor'Class;
    type FormInputProcessor_Access_Array is array (Natural range <>) of FormInputProcessor_Access;
    type FormInputProcessor_Access_Array_Access is access all FormInputProcessor_Access_Array;
+   type FormInputProcessor_Access_Array_Access_Array is array (Natural range <>) of FormInputProcessor_Access_Array_Access;
+   type FormInputProcessor_Access_Array_Access_Array_Access is access all FormInputProcessor_Access_Array_Access_Array;
 
    type FormInputProcessor is new InputProcessor with record
       logUtil : LogUtil_Access;

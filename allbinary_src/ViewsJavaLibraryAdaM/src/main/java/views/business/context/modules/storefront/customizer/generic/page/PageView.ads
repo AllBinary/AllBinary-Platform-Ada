@@ -34,6 +34,8 @@ package views.business.context.modules.storefront.customizer.generic_Id.page.Pag
    type PageView_Access is access all PageView'Class;
    type PageView_Access_Array is array (Natural range <>) of PageView_Access;
    type PageView_Access_Array_Access is access all PageView_Access_Array;
+   type PageView_Access_Array_Access_Array is array (Natural range <>) of PageView_Access_Array_Access;
+   type PageView_Access_Array_Access_Array_Access is access all PageView_Access_Array_Access_Array;
 
    type PageView is new HttpStoreComponentView with record
       logUtil : LogUtil_Access;

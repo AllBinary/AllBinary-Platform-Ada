@@ -28,6 +28,8 @@ package org.allbinary.init.crypt.jcehelper.CryptInterface_Package is
    type CryptInterface_Access is access all CryptInterface'Class;
    type CryptInterface_Access_Array is array (Natural range <>) of CryptInterface_Access;
    type CryptInterface_Access_Array_Access is access all CryptInterface_Access_Array;
+   type CryptInterface_Access_Array_Access_Array is array (Natural range <>) of CryptInterface_Access_Array_Access;
+   type CryptInterface_Access_Array_Access_Array_Access is access all CryptInterface_Access_Array_Access_Array;
    function encrypt (This : in out CryptInterface; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is abstract;
    function decrypt (This : in out CryptInterface; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is abstract;
 

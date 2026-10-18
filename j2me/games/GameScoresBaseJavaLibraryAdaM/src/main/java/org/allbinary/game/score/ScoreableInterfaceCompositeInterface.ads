@@ -29,6 +29,8 @@ package org.allbinary.game.score.ScoreableInterfaceCompositeInterface_Package is
    type ScoreableInterfaceCompositeInterface_Access is access all ScoreableInterfaceCompositeInterface'Class;
    type ScoreableInterfaceCompositeInterface_Access_Array is array (Natural range <>) of ScoreableInterfaceCompositeInterface_Access;
    type ScoreableInterfaceCompositeInterface_Access_Array_Access is access all ScoreableInterfaceCompositeInterface_Access_Array;
+   type ScoreableInterfaceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of ScoreableInterfaceCompositeInterface_Access_Array_Access;
+   type ScoreableInterfaceCompositeInterface_Access_Array_Access_Array_Access is access all ScoreableInterfaceCompositeInterface_Access_Array_Access_Array;
    function getScoreableInterface (This : in out ScoreableInterfaceCompositeInterface) return Scoreable_Access is abstract;
 
 end org.allbinary.game.score.ScoreableInterfaceCompositeInterface_Package;

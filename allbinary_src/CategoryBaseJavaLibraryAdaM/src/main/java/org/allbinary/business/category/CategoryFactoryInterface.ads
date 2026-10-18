@@ -35,6 +35,8 @@ package org.allbinary.business.category.CategoryFactoryInterface_Package is
    type CategoryFactoryInterface_Access is access all CategoryFactoryInterface'Class;
    type CategoryFactoryInterface_Access_Array is array (Natural range <>) of CategoryFactoryInterface_Access;
    type CategoryFactoryInterface_Access_Array_Access is access all CategoryFactoryInterface_Access_Array;
+   type CategoryFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of CategoryFactoryInterface_Access_Array_Access;
+   type CategoryFactoryInterface_Access_Array_Access_Array_Access is access all CategoryFactoryInterface_Access_Array_Access_Array;
    function getRootInstance (This : in out CategoryFactoryInterface) return CategoryInterface_Access is abstract;
    function getRootInstance (This : in out CategoryFactoryInterface; categoryPath_Param : access AbPath_Package.AbPath'Class) return CategoryInterface_Access is abstract;
    function getRootInstanceFromNode (This : in out CategoryFactoryInterface; node_Param : access Node_Package.Node'Class) return CategoryInterface_Access is abstract;

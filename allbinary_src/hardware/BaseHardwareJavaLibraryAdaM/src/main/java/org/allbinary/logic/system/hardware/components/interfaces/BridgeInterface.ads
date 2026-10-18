@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.interfaces.BridgeInterfac
    type BridgeInterface_Access is access all BridgeInterface'Class;
    type BridgeInterface_Access_Array is array (Natural range <>) of BridgeInterface_Access;
    type BridgeInterface_Access_Array_Access is access all BridgeInterface_Access_Array;
+   type BridgeInterface_Access_Array_Access_Array is array (Natural range <>) of BridgeInterface_Access_Array_Access;
+   type BridgeInterface_Access_Array_Access_Array_Access is access all BridgeInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
 

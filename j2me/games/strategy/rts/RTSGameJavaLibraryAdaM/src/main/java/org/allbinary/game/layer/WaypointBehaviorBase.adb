@@ -13,22 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+
 package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
    procedure Initialize_Fields (This : in out WaypointBehaviorBase'Class) is
    begin
       null;
       
       This.waypointOverridesAttacking := True;
       This.waypoint := WaypointBase_Package.NULL_WAYPOINT_BASE;
-      This.steeringVisitorList := BasicArrayListD_Package.Create;
+      This.steeringVisitorList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
    procedure Initialize (This : in out WaypointBehaviorBase'Class) is
    begin
       Initialize_Fields (This);
-        This.ownedWaypointList := BasicArrayListS_Package.Create (1);
+        This.ownedWaypointList := BasicArrayList_Access (BasicArrayListS_Package.Create (1));
    end Initialize;
 
    function Create return WaypointBehaviorBase_Access is

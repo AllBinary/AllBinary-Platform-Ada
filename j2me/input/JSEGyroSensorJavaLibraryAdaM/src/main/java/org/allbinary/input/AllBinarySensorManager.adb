@@ -13,14 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.input.AllBinarySensorManager_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out AllBinarySensorManager'Class) is
    begin
       null;
       This.ORIENTATION_SENSOR_INPUT := To_Unbounded_String ("Orientation Sensor Input");
       This.ORIENTATION_TYPE := To_Unbounded_String ("Orientation Type");
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 

@@ -13,8 +13,37 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
+with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.http.request.MultipartRequestParams_Package; use org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.io.file.FileUtil_Package; use org.allbinary.logic.io.file.FileUtil_Package;
+with org.allbinary.logic.io.file.zip.ZipFileUtil_Package; use org.allbinary.logic.io.file.zip.ZipFileUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body views.admin.inventory.download.DownloadableInventoryItemView_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package BasicItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
+   package DownloadableItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package MultipartRequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
+   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
+   package ZipFileUtil_Package renames Standard.org.allbinary.logic.io.file.zip.ZipFileUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out DownloadableInventoryItemView'Class) is
    begin
       null;
@@ -74,9 +103,9 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    procedure addDomNodeInterfaces (This : in out DownloadableInventoryItemView) is
       vector : BasicArrayList_Access;
    begin
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         if (This.downloadableItem) /= (null) then
-            vector.add (DownloadableItemView_Package.Create (This.downloadableItem));
+            vector.add (Java_Object_Access (DownloadableItemView_Package.Create (This.downloadableItem)));
         end if;
         DownloadableInventoryItemView'Class (This).addDomNodeInterface (BasicItemView_Package.Create (This.itemInterface, vector));
    end addDomNodeInterfaces;
@@ -152,7 +181,7 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
         storeFrontInterface := StoreFrontFactory_Package.getInstance (DownloadableInventoryItemView'Class (This).getWeblisketSession.getStoreName);
         filePathData := FilePathData_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (URLGLOBALS.getWebappPath);
+        stringBuffer.append (URLGLOBALS_Package.getWebappPath);
         stringBuffer.append (storeFrontInterface.getCurrentHostNamePath);
         stringBuffer.append (This.itemInterface.getCategory);
         stringBuffer.appendchar (filePathData.SEPARATORCHAR);

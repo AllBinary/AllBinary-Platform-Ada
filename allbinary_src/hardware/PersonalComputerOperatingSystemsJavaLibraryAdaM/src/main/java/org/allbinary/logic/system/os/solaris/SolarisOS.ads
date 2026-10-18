@@ -30,6 +30,8 @@ package org.allbinary.logic.system.os.solaris.SolarisOS_Package is
    type SolarisOS_Access is access all SolarisOS'Class;
    type SolarisOS_Access_Array is array (Natural range <>) of SolarisOS_Access;
    type SolarisOS_Access_Array_Access is access all SolarisOS_Access_Array;
+   type SolarisOS_Access_Array_Access_Array is array (Natural range <>) of SolarisOS_Access_Array_Access;
+   type SolarisOS_Access_Array_Access_Array_Access is access all SolarisOS_Access_Array_Access_Array;
 
    type SolarisOS is new GenericOperatingSystem with null record;
 

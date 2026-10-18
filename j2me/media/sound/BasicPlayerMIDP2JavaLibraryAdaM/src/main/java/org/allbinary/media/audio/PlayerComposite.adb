@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
+with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+with org.allbinary.media.audio.TimeBaseInterface_Package; use org.allbinary.media.audio.TimeBaseInterface_Package;
+with org.allbinary.media.audio.Controllable2_Package; use org.allbinary.media.audio.Controllable2_Package;
+
 package body org.allbinary.media.audio.PlayerComposite_Package is
 
+   package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    procedure Initialize_Fields (This : in out PlayerComposite'Class) is
    begin
       null;

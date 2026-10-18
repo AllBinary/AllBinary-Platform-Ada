@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
+
 package body org.allbinary.animation.vector.AdjustedCircleAnimation_Package is
 
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
    procedure Initialize_Fields (This : in out AdjustedCircleAnimation'Class) is
    begin
       null;

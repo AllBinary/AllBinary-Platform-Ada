@@ -30,6 +30,8 @@ package org.allbinary.media.image.ImageCompleteUtil_Package is
    type ImageCompleteUtil_Access is access all ImageCompleteUtil'Class;
    type ImageCompleteUtil_Access_Array is array (Natural range <>) of ImageCompleteUtil_Access;
    type ImageCompleteUtil_Access_Array_Access is access all ImageCompleteUtil_Access_Array;
+   type ImageCompleteUtil_Access_Array_Access_Array is array (Natural range <>) of ImageCompleteUtil_Access_Array_Access;
+   type ImageCompleteUtil_Access_Array_Access_Array_Access is access all ImageCompleteUtil_Access_Array_Access_Array;
 
    type ImageCompleteUtil is new Java_Object with null record;
    instance : ImageCompleteUtil_Access;

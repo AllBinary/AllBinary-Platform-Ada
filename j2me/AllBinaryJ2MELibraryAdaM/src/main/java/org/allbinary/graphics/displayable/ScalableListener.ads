@@ -28,6 +28,8 @@ package org.allbinary.graphics.displayable.ScalableListener_Package is
    type ScalableListener_Access is access all ScalableListener'Class;
    type ScalableListener_Access_Array is array (Natural range <>) of ScalableListener_Access;
    type ScalableListener_Access_Array_Access is access all ScalableListener_Access_Array;
+   type ScalableListener_Access_Array_Access_Array is array (Natural range <>) of ScalableListener_Access_Array_Access;
+   type ScalableListener_Access_Array_Access_Array_Access is access all ScalableListener_Access_Array_Access_Array;
    function getRatio (This : in out ScalableListener; ratio : Float) return Float is abstract;
    function getLeft (This : in out ScalableListener; xOffset : Integer) return Integer is abstract;
    function getTop (This : in out ScalableListener; yOffset : Integer) return Integer is abstract;

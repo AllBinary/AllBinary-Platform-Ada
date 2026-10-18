@@ -26,18 +26,18 @@ with AllBinary_Java; use AllBinary_Java;
 with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 --  with java.nio.channels.FileChannel_Package; use java.nio.channels.FileChannel_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
 package org.allbinary.logic.io.AbFileOutputStream_Package is
 
    package OutputStream_Package renames Standard.java.io.OutputStream_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
    type AbFileOutputStream is tagged;
    type AbFileOutputStream_Access is access all AbFileOutputStream'Class;
    type AbFileOutputStream_Access_Array is array (Natural range <>) of AbFileOutputStream_Access;
    type AbFileOutputStream_Access_Array_Access is access all AbFileOutputStream_Access_Array;
+   type AbFileOutputStream_Access_Array_Access_Array is array (Natural range <>) of AbFileOutputStream_Access_Array_Access;
+   type AbFileOutputStream_Access_Array_Access_Array_Access is access all AbFileOutputStream_Access_Array_Access_Array;
 
    type AbFileOutputStream is new OutputStream with record
       fileOutputStream : FileOutputStream_Access;

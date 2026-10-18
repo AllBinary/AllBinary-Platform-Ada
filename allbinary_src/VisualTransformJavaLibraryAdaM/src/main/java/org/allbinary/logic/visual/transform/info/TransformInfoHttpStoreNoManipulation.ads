@@ -22,18 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigNoManipulationFactory_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigNoManipulationFactory_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulation_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package TransformInfoObjectConfigNoManipulationFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigNoManipulationFactory_Package;
 
    type TransformInfoHttpStoreNoManipulation is tagged;
    type TransformInfoHttpStoreNoManipulation_Access is access all TransformInfoHttpStoreNoManipulation'Class;
    type TransformInfoHttpStoreNoManipulation_Access_Array is array (Natural range <>) of TransformInfoHttpStoreNoManipulation_Access;
    type TransformInfoHttpStoreNoManipulation_Access_Array_Access is access all TransformInfoHttpStoreNoManipulation_Access_Array;
+   type TransformInfoHttpStoreNoManipulation_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHttpStoreNoManipulation_Access_Array_Access;
+   type TransformInfoHttpStoreNoManipulation_Access_Array_Access_Array_Access is access all TransformInfoHttpStoreNoManipulation_Access_Array_Access_Array;
 
    type TransformInfoHttpStoreNoManipulation is new TransformInfoHttpStore with null record;
 

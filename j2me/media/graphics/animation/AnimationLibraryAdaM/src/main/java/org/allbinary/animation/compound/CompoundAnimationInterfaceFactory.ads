@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 
 package org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Package is
@@ -32,16 +30,16 @@ package org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Packa
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type CompoundAnimationInterfaceFactory is tagged;
    type CompoundAnimationInterfaceFactory_Access is access all CompoundAnimationInterfaceFactory'Class;
    type CompoundAnimationInterfaceFactory_Access_Array is array (Natural range <>) of CompoundAnimationInterfaceFactory_Access;
    type CompoundAnimationInterfaceFactory_Access_Array_Access is access all CompoundAnimationInterfaceFactory_Access_Array;
+   type CompoundAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of CompoundAnimationInterfaceFactory_Access_Array_Access;
+   type CompoundAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all CompoundAnimationInterfaceFactory_Access_Array_Access_Array;
 
-   type CompoundAnimationInterfaceFactory is new AnimationInterfaceFactoryInterface with record
+   type CompoundAnimationInterfaceFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       basicAnimationInterfaceFactoryInterfaceArrayP : AnimationInterfaceFactoryInterface_Access_Array_Access;
       animationBehaviorFactory : AnimationBehaviorFactory_Access;
    end record;

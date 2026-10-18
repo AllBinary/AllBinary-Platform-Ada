@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package is
 
    procedure Initialize_Fields (This : in out RaceTrackInfo'Class) is

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    procedure Initialize_Fields (This : in out StringValidationUtil'Class) is
@@ -43,7 +44,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function containsSpaces (This : in out StringValidationUtil; value : Unbounded_String) return Boolean is
    begin
-        if ((Index (value, Java_Image (' ')) - 1)) >= (0) then
+        if (Java_Index_Of (value, Java_Image (' '))) >= (0) then
             return True;
         end if;
         return False;

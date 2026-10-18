@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullCanvas_Package; use javax.microedition.lcdui.NullCanvas_Package;
+
 package body org.allbinary.midlet.ExitRunnable_Package is
 
+   package NullCanvas_Package renames Standard.javax.microedition.lcdui.NullCanvas_Package;
    procedure Initialize_Fields (This : in out ExitRunnable'Class) is
    begin
       null;

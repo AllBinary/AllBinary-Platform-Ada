@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
 package org.allbinary.logic.math.PrimitiveLongSingleton_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type PrimitiveLongSingleton is tagged;
    type PrimitiveLongSingleton_Access is access all PrimitiveLongSingleton'Class;
    type PrimitiveLongSingleton_Access_Array is array (Natural range <>) of PrimitiveLongSingleton_Access;
    type PrimitiveLongSingleton_Access_Array_Access is access all PrimitiveLongSingleton_Access_Array;
+   type PrimitiveLongSingleton_Access_Array_Access_Array is array (Natural range <>) of PrimitiveLongSingleton_Access_Array_Access;
+   type PrimitiveLongSingleton_Access_Array_Access_Array_Access is access all PrimitiveLongSingleton_Access_Array_Access_Array;
 
    type PrimitiveLongSingleton is new Java_Object with record
       UNK : Character_Array_Access;

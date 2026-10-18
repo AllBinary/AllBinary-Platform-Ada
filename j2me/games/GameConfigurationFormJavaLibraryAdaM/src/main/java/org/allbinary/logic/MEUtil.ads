@@ -32,6 +32,8 @@ package org.allbinary.logic.MEUtil_Package is
    type MEUtil_Access is access all MEUtil'Class;
    type MEUtil_Access_Array is array (Natural range <>) of MEUtil_Access;
    type MEUtil_Access_Array_Access is access all MEUtil_Access_Array;
+   type MEUtil_Access_Array_Access_Array is array (Natural range <>) of MEUtil_Access_Array_Access;
+   type MEUtil_Access_Array_Access_Array_Access is access all MEUtil_Access_Array_Access_Array;
 
    type MEUtil is new Java_Object with null record;
    instance : MEUtil_Access;

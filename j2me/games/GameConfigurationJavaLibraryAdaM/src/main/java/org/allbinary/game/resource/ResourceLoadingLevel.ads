@@ -28,6 +28,8 @@ package org.allbinary.game.resource.ResourceLoadingLevel_Package is
    type ResourceLoadingLevel_Access is access all ResourceLoadingLevel'Class;
    type ResourceLoadingLevel_Access_Array is array (Natural range <>) of ResourceLoadingLevel_Access;
    type ResourceLoadingLevel_Access_Array_Access is access all ResourceLoadingLevel_Access_Array;
+   type ResourceLoadingLevel_Access_Array_Access_Array is array (Natural range <>) of ResourceLoadingLevel_Access_Array_Access;
+   type ResourceLoadingLevel_Access_Array_Access_Array_Access is access all ResourceLoadingLevel_Access_Array_Access_Array;
 
    type ResourceLoadingLevel is new Java_Object with record
       name : Unbounded_String;

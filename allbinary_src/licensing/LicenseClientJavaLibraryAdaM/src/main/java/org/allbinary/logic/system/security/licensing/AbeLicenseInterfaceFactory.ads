@@ -21,26 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
-with java.util.Calendar_Package; use java.util.Calendar_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package; use org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
 
 package org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory_Package is
 
-   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbeLicenseClient_Package renames Standard.org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AbeLicenseInterfaceFactory is tagged;
    type AbeLicenseInterfaceFactory_Access is access all AbeLicenseInterfaceFactory'Class;
    type AbeLicenseInterfaceFactory_Access_Array is array (Natural range <>) of AbeLicenseInterfaceFactory_Access;
    type AbeLicenseInterfaceFactory_Access_Array_Access is access all AbeLicenseInterfaceFactory_Access_Array;
+   type AbeLicenseInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of AbeLicenseInterfaceFactory_Access_Array_Access;
+   type AbeLicenseInterfaceFactory_Access_Array_Access_Array_Access is access all AbeLicenseInterfaceFactory_Access_Array_Access_Array;
 
    type AbeLicenseInterfaceFactory is new Java_Object with record
       logUtil : LogUtil_Access;

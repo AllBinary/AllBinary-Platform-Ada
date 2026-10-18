@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+
 package body org.allbinary.image.ImageCacheBase_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out ImageCacheBase'Class) is
    begin
       null;
@@ -73,12 +86,12 @@ package body org.allbinary.image.ImageCacheBase_Package is
 
    function getIndexWH (This : in out ImageCacheBase; width : Integer; height : Integer) return Integer is
       foundIndex : Integer;
-      size_Case : Integer;
+      size : Integer;
       index : Integer;
    begin
         foundIndex := -(1);
-        size_Case := This.widths'Length;
-        for index in 0 .. (size_Case) - 1 loop
+        size := This.widths'Length;
+        for index in 0 .. (size) - 1 loop
             if ((This.widths (index)) = (width)) and then ((This.heights (index)) = (height)) then
                 foundIndex := index;
                 return foundIndex;
@@ -91,9 +104,9 @@ package body org.allbinary.image.ImageCacheBase_Package is
       list : BasicArrayList_Access;
    begin
         if (foundIndex) /= (-(1)) then
-            if (This.availableListOfList (foundIndex).size_Case) > (0) then
+            if (This.availableListOfList (foundIndex).size) > (0) then
                 list := This.availableListOfList (foundIndex);
-                return Image_Access (list.removeAt ((list.size_Case) - (1)));
+                return Image_Access (list.removeAt ((list.size) - (1)));
             end if;
         end if;
         return NullImage_Package.NULL_IMAGE;
@@ -140,8 +153,8 @@ package body org.allbinary.image.ImageCacheBase_Package is
         for index in reverse 0 .. (This.nextIndex) - (1) loop
             width := This.widths (index);
             height := This.heights (index);
-            total := This.listOfList (index).size_Case;
-            totalAvailable := This.availableListOfList (index).size_Case;
+            total := This.listOfList (index).size;
+            totalAvailable := This.availableListOfList (index).size;
             stringBuffer.append (To_Unbounded_String (" w: "));
             stringBuffer.appendint (width);
             stringBuffer.append (To_Unbounded_String (" h: "));
@@ -219,6 +232,30 @@ package body org.allbinary.image.ImageCacheBase_Package is
    begin
       null;
    end createImageFromInputStream;
+
+   function getImage (This : in out ImageCacheBase; Value : Unbounded_String) return Image_Access is
+   begin
+      return ImageCacheBase'Class (This).getImage (Java_Box (Value));
+   end getImage;
+
+   procedure getImage (This : in out ImageCacheBase; Value : Unbounded_String) is
+      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getImage (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getImage;
+
+   function getWithKey (This : in out ImageCacheBase; Value : Unbounded_String) return Image_Access is
+   begin
+      return ImageCacheBase'Class (This).getWithKey (Java_Box (Value));
+   end getWithKey;
+
+   procedure getWithKey (This : in out ImageCacheBase; Value : Unbounded_String) is
+      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getWithKey (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getWithKey;
 
 end org.allbinary.image.ImageCacheBase_Package;
 

@@ -20,18 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 
 package org.allbinary.logic.io.file.FileWrapperUtil_Package is
 
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package File_Package renames Standard.java.io.File_Package;
 
    type FileWrapperUtil is tagged;
    type FileWrapperUtil_Access is access all FileWrapperUtil'Class;
    type FileWrapperUtil_Access_Array is array (Natural range <>) of FileWrapperUtil_Access;
    type FileWrapperUtil_Access_Array_Access is access all FileWrapperUtil_Access_Array;
+   type FileWrapperUtil_Access_Array_Access_Array is array (Natural range <>) of FileWrapperUtil_Access_Array_Access;
+   type FileWrapperUtil_Access_Array_Access_Array_Access is access all FileWrapperUtil_Access_Array_Access_Array;
 
    type FileWrapperUtil is new Java_Object with null record;
 

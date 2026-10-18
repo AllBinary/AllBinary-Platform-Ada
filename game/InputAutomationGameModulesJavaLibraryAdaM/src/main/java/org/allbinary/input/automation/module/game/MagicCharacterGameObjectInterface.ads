@@ -30,6 +30,8 @@ package org.allbinary.input.automation.module.game.MagicCharacterGameObjectInter
    type MagicCharacterGameObjectInterface_Access is access all MagicCharacterGameObjectInterface'Class;
    type MagicCharacterGameObjectInterface_Access_Array is array (Natural range <>) of MagicCharacterGameObjectInterface_Access;
    type MagicCharacterGameObjectInterface_Access_Array_Access is access all MagicCharacterGameObjectInterface_Access_Array;
+   type MagicCharacterGameObjectInterface_Access_Array_Access_Array is array (Natural range <>) of MagicCharacterGameObjectInterface_Access_Array_Access;
+   type MagicCharacterGameObjectInterface_Access_Array_Access_Array_Access is access all MagicCharacterGameObjectInterface_Access_Array_Access_Array;
    function getHitPointGameObjectInterface (This : in out MagicCharacterGameObjectInterface) return HitPointGameObjectInterface_Access is abstract;
    function getMagicGameObjectInterface (This : in out MagicCharacterGameObjectInterface) return MagicGameObjectInterface_Access is abstract;
 

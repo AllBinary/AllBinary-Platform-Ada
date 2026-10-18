@@ -20,23 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package; use org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package;
-with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package; use org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.context.modules.storefront.StoreFront_Package; use org.allbinary.business.context.modules.storefront.StoreFront_Package;
 
 package org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package is
 
-   package StoreFrontsEntity_Package renames Standard.org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package;
-   package StoreFrontsEntityFactory_Package renames Standard.org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type StoreFrontFactory is tagged;
    type StoreFrontFactory_Access is access all StoreFrontFactory'Class;
    type StoreFrontFactory_Access_Array is array (Natural range <>) of StoreFrontFactory_Access;
    type StoreFrontFactory_Access_Array_Access is access all StoreFrontFactory_Access_Array;
+   type StoreFrontFactory_Access_Array_Access_Array is array (Natural range <>) of StoreFrontFactory_Access_Array_Access;
+   type StoreFrontFactory_Access_Array_Access_Array_Access is access all StoreFrontFactory_Access_Array_Access_Array;
 
    type StoreFrontFactory is new Java_Object with null record;
 

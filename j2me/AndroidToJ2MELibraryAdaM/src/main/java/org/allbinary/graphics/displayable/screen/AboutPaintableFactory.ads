@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 
 package org.allbinary.graphics.displayable.screen.AboutPaintableFactory_Package is
 
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
    type AboutPaintableFactory is tagged;
    type AboutPaintableFactory_Access is access all AboutPaintableFactory'Class;
    type AboutPaintableFactory_Access_Array is array (Natural range <>) of AboutPaintableFactory_Access;
    type AboutPaintableFactory_Access_Array_Access is access all AboutPaintableFactory_Access_Array;
+   type AboutPaintableFactory_Access_Array_Access_Array is array (Natural range <>) of AboutPaintableFactory_Access_Array_Access;
+   type AboutPaintableFactory_Access_Array_Access_Array_Access is access all AboutPaintableFactory_Access_Array_Access_Array;
 
    type AboutPaintableFactory is new Java_Object with record
       paintableArray : Paintable_Access_Array_Access;

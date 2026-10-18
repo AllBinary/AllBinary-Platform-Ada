@@ -40,6 +40,8 @@ package taghelpers.ValidationViewHelper_Package is
    type ValidationViewHelper_Access is access all ValidationViewHelper'Class;
    type ValidationViewHelper_Access_Array is array (Natural range <>) of ValidationViewHelper_Access;
    type ValidationViewHelper_Access_Array_Access is access all ValidationViewHelper_Access_Array;
+   type ValidationViewHelper_Access_Array_Access_Array is array (Natural range <>) of ValidationViewHelper_Access_Array_Access;
+   type ValidationViewHelper_Access_Array_Access_Array_Access is access all ValidationViewHelper_Access_Array_Access_Array;
 
    type ValidationViewHelper is new ViewHelper and ValidationComponentInterface with record
       logUtil : LogUtil_Access;

@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryProperties_Package; use org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryProperties_Package;
+
 package body org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryPropertiesFactory_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out RootStoreThemeCategoryPropertiesFactory'Class) is
    begin
       null;

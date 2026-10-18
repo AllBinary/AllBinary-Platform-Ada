@@ -28,6 +28,8 @@ package org.allbinary.android.AndroidInfoFactory_Package is
    type AndroidInfoFactory_Access is access all AndroidInfoFactory'Class;
    type AndroidInfoFactory_Access_Array is array (Natural range <>) of AndroidInfoFactory_Access;
    type AndroidInfoFactory_Access_Array_Access is access all AndroidInfoFactory_Access_Array;
+   type AndroidInfoFactory_Access_Array_Access_Array is array (Natural range <>) of AndroidInfoFactory_Access_Array_Access;
+   type AndroidInfoFactory_Access_Array_Access_Array_Access is access all AndroidInfoFactory_Access_Array_Access_Array;
 
    type AndroidInfoFactory is new Java_Object with record
       version : Integer;

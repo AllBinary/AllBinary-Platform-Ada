@@ -28,6 +28,8 @@ package org.allbinary.vector.PointsUtil_Package is
    type PointsUtil_Access is access all PointsUtil'Class;
    type PointsUtil_Access_Array is array (Natural range <>) of PointsUtil_Access;
    type PointsUtil_Access_Array_Access is access all PointsUtil_Access_Array;
+   type PointsUtil_Access_Array_Access_Array is array (Natural range <>) of PointsUtil_Access_Array_Access;
+   type PointsUtil_Access_Array_Access_Array_Access is access all PointsUtil_Access_Array_Access_Array;
 
    type PointsUtil is new Java_Object with null record;
    instance : PointsUtil_Access;

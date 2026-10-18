@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.TouchJ2ME_Package is
 
    procedure Initialize_Fields (This : in out TouchJ2ME'Class) is

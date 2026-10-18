@@ -13,12 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out CurrentlyPressedTouchButtonSingleton'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -53,7 +56,7 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
    function remove (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) return Boolean is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
-        return This.list.remove (touchButtonInput);
+        return This.list.remove (Java_Object_Access (touchButtonInput));
    end remove;
 
    function get (This : in out CurrentlyPressedTouchButtonSingleton; index : Integer) return TouchButtonInput_Access is
@@ -64,13 +67,13 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
    function contains (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) return Boolean is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
-        return This.list.contains (touchButtonInput);
+        return This.list.contains (Java_Object_Access (touchButtonInput));
    end contains;
 
    procedure add (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
-        This.list.add (touchButtonInput);
+        This.list.add (Java_Object_Access (touchButtonInput));
    end add;
 
    procedure removeAt (This : in out CurrentlyPressedTouchButtonSingleton; index : Integer) is

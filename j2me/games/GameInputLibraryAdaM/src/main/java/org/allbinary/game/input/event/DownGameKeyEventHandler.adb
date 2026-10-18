@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.input.event.DownGameKeyEventHandler_Package is
 
    procedure Initialize_Fields (This : in out DownGameKeyEventHandler'Class) is

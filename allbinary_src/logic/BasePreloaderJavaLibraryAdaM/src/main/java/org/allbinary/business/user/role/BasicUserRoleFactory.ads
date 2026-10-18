@@ -29,6 +29,8 @@ package org.allbinary.business.user.role.BasicUserRoleFactory_Package is
    type BasicUserRoleFactory_Access is access all BasicUserRoleFactory'Class;
    type BasicUserRoleFactory_Access_Array is array (Natural range <>) of BasicUserRoleFactory_Access;
    type BasicUserRoleFactory_Access_Array_Access is access all BasicUserRoleFactory_Access_Array;
+   type BasicUserRoleFactory_Access_Array_Access_Array is array (Natural range <>) of BasicUserRoleFactory_Access_Array_Access;
+   type BasicUserRoleFactory_Access_Array_Access_Array_Access is access all BasicUserRoleFactory_Access_Array_Access_Array;
 
    type BasicUserRoleFactory is new Java_Object with record
       INACTIVITYTIMEOUT : Long_Long_Integer;

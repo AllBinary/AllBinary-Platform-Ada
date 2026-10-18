@@ -22,35 +22,27 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.game.terrain.BasicTerrainInfo_Package; use org.allbinary.game.terrain.BasicTerrainInfo_Package;
-with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.terrain.TerrainEvent_Package;
-with org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package; use org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package;
-with org.allbinary.game.terrain.TerrainEventHandler_Package; use org.allbinary.game.terrain.TerrainEventHandler_Package;
 with org.allbinary.game.terrain.TerrainEventListener_Package; use org.allbinary.game.terrain.TerrainEventListener_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package; use org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package;
 
 package org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
 
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
    package BasicTerrainInfo_Package renames Standard.org.allbinary.game.terrain.BasicTerrainInfo_Package;
-   package TerrainEvent_Package renames Standard.org.allbinary.game.terrain.TerrainEvent_Package;
-   package TerrainEventCircularStaticPool_Package renames Standard.org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package;
-   package TerrainEventHandler_Package renames Standard.org.allbinary.game.terrain.TerrainEventHandler_Package;
    package TerrainEventListener_Package renames Standard.org.allbinary.game.terrain.TerrainEventListener_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type TerrainPatrolAI is tagged;
    type TerrainPatrolAI_Access is access all TerrainPatrolAI'Class;
    type TerrainPatrolAI_Access_Array is array (Natural range <>) of TerrainPatrolAI_Access;
    type TerrainPatrolAI_Access_Array_Access is access all TerrainPatrolAI_Access_Array;
+   type TerrainPatrolAI_Access_Array_Access_Array is array (Natural range <>) of TerrainPatrolAI_Access_Array_Access;
+   type TerrainPatrolAI_Access_Array_Access_Array_Access is access all TerrainPatrolAI_Access_Array_Access_Array;
 
    type TerrainPatrolAI is new PacePatrolAI with record
       terrainEventListener : TerrainEventListener_Access;

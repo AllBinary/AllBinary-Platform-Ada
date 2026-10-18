@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.apache.xmlrpc.NullXmlRpcHandler_Package; use org.apache.xmlrpc.NullXmlRpcHandler_Package;
+
 package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package NullXmlRpcHandler_Package renames Standard.org.apache.xmlrpc.NullXmlRpcHandler_Package;
    procedure Initialize_Fields (This : in out XmlRpcAbeClient'Class) is
    begin
       null;
@@ -112,7 +125,7 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    procedure setClient (This : in out XmlRpcAbeClient; client_Param : access XmlRpcClient_Package.XmlRpcClient'Class) is
       client : constant XmlRpcClient_Access := XmlRpcClient_Access (client_Param);
    begin
-        This.client := client;
+        This.client := XmlRpcHandler_Access (client);
    end setClient;
 
    function getServer (This : in out XmlRpcAbeClient) return Integer is
@@ -169,6 +182,30 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
 
    procedure tryAnother (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Java_Object_Access := XmlRpcAbeClient'Class (This).tryAnother (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end tryAnother;
+
+   function get (This : in out XmlRpcAbeClient; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return XmlRpcAbeClient'Class (This).get (Java_Box (Value));
+   end get;
+
+   procedure get (This : in out XmlRpcAbeClient; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := XmlRpcAbeClient'Class (This).get (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end get;
+
+   function tryAnother (This : in out XmlRpcAbeClient; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return XmlRpcAbeClient'Class (This).tryAnother (Java_Box (Value));
+   end tryAnother;
+
+   procedure tryAnother (This : in out XmlRpcAbeClient; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := XmlRpcAbeClient'Class (This).tryAnother (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -29,6 +29,8 @@ package org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package 
    type TouchButtonStrafeLeftResource_Access is access all TouchButtonStrafeLeftResource'Class;
    type TouchButtonStrafeLeftResource_Access_Array is array (Natural range <>) of TouchButtonStrafeLeftResource_Access;
    type TouchButtonStrafeLeftResource_Access_Array_Access is access all TouchButtonStrafeLeftResource_Access_Array;
+   type TouchButtonStrafeLeftResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonStrafeLeftResource_Access_Array_Access;
+   type TouchButtonStrafeLeftResource_Access_Array_Access_Array_Access is access all TouchButtonStrafeLeftResource_Access_Array_Access_Array;
 
    type TouchButtonStrafeLeftResource is new TouchButtonResource with null record;
    instance : TouchButtonResource_Access;

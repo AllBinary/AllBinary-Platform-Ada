@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.media.image.ImageRotationUtil_Package; use org.allbinary.media.image.ImageRotationUtil_Package;
 
 package org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
 
@@ -31,6 +30,8 @@ package org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
    type ImageToRotationImageArrayUtil_Access is access all ImageToRotationImageArrayUtil'Class;
    type ImageToRotationImageArrayUtil_Access_Array is array (Natural range <>) of ImageToRotationImageArrayUtil_Access;
    type ImageToRotationImageArrayUtil_Access_Array_Access is access all ImageToRotationImageArrayUtil_Access_Array;
+   type ImageToRotationImageArrayUtil_Access_Array_Access_Array is array (Natural range <>) of ImageToRotationImageArrayUtil_Access_Array_Access;
+   type ImageToRotationImageArrayUtil_Access_Array_Access_Array_Access is access all ImageToRotationImageArrayUtil_Access_Array_Access_Array;
 
    type ImageToRotationImageArrayUtil is new Java_Object with null record;
    instance : ImageToRotationImageArrayUtil_Access;

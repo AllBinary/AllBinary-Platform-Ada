@@ -21,27 +21,24 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
-with org.allbinary.animation.VectorRotationAnimation_Package; use org.allbinary.animation.VectorRotationAnimation_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Package is
 
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type VectorRotationAnimationInterfaceFactory is tagged;
    type VectorRotationAnimationInterfaceFactory_Access is access all VectorRotationAnimationInterfaceFactory'Class;
    type VectorRotationAnimationInterfaceFactory_Access_Array is array (Natural range <>) of VectorRotationAnimationInterfaceFactory_Access;
    type VectorRotationAnimationInterfaceFactory_Access_Array_Access is access all VectorRotationAnimationInterfaceFactory_Access_Array;
+   type VectorRotationAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of VectorRotationAnimationInterfaceFactory_Access_Array_Access;
+   type VectorRotationAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all VectorRotationAnimationInterfaceFactory_Access_Array_Access_Array;
 
-   type VectorRotationAnimationInterfaceFactory is new AnimationInterfaceFactoryInterface with record
+   type VectorRotationAnimationInterfaceFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       currentPoints : Integer_Array_Access_Array_Access_Array_Access;
       basicColor : BasicColor_Access;
       animationBehaviorFactory : AnimationBehaviorFactory_Access;

@@ -32,8 +32,10 @@ package org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Packag
    type DirectoryBooleanFileVisitor_Access is access all DirectoryBooleanFileVisitor'Class;
    type DirectoryBooleanFileVisitor_Access_Array is array (Natural range <>) of DirectoryBooleanFileVisitor_Access;
    type DirectoryBooleanFileVisitor_Access_Array_Access is access all DirectoryBooleanFileVisitor_Access_Array;
+   type DirectoryBooleanFileVisitor_Access_Array_Access_Array is array (Natural range <>) of DirectoryBooleanFileVisitor_Access_Array_Access;
+   type DirectoryBooleanFileVisitor_Access_Array_Access_Array_Access is access all DirectoryBooleanFileVisitor_Access_Array_Access_Array;
 
-   type DirectoryBooleanFileVisitor is new VisitorInterface with null record;
+   type DirectoryBooleanFileVisitor is new Java_Object and VisitorInterface with null record;
 
    procedure Initialize (This : in out DirectoryBooleanFileVisitor'Class);
    function Create return DirectoryBooleanFileVisitor_Access;
@@ -41,6 +43,8 @@ package org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Packag
    procedure visit (This : in out DirectoryBooleanFileVisitor; anyType_Param : access Java_Object'Class);
    function visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) return Boolean;
    procedure visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class);
+   function visit (This : in out DirectoryBooleanFileVisitor; Value : Unbounded_String) return Java_Object_Access;
+   procedure visit (This : in out DirectoryBooleanFileVisitor; Value : Unbounded_String);
 
 end org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package;
 

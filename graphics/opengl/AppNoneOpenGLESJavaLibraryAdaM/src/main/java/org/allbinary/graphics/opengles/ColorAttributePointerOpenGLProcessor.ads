@@ -32,6 +32,8 @@ package org.allbinary.graphics.opengles.ColorAttributePointerOpenGLProcessor_Pac
    type ColorAttributePointerOpenGLProcessor_Access is access all ColorAttributePointerOpenGLProcessor'Class;
    type ColorAttributePointerOpenGLProcessor_Access_Array is array (Natural range <>) of ColorAttributePointerOpenGLProcessor_Access;
    type ColorAttributePointerOpenGLProcessor_Access_Array_Access is access all ColorAttributePointerOpenGLProcessor_Access_Array;
+   type ColorAttributePointerOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of ColorAttributePointerOpenGLProcessor_Access_Array_Access;
+   type ColorAttributePointerOpenGLProcessor_Access_Array_Access_Array_Access is access all ColorAttributePointerOpenGLProcessor_Access_Array_Access_Array;
 
    type ColorAttributePointerOpenGLProcessor is new ObjectThreedOpenGLProcessor with null record;
    instance : ColorAttributePointerOpenGLProcessor_Access;

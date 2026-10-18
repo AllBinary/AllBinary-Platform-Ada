@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+with org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package; use org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package;
+
 package body org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package is
 
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
    procedure Initialize_Fields (This : in out MotionEventCircularPool'Class) is
    begin
       null;

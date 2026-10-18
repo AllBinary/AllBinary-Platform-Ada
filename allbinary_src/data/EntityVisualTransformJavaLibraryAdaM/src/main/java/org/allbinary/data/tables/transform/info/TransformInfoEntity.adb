@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.crypt.Encoder_Package; use org.allbinary.logic.control.crypt.Encoder_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+
 package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package Encoder_Package renames Standard.org.allbinary.logic.control.crypt.Encoder_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
    procedure Initialize_Fields (This : in out TransformInfoEntity'Class) is
    begin
       null;
@@ -126,7 +147,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
       objectConfigString : Unbounded_String;
       i : Integer;
    begin
-        objectConfigVector := BasicArrayListD_Package.Create;
+        objectConfigVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         objectConfigColumnVector := TransformInfoEntity'Class (This).getColumnWhere (TransformInfoData_Package.getInstance.OBJECTCONFIG, StoreFrontData_Package.getInstance.NAME, storeName);
         size := objectConfigColumnVector.size;
         for i in 0 .. (size) - 1 loop
@@ -145,7 +166,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
       viewNameString : Unbounded_String;
       i : Integer;
    begin
-        viewNameVector := BasicArrayListD_Package.Create;
+        viewNameVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         columnVector := TransformInfoEntity'Class (This).getColumnWhere (TransformInfoData_Package.getInstance.NAME, StoreFrontData_Package.getInstance.NAME, storeName);
         size := columnVector.size;
         for i in 0 .. (size) - 1 loop

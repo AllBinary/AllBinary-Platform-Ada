@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
 package org.allbinary.game.layer.Aggression_Package is
 
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type Aggression is tagged;
    type Aggression_Access is access all Aggression'Class;
    type Aggression_Access_Array is array (Natural range <>) of Aggression_Access;
    type Aggression_Access_Array_Access is access all Aggression_Access_Array;
+   type Aggression_Access_Array_Access_Array is array (Natural range <>) of Aggression_Access_Array_Access;
+   type Aggression_Access_Array_Access_Array_Access is access all Aggression_Access_Array_Access_Array;
 
    type Aggression is new Java_Object with record
       ram : Integer;

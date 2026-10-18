@@ -30,6 +30,8 @@ package org.allbinary.game.midlet.DemoGameMidletJs_Package is
    type DemoGameMidletJs_Access is access all DemoGameMidletJs'Class;
    type DemoGameMidletJs_Access_Array is array (Natural range <>) of DemoGameMidletJs_Access;
    type DemoGameMidletJs_Access_Array_Access is access all DemoGameMidletJs_Access_Array;
+   type DemoGameMidletJs_Access_Array_Access_Array is array (Natural range <>) of DemoGameMidletJs_Access_Array_Access;
+   type DemoGameMidletJs_Access_Array_Access_Array_Access is access all DemoGameMidletJs_Access_Array_Access_Array;
    function createDemoGameCanvasRunnableInterface (This : in out DemoGameMidletJs) return GameCanvasRunnableInterface_Access is abstract;
 
 end org.allbinary.game.midlet.DemoGameMidletJs_Package;

@@ -28,6 +28,8 @@ package org.allbinary.game.layer.CaptionResources_Package is
    type CaptionResources_Access is access all CaptionResources'Class;
    type CaptionResources_Access_Array is array (Natural range <>) of CaptionResources_Access;
    type CaptionResources_Access_Array_Access is access all CaptionResources_Access_Array;
+   type CaptionResources_Access_Array_Access_Array is array (Natural range <>) of CaptionResources_Access_Array_Access;
+   type CaptionResources_Access_Array_Access_Array_Access is access all CaptionResources_Access_Array_Access_Array;
 
    type CaptionResources is new Java_Object with record
       RESOURCE : Unbounded_String;

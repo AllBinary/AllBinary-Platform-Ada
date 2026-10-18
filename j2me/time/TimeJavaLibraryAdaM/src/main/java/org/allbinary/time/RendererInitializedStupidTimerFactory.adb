@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.time.RendererInitializedStupidTimerFactory_Package is
 
    procedure Initialize_Fields (This : in out RendererInitializedStupidTimerFactory'Class) is

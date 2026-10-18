@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
+
 package body org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryProperties_Package is
 
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package TransformInfoHttpStoreInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
    procedure Initialize_Fields (This : in out RootStoreThemeCategoryProperties'Class) is
    begin
       null;
@@ -88,14 +105,14 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
         storeFrontInterface := StoreFrontFactory_Package.getInstance (transformInfoHttpStoreInterface.getStoreName);
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
-        stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH);
+        stringBuffer.append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH);
         stringBuffer.append (storeFrontInterface.getName);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
-        stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.THEMEPATH);
+        stringBuffer.append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.THEMEPATH);
         abPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
         httpServletRequest := HttpServletRequest_Access (transformInfoHttpStoreInterface.getPageContext.getRequest);
         This.webAppAbPath := AbPath_Package.Create (Java_Image (httpServletRequest.getContextPath) & abPath.toString, StringUtil_Package.getInstance.EMPTY_STRING);
-        RootStoreThemeCategoryProperties'Class (This).setRootFilePath (AbPath_Package.Create (Java_Image (URLGLOBALS.getMainPath) & abPath.toString, StringUtil_Package.getInstance.EMPTY_STRING));
+        RootStoreThemeCategoryProperties'Class (This).setRootFilePath (AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getMainPath) & abPath.toString, StringUtil_Package.getInstance.EMPTY_STRING));
    end initPath;
 
 end org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryProperties_Package;

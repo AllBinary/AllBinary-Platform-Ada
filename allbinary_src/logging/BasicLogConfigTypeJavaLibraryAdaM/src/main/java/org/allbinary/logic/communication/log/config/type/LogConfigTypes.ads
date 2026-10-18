@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type LogConfigTypes is tagged;
    type LogConfigTypes_Access is access all LogConfigTypes'Class;
    type LogConfigTypes_Access_Array is array (Natural range <>) of LogConfigTypes_Access;
    type LogConfigTypes_Access_Array_Access is access all LogConfigTypes_Access_Array;
+   type LogConfigTypes_Access_Array_Access_Array is array (Natural range <>) of LogConfigTypes_Access_Array_Access;
+   type LogConfigTypes_Access_Array_Access_Array_Access is access all LogConfigTypes_Access_Array_Access_Array;
 
    type LogConfigTypes is new Java_Object with null record;
    LOGGING : BasicArrayList_Access;

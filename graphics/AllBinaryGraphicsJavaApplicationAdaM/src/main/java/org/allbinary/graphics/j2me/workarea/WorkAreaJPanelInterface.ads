@@ -31,6 +31,8 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package is
    type WorkAreaJPanelInterface_Access is access all WorkAreaJPanelInterface'Class;
    type WorkAreaJPanelInterface_Access_Array is array (Natural range <>) of WorkAreaJPanelInterface_Access;
    type WorkAreaJPanelInterface_Access_Array_Access is access all WorkAreaJPanelInterface_Access_Array;
+   type WorkAreaJPanelInterface_Access_Array_Access_Array is array (Natural range <>) of WorkAreaJPanelInterface_Access_Array_Access;
+   type WorkAreaJPanelInterface_Access_Array_Access_Array_Access is access all WorkAreaJPanelInterface_Access_Array_Access_Array;
    function getName (This : in out WorkAreaJPanelInterface) return Unbounded_String is abstract;
    procedure deselect (This : in out WorkAreaJPanelInterface) is abstract;
    procedure select_Id (This : in out WorkAreaJPanelInterface) is abstract;

@@ -31,6 +31,8 @@ package org.allbinary.game.input.event.DownGameKeyEventListenerInterface_Package
    type DownGameKeyEventListenerInterface_Access is access all DownGameKeyEventListenerInterface'Class;
    type DownGameKeyEventListenerInterface_Access_Array is array (Natural range <>) of DownGameKeyEventListenerInterface_Access;
    type DownGameKeyEventListenerInterface_Access_Array_Access is access all DownGameKeyEventListenerInterface_Access_Array;
+   type DownGameKeyEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of DownGameKeyEventListenerInterface_Access_Array_Access;
+   type DownGameKeyEventListenerInterface_Access_Array_Access_Array_Access is access all DownGameKeyEventListenerInterface_Access_Array_Access_Array;
    procedure onDownGameKeyEvent (This : in out DownGameKeyEventListenerInterface; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is abstract;
 
 end org.allbinary.game.input.event.DownGameKeyEventListenerInterface_Package;

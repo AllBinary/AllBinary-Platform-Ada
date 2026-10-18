@@ -13,13 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.AllMotionRecognizer_Package; use org.allbinary.input.motion.AllMotionRecognizer_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+
 package body org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package is
 
+   package AllMotionRecognizer_Package renames Standard.org.allbinary.input.motion.AllMotionRecognizer_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out GameInputMotionEventProcessorAPI1'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.motionRecognizer := AllMotionRecognizer_Package.Create;
+      This.motionRecognizer := MotionRecognizer_Access (AllMotionRecognizer_Package.Create);
    end Initialize_Fields;
 
 

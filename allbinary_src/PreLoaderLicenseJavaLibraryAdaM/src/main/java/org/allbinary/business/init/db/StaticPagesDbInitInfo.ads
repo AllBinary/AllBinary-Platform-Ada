@@ -29,6 +29,8 @@ package org.allbinary.business.init.db.StaticPagesDbInitInfo_Package is
    type StaticPagesDbInitInfo_Access is access all StaticPagesDbInitInfo'Class;
    type StaticPagesDbInitInfo_Access_Array is array (Natural range <>) of StaticPagesDbInitInfo_Access;
    type StaticPagesDbInitInfo_Access_Array_Access is access all StaticPagesDbInitInfo_Access_Array;
+   type StaticPagesDbInitInfo_Access_Array_Access_Array is array (Natural range <>) of StaticPagesDbInitInfo_Access_Array_Access;
+   type StaticPagesDbInitInfo_Access_Array_Access_Array_Access is access all StaticPagesDbInitInfo_Access_Array_Access_Array;
 
    type StaticPagesDbInitInfo is new DbInitInfo with null record;
    INITFILE : Unbounded_String;

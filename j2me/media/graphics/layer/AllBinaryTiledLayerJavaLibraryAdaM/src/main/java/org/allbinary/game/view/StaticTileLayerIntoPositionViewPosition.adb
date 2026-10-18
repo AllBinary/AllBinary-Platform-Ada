@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.layer.NullLayer_Package; use org.allbinary.layer.NullLayer_Package;
+
 package body org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package is
 
+   package NullLayer_Package renames Standard.org.allbinary.layer.NullLayer_Package;
    procedure Initialize_Fields (This : in out StaticTileLayerIntoPositionViewPosition'Class) is
    begin
       null;

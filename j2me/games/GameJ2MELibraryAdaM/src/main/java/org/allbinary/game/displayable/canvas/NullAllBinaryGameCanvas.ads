@@ -35,8 +35,10 @@ package org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package is
    type NullAllBinaryGameCanvas_Access is access all NullAllBinaryGameCanvas'Class;
    type NullAllBinaryGameCanvas_Access_Array is array (Natural range <>) of NullAllBinaryGameCanvas_Access;
    type NullAllBinaryGameCanvas_Access_Array_Access is access all NullAllBinaryGameCanvas_Access_Array;
+   type NullAllBinaryGameCanvas_Access_Array_Access_Array is array (Natural range <>) of NullAllBinaryGameCanvas_Access_Array_Access;
+   type NullAllBinaryGameCanvas_Access_Array_Access_Array_Access is access all NullAllBinaryGameCanvas_Access_Array_Access_Array;
 
-   type NullAllBinaryGameCanvas is new AllBinaryGameCanvasInterface with null record;
+   type NullAllBinaryGameCanvas is new Java_Object and AllBinaryGameCanvasInterface with null record;
    NULL_ALLBINARY_GAME_CANVAS : NullAllBinaryGameCanvas_Access;
 
    procedure Initialize (This : in out NullAllBinaryGameCanvas'Class);

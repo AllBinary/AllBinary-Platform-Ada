@@ -13,12 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackAdjacentDropLayerFactory_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out RaceTrackAdjacentDropLayerFactory'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.basicArrayListUtil := BasicArrayListUtil_Package.getInstance;
    end Initialize_Fields;
 
@@ -59,7 +62,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    procedure add (This : in out RaceTrackAdjacentDropLayerFactory; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) is
       layerInterfaceFactoryInterface : constant LayerInterfaceFactoryInterface_Access := LayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
    begin
-        This.list.add (layerInterfaceFactoryInterface);
+        This.list.add (Java_Object_Access (layerInterfaceFactoryInterface));
    end add;
 
 begin

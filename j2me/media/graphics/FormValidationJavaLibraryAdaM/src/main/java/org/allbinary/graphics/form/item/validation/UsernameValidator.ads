@@ -31,6 +31,8 @@ package org.allbinary.graphics.form.item.validation.UsernameValidator_Package is
    type UsernameValidator_Access is access all UsernameValidator'Class;
    type UsernameValidator_Access_Array is array (Natural range <>) of UsernameValidator_Access;
    type UsernameValidator_Access_Array_Access is access all UsernameValidator_Access_Array;
+   type UsernameValidator_Access_Array_Access_Array is array (Natural range <>) of UsernameValidator_Access_Array_Access;
+   type UsernameValidator_Access_Array_Access_Array_Access is access all UsernameValidator_Access_Array_Access_Array;
 
    type UsernameValidator is new TextFieldItemValidator with null record;
 

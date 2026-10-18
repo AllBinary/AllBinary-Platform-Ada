@@ -1,8 +1,13 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with android.view.KeyEvent_Package; use android.view.KeyEvent_Package;
+
 package body org.allbinary.game.input.AndroidNumberKeyToJ2MECanvasNumberKey_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package KeyEvent_Package renames Standard.android.view.KeyEvent_Package;
    procedure Initialize_Fields (This : in out AndroidNumberKeyToJ2MECanvasNumberKey'Class) is
    begin
       null;

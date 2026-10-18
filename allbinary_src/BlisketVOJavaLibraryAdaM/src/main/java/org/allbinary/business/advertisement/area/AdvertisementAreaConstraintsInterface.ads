@@ -32,6 +32,8 @@ package org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsIn
    type AdvertisementAreaConstraintsInterface_Access is access all AdvertisementAreaConstraintsInterface'Class;
    type AdvertisementAreaConstraintsInterface_Access_Array is array (Natural range <>) of AdvertisementAreaConstraintsInterface_Access;
    type AdvertisementAreaConstraintsInterface_Access_Array_Access is access all AdvertisementAreaConstraintsInterface_Access_Array;
+   type AdvertisementAreaConstraintsInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementAreaConstraintsInterface_Access_Array_Access;
+   type AdvertisementAreaConstraintsInterface_Access_Array_Access_Array_Access is access all AdvertisementAreaConstraintsInterface_Access_Array_Access_Array;
    function getDisplayInBrowserContraints (This : in out AdvertisementAreaConstraintsInterface) return DisplayInBrowserContraintsInterface_Access is abstract;
    function getTwoDimensionContraints (This : in out AdvertisementAreaConstraintsInterface) return TwoDimensionalConstraintInterface_Access is abstract;
 

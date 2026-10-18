@@ -22,26 +22,23 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package;
-with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
 
 package org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package is
 
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AnalogControllerConfigurationEventHandler is tagged;
    type AnalogControllerConfigurationEventHandler_Access is access all AnalogControllerConfigurationEventHandler'Class;
    type AnalogControllerConfigurationEventHandler_Access_Array is array (Natural range <>) of AnalogControllerConfigurationEventHandler_Access;
    type AnalogControllerConfigurationEventHandler_Access_Array_Access is access all AnalogControllerConfigurationEventHandler_Access_Array;
+   type AnalogControllerConfigurationEventHandler_Access_Array_Access_Array is array (Natural range <>) of AnalogControllerConfigurationEventHandler_Access_Array_Access;
+   type AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Access is access all AnalogControllerConfigurationEventHandler_Access_Array_Access_Array;
 
    type AnalogControllerConfigurationEventHandler is new BasicEventHandler with record
       list : BasicArrayList_Access;

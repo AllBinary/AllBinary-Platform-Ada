@@ -16,6 +16,8 @@ package org.osgi.framework.ServiceFactory_Package is
    type ServiceFactory_Access is access all ServiceFactory'Class;
    type ServiceFactory_Access_Array is array (Natural range <>) of ServiceFactory_Access;
    type ServiceFactory_Access_Array_Access is access all ServiceFactory_Access_Array;
+   type ServiceFactory_Access_Array_Access_Array is array (Natural range <>) of ServiceFactory_Access_Array_Access;
+   type ServiceFactory_Access_Array_Access_Array_Access is access all ServiceFactory_Access_Array_Access_Array;
 
 end org.osgi.framework.ServiceFactory_Package;
 

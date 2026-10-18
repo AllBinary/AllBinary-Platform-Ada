@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.modules.admin.AdminUser_Package; use org.allbinary.business.user.modules.admin.AdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.AdminUserFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.business.user.modules.admin.AdminUserFactory_Package is
    type AdminUserFactory_Access is access all AdminUserFactory'Class;
    type AdminUserFactory_Access_Array is array (Natural range <>) of AdminUserFactory_Access;
    type AdminUserFactory_Access_Array_Access is access all AdminUserFactory_Access_Array;
+   type AdminUserFactory_Access_Array_Access_Array is array (Natural range <>) of AdminUserFactory_Access_Array_Access;
+   type AdminUserFactory_Access_Array_Access_Array_Access is access all AdminUserFactory_Access_Array_Access_Array;
 
-   type AdminUserFactory is new UserFactoryInterface with null record;
+   type AdminUserFactory is new Java_Object and UserFactoryInterface with null record;
 
    procedure Initialize (This : in out AdminUserFactory'Class);
    function Create return AdminUserFactory_Access;

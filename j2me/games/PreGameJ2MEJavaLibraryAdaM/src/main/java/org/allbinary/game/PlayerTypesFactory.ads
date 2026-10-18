@@ -29,6 +29,8 @@ package org.allbinary.game.PlayerTypesFactory_Package is
    type PlayerTypesFactory_Access is access all PlayerTypesFactory'Class;
    type PlayerTypesFactory_Access_Array is array (Natural range <>) of PlayerTypesFactory_Access;
    type PlayerTypesFactory_Access_Array_Access is access all PlayerTypesFactory_Access_Array;
+   type PlayerTypesFactory_Access_Array_Access_Array is array (Natural range <>) of PlayerTypesFactory_Access_Array_Access;
+   type PlayerTypesFactory_Access_Array_Access_Array_Access is access all PlayerTypesFactory_Access_Array_Access_Array;
 
    type PlayerTypesFactory is new Java_Object with record
       PLAYER_TYPE_ONE : PlayerType_Access;

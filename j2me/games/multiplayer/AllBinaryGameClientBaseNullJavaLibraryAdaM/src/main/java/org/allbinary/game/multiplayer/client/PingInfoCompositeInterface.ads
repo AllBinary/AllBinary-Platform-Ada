@@ -28,6 +28,8 @@ package org.allbinary.game.multiplayer.client.PingInfoCompositeInterface_Package
    type PingInfoCompositeInterface_Access is access all PingInfoCompositeInterface'Class;
    type PingInfoCompositeInterface_Access_Array is array (Natural range <>) of PingInfoCompositeInterface_Access;
    type PingInfoCompositeInterface_Access_Array_Access is access all PingInfoCompositeInterface_Access_Array;
+   type PingInfoCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of PingInfoCompositeInterface_Access_Array_Access;
+   type PingInfoCompositeInterface_Access_Array_Access_Array_Access is access all PingInfoCompositeInterface_Access_Array_Access_Array;
    procedure setPingInfo (This : in out PingInfoCompositeInterface; show : Boolean) is abstract;
 
 end org.allbinary.game.multiplayer.client.PingInfoCompositeInterface_Package;

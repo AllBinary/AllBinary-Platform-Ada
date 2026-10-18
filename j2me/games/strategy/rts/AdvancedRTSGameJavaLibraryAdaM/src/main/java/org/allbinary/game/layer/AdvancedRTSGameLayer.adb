@@ -13,8 +13,60 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.animation.NullIndexedAnimationFactory_Package; use org.allbinary.animation.NullIndexedAnimationFactory_Package;
+with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+with org.allbinary.game.GameTypeFactory_Package; use org.allbinary.game.GameTypeFactory_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
+with org.allbinary.game.identification.GroupFactory_Package; use org.allbinary.game.identification.GroupFactory_Package;
+with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbinary.game.input.event.GameKeyEventFactory_Package;
+with org.allbinary.game.input.form.NullRTSFormInputFactory_Package; use org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
+with org.allbinary.game.layer.building.event.BuildingEventHandler_Package; use org.allbinary.game.layer.building.event.BuildingEventHandler_Package;
+with org.allbinary.game.layer.unit.UnitLayer_Package; use org.allbinary.game.layer.unit.UnitLayer_Package;
+with org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Package; use org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Package;
+with org.allbinary.game.layer.waypoint.WaypointBase_Package; use org.allbinary.game.layer.waypoint.WaypointBase_Package;
+with org.allbinary.game.layer.waypoint.WaypointRunnableSelectedLogHelper_Package; use org.allbinary.game.layer.waypoint.WaypointRunnableSelectedLogHelper_Package;
+with org.allbinary.game.layer.waypoint.WaypointSelectedLogHelper_Package; use org.allbinary.game.layer.waypoint.WaypointSelectedLogHelper_Package;
+with org.allbinary.game.tick.NullTickable_Package; use org.allbinary.game.tick.NullTickable_Package;
+with org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package; use org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
+with org.allbinary.graphics.RectangleFactory_Package; use org.allbinary.graphics.RectangleFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.math.FrameUtil_Package; use org.allbinary.math.FrameUtil_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package; use org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package;
+with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
+with org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package; use org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.RTSLayerUtil_Package; use org.allbinary.game.layer.RTSLayerUtil_Package;
+
 package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package NullIndexedAnimationFactory_Package renames Standard.org.allbinary.animation.NullIndexedAnimationFactory_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package GameTypeFactory_Package renames Standard.org.allbinary.game.GameTypeFactory_Package;
+   package DestroyedEventHandler_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
+   package GroupFactory_Package renames Standard.org.allbinary.game.identification.GroupFactory_Package;
+   package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
+   package NullRTSFormInputFactory_Package renames Standard.org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
+   package BuildingEventHandler_Package renames Standard.org.allbinary.game.layer.building.event.BuildingEventHandler_Package;
+   package UnitLayer_Package renames Standard.org.allbinary.game.layer.unit.UnitLayer_Package;
+   package Waypoint2SelectedLogHelper_Package renames Standard.org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Package;
+   package WaypointBase_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointBase_Package;
+   package WaypointRunnableSelectedLogHelper_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointRunnableSelectedLogHelper_Package;
+   package WaypointSelectedLogHelper_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointSelectedLogHelper_Package;
+   package NullTickable_Package renames Standard.org.allbinary.game.tick.NullTickable_Package;
+   package TileLayerPositionIntoViewPosition_Package renames Standard.org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
+   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package FrameUtil_Package renames Standard.org.allbinary.math.FrameUtil_Package;
+   package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+   package GeographicMapDirectionUtil_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package;
    procedure Initialize_Fields (This : in out AdvancedRTSGameLayer'Class) is
    begin
       null;
@@ -128,7 +180,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
    procedure setWaypointBehavior (This : in out AdvancedRTSGameLayer; unitWaypointHelper_Param : access WaypointBehaviorBase_Package.WaypointBehaviorBase'Class) is
       unitWaypointHelper : constant WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (unitWaypointHelper_Param);
    begin
-        This.waypointBehaviorBase := unitWaypointHelper;
+        This.waypointBehaviorBase := TickableInterface_Access (unitWaypointHelper);
    end setWaypointBehavior;
 
    function getWaypointLogHelper (This : in out AdvancedRTSGameLayer) return WaypointLogHelper_Access is

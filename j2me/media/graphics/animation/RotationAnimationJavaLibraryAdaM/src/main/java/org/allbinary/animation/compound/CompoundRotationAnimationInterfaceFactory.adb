@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.animation.compound.CompoundRotationAnimation_Package; use org.allbinary.animation.compound.CompoundRotationAnimation_Package;
+
 package body org.allbinary.animation.compound.CompoundRotationAnimationInterfaceFactory_Package is
 
+   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    procedure Initialize_Fields (This : in out CompoundRotationAnimationInterfaceFactory'Class) is
    begin
       null;
@@ -44,7 +50,7 @@ package body org.allbinary.animation.compound.CompoundRotationAnimationInterface
 
    function createAnimation (This : in out CompoundRotationAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access) return Animation_Access is
    begin
-        return CompoundRotationAnimation_Package.Create (RotationAnimation_Access_Array_Access (animationInterfaceArray), This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (CompoundRotationAnimation_Package.Create (RotationAnimation_Access_Array_Access (animationInterfaceArray), This.animationBehaviorFactory.getOrCreateInstance));
    end createAnimation;
 
    procedure createArray (This : in out CompoundRotationAnimationInterfaceFactory; size : Integer) is

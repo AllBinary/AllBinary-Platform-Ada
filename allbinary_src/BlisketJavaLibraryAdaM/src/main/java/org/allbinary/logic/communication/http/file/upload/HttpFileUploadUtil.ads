@@ -21,18 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.java.anyType.clazz.ClassUtil_Package; use org.allbinary.logic.java.anyType.clazz.ClassUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
 with org.apache.commons.fileupload.FileItemStream_Package; use org.apache.commons.fileupload.FileItemStream_Package;
 
 package org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package ClassUtil_Package renames Standard.org.allbinary.logic.java.anyType.clazz.ClassUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
    package FileItemStream_Package renames Standard.org.apache.commons.fileupload.FileItemStream_Package;
 
@@ -40,6 +34,8 @@ package org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Pa
    type HttpFileUploadUtil_Access is access all HttpFileUploadUtil'Class;
    type HttpFileUploadUtil_Access_Array is array (Natural range <>) of HttpFileUploadUtil_Access;
    type HttpFileUploadUtil_Access_Array_Access is access all HttpFileUploadUtil_Access_Array;
+   type HttpFileUploadUtil_Access_Array_Access_Array is array (Natural range <>) of HttpFileUploadUtil_Access_Array_Access;
+   type HttpFileUploadUtil_Access_Array_Access_Array_Access is access all HttpFileUploadUtil_Access_Array_Access_Array;
 
    type HttpFileUploadUtil is new Java_Object with record
       logUtil : LogUtil_Access;
@@ -53,6 +49,8 @@ package org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Pa
    procedure isValid (This : in out HttpFileUploadUtil; anyType_Param : access Java_Object'Class);
    procedure log (fileItem_Param : access FileItemStream_Package.FileItemStream'Class);
    procedure log (fileItem_Param : access FileItem_Package.FileItem'Class);
+   function isValid (This : in out HttpFileUploadUtil; Value : Unbounded_String) return Boolean;
+   procedure isValid (This : in out HttpFileUploadUtil; Value : Unbounded_String);
 
 end org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
 

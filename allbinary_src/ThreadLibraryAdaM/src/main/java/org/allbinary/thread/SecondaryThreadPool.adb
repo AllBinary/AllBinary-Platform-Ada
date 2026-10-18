@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.thread.SecondaryThreadPool_Package is
 
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out SecondaryThreadPool'Class) is
    begin
       null;
@@ -59,7 +66,7 @@ package body org.allbinary.thread.SecondaryThreadPool_Package is
 
 begin
    null;
-   instance := SecondaryThreadPool_Package.Create (To_Unbounded_String ("Secondary"), 1, ThreadPool_Package.NORMAL_PRIORITY);
+   instance := ThreadPool_Access (SecondaryThreadPool_Package.Create (To_Unbounded_String ("Secondary"), 1, ThreadPool_Package.NORMAL_PRIORITY));
 
 end org.allbinary.thread.SecondaryThreadPool_Package;
 

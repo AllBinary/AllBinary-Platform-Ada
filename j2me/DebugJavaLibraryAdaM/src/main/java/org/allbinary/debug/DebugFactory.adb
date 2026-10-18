@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.debug.NoDebug_Package; use org.allbinary.debug.NoDebug_Package;
+
 package body org.allbinary.debug.DebugFactory_Package is
 
    procedure Initialize_Fields (This : in out DebugFactory'Class) is

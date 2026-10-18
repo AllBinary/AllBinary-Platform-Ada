@@ -23,17 +23,17 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileNotFoundException_Package; use java.io.FileNotFoundException_Package;
 --  with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
 package org.allbinary.logic.io.AbFileOutputStream_Package is
 
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
    type AbFileOutputStream is tagged;
    type AbFileOutputStream_Access is access all AbFileOutputStream'Class;
    type AbFileOutputStream_Access_Array is array (Natural range <>) of AbFileOutputStream_Access;
    type AbFileOutputStream_Access_Array_Access is access all AbFileOutputStream_Access_Array;
+   type AbFileOutputStream_Access_Array_Access_Array is array (Natural range <>) of AbFileOutputStream_Access_Array_Access;
+   type AbFileOutputStream_Access_Array_Access_Array_Access is access all AbFileOutputStream_Access_Array_Access_Array;
 
    type AbFileOutputStream is new FileOutputStream with null record;
 

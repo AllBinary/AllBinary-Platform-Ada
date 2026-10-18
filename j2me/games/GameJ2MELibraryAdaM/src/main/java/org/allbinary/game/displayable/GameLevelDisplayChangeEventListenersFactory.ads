@@ -20,24 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
-with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.game.displayable.GameLevelDisplayChangeEventListenersFactory_Package is
 
-   package DisplayChangeEventHandler_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
    package DisplayChangeEventListener_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
-   package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type GameLevelDisplayChangeEventListenersFactory is tagged;
    type GameLevelDisplayChangeEventListenersFactory_Access is access all GameLevelDisplayChangeEventListenersFactory'Class;
    type GameLevelDisplayChangeEventListenersFactory_Access_Array is array (Natural range <>) of GameLevelDisplayChangeEventListenersFactory_Access;
    type GameLevelDisplayChangeEventListenersFactory_Access_Array_Access is access all GameLevelDisplayChangeEventListenersFactory_Access_Array;
+   type GameLevelDisplayChangeEventListenersFactory_Access_Array_Access_Array is array (Natural range <>) of GameLevelDisplayChangeEventListenersFactory_Access_Array_Access;
+   type GameLevelDisplayChangeEventListenersFactory_Access_Array_Access_Array_Access is access all GameLevelDisplayChangeEventListenersFactory_Access_Array_Access_Array;
 
    type GameLevelDisplayChangeEventListenersFactory is new Java_Object with record
       list : BasicArrayList_Access;

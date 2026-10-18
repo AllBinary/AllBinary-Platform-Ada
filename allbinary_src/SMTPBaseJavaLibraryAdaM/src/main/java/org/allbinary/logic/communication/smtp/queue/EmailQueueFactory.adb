@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package; use org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package;
+
 package body org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package is
 
    procedure Initialize_Fields (This : in out EmailQueueFactory'Class) is

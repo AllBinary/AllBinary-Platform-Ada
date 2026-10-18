@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package; use org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
+
 package body org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package is
 
    procedure Initialize_Fields (This : in out DestroyableSimpleBehavior'Class) is

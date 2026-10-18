@@ -20,26 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.graphics.form.ScreenInfo_Package; use org.allbinary.graphics.form.ScreenInfo_Package;
-with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 
 package org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
 
-   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
-   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package ScreenInfo_Package renames Standard.org.allbinary.graphics.form.ScreenInfo_Package;
-   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
    package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
 
    type LimitCommandsVisitor is tagged;
    type LimitCommandsVisitor_Access is access all LimitCommandsVisitor'Class;
    type LimitCommandsVisitor_Access_Array is array (Natural range <>) of LimitCommandsVisitor_Access;
    type LimitCommandsVisitor_Access_Array_Access is access all LimitCommandsVisitor_Access_Array;
+   type LimitCommandsVisitor_Access_Array_Access_Array is array (Natural range <>) of LimitCommandsVisitor_Access_Array_Access;
+   type LimitCommandsVisitor_Access_Array_Access_Array_Access is access all LimitCommandsVisitor_Access_Array_Access_Array;
 
    type LimitCommandsVisitor is new Visitor with record
       isNotSmallDisplay : Boolean;
@@ -49,6 +41,8 @@ package org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
    function Create return LimitCommandsVisitor_Access;
    function visit (This : in out LimitCommandsVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
    procedure visit (This : in out LimitCommandsVisitor; anyType_Param : access Java_Object'Class);
+   function visit (This : in out LimitCommandsVisitor; Value : Unbounded_String) return Java_Object_Access;
+   procedure visit (This : in out LimitCommandsVisitor; Value : Unbounded_String);
 
 end org.allbinary.graphics.form.item.LimitCommandsVisitor_Package;
 

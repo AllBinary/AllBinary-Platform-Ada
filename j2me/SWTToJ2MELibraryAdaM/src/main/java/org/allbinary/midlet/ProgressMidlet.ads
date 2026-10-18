@@ -21,28 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package; use org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
-with org.allbinary.thread.PrimaryThreadPool_Package; use org.allbinary.thread.PrimaryThreadPool_Package;
-with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
 with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllBinaryMidlet_Package;
-with org.allbinary.midlet.MidletExitProcessorFactory_Package; use org.allbinary.midlet.MidletExitProcessorFactory_Package;
-with org.allbinary.midlet.ExitRunnable_Package; use org.allbinary.midlet.ExitRunnable_Package;
 
 package org.allbinary.midlet.ProgressMidlet_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package ClientInformationFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
-   package PrimaryThreadPool_Package renames Standard.org.allbinary.thread.PrimaryThreadPool_Package;
-   package ThreadPool_Package renames Standard.org.allbinary.thread.ThreadPool_Package;
 
    type ProgressMidlet is tagged;
    type ProgressMidlet_Access is access all ProgressMidlet'Class;
    type ProgressMidlet_Access_Array is array (Natural range <>) of ProgressMidlet_Access;
    type ProgressMidlet_Access_Array_Access is access all ProgressMidlet_Access_Array;
+   type ProgressMidlet_Access_Array_Access_Array is array (Natural range <>) of ProgressMidlet_Access_Array_Access;
+   type ProgressMidlet_Access_Array_Access_Array_Access is access all ProgressMidlet_Access_Array_Access_Array;
 
    type ProgressMidlet is new AllBinaryMidlet with record
       logUtil : LogUtil_Access;

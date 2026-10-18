@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+
 package body org.allbinary.game.input.event.GameKeyEventUtil_Package is
 
    procedure Initialize_Fields (This : in out GameKeyEventUtil'Class) is
@@ -44,6 +46,18 @@ package body org.allbinary.game.input.event.GameKeyEventUtil_Package is
 
    procedure getKey (anyType_Param : access Java_Object'Class) is
       Java_Result : constant Integer := getKey (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getKey;
+
+   function getKey (Value : Unbounded_String) return Integer is
+   begin
+      return getKey (Java_Box (Value));
+   end getKey;
+
+   procedure getKey (Value : Unbounded_String) is
+      Java_Result : constant Integer := getKey (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

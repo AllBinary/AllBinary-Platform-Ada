@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
-with org.allbinary.game.input.form.NullRTSFormInputFactory_Package; use org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
 with org.allbinary.game.input.form.RTSFormInput_Package; use org.allbinary.game.input.form.RTSFormInput_Package;
 with org.allbinary.game.layer.capital.Capital_Package; use org.allbinary.game.layer.capital.Capital_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
@@ -39,7 +38,6 @@ package org.allbinary.game.layer.NullRTSLayer_Package is
    package GameNotificationHud_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
    package DestroyedEvent_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
    package PlayerGameInput_Package renames Standard.org.allbinary.game.input.PlayerGameInput_Package;
-   package NullRTSFormInputFactory_Package renames Standard.org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
    package RTSFormInput_Package renames Standard.org.allbinary.game.input.form.RTSFormInput_Package;
    package Capital_Package renames Standard.org.allbinary.game.layer.capital.Capital_Package;
    package ScrollSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionForm_Package;
@@ -51,6 +49,8 @@ package org.allbinary.game.layer.NullRTSLayer_Package is
    type NullRTSLayer_Access is access all NullRTSLayer'Class;
    type NullRTSLayer_Access_Array is array (Natural range <>) of NullRTSLayer_Access;
    type NullRTSLayer_Access_Array_Access is access all NullRTSLayer_Access_Array;
+   type NullRTSLayer_Access_Array_Access_Array is array (Natural range <>) of NullRTSLayer_Access_Array_Access;
+   type NullRTSLayer_Access_Array_Access_Array_Access is access all NullRTSLayer_Access_Array_Access_Array;
 
    type NullRTSLayer is new NullPathFindingLayer and RTSPlayerLayerInterface with null record;
    NULL_RTS_LAYER : NullRTSLayer_Access;

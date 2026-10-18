@@ -35,6 +35,8 @@ package org.allbinary.animation.image.AdjustedRightToLeftImageAnimation_Package 
    type AdjustedRightToLeftImageAnimation_Access is access all AdjustedRightToLeftImageAnimation'Class;
    type AdjustedRightToLeftImageAnimation_Access_Array is array (Natural range <>) of AdjustedRightToLeftImageAnimation_Access;
    type AdjustedRightToLeftImageAnimation_Access_Array_Access is access all AdjustedRightToLeftImageAnimation_Access_Array;
+   type AdjustedRightToLeftImageAnimation_Access_Array_Access_Array is array (Natural range <>) of AdjustedRightToLeftImageAnimation_Access_Array_Access;
+   type AdjustedRightToLeftImageAnimation_Access_Array_Access_Array_Access is access all AdjustedRightToLeftImageAnimation_Access_Array_Access_Array;
 
    type AdjustedRightToLeftImageAnimation is new RightToLeftImageAnimation with record
       dx : Integer;

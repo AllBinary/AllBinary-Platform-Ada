@@ -30,6 +30,8 @@ package org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListene
    type CompleteMotionGestureListenerInterface_Access is access all CompleteMotionGestureListenerInterface'Class;
    type CompleteMotionGestureListenerInterface_Access_Array is array (Natural range <>) of CompleteMotionGestureListenerInterface_Access;
    type CompleteMotionGestureListenerInterface_Access_Array_Access is access all CompleteMotionGestureListenerInterface_Access_Array;
+   type CompleteMotionGestureListenerInterface_Access_Array_Access_Array is array (Natural range <>) of CompleteMotionGestureListenerInterface_Access_Array_Access;
+   type CompleteMotionGestureListenerInterface_Access_Array_Access_Array_Access is access all CompleteMotionGestureListenerInterface_Access_Array_Access_Array;
    procedure onMotionGestureCompleted (This : in out CompleteMotionGestureListenerInterface; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
 
 end org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;

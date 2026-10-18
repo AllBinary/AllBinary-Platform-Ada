@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
+with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
+
 package body org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package is
 
+   package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
    procedure Initialize_Fields (This : in out BasicTouchButtonCellPositionFactory'Class) is
    begin
       null;

@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.user.commerce.inventory.item.special.SpecialItemData_Package; use org.allbinary.business.user.commerce.inventory.item.special.SpecialItemData_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body admin.taghelpers.SpecialItemsRequestHelper_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package SpecialItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.special.SpecialItemData_Package;
+   package SpecialItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out SpecialItemsRequestHelper'Class) is
    begin
       null;
@@ -89,7 +108,7 @@ package body admin.taghelpers.SpecialItemsRequestHelper_Package is
         begin
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (calendar.getTimeInMillis.toString);
-            values := BasicArrayListD_Package.Create;
+            values := BasicArrayList_Access (BasicArrayListD_Package.Create);
             values.add (Java_Box (This.id));
             values.add (Java_Box (This.number));
             values.add (Java_Box (This.enabled));

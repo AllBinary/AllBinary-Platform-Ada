@@ -22,8 +22,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package; use org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package;
-with org.allbinary.game.layer.capital.event.CapitalEvent_Package; use org.allbinary.game.layer.capital.event.CapitalEvent_Package;
 
 package org.allbinary.game.layer.capital.event.CapitalEventHandler_Package is
 
@@ -35,6 +33,8 @@ package org.allbinary.game.layer.capital.event.CapitalEventHandler_Package is
    type CapitalEventHandler_Access is access all CapitalEventHandler'Class;
    type CapitalEventHandler_Access_Array is array (Natural range <>) of CapitalEventHandler_Access;
    type CapitalEventHandler_Access_Array_Access is access all CapitalEventHandler_Access_Array;
+   type CapitalEventHandler_Access_Array_Access_Array is array (Natural range <>) of CapitalEventHandler_Access_Array_Access;
+   type CapitalEventHandler_Access_Array_Access_Array_Access is access all CapitalEventHandler_Access_Array_Access_Array;
 
    type CapitalEventHandler is new BasicEventHandler with null record;
 

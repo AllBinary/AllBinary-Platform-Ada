@@ -30,6 +30,8 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    type ImageActionScriptOutputInterface_Access is access all ImageActionScriptOutputInterface'Class;
    type ImageActionScriptOutputInterface_Access_Array is array (Natural range <>) of ImageActionScriptOutputInterface_Access;
    type ImageActionScriptOutputInterface_Access_Array_Access is access all ImageActionScriptOutputInterface_Access_Array;
+   type ImageActionScriptOutputInterface_Access_Array_Access_Array is array (Natural range <>) of ImageActionScriptOutputInterface_Access_Array_Access;
+   type ImageActionScriptOutputInterface_Access_Array_Access_Array_Access is access all ImageActionScriptOutputInterface_Access_Array_Access_Array;
    function getImageTypes (This : in out ImageActionScriptOutputInterface) return ImageTypes_Access is abstract;
    procedure setImageTypes (This : in out ImageActionScriptOutputInterface; imageTypes_Param : access ImageTypes_Package.ImageTypes'Class) is abstract;
    function isSaved (This : in out ImageActionScriptOutputInterface) return Boolean is abstract;

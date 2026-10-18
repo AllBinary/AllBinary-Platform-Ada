@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out ResourceRelativeRelationshipFactory'Class) is
    begin
       null;
@@ -60,9 +65,9 @@ package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Pac
    begin
         list := ResourceRelativeRelationshipFactory'Class (This).getResourceRelativeRelationshipList (resource);
         if (list) = (This.basicArrayListUtil.getImmutableInstance) then
-            list := BasicArrayListD_Package.Create;
+            list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         end if;
-        list.add (hardPoint);
+        list.add (Java_Object_Access (hardPoint));
         This.hashtable.put (resource, list);
    end addResourceRelativeRelationship;
 

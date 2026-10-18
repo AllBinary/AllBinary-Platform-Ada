@@ -31,8 +31,10 @@ package org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserC
    type DisplayInBrowserContraints_Access is access all DisplayInBrowserContraints'Class;
    type DisplayInBrowserContraints_Access_Array is array (Natural range <>) of DisplayInBrowserContraints_Access;
    type DisplayInBrowserContraints_Access_Array_Access is access all DisplayInBrowserContraints_Access_Array;
+   type DisplayInBrowserContraints_Access_Array_Access_Array is array (Natural range <>) of DisplayInBrowserContraints_Access_Array_Access;
+   type DisplayInBrowserContraints_Access_Array_Access_Array_Access is access all DisplayInBrowserContraints_Access_Array_Access_Array;
 
-   type DisplayInBrowserContraints is new DisplayInBrowserContraintsInterface with record
+   type DisplayInBrowserContraints is new Java_Object and DisplayInBrowserContraintsInterface with record
       frameable : Boolean;
       mountable : Boolean;
       quickFrameable : Boolean;

@@ -1,8 +1,19 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+
 package body org.allbinary.util.ArrayUtil_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
    procedure Initialize_Fields (This : in out ArrayUtil'Class) is
    begin
       null;
@@ -29,7 +40,7 @@ package body org.allbinary.util.ArrayUtil_Package is
 
    function copyOf (This : in out ArrayUtil; original : Java_Object_Access_Array_Access; newLength : Integer) return Java_Object_Access_Array_Access is
    begin
-        return ArrayUtil'Class (This).copyOfType (original, newLength, original.all'Tag);
+        return ArrayUtil'Class (This).copyOfType (original, newLength, Ada.Tags.No_Tag);
    end copyOf;
 
    function copyOfType (This : in out ArrayUtil; original : Java_Object_Access_Array_Access; newLength : Integer; newType : Ada.Tags.Tag) return Java_Object_Access_Array_Access is

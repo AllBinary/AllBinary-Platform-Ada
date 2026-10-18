@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.configuration.event.GameFeatureEvent_Package is
 
    procedure Initialize_Fields (This : in out GameFeatureEvent'Class) is

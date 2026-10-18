@@ -31,6 +31,8 @@ package org.allbinary.media.audio.UpgradeSound_Package is
    type UpgradeSound_Access is access all UpgradeSound'Class;
    type UpgradeSound_Access_Array is array (Natural range <>) of UpgradeSound_Access;
    type UpgradeSound_Access_Array_Access is access all UpgradeSound_Access_Array;
+   type UpgradeSound_Access_Array_Access_Array is array (Natural range <>) of UpgradeSound_Access_Array_Access;
+   type UpgradeSound_Access_Array_Access_Array_Access is access all UpgradeSound_Access_Array_Access_Array;
 
    type UpgradeSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

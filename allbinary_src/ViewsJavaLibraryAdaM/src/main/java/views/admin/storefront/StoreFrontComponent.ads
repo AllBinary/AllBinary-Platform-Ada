@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
-with org.allbinary.business.context.modules.storefront.StoreFront_Package; use org.allbinary.business.context.modules.storefront.StoreFront_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -29,7 +28,6 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.admin.storefront.StoreFrontComponent_Package is
 
-   package StoreFront_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFront_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -39,6 +37,8 @@ package views.admin.storefront.StoreFrontComponent_Package is
    type StoreFrontComponent_Access is access all StoreFrontComponent'Class;
    type StoreFrontComponent_Access_Array is array (Natural range <>) of StoreFrontComponent_Access;
    type StoreFrontComponent_Access_Array_Access is access all StoreFrontComponent_Access_Array;
+   type StoreFrontComponent_Access_Array_Access_Array is array (Natural range <>) of StoreFrontComponent_Access_Array_Access;
+   type StoreFrontComponent_Access_Array_Access_Array_Access is access all StoreFrontComponent_Access_Array_Access_Array;
 
    type StoreFrontComponent is new HttpStoreComponentView with record
       logUtil : LogUtil_Access;

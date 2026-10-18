@@ -29,6 +29,8 @@ package org.allbinary.input.automation.PointFactory_Package is
    type PointFactory_Access is access all PointFactory'Class;
    type PointFactory_Access_Array is array (Natural range <>) of PointFactory_Access;
    type PointFactory_Access_Array_Access is access all PointFactory_Access_Array;
+   type PointFactory_Access_Array_Access_Array is array (Natural range <>) of PointFactory_Access_Array_Access;
+   type PointFactory_Access_Array_Access_Array_Access is access all PointFactory_Access_Array_Access_Array;
 
    type PointFactory is new Java_Object with null record;
    pointArray : Point_Access_Array_Access_Array_Access;

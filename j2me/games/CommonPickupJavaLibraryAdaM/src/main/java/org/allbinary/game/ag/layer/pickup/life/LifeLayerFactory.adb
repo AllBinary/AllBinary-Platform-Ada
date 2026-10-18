@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package; use org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package;
+
 package body org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package is
 
    procedure Initialize_Fields (This : in out LifeLayerFactory'Class) is
@@ -36,7 +38,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package is
    --  throws Exception
    function getInstance (This : in out LifeLayerFactory) return AllBinaryLayer_Access is
    begin
-        return LifeLayer_Package.Create;
+        return AllBinaryLayer_Access (LifeLayer_Package.Create);
    end getInstance;
 
 end org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package;

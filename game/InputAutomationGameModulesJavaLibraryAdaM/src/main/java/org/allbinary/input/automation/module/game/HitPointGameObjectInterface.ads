@@ -29,6 +29,8 @@ package org.allbinary.input.automation.module.game.HitPointGameObjectInterface_P
    type HitPointGameObjectInterface_Access is access all HitPointGameObjectInterface'Class;
    type HitPointGameObjectInterface_Access_Array is array (Natural range <>) of HitPointGameObjectInterface_Access;
    type HitPointGameObjectInterface_Access_Array_Access is access all HitPointGameObjectInterface_Access_Array;
+   type HitPointGameObjectInterface_Access_Array_Access_Array is array (Natural range <>) of HitPointGameObjectInterface_Access_Array_Access;
+   type HitPointGameObjectInterface_Access_Array_Access_Array_Access is access all HitPointGameObjectInterface_Access_Array_Access_Array;
    function isMoreThan (This : in out HitPointGameObjectInterface; aFloat : Float) return Boolean is abstract;
    function isCloseDeath (This : in out HitPointGameObjectInterface) return Boolean is abstract;
    function isDamaged (This : in out HitPointGameObjectInterface) return Boolean is abstract;

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificationHudSingleton_Package is
 
+   package BasicHudFactory_Package renames Standard.org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out NoGameNotificationHudSingleton'Class) is
    begin
       null;
@@ -36,7 +43,7 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificati
         begin
             basicHudFactory := BasicHudFactory_Package.getInstance;
             --  Java nested class NoGameGameNotificationHud: move it to its own package
-            This.gameNotificationHud := NoGameGameNotificationHud_Package.Create;
+            This.gameNotificationHud := GameNotificationHud_Access (NoGameGameNotificationHud_Package.Create);
         exception
             when Java_Occurrence : others =>
                 declare

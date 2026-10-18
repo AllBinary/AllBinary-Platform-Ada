@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+
 package body org.allbinary.game.input.form.NullRTSGameLayerPositionFinder_Package is
 
+   package DropCellPositionHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
    procedure Initialize_Fields (This : in out NullRTSGameLayerPositionFinder'Class) is
    begin
       null;

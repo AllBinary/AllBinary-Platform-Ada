@@ -34,6 +34,8 @@ package org.allbinary.math.LayerDistanceUtil_Package is
    type LayerDistanceUtil_Access is access all LayerDistanceUtil'Class;
    type LayerDistanceUtil_Access_Array is array (Natural range <>) of LayerDistanceUtil_Access;
    type LayerDistanceUtil_Access_Array_Access is access all LayerDistanceUtil_Access_Array;
+   type LayerDistanceUtil_Access_Array_Access_Array is array (Natural range <>) of LayerDistanceUtil_Access_Array_Access;
+   type LayerDistanceUtil_Access_Array_Access_Array_Access is access all LayerDistanceUtil_Access_Array_Access_Array;
 
    type LayerDistanceUtil is new Java_Object with record
       mathUtil : MathUtil_Access;

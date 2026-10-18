@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body views.generic_Id.inventory.AutoValidationInventoryView_Package is
 
    procedure Initialize_Fields (This : in out AutoValidationInventoryView'Class) is

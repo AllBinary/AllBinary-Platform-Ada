@@ -21,19 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 
 package org.allbinary.game.score.HighScoreCommandsBaseFactory_Package is
 
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
-   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type HighScoreCommandsBaseFactory is tagged;
    type HighScoreCommandsBaseFactory_Access is access all HighScoreCommandsBaseFactory'Class;
    type HighScoreCommandsBaseFactory_Access_Array is array (Natural range <>) of HighScoreCommandsBaseFactory_Access;
    type HighScoreCommandsBaseFactory_Access_Array_Access is access all HighScoreCommandsBaseFactory_Access_Array;
+   type HighScoreCommandsBaseFactory_Access_Array_Access_Array is array (Natural range <>) of HighScoreCommandsBaseFactory_Access_Array_Access;
+   type HighScoreCommandsBaseFactory_Access_Array_Access_Array_Access is access all HighScoreCommandsBaseFactory_Access_Array_Access_Array;
 
    type HighScoreCommandsBaseFactory is new Java_Object with record
       logUtil : LogUtil_Access;

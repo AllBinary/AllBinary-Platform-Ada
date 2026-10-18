@@ -28,6 +28,8 @@ package org.allbinary.logic.control.search.SearchData_Package is
    type SearchData_Access is access all SearchData'Class;
    type SearchData_Access_Array is array (Natural range <>) of SearchData_Access;
    type SearchData_Access_Array_Access is access all SearchData_Access_Array;
+   type SearchData_Access_Array_Access_Array is array (Natural range <>) of SearchData_Access_Array_Access;
+   type SearchData_Access_Array_Access_Array_Access is access all SearchData_Access_Array_Access_Array;
 
    type SearchData is new Java_Object with null record;
    TOTAL_NUMBER_PAGES : Unbounded_String;

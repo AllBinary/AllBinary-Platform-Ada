@@ -21,22 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.communication.http.AcceptableResponseFactory_Package; use org.allbinary.logic.communication.http.AcceptableResponseFactory_Package;
 
 package org.allbinary.logic.communication.http.AcceptableResponseUtil_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type AcceptableResponseUtil is tagged;
    type AcceptableResponseUtil_Access is access all AcceptableResponseUtil'Class;
    type AcceptableResponseUtil_Access_Array is array (Natural range <>) of AcceptableResponseUtil_Access;
    type AcceptableResponseUtil_Access_Array_Access is access all AcceptableResponseUtil_Access_Array;
+   type AcceptableResponseUtil_Access_Array_Access_Array is array (Natural range <>) of AcceptableResponseUtil_Access_Array_Access;
+   type AcceptableResponseUtil_Access_Array_Access_Array_Access is access all AcceptableResponseUtil_Access_Array_Access_Array;
 
    type AcceptableResponseUtil is new Java_Object with record
       candidateVector : BasicArrayList_Access;

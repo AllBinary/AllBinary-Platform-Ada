@@ -34,6 +34,8 @@ package org.allbinary.game.layer.special.SpecialAnalogRightTriggerGameInputProce
    type SpecialAnalogRightTriggerGameInputProcessor_Access is access all SpecialAnalogRightTriggerGameInputProcessor'Class;
    type SpecialAnalogRightTriggerGameInputProcessor_Access_Array is array (Natural range <>) of SpecialAnalogRightTriggerGameInputProcessor_Access;
    type SpecialAnalogRightTriggerGameInputProcessor_Access_Array_Access is access all SpecialAnalogRightTriggerGameInputProcessor_Access_Array;
+   type SpecialAnalogRightTriggerGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of SpecialAnalogRightTriggerGameInputProcessor_Access_Array_Access;
+   type SpecialAnalogRightTriggerGameInputProcessor_Access_Array_Access_Array_Access is access all SpecialAnalogRightTriggerGameInputProcessor_Access_Array_Access_Array;
 
    type SpecialAnalogRightTriggerGameInputProcessor is new SpecialGameInputProcessor with null record;
 

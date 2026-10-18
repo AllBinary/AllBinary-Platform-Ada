@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.style.StylesData_Package is
    type StylesData_Access is access all StylesData'Class;
    type StylesData_Access_Array is array (Natural range <>) of StylesData_Access;
    type StylesData_Access_Array_Access is access all StylesData_Access_Array;
+   type StylesData_Access_Array_Access_Array is array (Natural range <>) of StylesData_Access_Array_Access;
+   type StylesData_Access_Array_Access_Array_Access is access all StylesData_Access_Array_Access_Array;
 
    type StylesData is new Java_Object with record
       NAME : Unbounded_String;

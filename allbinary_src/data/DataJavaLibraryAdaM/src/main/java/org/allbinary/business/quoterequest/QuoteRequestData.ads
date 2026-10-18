@@ -28,6 +28,8 @@ package org.allbinary.business.quoterequest.QuoteRequestData_Package is
    type QuoteRequestData_Access is access all QuoteRequestData'Class;
    type QuoteRequestData_Access_Array is array (Natural range <>) of QuoteRequestData_Access;
    type QuoteRequestData_Access_Array_Access is access all QuoteRequestData_Access_Array;
+   type QuoteRequestData_Access_Array_Access_Array is array (Natural range <>) of QuoteRequestData_Access_Array_Access;
+   type QuoteRequestData_Access_Array_Access_Array_Access is access all QuoteRequestData_Access_Array_Access_Array;
 
    type QuoteRequestData is new Java_Object with record
       ID : Unbounded_String;

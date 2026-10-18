@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.configuration.feature.InputFeature_Package; use org.allbinary.game.configuration.feature.InputFeature_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 
 package org.allbinary.game.configuration.feature.InputFeatureFactory_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.game.configuration.feature.InputFeatureFactory_Package is
    type InputFeatureFactory_Access is access all InputFeatureFactory'Class;
    type InputFeatureFactory_Access_Array is array (Natural range <>) of InputFeatureFactory_Access;
    type InputFeatureFactory_Access_Array_Access is access all InputFeatureFactory_Access_Array;
+   type InputFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of InputFeatureFactory_Access_Array_Access;
+   type InputFeatureFactory_Access_Array_Access_Array_Access is access all InputFeatureFactory_Access_Array_Access_Array;
 
    type InputFeatureFactory is new Java_Object with record
       REMOVE_DUPLICATE_KEY_PRESSES : InputFeature_Access;

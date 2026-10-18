@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.types.CreditCardType_
    type CreditCardType_Access is access all CreditCardType'Class;
    type CreditCardType_Access_Array is array (Natural range <>) of CreditCardType_Access;
    type CreditCardType_Access_Array_Access is access all CreditCardType_Access_Array;
+   type CreditCardType_Access_Array_Access_Array is array (Natural range <>) of CreditCardType_Access_Array_Access;
+   type CreditCardType_Access_Array_Access_Array_Access is access all CreditCardType_Access_Array_Access_Array;
 
    type CreditCardType is new Java_Object with record
       name : Unbounded_String;

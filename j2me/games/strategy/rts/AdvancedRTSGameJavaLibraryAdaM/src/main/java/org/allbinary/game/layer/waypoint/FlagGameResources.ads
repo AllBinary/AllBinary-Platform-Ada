@@ -21,19 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allbinary.game.layer.resources.BasicGameResources_Package;
-with org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package; use org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.game.layer.waypoint.FlagGameResources_Package is
 
    package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
-   package GameGraphicsResourceUtil_Package renames Standard.org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type FlagGameResources is tagged;
    type FlagGameResources_Access is access all FlagGameResources'Class;
    type FlagGameResources_Access_Array is array (Natural range <>) of FlagGameResources_Access;
    type FlagGameResources_Access_Array_Access is access all FlagGameResources_Access_Array;
+   type FlagGameResources_Access_Array_Access_Array is array (Natural range <>) of FlagGameResources_Access_Array_Access;
+   type FlagGameResources_Access_Array_Access_Array_Access is access all FlagGameResources_Access_Array_Access_Array;
 
    type FlagGameResources is new BasicGameResources with record
       NAME : Unbounded_String;

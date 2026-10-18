@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationView_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationView_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationMapping_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationMapping_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationData_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
+
 package body org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationView_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out UserEmailEventsConfigurationView'Class) is
    begin
       null;

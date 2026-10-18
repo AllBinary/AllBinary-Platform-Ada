@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.gyro.NoGyroSensor_Package; use org.allbinary.input.gyro.NoGyroSensor_Package;
+
 package body org.allbinary.input.gyro.GyroSensorFactory_Package is
 
    procedure Initialize_Fields (This : in out GyroSensorFactory'Class) is

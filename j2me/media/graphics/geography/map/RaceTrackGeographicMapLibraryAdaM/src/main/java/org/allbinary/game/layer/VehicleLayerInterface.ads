@@ -41,6 +41,8 @@ package org.allbinary.game.layer.VehicleLayerInterface_Package is
    type VehicleLayerInterface_Access is access all VehicleLayerInterface'Class;
    type VehicleLayerInterface_Access_Array is array (Natural range <>) of VehicleLayerInterface_Access;
    type VehicleLayerInterface_Access_Array_Access is access all VehicleLayerInterface_Access_Array;
+   type VehicleLayerInterface_Access_Array_Access_Array is array (Natural range <>) of VehicleLayerInterface_Access_Array_Access;
+   type VehicleLayerInterface_Access_Array_Access_Array_Access is access all VehicleLayerInterface_Access_Array_Access_Array;
    function getGameKeyEventList (This : in out VehicleLayerInterface) return BasicArrayList_Access is abstract;
    function getSpeedBasicDecimal (This : in out VehicleLayerInterface) return BasicDecimal_Access is abstract;
    function isReadyForExplosion (This : in out VehicleLayerInterface) return Boolean is abstract;

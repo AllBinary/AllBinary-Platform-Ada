@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with android.view.View_Package; use android.view.View_Package;
+
 package body org.allbinary.android.api16.ActivityFractureUtilAPI16_Package is
 
+   package View_Package renames Standard.android.view.View_Package;
    procedure Initialize_Fields (This : in out ActivityFractureUtilAPI16'Class) is
    begin
       null;

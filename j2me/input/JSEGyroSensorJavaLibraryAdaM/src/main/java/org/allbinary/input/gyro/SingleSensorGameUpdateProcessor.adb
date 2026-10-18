@@ -13,13 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package; use org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package;
+with org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package; use org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package;
+
 package body org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
 
    procedure Initialize_Fields (This : in out SingleSensorGameUpdateProcessor'Class) is
    begin
       null;
-      This.accelerometerSensorUpdateProcessor := AccelerometerSensorUpdateProcessor_Package.Create;
-      This.gyroSensorUpdateProcessor := GyroSensorUpdateProcessor_Package.Create;
+      This.accelerometerSensorUpdateProcessor := Processor_Access (AccelerometerSensorUpdateProcessor_Package.Create);
+      This.gyroSensorUpdateProcessor := Processor_Access (GyroSensorUpdateProcessor_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out SingleSensorGameUpdateProcessor'Class) is
@@ -48,6 +51,16 @@ package body org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         null;
+   end sendNotifications;
+
+   procedure process (This : in out SingleSensorGameUpdateProcessor; Value : Unbounded_String) is
+   begin
+      SingleSensorGameUpdateProcessor'Class (This).process (Java_Box (Value));
+   end process;
+
+   procedure sendNotifications (This : in out SingleSensorGameUpdateProcessor; Value : Unbounded_String) is
+   begin
+      SingleSensorGameUpdateProcessor'Class (This).sendNotifications (Java_Box (Value));
    end sendNotifications;
 
 end org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package;

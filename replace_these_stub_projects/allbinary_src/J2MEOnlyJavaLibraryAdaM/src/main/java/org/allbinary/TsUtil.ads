@@ -21,27 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
-with javax.microedition.lcdui.Form_Package; use javax.microedition.lcdui.Form_Package;
-with javax.microedition.rms.InvalidRecordIDException_Package; use javax.microedition.rms.InvalidRecordIDException_Package;
-with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
-with javax.microedition.rms.RecordStoreException_Package; use javax.microedition.rms.RecordStoreException_Package;
-with javax.microedition.rms.RecordStoreNotOpenException_Package; use javax.microedition.rms.RecordStoreNotOpenException_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 
 package org.allbinary.TsUtil_Package is
 
    package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
-   package Form_Package renames Standard.javax.microedition.lcdui.Form_Package;
-   package InvalidRecordIDException_Package renames Standard.javax.microedition.rms.InvalidRecordIDException_Package;
-   package RecordStore_Package renames Standard.javax.microedition.rms.RecordStore_Package;
-   package RecordStoreException_Package renames Standard.javax.microedition.rms.RecordStoreException_Package;
-   package RecordStoreNotOpenException_Package renames Standard.javax.microedition.rms.RecordStoreNotOpenException_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type TsUtil is tagged;
    type TsUtil_Access is access all TsUtil'Class;
    type TsUtil_Access_Array is array (Natural range <>) of TsUtil_Access;
    type TsUtil_Access_Array_Access is access all TsUtil_Access_Array;
+   type TsUtil_Access_Array_Access_Array is array (Natural range <>) of TsUtil_Access_Array_Access;
+   type TsUtil_Access_Array_Access_Array_Access is access all TsUtil_Access_Array_Access_Array;
 
    type TsUtil is new Java_Object with null record;
    instance : TsUtil_Access;
@@ -70,6 +60,9 @@ package org.allbinary.TsUtil_Package is
    procedure isItemListener (This : in out TsUtil; owner_Param : access Displayable_Package.Displayable'Class);
    procedure printAvailableMethods (This : in out TsUtil; anyType_Param : access Java_Object'Class);
    procedure gc (This : in out TsUtil);
+   function hashCode (This : in out TsUtil; Value : Unbounded_String) return Integer;
+   procedure hashCode (This : in out TsUtil; Value : Unbounded_String);
+   procedure printAvailableMethods (This : in out TsUtil; Value : Unbounded_String);
 
 end org.allbinary.TsUtil_Package;
 

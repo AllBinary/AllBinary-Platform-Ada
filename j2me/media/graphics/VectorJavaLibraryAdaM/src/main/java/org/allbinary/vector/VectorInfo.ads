@@ -28,6 +28,8 @@ package org.allbinary.vector.VectorInfo_Package is
    type VectorInfo_Access is access all VectorInfo'Class;
    type VectorInfo_Access_Array is array (Natural range <>) of VectorInfo_Access;
    type VectorInfo_Access_Array_Access is access all VectorInfo_Access_Array;
+   type VectorInfo_Access_Array_Access_Array is array (Natural range <>) of VectorInfo_Access_Array_Access;
+   type VectorInfo_Access_Array_Access_Array_Access is access all VectorInfo_Access_Array_Access_Array;
 
    type VectorInfo is new Java_Object with record
       width : Integer;

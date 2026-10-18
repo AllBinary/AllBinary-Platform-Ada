@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package is
 
    procedure Initialize_Fields (This : in out CryptServiceFactory'Class) is
@@ -42,7 +43,7 @@ package body org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Packag
       registration : constant ServiceRegistration_Access := ServiceRegistration_Access (registration_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, CryptServiceFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getService"));
-        return This.cryptService;
+        return Java_Object_Access (This.cryptService);
    end getService;
 
    procedure ungetService (This : in out CryptServiceFactory; bundle_Param : access Bundle_Package.Bundle'Class; registration_Param : access ServiceRegistration_Package.ServiceRegistration'Class; service_Param : access Java_Object'Class) is

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.thread.PathFindingThreadPool_Package is
 
    procedure Initialize_Fields (This : in out PathFindingThreadPool'Class) is
@@ -64,7 +65,7 @@ package body org.allbinary.thread.PathFindingThreadPool_Package is
 
 begin
    null;
-   instance := PathFindingThreadPool_Package.Create (To_Unbounded_String ("PathFinding"), 1, 1);
+   instance := ThreadPool_Access (PathFindingThreadPool_Package.Create (To_Unbounded_String ("PathFinding"), 1, 1));
 
 end org.allbinary.thread.PathFindingThreadPool_Package;
 

@@ -1,8 +1,14 @@
 --  Generated Code Do Not Modify
 
 
+with android.widget.Toast_Package; use android.widget.Toast_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
+
 package body org.allbinary.android.ToastUtil_Package is
 
+   package Toast_Package renames Standard.android.widget.Toast_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out ToastUtil'Class) is
    begin
       null;

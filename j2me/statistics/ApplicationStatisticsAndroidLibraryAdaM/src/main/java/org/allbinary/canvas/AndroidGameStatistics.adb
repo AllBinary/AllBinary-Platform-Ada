@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.view.ViewWrapper_Package; use org.allbinary.android.view.ViewWrapper_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.canvas.AndroidGameStatistics_Package is
 
+   package ViewWrapper_Package renames Standard.org.allbinary.android.view.ViewWrapper_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out AndroidGameStatistics'Class) is
    begin
       null;
@@ -49,7 +56,7 @@ package body org.allbinary.canvas.AndroidGameStatistics_Package is
       view : constant View_Access := View_Access (view_Param);
    begin
         BaseGameStatistics (This).init;
-        This.view := ViewWrapper_Package.Create (view);
+        This.view := BaseViewWrapper_Access (ViewWrapper_Package.Create (view));
         This.totalOnDraws := 0;
    end initView;
 

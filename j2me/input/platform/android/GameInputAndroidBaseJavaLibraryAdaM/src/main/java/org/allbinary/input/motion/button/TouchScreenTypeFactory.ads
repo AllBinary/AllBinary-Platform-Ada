@@ -21,23 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.app.Activity_Package; use android.app.Activity_Package;
-with android.content.res.Configuration_Package; use android.content.res.Configuration_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
-with org.allbinary.input.motion.button.TouchScreenTypesFactory_Package; use org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
 
 package org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
 
    package Activity_Package renames Standard.android.app.Activity_Package;
-   package Configuration_Package renames Standard.android.content.res.Configuration_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
 
    type TouchScreenTypeFactory is tagged;
    type TouchScreenTypeFactory_Access is access all TouchScreenTypeFactory'Class;
    type TouchScreenTypeFactory_Access_Array is array (Natural range <>) of TouchScreenTypeFactory_Access;
    type TouchScreenTypeFactory_Access_Array_Access is access all TouchScreenTypeFactory_Access_Array;
+   type TouchScreenTypeFactory_Access_Array_Access_Array is array (Natural range <>) of TouchScreenTypeFactory_Access_Array_Access;
+   type TouchScreenTypeFactory_Access_Array_Access_Array_Access is access all TouchScreenTypeFactory_Access_Array_Access_Array;
 
    type TouchScreenTypeFactory is new Java_Object with null record;
    instance : TouchScreenTypeFactory_Access;

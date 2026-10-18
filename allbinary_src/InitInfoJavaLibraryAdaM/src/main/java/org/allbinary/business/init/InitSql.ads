@@ -29,18 +29,12 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
 with org.allbinary.logic.communication.sql.SqlTypeStrings_Package; use org.allbinary.logic.communication.sql.SqlTypeStrings_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
@@ -48,18 +42,12 @@ package org.allbinary.business.init.InitSql_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package DatabaseConnectionInfoInterface_Package renames Standard.org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
    package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    package SqlStrings_Package renames Standard.org.allbinary.logic.communication.sql.SqlStrings_Package;
    package SqlTypeStrings_Package renames Standard.org.allbinary.logic.communication.sql.SqlTypeStrings_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -67,6 +55,8 @@ package org.allbinary.business.init.InitSql_Package is
    type InitSql_Access is access all InitSql'Class;
    type InitSql_Access_Array is array (Natural range <>) of InitSql_Access;
    type InitSql_Access_Array_Access is access all InitSql_Access_Array;
+   type InitSql_Access_Array_Access_Array is array (Natural range <>) of InitSql_Access_Array_Access;
+   type InitSql_Access_Array_Access_Array_Access is access all InitSql_Access_Array_Access_Array;
 
    type InitSql is new Java_Object with record
       stringUtil : StringUtil_Access;
@@ -74,7 +64,7 @@ package org.allbinary.business.init.InitSql_Package is
       sqlTypeStrings : SqlTypeStrings_Access;
       sqlStrings : SqlStrings_Access;
       stdUtil : StdUtil_Access;
-      INSERT : Unbounded_String;
+      INSERT_Field : Unbounded_String;
       UPDATE : Unbounded_String;
       databaseConnectionInfoInterface : DbConnectionInfo_Access;
       userid : Unbounded_String;
@@ -104,7 +94,7 @@ package org.allbinary.business.init.InitSql_Package is
    function getRow (This : in out InitSql; keysAndValues_Param : access HashMap_Package.HashMap'Class) return HashMap_Access;
    procedure getRow (This : in out InitSql; keysAndValues_Param : access HashMap_Package.HashMap'Class);
    procedure updateWhere (This : in out InitSql; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs_Param : access HashMap_Package.HashMap'Class);
-   procedure insert_Case (This : in out InitSql; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure insert (This : in out InitSql; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function getValue (This : in out InitSql; value : Unbounded_String) return Unbounded_String;
    procedure getValue (This : in out InitSql; value : Unbounded_String);
    function executeSQLStatement (This : in out InitSql; statement : Unbounded_String) return ResultSet_Access;

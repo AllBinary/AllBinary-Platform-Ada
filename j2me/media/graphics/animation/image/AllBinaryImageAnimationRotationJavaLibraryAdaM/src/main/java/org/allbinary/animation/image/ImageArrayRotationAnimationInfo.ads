@@ -32,6 +32,8 @@ package org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package is
    type ImageArrayRotationAnimationInfo_Access is access all ImageArrayRotationAnimationInfo'Class;
    type ImageArrayRotationAnimationInfo_Access_Array is array (Natural range <>) of ImageArrayRotationAnimationInfo_Access;
    type ImageArrayRotationAnimationInfo_Access_Array_Access is access all ImageArrayRotationAnimationInfo_Access_Array;
+   type ImageArrayRotationAnimationInfo_Access_Array_Access_Array is array (Natural range <>) of ImageArrayRotationAnimationInfo_Access_Array_Access;
+   type ImageArrayRotationAnimationInfo_Access_Array_Access_Array_Access is access all ImageArrayRotationAnimationInfo_Access_Array_Access_Array;
 
    type ImageArrayRotationAnimationInfo is new Java_Object with record
       imageArray : Image_Access_Array_Access;

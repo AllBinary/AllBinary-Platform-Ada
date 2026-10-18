@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package is
    type HtmlNameMathData_Access is access all HtmlNameMathData'Class;
    type HtmlNameMathData_Access_Array is array (Natural range <>) of HtmlNameMathData_Access;
    type HtmlNameMathData_Access_Array_Access is access all HtmlNameMathData_Access_Array;
+   type HtmlNameMathData_Access_Array_Access_Array is array (Natural range <>) of HtmlNameMathData_Access_Array_Access;
+   type HtmlNameMathData_Access_Array_Access_Array_Access is access all HtmlNameMathData_Access_Array_Access_Array;
 
    type HtmlNameMathData is new Java_Object with record
       EQUALS : Unbounded_String;

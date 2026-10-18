@@ -13,13 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out OpenGLESImageExclusionUtil'Class) is
    begin
       null;
       This.EXCLUSION := To_Unbounded_String ("font");
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -50,7 +53,7 @@ package body org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
       index : Integer;
    begin
         imageName := image.getName;
-        isNormalScaling := ((This.list.size) = (0)) or else (imageName.startsWith (This.EXCLUSION));
+        isNormalScaling := ((This.list.size) = (0)) or else (Java_Starts_With (imageName, This.EXCLUSION));
         if isNormalScaling then
             return False;
         else
@@ -58,7 +61,7 @@ package body org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
             name := Null_Unbounded_String;
             for index in 0 .. (size) - 1 loop
                 name := Java_Unbox (This.list.get (index));
-                if imageName.startsWith (name) then
+                if Java_Starts_With (imageName, name) then
                     isNormalScaling := True;
                 end if;
             end loop;

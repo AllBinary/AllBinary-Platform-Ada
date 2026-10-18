@@ -13,8 +13,59 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package; use org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package;
+with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.animation.NullIndexedAnimationFactory_Package; use org.allbinary.animation.NullIndexedAnimationFactory_Package;
+with org.allbinary.game.identification.GroupFactory_Package; use org.allbinary.game.identification.GroupFactory_Package;
+with org.allbinary.game.input.form.NullRTSFormInputFactory_Package; use org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
+with org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package; use org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package;
+with org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package; use org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package;
+with org.allbinary.game.layer.CollidableRTSBehavior_Package; use org.allbinary.game.layer.CollidableRTSBehavior_Package;
+with org.allbinary.game.layer.RTSLayerUtil_Package; use org.allbinary.game.layer.RTSLayerUtil_Package;
+with org.allbinary.game.layer.waypoint.Waypoint_Package; use org.allbinary.game.layer.waypoint.Waypoint_Package;
+with org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package; use org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
+with org.allbinary.graphics.RectangleFactory_Package; use org.allbinary.graphics.RectangleFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package; use org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
+with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
+with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
+with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package; use org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+with org.allbinary.media.audio.SelectSound_Package; use org.allbinary.media.audio.SelectSound_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package; use org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package;
+with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Package; use org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Package;
+with org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package; use org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package;
+
 package body org.allbinary.game.layer.building.BuildingLayer_Package is
 
+   package ExplosionBasicSound_Package renames Standard.org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package NullIndexedAnimationFactory_Package renames Standard.org.allbinary.animation.NullIndexedAnimationFactory_Package;
+   package GroupFactory_Package renames Standard.org.allbinary.game.identification.GroupFactory_Package;
+   package NullRTSFormInputFactory_Package renames Standard.org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
+   package VisibleCellPositionsSingleton_Package renames Standard.org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package;
+   package AdvancedRTSPlayerLayerInterface_Package renames Standard.org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package;
+   package CollidableRTSBehavior_Package renames Standard.org.allbinary.game.layer.CollidableRTSBehavior_Package;
+   package RTSLayerUtil_Package renames Standard.org.allbinary.game.layer.RTSLayerUtil_Package;
+   package Waypoint_Package renames Standard.org.allbinary.game.layer.waypoint.Waypoint_Package;
+   package TileLayerPositionIntoViewPosition_Package renames Standard.org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
+   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package GeographicMapCellPositionAreaBase_Package renames Standard.org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
+   package NullPathFindingLayer_Package renames Standard.org.allbinary.game.layer.NullPathFindingLayer_Package;
+   package TrackingEventHandler_Package renames Standard.org.allbinary.game.tracking.TrackingEventHandler_Package;
+   package SecondaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+   package SelectSound_Package renames Standard.org.allbinary.media.audio.SelectSound_Package;
+   package GeographicMapDirectionUtil_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package;
+   package DropCellPositionHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
    procedure Initialize_Fields (This : in out BuildingLayer'Class) is
    begin
       null;
@@ -250,14 +301,14 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
         surroundGeographicMapCellPosition := null;
         list := null;
         for index2 in reverse 0 .. (occupyList.size) - (1) loop
-            pathsList := BasicArrayListD_Package.Create;
+            pathsList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             occupyGeographicMapCellPosition := GeographicMapCellPosition_Access (occupyList.get (index2));
             for index in reverse 0 .. (surroundList.size) - (1) loop
                 surroundGeographicMapCellPosition := GeographicMapCellPosition_Access (surroundList.get (index));
                 if (geographicMapDirectionUtil.getEightDirectionFromCellPositionToAdjacentCellPosition (surroundGeographicMapCellPosition, occupyGeographicMapCellPosition)) /= (NO_DIRECTION) then
-                    list := BasicArrayListS_Package.Create (1);
-                    list.add (surroundGeographicMapCellPosition);
-                    pathsList.add (list);
+                    list := BasicArrayList_Access (BasicArrayListS_Package.Create (1));
+                    list.add (Java_Object_Access (surroundGeographicMapCellPosition));
+                    pathsList.add (Java_Object_Access (list));
                 end if;
             end loop;
             This.pathsHashtable.put (occupyGeographicMapCellPosition, pathsList);
@@ -366,14 +417,14 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
         buildingInfoHudPaintable := BuildingInfoHudPaintable_Package.getInstance;
         buildingInfoHudPaintable.setBasicColorP (This.allBinaryGameLayerManagerP.getForegroundBasicColor);
         buildingInfoHudPaintable.setRtsLayer (BuildingLayer_Access'(This'Unchecked_Access));
-        return buildingInfoHudPaintable;
+        return SelectionHudPaintable_Access (buildingInfoHudPaintable);
    end createHudPaintable;
 
    function getHudPaintable (This : in out BuildingLayer) return SelectionHudPaintable_Access is
       buildingInfoHudPaintable : BuildingInfoHudPaintable_Access;
    begin
         buildingInfoHudPaintable := BuildingInfoHudPaintable_Package.getInstance;
-        return buildingInfoHudPaintable;
+        return SelectionHudPaintable_Access (buildingInfoHudPaintable);
    end getHudPaintable;
 
    function getType (This : in out BuildingLayer) return Integer is

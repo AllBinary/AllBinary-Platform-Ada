@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.automation.Point_Package; use org.allbinary.input.automation.Point_Package;
-with org.allbinary.input.automation.PointHelper_Package; use org.allbinary.input.automation.PointHelper_Package;
 with org.allbinary.input.automation.Rectangle_Package; use org.allbinary.input.automation.Rectangle_Package;
 
 package org.allbinary.input.automation.AbstractInputRobot_Package is
@@ -34,6 +33,8 @@ package org.allbinary.input.automation.AbstractInputRobot_Package is
    type AbstractInputRobot_Access is access all AbstractInputRobot'Class;
    type AbstractInputRobot_Access_Array is array (Natural range <>) of AbstractInputRobot_Access;
    type AbstractInputRobot_Access_Array_Access is access all AbstractInputRobot_Access_Array;
+   type AbstractInputRobot_Access_Array_Access_Array is array (Natural range <>) of AbstractInputRobot_Access_Array_Access;
+   type AbstractInputRobot_Access_Array_Access_Array_Access is access all AbstractInputRobot_Access_Array_Access_Array;
 
    type AbstractInputRobot is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -21,19 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 
 package org.allbinary.log.LOGGING_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type LOGGING is tagged;
    type LOGGING_Access is access all LOGGING'Class;
    type LOGGING_Access_Array is array (Natural range <>) of LOGGING_Access;
    type LOGGING_Access_Array_Access is access all LOGGING_Access_Array;
+   type LOGGING_Access_Array_Access_Array is array (Natural range <>) of LOGGING_Access_Array_Access;
+   type LOGGING_Access_Array_Access_Array_Access is access all LOGGING_Access_Array_Access_Array;
 
    type LOGGING is new Java_Object with record
       name : Unbounded_String;

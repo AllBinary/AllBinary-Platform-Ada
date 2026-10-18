@@ -29,6 +29,8 @@ package org.allbinary.game.IntermissionCompositeInterface_Package is
    type IntermissionCompositeInterface_Access is access all IntermissionCompositeInterface'Class;
    type IntermissionCompositeInterface_Access_Array is array (Natural range <>) of IntermissionCompositeInterface_Access;
    type IntermissionCompositeInterface_Access_Array_Access is access all IntermissionCompositeInterface_Access_Array;
+   type IntermissionCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of IntermissionCompositeInterface_Access_Array_Access;
+   type IntermissionCompositeInterface_Access_Array_Access_Array_Access is access all IntermissionCompositeInterface_Access_Array_Access_Array;
    function getStartIntermissionInterface (This : in out IntermissionCompositeInterface) return IntermissionInterface_Access is abstract;
    function getEndLevelIntermissionInterface (This : in out IntermissionCompositeInterface) return IntermissionInterface_Access is abstract;
 

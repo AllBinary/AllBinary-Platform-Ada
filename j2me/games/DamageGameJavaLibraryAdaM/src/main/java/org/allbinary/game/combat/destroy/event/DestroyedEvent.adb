@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.displayable.canvas.NullGameCanvas_Package; use org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
+
 package body org.allbinary.game.combat.destroy.event.DestroyedEvent_Package is
 
+   package NullGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out DestroyedEvent'Class) is
    begin
       null;

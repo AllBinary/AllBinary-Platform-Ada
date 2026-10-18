@@ -28,6 +28,8 @@ package org.allbinary.midlet.MidletStrings_Package is
    type MidletStrings_Access is access all MidletStrings'Class;
    type MidletStrings_Access_Array is array (Natural range <>) of MidletStrings_Access;
    type MidletStrings_Access_Array_Access is access all MidletStrings_Access_Array;
+   type MidletStrings_Access_Array_Access_Array is array (Natural range <>) of MidletStrings_Access_Array_Access;
+   type MidletStrings_Access_Array_Access_Array_Access is access all MidletStrings_Access_Array_Access_Array;
 
    type MidletStrings is new Java_Object with record
       COMMAND_ACTION : Unbounded_String;

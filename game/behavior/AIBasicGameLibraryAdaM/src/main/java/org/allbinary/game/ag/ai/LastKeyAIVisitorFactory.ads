@@ -29,6 +29,8 @@ package org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package is
    type LastKeyAIVisitorFactory_Access is access all LastKeyAIVisitorFactory'Class;
    type LastKeyAIVisitorFactory_Access_Array is array (Natural range <>) of LastKeyAIVisitorFactory_Access;
    type LastKeyAIVisitorFactory_Access_Array_Access is access all LastKeyAIVisitorFactory_Access_Array;
+   type LastKeyAIVisitorFactory_Access_Array_Access_Array is array (Natural range <>) of LastKeyAIVisitorFactory_Access_Array_Access;
+   type LastKeyAIVisitorFactory_Access_Array_Access_Array_Access is access all LastKeyAIVisitorFactory_Access_Array_Access_Array;
 
    type LastKeyAIVisitorFactory is new Java_Object with null record;
    instance : LastKeyAIVisitor_Access;

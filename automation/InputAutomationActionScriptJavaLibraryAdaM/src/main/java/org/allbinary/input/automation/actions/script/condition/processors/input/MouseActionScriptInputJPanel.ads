@@ -21,34 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.InputEvent_Package; use java.awt.event.InputEvent_Package;
-with org.allbinary.input.automation.robot.InputRobot_Package; use org.allbinary.input.automation.robot.InputRobot_Package;
-with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
-with org.allbinary.input.automation.robot.TempInputRobotNames_Package; use org.allbinary.input.automation.robot.TempInputRobotNames_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.JPanel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.JPanel_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.ComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.ComboBoxModel_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package is
 
-   package InputRobot_Package renames Standard.org.allbinary.input.automation.robot.InputRobot_Package;
-   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
-   package TempInputRobotNames_Package renames Standard.org.allbinary.input.automation.robot.TempInputRobotNames_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type MouseActionScriptInputJPanel is tagged;
    type MouseActionScriptInputJPanel_Access is access all MouseActionScriptInputJPanel'Class;
    type MouseActionScriptInputJPanel_Access_Array is array (Natural range <>) of MouseActionScriptInputJPanel_Access;
    type MouseActionScriptInputJPanel_Access_Array_Access is access all MouseActionScriptInputJPanel_Access_Array;
+   type MouseActionScriptInputJPanel_Access_Array_Access_Array is array (Natural range <>) of MouseActionScriptInputJPanel_Access_Array_Access;
+   type MouseActionScriptInputJPanel_Access_Array_Access_Array_Access is access all MouseActionScriptInputJPanel_Access_Array_Access_Array;
 
    type MouseActionScriptInputJPanel is new JPanel with record
       logUtil : LogUtil_Access;

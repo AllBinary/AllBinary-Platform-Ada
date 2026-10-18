@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package is
 
    procedure Initialize_Fields (This : in out GeographicMapCellPositionBaseFactory'Class) is

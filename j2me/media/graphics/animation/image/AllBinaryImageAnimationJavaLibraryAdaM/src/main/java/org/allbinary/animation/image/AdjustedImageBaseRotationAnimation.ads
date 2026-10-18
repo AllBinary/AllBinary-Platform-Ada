@@ -37,6 +37,8 @@ package org.allbinary.animation.image.AdjustedImageBaseRotationAnimation_Package
    type AdjustedImageBaseRotationAnimation_Access is access all AdjustedImageBaseRotationAnimation'Class;
    type AdjustedImageBaseRotationAnimation_Access_Array is array (Natural range <>) of AdjustedImageBaseRotationAnimation_Access;
    type AdjustedImageBaseRotationAnimation_Access_Array_Access is access all AdjustedImageBaseRotationAnimation_Access_Array;
+   type AdjustedImageBaseRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AdjustedImageBaseRotationAnimation_Access_Array_Access;
+   type AdjustedImageBaseRotationAnimation_Access_Array_Access_Array_Access is access all AdjustedImageBaseRotationAnimation_Access_Array_Access_Array;
 
    type AdjustedImageBaseRotationAnimation is new ImageBaseRotationAnimation with record
       dx : Integer;

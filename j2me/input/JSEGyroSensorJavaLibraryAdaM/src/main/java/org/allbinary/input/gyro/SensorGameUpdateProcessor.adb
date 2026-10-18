@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package; use org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
+with org.allbinary.input.NoAllBinarySensor_Package; use org.allbinary.input.NoAllBinarySensor_Package;
+with org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package; use org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
+with org.allbinary.input.gyro.GyroSensorFactory_Package; use org.allbinary.input.gyro.GyroSensorFactory_Package;
+
 package body org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
 
+   package NoCompleteMotionGestureInputEventListener_Package renames Standard.org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
+   package NoAllBinarySensor_Package renames Standard.org.allbinary.input.NoAllBinarySensor_Package;
+   package AccelerometerSensorFactory_Package renames Standard.org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
    procedure Initialize_Fields (This : in out SensorGameUpdateProcessor'Class) is
    begin
       null;
@@ -74,6 +82,16 @@ package body org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
         AccelerometerSensorFactory_Package.getInstance.setCompleteMotionGestureInputEventListener (NoCompleteMotionGestureInputEventListener_Package.getInstance);
         SensorGameUpdateProcessor'Class (This).setInputSensor (NoAllBinarySensor_Package.getInstance);
    end setNoSensors;
+
+   procedure process (This : in out SensorGameUpdateProcessor; Value : Unbounded_String) is
+   begin
+      SensorGameUpdateProcessor'Class (This).process (Java_Box (Value));
+   end process;
+
+   procedure sendNotifications (This : in out SensorGameUpdateProcessor; Value : Unbounded_String) is
+   begin
+      SensorGameUpdateProcessor'Class (This).sendNotifications (Java_Box (Value));
+   end sendNotifications;
 
 end org.allbinary.input.gyro.SensorGameUpdateProcessor_Package;
 

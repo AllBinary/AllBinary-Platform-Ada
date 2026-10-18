@@ -22,21 +22,19 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package;
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package is
 
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-   package RaceTrackGeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
 
    type PathFindingNodeCostInfoFactory is tagged;
    type PathFindingNodeCostInfoFactory_Access is access all PathFindingNodeCostInfoFactory'Class;
    type PathFindingNodeCostInfoFactory_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoFactory_Access;
    type PathFindingNodeCostInfoFactory_Access_Array_Access is access all PathFindingNodeCostInfoFactory_Access_Array;
+   type PathFindingNodeCostInfoFactory_Access_Array_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoFactory_Access_Array_Access;
+   type PathFindingNodeCostInfoFactory_Access_Array_Access_Array_Access is access all PathFindingNodeCostInfoFactory_Access_Array_Access_Array;
 
    type PathFindingNodeCostInfoFactory is new PathFindingNodeCostInfoFactoryBase with null record;
 

@@ -21,20 +21,10 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
-with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
-with org.allbinary.business.category.CategoryUtil_Package; use org.allbinary.business.category.CategoryUtil_Package;
 with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package; use org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.sql.AbSqlData_Package; use org.allbinary.logic.communication.sql.AbSqlData_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
@@ -42,20 +32,10 @@ with org.allbinary.business.category.properties.CategoryPropertiesInterface_Pack
 package org.allbinary.business.category.properties.CategoryProperties_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
-   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
-   package CategoryUtil_Package renames Standard.org.allbinary.business.category.CategoryUtil_Package;
    package CategoryHierarchyInterface_Package renames Standard.org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlData_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlData_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -63,8 +43,10 @@ package org.allbinary.business.category.properties.CategoryProperties_Package is
    type CategoryProperties_Access is access all CategoryProperties'Class;
    type CategoryProperties_Access_Array is array (Natural range <>) of CategoryProperties_Access;
    type CategoryProperties_Access_Array_Access is access all CategoryProperties_Access_Array;
+   type CategoryProperties_Access_Array_Access_Array is array (Natural range <>) of CategoryProperties_Access_Array_Access;
+   type CategoryProperties_Access_Array_Access_Array_Access is access all CategoryProperties_Access_Array_Access_Array;
 
-   type CategoryProperties is new CategoryPropertiesInterface with record
+   type CategoryProperties is new Java_Object and CategoryPropertiesInterface with record
       logUtil : LogUtil_Access;
       category : Unbounded_String;
    end record;

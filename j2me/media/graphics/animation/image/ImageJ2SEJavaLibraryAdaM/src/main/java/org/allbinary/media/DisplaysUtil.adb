@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+
 package body org.allbinary.media.DisplaysUtil_Package is
 
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    procedure Initialize_Fields (This : in out DisplaysUtil'Class) is
    begin
       null;

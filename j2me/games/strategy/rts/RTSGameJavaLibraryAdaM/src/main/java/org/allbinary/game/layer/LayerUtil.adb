@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
+
 package body org.allbinary.game.layer.LayerUtil_Package is
 
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
    procedure Initialize_Fields (This : in out LayerUtil'Class) is
    begin
       null;
@@ -33,8 +42,8 @@ package body org.allbinary.game.layer.LayerUtil_Package is
    end Create;
 
 
-   function toString (hashtable_Case_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) return Unbounded_String is
-      hashtable_Case : constant ABHashtable_Access := ABHashtable_Access (hashtable_Case_Param);
+   function toString (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) return Unbounded_String is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       commonSeps : CommonSeps_Access;
       positionStrings : PositionStrings_Access;
       stringBuffer : StringMaker_Access;
@@ -43,7 +52,7 @@ package body org.allbinary.game.layer.LayerUtil_Package is
         positionStrings := PositionStrings_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (LayerUtil_Package.HASHTABLE);
-        stringBuffer.append (StringUtil_Package.getInstance.toString (hashtable_Case));
+        stringBuffer.append (StringUtil_Package.getInstance.toString (hashtable));
         stringBuffer.append (commonSeps.SPACE);
         stringBuffer.append (positionStrings.X_LABEL);
         stringBuffer.appendint (x);
@@ -56,8 +65,8 @@ package body org.allbinary.game.layer.LayerUtil_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure toString (hashtable_Case_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant Unbounded_String := toString (hashtable_Case_Param, x, y, z);
+   procedure toString (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) is
+      Java_Result : constant Unbounded_String := toString (hashtable_Param, x, y, z);
       pragma Unreferenced (Java_Result);
    begin
       null;

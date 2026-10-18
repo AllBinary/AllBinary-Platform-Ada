@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.android.NullParcelable_Package is
 
    procedure Initialize_Fields (This : in out NullParcelable'Class) is

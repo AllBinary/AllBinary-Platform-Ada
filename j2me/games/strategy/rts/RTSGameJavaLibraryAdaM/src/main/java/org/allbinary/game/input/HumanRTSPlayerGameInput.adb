@@ -13,8 +13,55 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.RTSGameStrings_Package; use org.allbinary.game.layer.RTSGameStrings_Package;
+with org.allbinary.input.motion.button.EndLevelNoBuildingSelectedTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.EndLevelNoBuildingSelectedTouchButtonsBuilder_Package;
+with org.allbinary.input.motion.button.EndLevelTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.EndLevelTouchButtonsBuilder_Package;
+with org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package;
+with org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package;
+with org.allbinary.media.audio.SelectBuildingSound_Package; use org.allbinary.media.audio.SelectBuildingSound_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.paint.NullInitUpdatePaintable_Package; use org.allbinary.graphics.paint.NullInitUpdatePaintable_Package;
+with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+
 package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
 
+   package RTSGameStrings_Package renames Standard.org.allbinary.game.layer.RTSGameStrings_Package;
+   package EndLevelNoBuildingSelectedTouchButtonsBuilder_Package renames Standard.org.allbinary.input.motion.button.EndLevelNoBuildingSelectedTouchButtonsBuilder_Package;
+   package EndLevelTouchButtonsBuilder_Package renames Standard.org.allbinary.input.motion.button.EndLevelTouchButtonsBuilder_Package;
+   package NoBuildingSelectedTouchButtonsBuilder_Package renames Standard.org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package;
+   package RTSTouchButtonsBuilder_Package renames Standard.org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package;
+   package SelectBuildingSound_Package renames Standard.org.allbinary.media.audio.SelectBuildingSound_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package NullInitUpdatePaintable_Package renames Standard.org.allbinary.graphics.paint.NullInitUpdatePaintable_Package;
+   package BasicMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package ErrorSound_Package renames Standard.org.allbinary.media.audio.ErrorSound_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
    procedure Initialize_Fields (This : in out HumanRTSPlayerGameInput'Class) is
    begin
       null;
@@ -358,7 +405,7 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
    procedure onMotionGestureEvent (This : in out HumanRTSPlayerGameInput; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       motionGestureEvent : constant MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
    begin
-        HumanRTSPlayerGameInput'Class (This).getMotionGestureInputList.add (motionGestureEvent);
+        HumanRTSPlayerGameInput'Class (This).getMotionGestureInputList.add (Java_Object_Access (motionGestureEvent));
    end onMotionGestureEvent;
 
    procedure onScrolledMotionGestureEvent (This : in out HumanRTSPlayerGameInput; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is

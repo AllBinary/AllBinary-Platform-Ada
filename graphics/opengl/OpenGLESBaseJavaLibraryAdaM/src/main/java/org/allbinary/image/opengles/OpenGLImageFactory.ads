@@ -34,6 +34,8 @@ package org.allbinary.image.opengles.OpenGLImageFactory_Package is
    type OpenGLImageFactory_Access is access all OpenGLImageFactory'Class;
    type OpenGLImageFactory_Access_Array is array (Natural range <>) of OpenGLImageFactory_Access;
    type OpenGLImageFactory_Access_Array_Access is access all OpenGLImageFactory_Access_Array;
+   type OpenGLImageFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLImageFactory_Access_Array_Access;
+   type OpenGLImageFactory_Access_Array_Access_Array_Access is access all OpenGLImageFactory_Access_Array_Access_Array;
 
    type OpenGLImageFactory is new Java_Object with null record;
    NULL_OPENGL_IMAGE_FACTORY : OpenGLImageFactory_Access;

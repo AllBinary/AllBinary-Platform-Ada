@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.java.anyType.clazz.loader.ClassLoader_Package; use org.allbinary.logic.java.anyType.clazz.loader.ClassLoader_Package;
 
 package org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Package is
 
@@ -29,6 +28,8 @@ package org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Package is
    type ClassLoaderUtil_Access is access all ClassLoaderUtil'Class;
    type ClassLoaderUtil_Access_Array is array (Natural range <>) of ClassLoaderUtil_Access;
    type ClassLoaderUtil_Access_Array_Access is access all ClassLoaderUtil_Access_Array;
+   type ClassLoaderUtil_Access_Array_Access_Array is array (Natural range <>) of ClassLoaderUtil_Access_Array_Access;
+   type ClassLoaderUtil_Access_Array_Access_Array_Access is access all ClassLoaderUtil_Access_Array_Access_Array;
 
    type ClassLoaderUtil is new Java_Object with null record;
 
@@ -36,6 +37,8 @@ package org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Package is
    function Create return ClassLoaderUtil_Access;
    function getName (anyType_Param : access Java_Object'Class) return Unbounded_String;
    procedure getName (anyType_Param : access Java_Object'Class);
+   function getName (Value : Unbounded_String) return Unbounded_String;
+   procedure getName (Value : Unbounded_String);
 
 end org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Package;
 

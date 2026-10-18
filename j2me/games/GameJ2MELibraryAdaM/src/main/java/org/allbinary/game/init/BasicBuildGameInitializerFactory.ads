@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package; use org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;
-with org.allbinary.game.init.BaseGameInitialization_Package; use org.allbinary.game.init.BaseGameInitialization_Package;
 with org.allbinary.game.init.GameInitializationInterface_Package; use org.allbinary.game.init.GameInitializationInterface_Package;
 
 package org.allbinary.game.init.BasicBuildGameInitializerFactory_Package is
@@ -31,8 +30,10 @@ package org.allbinary.game.init.BasicBuildGameInitializerFactory_Package is
    type BasicBuildGameInitializerFactory_Access is access all BasicBuildGameInitializerFactory'Class;
    type BasicBuildGameInitializerFactory_Access_Array is array (Natural range <>) of BasicBuildGameInitializerFactory_Access;
    type BasicBuildGameInitializerFactory_Access_Array_Access is access all BasicBuildGameInitializerFactory_Access_Array;
+   type BasicBuildGameInitializerFactory_Access_Array_Access_Array is array (Natural range <>) of BasicBuildGameInitializerFactory_Access_Array_Access;
+   type BasicBuildGameInitializerFactory_Access_Array_Access_Array_Access is access all BasicBuildGameInitializerFactory_Access_Array_Access_Array;
 
-   type BasicBuildGameInitializerFactory is new GameInitializationInterfaceFactoryInterface with null record;
+   type BasicBuildGameInitializerFactory is new Java_Object and GameInitializationInterfaceFactoryInterface with null record;
    NULL_BASE_BUILD_GMAE_INITIALIZER_FACTORY : BasicBuildGameInitializerFactory_Access;
 
    procedure Initialize (This : in out BasicBuildGameInitializerFactory'Class);

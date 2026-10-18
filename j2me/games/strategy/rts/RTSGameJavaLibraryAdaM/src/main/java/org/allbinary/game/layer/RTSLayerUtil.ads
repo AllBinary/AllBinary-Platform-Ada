@@ -23,35 +23,17 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.identification.GroupCommonFactory_Package; use org.allbinary.game.identification.GroupCommonFactory_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
-with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
 with org.allbinary.game.combat.weapon.WeaponProperties_Package; use org.allbinary.game.combat.weapon.WeaponProperties_Package;
-with org.allbinary.game.identification.BasicGroupFactory_Package; use org.allbinary.game.identification.BasicGroupFactory_Package;
-with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
-with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.game.part.weapon.BasicWeaponPart_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
-with org.allbinary.game.layer.FakeLayerManager_Package; use org.allbinary.game.layer.FakeLayerManager_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 
 package org.allbinary.game.layer.RTSLayerUtil_Package is
 
    package GroupCommonFactory_Package renames Standard.org.allbinary.game.identification.GroupCommonFactory_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
-   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
    package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
-   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
-   package PartInterface_Package renames Standard.org.allbinary.game.part.PartInterface_Package;
-   package BasicWeaponPart_Package renames Standard.org.allbinary.game.part.weapon.BasicWeaponPart_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package BaseRaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
@@ -59,6 +41,8 @@ package org.allbinary.game.layer.RTSLayerUtil_Package is
    type RTSLayerUtil_Access is access all RTSLayerUtil'Class;
    type RTSLayerUtil_Access_Array is array (Natural range <>) of RTSLayerUtil_Access;
    type RTSLayerUtil_Access_Array_Access is access all RTSLayerUtil_Access_Array;
+   type RTSLayerUtil_Access_Array_Access_Array is array (Natural range <>) of RTSLayerUtil_Access_Array_Access;
+   type RTSLayerUtil_Access_Array_Access_Array_Access is access all RTSLayerUtil_Access_Array_Access_Array;
 
    type RTSLayerUtil is new Java_Object with record
       logUtil : LogUtil_Access;

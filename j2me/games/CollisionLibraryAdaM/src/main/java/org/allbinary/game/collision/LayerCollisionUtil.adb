@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+with org.allbinary.game.collision.Collision2DProcessor_Package; use org.allbinary.game.collision.Collision2DProcessor_Package;
+with org.allbinary.game.collision.CollisionThreedProcessor_Package; use org.allbinary.game.collision.CollisionThreedProcessor_Package;
+
 package body org.allbinary.game.collision.LayerCollisionUtil_Package is
 
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
    procedure Initialize_Fields (This : in out LayerCollisionUtil'Class) is
    begin
       null;
@@ -35,9 +44,9 @@ package body org.allbinary.game.collision.LayerCollisionUtil_Package is
         features := Features_Package.getInstance;
         gameFeatureFactory := GameFeatureFactory_Package.getInstance;
         if (OpenGLFeatureUtil_Package.getInstance.isAnyThreed) and then (not (features.isFeature (gameFeatureFactory.COLLISIONS_FORCED_TWO_DIMENSIONAL))) then
-            This.collisionProcessor := CollisionThreedProcessor_Package.Create;
+            This.collisionProcessor := CollisionProcessor_Access (CollisionThreedProcessor_Package.Create);
         else
-            This.collisionProcessor := Collision2DProcessor_Package.Create;
+            This.collisionProcessor := CollisionProcessor_Access (Collision2DProcessor_Package.Create);
         end if;
    end Initialize;
 

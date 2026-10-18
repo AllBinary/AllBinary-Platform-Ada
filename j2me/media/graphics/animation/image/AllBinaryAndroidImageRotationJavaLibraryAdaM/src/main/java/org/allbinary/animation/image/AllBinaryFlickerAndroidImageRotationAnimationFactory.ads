@@ -21,36 +21,27 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package;
 
 package org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimationFactory_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type AllBinaryFlickerAndroidImageRotationAnimationFactory is tagged;
    type AllBinaryFlickerAndroidImageRotationAnimationFactory_Access is access all AllBinaryFlickerAndroidImageRotationAnimationFactory'Class;
    type AllBinaryFlickerAndroidImageRotationAnimationFactory_Access_Array is array (Natural range <>) of AllBinaryFlickerAndroidImageRotationAnimationFactory_Access;
    type AllBinaryFlickerAndroidImageRotationAnimationFactory_Access_Array_Access is access all AllBinaryFlickerAndroidImageRotationAnimationFactory_Access_Array;
+   type AllBinaryFlickerAndroidImageRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of AllBinaryFlickerAndroidImageRotationAnimationFactory_Access_Array_Access;
+   type AllBinaryFlickerAndroidImageRotationAnimationFactory_Access_Array_Access_Array_Access is access all AllBinaryFlickerAndroidImageRotationAnimationFactory_Access_Array_Access_Array;
 
-   type AllBinaryFlickerAndroidImageRotationAnimationFactory is new AnimationInterfaceFactoryInterface with record
+   type AllBinaryFlickerAndroidImageRotationAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       image : Image_Access;
       angleIncrement : Short_Integer;
       animationBehaviorFactory : AnimationBehaviorFactory_Access;

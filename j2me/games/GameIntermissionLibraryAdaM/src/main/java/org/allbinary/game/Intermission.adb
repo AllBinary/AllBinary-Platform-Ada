@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.NullIntermissionEnableListener_Package; use org.allbinary.game.NullIntermissionEnableListener_Package;
+
 package body org.allbinary.game.Intermission_Package is
 
    procedure Initialize_Fields (This : in out Intermission'Class) is

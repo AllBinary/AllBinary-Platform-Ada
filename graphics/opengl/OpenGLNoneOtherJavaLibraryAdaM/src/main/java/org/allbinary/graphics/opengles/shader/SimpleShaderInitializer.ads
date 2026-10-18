@@ -29,6 +29,8 @@ package org.allbinary.graphics.opengles.shader.SimpleShaderInitializer_Package i
    type SimpleShaderInitializer_Access is access all SimpleShaderInitializer'Class;
    type SimpleShaderInitializer_Access_Array is array (Natural range <>) of SimpleShaderInitializer_Access;
    type SimpleShaderInitializer_Access_Array_Access is access all SimpleShaderInitializer_Access_Array;
+   type SimpleShaderInitializer_Access_Array_Access_Array is array (Natural range <>) of SimpleShaderInitializer_Access_Array_Access;
+   type SimpleShaderInitializer_Access_Array_Access_Array_Access is access all SimpleShaderInitializer_Access_Array_Access_Array;
 
    type SimpleShaderInitializer is new ShaderInitializer with null record;
    instanceC : SimpleShaderInitializer_Access;

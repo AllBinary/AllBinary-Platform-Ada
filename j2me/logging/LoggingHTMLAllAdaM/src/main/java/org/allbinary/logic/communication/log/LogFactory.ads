@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package; use org.allbinary.logic.communication.log.Log_Package;
 
 package org.allbinary.logic.communication.log.LogFactory_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type LogFactory is tagged;
    type LogFactory_Access is access all LogFactory'Class;
    type LogFactory_Access_Array is array (Natural range <>) of LogFactory_Access;
    type LogFactory_Access_Array_Access is access all LogFactory_Access_Array;
+   type LogFactory_Access_Array_Access_Array is array (Natural range <>) of LogFactory_Access_Array_Access;
+   type LogFactory_Access_Array_Access_Array_Access is access all LogFactory_Access_Array_Access_Array;
 
    type LogFactory is new Java_Object with null record;
 

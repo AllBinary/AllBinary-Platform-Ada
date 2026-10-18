@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
+with org.allbinary.data.tree.dom.FileTableMapping_Package; use org.allbinary.data.tree.dom.FileTableMapping_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+
 package body org.allbinary.data.tree.dom.FileDomDataModel_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
    procedure Initialize_Fields (This : in out FileDomDataModel'Class) is
    begin
       null;

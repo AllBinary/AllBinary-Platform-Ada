@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package; use org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package;
+
 package body org.allbinary.logic.visual.dhtml.html.input.HtmlRadioInput_Package is
 
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
    procedure Initialize_Fields (This : in out HtmlRadioInput'Class) is
    begin
       null;

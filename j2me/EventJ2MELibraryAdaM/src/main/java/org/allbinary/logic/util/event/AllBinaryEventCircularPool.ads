@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.cache.BaseCircularPool_Package; use org.allbinary.logic.util.cache.BaseCircularPool_Package;
-with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package; use org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
 
 package org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package is
 
    package BaseCircularPool_Package renames Standard.org.allbinary.logic.util.cache.BaseCircularPool_Package;
-   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type AllBinaryEventCircularPool is tagged;
    type AllBinaryEventCircularPool_Access is access all AllBinaryEventCircularPool'Class;
    type AllBinaryEventCircularPool_Access_Array is array (Natural range <>) of AllBinaryEventCircularPool_Access;
    type AllBinaryEventCircularPool_Access_Array_Access is access all AllBinaryEventCircularPool_Access_Array;
+   type AllBinaryEventCircularPool_Access_Array_Access_Array is array (Natural range <>) of AllBinaryEventCircularPool_Access_Array_Access;
+   type AllBinaryEventCircularPool_Access_Array_Access_Array_Access is access all AllBinaryEventCircularPool_Access_Array_Access_Array;
 
    type AllBinaryEventCircularPool is new BaseCircularPool with null record;
 

@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.EventObject_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.EventObject_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
 
 package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package is
 
@@ -31,6 +30,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package 
    type MyCanvasEvent_Access is access all MyCanvasEvent'Class;
    type MyCanvasEvent_Access_Array is array (Natural range <>) of MyCanvasEvent_Access;
    type MyCanvasEvent_Access_Array_Access is access all MyCanvasEvent_Access_Array;
+   type MyCanvasEvent_Access_Array_Access_Array is array (Natural range <>) of MyCanvasEvent_Access_Array_Access;
+   type MyCanvasEvent_Access_Array_Access_Array_Access is access all MyCanvasEvent_Access_Array_Access_Array;
 
    type MyCanvasEvent is new EventObject with null record;
 

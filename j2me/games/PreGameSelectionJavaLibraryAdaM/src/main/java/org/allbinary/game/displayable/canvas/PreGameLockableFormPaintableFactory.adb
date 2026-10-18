@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+with org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package; use org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package;
+
 package body org.allbinary.game.displayable.canvas.PreGameLockableFormPaintableFactory_Package is
 
+   package ScrollCurrentSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
    procedure Initialize_Fields (This : in out PreGameLockableFormPaintableFactory'Class) is
    begin
       null;
@@ -40,7 +44,7 @@ package body org.allbinary.game.displayable.canvas.PreGameLockableFormPaintableF
    function getInstanceItemPaintable (This : in out PreGameLockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class) return ItemPaintable_Access is
       paintableForm : constant PaintableForm_Access := PaintableForm_Access (paintableForm_Param);
    begin
-        return PreGameLockablePaintable_Package.Create (ScrollCurrentSelectionForm_Access (paintableForm), This.lockedIndex);
+        return ItemPaintable_Access (PreGameLockablePaintable_Package.Create (ScrollCurrentSelectionForm_Access (paintableForm), This.lockedIndex));
    end getInstanceItemPaintable;
 
    procedure getInstanceItemPaintable (This : in out PreGameLockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class) is

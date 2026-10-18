@@ -20,37 +20,25 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-with org.allbinary.game.layer.drop.DropLayerFactory_Package; use org.allbinary.game.layer.drop.DropLayerFactory_Package;
-with org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package; use org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package;
-with org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package; use org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackDropCellPositionGenerator_Package; use org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackDropCellPositionGenerator_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackRandomDropCellPositionGenerator_Package is
 
-   package PickedUpLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
    package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package DropLayerFactory_Package renames Standard.org.allbinary.game.layer.drop.DropLayerFactory_Package;
-   package PickupLayerCircularStaticPool_Package renames Standard.org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package;
-   package RaceTrackPickupLayer_Package renames Standard.org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
    package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
-   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
    type RaceTrackRandomDropCellPositionGenerator is tagged;
    type RaceTrackRandomDropCellPositionGenerator_Access is access all RaceTrackRandomDropCellPositionGenerator'Class;
    type RaceTrackRandomDropCellPositionGenerator_Access_Array is array (Natural range <>) of RaceTrackRandomDropCellPositionGenerator_Access;
    type RaceTrackRandomDropCellPositionGenerator_Access_Array_Access is access all RaceTrackRandomDropCellPositionGenerator_Access_Array;
+   type RaceTrackRandomDropCellPositionGenerator_Access_Array_Access_Array is array (Natural range <>) of RaceTrackRandomDropCellPositionGenerator_Access_Array_Access;
+   type RaceTrackRandomDropCellPositionGenerator_Access_Array_Access_Array_Access is access all RaceTrackRandomDropCellPositionGenerator_Access_Array_Access_Array;
 
    type RaceTrackRandomDropCellPositionGenerator is new RaceTrackDropCellPositionGenerator with record
       myRandomFactory : MyRandomFactory_Access;

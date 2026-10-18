@@ -21,22 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
 
 package tags.admin.UserTag_Package is
 
-   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package SqlStrings_Package renames Standard.org.allbinary.logic.communication.sql.SqlStrings_Package;
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type UserTag is tagged;
    type UserTag_Access is access all UserTag'Class;
    type UserTag_Access_Array is array (Natural range <>) of UserTag_Access;
    type UserTag_Access_Array_Access is access all UserTag_Access_Array;
+   type UserTag_Access_Array_Access_Array is array (Natural range <>) of UserTag_Access_Array_Access;
+   type UserTag_Access_Array_Access_Array_Access is access all UserTag_Access_Array_Access_Array;
 
    type UserTag is new StoreValidationTransformTag with record
       role : Unbounded_String;

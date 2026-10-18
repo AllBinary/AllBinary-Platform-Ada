@@ -13,12 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+
 package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
 
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out UniqueTokens'Class) is
    begin
       null;
-      This.specialCharacters := BasicArrayListD_Package.Create;
+      This.specialCharacters := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -85,11 +97,11 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
                 for forIndex in 0 .. (keywordVector.size) - 1 loop
                     cleanString := Java_Unbox (keywordVector.get (forIndex));
                     cleanString := Trim (cleanString, Ada.Strings.Both);
-                    if ((Index (cleanString, Java_Image ('-')) - 1)) /= (-(1)) then
+                    if (Java_Index_Of (cleanString, Java_Image ('-'))) /= (-(1)) then
                         cleanString := Replace_Package.Create (To_Unbounded_String ("-"), commonSeps.SPACE).all_Id (cleanString);
                     end if;
                     hashSet.add (cleanString);
-                    if ((Index (cleanString, Java_Image (' ')) - 1)) /= (-(1)) then
+                    if (Java_Index_Of (cleanString, Java_Image (' '))) /= (-(1)) then
                         spaceTokenizer := Tokenizer_Package.Create (commonSeps.SPACE);
                         subKeywordVector := spaceTokenizer.getTokensFromString (cleanString, BasicArrayListD_Package.Create);
                         for spaceIndex in 0 .. (subKeywordVector.size) - 1 loop

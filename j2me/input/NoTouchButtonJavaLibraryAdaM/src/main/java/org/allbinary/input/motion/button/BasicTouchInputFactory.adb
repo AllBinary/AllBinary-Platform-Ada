@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
 
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BasicTouchInputFactory'Class) is
    begin
       null;
@@ -31,7 +42,7 @@ package body org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
       This.DOWN := TouchButtonInput_Package.Create ((InputFactory_Package.getInstance.MAX) - (39), To_Unbounded_String ("Down Button"));
       This.NONE := TouchButtonInput_Package.Create ((InputFactory_Package.getInstance.MAX) - (40), To_Unbounded_String ("No Button"));
       This.initialized := False;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out BasicTouchInputFactory'Class) is
@@ -60,16 +71,16 @@ package body org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
    begin
         if not (This.initialized) then
             This.initialized := True;
-            This.list.add (This.UP);
-            This.list.add (This.LEFT);
-            This.list.add (This.RIGHT);
-            This.list.add (This.DOWN);
-            This.list.add (This.SPECIAL_BUTTON_TWO);
-            This.list.add (This.SPECIAL_BUTTON_FOUR);
-            This.list.add (This.SPECIAL_BUTTON_THREE);
-            This.list.add (This.SPECIAL_BUTTON_ONE);
-            This.list.add (This.SPECIAL_BUTTON_FIVE);
-            This.list.add (This.SPECIAL_BUTTON_SIX);
+            This.list.add (Java_Object_Access (This.UP));
+            This.list.add (Java_Object_Access (This.LEFT));
+            This.list.add (Java_Object_Access (This.RIGHT));
+            This.list.add (Java_Object_Access (This.DOWN));
+            This.list.add (Java_Object_Access (This.SPECIAL_BUTTON_TWO));
+            This.list.add (Java_Object_Access (This.SPECIAL_BUTTON_FOUR));
+            This.list.add (Java_Object_Access (This.SPECIAL_BUTTON_THREE));
+            This.list.add (Java_Object_Access (This.SPECIAL_BUTTON_ONE));
+            This.list.add (Java_Object_Access (This.SPECIAL_BUTTON_FIVE));
+            This.list.add (Java_Object_Access (This.SPECIAL_BUTTON_SIX));
             BasicTouchInputFactory'Class (This).updateAllList (This.list, inputToGameKeyMapping);
         end if;
    end init;

@@ -20,27 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
-with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package MultipassState_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-   package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
@@ -48,6 +40,8 @@ package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
    type MultipassWaypointPathRunnable_Access is access all MultipassWaypointPathRunnable'Class;
    type MultipassWaypointPathRunnable_Access_Array is array (Natural range <>) of MultipassWaypointPathRunnable_Access;
    type MultipassWaypointPathRunnable_Access_Array_Access is access all MultipassWaypointPathRunnable_Access_Array;
+   type MultipassWaypointPathRunnable_Access_Array_Access_Array is array (Natural range <>) of MultipassWaypointPathRunnable_Access_Array_Access;
+   type MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is access all MultipassWaypointPathRunnable_Access_Array_Access_Array;
 
    type MultipassWaypointPathRunnable is new WaypointPathRunnableBase with record
       logUtil : LogUtil_Access;
@@ -85,27 +79,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
-with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.layer.FirstRunnable_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package MultipassState_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-   package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
@@ -113,6 +99,8 @@ package org.allbinary.game.layer.FirstRunnable_Package is
    type FirstRunnable_Access is access all FirstRunnable'Class;
    type FirstRunnable_Access_Array is array (Natural range <>) of FirstRunnable_Access;
    type FirstRunnable_Access_Array_Access is access all FirstRunnable_Access_Array;
+   type FirstRunnable_Access_Array_Access_Array is array (Natural range <>) of FirstRunnable_Access_Array_Access;
+   type FirstRunnable_Access_Array_Access_Array_Access is access all FirstRunnable_Access_Array_Access_Array;
 
    type FirstRunnable is new ARunnable with record
       multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access;
@@ -132,27 +120,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
-with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.layer.SecondRunnable_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package MultipassState_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-   package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
@@ -160,6 +140,8 @@ package org.allbinary.game.layer.SecondRunnable_Package is
    type SecondRunnable_Access is access all SecondRunnable'Class;
    type SecondRunnable_Access_Array is array (Natural range <>) of SecondRunnable_Access;
    type SecondRunnable_Access_Array_Access is access all SecondRunnable_Access_Array;
+   type SecondRunnable_Access_Array_Access_Array is array (Natural range <>) of SecondRunnable_Access_Array_Access;
+   type SecondRunnable_Access_Array_Access_Array_Access is access all SecondRunnable_Access_Array_Access_Array;
 
    type SecondRunnable is new ARunnable with record
       multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access;
@@ -179,27 +161,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
-with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.layer.EndRunnable_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package MultipassState_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
-   package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
@@ -207,6 +181,8 @@ package org.allbinary.game.layer.EndRunnable_Package is
    type EndRunnable_Access is access all EndRunnable'Class;
    type EndRunnable_Access_Array is array (Natural range <>) of EndRunnable_Access;
    type EndRunnable_Access_Array_Access is access all EndRunnable_Access_Array;
+   type EndRunnable_Access_Array_Access_Array is array (Natural range <>) of EndRunnable_Access_Array_Access;
+   type EndRunnable_Access_Array_Access_Array_Access is access all EndRunnable_Access_Array_Access_Array;
 
    type EndRunnable is new ARunnable with record
       multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access;

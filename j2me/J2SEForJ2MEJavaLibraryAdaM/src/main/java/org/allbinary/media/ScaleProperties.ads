@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 
 package org.allbinary.media.ScaleProperties_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type ScaleProperties is tagged;
    type ScaleProperties_Access is access all ScaleProperties'Class;
    type ScaleProperties_Access_Array is array (Natural range <>) of ScaleProperties_Access;
    type ScaleProperties_Access_Array_Access is access all ScaleProperties_Access_Array;
+   type ScaleProperties_Access_Array_Access_Array is array (Natural range <>) of ScaleProperties_Access_Array_Access;
+   type ScaleProperties_Access_Array_Access_Array_Access is access all ScaleProperties_Access_Array_Access_Array;
 
    type ScaleProperties is new Java_Object with record
       scaleX : Float;

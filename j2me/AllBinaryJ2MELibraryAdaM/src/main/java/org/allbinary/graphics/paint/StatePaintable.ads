@@ -31,6 +31,8 @@ package org.allbinary.graphics.paint.StatePaintable_Package is
    type StatePaintable_Access is access all StatePaintable'Class;
    type StatePaintable_Access_Array is array (Natural range <>) of StatePaintable_Access;
    type StatePaintable_Access_Array_Access is access all StatePaintable_Access_Array;
+   type StatePaintable_Access_Array_Access_Array is array (Natural range <>) of StatePaintable_Access_Array_Access;
+   type StatePaintable_Access_Array_Access_Array_Access is access all StatePaintable_Access_Array_Access_Array;
 
    type StatePaintable is new Paintable and StateControlledInterface with null record;
 

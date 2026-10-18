@@ -28,6 +28,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package is
    type CanvasTreeLabel_Access is access all CanvasTreeLabel'Class;
    type CanvasTreeLabel_Access_Array is array (Natural range <>) of CanvasTreeLabel_Access;
    type CanvasTreeLabel_Access_Array_Access is access all CanvasTreeLabel_Access_Array;
+   type CanvasTreeLabel_Access_Array_Access_Array is array (Natural range <>) of CanvasTreeLabel_Access_Array_Access;
+   type CanvasTreeLabel_Access_Array_Access_Array_Access is access all CanvasTreeLabel_Access_Array_Access_Array;
 
    type CanvasTreeLabel is new Java_Object with record
       label : Unbounded_String;

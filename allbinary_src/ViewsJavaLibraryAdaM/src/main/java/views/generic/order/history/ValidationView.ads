@@ -20,14 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.globals.MESSAGES_Package; use org.allbinary.globals.MESSAGES_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with views.generic_Id.order.history.OrderHistoryView_Package; use views.generic_Id.order.history.OrderHistoryView_Package;
 
 package views.generic_Id.order.history.ValidationView_Package is
 
-   package MESSAGES_Package renames Standard.org.allbinary.globals.MESSAGES_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
@@ -35,6 +33,8 @@ package views.generic_Id.order.history.ValidationView_Package is
    type ValidationView_Access is access all ValidationView'Class;
    type ValidationView_Access_Array is array (Natural range <>) of ValidationView_Access;
    type ValidationView_Access_Array_Access is access all ValidationView_Access_Array;
+   type ValidationView_Access_Array_Access_Array is array (Natural range <>) of ValidationView_Access_Array_Access;
+   type ValidationView_Access_Array_Access_Array_Access is access all ValidationView_Access_Array_Access_Array;
 
    type ValidationView is new OrderHistoryView and ValidationComponentInterface with null record;
 

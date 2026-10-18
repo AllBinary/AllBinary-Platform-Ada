@@ -28,6 +28,8 @@ package org.allbinary.game.configuration.feature.GameFeatureControlledInterface_
    type GameFeatureControlledInterface_Access is access all GameFeatureControlledInterface'Class;
    type GameFeatureControlledInterface_Access_Array is array (Natural range <>) of GameFeatureControlledInterface_Access;
    type GameFeatureControlledInterface_Access_Array_Access is access all GameFeatureControlledInterface_Access_Array;
+   type GameFeatureControlledInterface_Access_Array_Access_Array is array (Natural range <>) of GameFeatureControlledInterface_Access_Array_Access;
+   type GameFeatureControlledInterface_Access_Array_Access_Array_Access is access all GameFeatureControlledInterface_Access_Array_Access_Array;
    procedure init (This : in out GameFeatureControlledInterface; level : Integer) is abstract;
    function isFeature (This : in out GameFeatureControlledInterface) return Boolean is abstract;
    function isLoadingLevel (This : in out GameFeatureControlledInterface; level : Integer) return Boolean is abstract;

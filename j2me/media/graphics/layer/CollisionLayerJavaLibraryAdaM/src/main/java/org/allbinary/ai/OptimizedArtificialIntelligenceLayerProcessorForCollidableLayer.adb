@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.ai.OptimizedArtificialIntelligenceLayerManager_Package; use org.allbinary.ai.OptimizedArtificialIntelligenceLayerManager_Package;
+
 package body org.allbinary.ai.OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Package is
 
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
    procedure Initialize_Fields (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer'Class) is
    begin
       null;

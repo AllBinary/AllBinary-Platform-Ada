@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.init.InitInfo2_Package is
 
    procedure Initialize_Fields (This : in out InitInfo2'Class) is

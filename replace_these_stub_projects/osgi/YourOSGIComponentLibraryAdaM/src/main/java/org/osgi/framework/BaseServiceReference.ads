@@ -29,8 +29,10 @@ package org.osgi.framework.BaseServiceReference_Package is
    type BaseServiceReference_Access is access all BaseServiceReference'Class;
    type BaseServiceReference_Access_Array is array (Natural range <>) of BaseServiceReference_Access;
    type BaseServiceReference_Access_Array_Access is access all BaseServiceReference_Access_Array;
+   type BaseServiceReference_Access_Array_Access_Array is array (Natural range <>) of BaseServiceReference_Access_Array_Access;
+   type BaseServiceReference_Access_Array_Access_Array_Access is access all BaseServiceReference_Access_Array_Access_Array;
 
-   type BaseServiceReference is new ServiceReference with null record;
+   type BaseServiceReference is new Java_Object and ServiceReference with null record;
 
    procedure Initialize (This : in out BaseServiceReference'Class);
    function Create return BaseServiceReference_Access;
@@ -39,6 +41,8 @@ package org.osgi.framework.BaseServiceReference_Package is
    function getPropertyKeys (This : in out BaseServiceReference) return Unbounded_String_Array_Access;
    function compareTo (This : in out BaseServiceReference; o_Param : access Java_Object'Class) return Integer;
    procedure compareTo (This : in out BaseServiceReference; o_Param : access Java_Object'Class);
+   function compareTo (This : in out BaseServiceReference; Value : Unbounded_String) return Integer;
+   procedure compareTo (This : in out BaseServiceReference; Value : Unbounded_String);
 
 end org.osgi.framework.BaseServiceReference_Package;
 

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.java.help.JavaHelpUtil_Package; use org.allbinary.logic.java.help.JavaHelpUtil_Package;
+
 package body org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package is
 
+   package JavaHelpUtil_Package renames Standard.org.allbinary.logic.java.help.JavaHelpUtil_Package;
    procedure Initialize_Fields (This : in out AbstractInputAutomationFactory'Class) is
    begin
       null;

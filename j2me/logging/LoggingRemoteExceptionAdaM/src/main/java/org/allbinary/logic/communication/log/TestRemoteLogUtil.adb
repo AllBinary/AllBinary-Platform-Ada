@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+
 package body org.allbinary.logic.communication.log.TestRemoteLogUtil_Package is
 
+   package Globals_Package renames Standard.org.allbinary.globals.Globals_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out TestRemoteLogUtil'Class) is
    begin
       null;

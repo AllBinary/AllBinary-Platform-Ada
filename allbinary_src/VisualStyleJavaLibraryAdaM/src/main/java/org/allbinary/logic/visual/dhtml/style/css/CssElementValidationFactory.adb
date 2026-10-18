@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package;
+
 package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package is
 
    procedure Initialize_Fields (This : in out CssElementValidationFactory'Class) is

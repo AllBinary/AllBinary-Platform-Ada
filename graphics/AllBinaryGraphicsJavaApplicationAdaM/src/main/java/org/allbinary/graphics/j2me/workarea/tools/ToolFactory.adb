@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
+
 package body org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package is
 
+   package StatusFactory_Package renames Standard.org.allbinary.graphics.j2me.StatusFactory_Package;
    procedure Initialize_Fields (This : in out ToolFactory'Class) is
    begin
       null;

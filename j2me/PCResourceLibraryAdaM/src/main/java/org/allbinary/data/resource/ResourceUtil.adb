@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.data.resource.ResourceUtil_Package is
 
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out ResourceUtil'Class) is
    begin
       null;
@@ -73,11 +82,11 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
       inputStream : InputStream_Access;
       byteArray : Short_Short_Integer_Array_Access;
    begin
-        inputStream := FileInputStream_Package.Create (StringMaker_Package.Create.append (This.path).append (resource).append (This.ext).toString);
+        inputStream := InputStream_Access (FileInputStream_Package.Create (StringMaker_Package.Create.append (This.path).append (resource).append (This.ext).toString));
         if (inputStream) /= (null) then
             byteArray := new Short_Short_Integer_Array'(0 .. (inputStream.available) - 1 => 0);
             StreamUtil_Package.getInstance.getByteArray (inputStream, ByteArrayOutputStream_Package.Create, byteArray);
-            return ByteArrayInputStream_Package.Create (byteArray);
+            return InputStream_Access (ByteArrayInputStream_Package.Create (byteArray));
         end if;
         return inputStream;
    end getResourceAsStreamAtStart;

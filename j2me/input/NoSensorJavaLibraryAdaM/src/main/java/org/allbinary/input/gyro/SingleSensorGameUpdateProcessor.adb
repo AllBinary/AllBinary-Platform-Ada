@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
 
    procedure Initialize_Fields (This : in out SingleSensorGameUpdateProcessor'Class) is
@@ -46,6 +47,16 @@ package body org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         null;
+   end sendNotifications;
+
+   procedure process (This : in out SingleSensorGameUpdateProcessor; Value : Unbounded_String) is
+   begin
+      SingleSensorGameUpdateProcessor'Class (This).process (Java_Box (Value));
+   end process;
+
+   procedure sendNotifications (This : in out SingleSensorGameUpdateProcessor; Value : Unbounded_String) is
+   begin
+      SingleSensorGameUpdateProcessor'Class (This).sendNotifications (Java_Box (Value));
    end sendNotifications;
 
 end org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package;

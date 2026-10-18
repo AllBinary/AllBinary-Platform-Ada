@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.view.ViewPosition_Package is
 
    procedure Initialize_Fields (This : in out ViewPosition'Class) is
@@ -74,6 +75,11 @@ package body org.allbinary.view.ViewPosition_Package is
       allbinaryLayer : constant Java_Object_Access := Java_Object_Access (allbinaryLayer_Param);
    begin
         This.allbinaryLayer := AllBinaryLayer_Access (allbinaryLayer);
+   end setAllbinaryLayer;
+
+   procedure setAllbinaryLayer (This : in out ViewPosition; Value : Unbounded_String) is
+   begin
+      ViewPosition'Class (This).setAllbinaryLayer (Java_Box (Value));
    end setAllbinaryLayer;
 
 end org.allbinary.view.ViewPosition_Package;

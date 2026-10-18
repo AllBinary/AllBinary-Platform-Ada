@@ -23,17 +23,14 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Arrays_Package; use java.util.Arrays_Package;
 with org.allbinary.business.category.CategoryView_Package; use org.allbinary.business.category.CategoryView_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.logic.visual.theme.ThemeValidation_Package; use org.allbinary.logic.visual.theme.ThemeValidation_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
-with org.allbinary.business.category.store.theme.ThemeComparator_Package; use org.allbinary.business.category.store.theme.ThemeComparator_Package;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package is
 
    package CategoryView_Package renames Standard.org.allbinary.business.category.CategoryView_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package ThemeValidation_Package renames Standard.org.allbinary.logic.visual.theme.ThemeValidation_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -41,6 +38,8 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryView_Packa
    type StoreThemeCategoryView_Access is access all StoreThemeCategoryView'Class;
    type StoreThemeCategoryView_Access_Array is array (Natural range <>) of StoreThemeCategoryView_Access;
    type StoreThemeCategoryView_Access_Array_Access is access all StoreThemeCategoryView_Access_Array;
+   type StoreThemeCategoryView_Access_Array_Access_Array is array (Natural range <>) of StoreThemeCategoryView_Access_Array_Access;
+   type StoreThemeCategoryView_Access_Array_Access_Array_Access is access all StoreThemeCategoryView_Access_Array_Access_Array;
 
    type StoreThemeCategoryView is new CategoryView and DomNodeInterface with null record;
 

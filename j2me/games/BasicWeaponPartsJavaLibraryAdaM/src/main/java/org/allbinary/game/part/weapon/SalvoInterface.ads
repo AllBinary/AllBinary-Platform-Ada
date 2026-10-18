@@ -34,6 +34,8 @@ package org.allbinary.game.part.weapon.SalvoInterface_Package is
    type SalvoInterface_Access is access all SalvoInterface'Class;
    type SalvoInterface_Access_Array is array (Natural range <>) of SalvoInterface_Access;
    type SalvoInterface_Access_Array_Access is access all SalvoInterface_Access_Array;
+   type SalvoInterface_Access_Array_Access_Array is array (Natural range <>) of SalvoInterface_Access_Array_Access;
+   type SalvoInterface_Access_Array_Access_Array_Access is access all SalvoInterface_Access_Array_Access_Array;
    procedure process (This : in out SalvoInterface; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; angle : Short_Integer; otherAngle : Short_Integer) is abstract;
    procedure processScore (This : in out SalvoInterface; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; angle : Short_Integer; otherAngle : Short_Integer; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface_Package.ScoreableInterface'Class) is abstract;
 

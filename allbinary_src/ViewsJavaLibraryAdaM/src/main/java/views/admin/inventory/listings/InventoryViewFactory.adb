@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with views.generic_Id.inventory.InventorySearch_Package; use views.generic_Id.inventory.InventorySearch_Package;
+
 package body views.admin.inventory.listings.InventoryViewFactory_Package is
 
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package InventorySearch_Package renames Standard.views.generic_Id.inventory.InventorySearch_Package;
    procedure Initialize_Fields (This : in out InventoryViewFactory'Class) is
    begin
       null;
@@ -42,7 +51,7 @@ package body views.admin.inventory.listings.InventoryViewFactory_Package is
    begin
         logUtil := LogUtil_Package.getInstance;
         begin
-            return InventorySearch_Package.Create (searchRequest);
+            return InventoryViewSearchInterface_Access (InventorySearch_Package.Create (searchRequest));
         exception
             when Java_Occurrence : others =>
                 declare

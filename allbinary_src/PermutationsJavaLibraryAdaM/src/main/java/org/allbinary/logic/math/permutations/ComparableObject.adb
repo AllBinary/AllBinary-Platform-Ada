@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+
 package body org.allbinary.logic.math.permutations.ComparableObject_Package is
 
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    procedure Initialize_Fields (This : in out ComparableObject'Class) is
    begin
       null;
@@ -46,6 +49,18 @@ package body org.allbinary.logic.math.permutations.ComparableObject_Package is
 
    procedure compareTo (This : in out ComparableObject; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Integer := ComparableObject'Class (This).compareTo (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end compareTo;
+
+   function compareTo (This : in out ComparableObject; Value : Unbounded_String) return Integer is
+   begin
+      return ComparableObject'Class (This).compareTo (Java_Box (Value));
+   end compareTo;
+
+   procedure compareTo (This : in out ComparableObject; Value : Unbounded_String) is
+      Java_Result : constant Integer := ComparableObject'Class (This).compareTo (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

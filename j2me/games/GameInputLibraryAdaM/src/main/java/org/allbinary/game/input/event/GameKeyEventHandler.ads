@@ -37,6 +37,8 @@ package org.allbinary.game.input.event.GameKeyEventHandler_Package is
    type GameKeyEventHandler_Access is access all GameKeyEventHandler'Class;
    type GameKeyEventHandler_Access_Array is array (Natural range <>) of GameKeyEventHandler_Access;
    type GameKeyEventHandler_Access_Array_Access is access all GameKeyEventHandler_Access_Array;
+   type GameKeyEventHandler_Access_Array_Access_Array is array (Natural range <>) of GameKeyEventHandler_Access_Array_Access;
+   type GameKeyEventHandler_Access_Array_Access_Array_Access is access all GameKeyEventHandler_Access_Array_Access_Array;
 
    type GameKeyEventHandler is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -29,6 +29,8 @@ package javax.microedition.lcdui.PreLoadPlatformImage_Package is
    type PreLoadPlatformImage_Access is access all PreLoadPlatformImage'Class;
    type PreLoadPlatformImage_Access_Array is array (Natural range <>) of PreLoadPlatformImage_Access;
    type PreLoadPlatformImage_Access_Array_Access is access all PreLoadPlatformImage_Access_Array;
+   type PreLoadPlatformImage_Access_Array_Access_Array is array (Natural range <>) of PreLoadPlatformImage_Access_Array_Access;
+   type PreLoadPlatformImage_Access_Array_Access_Array_Access is access all PreLoadPlatformImage_Access_Array_Access_Array;
 
    type PreLoadPlatformImage is new PlatformImage with null record;
    instance : PreLoadPlatformImage_Access;

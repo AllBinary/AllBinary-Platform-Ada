@@ -21,14 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
-with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
-with org.allbinary.graphics.RectangleFactory_Package; use org.allbinary.graphics.RectangleFactory_Package;
 with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package;
@@ -36,14 +31,9 @@ with org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryIn
 package org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package is
 
    package BasicAnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
-   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
-   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
-   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
    package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
@@ -51,8 +41,10 @@ package org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryIn
    type BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access is access all BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class;
    type BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array is array (Natural range <>) of BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access;
    type BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access is access all BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array;
+   type BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access;
+   type BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array_Access is access all BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array;
 
-   type BaseResourceAnimationInterfaceFactoryInterfaceFactory is new FeatureResourceAnimationInterfaceFactoryInterface with record
+   type BaseResourceAnimationInterfaceFactoryInterfaceFactory is new Java_Object and FeatureResourceAnimationInterfaceFactoryInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       hashtable : ABHashtable_Access;

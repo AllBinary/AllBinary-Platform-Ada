@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
@@ -34,7 +33,6 @@ package views.admin.storefront.statistics.ValidationStoreFrontStatisticsView_Pac
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -43,6 +41,8 @@ package views.admin.storefront.statistics.ValidationStoreFrontStatisticsView_Pac
    type ValidationStoreFrontStatisticsView_Access is access all ValidationStoreFrontStatisticsView'Class;
    type ValidationStoreFrontStatisticsView_Access_Array is array (Natural range <>) of ValidationStoreFrontStatisticsView_Access;
    type ValidationStoreFrontStatisticsView_Access_Array_Access is access all ValidationStoreFrontStatisticsView_Access_Array;
+   type ValidationStoreFrontStatisticsView_Access_Array_Access_Array is array (Natural range <>) of ValidationStoreFrontStatisticsView_Access_Array_Access;
+   type ValidationStoreFrontStatisticsView_Access_Array_Access_Array_Access is access all ValidationStoreFrontStatisticsView_Access_Array_Access_Array;
 
    type ValidationStoreFrontStatisticsView is new StoreFrontStatisticsComponent and ValidationComponentInterface with record
       logUtil : LogUtil_Access;

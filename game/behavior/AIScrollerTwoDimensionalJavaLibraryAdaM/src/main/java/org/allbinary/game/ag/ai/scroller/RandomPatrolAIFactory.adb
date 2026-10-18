@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package; use org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package;
+
 package body org.allbinary.game.ag.ai.scroller.RandomPatrolAIFactory_Package is
 
    procedure Initialize_Fields (This : in out RandomPatrolAIFactory'Class) is
@@ -39,7 +41,7 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolAIFactory_Package is
       ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
       gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
    begin
-        return RandomPatrolAI_Package.Create (hashtable, ownerLayerInterface, gameInput);
+        return ArtificialIntelligenceInterface_Access (RandomPatrolAI_Package.Create (hashtable, ownerLayerInterface, gameInput));
    end getInstance;
 
    procedure getInstance (This : in out RandomPatrolAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is

@@ -38,6 +38,8 @@ package org.allbinary.game.displayable.canvas.PopupCommandFormInputProcessor_Pac
    type PopupCommandFormInputProcessor_Access is access all PopupCommandFormInputProcessor'Class;
    type PopupCommandFormInputProcessor_Access_Array is array (Natural range <>) of PopupCommandFormInputProcessor_Access;
    type PopupCommandFormInputProcessor_Access_Array_Access is access all PopupCommandFormInputProcessor_Access_Array;
+   type PopupCommandFormInputProcessor_Access_Array_Access_Array is array (Natural range <>) of PopupCommandFormInputProcessor_Access_Array_Access;
+   type PopupCommandFormInputProcessor_Access_Array_Access_Array_Access is access all PopupCommandFormInputProcessor_Access_Array_Access_Array;
 
    type PopupCommandFormInputProcessor is new CommandFormInputProcessor with null record;
 

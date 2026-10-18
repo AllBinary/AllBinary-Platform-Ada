@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.game.layer.unit.UnitWaypointStrings_Package is
 
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out UnitWaypointStrings'Class) is
    begin
       null;

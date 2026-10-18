@@ -13,13 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+
 package body org.allbinary.canvas.GameGlobalsFactory_Package is
 
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    procedure Initialize_Fields (This : in out GameGlobalsFactory'Class) is
    begin
       null;
       This.newCanvas := True;
-      This.newDisplaybleTime := Long_Long_Integer (Integer_Package.MIN_VALUE);
+      This.newDisplaybleTime := Long_Long_Integer (Integer'First);
       This.point := PointFactory_Package.getInstance.ZERO_ZERO;
    end Initialize_Fields;
 

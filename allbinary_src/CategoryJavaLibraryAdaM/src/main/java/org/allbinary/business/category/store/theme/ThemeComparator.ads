@@ -29,8 +29,10 @@ package org.allbinary.business.category.store.theme.ThemeComparator_Package is
    type ThemeComparator_Access is access all ThemeComparator'Class;
    type ThemeComparator_Access_Array is array (Natural range <>) of ThemeComparator_Access;
    type ThemeComparator_Access_Array_Access is access all ThemeComparator_Access_Array;
+   type ThemeComparator_Access_Array_Access_Array is array (Natural range <>) of ThemeComparator_Access_Array_Access;
+   type ThemeComparator_Access_Array_Access_Array_Access is access all ThemeComparator_Access_Array_Access_Array;
 
-   type ThemeComparator is new Comparator with null record;
+   type ThemeComparator is new Java_Object and Comparator with null record;
 
    procedure Initialize (This : in out ThemeComparator'Class);
    function Create return ThemeComparator_Access;

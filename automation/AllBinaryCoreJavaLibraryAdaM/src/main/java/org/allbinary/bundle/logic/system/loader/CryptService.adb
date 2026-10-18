@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.gui.dialog.BasicTextJDialog_Package; use org.allbinary.gui.dialog.BasicTextJDialog_Package;
+with org.allbinary.gui.dialog.ExitCloseListener_Package; use org.allbinary.gui.dialog.ExitCloseListener_Package;
+with org.allbinary.logic.system.security.AbKeys_Package; use org.allbinary.logic.system.security.AbKeys_Package;
+with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory_Package;
+with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
 
+   package Globals_Package renames Standard.org.allbinary.globals.Globals_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package BasicTextJDialog_Package renames Standard.org.allbinary.gui.dialog.BasicTextJDialog_Package;
+   package ExitCloseListener_Package renames Standard.org.allbinary.gui.dialog.ExitCloseListener_Package;
+   package AbKeys_Package renames Standard.org.allbinary.logic.system.security.AbKeys_Package;
+   package AbeLicenseInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
+   package AbeLicenseInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory_Package;
+   package AbeNoLicense_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out CryptService'Class) is
    begin
       null;
@@ -28,7 +47,7 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
    begin
       Initialize_Fields (This);
         Globals_Package.getInstance.init (This.all'Tag.getClassLoader, To_Unbounded_String ("./"));
-        This.logUtil.putF (To_Unbounded_String ("Set Globals: ") & Java_Image (URLGLOBALS.getWebappPath), CryptService_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("Set Globals: ") & Java_Image (URLGLOBALS_Package.getWebappPath), CryptService_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
    function Create return CryptService_Access is
@@ -47,7 +66,7 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
         begin
             key := AbKeys_Package.getInstance.getKey (abeClientInformation, name);
             decrypted := This.abCryptUtil.decrypt (inputStream, key);
-            return ByteArrayInputStream_Package.Create (decrypted);
+            return InputStream_Access (ByteArrayInputStream_Package.Create (decrypted));
         exception
             when Java_Occurrence : others =>
                 declare

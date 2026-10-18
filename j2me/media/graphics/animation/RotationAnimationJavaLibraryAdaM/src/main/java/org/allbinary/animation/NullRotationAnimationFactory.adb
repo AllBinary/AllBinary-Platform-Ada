@@ -13,13 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+
 package body org.allbinary.animation.NullRotationAnimationFactory_Package is
 
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
    procedure Initialize_Fields (This : in out NullRotationAnimationFactory'Class) is
    begin
       null;
       This.NULL_ROTATION_ANIMATION_ARRAY := new RotationAnimation_Access_Array'(0 .. (0) - 1 => null);
-      This.NULL_ANIMATION := NullRotationAnimation2_Package.Create;
+      This.NULL_ANIMATION := Animation_Access (NullRotationAnimation2_Package.Create);
    end Initialize_Fields;
 
 
@@ -80,8 +88,16 @@ begin
 end org.allbinary.animation.NullRotationAnimationFactory_Package;
 
 
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+
 package body org.allbinary.animation.NullRotationAnimation2_Package is
 
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
    procedure Initialize_Fields (This : in out NullRotationAnimation2'Class) is
    begin
       null;

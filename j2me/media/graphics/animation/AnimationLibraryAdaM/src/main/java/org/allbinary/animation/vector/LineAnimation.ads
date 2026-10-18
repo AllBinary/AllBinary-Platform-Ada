@@ -25,7 +25,6 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.ColorCompositeInterface_Package; use org.allbinary.graphics.color.ColorCompositeInterface_Package;
 with org.allbinary.layer.PositionInterface_Package; use org.allbinary.layer.PositionInterface_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 
 package org.allbinary.animation.vector.LineAnimation_Package is
 
@@ -34,12 +33,13 @@ package org.allbinary.animation.vector.LineAnimation_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package ColorCompositeInterface_Package renames Standard.org.allbinary.graphics.color.ColorCompositeInterface_Package;
    package PositionInterface_Package renames Standard.org.allbinary.layer.PositionInterface_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type LineAnimation is tagged;
    type LineAnimation_Access is access all LineAnimation'Class;
    type LineAnimation_Access_Array is array (Natural range <>) of LineAnimation_Access;
    type LineAnimation_Access_Array_Access is access all LineAnimation_Access_Array;
+   type LineAnimation_Access_Array_Access_Array is array (Natural range <>) of LineAnimation_Access_Array_Access;
+   type LineAnimation_Access_Array_Access_Array_Access is access all LineAnimation_Access_Array_Access_Array;
 
    type LineAnimation is new Animation and ColorCompositeInterface and PositionInterface with record
       newLine : Integer_Array_Access_Array_Access;

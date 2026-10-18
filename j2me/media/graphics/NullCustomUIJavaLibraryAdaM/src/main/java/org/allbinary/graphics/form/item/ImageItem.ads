@@ -16,6 +16,8 @@ package org.allbinary.graphics.form.item.ImageItem_Package is
    type ImageItem_Access is access all ImageItem'Class;
    type ImageItem_Access_Array is array (Natural range <>) of ImageItem_Access;
    type ImageItem_Access_Array_Access is access all ImageItem_Access_Array;
+   type ImageItem_Access_Array_Access_Array is array (Natural range <>) of ImageItem_Access_Array_Access;
+   type ImageItem_Access_Array_Access_Array_Access is access all ImageItem_Access_Array_Access_Array;
 
    type ImageItem is new Java_Object with null record;
 

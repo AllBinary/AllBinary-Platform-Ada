@@ -28,6 +28,8 @@ package org.allbinary.business.user.UsersData_Package is
    type UsersData_Access is access all UsersData'Class;
    type UsersData_Access_Array is array (Natural range <>) of UsersData_Access;
    type UsersData_Access_Array_Access is access all UsersData_Access_Array;
+   type UsersData_Access_Array_Access_Array is array (Natural range <>) of UsersData_Access_Array_Access;
+   type UsersData_Access_Array_Access_Array_Access is access all UsersData_Access_Array_Access_Array;
 
    type UsersData is new Java_Object with null record;
    NAME : Unbounded_String;

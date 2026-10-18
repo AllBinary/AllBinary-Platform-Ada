@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package;
+
 package body org.allbinary.business.context.modules.storefronts.BasicStoreFrontsEntity_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out BasicStoreFrontsEntity'Class) is
    begin
       null;

@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
 
@@ -30,15 +29,16 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
 
    type PaymentGatewayEncryptedMapping is tagged;
    type PaymentGatewayEncryptedMapping_Access is access all PaymentGatewayEncryptedMapping'Class;
    type PaymentGatewayEncryptedMapping_Access_Array is array (Natural range <>) of PaymentGatewayEncryptedMapping_Access;
    type PaymentGatewayEncryptedMapping_Access_Array_Access is access all PaymentGatewayEncryptedMapping_Access_Array;
+   type PaymentGatewayEncryptedMapping_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayEncryptedMapping_Access_Array_Access;
+   type PaymentGatewayEncryptedMapping_Access_Array_Access_Array_Access is access all PaymentGatewayEncryptedMapping_Access_Array_Access_Array;
 
-   type PaymentGatewayEncryptedMapping is new TableMappingInterface with record
+   type PaymentGatewayEncryptedMapping is new Java_Object and TableMappingInterface with record
       paymentGatewayInterface : PaymentGatewayInterface_Access;
    end record;
 

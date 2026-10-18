@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.image.ImageStrings_Package is
 
    procedure Initialize_Fields (This : in out ImageStrings'Class) is

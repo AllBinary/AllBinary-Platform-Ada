@@ -32,6 +32,8 @@ package org.allbinary.game.input.RTSLayerFormFactoryInterface_Package is
    type RTSLayerFormFactoryInterface_Access is access all RTSLayerFormFactoryInterface'Class;
    type RTSLayerFormFactoryInterface_Access_Array is array (Natural range <>) of RTSLayerFormFactoryInterface_Access;
    type RTSLayerFormFactoryInterface_Access_Array_Access is access all RTSLayerFormFactoryInterface_Access_Array;
+   type RTSLayerFormFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of RTSLayerFormFactoryInterface_Access_Array_Access;
+   type RTSLayerFormFactoryInterface_Access_Array_Access_Array_Access is access all RTSLayerFormFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out RTSLayerFormFactoryInterface; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) return ScrollSelectionForm_Access is abstract;
 
 end org.allbinary.game.input.RTSLayerFormFactoryInterface_Package;

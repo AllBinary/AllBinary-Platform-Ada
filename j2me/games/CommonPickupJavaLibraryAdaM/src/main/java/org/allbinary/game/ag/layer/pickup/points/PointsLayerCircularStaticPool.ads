@@ -20,15 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.score.ScoreableInterface_Package; use org.allbinary.game.score.ScoreableInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.layer.AllBinaryLayerCircularPool_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
-with org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package; use org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package;
 
 package org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStaticPool_Package is
 
-   package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerCircularPool_Package renames Standard.org.allbinary.layer.AllBinaryLayerCircularPool_Package;
    package AllBinaryLayerFactoryInterface_Package renames Standard.org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
@@ -37,6 +34,8 @@ package org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStaticPool_
    type PointsLayerCircularStaticPool_Access is access all PointsLayerCircularStaticPool'Class;
    type PointsLayerCircularStaticPool_Access_Array is array (Natural range <>) of PointsLayerCircularStaticPool_Access;
    type PointsLayerCircularStaticPool_Access_Array_Access is access all PointsLayerCircularStaticPool_Access_Array;
+   type PointsLayerCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of PointsLayerCircularStaticPool_Access_Array_Access;
+   type PointsLayerCircularStaticPool_Access_Array_Access_Array_Access is access all PointsLayerCircularStaticPool_Access_Array_Access_Array;
 
    type PointsLayerCircularStaticPool is new AllBinaryLayerCircularPool with null record;
 

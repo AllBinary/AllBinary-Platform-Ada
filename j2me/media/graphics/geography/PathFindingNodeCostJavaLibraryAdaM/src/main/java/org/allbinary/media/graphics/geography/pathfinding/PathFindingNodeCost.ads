@@ -20,25 +20,23 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
-with org.allbinary.media.graphics.geography.pathfinding.Comparable_Package; use org.allbinary.media.graphics.geography.pathfinding.Comparable_Package;
+with java.lang.Comparable_Package; use java.lang.Comparable_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type PathFindingNodeCost is tagged;
    type PathFindingNodeCost_Access is access all PathFindingNodeCost'Class;
    type PathFindingNodeCost_Access_Array is array (Natural range <>) of PathFindingNodeCost_Access;
    type PathFindingNodeCost_Access_Array_Access is access all PathFindingNodeCost_Access_Array;
+   type PathFindingNodeCost_Access_Array_Access_Array is array (Natural range <>) of PathFindingNodeCost_Access_Array_Access;
+   type PathFindingNodeCost_Access_Array_Access_Array_Access is access all PathFindingNodeCost_Access_Array_Access_Array;
 
    type PathFindingNodeCost is new PathFindingNode and Comparable with record
       commonSeps : CommonSeps_Access;

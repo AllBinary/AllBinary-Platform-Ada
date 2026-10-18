@@ -20,16 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
-with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
 
 package org.allbinary.data.tree.dom.DomNodeHelper_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
@@ -37,6 +32,8 @@ package org.allbinary.data.tree.dom.DomNodeHelper_Package is
    type DomNodeHelper_Access is access all DomNodeHelper'Class;
    type DomNodeHelper_Access_Array is array (Natural range <>) of DomNodeHelper_Access;
    type DomNodeHelper_Access_Array_Access is access all DomNodeHelper_Access_Array;
+   type DomNodeHelper_Access_Array_Access_Array is array (Natural range <>) of DomNodeHelper_Access_Array_Access;
+   type DomNodeHelper_Access_Array_Access_Array_Access is access all DomNodeHelper_Access_Array_Access_Array;
 
    type DomNodeHelper is new Java_Object with null record;
 

@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.input.analog.AnalogLocationInput_Package is
 
    procedure Initialize_Fields (This : in out AnalogLocationInput'Class) is

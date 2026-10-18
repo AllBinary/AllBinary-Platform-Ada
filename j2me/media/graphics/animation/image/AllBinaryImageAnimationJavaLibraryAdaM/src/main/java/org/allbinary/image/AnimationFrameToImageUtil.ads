@@ -20,14 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
 
 package org.allbinary.image.AnimationFrameToImageUtil_Package is
 
-   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
 
@@ -35,6 +32,8 @@ package org.allbinary.image.AnimationFrameToImageUtil_Package is
    type AnimationFrameToImageUtil_Access is access all AnimationFrameToImageUtil'Class;
    type AnimationFrameToImageUtil_Access_Array is array (Natural range <>) of AnimationFrameToImageUtil_Access;
    type AnimationFrameToImageUtil_Access_Array_Access is access all AnimationFrameToImageUtil_Access_Array;
+   type AnimationFrameToImageUtil_Access_Array_Access_Array is array (Natural range <>) of AnimationFrameToImageUtil_Access_Array_Access;
+   type AnimationFrameToImageUtil_Access_Array_Access_Array_Access is access all AnimationFrameToImageUtil_Access_Array_Access_Array;
 
    type AnimationFrameToImageUtil is new Java_Object with null record;
    instance : AnimationFrameToImageUtil_Access;

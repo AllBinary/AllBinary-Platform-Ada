@@ -29,6 +29,8 @@ package org.allbinary.game.midlet.LicenseLoadingTypeFactory_Package is
    type LicenseLoadingTypeFactory_Access is access all LicenseLoadingTypeFactory'Class;
    type LicenseLoadingTypeFactory_Access_Array is array (Natural range <>) of LicenseLoadingTypeFactory_Access;
    type LicenseLoadingTypeFactory_Access_Array_Access is access all LicenseLoadingTypeFactory_Access_Array;
+   type LicenseLoadingTypeFactory_Access_Array_Access_Array is array (Natural range <>) of LicenseLoadingTypeFactory_Access_Array_Access;
+   type LicenseLoadingTypeFactory_Access_Array_Access_Array_Access is access all LicenseLoadingTypeFactory_Access_Array_Access_Array;
 
    type LicenseLoadingTypeFactory is new Java_Object with record
       INITIAL_LOADING : LicenseLoadingType_Access;

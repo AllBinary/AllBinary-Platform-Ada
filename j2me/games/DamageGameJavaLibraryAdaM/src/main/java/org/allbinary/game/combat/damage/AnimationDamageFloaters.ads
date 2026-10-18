@@ -22,31 +22,25 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
-with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
-with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.game.combat.damage.DamageFloaters_Package; use org.allbinary.game.combat.damage.DamageFloaters_Package;
 
 package org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
-   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
-   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
-   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type AnimationDamageFloaters is tagged;
    type AnimationDamageFloaters_Access is access all AnimationDamageFloaters'Class;
    type AnimationDamageFloaters_Access_Array is array (Natural range <>) of AnimationDamageFloaters_Access;
    type AnimationDamageFloaters_Access_Array_Access is access all AnimationDamageFloaters_Access_Array;
+   type AnimationDamageFloaters_Access_Array_Access_Array is array (Natural range <>) of AnimationDamageFloaters_Access_Array_Access;
+   type AnimationDamageFloaters_Access_Array_Access_Array_Access is access all AnimationDamageFloaters_Access_Array_Access_Array;
 
    type AnimationDamageFloaters is new DamageFloaters with record
       logUtil : LogUtil_Access;

@@ -16,6 +16,8 @@ package org.allbinary.logic.control.crypt.SuperCrypt_Package is
    type SuperCrypt_Access is access all SuperCrypt'Class;
    type SuperCrypt_Access_Array is array (Natural range <>) of SuperCrypt_Access;
    type SuperCrypt_Access_Array_Access is access all SuperCrypt_Access_Array;
+   type SuperCrypt_Access_Array_Access_Array is array (Natural range <>) of SuperCrypt_Access_Array_Access;
+   type SuperCrypt_Access_Array_Access_Array_Access is access all SuperCrypt_Access_Array_Access_Array;
 
    type SuperCrypt is new Java_Object with null record;
    KEYMAX : Integer;

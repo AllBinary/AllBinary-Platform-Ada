@@ -32,6 +32,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
    type GenericProfileDataWorkerTypeInterface_Access is access all GenericProfileDataWorkerTypeInterface'Class;
    type GenericProfileDataWorkerTypeInterface_Access_Array is array (Natural range <>) of GenericProfileDataWorkerTypeInterface_Access;
    type GenericProfileDataWorkerTypeInterface_Access_Array_Access is access all GenericProfileDataWorkerTypeInterface_Access_Array;
+   type GenericProfileDataWorkerTypeInterface_Access_Array_Access_Array is array (Natural range <>) of GenericProfileDataWorkerTypeInterface_Access_Array_Access;
+   type GenericProfileDataWorkerTypeInterface_Access_Array_Access_Array_Access is access all GenericProfileDataWorkerTypeInterface_Access_Array_Access_Array;
    function getName (This : in out GenericProfileDataWorkerTypeInterface) return Unbounded_String is abstract;
    procedure setName (This : in out GenericProfileDataWorkerTypeInterface; name : Unbounded_String) is abstract;
    function toString (This : in out GenericProfileDataWorkerTypeInterface) return Unbounded_String is abstract;

@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleData_Package; use org.allbinary.input.automation.module.InputAutomationModuleData_Package;
+with org.allbinary.input.automation.module.NewInputAutomationModulesData_Package; use org.allbinary.input.automation.module.NewInputAutomationModulesData_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+
 package body org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package is
 
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package InputAutomationModuleData_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleData_Package;
+   package NewInputAutomationModulesData_Package renames Standard.org.allbinary.input.automation.module.NewInputAutomationModulesData_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out InputAutomationModuleConfigurations'Class) is
    begin
       null;
@@ -43,7 +54,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         idFile := FileInputStream_Package.Create (file);
         length := idFile.read (bytes);
         data := Java_New_String (bytes);
-        endIndex := data.lastIndexOf ('>');
+        endIndex := Java_Last_Index_Of (data, Java_Image ('>'));
         document := DomDocumentHelper_Package.create (Unbounded_Slice (data, (0) + 1, (endIndex) + (1)));
         nodeList := document.getElementsByTagName (NewInputAutomationModulesData_Package.NAME);
         if (nodeList.getLength) > (0) then

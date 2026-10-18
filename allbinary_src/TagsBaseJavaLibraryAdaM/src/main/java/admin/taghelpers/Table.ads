@@ -31,8 +31,10 @@ package admin.taghelpers.Table_Package is
    type Table_Access is access all Table'Class;
    type Table_Access_Array is array (Natural range <>) of Table_Access;
    type Table_Access_Array_Access is access all Table_Access_Array;
+   type Table_Access_Array_Access_Array is array (Natural range <>) of Table_Access_Array_Access;
+   type Table_Access_Array_Access_Array_Access is access all Table_Access_Array_Access_Array;
 
-   type Table is new TableInterface with record
+   type Table is new Java_Object and TableInterface with record
       commonStrings : CommonStrings_Access;
    end record;
 

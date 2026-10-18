@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with com.google.gwt.i18n.client.DateTimeFormat_Package; use com.google.gwt.i18n.client.DateTimeFormat_Package;
+with java.util.Date_Package; use java.util.Date_Package;
+
 package body org.allbinary.time.TimeStampUtil_Package is
 
+   package DateTimeFormat_Package renames Standard.com.google.gwt.i18n.client.DateTimeFormat_Package;
+   package Date_Package renames Standard.java.util.Date_Package;
    procedure Initialize_Fields (This : in out TimeStampUtil'Class) is
    begin
       null;

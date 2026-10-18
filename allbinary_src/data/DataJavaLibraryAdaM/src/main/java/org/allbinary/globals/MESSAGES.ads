@@ -28,6 +28,8 @@ package org.allbinary.globals.MESSAGES_Package is
    type MESSAGES_Access is access all MESSAGES'Class;
    type MESSAGES_Access_Array is array (Natural range <>) of MESSAGES_Access;
    type MESSAGES_Access_Array_Access is access all MESSAGES_Access_Array;
+   type MESSAGES_Access_Array_Access_Array is array (Natural range <>) of MESSAGES_Access_Array_Access;
+   type MESSAGES_Access_Array_Access_Array_Access is access all MESSAGES_Access_Array_Access_Array;
 
    type MESSAGES is new Java_Object with null record;
    CONTACTADMIN : Unbounded_String;

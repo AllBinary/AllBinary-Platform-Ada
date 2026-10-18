@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
+with org.allbinary.data.generator.ProductIdGenerator_Package; use org.allbinary.data.generator.ProductIdGenerator_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+
 package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
+   package ProductIdGenerator_Package renames Standard.org.allbinary.data.generator.ProductIdGenerator_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
    procedure Initialize_Fields (This : in out BasicItem'Class) is
    begin
       null;
@@ -511,7 +530,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
             This.logUtil.putF (This.commonStrings.START, BasicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("toVector"));
         end if;
-        values := BasicArrayListD_Package.Create;
+        values := BasicArrayList_Access (BasicArrayListD_Package.Create);
         values.add (This.itemId);
         values.add (This.number);
         values.add (This.inBaskets);

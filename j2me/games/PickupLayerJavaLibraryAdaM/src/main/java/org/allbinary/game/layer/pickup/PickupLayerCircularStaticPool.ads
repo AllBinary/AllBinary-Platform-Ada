@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.layer.AllBinaryLayerCircularPool_Package;
-with org.allbinary.game.layer.pickup.PickupLayer_Package; use org.allbinary.game.layer.pickup.PickupLayer_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
 
@@ -33,6 +32,8 @@ package org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package is
    type PickupLayerCircularStaticPool_Access is access all PickupLayerCircularStaticPool'Class;
    type PickupLayerCircularStaticPool_Access_Array is array (Natural range <>) of PickupLayerCircularStaticPool_Access;
    type PickupLayerCircularStaticPool_Access_Array_Access is access all PickupLayerCircularStaticPool_Access_Array;
+   type PickupLayerCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of PickupLayerCircularStaticPool_Access_Array_Access;
+   type PickupLayerCircularStaticPool_Access_Array_Access_Array_Access is access all PickupLayerCircularStaticPool_Access_Array_Access_Array;
 
    type PickupLayerCircularStaticPool is new AllBinaryLayerCircularPool with null record;
    SINGLETON : PickupLayerCircularStaticPool_Access;

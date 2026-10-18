@@ -22,8 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.GameKeyEventSourceInterface_Package; use org.allbinary.game.input.GameKeyEventSourceInterface_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 
@@ -31,14 +29,14 @@ package org.allbinary.game.input.event.GameKeyEventFactory_Package is
 
    package GameKeyEventSourceInterface_Package renames Standard.org.allbinary.game.input.GameKeyEventSourceInterface_Package;
    package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
-   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type GameKeyEventFactory is tagged;
    type GameKeyEventFactory_Access is access all GameKeyEventFactory'Class;
    type GameKeyEventFactory_Access_Array is array (Natural range <>) of GameKeyEventFactory_Access;
    type GameKeyEventFactory_Access_Array_Access is access all GameKeyEventFactory_Access_Array;
+   type GameKeyEventFactory_Access_Array_Access_Array is array (Natural range <>) of GameKeyEventFactory_Access_Array_Access;
+   type GameKeyEventFactory_Access_Array_Access_Array_Access is access all GameKeyEventFactory_Access_Array_Access_Array;
 
    type GameKeyEventFactory is new Java_Object with record
       logUtil : LogUtil_Access;

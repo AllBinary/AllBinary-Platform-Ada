@@ -29,6 +29,8 @@ package javax.microedition.lcdui.ChoiceGroupImageFactory_Package is
    type ChoiceGroupImageFactory_Access is access all ChoiceGroupImageFactory'Class;
    type ChoiceGroupImageFactory_Access_Array is array (Natural range <>) of ChoiceGroupImageFactory_Access;
    type ChoiceGroupImageFactory_Access_Array_Access is access all ChoiceGroupImageFactory_Access_Array;
+   type ChoiceGroupImageFactory_Access_Array_Access_Array is array (Natural range <>) of ChoiceGroupImageFactory_Access_Array_Access;
+   type ChoiceGroupImageFactory_Access_Array_Access_Array_Access is access all ChoiceGroupImageFactory_Access_Array_Access_Array;
 
    type ChoiceGroupImageFactory is new Java_Object with record
       multiOff : Short_Short_Integer_Array_Access;

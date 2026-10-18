@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.logic.communication.http.HttpData_Package is
 
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type HttpData is tagged;
    type HttpData_Access is access all HttpData'Class;
    type HttpData_Access_Array is array (Natural range <>) of HttpData_Access;
    type HttpData_Access_Array_Access is access all HttpData_Access_Array;
+   type HttpData_Access_Array_Access_Array is array (Natural range <>) of HttpData_Access_Array_Access;
+   type HttpData_Access_Array_Access_Array_Access is access all HttpData_Access_Array_Access_Array;
 
    type HttpData is new Java_Object with record
       EQUALS : Unbounded_String;

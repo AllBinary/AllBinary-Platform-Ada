@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+with org.allbinary.animation.caption.CaptionAnimation_Package; use org.allbinary.animation.caption.CaptionAnimation_Package;
+
 package body org.allbinary.animation.caption.CaptionAnimationHelper_Package is
 
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    procedure Initialize_Fields (This : in out CaptionAnimationHelper'Class) is
    begin
       null;
@@ -30,7 +40,7 @@ package body org.allbinary.animation.caption.CaptionAnimationHelper_Package is
    begin
       CaptionAnimationHelperBase_Package.Initialize (This);
       Initialize_Fields (This);
-        This.captionAnimation := CaptionAnimation_Package.Create (captionAnimation, This.textAnimation, captionDx, captionDy, dx, dy);
+        This.captionAnimation := Animation_Access (CaptionAnimation_Package.Create (captionAnimation, This.textAnimation, captionDx, captionDy, dx, dy));
    end Initialize;
 
    function Create (captionAnimation_Param : access Animation_Package.Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimationHelper_Access is

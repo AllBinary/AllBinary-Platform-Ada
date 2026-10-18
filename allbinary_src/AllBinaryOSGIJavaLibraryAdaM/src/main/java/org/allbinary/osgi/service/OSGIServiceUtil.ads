@@ -21,27 +21,23 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSGIServiceInterface_Package;
 
 package org.allbinary.osgi.service.OSGIServiceUtil_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
    package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package OSGIServiceInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceInterface_Package;
 
    type OSGIServiceUtil is tagged;
    type OSGIServiceUtil_Access is access all OSGIServiceUtil'Class;
    type OSGIServiceUtil_Access_Array is array (Natural range <>) of OSGIServiceUtil_Access;
    type OSGIServiceUtil_Access_Array_Access is access all OSGIServiceUtil_Access_Array;
+   type OSGIServiceUtil_Access_Array_Access_Array is array (Natural range <>) of OSGIServiceUtil_Access_Array_Access;
+   type OSGIServiceUtil_Access_Array_Access_Array_Access is access all OSGIServiceUtil_Access_Array_Access_Array;
 
    type OSGIServiceUtil is new Java_Object with record
       logUtil : LogUtil_Access;

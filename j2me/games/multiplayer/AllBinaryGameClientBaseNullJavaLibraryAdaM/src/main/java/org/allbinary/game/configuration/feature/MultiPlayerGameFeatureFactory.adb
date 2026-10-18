@@ -1,8 +1,13 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+
 package body org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
    procedure Initialize_Fields (This : in out MultiPlayerGameFeatureFactory'Class) is
    begin
       null;
@@ -35,6 +40,11 @@ package body org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFact
         gameCommandsFactory := GameCommandsFactory_Package.getInstance;
         canvas := Canvas_Access (anyType);
         canvas.addCommand (gameCommandsFactory.QUIT_COMMAND);
+   end addCommands;
+
+   procedure addCommands (This : in out MultiPlayerGameFeatureFactory; Value : Unbounded_String) is
+   begin
+      MultiPlayerGameFeatureFactory'Class (This).addCommands (Java_Box (Value));
    end addCommands;
 
 begin

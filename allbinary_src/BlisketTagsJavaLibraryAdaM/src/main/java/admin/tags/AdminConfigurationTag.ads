@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with admin.taghelpers.AdminConfigurationHelperFactory_Package; use admin.taghelpers.AdminConfigurationHelperFactory_Package;
-with admin.taghelpers.AdminConfigurationRequestHelperFactory_Package; use admin.taghelpers.AdminConfigurationRequestHelperFactory_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.AdminConfigurationTag_Package is
 
-   package AdminConfigurationHelperFactory_Package renames Standard.admin.taghelpers.AdminConfigurationHelperFactory_Package;
-   package AdminConfigurationRequestHelperFactory_Package renames Standard.admin.taghelpers.AdminConfigurationRequestHelperFactory_Package;
 
    type AdminConfigurationTag is tagged;
    type AdminConfigurationTag_Access is access all AdminConfigurationTag'Class;
    type AdminConfigurationTag_Access_Array is array (Natural range <>) of AdminConfigurationTag_Access;
    type AdminConfigurationTag_Access_Array_Access is access all AdminConfigurationTag_Access_Array;
+   type AdminConfigurationTag_Access_Array_Access_Array is array (Natural range <>) of AdminConfigurationTag_Access_Array_Access;
+   type AdminConfigurationTag_Access_Array_Access_Array_Access is access all AdminConfigurationTag_Access_Array_Access_Array;
 
    type AdminConfigurationTag is new TableTag with null record;
 

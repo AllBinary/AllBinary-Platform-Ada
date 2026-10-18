@@ -13,13 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.layer.BasicLayerProcessor_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BasicLayerProcessor'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -39,8 +44,8 @@ package body org.allbinary.layer.BasicLayerProcessor_Package is
    procedure add (This : in out BasicLayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
-        if not (This.list.contains (layerInterface)) then
-            This.list.add (layerInterface);
+        if not (This.list.contains (Java_Object_Access (layerInterface))) then
+            This.list.add (Java_Object_Access (layerInterface));
         end if;
    end add;
 

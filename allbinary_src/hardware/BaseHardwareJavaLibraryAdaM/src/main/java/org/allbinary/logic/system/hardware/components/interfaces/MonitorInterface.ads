@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.interfaces.MonitorInterfa
    type MonitorInterface_Access is access all MonitorInterface'Class;
    type MonitorInterface_Access_Array is array (Natural range <>) of MonitorInterface_Access;
    type MonitorInterface_Access_Array_Access is access all MonitorInterface_Access_Array;
+   type MonitorInterface_Access_Array_Access_Array is array (Natural range <>) of MonitorInterface_Access_Array_Access;
+   type MonitorInterface_Access_Array_Access_Array_Access is access all MonitorInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
 

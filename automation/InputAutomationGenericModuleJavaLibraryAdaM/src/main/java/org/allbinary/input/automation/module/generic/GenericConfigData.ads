@@ -28,6 +28,8 @@ package org.allbinary.input.automation.module.generic_Id.GenericConfigData_Packa
    type GenericConfigData_Access is access all GenericConfigData'Class;
    type GenericConfigData_Access_Array is array (Natural range <>) of GenericConfigData_Access;
    type GenericConfigData_Access_Array_Access is access all GenericConfigData_Access_Array;
+   type GenericConfigData_Access_Array_Access_Array is array (Natural range <>) of GenericConfigData_Access_Array_Access;
+   type GenericConfigData_Access_Array_Access_Array_Access is access all GenericConfigData_Access_Array_Access_Array;
 
    type GenericConfigData is new Java_Object with null record;
    RELATIVE_PATH : Unbounded_String;

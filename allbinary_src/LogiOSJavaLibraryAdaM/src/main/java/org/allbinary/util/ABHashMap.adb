@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.util.ABHashMap_Package is
 
    procedure Initialize_Fields (This : in out ABHashMap'Class) is

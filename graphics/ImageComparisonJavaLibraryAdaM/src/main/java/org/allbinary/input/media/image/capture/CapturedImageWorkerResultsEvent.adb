@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package is
 
    procedure Initialize_Fields (This : in out CapturedImageWorkerResultsEvent'Class) is

@@ -23,19 +23,12 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
-with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
-with org.allbinary.data.tree.dom.ToDomHelper_Package; use org.allbinary.data.tree.dom.ToDomHelper_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.logic.control.search.SearchData_Package;
 
 package org.allbinary.logic.control.search.SearchParams_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
-   package ToDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ToDomHelper_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -43,6 +36,8 @@ package org.allbinary.logic.control.search.SearchParams_Package is
    type SearchParams_Access is access all SearchParams'Class;
    type SearchParams_Access_Array is array (Natural range <>) of SearchParams_Access;
    type SearchParams_Access_Array_Access is access all SearchParams_Access_Array;
+   type SearchParams_Access_Array_Access_Array is array (Natural range <>) of SearchParams_Access_Array_Access;
+   type SearchParams_Access_Array_Access_Array_Access is access all SearchParams_Access_Array_Access_Array;
 
    type SearchParams is new Java_Object with record
       columnsAndSearchValues : HashMap_Access;

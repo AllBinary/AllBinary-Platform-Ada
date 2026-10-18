@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.jgrapht.graph.DefaultWeightedEdge_Package; use org.jgrapht.graph.DefaultWeightedEdge_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
+
 package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitor_Package is
 
+   package DefaultWeightedEdge_Package renames Standard.org.jgrapht.graph.DefaultWeightedEdge_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
+   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+   package BasicGeographicMapUtil_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package RaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
+   package PathFindingNode_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
    procedure Initialize_Fields (This : in out PathFinderGraphHackVisitor'Class) is
    begin
       null;
@@ -174,9 +191,9 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
         for index in reverse 0 .. (CellPositionArray'Length) - (1) loop
             overPassGeographicMapCellPosition := CellPositionArray (index);
             underPassGeographicMapCellPosition := geographicMapCellPositionFactory.getAt (overPassGeographicMapCellPosition.getColumn, overPassGeographicMapCellPosition.getRow);
-            indexOf := pathList.indexOf (overPassGeographicMapCellPosition);
+            indexOf := pathList.indexOf (Java_Object_Access (overPassGeographicMapCellPosition));
             if (indexOf) /= (-(1)) then
-                pathList.set (indexOf, underPassGeographicMapCellPosition);
+                pathList.set (indexOf, Java_Object_Access (underPassGeographicMapCellPosition));
             end if;
         end loop;
    end removeOverPassEdges;

@@ -21,19 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.media.Control_Package; use javax.microedition.media.Control_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.BasicPlayer_Package; use org.allbinary.media.audio.BasicPlayer_Package;
-with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
 
 package org.allbinary.media.audio.NoPlayer_Package is
 
    package Control_Package renames Standard.javax.microedition.media.Control_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type NoPlayer is tagged;
    type NoPlayer_Access is access all NoPlayer'Class;
    type NoPlayer_Access_Array is array (Natural range <>) of NoPlayer_Access;
    type NoPlayer_Access_Array_Access is access all NoPlayer_Access_Array;
+   type NoPlayer_Access_Array_Access_Array is array (Natural range <>) of NoPlayer_Access_Array_Access;
+   type NoPlayer_Access_Array_Access_Array_Access is access all NoPlayer_Access_Array_Access_Array;
 
    type NoPlayer is new BasicPlayer with null record;
    NO_PLAYER : NoPlayer_Access;

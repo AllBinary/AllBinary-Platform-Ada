@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+
 package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModule_Package is
 
+   package BasketInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
    procedure Initialize_Fields (This : in out BasicWeightShippingModule'Class) is
    begin
       null;

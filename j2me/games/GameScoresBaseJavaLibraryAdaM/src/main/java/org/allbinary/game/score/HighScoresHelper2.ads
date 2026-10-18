@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.game.score.HighScoresHelperBase_Package; use org.allbinary.game.score.HighScoresHelperBase_Package;
-with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 
 package org.allbinary.game.score.HighScoresHelper2_Package is
@@ -33,6 +32,8 @@ package org.allbinary.game.score.HighScoresHelper2_Package is
    type HighScoresHelper2_Access is access all HighScoresHelper2'Class;
    type HighScoresHelper2_Access_Array is array (Natural range <>) of HighScoresHelper2_Access;
    type HighScoresHelper2_Access_Array_Access is access all HighScoresHelper2_Access_Array;
+   type HighScoresHelper2_Access_Array_Access_Array is array (Natural range <>) of HighScoresHelper2_Access_Array_Access;
+   type HighScoresHelper2_Access_Array_Access_Array_Access is access all HighScoresHelper2_Access_Array_Access_Array;
 
    type HighScoresHelper2 is new HighScoresHelperBase with record
       circularIndexUtil : CircularIndexUtil_Access;

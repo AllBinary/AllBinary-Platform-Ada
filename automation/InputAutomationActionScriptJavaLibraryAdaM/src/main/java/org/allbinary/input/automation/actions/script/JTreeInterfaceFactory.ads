@@ -21,6 +21,8 @@ package org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Pack
    type JTreeInterfaceFactory_Access is access all JTreeInterfaceFactory'Class;
    type JTreeInterfaceFactory_Access_Array is array (Natural range <>) of JTreeInterfaceFactory_Access;
    type JTreeInterfaceFactory_Access_Array_Access is access all JTreeInterfaceFactory_Access_Array;
+   type JTreeInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of JTreeInterfaceFactory_Access_Array_Access;
+   type JTreeInterfaceFactory_Access_Array_Access_Array_Access is access all JTreeInterfaceFactory_Access_Array_Access_Array;
 
    type JTreeInterfaceFactory is new Java_Object with record
       jTreeInterface : JTreeInterface_Access;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package is
 
    procedure Initialize_Fields (This : in out HtmlLengthInput'Class) is
@@ -44,9 +45,9 @@ package body org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package
         HtmlLengthInput'Class (This).addAttribute (This.MAXLENGTH, This'Length);
    end setMaxLength;
 
-   procedure setSize (This : in out HtmlLengthInput; size_Case : Integer) is
+   procedure setSize (This : in out HtmlLengthInput; size : Integer) is
    begin
-        This.size_Case := Java_New_String (size_Case);
+        This.size_Case := Java_New_String (size);
         HtmlLengthInput'Class (This).addAttribute (This.MAXLENGTH, This.size_Case);
    end setSize;
 

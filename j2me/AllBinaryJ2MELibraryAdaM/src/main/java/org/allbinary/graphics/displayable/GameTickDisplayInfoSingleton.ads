@@ -29,6 +29,8 @@ package org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Package 
    type GameTickDisplayInfoSingleton_Access is access all GameTickDisplayInfoSingleton'Class;
    type GameTickDisplayInfoSingleton_Access_Array is array (Natural range <>) of GameTickDisplayInfoSingleton_Access;
    type GameTickDisplayInfoSingleton_Access_Array_Access is access all GameTickDisplayInfoSingleton_Access_Array;
+   type GameTickDisplayInfoSingleton_Access_Array_Access_Array is array (Natural range <>) of GameTickDisplayInfoSingleton_Access_Array_Access;
+   type GameTickDisplayInfoSingleton_Access_Array_Access_Array_Access is access all GameTickDisplayInfoSingleton_Access_Array_Access_Array;
 
    type GameTickDisplayInfoSingleton is new Java_Object with record
       displayInfoSingleton : DisplayInfoSingleton_Access;

@@ -20,14 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 
 package org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory_Package is
 
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
@@ -36,6 +34,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory_Pack
    type PathCacheFactory_Access is access all PathCacheFactory'Class;
    type PathCacheFactory_Access_Array is array (Natural range <>) of PathCacheFactory_Access;
    type PathCacheFactory_Access_Array_Access is access all PathCacheFactory_Access_Array;
+   type PathCacheFactory_Access_Array_Access_Array is array (Natural range <>) of PathCacheFactory_Access_Array_Access;
+   type PathCacheFactory_Access_Array_Access_Array_Access is access all PathCacheFactory_Access_Array_Access_Array;
 
    type PathCacheFactory is new Java_Object with record
       basicArrayListUtil : BasicArrayListUtil_Access;

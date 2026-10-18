@@ -22,32 +22,22 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
-with org.allbinary.DisposalUtil_Package; use org.allbinary.DisposalUtil_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
-with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
 with org.allbinary.media.image.ImageRotationUtil_Package; use org.allbinary.media.image.ImageRotationUtil_Package;
 with org.allbinary.animation.image.ImageBaseRotationAnimation_Package; use org.allbinary.animation.image.ImageBaseRotationAnimation_Package;
 with org.allbinary.animation.image.ModifierBaseProcessor_Package; use org.allbinary.animation.image.ModifierBaseProcessor_Package;
-with org.allbinary.animation.image.ScaleProcessor_Package; use org.allbinary.animation.image.ScaleProcessor_Package;
 with org.allbinary.animation.image.ScaleBaseProcessor_Package; use org.allbinary.animation.image.ScaleBaseProcessor_Package;
-with org.allbinary.animation.image.SetColorProcessor_Package; use org.allbinary.animation.image.SetColorProcessor_Package;
-with org.allbinary.animation.image.ChangeColorProcessor_Package; use org.allbinary.animation.image.ChangeColorProcessor_Package;
-with org.allbinary.animation.image.AlphaProcessor_Package; use org.allbinary.animation.image.AlphaProcessor_Package;
 
 package org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
-   package DisposalUtil_Package renames Standard.org.allbinary.DisposalUtil_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
-   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
    package ImageModifierUtil_Package renames Standard.org.allbinary.media.image.ImageModifierUtil_Package;
    package ImageRotationUtil_Package renames Standard.org.allbinary.media.image.ImageRotationUtil_Package;
 
@@ -55,6 +45,8 @@ package org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Packag
    type AllBinaryJ2SEImageRotationAnimation_Access is access all AllBinaryJ2SEImageRotationAnimation'Class;
    type AllBinaryJ2SEImageRotationAnimation_Access_Array is array (Natural range <>) of AllBinaryJ2SEImageRotationAnimation_Access;
    type AllBinaryJ2SEImageRotationAnimation_Access_Array_Access is access all AllBinaryJ2SEImageRotationAnimation_Access_Array;
+   type AllBinaryJ2SEImageRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AllBinaryJ2SEImageRotationAnimation_Access_Array_Access;
+   type AllBinaryJ2SEImageRotationAnimation_Access_Array_Access_Array_Access is access all AllBinaryJ2SEImageRotationAnimation_Access_Array_Access_Array;
 
    type AllBinaryJ2SEImageRotationAnimation is new ImageBaseRotationAnimation with record
       imageRotationUtil : ImageRotationUtil_Access;

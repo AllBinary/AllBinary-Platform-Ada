@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.emulator.InitEmulatorFactory_Package; use org.allbinary.emulator.InitEmulatorFactory_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+
 package body org.allbinary.graphics.opengles.renderer.EmulatorCustomRenderer_Package is
 
+   package InitEmulatorFactory_Package renames Standard.org.allbinary.emulator.InitEmulatorFactory_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    procedure Initialize_Fields (This : in out EmulatorCustomRenderer'Class) is
    begin
       null;

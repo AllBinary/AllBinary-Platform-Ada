@@ -28,6 +28,8 @@ package org.allbinary.media.audio.SoundStrings_Package is
    type SoundStrings_Access is access all SoundStrings'Class;
    type SoundStrings_Access_Array is array (Natural range <>) of SoundStrings_Access;
    type SoundStrings_Access_Array_Access is access all SoundStrings_Access_Array;
+   type SoundStrings_Access_Array_Access_Array is array (Natural range <>) of SoundStrings_Access_Array_Access;
+   type SoundStrings_Access_Array_Access_Array_Access is access all SoundStrings_Access_Array_Access_Array;
 
    type SoundStrings is new Java_Object with record
       STOP_ALL : Unbounded_String;

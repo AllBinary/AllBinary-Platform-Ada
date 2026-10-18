@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
+
 package body org.allbinary.DisposalUtil_Package is
 
+   package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
    procedure Initialize_Fields (This : in out DisposalUtil'Class) is
    begin
       null;

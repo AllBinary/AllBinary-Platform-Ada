@@ -30,6 +30,8 @@ package org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInt
    type AdvertisementThumbnailInterface_Access is access all AdvertisementThumbnailInterface'Class;
    type AdvertisementThumbnailInterface_Access_Array is array (Natural range <>) of AdvertisementThumbnailInterface_Access;
    type AdvertisementThumbnailInterface_Access_Array_Access is access all AdvertisementThumbnailInterface_Access_Array;
+   type AdvertisementThumbnailInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementThumbnailInterface_Access_Array_Access;
+   type AdvertisementThumbnailInterface_Access_Array_Access_Array_Access is access all AdvertisementThumbnailInterface_Access_Array_Access_Array;
 
 end org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package;
 

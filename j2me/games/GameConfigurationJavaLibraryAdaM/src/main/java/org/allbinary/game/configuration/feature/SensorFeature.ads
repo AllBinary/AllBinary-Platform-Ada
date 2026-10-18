@@ -29,6 +29,8 @@ package org.allbinary.game.configuration.feature.SensorFeature_Package is
    type SensorFeature_Access is access all SensorFeature'Class;
    type SensorFeature_Access_Array is array (Natural range <>) of SensorFeature_Access;
    type SensorFeature_Access_Array_Access is access all SensorFeature_Access_Array;
+   type SensorFeature_Access_Array_Access_Array is array (Natural range <>) of SensorFeature_Access_Array_Access;
+   type SensorFeature_Access_Array_Access_Array_Access is access all SensorFeature_Access_Array_Access_Array;
 
    type SensorFeature is new Feature with null record;
 

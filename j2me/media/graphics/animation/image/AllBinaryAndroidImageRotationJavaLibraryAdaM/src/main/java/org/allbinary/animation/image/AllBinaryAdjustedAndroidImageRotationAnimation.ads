@@ -37,6 +37,8 @@ package org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnima
    type AllBinaryAdjustedAndroidImageRotationAnimation_Access is access all AllBinaryAdjustedAndroidImageRotationAnimation'Class;
    type AllBinaryAdjustedAndroidImageRotationAnimation_Access_Array is array (Natural range <>) of AllBinaryAdjustedAndroidImageRotationAnimation_Access;
    type AllBinaryAdjustedAndroidImageRotationAnimation_Access_Array_Access is access all AllBinaryAdjustedAndroidImageRotationAnimation_Access_Array;
+   type AllBinaryAdjustedAndroidImageRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AllBinaryAdjustedAndroidImageRotationAnimation_Access_Array_Access;
+   type AllBinaryAdjustedAndroidImageRotationAnimation_Access_Array_Access_Array_Access is access all AllBinaryAdjustedAndroidImageRotationAnimation_Access_Array_Access_Array;
 
    type AllBinaryAdjustedAndroidImageRotationAnimation is new AllBinaryFlickerAndroidImageRotationAnimation with record
       dx : Integer;

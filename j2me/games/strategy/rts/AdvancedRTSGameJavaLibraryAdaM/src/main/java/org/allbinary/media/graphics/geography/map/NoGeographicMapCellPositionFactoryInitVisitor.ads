@@ -32,8 +32,10 @@ package org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFa
    type NoGeographicMapCellPositionFactoryInitVisitor_Access is access all NoGeographicMapCellPositionFactoryInitVisitor'Class;
    type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array is array (Natural range <>) of NoGeographicMapCellPositionFactoryInitVisitor_Access;
    type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access is access all NoGeographicMapCellPositionFactoryInitVisitor_Access_Array;
+   type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array is array (Natural range <>) of NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access;
+   type NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array_Access is access all NoGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array;
 
-   type NoGeographicMapCellPositionFactoryInitVisitor is new GeographicMapCellPositionFactoryInitVisitorInterface with null record;
+   type NoGeographicMapCellPositionFactoryInitVisitor is new Java_Object and GeographicMapCellPositionFactoryInitVisitorInterface with null record;
 
    procedure Initialize (This : in out NoGeographicMapCellPositionFactoryInitVisitor'Class);
    function Create return NoGeographicMapCellPositionFactoryInitVisitor_Access;

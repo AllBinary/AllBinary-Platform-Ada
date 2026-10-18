@@ -20,19 +20,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
-with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package;
 
 package org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package is
 
-   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -40,8 +35,10 @@ package org.allbinary.business.context.modules.storefront.statistics.users.Store
    type StoreFrontUsersStatisticsView_Access is access all StoreFrontUsersStatisticsView'Class;
    type StoreFrontUsersStatisticsView_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsView_Access;
    type StoreFrontUsersStatisticsView_Access_Array_Access is access all StoreFrontUsersStatisticsView_Access_Array;
+   type StoreFrontUsersStatisticsView_Access_Array_Access_Array is array (Natural range <>) of StoreFrontUsersStatisticsView_Access_Array_Access;
+   type StoreFrontUsersStatisticsView_Access_Array_Access_Array_Access is access all StoreFrontUsersStatisticsView_Access_Array_Access_Array;
 
-   type StoreFrontUsersStatisticsView is new DomNodeInterface with record
+   type StoreFrontUsersStatisticsView is new Java_Object and DomNodeInterface with record
       storeFrontUsersStatisticsInterface : StoreFrontUsersStatisticsInterface_Access;
    end record;
 

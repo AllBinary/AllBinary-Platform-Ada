@@ -13,8 +13,28 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+with org.allbinary.data.generator.ProductIdGenerator_Package; use org.allbinary.data.generator.ProductIdGenerator_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.time.TimeUtil_Package; use org.allbinary.time.TimeUtil_Package;
+with org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package;
+
 package body org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+   package ProductIdGenerator_Package renames Standard.org.allbinary.data.generator.ProductIdGenerator_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TimeUtil_Package renames Standard.org.allbinary.time.TimeUtil_Package;
    procedure Initialize_Fields (This : in out DownloadableItem'Class) is
    begin
       null;
@@ -120,7 +140,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    begin
         calendar := Calendar_Package.getInstance;
         time := calendar.getTimeInMillis.toString;
-        values := BasicArrayListD_Package.Create;
+        values := BasicArrayList_Access (BasicArrayListD_Package.Create);
         values.add (DownloadableItem'Class (This).getId);
         values.add (This.basicItemId);
         values.add (This.enabled);

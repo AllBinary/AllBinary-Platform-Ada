@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
 with org.allbinary.input.automation.AbstractInputRobot_Package; use org.allbinary.input.automation.AbstractInputRobot_Package;
-with org.allbinary.input.automation.PointFactory_Package; use org.allbinary.input.automation.PointFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
 with org.allbinary.input.automation.robot.Point_Package; use org.allbinary.input.automation.robot.Point_Package;
@@ -33,13 +32,14 @@ with org.allbinary.input.automation.robot.Color_Package; use org.allbinary.input
 package org.allbinary.input.automation.robot.NullInputRobot_Package is
 
    package AbstractInputRobot_Package renames Standard.org.allbinary.input.automation.AbstractInputRobot_Package;
-   package PointFactory_Package renames Standard.org.allbinary.input.automation.PointFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type NullInputRobot is tagged;
    type NullInputRobot_Access is access all NullInputRobot'Class;
    type NullInputRobot_Access_Array is array (Natural range <>) of NullInputRobot_Access;
    type NullInputRobot_Access_Array_Access is access all NullInputRobot_Access_Array;
+   type NullInputRobot_Access_Array_Access_Array is array (Natural range <>) of NullInputRobot_Access_Array_Access;
+   type NullInputRobot_Access_Array_Access_Array_Access is access all NullInputRobot_Access_Array_Access_Array;
 
    type NullInputRobot is new AbstractInputRobot and InputRobotInterface with record
       logUtil : LogUtil_Access;

@@ -28,6 +28,8 @@ package org.allbinary.animation.ShapeType_Package is
    type ShapeType_Access is access all ShapeType'Class;
    type ShapeType_Access_Array is array (Natural range <>) of ShapeType_Access;
    type ShapeType_Access_Array_Access is access all ShapeType_Access_Array;
+   type ShapeType_Access_Array_Access_Array is array (Natural range <>) of ShapeType_Access_Array_Access;
+   type ShapeType_Access_Array_Access_Array_Access is access all ShapeType_Access_Array_Access_Array;
 
    type ShapeType is new Java_Object with record
       name : Unbounded_String;

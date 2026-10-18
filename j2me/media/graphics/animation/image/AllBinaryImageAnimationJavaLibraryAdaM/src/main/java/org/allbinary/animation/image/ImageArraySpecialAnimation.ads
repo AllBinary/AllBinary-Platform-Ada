@@ -24,8 +24,6 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.special.SpecialAnimationInterface_Package; use org.allbinary.animation.special.SpecialAnimationInterface_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.animation.image.ImageArrayAnimation_Package; use org.allbinary.animation.image.ImageArrayAnimation_Package;
 
@@ -35,14 +33,14 @@ package org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package SpecialAnimationInterface_Package renames Standard.org.allbinary.animation.special.SpecialAnimationInterface_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type ImageArraySpecialAnimation is tagged;
    type ImageArraySpecialAnimation_Access is access all ImageArraySpecialAnimation'Class;
    type ImageArraySpecialAnimation_Access_Array is array (Natural range <>) of ImageArraySpecialAnimation_Access;
    type ImageArraySpecialAnimation_Access_Array_Access is access all ImageArraySpecialAnimation_Access_Array;
+   type ImageArraySpecialAnimation_Access_Array_Access_Array is array (Natural range <>) of ImageArraySpecialAnimation_Access_Array_Access;
+   type ImageArraySpecialAnimation_Access_Array_Access_Array_Access is access all ImageArraySpecialAnimation_Access_Array_Access_Array;
 
    type ImageArraySpecialAnimation is new ImageArrayAnimation and SpecialAnimationInterface with record
       timeDelayHelper : TimeDelayHelper_Access;

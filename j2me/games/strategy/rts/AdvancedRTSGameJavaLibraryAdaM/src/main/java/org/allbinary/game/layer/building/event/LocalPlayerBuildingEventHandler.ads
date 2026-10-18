@@ -19,15 +19,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.RTSLayerEvent_Package; use org.allbinary.game.layer.RTSLayerEvent_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package; use org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 
 package org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package is
 
-   package RTSLayerEvent_Package renames Standard.org.allbinary.game.layer.RTSLayerEvent_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
@@ -36,6 +33,8 @@ package org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_
    type LocalPlayerBuildingEventHandler_Access is access all LocalPlayerBuildingEventHandler'Class;
    type LocalPlayerBuildingEventHandler_Access_Array is array (Natural range <>) of LocalPlayerBuildingEventHandler_Access;
    type LocalPlayerBuildingEventHandler_Access_Array_Access is access all LocalPlayerBuildingEventHandler_Access_Array;
+   type LocalPlayerBuildingEventHandler_Access_Array_Access_Array is array (Natural range <>) of LocalPlayerBuildingEventHandler_Access_Array_Access;
+   type LocalPlayerBuildingEventHandler_Access_Array_Access_Array_Access is access all LocalPlayerBuildingEventHandler_Access_Array_Access_Array;
 
    type LocalPlayerBuildingEventHandler is new BasicEventHandler with null record;
    eventHandler : LocalPlayerBuildingEventHandler_Access;

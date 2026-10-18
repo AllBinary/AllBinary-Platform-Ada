@@ -22,18 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileNotFoundException_Package; use java.io.FileNotFoundException_Package;
 with android.content.Context_Package; use android.content.Context_Package;
-with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 
 package org.allbinary.logic.io.file.FileFactory_Package is
 
    package Context_Package renames Standard.android.content.Context_Package;
-   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
 
    type FileFactory is tagged;
    type FileFactory_Access is access all FileFactory'Class;
    type FileFactory_Access_Array is array (Natural range <>) of FileFactory_Access;
    type FileFactory_Access_Array_Access is access all FileFactory_Access_Array;
+   type FileFactory_Access_Array_Access_Array is array (Natural range <>) of FileFactory_Access_Array_Access;
+   type FileFactory_Access_Array_Access_Array_Access is access all FileFactory_Access_Array_Access_Array;
 
    type FileFactory is new Java_Object with record
       context : Context_Access;

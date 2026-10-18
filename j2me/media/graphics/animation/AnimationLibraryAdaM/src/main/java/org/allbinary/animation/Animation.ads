@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package; use org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package; use org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.animation.AnimationInterface_Package; use org.allbinary.animation.AnimationInterface_Package;
@@ -33,7 +32,6 @@ package org.allbinary.animation.Animation_Package is
    package GL_Package renames Standard.javax.microedition.khronos.opengles.GL_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package BasicColorSetUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorSetUtil_Package;
    package OpenGLSurfaceChangedInterface_Package renames Standard.org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 
@@ -41,8 +39,10 @@ package org.allbinary.animation.Animation_Package is
    type Animation_Access is access all Animation'Class;
    type Animation_Access_Array is array (Natural range <>) of Animation_Access;
    type Animation_Access_Array_Access is access all Animation_Access_Array;
+   type Animation_Access_Array_Access_Array is array (Natural range <>) of Animation_Access_Array_Access;
+   type Animation_Access_Array_Access_Array_Access is access all Animation_Access_Array_Access_Array;
 
-   type Animation is new AnimationInterface and OpenGLSurfaceChangedInterface with record
+   type Animation is new Java_Object and AnimationInterface and OpenGLSurfaceChangedInterface with record
       basicSetColorUtil : BasicColorSetUtil_Access;
       basicColor : BasicColor_Access;
       colorP : Integer;

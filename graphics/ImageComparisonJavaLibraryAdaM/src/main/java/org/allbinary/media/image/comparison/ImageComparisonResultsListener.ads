@@ -31,6 +31,8 @@ package org.allbinary.media.image.comparison.ImageComparisonResultsListener_Pack
    type ImageComparisonResultsListener_Access is access all ImageComparisonResultsListener'Class;
    type ImageComparisonResultsListener_Access_Array is array (Natural range <>) of ImageComparisonResultsListener_Access;
    type ImageComparisonResultsListener_Access_Array_Access is access all ImageComparisonResultsListener_Access_Array;
+   type ImageComparisonResultsListener_Access_Array_Access_Array is array (Natural range <>) of ImageComparisonResultsListener_Access_Array_Access;
+   type ImageComparisonResultsListener_Access_Array_Access_Array_Access is access all ImageComparisonResultsListener_Access_Array_Access_Array;
    procedure onImageComparisonResultsEvent (This : in out ImageComparisonResultsListener; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent_Package.ImageComparisonResultsEvent'Class) is abstract;
 
 end org.allbinary.media.image.comparison.ImageComparisonResultsListener_Package;

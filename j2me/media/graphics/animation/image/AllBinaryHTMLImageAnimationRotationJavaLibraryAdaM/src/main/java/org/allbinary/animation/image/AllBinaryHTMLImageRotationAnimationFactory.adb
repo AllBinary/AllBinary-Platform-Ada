@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
+with org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package;
+with org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package;
+
 package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFactory_Package is
 
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    procedure Initialize_Fields (This : in out AllBinaryHTMLImageRotationAnimationFactory'Class) is
    begin
       null;
@@ -66,9 +79,9 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFa
         copyOfScaledImage := ImageCopyUtil_Package.getInstance.createImage (scaledImage);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
             This.animationFactoryImageScaleUtil.processAdjust (AllBinaryHTMLImageRotationAnimationFactory_Access'(This'Unchecked_Access));
-            return AllBinaryAdjustedHTMLImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (AllBinaryHTMLImageRotationAnimationFactory'Class (This).getAngleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (AllBinaryAdjustedHTMLImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (AllBinaryHTMLImageRotationAnimationFactory'Class (This).getAngleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
         else
-            return AllBinaryHTMLImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (AllBinaryHTMLImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationBehaviorFactory.getOrCreateInstance));
         end if;
    end getInstance;
 

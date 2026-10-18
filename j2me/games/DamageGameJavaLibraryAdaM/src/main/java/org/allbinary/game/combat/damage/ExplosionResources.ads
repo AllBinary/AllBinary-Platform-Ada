@@ -28,6 +28,8 @@ package org.allbinary.game.combat.damage.ExplosionResources_Package is
    type ExplosionResources_Access is access all ExplosionResources'Class;
    type ExplosionResources_Access_Array is array (Natural range <>) of ExplosionResources_Access;
    type ExplosionResources_Access_Array_Access is access all ExplosionResources_Access_Array;
+   type ExplosionResources_Access_Array_Access_Array is array (Natural range <>) of ExplosionResources_Access_Array_Access;
+   type ExplosionResources_Access_Array_Access_Array_Access is access all ExplosionResources_Access_Array_Access_Array;
 
    type ExplosionResources is new Java_Object with record
       EXPLOSION_90_RESOURCE : Unbounded_String;

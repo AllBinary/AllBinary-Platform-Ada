@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.system.hardware.components.Component_Package; use org.allbinary.logic.system.hardware.components.Component_Package;
 
 package org.allbinary.logic.system.hardware.components.ComponentFactory_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ComponentFactory is tagged;
    type ComponentFactory_Access is access all ComponentFactory'Class;
    type ComponentFactory_Access_Array is array (Natural range <>) of ComponentFactory_Access;
    type ComponentFactory_Access_Array_Access is access all ComponentFactory_Access_Array;
+   type ComponentFactory_Access_Array_Access_Array is array (Natural range <>) of ComponentFactory_Access_Array_Access;
+   type ComponentFactory_Access_Array_Access_Array_Access is access all ComponentFactory_Access_Array_Access_Array;
 
    type ComponentFactory is new Java_Object with record
       VGA : Component_Access;

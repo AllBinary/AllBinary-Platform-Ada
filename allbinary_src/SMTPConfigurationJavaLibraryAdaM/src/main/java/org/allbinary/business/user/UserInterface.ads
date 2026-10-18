@@ -40,6 +40,8 @@ package org.allbinary.business.user.UserInterface_Package is
    type UserInterface_Access is access all UserInterface'Class;
    type UserInterface_Access_Array is array (Natural range <>) of UserInterface_Access;
    type UserInterface_Access_Array_Access is access all UserInterface_Access_Array;
+   type UserInterface_Access_Array_Access_Array is array (Natural range <>) of UserInterface_Access_Array_Access;
+   type UserInterface_Access_Array_Access_Array_Access is access all UserInterface_Access_Array_Access_Array;
    procedure setUserName (This : in out UserInterface; value : Unbounded_String) is abstract;
    procedure setPrefixName (This : in out UserInterface; value : Unbounded_String) is abstract;
    procedure setFirstName (This : in out UserInterface; value : Unbounded_String) is abstract;

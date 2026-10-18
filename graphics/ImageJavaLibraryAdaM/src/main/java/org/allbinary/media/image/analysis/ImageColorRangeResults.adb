@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.analysis.ColorRange_Package; use org.allbinary.media.image.analysis.ColorRange_Package;
+
 package body org.allbinary.media.image.analysis.ImageColorRangeResults_Package is
 
    procedure Initialize_Fields (This : in out ImageColorRangeResults'Class) is

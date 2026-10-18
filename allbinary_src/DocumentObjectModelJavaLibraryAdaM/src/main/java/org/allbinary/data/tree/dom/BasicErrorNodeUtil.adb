@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.error.ErrorData_Package; use org.allbinary.business.error.ErrorData_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+
 package body org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package is
 
+   package ErrorData_Package renames Standard.org.allbinary.business.error.ErrorData_Package;
    procedure Initialize_Fields (This : in out BasicErrorNodeUtil'Class) is
    begin
       null;

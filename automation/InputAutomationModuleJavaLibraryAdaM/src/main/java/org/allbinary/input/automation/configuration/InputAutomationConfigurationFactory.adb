@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
+   package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out InputAutomationConfigurationFactory'Class) is
    begin
       null;

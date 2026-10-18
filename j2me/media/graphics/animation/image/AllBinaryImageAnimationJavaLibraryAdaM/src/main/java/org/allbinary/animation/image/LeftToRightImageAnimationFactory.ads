@@ -24,8 +24,6 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
-with org.allbinary.animation.image.LeftToRightImageAnimation_Package; use org.allbinary.animation.image.LeftToRightImageAnimation_Package;
-with org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Package; use org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Package;
 
 package org.allbinary.animation.image.LeftToRightImageAnimationFactory_Package is
 
@@ -37,6 +35,8 @@ package org.allbinary.animation.image.LeftToRightImageAnimationFactory_Package i
    type LeftToRightImageAnimationFactory_Access is access all LeftToRightImageAnimationFactory'Class;
    type LeftToRightImageAnimationFactory_Access_Array is array (Natural range <>) of LeftToRightImageAnimationFactory_Access;
    type LeftToRightImageAnimationFactory_Access_Array_Access is access all LeftToRightImageAnimationFactory_Access_Array;
+   type LeftToRightImageAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of LeftToRightImageAnimationFactory_Access_Array_Access;
+   type LeftToRightImageAnimationFactory_Access_Array_Access_Array_Access is access all LeftToRightImageAnimationFactory_Access_Array_Access_Array;
 
    type LeftToRightImageAnimationFactory is new BaseImageAnimationFactory with null record;
 

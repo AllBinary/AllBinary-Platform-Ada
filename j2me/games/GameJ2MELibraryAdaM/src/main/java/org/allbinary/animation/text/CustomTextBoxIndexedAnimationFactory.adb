@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
+with org.allbinary.graphics.form.item.CustomTextBox_Package; use org.allbinary.graphics.form.item.CustomTextBox_Package;
+with org.allbinary.game.canvas.ABToGBUtil_Package; use org.allbinary.game.canvas.ABToGBUtil_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.animation.text.CustomTextBox2_Package; use org.allbinary.animation.text.CustomTextBox2_Package;
+with org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package; use org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package;
+
 package body org.allbinary.animation.text.CustomTextBoxIndexedAnimationFactory_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package TextField_Package renames Standard.javax.microedition.lcdui.TextField_Package;
+   package CustomTextBox_Package renames Standard.org.allbinary.graphics.form.item.CustomTextBox_Package;
+   package ABToGBUtil_Package renames Standard.org.allbinary.game.canvas.ABToGBUtil_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out CustomTextBoxIndexedAnimationFactory'Class) is
    begin
       null;
@@ -49,8 +66,8 @@ package body org.allbinary.animation.text.CustomTextBoxIndexedAnimationFactory_P
         abToGBUtil := ABToGBUtil_Package.getInstance;
         abCanvas := AllBinaryGameCanvas_Access (abToGBUtil.abCanvas);
         font := Font_Package.getFont (Font_Package.FACE_SYSTEM, Font_Package.STYLE_PLAIN, This.scaleProperties.scaleHeight);
-        customTextBox := CustomTextBox2_Package.Create (abCanvas.getCustomCommandListener, StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING, This.maxLength, TextField_Package.ANY, font, abCanvas.getLayerManager.getBackgroundBasicColor, abCanvas.getLayerManager.getForegroundBasicColor);
-        return CustomTextBoxIndexedAnimation_Package.Create (customTextBox);
+        customTextBox := CustomTextBox_Access (CustomTextBox2_Package.Create (abCanvas.getCustomCommandListener, StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING, This.maxLength, TextField_Package.ANY, font, abCanvas.getLayerManager.getBackgroundBasicColor, abCanvas.getLayerManager.getForegroundBasicColor));
+        return Animation_Access (CustomTextBoxIndexedAnimation_Package.Create (customTextBox));
    end getInstance;
 
    procedure setInitialScale (This : in out CustomTextBoxIndexedAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is

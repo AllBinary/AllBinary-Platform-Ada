@@ -13,14 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+
 package body org.allbinary.game.paint.OwnershipPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out OwnershipPaintable'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.displayInfo := DisplayInfoSingleton_Package.getInstance;
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (OwnershipPaintable_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (OwnershipPaintable_Access'(This'Unchecked_Access)));
       This.COPYRIGHT := To_Unbounded_String ("AllBinary Copyright (c) 2011");
       This.basicColor := BasicColorFactory_Package.getInstance.WHITE;
       This.color := This.basicColor.intValue;

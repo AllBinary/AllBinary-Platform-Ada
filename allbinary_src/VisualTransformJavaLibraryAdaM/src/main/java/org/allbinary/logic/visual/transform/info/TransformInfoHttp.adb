@@ -13,8 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
+with org.allbinary.logic.communication.sql.AbSqlData_Package; use org.allbinary.logic.communication.sql.AbSqlData_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+
 package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package is
 
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package AbSqlData_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlData_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TransformInfoObjectConfig_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
    procedure Initialize_Fields (This : in out TransformInfoHttp'Class) is
    begin
       null;
@@ -173,19 +189,19 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
    --  throws Exception
    function getTemplateFilePath (This : in out TransformInfoHttp) return AbPath_Access is
    begin
-        return AbPath_Package.Create ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH), TransformInfoHttp'Class (This).getTemplateFile);
+        return AbPath_Package.Create ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH), TransformInfoHttp'Class (This).getTemplateFile);
    end getTemplateFilePath;
 
    --  throws Exception
    function getObjectConfigFilePath (This : in out TransformInfoHttp) return AbPath_Access is
    begin
-        return AbPath_Package.Create ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH), TransformInfoHttp'Class (This).getObjectConfigFile);
+        return AbPath_Package.Create ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH), TransformInfoHttp'Class (This).getObjectConfigFile);
    end getObjectConfigFilePath;
 
    --  throws Exception
    function getDataFilePath (This : in out TransformInfoHttp) return AbPath_Access is
    begin
-        return AbPath_Package.Create ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH), TransformInfoHttp'Class (This).getDataFile);
+        return AbPath_Package.Create ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH), TransformInfoHttp'Class (This).getDataFile);
    end getDataFilePath;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;

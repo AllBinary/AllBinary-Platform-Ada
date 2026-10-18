@@ -29,8 +29,10 @@ package org.allbinary.debug.NoDebug_Package is
    type NoDebug_Access is access all NoDebug'Class;
    type NoDebug_Access_Array is array (Natural range <>) of NoDebug_Access;
    type NoDebug_Access_Array_Access is access all NoDebug_Access_Array;
+   type NoDebug_Access_Array_Access_Array is array (Natural range <>) of NoDebug_Access_Array_Access;
+   type NoDebug_Access_Array_Access_Array_Access is access all NoDebug_Access_Array_Access_Array;
 
-   type NoDebug is new DebugInterface with null record;
+   type NoDebug is new Java_Object and DebugInterface with null record;
    SINGLETON : DebugInterface_Access;
 
    procedure Initialize (This : in out NoDebug'Class);

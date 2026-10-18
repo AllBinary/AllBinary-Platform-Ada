@@ -20,21 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with playn.core.PlayN_Package; use playn.core.PlayN_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package; use org.allbinary.logic.communication.log.Log_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 
 package org.allbinary.logic.communication.log.LogUtil_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package PlayN_Package renames Standard.playn.core.PlayN_Package;
 
    type LogUtil is tagged;
    type LogUtil_Access is access all LogUtil'Class;
    type LogUtil_Access_Array is array (Natural range <>) of LogUtil_Access;
    type LogUtil_Access_Array_Access is access all LogUtil_Access_Array;
+   type LogUtil_Access_Array_Access_Array is array (Natural range <>) of LogUtil_Access_Array_Access;
+   type LogUtil_Access_Array_Access_Array_Access is access all LogUtil_Access_Array_Access_Array;
 
    type LogUtil is new Java_Object with record
       logFormatUtil : LogFormatUtil_Access;

@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.layer.LevelLayersFinder_Package is
 
+   package Enumeration_Package renames Standard.java.util.Enumeration_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out LevelLayersFinder'Class) is
    begin
       null;
@@ -49,7 +58,7 @@ package body org.allbinary.game.layer.LevelLayersFinder_Package is
       cachedIntegerCanBeNull : Integer;
    begin
         smallIntegerSingletonFactory := SmallIntegerSingletonFactory_Package.getInstance;
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         enumeration := hashtable.keys;
         layerHashtableCanBeNull := null;
         integerCanBeNull := null;

@@ -1,12 +1,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.thread.NullPriorityRunnable_Package; use org.allbinary.thread.NullPriorityRunnable_Package;
+
 package body org.allbinary.thread.ThreadObjectUtil_Package is
 
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    procedure Initialize_Fields (This : in out ThreadObjectUtil'Class) is
    begin
       null;
-      This.NULL_PRIORITY_RUNNABLE := NullPriorityRunnable_Package.Create;
+      This.NULL_PRIORITY_RUNNABLE := PriorityRunnable_Access (NullPriorityRunnable_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out ThreadObjectUtil'Class) is
@@ -54,6 +58,16 @@ package body org.allbinary.thread.ThreadObjectUtil_Package is
         thread := Thread_Package.Create (runnable);
         thread.start;
    end processThread;
+
+   procedure notifyObject (This : in out ThreadObjectUtil; Value : Unbounded_String) is
+   begin
+      ThreadObjectUtil'Class (This).notifyObject (Java_Box (Value));
+   end notifyObject;
+
+   procedure waitObject (This : in out ThreadObjectUtil; Value : Unbounded_String) is
+   begin
+      ThreadObjectUtil'Class (This).waitObject (Java_Box (Value));
+   end waitObject;
 
 begin
    null;

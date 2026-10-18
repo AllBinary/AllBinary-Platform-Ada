@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.form.item.LimitCommandsVisitor_Package; use org.allbinary.graphics.form.item.LimitCommandsVisitor_Package;
+
 package body org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package is
 
+   package LimitCommandsVisitor_Package renames Standard.org.allbinary.graphics.form.item.LimitCommandsVisitor_Package;
    procedure Initialize_Fields (This : in out DemoLimitedCommandTextItemArrayFactory'Class) is
    begin
       null;

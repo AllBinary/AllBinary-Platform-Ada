@@ -21,31 +21,23 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.InputOutputTypeData_Package; use org.allbinary.logic.io.InputOutputTypeData_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.visual.transform.TransformFactory_Package; use org.allbinary.logic.visual.transform.TransformFactory_Package;
-with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package; use org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package;
 
 package org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package TransformFactory_Package renames Standard.org.allbinary.logic.visual.transform.TransformFactory_Package;
-   package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
    package TransformInfoDomNode_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
-   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package StoreFileGenerator_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package;
 
    type TransformGeneratorUtil is tagged;
    type TransformGeneratorUtil_Access is access all TransformGeneratorUtil'Class;
    type TransformGeneratorUtil_Access_Array is array (Natural range <>) of TransformGeneratorUtil_Access;
    type TransformGeneratorUtil_Access_Array_Access is access all TransformGeneratorUtil_Access_Array;
+   type TransformGeneratorUtil_Access_Array_Access_Array is array (Natural range <>) of TransformGeneratorUtil_Access_Array_Access;
+   type TransformGeneratorUtil_Access_Array_Access_Array_Access is access all TransformGeneratorUtil_Access_Array_Access_Array;
 
    type TransformGeneratorUtil is new Java_Object with record
       logUtil : LogUtil_Access;

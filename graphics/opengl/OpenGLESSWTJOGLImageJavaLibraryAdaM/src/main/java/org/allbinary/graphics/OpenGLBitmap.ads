@@ -9,23 +9,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.DisposalUtil_Package; use org.allbinary.DisposalUtil_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
-with org.microemu.device.swt.SwtImmutableImage_Package; use org.microemu.device.swt.SwtImmutableImage_Package;
-with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
 
 package org.allbinary.graphics.OpenGLBitmap_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package DisposalUtil_Package renames Standard.org.allbinary.DisposalUtil_Package;
    package PlatformBitmapBase_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBase_Package;
-   package SwtImmutableImage_Package renames Standard.org.microemu.device.swt.SwtImmutableImage_Package;
-   package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
 
    type OpenGLBitmap is tagged;
    type OpenGLBitmap_Access is access all OpenGLBitmap'Class;
    type OpenGLBitmap_Access_Array is array (Natural range <>) of OpenGLBitmap_Access;
    type OpenGLBitmap_Access_Array_Access is access all OpenGLBitmap_Access_Array;
+   type OpenGLBitmap_Access_Array_Access_Array is array (Natural range <>) of OpenGLBitmap_Access_Array_Access;
+   type OpenGLBitmap_Access_Array_Access_Array_Access is access all OpenGLBitmap_Access_Array_Access_Array;
 
    type OpenGLBitmap is new PlatformBitmapBase with record
       image : Image_Access;

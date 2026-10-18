@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.input.form.PlayersSingletonFactory_Package is
 
    procedure Initialize_Fields (This : in out PlayersSingletonFactory'Class) is

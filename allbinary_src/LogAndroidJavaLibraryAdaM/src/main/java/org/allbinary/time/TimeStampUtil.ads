@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.Calendar_Package; use java.util.Calendar_Package;
-with java.util.Date_Package; use java.util.Date_Package;
 
 package org.allbinary.time.TimeStampUtil_Package is
 
-   package Calendar_Package renames Standard.java.util.Calendar_Package;
-   package Date_Package renames Standard.java.util.Date_Package;
 
    type TimeStampUtil is tagged;
    type TimeStampUtil_Access is access all TimeStampUtil'Class;
    type TimeStampUtil_Access_Array is array (Natural range <>) of TimeStampUtil_Access;
    type TimeStampUtil_Access_Array_Access is access all TimeStampUtil_Access_Array;
+   type TimeStampUtil_Access_Array_Access_Array is array (Natural range <>) of TimeStampUtil_Access_Array_Access;
+   type TimeStampUtil_Access_Array_Access_Array_Access is access all TimeStampUtil_Access_Array_Access_Array;
 
    type TimeStampUtil is new Java_Object with null record;
    instance : TimeStampUtil_Access;

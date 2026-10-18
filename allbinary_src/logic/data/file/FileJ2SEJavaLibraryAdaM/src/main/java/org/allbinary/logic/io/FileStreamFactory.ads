@@ -20,22 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
 with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
 
 package org.allbinary.logic.io.FileStreamFactory_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
 
    type FileStreamFactory is tagged;
    type FileStreamFactory_Access is access all FileStreamFactory'Class;
    type FileStreamFactory_Access_Array is array (Natural range <>) of FileStreamFactory_Access;
    type FileStreamFactory_Access_Array_Access is access all FileStreamFactory_Access_Array;
+   type FileStreamFactory_Access_Array_Access_Array is array (Natural range <>) of FileStreamFactory_Access_Array_Access;
+   type FileStreamFactory_Access_Array_Access_Array_Access is access all FileStreamFactory_Access_Array_Access_Array;
 
    type FileStreamFactory is new Java_Object with null record;
    SINGLETON : Java_Object_Access;

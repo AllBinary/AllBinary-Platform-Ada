@@ -29,6 +29,8 @@ package org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Packa
    type CollidableInterfaceCompositeInterface_Access is access all CollidableInterfaceCompositeInterface'Class;
    type CollidableInterfaceCompositeInterface_Access_Array is array (Natural range <>) of CollidableInterfaceCompositeInterface_Access;
    type CollidableInterfaceCompositeInterface_Access_Array_Access is access all CollidableInterfaceCompositeInterface_Access_Array;
+   type CollidableInterfaceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of CollidableInterfaceCompositeInterface_Access_Array_Access;
+   type CollidableInterfaceCompositeInterface_Access_Array_Access_Array_Access is access all CollidableInterfaceCompositeInterface_Access_Array_Access_Array;
    function getCollidableInferface (This : in out CollidableInterfaceCompositeInterface) return CollidableBaseBehavior_Access is abstract;
 
 end org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;

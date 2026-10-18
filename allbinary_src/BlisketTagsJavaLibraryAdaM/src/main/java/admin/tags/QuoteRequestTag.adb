@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.QuoteHelperFactory_Package; use admin.taghelpers.QuoteHelperFactory_Package;
+with admin.taghelpers.QuoteRequestHelperFactory_Package; use admin.taghelpers.QuoteRequestHelperFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body admin.tags.QuoteRequestTag_Package is
 
+   package QuoteHelperFactory_Package renames Standard.admin.taghelpers.QuoteHelperFactory_Package;
+   package QuoteRequestHelperFactory_Package renames Standard.admin.taghelpers.QuoteRequestHelperFactory_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out QuoteRequestTag'Class) is
    begin
       null;
@@ -74,7 +85,7 @@ package body admin.tags.QuoteRequestTag_Package is
             if (QuoteRequestTag'Class (This).getCommand) /= (null) then
                 QuoteRequestTag'Class (This).getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
                 if (QuoteRequestTag'Class (This).getCommand.compareTo (To_Unbounded_String ("EMAIL"))) = (0) then
-                    QuoteRequestTag'Class (This).email;
+                    declare Java_Result renames QuoteRequestTag'Class (This).email; pragma Unreferenced (Java_Result); begin null; end;
                     return This.EVAL_BODY_INCLUDE;
                 else
                     return TableTag (This).doStartTag;

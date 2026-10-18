@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.context.modules.storefront.StoreFrontData_Package is
 
    procedure Initialize_Fields (This : in out StoreFrontData'Class) is

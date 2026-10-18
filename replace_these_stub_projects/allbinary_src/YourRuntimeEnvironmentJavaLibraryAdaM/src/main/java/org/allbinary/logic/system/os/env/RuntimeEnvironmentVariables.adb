@@ -1,8 +1,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
+with org.allbinary.logic.system.os.env.Process_Package; use org.allbinary.logic.system.os.env.Process_Package;
+with org.allbinary.logic.system.os.env.Runtime_Package; use org.allbinary.logic.system.os.env.Runtime_Package;
+
 package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Package is
 
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+   package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
    procedure Initialize_Fields (This : in out RuntimeEnvironmentVariables'Class) is
    begin
       null;
@@ -63,7 +72,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
             operatingSystems := OperatingSystems_Package.getInstance;
             if (Java_Compare_To (osName, operatingSystems.LINUX)) = (0) then
                 process := Runtime_Package.getRuntime.exec (linuxCommand);
-            elsif ((Index (osName, Java_Image (operatingSystems.WINDOWS)) - 1)) >= (0) then
+            elsif (Java_Index_Of (osName, Java_Image (operatingSystems.WINDOWS))) >= (0) then
                 process := Runtime_Package.getRuntime.exec (windowsCommand);
             elsif (Java_Compare_To (osName, operatingSystems.SOLARIS)) = (0) then
                 process := Runtime_Package.getRuntime.exec (solarisCommand);
@@ -74,7 +83,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
             bufferedReader := BufferedReader_Package.Create (processInputStreamReader);
             keyValuePair := Null_Unbounded_String;
             while ((Java_Assign (keyValuePair, bufferedReader.readLine))) /= (null) loop
-                index := (Index (keyValuePair, Java_Image ('=')) - 1);
+                index := Java_Index_Of (keyValuePair, Java_Image ('='));
                 key := Unbounded_Slice (keyValuePair, (0) + 1, index);
                 value := Unbounded_Slice (keyValuePair, ((index) + (1)) + 1, Length (keyValuePair));
                 environmentVariables.put (key, value);
@@ -227,7 +236,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
             windowsCommand := To_Unbounded_String ("cmd.exe /c set") & var & To_Unbounded_String ("=") & val;
             if (Java_Compare_To (osName, operatingSystems.LINUX)) = (0) then
                 Java_Throw (Java_New_Exception ("Exception"));
-            elsif ((Index (osName, Java_Image (operatingSystems.WINDOWS)) - 1)) >= (0) then
+            elsif (Java_Index_Of (osName, Java_Image (operatingSystems.WINDOWS))) >= (0) then
                 process := Runtime_Package.getRuntime.exec (windowsCommand);
             elsif (Java_Compare_To (osName, operatingSystems.SOLARIS)) = (0) then
                 Java_Throw (Java_New_Exception ("Exception"));

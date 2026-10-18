@@ -24,45 +24,24 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.http.HttpSession_Package; use javax.servlet.http.HttpSession_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
-with org.allbinary.business.user.commerce.inventory.basket.Basket_Package; use org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
-with org.allbinary.business.user.commerce.inventory.order.Order_Package; use org.allbinary.business.user.commerce.inventory.order.Order_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package; use org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
-with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
 with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
-with org.allbinary.business.user.role.UserRoleB_Package; use org.allbinary.business.user.role.UserRoleB_Package;
-with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
-with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
-with org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
 
 package org.allbinary.logic.communication.http.request.session.WeblisketSession_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
-   package Basket_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
-   package Order_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.Order_Package;
    package OrderInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
-   package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
    package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
-   package UserRoleB_Package renames Standard.org.allbinary.business.user.role.UserRoleB_Package;
-   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
-   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type WeblisketSession is tagged;
    type WeblisketSession_Access is access all WeblisketSession'Class;
    type WeblisketSession_Access_Array is array (Natural range <>) of WeblisketSession_Access;
    type WeblisketSession_Access_Array_Access is access all WeblisketSession_Access_Array;
+   type WeblisketSession_Access_Array_Access_Array is array (Natural range <>) of WeblisketSession_Access_Array_Access;
+   type WeblisketSession_Access_Array_Access_Array_Access is access all WeblisketSession_Access_Array_Access_Array;
 
-   type WeblisketSession is new WeblisketSessionInterface with record
+   type WeblisketSession is new Java_Object and WeblisketSessionInterface with record
       session : HttpSession_Access;
    end record;
 

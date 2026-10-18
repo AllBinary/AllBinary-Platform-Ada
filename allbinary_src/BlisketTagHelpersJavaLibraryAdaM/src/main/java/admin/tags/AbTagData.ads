@@ -28,6 +28,8 @@ package admin.tags.AbTagData_Package is
    type AbTagData_Access is access all AbTagData'Class;
    type AbTagData_Access_Array is array (Natural range <>) of AbTagData_Access;
    type AbTagData_Access_Array_Access is access all AbTagData_Access_Array;
+   type AbTagData_Access_Array_Access_Array is array (Natural range <>) of AbTagData_Access_Array_Access;
+   type AbTagData_Access_Array_Access_Array_Access is access all AbTagData_Access_Array_Access_Array;
 
    type AbTagData is new Java_Object with null record;
    PARENT : Unbounded_String;

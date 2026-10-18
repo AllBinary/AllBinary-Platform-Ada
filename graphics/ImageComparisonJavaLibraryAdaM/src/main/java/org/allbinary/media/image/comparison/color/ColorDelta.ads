@@ -20,24 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.media.image.comparison.color.ColorDelta_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type ColorDelta is tagged;
    type ColorDelta_Access is access all ColorDelta'Class;
    type ColorDelta_Access_Array is array (Natural range <>) of ColorDelta_Access;
    type ColorDelta_Access_Array_Access is access all ColorDelta_Access_Array;
+   type ColorDelta_Access_Array_Access_Array is array (Natural range <>) of ColorDelta_Access_Array_Access;
+   type ColorDelta_Access_Array_Access_Array_Access is access all ColorDelta_Access_Array_Access_Array;
 
-   type ColorDelta is new CacheableInterface with record
+   type ColorDelta is new Java_Object and CacheableInterface with record
       rgb1 : Integer;
       rgb2 : Integer;
       key : Java_Object_Access;

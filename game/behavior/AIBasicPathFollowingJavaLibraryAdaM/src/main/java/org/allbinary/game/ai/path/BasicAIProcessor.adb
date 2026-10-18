@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+
 package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
 
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
    procedure Initialize_Fields (This : in out BasicAIProcessor'Class) is
    begin
       null;
@@ -97,7 +102,7 @@ package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
       keyDirection : Integer;
    begin
         keyDirection := -(1);
-        if This.geographicMapCellPositionBasicArrayList.contains (currentGeographicMapCellPosition) then
+        if This.geographicMapCellPositionBasicArrayList.contains (Java_Object_Access (currentGeographicMapCellPosition)) then
             BasicAIProcessor'Class (This).update;
             keyDirection := BasicAIProcessor'Class (This).goTowardNextChosenOnPathPosition (currentGeographicMapCellPosition);
             This.geographicMapCellPathHistoryInfo.setPreviousOnPathGeographicMapCellPosition (currentGeographicMapCellPosition);

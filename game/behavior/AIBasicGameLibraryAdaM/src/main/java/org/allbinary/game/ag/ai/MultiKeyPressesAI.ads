@@ -24,7 +24,6 @@ with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.Ga
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.ag.ai.KeyPressesAI_Package; use org.allbinary.game.ag.ai.KeyPressesAI_Package;
@@ -35,7 +34,6 @@ package org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
@@ -43,6 +41,8 @@ package org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
    type MultiKeyPressesAI_Access is access all MultiKeyPressesAI'Class;
    type MultiKeyPressesAI_Access_Array is array (Natural range <>) of MultiKeyPressesAI_Access;
    type MultiKeyPressesAI_Access_Array_Access is access all MultiKeyPressesAI_Access_Array;
+   type MultiKeyPressesAI_Access_Array_Access_Array is array (Natural range <>) of MultiKeyPressesAI_Access_Array_Access;
+   type MultiKeyPressesAI_Access_Array_Access_Array_Access is access all MultiKeyPressesAI_Access_Array_Access_Array;
 
    type MultiKeyPressesAI is new KeyPressesAI with record
       toggleTimeHelper : TimeDelayHelper_Access;

@@ -23,21 +23,20 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
-with org.allbinary.animation.image.BottomToTopImageAnimation_Package; use org.allbinary.animation.image.BottomToTopImageAnimation_Package;
 
 package org.allbinary.animation.image.BottomToTopImageAnimationFactory_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
    type BottomToTopImageAnimationFactory is tagged;
    type BottomToTopImageAnimationFactory_Access is access all BottomToTopImageAnimationFactory'Class;
    type BottomToTopImageAnimationFactory_Access_Array is array (Natural range <>) of BottomToTopImageAnimationFactory_Access;
    type BottomToTopImageAnimationFactory_Access_Array_Access is access all BottomToTopImageAnimationFactory_Access_Array;
+   type BottomToTopImageAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of BottomToTopImageAnimationFactory_Access_Array_Access;
+   type BottomToTopImageAnimationFactory_Access_Array_Access_Array_Access is access all BottomToTopImageAnimationFactory_Access_Array_Access_Array;
 
    type BottomToTopImageAnimationFactory is new BaseImageAnimationFactory with null record;
 

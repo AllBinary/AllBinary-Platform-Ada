@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.special.SpecialAnimation_Package; use org.allbinary.animation.special.SpecialAnimation_Package;
+
 package body org.allbinary.animation.NullSpecialAnimationFactory_Package is
 
+   package SpecialAnimation_Package renames Standard.org.allbinary.animation.special.SpecialAnimation_Package;
    procedure Initialize_Fields (This : in out NullSpecialAnimationFactory'Class) is
    begin
       null;

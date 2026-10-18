@@ -29,6 +29,8 @@ package org.allbinary.game.resource.ResourceLoadingLevelFactory_Package is
    type ResourceLoadingLevelFactory_Access is access all ResourceLoadingLevelFactory'Class;
    type ResourceLoadingLevelFactory_Access_Array is array (Natural range <>) of ResourceLoadingLevelFactory_Access;
    type ResourceLoadingLevelFactory_Access_Array_Access is access all ResourceLoadingLevelFactory_Access_Array;
+   type ResourceLoadingLevelFactory_Access_Array_Access_Array is array (Natural range <>) of ResourceLoadingLevelFactory_Access_Array_Access;
+   type ResourceLoadingLevelFactory_Access_Array_Access_Array_Access is access all ResourceLoadingLevelFactory_Access_Array_Access_Array;
 
    type ResourceLoadingLevelFactory is new Java_Object with record
       LOAD_EARLY : ResourceLoadingLevel_Access;
@@ -44,8 +46,8 @@ package org.allbinary.game.resource.ResourceLoadingLevelFactory_Package is
    procedure Initialize (This : in out ResourceLoadingLevelFactory'Class);
    function Create return ResourceLoadingLevelFactory_Access;
    function getInstance return ResourceLoadingLevelFactory_Access;
-   function getLevelString (This : in out ResourceLoadingLevelFactory; level_Case : Integer) return Unbounded_String;
-   procedure getLevelString (This : in out ResourceLoadingLevelFactory; level_Case : Integer);
+   function getLevelString (This : in out ResourceLoadingLevelFactory; level : Integer) return Unbounded_String;
+   procedure getLevelString (This : in out ResourceLoadingLevelFactory; level : Integer);
 
 end org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
 

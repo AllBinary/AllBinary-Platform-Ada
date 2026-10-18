@@ -20,22 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.game.resource.FeaturedResourceFactory_Package; use org.allbinary.game.resource.FeaturedResourceFactory_Package;
-with org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package; use org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package;
 
 package org.allbinary.game.resource.FeatureResourceInitializationUtil_Package is
 
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type FeatureResourceInitializationUtil is tagged;
    type FeatureResourceInitializationUtil_Access is access all FeatureResourceInitializationUtil'Class;
    type FeatureResourceInitializationUtil_Access_Array is array (Natural range <>) of FeatureResourceInitializationUtil_Access;
    type FeatureResourceInitializationUtil_Access_Array_Access is access all FeatureResourceInitializationUtil_Access_Array;
+   type FeatureResourceInitializationUtil_Access_Array_Access_Array is array (Natural range <>) of FeatureResourceInitializationUtil_Access_Array_Access;
+   type FeatureResourceInitializationUtil_Access_Array_Access_Array_Access is access all FeatureResourceInitializationUtil_Access_Array_Access_Array;
 
    type FeatureResourceInitializationUtil is new Java_Object with record
       logUtil : LogUtil_Access;

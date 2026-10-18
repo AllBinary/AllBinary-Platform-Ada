@@ -28,6 +28,8 @@ package org.allbinary.input.automation.actions.script.condition.TimeIntervalActi
    type TimeIntervalActionScriptConditionData_Access is access all TimeIntervalActionScriptConditionData'Class;
    type TimeIntervalActionScriptConditionData_Access_Array is array (Natural range <>) of TimeIntervalActionScriptConditionData_Access;
    type TimeIntervalActionScriptConditionData_Access_Array_Access is access all TimeIntervalActionScriptConditionData_Access_Array;
+   type TimeIntervalActionScriptConditionData_Access_Array_Access_Array is array (Natural range <>) of TimeIntervalActionScriptConditionData_Access_Array_Access;
+   type TimeIntervalActionScriptConditionData_Access_Array_Access_Array_Access is access all TimeIntervalActionScriptConditionData_Access_Array_Access_Array;
 
    type TimeIntervalActionScriptConditionData is new Java_Object with null record;
    NAME : Unbounded_String;

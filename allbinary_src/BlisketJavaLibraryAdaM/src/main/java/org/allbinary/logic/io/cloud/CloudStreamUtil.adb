@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.io.AbFileLocalInputStream_Package; use org.allbinary.logic.io.AbFileLocalInputStream_Package;
+
 package body org.allbinary.logic.io.CloudStreamUtil_Package is
 
    procedure Initialize_Fields (This : in out CloudStreamUtil'Class) is
@@ -45,7 +48,7 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
       inputStream : InputStream_Access;
       available : Integer;
    begin
-        inputStream := AbFileInputStream_Package.Create (file);
+        inputStream := InputStream_Access (AbFileInputStream_Package.Create (file));
         available := inputStream.available;
         if (available) > (0) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -61,14 +64,14 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
       inputStream : InputStream_Access;
       available : Integer;
    begin
-        inputStream := AbFileLocalInputStream_Package.Create (file);
+        inputStream := InputStream_Access (AbFileLocalInputStream_Package.Create (file));
         available := inputStream.available;
         if (available) > (0) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Local File Bytes: ") & Java_Image (available), CloudStreamUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("processRequest()"));
             end if;
         else
-            inputStream := AbFileInputStream_Package.Create (file);
+            inputStream := InputStream_Access (AbFileInputStream_Package.Create (file));
             available := inputStream.available;
             if (available) > (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
@@ -85,7 +88,7 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
       inputStream : InputStream_Access;
       available : Integer;
    begin
-        inputStream := AbFileLocalInputStream_Package.Create (file);
+        inputStream := InputStream_Access (AbFileLocalInputStream_Package.Create (file));
         available := inputStream.available;
         if (available) > (0) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then

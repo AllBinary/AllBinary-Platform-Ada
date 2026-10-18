@@ -20,9 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
-with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package; use org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
-with org.allbinary.graphics.opengles.OpenGLCapabilities_Package; use org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
 with org.allbinary.graphics.opengles.OpenGLProcessor_Package; use org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 with org.allbinary.graphics.opengles.shader.ShaderComposite_Package; use org.allbinary.graphics.opengles.shader.ShaderComposite_Package;
 with org.allbinary.graphics.opengles.shader.Shader_Package; use org.allbinary.graphics.opengles.shader.Shader_Package;
@@ -32,15 +29,14 @@ with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package; use org
 
 package org.allbinary.graphics.opengles.shader.NullShaderComposite_Package is
 
-   package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
-   package NullOpenGLProcessorFactory_Package renames Standard.org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
-   package OpenGLCapabilities_Package renames Standard.org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
    package OpenGLProcessor_Package renames Standard.org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 
    type NullShaderComposite is tagged;
    type NullShaderComposite_Access is access all NullShaderComposite'Class;
    type NullShaderComposite_Access_Array is array (Natural range <>) of NullShaderComposite_Access;
    type NullShaderComposite_Access_Array_Access is access all NullShaderComposite_Access_Array;
+   type NullShaderComposite_Access_Array_Access_Array is array (Natural range <>) of NullShaderComposite_Access_Array_Access;
+   type NullShaderComposite_Access_Array_Access_Array_Access is access all NullShaderComposite_Access_Array_Access_Array;
 
    type NullShaderComposite is new ShaderComposite with null record;
    instance : NullShaderComposite_Access;

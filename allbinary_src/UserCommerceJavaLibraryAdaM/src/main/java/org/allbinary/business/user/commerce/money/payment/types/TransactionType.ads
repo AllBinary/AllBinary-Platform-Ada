@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.types.TransactionType
    type TransactionType_Access is access all TransactionType'Class;
    type TransactionType_Access_Array is array (Natural range <>) of TransactionType_Access;
    type TransactionType_Access_Array_Access is access all TransactionType_Access_Array;
+   type TransactionType_Access_Array_Access_Array is array (Natural range <>) of TransactionType_Access_Array_Access;
+   type TransactionType_Access_Array_Access_Array_Access is access all TransactionType_Access_Array_Access_Array;
 
    type TransactionType is new Java_Object with record
       name : Unbounded_String;

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntityFactory_Package;
+with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+
 package body admin.taghelpers.CustomItemsHelper_Package is
 
+   package CustomItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntityFactory_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
    procedure Initialize_Fields (This : in out CustomItemsHelper'Class) is
    begin
       null;

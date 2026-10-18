@@ -33,6 +33,8 @@ package org.allbinary.game.health.HealthBarTwodAnimation_Package is
    type HealthBarTwodAnimation_Access is access all HealthBarTwodAnimation'Class;
    type HealthBarTwodAnimation_Access_Array is array (Natural range <>) of HealthBarTwodAnimation_Access;
    type HealthBarTwodAnimation_Access_Array_Access is access all HealthBarTwodAnimation_Access_Array;
+   type HealthBarTwodAnimation_Access_Array_Access_Array is array (Natural range <>) of HealthBarTwodAnimation_Access_Array_Access;
+   type HealthBarTwodAnimation_Access_Array_Access_Array_Access is access all HealthBarTwodAnimation_Access_Array_Access_Array;
 
    type HealthBarTwodAnimation is new HealthBarAnimation with null record;
 

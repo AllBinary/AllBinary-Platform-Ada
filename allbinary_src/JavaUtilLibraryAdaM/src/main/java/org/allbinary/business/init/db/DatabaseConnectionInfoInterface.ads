@@ -28,6 +28,8 @@ package org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package i
    type DatabaseConnectionInfoInterface_Access is access all DatabaseConnectionInfoInterface'Class;
    type DatabaseConnectionInfoInterface_Access_Array is array (Natural range <>) of DatabaseConnectionInfoInterface_Access;
    type DatabaseConnectionInfoInterface_Access_Array_Access is access all DatabaseConnectionInfoInterface_Access_Array;
+   type DatabaseConnectionInfoInterface_Access_Array_Access_Array is array (Natural range <>) of DatabaseConnectionInfoInterface_Access_Array_Access;
+   type DatabaseConnectionInfoInterface_Access_Array_Access_Array_Access is access all DatabaseConnectionInfoInterface_Access_Array_Access_Array;
    function getUrl (This : in out DatabaseConnectionInfoInterface) return Unbounded_String is abstract;
    function getJdbcDriver (This : in out DatabaseConnectionInfoInterface) return Unbounded_String is abstract;
    function getName (This : in out DatabaseConnectionInfoInterface) return Unbounded_String is abstract;

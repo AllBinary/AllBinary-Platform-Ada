@@ -34,6 +34,8 @@ package org.allbinary.opengles.JOGL11_Package is
    type JOGL11_Access is access all JOGL11'Class;
    type JOGL11_Access_Array is array (Natural range <>) of JOGL11_Access;
    type JOGL11_Access_Array_Access is access all JOGL11_Access_Array;
+   type JOGL11_Access_Array_Access_Array is array (Natural range <>) of JOGL11_Access_Array_Access;
+   type JOGL11_Access_Array_Access_Array_Access is access all JOGL11_Access_Array_Access_Array;
 
    type JOGL11 is new JOGL10 and GL11 with record
       gl11 : GL2_Access;

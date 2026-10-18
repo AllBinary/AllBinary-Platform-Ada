@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.paint.FullScreenPaintable_Package; use org.allbinary.game.paint.FullScreenPaintable_Package;
+
 package body org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Package is
 
+   package FullScreenPaintable_Package renames Standard.org.allbinary.game.paint.FullScreenPaintable_Package;
    procedure Initialize_Fields (This : in out FullScreenPaintableFactory'Class) is
    begin
       null;

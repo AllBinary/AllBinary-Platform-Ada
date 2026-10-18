@@ -20,24 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
-with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 
 package org.allbinary.graphics.color.BasicColorFactory_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
-   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type BasicColorFactory is tagged;
    type BasicColorFactory_Access is access all BasicColorFactory'Class;
    type BasicColorFactory_Access_Array is array (Natural range <>) of BasicColorFactory_Access;
    type BasicColorFactory_Access_Array_Access is access all BasicColorFactory_Access_Array;
+   type BasicColorFactory_Access_Array_Access_Array is array (Natural range <>) of BasicColorFactory_Access_Array_Access;
+   type BasicColorFactory_Access_Array_Access_Array_Access is access all BasicColorFactory_Access_Array_Access_Array;
 
    type BasicColorFactory is new Java_Object with record
       NULL_COLOR : BasicColor_Access;

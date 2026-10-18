@@ -28,6 +28,8 @@ package org.allbinary.logic.math.PrimitiveFloatUtil_Package is
    type PrimitiveFloatUtil_Access is access all PrimitiveFloatUtil'Class;
    type PrimitiveFloatUtil_Access_Array is array (Natural range <>) of PrimitiveFloatUtil_Access;
    type PrimitiveFloatUtil_Access_Array_Access is access all PrimitiveFloatUtil_Access_Array;
+   type PrimitiveFloatUtil_Access_Array_Access_Array is array (Natural range <>) of PrimitiveFloatUtil_Access_Array_Access;
+   type PrimitiveFloatUtil_Access_Array_Access_Array_Access is access all PrimitiveFloatUtil_Access_Array_Access_Array;
 
    type PrimitiveFloatUtil is new Java_Object with null record;
 

@@ -20,14 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
-with org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package; use org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package;
 
 package org.allbinary.game.ag.layer.pickup.FallingPickupLayerFactory_Package is
 
-   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerFactoryInterface_Package renames Standard.org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 
@@ -35,8 +32,10 @@ package org.allbinary.game.ag.layer.pickup.FallingPickupLayerFactory_Package is
    type FallingPickupLayerFactory_Access is access all FallingPickupLayerFactory'Class;
    type FallingPickupLayerFactory_Access_Array is array (Natural range <>) of FallingPickupLayerFactory_Access;
    type FallingPickupLayerFactory_Access_Array_Access is access all FallingPickupLayerFactory_Access_Array;
+   type FallingPickupLayerFactory_Access_Array_Access_Array is array (Natural range <>) of FallingPickupLayerFactory_Access_Array_Access;
+   type FallingPickupLayerFactory_Access_Array_Access_Array_Access is access all FallingPickupLayerFactory_Access_Array_Access_Array;
 
-   type FallingPickupLayerFactory is new AllBinaryLayerFactoryInterface with null record;
+   type FallingPickupLayerFactory is new Java_Object and AllBinaryLayerFactoryInterface with null record;
 
    procedure Initialize (This : in out FallingPickupLayerFactory'Class);
    function Create return FallingPickupLayerFactory_Access;

@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with javax.microedition.lcdui.ImageItem_Package; use javax.microedition.lcdui.ImageItem_Package;
+with org.allbinary.game.layer.RTSGameStrings_Package; use org.allbinary.game.layer.RTSGameStrings_Package;
+with org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package; use org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;
+with org.allbinary.game.layer.item.RTSLayerTextAnimation_Package; use org.allbinary.game.layer.item.RTSLayerTextAnimation_Package;
+with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.form.item.CustomItemUtil_Package; use org.allbinary.graphics.form.item.CustomItemUtil_Package;
+with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+
 package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
 
+   package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package ImageItem_Package renames Standard.javax.microedition.lcdui.ImageItem_Package;
+   package RTSGameStrings_Package renames Standard.org.allbinary.game.layer.RTSGameStrings_Package;
+   package LayerInterfaceFactoryImageItem_Package renames Standard.org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;
+   package RTSLayerTextAnimation_Package renames Standard.org.allbinary.game.layer.item.RTSLayerTextAnimation_Package;
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package CustomItemUtil_Package renames Standard.org.allbinary.graphics.form.item.CustomItemUtil_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
    procedure Initialize_Fields (This : in out UnitItemArrayFactory'Class) is
    begin
       null;
@@ -45,7 +66,7 @@ package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
       index : Integer;
    begin
         name := flagResources.NAME;
-        index := (Index (name, Java_Image (This.commonSeps.SPACE)) - 1);
+        index := Java_Index_Of (name, Java_Image (This.commonSeps.SPACE));
         if (index) >= (0) then
             name := Unbounded_Slice (name, (index) + 1, Length (name));
         end if;
@@ -62,7 +83,7 @@ package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
    begin
         IMAGE_CACHE := GameFeatureImageCacheFactory_Package.getInstance;
         image := IMAGE_CACHE.getWithKey (flagResources.RESOURCE_ICON);
-        item := LayerInterfaceFactoryImageItem_Package.Create (name, image, ImageItem_Package.LAYOUT_DEFAULT, flagResources.NAME, This.basicColor, new Animation_Access_Array'(0 => RTSLayerTextAnimation_Package.Create (RTSGameStrings_Package.getInstance.DRAGGABLE, image)), layerInterfaceFactoryInterface);
+        item := ABCustomItem_Access (LayerInterfaceFactoryImageItem_Package.Create (name, image, ImageItem_Package.LAYOUT_DEFAULT, flagResources.NAME, This.basicColor, new Animation_Access_Array'(0 => RTSLayerTextAnimation_Package.Create (RTSGameStrings_Package.getInstance.DRAGGABLE, image)), layerInterfaceFactoryInterface));
         return item;
    end createNamedFlagItem;
 

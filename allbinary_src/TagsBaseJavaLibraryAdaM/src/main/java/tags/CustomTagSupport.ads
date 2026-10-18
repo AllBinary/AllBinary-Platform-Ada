@@ -32,6 +32,8 @@ package tags.CustomTagSupport_Package is
    type CustomTagSupport_Access is access all CustomTagSupport'Class;
    type CustomTagSupport_Access_Array is array (Natural range <>) of CustomTagSupport_Access;
    type CustomTagSupport_Access_Array_Access is access all CustomTagSupport_Access_Array;
+   type CustomTagSupport_Access_Array_Access_Array is array (Natural range <>) of CustomTagSupport_Access_Array_Access;
+   type CustomTagSupport_Access_Array_Access_Array_Access is access all CustomTagSupport_Access_Array_Access_Array;
 
    type CustomTagSupport is new TagSupport with record
       commonStrings : CommonStrings_Access;

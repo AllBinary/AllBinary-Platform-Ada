@@ -32,6 +32,8 @@ package org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_
    type ShippingInterface_Access is access all ShippingInterface'Class;
    type ShippingInterface_Access_Array is array (Natural range <>) of ShippingInterface_Access;
    type ShippingInterface_Access_Array_Access is access all ShippingInterface_Access_Array;
+   type ShippingInterface_Access_Array_Access_Array is array (Natural range <>) of ShippingInterface_Access_Array_Access;
+   type ShippingInterface_Access_Array_Access_Array_Access is access all ShippingInterface_Access_Array_Access_Array;
    function getCost (This : in out ShippingInterface; order_Param : access OrderInterface_Package.OrderInterface'Class) return Money_Access is abstract;
    function getName (This : in out ShippingInterface) return Unbounded_String is abstract;
    function getDescription (This : in out ShippingInterface) return Unbounded_String is abstract;

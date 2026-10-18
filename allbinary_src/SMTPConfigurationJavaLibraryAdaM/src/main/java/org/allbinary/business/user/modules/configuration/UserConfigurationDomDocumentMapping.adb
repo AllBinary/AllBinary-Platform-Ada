@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.business.user.modules.configuration.UserConfigurationView_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationView_Package;
+
 package body org.allbinary.business.user.modules.configuration.UserConfigurationDomDocumentMapping_Package is
 
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
    procedure Initialize_Fields (This : in out UserConfigurationDomDocumentMapping'Class) is
    begin
       null;

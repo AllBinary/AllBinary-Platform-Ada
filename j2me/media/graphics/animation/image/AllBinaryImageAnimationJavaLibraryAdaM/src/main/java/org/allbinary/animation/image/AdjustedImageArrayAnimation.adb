@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.image.AdjustedImageArrayAnimation_Package is
 
    procedure Initialize_Fields (This : in out AdjustedImageArrayAnimation'Class) is

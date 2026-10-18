@@ -8,28 +8,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.view.KeyEvent_Package; use android.view.KeyEvent_Package;
 with org.allbinary.android.ActivityFractureUtil_Package; use org.allbinary.android.ActivityFractureUtil_Package;
-with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.game.input.AndroidGameKey_Package; use org.allbinary.game.input.AndroidGameKey_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 
 package org.allbinary.game.input.AndroidKeyFactory_Package is
 
-   package KeyEvent_Package renames Standard.android.view.KeyEvent_Package;
    package ActivityFractureUtil_Package renames Standard.org.allbinary.android.ActivityFractureUtil_Package;
-   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type AndroidKeyFactory is tagged;
    type AndroidKeyFactory_Access is access all AndroidKeyFactory'Class;
    type AndroidKeyFactory_Access_Array is array (Natural range <>) of AndroidKeyFactory_Access;
    type AndroidKeyFactory_Access_Array_Access is access all AndroidKeyFactory_Access_Array;
+   type AndroidKeyFactory_Access_Array_Access_Array is array (Natural range <>) of AndroidKeyFactory_Access_Array_Access;
+   type AndroidKeyFactory_Access_Array_Access_Array_Access is access all AndroidKeyFactory_Access_Array_Access_Array;
 
    type AndroidKeyFactory is new ActivityFractureUtil with record
       logUtil : LogUtil_Access;

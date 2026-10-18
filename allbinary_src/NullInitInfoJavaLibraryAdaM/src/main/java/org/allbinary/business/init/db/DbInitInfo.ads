@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
 
 package org.allbinary.business.init.db.DbInitInfo_Package is
 
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
 
    type DbInitInfo is tagged;
    type DbInitInfo_Access is access all DbInitInfo'Class;
    type DbInitInfo_Access_Array is array (Natural range <>) of DbInitInfo_Access;
    type DbInitInfo_Access_Array_Access is access all DbInitInfo_Access_Array;
+   type DbInitInfo_Access_Array_Access_Array is array (Natural range <>) of DbInitInfo_Access_Array_Access;
+   type DbInitInfo_Access_Array_Access_Array_Access is access all DbInitInfo_Access_Array_Access_Array;
 
    type DbInitInfo is new DbConnectionInfo with null record;
 

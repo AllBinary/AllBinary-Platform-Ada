@@ -28,6 +28,8 @@ package org.allbinary.game.layer.behavior.GameLayerBehavior_Package is
    type GameLayerBehavior_Access is access all GameLayerBehavior'Class;
    type GameLayerBehavior_Access_Array is array (Natural range <>) of GameLayerBehavior_Access;
    type GameLayerBehavior_Access_Array_Access is access all GameLayerBehavior_Access_Array;
+   type GameLayerBehavior_Access_Array_Access_Array is array (Natural range <>) of GameLayerBehavior_Access_Array_Access;
+   type GameLayerBehavior_Access_Array_Access_Array_Access is access all GameLayerBehavior_Access_Array_Access_Array;
 
    type GameLayerBehavior is new Java_Object with null record;
 

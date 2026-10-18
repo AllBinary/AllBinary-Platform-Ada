@@ -20,11 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package; use org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
-with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package;
-with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package;
-with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
-with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.JPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.JPanel_Package;
@@ -32,11 +27,6 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.acti
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package is
 
-   package JTreeInterfaceFactory_Package renames Standard.org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
-   package AlwaysActionScriptCondition_Package renames Standard.org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package;
-   package ColorAtActionScriptCondition_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package;
-   package ProfileActionScriptConditionInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
-   package TimeIntervalActionScriptCondition_Package renames Standard.org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package;
    package GenericProfileActionScriptJPanel_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
@@ -44,6 +34,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    type GenericProfileActionJPanel_Access is access all GenericProfileActionJPanel'Class;
    type GenericProfileActionJPanel_Access_Array is array (Natural range <>) of GenericProfileActionJPanel_Access;
    type GenericProfileActionJPanel_Access_Array_Access is access all GenericProfileActionJPanel_Access_Array;
+   type GenericProfileActionJPanel_Access_Array_Access_Array is array (Natural range <>) of GenericProfileActionJPanel_Access_Array_Access;
+   type GenericProfileActionJPanel_Access_Array_Access_Array_Access is access all GenericProfileActionJPanel_Access_Array_Access_Array;
 
    type GenericProfileActionJPanel is new JPanel with record
       logUtil : LogUtil_Access;

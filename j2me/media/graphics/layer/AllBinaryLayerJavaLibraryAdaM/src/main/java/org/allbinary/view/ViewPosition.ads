@@ -31,6 +31,8 @@ package org.allbinary.view.ViewPosition_Package is
    type ViewPosition_Access is access all ViewPosition'Class;
    type ViewPosition_Access_Array is array (Natural range <>) of ViewPosition_Access;
    type ViewPosition_Access_Array_Access is access all ViewPosition_Access_Array;
+   type ViewPosition_Access_Array_Access_Array is array (Natural range <>) of ViewPosition_Access_Array_Access;
+   type ViewPosition_Access_Array_Access_Array_Access is access all ViewPosition_Access_Array_Access_Array;
 
    type ViewPosition is new ViewPositionBase with record
       allbinaryLayer : AllBinaryLayer_Access;
@@ -46,6 +48,7 @@ package org.allbinary.view.ViewPosition_Package is
    function getY2 (This : in out ViewPosition) return Integer;
    function getZ2 (This : in out ViewPosition) return Integer;
    procedure setAllbinaryLayer (This : in out ViewPosition; allbinaryLayer_Param : access Java_Object'Class);
+   procedure setAllbinaryLayer (This : in out ViewPosition; Value : Unbounded_String);
 
 end org.allbinary.view.ViewPosition_Package;
 

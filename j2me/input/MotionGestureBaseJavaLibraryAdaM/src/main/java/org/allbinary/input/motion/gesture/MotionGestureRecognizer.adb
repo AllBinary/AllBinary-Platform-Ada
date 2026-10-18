@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+with org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package;
+with org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+
 package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package is
 
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package MotionGestureConfiguration_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+   package MotionGestureConfigurationFactory_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+   package MotionGestureEvent_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+   package MovedMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package;
+   package ScrolledMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out MotionGestureRecognizer'Class) is
    begin
       null;

@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.view.View_Package; use android.view.View_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.activity.ViewCompositeInterface_Package is
 
@@ -30,6 +31,8 @@ package org.allbinary.android.activity.ViewCompositeInterface_Package is
    type ViewCompositeInterface_Access is access all ViewCompositeInterface'Class;
    type ViewCompositeInterface_Access_Array is array (Natural range <>) of ViewCompositeInterface_Access;
    type ViewCompositeInterface_Access_Array_Access is access all ViewCompositeInterface_Access_Array;
+   type ViewCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of ViewCompositeInterface_Access_Array_Access;
+   type ViewCompositeInterface_Access_Array_Access_Array_Access is access all ViewCompositeInterface_Access_Array_Access_Array;
    function getRootView (This : in out ViewCompositeInterface) return View_Access is abstract;
    function getView (This : in out ViewCompositeInterface) return View_Access is abstract;
    procedure runOnUiThread (This : in out ViewCompositeInterface; action_Param : access Runnable_Package.Runnable'Class) is abstract;

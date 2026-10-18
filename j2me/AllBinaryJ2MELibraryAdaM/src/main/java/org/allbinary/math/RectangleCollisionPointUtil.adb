@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.math.RectangleCollisionUtil_Package; use org.allbinary.math.RectangleCollisionUtil_Package;
+
 package body org.allbinary.math.RectangleCollisionPointUtil_Package is
 
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    procedure Initialize_Fields (This : in out RectangleCollisionPointUtil'Class) is
    begin
       null;

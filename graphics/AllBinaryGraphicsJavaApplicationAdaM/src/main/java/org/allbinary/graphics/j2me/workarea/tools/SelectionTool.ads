@@ -20,36 +20,26 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package; use org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.math.RectangleCollisionPointUtil_Package; use org.allbinary.math.RectangleCollisionPointUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Color_Package; use org.allbinary.graphics.j2me.workarea.tools.Color_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Points_Package; use org.allbinary.graphics.j2me.workarea.tools.Points_Package;
-with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Graphics_Package; use org.allbinary.graphics.j2me.workarea.tools.Graphics_Package;
-with org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package; use org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
 
-   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package CanvasDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
    package CanvasJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
    package IntegerDimension_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package RectangleCollisionPointUtil_Package renames Standard.org.allbinary.math.RectangleCollisionPointUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -57,8 +47,10 @@ package org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
    type SelectionTool_Access is access all SelectionTool'Class;
    type SelectionTool_Access_Array is array (Natural range <>) of SelectionTool_Access;
    type SelectionTool_Access_Array_Access is access all SelectionTool_Access_Array;
+   type SelectionTool_Access_Array_Access_Array is array (Natural range <>) of SelectionTool_Access_Array_Access;
+   type SelectionTool_Access_Array_Access_Array_Access is access all SelectionTool_Access_Array_Access_Array;
 
-   type SelectionTool is new GraphicItemInterface with record
+   type SelectionTool is new Java_Object and GraphicItemInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       canvasJPanel : CanvasJPanel_Access;

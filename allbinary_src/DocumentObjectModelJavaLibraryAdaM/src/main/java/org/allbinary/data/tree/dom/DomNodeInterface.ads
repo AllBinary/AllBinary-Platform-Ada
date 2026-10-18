@@ -32,6 +32,8 @@ package org.allbinary.data.tree.dom.DomNodeInterface_Package is
    type DomNodeInterface_Access is access all DomNodeInterface'Class;
    type DomNodeInterface_Access_Array is array (Natural range <>) of DomNodeInterface_Access;
    type DomNodeInterface_Access_Array_Access is access all DomNodeInterface_Access_Array;
+   type DomNodeInterface_Access_Array_Access_Array is array (Natural range <>) of DomNodeInterface_Access_Array_Access;
+   type DomNodeInterface_Access_Array_Access_Array_Access is access all DomNodeInterface_Access_Array_Access_Array;
    function toXmlNode (This : in out DomNodeInterface; document_Param : access Document_Package.Document'Class) return Node_Access is abstract;
 
 end org.allbinary.data.tree.dom.DomNodeInterface_Package;

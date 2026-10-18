@@ -21,24 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.view.MotionEvent_Package; use android.view.MotionEvent_Package;
-with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
 with org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package; use org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package;
-with org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.android.input.motion.MotionEventProcessor_Package; use org.allbinary.android.input.motion.MotionEventProcessor_Package;
 
 package org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package is
 
    package MotionEvent_Package renames Standard.android.view.MotionEvent_Package;
-   package BasicMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
    package GameMotionGestureListener_Package renames Standard.org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package;
-   package MotionGestureReceiveInterfaceFactory_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BaseGameInputMotionEventProcessor is tagged;
    type BaseGameInputMotionEventProcessor_Access is access all BaseGameInputMotionEventProcessor'Class;
    type BaseGameInputMotionEventProcessor_Access_Array is array (Natural range <>) of BaseGameInputMotionEventProcessor_Access;
    type BaseGameInputMotionEventProcessor_Access_Array_Access is access all BaseGameInputMotionEventProcessor_Access_Array;
+   type BaseGameInputMotionEventProcessor_Access_Array_Access_Array is array (Natural range <>) of BaseGameInputMotionEventProcessor_Access_Array_Access;
+   type BaseGameInputMotionEventProcessor_Access_Array_Access_Array_Access is access all BaseGameInputMotionEventProcessor_Access_Array_Access_Array;
 
    type BaseGameInputMotionEventProcessor is new MotionEventProcessor with record
       commonStrings : CommonStrings_Access;

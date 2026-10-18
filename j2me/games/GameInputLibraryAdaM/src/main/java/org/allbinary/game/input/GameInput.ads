@@ -20,8 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
@@ -29,8 +27,6 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.game.input.GameInput_Package is
 
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
    package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
@@ -40,6 +36,8 @@ package org.allbinary.game.input.GameInput_Package is
    type GameInput_Access is access all GameInput'Class;
    type GameInput_Access_Array is array (Natural range <>) of GameInput_Access;
    type GameInput_Access_Array_Access is access all GameInput_Access_Array;
+   type GameInput_Access_Array_Access_Array is array (Natural range <>) of GameInput_Access_Array_Access;
+   type GameInput_Access_Array_Access_Array_Access is access all GameInput_Access_Array_Access_Array;
 
    type GameInput is new Java_Object with record
       logUtil : LogUtil_Access;

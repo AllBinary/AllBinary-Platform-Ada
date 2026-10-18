@@ -20,15 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package org.allbinary.game.ag.ai.InputProbability_Package is
 
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
@@ -36,6 +32,8 @@ package org.allbinary.game.ag.ai.InputProbability_Package is
    type InputProbability_Access is access all InputProbability'Class;
    type InputProbability_Access_Array is array (Natural range <>) of InputProbability_Access;
    type InputProbability_Access_Array_Access is access all InputProbability_Access_Array;
+   type InputProbability_Access_Array_Access_Array is array (Natural range <>) of InputProbability_Access_Array_Access;
+   type InputProbability_Access_Array_Access_Array_Access is access all InputProbability_Access_Array_Access_Array;
 
    type InputProbability is new Java_Object with record
       likelyhoodIntegerArray : Integer_Array_Access_Array_Access;

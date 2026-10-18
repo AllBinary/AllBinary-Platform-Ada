@@ -13,8 +13,58 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.crypt.Encoder_Package; use org.allbinary.logic.control.crypt.Encoder_Package;
+with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+with org.allbinary.logic.io.OutputTypeData_Package; use org.allbinary.logic.io.OutputTypeData_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package; use org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+with org.allbinary.logic.visual.transform.info.data.TransformInfoDataData_Package; use org.allbinary.logic.visual.transform.info.data.TransformInfoDataData_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
+with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package; use org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
+with org.allbinary.logic.visual.transform.info.viewObject.TransformInfoObjectData_Package; use org.allbinary.logic.visual.transform.info.viewObject.TransformInfoObjectData_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+
 package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package Encoder_Package renames Standard.org.allbinary.logic.control.crypt.Encoder_Package;
+   package CryptFileReader_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+   package OutputTypeData_Package renames Standard.org.allbinary.logic.io.OutputTypeData_Package;
+   package AbFilePath_Package renames Standard.org.allbinary.logic.io.path.AbFilePath_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package TransformInfoDataData_Package renames Standard.org.allbinary.logic.visual.transform.info.data.TransformInfoDataData_Package;
+   package TransformInfoObjectConfig_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
+   package TransformInfoObjectConfigAndManipulatorFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
+   package TransformInfoTemplateData_Package renames Standard.org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
+   package TransformInfoObjectData_Package renames Standard.org.allbinary.logic.visual.transform.info.viewObject.TransformInfoObjectData_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out TransformInfo'Class) is
    begin
       null;
@@ -120,8 +170,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
             This.objectFileName := aObjectFileName;
         end if;
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (URLGLOBALS.getMainPath);
-        stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH);
+        stringBuffer.append (URLGLOBALS_Package.getMainPath);
+        stringBuffer.append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH);
         stringBuffer.append (This.storeName);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         fileAbPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
@@ -132,7 +182,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
             end if;
             fileDataString := CryptFileReader_Package.Create (TransformInfoObjectData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoObjectData_Package.getInstance.ENCRYPTED_EXTENSION).get (AbPath_Package.Create (fileAbPath.toString, aObject));
             if (fileDataString) /= (Null_Unbounded_String) then
-                This.anyType := fileDataString;
+                This.anyType := Java_Box (fileDataString);
             end if;
         end if;
         if not (stringValidationUtil.isEmpty (Java_Unbox (hashMap.get (transformInfoData.OBJECTCONFIG)))) then
@@ -325,19 +375,19 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    --  throws Exception
    function getTemplateFilePath (This : in out TransformInfo) return AbPath_Access is
    begin
-        return AbFilePath_Package.Create (TransformInfo'Class (This).getTemplateFile);
+        return AbPath_Access (AbFilePath_Package.Create (TransformInfo'Class (This).getTemplateFile));
    end getTemplateFilePath;
 
    --  throws Exception
    function getObjectConfigFilePath (This : in out TransformInfo) return AbPath_Access is
    begin
-        return AbFilePath_Package.Create (TransformInfo'Class (This).getObjectConfigFile);
+        return AbPath_Access (AbFilePath_Package.Create (TransformInfo'Class (This).getObjectConfigFile));
    end getObjectConfigFilePath;
 
    --  throws Exception
    function getDataFilePath (This : in out TransformInfo) return AbPath_Access is
    begin
-        return AbFilePath_Package.Create (TransformInfo'Class (This).getDataFile);
+        return AbPath_Access (AbFilePath_Package.Create (TransformInfo'Class (This).getDataFile));
    end getDataFilePath;
 
    function getObjectConfigFile (This : in out TransformInfo) return Unbounded_String is
@@ -458,7 +508,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
       calendar : Calendar_Access;
       time : Unbounded_String;
    begin
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         vector.add (This.name);
         vector.add (This.storeName);
         vector.add (This.objectFileName);
@@ -501,6 +551,11 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    begin
         This.objectConfigInterface := objectConfigInterface;
    end setObjectConfigInterface;
+
+   procedure setObject (This : in out TransformInfo; Value : Unbounded_String) is
+   begin
+      TransformInfo'Class (This).setObject (Java_Box (Value));
+   end setObject;
 
 end org.allbinary.logic.visual.transform.info.TransformInfo_Package;
 

@@ -33,6 +33,8 @@ package org.allbinary.game.input.event.UpKeyEventHandler_Package is
    type UpKeyEventHandler_Access is access all UpKeyEventHandler'Class;
    type UpKeyEventHandler_Access_Array is array (Natural range <>) of UpKeyEventHandler_Access;
    type UpKeyEventHandler_Access_Array_Access is access all UpKeyEventHandler_Access_Array;
+   type UpKeyEventHandler_Access_Array_Access_Array is array (Natural range <>) of UpKeyEventHandler_Access_Array_Access;
+   type UpKeyEventHandler_Access_Array_Access_Array_Access is access all UpKeyEventHandler_Access_Array_Access_Array;
 
    type UpKeyEventHandler is new UpKeyEventHandlerBase with record
       playerInputIdFactory : LocalPlayerInputIdFactory_Access;

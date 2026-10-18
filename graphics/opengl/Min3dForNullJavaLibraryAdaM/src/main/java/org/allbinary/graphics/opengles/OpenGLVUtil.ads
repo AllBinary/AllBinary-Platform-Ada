@@ -29,6 +29,8 @@ package org.allbinary.graphics.opengles.OpenGLVUtil_Package is
    type OpenGLVUtil_Access is access all OpenGLVUtil'Class;
    type OpenGLVUtil_Access_Array is array (Natural range <>) of OpenGLVUtil_Access;
    type OpenGLVUtil_Access_Array_Access is access all OpenGLVUtil_Access_Array;
+   type OpenGLVUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLVUtil_Access_Array_Access;
+   type OpenGLVUtil_Access_Array_Access_Array_Access is access all OpenGLVUtil_Access_Array_Access_Array;
 
    type OpenGLVUtil is new OpenGLVUtilBase with null record;
    instance : OpenGLVUtil_Access;

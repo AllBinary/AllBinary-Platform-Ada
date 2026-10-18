@@ -28,6 +28,8 @@ package org.allbinary.business.advertisement.AdvertisementProcessorInterface_Pac
    type AdvertisementProcessorInterface_Access is access all AdvertisementProcessorInterface'Class;
    type AdvertisementProcessorInterface_Access_Array is array (Natural range <>) of AdvertisementProcessorInterface_Access;
    type AdvertisementProcessorInterface_Access_Array_Access is access all AdvertisementProcessorInterface_Access_Array;
+   type AdvertisementProcessorInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementProcessorInterface_Access_Array_Access;
+   type AdvertisementProcessorInterface_Access_Array_Access_Array_Access is access all AdvertisementProcessorInterface_Access_Array_Access_Array;
 
    type AdvertisementProcessorInterface is new Java_Object with null record;
 

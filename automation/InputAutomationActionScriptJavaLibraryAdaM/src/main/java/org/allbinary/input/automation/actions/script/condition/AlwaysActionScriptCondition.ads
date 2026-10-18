@@ -21,35 +21,26 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
-with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
-with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package;
 with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionInterface_Package;
 with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package;
-with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionData_Package;
 
 package org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
-   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
-   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type AlwaysActionScriptCondition is tagged;
    type AlwaysActionScriptCondition_Access is access all AlwaysActionScriptCondition'Class;
    type AlwaysActionScriptCondition_Access_Array is array (Natural range <>) of AlwaysActionScriptCondition_Access;
    type AlwaysActionScriptCondition_Access_Array_Access is access all AlwaysActionScriptCondition_Access_Array;
+   type AlwaysActionScriptCondition_Access_Array_Access_Array is array (Natural range <>) of AlwaysActionScriptCondition_Access_Array_Access;
+   type AlwaysActionScriptCondition_Access_Array_Access_Array_Access is access all AlwaysActionScriptCondition_Access_Array_Access_Array;
 
    type AlwaysActionScriptCondition is new BasicProfileActionScriptCondition and AlwaysActionScriptConditionInterface with record
       logUtil : LogUtil_Access;

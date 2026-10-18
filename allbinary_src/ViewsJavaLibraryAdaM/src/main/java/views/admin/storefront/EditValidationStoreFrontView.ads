@@ -20,10 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
@@ -31,10 +29,8 @@ with views.admin.storefront.StoreFrontComponent_Package; use views.admin.storefr
 
 package views.admin.storefront.EditValidationStoreFrontView_Package is
 
-   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -43,6 +39,8 @@ package views.admin.storefront.EditValidationStoreFrontView_Package is
    type EditValidationStoreFrontView_Access is access all EditValidationStoreFrontView'Class;
    type EditValidationStoreFrontView_Access_Array is array (Natural range <>) of EditValidationStoreFrontView_Access;
    type EditValidationStoreFrontView_Access_Array_Access is access all EditValidationStoreFrontView_Access_Array;
+   type EditValidationStoreFrontView_Access_Array_Access_Array is array (Natural range <>) of EditValidationStoreFrontView_Access_Array_Access;
+   type EditValidationStoreFrontView_Access_Array_Access_Array_Access is access all EditValidationStoreFrontView_Access_Array_Access_Array;
 
    type EditValidationStoreFrontView is new StoreFrontComponent and ValidationComponentInterface with record
       logUtil : LogUtil_Access;

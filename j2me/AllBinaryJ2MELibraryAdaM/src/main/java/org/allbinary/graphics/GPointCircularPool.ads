@@ -21,18 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.cache.BaseCircularPool_Package; use org.allbinary.logic.util.cache.BaseCircularPool_Package;
-with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
-with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
 
 package org.allbinary.graphics.GPointCircularPool_Package is
 
    package BaseCircularPool_Package renames Standard.org.allbinary.logic.util.cache.BaseCircularPool_Package;
-   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type GPointCircularPool is tagged;
    type GPointCircularPool_Access is access all GPointCircularPool'Class;
    type GPointCircularPool_Access_Array is array (Natural range <>) of GPointCircularPool_Access;
    type GPointCircularPool_Access_Array_Access is access all GPointCircularPool_Access_Array;
+   type GPointCircularPool_Access_Array_Access_Array is array (Natural range <>) of GPointCircularPool_Access_Array_Access;
+   type GPointCircularPool_Access_Array_Access_Array_Access is access all GPointCircularPool_Access_Array_Access_Array;
 
    type GPointCircularPool is new BaseCircularPool with null record;
 

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
+
 package body org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package is
 
    procedure Initialize_Fields (This : in out ShakeAnimationListenerFactory'Class) is
@@ -35,7 +37,7 @@ package body org.allbinary.animation.transition.shake.ShakeAnimationListenerFact
 
    function getInstance return ShakeAnimationListener_Access is
    begin
-        return NoShakeAnimationListener_Package.Create;
+        return ShakeAnimationListener_Access (NoShakeAnimationListener_Package.Create);
    end getInstance;
 
 end org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package;

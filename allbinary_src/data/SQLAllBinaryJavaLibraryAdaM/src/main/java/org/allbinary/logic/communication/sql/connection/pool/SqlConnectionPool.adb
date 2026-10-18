@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out SqlConnectionPool'Class) is
    begin
       null;
@@ -69,7 +76,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
         else
             connectionVector := BasicArrayList_Access (This.connectionHashMap.get (Java_Box (url)));
             if (connectionVector) = (null) then
-                connectionVector := BasicArrayListD_Package.Create;
+                connectionVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (This.FIRST);
@@ -90,7 +97,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
                 for i in 0 .. (size) - 1 loop
                     sqlConnection := Connection_Access (connectionVector.get (i));
                     if not (sqlConnection.isClosed) then
-                        connectionVector.remove (sqlConnection);
+                        connectionVector.remove (Java_Object_Access (sqlConnection));
                         This.connectionHashMap.put (Java_Box (url), connectionVector);
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
                             stringBuffer.delete (0, stringBuffer.length);
@@ -126,14 +133,14 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
             connectionVector := null;
             if (This.connectionHashMap) = (null) then
                 This.connectionHashMap := This.stdUtil.createHashMap;
-                connectionVector := BasicArrayListD_Package.Create;
-                connectionVector.add (sqlConnection);
+                connectionVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+                connectionVector.add (Java_Object_Access (sqlConnection));
             else
                 connectionVector := BasicArrayList_Access (This.connectionHashMap.get (Java_Box (url)));
                 if (connectionVector) = (null) then
-                    connectionVector := BasicArrayListD_Package.Create;
+                    connectionVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
                 end if;
-                connectionVector.add (sqlConnection);
+                connectionVector.add (Java_Object_Access (sqlConnection));
                 This.connectionHashMap.put (Java_Box (url), connectionVector);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then

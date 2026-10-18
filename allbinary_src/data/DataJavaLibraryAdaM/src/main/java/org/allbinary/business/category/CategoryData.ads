@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.file.CommonDataFileStrings_Package; use org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 
 package org.allbinary.business.category.CategoryData_Package is
 
-   package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 
    type CategoryData is tagged;
    type CategoryData_Access is access all CategoryData'Class;
    type CategoryData_Access_Array is array (Natural range <>) of CategoryData_Access;
    type CategoryData_Access_Array_Access is access all CategoryData_Access_Array;
+   type CategoryData_Access_Array_Access_Array is array (Natural range <>) of CategoryData_Access_Array_Access;
+   type CategoryData_Access_Array_Access_Array_Access is access all CategoryData_Access_Array_Access_Array;
 
    type CategoryData is new Java_Object with record
       PARENT : Unbounded_String;

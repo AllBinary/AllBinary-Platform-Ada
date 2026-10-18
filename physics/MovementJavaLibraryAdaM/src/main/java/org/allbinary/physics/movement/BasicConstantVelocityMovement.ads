@@ -26,7 +26,6 @@ with org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Pac
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package; use org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.physics.movement.Movement_Package; use org.allbinary.physics.movement.Movement_Package;
 
 package org.allbinary.physics.movement.BasicConstantVelocityMovement_Package is
@@ -37,12 +36,13 @@ package org.allbinary.physics.movement.BasicConstantVelocityMovement_Package is
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
    package AxisMathVectorUtil_Package renames Standard.org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
 
    type BasicConstantVelocityMovement is tagged;
    type BasicConstantVelocityMovement_Access is access all BasicConstantVelocityMovement'Class;
    type BasicConstantVelocityMovement_Access_Array is array (Natural range <>) of BasicConstantVelocityMovement_Access;
    type BasicConstantVelocityMovement_Access_Array_Access is access all BasicConstantVelocityMovement_Access_Array;
+   type BasicConstantVelocityMovement_Access_Array_Access_Array is array (Natural range <>) of BasicConstantVelocityMovement_Access_Array_Access;
+   type BasicConstantVelocityMovement_Access_Array_Access_Array_Access is access all BasicConstantVelocityMovement_Access_Array_Access_Array;
 
    type BasicConstantVelocityMovement is new Movement and VelocityInterfaceCompositeInterface with record
       velocityProperties : BasicVelocityProperties_Access;

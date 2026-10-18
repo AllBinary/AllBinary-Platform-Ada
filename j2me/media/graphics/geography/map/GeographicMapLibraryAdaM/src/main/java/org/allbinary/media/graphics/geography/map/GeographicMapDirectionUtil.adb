@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
+
 package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
    procedure Initialize_Fields (This : in out GeographicMapDirectionUtil'Class) is
    begin
       null;

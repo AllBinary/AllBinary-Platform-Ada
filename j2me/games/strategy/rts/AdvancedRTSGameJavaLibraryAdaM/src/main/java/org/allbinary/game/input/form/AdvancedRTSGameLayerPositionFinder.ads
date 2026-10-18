@@ -21,25 +21,23 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.LayerPositionFinderInterface_Package; use org.allbinary.game.input.LayerPositionFinderInterface_Package;
-with org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package; use org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 
 package org.allbinary.game.input.form.AdvancedRTSGameLayerPositionFinder_Package is
 
    package LayerPositionFinderInterface_Package renames Standard.org.allbinary.game.input.LayerPositionFinderInterface_Package;
-   package WaypointCellPositionHistory_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package DropCellPositionHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 
    type AdvancedRTSGameLayerPositionFinder is tagged;
    type AdvancedRTSGameLayerPositionFinder_Access is access all AdvancedRTSGameLayerPositionFinder'Class;
    type AdvancedRTSGameLayerPositionFinder_Access_Array is array (Natural range <>) of AdvancedRTSGameLayerPositionFinder_Access;
    type AdvancedRTSGameLayerPositionFinder_Access_Array_Access is access all AdvancedRTSGameLayerPositionFinder_Access_Array;
+   type AdvancedRTSGameLayerPositionFinder_Access_Array_Access_Array is array (Natural range <>) of AdvancedRTSGameLayerPositionFinder_Access_Array_Access;
+   type AdvancedRTSGameLayerPositionFinder_Access_Array_Access_Array_Access is access all AdvancedRTSGameLayerPositionFinder_Access_Array_Access_Array;
 
-   type AdvancedRTSGameLayerPositionFinder is new LayerPositionFinderInterface with null record;
+   type AdvancedRTSGameLayerPositionFinder is new Java_Object and LayerPositionFinderInterface with null record;
    instance : AdvancedRTSGameLayerPositionFinder_Access;
 
    procedure Initialize (This : in out AdvancedRTSGameLayerPositionFinder'Class);

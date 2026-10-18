@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.apache.xmlrpc.XmlRpcClient_Package; use org.apache.xmlrpc.XmlRpcClient_Package;
+with org.apache.xmlrpc.XmlRpcException_Package; use org.apache.xmlrpc.XmlRpcException_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+
 package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package is
 
+   package XmlRpcClient_Package renames Standard.org.apache.xmlrpc.XmlRpcClient_Package;
+   package XmlRpcException_Package renames Standard.org.apache.xmlrpc.XmlRpcException_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    procedure Initialize_Fields (This : in out XmlRpcRemoteLogClient'Class) is
    begin
       null;
@@ -47,15 +62,15 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
       result : Java_Object_Access;
    begin
         begin
-            param := BasicArrayListD_Package.Create;
+            param := BasicArrayList_Access (BasicArrayListD_Package.Create);
             serverUrl := XmlRpcRemoteLogClient'Class (This).getClientInfo.getLicenseServer (XmlRpcRemoteLogClient'Class (This).getServer);
-            index := serverUrl.lastIndexOf (To_Unbounded_String ("/"));
+            index := Java_Last_Index_Of (serverUrl, Java_Image (To_Unbounded_String ("/")));
             serverUrl := Unbounded_Slice (serverUrl, (0) + 1, (index) + (1)) & To_Unbounded_String ("logservssl.php");
             xmlRpcClient := XmlRpcClient_Package.Create (serverUrl);
             XmlRpcRemoteLogClient'Class (This).setClient (xmlRpcClient);
             xmlRpcClient.setBasicAuthentication (null, null);
             hashtable := ABHashtable_Access (anyType);
-            param.add (hashtable);
+            param.add (Java_Object_Access (hashtable));
             result := xmlRpcClient.execute (XmlRpcRemoteLogClient'Class (This).getRemoteMethod, param, This.noCrypt);
             Ada.Text_IO.Put_Line (Java_Image (Java_Image ((CommonLabels_Package.getInstance.RESULT_U) + (CommonSeps_Package.getInstance.NEW_LINE)) & result.toString));
             return result;
@@ -76,6 +91,18 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
 
    procedure get (This : in out XmlRpcRemoteLogClient; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Java_Object_Access := XmlRpcRemoteLogClient'Class (This).get (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end get;
+
+   function get (This : in out XmlRpcRemoteLogClient; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return XmlRpcRemoteLogClient'Class (This).get (Java_Box (Value));
+   end get;
+
+   procedure get (This : in out XmlRpcRemoteLogClient; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := XmlRpcRemoteLogClient'Class (This).get (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

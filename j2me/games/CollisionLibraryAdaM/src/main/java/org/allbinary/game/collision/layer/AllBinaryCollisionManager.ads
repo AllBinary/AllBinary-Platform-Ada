@@ -20,22 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbinary.game.collision.CollidableBaseBehavior_Package;
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
 
 package org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package is
 
-   package CollidableBaseBehavior_Package renames Standard.org.allbinary.game.collision.CollidableBaseBehavior_Package;
    package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
    package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
 
    type AllBinaryCollisionManager is tagged;
    type AllBinaryCollisionManager_Access is access all AllBinaryCollisionManager'Class;
    type AllBinaryCollisionManager_Access_Array is array (Natural range <>) of AllBinaryCollisionManager_Access;
    type AllBinaryCollisionManager_Access_Array_Access is access all AllBinaryCollisionManager_Access_Array;
+   type AllBinaryCollisionManager_Access_Array_Access_Array is array (Natural range <>) of AllBinaryCollisionManager_Access_Array_Access;
+   type AllBinaryCollisionManager_Access_Array_Access_Array_Access is access all AllBinaryCollisionManager_Access_Array_Access_Array;
 
    type AllBinaryCollisionManager is new Java_Object with null record;
    allBinaryCollisionManager : AllBinaryCollisionManager_Access;

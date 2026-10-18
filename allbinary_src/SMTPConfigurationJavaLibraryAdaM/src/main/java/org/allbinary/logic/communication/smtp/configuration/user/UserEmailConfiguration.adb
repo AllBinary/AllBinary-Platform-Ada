@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package;
+
 package body org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package is
 
+   package UserEmailEventsConfiguration_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package;
    procedure Initialize_Fields (This : in out UserEmailConfiguration'Class) is
    begin
       null;

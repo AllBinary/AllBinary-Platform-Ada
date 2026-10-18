@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.ScreenCaptureNoneFactory_Package; use org.allbinary.graphics.ScreenCaptureNoneFactory_Package;
+
 package body org.allbinary.graphics.ScreenCaptureFactory_Package is
 
    procedure Initialize_Fields (This : in out ScreenCaptureFactory'Class) is

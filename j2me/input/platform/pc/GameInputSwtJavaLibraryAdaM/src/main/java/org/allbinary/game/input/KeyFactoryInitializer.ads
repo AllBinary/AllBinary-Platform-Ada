@@ -22,18 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.init.Init_Package; use org.allbinary.init.Init_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
 package org.allbinary.game.input.KeyFactoryInitializer_Package is
 
    package Init_Package renames Standard.org.allbinary.init.Init_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type KeyFactoryInitializer is tagged;
    type KeyFactoryInitializer_Access is access all KeyFactoryInitializer'Class;
    type KeyFactoryInitializer_Access_Array is array (Natural range <>) of KeyFactoryInitializer_Access;
    type KeyFactoryInitializer_Access_Array_Access is access all KeyFactoryInitializer_Access_Array;
+   type KeyFactoryInitializer_Access_Array_Access_Array is array (Natural range <>) of KeyFactoryInitializer_Access_Array_Access;
+   type KeyFactoryInitializer_Access_Array_Access_Array_Access is access all KeyFactoryInitializer_Access_Array_Access_Array;
 
    type KeyFactoryInitializer is new Init with record
       logUtil : LogUtil_Access;

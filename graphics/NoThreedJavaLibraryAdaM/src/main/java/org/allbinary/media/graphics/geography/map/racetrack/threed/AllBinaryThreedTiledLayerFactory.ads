@@ -34,6 +34,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.threed.AllBinaryThr
    type AllBinaryThreedTiledLayerFactory_Access is access all AllBinaryThreedTiledLayerFactory'Class;
    type AllBinaryThreedTiledLayerFactory_Access_Array is array (Natural range <>) of AllBinaryThreedTiledLayerFactory_Access;
    type AllBinaryThreedTiledLayerFactory_Access_Array_Access is access all AllBinaryThreedTiledLayerFactory_Access_Array;
+   type AllBinaryThreedTiledLayerFactory_Access_Array_Access_Array is array (Natural range <>) of AllBinaryThreedTiledLayerFactory_Access_Array_Access;
+   type AllBinaryThreedTiledLayerFactory_Access_Array_Access_Array_Access is access all AllBinaryThreedTiledLayerFactory_Access_Array_Access_Array;
 
    type AllBinaryThreedTiledLayerFactory is new Java_Object with null record;
    instance : AllBinaryThreedTiledLayerFactory_Access;

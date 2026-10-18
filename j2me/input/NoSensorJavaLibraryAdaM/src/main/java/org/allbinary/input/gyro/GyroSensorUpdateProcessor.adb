@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package is
 
    procedure Initialize_Fields (This : in out GyroSensorUpdateProcessor'Class) is

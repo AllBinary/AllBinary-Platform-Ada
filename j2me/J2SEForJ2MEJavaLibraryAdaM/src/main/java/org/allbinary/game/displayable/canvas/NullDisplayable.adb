@@ -1,8 +1,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.canvas.GameStatisticsFactory_Package; use org.allbinary.canvas.GameStatisticsFactory_Package;
+
 package body org.allbinary.game.displayable.canvas.NullDisplayable_Package is
 
+   package GameStatisticsFactory_Package renames Standard.org.allbinary.canvas.GameStatisticsFactory_Package;
    procedure Initialize_Fields (This : in out NullDisplayable'Class) is
    begin
       null;

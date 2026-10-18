@@ -29,6 +29,8 @@ package org.allbinary.game.layer.BasicLayerPlacement_Package is
    type BasicLayerPlacement_Access is access all BasicLayerPlacement'Class;
    type BasicLayerPlacement_Access_Array is array (Natural range <>) of BasicLayerPlacement_Access;
    type BasicLayerPlacement_Access_Array_Access is access all BasicLayerPlacement_Access_Array;
+   type BasicLayerPlacement_Access_Array_Access_Array is array (Natural range <>) of BasicLayerPlacement_Access_Array_Access;
+   type BasicLayerPlacement_Access_Array_Access_Array_Access is access all BasicLayerPlacement_Access_Array_Access_Array;
 
    type BasicLayerPlacement is new Java_Object with record
       layerType : LayerPlacementType_Access;

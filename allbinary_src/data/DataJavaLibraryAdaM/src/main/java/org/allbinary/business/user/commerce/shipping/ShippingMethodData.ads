@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package
    type ShippingMethodData_Access is access all ShippingMethodData'Class;
    type ShippingMethodData_Access_Array is array (Natural range <>) of ShippingMethodData_Access;
    type ShippingMethodData_Access_Array_Access is access all ShippingMethodData_Access_Array;
+   type ShippingMethodData_Access_Array_Access_Array is array (Natural range <>) of ShippingMethodData_Access_Array_Access;
+   type ShippingMethodData_Access_Array_Access_Array_Access is access all ShippingMethodData_Access_Array_Access_Array;
 
    type ShippingMethodData is new Java_Object with null record;
    DESCRIPTION : Unbounded_String;

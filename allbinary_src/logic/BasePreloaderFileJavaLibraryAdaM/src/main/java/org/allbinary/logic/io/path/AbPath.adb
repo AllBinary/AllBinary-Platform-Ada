@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.io.file.FilePathUtil_Package; use org.allbinary.logic.io.file.FilePathUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+
 package body org.allbinary.logic.io.path.AbPath_Package is
 
+   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
+   package FilePathUtil_Package renames Standard.org.allbinary.logic.io.file.FilePathUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    procedure Initialize_Fields (This : in out AbPath'Class) is
    begin
       null;
@@ -80,7 +91,7 @@ package body org.allbinary.logic.io.path.AbPath_Package is
    function getSchema (This : in out AbPath; aPath : Unbounded_String) return Unbounded_String is
       beginIndex : Integer;
    begin
-        beginIndex := (Index (aPath, Java_Image (This.commonSeps.COLON)) - 1);
+        beginIndex := Java_Index_Of (aPath, Java_Image (This.commonSeps.COLON));
         if (beginIndex) >= (0) then
             This.hasSchemaP := True;
             return Unbounded_Slice (aPath, (0) + 1, beginIndex);
@@ -105,7 +116,7 @@ package body org.allbinary.logic.io.path.AbPath_Package is
         if not (AbPath'Class (This).hasSchema) then
             tempPath := This.abPathUtil.adjustStart (tempPath);
         else
-            beginIndex := (Index (tempPath, Java_Image (This.commonSeps.COLON)) - 1);
+            beginIndex := Java_Index_Of (tempPath, Java_Image (This.commonSeps.COLON));
             if (beginIndex) >= (0) then
                 beginIndex := beginIndex + 1;
                 while ((Element (tempPath, (beginIndex) + 1)) = (This.abPathData.SEPARATORCHAR)) or else ((Element (tempPath, (beginIndex) + 1)) = (filePathData.SEPARATORCHAR)) loop

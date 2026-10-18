@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+
 package body org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package is
 
    procedure Initialize_Fields (This : in out AnimationInterfaceFactoryInterfaceComposite'Class) is

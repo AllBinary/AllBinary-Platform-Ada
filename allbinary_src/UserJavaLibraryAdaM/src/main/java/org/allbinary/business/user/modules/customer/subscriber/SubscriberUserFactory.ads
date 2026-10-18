@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package; use org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package;
 
 package org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFa
    type SubscriberUserFactory_Access is access all SubscriberUserFactory'Class;
    type SubscriberUserFactory_Access_Array is array (Natural range <>) of SubscriberUserFactory_Access;
    type SubscriberUserFactory_Access_Array_Access is access all SubscriberUserFactory_Access_Array;
+   type SubscriberUserFactory_Access_Array_Access_Array is array (Natural range <>) of SubscriberUserFactory_Access_Array_Access;
+   type SubscriberUserFactory_Access_Array_Access_Array_Access is access all SubscriberUserFactory_Access_Array_Access_Array;
 
-   type SubscriberUserFactory is new UserFactoryInterface with null record;
+   type SubscriberUserFactory is new Java_Object and UserFactoryInterface with null record;
 
    procedure Initialize (This : in out SubscriberUserFactory'Class);
    function Create return SubscriberUserFactory_Access;

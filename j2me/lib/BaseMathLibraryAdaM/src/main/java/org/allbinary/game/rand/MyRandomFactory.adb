@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.game.rand.MyRandomFactory_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out MyRandomFactory'Class) is
    begin
       null;
@@ -49,7 +60,7 @@ package body org.allbinary.game.rand.MyRandomFactory_Package is
    function getNextInt (This : in out MyRandomFactory; range_Id : Integer) return Integer is
       div : Integer;
    begin
-        div := (((Integer_Package.MAX_VALUE) / (range_Id))) + (1);
+        div := (((Integer'Last) / (range_Id))) + (1);
         return Integer (((This.rand.nextInt) / (div)));
    end getNextInt;
 

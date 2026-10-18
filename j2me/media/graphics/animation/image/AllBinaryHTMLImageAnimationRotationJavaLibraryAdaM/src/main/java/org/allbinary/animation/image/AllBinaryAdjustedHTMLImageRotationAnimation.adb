@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package is
 
    procedure Initialize_Fields (This : in out AllBinaryAdjustedHTMLImageRotationAnimation'Class) is

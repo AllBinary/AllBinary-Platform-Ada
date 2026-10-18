@@ -30,6 +30,8 @@ package org.allbinary.util.ABStack_Package is
    type ABStack_Access is access all ABStack'Class;
    type ABStack_Access_Array is array (Natural range <>) of ABStack_Access;
    type ABStack_Access_Array_Access is access all ABStack_Access_Array;
+   type ABStack_Access_Array_Access_Array is array (Natural range <>) of ABStack_Access_Array_Access;
+   type ABStack_Access_Array_Access_Array_Access is access all ABStack_Access_Array_Access_Array;
 
    type ABStack is new Stack with null record;
 

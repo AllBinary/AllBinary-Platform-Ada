@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.eclipse.swt.widgets.Display_Package is
 
    procedure Initialize_Fields (This : in out Display'Class) is

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package; use org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
+with org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package; use org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
+
 package body org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package is
 
+   package CapturedImageInputOutput_Package renames Standard.org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
+   package ComparisonImageInputOutput_Package renames Standard.org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
+   package MotionRectanglesImageInputOutput_Package renames Standard.org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
    procedure Initialize_Fields (This : in out InputImageIOInterfaceFactory'Class) is
    begin
       null;
@@ -39,11 +46,11 @@ package body org.allbinary.input.media.image.InputImageIOInterfaceFactory_Packag
       imageType : constant InputImageType_Access := InputImageType_Access (imageType_Param);
    begin
         if (imageType) = (InputImageType_Package.CAPTURE) then
-            return CapturedImageInputOutput_Package.Create;
+            return ImageIOInterface_Access (CapturedImageInputOutput_Package.Create);
         elsif (imageType) = (InputImageType_Package.COMPARISON) then
-            return ComparisonImageInputOutput_Package.Create;
+            return ImageIOInterface_Access (ComparisonImageInputOutput_Package.Create);
         elsif (imageType) = (InputImageType_Package.MOTION) then
-            return MotionRectanglesImageInputOutput_Package.Create;
+            return ImageIOInterface_Access (MotionRectanglesImageInputOutput_Package.Create);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No ImageIOInterface for: ") & imageType.toString));
         end if;

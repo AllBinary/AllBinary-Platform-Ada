@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.template.customizer.TransformTempla
    type TransformTemplateCustomizerData_Access is access all TransformTemplateCustomizerData'Class;
    type TransformTemplateCustomizerData_Access_Array is array (Natural range <>) of TransformTemplateCustomizerData_Access;
    type TransformTemplateCustomizerData_Access_Array_Access is access all TransformTemplateCustomizerData_Access_Array;
+   type TransformTemplateCustomizerData_Access_Array_Access_Array is array (Natural range <>) of TransformTemplateCustomizerData_Access_Array_Access;
+   type TransformTemplateCustomizerData_Access_Array_Access_Array_Access is access all TransformTemplateCustomizerData_Access_Array_Access_Array;
 
    type TransformTemplateCustomizerData is new Java_Object with null record;
    NAME : Unbounded_String;

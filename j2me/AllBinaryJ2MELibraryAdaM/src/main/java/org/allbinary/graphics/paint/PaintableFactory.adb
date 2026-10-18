@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+
 package body org.allbinary.graphics.paint.PaintableFactory_Package is
 
    procedure Initialize_Fields (This : in out PaintableFactory'Class) is

@@ -31,6 +31,8 @@ package org.allbinary.game.configuration.event.GameInitializedListenerInterface_
    type GameInitializedListenerInterface_Access is access all GameInitializedListenerInterface'Class;
    type GameInitializedListenerInterface_Access_Array is array (Natural range <>) of GameInitializedListenerInterface_Access;
    type GameInitializedListenerInterface_Access_Array_Access is access all GameInitializedListenerInterface_Access_Array;
+   type GameInitializedListenerInterface_Access_Array_Access_Array is array (Natural range <>) of GameInitializedListenerInterface_Access_Array_Access;
+   type GameInitializedListenerInterface_Access_Array_Access_Array_Access is access all GameInitializedListenerInterface_Access_Array_Access_Array;
    procedure onGameInitialized (This : in out GameInitializedListenerInterface; gameInitializedEvent_Param : access GameInitializedEvent_Package.GameInitializedEvent'Class) is abstract;
 
 end org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;

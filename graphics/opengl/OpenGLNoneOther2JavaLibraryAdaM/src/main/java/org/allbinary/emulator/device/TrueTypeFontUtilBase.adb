@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
 
    procedure Initialize_Fields (This : in out TrueTypeFontUtilBase'Class) is

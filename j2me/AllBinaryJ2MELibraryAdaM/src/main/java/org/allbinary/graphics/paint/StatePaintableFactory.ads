@@ -29,6 +29,8 @@ package org.allbinary.graphics.paint.StatePaintableFactory_Package is
    type StatePaintableFactory_Access is access all StatePaintableFactory'Class;
    type StatePaintableFactory_Access_Array is array (Natural range <>) of StatePaintableFactory_Access;
    type StatePaintableFactory_Access_Array_Access is access all StatePaintableFactory_Access_Array;
+   type StatePaintableFactory_Access_Array_Access_Array is array (Natural range <>) of StatePaintableFactory_Access_Array_Access;
+   type StatePaintableFactory_Access_Array_Access_Array_Access is access all StatePaintableFactory_Access_Array_Access_Array;
 
    type StatePaintableFactory is new Java_Object with null record;
    instance : StatePaintable_Access;

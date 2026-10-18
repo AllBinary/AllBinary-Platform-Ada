@@ -37,6 +37,8 @@ package org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnim
    type AllBinaryAdjustedSpriteRotationAnimation_Access is access all AllBinaryAdjustedSpriteRotationAnimation'Class;
    type AllBinaryAdjustedSpriteRotationAnimation_Access_Array is array (Natural range <>) of AllBinaryAdjustedSpriteRotationAnimation_Access;
    type AllBinaryAdjustedSpriteRotationAnimation_Access_Array_Access is access all AllBinaryAdjustedSpriteRotationAnimation_Access_Array;
+   type AllBinaryAdjustedSpriteRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AllBinaryAdjustedSpriteRotationAnimation_Access_Array_Access;
+   type AllBinaryAdjustedSpriteRotationAnimation_Access_Array_Access_Array_Access is access all AllBinaryAdjustedSpriteRotationAnimation_Access_Array_Access_Array;
 
    type AllBinaryAdjustedSpriteRotationAnimation is new AllBinarySpriteRotationAnimation with record
       dx : Integer;

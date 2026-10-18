@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+
 package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellTypeFactory_Package is
 
+   package Enumeration_Package renames Standard.java.util.Enumeration_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out BasicPlatormGeographicMapCellTypeFactory'Class) is
    begin
       null;

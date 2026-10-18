@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+
 package body org.allbinary.business.advertisement.GameAdStateBase_Package is
 
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    procedure Initialize_Fields (This : in out GameAdStateBase'Class) is
    begin
       null;
@@ -156,6 +161,11 @@ package body org.allbinary.business.advertisement.GameAdStateBase_Package is
    begin
       null;
    end isShowingAtLocation;
+
+   procedure onStart (This : in out GameAdStateBase; Value : Unbounded_String) is
+   begin
+      GameAdStateBase'Class (This).onStart (Java_Box (Value));
+   end onStart;
 
 end org.allbinary.business.advertisement.GameAdStateBase_Package;
 

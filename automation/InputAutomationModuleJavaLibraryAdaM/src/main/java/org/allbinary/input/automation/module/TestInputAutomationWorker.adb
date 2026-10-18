@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.automation.module.TestInputAutomationWorker_Package is
 
    procedure Initialize_Fields (This : in out TestInputAutomationWorker'Class) is

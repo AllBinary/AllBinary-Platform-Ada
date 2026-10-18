@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 
 package org.allbinary.logic.communication.log.ForcedLogUtil_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
 
    type ForcedLogUtil is tagged;
    type ForcedLogUtil_Access is access all ForcedLogUtil'Class;
    type ForcedLogUtil_Access_Array is array (Natural range <>) of ForcedLogUtil_Access;
    type ForcedLogUtil_Access_Array_Access is access all ForcedLogUtil_Access_Array;
+   type ForcedLogUtil_Access_Array_Access_Array is array (Natural range <>) of ForcedLogUtil_Access_Array_Access;
+   type ForcedLogUtil_Access_Array_Access_Array_Access is access all ForcedLogUtil_Access_Array_Access_Array;
 
    type ForcedLogUtil is new Java_Object with null record;
 

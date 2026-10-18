@@ -20,16 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.math.LayerDistanceUtil_Package; use org.allbinary.math.LayerDistanceUtil_Package;
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
-with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 
 package org.allbinary.game.layer.WaypointPathRunnableBase_Package is
 
-   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package LayerDistanceUtil_Package renames Standard.org.allbinary.math.LayerDistanceUtil_Package;
    package PriorityRunnable_Package renames Standard.org.allbinary.thread.PriorityRunnable_Package;
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
@@ -38,8 +35,10 @@ package org.allbinary.game.layer.WaypointPathRunnableBase_Package is
    type WaypointPathRunnableBase_Access is access all WaypointPathRunnableBase'Class;
    type WaypointPathRunnableBase_Access_Array is array (Natural range <>) of WaypointPathRunnableBase_Access;
    type WaypointPathRunnableBase_Access_Array_Access is access all WaypointPathRunnableBase_Access_Array;
+   type WaypointPathRunnableBase_Access_Array_Access_Array is array (Natural range <>) of WaypointPathRunnableBase_Access_Array_Access;
+   type WaypointPathRunnableBase_Access_Array_Access_Array_Access is access all WaypointPathRunnableBase_Access_Array_Access_Array;
 
-   type WaypointPathRunnableBase is new RunnableInterface and PriorityRunnable with record
+   type WaypointPathRunnableBase is new Java_Object and RunnableInterface and PriorityRunnable with record
       layerDistanceUtil : LayerDistanceUtil_Access;
       pathFindingLayer : PathFindingLayerInterface_Access;
       targetPathFindingLayer : PathFindingLayerInterface_Access;

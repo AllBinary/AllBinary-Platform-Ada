@@ -13,8 +13,28 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.RectangleFactory_Package; use org.allbinary.graphics.RectangleFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+
 package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package is
 
+   package FeatureResourceAnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out FeaturedAnimationInterfaceFactoryInterfaceFactory'Class) is
    begin
       null;
@@ -102,14 +122,14 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
       size2 : Integer;
    begin
         list := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getList;
-        resourceTypeAvailableList := BasicArrayListD_Package.Create;
+        resourceTypeAvailableList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getList.size;
         featureInterface := null;
         animationInterfaceFactoryInterface := null;
         for index in 0 .. (size) - 1 loop
             featureInterface := FeatureResourceAnimationInterfaceFactoryInterface_Access (list.objectArray (index));
             if featureInterface.isFeature then
-                resourceTypeAvailableList.add (featureInterface);
+                resourceTypeAvailableList.add (Java_Object_Access (featureInterface));
                 animationInterfaceFactoryInterface := featureInterface.getBasicAnimationInterfaceFactoryInstance (resource);
                 if (animationInterfaceFactoryInterface) /= (NullAnimationFactory_Package.NULL_NOT_FOR_USE_ANIMATION_FACTORY) then
                     return animationInterfaceFactoryInterface;

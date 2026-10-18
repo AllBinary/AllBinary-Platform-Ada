@@ -34,6 +34,8 @@ package org.allbinary.game.input.ScrollMapDownGameInputProcessor_Package is
    type ScrollMapDownGameInputProcessor_Access is access all ScrollMapDownGameInputProcessor'Class;
    type ScrollMapDownGameInputProcessor_Access_Array is array (Natural range <>) of ScrollMapDownGameInputProcessor_Access;
    type ScrollMapDownGameInputProcessor_Access_Array_Access is access all ScrollMapDownGameInputProcessor_Access_Array;
+   type ScrollMapDownGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of ScrollMapDownGameInputProcessor_Access_Array_Access;
+   type ScrollMapDownGameInputProcessor_Access_Array_Access_Array_Access is access all ScrollMapDownGameInputProcessor_Access_Array_Access_Array;
 
    type ScrollMapDownGameInputProcessor is new ScrollMapGameInputProcessor with null record;
 

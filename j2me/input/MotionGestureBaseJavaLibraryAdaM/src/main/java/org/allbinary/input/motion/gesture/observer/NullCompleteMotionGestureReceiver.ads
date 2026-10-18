@@ -21,22 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package; use org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
 
 package org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type NullCompleteMotionGestureReceiver is tagged;
    type NullCompleteMotionGestureReceiver_Access is access all NullCompleteMotionGestureReceiver'Class;
    type NullCompleteMotionGestureReceiver_Access_Array is array (Natural range <>) of NullCompleteMotionGestureReceiver_Access;
    type NullCompleteMotionGestureReceiver_Access_Array_Access is access all NullCompleteMotionGestureReceiver_Access_Array;
+   type NullCompleteMotionGestureReceiver_Access_Array_Access_Array is array (Natural range <>) of NullCompleteMotionGestureReceiver_Access_Array_Access;
+   type NullCompleteMotionGestureReceiver_Access_Array_Access_Array_Access is access all NullCompleteMotionGestureReceiver_Access_Array_Access_Array;
 
-   type NullCompleteMotionGestureReceiver is new CompleteMotionGestureListenerInterface with record
+   type NullCompleteMotionGestureReceiver is new Java_Object and CompleteMotionGestureListenerInterface with record
       logUtil : LogUtil_Access;
    end record;
 

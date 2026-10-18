@@ -20,21 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
-with org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package; use org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
-with org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package; use org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package;
-with org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package; use org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package;
 with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package; use org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package;
 
 package org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package is
 
-   package MotionGestureConfiguration_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
-   package MotionGestureConfigurationFactory_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
 
    type MotionGestureReceiveInterfaceFactory is tagged;
    type MotionGestureReceiveInterfaceFactory_Access is access all MotionGestureReceiveInterfaceFactory'Class;
    type MotionGestureReceiveInterfaceFactory_Access_Array is array (Natural range <>) of MotionGestureReceiveInterfaceFactory_Access;
    type MotionGestureReceiveInterfaceFactory_Access_Array_Access is access all MotionGestureReceiveInterfaceFactory_Access_Array;
+   type MotionGestureReceiveInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of MotionGestureReceiveInterfaceFactory_Access_Array_Access;
+   type MotionGestureReceiveInterfaceFactory_Access_Array_Access_Array_Access is access all MotionGestureReceiveInterfaceFactory_Access_Array_Access_Array;
 
    type MotionGestureReceiveInterfaceFactory is new Java_Object with null record;
 

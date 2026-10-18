@@ -22,21 +22,16 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.control.validate.Validation_Package; use org.allbinary.logic.control.validate.Validation_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.logic.visual.theme.ThemesData_Package; use org.allbinary.logic.visual.theme.ThemesData_Package;
 
 package org.allbinary.logic.visual.theme.ThemesValidation_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package Validation_Package renames Standard.org.allbinary.logic.control.validate.Validation_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -45,6 +40,8 @@ package org.allbinary.logic.visual.theme.ThemesValidation_Package is
    type ThemesValidation_Access is access all ThemesValidation'Class;
    type ThemesValidation_Access_Array is array (Natural range <>) of ThemesValidation_Access;
    type ThemesValidation_Access_Array_Access is access all ThemesValidation_Access_Array;
+   type ThemesValidation_Access_Array_Access_Array is array (Natural range <>) of ThemesValidation_Access_Array_Access;
+   type ThemesValidation_Access_Array_Access_Array_Access is access all ThemesValidation_Access_Array_Access_Array;
 
    type ThemesValidation is new Validation and DomNodeInterface with record
       themeVector : BasicArrayList_Access;

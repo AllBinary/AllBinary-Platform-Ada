@@ -28,6 +28,8 @@ package org.allbinary.game.collision.CollisionType_Package is
    type CollisionType_Access is access all CollisionType'Class;
    type CollisionType_Access_Array is array (Natural range <>) of CollisionType_Access;
    type CollisionType_Access_Array_Access is access all CollisionType_Access_Array;
+   type CollisionType_Access_Array_Access_Array is array (Natural range <>) of CollisionType_Access_Array_Access;
+   type CollisionType_Access_Array_Access_Array_Access is access all CollisionType_Access_Array_Access_Array;
 
    type CollisionType is new Java_Object with record
       name : Unbounded_String;

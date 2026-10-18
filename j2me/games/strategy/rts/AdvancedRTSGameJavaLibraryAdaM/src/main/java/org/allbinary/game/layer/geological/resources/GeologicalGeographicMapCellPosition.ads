@@ -31,6 +31,8 @@ package org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCel
    type GeologicalGeographicMapCellPosition_Access is access all GeologicalGeographicMapCellPosition'Class;
    type GeologicalGeographicMapCellPosition_Access_Array is array (Natural range <>) of GeologicalGeographicMapCellPosition_Access;
    type GeologicalGeographicMapCellPosition_Access_Array_Access is access all GeologicalGeographicMapCellPosition_Access_Array;
+   type GeologicalGeographicMapCellPosition_Access_Array_Access_Array is array (Natural range <>) of GeologicalGeographicMapCellPosition_Access_Array_Access;
+   type GeologicalGeographicMapCellPosition_Access_Array_Access_Array_Access is access all GeologicalGeographicMapCellPosition_Access_Array_Access_Array;
 
    type GeologicalGeographicMapCellPosition is new GeographicMapCellPosition with record
       geologicalResource : GeologicalResource_Access;

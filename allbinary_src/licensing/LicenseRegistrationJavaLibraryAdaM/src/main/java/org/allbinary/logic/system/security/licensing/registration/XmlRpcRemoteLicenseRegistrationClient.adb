@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.apache.xmlrpc.XmlRpcClient_Package; use org.apache.xmlrpc.XmlRpcClient_Package;
+with org.apache.xmlrpc.XmlRpcException_Package; use org.apache.xmlrpc.XmlRpcException_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package; use org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+
 package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRemoteLicenseRegistrationClient_Package is
 
+   package XmlRpcClient_Package renames Standard.org.apache.xmlrpc.XmlRpcClient_Package;
+   package XmlRpcException_Package renames Standard.org.apache.xmlrpc.XmlRpcException_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ExceptionUtil_Package renames Standard.org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    procedure Initialize_Fields (This : in out XmlRpcRemoteLicenseRegistrationClient'Class) is
    begin
       null;
@@ -59,16 +76,16 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
             stringBuffer.append (SEP_Package);
             stringBuffer.append (server);
             This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START_LABEL) & stringBuffer.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
-            param := BasicArrayListD_Package.Create;
+            param := BasicArrayList_Access (BasicArrayListD_Package.Create);
             serverUrl := XmlRpcRemoteLicenseRegistrationClient'Class (This).getClientInfo.getLicenseServer (XmlRpcRemoteLicenseRegistrationClient'Class (This).getServer);
-            index := serverUrl.lastIndexOf (To_Unbounded_String ("/"));
+            index := Java_Last_Index_Of (serverUrl, Java_Image (To_Unbounded_String ("/")));
             serverUrl := Unbounded_Slice (serverUrl, (0) + 1, (index) + (1)) & This.PAGE;
             xmlRpcClient := XmlRpcClient_Package.Create (serverUrl);
             XmlRpcRemoteLicenseRegistrationClient'Class (This).setClient (xmlRpcClient);
             xmlRpcClient.setBasicAuthentication (null, null);
             hashtable := ABHashtable_Access (anyType);
             This.logUtil.putF (Java_Image (CLIENT_INFO) & hashtable.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
-            param.add (hashtable);
+            param.add (Java_Object_Access (hashtable));
             result := xmlRpcClient.execute (XmlRpcRemoteLicenseRegistrationClient'Class (This).getRemoteMethod, param, cryptInterface);
             This.logUtil.putF (Java_Image (RESULT) & result.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             This.isOnline := True;

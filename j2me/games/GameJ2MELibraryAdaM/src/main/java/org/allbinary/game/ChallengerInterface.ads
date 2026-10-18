@@ -20,6 +20,8 @@ package org.allbinary.game.ChallengerInterface_Package is
    type ChallengerInterface_Access is access all ChallengerInterface'Class;
    type ChallengerInterface_Access_Array is array (Natural range <>) of ChallengerInterface_Access;
    type ChallengerInterface_Access_Array_Access is access all ChallengerInterface_Access_Array;
+   type ChallengerInterface_Access_Array_Access_Array is array (Natural range <>) of ChallengerInterface_Access_Array_Access;
+   type ChallengerInterface_Access_Array_Access_Array_Access is access all ChallengerInterface_Access_Array_Access_Array;
    procedure setWinner (This : in out ChallengerInterface; isWinner : Boolean) is abstract;
 
 end org.allbinary.game.ChallengerInterface_Package;

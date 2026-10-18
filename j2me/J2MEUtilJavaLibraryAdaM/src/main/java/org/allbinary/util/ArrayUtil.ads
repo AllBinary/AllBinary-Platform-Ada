@@ -8,26 +8,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 
 package org.allbinary.util.ArrayUtil_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
 
    type ArrayUtil is tagged;
    type ArrayUtil_Access is access all ArrayUtil'Class;
    type ArrayUtil_Access_Array is array (Natural range <>) of ArrayUtil_Access;
    type ArrayUtil_Access_Array_Access is access all ArrayUtil_Access_Array;
+   type ArrayUtil_Access_Array_Access_Array is array (Natural range <>) of ArrayUtil_Access_Array_Access;
+   type ArrayUtil_Access_Array_Access_Array_Access is access all ArrayUtil_Access_Array_Access_Array;
 
    type ArrayUtil is new Java_Object with record
       mathUtil : MathUtil_Access;

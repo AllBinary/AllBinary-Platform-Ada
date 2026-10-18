@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.category.hierarchy.CategoryHierarchy_Package; use org.allbinary.business.category.hierarchy.CategoryHierarchy_Package;
+with org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.business.category.Category_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CategoryHierarchy_Package renames Standard.org.allbinary.business.category.hierarchy.CategoryHierarchy_Package;
+   package RootCategoryPropertiesInterface_Package renames Standard.org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out Category'Class) is
    begin
       null;
@@ -22,8 +35,8 @@ package body org.allbinary.business.category.Category_Package is
       This.commonStrings := CommonStrings_Package.getInstance;
       
       
-      This.childCategoryVector := BasicArrayListD_Package.Create;
-      This.typeVector := BasicArrayListD_Package.Create;
+      This.childCategoryVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.typeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.PROPERTIES := 1;
       This.CATEGORY := 0;
    end Initialize_Fields;
@@ -127,7 +140,7 @@ package body org.allbinary.business.category.Category_Package is
       categoryPropertiesInterface : constant CategoryPropertiesInterface_Access := CategoryPropertiesInterface_Access (categoryPropertiesInterface_Param);
    begin
         This.typeVector.add (This.PROPERTIES);
-        return This.childCategoryVector.add (categoryPropertiesInterface);
+        return This.childCategoryVector.add (Java_Object_Access (categoryPropertiesInterface));
    end addChildProperty;
 
    function addChild (This : in out Category; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return Boolean is
@@ -143,7 +156,7 @@ package body org.allbinary.business.category.Category_Package is
         childCategoryHierarchyInterface.setRoot (Category'Class (This).getHierarchy.getRoot);
         categoryInterface.setHierarchy (childCategoryHierarchyInterface);
         This.typeVector.add (This.CATEGORY);
-        return This.childCategoryVector.add (categoryInterface);
+        return This.childCategoryVector.add (Java_Object_Access (categoryInterface));
    end addChild;
 
    function getChildNodes (This : in out Category) return BasicArrayList_Access is
@@ -160,7 +173,7 @@ package body org.allbinary.business.category.Category_Package is
       currentCategoryInterface : CategoryInterface_Access;
       index : Integer;
    begin
-        removalVector := BasicArrayListD_Package.Create;
+        removalVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         bool_return := False;
         size := This.childCategoryVector.size;
         for index in 0 .. (size) - 1 loop
@@ -168,7 +181,7 @@ package body org.allbinary.business.category.Category_Package is
                 anyType := This.childCategoryVector.get (index);
                 currentCategoryInterface := CategoryInterface_Access (anyType);
                 if (currentCategoryInterface.getProperties.getValue.compareTo (categoryInterface.getProperties.getValue)) = (0) then
-                    removalVector.add (currentCategoryInterface);
+                    removalVector.add (Java_Object_Access (currentCategoryInterface));
                     bool_return := True;
                 end if;
             end if;
@@ -203,7 +216,7 @@ package body org.allbinary.business.category.Category_Package is
       categoryPropertiesInterface : CategoryPropertiesInterface_Access;
       index : Integer;
    begin
-        removalVector := BasicArrayListD_Package.Create;
+        removalVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         bool_return := False;
         size := This.childCategoryVector.size;
         for index in 0 .. (size) - 1 loop
@@ -211,7 +224,7 @@ package body org.allbinary.business.category.Category_Package is
             if (This.PROPERTIES) = (This.typeVector.get (index)) then
                 categoryPropertiesInterface := CategoryPropertiesInterface_Access (anyType);
                 if (categoryInterface.getProperties.getValue.compareTo (categoryPropertiesInterface.getValue)) = (0) then
-                    removalVector.add (categoryPropertiesInterface);
+                    removalVector.add (Java_Object_Access (categoryPropertiesInterface));
                     bool_return := True;
                     exit;
                 end if;
@@ -219,7 +232,7 @@ package body org.allbinary.business.category.Category_Package is
                 existingCategoryInterface := CategoryInterface_Access (anyType);
                 categoryPropertiesInterface := existingCategoryInterface.getProperties;
                 if (categoryInterface.getProperties.getValue.compareTo (categoryPropertiesInterface.getValue)) = (0) then
-                    removalVector.add (existingCategoryInterface);
+                    removalVector.add (Java_Object_Access (existingCategoryInterface));
                     bool_return := True;
                     exit;
                 end if;
@@ -325,7 +338,7 @@ package body org.allbinary.business.category.Category_Package is
       categoryVector : BasicArrayList_Access;
    begin
         categoryVector := This.categoryPropertiesInterface.toVector;
-        categoryVector.add (This.childCategoryVector);
+        categoryVector.add (Java_Object_Access (This.childCategoryVector));
         return categoryVector;
    end toVector;
 

@@ -23,6 +23,8 @@ package org.platform.opengl.OpenGLGLUUtils_Package is
    type OpenGLGLUUtils_Access is access all OpenGLGLUUtils'Class;
    type OpenGLGLUUtils_Access_Array is array (Natural range <>) of OpenGLGLUUtils_Access;
    type OpenGLGLUUtils_Access_Array_Access is access all OpenGLGLUUtils_Access_Array;
+   type OpenGLGLUUtils_Access_Array_Access_Array is array (Natural range <>) of OpenGLGLUUtils_Access_Array_Access;
+   type OpenGLGLUUtils_Access_Array_Access_Array_Access is access all OpenGLGLUUtils_Access_Array_Access_Array;
 
    type OpenGLGLUUtils is new Java_Object with null record;
    instance : OpenGLGLUUtils_Access;

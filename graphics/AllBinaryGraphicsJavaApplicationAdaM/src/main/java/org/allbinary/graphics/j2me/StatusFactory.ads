@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.graphics.j2me.MyFrame_Package; use org.allbinary.graphics.j2me.MyFrame_Package;
 
 package org.allbinary.graphics.j2me.StatusFactory_Package is
 
@@ -31,10 +30,12 @@ package org.allbinary.graphics.j2me.StatusFactory_Package is
    type StatusFactory_Access is access all StatusFactory'Class;
    type StatusFactory_Access_Array is array (Natural range <>) of StatusFactory_Access;
    type StatusFactory_Access_Array_Access is access all StatusFactory_Access_Array;
+   type StatusFactory_Access_Array_Access_Array is array (Natural range <>) of StatusFactory_Access_Array_Access;
+   type StatusFactory_Access_Array_Access_Array_Access is access all StatusFactory_Access_Array_Access_Array;
 
    type StatusFactory is new Java_Object with record
       logUtil : LogUtil_Access;
-      SETSTATUS : Unbounded_String;
+      SETSTATUS_Field : Unbounded_String;
       STATUS_LABEL : Unbounded_String;
    end record;
    instance : StatusFactory_Access;
@@ -43,7 +44,7 @@ package org.allbinary.graphics.j2me.StatusFactory_Package is
    function Create return StatusFactory_Access;
    function getInstance return StatusFactory_Access;
    procedure setStatusNoLog (This : in out StatusFactory; status : Unbounded_String);
-   procedure setStatus_Case (This : in out StatusFactory; status : Unbounded_String);
+   procedure setStatus (This : in out StatusFactory; status : Unbounded_String);
 
 end org.allbinary.graphics.j2me.StatusFactory_Package;
 

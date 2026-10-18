@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.automation.PointFactory_Package; use org.allbinary.input.automation.PointFactory_Package;
 with org.allbinary.input.automation.Point_Package; use org.allbinary.input.automation.Point_Package;
 with org.allbinary.input.automation.Rectangle_Package; use org.allbinary.input.automation.Rectangle_Package;
 
@@ -31,6 +30,8 @@ package org.allbinary.input.automation.PointHelper_Package is
    type PointHelper_Access is access all PointHelper'Class;
    type PointHelper_Access_Array is array (Natural range <>) of PointHelper_Access;
    type PointHelper_Access_Array_Access is access all PointHelper_Access_Array;
+   type PointHelper_Access_Array_Access_Array is array (Natural range <>) of PointHelper_Access_Array_Access;
+   type PointHelper_Access_Array_Access_Array_Access is access all PointHelper_Access_Array_Access_Array;
 
    type PointHelper is new Java_Object with null record;
    two : Long_Float;

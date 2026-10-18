@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.w3c.dom.Attr_Package; use org.w3c.dom.Attr_Package;
+with org.w3c.dom.NamedNodeMap_Package; use org.w3c.dom.NamedNodeMap_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfo_Package; use org.allbinary.logic.visual.transform.info.TransformInfo_Package;
+
 package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package is
 
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package Attr_Package renames Standard.org.w3c.dom.Attr_Package;
+   package NamedNodeMap_Package renames Standard.org.w3c.dom.NamedNodeMap_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out TransformInfoDomNode'Class) is
    begin
       null;
@@ -130,7 +145,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
    procedure Initialize (This : in out TransformInfoDomNode'Class; name : Unbounded_String; mappedName : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.transformInfoInterface := TransformInfo_Package.Create (name);
+        This.transformInfoInterface := TransformInfoInterface_Access (TransformInfo_Package.Create (name));
         This.mappedName := mappedName;
    end Initialize;
 

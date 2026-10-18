@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
 
    procedure Initialize_Fields (This : in out Grid'Class) is
@@ -44,8 +45,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
    begin
       Initialize_Fields (This);
         This.grid := grid.grid;
-        Grid'Class (This).showGrid (grid.isGridOn_Field);
-        This.isGridPossible_Field := grid.isGridPossible_Field;
+        Grid'Class (This).showGrid (grid.isGridOn);
+        This.isGridPossible_Field := grid.isGridPossible;
         Grid'Class (This).setZoom (grid.getZoom);
    end Initialize;
 

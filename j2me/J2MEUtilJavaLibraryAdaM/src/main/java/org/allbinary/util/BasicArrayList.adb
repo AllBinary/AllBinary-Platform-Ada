@@ -1,8 +1,24 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+
 package body org.allbinary.util.BasicArrayList_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
    procedure Initialize_Fields (This : in out BasicArrayList'Class) is
    begin
       null;
@@ -33,7 +49,7 @@ package body org.allbinary.util.BasicArrayList_Package is
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (CommonLabels_Package.getInstance.INDEX_LABEL);
             stringBuffer.appendint (index);
-            stringBuffer.append (BasicArrayList_Package.SIZE);
+            stringBuffer.append (BasicArrayList_Package.SIZE_Field);
             stringBuffer.appendint (This.currentIndex);
             Java_Throw (Java_New_Exception ("IndexOutOfBoundsException", stringBuffer.toString));
         end if;
@@ -60,7 +76,7 @@ package body org.allbinary.util.BasicArrayList_Package is
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (CommonLabels_Package.getInstance.INDEX_LABEL);
             stringBuffer.appendint (index);
-            stringBuffer.append (BasicArrayList_Package.SIZE);
+            stringBuffer.append (BasicArrayList_Package.SIZE_Field);
             stringBuffer.appendint (This.currentIndex);
             Java_Throw (Java_New_Exception ("IndexOutOfBoundsException", stringBuffer.toString));
         end if;
@@ -107,12 +123,12 @@ package body org.allbinary.util.BasicArrayList_Package is
    function removeAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean is
       list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       result : Boolean;
-      size_Case : Integer;
+      size : Integer;
       index : Integer;
    begin
         result := True;
-        size_Case := list.size_Case;
-        for index in 0 .. (size_Case) - 1 loop
+        size := list.size;
+        for index in 0 .. (size) - 1 loop
             if BasicArrayList'Class (This).remove (list.get (index)) then
                 null;
             else
@@ -223,7 +239,7 @@ package body org.allbinary.util.BasicArrayList_Package is
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (CommonLabels_Package.getInstance.INDEX_LABEL);
             stringBuffer.appendint (index);
-            stringBuffer.append (BasicArrayList_Package.SIZE);
+            stringBuffer.append (BasicArrayList_Package.SIZE_Field);
             stringBuffer.appendint (This.currentIndex);
             Java_Throw (Java_New_Exception ("IndexOutOfBoundsException", stringBuffer.toString));
         end if;
@@ -239,7 +255,7 @@ package body org.allbinary.util.BasicArrayList_Package is
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (CommonLabels_Package.getInstance.INDEX_LABEL);
             stringBuffer.appendint (index);
-            stringBuffer.append (BasicArrayList_Package.SIZE);
+            stringBuffer.append (BasicArrayList_Package.SIZE_Field);
             stringBuffer.appendint (This.currentIndex);
             Java_Throw (Java_New_Exception ("IndexOutOfBoundsException", stringBuffer.toString));
         end if;
@@ -257,10 +273,10 @@ package body org.allbinary.util.BasicArrayList_Package is
         This.currentIndex := 0;
    end clear;
 
-   function size_Case (This : in out BasicArrayList) return Integer is
+   function size (This : in out BasicArrayList) return Integer is
    begin
         return This.currentIndex;
-   end size_Case;
+   end size;
 
    function isEmpty (This : in out BasicArrayList) return Boolean is
    begin
@@ -281,7 +297,7 @@ package body org.allbinary.util.BasicArrayList_Package is
    function toArrayType (This : in out BasicArrayList; objectArray : Java_Object_Access_Array_Access) return Java_Object_Access_Array_Access is
    begin
         if (objectArray'Length) < (This.currentIndex) then
-            return This.arrayUtil.copyOfType (This.objectArray, This.currentIndex, objectArray.all'Tag);
+            return This.arrayUtil.copyOfType (This.objectArray, This.currentIndex, Ada.Tags.No_Tag);
         end if;
         Java_Array_Copy (This.objectArray, 0, objectArray, 0, This.currentIndex);
         if (objectArray'Length) > (This.currentIndex) then
@@ -291,19 +307,19 @@ package body org.allbinary.util.BasicArrayList_Package is
    end toArrayType;
 
    function clone (This : in out BasicArrayList) return Java_Object_Access is
-      size_Case : Integer;
+      size : Integer;
       list : BasicArrayList_Access;
       anyType : Java_Object_Access;
       index : Integer;
    begin
-        size_Case := BasicArrayList'Class (This).size_Case;
-        list := BasicArrayListS_Package.Create (size_Case);
+        size := BasicArrayList'Class (This).size;
+        list := BasicArrayList_Access (BasicArrayListS_Package.Create (size));
         anyType := null;
-        for index in 0 .. (size_Case) - 1 loop
+        for index in 0 .. (size) - 1 loop
             anyType := This.objectArray (index);
             list.add (anyType);
         end loop;
-        return list;
+        return Java_Object_Access (list);
    end clone;
 
    function toString (This : in out BasicArrayList) return Unbounded_String is
@@ -411,9 +427,69 @@ package body org.allbinary.util.BasicArrayList_Package is
       null;
    end toArrayType;
 
+   function add (This : in out BasicArrayList; Value : Unbounded_String) return Boolean is
+   begin
+      return BasicArrayList'Class (This).add (Java_Box (Value));
+   end add;
+
+   procedure add (This : in out BasicArrayList; Value : Unbounded_String) is
+      Java_Result : constant Boolean := BasicArrayList'Class (This).add (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end add;
+
+   function remove (This : in out BasicArrayList; Value : Unbounded_String) return Boolean is
+   begin
+      return BasicArrayList'Class (This).remove (Java_Box (Value));
+   end remove;
+
+   procedure remove (This : in out BasicArrayList; Value : Unbounded_String) is
+      Java_Result : constant Boolean := BasicArrayList'Class (This).remove (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end remove;
+
+   function indexOf (This : in out BasicArrayList; Value : Unbounded_String) return Integer is
+   begin
+      return BasicArrayList'Class (This).indexOf (Java_Box (Value));
+   end indexOf;
+
+   procedure indexOf (This : in out BasicArrayList; Value : Unbounded_String) is
+      Java_Result : constant Integer := BasicArrayList'Class (This).indexOf (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end indexOf;
+
+   function lastIndexOf (This : in out BasicArrayList; Value : Unbounded_String) return Integer is
+   begin
+      return BasicArrayList'Class (This).lastIndexOf (Java_Box (Value));
+   end lastIndexOf;
+
+   procedure lastIndexOf (This : in out BasicArrayList; Value : Unbounded_String) is
+      Java_Result : constant Integer := BasicArrayList'Class (This).lastIndexOf (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end lastIndexOf;
+
+   function contains (This : in out BasicArrayList; Value : Unbounded_String) return Boolean is
+   begin
+      return BasicArrayList'Class (This).contains (Java_Box (Value));
+   end contains;
+
+   procedure contains (This : in out BasicArrayList; Value : Unbounded_String) is
+      Java_Result : constant Boolean := BasicArrayList'Class (This).contains (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end contains;
+
 begin
    null;
-   SIZE := To_Unbounded_String (", Size: ");
+   SIZE_Field := To_Unbounded_String (", Size: ");
 
 end org.allbinary.util.BasicArrayList_Package;
 

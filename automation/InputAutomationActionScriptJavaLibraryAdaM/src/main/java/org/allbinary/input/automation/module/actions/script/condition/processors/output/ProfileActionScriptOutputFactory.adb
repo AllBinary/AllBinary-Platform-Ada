@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputData_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;
+
 package body org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package is
 
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
    procedure Initialize_Fields (This : in out ProfileActionScriptOutputFactory'Class) is
    begin
       null;
@@ -41,7 +46,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    begin
         profileActionScriptOutputInterface := null;
         if (DomSearchHelper_Package.getNodeNoThrow (ImageActionScriptOutputData_Package.NAME, node.getChildNodes)) /= (null) then
-            profileActionScriptOutputInterface := ImageActionScriptOutput_Package.Create (node);
+            profileActionScriptOutputInterface := ProfileActionScriptOutputInterface_Access (ImageActionScriptOutput_Package.Create (node));
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such ActionScript Output")));
         end if;

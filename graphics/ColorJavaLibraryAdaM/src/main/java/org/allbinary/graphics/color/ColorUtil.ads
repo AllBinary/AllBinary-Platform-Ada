@@ -29,6 +29,8 @@ package org.allbinary.graphics.color.ColorUtil_Package is
    type ColorUtil_Access is access all ColorUtil'Class;
    type ColorUtil_Access_Array is array (Natural range <>) of ColorUtil_Access;
    type ColorUtil_Access_Array_Access is access all ColorUtil_Access_Array;
+   type ColorUtil_Access_Array_Access_Array is array (Natural range <>) of ColorUtil_Access_Array_Access;
+   type ColorUtil_Access_Array_Access_Array_Access is access all ColorUtil_Access_Array_Access_Array;
 
    type ColorUtil is new Java_Object with null record;
    instance : ColorUtil_Access;

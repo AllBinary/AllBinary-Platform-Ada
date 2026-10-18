@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.template.XslData_Package is
    type XslData_Access is access all XslData'Class;
    type XslData_Access_Array is array (Natural range <>) of XslData_Access;
    type XslData_Access_Array_Access is access all XslData_Access_Array;
+   type XslData_Access_Array_Access_Array is array (Natural range <>) of XslData_Access_Array_Access;
+   type XslData_Access_Array_Access_Array_Access is access all XslData_Access_Array_Access_Array;
 
    type XslData is new Java_Object with record
       NAME : Unbounded_String;

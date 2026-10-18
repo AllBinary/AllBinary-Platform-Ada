@@ -21,37 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
-with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
-with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
-with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
-with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.business.user.modules.configuration.UserConfigurationData_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationData_Package;
-with org.allbinary.business.user.modules.configuration.UserConfigurationView_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationView_Package;
 with org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
-with org.allbinary.business.user.modules.configuration.UserConfiguration_Package; use org.allbinary.business.user.modules.configuration.UserConfiguration_Package;
 
 package org.allbinary.business.user.modules.configuration.UserConfigurationInterfaceFactory_Package is
 
    package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
-   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
-   package CryptFileReader_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
-   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
-   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type UserConfigurationInterfaceFactory is tagged;
    type UserConfigurationInterfaceFactory_Access is access all UserConfigurationInterfaceFactory'Class;
    type UserConfigurationInterfaceFactory_Access_Array is array (Natural range <>) of UserConfigurationInterfaceFactory_Access;
    type UserConfigurationInterfaceFactory_Access_Array_Access is access all UserConfigurationInterfaceFactory_Access_Array;
+   type UserConfigurationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of UserConfigurationInterfaceFactory_Access_Array_Access;
+   type UserConfigurationInterfaceFactory_Access_Array_Access_Array_Access is access all UserConfigurationInterfaceFactory_Access_Array_Access_Array;
 
    type UserConfigurationInterfaceFactory is new Java_Object with null record;
    configurationName : Unbounded_String;

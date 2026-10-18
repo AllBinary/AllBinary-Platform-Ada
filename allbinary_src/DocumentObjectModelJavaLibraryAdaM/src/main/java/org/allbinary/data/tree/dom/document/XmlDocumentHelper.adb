@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.logic.java.characters.CharacterSetData_Package; use org.allbinary.logic.java.characters.CharacterSetData_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.xml.sax.InputSource_Package; use org.xml.sax.InputSource_Package;
+
 package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
 
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package CharacterSetData_Package renames Standard.org.allbinary.logic.java.characters.CharacterSetData_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package InputSource_Package renames Standard.org.xml.sax.InputSource_Package;
    procedure Initialize_Fields (This : in out XmlDocumentHelper'Class) is
    begin
       null;
@@ -74,7 +85,7 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    begin
         src := InputSource_Package.Create (StringReader_Package.Create (xmlString));
         document := DocumentBuilderFactory_Package.newInstance.newDocumentBuilder.parse (src);
-        out_Id := StringWriter_Package.Create;
+        out_Id := Writer_Access (StringWriter_Package.Create);
         This.transformer.transform (DOMSource_Package.Create (document), StreamResult_Package.Create (out_Id));
         return out_Id.toString;
    end format;

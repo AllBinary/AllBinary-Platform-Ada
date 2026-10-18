@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.logic.io.LineReader_Package is
 
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out LineReader'Class) is
    begin
       null;
@@ -62,7 +65,7 @@ package body org.allbinary.logic.io.LineReader_Package is
       nextIndex : Integer;
    begin
         begin
-            nextIndex := This.string_Id.indexOf (CommonSeps_Package.getInstance.NEW_LINE, This.index);
+            nextIndex := Java_Index_Of (This.string_Id, Java_Image (CommonSeps_Package.getInstance.NEW_LINE), This.index);
             if (nextIndex) = (-(1)) then
                 return False;
             end if;
@@ -87,7 +90,7 @@ package body org.allbinary.logic.io.LineReader_Package is
       temp : Unbounded_String;
    begin
         begin
-            nextIndex := This.string_Id.indexOf (CommonSeps_Package.getInstance.NEW_LINE, This.index);
+            nextIndex := Java_Index_Of (This.string_Id, Java_Image (CommonSeps_Package.getInstance.NEW_LINE), This.index);
             if (nextIndex) = (-(1)) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("next() should have been called first")));
             end if;

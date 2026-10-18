@@ -23,6 +23,8 @@ package org.allbinary.graphics.form.item.ABTextItem_Package is
    type ABTextItem_Access is access all ABTextItem'Class;
    type ABTextItem_Access_Array is array (Natural range <>) of ABTextItem_Access;
    type ABTextItem_Access_Array_Access is access all ABTextItem_Access_Array;
+   type ABTextItem_Access_Array_Access_Array is array (Natural range <>) of ABTextItem_Access_Array_Access;
+   type ABTextItem_Access_Array_Access_Array_Access is access all ABTextItem_Access_Array_Access_Array;
 
    type ABTextItem is new CustomCustomItem and ABCustomItemInterface with null record;
 

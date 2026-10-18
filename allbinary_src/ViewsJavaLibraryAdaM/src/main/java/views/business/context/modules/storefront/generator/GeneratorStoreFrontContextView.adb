@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_Package; use org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfosData_Package; use org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+
 package body views.business.context.modules.storefront.generator.GeneratorStoreFrontContextView_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package TransformsGeneratorUtil_Package renames Standard.org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_Package;
+   package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
    procedure Initialize_Fields (This : in out GeneratorStoreFrontContextView'Class) is
    begin
       null;

@@ -30,6 +30,8 @@ package org.allbinary.game.behavior.topview.placement.TileMapPlacementVisitor_Pa
    type TileMapPlacementVisitor_Access is access all TileMapPlacementVisitor'Class;
    type TileMapPlacementVisitor_Access_Array is array (Natural range <>) of TileMapPlacementVisitor_Access;
    type TileMapPlacementVisitor_Access_Array_Access is access all TileMapPlacementVisitor_Access_Array;
+   type TileMapPlacementVisitor_Access_Array_Access_Array is array (Natural range <>) of TileMapPlacementVisitor_Access_Array_Access;
+   type TileMapPlacementVisitor_Access_Array_Access_Array_Access is access all TileMapPlacementVisitor_Access_Array_Access_Array;
 
    type TileMapPlacementVisitor is new Java_Object with null record;
 

@@ -20,6 +20,8 @@ package org.allbinary.logic.control.crypt.file.CryptFileReader_Package is
    type CryptFileReader_Access is access all CryptFileReader'Class;
    type CryptFileReader_Access_Array is array (Natural range <>) of CryptFileReader_Access;
    type CryptFileReader_Access_Array_Access is access all CryptFileReader_Access_Array;
+   type CryptFileReader_Access_Array_Access_Array is array (Natural range <>) of CryptFileReader_Access_Array_Access;
+   type CryptFileReader_Access_Array_Access_Array_Access is access all CryptFileReader_Access_Array_Access_Array;
 
    type CryptFileReader is new Java_Object with null record;
 

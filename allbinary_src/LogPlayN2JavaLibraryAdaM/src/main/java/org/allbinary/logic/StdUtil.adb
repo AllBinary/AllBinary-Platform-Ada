@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+
 package body org.allbinary.logic.StdUtil_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
    procedure Initialize_Fields (This : in out StdUtil'Class) is
    begin
       null;

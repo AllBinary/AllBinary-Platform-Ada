@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.paint.PaintableComposite_Package is
 
    procedure Initialize_Fields (This : in out PaintableComposite'Class) is

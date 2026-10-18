@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 
 package org.allbinary.logic.visual.dhtml.html.HtmlTag_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type HtmlTag is tagged;
    type HtmlTag_Access is access all HtmlTag'Class;
    type HtmlTag_Access_Array is array (Natural range <>) of HtmlTag_Access;
    type HtmlTag_Access_Array_Access is access all HtmlTag_Access_Array;
+   type HtmlTag_Access_Array_Access_Array is array (Natural range <>) of HtmlTag_Access_Array_Access;
+   type HtmlTag_Access_Array_Access_Array_Access is access all HtmlTag_Access_Array_Access_Array;
 
    type HtmlTag is new Java_Object with record
       otherAttributes : HashMap_Access;

@@ -39,6 +39,8 @@ package org.allbinary.game.layer.TileLayerItem_Package is
    type TileLayerItem_Access is access all TileLayerItem'Class;
    type TileLayerItem_Access_Array is array (Natural range <>) of TileLayerItem_Access;
    type TileLayerItem_Access_Array_Access is access all TileLayerItem_Access_Array;
+   type TileLayerItem_Access_Array_Access_Array is array (Natural range <>) of TileLayerItem_Access_Array_Access;
+   type TileLayerItem_Access_Array_Access_Array_Access is access all TileLayerItem_Access_Array_Access_Array;
 
    type TileLayerItem is new ABCustomItem and ABCustomItemInterface with record
       tiledLayer : AllBinaryTiledLayer_Access;

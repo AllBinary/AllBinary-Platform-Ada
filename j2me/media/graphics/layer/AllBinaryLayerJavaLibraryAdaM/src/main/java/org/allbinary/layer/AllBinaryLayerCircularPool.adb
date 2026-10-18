@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+
 package body org.allbinary.layer.AllBinaryLayerCircularPool_Package is
 
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
    procedure Initialize_Fields (This : in out AllBinaryLayerCircularPool'Class) is
    begin
       null;

@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.thread.Runnable_Package; use org.allbinary.thread.Runnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.RunnableInterface_Package is
 
@@ -29,6 +29,8 @@ package org.allbinary.thread.RunnableInterface_Package is
    type RunnableInterface_Access is access all RunnableInterface'Class;
    type RunnableInterface_Access_Array is array (Natural range <>) of RunnableInterface_Access;
    type RunnableInterface_Access_Array_Access is access all RunnableInterface_Access_Array;
+   type RunnableInterface_Access_Array_Access_Array is array (Natural range <>) of RunnableInterface_Access_Array_Access;
+   type RunnableInterface_Access_Array_Access_Array_Access is access all RunnableInterface_Access_Array_Access_Array;
    function isRunning (This : in out RunnableInterface) return Boolean is abstract;
    procedure setRunning (This : in out RunnableInterface; isRunning : Boolean) is abstract;
    procedure setThread (This : in out RunnableInterface; thread_Param : access Thread_Package.Thread'Class) is abstract;

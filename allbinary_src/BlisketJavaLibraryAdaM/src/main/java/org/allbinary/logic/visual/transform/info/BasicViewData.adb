@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.visual.transform.info.BasicViewData_Package is
 
    procedure Initialize_Fields (This : in out BasicViewData'Class) is

@@ -29,6 +29,8 @@ package org.allbinary.logic.util.event.BasicEventListenerInterface_Package is
    type BasicEventListenerInterface_Access is access all BasicEventListenerInterface'Class;
    type BasicEventListenerInterface_Access_Array is array (Natural range <>) of BasicEventListenerInterface_Access;
    type BasicEventListenerInterface_Access_Array_Access is access all BasicEventListenerInterface_Access_Array;
+   type BasicEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of BasicEventListenerInterface_Access_Array_Access;
+   type BasicEventListenerInterface_Access_Array_Access_Array_Access is access all BasicEventListenerInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
 

@@ -28,6 +28,8 @@ package org.allbinary.logic.string_Id.StringValidationJSEUtil_Package is
    type StringValidationJSEUtil_Access is access all StringValidationJSEUtil'Class;
    type StringValidationJSEUtil_Access_Array is array (Natural range <>) of StringValidationJSEUtil_Access;
    type StringValidationJSEUtil_Access_Array_Access is access all StringValidationJSEUtil_Access_Array;
+   type StringValidationJSEUtil_Access_Array_Access_Array is array (Natural range <>) of StringValidationJSEUtil_Access_Array_Access;
+   type StringValidationJSEUtil_Access_Array_Access_Array_Access is access all StringValidationJSEUtil_Access_Array_Access_Array;
 
    type StringValidationJSEUtil is new Java_Object with null record;
 

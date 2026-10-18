@@ -32,8 +32,10 @@ package org.allbinary.game.score.HighScoresCanvasNoInputProcessorFactory_Package
    type HighScoresCanvasNoInputProcessorFactory_Access is access all HighScoresCanvasNoInputProcessorFactory'Class;
    type HighScoresCanvasNoInputProcessorFactory_Access_Array is array (Natural range <>) of HighScoresCanvasNoInputProcessorFactory_Access;
    type HighScoresCanvasNoInputProcessorFactory_Access_Array_Access is access all HighScoresCanvasNoInputProcessorFactory_Access_Array;
+   type HighScoresCanvasNoInputProcessorFactory_Access_Array_Access_Array is array (Natural range <>) of HighScoresCanvasNoInputProcessorFactory_Access_Array_Access;
+   type HighScoresCanvasNoInputProcessorFactory_Access_Array_Access_Array_Access is access all HighScoresCanvasNoInputProcessorFactory_Access_Array_Access_Array;
 
-   type HighScoresCanvasNoInputProcessorFactory is new HighScoresCanvasInputProcessorFactoryInterface with null record;
+   type HighScoresCanvasNoInputProcessorFactory is new Java_Object and HighScoresCanvasInputProcessorFactoryInterface with null record;
 
    procedure Initialize (This : in out HighScoresCanvasNoInputProcessorFactory'Class);
    function Create return HighScoresCanvasNoInputProcessorFactory_Access;

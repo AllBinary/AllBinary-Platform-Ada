@@ -35,6 +35,8 @@ package org.allbinary.game.layer.LinePathRelativeAnimation_Package is
    type LinePathRelativeAnimation_Access is access all LinePathRelativeAnimation'Class;
    type LinePathRelativeAnimation_Access_Array is array (Natural range <>) of LinePathRelativeAnimation_Access;
    type LinePathRelativeAnimation_Access_Array_Access is access all LinePathRelativeAnimation_Access_Array;
+   type LinePathRelativeAnimation_Access_Array_Access_Array is array (Natural range <>) of LinePathRelativeAnimation_Access_Array_Access;
+   type LinePathRelativeAnimation_Access_Array_Access_Array_Access is access all LinePathRelativeAnimation_Access_Array_Access_Array;
 
    type LinePathRelativeAnimation is new LinePathAnimation with null record;
    instanceC : LinePathRelativeAnimation_Access;

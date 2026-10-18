@@ -28,6 +28,8 @@ package org.allbinary.business.time.Time_Package is
    type Time_Access is access all Time'Class;
    type Time_Access_Array is array (Natural range <>) of Time_Access;
    type Time_Access_Array_Access is access all Time_Access_Array;
+   type Time_Access_Array_Access_Array is array (Natural range <>) of Time_Access_Array_Access;
+   type Time_Access_Array_Access_Array_Access is access all Time_Access_Array_Access_Array;
 
    type Time is new Java_Object with record
       timeLong : Long_Long_Integer;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.image.CanvasTrimUtil_Package is
 
    procedure Initialize_Fields (This : in out CanvasTrimUtil'Class) is

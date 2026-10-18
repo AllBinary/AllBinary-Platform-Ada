@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package; use org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package;
+with org.allbinary.game.input.event.GameKeyEventHandler_Package; use org.allbinary.game.input.event.GameKeyEventHandler_Package;
+with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+
 package body org.allbinary.game.displayable.canvas.GameEventHandlerUtil_Package is
 
+   package GameInputMotionEventProcessorFactory_Package renames Standard.org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package;
+   package GameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.GameKeyEventHandler_Package;
+   package BasicMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
    procedure Initialize_Fields (This : in out GameEventHandlerUtil'Class) is
    begin
       null;

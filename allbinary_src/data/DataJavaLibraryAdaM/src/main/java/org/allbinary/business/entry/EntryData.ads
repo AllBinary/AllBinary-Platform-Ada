@@ -28,6 +28,8 @@ package org.allbinary.business.entry_Id.EntryData_Package is
    type EntryData_Access is access all EntryData'Class;
    type EntryData_Access_Array is array (Natural range <>) of EntryData_Access;
    type EntryData_Access_Array_Access is access all EntryData_Access_Array;
+   type EntryData_Access_Array_Access_Array is array (Natural range <>) of EntryData_Access_Array_Access;
+   type EntryData_Access_Array_Access_Array_Access is access all EntryData_Access_Array_Access_Array;
 
    type EntryData is new Java_Object with record
       ID : Unbounded_String;

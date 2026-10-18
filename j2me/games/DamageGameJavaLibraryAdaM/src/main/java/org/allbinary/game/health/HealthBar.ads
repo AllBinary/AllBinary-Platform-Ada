@@ -38,6 +38,8 @@ package org.allbinary.game.health.HealthBar_Package is
    type HealthBar_Access is access all HealthBar'Class;
    type HealthBar_Access_Array is array (Natural range <>) of HealthBar_Access;
    type HealthBar_Access_Array_Access is access all HealthBar_Access_Array;
+   type HealthBar_Access_Array_Access_Array is array (Natural range <>) of HealthBar_Access_Array_Access;
+   type HealthBar_Access_Array_Access_Array_Access is access all HealthBar_Access_Array_Access_Array;
 
    type HealthBar is new Paintable and HealthListenerInterface with record
       animationInterface : HealthBarAnimation_Access;

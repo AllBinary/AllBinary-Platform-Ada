@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.osgi.framework.NullServiceReference_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type NullServiceReference is tagged;
    type NullServiceReference_Access is access all NullServiceReference'Class;
    type NullServiceReference_Access_Array is array (Natural range <>) of NullServiceReference_Access;
    type NullServiceReference_Access_Array_Access is access all NullServiceReference_Access_Array;
+   type NullServiceReference_Access_Array_Access_Array is array (Natural range <>) of NullServiceReference_Access_Array_Access;
+   type NullServiceReference_Access_Array_Access_Array_Access is access all NullServiceReference_Access_Array_Access_Array;
 
    type NullServiceReference is new Java_Object with null record;
 
@@ -42,6 +40,8 @@ package org.osgi.framework.NullServiceReference_Package is
    function getPropertyKeys (This : in out NullServiceReference) return Unbounded_String_Array_Access;
    function compareTo (This : in out NullServiceReference; o_Param : access Java_Object'Class) return Integer;
    procedure compareTo (This : in out NullServiceReference; o_Param : access Java_Object'Class);
+   function compareTo (This : in out NullServiceReference; Value : Unbounded_String) return Integer;
+   procedure compareTo (This : in out NullServiceReference; Value : Unbounded_String);
 
 end org.osgi.framework.NullServiceReference_Package;
 

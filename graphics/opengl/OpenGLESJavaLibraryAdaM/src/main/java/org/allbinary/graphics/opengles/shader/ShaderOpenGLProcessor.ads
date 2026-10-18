@@ -20,6 +20,8 @@ package org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package is
    type ShaderOpenGLProcessor_Access is access all ShaderOpenGLProcessor'Class;
    type ShaderOpenGLProcessor_Access_Array is array (Natural range <>) of ShaderOpenGLProcessor_Access;
    type ShaderOpenGLProcessor_Access_Array_Access is access all ShaderOpenGLProcessor_Access_Array;
+   type ShaderOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of ShaderOpenGLProcessor_Access_Array_Access;
+   type ShaderOpenGLProcessor_Access_Array_Access_Array_Access is access all ShaderOpenGLProcessor_Access_Array_Access_Array;
 
    type ShaderOpenGLProcessor is new OpenGLProcessor with null record;
 

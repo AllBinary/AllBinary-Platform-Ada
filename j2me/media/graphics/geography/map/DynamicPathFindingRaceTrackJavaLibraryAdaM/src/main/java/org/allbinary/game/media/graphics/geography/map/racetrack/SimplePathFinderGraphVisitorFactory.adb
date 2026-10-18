@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package; use org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package;
+
 package body org.allbinary.game.media.graphics.geography.map.racetrack.SimplePathFinderGraphVisitorFactory_Package is
 
    procedure Initialize_Fields (This : in out SimplePathFinderGraphVisitorFactory'Class) is
@@ -43,7 +45,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.SimplePat
    function getInstance (This : in out SimplePathFinderGraphVisitorFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) return PathFinderGraphVisitorBase_Access is
       geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
-        return BasePathFinderGraphVisitor_Package.Create (geographicMapInterface, This.edgeMinimum, This.minPathWeight, This.maxPathWeight);
+        return PathFinderGraphVisitorBase_Access (BasePathFinderGraphVisitor_Package.Create (geographicMapInterface, This.edgeMinimum, This.minPathWeight, This.maxPathWeight));
    end getInstance;
 
    procedure getInstance (This : in out SimplePathFinderGraphVisitorFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is

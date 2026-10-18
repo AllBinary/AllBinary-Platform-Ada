@@ -30,6 +30,8 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterfa
    type GeographicMapCompositeInterface_Access is access all GeographicMapCompositeInterface'Class;
    type GeographicMapCompositeInterface_Access_Array is array (Natural range <>) of GeographicMapCompositeInterface_Access;
    type GeographicMapCompositeInterface_Access_Array_Access is access all GeographicMapCompositeInterface_Access_Array;
+   type GeographicMapCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCompositeInterface_Access_Array_Access;
+   type GeographicMapCompositeInterface_Access_Array_Access_Array_Access is access all GeographicMapCompositeInterface_Access_Array_Access_Array;
    function geographicMapCellTypeArray (This : in out GeographicMapCompositeInterface) return GeographicMapCellType_Access_Array_Access is abstract;
    function getGeographicMapInterface (This : in out GeographicMapCompositeInterface) return BasicGeographicMap_Access_Array_Access is abstract;
    procedure setGeographicMapInterface (This : in out GeographicMapCompositeInterface; geographicMapInterface : BasicGeographicMap_Access_Array_Access) is abstract;

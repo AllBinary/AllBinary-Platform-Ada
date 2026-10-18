@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;
-with org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package; use org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Package is
@@ -33,8 +32,10 @@ package org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Package 
    type SelectionToolFactory_Access is access all SelectionToolFactory'Class;
    type SelectionToolFactory_Access_Array is array (Natural range <>) of SelectionToolFactory_Access;
    type SelectionToolFactory_Access_Array_Access is access all SelectionToolFactory_Access_Array;
+   type SelectionToolFactory_Access_Array_Access_Array is array (Natural range <>) of SelectionToolFactory_Access_Array_Access;
+   type SelectionToolFactory_Access_Array_Access_Array_Access is access all SelectionToolFactory_Access_Array_Access_Array;
 
-   type SelectionToolFactory is new GraphicsItemInterfaceFactoryInterface with null record;
+   type SelectionToolFactory is new Java_Object and GraphicsItemInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out SelectionToolFactory'Class);
    function Create return SelectionToolFactory_Access;

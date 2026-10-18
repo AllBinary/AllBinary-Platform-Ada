@@ -32,6 +32,8 @@ package org.allbinary.game.input.LayerPositionFinderInterface_Package is
    type LayerPositionFinderInterface_Access is access all LayerPositionFinderInterface'Class;
    type LayerPositionFinderInterface_Access_Array is array (Natural range <>) of LayerPositionFinderInterface_Access;
    type LayerPositionFinderInterface_Access_Array_Access is access all LayerPositionFinderInterface_Access_Array;
+   type LayerPositionFinderInterface_Access_Array_Access_Array is array (Natural range <>) of LayerPositionFinderInterface_Access_Array_Access;
+   type LayerPositionFinderInterface_Access_Array_Access_Array_Access is access all LayerPositionFinderInterface_Access_Array_Access_Array;
    function getLayerInterface (This : in out LayerPositionFinderInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return AllBinaryLayer_Access is abstract;
 
 end org.allbinary.game.input.LayerPositionFinderInterface_Package;

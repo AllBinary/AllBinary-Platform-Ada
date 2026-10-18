@@ -1,6 +1,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.cache.CacheTypeFactory_Package; use org.allbinary.logic.util.cache.CacheTypeFactory_Package;
+
 package body org.allbinary.logic.util.cache.PoolTypeFactory_Package is
 
    procedure Initialize_Fields (This : in out PoolTypeFactory'Class) is

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+
 package body org.allbinary.graphics.RectangleFactory_Package is
 
    procedure Initialize_Fields (This : in out RectangleFactory'Class) is

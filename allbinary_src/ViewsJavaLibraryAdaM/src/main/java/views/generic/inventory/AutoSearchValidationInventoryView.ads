@@ -35,6 +35,8 @@ package views.generic_Id.inventory.AutoSearchValidationInventoryView_Package is
    type AutoSearchValidationInventoryView_Access is access all AutoSearchValidationInventoryView'Class;
    type AutoSearchValidationInventoryView_Access_Array is array (Natural range <>) of AutoSearchValidationInventoryView_Access;
    type AutoSearchValidationInventoryView_Access_Array_Access is access all AutoSearchValidationInventoryView_Access_Array;
+   type AutoSearchValidationInventoryView_Access_Array_Access_Array is array (Natural range <>) of AutoSearchValidationInventoryView_Access_Array_Access;
+   type AutoSearchValidationInventoryView_Access_Array_Access_Array_Access is access all AutoSearchValidationInventoryView_Access_Array_Access_Array;
 
    type AutoSearchValidationInventoryView is new InventorySearch with null record;
 

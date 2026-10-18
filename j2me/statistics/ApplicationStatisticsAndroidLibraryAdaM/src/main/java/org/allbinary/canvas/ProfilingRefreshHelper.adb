@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.canvas.ProfilingRefreshHelper_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out ProfilingRefreshHelper'Class) is
    begin
       null;
@@ -49,7 +52,7 @@ package body org.allbinary.canvas.ProfilingRefreshHelper_Package is
    begin
         AndroidGameStatistics (This).initView (view);
         This.frameProcessingTimeElapsed := ProfilingRefreshHelper'Class (This).getTimeDelayHelper.getStartTime;
-        This.bestFrameProcessingTime := Integer_Package.MAX_VALUE;
+        This.bestFrameProcessingTime := Integer'Last;
         This.worstFrameProcessingTime := 0;
    end initView;
 

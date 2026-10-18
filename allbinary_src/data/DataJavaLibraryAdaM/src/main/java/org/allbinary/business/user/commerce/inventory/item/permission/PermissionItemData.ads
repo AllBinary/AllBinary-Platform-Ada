@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.item.permission.Permissio
    type PermissionItemData_Access is access all PermissionItemData'Class;
    type PermissionItemData_Access_Array is array (Natural range <>) of PermissionItemData_Access;
    type PermissionItemData_Access_Array_Access is access all PermissionItemData_Access_Array;
+   type PermissionItemData_Access_Array_Access_Array is array (Natural range <>) of PermissionItemData_Access_Array_Access;
+   type PermissionItemData_Access_Array_Access_Array_Access is access all PermissionItemData_Access_Array_Access_Array;
 
    type PermissionItemData is new Java_Object with null record;
    WHO : Unbounded_String;

@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 with org.allbinary.direction.DirectionUtil_Package; use org.allbinary.direction.DirectionUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.math.FrameUtil_Package; use org.allbinary.math.FrameUtil_Package;
@@ -35,7 +34,6 @@ package org.allbinary.animation.RotationAnimation_Package is
 
    package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
    package DirectionUtil_Package renames Standard.org.allbinary.direction.DirectionUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    package FrameUtil_Package renames Standard.org.allbinary.math.FrameUtil_Package;
@@ -45,6 +43,8 @@ package org.allbinary.animation.RotationAnimation_Package is
    type RotationAnimation_Access is access all RotationAnimation'Class;
    type RotationAnimation_Access_Array is array (Natural range <>) of RotationAnimation_Access;
    type RotationAnimation_Access_Array_Access is access all RotationAnimation_Access_Array;
+   type RotationAnimation_Access_Array_Access_Array is array (Natural range <>) of RotationAnimation_Access_Array_Access;
+   type RotationAnimation_Access_Array_Access_Array_Access is access all RotationAnimation_Access_Array_Access_Array;
 
    type RotationAnimation is new IndexedAnimation and RotationAnimationInterface with record
       frameUtil : FrameUtil_Access;

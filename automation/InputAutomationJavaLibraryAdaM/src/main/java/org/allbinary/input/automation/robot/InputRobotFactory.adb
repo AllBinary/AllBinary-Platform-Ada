@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.java.help.JavaHelpSetNotifier_Package; use org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
+with org.allbinary.logic.java.anyType.InterfaceUtil_Package; use org.allbinary.logic.java.anyType.InterfaceUtil_Package;
+with org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package; use org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package;
+with org.allbinary.input.automation.robot.InputRobot_Package; use org.allbinary.input.automation.robot.InputRobot_Package;
+
 package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package JavaHelpSetNotifier_Package renames Standard.org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
+   package InterfaceUtil_Package renames Standard.org.allbinary.logic.java.anyType.InterfaceUtil_Package;
+   package SecuredNativeLibraryInterface_Package renames Standard.org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package;
    procedure Initialize_Fields (This : in out InputRobotFactory'Class) is
    begin
       null;

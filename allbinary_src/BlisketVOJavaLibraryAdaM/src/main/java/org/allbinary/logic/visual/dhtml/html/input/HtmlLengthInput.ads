@@ -29,6 +29,8 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package is
    type HtmlLengthInput_Access is access all HtmlLengthInput'Class;
    type HtmlLengthInput_Access_Array is array (Natural range <>) of HtmlLengthInput_Access;
    type HtmlLengthInput_Access_Array_Access is access all HtmlLengthInput_Access_Array;
+   type HtmlLengthInput_Access_Array_Access_Array is array (Natural range <>) of HtmlLengthInput_Access_Array_Access;
+   type HtmlLengthInput_Access_Array_Access_Array_Access is access all HtmlLengthInput_Access_Array_Access_Array;
 
    type HtmlLengthInput is new HtmlValueInput with record
       MAXLENGTH : Unbounded_String;
@@ -40,7 +42,7 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package is
    procedure Initialize (This : in out HtmlLengthInput'Class; before : Unbounded_String; type_Id : Unbounded_String; name : Unbounded_String; value : Unbounded_String; after : Unbounded_String);
    function Create (before : Unbounded_String; type_Id : Unbounded_String; name : Unbounded_String; value : Unbounded_String; after : Unbounded_String) return HtmlLengthInput_Access;
    procedure setMaxLength (This : in out HtmlLengthInput; length : Integer);
-   procedure setSize (This : in out HtmlLengthInput; size_Case : Integer);
+   procedure setSize (This : in out HtmlLengthInput; size : Integer);
 
 end org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package;
 

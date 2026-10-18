@@ -24,25 +24,20 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.ColorModel_Package; use java.awt.image.ColorModel_Package;
 --  with java.awt.image.WritableRaster_Package; use java.awt.image.WritableRaster_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
-with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ImageModifierUtil is tagged;
    type ImageModifierUtil_Access is access all ImageModifierUtil'Class;
    type ImageModifierUtil_Access_Array is array (Natural range <>) of ImageModifierUtil_Access;
    type ImageModifierUtil_Access_Array_Access is access all ImageModifierUtil_Access_Array;
+   type ImageModifierUtil_Access_Array_Access_Array is array (Natural range <>) of ImageModifierUtil_Access_Array_Access;
+   type ImageModifierUtil_Access_Array_Access_Array_Access is access all ImageModifierUtil_Access_Array_Access_Array;
 
    type ImageModifierUtil is new Java_Object with record
       imageUtil : ImageUtil_Access;

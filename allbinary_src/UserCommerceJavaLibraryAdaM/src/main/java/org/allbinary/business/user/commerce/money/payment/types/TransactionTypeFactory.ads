@@ -29,6 +29,8 @@ package org.allbinary.business.user.commerce.money.payment.types.TransactionType
    type TransactionTypeFactory_Access is access all TransactionTypeFactory'Class;
    type TransactionTypeFactory_Access_Array is array (Natural range <>) of TransactionTypeFactory_Access;
    type TransactionTypeFactory_Access_Array_Access is access all TransactionTypeFactory_Access_Array;
+   type TransactionTypeFactory_Access_Array_Access_Array is array (Natural range <>) of TransactionTypeFactory_Access_Array_Access;
+   type TransactionTypeFactory_Access_Array_Access_Array_Access is access all TransactionTypeFactory_Access_Array_Access_Array;
 
    type TransactionTypeFactory is new Java_Object with record
       SALE : TransactionType_Access;

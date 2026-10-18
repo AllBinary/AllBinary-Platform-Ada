@@ -27,7 +27,6 @@ with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Pack
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.media.image.AndroidImageUtil_Package; use org.allbinary.media.image.AndroidImageUtil_Package;
-with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
 with org.allbinary.animation.image.ImageBaseRotationAnimation_Package; use org.allbinary.animation.image.ImageBaseRotationAnimation_Package;
 
@@ -40,13 +39,14 @@ package org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotationAnim
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package AndroidImageUtil_Package renames Standard.org.allbinary.media.image.AndroidImageUtil_Package;
-   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
    package ImageModifierUtil_Package renames Standard.org.allbinary.media.image.ImageModifierUtil_Package;
 
    type AllBinaryNoFlickerAndroidImageRotationAnimation is tagged;
    type AllBinaryNoFlickerAndroidImageRotationAnimation_Access is access all AllBinaryNoFlickerAndroidImageRotationAnimation'Class;
    type AllBinaryNoFlickerAndroidImageRotationAnimation_Access_Array is array (Natural range <>) of AllBinaryNoFlickerAndroidImageRotationAnimation_Access;
    type AllBinaryNoFlickerAndroidImageRotationAnimation_Access_Array_Access is access all AllBinaryNoFlickerAndroidImageRotationAnimation_Access_Array;
+   type AllBinaryNoFlickerAndroidImageRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AllBinaryNoFlickerAndroidImageRotationAnimation_Access_Array_Access;
+   type AllBinaryNoFlickerAndroidImageRotationAnimation_Access_Array_Access_Array_Access is access all AllBinaryNoFlickerAndroidImageRotationAnimation_Access_Array_Access_Array;
 
    type AllBinaryNoFlickerAndroidImageRotationAnimation is new ImageBaseRotationAnimation with record
       imageModifierUtil : ImageModifierUtil_Access;

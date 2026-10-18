@@ -25,10 +25,8 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package; use org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package;
 
 package org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package is
@@ -36,15 +34,15 @@ package org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package is
    package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type WebCommandProcessor is tagged;
    type WebCommandProcessor_Access is access all WebCommandProcessor'Class;
    type WebCommandProcessor_Access_Array is array (Natural range <>) of WebCommandProcessor_Access;
    type WebCommandProcessor_Access_Array_Access is access all WebCommandProcessor_Access_Array;
+   type WebCommandProcessor_Access_Array_Access_Array is array (Natural range <>) of WebCommandProcessor_Access_Array_Access;
+   type WebCommandProcessor_Access_Array_Access_Array_Access is access all WebCommandProcessor_Access_Array_Access_Array;
 
    type WebCommandProcessor is new Java_Object with record
       logUtil : LogUtil_Access;

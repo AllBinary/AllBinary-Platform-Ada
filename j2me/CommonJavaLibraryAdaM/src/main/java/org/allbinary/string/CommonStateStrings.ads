@@ -28,6 +28,8 @@ package org.allbinary.string_Id.CommonStateStrings_Package is
    type CommonStateStrings_Access is access all CommonStateStrings'Class;
    type CommonStateStrings_Access_Array is array (Natural range <>) of CommonStateStrings_Access;
    type CommonStateStrings_Access_Array_Access is access all CommonStateStrings_Access_Array;
+   type CommonStateStrings_Access_Array_Access_Array is array (Natural range <>) of CommonStateStrings_Access_Array_Access;
+   type CommonStateStrings_Access_Array_Access_Array_Access is access all CommonStateStrings_Access_Array_Access_Array;
 
    type CommonStateStrings is new Java_Object with record
       CONTEXT : Unbounded_String;

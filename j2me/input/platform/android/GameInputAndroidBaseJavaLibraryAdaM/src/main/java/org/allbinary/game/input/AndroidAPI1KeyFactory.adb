@@ -1,8 +1,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+
 package body org.allbinary.game.input.AndroidAPI1KeyFactory_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out AndroidAPI1KeyFactory'Class) is
    begin
       null;

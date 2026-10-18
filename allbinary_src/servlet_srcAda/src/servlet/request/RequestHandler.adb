@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.logic.control.workflow.WorkFlowInterface_Package; use org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
+with org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package; use org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package;
+with servlet.request.PrintWriter_Package; use servlet.request.PrintWriter_Package;
+with servlet.request.ServletRequest_Package; use servlet.request.ServletRequest_Package;
+with servlet.request.ServletResponse_Package; use servlet.request.ServletResponse_Package;
+
 package body servlet.request.RequestHandler_Package is
 
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package WorkFlowInterface_Package renames Standard.org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
+   package RequestWorkFlowFactory_Package renames Standard.org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package;
    procedure Initialize_Fields (This : in out RequestHandler'Class) is
    begin
       null;

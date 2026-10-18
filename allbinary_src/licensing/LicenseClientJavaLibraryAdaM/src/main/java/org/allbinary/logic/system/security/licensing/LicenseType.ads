@@ -28,6 +28,8 @@ package org.allbinary.logic.system.security.licensing.LicenseType_Package is
    type LicenseType_Access is access all LicenseType'Class;
    type LicenseType_Access_Array is array (Natural range <>) of LicenseType_Access;
    type LicenseType_Access_Array_Access is access all LicenseType_Access_Array;
+   type LicenseType_Access_Array_Access_Array is array (Natural range <>) of LicenseType_Access_Array_Access;
+   type LicenseType_Access_Array_Access_Array_Access is access all LicenseType_Access_Array_Access_Array;
 
    type LicenseType is new Java_Object with record
       name : Unbounded_String;

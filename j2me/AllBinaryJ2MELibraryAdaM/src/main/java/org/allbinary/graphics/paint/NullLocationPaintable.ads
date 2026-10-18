@@ -29,6 +29,8 @@ package org.allbinary.graphics.paint.NullLocationPaintable_Package is
    type NullLocationPaintable_Access is access all NullLocationPaintable'Class;
    type NullLocationPaintable_Access_Array is array (Natural range <>) of NullLocationPaintable_Access;
    type NullLocationPaintable_Access_Array_Access is access all NullLocationPaintable_Access_Array;
+   type NullLocationPaintable_Access_Array_Access_Array is array (Natural range <>) of NullLocationPaintable_Access_Array_Access;
+   type NullLocationPaintable_Access_Array_Access_Array_Access is access all NullLocationPaintable_Access_Array_Access_Array;
 
    type NullLocationPaintable is new LocationPaintable with null record;
    instanceC : NullLocationPaintable_Access;

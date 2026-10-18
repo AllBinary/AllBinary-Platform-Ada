@@ -28,6 +28,8 @@ package org.allbinary.midlet.MidletIcon_Package is
    type MidletIcon_Access is access all MidletIcon'Class;
    type MidletIcon_Access_Array is array (Natural range <>) of MidletIcon_Access;
    type MidletIcon_Access_Array_Access is access all MidletIcon_Access_Array;
+   type MidletIcon_Access_Array_Access_Array is array (Natural range <>) of MidletIcon_Access_Array_Access;
+   type MidletIcon_Access_Array_Access_Array_Access is access all MidletIcon_Access_Array_Access_Array;
 
    type MidletIcon is new Java_Object with null record;
    RESOURCE : Unbounded_String;

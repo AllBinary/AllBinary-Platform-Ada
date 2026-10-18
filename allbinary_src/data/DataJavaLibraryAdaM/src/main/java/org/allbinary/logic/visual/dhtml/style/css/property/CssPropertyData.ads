@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Pack
    type CssPropertyData_Access is access all CssPropertyData'Class;
    type CssPropertyData_Access_Array is array (Natural range <>) of CssPropertyData_Access;
    type CssPropertyData_Access_Array_Access is access all CssPropertyData_Access_Array;
+   type CssPropertyData_Access_Array_Access_Array is array (Natural range <>) of CssPropertyData_Access_Array_Access;
+   type CssPropertyData_Access_Array_Access_Array_Access is access all CssPropertyData_Access_Array_Access_Array;
 
    type CssPropertyData is new Java_Object with record
       NAME : Unbounded_String;

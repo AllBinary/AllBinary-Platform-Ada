@@ -20,32 +20,25 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
-with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package; use org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;
 with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package; use org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
-with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package; use org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package;
 with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package; use org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
-with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
 
 package org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package is
 
-   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package DisplayInBrowserContraints_Package renames Standard.org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;
    package DisplayInBrowserContraintsInterface_Package renames Standard.org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
-   package TwoDimensionalConstraint_Package renames Standard.org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package;
    package TwoDimensionalConstraintInterface_Package renames Standard.org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
-   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type AdvertisementAreaConstraints is tagged;
    type AdvertisementAreaConstraints_Access is access all AdvertisementAreaConstraints'Class;
    type AdvertisementAreaConstraints_Access_Array is array (Natural range <>) of AdvertisementAreaConstraints_Access;
    type AdvertisementAreaConstraints_Access_Array_Access is access all AdvertisementAreaConstraints_Access_Array;
+   type AdvertisementAreaConstraints_Access_Array_Access_Array is array (Natural range <>) of AdvertisementAreaConstraints_Access_Array_Access;
+   type AdvertisementAreaConstraints_Access_Array_Access_Array_Access is access all AdvertisementAreaConstraints_Access_Array_Access_Array;
 
-   type AdvertisementAreaConstraints is new AdvertisementAreaConstraintsInterface with record
+   type AdvertisementAreaConstraints is new Java_Object and AdvertisementAreaConstraintsInterface with record
       displayInBrowserContraintsInterface : DisplayInBrowserContraintsInterface_Access;
       twoDimensionConstraintsInterface : TwoDimensionalConstraintInterface_Access;
    end record;

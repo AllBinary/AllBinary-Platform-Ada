@@ -28,6 +28,8 @@ package org.allbinary.game.layer.capital.Capital_Package is
    type Capital_Access is access all Capital'Class;
    type Capital_Access_Array is array (Natural range <>) of Capital_Access;
    type Capital_Access_Array_Access is access all Capital_Access_Array;
+   type Capital_Access_Array_Access_Array is array (Natural range <>) of Capital_Access_Array_Access;
+   type Capital_Access_Array_Access_Array_Access is access all Capital_Access_Array_Access_Array;
 
    type Capital is new Java_Object with record
       value : Integer;

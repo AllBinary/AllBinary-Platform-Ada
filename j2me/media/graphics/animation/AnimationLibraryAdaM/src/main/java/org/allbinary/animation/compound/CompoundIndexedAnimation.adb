@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+
 package body org.allbinary.animation.compound.CompoundIndexedAnimation_Package is
 
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out CompoundIndexedAnimation'Class) is
    begin
       null;
@@ -104,7 +107,7 @@ package body org.allbinary.animation.compound.CompoundIndexedAnimation_Package i
       frame : Integer;
    begin
         frame := CompoundIndexedAnimation'Class (This).getFrame;
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
         CompoundIndexedAnimation'Class (This).setFrame (frame);
    end nextAnimation;
 
@@ -112,7 +115,7 @@ package body org.allbinary.animation.compound.CompoundIndexedAnimation_Package i
       frame : Integer;
    begin
         frame := CompoundIndexedAnimation'Class (This).getFrame;
-        This.circularIndexUtil.previous;
+        declare Java_Result renames This.circularIndexUtil.previous; pragma Unreferenced (Java_Result); begin null; end;
         CompoundIndexedAnimation'Class (This).setFrame (frame);
    end previousAnimation;
 

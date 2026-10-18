@@ -13,12 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.ai.ArtificialIntelligence_Package; use org.allbinary.ai.ArtificialIntelligence_Package;
+with org.allbinary.animation.RotationAnimationInterface_Package; use org.allbinary.animation.RotationAnimationInterface_Package;
+with org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package; use org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package;
+with org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
+
 package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package ArtificialIntelligence_Package renames Standard.org.allbinary.ai.ArtificialIntelligence_Package;
+   package RotationAnimationInterface_Package renames Standard.org.allbinary.animation.RotationAnimationInterface_Package;
+   package RotationAnimationInterfaceCompositeInterface_Package renames Standard.org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package;
+   package VelocityInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package AngleIncrementInfo_Package renames Standard.org.allbinary.math.AngleIncrementInfo_Package;
    procedure Initialize_Fields (This : in out HorizontaRotationManeuverAI'Class) is
    begin
       null;
-      This.circularIndexUtil := CircularIndexUtil_Package.createInstanceAt (10, Integer_Package.MAX_VALUE);
+      This.circularIndexUtil := CircularIndexUtil_Package.createInstanceAt (10, Integer'Last);
       This.currentSpeedDivisor := 5;
       
       
@@ -96,7 +111,7 @@ package body org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
             BasicAI (This).processKeyAI (Canvas_Package.UP);
             This.velocityInterface.limitMaxXYVelocity ((This.velocityInterface.getMaxForwardVelocity) / (This.currentSpeedDivisor));
         end if;
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
         if (frame) = (angleIncrementInfo.LEFT_FRAME.intValue) then
             BasicAI (This).processKeyAI (Canvas_Package.KEY_NUM0);
         elsif (frame) = (angleIncrementInfo.RIGHT_FRAME.intValue) then

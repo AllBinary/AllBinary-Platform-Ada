@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package is
 
    procedure Initialize_Fields (This : in out PlatformBitmapBaseFactory'Class) is

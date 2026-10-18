@@ -32,6 +32,8 @@ package org.allbinary.business.user.commerce.inventory.item.ItemInterface_Packag
    type ItemInterface_Access is access all ItemInterface'Class;
    type ItemInterface_Access_Array is array (Natural range <>) of ItemInterface_Access;
    type ItemInterface_Access_Array_Access is access all ItemInterface_Access_Array;
+   type ItemInterface_Access_Array_Access_Array is array (Natural range <>) of ItemInterface_Access_Array_Access;
+   type ItemInterface_Access_Array_Access_Array_Access is access all ItemInterface_Access_Array_Access_Array;
    procedure setId (This : in out ItemInterface; itemId : Unbounded_String) is abstract;
    procedure setNumber (This : in out ItemInterface; number : Unbounded_String) is abstract;
    procedure setInBaskets (This : in out ItemInterface; value : Unbounded_String) is abstract;

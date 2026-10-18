@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+
 package body org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    procedure Initialize_Fields (This : in out RTSLayerCostAnimation'Class) is
    begin
       null;
@@ -23,7 +36,7 @@ package body org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
       This.DOLLAR := To_Unbounded_String ("$");
       
       
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (RTSLayerCostAnimation_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (RTSLayerCostAnimation_Access'(This'Unchecked_Access)));
       This.costString := NullUtil_Package.getInstance.NULL_CHAR_ARRAY;
       This.len := 0;
       This.adjustedCostX := 0;

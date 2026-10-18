@@ -26,9 +26,7 @@ with org.allbinary.business.category.properties.CategoryPropertiesInterface_Pack
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryProperties_Package; use org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryProperties_Package;
 
 package org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryPropertiesFactory_Package is
 
@@ -38,15 +36,16 @@ package org.allbinary.business.category.properties.root.store.theme.RootStoreThe
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type RootStoreThemeCategoryPropertiesFactory is tagged;
    type RootStoreThemeCategoryPropertiesFactory_Access is access all RootStoreThemeCategoryPropertiesFactory'Class;
    type RootStoreThemeCategoryPropertiesFactory_Access_Array is array (Natural range <>) of RootStoreThemeCategoryPropertiesFactory_Access;
    type RootStoreThemeCategoryPropertiesFactory_Access_Array_Access is access all RootStoreThemeCategoryPropertiesFactory_Access_Array;
+   type RootStoreThemeCategoryPropertiesFactory_Access_Array_Access_Array is array (Natural range <>) of RootStoreThemeCategoryPropertiesFactory_Access_Array_Access;
+   type RootStoreThemeCategoryPropertiesFactory_Access_Array_Access_Array_Access is access all RootStoreThemeCategoryPropertiesFactory_Access_Array_Access_Array;
 
-   type RootStoreThemeCategoryPropertiesFactory is new CategoryPropertiesFactoryInterface with record
+   type RootStoreThemeCategoryPropertiesFactory is new Java_Object and CategoryPropertiesFactoryInterface with record
       logUtil : LogUtil_Access;
       categoryPropertiesInterface : CategoryPropertiesInterface_Access;
    end record;

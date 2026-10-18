@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAI_Package is
 
    procedure Initialize_Fields (This : in out NumberLayersSequenceAI'Class) is

@@ -32,6 +32,8 @@ package org.allbinary.content.CommandUriAction_Package is
    type CommandUriAction_Access is access all CommandUriAction'Class;
    type CommandUriAction_Access_Array is array (Natural range <>) of CommandUriAction_Access;
    type CommandUriAction_Access_Array_Access is access all CommandUriAction_Access_Array;
+   type CommandUriAction_Access_Array_Access_Array is array (Natural range <>) of CommandUriAction_Access_Array_Access;
+   type CommandUriAction_Access_Array_Access_Array_Access is access all CommandUriAction_Access_Array_Access_Array;
 
    type CommandUriAction is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -20,25 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.GameTypeFactory_Package; use org.allbinary.game.GameTypeFactory_Package;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.DemoGameBehavior_Package is
 
-   package GameTypeFactory_Package renames Standard.org.allbinary.game.GameTypeFactory_Package;
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type DemoGameBehavior is tagged;
    type DemoGameBehavior_Access is access all DemoGameBehavior'Class;
    type DemoGameBehavior_Access_Array is array (Natural range <>) of DemoGameBehavior_Access;
    type DemoGameBehavior_Access_Array_Access is access all DemoGameBehavior_Access_Array;
+   type DemoGameBehavior_Access_Array_Access_Array is array (Natural range <>) of DemoGameBehavior_Access_Array_Access;
+   type DemoGameBehavior_Access_Array_Access_Array_Access is access all DemoGameBehavior_Access_Array_Access_Array;
 
    type DemoGameBehavior is new Java_Object with record
       logUtil : LogUtil_Access;

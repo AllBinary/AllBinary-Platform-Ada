@@ -30,6 +30,8 @@ package org.allbinary.input.magnetic.field.AllBinaryMagneticFieldSensor_Package 
    type AllBinaryMagneticFieldSensor_Access is access all AllBinaryMagneticFieldSensor'Class;
    type AllBinaryMagneticFieldSensor_Access_Array is array (Natural range <>) of AllBinaryMagneticFieldSensor_Access;
    type AllBinaryMagneticFieldSensor_Access_Array_Access is access all AllBinaryMagneticFieldSensor_Access_Array;
+   type AllBinaryMagneticFieldSensor_Access_Array_Access_Array is array (Natural range <>) of AllBinaryMagneticFieldSensor_Access_Array_Access;
+   type AllBinaryMagneticFieldSensor_Access_Array_Access_Array_Access is access all AllBinaryMagneticFieldSensor_Access_Array_Access_Array;
 
    type AllBinaryMagneticFieldSensor is new AllBinarySensor with null record;
 

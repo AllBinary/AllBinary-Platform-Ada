@@ -23,21 +23,20 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Package; use org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Package;
-with org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package; use org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package;
 
 package org.allbinary.animation.compound.AutoCompoundRotationAnimationInterfaceFactory_Package is
 
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
 
    type AutoCompoundRotationAnimationInterfaceFactory is tagged;
    type AutoCompoundRotationAnimationInterfaceFactory_Access is access all AutoCompoundRotationAnimationInterfaceFactory'Class;
    type AutoCompoundRotationAnimationInterfaceFactory_Access_Array is array (Natural range <>) of AutoCompoundRotationAnimationInterfaceFactory_Access;
    type AutoCompoundRotationAnimationInterfaceFactory_Access_Array_Access is access all AutoCompoundRotationAnimationInterfaceFactory_Access_Array;
+   type AutoCompoundRotationAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of AutoCompoundRotationAnimationInterfaceFactory_Access_Array_Access;
+   type AutoCompoundRotationAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all AutoCompoundRotationAnimationInterfaceFactory_Access_Array_Access_Array;
 
    type AutoCompoundRotationAnimationInterfaceFactory is new CompoundAnimationInterfaceFactory with null record;
 

@@ -24,24 +24,17 @@ with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khro
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package; use org.allbinary.graphics.color.BasicColorSetUtil_Package;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package; use org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.event.ViewPositionEvent_Package; use org.allbinary.view.event.ViewPositionEvent_Package;
 with org.allbinary.view.event.ViewPositionEventListenerInterface_Package; use org.allbinary.view.event.ViewPositionEventListenerInterface_Package;
-with org.allbinary.game.layer.SWTUtil_Package; use org.allbinary.game.layer.SWTUtil_Package;
-with org.allbinary.game.layer.GameLayerUtil_Package; use org.allbinary.game.layer.GameLayerUtil_Package;
 
 package org.allbinary.game.layer.AllBinaryGameLayer_Package is
 
@@ -49,19 +42,14 @@ package org.allbinary.game.layer.AllBinaryGameLayer_Package is
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package BasicColorSetUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorSetUtil_Package;
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
    package OpenGLSurfaceChangedInterface_Package renames Standard.org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
    package ViewPositionEvent_Package renames Standard.org.allbinary.view.event.ViewPositionEvent_Package;
    package ViewPositionEventListenerInterface_Package renames Standard.org.allbinary.view.event.ViewPositionEventListenerInterface_Package;
@@ -70,6 +58,8 @@ package org.allbinary.game.layer.AllBinaryGameLayer_Package is
    type AllBinaryGameLayer_Access is access all AllBinaryGameLayer'Class;
    type AllBinaryGameLayer_Access_Array is array (Natural range <>) of AllBinaryGameLayer_Access;
    type AllBinaryGameLayer_Access_Array_Access is access all AllBinaryGameLayer_Access_Array;
+   type AllBinaryGameLayer_Access_Array_Access_Array is array (Natural range <>) of AllBinaryGameLayer_Access_Array_Access;
+   type AllBinaryGameLayer_Access_Array_Access_Array_Access is access all AllBinaryGameLayer_Access_Array_Access_Array;
 
    type AllBinaryGameLayer is new AllBinaryLayer and ViewPositionEventListenerInterface and OpenGLSurfaceChangedInterface with record
       commonStrings : CommonStrings_Access;

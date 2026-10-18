@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.io.LineReader_Package; use org.allbinary.logic.io.LineReader_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LineReader_Package renames Standard.org.allbinary.logic.io.LineReader_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out HtmlSelect'Class) is
    begin
       null;
@@ -37,21 +46,21 @@ package body org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HtmlSelect'Class; before : Unbounded_String; size_Case : Unbounded_String; name_Case : Unbounded_String; after : Unbounded_String) is
+   procedure Initialize (This : in out HtmlSelect'Class; before : Unbounded_String; size : Unbounded_String; name : Unbounded_String; after : Unbounded_String) is
    begin
       HtmlTag_Package.Initialize (This);
       Initialize_Fields (This);
         This.before := before;
-        This.size_Case := size_Case;
-        This.name_Case := name_Case;
+        This.size_Case := size;
+        This.name_Case := name;
         This.after := after;
-        This.options := BasicArrayListD_Package.Create;
+        This.options := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
-   function Create (before : Unbounded_String; size_Case : Unbounded_String; name_Case : Unbounded_String; after : Unbounded_String) return HtmlSelect_Access is
+   function Create (before : Unbounded_String; size : Unbounded_String; name : Unbounded_String; after : Unbounded_String) return HtmlSelect_Access is
       This : constant HtmlSelect_Access := new HtmlSelect;
    begin
-      HtmlSelect_Package.Initialize (This.all, before, size_Case, name_Case, after);
+      HtmlSelect_Package.Initialize (This.all, before, size, name, after);
       return This;
    end Create;
 

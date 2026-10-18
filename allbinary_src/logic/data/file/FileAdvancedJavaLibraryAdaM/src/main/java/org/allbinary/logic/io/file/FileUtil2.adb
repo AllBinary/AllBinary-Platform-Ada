@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.io.file.SimpleFileUtil_Package; use org.allbinary.logic.io.file.SimpleFileUtil_Package;
+
 package body org.allbinary.logic.io.file.FileUtil2_Package is
 
+   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
    procedure Initialize_Fields (This : in out FileUtil2'Class) is
    begin
       null;

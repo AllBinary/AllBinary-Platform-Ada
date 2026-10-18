@@ -28,6 +28,8 @@ package org.allbinary.business.user.address.StreetAddressData_Package is
    type StreetAddressData_Access is access all StreetAddressData'Class;
    type StreetAddressData_Access_Array is array (Natural range <>) of StreetAddressData_Access;
    type StreetAddressData_Access_Array_Access is access all StreetAddressData_Access_Array;
+   type StreetAddressData_Access_Array_Access_Array is array (Natural range <>) of StreetAddressData_Access_Array_Access;
+   type StreetAddressData_Access_Array_Access_Array_Access is access all StreetAddressData_Access_Array_Access_Array;
 
    type StreetAddressData is new Java_Object with null record;
    MAX : Integer;

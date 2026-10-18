@@ -22,38 +22,27 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
-with org.allbinary.animation.vector.RectangleAdjustedAnimation_Package; use org.allbinary.animation.vector.RectangleAdjustedAnimation_Package;
-with org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package; use org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.form.item.CommandTextItem_Package; use org.allbinary.graphics.form.item.CommandTextItem_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
-with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 
 package org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
 
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
-   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
-   package RectangleAdjustedAnimation_Package renames Standard.org.allbinary.animation.vector.RectangleAdjustedAnimation_Package;
-   package RectangleFilledAdjustedAnimation_Package renames Standard.org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package CommandTextItem_Package renames Standard.org.allbinary.graphics.form.item.CommandTextItem_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type CommandCurrentSelectionForm is tagged;
    type CommandCurrentSelectionForm_Access is access all CommandCurrentSelectionForm'Class;
    type CommandCurrentSelectionForm_Access_Array is array (Natural range <>) of CommandCurrentSelectionForm_Access;
    type CommandCurrentSelectionForm_Access_Array_Access is access all CommandCurrentSelectionForm_Access_Array;
+   type CommandCurrentSelectionForm_Access_Array_Access_Array is array (Natural range <>) of CommandCurrentSelectionForm_Access_Array_Access;
+   type CommandCurrentSelectionForm_Access_Array_Access_Array_Access is access all CommandCurrentSelectionForm_Access_Array_Access_Array;
 
    type CommandCurrentSelectionForm is new ScrollCurrentSelectionForm and UpdateMyFontInterface with record
       selectedAnimationArray : Animation_Access_Array_Access;

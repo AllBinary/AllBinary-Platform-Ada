@@ -28,6 +28,8 @@ package org.allbinary.logic.io.file.FilePathData_Package is
    type FilePathData_Access is access all FilePathData'Class;
    type FilePathData_Access_Array is array (Natural range <>) of FilePathData_Access;
    type FilePathData_Access_Array_Access is access all FilePathData_Access_Array;
+   type FilePathData_Access_Array_Access_Array is array (Natural range <>) of FilePathData_Access_Array_Access;
+   type FilePathData_Access_Array_Access_Array_Access is access all FilePathData_Access_Array_Access_Array;
 
    type FilePathData is new Java_Object with record
       SEPARATORCHAR : Character;

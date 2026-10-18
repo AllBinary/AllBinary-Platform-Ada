@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package is
 
    procedure Initialize_Fields (This : in out PathFinderGraphVisitorBase'Class) is
@@ -74,6 +75,30 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphV
 
    procedure getInvalidReason (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) is
       Java_Result : constant Unbounded_String := PathFinderGraphVisitorBase'Class (This).getInvalidReason (graphPath_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInvalidReason;
+
+   function isValid (This : in out PathFinderGraphVisitorBase; Value : Unbounded_String) return Boolean is
+   begin
+      return PathFinderGraphVisitorBase'Class (This).isValid (Java_Box (Value));
+   end isValid;
+
+   procedure isValid (This : in out PathFinderGraphVisitorBase; Value : Unbounded_String) is
+      Java_Result : constant Boolean := PathFinderGraphVisitorBase'Class (This).isValid (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   function getInvalidReason (This : in out PathFinderGraphVisitorBase; Value : Unbounded_String) return Unbounded_String is
+   begin
+      return PathFinderGraphVisitorBase'Class (This).getInvalidReason (Java_Box (Value));
+   end getInvalidReason;
+
+   procedure getInvalidReason (This : in out PathFinderGraphVisitorBase; Value : Unbounded_String) is
+      Java_Result : constant Unbounded_String := PathFinderGraphVisitorBase'Class (This).getInvalidReason (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

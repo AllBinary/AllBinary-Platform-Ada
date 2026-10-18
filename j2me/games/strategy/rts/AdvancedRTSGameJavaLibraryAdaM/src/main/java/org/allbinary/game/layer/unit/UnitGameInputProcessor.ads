@@ -31,6 +31,8 @@ package org.allbinary.game.layer.unit.UnitGameInputProcessor_Package is
    type UnitGameInputProcessor_Access is access all UnitGameInputProcessor'Class;
    type UnitGameInputProcessor_Access_Array is array (Natural range <>) of UnitGameInputProcessor_Access;
    type UnitGameInputProcessor_Access_Array_Access is access all UnitGameInputProcessor_Access_Array;
+   type UnitGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of UnitGameInputProcessor_Access_Array_Access;
+   type UnitGameInputProcessor_Access_Array_Access_Array_Access is access all UnitGameInputProcessor_Access_Array_Access_Array;
 
    type UnitGameInputProcessor is new GameInputProcessor with record
       unitLayer : UnitLayer_Access;

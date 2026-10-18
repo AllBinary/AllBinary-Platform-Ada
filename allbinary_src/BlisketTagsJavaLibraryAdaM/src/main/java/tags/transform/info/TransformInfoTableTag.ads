@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
-with taghelpers.transform.info.TransformInfoHelperFactory_Package; use taghelpers.transform.info.TransformInfoHelperFactory_Package;
 
 package tags.transform.info.TransformInfoTableTag_Package is
 
    package TableTag_Package renames Standard.admin.tags.TableTag_Package;
-   package TransformInfoHelperFactory_Package renames Standard.taghelpers.transform.info.TransformInfoHelperFactory_Package;
 
    type TransformInfoTableTag is tagged;
    type TransformInfoTableTag_Access is access all TransformInfoTableTag'Class;
    type TransformInfoTableTag_Access_Array is array (Natural range <>) of TransformInfoTableTag_Access;
    type TransformInfoTableTag_Access_Array_Access is access all TransformInfoTableTag_Access_Array;
+   type TransformInfoTableTag_Access_Array_Access_Array is array (Natural range <>) of TransformInfoTableTag_Access_Array_Access;
+   type TransformInfoTableTag_Access_Array_Access_Array_Access is access all TransformInfoTableTag_Access_Array_Access_Array;
 
    type TransformInfoTableTag is new TableTag with null record;
 

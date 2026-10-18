@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.canvas.GameStatisticsFactory_Package is
 
    procedure Initialize_Fields (This : in out GameStatisticsFactory'Class) is
@@ -56,7 +57,7 @@ package body org.allbinary.canvas.GameStatisticsFactory_Package is
 
 begin
    null;
-   SINGLETON := GameStatisticsFactory_Package.Create;
+   SINGLETON := AndroidGameStatistics_Access (GameStatisticsFactory_Package.Create);
 
 end org.allbinary.canvas.GameStatisticsFactory_Package;
 

@@ -28,6 +28,8 @@ package org.allbinary.game.GameInfoData_Package is
    type GameInfoData_Access is access all GameInfoData'Class;
    type GameInfoData_Access_Array is array (Natural range <>) of GameInfoData_Access;
    type GameInfoData_Access_Array_Access is access all GameInfoData_Access_Array;
+   type GameInfoData_Access_Array_Access_Array is array (Natural range <>) of GameInfoData_Access_Array_Access;
+   type GameInfoData_Access_Array_Access_Array_Access is access all GameInfoData_Access_Array_Access_Array;
 
    type GameInfoData is new Java_Object with record
       GAME_TYPE : Unbounded_String;

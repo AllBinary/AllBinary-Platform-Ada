@@ -1,8 +1,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.logic.communication.sql.SqlStrings_Package is
 
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out SqlStrings'Class) is
    begin
       null;

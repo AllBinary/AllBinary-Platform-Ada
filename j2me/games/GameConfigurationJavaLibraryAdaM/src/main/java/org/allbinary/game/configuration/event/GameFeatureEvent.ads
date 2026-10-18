@@ -30,6 +30,8 @@ package org.allbinary.game.configuration.event.GameFeatureEvent_Package is
    type GameFeatureEvent_Access is access all GameFeatureEvent'Class;
    type GameFeatureEvent_Access_Array is array (Natural range <>) of GameFeatureEvent_Access;
    type GameFeatureEvent_Access_Array_Access is access all GameFeatureEvent_Access_Array;
+   type GameFeatureEvent_Access_Array_Access_Array is array (Natural range <>) of GameFeatureEvent_Access_Array_Access;
+   type GameFeatureEvent_Access_Array_Access_Array_Access is access all GameFeatureEvent_Access_Array_Access_Array;
 
    type GameFeatureEvent is new AllBinaryEventObject with record
       whatChanged : Unbounded_String;

@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_P
    type UsbInterface_Access is access all UsbInterface'Class;
    type UsbInterface_Access_Array is array (Natural range <>) of UsbInterface_Access;
    type UsbInterface_Access_Array_Access is access all UsbInterface_Access_Array;
+   type UsbInterface_Access_Array_Access_Array is array (Natural range <>) of UsbInterface_Access_Array_Access;
+   type UsbInterface_Access_Array_Access_Array_Access is access all UsbInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
 

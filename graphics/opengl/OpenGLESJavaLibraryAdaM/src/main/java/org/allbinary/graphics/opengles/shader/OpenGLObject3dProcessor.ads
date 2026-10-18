@@ -20,6 +20,8 @@ package org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package i
    type OpenGLObject3dProcessor_Access is access all OpenGLObject3dProcessor'Class;
    type OpenGLObject3dProcessor_Access_Array is array (Natural range <>) of OpenGLObject3dProcessor_Access;
    type OpenGLObject3dProcessor_Access_Array_Access is access all OpenGLObject3dProcessor_Access_Array;
+   type OpenGLObject3dProcessor_Access_Array_Access_Array is array (Natural range <>) of OpenGLObject3dProcessor_Access_Array_Access;
+   type OpenGLObject3dProcessor_Access_Array_Access_Array_Access is access all OpenGLObject3dProcessor_Access_Array_Access_Array;
 
    type OpenGLObject3dProcessor is new Java_Object with record
       commonStrings : CommonStrings_Access;

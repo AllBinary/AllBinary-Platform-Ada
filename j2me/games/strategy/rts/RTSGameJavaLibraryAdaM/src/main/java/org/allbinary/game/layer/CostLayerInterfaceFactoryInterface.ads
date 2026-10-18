@@ -30,6 +30,8 @@ package org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package is
    type CostLayerInterfaceFactoryInterface_Access is access all CostLayerInterfaceFactoryInterface'Class;
    type CostLayerInterfaceFactoryInterface_Access_Array is array (Natural range <>) of CostLayerInterfaceFactoryInterface_Access;
    type CostLayerInterfaceFactoryInterface_Access_Array_Access is access all CostLayerInterfaceFactoryInterface_Access_Array;
+   type CostLayerInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of CostLayerInterfaceFactoryInterface_Access_Array_Access;
+   type CostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all CostLayerInterfaceFactoryInterface_Access_Array_Access_Array;
    function getCost (This : in out CostLayerInterfaceFactoryInterface) return Integer is abstract;
 
 end org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package;

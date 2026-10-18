@@ -24,7 +24,6 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package; use org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package;
-with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 
 package org.allbinary.animation.image.ImageArrayRotationAnimation_Package is
 
@@ -36,6 +35,8 @@ package org.allbinary.animation.image.ImageArrayRotationAnimation_Package is
    type ImageArrayRotationAnimation_Access is access all ImageArrayRotationAnimation'Class;
    type ImageArrayRotationAnimation_Access_Array is array (Natural range <>) of ImageArrayRotationAnimation_Access;
    type ImageArrayRotationAnimation_Access_Array_Access is access all ImageArrayRotationAnimation_Access_Array;
+   type ImageArrayRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of ImageArrayRotationAnimation_Access_Array_Access;
+   type ImageArrayRotationAnimation_Access_Array_Access_Array_Access is access all ImageArrayRotationAnimation_Access_Array_Access_Array;
 
    type ImageArrayRotationAnimation is new ImageArrayBaseRotationAnimation with record
       expectedTotalFrames : Integer;

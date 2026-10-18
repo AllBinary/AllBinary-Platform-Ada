@@ -29,6 +29,8 @@ package org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package 
    type ImageProcessorInputCompositeInterface_Access is access all ImageProcessorInputCompositeInterface'Class;
    type ImageProcessorInputCompositeInterface_Access_Array is array (Natural range <>) of ImageProcessorInputCompositeInterface_Access;
    type ImageProcessorInputCompositeInterface_Access_Array_Access is access all ImageProcessorInputCompositeInterface_Access_Array;
+   type ImageProcessorInputCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of ImageProcessorInputCompositeInterface_Access_Array_Access;
+   type ImageProcessorInputCompositeInterface_Access_Array_Access_Array_Access is access all ImageProcessorInputCompositeInterface_Access_Array_Access_Array;
    function getImageProcessorInput (This : in out ImageProcessorInputCompositeInterface) return ImageProcessorInput_Access is abstract;
    procedure setImageProcessorInput (This : in out ImageProcessorInputCompositeInterface; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) is abstract;
 

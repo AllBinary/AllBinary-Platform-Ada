@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.configuration.GameOptionsForm_Package; use org.allbinary.game.configuration.GameOptionsForm_Package;
+
 package body org.allbinary.game.configuration.GameOptionsFormFactory_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out GameOptionsFormFactory'Class) is
    begin
       null;
@@ -47,7 +51,7 @@ package body org.allbinary.game.configuration.GameOptionsFormFactory_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            return GameOptionsForm_Package.Create (commandListener, title, backgrounBasicColor, foregroundBasicColor);
+            return CommandForm_Access (GameOptionsForm_Package.Create (commandListener, title, backgrounBasicColor, foregroundBasicColor));
         exception
             when Java_Occurrence : others =>
                 declare

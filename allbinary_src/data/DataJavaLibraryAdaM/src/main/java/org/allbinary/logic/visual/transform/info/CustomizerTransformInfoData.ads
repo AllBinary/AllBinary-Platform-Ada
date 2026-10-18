@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Pa
    type CustomizerTransformInfoData_Access is access all CustomizerTransformInfoData'Class;
    type CustomizerTransformInfoData_Access_Array is array (Natural range <>) of CustomizerTransformInfoData_Access;
    type CustomizerTransformInfoData_Access_Array_Access is access all CustomizerTransformInfoData_Access_Array;
+   type CustomizerTransformInfoData_Access_Array_Access_Array is array (Natural range <>) of CustomizerTransformInfoData_Access_Array_Access;
+   type CustomizerTransformInfoData_Access_Array_Access_Array_Access is access all CustomizerTransformInfoData_Access_Array_Access_Array;
 
    type CustomizerTransformInfoData is new Java_Object with null record;
    NAME : Unbounded_String;

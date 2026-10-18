@@ -28,6 +28,8 @@ package org.allbinary.input.automation.module.InputAutomationModuleData_Package 
    type InputAutomationModuleData_Access is access all InputAutomationModuleData'Class;
    type InputAutomationModuleData_Access_Array is array (Natural range <>) of InputAutomationModuleData_Access;
    type InputAutomationModuleData_Access_Array_Access is access all InputAutomationModuleData_Access_Array;
+   type InputAutomationModuleData_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModuleData_Access_Array_Access;
+   type InputAutomationModuleData_Access_Array_Access_Array_Access is access all InputAutomationModuleData_Access_Array_Access_Array;
 
    type InputAutomationModuleData is new Java_Object with null record;
    NAME : Unbounded_String;

@@ -33,6 +33,8 @@ package org.allbinary.game.input.event.DownGameKeyEventHandler_Package is
    type DownGameKeyEventHandler_Access is access all DownGameKeyEventHandler'Class;
    type DownGameKeyEventHandler_Access_Array is array (Natural range <>) of DownGameKeyEventHandler_Access;
    type DownGameKeyEventHandler_Access_Array_Access is access all DownGameKeyEventHandler_Access_Array;
+   type DownGameKeyEventHandler_Access_Array_Access_Array is array (Natural range <>) of DownGameKeyEventHandler_Access_Array_Access;
+   type DownGameKeyEventHandler_Access_Array_Access_Array_Access is access all DownGameKeyEventHandler_Access_Array_Access_Array;
 
    type DownGameKeyEventHandler is new DownGameKeyEventHandlerBase with record
       playerInputIdFactory : LocalPlayerInputIdFactory_Access;

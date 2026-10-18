@@ -28,6 +28,8 @@ package org.allbinary.graphics.ResizableListenerInterface_Package is
    type ResizableListenerInterface_Access is access all ResizableListenerInterface'Class;
    type ResizableListenerInterface_Access_Array is array (Natural range <>) of ResizableListenerInterface_Access;
    type ResizableListenerInterface_Access_Array_Access is access all ResizableListenerInterface_Access_Array;
+   type ResizableListenerInterface_Access_Array_Access_Array is array (Natural range <>) of ResizableListenerInterface_Access_Array_Access;
+   type ResizableListenerInterface_Access_Array_Access_Array_Access is access all ResizableListenerInterface_Access_Array_Access_Array;
    procedure onResizable (This : in out ResizableListenerInterface; isResizable : Boolean) is abstract;
 
 end org.allbinary.graphics.ResizableListenerInterface_Package;

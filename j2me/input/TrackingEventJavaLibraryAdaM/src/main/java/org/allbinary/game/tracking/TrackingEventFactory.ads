@@ -22,8 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package; use org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
-with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
-with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
 
 package org.allbinary.game.tracking.TrackingEventFactory_Package is
 
@@ -34,8 +32,10 @@ package org.allbinary.game.tracking.TrackingEventFactory_Package is
    type TrackingEventFactory_Access is access all TrackingEventFactory'Class;
    type TrackingEventFactory_Access_Array is array (Natural range <>) of TrackingEventFactory_Access;
    type TrackingEventFactory_Access_Array_Access is access all TrackingEventFactory_Access_Array;
+   type TrackingEventFactory_Access_Array_Access_Array is array (Natural range <>) of TrackingEventFactory_Access_Array_Access;
+   type TrackingEventFactory_Access_Array_Access_Array_Access is access all TrackingEventFactory_Access_Array_Access_Array;
 
-   type TrackingEventFactory is new AllBinaryEventObjectFactoryInterface with null record;
+   type TrackingEventFactory is new Java_Object and AllBinaryEventObjectFactoryInterface with null record;
 
    procedure Initialize (This : in out TrackingEventFactory'Class);
    function Create return TrackingEventFactory_Access;

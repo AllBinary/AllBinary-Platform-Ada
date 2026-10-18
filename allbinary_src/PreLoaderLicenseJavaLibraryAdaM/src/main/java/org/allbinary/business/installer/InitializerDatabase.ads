@@ -23,36 +23,23 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
-with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.installer.DynamicInitDb_Package; use org.allbinary.business.installer.DynamicInitDb_Package;
-with org.allbinary.business.installer.InitializerData_Package; use org.allbinary.business.installer.InitializerData_Package;
 
 package org.allbinary.business.installer.InitializerDatabase_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Map_Package renames Standard.java.util.Map_Package;
-   package DatabaseConnectionInfoInterface_Package renames Standard.org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
-   package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InitializerDatabase is tagged;
    type InitializerDatabase_Access is access all InitializerDatabase'Class;
    type InitializerDatabase_Access_Array is array (Natural range <>) of InitializerDatabase_Access;
    type InitializerDatabase_Access_Array_Access is access all InitializerDatabase_Access_Array;
+   type InitializerDatabase_Access_Array_Access_Array is array (Natural range <>) of InitializerDatabase_Access_Array_Access;
+   type InitializerDatabase_Access_Array_Access_Array_Access is access all InitializerDatabase_Access_Array_Access_Array;
 
    type InitializerDatabase is new Java_Object with record
       logUtil : LogUtil_Access;

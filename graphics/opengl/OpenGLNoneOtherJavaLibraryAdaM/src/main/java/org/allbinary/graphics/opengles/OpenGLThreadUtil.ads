@@ -16,6 +16,8 @@ package org.allbinary.graphics.opengles.OpenGLThreadUtil_Package is
    type OpenGLThreadUtil_Access is access all OpenGLThreadUtil'Class;
    type OpenGLThreadUtil_Access_Array is array (Natural range <>) of OpenGLThreadUtil_Access;
    type OpenGLThreadUtil_Access_Array_Access is access all OpenGLThreadUtil_Access_Array;
+   type OpenGLThreadUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLThreadUtil_Access_Array_Access;
+   type OpenGLThreadUtil_Access_Array_Access_Array_Access is access all OpenGLThreadUtil_Access_Array_Access_Array;
 
    type OpenGLThreadUtil is new Java_Object with null record;
    instance : OpenGLThreadUtil_Access;
@@ -26,6 +28,7 @@ package org.allbinary.graphics.opengles.OpenGLThreadUtil_Package is
    procedure set (This : in out OpenGLThreadUtil; glSurfaceView_Param : access Java_Object'Class);
    procedure onPause (This : in out OpenGLThreadUtil);
    procedure onResume (This : in out OpenGLThreadUtil);
+   procedure set (This : in out OpenGLThreadUtil; Value : Unbounded_String);
 
 end org.allbinary.graphics.opengles.OpenGLThreadUtil_Package;
 

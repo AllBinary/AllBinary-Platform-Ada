@@ -21,18 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
-with org.allbinary.logic.system.security.licensing.LockedResources_Package; use org.allbinary.logic.system.security.licensing.LockedResources_Package;
-with org.allbinary.logic.system.security.licensing.LockedUtil_Package; use org.allbinary.logic.system.security.licensing.LockedUtil_Package;
 with org.allbinary.graphics.form.LockablePaintable_Package; use org.allbinary.graphics.form.LockablePaintable_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
 package org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
-   package LockedResources_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedResources_Package;
-   package LockedUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedUtil_Package;
    package LockablePaintable_Package renames Standard.org.allbinary.graphics.form.LockablePaintable_Package;
    package ScrollCurrentSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
@@ -40,6 +34,8 @@ package org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package i
    type PreGameLockablePaintable_Access is access all PreGameLockablePaintable'Class;
    type PreGameLockablePaintable_Access_Array is array (Natural range <>) of PreGameLockablePaintable_Access;
    type PreGameLockablePaintable_Access_Array_Access is access all PreGameLockablePaintable_Access_Array;
+   type PreGameLockablePaintable_Access_Array_Access_Array is array (Natural range <>) of PreGameLockablePaintable_Access_Array_Access;
+   type PreGameLockablePaintable_Access_Array_Access_Array_Access is access all PreGameLockablePaintable_Access_Array_Access_Array;
 
    type PreGameLockablePaintable is new LockablePaintable with record
       halfWidth : Integer;

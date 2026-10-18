@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.activity.SimpleProgressActivityInterface_Package is
 
@@ -28,6 +29,8 @@ package org.allbinary.android.activity.SimpleProgressActivityInterface_Package i
    type SimpleProgressActivityInterface_Access is access all SimpleProgressActivityInterface'Class;
    type SimpleProgressActivityInterface_Access_Array is array (Natural range <>) of SimpleProgressActivityInterface_Access;
    type SimpleProgressActivityInterface_Access_Array_Access is access all SimpleProgressActivityInterface_Access_Array;
+   type SimpleProgressActivityInterface_Access_Array_Access_Array is array (Natural range <>) of SimpleProgressActivityInterface_Access_Array_Access;
+   type SimpleProgressActivityInterface_Access_Array_Access_Array_Access is access all SimpleProgressActivityInterface_Access_Array_Access_Array;
    procedure runOnUiThread (This : in out SimpleProgressActivityInterface; action_Param : access Runnable_Package.Runnable'Class) is abstract;
    procedure onSetProgress (This : in out SimpleProgressActivityInterface; value : Integer; text : Unbounded_String) is abstract;
    procedure onDismissProgress (This : in out SimpleProgressActivityInterface; animationSequence : Integer_Array_Access) is abstract;

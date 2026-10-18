@@ -21,19 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animation.VectorAnimation_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 
 package org.allbinary.animation.ColorLessVectorAnimation_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
 
    type ColorLessVectorAnimation is tagged;
    type ColorLessVectorAnimation_Access is access all ColorLessVectorAnimation'Class;
    type ColorLessVectorAnimation_Access_Array is array (Natural range <>) of ColorLessVectorAnimation_Access;
    type ColorLessVectorAnimation_Access_Array_Access is access all ColorLessVectorAnimation_Access_Array;
+   type ColorLessVectorAnimation_Access_Array_Access_Array is array (Natural range <>) of ColorLessVectorAnimation_Access_Array_Access;
+   type ColorLessVectorAnimation_Access_Array_Access_Array_Access is access all ColorLessVectorAnimation_Access_Array_Access_Array;
 
    type ColorLessVectorAnimation is new VectorAnimation with null record;
 

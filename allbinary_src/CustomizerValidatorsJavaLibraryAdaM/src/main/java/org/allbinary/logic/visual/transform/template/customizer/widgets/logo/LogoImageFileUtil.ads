@@ -21,16 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.FileUtil_Package; use org.allbinary.logic.io.file.FileUtil_Package;
 with org.allbinary.logic.io.file.directory.Directory_Package; use org.allbinary.logic.io.file.directory.Directory_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
 
 package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoImageFileUtil_Package is
 
-   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
    package Directory_Package renames Standard.org.allbinary.logic.io.file.directory.Directory_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
@@ -39,6 +35,8 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.Lo
    type LogoImageFileUtil_Access is access all LogoImageFileUtil'Class;
    type LogoImageFileUtil_Access_Array is array (Natural range <>) of LogoImageFileUtil_Access;
    type LogoImageFileUtil_Access_Array_Access is access all LogoImageFileUtil_Access_Array;
+   type LogoImageFileUtil_Access_Array_Access_Array is array (Natural range <>) of LogoImageFileUtil_Access_Array_Access;
+   type LogoImageFileUtil_Access_Array_Access_Array_Access is access all LogoImageFileUtil_Access_Array_Access_Array;
 
    type LogoImageFileUtil is new Java_Object with record
       directory : Directory_Access;

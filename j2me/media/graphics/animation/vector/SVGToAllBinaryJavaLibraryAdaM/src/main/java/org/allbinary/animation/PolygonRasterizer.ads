@@ -8,8 +8,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.PathParser_Package; use org.allbinary.animation.PathParser_Package;
-with org.allbinary.animation.FixedPoint_Package; use org.allbinary.animation.FixedPoint_Package;
 
 package org.allbinary.animation.PolygonRasterizer_Package is
 
@@ -18,6 +16,8 @@ package org.allbinary.animation.PolygonRasterizer_Package is
    type PolygonRasterizer_Access is access all PolygonRasterizer'Class;
    type PolygonRasterizer_Access_Array is array (Natural range <>) of PolygonRasterizer_Access;
    type PolygonRasterizer_Access_Array_Access is access all PolygonRasterizer_Access_Array;
+   type PolygonRasterizer_Access_Array_Access_Array is array (Natural range <>) of PolygonRasterizer_Access_Array_Access;
+   type PolygonRasterizer_Access_Array_Access_Array_Access is access all PolygonRasterizer_Access_Array_Access_Array;
 
    type PolygonRasterizer is new Java_Object with null record;
    instance : PolygonRasterizer_Access;

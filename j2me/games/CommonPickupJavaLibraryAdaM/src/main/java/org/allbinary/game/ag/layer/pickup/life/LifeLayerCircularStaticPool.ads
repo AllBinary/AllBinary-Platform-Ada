@@ -20,17 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.ag.life.Life_Package; use org.allbinary.game.ag.life.Life_Package;
-with org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package; use org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.layer.AllBinaryLayerCircularPool_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
-with org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package; use org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package;
 
 package org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool_Package is
 
-   package Life_Package renames Standard.org.allbinary.game.ag.life.Life_Package;
-   package LifeInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerCircularPool_Package renames Standard.org.allbinary.layer.AllBinaryLayerCircularPool_Package;
    package AllBinaryLayerFactoryInterface_Package renames Standard.org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
@@ -39,6 +34,8 @@ package org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool_Pack
    type LifeLayerCircularStaticPool_Access is access all LifeLayerCircularStaticPool'Class;
    type LifeLayerCircularStaticPool_Access_Array is array (Natural range <>) of LifeLayerCircularStaticPool_Access;
    type LifeLayerCircularStaticPool_Access_Array_Access is access all LifeLayerCircularStaticPool_Access_Array;
+   type LifeLayerCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of LifeLayerCircularStaticPool_Access_Array_Access;
+   type LifeLayerCircularStaticPool_Access_Array_Access_Array_Access is access all LifeLayerCircularStaticPool_Access_Array_Access_Array;
 
    type LifeLayerCircularStaticPool is new AllBinaryLayerCircularPool with null record;
 

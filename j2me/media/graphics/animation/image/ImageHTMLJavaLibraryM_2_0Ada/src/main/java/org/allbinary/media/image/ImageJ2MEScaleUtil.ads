@@ -22,32 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.microemu.device.playn.PlaynImmutableImage_Package; use org.microemu.device.playn.PlaynImmutableImage_Package;
-with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
-with playn.core.Canvas_Package; use playn.core.Canvas_Package;
-with playn.core.CoreImage_Package; use playn.core.CoreImage_Package;
-with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
-with playn.core.PlayN_Package; use playn.core.PlayN_Package;
-with playn.html.HtmlGraphics_Package; use playn.html.HtmlGraphics_Package;
-with playn.html.HtmlImage_Package; use playn.html.HtmlImage_Package;
 
 package org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package PlaynImmutableImage_Package renames Standard.org.microemu.device.playn.PlaynImmutableImage_Package;
-   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
-   package Canvas_Package renames Standard.playn.core.Canvas_Package;
-   package CoreImage_Package renames Standard.playn.core.CoreImage_Package;
-   package ImageImpl_Package renames Standard.playn.core.ImageImpl_Package;
-   package PlayN_Package renames Standard.playn.core.PlayN_Package;
-   package HtmlGraphics_Package renames Standard.playn.html.HtmlGraphics_Package;
-   package HtmlImage_Package renames Standard.playn.html.HtmlImage_Package;
 
    type ImageJ2MEScaleUtil is tagged;
    type ImageJ2MEScaleUtil_Access is access all ImageJ2MEScaleUtil'Class;
    type ImageJ2MEScaleUtil_Access_Array is array (Natural range <>) of ImageJ2MEScaleUtil_Access;
    type ImageJ2MEScaleUtil_Access_Array_Access is access all ImageJ2MEScaleUtil_Access_Array;
+   type ImageJ2MEScaleUtil_Access_Array_Access_Array is array (Natural range <>) of ImageJ2MEScaleUtil_Access_Array_Access;
+   type ImageJ2MEScaleUtil_Access_Array_Access_Array_Access is access all ImageJ2MEScaleUtil_Access_Array_Access_Array;
 
    type ImageJ2MEScaleUtil is new Java_Object with record
       logUtil : LogUtil_Access;

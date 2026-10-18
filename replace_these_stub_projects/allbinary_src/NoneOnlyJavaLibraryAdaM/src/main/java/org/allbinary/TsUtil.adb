@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.TsUtil_Package is
 
    procedure Initialize_Fields (This : in out TsUtil'Class) is
@@ -170,6 +171,35 @@ package body org.allbinary.TsUtil_Package is
    begin
       null;
    end isItemListener;
+
+   function hashCode (This : in out TsUtil; Value : Unbounded_String) return Integer is
+   begin
+      return TsUtil'Class (This).hashCode (Java_Box (Value));
+   end hashCode;
+
+   procedure hashCode (This : in out TsUtil; Value : Unbounded_String) is
+      Java_Result : constant Integer := TsUtil'Class (This).hashCode (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end hashCode;
+
+   function isItemListener (This : in out TsUtil; Value : Unbounded_String) return Boolean is
+   begin
+      return TsUtil'Class (This).isItemListener (Java_Box (Value));
+   end isItemListener;
+
+   procedure isItemListener (This : in out TsUtil; Value : Unbounded_String) is
+      Java_Result : constant Boolean := TsUtil'Class (This).isItemListener (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isItemListener;
+
+   procedure printAvailableMethods (This : in out TsUtil; Value : Unbounded_String) is
+   begin
+      TsUtil'Class (This).printAvailableMethods (Java_Box (Value));
+   end printAvailableMethods;
 
 begin
    null;

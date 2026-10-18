@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package;
+with org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package;
+with org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package;
+
 package body org.allbinary.input.motion.button.EndLevelTouchButtonsBuilder_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    procedure Initialize_Fields (This : in out EndLevelTouchButtonsBuilder'Class) is
    begin
       null;
@@ -40,7 +48,7 @@ package body org.allbinary.input.motion.button.EndLevelTouchButtonsBuilder_Packa
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, EndLevelTouchButtonsBuilder_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-            list := BasicArrayListD_Package.Create;
+            list := BasicArrayList_Access (BasicArrayListD_Package.Create);
             list.addAllList (BasicTouchButtonsBuilder_Package.Create.getList);
             list.addAllList (BuildingScrollTouchButtonsBuilder_Package.Create.getList);
             list.addAllList (UpgradeDowngradeTouchButtonsBuilder_Package.Create.getList);

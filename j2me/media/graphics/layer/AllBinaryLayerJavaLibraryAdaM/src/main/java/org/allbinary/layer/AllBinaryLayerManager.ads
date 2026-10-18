@@ -24,7 +24,6 @@ with org.allbinary.layer.event.LayerManagerEvent_Package; use org.allbinary.laye
 with org.allbinary.layer.event.LayerManagerEventHandler_Package; use org.allbinary.layer.event.LayerManagerEventHandler_Package;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
-with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.LayerManagerNoDebug_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 
 package org.allbinary.layer.AllBinaryLayerManager_Package is
@@ -36,6 +35,8 @@ package org.allbinary.layer.AllBinaryLayerManager_Package is
    type AllBinaryLayerManager_Access is access all AllBinaryLayerManager'Class;
    type AllBinaryLayerManager_Access_Array is array (Natural range <>) of AllBinaryLayerManager_Access;
    type AllBinaryLayerManager_Access_Array_Access is access all AllBinaryLayerManager_Access_Array;
+   type AllBinaryLayerManager_Access_Array_Access_Array is array (Natural range <>) of AllBinaryLayerManager_Access_Array_Access;
+   type AllBinaryLayerManager_Access_Array_Access_Array_Access is access all AllBinaryLayerManager_Access_Array_Access_Array;
 
    type AllBinaryLayerManager is new LayerManager with record
       layerManagerEventHandler : LayerManagerEventHandler_Access;

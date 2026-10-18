@@ -21,8 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
-with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
@@ -34,8 +32,6 @@ with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package; use org.allbinar
 package org.allbinary.game.ai.path.BasicAIProcessor_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
-   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    package GeographicMapCellHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
@@ -47,6 +43,8 @@ package org.allbinary.game.ai.path.BasicAIProcessor_Package is
    type BasicAIProcessor_Access is access all BasicAIProcessor'Class;
    type BasicAIProcessor_Access_Array is array (Natural range <>) of BasicAIProcessor_Access;
    type BasicAIProcessor_Access_Array_Access is access all BasicAIProcessor_Access_Array;
+   type BasicAIProcessor_Access_Array_Access_Array is array (Natural range <>) of BasicAIProcessor_Access_Array_Access;
+   type BasicAIProcessor_Access_Array_Access_Array_Access is access all BasicAIProcessor_Access_Array_Access_Array;
 
    type BasicAIProcessor is new Java_Object with record
       name : Unbounded_String;

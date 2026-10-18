@@ -17,6 +17,8 @@ package org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package is
    type NullOpenGLProcessorFactory_Access is access all NullOpenGLProcessorFactory'Class;
    type NullOpenGLProcessorFactory_Access_Array is array (Natural range <>) of NullOpenGLProcessorFactory_Access;
    type NullOpenGLProcessorFactory_Access_Array_Access is access all NullOpenGLProcessorFactory_Access_Array;
+   type NullOpenGLProcessorFactory_Access_Array_Access_Array is array (Natural range <>) of NullOpenGLProcessorFactory_Access_Array_Access;
+   type NullOpenGLProcessorFactory_Access_Array_Access_Array_Access is access all NullOpenGLProcessorFactory_Access_Array_Access_Array;
 
    type NullOpenGLProcessorFactory is new Java_Object with null record;
    instance : OpenGLProcessor_Access;

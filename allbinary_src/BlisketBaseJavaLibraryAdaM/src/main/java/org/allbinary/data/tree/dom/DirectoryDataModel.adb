@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.allbinary.logic.io.file.directory.Directory_Package; use org.allbinary.logic.io.file.directory.Directory_Package;
+with org.allbinary.logic.visual.transform.data.TransformDocumentFactory_Package; use org.allbinary.logic.visual.transform.data.TransformDocumentFactory_Package;
+with org.allbinary.data.tree.dom.FileDomDataModel_Package; use org.allbinary.data.tree.dom.FileDomDataModel_Package;
+
 package body org.allbinary.data.tree.dom.DirectoryDataModel_Package is
 
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package Directory_Package renames Standard.org.allbinary.logic.io.file.directory.Directory_Package;
+   package TransformDocumentFactory_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentFactory_Package;
    procedure Initialize_Fields (This : in out DirectoryDataModel'Class) is
    begin
       null;

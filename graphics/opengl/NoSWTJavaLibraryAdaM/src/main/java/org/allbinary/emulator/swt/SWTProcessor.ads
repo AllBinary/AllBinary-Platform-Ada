@@ -21,17 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.eclipse.swt.widgets.Display_Package; use org.eclipse.swt.widgets.Display_Package;
-with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.emulator.swt.SWTProcessor_Package is
 
    package Display_Package renames Standard.org.eclipse.swt.widgets.Display_Package;
-   package NullRunnable_Package renames Standard.org.allbinary.thread.NullRunnable_Package;
 
    type SWTProcessor is tagged;
    type SWTProcessor_Access is access all SWTProcessor'Class;
    type SWTProcessor_Access_Array is array (Natural range <>) of SWTProcessor_Access;
    type SWTProcessor_Access_Array_Access is access all SWTProcessor_Access_Array;
+   type SWTProcessor_Access_Array_Access_Array is array (Natural range <>) of SWTProcessor_Access_Array_Access;
+   type SWTProcessor_Access_Array_Access_Array_Access is access all SWTProcessor_Access_Array_Access_Array;
 
    type SWTProcessor is new Java_Object with record
       runnable : Runnable_Access;

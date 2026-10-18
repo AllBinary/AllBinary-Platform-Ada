@@ -20,14 +20,16 @@ package org.allbinary.input.motion.button.TouchButtonResource_Package is
    type TouchButtonResource_Access is access all TouchButtonResource'Class;
    type TouchButtonResource_Access_Array is array (Natural range <>) of TouchButtonResource_Access;
    type TouchButtonResource_Access_Array_Access is access all TouchButtonResource_Access_Array;
+   type TouchButtonResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonResource_Access_Array_Access;
+   type TouchButtonResource_Access_Array_Access_Array_Access is access all TouchButtonResource_Access_Array_Access_Array;
 
    type TouchButtonResource is new Java_Object with record
       RESOURCE : Unbounded_String;
       HINT : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out TouchButtonResource'Class; resource_Case : Unbounded_String; hint_Case : Unbounded_String);
-   function Create (resource_Case : Unbounded_String; hint_Case : Unbounded_String) return TouchButtonResource_Access;
+   procedure Initialize (This : in out TouchButtonResource'Class; resource : Unbounded_String; hint : Unbounded_String);
+   function Create (resource : Unbounded_String; hint : Unbounded_String) return TouchButtonResource_Access;
 
 end org.allbinary.input.motion.button.TouchButtonResource_Package;
 

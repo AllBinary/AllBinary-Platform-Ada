@@ -21,30 +21,26 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
 with org.allbinary.thread.ThreadPoolStrings_Package; use org.allbinary.thread.ThreadPoolStrings_Package;
 with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.ThreadObjectUtil_Package;
-with org.allbinary.thread.PooledThread_Package; use org.allbinary.thread.PooledThread_Package;
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.ThreadPool_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type ThreadPool is tagged;
    type ThreadPool_Access is access all ThreadPool'Class;
    type ThreadPool_Access_Array is array (Natural range <>) of ThreadPool_Access;
    type ThreadPool_Access_Array_Access is access all ThreadPool_Access_Array;
+   type ThreadPool_Access_Array_Access_Array is array (Natural range <>) of ThreadPool_Access_Array_Access;
+   type ThreadPool_Access_Array_Access_Array_Access is access all ThreadPool_Access_Array_Access_Array;
 
    type ThreadPool is new Java_Object with record
       logUtil : LogUtil_Access;

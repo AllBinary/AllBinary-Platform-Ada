@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package; use org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package;
+
 package body org.allbinary.logic.system.hardware.NoHardware_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package NoHardwareComponent_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package;
    procedure Initialize_Fields (This : in out NoHardware'Class) is
    begin
       null;
@@ -83,7 +88,7 @@ package body org.allbinary.logic.system.hardware.NoHardware_Package is
 
 begin
    null;
-   instance := NoHardware_Package.Create;
+   instance := HardwareInterface_Access (NoHardware_Package.Create);
 
 end org.allbinary.logic.system.hardware.NoHardware_Package;
 

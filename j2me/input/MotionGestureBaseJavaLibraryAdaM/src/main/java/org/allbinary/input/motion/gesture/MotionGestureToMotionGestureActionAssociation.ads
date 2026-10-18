@@ -32,6 +32,8 @@ package org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActionAss
    type MotionGestureToMotionGestureActionAssociation_Access is access all MotionGestureToMotionGestureActionAssociation'Class;
    type MotionGestureToMotionGestureActionAssociation_Access_Array is array (Natural range <>) of MotionGestureToMotionGestureActionAssociation_Access;
    type MotionGestureToMotionGestureActionAssociation_Access_Array_Access is access all MotionGestureToMotionGestureActionAssociation_Access_Array;
+   type MotionGestureToMotionGestureActionAssociation_Access_Array_Access_Array is array (Natural range <>) of MotionGestureToMotionGestureActionAssociation_Access_Array_Access;
+   type MotionGestureToMotionGestureActionAssociation_Access_Array_Access_Array_Access is access all MotionGestureToMotionGestureActionAssociation_Access_Array_Access_Array;
 
    type MotionGestureToMotionGestureActionAssociation is new Java_Object with record
       list : BasicArrayList_Access;

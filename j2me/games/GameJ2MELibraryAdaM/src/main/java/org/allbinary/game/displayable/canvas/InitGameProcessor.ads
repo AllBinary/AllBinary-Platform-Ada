@@ -21,22 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
-with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.InitGameProcessor_Package is
 
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
-   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InitGameProcessor is tagged;
    type InitGameProcessor_Access is access all InitGameProcessor'Class;
    type InitGameProcessor_Access_Array is array (Natural range <>) of InitGameProcessor_Access;
    type InitGameProcessor_Access_Array_Access is access all InitGameProcessor_Access_Array;
+   type InitGameProcessor_Access_Array_Access_Array is array (Natural range <>) of InitGameProcessor_Access_Array_Access;
+   type InitGameProcessor_Access_Array_Access_Array_Access is access all InitGameProcessor_Access_Array_Access_Array;
 
    type InitGameProcessor is new Processor with record
       gameCanvas : AllBinaryGameCanvas_Access;

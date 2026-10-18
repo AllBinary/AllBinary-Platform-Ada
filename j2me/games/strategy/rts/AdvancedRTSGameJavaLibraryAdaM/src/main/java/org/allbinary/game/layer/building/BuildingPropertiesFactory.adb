@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.combat.damage.PtsDamageFloaters_Package; use org.allbinary.game.combat.damage.PtsDamageFloaters_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+with org.allbinary.game.health.HealthBar_Package; use org.allbinary.game.health.HealthBar_Package;
+with org.allbinary.game.health.HealthBarTwodAnimation_Package; use org.allbinary.game.health.HealthBarTwodAnimation_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+
 package body org.allbinary.game.layer.building.BuildingPropertiesFactory_Package is
 
+   package PtsDamageFloaters_Package renames Standard.org.allbinary.game.combat.damage.PtsDamageFloaters_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package BasicHudFactory_Package renames Standard.org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+   package HealthBar_Package renames Standard.org.allbinary.game.health.HealthBar_Package;
+   package HealthBarTwodAnimation_Package renames Standard.org.allbinary.game.health.HealthBarTwodAnimation_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out BuildingPropertiesFactory'Class) is
    begin
       null;
@@ -51,8 +70,8 @@ package body org.allbinary.game.layer.building.BuildingPropertiesFactory_Package
    begin
         damageFloaters := DamageFloaters_Package.getInstance;
         if Features_Package.getInstance.isFeature (GameFeatureFactory_Package.getInstance.DAMAGE_FLOATERS) then
-            damageFloaters := PtsDamageFloaters_Package.Create (buildingLayer);
-            This.damageFloatersPaintableInterface := damageFloaters;
+            damageFloaters := DamageFloaters_Access (PtsDamageFloaters_Package.Create (buildingLayer));
+            This.damageFloatersPaintableInterface := Paintable_Access (damageFloaters);
         else
             damageFloaters := DamageFloaters_Package.Create;
         end if;
@@ -66,7 +85,7 @@ package body org.allbinary.game.layer.building.BuildingPropertiesFactory_Package
    begin
         healthBar := NullPaintable_Package.getInstance;
         if Features_Package.getInstance.isFeature (GameFeatureFactory_Package.getInstance.HEALTH_BARS) then
-            healthBar := HealthBar_Package.Create (buildingLayer, buildingLayer.getHealthInterface, HealthBarTwodAnimation_Package.Create (AllBinaryLayer_Access (buildingLayer), BasicHudFactory_Package.getInstance.BOTTOMLEFT), -(1));
+            healthBar := Paintable_Access (HealthBar_Package.Create (buildingLayer, buildingLayer.getHealthInterface, HealthBarTwodAnimation_Package.Create (AllBinaryLayer_Access (buildingLayer), BasicHudFactory_Package.getInstance.BOTTOMLEFT), -(1)));
         end if;
         return healthBar;
    end getHealthBar;

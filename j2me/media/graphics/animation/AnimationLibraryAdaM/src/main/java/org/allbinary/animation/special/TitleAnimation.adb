@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+
 package body org.allbinary.animation.special.TitleAnimation_Package is
 
+   package IndexedAnimationBehavior_Package renames Standard.org.allbinary.animation.IndexedAnimationBehavior_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out TitleAnimation'Class) is
    begin
       null;
@@ -155,7 +162,7 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
       index : Integer;
    begin
         x := 0;
-        if (This.widthP) /= (Integer_Package.MIN_VALUE) then
+        if (This.widthP) /= (Integer'First) then
             x := ((((This.displayInfoSingleton.getLastWidth) - (This.widthP))) / (2));
         end if;
         deltaX := 0;

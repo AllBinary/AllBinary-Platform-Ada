@@ -21,21 +21,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.business.category.properties.CategoryPropertiesFactory_Package; use org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
-with org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.CategoryFactoryInterface_Package; use org.allbinary.business.category.CategoryFactoryInterface_Package;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
-with org.allbinary.business.category.Category_Package; use org.allbinary.business.category.Category_Package;
 
 package org.allbinary.business.category.CategoryAbstractFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package CategoryPropertiesFactory_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
-   package CategoryPropertiesFactoryInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
@@ -45,8 +40,10 @@ package org.allbinary.business.category.CategoryAbstractFactory_Package is
    type CategoryAbstractFactory_Access is access all CategoryAbstractFactory'Class;
    type CategoryAbstractFactory_Access_Array is array (Natural range <>) of CategoryAbstractFactory_Access;
    type CategoryAbstractFactory_Access_Array_Access is access all CategoryAbstractFactory_Access_Array;
+   type CategoryAbstractFactory_Access_Array_Access_Array is array (Natural range <>) of CategoryAbstractFactory_Access_Array_Access;
+   type CategoryAbstractFactory_Access_Array_Access_Array_Access is access all CategoryAbstractFactory_Access_Array_Access_Array;
 
-   type CategoryAbstractFactory is new CategoryFactoryInterface with record
+   type CategoryAbstractFactory is new Java_Object and CategoryFactoryInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;

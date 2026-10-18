@@ -30,6 +30,8 @@ package org.allbinary.game.combat.damage.DamageableInterface_Package is
    type DamageableInterface_Access is access all DamageableInterface'Class;
    type DamageableInterface_Access_Array is array (Natural range <>) of DamageableInterface_Access;
    type DamageableInterface_Access_Array_Access is access all DamageableInterface_Access_Array;
+   type DamageableInterface_Access_Array_Access_Array is array (Natural range <>) of DamageableInterface_Access_Array_Access;
+   type DamageableInterface_Access_Array_Access_Array_Access is access all DamageableInterface_Access_Array_Access_Array;
    procedure damage (This : in out DamageableInterface; damage : Integer; damageType : Integer) is abstract;
    function getDamage (This : in out DamageableInterface; damageType : Integer) return Integer is abstract;
 

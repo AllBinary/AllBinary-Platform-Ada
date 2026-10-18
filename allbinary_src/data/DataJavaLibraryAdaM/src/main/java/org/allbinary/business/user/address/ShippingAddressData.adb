@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.address.ShippingAddressData_Package is
 
    procedure Initialize_Fields (This : in out ShippingAddressData'Class) is

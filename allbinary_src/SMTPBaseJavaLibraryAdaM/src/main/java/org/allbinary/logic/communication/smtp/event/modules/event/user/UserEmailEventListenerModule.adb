@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.smtp.BasicEmail_Package; use org.allbinary.logic.communication.smtp.BasicEmail_Package;
+with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allbinary.logic.communication.smtp.EmailInterface_Package;
+with org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package; use org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package;
+
 package body org.allbinary.logic.communication.smtp.event.modules.event.user.UserEmailEventListenerModule_Package is
 
+   package BasicEmail_Package renames Standard.org.allbinary.logic.communication.smtp.BasicEmail_Package;
+   package EmailInterface_Package renames Standard.org.allbinary.logic.communication.smtp.EmailInterface_Package;
+   package EmailQueueFactory_Package renames Standard.org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package;
    procedure Initialize_Fields (This : in out UserEmailEventListenerModule'Class) is
    begin
       null;

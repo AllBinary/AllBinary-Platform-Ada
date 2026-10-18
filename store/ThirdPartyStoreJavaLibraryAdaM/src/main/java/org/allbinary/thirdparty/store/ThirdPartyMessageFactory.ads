@@ -28,6 +28,8 @@ package org.allbinary.thirdparty.store.ThirdPartyMessageFactory_Package is
    type ThirdPartyMessageFactory_Access is access all ThirdPartyMessageFactory'Class;
    type ThirdPartyMessageFactory_Access_Array is array (Natural range <>) of ThirdPartyMessageFactory_Access;
    type ThirdPartyMessageFactory_Access_Array_Access is access all ThirdPartyMessageFactory_Access_Array;
+   type ThirdPartyMessageFactory_Access_Array_Access_Array is array (Natural range <>) of ThirdPartyMessageFactory_Access_Array_Access;
+   type ThirdPartyMessageFactory_Access_Array_Access_Array_Access is access all ThirdPartyMessageFactory_Access_Array_Access_Array;
 
    type ThirdPartyMessageFactory is new Java_Object with record
       AUTHORIZED : Unbounded_String;

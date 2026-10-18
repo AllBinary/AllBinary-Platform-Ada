@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+
 package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ImageUtil_Package renames Standard.org.allbinary.media.image.ImageUtil_Package;
    procedure Initialize_Fields (This : in out ImageComparisonSearch'Class) is
    begin
       null;
@@ -39,7 +46,7 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
       imageUtil : ImageUtil_Access;
    begin
       Initialize_Fields (This);
-        This.nonMatchingPixelVector := BasicArrayListD_Package.Create;
+        This.nonMatchingPixelVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         ImageComparisonSearch'Class (This).setBufferedImages (new BufferedImage_Access_Array'(0 .. (2) - 1 => null));
         ImageComparisonSearch'Class (This).getBufferedImages (0) := bufferedImage;
         ImageComparisonSearch'Class (This).getBufferedImages (1) := bufferedImage2;
@@ -87,7 +94,7 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
    procedure add (This : in out ImageComparisonSearch; pixel_Param : access PixelDelta_Package.PixelDelta'Class) is
       pixel : constant PixelDelta_Access := PixelDelta_Access (pixel_Param);
    begin
-        This.nonMatchingPixelVector.add (pixel);
+        This.nonMatchingPixelVector.add (Java_Object_Access (pixel));
    end add;
 
    function getNonMatchingPixelVector (This : in out ImageComparisonSearch) return BasicArrayList_Access is

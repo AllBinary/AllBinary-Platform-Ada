@@ -13,15 +13,26 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+
 package body org.allbinary.game.input.mapping.InputMapping_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out InputMapping'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
       This.hashtable := StdUtil_Package.getInstance.createHashtable;
-      This.mappedList := BasicArrayListD_Package.Create;
+      This.mappedList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -74,9 +85,9 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
         stringBuffer.append (stringUtil.toString (mappedToInput));
         This.logUtil.putF (stringBuffer.toString, InputMapping_Access'(This'Unchecked_Access), To_Unbounded_String ("InputMapping::remove"));
         list := InputMapping'Class (This).getMappedInput (input);
-        if list.contains (mappedToInput) then
-            list.remove (mappedToInput);
-            This.mappedList.remove (mappedToInput);
+        if list.contains (Java_Object_Access (mappedToInput)) then
+            list.remove (Java_Object_Access (mappedToInput));
+            This.mappedList.remove (Java_Object_Access (mappedToInput));
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (To_Unbounded_String ("Removed: "));
             stringBuffer.append (stringUtil.toString (input));
@@ -106,16 +117,16 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
       list : BasicArrayList_Access;
    begin
         list := InputMapping'Class (This).getMappedInput (input);
-        if not (list.contains (mappedToInput)) then
-            list.add (mappedToInput);
-            This.mappedList.add (mappedToInput);
+        if not (list.contains (Java_Object_Access (mappedToInput))) then
+            list.add (Java_Object_Access (mappedToInput));
+            This.mappedList.add (Java_Object_Access (mappedToInput));
         end if;
    end add;
 
    function isMapped (This : in out InputMapping; input_Param : access Input_Package.Input'Class) return Boolean is
       input : constant Input_Access := Input_Access (input_Param);
    begin
-        return This.mappedList.contains (input);
+        return This.mappedList.contains (Java_Object_Access (input));
    end isMapped;
 
    function getMappedInput (This : in out InputMapping; id_Param : access Input_Package.Input'Class) return BasicArrayList_Access is
@@ -125,7 +136,7 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
    begin
         mappingInputCanBeNullList := This.hashtable.get (id);
         if (mappingInputCanBeNullList) = (null) then
-            list := BasicArrayListD_Package.Create;
+            list := BasicArrayList_Access (BasicArrayListD_Package.Create);
             This.hashtable.put (id, list);
             return list;
         end if;

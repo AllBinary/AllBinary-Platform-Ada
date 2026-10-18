@@ -20,7 +20,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
@@ -29,7 +28,6 @@ with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbina
 package org.allbinary.game.layer.FakeLayerManager_Package is
 
    package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
    package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
@@ -38,6 +36,8 @@ package org.allbinary.game.layer.FakeLayerManager_Package is
    type FakeLayerManager_Access is access all FakeLayerManager'Class;
    type FakeLayerManager_Access_Array is array (Natural range <>) of FakeLayerManager_Access;
    type FakeLayerManager_Access_Array_Access is access all FakeLayerManager_Access_Array;
+   type FakeLayerManager_Access_Array_Access_Array is array (Natural range <>) of FakeLayerManager_Access_Array_Access;
+   type FakeLayerManager_Access_Array_Access_Array_Access is access all FakeLayerManager_Access_Array_Access_Array;
 
    type FakeLayerManager is new AllBinaryGameLayerManager and GeographicMapCompositeInterface with record
       geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access;

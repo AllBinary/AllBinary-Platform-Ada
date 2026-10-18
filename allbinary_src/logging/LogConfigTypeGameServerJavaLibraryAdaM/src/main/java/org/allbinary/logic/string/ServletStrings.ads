@@ -28,6 +28,8 @@ package org.allbinary.logic.string_Id.ServletStrings_Package is
    type ServletStrings_Access is access all ServletStrings'Class;
    type ServletStrings_Access_Array is array (Natural range <>) of ServletStrings_Access;
    type ServletStrings_Access_Array_Access is access all ServletStrings_Access_Array;
+   type ServletStrings_Access_Array_Access_Array is array (Natural range <>) of ServletStrings_Access_Array_Access;
+   type ServletStrings_Access_Array_Access_Array_Access is access all ServletStrings_Access_Array_Access_Array;
 
    type ServletStrings is new Java_Object with record
       DOPOST : Unbounded_String;

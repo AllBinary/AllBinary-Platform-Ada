@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.image.opengles.OpenGLESImage_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out OpenGLESImage'Class) is
    begin
       null;
@@ -85,7 +90,7 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
 begin
    null;
    NULL_OPENGL_IMAGE := OpenGLESImage_Package.Create (NullImage_Package.NULL_IMAGE, PlatformBitmapBaseFactory_Package.NULL_PLATFORM_BITMAP_BASE_FACTORY, PlatformTextureBaseFactory_Package.NULL_PLATFORM_TEXTURE_BASE_FACTORY);
-   texture2dList := BasicArrayListD_Package.Create;
+   texture2dList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    TYPE_Id := 4;
 
 end org.allbinary.image.opengles.OpenGLESImage_Package;

@@ -28,6 +28,8 @@ package org.allbinary.game.layer.pickup.PickedUpLayerType_Package is
    type PickedUpLayerType_Access is access all PickedUpLayerType'Class;
    type PickedUpLayerType_Access_Array is array (Natural range <>) of PickedUpLayerType_Access;
    type PickedUpLayerType_Access_Array_Access is access all PickedUpLayerType_Access_Array;
+   type PickedUpLayerType_Access_Array_Access_Array is array (Natural range <>) of PickedUpLayerType_Access_Array_Access;
+   type PickedUpLayerType_Access_Array_Access_Array_Access is access all PickedUpLayerType_Access_Array_Access_Array;
 
    type PickedUpLayerType is new Java_Object with record
       name : Unbounded_String;

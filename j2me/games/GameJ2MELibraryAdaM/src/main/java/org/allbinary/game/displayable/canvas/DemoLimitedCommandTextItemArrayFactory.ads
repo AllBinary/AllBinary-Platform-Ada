@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package; use org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
-with org.allbinary.graphics.form.item.LimitCommandsVisitor_Package; use org.allbinary.graphics.form.item.LimitCommandsVisitor_Package;
 
 package org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package is
 
    package CommandTextItemArrayFactory_Package renames Standard.org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
-   package LimitCommandsVisitor_Package renames Standard.org.allbinary.graphics.form.item.LimitCommandsVisitor_Package;
 
    type DemoLimitedCommandTextItemArrayFactory is tagged;
    type DemoLimitedCommandTextItemArrayFactory_Access is access all DemoLimitedCommandTextItemArrayFactory'Class;
    type DemoLimitedCommandTextItemArrayFactory_Access_Array is array (Natural range <>) of DemoLimitedCommandTextItemArrayFactory_Access;
    type DemoLimitedCommandTextItemArrayFactory_Access_Array_Access is access all DemoLimitedCommandTextItemArrayFactory_Access_Array;
+   type DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array is array (Natural range <>) of DemoLimitedCommandTextItemArrayFactory_Access_Array_Access;
+   type DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Access is access all DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array;
 
    type DemoLimitedCommandTextItemArrayFactory is new Java_Object with record
       commandTextItemArrayFactory : CommandTextItemArrayFactory_Access;

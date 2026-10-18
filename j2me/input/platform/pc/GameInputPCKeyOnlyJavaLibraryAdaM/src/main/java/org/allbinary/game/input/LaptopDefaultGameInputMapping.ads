@@ -20,22 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
-with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-with org.allbinary.game.input.PCKeyFactory_Package; use org.allbinary.game.input.PCKeyFactory_Package;
-with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 
 package org.allbinary.game.input.LaptopDefaultGameInputMapping_Package is
 
-   package GamePersistanceStrings_Package renames Standard.org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
-   package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
    package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
 
    type LaptopDefaultGameInputMapping is tagged;
    type LaptopDefaultGameInputMapping_Access is access all LaptopDefaultGameInputMapping'Class;
    type LaptopDefaultGameInputMapping_Access_Array is array (Natural range <>) of LaptopDefaultGameInputMapping_Access;
    type LaptopDefaultGameInputMapping_Access_Array_Access is access all LaptopDefaultGameInputMapping_Access_Array;
+   type LaptopDefaultGameInputMapping_Access_Array_Access_Array is array (Natural range <>) of LaptopDefaultGameInputMapping_Access_Array_Access;
+   type LaptopDefaultGameInputMapping_Access_Array_Access_Array_Access is access all LaptopDefaultGameInputMapping_Access_Array_Access_Array;
 
    type LaptopDefaultGameInputMapping is new PersistentInputMapping with null record;
 

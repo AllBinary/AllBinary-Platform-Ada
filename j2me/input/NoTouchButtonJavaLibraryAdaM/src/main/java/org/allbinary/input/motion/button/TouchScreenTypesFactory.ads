@@ -29,6 +29,8 @@ package org.allbinary.input.motion.button.TouchScreenTypesFactory_Package is
    type TouchScreenTypesFactory_Access is access all TouchScreenTypesFactory'Class;
    type TouchScreenTypesFactory_Access_Array is array (Natural range <>) of TouchScreenTypesFactory_Access;
    type TouchScreenTypesFactory_Access_Array_Access is access all TouchScreenTypesFactory_Access_Array;
+   type TouchScreenTypesFactory_Access_Array_Access_Array is array (Natural range <>) of TouchScreenTypesFactory_Access_Array_Access;
+   type TouchScreenTypesFactory_Access_Array_Access_Array_Access is access all TouchScreenTypesFactory_Access_Array_Access_Array;
 
    type TouchScreenTypesFactory is new Java_Object with record
       FINGER : TouchScreenType_Access;

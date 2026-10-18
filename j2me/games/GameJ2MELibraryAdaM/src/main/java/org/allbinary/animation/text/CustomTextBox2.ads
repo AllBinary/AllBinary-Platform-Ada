@@ -36,6 +36,8 @@ package org.allbinary.animation.text.CustomTextBox2_Package is
    type CustomTextBox2_Access is access all CustomTextBox2'Class;
    type CustomTextBox2_Access_Array is array (Natural range <>) of CustomTextBox2_Access;
    type CustomTextBox2_Access_Array_Access is access all CustomTextBox2_Access_Array;
+   type CustomTextBox2_Access_Array_Access_Array is array (Natural range <>) of CustomTextBox2_Access_Array_Access;
+   type CustomTextBox2_Access_Array_Access_Array_Access is access all CustomTextBox2_Access_Array_Access_Array;
 
    type CustomTextBox2 is new CustomTextBox with null record;
 

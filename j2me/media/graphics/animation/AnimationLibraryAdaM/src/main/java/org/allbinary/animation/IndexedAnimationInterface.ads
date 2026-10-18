@@ -29,6 +29,8 @@ package org.allbinary.animation.IndexedAnimationInterface_Package is
    type IndexedAnimationInterface_Access is access all IndexedAnimationInterface'Class;
    type IndexedAnimationInterface_Access_Array is array (Natural range <>) of IndexedAnimationInterface_Access;
    type IndexedAnimationInterface_Access_Array_Access is access all IndexedAnimationInterface_Access_Array;
+   type IndexedAnimationInterface_Access_Array_Access_Array is array (Natural range <>) of IndexedAnimationInterface_Access_Array_Access;
+   type IndexedAnimationInterface_Access_Array_Access_Array_Access is access all IndexedAnimationInterface_Access_Array_Access_Array;
    procedure reset (This : in out IndexedAnimationInterface) is abstract;
    procedure setFrame (This : in out IndexedAnimationInterface; index : Integer) is abstract;
    function getFrame (This : in out IndexedAnimationInterface) return Integer is abstract;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.android.activity.NullProgressActivity_Package is
 
    procedure Initialize_Fields (This : in out NullProgressActivity'Class) is

@@ -31,6 +31,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingInfoInterf
    type PathFindingInfoInterface_Access is access all PathFindingInfoInterface'Class;
    type PathFindingInfoInterface_Access_Array is array (Natural range <>) of PathFindingInfoInterface_Access;
    type PathFindingInfoInterface_Access_Array_Access is access all PathFindingInfoInterface_Access_Array;
+   type PathFindingInfoInterface_Access_Array_Access_Array is array (Natural range <>) of PathFindingInfoInterface_Access_Array_Access;
+   type PathFindingInfoInterface_Access_Array_Access_Array_Access is access all PathFindingInfoInterface_Access_Array_Access_Array;
    function getStartPathFindingNodeList (This : in out PathFindingInfoInterface) return BasicArrayList_Access is abstract;
    function getEndPathFindingNodeList (This : in out PathFindingInfoInterface) return BasicArrayList_Access is abstract;
    function getPathFinder (This : in out PathFindingInfoInterface) return GeographicPathFinderBase_Access is abstract;

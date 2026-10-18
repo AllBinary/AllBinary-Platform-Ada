@@ -30,6 +30,8 @@ package org.allbinary.android.input.motion.event.AnalogControllerConfigurationEv
    type AnalogControllerConfigurationEvent_Access is access all AnalogControllerConfigurationEvent'Class;
    type AnalogControllerConfigurationEvent_Access_Array is array (Natural range <>) of AnalogControllerConfigurationEvent_Access;
    type AnalogControllerConfigurationEvent_Access_Array_Access is access all AnalogControllerConfigurationEvent_Access_Array;
+   type AnalogControllerConfigurationEvent_Access_Array_Access_Array is array (Natural range <>) of AnalogControllerConfigurationEvent_Access_Array_Access;
+   type AnalogControllerConfigurationEvent_Access_Array_Access_Array_Access is access all AnalogControllerConfigurationEvent_Access_Array_Access_Array;
 
    type AnalogControllerConfigurationEvent is new AllBinaryEventObject with null record;
 

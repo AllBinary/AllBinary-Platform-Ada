@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package is
 
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out KeySpecFactory'Class) is
    begin
       null;
@@ -49,9 +56,9 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_
         begin
             tsUtil := TsUtil_Package.getInstance;
             if (tsUtil.compareTo (algorithm, This.DES)) = (0) then
-                return DESKeySpec_Package.Create (keyData);
+                return KeySpec_Access (DESKeySpec_Package.Create (keyData));
             elsif (tsUtil.compareTo (algorithm, This.DESEDE)) = (0) then
-                return DESedeKeySpec_Package.Create (keyData);
+                return KeySpec_Access (DESedeKeySpec_Package.Create (keyData));
             else
                 Java_Throw (Java_New_Exception ("RuntimeException"));
             end if;

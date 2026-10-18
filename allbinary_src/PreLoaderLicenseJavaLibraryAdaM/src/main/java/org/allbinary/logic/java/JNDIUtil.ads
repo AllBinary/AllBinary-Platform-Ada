@@ -28,6 +28,8 @@ package org.allbinary.logic.java.JNDIUtil_Package is
    type JNDIUtil_Access is access all JNDIUtil'Class;
    type JNDIUtil_Access_Array is array (Natural range <>) of JNDIUtil_Access;
    type JNDIUtil_Access_Array_Access is access all JNDIUtil_Access_Array;
+   type JNDIUtil_Access_Array_Access_Array is array (Natural range <>) of JNDIUtil_Access_Array_Access;
+   type JNDIUtil_Access_Array_Access_Array_Access is access all JNDIUtil_Access_Array_Access_Array;
 
    type JNDIUtil is new Java_Object with null record;
 

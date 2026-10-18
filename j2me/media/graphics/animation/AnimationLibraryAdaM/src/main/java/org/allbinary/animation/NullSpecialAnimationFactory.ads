@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.special.SpecialAnimation_Package; use org.allbinary.animation.special.SpecialAnimation_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
@@ -28,15 +27,16 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 
 package org.allbinary.animation.NullSpecialAnimationFactory_Package is
 
-   package SpecialAnimation_Package renames Standard.org.allbinary.animation.special.SpecialAnimation_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type NullSpecialAnimationFactory is tagged;
    type NullSpecialAnimationFactory_Access is access all NullSpecialAnimationFactory'Class;
    type NullSpecialAnimationFactory_Access_Array is array (Natural range <>) of NullSpecialAnimationFactory_Access;
    type NullSpecialAnimationFactory_Access_Array_Access is access all NullSpecialAnimationFactory_Access_Array;
+   type NullSpecialAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of NullSpecialAnimationFactory_Access_Array_Access;
+   type NullSpecialAnimationFactory_Access_Array_Access_Array_Access is access all NullSpecialAnimationFactory_Access_Array_Access_Array;
 
-   type NullSpecialAnimationFactory is new AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with null record;
+   type NullSpecialAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with null record;
    NULL_SPECIAL_ANIMATION_FACTORY : NullSpecialAnimationFactory_Access;
 
    procedure Initialize (This : in out NullSpecialAnimationFactory'Class);

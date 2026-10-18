@@ -30,6 +30,8 @@ package org.allbinary.image.opengles.OpenGLESImageProcessor_Package is
    type OpenGLESImageProcessor_Access is access all OpenGLESImageProcessor'Class;
    type OpenGLESImageProcessor_Access_Array is array (Natural range <>) of OpenGLESImageProcessor_Access;
    type OpenGLESImageProcessor_Access_Array_Access is access all OpenGLESImageProcessor_Access_Array;
+   type OpenGLESImageProcessor_Access_Array_Access_Array is array (Natural range <>) of OpenGLESImageProcessor_Access_Array_Access;
+   type OpenGLESImageProcessor_Access_Array_Access_Array_Access is access all OpenGLESImageProcessor_Access_Array_Access_Array;
 
    type OpenGLESImageProcessor is new Java_Object with null record;
    instance : OpenGLESImageProcessor_Access;

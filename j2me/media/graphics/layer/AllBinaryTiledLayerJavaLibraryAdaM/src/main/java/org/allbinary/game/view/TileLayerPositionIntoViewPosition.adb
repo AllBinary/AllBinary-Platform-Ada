@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.layer.NullLayer_Package; use org.allbinary.layer.NullLayer_Package;
+
 package body org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package is
 
+   package NullLayer_Package renames Standard.org.allbinary.layer.NullLayer_Package;
    procedure Initialize_Fields (This : in out TileLayerPositionIntoViewPosition'Class) is
    begin
       null;
@@ -53,7 +56,7 @@ package body org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package i
    procedure setTiledLayer (This : in out TileLayerPositionIntoViewPosition; tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class) is
       tiledLayer : constant AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (tiledLayer_Param);
    begin
-        This.tiledLayer := tiledLayer;
+        This.tiledLayer := Layer_Access (tiledLayer);
    end setTiledLayer;
 
 end org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;

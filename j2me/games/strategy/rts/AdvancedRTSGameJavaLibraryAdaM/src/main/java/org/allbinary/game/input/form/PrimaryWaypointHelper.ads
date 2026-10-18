@@ -20,13 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 with org.allbinary.game.layer.waypoint.WaypointLayer_Package; use org.allbinary.game.layer.waypoint.WaypointLayer_Package;
 
 package org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
 
-   package NullPathFindingLayer_Package renames Standard.org.allbinary.game.layer.NullPathFindingLayer_Package;
    package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
    package WaypointLayer_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointLayer_Package;
 
@@ -34,6 +32,8 @@ package org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
    type PrimaryWaypointHelper_Access is access all PrimaryWaypointHelper'Class;
    type PrimaryWaypointHelper_Access_Array is array (Natural range <>) of PrimaryWaypointHelper_Access;
    type PrimaryWaypointHelper_Access_Array_Access is access all PrimaryWaypointHelper_Access_Array;
+   type PrimaryWaypointHelper_Access_Array_Access_Array is array (Natural range <>) of PrimaryWaypointHelper_Access_Array_Access;
+   type PrimaryWaypointHelper_Access_Array_Access_Array_Access is access all PrimaryWaypointHelper_Access_Array_Access_Array;
 
    type PrimaryWaypointHelper is new Java_Object with record
       waypointLayer : PathFindingLayerInterface_Access;

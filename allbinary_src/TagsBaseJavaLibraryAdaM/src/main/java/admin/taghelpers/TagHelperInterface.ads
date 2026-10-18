@@ -28,6 +28,8 @@ package admin.taghelpers.TagHelperInterface_Package is
    type TagHelperInterface_Access is access all TagHelperInterface'Class;
    type TagHelperInterface_Access_Array is array (Natural range <>) of TagHelperInterface_Access;
    type TagHelperInterface_Access_Array_Access is access all TagHelperInterface_Access_Array;
+   type TagHelperInterface_Access_Array_Access_Array is array (Natural range <>) of TagHelperInterface_Access_Array_Access;
+   type TagHelperInterface_Access_Array_Access_Array_Access is access all TagHelperInterface_Access_Array_Access_Array;
 
 end admin.taghelpers.TagHelperInterface_Package;
 

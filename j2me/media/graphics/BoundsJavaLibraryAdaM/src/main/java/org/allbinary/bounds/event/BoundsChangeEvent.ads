@@ -32,6 +32,8 @@ package org.allbinary.bounds.event.BoundsChangeEvent_Package is
    type BoundsChangeEvent_Access is access all BoundsChangeEvent'Class;
    type BoundsChangeEvent_Access_Array is array (Natural range <>) of BoundsChangeEvent_Access;
    type BoundsChangeEvent_Access_Array_Access is access all BoundsChangeEvent_Access_Array;
+   type BoundsChangeEvent_Access_Array_Access_Array is array (Natural range <>) of BoundsChangeEvent_Access_Array_Access;
+   type BoundsChangeEvent_Access_Array_Access_Array_Access is access all BoundsChangeEvent_Access_Array_Access_Array;
 
    type BoundsChangeEvent is new AllBinaryEventObject with null record;
 

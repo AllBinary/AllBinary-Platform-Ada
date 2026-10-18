@@ -29,6 +29,8 @@ package org.allbinary.game.layer.special.SpecialGameInputFactory_Package is
    type SpecialGameInputFactory_Access is access all SpecialGameInputFactory'Class;
    type SpecialGameInputFactory_Access_Array is array (Natural range <>) of SpecialGameInputFactory_Access;
    type SpecialGameInputFactory_Access_Array_Access is access all SpecialGameInputFactory_Access_Array;
+   type SpecialGameInputFactory_Access_Array_Access_Array is array (Natural range <>) of SpecialGameInputFactory_Access_Array_Access;
+   type SpecialGameInputFactory_Access_Array_Access_Array_Access is access all SpecialGameInputFactory_Access_Array_Access_Array;
 
    type SpecialGameInputFactory is new Java_Object with null record;
    NO_SPECIAL_GAME_INPUT : SpecialGameInput_Access;

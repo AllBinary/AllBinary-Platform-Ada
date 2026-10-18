@@ -23,23 +23,21 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
-with org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package; use org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Package;
 
 package admin.taghelpers.PaymentTransactionResultHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
-   package TransactionResultEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 
    type PaymentTransactionResultHelper is tagged;
    type PaymentTransactionResultHelper_Access is access all PaymentTransactionResultHelper'Class;
    type PaymentTransactionResultHelper_Access_Array is array (Natural range <>) of PaymentTransactionResultHelper_Access;
    type PaymentTransactionResultHelper_Access_Array_Access is access all PaymentTransactionResultHelper_Access_Array;
+   type PaymentTransactionResultHelper_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionResultHelper_Access_Array_Access;
+   type PaymentTransactionResultHelper_Access_Array_Access_Array_Access is access all PaymentTransactionResultHelper_Access_Array_Access_Array;
 
    type PaymentTransactionResultHelper is new BasicTable with record
       logUtil : LogUtil_Access;

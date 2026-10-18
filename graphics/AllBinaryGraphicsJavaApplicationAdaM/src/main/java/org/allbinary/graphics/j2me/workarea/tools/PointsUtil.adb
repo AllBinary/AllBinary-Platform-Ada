@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.VectorRotationGenerator_Package; use org.allbinary.animation.VectorRotationGenerator_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+
 package body org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package is
 
+   package VectorRotationGenerator_Package renames Standard.org.allbinary.animation.VectorRotationGenerator_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    procedure Initialize_Fields (This : in out PointsUtil'Class) is
    begin
       null;

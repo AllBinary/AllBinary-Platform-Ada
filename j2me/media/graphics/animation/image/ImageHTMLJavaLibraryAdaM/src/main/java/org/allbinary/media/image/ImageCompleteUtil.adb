@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
+with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn.PlaynImage_Package;
+with org.allbinary.media.image.Hashtable_Package; use org.allbinary.media.image.Hashtable_Package;
+
 package body org.allbinary.media.image.ImageCompleteUtil_Package is
 
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
+   package PlaynImage_Package renames Standard.org.microemu.device.playn.PlaynImage_Package;
    procedure Initialize_Fields (This : in out ImageCompleteUtil'Class) is
    begin
       null;

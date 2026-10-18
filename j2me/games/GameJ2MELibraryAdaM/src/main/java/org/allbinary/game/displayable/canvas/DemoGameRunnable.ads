@@ -21,23 +21,21 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbinary.game.displayable.canvas.GameRunnable_Package;
 with org.allbinary.game.displayable.canvas.DemoCanvas_Package; use org.allbinary.game.displayable.canvas.DemoCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.DemoGameRunnable_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 
    type DemoGameRunnable is tagged;
    type DemoGameRunnable_Access is access all DemoGameRunnable'Class;
    type DemoGameRunnable_Access_Array is array (Natural range <>) of DemoGameRunnable_Access;
    type DemoGameRunnable_Access_Array_Access is access all DemoGameRunnable_Access_Array;
+   type DemoGameRunnable_Access_Array_Access_Array is array (Natural range <>) of DemoGameRunnable_Access_Array_Access;
+   type DemoGameRunnable_Access_Array_Access_Array_Access is access all DemoGameRunnable_Access_Array_Access_Array;
 
    type DemoGameRunnable is new GameRunnable with record
       logUtil : LogUtil_Access;

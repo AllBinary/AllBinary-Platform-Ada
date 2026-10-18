@@ -24,23 +24,21 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Package;
 with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
-with org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 
 package taghelpers.transform.info.TransformInfoHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicTable_Package renames Standard.admin.taghelpers.BasicTable_Package;
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
-   package TransformInfoEntityBuilder_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 
    type TransformInfoHelper is tagged;
    type TransformInfoHelper_Access is access all TransformInfoHelper'Class;
    type TransformInfoHelper_Access_Array is array (Natural range <>) of TransformInfoHelper_Access;
    type TransformInfoHelper_Access_Array_Access is access all TransformInfoHelper_Access_Array;
+   type TransformInfoHelper_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHelper_Access_Array_Access;
+   type TransformInfoHelper_Access_Array_Access_Array_Access is access all TransformInfoHelper_Access_Array_Access_Array;
 
    type TransformInfoHelper is new BasicTable with record
       logUtil : LogUtil_Access;

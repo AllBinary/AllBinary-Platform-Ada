@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.logic.system.hardware.windows.WindowsHardware_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out WindowsHardware'Class) is
    begin
       null;
@@ -40,18 +49,18 @@ package body org.allbinary.logic.system.hardware.windows.WindowsHardware_Package
    begin
       Initialize_Fields (This);
         begin
-            This.componentInterfaceVector := BasicArrayListD_Package.Create;
-            This.videoInterfaceVector := BasicArrayListD_Package.Create;
-            This.hardDriveControllerInterfaceVector := BasicArrayListD_Package.Create;
-            This.cpuInterfaceVector := BasicArrayListD_Package.Create;
-            This.usbInterfaceVector := BasicArrayListD_Package.Create;
-            This.ethernetInterfaceVector := BasicArrayListD_Package.Create;
-            This.multimediaInterfaceVector := BasicArrayListD_Package.Create;
-            This.fireWireInterfaceVector := BasicArrayListD_Package.Create;
-            This.bridgeInterfaceVector := BasicArrayListD_Package.Create;
-            This.hardDriveInterfaceVector := BasicArrayListD_Package.Create;
-            This.macInterfaceVector := BasicArrayListD_Package.Create;
-            This.monitorInterfaceVector := BasicArrayListD_Package.Create;
+            This.componentInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.videoInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.hardDriveControllerInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.cpuInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.usbInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.ethernetInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.multimediaInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.fireWireInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.bridgeInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.hardDriveInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.macInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.monitorInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             if (This.componentInterfaceVector.size) < (This.MINHARDWARE) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Enough Data For A Valid License On Windows")));
             end if;
@@ -74,19 +83,19 @@ package body org.allbinary.logic.system.hardware.windows.WindowsHardware_Package
 
    function getComponentType (This : in out WindowsHardware; component : Unbounded_String) return Unbounded_String is
    begin
-        if ((Index (component, Java_Image (This.componentFactory.ETHERNET.toString)) - 1)) >= (0) then
+        if (Java_Index_Of (component, Java_Image (This.componentFactory.ETHERNET.toString))) >= (0) then
             return This.componentFactory.ETHERNET.toString;
-        elsif ((Index (component, Java_Image (This.componentFactory.BRIDGE.toString)) - 1)) >= (0) then
+        elsif (Java_Index_Of (component, Java_Image (This.componentFactory.BRIDGE.toString))) >= (0) then
             return This.componentFactory.BRIDGE.toString;
-        elsif ((Index (component, Java_Image (This.componentFactory.IDE.toString)) - 1)) >= (0) then
+        elsif (Java_Index_Of (component, Java_Image (This.componentFactory.IDE.toString))) >= (0) then
             return This.componentFactory.IDE.toString;
-        elsif ((Index (component, Java_Image (This.componentFactory.MULTIMEDIA.toString)) - 1)) >= (0) then
+        elsif (Java_Index_Of (component, Java_Image (This.componentFactory.MULTIMEDIA.toString))) >= (0) then
             return This.componentFactory.MULTIMEDIA.toString;
-        elsif ((Index (component, Java_Image (This.componentFactory.SCSI.toString)) - 1)) >= (0) then
+        elsif (Java_Index_Of (component, Java_Image (This.componentFactory.SCSI.toString))) >= (0) then
             return This.componentFactory.SCSI.toString;
-        elsif ((Index (component, Java_Image (This.componentFactory.USB.toString)) - 1)) >= (0) then
+        elsif (Java_Index_Of (component, Java_Image (This.componentFactory.USB.toString))) >= (0) then
             return This.componentFactory.USB.toString;
-        elsif ((Index (component, Java_Image (This.componentFactory.VGA.toString)) - 1)) >= (0) then
+        elsif (Java_Index_Of (component, Java_Image (This.componentFactory.VGA.toString))) >= (0) then
             return This.componentFactory.VGA.toString;
         else
             return Null_Unbounded_String;

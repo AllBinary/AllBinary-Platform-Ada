@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.module.InputAutomationActionInterface_Package; use org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleData_Package; use org.allbinary.input.automation.module.InputAutomationModuleData_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationJPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationJPanel_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
+with org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package; use org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package;
+with org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package; use org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package;
+with org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package; use org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package;
+with org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package; use org.allbinary.input.automation.module.generic_Id.GenericInputAutomationWorker_Package;
+
 package body org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package is
 
+   package InputAutomationActionInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
+   package InputAutomationModuleData_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleData_Package;
+   package GenericModuleConfigurationJPanel_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationJPanel_Package;
+   package GenericProfile_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
+   package NoImageComparatorConstraints_Package renames Standard.org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package;
+   package NoMotionRectangleConstraints_Package renames Standard.org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package;
    procedure Initialize_Fields (This : in out GenericModuleFactory'Class) is
    begin
       null;

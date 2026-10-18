@@ -21,27 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.business.user.username.UserName_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type UserName is tagged;
    type UserName_Access is access all UserName'Class;
    type UserName_Access_Array is array (Natural range <>) of UserName_Access;
    type UserName_Access_Array_Access is access all UserName_Access_Array;
+   type UserName_Access_Array_Access_Array is array (Natural range <>) of UserName_Access_Array_Access;
+   type UserName_Access_Array_Access_Array_Access is access all UserName_Access_Array_Access_Array;
 
    type UserName is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.transition.TransistionTypes_Package; use org.allbinary.animation.transition.TransistionTypes_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package is
 
+   package TransistionTypes_Package renames Standard.org.allbinary.animation.transition.TransistionTypes_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out DismissTitleProgressBarRunnable'Class) is
    begin
       null;

@@ -20,27 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
-with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
-with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package; use org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package;
 with org.allbinary.logic.util.cache.CacheInterface_Package; use org.allbinary.logic.util.cache.CacheInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 
 package org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
-   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type IndexedBasicArrayListCache is tagged;
    type IndexedBasicArrayListCache_Access is access all IndexedBasicArrayListCache'Class;
    type IndexedBasicArrayListCache_Access_Array is array (Natural range <>) of IndexedBasicArrayListCache_Access;
    type IndexedBasicArrayListCache_Access_Array_Access is access all IndexedBasicArrayListCache_Access_Array;
+   type IndexedBasicArrayListCache_Access_Array_Access_Array is array (Natural range <>) of IndexedBasicArrayListCache_Access_Array_Access;
+   type IndexedBasicArrayListCache_Access_Array_Access_Array_Access is access all IndexedBasicArrayListCache_Access_Array_Access_Array;
 
    type IndexedBasicArrayListCache is new BaseBasicArrayListCache and CacheInterface with record
       commonStrings : CommonStrings_Access;
@@ -60,6 +54,7 @@ package org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package is
    procedure add (This : in out IndexedBasicArrayListCache; cacheableInterface_Param : access CacheableInterface_Package.CacheableInterface'Class);
    procedure addArray (This : in out IndexedBasicArrayListCache; cacheableInterfaces : CacheableInterface_Access_Array_Access);
    procedure clear (This : in out IndexedBasicArrayListCache);
+   procedure addObject (This : in out IndexedBasicArrayListCache; Value : Unbounded_String);
 
 end org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package;
 

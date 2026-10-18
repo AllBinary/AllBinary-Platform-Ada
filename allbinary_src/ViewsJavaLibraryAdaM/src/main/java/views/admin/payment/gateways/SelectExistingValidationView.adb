@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with views.admin.payment.gateways.SelectExistingView_Package; use views.admin.payment.gateways.SelectExistingView_Package;
+
 package body views.admin.payment.gateways.SelectExistingValidationView_Package is
 
    procedure Initialize_Fields (This : in out SelectExistingValidationView'Class) is

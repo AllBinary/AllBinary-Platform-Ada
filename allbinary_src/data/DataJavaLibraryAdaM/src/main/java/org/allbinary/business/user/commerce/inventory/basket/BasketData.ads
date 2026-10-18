@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.basket.BasketData_Package
    type BasketData_Access is access all BasketData'Class;
    type BasketData_Access_Array is array (Natural range <>) of BasketData_Access;
    type BasketData_Access_Array_Access is access all BasketData_Access_Array;
+   type BasketData_Access_Array_Access_Array is array (Natural range <>) of BasketData_Access_Array_Access;
+   type BasketData_Access_Array_Access_Array_Access is access all BasketData_Access_Array_Access_Array;
 
    type BasketData is new Java_Object with null record;
    BASKET : Unbounded_String;

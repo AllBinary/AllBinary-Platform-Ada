@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package; use org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintableSingleton_Package;
+with org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package; use org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
+
 package body org.allbinary.game.layer.geological.resources.ResourceWaypointLayer_Package is
 
    procedure Initialize_Fields (This : in out ResourceWaypointLayer'Class) is
@@ -44,14 +47,14 @@ package body org.allbinary.game.layer.geological.resources.ResourceWaypointLayer
         rtsLayerHudPaintable := GeologicalResourceInfoHudPaintableSingleton_Package.getInstance;
         rtsLayerHudPaintable.setBasicColorP (This.allBinaryGameLayerManagerP.getForegroundBasicColor);
         rtsLayerHudPaintable.setRtsLayer (ResourceWaypointLayer_Access'(This'Unchecked_Access));
-        return rtsLayerHudPaintable;
+        return SelectionHudPaintable_Access (rtsLayerHudPaintable);
    end createHudPaintable;
 
    function getHudPaintable (This : in out ResourceWaypointLayer) return SelectionHudPaintable_Access is
       rtsLayerHudPaintable : GeologicalResourceInfoHudPaintable_Access;
    begin
         rtsLayerHudPaintable := GeologicalResourceInfoHudPaintableSingleton_Package.getInstance;
-        return rtsLayerHudPaintable;
+        return SelectionHudPaintable_Access (rtsLayerHudPaintable);
    end getHudPaintable;
 
 end org.allbinary.game.layer.geological.resources.ResourceWaypointLayer_Package;

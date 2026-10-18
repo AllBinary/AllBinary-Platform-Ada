@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.init.db.InventoryDbInitInfo_Package; use org.allbinary.business.init.db.InventoryDbInitInfo_Package;
+with org.allbinary.business.user.commerce.inventory.item.BasicItem_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItem_Package;
+with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+
 package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package InventoryDbInitInfo_Package renames Standard.org.allbinary.business.init.db.InventoryDbInitInfo_Package;
+   package BasicItem_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItem_Package;
+   package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    procedure Initialize_Fields (This : in out InventoryEntity'Class) is
    begin
       null;
@@ -91,7 +108,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("Getting Items For: ") & storeFrontInterface.getName, InventoryEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getItems"));
         end if;
-        itemVector := BasicArrayListD_Package.Create;
+        itemVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         itemHashMapVector := AbSqlBean (This).getRows (keysAndValues);
         size := itemHashMapVector.size;
@@ -99,8 +116,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
             itemHashMap := HashMap_Access (itemHashMapVector.get (i));
             if (itemHashMap) /= (null) then
                 category := Java_Unbox (itemHashMap.get (This.basicItemData.CATEGORY));
-                if (not (StringValidationUtil_Package.getInstance.isEmpty (category))) and then (category.startsWith (storeFrontInterface.getCategoryPath)) then
-                    itemVector.add (BasicItem_Package.Create (itemHashMap));
+                if (not (StringValidationUtil_Package.getInstance.isEmpty (category))) and then (Java_Starts_With (category, storeFrontInterface.getCategoryPath)) then
+                    itemVector.add (Java_Object_Access (BasicItem_Package.Create (itemHashMap)));
                 end if;
             end if;
         end loop;
@@ -116,7 +133,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
         keysAndValues.put (This.basicItemData.ID, Java_Box (id));
         itemHashMap := AbSqlBean (This).getRow (keysAndValues);
         if (itemHashMap) /= (null) then
-            return BasicItem_Package.Create (itemHashMap);
+            return ItemInterface_Access (BasicItem_Package.Create (itemHashMap));
         else
             return null;
         end if;

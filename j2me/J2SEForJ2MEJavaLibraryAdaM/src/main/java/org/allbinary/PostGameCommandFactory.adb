@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package; use org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package;
+
 package body org.allbinary.PostGameCommandFactory_Package is
 
+   package MultiPlayerGameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package;
    procedure Initialize_Fields (This : in out PostGameCommandFactory'Class) is
    begin
       null;

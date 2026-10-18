@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
+with org.allbinary.logic.java.bool.BooleanUtil_Package; use org.allbinary.logic.java.bool.BooleanUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body admin.tags.TableTag_Package is
 
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package SqlStrings_Package renames Standard.org.allbinary.logic.communication.sql.SqlStrings_Package;
+   package BooleanUtil_Package renames Standard.org.allbinary.logic.java.bool.BooleanUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out TableTag'Class) is
    begin
       null;
@@ -326,11 +339,11 @@ package body admin.tags.TableTag_Package is
                         This.requestObject := TableTag'Class (This).getTagRequestHelperFactoryInterface.getInstance (TableTag'Class (This).getPropertiesHashMap, This.pageContext);
                     end if;
                     if ((TableTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0)) or else ((TableTag'Class (This).getCommand.compareTo (SqlStrings_Package.getInstance.INSERT_INTO)) = (0)) then
-                        TableTag'Class (This).insert;
+                        declare Java_Result renames TableTag'Class (This).insert; pragma Unreferenced (Java_Result); begin null; end;
                     elsif (TableTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
-                        TableTag'Class (This).delete;
+                        declare Java_Result renames TableTag'Class (This).delete; pragma Unreferenced (Java_Result); begin null; end;
                     elsif ((TableTag'Class (This).getCommand.compareTo (This.commonStrings.UPDATE)) = (0)) or else ((TableTag'Class (This).getCommand.compareTo (SqlStrings_Package.getInstance.UPDATE)) = (0)) then
-                        TableTag'Class (This).update;
+                        declare Java_Result renames TableTag'Class (This).update; pragma Unreferenced (Java_Result); begin null; end;
                     end if;
                     if (TableTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) = (0) then
                         output := TableTag'Class (This).backup;

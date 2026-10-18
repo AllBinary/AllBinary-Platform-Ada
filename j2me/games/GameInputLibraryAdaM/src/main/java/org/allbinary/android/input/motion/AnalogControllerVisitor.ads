@@ -31,6 +31,8 @@ package org.allbinary.android.input.motion.AnalogControllerVisitor_Package is
    type AnalogControllerVisitor_Access is access all AnalogControllerVisitor'Class;
    type AnalogControllerVisitor_Access_Array is array (Natural range <>) of AnalogControllerVisitor_Access;
    type AnalogControllerVisitor_Access_Array_Access is access all AnalogControllerVisitor_Access_Array;
+   type AnalogControllerVisitor_Access_Array_Access_Array is array (Natural range <>) of AnalogControllerVisitor_Access_Array_Access;
+   type AnalogControllerVisitor_Access_Array_Access_Array_Access is access all AnalogControllerVisitor_Access_Array_Access_Array;
 
    type AnalogControllerVisitor is new Java_Object with null record;
 

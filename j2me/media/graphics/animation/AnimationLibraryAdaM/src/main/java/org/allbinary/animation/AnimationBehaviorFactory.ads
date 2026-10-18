@@ -29,6 +29,8 @@ package org.allbinary.animation.AnimationBehaviorFactory_Package is
    type AnimationBehaviorFactory_Access is access all AnimationBehaviorFactory'Class;
    type AnimationBehaviorFactory_Access_Array is array (Natural range <>) of AnimationBehaviorFactory_Access;
    type AnimationBehaviorFactory_Access_Array_Access is access all AnimationBehaviorFactory_Access_Array;
+   type AnimationBehaviorFactory_Access_Array_Access_Array is array (Natural range <>) of AnimationBehaviorFactory_Access_Array_Access;
+   type AnimationBehaviorFactory_Access_Array_Access_Array_Access is access all AnimationBehaviorFactory_Access_Array_Access_Array;
 
    type AnimationBehaviorFactory is new Java_Object with null record;
    instance : AnimationBehaviorFactory_Access;

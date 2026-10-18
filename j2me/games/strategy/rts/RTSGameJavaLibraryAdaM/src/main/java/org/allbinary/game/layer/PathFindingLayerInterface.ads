@@ -41,6 +41,8 @@ package org.allbinary.game.layer.PathFindingLayerInterface_Package is
    type PathFindingLayerInterface_Access is access all PathFindingLayerInterface'Class;
    type PathFindingLayerInterface_Access_Array is array (Natural range <>) of PathFindingLayerInterface_Access;
    type PathFindingLayerInterface_Access_Array_Access is access all PathFindingLayerInterface_Access_Array;
+   type PathFindingLayerInterface_Access_Array_Access_Array is array (Natural range <>) of PathFindingLayerInterface_Access_Array_Access;
+   type PathFindingLayerInterface_Access_Array_Access_Array_Access is access all PathFindingLayerInterface_Access_Array_Access_Array;
    function getEndGeographicMapCellPositionList (This : in out PathFindingLayerInterface) return BasicArrayList_Access is abstract;
    function shouldHandleStartSameAsEnd (This : in out PathFindingLayerInterface) return Boolean is abstract;
    function getGeographicMapCellPositionArea (This : in out PathFindingLayerInterface) return GeographicMapCellPositionAreaBase_Access is abstract;

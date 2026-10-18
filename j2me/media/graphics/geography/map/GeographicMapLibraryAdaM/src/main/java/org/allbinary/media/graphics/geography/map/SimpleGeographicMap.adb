@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+
 package body org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package is
 
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    procedure Initialize_Fields (This : in out SimpleGeographicMap'Class) is
    begin
       null;

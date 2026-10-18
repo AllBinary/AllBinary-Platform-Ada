@@ -8,37 +8,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
-with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
-with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.util.ArrayUtil_Package; use org.allbinary.util.ArrayUtil_Package;
-with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 
 package org.allbinary.util.BasicArrayList_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
-   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type BasicArrayList is tagged;
    type BasicArrayList_Access is access all BasicArrayList'Class;
    type BasicArrayList_Access_Array is array (Natural range <>) of BasicArrayList_Access;
    type BasicArrayList_Access_Array_Access is access all BasicArrayList_Access_Array;
+   type BasicArrayList_Access_Array_Access_Array is array (Natural range <>) of BasicArrayList_Access_Array_Access;
+   type BasicArrayList_Access_Array_Access_Array_Access is access all BasicArrayList_Access_Array_Access_Array;
 
    type BasicArrayList is new Java_Object with record
       arrayUtil : ArrayUtil_Access;
       objectArray : Java_Object_Access_Array_Access;
       currentIndex : Integer;
    end record;
-   SIZE : Unbounded_String;
+   SIZE_Field : Unbounded_String;
 
    procedure Initialize (This : in out BasicArrayList'Class; objectArray : Java_Object_Access_Array_Access);
    function Create (objectArray : Java_Object_Access_Array_Access) return BasicArrayList_Access;
@@ -68,7 +55,7 @@ package org.allbinary.util.BasicArrayList_Package is
    function set (This : in out BasicArrayList; index : Integer; element_Param : access Java_Object'Class) return Java_Object_Access;
    procedure set (This : in out BasicArrayList; index : Integer; element_Param : access Java_Object'Class);
    procedure clear (This : in out BasicArrayList);
-   function size_Case (This : in out BasicArrayList) return Integer;
+   function size (This : in out BasicArrayList) return Integer;
    function isEmpty (This : in out BasicArrayList) return Boolean;
    function contains (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) return Boolean;
    procedure contains (This : in out BasicArrayList; anyType_Param : access Java_Object'Class);
@@ -77,6 +64,16 @@ package org.allbinary.util.BasicArrayList_Package is
    procedure toArrayType (This : in out BasicArrayList; objectArray : Java_Object_Access_Array_Access);
    function clone (This : in out BasicArrayList) return Java_Object_Access;
    function toString (This : in out BasicArrayList) return Unbounded_String;
+   function add (This : in out BasicArrayList; Value : Unbounded_String) return Boolean;
+   procedure add (This : in out BasicArrayList; Value : Unbounded_String);
+   function remove (This : in out BasicArrayList; Value : Unbounded_String) return Boolean;
+   procedure remove (This : in out BasicArrayList; Value : Unbounded_String);
+   function indexOf (This : in out BasicArrayList; Value : Unbounded_String) return Integer;
+   procedure indexOf (This : in out BasicArrayList; Value : Unbounded_String);
+   function lastIndexOf (This : in out BasicArrayList; Value : Unbounded_String) return Integer;
+   procedure lastIndexOf (This : in out BasicArrayList; Value : Unbounded_String);
+   function contains (This : in out BasicArrayList; Value : Unbounded_String) return Boolean;
+   procedure contains (This : in out BasicArrayList; Value : Unbounded_String);
 
 end org.allbinary.util.BasicArrayList_Package;
 

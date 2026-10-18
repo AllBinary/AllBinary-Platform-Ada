@@ -33,8 +33,10 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostIn
    type PathFindingNodeCostInfoFactoryBase_Access is access all PathFindingNodeCostInfoFactoryBase'Class;
    type PathFindingNodeCostInfoFactoryBase_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoFactoryBase_Access;
    type PathFindingNodeCostInfoFactoryBase_Access_Array_Access is access all PathFindingNodeCostInfoFactoryBase_Access_Array;
+   type PathFindingNodeCostInfoFactoryBase_Access_Array_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoFactoryBase_Access_Array_Access;
+   type PathFindingNodeCostInfoFactoryBase_Access_Array_Access_Array_Access is access all PathFindingNodeCostInfoFactoryBase_Access_Array_Access_Array;
 
-   type PathFindingNodeCostInfoFactoryBase is new PathFindingNodeCostInfoFactoryBaseInterface with null record;
+   type PathFindingNodeCostInfoFactoryBase is new Java_Object and PathFindingNodeCostInfoFactoryBaseInterface with null record;
    NULL_PATH_FINDING_NODE_COST_INFO_FACTORY_BASE : PathFindingNodeCostInfoFactoryBase_Access;
 
    procedure Initialize (This : in out PathFindingNodeCostInfoFactoryBase'Class);

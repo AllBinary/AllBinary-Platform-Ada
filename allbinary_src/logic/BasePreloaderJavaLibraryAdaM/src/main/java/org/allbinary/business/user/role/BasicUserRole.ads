@@ -22,19 +22,19 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Serializable_Package; use java.io.Serializable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.business.user.role.BasicUserRole_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicUserRole is tagged;
    type BasicUserRole_Access is access all BasicUserRole'Class;
    type BasicUserRole_Access_Array is array (Natural range <>) of BasicUserRole_Access;
    type BasicUserRole_Access_Array_Access is access all BasicUserRole_Access_Array;
+   type BasicUserRole_Access_Array_Access_Array is array (Natural range <>) of BasicUserRole_Access_Array_Access;
+   type BasicUserRole_Access_Array_Access_Array_Access is access all BasicUserRole_Access_Array_Access_Array;
 
-   type BasicUserRole is new Serializable with record
+   type BasicUserRole is new Java_Object and Serializable with record
       m_int_RoleId : Integer;
       role : Unbounded_String;
       displayValue : Unbounded_String;

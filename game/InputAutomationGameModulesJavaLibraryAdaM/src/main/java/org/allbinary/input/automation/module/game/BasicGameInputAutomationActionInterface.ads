@@ -31,6 +31,8 @@ package org.allbinary.input.automation.module.game.BasicGameInputAutomationActio
    type BasicGameInputAutomationActionInterface_Access is access all BasicGameInputAutomationActionInterface'Class;
    type BasicGameInputAutomationActionInterface_Access_Array is array (Natural range <>) of BasicGameInputAutomationActionInterface_Access;
    type BasicGameInputAutomationActionInterface_Access_Array_Access is access all BasicGameInputAutomationActionInterface_Access_Array;
+   type BasicGameInputAutomationActionInterface_Access_Array_Access_Array is array (Natural range <>) of BasicGameInputAutomationActionInterface_Access_Array_Access;
+   type BasicGameInputAutomationActionInterface_Access_Array_Access_Array_Access is access all BasicGameInputAutomationActionInterface_Access_Array_Access_Array;
    procedure attack (This : in out BasicGameInputAutomationActionInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) is abstract;
    procedure target (This : in out BasicGameInputAutomationActionInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) is abstract;
 

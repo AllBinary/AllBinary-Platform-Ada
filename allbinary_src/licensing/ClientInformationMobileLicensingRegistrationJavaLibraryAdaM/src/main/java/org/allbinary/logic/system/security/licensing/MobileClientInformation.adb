@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.system.security.licensing.registration.RegistrationConfiguration_Package; use org.allbinary.logic.system.security.licensing.registration.RegistrationConfiguration_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package; use org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package;
+
 package body org.allbinary.logic.system.security.licensing.MobileClientInformation_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package RegistrationConfiguration_Package renames Standard.org.allbinary.logic.system.security.licensing.registration.RegistrationConfiguration_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out MobileClientInformation'Class) is
    begin
       null;

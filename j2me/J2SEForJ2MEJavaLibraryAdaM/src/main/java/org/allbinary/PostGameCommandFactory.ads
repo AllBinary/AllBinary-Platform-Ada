@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
-with org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package; use org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package;
 
 package org.allbinary.PostGameCommandFactory_Package is
 
    package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
-   package MultiPlayerGameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package;
 
    type PostGameCommandFactory is tagged;
    type PostGameCommandFactory_Access is access all PostGameCommandFactory'Class;
    type PostGameCommandFactory_Access_Array is array (Natural range <>) of PostGameCommandFactory_Access;
    type PostGameCommandFactory_Access_Array_Access is access all PostGameCommandFactory_Access_Array;
+   type PostGameCommandFactory_Access_Array_Access_Array is array (Natural range <>) of PostGameCommandFactory_Access_Array_Access;
+   type PostGameCommandFactory_Access_Array_Access_Array_Access is access all PostGameCommandFactory_Access_Array_Access_Array;
 
    type PostGameCommandFactory is new Java_Object with null record;
    instance : PostGameCommandFactory_Access;

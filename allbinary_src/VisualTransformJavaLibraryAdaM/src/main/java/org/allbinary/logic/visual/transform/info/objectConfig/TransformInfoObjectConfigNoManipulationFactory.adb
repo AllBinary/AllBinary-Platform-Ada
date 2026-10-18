@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
+
 package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigNoManipulationFactory_Package is
 
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package CryptFileReader_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out TransformInfoObjectConfigNoManipulationFactory'Class) is
    begin
       null;
@@ -51,7 +60,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         begin
             transformInfoObjectConfigData := TransformInfoObjectConfigData_Package.getInstance;
             data := CryptFileReader_Package.Create (transformInfoObjectConfigData.UNCRYPTED_EXTENSION, transformInfoObjectConfigData.getInstance.ENCRYPTED_EXTENSION).get (objectConfigFileAbPath);
-            return TransformInfoObjectConfig_Package.Create (transformInfoInterface, DomDocumentHelper_Package.create (data));
+            return TransformInfoObjectConfigInterface_Access (TransformInfoObjectConfig_Package.Create (transformInfoInterface, DomDocumentHelper_Package.create (data)));
         exception
             when Java_Occurrence : others =>
                 declare

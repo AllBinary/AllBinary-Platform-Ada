@@ -30,6 +30,8 @@ package org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Pack
    type SizeConstraintInterface_Access is access all SizeConstraintInterface'Class;
    type SizeConstraintInterface_Access_Array is array (Natural range <>) of SizeConstraintInterface_Access;
    type SizeConstraintInterface_Access_Array_Access is access all SizeConstraintInterface_Access_Array;
+   type SizeConstraintInterface_Access_Array_Access_Array is array (Natural range <>) of SizeConstraintInterface_Access_Array_Access;
+   type SizeConstraintInterface_Access_Array_Access_Array_Access is access all SizeConstraintInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package;
 

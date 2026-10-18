@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.device.NullGL10_Package; use org.allbinary.device.NullGL10_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
+
 package body org.allbinary.image.opengles.OpenGLImageCache_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package NullGL10_Package renames Standard.org.allbinary.device.NullGL10_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
    procedure Initialize_Fields (This : in out OpenGLImageCache'Class) is
    begin
       null;
@@ -22,7 +32,7 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
       This.preResourceImageUtil := PreResourceImageUtil_Package.getInstance;
       This.gl := NullGL10_Package.NULL_GL10;
       This.lock := SynchObject_Package.Create;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.renderer := AllBinaryRendererBase3_Package.Create;
    end Initialize_Fields;
 
@@ -85,7 +95,7 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
         image := This.preResourceImageUtil.encapsulate (image2);
         begin  --  synchronized
             if (image) /= (NullImage_Package.NULL_IMAGE) then
-                This.list.add (image);
+                This.list.add (Java_Object_Access (image));
             end if;
         end;
         return image;
@@ -102,7 +112,7 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
         image := This.preResourceImageUtil.encapsulate (cachedImage);
         begin  --  synchronized
             if (image) /= (NullImage_Package.NULL_IMAGE) then
-                This.list.add (image);
+                This.list.add (Java_Object_Access (image));
             end if;
         end;
         return image;
@@ -118,10 +128,10 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
    begin
         begin
             begin  --  synchronized
-                if This.list.contains (image) then
+                if This.list.contains (Java_Object_Access (image)) then
                     Java_Throw (Java_New_Exception ("RuntimeException"));
                 end if;
-                This.list.add (image);
+                This.list.add (Java_Object_Access (image));
             end;
             This.renderer.add (image);
         exception
@@ -147,6 +157,11 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
    begin
       null;
    end createImageFromInputStream;
+
+   procedure addListener (This : in out OpenGLImageCache; Value : Unbounded_String) is
+   begin
+      OpenGLImageCache'Class (This).addListener (Java_Box (Value));
+   end addListener;
 
 end org.allbinary.image.opengles.OpenGLImageCache_Package;
 

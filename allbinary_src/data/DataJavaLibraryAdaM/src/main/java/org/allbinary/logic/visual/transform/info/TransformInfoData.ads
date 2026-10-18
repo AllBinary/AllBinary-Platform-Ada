@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoData_Package is
    type TransformInfoData_Access is access all TransformInfoData'Class;
    type TransformInfoData_Access_Array is array (Natural range <>) of TransformInfoData_Access;
    type TransformInfoData_Access_Array_Access is access all TransformInfoData_Access_Array;
+   type TransformInfoData_Access_Array_Access_Array is array (Natural range <>) of TransformInfoData_Access_Array_Access;
+   type TransformInfoData_Access_Array_Access_Array_Access is access all TransformInfoData_Access_Array_Access_Array;
 
    type TransformInfoData is new Java_Object with record
       PARENT : Unbounded_String;

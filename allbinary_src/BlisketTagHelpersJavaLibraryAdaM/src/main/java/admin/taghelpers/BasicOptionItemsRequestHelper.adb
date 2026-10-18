@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package; use org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOptionItemsEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOptionItemsEntityFactory_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package BasicOptionItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.option.BasicOptionItemData_Package;
+   package BasicOptionItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOptionItemsEntityFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out BasicOptionItemsRequestHelper'Class) is
    begin
       null;
@@ -51,8 +68,8 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
 
    procedure getFormData (This : in out BasicOptionItemsRequestHelper) is
    begin
-        This.optionItem := BasicArrayListD_Package.Create;
-        This.optionValue := BasicArrayListD_Package.Create;
+        This.optionItem := BasicArrayList_Access (BasicArrayListD_Package.Create);
+        This.optionValue := BasicArrayList_Access (BasicArrayListD_Package.Create);
         This.id := This.request.getParameter (This.basicItemData.ID);
         This.optionOneTitle := This.request.getParameter (BasicOptionItemData_Package.OPTION_ONE_TITLE);
         This.defaultOptionItem := This.request.getParameter (BasicOptionItemData_Package.DEFAULT_OPTION_ITEM);
@@ -122,7 +139,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
         begin
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (calendar.getTimeInMillis.toString);
-            values := BasicArrayListD_Package.Create;
+            values := BasicArrayList_Access (BasicArrayListD_Package.Create);
             values.add (Java_Box (This.id));
             size := This.optionValue.size;
             for index in 0 .. (size) - 1 loop

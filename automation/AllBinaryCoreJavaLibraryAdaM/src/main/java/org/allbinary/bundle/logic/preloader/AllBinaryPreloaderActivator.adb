@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
+with org.osgi.framework.ServiceRegistration_Package; use org.osgi.framework.ServiceRegistration_Package;
+with org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package; use org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+
 package body org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Package is
 
+   package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
+   package ServiceRegistration_Package renames Standard.org.osgi.framework.ServiceRegistration_Package;
+   package CryptServiceFactory_Package renames Standard.org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    procedure Initialize_Fields (This : in out AllBinaryPreloaderActivator'Class) is
    begin
       null;

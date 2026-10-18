@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.score.remote.TestRemoteHighScoresNotFinished_Package is
 
    procedure Initialize_Fields (This : in out TestRemoteHighScoresNotFinished'Class) is

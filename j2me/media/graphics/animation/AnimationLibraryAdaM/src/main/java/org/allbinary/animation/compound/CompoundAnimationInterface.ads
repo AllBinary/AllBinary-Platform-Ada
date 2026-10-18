@@ -32,6 +32,8 @@ package org.allbinary.animation.compound.CompoundAnimationInterface_Package is
    type CompoundAnimationInterface_Access is access all CompoundAnimationInterface'Class;
    type CompoundAnimationInterface_Access_Array is array (Natural range <>) of CompoundAnimationInterface_Access;
    type CompoundAnimationInterface_Access_Array_Access is access all CompoundAnimationInterface_Access_Array;
+   type CompoundAnimationInterface_Access_Array_Access_Array is array (Natural range <>) of CompoundAnimationInterface_Access_Array_Access;
+   type CompoundAnimationInterface_Access_Array_Access_Array_Access is access all CompoundAnimationInterface_Access_Array_Access_Array;
    procedure nextAnimation (This : in out CompoundAnimationInterface) is abstract;
    procedure previousAnimation (This : in out CompoundAnimationInterface) is abstract;
    procedure setAnimation (This : in out CompoundAnimationInterface; index : Integer) is abstract;

@@ -22,15 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileReader_Package; use java.io.FileReader_Package;
 --  with java.io.LineNumberReader_Package; use java.io.LineNumberReader_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
-with org.allbinary.logic.io.file.directory.SubDirectory_Package; use org.allbinary.logic.io.file.directory.SubDirectory_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package;
@@ -44,24 +36,13 @@ with org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Pa
 with org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
-with org.allbinary.logic.system.hardware.components.linux.Cpu_Package; use org.allbinary.logic.system.hardware.components.linux.Cpu_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package; use org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package;
 
 package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
 
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
-   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
-   package SubDirectory_Package renames Standard.org.allbinary.logic.io.file.directory.SubDirectory_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package HardwareInterface_Package renames Standard.org.allbinary.logic.system.hardware.HardwareInterface_Package;
    package BridgeInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
    package CpuInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package;
@@ -75,8 +56,6 @@ package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    package MonitorInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
    package UsbInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
    package VideoInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
-   package Cpu_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.Cpu_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
@@ -85,8 +64,10 @@ package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    type LinuxHardware_Access is access all LinuxHardware'Class;
    type LinuxHardware_Access_Array is array (Natural range <>) of LinuxHardware_Access;
    type LinuxHardware_Access_Array_Access is access all LinuxHardware_Access_Array;
+   type LinuxHardware_Access_Array_Access_Array is array (Natural range <>) of LinuxHardware_Access_Array_Access;
+   type LinuxHardware_Access_Array_Access_Array_Access is access all LinuxHardware_Access_Array_Access_Array;
 
-   type LinuxHardware is new HardwareInterface with record
+   type LinuxHardware is new Java_Object and HardwareInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       componentInterfaceVector : BasicArrayList_Access;

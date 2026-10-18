@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.image.ImageTypeUtil_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type ImageTypeUtil is tagged;
    type ImageTypeUtil_Access is access all ImageTypeUtil'Class;
    type ImageTypeUtil_Access_Array is array (Natural range <>) of ImageTypeUtil_Access;
    type ImageTypeUtil_Access_Array_Access is access all ImageTypeUtil_Access_Array;
+   type ImageTypeUtil_Access_Array_Access_Array is array (Natural range <>) of ImageTypeUtil_Access_Array_Access;
+   type ImageTypeUtil_Access_Array_Access_Array_Access is access all ImageTypeUtil_Access_Array_Access_Array;
 
    type ImageTypeUtil is new Java_Object with record
       PNG : Unbounded_String;

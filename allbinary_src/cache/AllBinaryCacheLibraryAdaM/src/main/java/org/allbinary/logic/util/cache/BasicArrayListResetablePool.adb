@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package is
 
    procedure Initialize_Fields (This : in out BasicArrayListResetablePool'Class) is
@@ -54,6 +55,18 @@ package body org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package 
 
    procedure remove (This : in out BasicArrayListResetablePool; key_Param : access Java_Object'Class) is
       Java_Result : constant CacheableInterface_Access := BasicArrayListResetablePool'Class (This).remove (key_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end remove;
+
+   function remove (This : in out BasicArrayListResetablePool; Value : Unbounded_String) return CacheableInterface_Access is
+   begin
+      return BasicArrayListResetablePool'Class (This).remove (Java_Box (Value));
+   end remove;
+
+   procedure remove (This : in out BasicArrayListResetablePool; Value : Unbounded_String) is
+      Java_Result : constant CacheableInterface_Access := BasicArrayListResetablePool'Class (This).remove (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

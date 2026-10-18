@@ -13,13 +13,30 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.event.LayerManagerEventHandler_Package; use org.allbinary.layer.event.LayerManagerEventHandler_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.layer.identification.GroupLayerManagerListener_Package is
 
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package LayerManagerEventHandler_Package renames Standard.org.allbinary.layer.event.LayerManagerEventHandler_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out GroupLayerManagerListener'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -165,7 +182,7 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
    procedure init (This : in out GroupLayerManagerListener; total : Integer) is
    begin
         while (This.list.size) <= ((total) + (1)) loop
-            This.list.add (BasicArrayListD_Package.Create);
+            This.list.add (Java_Object_Access (BasicArrayListD_Package.Create));
         end loop;
    end init;
 
@@ -196,8 +213,8 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
             if (groupList) = (null) then
                 This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("id: ")).appendint (id).toString, GroupLayerManagerListener_Access'(This'Unchecked_Access), To_Unbounded_String ("onCreateLayerManagerEvent"));
             end if;
-            if not (groupList.contains (layerInterface)) then
-                groupList.add (layerInterface);
+            if not (groupList.contains (Java_Object_Access (layerInterface))) then
+                groupList.add (Java_Object_Access (layerInterface));
             else
                 null;
             end if;
@@ -222,7 +239,7 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
         for index in 0 .. (size) - 1 loop
             id := Integer (groupInterfaceArray (index).getGroupId);
             groupList := BasicArrayList_Access (This.list.objectArray (id));
-            groupList.remove (layerInterface);
+            groupList.remove (Java_Object_Access (layerInterface));
         end loop;
    end onDeleteLayerManagerEvent;
 

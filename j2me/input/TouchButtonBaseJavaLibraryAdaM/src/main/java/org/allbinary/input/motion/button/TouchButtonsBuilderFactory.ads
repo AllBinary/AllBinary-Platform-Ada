@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package; use org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
 
 package org.allbinary.input.motion.button.TouchButtonsBuilderFactory_Package is
@@ -30,6 +29,8 @@ package org.allbinary.input.motion.button.TouchButtonsBuilderFactory_Package is
    type TouchButtonsBuilderFactory_Access is access all TouchButtonsBuilderFactory'Class;
    type TouchButtonsBuilderFactory_Access_Array is array (Natural range <>) of TouchButtonsBuilderFactory_Access;
    type TouchButtonsBuilderFactory_Access_Array_Access is access all TouchButtonsBuilderFactory_Access_Array;
+   type TouchButtonsBuilderFactory_Access_Array_Access_Array is array (Natural range <>) of TouchButtonsBuilderFactory_Access_Array_Access;
+   type TouchButtonsBuilderFactory_Access_Array_Access_Array_Access is access all TouchButtonsBuilderFactory_Access_Array_Access_Array;
 
    type TouchButtonsBuilderFactory is new Java_Object with null record;
    NO_TOUCH_BUTTON_BUILDER_FACTORY : TouchButtonsBuilderFactory_Access;

@@ -29,8 +29,10 @@ package org.allbinary.game.health.NullHealthListener_Package is
    type NullHealthListener_Access is access all NullHealthListener'Class;
    type NullHealthListener_Access_Array is array (Natural range <>) of NullHealthListener_Access;
    type NullHealthListener_Access_Array_Access is access all NullHealthListener_Access_Array;
+   type NullHealthListener_Access_Array_Access_Array is array (Natural range <>) of NullHealthListener_Access_Array_Access;
+   type NullHealthListener_Access_Array_Access_Array_Access is access all NullHealthListener_Access_Array_Access_Array;
 
-   type NullHealthListener is new HealthListenerInterface with null record;
+   type NullHealthListener is new Java_Object and HealthListenerInterface with null record;
    NULL_HEALTH_LISTENER : NullHealthListener_Access;
 
    procedure Initialize (This : in out NullHealthListener'Class);

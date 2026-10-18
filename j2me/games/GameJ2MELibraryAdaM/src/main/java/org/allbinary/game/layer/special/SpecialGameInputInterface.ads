@@ -34,6 +34,8 @@ package org.allbinary.game.layer.special.SpecialGameInputInterface_Package is
    type SpecialGameInputInterface_Access is access all SpecialGameInputInterface'Class;
    type SpecialGameInputInterface_Access_Array is array (Natural range <>) of SpecialGameInputInterface_Access;
    type SpecialGameInputInterface_Access_Array_Access is access all SpecialGameInputInterface_Access_Array;
+   type SpecialGameInputInterface_Access_Array_Access_Array is array (Natural range <>) of SpecialGameInputInterface_Access_Array_Access;
+   type SpecialGameInputInterface_Access_Array_Access_Array_Access is access all SpecialGameInputInterface_Access_Array_Access_Array;
    procedure up (This : in out SpecialGameInputInterface) is abstract;
    procedure down (This : in out SpecialGameInputInterface) is abstract;
    procedure right (This : in out SpecialGameInputInterface) is abstract;

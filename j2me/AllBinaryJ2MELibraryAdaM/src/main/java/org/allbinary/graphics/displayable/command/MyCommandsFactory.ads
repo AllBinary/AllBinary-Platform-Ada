@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.graphics.displayable.command.MyCommandsFactory_Package is
 
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type MyCommandsFactory is tagged;
    type MyCommandsFactory_Access is access all MyCommandsFactory'Class;
    type MyCommandsFactory_Access_Array is array (Natural range <>) of MyCommandsFactory_Access;
    type MyCommandsFactory_Access_Array_Access is access all MyCommandsFactory_Access_Array;
+   type MyCommandsFactory_Access_Array_Access_Array is array (Natural range <>) of MyCommandsFactory_Access_Array_Access;
+   type MyCommandsFactory_Access_Array_Access_Array_Access is access all MyCommandsFactory_Access_Array_Access_Array;
 
    type MyCommandsFactory is new Java_Object with record
       NO_COMMAND : Command_Access;

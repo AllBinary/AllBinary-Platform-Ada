@@ -28,6 +28,8 @@ package org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package is
    type OpenGLFeatureUtil_Access is access all OpenGLFeatureUtil'Class;
    type OpenGLFeatureUtil_Access_Array is array (Natural range <>) of OpenGLFeatureUtil_Access;
    type OpenGLFeatureUtil_Access_Array_Access is access all OpenGLFeatureUtil_Access_Array;
+   type OpenGLFeatureUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLFeatureUtil_Access_Array_Access;
+   type OpenGLFeatureUtil_Access_Array_Access_Array_Access is access all OpenGLFeatureUtil_Access_Array_Access_Array;
 
    type OpenGLFeatureUtil is new Java_Object with null record;
    instance : OpenGLFeatureUtil_Access;

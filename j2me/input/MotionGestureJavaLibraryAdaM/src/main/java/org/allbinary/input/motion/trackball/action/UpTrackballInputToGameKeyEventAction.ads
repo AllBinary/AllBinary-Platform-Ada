@@ -20,22 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
 with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
-with org.allbinary.input.motion.gesture.TrackballMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TrackballMotionGestureFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 
 package org.allbinary.input.motion.trackball.action.UpTrackballInputToGameKeyEventAction_Package is
 
-   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
    package GameKeyCompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
-   package TrackballMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TrackballMotionGestureFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type UpTrackballInputToGameKeyEventAction is tagged;
    type UpTrackballInputToGameKeyEventAction_Access is access all UpTrackballInputToGameKeyEventAction'Class;
    type UpTrackballInputToGameKeyEventAction_Access_Array is array (Natural range <>) of UpTrackballInputToGameKeyEventAction_Access;
    type UpTrackballInputToGameKeyEventAction_Access_Array_Access is access all UpTrackballInputToGameKeyEventAction_Access_Array;
+   type UpTrackballInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of UpTrackballInputToGameKeyEventAction_Access_Array_Access;
+   type UpTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all UpTrackballInputToGameKeyEventAction_Access_Array_Access_Array;
 
    type UpTrackballInputToGameKeyEventAction is new GameKeyCompleteMotionGestureInputEvent with null record;
    instance : Java_Object_Access;

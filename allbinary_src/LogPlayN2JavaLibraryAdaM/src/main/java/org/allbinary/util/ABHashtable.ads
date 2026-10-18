@@ -20,22 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with java.util.Enumeration_Package; use java.util.Enumeration_Package;
 with java.util.Hashtable_Package; use java.util.Hashtable_Package;
-with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.util.ABHashtable_Package is
 
+   package Enumeration_Package renames Standard.java.util.Enumeration_Package;
    package Hashtable_Package renames Standard.java.util.Hashtable_Package;
-   package Map_Package renames Standard.java.util.Map_Package;
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ABHashtable is tagged;
    type ABHashtable_Access is access all ABHashtable'Class;
    type ABHashtable_Access_Array is array (Natural range <>) of ABHashtable_Access;
    type ABHashtable_Access_Array_Access is access all ABHashtable_Access_Array;
+   type ABHashtable_Access_Array_Access_Array is array (Natural range <>) of ABHashtable_Access_Array_Access;
+   type ABHashtable_Access_Array_Access_Array_Access is access all ABHashtable_Access_Array_Access_Array;
 
    type ABHashtable is new Hashtable with null record;
 
@@ -58,6 +57,16 @@ package org.allbinary.util.ABHashtable_Package is
    function equals (This : in out ABHashtable; obj_Param : access Java_Object'Class) return Boolean;
    procedure equals (This : in out ABHashtable; obj_Param : access Java_Object'Class);
    function hashCode (This : in out ABHashtable) return Integer;
+   function contains (This : in out ABHashtable; Value : Unbounded_String) return Boolean;
+   procedure contains (This : in out ABHashtable; Value : Unbounded_String);
+   function containsValue (This : in out ABHashtable; Value : Unbounded_String) return Boolean;
+   procedure containsValue (This : in out ABHashtable; Value : Unbounded_String);
+   function containsKey (This : in out ABHashtable; Value : Unbounded_String) return Boolean;
+   procedure containsKey (This : in out ABHashtable; Value : Unbounded_String);
+   function get (This : in out ABHashtable; Value : Unbounded_String) return Java_Object_Access;
+   procedure get (This : in out ABHashtable; Value : Unbounded_String);
+   function equals (This : in out ABHashtable; Value : Unbounded_String) return Boolean;
+   procedure equals (This : in out ABHashtable; Value : Unbounded_String);
 
 end org.allbinary.util.ABHashtable_Package;
 

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.behavior.topview.InitialJumpBehavior_Package is
 
    procedure Initialize_Fields (This : in out InitialJumpBehavior'Class) is

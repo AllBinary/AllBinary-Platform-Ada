@@ -32,6 +32,8 @@ package org.allbinary.image.ImageFactory_Package is
    type ImageFactory_Access is access all ImageFactory'Class;
    type ImageFactory_Access_Array is array (Natural range <>) of ImageFactory_Access;
    type ImageFactory_Access_Array_Access is access all ImageFactory_Access_Array;
+   type ImageFactory_Access_Array_Access_Array is array (Natural range <>) of ImageFactory_Access_Array_Access;
+   type ImageFactory_Access_Array_Access_Array_Access is access all ImageFactory_Access_Array_Access_Array;
 
    type ImageFactory is new Java_Object with null record;
    instance : ImageFactory_Access;

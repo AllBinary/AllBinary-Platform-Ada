@@ -21,40 +21,26 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.jgrapht.GraphPath_Package; use org.jgrapht.GraphPath_Package;
-with org.jgrapht.graph.DefaultWeightedEdge_Package; use org.jgrapht.graph.DefaultWeightedEdge_Package;
 with org.jgrapht.graph.SimpleWeightedGraph_Package; use org.jgrapht.graph.SimpleWeightedGraph_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
-with org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 with org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package; use org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package;
 
 package org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitor_Package is
 
    package GraphPath_Package renames Standard.org.jgrapht.GraphPath_Package;
-   package DefaultWeightedEdge_Package renames Standard.org.jgrapht.graph.DefaultWeightedEdge_Package;
    package SimpleWeightedGraph_Package renames Standard.org.jgrapht.graph.SimpleWeightedGraph_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
-   package BasicGeographicMapUtil_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package;
-   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package RaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
-   package PathFindingNode_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 
    type PathFinderGraphHackVisitor is tagged;
    type PathFinderGraphHackVisitor_Access is access all PathFinderGraphHackVisitor'Class;
    type PathFinderGraphHackVisitor_Access_Array is array (Natural range <>) of PathFinderGraphHackVisitor_Access;
    type PathFinderGraphHackVisitor_Access_Array_Access is access all PathFinderGraphHackVisitor_Access_Array;
+   type PathFinderGraphHackVisitor_Access_Array_Access_Array is array (Natural range <>) of PathFinderGraphHackVisitor_Access_Array_Access;
+   type PathFinderGraphHackVisitor_Access_Array_Access_Array_Access is access all PathFinderGraphHackVisitor_Access_Array_Access_Array;
 
    type PathFinderGraphHackVisitor is new BasePathFinderGraphVisitor with record
       logUtil : LogUtil_Access;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package; use org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package;
+
 package body org.allbinary.game.input.SelectAdvancedRTSLayerVisitorFactory_Package is
 
    procedure Initialize_Fields (This : in out SelectAdvancedRTSLayerVisitorFactory'Class) is
@@ -42,7 +44,7 @@ package body org.allbinary.game.input.SelectAdvancedRTSLayerVisitorFactory_Packa
    function create (This : in out SelectAdvancedRTSLayerVisitorFactory; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) return Visitor_Access is
       selectedRTSLayersPlayerGameInput : constant SelectedRTSLayersPlayerGameInput_Access := SelectedRTSLayersPlayerGameInput_Access (selectedRTSLayersPlayerGameInput_Param);
    begin
-        return SelectAdvancedRTSLayerVisitor_Package.Create (selectedRTSLayersPlayerGameInput);
+        return Visitor_Access (SelectAdvancedRTSLayerVisitor_Package.Create (selectedRTSLayersPlayerGameInput));
    end create;
 
    procedure create (This : in out SelectAdvancedRTSLayerVisitorFactory; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) is

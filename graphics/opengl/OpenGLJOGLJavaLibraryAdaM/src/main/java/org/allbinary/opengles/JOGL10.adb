@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.opengles.JOGL10_Package is
 
    procedure Initialize_Fields (This : in out JOGL10'Class) is
@@ -69,9 +70,9 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glAlphaFunc (func, ref);
    end glAlphaFunc;
 
-   procedure glBindTexture (This : in out JOGL10; target_Case : Integer; texture : Integer) is
+   procedure glBindTexture (This : in out JOGL10; target : Integer; texture : Integer) is
    begin
-        This.gl10.glBindTexture (target_Case, texture);
+        This.gl10.glBindTexture (target, texture);
    end glBindTexture;
 
    procedure glBlendFunc (This : in out JOGL10; sfactor : Integer; dfactor : Integer) is
@@ -84,9 +85,9 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glClear (mask);
    end glClear;
 
-   procedure glClearColor (This : in out JOGL10; red_Case : Float; green_Case : Float; blue_Case : Float; alpha_Case : Float) is
+   procedure glClearColor (This : in out JOGL10; red : Float; green : Float; blue : Float; alpha : Float) is
    begin
-        This.gl10.glClearColor (red_Case, green_Case, blue_Case, alpha_Case);
+        This.gl10.glClearColor (red, green, blue, alpha);
    end glClearColor;
 
    procedure glClearDepthf (This : in out JOGL10; depth : Float) is
@@ -104,14 +105,14 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glClientActiveTexture (texture);
    end glClientActiveTexture;
 
-   procedure glColor4f (This : in out JOGL10; red_Case : Float; green_Case : Float; blue_Case : Float; alpha_Case : Float) is
+   procedure glColor4f (This : in out JOGL10; red : Float; green : Float; blue : Float; alpha : Float) is
    begin
-        This.gl10.glColor4f (red_Case, green_Case, blue_Case, alpha_Case);
+        This.gl10.glColor4f (red, green, blue, alpha);
    end glColor4f;
 
-   procedure glColorMask (This : in out JOGL10; red_Case : Boolean; green_Case : Boolean; blue_Case : Boolean; alpha_Case : Boolean) is
+   procedure glColorMask (This : in out JOGL10; red : Boolean; green : Boolean; blue : Boolean; alpha : Boolean) is
    begin
-        This.gl10.glColorMask (red_Case, green_Case, blue_Case, alpha_Case);
+        This.gl10.glColorMask (red, green, blue, alpha);
    end glColorMask;
 
    procedure glColorPointer (This : in out JOGL10; size : Integer; type_Id : Integer; stride : Integer; pointer_Param : access Buffer_Package.Buffer'Class) is
@@ -120,26 +121,26 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glColorPointer (size, type_Id, stride, pointer);
    end glColorPointer;
 
-   procedure glCompressedTexImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; imageSize : Integer; data_Param : access Buffer_Package.Buffer'Class) is
+   procedure glCompressedTexImage2D (This : in out JOGL10; target : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; imageSize : Integer; data_Param : access Buffer_Package.Buffer'Class) is
       data : constant Buffer_Access := Buffer_Access (data_Param);
    begin
-        This.gl10.glCompressedTexImage2D (target_Case, level, internalformat, width, height, border, imageSize, data);
+        This.gl10.glCompressedTexImage2D (target, level, internalformat, width, height, border, imageSize, data);
    end glCompressedTexImage2D;
 
-   procedure glCompressedTexSubImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; imageSize : Integer; data_Param : access Buffer_Package.Buffer'Class) is
+   procedure glCompressedTexSubImage2D (This : in out JOGL10; target : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; imageSize : Integer; data_Param : access Buffer_Package.Buffer'Class) is
       data : constant Buffer_Access := Buffer_Access (data_Param);
    begin
-        This.gl10.glCompressedTexSubImage2D (target_Case, level, xoffset, yoffset, width, height, format, imageSize, data);
+        This.gl10.glCompressedTexSubImage2D (target, level, xoffset, yoffset, width, height, format, imageSize, data);
    end glCompressedTexSubImage2D;
 
-   procedure glCopyTexImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; internalformat : Integer; x : Integer; y : Integer; width : Integer; height : Integer; border : Integer) is
+   procedure glCopyTexImage2D (This : in out JOGL10; target : Integer; level : Integer; internalformat : Integer; x : Integer; y : Integer; width : Integer; height : Integer; border : Integer) is
    begin
-        This.gl10.glCopyTexImage2D (target_Case, level, internalformat, x, y, width, height, border);
+        This.gl10.glCopyTexImage2D (target, level, internalformat, x, y, width, height, border);
    end glCopyTexImage2D;
 
-   procedure glCopyTexSubImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; xoffset : Integer; yoffset : Integer; x : Integer; y : Integer; width : Integer; height : Integer) is
+   procedure glCopyTexSubImage2D (This : in out JOGL10; target : Integer; level : Integer; xoffset : Integer; yoffset : Integer; x : Integer; y : Integer; width : Integer; height : Integer) is
    begin
-        This.gl10.glCopyTexSubImage2D (target_Case, level, xoffset, yoffset, x, y, width, height);
+        This.gl10.glCopyTexSubImage2D (target, level, xoffset, yoffset, x, y, width, height);
    end glCopyTexSubImage2D;
 
    procedure glCullFace (This : in out JOGL10; mode : Integer) is
@@ -214,20 +215,20 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glFlush;
    end glFlush;
 
-   procedure glFogf (This : in out JOGL10; pname_Case : Integer; param_Case : Float) is
+   procedure glFogf (This : in out JOGL10; pname : Integer; param : Float) is
    begin
-        This.gl10.glFogf (pname_Case, param_Case);
+        This.gl10.glFogf (pname, param);
    end glFogf;
 
-   procedure glFogfv (This : in out JOGL10; pname_Case : Integer; params_Case : Float_Array_Access; offset : Integer) is
+   procedure glFogfv (This : in out JOGL10; pname : Integer; params : Float_Array_Access; offset : Integer) is
    begin
-        This.gl10.glFogfv (pname_Case, params_Case, offset);
+        This.gl10.glFogfv (pname, params, offset);
    end glFogfv;
 
-   procedure glFogfv (This : in out JOGL10; pname_Case : Integer; params_Case_Param : access FloatBuffer_Package.FloatBuffer'Class) is
-      params_Case : constant FloatBuffer_Access := FloatBuffer_Access (params_Case_Param);
+   procedure glFogfv (This : in out JOGL10; pname : Integer; params_Param : access FloatBuffer_Package.FloatBuffer'Class) is
+      params : constant FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
-        This.gl10.glFogfv (pname_Case, params_Case);
+        This.gl10.glFogfv (pname, params);
    end glFogfv;
 
    procedure glFrontFace (This : in out JOGL10; mode : Integer) is
@@ -256,15 +257,15 @@ package body org.allbinary.opengles.JOGL10_Package is
         return This.gl10.glGetError;
    end glGetError;
 
-   procedure glGetIntegerv (This : in out JOGL10; pname_Case : Integer; params_Case : Integer_Array_Access; offset : Integer) is
+   procedure glGetIntegerv (This : in out JOGL10; pname : Integer; params : Integer_Array_Access; offset : Integer) is
    begin
-        This.gl10.glGetIntegerv (pname_Case, params_Case, offset);
+        This.gl10.glGetIntegerv (pname, params, offset);
    end glGetIntegerv;
 
-   procedure glGetIntegerv (This : in out JOGL10; pname_Case : Integer; params_Case_Param : access IntBuffer_Package.IntBuffer'Class) is
-      params_Case : constant IntBuffer_Access := IntBuffer_Access (params_Case_Param);
+   procedure glGetIntegerv (This : in out JOGL10; pname : Integer; params_Param : access IntBuffer_Package.IntBuffer'Class) is
+      params : constant IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
-        This.gl10.glGetIntegerv (pname_Case, params_Case);
+        This.gl10.glGetIntegerv (pname, params);
    end glGetIntegerv;
 
    function glGetString (This : in out JOGL10; name : Integer) return Unbounded_String is
@@ -272,41 +273,41 @@ package body org.allbinary.opengles.JOGL10_Package is
         return This.gl10.glGetString (name);
    end glGetString;
 
-   procedure glHint (This : in out JOGL10; target_Case : Integer; mode : Integer) is
+   procedure glHint (This : in out JOGL10; target : Integer; mode : Integer) is
    begin
-        This.gl10.glHint (target_Case, mode);
+        This.gl10.glHint (target, mode);
    end glHint;
 
-   procedure glLightModelf (This : in out JOGL10; pname_Case : Integer; param_Case : Float) is
+   procedure glLightModelf (This : in out JOGL10; pname : Integer; param : Float) is
    begin
-        This.gl10.glLightModelf (pname_Case, param_Case);
+        This.gl10.glLightModelf (pname, param);
    end glLightModelf;
 
-   procedure glLightModelfv (This : in out JOGL10; pname_Case : Integer; params_Case : Float_Array_Access; offset : Integer) is
+   procedure glLightModelfv (This : in out JOGL10; pname : Integer; params : Float_Array_Access; offset : Integer) is
    begin
-        This.gl10.glLightModelfv (pname_Case, params_Case, offset);
+        This.gl10.glLightModelfv (pname, params, offset);
    end glLightModelfv;
 
-   procedure glLightModelfv (This : in out JOGL10; pname_Case : Integer; params_Case_Param : access FloatBuffer_Package.FloatBuffer'Class) is
-      params_Case : constant FloatBuffer_Access := FloatBuffer_Access (params_Case_Param);
+   procedure glLightModelfv (This : in out JOGL10; pname : Integer; params_Param : access FloatBuffer_Package.FloatBuffer'Class) is
+      params : constant FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
-        This.gl10.glLightModelfv (pname_Case, params_Case);
+        This.gl10.glLightModelfv (pname, params);
    end glLightModelfv;
 
-   procedure glLightf (This : in out JOGL10; light_Case : Integer; pname_Case : Integer; param_Case : Float) is
+   procedure glLightf (This : in out JOGL10; light : Integer; pname : Integer; param : Float) is
    begin
-        This.gl10.glLightf (light_Case, pname_Case, param_Case);
+        This.gl10.glLightf (light, pname, param);
    end glLightf;
 
-   procedure glLightfv (This : in out JOGL10; light_Case : Integer; pname_Case : Integer; params_Case : Float_Array_Access; offset : Integer) is
+   procedure glLightfv (This : in out JOGL10; light : Integer; pname : Integer; params : Float_Array_Access; offset : Integer) is
    begin
-        This.gl10.glLightfv (light_Case, pname_Case, params_Case, offset);
+        This.gl10.glLightfv (light, pname, params, offset);
    end glLightfv;
 
-   procedure glLightfv (This : in out JOGL10; light_Case : Integer; pname_Case : Integer; params_Case_Param : access FloatBuffer_Package.FloatBuffer'Class) is
-      params_Case : constant FloatBuffer_Access := FloatBuffer_Access (params_Case_Param);
+   procedure glLightfv (This : in out JOGL10; light : Integer; pname : Integer; params_Param : access FloatBuffer_Package.FloatBuffer'Class) is
+      params : constant FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
-        This.gl10.glLightfv (light_Case, pname_Case, params_Case);
+        This.gl10.glLightfv (light, pname, params);
    end glLightfv;
 
    procedure glLineWidth (This : in out JOGL10; width : Float) is
@@ -335,20 +336,20 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glLogicOp (opcode);
    end glLogicOp;
 
-   procedure glMaterialf (This : in out JOGL10; face_Case : Integer; pname_Case : Integer; param_Case : Float) is
+   procedure glMaterialf (This : in out JOGL10; face : Integer; pname : Integer; param : Float) is
    begin
-        This.gl10.glMaterialf (face_Case, pname_Case, param_Case);
+        This.gl10.glMaterialf (face, pname, param);
    end glMaterialf;
 
-   procedure glMaterialfv (This : in out JOGL10; face_Case : Integer; pname_Case : Integer; params_Case : Float_Array_Access; offset : Integer) is
+   procedure glMaterialfv (This : in out JOGL10; face : Integer; pname : Integer; params : Float_Array_Access; offset : Integer) is
    begin
-        This.gl10.glMaterialfv (face_Case, pname_Case, params_Case, offset);
+        This.gl10.glMaterialfv (face, pname, params, offset);
    end glMaterialfv;
 
-   procedure glMaterialfv (This : in out JOGL10; face_Case : Integer; pname_Case : Integer; params_Case_Param : access FloatBuffer_Package.FloatBuffer'Class) is
-      params_Case : constant FloatBuffer_Access := FloatBuffer_Access (params_Case_Param);
+   procedure glMaterialfv (This : in out JOGL10; face : Integer; pname : Integer; params_Param : access FloatBuffer_Package.FloatBuffer'Class) is
+      params : constant FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
-        This.gl10.glMaterialfv (face_Case, pname_Case, params_Case);
+        This.gl10.glMaterialfv (face, pname, params);
    end glMaterialfv;
 
    procedure glMatrixMode (This : in out JOGL10; mode : Integer) is
@@ -367,9 +368,9 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glMultMatrixf (m);
    end glMultMatrixf;
 
-   procedure glMultiTexCoord4f (This : in out JOGL10; target_Case : Integer; s : Float; t : Float; r : Float; q : Float) is
+   procedure glMultiTexCoord4f (This : in out JOGL10; target : Integer; s : Float; t : Float; r : Float; q : Float) is
    begin
-        This.gl10.glMultiTexCoord4f (target_Case, s, t, r, q);
+        This.gl10.glMultiTexCoord4f (target, s, t, r, q);
    end glMultiTexCoord4f;
 
    procedure glNormal3f (This : in out JOGL10; nx : Float; ny : Float; nz : Float) is
@@ -388,9 +389,9 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glOrthof (left, right, bottom, top, zNear, zFar);
    end glOrthof;
 
-   procedure glPixelStorei (This : in out JOGL10; pname_Case : Integer; param_Case : Integer) is
+   procedure glPixelStorei (This : in out JOGL10; pname : Integer; param : Integer) is
    begin
-        This.gl10.glPixelStorei (pname_Case, param_Case);
+        This.gl10.glPixelStorei (pname, param);
    end glPixelStorei;
 
    procedure glPointSize (This : in out JOGL10; size : Float) is
@@ -475,42 +476,42 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glTexCoordPointer (size, type_Id, stride, pointer);
    end glTexCoordPointer;
 
-   procedure glTexEnvf (This : in out JOGL10; target_Case : Integer; pname_Case : Integer; param_Case : Float) is
+   procedure glTexEnvf (This : in out JOGL10; target : Integer; pname : Integer; param : Float) is
    begin
-        This.gl10.glTexEnvf (target_Case, pname_Case, param_Case);
+        This.gl10.glTexEnvf (target, pname, param);
    end glTexEnvf;
 
-   procedure glTexEnvfv (This : in out JOGL10; target_Case : Integer; pname_Case : Integer; params_Case : Float_Array_Access; offset : Integer) is
+   procedure glTexEnvfv (This : in out JOGL10; target : Integer; pname : Integer; params : Float_Array_Access; offset : Integer) is
    begin
-        This.gl10.glTexEnvfv (target_Case, pname_Case, params_Case, offset);
+        This.gl10.glTexEnvfv (target, pname, params, offset);
    end glTexEnvfv;
 
-   procedure glTexEnvfv (This : in out JOGL10; target_Case : Integer; pname_Case : Integer; params_Case_Param : access FloatBuffer_Package.FloatBuffer'Class) is
-      params_Case : constant FloatBuffer_Access := FloatBuffer_Access (params_Case_Param);
+   procedure glTexEnvfv (This : in out JOGL10; target : Integer; pname : Integer; params_Param : access FloatBuffer_Package.FloatBuffer'Class) is
+      params : constant FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
-        This.gl10.glTexEnvfv (target_Case, pname_Case, params_Case);
+        This.gl10.glTexEnvfv (target, pname, params);
    end glTexEnvfv;
 
-   procedure glTexImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; format : Integer; type_Id : Integer; pixels_Param : access Buffer_Package.Buffer'Class) is
+   procedure glTexImage2D (This : in out JOGL10; target : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; format : Integer; type_Id : Integer; pixels_Param : access Buffer_Package.Buffer'Class) is
       pixels : constant Buffer_Access := Buffer_Access (pixels_Param);
    begin
-        This.gl10.glTexImage2D (target_Case, level, internalformat, width, height, border, format, type_Id, pixels);
+        This.gl10.glTexImage2D (target, level, internalformat, width, height, border, format, type_Id, pixels);
    end glTexImage2D;
 
-   procedure glTexParameterf (This : in out JOGL10; target_Case : Integer; pname_Case : Integer; param_Case : Float) is
+   procedure glTexParameterf (This : in out JOGL10; target : Integer; pname : Integer; param : Float) is
    begin
-        This.gl10.glTexParameterf (target_Case, pname_Case, param_Case);
+        This.gl10.glTexParameterf (target, pname, param);
    end glTexParameterf;
 
-   procedure glTexParameteri (This : in out JOGL10; target_Case : Integer; pname_Case : Integer; param_Case : Integer) is
+   procedure glTexParameteri (This : in out JOGL10; target : Integer; pname : Integer; param : Integer) is
    begin
-        This.gl10.glTexParameteri (target_Case, pname_Case, param_Case);
+        This.gl10.glTexParameteri (target, pname, param);
    end glTexParameteri;
 
-   procedure glTexSubImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; type_Id : Integer; pixels_Param : access Buffer_Package.Buffer'Class) is
+   procedure glTexSubImage2D (This : in out JOGL10; target : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; type_Id : Integer; pixels_Param : access Buffer_Package.Buffer'Class) is
       pixels : constant Buffer_Access := Buffer_Access (pixels_Param);
    begin
-        This.gl10.glTexSubImage2D (target_Case, level, xoffset, yoffset, width, height, format, type_Id, pixels);
+        This.gl10.glTexSubImage2D (target, level, xoffset, yoffset, width, height, format, type_Id, pixels);
    end glTexSubImage2D;
 
    procedure glTranslatef (This : in out JOGL10; x : Float; y : Float; z : Float) is

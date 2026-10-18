@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectangle_Package; use org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
+
 package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out ConstrainedMotionRectangles'Class) is
    begin
       null;
@@ -58,7 +66,7 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
         This.logUtil.putF (To_Unbounded_String ("Start - Size Before: ") & Java_Image (motionRectangles.getVector.size), ConstrainedMotionRectangles_Access'(This'Unchecked_Access), To_Unbounded_String ("applyMotionRectangleConstraints"));
         bufferedImageArray := motionRectangles.getImageComparisonResult.getBufferedImages;
         bufferedImage := bufferedImageArray (1);
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         vector2 := motionRectangles.getVector;
         size := vector2.size;
         for index in 0 .. (size) - 1 loop
@@ -81,7 +89,7 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
                 goto Continue_N66349;
             end if;
             if (((not (isTooSmall)) and then (not (isAreaTooSmall))) and then (not (isTooBig))) and then (isValid) then
-                vector.add (motionRectangle);
+                vector.add (Java_Object_Access (motionRectangle));
             end if;
             <<Continue_N66349>> null;
         end loop;

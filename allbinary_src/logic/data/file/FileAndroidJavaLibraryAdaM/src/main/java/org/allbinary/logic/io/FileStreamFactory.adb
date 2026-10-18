@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+
 package body org.allbinary.logic.io.FileStreamFactory_Package is
 
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out FileStreamFactory'Class) is
    begin
       null;
@@ -34,7 +39,7 @@ package body org.allbinary.logic.io.FileStreamFactory_Package is
       context : constant Context_Access := Context_Access (context_Param);
    begin
       Initialize_Fields (This);
-        This.context := context;
+        This.context := Java_Object_Access (context);
    end Initialize;
 
    function Create (context_Param : access Context_Package.Context'Class) return FileStreamFactory_Access is

@@ -23,21 +23,18 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with taghelpers.OrderHistoryHelper_Package; use taghelpers.OrderHistoryHelper_Package;
 
 package taghelpers.OrderHistoryHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type OrderHistoryHelperFactory is tagged;
    type OrderHistoryHelperFactory_Access is access all OrderHistoryHelperFactory'Class;
    type OrderHistoryHelperFactory_Access_Array is array (Natural range <>) of OrderHistoryHelperFactory_Access;
    type OrderHistoryHelperFactory_Access_Array_Access is access all OrderHistoryHelperFactory_Access_Array;
+   type OrderHistoryHelperFactory_Access_Array_Access_Array is array (Natural range <>) of OrderHistoryHelperFactory_Access_Array_Access;
+   type OrderHistoryHelperFactory_Access_Array_Access_Array_Access is access all OrderHistoryHelperFactory_Access_Array_Access_Array;
 
    type OrderHistoryHelperFactory is new Java_Object with record
       logUtil : LogUtil_Access;

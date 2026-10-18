@@ -30,6 +30,8 @@ package org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Pac
    type RotationAnimationInterfaceCompositeInterface_Access is access all RotationAnimationInterfaceCompositeInterface'Class;
    type RotationAnimationInterfaceCompositeInterface_Access_Array is array (Natural range <>) of RotationAnimationInterfaceCompositeInterface_Access;
    type RotationAnimationInterfaceCompositeInterface_Access_Array_Access is access all RotationAnimationInterfaceCompositeInterface_Access_Array;
+   type RotationAnimationInterfaceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of RotationAnimationInterfaceCompositeInterface_Access_Array_Access;
+   type RotationAnimationInterfaceCompositeInterface_Access_Array_Access_Array_Access is access all RotationAnimationInterfaceCompositeInterface_Access_Array_Access_Array;
    function getRotationAnimationInterface (This : in out RotationAnimationInterfaceCompositeInterface) return RotationAnimation_Access is abstract;
    procedure setFrame (This : in out RotationAnimationInterfaceCompositeInterface; index : Integer) is abstract;
 

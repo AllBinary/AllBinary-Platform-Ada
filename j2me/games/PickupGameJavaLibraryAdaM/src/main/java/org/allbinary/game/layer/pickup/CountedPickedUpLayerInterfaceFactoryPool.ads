@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type CountedPickedUpLayerInterfaceFactoryPool is tagged;
    type CountedPickedUpLayerInterfaceFactoryPool_Access is access all CountedPickedUpLayerInterfaceFactoryPool'Class;
    type CountedPickedUpLayerInterfaceFactoryPool_Access_Array is array (Natural range <>) of CountedPickedUpLayerInterfaceFactoryPool_Access;
    type CountedPickedUpLayerInterfaceFactoryPool_Access_Array_Access is access all CountedPickedUpLayerInterfaceFactoryPool_Access_Array;
+   type CountedPickedUpLayerInterfaceFactoryPool_Access_Array_Access_Array is array (Natural range <>) of CountedPickedUpLayerInterfaceFactoryPool_Access_Array_Access;
+   type CountedPickedUpLayerInterfaceFactoryPool_Access_Array_Access_Array_Access is access all CountedPickedUpLayerInterfaceFactoryPool_Access_Array_Access_Array;
 
    type CountedPickedUpLayerInterfaceFactoryPool is new Java_Object with record
       list : BasicArrayList_Access;

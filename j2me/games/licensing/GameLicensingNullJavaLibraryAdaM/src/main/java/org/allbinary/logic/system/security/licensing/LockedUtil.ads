@@ -30,8 +30,10 @@ package org.allbinary.logic.system.security.licensing.LockedUtil_Package is
    type LockedUtil_Access is access all LockedUtil'Class;
    type LockedUtil_Access_Array is array (Natural range <>) of LockedUtil_Access;
    type LockedUtil_Access_Array_Access is access all LockedUtil_Access_Array;
+   type LockedUtil_Access_Array_Access_Array is array (Natural range <>) of LockedUtil_Access_Array_Access;
+   type LockedUtil_Access_Array_Access_Array_Access is access all LockedUtil_Access_Array_Access_Array;
 
-   type LockedUtil is new LockedUtilInterface with null record;
+   type LockedUtil is new Java_Object and LockedUtilInterface with null record;
    instance : LockedUtil_Access;
 
    procedure Initialize (This : in out LockedUtil'Class);

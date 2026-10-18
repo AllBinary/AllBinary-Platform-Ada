@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package; use org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package;
 with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package; use org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package;
 
 package org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFactory_Package is
@@ -30,6 +29,8 @@ package org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFacto
    type RemoteHighScoresSubmissionProcessorFactory_Access is access all RemoteHighScoresSubmissionProcessorFactory'Class;
    type RemoteHighScoresSubmissionProcessorFactory_Access_Array is array (Natural range <>) of RemoteHighScoresSubmissionProcessorFactory_Access;
    type RemoteHighScoresSubmissionProcessorFactory_Access_Array_Access is access all RemoteHighScoresSubmissionProcessorFactory_Access_Array;
+   type RemoteHighScoresSubmissionProcessorFactory_Access_Array_Access_Array is array (Natural range <>) of RemoteHighScoresSubmissionProcessorFactory_Access_Array_Access;
+   type RemoteHighScoresSubmissionProcessorFactory_Access_Array_Access_Array_Access is access all RemoteHighScoresSubmissionProcessorFactory_Access_Array_Access_Array;
 
    type RemoteHighScoresSubmissionProcessorFactory is new Java_Object with null record;
    SINGLETON : RemoteHighScoresSubmissionProcessorInterface_Access;

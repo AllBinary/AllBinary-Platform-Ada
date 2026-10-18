@@ -30,6 +30,8 @@ package org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Packa
    type GenericTrackingLayerCircularStaticPool_Access is access all GenericTrackingLayerCircularStaticPool'Class;
    type GenericTrackingLayerCircularStaticPool_Access_Array is array (Natural range <>) of GenericTrackingLayerCircularStaticPool_Access;
    type GenericTrackingLayerCircularStaticPool_Access_Array_Access is access all GenericTrackingLayerCircularStaticPool_Access_Array;
+   type GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of GenericTrackingLayerCircularStaticPool_Access_Array_Access;
+   type GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array_Access is access all GenericTrackingLayerCircularStaticPool_Access_Array_Access_Array;
 
    type GenericTrackingLayerCircularStaticPool is new AllBinaryLayerCircularPool with null record;
    SINGLETON : GenericTrackingLayerCircularStaticPool_Access;

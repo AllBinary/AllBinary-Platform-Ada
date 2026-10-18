@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package is
 
    procedure Initialize_Fields (This : in out ExplosionBasicSound'Class) is
@@ -40,7 +41,7 @@ package body org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package is
 
 begin
    null;
-   soundInterface := ExplosionBasicSound_Package.Create;
+   soundInterface := Sound_Access (ExplosionBasicSound_Package.Create);
 
 end org.allbinary.ag.weapon.media.audio.ExplosionBasicSound_Package;
 

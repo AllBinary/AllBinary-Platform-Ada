@@ -29,6 +29,8 @@ package org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Pack
    type WaypointInfoHudPaintableSingleton_Access is access all WaypointInfoHudPaintableSingleton'Class;
    type WaypointInfoHudPaintableSingleton_Access_Array is array (Natural range <>) of WaypointInfoHudPaintableSingleton_Access;
    type WaypointInfoHudPaintableSingleton_Access_Array_Access is access all WaypointInfoHudPaintableSingleton_Access_Array;
+   type WaypointInfoHudPaintableSingleton_Access_Array_Access_Array is array (Natural range <>) of WaypointInfoHudPaintableSingleton_Access_Array_Access;
+   type WaypointInfoHudPaintableSingleton_Access_Array_Access_Array_Access is access all WaypointInfoHudPaintableSingleton_Access_Array_Access_Array;
 
    type WaypointInfoHudPaintableSingleton is new Java_Object with null record;
    instance : WaypointInfoHudPaintable_Access;

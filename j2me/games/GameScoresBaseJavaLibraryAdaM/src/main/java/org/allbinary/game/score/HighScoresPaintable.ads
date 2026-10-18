@@ -20,45 +20,33 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
-with org.allbinary.graphics.color.ColorChangeEvent_Package; use org.allbinary.graphics.color.ColorChangeEvent_Package;
 with org.allbinary.graphics.color.ColorChangeListener_Package; use org.allbinary.graphics.color.ColorChangeListener_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
-with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
 
 package org.allbinary.game.score.HighScoresPaintable_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
-   package ColorChangeEvent_Package renames Standard.org.allbinary.graphics.color.ColorChangeEvent_Package;
    package ColorChangeListener_Package renames Standard.org.allbinary.graphics.color.ColorChangeListener_Package;
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type HighScoresPaintable is tagged;
    type HighScoresPaintable_Access is access all HighScoresPaintable'Class;
    type HighScoresPaintable_Access_Array is array (Natural range <>) of HighScoresPaintable_Access;
    type HighScoresPaintable_Access_Array_Access is access all HighScoresPaintable_Access_Array;
+   type HighScoresPaintable_Access_Array_Access_Array is array (Natural range <>) of HighScoresPaintable_Access_Array_Access;
+   type HighScoresPaintable_Access_Array_Access_Array_Access is access all HighScoresPaintable_Access_Array_Access_Array;
 
    type HighScoresPaintable is new Paintable and ColorChangeListener and UpdateMyFontInterface with record
       displayInfoSingleton : DisplayInfoSingleton_Access;

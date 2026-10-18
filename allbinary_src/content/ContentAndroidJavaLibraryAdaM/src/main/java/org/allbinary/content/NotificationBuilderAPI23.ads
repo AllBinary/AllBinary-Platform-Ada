@@ -21,8 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with android.app.Notification_Package; use android.app.Notification_Package;
-with android.app.Notification.Builder_Package; use android.app.Notification.Builder_Package;
 with android.app.PendingIntent_Package; use android.app.PendingIntent_Package;
 with android.content.Context_Package; use android.content.Context_Package;
 with android.os.Parcelable_Package; use android.os.Parcelable_Package;
@@ -31,8 +29,6 @@ with org.allbinary.content.NotificationBuilder_Package; use org.allbinary.conten
 package org.allbinary.content.NotificationBuilderAPI23_Package is
 
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
-   package Notification_Package renames Standard.android.app.Notification_Package;
-   package Builder_Package renames Standard.android.app.Notification.Builder_Package;
    package PendingIntent_Package renames Standard.android.app.PendingIntent_Package;
    package Context_Package renames Standard.android.content.Context_Package;
    package Parcelable_Package renames Standard.android.os.Parcelable_Package;
@@ -41,6 +37,8 @@ package org.allbinary.content.NotificationBuilderAPI23_Package is
    type NotificationBuilderAPI23_Access is access all NotificationBuilderAPI23'Class;
    type NotificationBuilderAPI23_Access_Array is array (Natural range <>) of NotificationBuilderAPI23_Access;
    type NotificationBuilderAPI23_Access_Array_Access is access all NotificationBuilderAPI23_Access_Array;
+   type NotificationBuilderAPI23_Access_Array_Access_Array is array (Natural range <>) of NotificationBuilderAPI23_Access_Array_Access;
+   type NotificationBuilderAPI23_Access_Array_Access_Array_Access is access all NotificationBuilderAPI23_Access_Array_Access_Array;
 
    type NotificationBuilderAPI23 is new NotificationBuilder with null record;
 

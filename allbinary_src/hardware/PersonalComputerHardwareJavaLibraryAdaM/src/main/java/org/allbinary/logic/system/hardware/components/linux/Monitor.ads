@@ -32,8 +32,10 @@ package org.allbinary.logic.system.hardware.components.linux.Monitor_Package is
    type Monitor_Access is access all Monitor'Class;
    type Monitor_Access_Array is array (Natural range <>) of Monitor_Access;
    type Monitor_Access_Array_Access is access all Monitor_Access_Array;
+   type Monitor_Access_Array_Access_Array is array (Natural range <>) of Monitor_Access_Array_Access;
+   type Monitor_Access_Array_Access_Array_Access is access all Monitor_Access_Array_Access_Array;
 
-   type Monitor is new HardwareComponentInterface and MonitorInterface with record
+   type Monitor is new Java_Object and HardwareComponentInterface and MonitorInterface with record
       data : Unbounded_String;
    end record;
 

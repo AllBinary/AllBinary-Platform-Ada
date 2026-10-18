@@ -20,19 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
 
 package org.allbinary.business.advertisement.BottomLimiter_Package is
 
-   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
    type BottomLimiter is tagged;
    type BottomLimiter_Access is access all BottomLimiter'Class;
    type BottomLimiter_Access_Array is array (Natural range <>) of BottomLimiter_Access;
    type BottomLimiter_Access_Array_Access is access all BottomLimiter_Access_Array;
+   type BottomLimiter_Access_Array_Access_Array is array (Natural range <>) of BottomLimiter_Access_Array_Access;
+   type BottomLimiter_Access_Array_Access_Array_Access is access all BottomLimiter_Access_Array_Access_Array;
 
    type BottomLimiter is new Java_Object with record
       bottom : Integer;

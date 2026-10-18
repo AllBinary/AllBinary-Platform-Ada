@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.java.anyType.ConstructorUtil_Package; use org.allbinary.logic.java.anyType.ConstructorUtil_Package;
+with org.allbinary.logic.java.anyType.InterfaceUtil_Package; use org.allbinary.logic.java.anyType.InterfaceUtil_Package;
+with org.allbinary.logic.java.anyType.MethodUtil_Package; use org.allbinary.logic.java.anyType.MethodUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.logic.java.anyType.clazz.ClassUtil_Package is
 
+   package ConstructorUtil_Package renames Standard.org.allbinary.logic.java.anyType.ConstructorUtil_Package;
+   package InterfaceUtil_Package renames Standard.org.allbinary.logic.java.anyType.InterfaceUtil_Package;
+   package MethodUtil_Package renames Standard.org.allbinary.logic.java.anyType.MethodUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out ClassUtil'Class) is
    begin
       null;

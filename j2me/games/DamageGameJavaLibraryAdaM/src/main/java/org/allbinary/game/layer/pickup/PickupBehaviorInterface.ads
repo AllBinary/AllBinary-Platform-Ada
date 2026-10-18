@@ -30,6 +30,8 @@ package org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package is
    type PickupBehaviorInterface_Access is access all PickupBehaviorInterface'Class;
    type PickupBehaviorInterface_Access_Array is array (Natural range <>) of PickupBehaviorInterface_Access;
    type PickupBehaviorInterface_Access_Array_Access is access all PickupBehaviorInterface_Access_Array;
+   type PickupBehaviorInterface_Access_Array_Access_Array is array (Natural range <>) of PickupBehaviorInterface_Access_Array_Access;
+   type PickupBehaviorInterface_Access_Array_Access_Array_Access is access all PickupBehaviorInterface_Access_Array_Access_Array;
    procedure doPickup (This : in out PickupBehaviorInterface; pickupProcessorInterface_Param : access PickupProcessorInterface_Package.PickupProcessorInterface'Class) is abstract;
    procedure doPickupLayer (This : in out PickupBehaviorInterface; pickupLayerInterface_Param : access PickedUpLayerInterface_Package.PickedUpLayerInterface'Class) is abstract;
 

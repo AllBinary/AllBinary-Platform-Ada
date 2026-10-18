@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
-with org.allbinary.game.tracking.TrackingEventFactory_Package; use org.allbinary.game.tracking.TrackingEventFactory_Package;
 with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
 
 package org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package is
@@ -34,6 +33,8 @@ package org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package is
    type TrackingEventCircularStaticPool_Access is access all TrackingEventCircularStaticPool'Class;
    type TrackingEventCircularStaticPool_Access_Array is array (Natural range <>) of TrackingEventCircularStaticPool_Access;
    type TrackingEventCircularStaticPool_Access_Array_Access is access all TrackingEventCircularStaticPool_Access_Array;
+   type TrackingEventCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of TrackingEventCircularStaticPool_Access_Array_Access;
+   type TrackingEventCircularStaticPool_Access_Array_Access_Array_Access is access all TrackingEventCircularStaticPool_Access_Array_Access_Array;
 
    type TrackingEventCircularStaticPool is new Java_Object with record
       EVENT_POOL : AllBinaryEventCircularPool_Access;

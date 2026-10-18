@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package is
 
    procedure Initialize_Fields (This : in out TouchButtonUpgradeResource'Class) is
@@ -40,7 +41,7 @@ package body org.allbinary.game.input.resource.TouchButtonUpgradeResource_Packag
 
 begin
    null;
-   instance := TouchButtonUpgradeResource_Package.Create;
+   instance := TouchButtonResource_Access (TouchButtonUpgradeResource_Package.Create);
 
 end org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package;
 

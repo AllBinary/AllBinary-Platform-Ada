@@ -21,39 +21,25 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
-with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package; use org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package; use org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Package;
 
 package admin.taghelpers.StoreFrontsHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
-   package StoreFrontsEntityFactory_Package renames Standard.org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package HtmlSelect_Package renames Standard.org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package;
    package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type StoreFrontsHelper is tagged;
    type StoreFrontsHelper_Access is access all StoreFrontsHelper'Class;
    type StoreFrontsHelper_Access_Array is array (Natural range <>) of StoreFrontsHelper_Access;
    type StoreFrontsHelper_Access_Array_Access is access all StoreFrontsHelper_Access_Array;
+   type StoreFrontsHelper_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsHelper_Access_Array_Access;
+   type StoreFrontsHelper_Access_Array_Access_Array_Access is access all StoreFrontsHelper_Access_Array_Access_Array;
 
    type StoreFrontsHelper is new BasicTable with record
       logUtil : LogUtil_Access;

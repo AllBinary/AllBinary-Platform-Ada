@@ -34,6 +34,8 @@ package org.allbinary.game.layer.special.SpecialFireGameInputInterfaceProcessor_
    type SpecialFireGameInputInterfaceProcessor_Access is access all SpecialFireGameInputInterfaceProcessor'Class;
    type SpecialFireGameInputInterfaceProcessor_Access_Array is array (Natural range <>) of SpecialFireGameInputInterfaceProcessor_Access;
    type SpecialFireGameInputInterfaceProcessor_Access_Array_Access is access all SpecialFireGameInputInterfaceProcessor_Access_Array;
+   type SpecialFireGameInputInterfaceProcessor_Access_Array_Access_Array is array (Natural range <>) of SpecialFireGameInputInterfaceProcessor_Access_Array_Access;
+   type SpecialFireGameInputInterfaceProcessor_Access_Array_Access_Array_Access is access all SpecialFireGameInputInterfaceProcessor_Access_Array_Access_Array;
 
    type SpecialFireGameInputInterfaceProcessor is new SpecialGameInputInterfaceProcessor with null record;
 

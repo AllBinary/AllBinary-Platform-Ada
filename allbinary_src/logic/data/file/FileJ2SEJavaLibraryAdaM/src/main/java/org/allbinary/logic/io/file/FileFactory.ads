@@ -29,6 +29,8 @@ package org.allbinary.logic.io.file.FileFactory_Package is
    type FileFactory_Access is access all FileFactory'Class;
    type FileFactory_Access_Array is array (Natural range <>) of FileFactory_Access;
    type FileFactory_Access_Array_Access is access all FileFactory_Access_Array;
+   type FileFactory_Access_Array_Access_Array is array (Natural range <>) of FileFactory_Access_Array_Access;
+   type FileFactory_Access_Array_Access_Array_Access is access all FileFactory_Access_Array_Access_Array;
 
    type FileFactory is new Java_Object with null record;
    instance : FileFactory_Access;

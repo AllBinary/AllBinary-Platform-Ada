@@ -30,6 +30,8 @@ package org.allbinary.layer.LayerManagerLoggingBase_Package is
    type LayerManagerLoggingBase_Access is access all LayerManagerLoggingBase'Class;
    type LayerManagerLoggingBase_Access_Array is array (Natural range <>) of LayerManagerLoggingBase_Access;
    type LayerManagerLoggingBase_Access_Array_Access is access all LayerManagerLoggingBase_Access_Array;
+   type LayerManagerLoggingBase_Access_Array_Access_Array is array (Natural range <>) of LayerManagerLoggingBase_Access_Array_Access;
+   type LayerManagerLoggingBase_Access_Array_Access_Array_Access is access all LayerManagerLoggingBase_Access_Array_Access_Array;
 
    type LayerManagerLoggingBase is new Java_Object with null record;
 

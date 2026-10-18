@@ -28,6 +28,8 @@ package org.allbinary.game.GameStrings_Package is
    type GameStrings_Access is access all GameStrings'Class;
    type GameStrings_Access_Array is array (Natural range <>) of GameStrings_Access;
    type GameStrings_Access_Array_Access is access all GameStrings_Access_Array;
+   type GameStrings_Access_Array_Access_Array is array (Natural range <>) of GameStrings_Access_Array_Access;
+   type GameStrings_Access_Array_Access_Array_Access is access all GameStrings_Access_Array_Access_Array;
 
    type GameStrings is new Java_Object with record
       PROCESS_TICK : Unbounded_String;

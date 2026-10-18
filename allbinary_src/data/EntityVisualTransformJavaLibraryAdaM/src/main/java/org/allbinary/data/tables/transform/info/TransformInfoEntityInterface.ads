@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -31,7 +30,6 @@ package org.allbinary.data.tables.transform.info.TransformInfoEntityInterface_Pa
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
@@ -39,6 +37,8 @@ package org.allbinary.data.tables.transform.info.TransformInfoEntityInterface_Pa
    type TransformInfoEntityInterface_Access is access all TransformInfoEntityInterface'Class;
    type TransformInfoEntityInterface_Access_Array is array (Natural range <>) of TransformInfoEntityInterface_Access;
    type TransformInfoEntityInterface_Access_Array_Access is access all TransformInfoEntityInterface_Access_Array;
+   type TransformInfoEntityInterface_Access_Array_Access_Array is array (Natural range <>) of TransformInfoEntityInterface_Access_Array_Access;
+   type TransformInfoEntityInterface_Access_Array_Access_Array_Access is access all TransformInfoEntityInterface_Access_Array_Access_Array;
    function get (This : in out TransformInfoEntityInterface; name : Unbounded_String; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoInterface_Access is abstract;
    function getObjectConfigs (This : in out TransformInfoEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
    function getNames (This : in out TransformInfoEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;

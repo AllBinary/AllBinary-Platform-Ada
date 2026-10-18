@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package; use org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package;
+with org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package; use org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package;
+with org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package; use org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package;
+with org.allbinary.logic.io.file.filter.VisitorFileFilter_Package; use org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+
 package body org.allbinary.logic.io.file.FileListFetcher_Package is
 
+   package DirectoryBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package;
+   package DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package;
+   package DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package;
+   package VisitorFileFilter_Package renames Standard.org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out FileListFetcher'Class) is
    begin
       null;
@@ -65,7 +77,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
       files : BasicArrayList_Access;
    begin
         begin
-            includeExtensionBasicArrayList := BasicArrayListD_Package.Create;
+            includeExtensionBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             size := includeExtensions'Length;
             for index in 0 .. (size) - 1 loop
                 includeExtensionBasicArrayList.add (includeExtensions (index));
@@ -91,7 +103,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
       files : BasicArrayList_Access;
    begin
         begin
-            includeExtensionBasicArrayList := BasicArrayListD_Package.Create;
+            includeExtensionBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             includeExtensionBasicArrayList.add (includeExtension);
             visitorFileFilter := VisitorFileFilter_Package.Create (DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package.Create (includeExtensionBasicArrayList));
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
@@ -114,7 +126,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
       files : BasicArrayList_Access;
    begin
         begin
-            includeExtensionBasicArrayList := BasicArrayListD_Package.Create;
+            includeExtensionBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             includeExtensionBasicArrayList.add (includeExtension);
             visitorFileFilter := VisitorFileFilter_Package.Create (DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package.Create (includeExtensionBasicArrayList, pathIncludes));
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
@@ -139,7 +151,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
       files : BasicArrayList_Access;
    begin
         begin
-            includeExtensionBasicArrayList := BasicArrayListD_Package.Create;
+            includeExtensionBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             size := includeExtensions'Length;
             for index in 0 .. (size) - 1 loop
                 includeExtensionBasicArrayList.add (includeExtensions (index));
@@ -165,7 +177,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
       files : BasicArrayList_Access;
    begin
         begin
-            includeExtensionBasicArrayList := BasicArrayListD_Package.Create;
+            includeExtensionBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             includeExtensionBasicArrayList.add (includeExtension);
             visitorFileFilter := VisitorFileFilter_Package.Create (DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package.Create (includeExtensionBasicArrayList));
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));

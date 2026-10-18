@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
-with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 
 package org.allbinary.animation.IndexedAnimationBehaviorFactory_Package is
@@ -31,6 +30,8 @@ package org.allbinary.animation.IndexedAnimationBehaviorFactory_Package is
    type IndexedAnimationBehaviorFactory_Access is access all IndexedAnimationBehaviorFactory'Class;
    type IndexedAnimationBehaviorFactory_Access_Array is array (Natural range <>) of IndexedAnimationBehaviorFactory_Access;
    type IndexedAnimationBehaviorFactory_Access_Array_Access is access all IndexedAnimationBehaviorFactory_Access_Array;
+   type IndexedAnimationBehaviorFactory_Access_Array_Access_Array is array (Natural range <>) of IndexedAnimationBehaviorFactory_Access_Array_Access;
+   type IndexedAnimationBehaviorFactory_Access_Array_Access_Array_Access is access all IndexedAnimationBehaviorFactory_Access_Array_Access_Array;
 
    type IndexedAnimationBehaviorFactory is new AnimationBehaviorFactory with record
       frameDelayTime : Long_Long_Integer;

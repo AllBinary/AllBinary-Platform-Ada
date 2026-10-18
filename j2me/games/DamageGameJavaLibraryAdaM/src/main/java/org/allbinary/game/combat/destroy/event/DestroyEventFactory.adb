@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+
 package body org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package is
 
    procedure Initialize_Fields (This : in out DestroyEventFactory'Class) is
@@ -38,7 +40,7 @@ package body org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package
 
    function getInstance (This : in out DestroyEventFactory) return AllBinaryEventObject_Access is
    begin
-        return DestroyedEvent_Package.Create (This.combatGameCanvas);
+        return AllBinaryEventObject_Access (DestroyedEvent_Package.Create (This.combatGameCanvas));
    end getInstance;
 
 end org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package;

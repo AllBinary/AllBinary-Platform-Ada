@@ -28,6 +28,8 @@ package org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Pack
    type ProcessingFrameIndexFactory_Access is access all ProcessingFrameIndexFactory'Class;
    type ProcessingFrameIndexFactory_Access_Array is array (Natural range <>) of ProcessingFrameIndexFactory_Access;
    type ProcessingFrameIndexFactory_Access_Array_Access is access all ProcessingFrameIndexFactory_Access_Array;
+   type ProcessingFrameIndexFactory_Access_Array_Access_Array is array (Natural range <>) of ProcessingFrameIndexFactory_Access_Array_Access;
+   type ProcessingFrameIndexFactory_Access_Array_Access_Array_Access is access all ProcessingFrameIndexFactory_Access_Array_Access_Array;
 
    type ProcessingFrameIndexFactory is new Java_Object with null record;
    currentFrame : Long_Long_Integer;

@@ -1,12 +1,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+
 package body org.allbinary.graphics.form.item.CustomCustomItem_Package is
 
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out CustomCustomItem'Class) is
    begin
       null;
-      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (CustomCustomItem_Access'(This'Unchecked_Access));
+      This.updateMyFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (CustomCustomItem_Access'(This'Unchecked_Access)));
       This.myFontProcessor := This.updateMyFontProcessor;
    end Initialize_Fields;
 

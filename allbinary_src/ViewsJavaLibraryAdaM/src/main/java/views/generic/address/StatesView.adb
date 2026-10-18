@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.address.StreetAddressData_Package; use org.allbinary.business.user.address.StreetAddressData_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.io.LineReader_Package; use org.allbinary.logic.io.LineReader_Package;
+
 package body views.generic_Id.address.StatesView_Package is
 
+   package StreetAddressData_Package renames Standard.org.allbinary.business.user.address.StreetAddressData_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package LineReader_Package renames Standard.org.allbinary.logic.io.LineReader_Package;
    procedure Initialize_Fields (This : in out StatesView'Class) is
    begin
       null;
@@ -45,7 +56,7 @@ package body views.generic_Id.address.StatesView_Package is
    begin
         begin
             node := document.createElement (StreetAddressData_Package.STATES);
-            statesFile := Java_Image ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.LINEDATAPATH)) & To_Unbounded_String ("states.txt");
+            statesFile := Java_Image ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.LINEDATAPATH)) & To_Unbounded_String ("states.txt");
             lineReader := LineReader_Package.Create (statesFile);
             while lineReader.hasNext loop
                 option := lineReader.next;

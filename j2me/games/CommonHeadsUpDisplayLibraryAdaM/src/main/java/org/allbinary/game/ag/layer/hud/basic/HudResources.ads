@@ -28,6 +28,8 @@ package org.allbinary.game.ag.layer.hud.basic.HudResources_Package is
    type HudResources_Access is access all HudResources'Class;
    type HudResources_Access_Array is array (Natural range <>) of HudResources_Access;
    type HudResources_Access_Array_Access is access all HudResources_Access_Array;
+   type HudResources_Access_Array_Access_Array is array (Natural range <>) of HudResources_Access_Array_Access;
+   type HudResources_Access_Array_Access_Array_Access is access all HudResources_Access_Array_Access_Array;
 
    type HudResources is new Java_Object with record
       RESOURCE_LIFE : Unbounded_String;

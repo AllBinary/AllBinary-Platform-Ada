@@ -20,14 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
@@ -35,7 +33,6 @@ with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package GeographicMapCellPositionBaseFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
    package GeographicMapCellPositionFactoryInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
@@ -45,6 +42,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographic
    type RaceTrackGeographicMap_Access is access all RaceTrackGeographicMap'Class;
    type RaceTrackGeographicMap_Access_Array is array (Natural range <>) of RaceTrackGeographicMap_Access;
    type RaceTrackGeographicMap_Access_Array_Access is access all RaceTrackGeographicMap_Access_Array;
+   type RaceTrackGeographicMap_Access_Array_Access_Array is array (Natural range <>) of RaceTrackGeographicMap_Access_Array_Access;
+   type RaceTrackGeographicMap_Access_Array_Access_Array_Access is access all RaceTrackGeographicMap_Access_Array_Access_Array;
 
    type RaceTrackGeographicMap is new BaseRaceTrackGeographicMap with record
       customMapGenerator : CustomMapGeneratorBase_Access;

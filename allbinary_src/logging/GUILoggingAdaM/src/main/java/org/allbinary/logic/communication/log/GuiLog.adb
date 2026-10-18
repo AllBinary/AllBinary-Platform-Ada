@@ -13,6 +13,10 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.JDialog_Package; use org.allbinary.logic.communication.log.JDialog_Package;
+with org.allbinary.logic.communication.log.GridLayout_Package; use org.allbinary.logic.communication.log.GridLayout_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+
 package body org.allbinary.logic.communication.log.GuiLog_Package is
 
    procedure Initialize_Fields (This : in out GuiLog'Class) is

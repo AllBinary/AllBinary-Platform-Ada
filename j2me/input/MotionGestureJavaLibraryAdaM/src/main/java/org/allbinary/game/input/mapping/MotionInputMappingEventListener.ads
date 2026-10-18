@@ -22,28 +22,22 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.mapping.event.InputMappingEvent_Package; use org.allbinary.game.input.mapping.event.InputMappingEvent_Package;
 with org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package; use org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package;
-with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package; use org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package;
-with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 
 package org.allbinary.game.input.mapping.MotionInputMappingEventListener_Package is
 
    package InputMappingEvent_Package renames Standard.org.allbinary.game.input.mapping.event.InputMappingEvent_Package;
    package InputMappingEventListenerInterface_Package renames Standard.org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package;
-   package GameKeyCompleteMotionGestureInputEventFactory_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package;
-   package BasicTouchInputFactory_Package renames Standard.org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type MotionInputMappingEventListener is tagged;
    type MotionInputMappingEventListener_Access is access all MotionInputMappingEventListener'Class;
    type MotionInputMappingEventListener_Access_Array is array (Natural range <>) of MotionInputMappingEventListener_Access;
    type MotionInputMappingEventListener_Access_Array_Access is access all MotionInputMappingEventListener_Access_Array;
+   type MotionInputMappingEventListener_Access_Array_Access_Array is array (Natural range <>) of MotionInputMappingEventListener_Access_Array_Access;
+   type MotionInputMappingEventListener_Access_Array_Access_Array_Access is access all MotionInputMappingEventListener_Access_Array_Access_Array;
 
-   type MotionInputMappingEventListener is new InputMappingEventListenerInterface with null record;
+   type MotionInputMappingEventListener is new Java_Object and InputMappingEventListenerInterface with null record;
 
    procedure Initialize (This : in out MotionInputMappingEventListener'Class);
    function Create return MotionInputMappingEventListener_Access;

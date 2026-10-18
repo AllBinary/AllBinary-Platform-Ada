@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
-with org.allbinary.logic.util.cache.BasicArrayListCacheable_Package; use org.allbinary.logic.util.cache.BasicArrayListCacheable_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 
 package org.allbinary.logic.util.cache.BasicArrayListCacheableInterfaceFactory_Package is
@@ -31,13 +30,17 @@ package org.allbinary.logic.util.cache.BasicArrayListCacheableInterfaceFactory_P
    type BasicArrayListCacheableInterfaceFactory_Access is access all BasicArrayListCacheableInterfaceFactory'Class;
    type BasicArrayListCacheableInterfaceFactory_Access_Array is array (Natural range <>) of BasicArrayListCacheableInterfaceFactory_Access;
    type BasicArrayListCacheableInterfaceFactory_Access_Array_Access is access all BasicArrayListCacheableInterfaceFactory_Access_Array;
+   type BasicArrayListCacheableInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of BasicArrayListCacheableInterfaceFactory_Access_Array_Access;
+   type BasicArrayListCacheableInterfaceFactory_Access_Array_Access_Array_Access is access all BasicArrayListCacheableInterfaceFactory_Access_Array_Access_Array;
 
-   type BasicArrayListCacheableInterfaceFactory is new CacheableInterfaceFactoryInterface with null record;
+   type BasicArrayListCacheableInterfaceFactory is new Java_Object and CacheableInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out BasicArrayListCacheableInterfaceFactory'Class);
    function Create return BasicArrayListCacheableInterfaceFactory_Access;
    function getInstance (This : in out BasicArrayListCacheableInterfaceFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access;
    procedure getInstance (This : in out BasicArrayListCacheableInterfaceFactory; key_Param : access Java_Object'Class);
+   function getInstance (This : in out BasicArrayListCacheableInterfaceFactory; Value : Unbounded_String) return CacheableInterface_Access;
+   procedure getInstance (This : in out BasicArrayListCacheableInterfaceFactory; Value : Unbounded_String);
 
 end org.allbinary.logic.util.cache.BasicArrayListCacheableInterfaceFactory_Package;
 

@@ -20,19 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.os.Debug_Package; use android.os.Debug_Package;
 with org.allbinary.debug.DebugInterface_Package; use org.allbinary.debug.DebugInterface_Package;
 
 package org.allbinary.debug.AndroidDebug_Package is
 
-   package Debug_Package renames Standard.android.os.Debug_Package;
 
    type AndroidDebug is tagged;
    type AndroidDebug_Access is access all AndroidDebug'Class;
    type AndroidDebug_Access_Array is array (Natural range <>) of AndroidDebug_Access;
    type AndroidDebug_Access_Array_Access is access all AndroidDebug_Access_Array;
+   type AndroidDebug_Access_Array_Access_Array is array (Natural range <>) of AndroidDebug_Access_Array_Access;
+   type AndroidDebug_Access_Array_Access_Array_Access is access all AndroidDebug_Access_Array_Access_Array;
 
-   type AndroidDebug is new DebugInterface with record
+   type AndroidDebug is new Java_Object and DebugInterface with record
       startTime : Long_Long_Integer;
       running : Boolean;
       bufferSize : Integer;

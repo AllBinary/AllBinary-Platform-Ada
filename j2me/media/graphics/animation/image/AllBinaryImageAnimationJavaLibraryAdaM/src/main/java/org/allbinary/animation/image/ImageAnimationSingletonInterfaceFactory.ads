@@ -21,22 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.SingletonAnimationInterfaceFactory_Package; use org.allbinary.animation.SingletonAnimationInterfaceFactory_Package;
-with org.allbinary.image.AnimationFrameToImageUtil_Package; use org.allbinary.image.AnimationFrameToImageUtil_Package;
-with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.animation.image.ImageAnimation_Package;
 
 package org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package is
 
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
-   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package SingletonAnimationInterfaceFactory_Package renames Standard.org.allbinary.animation.SingletonAnimationInterfaceFactory_Package;
-   package AnimationFrameToImageUtil_Package renames Standard.org.allbinary.image.AnimationFrameToImageUtil_Package;
 
    type ImageAnimationSingletonInterfaceFactory is tagged;
    type ImageAnimationSingletonInterfaceFactory_Access is access all ImageAnimationSingletonInterfaceFactory'Class;
    type ImageAnimationSingletonInterfaceFactory_Access_Array is array (Natural range <>) of ImageAnimationSingletonInterfaceFactory_Access;
    type ImageAnimationSingletonInterfaceFactory_Access_Array_Access is access all ImageAnimationSingletonInterfaceFactory_Access_Array;
+   type ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of ImageAnimationSingletonInterfaceFactory_Access_Array_Access;
+   type ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Access is access all ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array;
 
    type ImageAnimationSingletonInterfaceFactory is new SingletonAnimationInterfaceFactory with null record;
 

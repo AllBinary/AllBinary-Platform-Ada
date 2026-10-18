@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.identification.BasicGroupFactory_Package; use org.allbinary.game.identification.BasicGroupFactory_Package;
+
 package body org.allbinary.game.input.form.NullRTSFormInputFactory_Package is
 
+   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
    procedure Initialize_Fields (This : in out NullRTSFormInputFactory'Class) is
    begin
       null;

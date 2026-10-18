@@ -21,26 +21,21 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-with org.allbinary.game.displayable.canvas.NullGameCanvas_Package; use org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
 
 package org.allbinary.game.combat.destroy.event.DestroyedEvent_Package is
 
    package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-   package NullGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type DestroyedEvent is tagged;
    type DestroyedEvent_Access is access all DestroyedEvent'Class;
    type DestroyedEvent_Access_Array is array (Natural range <>) of DestroyedEvent_Access;
    type DestroyedEvent_Access_Array_Access is access all DestroyedEvent_Access_Array;
+   type DestroyedEvent_Access_Array_Access_Array is array (Natural range <>) of DestroyedEvent_Access_Array_Access;
+   type DestroyedEvent_Access_Array_Access_Array_Access is access all DestroyedEvent_Access_Array_Access_Array;
 
    type DestroyedEvent is new AllBinaryEventObject with record
       allBinaryGameCanvas : AllBinaryGameCanvas_Access;

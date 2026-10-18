@@ -28,6 +28,8 @@ package org.allbinary.business.advertisement.area.AdvertisementAreaData_Package 
    type AdvertisementAreaData_Access is access all AdvertisementAreaData'Class;
    type AdvertisementAreaData_Access_Array is array (Natural range <>) of AdvertisementAreaData_Access;
    type AdvertisementAreaData_Access_Array_Access is access all AdvertisementAreaData_Access_Array;
+   type AdvertisementAreaData_Access_Array_Access_Array is array (Natural range <>) of AdvertisementAreaData_Access_Array_Access;
+   type AdvertisementAreaData_Access_Array_Access_Array_Access is access all AdvertisementAreaData_Access_Array_Access_Array;
 
    type AdvertisementAreaData is new Java_Object with record
       NAME : Unbounded_String;

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with android.graphics.PorterDuff_Package; use android.graphics.PorterDuff_Package;
+with android.graphics.PorterDuffColorFilter_Package; use android.graphics.PorterDuffColorFilter_Package;
+
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 
+   package PorterDuff_Package renames Standard.android.graphics.PorterDuff_Package;
+   package PorterDuffColorFilter_Package renames Standard.android.graphics.PorterDuffColorFilter_Package;
    procedure Initialize_Fields (This : in out ImageModifierUtil'Class) is
    begin
       null;

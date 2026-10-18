@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUserFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdmi
    type PaymentStoreAdminUserFactory_Access is access all PaymentStoreAdminUserFactory'Class;
    type PaymentStoreAdminUserFactory_Access_Array is array (Natural range <>) of PaymentStoreAdminUserFactory_Access;
    type PaymentStoreAdminUserFactory_Access_Array_Access is access all PaymentStoreAdminUserFactory_Access_Array;
+   type PaymentStoreAdminUserFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentStoreAdminUserFactory_Access_Array_Access;
+   type PaymentStoreAdminUserFactory_Access_Array_Access_Array_Access is access all PaymentStoreAdminUserFactory_Access_Array_Access_Array;
 
-   type PaymentStoreAdminUserFactory is new UserFactoryInterface with null record;
+   type PaymentStoreAdminUserFactory is new Java_Object and UserFactoryInterface with null record;
 
    procedure Initialize (This : in out PaymentStoreAdminUserFactory'Class);
    function Create return PaymentStoreAdminUserFactory_Access;

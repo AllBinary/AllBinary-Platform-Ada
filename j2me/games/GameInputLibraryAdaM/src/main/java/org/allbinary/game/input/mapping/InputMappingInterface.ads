@@ -32,6 +32,8 @@ package org.allbinary.game.input.mapping.InputMappingInterface_Package is
    type InputMappingInterface_Access is access all InputMappingInterface'Class;
    type InputMappingInterface_Access_Array is array (Natural range <>) of InputMappingInterface_Access;
    type InputMappingInterface_Access_Array_Access is access all InputMappingInterface_Access_Array;
+   type InputMappingInterface_Access_Array_Access_Array is array (Natural range <>) of InputMappingInterface_Access_Array_Access;
+   type InputMappingInterface_Access_Array_Access_Array_Access is access all InputMappingInterface_Access_Array_Access_Array;
    procedure processInputMapping (This : in out InputMappingInterface; gameKey_Param : access GameKey_Package.GameKey'Class; input_Param : access Input_Package.Input'Class) is abstract;
 
 end org.allbinary.game.input.mapping.InputMappingInterface_Package;

@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.P
    type PaymentTransactionKeys_Access is access all PaymentTransactionKeys'Class;
    type PaymentTransactionKeys_Access_Array is array (Natural range <>) of PaymentTransactionKeys_Access;
    type PaymentTransactionKeys_Access_Array_Access is access all PaymentTransactionKeys_Access_Array;
+   type PaymentTransactionKeys_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionKeys_Access_Array_Access;
+   type PaymentTransactionKeys_Access_Array_Access_Array_Access is access all PaymentTransactionKeys_Access_Array_Access_Array;
 
    type PaymentTransactionKeys is new Java_Object with record
       key : Unbounded_String;

@@ -13,12 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
+
 package body org.allbinary.game.layer.LayerPlacementTypeFactory_Package is
 
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
    procedure Initialize_Fields (This : in out LayerPlacementTypeFactory'Class) is
    begin
       null;
-      This.MAP := LayerPlacementType_Package.Create (Integer_Package.MAX_VALUE);
+      This.MAP := LayerPlacementType_Package.Create (Integer'Last);
       This.LEFT := LayerPlacementType_Package.Create (DirectionFactory_Package.getInstance.LEFT.getValue);
       This.DOWN := LayerPlacementType_Package.Create (DirectionFactory_Package.getInstance.DOWN.getValue);
       This.UP := LayerPlacementType_Package.Create (DirectionFactory_Package.getInstance.UP.getValue);

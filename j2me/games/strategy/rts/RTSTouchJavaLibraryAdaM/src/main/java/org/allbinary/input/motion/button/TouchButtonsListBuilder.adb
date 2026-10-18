@@ -13,12 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.input.motion.button.TouchButtonsListBuilder_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out TouchButtonsListBuilder'Class) is
    begin
       null;
-      This.baseTouchInputList := BasicArrayListD_Package.Create;
+      This.baseTouchInputList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out TouchButtonsListBuilder'Class) is
@@ -52,7 +55,7 @@ package body org.allbinary.input.motion.button.TouchButtonsListBuilder_Package i
    procedure add (This : in out TouchButtonsListBuilder; baseTouchInput_Param : access BaseTouchInput_Package.BaseTouchInput'Class) is
       baseTouchInput : constant BaseTouchInput_Access := BaseTouchInput_Access (baseTouchInput_Param);
    begin
-        This.baseTouchInputList.add (baseTouchInput);
+        This.baseTouchInputList.add (Java_Object_Access (baseTouchInput));
    end add;
 
 end org.allbinary.input.motion.button.TouchButtonsListBuilder_Package;

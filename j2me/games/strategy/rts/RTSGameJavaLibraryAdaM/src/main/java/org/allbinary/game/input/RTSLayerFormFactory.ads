@@ -33,8 +33,10 @@ package org.allbinary.game.input.RTSLayerFormFactory_Package is
    type RTSLayerFormFactory_Access is access all RTSLayerFormFactory'Class;
    type RTSLayerFormFactory_Access_Array is array (Natural range <>) of RTSLayerFormFactory_Access;
    type RTSLayerFormFactory_Access_Array_Access is access all RTSLayerFormFactory_Access_Array;
+   type RTSLayerFormFactory_Access_Array_Access_Array is array (Natural range <>) of RTSLayerFormFactory_Access_Array_Access;
+   type RTSLayerFormFactory_Access_Array_Access_Array_Access is access all RTSLayerFormFactory_Access_Array_Access_Array;
 
-   type RTSLayerFormFactory is new RTSLayerFormFactoryInterface with null record;
+   type RTSLayerFormFactory is new Java_Object and RTSLayerFormFactoryInterface with null record;
 
    procedure Initialize (This : in out RTSLayerFormFactory'Class);
    function Create return RTSLayerFormFactory_Access;

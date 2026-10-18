@@ -13,12 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
+
 package body org.allbinary.media.audio.BasicPlayer_Package is
 
+   package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BasicPlayer'Class) is
    begin
       null;
-      This.listenersList := BasicArrayListD_Package.Create;
+      This.listenersList := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.timeBase := null;
       This.stateP := 0;
       This.loopCountP := 0;
@@ -46,7 +54,7 @@ package body org.allbinary.media.audio.BasicPlayer_Package is
 
    function getControl (This : in out BasicPlayer; controlType : Unbounded_String) return Control_Access is
    begin
-        return NullControl_Package.Create;
+        return Control_Access (NullControl_Package.Create);
    end getControl;
 
    function getControls (This : in out BasicPlayer) return Control_Access_Array_Access is
@@ -62,15 +70,15 @@ package body org.allbinary.media.audio.BasicPlayer_Package is
    procedure addPlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener_Package.PlayerListener'Class) is
       playerListener : constant PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
-        if not (This.listenersList.contains (playerListener)) then
-            This.listenersList.add (playerListener);
+        if not (This.listenersList.contains (Java_Object_Access (playerListener))) then
+            This.listenersList.add (Java_Object_Access (playerListener));
         end if;
    end addPlayerListener;
 
    procedure removePlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener_Package.PlayerListener'Class) is
       playerListener : constant PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
-        This.listenersList.remove (playerListener);
+        This.listenersList.remove (Java_Object_Access (playerListener));
    end removePlayerListener;
 
    function getState (This : in out BasicPlayer) return Integer is

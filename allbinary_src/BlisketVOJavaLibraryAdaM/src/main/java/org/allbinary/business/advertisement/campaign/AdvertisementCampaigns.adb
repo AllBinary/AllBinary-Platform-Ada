@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.business.advertisement.campaign.AdvertisementCampaigns_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out AdvertisementCampaigns'Class) is
    begin
       null;
@@ -39,7 +42,7 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
    procedure add (This : in out AdvertisementCampaigns; advertisementInterface_Param : access AdvertisementInterface_Package.AdvertisementInterface'Class) is
       advertisementInterface : constant AdvertisementInterface_Access := AdvertisementInterface_Access (advertisementInterface_Param);
    begin
-        This.advertisementsVector.add (advertisementInterface);
+        This.advertisementsVector.add (Java_Object_Access (advertisementInterface));
    end add;
 
    function get (This : in out AdvertisementCampaigns; index : Integer) return AdvertisementInterface_Access is

@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.android.activity.ProgressActivityInterface_Package; use org.allbinary.android.activity.ProgressActivityInterface_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.activity.NullProgressActivity_Package is
 
@@ -29,8 +30,10 @@ package org.allbinary.android.activity.NullProgressActivity_Package is
    type NullProgressActivity_Access is access all NullProgressActivity'Class;
    type NullProgressActivity_Access_Array is array (Natural range <>) of NullProgressActivity_Access;
    type NullProgressActivity_Access_Array_Access is access all NullProgressActivity_Access_Array;
+   type NullProgressActivity_Access_Array_Access_Array is array (Natural range <>) of NullProgressActivity_Access_Array_Access;
+   type NullProgressActivity_Access_Array_Access_Array_Access is access all NullProgressActivity_Access_Array_Access_Array;
 
-   type NullProgressActivity is new ProgressActivityInterface with null record;
+   type NullProgressActivity is new Java_Object and ProgressActivityInterface with null record;
    NULL_PROGRESS_ACTIVITY : NullProgressActivity_Access;
 
    procedure Initialize (This : in out NullProgressActivity'Class);

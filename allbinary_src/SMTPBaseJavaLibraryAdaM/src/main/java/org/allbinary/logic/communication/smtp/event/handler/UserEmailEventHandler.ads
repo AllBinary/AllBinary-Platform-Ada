@@ -21,9 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.communication.smtp.event.EmailEvent_Package; use org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
 with org.allbinary.logic.communication.smtp.info.EmailInfo_Package; use org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
@@ -31,9 +28,6 @@ with org.allbinary.logic.communication.smtp.info.EmailInfo_Package; use org.allb
 package org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package EmailEvent_Package renames Standard.org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
    package UserEmailEventListenerInterface_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
    package UserEmailEventNameData_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
    package EmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
@@ -42,6 +36,8 @@ package org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandl
    type UserEmailEventHandler_Access is access all UserEmailEventHandler'Class;
    type UserEmailEventHandler_Access_Array is array (Natural range <>) of UserEmailEventHandler_Access;
    type UserEmailEventHandler_Access_Array_Access is access all UserEmailEventHandler_Access_Array;
+   type UserEmailEventHandler_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventHandler_Access_Array_Access;
+   type UserEmailEventHandler_Access_Array_Access_Array_Access is access all UserEmailEventHandler_Access_Array_Access_Array;
 
    type UserEmailEventHandler is new Java_Object with record
       emailVector : BasicArrayList_Access;

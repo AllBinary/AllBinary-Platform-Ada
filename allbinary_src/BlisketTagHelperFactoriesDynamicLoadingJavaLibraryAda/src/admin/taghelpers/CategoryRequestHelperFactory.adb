@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with admin.taghelpers.HelperFactory_Package; use admin.taghelpers.HelperFactory_Package;
+
 package body admin.taghelpers.CategoryRequestHelperFactory_Package is
 
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out CategoryRequestHelperFactory'Class) is
    begin
       null;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.layer.RTSLayer2LogHelper_Package is
 
    procedure Initialize_Fields (This : in out RTSLayer2LogHelper'Class) is

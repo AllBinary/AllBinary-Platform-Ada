@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with android.os.Build_Package; use android.os.Build_Package;
+
 package body org.allbinary.android.AndroidInfoFactory_Package is
 
+   package Build_Package renames Standard.android.os.Build_Package;
    procedure Initialize_Fields (This : in out AndroidInfoFactory'Class) is
    begin
       null;

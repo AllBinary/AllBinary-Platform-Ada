@@ -20,26 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.directory.Directory_Package; use org.allbinary.logic.io.file.directory.Directory_Package;
 with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
-with org.allbinary.logic.visual.transform.data.TransformDocumentFactory_Package; use org.allbinary.logic.visual.transform.data.TransformDocumentFactory_Package;
 with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package; use org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.data.tree.dom.FileDomDataModel_Package; use org.allbinary.data.tree.dom.FileDomDataModel_Package;
 
 package org.allbinary.data.tree.dom.DirectoryDataModel_Package is
 
-   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package Directory_Package renames Standard.org.allbinary.logic.io.file.directory.Directory_Package;
    package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
-   package TransformDocumentFactory_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentFactory_Package;
    package TransformDocumentInterface_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
@@ -50,8 +43,10 @@ package org.allbinary.data.tree.dom.DirectoryDataModel_Package is
    type DirectoryDataModel_Access is access all DirectoryDataModel'Class;
    type DirectoryDataModel_Access_Array is array (Natural range <>) of DirectoryDataModel_Access;
    type DirectoryDataModel_Access_Array_Access is access all DirectoryDataModel_Access_Array;
+   type DirectoryDataModel_Access_Array_Access_Array is array (Natural range <>) of DirectoryDataModel_Access_Array_Access;
+   type DirectoryDataModel_Access_Array_Access_Array_Access is access all DirectoryDataModel_Access_Array_Access_Array;
 
-   type DirectoryDataModel is new DomNodeInterface and TransformInterface with record
+   type DirectoryDataModel is new Java_Object and DomNodeInterface and TransformInterface with record
       fileBasicArrayList : BasicArrayList_Access;
       transformDocumentInterface : TransformDocumentInterface_Access;
       NO_TYPE : Integer;

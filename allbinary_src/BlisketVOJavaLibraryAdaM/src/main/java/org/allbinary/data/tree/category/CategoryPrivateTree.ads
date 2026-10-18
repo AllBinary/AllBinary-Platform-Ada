@@ -20,32 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.category.CategoryComponent_Package; use org.allbinary.business.category.CategoryComponent_Package;
-with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
 with org.allbinary.business.category.CategoryFactoryInterface_Package; use org.allbinary.business.category.CategoryFactoryInterface_Package;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.control.crypt.file.CryptFileWriter_Package; use org.allbinary.logic.control.crypt.file.CryptFileWriter_Package;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package org.allbinary.data.tree.category.CategoryPrivateTree_Package is
 
-   package CategoryComponent_Package renames Standard.org.allbinary.business.category.CategoryComponent_Package;
-   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
    package CategoryFactoryInterface_Package renames Standard.org.allbinary.business.category.CategoryFactoryInterface_Package;
    package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CryptFileWriter_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileWriter_Package;
-   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type CategoryPrivateTree is tagged;
    type CategoryPrivateTree_Access is access all CategoryPrivateTree'Class;
    type CategoryPrivateTree_Access_Array is array (Natural range <>) of CategoryPrivateTree_Access;
    type CategoryPrivateTree_Access_Array_Access is access all CategoryPrivateTree_Access_Array;
+   type CategoryPrivateTree_Access_Array_Access_Array is array (Natural range <>) of CategoryPrivateTree_Access_Array_Access;
+   type CategoryPrivateTree_Access_Array_Access_Array_Access is access all CategoryPrivateTree_Access_Array_Access_Array;
 
    type CategoryPrivateTree is new Java_Object with record
       logUtil : LogUtil_Access;

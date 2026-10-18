@@ -28,6 +28,8 @@ package org.allbinary.logic.control.contraints.MinMaxDoubleConstraintInterface_P
    type MinMaxDoubleConstraintInterface_Access is access all MinMaxDoubleConstraintInterface'Class;
    type MinMaxDoubleConstraintInterface_Access_Array is array (Natural range <>) of MinMaxDoubleConstraintInterface_Access;
    type MinMaxDoubleConstraintInterface_Access_Array_Access is access all MinMaxDoubleConstraintInterface_Access_Array;
+   type MinMaxDoubleConstraintInterface_Access_Array_Access_Array is array (Natural range <>) of MinMaxDoubleConstraintInterface_Access_Array_Access;
+   type MinMaxDoubleConstraintInterface_Access_Array_Access_Array_Access is access all MinMaxDoubleConstraintInterface_Access_Array_Access_Array;
    function getMax (This : in out MinMaxDoubleConstraintInterface) return Long_Float is abstract;
    function getMin (This : in out MinMaxDoubleConstraintInterface) return Long_Float is abstract;
    procedure setMax (This : in out MinMaxDoubleConstraintInterface; max : Long_Float) is abstract;

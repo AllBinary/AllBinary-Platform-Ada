@@ -30,6 +30,8 @@ package org.allbinary.game.input.event.UpKeyEventListenerInterface_Package is
    type UpKeyEventListenerInterface_Access is access all UpKeyEventListenerInterface'Class;
    type UpKeyEventListenerInterface_Access_Array is array (Natural range <>) of UpKeyEventListenerInterface_Access;
    type UpKeyEventListenerInterface_Access_Array_Access is access all UpKeyEventListenerInterface_Access_Array;
+   type UpKeyEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of UpKeyEventListenerInterface_Access_Array_Access;
+   type UpKeyEventListenerInterface_Access_Array_Access_Array_Access is access all UpKeyEventListenerInterface_Access_Array_Access_Array;
    procedure onUpKeyEvent (This : in out UpKeyEventListenerInterface; keyAsInteger : Integer) is abstract;
 
 end org.allbinary.game.input.event.UpKeyEventListenerInterface_Package;

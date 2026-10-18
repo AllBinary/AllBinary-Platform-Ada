@@ -22,24 +22,23 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 with org.allbinary.graphics.opengles.OpenGLProcessor_Package; use org.allbinary.graphics.opengles.OpenGLProcessor_Package;
-with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package; use org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
 with org.allbinary.graphics.opengles.shader.Shader_Package; use org.allbinary.graphics.opengles.shader.Shader_Package;
 with org.allbinary.graphics.opengles.shader.ShaderInitializer_Package; use org.allbinary.graphics.opengles.shader.ShaderInitializer_Package;
 with org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package; use org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package;
 with org.allbinary.graphics.opengles.shader.ModelViewProjection_Package; use org.allbinary.graphics.opengles.shader.ModelViewProjection_Package;
-with org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package; use org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package;
 with org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package; use org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
 
 package org.allbinary.graphics.opengles.shader.ShaderComposite_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
    package OpenGLProcessor_Package renames Standard.org.allbinary.graphics.opengles.OpenGLProcessor_Package;
-   package NullOpenGLProcessorFactory_Package renames Standard.org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
 
    type ShaderComposite is tagged;
    type ShaderComposite_Access is access all ShaderComposite'Class;
    type ShaderComposite_Access_Array is array (Natural range <>) of ShaderComposite_Access;
    type ShaderComposite_Access_Array_Access is access all ShaderComposite_Access_Array;
+   type ShaderComposite_Access_Array_Access_Array is array (Natural range <>) of ShaderComposite_Access_Array_Access;
+   type ShaderComposite_Access_Array_Access_Array_Access is access all ShaderComposite_Access_Array_Access_Array;
 
    type ShaderComposite is new Java_Object with record
       disableProgramShaderOpenGLProcessor : OpenGLProcessor_Access;

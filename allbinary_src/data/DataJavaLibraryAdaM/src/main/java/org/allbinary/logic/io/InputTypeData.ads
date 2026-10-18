@@ -28,6 +28,8 @@ package org.allbinary.logic.io.InputTypeData_Package is
    type InputTypeData_Access is access all InputTypeData'Class;
    type InputTypeData_Access_Array is array (Natural range <>) of InputTypeData_Access;
    type InputTypeData_Access_Array_Access is access all InputTypeData_Access_Array;
+   type InputTypeData_Access_Array_Access_Array is array (Natural range <>) of InputTypeData_Access_Array_Access;
+   type InputTypeData_Access_Array_Access_Array_Access is access all InputTypeData_Access_Array_Access_Array;
 
    type InputTypeData is new Java_Object with record
       NAME : Unbounded_String;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.actions.script.JMenuItem_Package; use org.allbinary.input.automation.actions.script.JMenuItem_Package;
+
 package body org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package is
 
    procedure Initialize_Fields (This : in out ProfileActionScriptItem'Class) is

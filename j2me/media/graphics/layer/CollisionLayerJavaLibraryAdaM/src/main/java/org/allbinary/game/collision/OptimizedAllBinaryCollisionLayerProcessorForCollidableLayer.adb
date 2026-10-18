@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
+with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
+with org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerManager_Package; use org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerManager_Package;
+with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbinary.game.collision.CollidableBaseBehavior_Package;
+
 package body org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Package is
 
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
    procedure Initialize_Fields (This : in out OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer'Class) is
    begin
       null;

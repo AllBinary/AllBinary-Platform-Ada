@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.InputOutputTypeData_Package; use org.allbinary.logic.io.InputOutputTypeData_Package;
+with org.allbinary.logic.visual.transform.TransformFactory_Package; use org.allbinary.logic.visual.transform.TransformFactory_Package;
+with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package;
+
 package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package is
 
+   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
+   package TransformFactory_Package renames Standard.org.allbinary.logic.visual.transform.TransformFactory_Package;
+   package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package StoreFileGenerator_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package;
    procedure Initialize_Fields (This : in out TransformGeneratorUtil'Class) is
    begin
       null;
@@ -58,7 +69,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
             result := componentInterface.view;
             httpTransformInfoInterface := TransformInfoHttpInterface_Access (componentInterface.getTransformInfoInterface);
             inputOutputTypeData := InputOutputTypeData_Package.getInstance;
-            if ((Index (result, Java_Image (To_Unbounded_String ("<HTML>"))) - 1)) >= (0) then
+            if (Java_Index_Of (result, Java_Image (To_Unbounded_String ("<HTML>")))) >= (0) then
                 httpTransformInfoInterface.getPropertiesHashMap.put (inputOutputTypeData.NAME, inputOutputTypeData.DEFAULT);
             else
                 httpTransformInfoInterface.getPropertiesHashMap.put (inputOutputTypeData.NAME, inputOutputTypeData.DEFAULT_FRAGMENT);

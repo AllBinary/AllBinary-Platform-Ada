@@ -22,8 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.animation.VectorAnimationFactoryInterface_Package; use org.allbinary.animation.VectorAnimationFactoryInterface_Package;
-with org.allbinary.animation.TimedVectorAnimation_Package; use org.allbinary.animation.TimedVectorAnimation_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animation.VectorAnimation_Package;
 
 package org.allbinary.animation.TimedVectorAnimationFactory_Package is
@@ -34,8 +32,10 @@ package org.allbinary.animation.TimedVectorAnimationFactory_Package is
    type TimedVectorAnimationFactory_Access is access all TimedVectorAnimationFactory'Class;
    type TimedVectorAnimationFactory_Access_Array is array (Natural range <>) of TimedVectorAnimationFactory_Access;
    type TimedVectorAnimationFactory_Access_Array_Access is access all TimedVectorAnimationFactory_Access_Array;
+   type TimedVectorAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of TimedVectorAnimationFactory_Access_Array_Access;
+   type TimedVectorAnimationFactory_Access_Array_Access_Array_Access is access all TimedVectorAnimationFactory_Access_Array_Access_Array;
 
-   type TimedVectorAnimationFactory is new VectorAnimationFactoryInterface with null record;
+   type TimedVectorAnimationFactory is new Java_Object and VectorAnimationFactoryInterface with null record;
 
    procedure Initialize (This : in out TimedVectorAnimationFactory'Class);
    function Create return TimedVectorAnimationFactory_Access;

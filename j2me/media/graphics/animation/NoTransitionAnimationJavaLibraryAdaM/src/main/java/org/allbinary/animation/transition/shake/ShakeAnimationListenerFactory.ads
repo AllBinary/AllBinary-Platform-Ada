@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
 with org.allbinary.animation.transition.shake.ShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;
 
 package org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package is
@@ -30,6 +29,8 @@ package org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_P
    type ShakeAnimationListenerFactory_Access is access all ShakeAnimationListenerFactory'Class;
    type ShakeAnimationListenerFactory_Access_Array is array (Natural range <>) of ShakeAnimationListenerFactory_Access;
    type ShakeAnimationListenerFactory_Access_Array_Access is access all ShakeAnimationListenerFactory_Access_Array;
+   type ShakeAnimationListenerFactory_Access_Array_Access_Array is array (Natural range <>) of ShakeAnimationListenerFactory_Access_Array_Access;
+   type ShakeAnimationListenerFactory_Access_Array_Access_Array_Access is access all ShakeAnimationListenerFactory_Access_Array_Access_Array;
 
    type ShakeAnimationListenerFactory is new Java_Object with null record;
 

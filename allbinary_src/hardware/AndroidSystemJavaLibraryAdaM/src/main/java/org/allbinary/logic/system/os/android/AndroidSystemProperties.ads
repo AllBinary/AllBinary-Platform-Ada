@@ -21,23 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.content.Context_Package; use android.content.Context_Package;
-with android.os.Build_Package; use android.os.Build_Package;
-with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.logic.system.os.android.AndroidSystemProperties_Package is
 
    package Context_Package renames Standard.android.content.Context_Package;
-   package Build_Package renames Standard.android.os.Build_Package;
-   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AndroidSystemProperties is tagged;
    type AndroidSystemProperties_Access is access all AndroidSystemProperties'Class;
    type AndroidSystemProperties_Access_Array is array (Natural range <>) of AndroidSystemProperties_Access;
    type AndroidSystemProperties_Access_Array_Access is access all AndroidSystemProperties_Access_Array;
+   type AndroidSystemProperties_Access_Array_Access_Array is array (Natural range <>) of AndroidSystemProperties_Access_Array_Access;
+   type AndroidSystemProperties_Access_Array_Access_Array_Access is access all AndroidSystemProperties_Access_Array_Access_Array;
 
    type AndroidSystemProperties is new Java_Object with record
       commonStrings : CommonStrings_Access;

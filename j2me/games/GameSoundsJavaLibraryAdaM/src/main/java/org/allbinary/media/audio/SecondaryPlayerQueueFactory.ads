@@ -29,6 +29,8 @@ package org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package is
    type SecondaryPlayerQueueFactory_Access is access all SecondaryPlayerQueueFactory'Class;
    type SecondaryPlayerQueueFactory_Access_Array is array (Natural range <>) of SecondaryPlayerQueueFactory_Access;
    type SecondaryPlayerQueueFactory_Access_Array_Access is access all SecondaryPlayerQueueFactory_Access_Array;
+   type SecondaryPlayerQueueFactory_Access_Array_Access_Array is array (Natural range <>) of SecondaryPlayerQueueFactory_Access_Array_Access;
+   type SecondaryPlayerQueueFactory_Access_Array_Access_Array_Access is access all SecondaryPlayerQueueFactory_Access_Array_Access_Array;
 
    type SecondaryPlayerQueueFactory is new Java_Object with null record;
    SINGLETON : PlayerQueue_Access;

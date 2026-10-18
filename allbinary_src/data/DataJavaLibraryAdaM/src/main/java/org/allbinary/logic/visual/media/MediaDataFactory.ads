@@ -29,6 +29,8 @@ package org.allbinary.logic.visual.media.MediaDataFactory_Package is
    type MediaDataFactory_Access is access all MediaDataFactory'Class;
    type MediaDataFactory_Access_Array is array (Natural range <>) of MediaDataFactory_Access;
    type MediaDataFactory_Access_Array_Access is access all MediaDataFactory_Access_Array;
+   type MediaDataFactory_Access_Array_Access_Array is array (Natural range <>) of MediaDataFactory_Access_Array_Access;
+   type MediaDataFactory_Access_Array_Access_Array_Access is access all MediaDataFactory_Access_Array_Access_Array;
 
    type MediaDataFactory is new Java_Object with record
       AVI : MediaData_Access;

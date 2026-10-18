@@ -30,6 +30,8 @@ package org.allbinary.game.physics.velocity.VelocityProperties_Package is
    type VelocityProperties_Access is access all VelocityProperties'Class;
    type VelocityProperties_Access_Array is array (Natural range <>) of VelocityProperties_Access;
    type VelocityProperties_Access_Array_Access is access all VelocityProperties_Access_Array;
+   type VelocityProperties_Access_Array_Access_Array is array (Natural range <>) of VelocityProperties_Access_Array_Access;
+   type VelocityProperties_Access_Array_Access_Array_Access is access all VelocityProperties_Access_Array_Access_Array;
 
    type VelocityProperties is new BasicVelocityProperties and VelocityInterface with record
       maxForwardVelocity : Integer;

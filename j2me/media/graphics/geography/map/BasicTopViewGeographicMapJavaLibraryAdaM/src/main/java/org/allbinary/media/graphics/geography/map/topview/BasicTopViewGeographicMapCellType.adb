@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+
 package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellType_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package GeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+   package RaceTrackGeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
    procedure Initialize_Fields (This : in out BasicTopViewGeographicMapCellType'Class) is
    begin
       null;
@@ -28,7 +39,7 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
    function createType (name : Unbounded_String; type_Id : Integer; cost : Integer) return BasicTopViewGeographicMapCellType_Access is
       types : BasicArrayList_Access;
    begin
-        types := BasicArrayListS_Package.Create (1);
+        types := BasicArrayList_Access (BasicArrayListS_Package.Create (1));
         types.add (type_Id);
         return BasicTopViewGeographicMapCellType_Package.Create (name, types, cost);
    end createType;

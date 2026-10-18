@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
+
 package body org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package is
 
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out FREEBLISKET_PATH_GLOBALS'Class) is
    begin
       null;
@@ -35,7 +41,7 @@ package body org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package is
 
    function getInstance return FREEBLISKET_PATH_GLOBALS_Access is
    begin
-        return FREEBLISKET_PATH_GLOBALS.instance;
+        return FREEBLISKET_PATH_GLOBALS_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out FREEBLISKET_PATH_GLOBALS'Class) is

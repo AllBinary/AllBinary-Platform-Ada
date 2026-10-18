@@ -1,8 +1,14 @@
 --  Generated Code Do Not Modify
 
 
+with android.view.KeyEvent_Package; use android.view.KeyEvent_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.input.AndroidGameKey_Package; use org.allbinary.game.input.AndroidGameKey_Package;
+
 package body org.allbinary.game.input.AndroidAPI9KeyFactory_Package is
 
+   package KeyEvent_Package renames Standard.android.view.KeyEvent_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out AndroidAPI9KeyFactory'Class) is
    begin
       null;

@@ -28,6 +28,8 @@ package org.allbinary.android.view.BaseViewWrapper_Package is
    type BaseViewWrapper_Access is access all BaseViewWrapper'Class;
    type BaseViewWrapper_Access_Array is array (Natural range <>) of BaseViewWrapper_Access;
    type BaseViewWrapper_Access_Array_Access is access all BaseViewWrapper_Access_Array;
+   type BaseViewWrapper_Access_Array_Access_Array is array (Natural range <>) of BaseViewWrapper_Access_Array_Access;
+   type BaseViewWrapper_Access_Array_Access_Array_Access is access all BaseViewWrapper_Access_Array_Access_Array;
 
    type BaseViewWrapper is new Java_Object with null record;
    NULL_VIEW_WRAPPER : BaseViewWrapper_Access;

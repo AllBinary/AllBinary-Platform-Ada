@@ -32,6 +32,8 @@ package org.allbinary.graphics.font.UpdateMyFontProcessor_Package is
    type UpdateMyFontProcessor_Access is access all UpdateMyFontProcessor'Class;
    type UpdateMyFontProcessor_Access_Array is array (Natural range <>) of UpdateMyFontProcessor_Access;
    type UpdateMyFontProcessor_Access_Array_Access is access all UpdateMyFontProcessor_Access_Array;
+   type UpdateMyFontProcessor_Access_Array_Access_Array is array (Natural range <>) of UpdateMyFontProcessor_Access_Array_Access;
+   type UpdateMyFontProcessor_Access_Array_Access_Array_Access is access all UpdateMyFontProcessor_Access_Array_Access_Array;
 
    type UpdateMyFontProcessor is new MyFontProcessor with record
       updateMeasurementProcessor : UpdateMyFontInterface_Access;

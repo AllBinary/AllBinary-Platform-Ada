@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.types.TenderType_Pack
    type TenderType_Access is access all TenderType'Class;
    type TenderType_Access_Array is array (Natural range <>) of TenderType_Access;
    type TenderType_Access_Array_Access is access all TenderType_Access_Array;
+   type TenderType_Access_Array_Access_Array is array (Natural range <>) of TenderType_Access_Array_Access;
+   type TenderType_Access_Array_Access_Array_Access is access all TenderType_Access_Array_Access_Array;
 
    type TenderType is new Java_Object with record
       name : Unbounded_String;

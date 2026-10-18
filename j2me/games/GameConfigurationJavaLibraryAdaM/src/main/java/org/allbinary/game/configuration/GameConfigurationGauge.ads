@@ -31,6 +31,8 @@ package org.allbinary.game.configuration.GameConfigurationGauge_Package is
    type GameConfigurationGauge_Access is access all GameConfigurationGauge'Class;
    type GameConfigurationGauge_Access_Array is array (Natural range <>) of GameConfigurationGauge_Access;
    type GameConfigurationGauge_Access_Array_Access is access all GameConfigurationGauge_Access_Array;
+   type GameConfigurationGauge_Access_Array_Access_Array is array (Natural range <>) of GameConfigurationGauge_Access_Array_Access;
+   type GameConfigurationGauge_Access_Array_Access_Array_Access is access all GameConfigurationGauge_Access_Array_Access_Array;
 
    type GameConfigurationGauge is new Gauge with null record;
 

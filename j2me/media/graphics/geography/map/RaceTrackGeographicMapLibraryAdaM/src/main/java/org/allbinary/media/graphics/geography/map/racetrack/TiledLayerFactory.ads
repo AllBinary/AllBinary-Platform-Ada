@@ -31,6 +31,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_P
    type TiledLayerFactory_Access is access all TiledLayerFactory'Class;
    type TiledLayerFactory_Access_Array is array (Natural range <>) of TiledLayerFactory_Access;
    type TiledLayerFactory_Access_Array_Access is access all TiledLayerFactory_Access_Array;
+   type TiledLayerFactory_Access_Array_Access_Array is array (Natural range <>) of TiledLayerFactory_Access_Array_Access;
+   type TiledLayerFactory_Access_Array_Access_Array_Access is access all TiledLayerFactory_Access_Array_Access_Array;
 
    type TiledLayerFactory is new Java_Object with null record;
 

@@ -22,25 +22,19 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with admin.taghelpers.ShippingAddressHelperFactory_Package; use admin.taghelpers.ShippingAddressHelperFactory_Package;
-with org.allbinary.business.user.address.ShippingAddressData_Package; use org.allbinary.business.user.address.ShippingAddressData_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.ShippingAddressTag_Package is
 
-   package ShippingAddressHelperFactory_Package renames Standard.admin.taghelpers.ShippingAddressHelperFactory_Package;
-   package ShippingAddressData_Package renames Standard.org.allbinary.business.user.address.ShippingAddressData_Package;
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type ShippingAddressTag is tagged;
    type ShippingAddressTag_Access is access all ShippingAddressTag'Class;
    type ShippingAddressTag_Access_Array is array (Natural range <>) of ShippingAddressTag_Access;
    type ShippingAddressTag_Access_Array_Access is access all ShippingAddressTag_Access_Array;
+   type ShippingAddressTag_Access_Array_Access_Array is array (Natural range <>) of ShippingAddressTag_Access_Array_Access;
+   type ShippingAddressTag_Access_Array_Access_Array_Access is access all ShippingAddressTag_Access_Array_Access_Array;
 
    type ShippingAddressTag is new TableTag with record
       logUtil : LogUtil_Access;

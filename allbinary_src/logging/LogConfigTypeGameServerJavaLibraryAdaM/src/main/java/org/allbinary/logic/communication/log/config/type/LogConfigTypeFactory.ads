@@ -20,19 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package;
 
 package org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package is
 
-   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 
    type LogConfigTypeFactory is tagged;
    type LogConfigTypeFactory_Access is access all LogConfigTypeFactory'Class;
    type LogConfigTypeFactory_Access_Array is array (Natural range <>) of LogConfigTypeFactory_Access;
    type LogConfigTypeFactory_Access_Array_Access is access all LogConfigTypeFactory_Access_Array;
+   type LogConfigTypeFactory_Access_Array_Access_Array is array (Natural range <>) of LogConfigTypeFactory_Access_Array_Access;
+   type LogConfigTypeFactory_Access_Array_Access_Array_Access is access all LogConfigTypeFactory_Access_Array_Access_Array;
 
    type LogConfigTypeFactory is new Java_Object with record
       NO_DESCRIPTION : Unbounded_String;

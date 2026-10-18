@@ -30,6 +30,8 @@ package org.allbinary.input.automation.actions.script.condition.CustomTreeNodeIn
    type CustomTreeNodeInterface_Access is access all CustomTreeNodeInterface'Class;
    type CustomTreeNodeInterface_Access_Array is array (Natural range <>) of CustomTreeNodeInterface_Access;
    type CustomTreeNodeInterface_Access_Array_Access is access all CustomTreeNodeInterface_Access_Array;
+   type CustomTreeNodeInterface_Access_Array_Access_Array is array (Natural range <>) of CustomTreeNodeInterface_Access_Array_Access;
+   type CustomTreeNodeInterface_Access_Array_Access_Array_Access is access all CustomTreeNodeInterface_Access_Array_Access_Array;
    function getJPopupMenu (This : in out CustomTreeNodeInterface) return JPopupMenu_Access is abstract;
 
 end org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;

@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
-with org.allbinary.logic.io.AbFileLocalInputStream_Package; use org.allbinary.logic.io.AbFileLocalInputStream_Package;
 
 package org.allbinary.logic.io.CloudStreamUtil_Package is
 
@@ -36,6 +34,8 @@ package org.allbinary.logic.io.CloudStreamUtil_Package is
    type CloudStreamUtil_Access is access all CloudStreamUtil'Class;
    type CloudStreamUtil_Access_Array is array (Natural range <>) of CloudStreamUtil_Access;
    type CloudStreamUtil_Access_Array_Access is access all CloudStreamUtil_Access_Array;
+   type CloudStreamUtil_Access_Array_Access_Array is array (Natural range <>) of CloudStreamUtil_Access_Array_Access;
+   type CloudStreamUtil_Access_Array_Access_Array_Access is access all CloudStreamUtil_Access_Array_Access_Array;
 
    type CloudStreamUtil is new Java_Object with record
       logUtil : LogUtil_Access;

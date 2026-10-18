@@ -24,33 +24,23 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
-with org.allbinary.business.user.commerce.money.payment.PaymentFactory_Package; use org.allbinary.business.user.commerce.money.payment.PaymentFactory_Package;
-with org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package; use org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
-with org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package; use org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package;
-with org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package; use org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with admin.taghelpers.Table_Package; use admin.taghelpers.Table_Package;
 
 package admin.taghelpers.PaymentHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
-   package PaymentFactory_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentFactory_Package;
-   package PaymentInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
-   package PaymentEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package;
-   package PaymentEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package;
    package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type PaymentHelper is tagged;
    type PaymentHelper_Access is access all PaymentHelper'Class;
    type PaymentHelper_Access_Array is array (Natural range <>) of PaymentHelper_Access;
    type PaymentHelper_Access_Array_Access is access all PaymentHelper_Access_Array;
+   type PaymentHelper_Access_Array_Access_Array is array (Natural range <>) of PaymentHelper_Access_Array_Access;
+   type PaymentHelper_Access_Array_Access_Array_Access is access all PaymentHelper_Access_Array_Access_Array;
 
    type PaymentHelper is new Table with record
       logUtil : LogUtil_Access;

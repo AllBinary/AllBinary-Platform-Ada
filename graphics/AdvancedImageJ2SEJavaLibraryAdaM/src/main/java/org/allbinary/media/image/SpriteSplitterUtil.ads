@@ -22,20 +22,14 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
-with org.allbinary.media.image.ImageUnifierProperties_Package; use org.allbinary.media.image.ImageUnifierProperties_Package;
-with org.allbinary.media.image.ImageUnifierCell_Package; use org.allbinary.media.image.ImageUnifierCell_Package;
-with org.allbinary.media.image.ImageUnifierUtil_Package; use org.allbinary.media.image.ImageUnifierUtil_Package;
 with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
 with org.allbinary.media.image.ImageProcessedVisitor_Package; use org.allbinary.media.image.ImageProcessedVisitor_Package;
 
 package org.allbinary.media.image.SpriteSplitterUtil_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -43,6 +37,8 @@ package org.allbinary.media.image.SpriteSplitterUtil_Package is
    type SpriteSplitterUtil_Access is access all SpriteSplitterUtil'Class;
    type SpriteSplitterUtil_Access_Array is array (Natural range <>) of SpriteSplitterUtil_Access;
    type SpriteSplitterUtil_Access_Array_Access is access all SpriteSplitterUtil_Access_Array;
+   type SpriteSplitterUtil_Access_Array_Access_Array is array (Natural range <>) of SpriteSplitterUtil_Access_Array_Access;
+   type SpriteSplitterUtil_Access_Array_Access_Array_Access is access all SpriteSplitterUtil_Access_Array_Access_Array;
 
    type SpriteSplitterUtil is new Java_Object with record
       logUtil : LogUtil_Access;

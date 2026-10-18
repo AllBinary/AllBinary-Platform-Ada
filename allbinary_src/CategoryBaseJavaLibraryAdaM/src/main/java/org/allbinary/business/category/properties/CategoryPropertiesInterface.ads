@@ -36,6 +36,8 @@ package org.allbinary.business.category.properties.CategoryPropertiesInterface_P
    type CategoryPropertiesInterface_Access is access all CategoryPropertiesInterface'Class;
    type CategoryPropertiesInterface_Access_Array is array (Natural range <>) of CategoryPropertiesInterface_Access;
    type CategoryPropertiesInterface_Access_Array_Access is access all CategoryPropertiesInterface_Access_Array;
+   type CategoryPropertiesInterface_Access_Array_Access_Array is array (Natural range <>) of CategoryPropertiesInterface_Access_Array_Access;
+   type CategoryPropertiesInterface_Access_Array_Access_Array_Access is access all CategoryPropertiesInterface_Access_Array_Access_Array;
    procedure setValue (This : in out CategoryPropertiesInterface; value : Unbounded_String) is abstract;
    function getValue (This : in out CategoryPropertiesInterface) return Unbounded_String is abstract;
    function getWebAppPath (This : in out CategoryPropertiesInterface) return AbPath_Access is abstract;

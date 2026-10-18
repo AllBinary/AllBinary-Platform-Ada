@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
 
 package org.allbinary.game.state.GameStateFactory_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type GameStateFactory is tagged;
    type GameStateFactory_Access is access all GameStateFactory'Class;
    type GameStateFactory_Access_Array is array (Natural range <>) of GameStateFactory_Access;
    type GameStateFactory_Access_Array_Access is access all GameStateFactory_Access_Array;
+   type GameStateFactory_Access_Array_Access_Array is array (Natural range <>) of GameStateFactory_Access_Array_Access;
+   type GameStateFactory_Access_Array_Access_Array_Access is access all GameStateFactory_Access_Array_Access_Array;
 
    type GameStateFactory is new Java_Object with record
       index : Integer;

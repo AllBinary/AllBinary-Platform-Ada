@@ -29,6 +29,8 @@ package org.allbinary.input.KeyUtil_Package is
    type KeyUtil_Access is access all KeyUtil'Class;
    type KeyUtil_Access_Array is array (Natural range <>) of KeyUtil_Access;
    type KeyUtil_Access_Array_Access is access all KeyUtil_Access_Array;
+   type KeyUtil_Access_Array_Access_Array is array (Natural range <>) of KeyUtil_Access_Array_Access;
+   type KeyUtil_Access_Array_Access_Array_Access is access all KeyUtil_Access_Array_Access_Array;
 
    type KeyUtil is new Java_Object with null record;
 

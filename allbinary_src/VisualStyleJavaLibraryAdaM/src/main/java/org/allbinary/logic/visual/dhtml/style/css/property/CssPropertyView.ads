@@ -37,8 +37,10 @@ package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Pack
    type CssPropertyView_Access is access all CssPropertyView'Class;
    type CssPropertyView_Access_Array is array (Natural range <>) of CssPropertyView_Access;
    type CssPropertyView_Access_Array_Access is access all CssPropertyView_Access_Array;
+   type CssPropertyView_Access_Array_Access_Array is array (Natural range <>) of CssPropertyView_Access_Array_Access;
+   type CssPropertyView_Access_Array_Access_Array_Access is access all CssPropertyView_Access_Array_Access_Array;
 
-   type CssPropertyView is new DomNodeInterface with record
+   type CssPropertyView is new Java_Object and DomNodeInterface with record
       commonStrings : CommonStrings_Access;
       cssProperty : CssProperty_Access;
    end record;

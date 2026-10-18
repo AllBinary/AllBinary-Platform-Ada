@@ -29,8 +29,10 @@ package org.allbinary.graphics.ResizableEmptyListener_Package is
    type ResizableEmptyListener_Access is access all ResizableEmptyListener'Class;
    type ResizableEmptyListener_Access_Array is array (Natural range <>) of ResizableEmptyListener_Access;
    type ResizableEmptyListener_Access_Array_Access is access all ResizableEmptyListener_Access_Array;
+   type ResizableEmptyListener_Access_Array_Access_Array is array (Natural range <>) of ResizableEmptyListener_Access_Array_Access;
+   type ResizableEmptyListener_Access_Array_Access_Array_Access is access all ResizableEmptyListener_Access_Array_Access_Array;
 
-   type ResizableEmptyListener is new ResizableListenerInterface with null record;
+   type ResizableEmptyListener is new Java_Object and ResizableListenerInterface with null record;
 
    procedure Initialize (This : in out ResizableEmptyListener'Class);
    function Create return ResizableEmptyListener_Access;

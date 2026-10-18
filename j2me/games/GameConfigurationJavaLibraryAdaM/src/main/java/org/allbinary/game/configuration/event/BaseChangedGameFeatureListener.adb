@@ -13,14 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package is
 
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BaseChangedGameFeatureListener'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.gameFeatureUtil := GameFeatureUtil_Package.getInstance;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.changed := True;
    end Initialize_Fields;
 
@@ -54,13 +67,13 @@ package body org.allbinary.game.configuration.event.BaseChangedGameFeatureListen
    procedure add (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature_Package.Feature'Class) is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
-        This.list.add (gameFeature);
+        This.list.add (Java_Object_Access (gameFeature));
    end add;
 
    procedure remove (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature_Package.Feature'Class) is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
-        This.list.remove (gameFeature);
+        This.list.remove (Java_Object_Access (gameFeature));
    end remove;
 
    procedure setChanged (This : in out BaseChangedGameFeatureListener; initialized : Boolean) is
@@ -76,7 +89,7 @@ package body org.allbinary.game.configuration.event.BaseChangedGameFeatureListen
       isChanged : Boolean;
       stringBuffer : StringMaker_Access;
    begin
-        isChanged := This.list.contains (gameFeature);
+        isChanged := This.list.contains (Java_Object_Access (gameFeature));
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("GameFeature: "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (gameFeature));

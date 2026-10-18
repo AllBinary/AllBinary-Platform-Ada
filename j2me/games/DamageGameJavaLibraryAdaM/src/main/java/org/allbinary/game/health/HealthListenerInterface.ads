@@ -28,6 +28,8 @@ package org.allbinary.game.health.HealthListenerInterface_Package is
    type HealthListenerInterface_Access is access all HealthListenerInterface'Class;
    type HealthListenerInterface_Access_Array is array (Natural range <>) of HealthListenerInterface_Access;
    type HealthListenerInterface_Access_Array_Access is access all HealthListenerInterface_Access_Array;
+   type HealthListenerInterface_Access_Array_Access_Array is array (Natural range <>) of HealthListenerInterface_Access_Array_Access;
+   type HealthListenerInterface_Access_Array_Access_Array_Access is access all HealthListenerInterface_Access_Array_Access_Array;
    procedure onHealthChange (This : in out HealthListenerInterface) is abstract;
 
 end org.allbinary.game.health.HealthListenerInterface_Package;

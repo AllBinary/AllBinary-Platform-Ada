@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapStrings_Package is
 
    procedure Initialize_Fields (This : in out BasicTopViewGeographicMapStrings'Class) is

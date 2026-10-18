@@ -20,24 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package; use org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
 
 package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package is
 
-   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type CurrentlyPressedTouchButtonSingletonDebug is tagged;
    type CurrentlyPressedTouchButtonSingletonDebug_Access is access all CurrentlyPressedTouchButtonSingletonDebug'Class;
    type CurrentlyPressedTouchButtonSingletonDebug_Access_Array is array (Natural range <>) of CurrentlyPressedTouchButtonSingletonDebug_Access;
    type CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access is access all CurrentlyPressedTouchButtonSingletonDebug_Access_Array;
+   type CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array is array (Natural range <>) of CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access;
+   type CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array_Access is access all CurrentlyPressedTouchButtonSingletonDebug_Access_Array_Access_Array;
 
    type CurrentlyPressedTouchButtonSingletonDebug is new CurrentlyPressedTouchButtonSingleton with record
       string_Id : Unbounded_String;
@@ -55,8 +49,8 @@ package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDe
    procedure Initialize (This : in out CurrentlyPressedTouchButtonSingletonDebug'Class);
    function Create return CurrentlyPressedTouchButtonSingletonDebug_Access;
    function getInstance return CurrentlyPressedTouchButtonSingleton_Access;
-   procedure appendTouchButtonInput (This : in out CurrentlyPressedTouchButtonSingletonDebug; append_Field : Unbounded_String; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class);
-   procedure append (This : in out CurrentlyPressedTouchButtonSingletonDebug; append_Field : Unbounded_String);
+   procedure appendTouchButtonInput (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class);
+   procedure append (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String);
    procedure clearLog (This : in out CurrentlyPressedTouchButtonSingletonDebug; x : Integer; y : Integer);
    procedure releaseAndNotFired (This : in out CurrentlyPressedTouchButtonSingletonDebug);
    procedure releaseAndFired (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class);

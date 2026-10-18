@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.color.BasicColorUtil_Package is
 
    procedure Initialize_Fields (This : in out BasicColorUtil'Class) is

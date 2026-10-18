@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package; use org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
@@ -31,7 +30,6 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 package org.allbinary.business.category.CategoryInterface_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package CategoryHierarchyInterface_Package renames Standard.org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
    package CategoryPropertiesInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
    package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
@@ -42,6 +40,8 @@ package org.allbinary.business.category.CategoryInterface_Package is
    type CategoryInterface_Access is access all CategoryInterface'Class;
    type CategoryInterface_Access_Array is array (Natural range <>) of CategoryInterface_Access;
    type CategoryInterface_Access_Array_Access is access all CategoryInterface_Access_Array;
+   type CategoryInterface_Access_Array_Access_Array is array (Natural range <>) of CategoryInterface_Access_Array_Access;
+   type CategoryInterface_Access_Array_Access_Array_Access is access all CategoryInterface_Access_Array_Access_Array;
    function getChildNodes (This : in out CategoryInterface) return BasicArrayList_Access is abstract;
    function addChildProperty (This : in out CategoryInterface; categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) return Boolean is abstract;
    function addChild (This : in out CategoryInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return Boolean is abstract;

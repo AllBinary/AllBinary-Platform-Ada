@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.init.InitInfo_Package; use org.allbinary.business.init.InitInfo_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.globals.UrlGlobalsInterface_Package; use org.allbinary.globals.UrlGlobalsInterface_Package;
 
 package org.allbinary.globals.WebAppUrlGlobals_Package is
 
-   package InitInfo_Package renames Standard.org.allbinary.business.init.InitInfo_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type WebAppUrlGlobals is tagged;
    type WebAppUrlGlobals_Access is access all WebAppUrlGlobals'Class;
    type WebAppUrlGlobals_Access_Array is array (Natural range <>) of WebAppUrlGlobals_Access;
    type WebAppUrlGlobals_Access_Array_Access is access all WebAppUrlGlobals_Access_Array;
+   type WebAppUrlGlobals_Access_Array_Access_Array is array (Natural range <>) of WebAppUrlGlobals_Access_Array_Access;
+   type WebAppUrlGlobals_Access_Array_Access_Array_Access is access all WebAppUrlGlobals_Access_Array_Access_Array;
 
    type WebAppUrlGlobals is new UrlGlobalsInterface with record
       path : Unbounded_String;

@@ -23,18 +23,18 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.util.ABHashMap_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Map_Package renames Standard.java.util.Map_Package;
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ABHashMap is tagged;
    type ABHashMap_Access is access all ABHashMap'Class;
    type ABHashMap_Access_Array is array (Natural range <>) of ABHashMap_Access;
    type ABHashMap_Access_Array_Access is access all ABHashMap_Access_Array;
+   type ABHashMap_Access_Array_Access_Array is array (Natural range <>) of ABHashMap_Access_Array_Access;
+   type ABHashMap_Access_Array_Access_Array_Access is access all ABHashMap_Access_Array_Access_Array;
 
    type ABHashMap is new HashMap with null record;
 
@@ -61,6 +61,14 @@ package org.allbinary.util.ABHashMap_Package is
    function putIfAbsent (This : in out ABHashMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) return Java_Object_Access;
    procedure putIfAbsent (This : in out ABHashMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class);
    function clone (This : in out ABHashMap) return Java_Object_Access;
+   function get (This : in out ABHashMap; Value : Unbounded_String) return Java_Object_Access;
+   procedure get (This : in out ABHashMap; Value : Unbounded_String);
+   function containsKey (This : in out ABHashMap; Value : Unbounded_String) return Boolean;
+   procedure containsKey (This : in out ABHashMap; Value : Unbounded_String);
+   function remove (This : in out ABHashMap; Value : Unbounded_String) return Java_Object_Access;
+   procedure remove (This : in out ABHashMap; Value : Unbounded_String);
+   function containsValue (This : in out ABHashMap; Value : Unbounded_String) return Boolean;
+   procedure containsValue (This : in out ABHashMap; Value : Unbounded_String);
 
 end org.allbinary.util.ABHashMap_Package;
 

@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animation.VectorAnimation_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
@@ -29,13 +28,14 @@ with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animat
 package org.allbinary.animation.TimedVectorAnimation_Package is
 
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type TimedVectorAnimation is tagged;
    type TimedVectorAnimation_Access is access all TimedVectorAnimation'Class;
    type TimedVectorAnimation_Access_Array is array (Natural range <>) of TimedVectorAnimation_Access;
    type TimedVectorAnimation_Access_Array_Access is access all TimedVectorAnimation_Access_Array;
+   type TimedVectorAnimation_Access_Array_Access_Array is array (Natural range <>) of TimedVectorAnimation_Access_Array_Access;
+   type TimedVectorAnimation_Access_Array_Access_Array_Access is access all TimedVectorAnimation_Access_Array_Access_Array;
 
    type TimedVectorAnimation is new VectorAnimation with record
       timeElapsedHelper : TimeDelayHelper_Access;

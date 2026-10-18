@@ -21,22 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.osgi.framework.Bundle_Package; use org.osgi.framework.Bundle_Package;
-with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
-with bundle.input.automation.InputAutomationBundleActivator_Package; use bundle.input.automation.InputAutomationBundleActivator_Package;
-with org.allbinary.gui.dialog.BasicTextJDialog_Package; use org.allbinary.gui.dialog.BasicTextJDialog_Package;
-with org.allbinary.input.automation.osgi.JDialog_Package; use org.allbinary.input.automation.osgi.JDialog_Package;
 
 package org.allbinary.input.automation.osgi.DesktopBundle_Package is
 
    package Bundle_Package renames Standard.org.osgi.framework.Bundle_Package;
-   package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
-   package InputAutomationBundleActivator_Package renames Standard.bundle.input.automation.InputAutomationBundleActivator_Package;
-   package BasicTextJDialog_Package renames Standard.org.allbinary.gui.dialog.BasicTextJDialog_Package;
 
    type DesktopBundle is tagged;
    type DesktopBundle_Access is access all DesktopBundle'Class;
    type DesktopBundle_Access_Array is array (Natural range <>) of DesktopBundle_Access;
    type DesktopBundle_Access_Array_Access is access all DesktopBundle_Access_Array;
+   type DesktopBundle_Access_Array_Access_Array is array (Natural range <>) of DesktopBundle_Access_Array_Access;
+   type DesktopBundle_Access_Array_Access_Array_Access is access all DesktopBundle_Access_Array_Access_Array;
 
    type DesktopBundle is new Java_Object with record
       bundle : Bundle_Access;

@@ -29,6 +29,8 @@ package org.allbinary.thread.NullABRunnable_Package is
    type NullABRunnable_Access is access all NullABRunnable'Class;
    type NullABRunnable_Access_Array is array (Natural range <>) of NullABRunnable_Access;
    type NullABRunnable_Access_Array_Access is access all NullABRunnable_Access_Array;
+   type NullABRunnable_Access_Array_Access_Array is array (Natural range <>) of NullABRunnable_Access_Array_Access;
+   type NullABRunnable_Access_Array_Access_Array_Access is access all NullABRunnable_Access_Array_Access_Array;
 
    type NullABRunnable is new ABRunnable with null record;
    instance : NullABRunnable_Access;

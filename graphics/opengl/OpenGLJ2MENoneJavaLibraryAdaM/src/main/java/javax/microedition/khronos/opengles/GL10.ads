@@ -17,6 +17,8 @@ package javax.microedition.khronos.opengles.GL10_Package is
    type GL10_Access is access all GL10'Class;
    type GL10_Access_Array is array (Natural range <>) of GL10_Access;
    type GL10_Access_Array_Access is access all GL10_Access_Array;
+   type GL10_Access_Array_Access_Array is array (Natural range <>) of GL10_Access_Array_Access;
+   type GL10_Access_Array_Access_Array_Access is access all GL10_Access_Array_Access_Array;
 
 end javax.microedition.khronos.opengles.GL10_Package;
 

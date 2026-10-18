@@ -28,6 +28,8 @@ package org.eclipse.swt.widgets.Display_Package is
    type Display_Access is access all Display'Class;
    type Display_Access_Array is array (Natural range <>) of Display_Access;
    type Display_Access_Array_Access is access all Display_Access_Array;
+   type Display_Access_Array_Access_Array is array (Natural range <>) of Display_Access_Array_Access;
+   type Display_Access_Array_Access_Array_Access is access all Display_Access_Array_Access_Array;
 
    type Display is new Java_Object with null record;
 

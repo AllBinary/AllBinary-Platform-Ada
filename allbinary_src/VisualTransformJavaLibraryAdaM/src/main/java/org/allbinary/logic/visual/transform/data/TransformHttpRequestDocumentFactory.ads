@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-with org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package; use org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package;
 with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package; use org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
 
 package org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package is
@@ -33,6 +32,8 @@ package org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFa
    type TransformHttpRequestDocumentFactory_Access is access all TransformHttpRequestDocumentFactory'Class;
    type TransformHttpRequestDocumentFactory_Access_Array is array (Natural range <>) of TransformHttpRequestDocumentFactory_Access;
    type TransformHttpRequestDocumentFactory_Access_Array_Access is access all TransformHttpRequestDocumentFactory_Access_Array;
+   type TransformHttpRequestDocumentFactory_Access_Array_Access_Array is array (Natural range <>) of TransformHttpRequestDocumentFactory_Access_Array_Access;
+   type TransformHttpRequestDocumentFactory_Access_Array_Access_Array_Access is access all TransformHttpRequestDocumentFactory_Access_Array_Access_Array;
 
    type TransformHttpRequestDocumentFactory is new Java_Object with null record;
 

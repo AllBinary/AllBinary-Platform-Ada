@@ -32,6 +32,8 @@ package org.allbinary.business.advertisement.campaign.AdvertisementCampaignInter
    type AdvertisementCampaignInterface_Access is access all AdvertisementCampaignInterface'Class;
    type AdvertisementCampaignInterface_Access_Array is array (Natural range <>) of AdvertisementCampaignInterface_Access;
    type AdvertisementCampaignInterface_Access_Array_Access is access all AdvertisementCampaignInterface_Access_Array;
+   type AdvertisementCampaignInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementCampaignInterface_Access_Array_Access;
+   type AdvertisementCampaignInterface_Access_Array_Access_Array_Access is access all AdvertisementCampaignInterface_Access_Array_Access_Array;
    function getName (This : in out AdvertisementCampaignInterface) return Unbounded_String is abstract;
    function getComponent (This : in out AdvertisementCampaignInterface) return Java_Object_Access is abstract;
    procedure setName (This : in out AdvertisementCampaignInterface; name : Unbounded_String) is abstract;

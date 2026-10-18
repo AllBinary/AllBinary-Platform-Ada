@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tables.staticpages.StaticPagesEntityFactory_Package; use org.allbinary.data.tables.staticpages.StaticPagesEntityFactory_Package;
+with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+
 package body admin.taghelpers.StaticPagesHelper_Package is
 
+   package StaticPagesEntityFactory_Package renames Standard.org.allbinary.data.tables.staticpages.StaticPagesEntityFactory_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
    procedure Initialize_Fields (This : in out StaticPagesHelper'Class) is
    begin
       null;

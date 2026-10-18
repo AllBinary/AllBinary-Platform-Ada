@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.tracking.TrackingEventListenerInterface_Package; use org.allbinary.game.tracking.TrackingEventListenerInterface_Package;
+with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
+
 package body org.allbinary.game.tracking.TrackingEventHandler_Package is
 
    procedure Initialize_Fields (This : in out TrackingEventHandler'Class) is

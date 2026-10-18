@@ -32,6 +32,8 @@ package org.allbinary.graphics.font.MyFontProcessor_Package is
    type MyFontProcessor_Access is access all MyFontProcessor'Class;
    type MyFontProcessor_Access_Array is array (Natural range <>) of MyFontProcessor_Access;
    type MyFontProcessor_Access_Array_Access is access all MyFontProcessor_Access_Array;
+   type MyFontProcessor_Access_Array_Access_Array is array (Natural range <>) of MyFontProcessor_Access_Array_Access;
+   type MyFontProcessor_Access_Array_Access_Array_Access is access all MyFontProcessor_Access_Array_Access_Array;
 
    type MyFontProcessor is new Java_Object with null record;
    instance : MyFontProcessor_Access;

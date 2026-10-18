@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+
 package body org.allbinary.game.paint.AboutPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out AboutPaintable'Class) is
    begin
       null;
@@ -23,7 +32,7 @@ package body org.allbinary.game.paint.AboutPaintable_Package is
       
       
       This.paintableArray := new Paintable_Access_Array'(0 => AboutPaintable_Access'(This'Unchecked_Access));
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (AboutPaintable_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (AboutPaintable_Access'(This'Unchecked_Access)));
       This.charHeight := 0;
       This.aboutBeginWidth := 0;
       

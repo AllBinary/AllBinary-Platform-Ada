@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.gd.resource.GDResources_Package is
 
    procedure Initialize_Fields (This : in out GDResources'Class) is

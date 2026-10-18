@@ -13,8 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghelpers.InventoryItemViewParentTagHelper_Package;
+
 package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out MultipartRequestParamForwardHelper'Class) is
    begin
       null;
@@ -113,7 +129,7 @@ package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
       requestCommand : Unbounded_String;
    begin
         hashMap := This.requestMapInterface.getRequestHashMap;
-        requestCommand := Java_Unbox (hashMap.get (GLOBALS2.ADMINCOMMAND));
+        requestCommand := Java_Unbox (hashMap.get (GLOBALS2_Package.ADMINCOMMAND));
         if (StringValidationUtil_Package.getInstance.isEmpty (This.command)) or else (((not (StringValidationUtil_Package.getInstance.isEmpty (requestCommand))) and then ((Java_Compare_To (This.command, requestCommand)) = (0)))) then
             return True;
         end if;

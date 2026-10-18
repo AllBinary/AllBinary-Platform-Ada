@@ -21,16 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.graphics.Paint_Package; use android.graphics.Paint_Package;
-with android.graphics.PorterDuff_Package; use android.graphics.PorterDuff_Package;
-with android.graphics.PorterDuffColorFilter_Package; use android.graphics.PorterDuffColorFilter_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
 
    package Paint_Package renames Standard.android.graphics.Paint_Package;
-   package PorterDuff_Package renames Standard.android.graphics.PorterDuff_Package;
-   package PorterDuffColorFilter_Package renames Standard.android.graphics.PorterDuffColorFilter_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
@@ -38,6 +34,8 @@ package org.allbinary.media.image.ImageModifierUtil_Package is
    type ImageModifierUtil_Access is access all ImageModifierUtil'Class;
    type ImageModifierUtil_Access_Array is array (Natural range <>) of ImageModifierUtil_Access;
    type ImageModifierUtil_Access_Array_Access is access all ImageModifierUtil_Access_Array;
+   type ImageModifierUtil_Access_Array_Access_Array is array (Natural range <>) of ImageModifierUtil_Access_Array_Access;
+   type ImageModifierUtil_Access_Array_Access_Array_Access is access all ImageModifierUtil_Access_Array_Access_Array;
 
    type ImageModifierUtil is new Java_Object with record
       paint : Paint_Access;

@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.eclipse.swt.graphics.Resource_Package is
 
    procedure Initialize_Fields (This : in out Resource'Class) is

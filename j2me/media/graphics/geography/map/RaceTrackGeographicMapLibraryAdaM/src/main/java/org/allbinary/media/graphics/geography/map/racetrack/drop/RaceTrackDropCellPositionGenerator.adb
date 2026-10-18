@@ -13,12 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package;
+with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+
 package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackDropCellPositionGenerator_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GeographicMapCellHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+   package BaseRaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
+   package NullRaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package;
+   package RaceTrackGeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+   package RaceTrackGeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package;
+   package RaceTrackRoadsGeographicMapCellHistoryFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    procedure Initialize_Fields (This : in out RaceTrackDropCellPositionGenerator'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
       This.STRAIGHTAWAY := 4;
       This.raceTrackGeographicMap := NullRaceTrackGeographicMap_Package.NULL_RACE_TRACK_GEOGRAPHIC_MAP;
@@ -76,7 +95,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    begin
         RaceTrackDropCellPositionGenerator'Class (This).init;
         baseRaceTrackGeographicMap := BaseRaceTrackGeographicMap_Access (geographicMapInterface);
-        This.raceTrackGeographicMap := baseRaceTrackGeographicMap;
+        This.raceTrackGeographicMap := RaceTrackGeographicMapInterface_Access (baseRaceTrackGeographicMap);
         This.raceTrackGeographicMapCellTypeFactory := RaceTrackGeographicMapCellTypeFactory_Access (baseRaceTrackGeographicMap.getGeographicMapCellTypeFactory);
         roadGeographicMapCellHistory := RaceTrackRoadsGeographicMapCellHistoryFactory_Package.getInstance;
         trackedList := roadGeographicMapCellHistory.getTracked;
@@ -91,7 +110,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
             while RaceTrackDropCellPositionGenerator'Class (This).isDropAllowedAt (GeographicMapCellPosition_Access (trackedList.get (ahead))) loop
                 total := total + 1;
                 if (total) > (This.STRAIGHTAWAY) then
-                    This.list.add (geographicMapCellPosition);
+                    This.list.add (Java_Object_Access (geographicMapCellPosition));
                     exit;
                 end if;
                 ahead := ahead + 1;

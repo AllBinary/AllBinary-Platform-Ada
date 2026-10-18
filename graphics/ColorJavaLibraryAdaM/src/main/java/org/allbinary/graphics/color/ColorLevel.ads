@@ -28,6 +28,8 @@ package org.allbinary.graphics.color.ColorLevel_Package is
    type ColorLevel_Access is access all ColorLevel'Class;
    type ColorLevel_Access_Array is array (Natural range <>) of ColorLevel_Access;
    type ColorLevel_Access_Array_Access is access all ColorLevel_Access_Array;
+   type ColorLevel_Access_Array_Access_Array is array (Natural range <>) of ColorLevel_Access_Array_Access;
+   type ColorLevel_Access_Array_Access_Array_Access is access all ColorLevel_Access_Array_Access_Array;
 
    type ColorLevel is new Java_Object with null record;
    COLOR_MASK : Integer;

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+
 package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package is
 
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out SimultaneousCompoundIndexAnimation'Class) is
    begin
       null;

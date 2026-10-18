@@ -20,18 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
 
 package org.allbinary.game.state.RaceGameStateFactory_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type RaceGameStateFactory is tagged;
    type RaceGameStateFactory_Access is access all RaceGameStateFactory'Class;
    type RaceGameStateFactory_Access_Array is array (Natural range <>) of RaceGameStateFactory_Access;
    type RaceGameStateFactory_Access_Array_Access is access all RaceGameStateFactory_Access_Array;
+   type RaceGameStateFactory_Access_Array_Access_Array is array (Natural range <>) of RaceGameStateFactory_Access_Array_Access;
+   type RaceGameStateFactory_Access_Array_Access_Array_Access is access all RaceGameStateFactory_Access_Array_Access_Array;
 
    type RaceGameStateFactory is new Java_Object with record
       START_GAME_STATE : GameState_Access;

@@ -31,6 +31,8 @@ package org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package
    type GameAdStateFactoryInterface_Access is access all GameAdStateFactoryInterface'Class;
    type GameAdStateFactoryInterface_Access_Array is array (Natural range <>) of GameAdStateFactoryInterface_Access;
    type GameAdStateFactoryInterface_Access_Array_Access is access all GameAdStateFactoryInterface_Access_Array;
+   type GameAdStateFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of GameAdStateFactoryInterface_Access_Array_Access;
+   type GameAdStateFactoryInterface_Access_Array_Access_Array_Access is access all GameAdStateFactoryInterface_Access_Array_Access_Array;
    function getInstanceForApp (This : in out GameAdStateFactoryInterface; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class) return GameAdStateBase_Access is abstract;
 
 end org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package;

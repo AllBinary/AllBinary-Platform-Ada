@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.life.Life_Package; use org.allbinary.game.ag.life.Life_Package;
+with org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package; use org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package;
+with org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package; use org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package;
+
 package body org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool_Package is
 
+   package Life_Package renames Standard.org.allbinary.game.ag.life.Life_Package;
+   package LifeInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package;
    procedure Initialize_Fields (This : in out LifeLayerCircularStaticPool'Class) is
    begin
       null;

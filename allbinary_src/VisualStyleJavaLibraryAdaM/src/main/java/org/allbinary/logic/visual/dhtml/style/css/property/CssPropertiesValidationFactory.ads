@@ -22,28 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
-with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package;
-with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidationFactory_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidationFactory_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package Node_Package renames Standard.org.w3c.dom.Node_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type CssPropertiesValidationFactory is tagged;
    type CssPropertiesValidationFactory_Access is access all CssPropertiesValidationFactory'Class;
    type CssPropertiesValidationFactory_Access_Array is array (Natural range <>) of CssPropertiesValidationFactory_Access;
    type CssPropertiesValidationFactory_Access_Array_Access is access all CssPropertiesValidationFactory_Access_Array;
+   type CssPropertiesValidationFactory_Access_Array_Access_Array is array (Natural range <>) of CssPropertiesValidationFactory_Access_Array_Access;
+   type CssPropertiesValidationFactory_Access_Array_Access_Array_Access is access all CssPropertiesValidationFactory_Access_Array_Access_Array;
 
    type CssPropertiesValidationFactory is new Java_Object with null record;
 

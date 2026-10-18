@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 
 package org.allbinary.input.motion.gesture.TrackballMotionGestureFactory_Package is
 
-   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type TrackballMotionGestureFactory is tagged;
    type TrackballMotionGestureFactory_Access is access all TrackballMotionGestureFactory'Class;
    type TrackballMotionGestureFactory_Access_Array is array (Natural range <>) of TrackballMotionGestureFactory_Access;
    type TrackballMotionGestureFactory_Access_Array_Access is access all TrackballMotionGestureFactory_Access_Array;
+   type TrackballMotionGestureFactory_Access_Array_Access_Array is array (Natural range <>) of TrackballMotionGestureFactory_Access_Array_Access;
+   type TrackballMotionGestureFactory_Access_Array_Access_Array_Access is access all TrackballMotionGestureFactory_Access_Array_Access_Array;
 
    type TrackballMotionGestureFactory is new Java_Object with record
       LEFT : MotionGestureInput_Access;

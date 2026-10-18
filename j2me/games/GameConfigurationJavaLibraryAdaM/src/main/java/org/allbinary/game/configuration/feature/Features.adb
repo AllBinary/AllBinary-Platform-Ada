@@ -13,8 +13,32 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.event.GameFeatureEvent_Package; use org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+with org.allbinary.game.configuration.event.GameFeatureEventHandler_Package; use org.allbinary.game.configuration.event.GameFeatureEventHandler_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+with org.allbinary.game.configuration.feature.TouchFeatureFactory_Package; use org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
+with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+
 package body org.allbinary.game.configuration.feature.Features_Package is
 
+   package GameFeatureEvent_Package renames Standard.org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+   package GameFeatureEventHandler_Package renames Standard.org.allbinary.game.configuration.event.GameFeatureEventHandler_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out Features'Class) is
    begin
       null;
@@ -36,8 +60,8 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    procedure Initialize (This : in out Features'Class) is
    begin
       Initialize_Fields (This);
-        This.list := BasicArrayListD_Package.Create;
-        This.defaultList := BasicArrayListD_Package.Create;
+        This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
+        This.defaultList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         Features'Class (This).init;
    end Initialize;
 
@@ -53,8 +77,8 @@ package body org.allbinary.game.configuration.feature.Features_Package is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
         Features'Class (This).add (gameFeature);
-        if not (This.defaultList.contains (gameFeature)) then
-            This.defaultList.add (gameFeature);
+        if not (This.defaultList.contains (Java_Object_Access (gameFeature))) then
+            This.defaultList.add (Java_Object_Access (gameFeature));
         end if;
    end addDefault;
 
@@ -62,9 +86,9 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    procedure add (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
-        if not (This.list.contains (gameFeature)) then
+        if not (This.list.contains (Java_Object_Access (gameFeature))) then
             This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (gameFeature.toString).toString, Features_Access'(This'Unchecked_Access), This.commonStrings.ADD);
-            This.list.add (gameFeature);
+            This.list.add (Java_Object_Access (gameFeature));
             GameFeatureEventHandler_Package.getInstance.fireEvent (GameFeatureEvent_Package.Create (gameFeature, gameFeature.toString));
         end if;
    end add;
@@ -75,16 +99,16 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (gameFeature.toString).toString, Features_Access'(This'Unchecked_Access), To_Unbounded_String ("removeDefault"));
         Features'Class (This).remove (gameFeature);
-        This.defaultList.remove (gameFeature);
+        This.defaultList.remove (Java_Object_Access (gameFeature));
    end removeDefault;
 
    --  throws Exception
    procedure remove (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
-        if This.list.contains (gameFeature) then
+        if This.list.contains (Java_Object_Access (gameFeature)) then
             This.logUtil.putF (This.commonStrings.START, Features_Access'(This'Unchecked_Access), This.commonStrings.REMOVE);
-            This.list.remove (gameFeature);
+            This.list.remove (Java_Object_Access (gameFeature));
             GameFeatureEventHandler_Package.getInstance.fireEvent (GameFeatureEvent_Package.Create (gameFeature, gameFeature.toString));
         end if;
    end remove;
@@ -133,13 +157,13 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    function isDefault (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) return Boolean is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
-        return This.defaultList.contains (gameFeature);
+        return This.defaultList.contains (Java_Object_Access (gameFeature));
    end isDefault;
 
    function isFeature (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) return Boolean is
       gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
-        return This.list.contains (gameFeature);
+        return This.list.contains (Java_Object_Access (gameFeature));
    end isFeature;
 
    --  throws Exception

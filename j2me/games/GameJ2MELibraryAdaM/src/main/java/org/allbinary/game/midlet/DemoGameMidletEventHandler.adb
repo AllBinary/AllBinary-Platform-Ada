@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.midlet.DemoGameMidletEventListener_Package; use org.allbinary.game.midlet.DemoGameMidletEventListener_Package;
+with org.allbinary.game.midlet.DemoGameMidletEvent_Package; use org.allbinary.game.midlet.DemoGameMidletEvent_Package;
+
 package body org.allbinary.game.midlet.DemoGameMidletEventHandler_Package is
 
    procedure Initialize_Fields (This : in out DemoGameMidletEventHandler'Class) is

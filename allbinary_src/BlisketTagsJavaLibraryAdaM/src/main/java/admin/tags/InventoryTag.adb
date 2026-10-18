@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.InventoryHelperFactory_Package; use admin.taghelpers.InventoryHelperFactory_Package;
+with admin.taghelpers.InventoryRequestHelperFactory_Package; use admin.taghelpers.InventoryRequestHelperFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with admin.tags.ParentInventoryTagHelper_Package; use admin.tags.ParentInventoryTagHelper_Package;
+with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
+
 package body admin.tags.InventoryTag_Package is
 
+   package InventoryHelperFactory_Package renames Standard.admin.taghelpers.InventoryHelperFactory_Package;
+   package InventoryRequestHelperFactory_Package renames Standard.admin.taghelpers.InventoryRequestHelperFactory_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    procedure Initialize_Fields (This : in out InventoryTag'Class) is
    begin
       null;

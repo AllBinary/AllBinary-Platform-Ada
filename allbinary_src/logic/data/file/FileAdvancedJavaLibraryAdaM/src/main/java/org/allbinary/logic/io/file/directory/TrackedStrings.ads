@@ -28,6 +28,8 @@ package org.allbinary.logic.io.file.directory.TrackedStrings_Package is
    type TrackedStrings_Access is access all TrackedStrings'Class;
    type TrackedStrings_Access_Array is array (Natural range <>) of TrackedStrings_Access;
    type TrackedStrings_Access_Array_Access is access all TrackedStrings_Access_Array;
+   type TrackedStrings_Access_Array_Access_Array is array (Natural range <>) of TrackedStrings_Access_Array_Access;
+   type TrackedStrings_Access_Array_Access_Array_Access is access all TrackedStrings_Access_Array_Access_Array;
 
    type TrackedStrings is new Java_Object with record
       TARGET_PATH_WINDOWS : Unbounded_String;

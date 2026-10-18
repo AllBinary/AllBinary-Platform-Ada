@@ -29,6 +29,8 @@ package org.allbinary.logic.io.path.AbPathUtil_Package is
    type AbPathUtil_Access is access all AbPathUtil'Class;
    type AbPathUtil_Access_Array is array (Natural range <>) of AbPathUtil_Access;
    type AbPathUtil_Access_Array_Access is access all AbPathUtil_Access_Array;
+   type AbPathUtil_Access_Array_Access_Array is array (Natural range <>) of AbPathUtil_Access_Array_Access;
+   type AbPathUtil_Access_Array_Access_Array_Access is access all AbPathUtil_Access_Array_Access_Array;
 
    type AbPathUtil is new Java_Object with record
       NO_ABPATH : AbPath_Access;

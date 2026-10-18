@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathValidationView_Package is
 
    procedure Initialize_Fields (This : in out StoreThemeCategoryPathValidationView'Class) is

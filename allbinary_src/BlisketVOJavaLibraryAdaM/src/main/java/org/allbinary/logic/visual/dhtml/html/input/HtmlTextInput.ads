@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package; use org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package;
-with org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package; use org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package;
 
 package org.allbinary.logic.visual.dhtml.html.input.HtmlTextInput_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlTextInput_Package is
    type HtmlTextInput_Access is access all HtmlTextInput'Class;
    type HtmlTextInput_Access_Array is array (Natural range <>) of HtmlTextInput_Access;
    type HtmlTextInput_Access_Array_Access is access all HtmlTextInput_Access_Array;
+   type HtmlTextInput_Access_Array_Access_Array is array (Natural range <>) of HtmlTextInput_Access_Array_Access;
+   type HtmlTextInput_Access_Array_Access_Array_Access is access all HtmlTextInput_Access_Array_Access_Array;
 
    type HtmlTextInput is new HtmlLengthInput with null record;
 

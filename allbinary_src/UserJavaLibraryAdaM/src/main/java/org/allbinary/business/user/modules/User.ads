@@ -20,62 +20,28 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.Calendar_Package; use java.util.Calendar_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
-with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.modules.configuration.UserConfigurationDomDocumentMapping_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationDomDocumentMapping_Package;
 with org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
-with org.allbinary.business.user.modules.configuration.UserConfigurationInterfaceFactory_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationInterfaceFactory_Package;
 with org.allbinary.business.user.password.Password_Package; use org.allbinary.business.user.password.Password_Package;
 with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
-with org.allbinary.business.user.role.UserRoleB_Package; use org.allbinary.business.user.role.UserRoleB_Package;
-with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
-with org.allbinary.business.user.username.UserName_Package; use org.allbinary.business.user.username.UserName_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
-with org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.business.user.modules.User_Package is
 
-   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
-   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
    package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
-   package UserConfigurationDomDocumentMapping_Package renames Standard.org.allbinary.business.user.modules.configuration.UserConfigurationDomDocumentMapping_Package;
    package UserConfigurationInterface_Package renames Standard.org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
-   package UserConfigurationInterfaceFactory_Package renames Standard.org.allbinary.business.user.modules.configuration.UserConfigurationInterfaceFactory_Package;
    package Password_Package renames Standard.org.allbinary.business.user.password.Password_Package;
    package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
-   package UserRoleB_Package renames Standard.org.allbinary.business.user.role.UserRoleB_Package;
-   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
-   package UserName_Package renames Standard.org.allbinary.business.user.username.UserName_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
-   package WeblisketSessionData_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
    package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -83,8 +49,10 @@ package org.allbinary.business.user.modules.User_Package is
    type User_Access is access all User'Class;
    type User_Access_Array is array (Natural range <>) of User_Access;
    type User_Access_Array_Access is access all User_Access_Array;
+   type User_Access_Array_Access_Array is array (Natural range <>) of User_Access_Array_Access;
+   type User_Access_Array_Access_Array_Access is access all User_Access_Array_Access_Array;
 
-   type User is new UserInterface with record
+   type User is new Java_Object and UserInterface with record
       logUtil : LogUtil_Access;
       userName : Unbounded_String;
       prefixName : Unbounded_String;
@@ -143,7 +111,7 @@ package org.allbinary.business.user.modules.User_Package is
    procedure setPassword (This : in out User; value : Unbounded_String);
    procedure enable (This : in out User);
    procedure disable (This : in out User);
-   procedure setEnable (This : in out User; enable_Field : Unbounded_String);
+   procedure setEnable (This : in out User; enable : Unbounded_String);
    function getUserName (This : in out User) return Unbounded_String;
    function getPrefixName (This : in out User) return Unbounded_String;
    function getFirstName (This : in out User) return Unbounded_String;

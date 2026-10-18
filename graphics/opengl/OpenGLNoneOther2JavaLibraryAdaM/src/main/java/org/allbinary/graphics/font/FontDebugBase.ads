@@ -20,6 +20,8 @@ package org.allbinary.graphics.font.FontDebugBase_Package is
    type FontDebugBase_Access is access all FontDebugBase'Class;
    type FontDebugBase_Access_Array is array (Natural range <>) of FontDebugBase_Access;
    type FontDebugBase_Access_Array_Access is access all FontDebugBase_Access_Array;
+   type FontDebugBase_Access_Array_Access_Array is array (Natural range <>) of FontDebugBase_Access_Array_Access;
+   type FontDebugBase_Access_Array_Access_Array_Access is access all FontDebugBase_Access_Array_Access_Array;
 
    type FontDebugBase is new Java_Object with record
       SET_FONT : Unbounded_String;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Package is
 
    procedure Initialize_Fields (This : in out NullOpenGLTextureProcessor'Class) is

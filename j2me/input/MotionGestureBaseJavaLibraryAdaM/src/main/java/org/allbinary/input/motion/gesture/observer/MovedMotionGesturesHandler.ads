@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package; use org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
-with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 
 package org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package is
 
@@ -36,6 +34,8 @@ package org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_P
    type MovedMotionGesturesHandler_Access is access all MovedMotionGesturesHandler'Class;
    type MovedMotionGesturesHandler_Access_Array is array (Natural range <>) of MovedMotionGesturesHandler_Access;
    type MovedMotionGesturesHandler_Access_Array_Access is access all MovedMotionGesturesHandler_Access_Array;
+   type MovedMotionGesturesHandler_Access_Array_Access_Array is array (Natural range <>) of MovedMotionGesturesHandler_Access_Array_Access;
+   type MovedMotionGesturesHandler_Access_Array_Access_Array_Access is access all MovedMotionGesturesHandler_Access_Array_Access_Array;
 
    type MovedMotionGesturesHandler is new BasicEventHandler with null record;
    SINGLETON : MovedMotionGesturesHandler_Access;

@@ -21,31 +21,26 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.animation.NullRotationAnimation_Package; use org.allbinary.animation.NullRotationAnimation_Package;
-with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullRotationAnimationFactory_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
-   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type NullRotationAnimationFactory is tagged;
    type NullRotationAnimationFactory_Access is access all NullRotationAnimationFactory'Class;
    type NullRotationAnimationFactory_Access_Array is array (Natural range <>) of NullRotationAnimationFactory_Access;
    type NullRotationAnimationFactory_Access_Array_Access is access all NullRotationAnimationFactory_Access_Array;
+   type NullRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of NullRotationAnimationFactory_Access_Array_Access;
+   type NullRotationAnimationFactory_Access_Array_Access_Array_Access is access all NullRotationAnimationFactory_Access_Array_Access_Array;
 
-   type NullRotationAnimationFactory is new AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
+   type NullRotationAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
       NULL_ROTATION_ANIMATION_ARRAY : RotationAnimation_Access_Array_Access;
       NULL_ANIMATION : Animation_Access;
    end record;
@@ -71,29 +66,24 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.animation.NullRotationAnimation_Package; use org.allbinary.animation.NullRotationAnimation_Package;
-with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.NullRotationAnimation2_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
-   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type NullRotationAnimation2 is tagged;
    type NullRotationAnimation2_Access is access all NullRotationAnimation2'Class;
    type NullRotationAnimation2_Access_Array is array (Natural range <>) of NullRotationAnimation2_Access;
    type NullRotationAnimation2_Access_Array_Access is access all NullRotationAnimation2_Access_Array;
+   type NullRotationAnimation2_Access_Array_Access_Array is array (Natural range <>) of NullRotationAnimation2_Access_Array_Access;
+   type NullRotationAnimation2_Access_Array_Access_Array_Access is access all NullRotationAnimation2_Access_Array_Access_Array;
 
    type NullRotationAnimation2 is new NullRotationAnimation with null record;
 

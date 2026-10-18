@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package;
+
 package body org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResult_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Tokenizer_Package renames Standard.org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out TransactionResult'Class) is
    begin
       null;
@@ -88,7 +100,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
       verisignResponseKeys : BasicArrayList_Access;
    begin
         paymentTransactionKeysFactory := PaymentTransactionKeysFactory_Package.getInstance;
-        verisignResponseKeys := BasicArrayListD_Package.Create;
+        verisignResponseKeys := BasicArrayList_Access (BasicArrayListD_Package.Create);
         verisignResponseKeys.add (paymentTransactionKeysFactory.RESULT.toString);
         verisignResponseKeys.add (paymentTransactionKeysFactory.PNREF.toString);
         verisignResponseKeys.add (paymentTransactionKeysFactory.RESPMSG.toString);
@@ -123,7 +135,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
       i : Integer;
    begin
         keyVector := TransactionResult'Class (This).getAllPossibleKeys;
-        valueVector := BasicArrayListD_Package.Create;
+        valueVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := keyVector.size;
         for i in 0 .. (size) - 1 loop
             key := Java_Unbox (keyVector.get (i));

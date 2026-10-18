@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
 with org.allbinary.game.ag.ai.sequence.SequenceAI_Package; use org.allbinary.game.ag.ai.sequence.SequenceAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
-with org.allbinary.game.layer.identification.GroupLayerManagerListener_Package; use org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 
@@ -32,7 +31,6 @@ package org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package is
    package ArtificialIntelligenceInterface_Package renames Standard.org.allbinary.ai.ArtificialIntelligenceInterface_Package;
    package SequenceAI_Package renames Standard.org.allbinary.game.ag.ai.sequence.SequenceAI_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
-   package GroupLayerManagerListener_Package renames Standard.org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
@@ -40,6 +38,8 @@ package org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package is
    type NumberOnOwnGroupSequenceAI_Access is access all NumberOnOwnGroupSequenceAI'Class;
    type NumberOnOwnGroupSequenceAI_Access_Array is array (Natural range <>) of NumberOnOwnGroupSequenceAI_Access;
    type NumberOnOwnGroupSequenceAI_Access_Array_Access is access all NumberOnOwnGroupSequenceAI_Access_Array;
+   type NumberOnOwnGroupSequenceAI_Access_Array_Access_Array is array (Natural range <>) of NumberOnOwnGroupSequenceAI_Access_Array_Access;
+   type NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Access is access all NumberOnOwnGroupSequenceAI_Access_Array_Access_Array;
 
    type NumberOnOwnGroupSequenceAI is new SequenceAI with record
       numberOnSameTeam : Integer_Array_Access;

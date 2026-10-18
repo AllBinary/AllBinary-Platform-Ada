@@ -20,28 +20,27 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileFilter_Package; use java.io.FileFilter_Package;
 --  with java.io.FilenameFilter_Package; use java.io.FilenameFilter_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 --  with java.net.URI_Package; use java.net.URI_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.io.file.AbFileInterface_Package; use org.allbinary.logic.io.file.AbFileInterface_Package;
 
 package org.allbinary.logic.io.file.AbFile_Package is
 
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package File_Package renames Standard.java.io.File_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type AbFile is tagged;
    type AbFile_Access is access all AbFile'Class;
    type AbFile_Access_Array is array (Natural range <>) of AbFile_Access;
    type AbFile_Access_Array_Access is access all AbFile_Access_Array;
+   type AbFile_Access_Array_Access_Array is array (Natural range <>) of AbFile_Access_Array_Access;
+   type AbFile_Access_Array_Access_Array_Access is access all AbFile_Access_Array_Access_Array;
 
-   type AbFile is new AbFileInterface with record
+   type AbFile is new Java_Object and AbFileInterface with record
       file : File_Access;
    end record;
    NULL_FILE : AbFile_Access;
@@ -101,6 +100,8 @@ package org.allbinary.logic.io.file.AbFile_Package is
    procedure equals (This : in out AbFile; obj_Param : access Java_Object'Class);
    function hashCode (This : in out AbFile) return Integer;
    function toString (This : in out AbFile) return Unbounded_String;
+   function equals (This : in out AbFile; Value : Unbounded_String) return Boolean;
+   procedure equals (This : in out AbFile; Value : Unbounded_String);
 
 end org.allbinary.logic.io.file.AbFile_Package;
 

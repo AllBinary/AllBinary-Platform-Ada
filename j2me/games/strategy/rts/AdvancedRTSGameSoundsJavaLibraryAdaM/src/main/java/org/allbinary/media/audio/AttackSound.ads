@@ -29,6 +29,8 @@ package org.allbinary.media.audio.AttackSound_Package is
    type AttackSound_Access is access all AttackSound'Class;
    type AttackSound_Access_Array is array (Natural range <>) of AttackSound_Access;
    type AttackSound_Access_Array_Access is access all AttackSound_Access_Array;
+   type AttackSound_Access_Array_Access_Array is array (Natural range <>) of AttackSound_Access_Array_Access;
+   type AttackSound_Access_Array_Access_Array_Access is access all AttackSound_Access_Array_Access_Array;
 
    type AttackSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

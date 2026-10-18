@@ -6,6 +6,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.testgamedemo.R_Package is
 
    procedure Initialize_Fields (This : in out R'Class) is
@@ -27,6 +28,7 @@ package body org.allbinary.game.testgamedemo.R_Package is
 
 
 end org.allbinary.game.testgamedemo.R_Package;
+
 
 
 package body org.allbinary.game.testgamedemo.attr_Package is
@@ -52,6 +54,7 @@ package body org.allbinary.game.testgamedemo.attr_Package is
 end org.allbinary.game.testgamedemo.attr_Package;
 
 
+
 package body org.allbinary.game.testgamedemo.drawable_Package is
 
    procedure Initialize_Fields (This : in out drawable'Class) is
@@ -73,6 +76,7 @@ package body org.allbinary.game.testgamedemo.drawable_Package is
 
 
 end org.allbinary.game.testgamedemo.drawable_Package;
+
 
 
 package body org.allbinary.game.testgamedemo.id_Package is
@@ -106,6 +110,7 @@ begin
 end org.allbinary.game.testgamedemo.id_Package;
 
 
+
 package body org.allbinary.game.testgamedemo.layout_Package is
 
    procedure Initialize_Fields (This : in out layout'Class) is
@@ -131,6 +136,7 @@ begin
    webview_layout := 16#7f020000#;
 
 end org.allbinary.game.testgamedemo.layout_Package;
+
 
 
 package body org.allbinary.game.testgamedemo.raw_Package is
@@ -189,6 +195,7 @@ begin
    google_key := 16#7f040013#;
 
 end org.allbinary.game.testgamedemo.raw_Package;
+
 
 
 package body org.allbinary.game.testgamedemo.string_Package is

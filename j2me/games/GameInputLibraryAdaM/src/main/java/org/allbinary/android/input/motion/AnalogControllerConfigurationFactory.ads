@@ -21,19 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
-with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
-with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logic.math.ScaleFactorFactory_Package;
 
 package org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package is
 
    package AnalogControllerConfigurationEvent_Package renames Standard.org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
-   package AnalogControllerConfigurationEventHandler_Package renames Standard.org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
-   package ScaleFactorFactory_Package renames Standard.org.allbinary.logic.math.ScaleFactorFactory_Package;
 
    type AnalogControllerConfigurationFactory is tagged;
    type AnalogControllerConfigurationFactory_Access is access all AnalogControllerConfigurationFactory'Class;
    type AnalogControllerConfigurationFactory_Access_Array is array (Natural range <>) of AnalogControllerConfigurationFactory_Access;
    type AnalogControllerConfigurationFactory_Access_Array_Access is access all AnalogControllerConfigurationFactory_Access_Array;
+   type AnalogControllerConfigurationFactory_Access_Array_Access_Array is array (Natural range <>) of AnalogControllerConfigurationFactory_Access_Array_Access;
+   type AnalogControllerConfigurationFactory_Access_Array_Access_Array_Access is access all AnalogControllerConfigurationFactory_Access_Array_Access_Array;
 
    type AnalogControllerConfigurationFactory is new Java_Object with record
       SCALE_FACTOR : Integer;

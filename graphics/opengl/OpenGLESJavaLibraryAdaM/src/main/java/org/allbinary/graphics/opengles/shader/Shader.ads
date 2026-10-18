@@ -30,6 +30,8 @@ package org.allbinary.graphics.opengles.shader.Shader_Package is
    type Shader_Access is access all Shader'Class;
    type Shader_Access_Array is array (Natural range <>) of Shader_Access;
    type Shader_Access_Array_Access is access all Shader_Access_Array;
+   type Shader_Access_Array_Access_Array is array (Natural range <>) of Shader_Access_Array_Access;
+   type Shader_Access_Array_Access_Array_Access is access all Shader_Access_Array_Access_Array;
 
    type Shader is new Java_Object with record
       shaderName : Unbounded_String;

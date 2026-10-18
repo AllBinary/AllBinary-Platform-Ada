@@ -31,8 +31,10 @@ package org.allbinary.graphics.color.ColorCacheable_Package is
    type ColorCacheable_Access is access all ColorCacheable'Class;
    type ColorCacheable_Access_Array is array (Natural range <>) of ColorCacheable_Access;
    type ColorCacheable_Access_Array_Access is access all ColorCacheable_Access_Array;
+   type ColorCacheable_Access_Array_Access_Array is array (Natural range <>) of ColorCacheable_Access_Array_Access;
+   type ColorCacheable_Access_Array_Access_Array_Access is access all ColorCacheable_Access_Array_Access_Array;
 
-   type ColorCacheable is new CacheableInterface with record
+   type ColorCacheable is new Java_Object and CacheableInterface with record
       key : Java_Object_Access;
       color : Color_Access;
    end record;

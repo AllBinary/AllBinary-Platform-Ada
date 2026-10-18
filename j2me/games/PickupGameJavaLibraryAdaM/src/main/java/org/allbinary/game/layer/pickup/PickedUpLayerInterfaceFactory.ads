@@ -35,6 +35,8 @@ package org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package is
    type PickedUpLayerInterfaceFactory_Access is access all PickedUpLayerInterfaceFactory'Class;
    type PickedUpLayerInterfaceFactory_Access_Array is array (Natural range <>) of PickedUpLayerInterfaceFactory_Access;
    type PickedUpLayerInterfaceFactory_Access_Array_Access is access all PickedUpLayerInterfaceFactory_Access_Array;
+   type PickedUpLayerInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of PickedUpLayerInterfaceFactory_Access_Array_Access;
+   type PickedUpLayerInterfaceFactory_Access_Array_Access_Array_Access is access all PickedUpLayerInterfaceFactory_Access_Array_Access_Array;
 
    type PickedUpLayerInterfaceFactory is new PickedUpLayerInterfaceFactoryBase with record
       pickedUpLayerType : PickedUpLayerType_Access;

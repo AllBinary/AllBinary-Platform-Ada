@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.util.visitor.Visitor_Package is
 
    procedure Initialize_Fields (This : in out Visitor'Class) is
@@ -47,6 +48,18 @@ package body org.allbinary.logic.util.visitor.Visitor_Package is
 
    procedure visit (This : in out Visitor; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Java_Object_Access := Visitor'Class (This).visit (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end visit;
+
+   function visit (This : in out Visitor; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return Visitor'Class (This).visit (Java_Box (Value));
+   end visit;
+
+   procedure visit (This : in out Visitor; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := Visitor'Class (This).visit (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

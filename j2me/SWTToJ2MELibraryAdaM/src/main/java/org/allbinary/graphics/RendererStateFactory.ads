@@ -28,6 +28,8 @@ package org.allbinary.graphics.RendererStateFactory_Package is
    type RendererStateFactory_Access is access all RendererStateFactory'Class;
    type RendererStateFactory_Access_Array is array (Natural range <>) of RendererStateFactory_Access;
    type RendererStateFactory_Access_Array_Access is access all RendererStateFactory_Access_Array;
+   type RendererStateFactory_Access_Array_Access_Array is array (Natural range <>) of RendererStateFactory_Access_Array_Access;
+   type RendererStateFactory_Access_Array_Access_Array_Access is access all RendererStateFactory_Access_Array_Access_Array;
 
    type RendererStateFactory is new Java_Object with record
       loaded : Boolean;

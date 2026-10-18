@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out HtmlRow'Class) is
    begin
       null;
@@ -34,7 +41,7 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package is
       Initialize_Fields (This);
         This.before := Java_New_String (before);
         This.after := Java_New_String (after);
-        This.htmlCellsVector := BasicArrayListD_Package.Create;
+        This.htmlCellsVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create (before : Unbounded_String; after : Unbounded_String) return HtmlRow_Access is
@@ -47,7 +54,7 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package is
    procedure addCell (This : in out HtmlRow; htmlCell_Param : access HtmlCell_Package.HtmlCell'Class) is
       htmlCell : constant HtmlCell_Access := HtmlCell_Access (htmlCell_Param);
    begin
-        This.htmlCellsVector.add (htmlCell);
+        This.htmlCellsVector.add (Java_Object_Access (htmlCell));
         This.numberOfColumns := This.numberOfColumns + 1;
    end addCell;
 

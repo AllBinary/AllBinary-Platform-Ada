@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.loader.AbeFactory_Package; use org.allbinary.logic.system.loader.AbeFactory_Package;
+
 package body org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventListenerFactory_Package is
 
+   package AbeFactory_Package renames Standard.org.allbinary.logic.system.loader.AbeFactory_Package;
    procedure Initialize_Fields (This : in out UserEmailEventListenerFactory'Class) is
    begin
       null;

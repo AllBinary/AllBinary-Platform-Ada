@@ -32,6 +32,8 @@ package org.allbinary.logic.util.cache.PoolInterfaceFactory_Package is
    type PoolInterfaceFactory_Access is access all PoolInterfaceFactory'Class;
    type PoolInterfaceFactory_Access_Array is array (Natural range <>) of PoolInterfaceFactory_Access;
    type PoolInterfaceFactory_Access_Array_Access is access all PoolInterfaceFactory_Access_Array;
+   type PoolInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of PoolInterfaceFactory_Access_Array_Access;
+   type PoolInterfaceFactory_Access_Array_Access_Array_Access is access all PoolInterfaceFactory_Access_Array_Access_Array;
 
    type PoolInterfaceFactory is new Java_Object with null record;
 

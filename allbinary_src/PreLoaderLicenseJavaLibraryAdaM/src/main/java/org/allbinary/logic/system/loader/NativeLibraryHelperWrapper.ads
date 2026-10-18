@@ -22,18 +22,17 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Constructor_Package; use java.lang.reflect.Constructor_Package;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
-with org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package; use org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package;
 
 package org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type NativeLibraryHelperWrapper is tagged;
    type NativeLibraryHelperWrapper_Access is access all NativeLibraryHelperWrapper'Class;
    type NativeLibraryHelperWrapper_Access_Array is array (Natural range <>) of NativeLibraryHelperWrapper_Access;
    type NativeLibraryHelperWrapper_Access_Array_Access is access all NativeLibraryHelperWrapper_Access_Array;
+   type NativeLibraryHelperWrapper_Access_Array_Access_Array is array (Natural range <>) of NativeLibraryHelperWrapper_Access_Array_Access;
+   type NativeLibraryHelperWrapper_Access_Array_Access_Array_Access is access all NativeLibraryHelperWrapper_Access_Array_Access_Array;
 
    type NativeLibraryHelperWrapper is new Java_Object with record
       libraryName : Unbounded_String;

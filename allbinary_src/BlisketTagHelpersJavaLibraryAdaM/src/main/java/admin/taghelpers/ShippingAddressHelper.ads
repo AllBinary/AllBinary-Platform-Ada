@@ -24,15 +24,9 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
-with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
 with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
-with org.allbinary.data.tables.user.address.billing.BillingAddressesEntityFactory_Package; use org.allbinary.data.tables.user.address.billing.BillingAddressesEntityFactory_Package;
-with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package; use org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
-with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package; use org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-with org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Package;
 
@@ -40,21 +34,17 @@ package admin.taghelpers.ShippingAddressHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
-   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
    package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
-   package BillingAddressesEntityFactory_Package renames Standard.org.allbinary.data.tables.user.address.billing.BillingAddressesEntityFactory_Package;
-   package ShippingAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
-   package ShippingAddressesEntityFactory_Package renames Standard.org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package;
    package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package WeblisketSessionData_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ShippingAddressHelper is tagged;
    type ShippingAddressHelper_Access is access all ShippingAddressHelper'Class;
    type ShippingAddressHelper_Access_Array is array (Natural range <>) of ShippingAddressHelper_Access;
    type ShippingAddressHelper_Access_Array_Access is access all ShippingAddressHelper_Access_Array;
+   type ShippingAddressHelper_Access_Array_Access_Array is array (Natural range <>) of ShippingAddressHelper_Access_Array_Access;
+   type ShippingAddressHelper_Access_Array_Access_Array_Access is access all ShippingAddressHelper_Access_Array_Access_Array;
 
    type ShippingAddressHelper is new BasicTable with record
       logUtil : LogUtil_Access;

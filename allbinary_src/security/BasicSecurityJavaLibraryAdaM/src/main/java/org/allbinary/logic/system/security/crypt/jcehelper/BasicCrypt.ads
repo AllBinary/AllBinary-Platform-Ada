@@ -20,28 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.java.byteutil.ByteUtil_Package; use org.allbinary.logic.java.byteutil.ByteUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Package is
 
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package ByteUtil_Package renames Standard.org.allbinary.logic.java.byteutil.ByteUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BasicCrypt is tagged;
    type BasicCrypt_Access is access all BasicCrypt'Class;
    type BasicCrypt_Access_Array is array (Natural range <>) of BasicCrypt_Access;
    type BasicCrypt_Access_Array_Access is access all BasicCrypt_Access_Array;
+   type BasicCrypt_Access_Array_Access_Array is array (Natural range <>) of BasicCrypt_Access_Array_Access;
+   type BasicCrypt_Access_Array_Access_Array_Access is access all BasicCrypt_Access_Array_Access_Array;
 
-   type BasicCrypt is new CryptInterface with record
+   type BasicCrypt is new Java_Object and CryptInterface with record
       byteUtil : ByteUtil_Access;
       key : Short_Short_Integer_Array_Access;
    end record;

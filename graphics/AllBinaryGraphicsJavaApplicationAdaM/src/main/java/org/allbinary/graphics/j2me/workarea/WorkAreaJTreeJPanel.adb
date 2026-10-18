@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 
+   package CanvasTreeLabel_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
+   package MyCanvasEvent_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+   package MyCanvasEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+   package MyCanvasEventSource_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
+   package MyGraphicItemEvent_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
+   package MyGraphicItemEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
+   package MyGraphicItemEventSource_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out WorkAreaJTreeJPanel'Class) is
    begin
       null;
@@ -40,7 +57,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
         This.rootTreeNode := DefaultMutableTreeNode_Package.Create (workAreaName);
         This.workAreaPropertiesJPanel.removeAll;
         WorkAreaJTreeJPanel'Class (This).updateTree;
-        This.highlightedBasicArrayList := BasicArrayListD_Package.Create;
+        This.highlightedBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create (workAreaName : Unbounded_String) return WorkAreaJTreeJPanel_Access is
@@ -75,7 +92,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
       basicArrayList : BasicArrayList_Access;
       index : Integer;
    begin
-        basicArrayList := BasicArrayListD_Package.Create;
+        basicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         if (treePathArray) /= (null) then
             for index in 0 .. (treePathArray'Length) - 1 loop
                 basicArrayList.add (WorkAreaJTreeJPanel'Class (This).getNode (treePathArray (index)));
@@ -118,7 +135,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
    procedure selectGraphicItem (This : in out WorkAreaJTreeJPanel; node_Param : access DefaultMutableTreeNode_Package.DefaultMutableTreeNode'Class) is
       node : constant DefaultMutableTreeNode_Access := DefaultMutableTreeNode_Access (node_Param);
    begin
-        This.highlightedBasicArrayList.add (node);
+        This.highlightedBasicArrayList.add (Java_Object_Access (node));
         MyGraphicItemEventService_Package.fire (MyGraphicItemEvent_Package.Create (Java_Object_Access (MyGraphicItemEventSource_Package.Create (MyGraphicItemEventService_Package.SELECT_Id, node))));
    end selectGraphicItem;
 
@@ -197,7 +214,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 
    function getRootTreeNode (This : in out WorkAreaJTreeJPanel) return MutableTreeNode_Access is
    begin
-        return This.rootTreeNode;
+        return MutableTreeNode_Access (This.rootTreeNode);
    end getRootTreeNode;
 
    procedure expand (This : in out WorkAreaJTreeJPanel) is

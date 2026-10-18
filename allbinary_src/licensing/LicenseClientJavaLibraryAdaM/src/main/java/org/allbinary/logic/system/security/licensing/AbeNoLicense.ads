@@ -20,25 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
-with org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package; use org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package; use org.allbinary.logic.system.security.licensing.LicenseType_Package;
 
 package org.allbinary.logic.system.security.licensing.AbeNoLicense_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AbeNoLicense is tagged;
    type AbeNoLicense_Access is access all AbeNoLicense'Class;
    type AbeNoLicense_Access_Array is array (Natural range <>) of AbeNoLicense_Access;
    type AbeNoLicense_Access_Array_Access is access all AbeNoLicense_Access_Array;
+   type AbeNoLicense_Access_Array_Access_Array is array (Natural range <>) of AbeNoLicense_Access_Array_Access;
+   type AbeNoLicense_Access_Array_Access_Array_Access is access all AbeNoLicense_Access_Array_Access_Array;
 
-   type AbeNoLicense is new AbeLicenseInterface with record
+   type AbeNoLicense is new Java_Object and AbeLicenseInterface with record
       serverVector : BasicArrayList_Access;
    end record;
    abeNoLicense : AbeNoLicense_Access;

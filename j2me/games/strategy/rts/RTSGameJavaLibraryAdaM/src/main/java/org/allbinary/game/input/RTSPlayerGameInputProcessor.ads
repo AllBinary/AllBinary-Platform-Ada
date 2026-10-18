@@ -30,6 +30,8 @@ package org.allbinary.game.input.RTSPlayerGameInputProcessor_Package is
    type RTSPlayerGameInputProcessor_Access is access all RTSPlayerGameInputProcessor'Class;
    type RTSPlayerGameInputProcessor_Access_Array is array (Natural range <>) of RTSPlayerGameInputProcessor_Access;
    type RTSPlayerGameInputProcessor_Access_Array_Access is access all RTSPlayerGameInputProcessor_Access_Array;
+   type RTSPlayerGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of RTSPlayerGameInputProcessor_Access_Array_Access;
+   type RTSPlayerGameInputProcessor_Access_Array_Access_Array_Access is access all RTSPlayerGameInputProcessor_Access_Array_Access_Array;
 
    type RTSPlayerGameInputProcessor is new GameInputProcessor with record
       rtsPlayerGameInput : RTSPlayerGameInput_Access;

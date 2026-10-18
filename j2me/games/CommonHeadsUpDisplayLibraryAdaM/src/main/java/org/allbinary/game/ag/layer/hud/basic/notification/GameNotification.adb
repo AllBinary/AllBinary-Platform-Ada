@@ -13,14 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package is
 
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out GameNotification'Class) is
    begin
       null;
-      This.stringList := BasicArrayListD_Package.Create;
-      This.timeList := BasicArrayListD_Package.Create;
-      This.colorList := BasicArrayListD_Package.Create;
+      This.stringList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.timeList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.colorList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out GameNotification'Class) is
@@ -42,7 +53,7 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification
         if not (This.stringList.contains (string_Id)) then
             This.stringList.add (string_Id);
             This.timeList.add (seconds);
-            This.colorList.add (basicColor);
+            This.colorList.add (Java_Object_Access (basicColor));
         end if;
    end add;
 

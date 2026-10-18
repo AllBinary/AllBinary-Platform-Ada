@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.identification.BasicGroupFactory_Package; use org.allbinary.game.identification.BasicGroupFactory_Package;
 with org.allbinary.game.input.form.RTSFormInput_Package; use org.allbinary.game.input.form.RTSFormInput_Package;
 
 package org.allbinary.game.input.form.NullRTSFormInputFactory_Package is
 
-   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
 
    type NullRTSFormInputFactory is tagged;
    type NullRTSFormInputFactory_Access is access all NullRTSFormInputFactory'Class;
    type NullRTSFormInputFactory_Access_Array is array (Natural range <>) of NullRTSFormInputFactory_Access;
    type NullRTSFormInputFactory_Access_Array_Access is access all NullRTSFormInputFactory_Access_Array;
+   type NullRTSFormInputFactory_Access_Array_Access_Array is array (Natural range <>) of NullRTSFormInputFactory_Access_Array_Access;
+   type NullRTSFormInputFactory_Access_Array_Access_Array_Access is access all NullRTSFormInputFactory_Access_Array_Access_Array;
 
    type NullRTSFormInputFactory is new Java_Object with null record;
    SINGLETON : RTSFormInput_Access;

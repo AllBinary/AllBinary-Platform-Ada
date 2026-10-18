@@ -13,8 +13,44 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbinary.game.input.event.GameKeyEventFactory_Package;
+with org.allbinary.game.layer.SWTUtil_Package; use org.allbinary.game.layer.SWTUtil_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.form.CommandCurrentSelectionForm_Package; use org.allbinary.graphics.form.CommandCurrentSelectionForm_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package; use org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
+with org.allbinary.media.audio.SelectSound_Package; use org.allbinary.media.audio.SelectSound_Package;
+with org.allbinary.thread.PrimaryThreadPool_Package; use org.allbinary.thread.PrimaryThreadPool_Package;
+with org.allbinary.game.displayable.canvas.CommandRunnable_Package; use org.allbinary.game.displayable.canvas.CommandRunnable_Package;
+
 package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
+   package SWTUtil_Package renames Standard.org.allbinary.game.layer.SWTUtil_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package CommandCurrentSelectionForm_Package renames Standard.org.allbinary.graphics.form.CommandCurrentSelectionForm_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package PrimaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
+   package SelectSound_Package renames Standard.org.allbinary.media.audio.SelectSound_Package;
+   package PrimaryThreadPool_Package renames Standard.org.allbinary.thread.PrimaryThreadPool_Package;
    procedure Initialize_Fields (This : in out CommandFormInputProcessor'Class) is
    begin
       null;
@@ -158,7 +194,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
                     PrimaryPlayerQueueFactory_Package.getInstance.add (SelectSound_Package.getInstance);
                     if (index) = (This.form.getSelectedIndex) then
                         if This.clickTimeHelper.isTimeTNT then
-                            CommandFormInputProcessor'Class (This).processCommand;
+                            declare Java_Result renames CommandFormInputProcessor'Class (This).processCommand; pragma Unreferenced (Java_Result); begin null; end;
                         end if;
                     else
                         This.form.setSelectedIndex (index);
@@ -170,7 +206,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
             if This.hasPressed then
                 if not (This.doubleClickTimeHelper.isTimeTNT) then
                     This.logUtil.putF (To_Unbounded_String ("Double Press"), CommandFormInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.PROCESS_MOTION_INPUT);
-                    CommandFormInputProcessor'Class (This).processCommand;
+                    declare Java_Result renames CommandFormInputProcessor'Class (This).processCommand; pragma Unreferenced (Java_Result); begin null; end;
                 end if;
                 This.doubleClickTimeHelper.delay_Id := This.DOUBLE_CLICK_DELAY;
                 This.doubleClickTimeHelper.setStartTimeTNT;

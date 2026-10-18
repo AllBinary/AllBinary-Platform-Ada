@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package;
+
 package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package is
 
    procedure Initialize_Fields (This : in out FontFamilyView'Class) is

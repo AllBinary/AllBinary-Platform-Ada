@@ -22,20 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
-with org.allbinary.layer.NullLayer_Package; use org.allbinary.layer.NullLayer_Package;
 with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 
 package org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package is
 
    package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
    package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
-   package NullLayer_Package renames Standard.org.allbinary.layer.NullLayer_Package;
    package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type TileLayerPositionIntoViewPosition is tagged;
    type TileLayerPositionIntoViewPosition_Access is access all TileLayerPositionIntoViewPosition'Class;
    type TileLayerPositionIntoViewPosition_Access_Array is array (Natural range <>) of TileLayerPositionIntoViewPosition_Access;
    type TileLayerPositionIntoViewPosition_Access_Array_Access is access all TileLayerPositionIntoViewPosition_Access_Array;
+   type TileLayerPositionIntoViewPosition_Access_Array_Access_Array is array (Natural range <>) of TileLayerPositionIntoViewPosition_Access_Array_Access;
+   type TileLayerPositionIntoViewPosition_Access_Array_Access_Array_Access is access all TileLayerPositionIntoViewPosition_Access_Array_Access_Array;
 
    type TileLayerPositionIntoViewPosition is new ViewPosition with record
       tiledLayer : Layer_Access;

@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package; use org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+
 package body org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package is
 
    procedure Initialize_Fields (This : in out MovedMotionGesturesHandler'Class) is

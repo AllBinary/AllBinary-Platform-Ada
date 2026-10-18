@@ -20,18 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
-with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package; use org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
-with org.allbinary.game.layer.geological.resources.GeologicalResource_Package; use org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
 
 package org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPositionFactory_Package is
 
-   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package GeographicMapCellPositionFactoryInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
@@ -40,8 +34,10 @@ package org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCel
    type GeologicalGeographicMapCellPositionFactory_Access is access all GeologicalGeographicMapCellPositionFactory'Class;
    type GeologicalGeographicMapCellPositionFactory_Access_Array is array (Natural range <>) of GeologicalGeographicMapCellPositionFactory_Access;
    type GeologicalGeographicMapCellPositionFactory_Access_Array_Access is access all GeologicalGeographicMapCellPositionFactory_Access_Array;
+   type GeologicalGeographicMapCellPositionFactory_Access_Array_Access_Array is array (Natural range <>) of GeologicalGeographicMapCellPositionFactory_Access_Array_Access;
+   type GeologicalGeographicMapCellPositionFactory_Access_Array_Access_Array_Access is access all GeologicalGeographicMapCellPositionFactory_Access_Array_Access_Array;
 
-   type GeologicalGeographicMapCellPositionFactory is new GeographicMapCellPositionFactoryInterface with record
+   type GeologicalGeographicMapCellPositionFactory is new Java_Object and GeographicMapCellPositionFactoryInterface with record
       resourcePerMapCellType : Integer_Array_Access;
    end record;
 

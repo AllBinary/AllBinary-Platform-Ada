@@ -31,6 +31,8 @@ package org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Packa
    type ImageComparisonSearchResultsEvent_Access is access all ImageComparisonSearchResultsEvent'Class;
    type ImageComparisonSearchResultsEvent_Access_Array is array (Natural range <>) of ImageComparisonSearchResultsEvent_Access;
    type ImageComparisonSearchResultsEvent_Access_Array_Access is access all ImageComparisonSearchResultsEvent_Access_Array;
+   type ImageComparisonSearchResultsEvent_Access_Array_Access_Array is array (Natural range <>) of ImageComparisonSearchResultsEvent_Access_Array_Access;
+   type ImageComparisonSearchResultsEvent_Access_Array_Access_Array_Access is access all ImageComparisonSearchResultsEvent_Access_Array_Access_Array;
 
    type ImageComparisonSearchResultsEvent is new AllBinaryEventObject with record
       imageComparisonSearch : ImageComparisonSearch_Access;

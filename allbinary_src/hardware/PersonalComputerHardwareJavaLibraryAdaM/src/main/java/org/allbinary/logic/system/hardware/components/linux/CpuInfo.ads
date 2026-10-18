@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package is
    type CpuInfo_Access is access all CpuInfo'Class;
    type CpuInfo_Access_Array is array (Natural range <>) of CpuInfo_Access;
    type CpuInfo_Access_Array_Access is access all CpuInfo_Access_Array;
+   type CpuInfo_Access_Array_Access_Array is array (Natural range <>) of CpuInfo_Access_Array_Access;
+   type CpuInfo_Access_Array_Access_Array_Access is access all CpuInfo_Access_Array_Access_Array;
 
    type CpuInfo is new Java_Object with record
       name : Unbounded_String;

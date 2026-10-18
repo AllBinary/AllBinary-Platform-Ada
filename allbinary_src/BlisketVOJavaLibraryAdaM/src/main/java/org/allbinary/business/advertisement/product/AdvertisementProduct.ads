@@ -31,8 +31,10 @@ package org.allbinary.business.advertisement.product.AdvertisementProduct_Packag
    type AdvertisementProduct_Access is access all AdvertisementProduct'Class;
    type AdvertisementProduct_Access_Array is array (Natural range <>) of AdvertisementProduct_Access;
    type AdvertisementProduct_Access_Array_Access is access all AdvertisementProduct_Access_Array;
+   type AdvertisementProduct_Access_Array_Access_Array is array (Natural range <>) of AdvertisementProduct_Access_Array_Access;
+   type AdvertisementProduct_Access_Array_Access_Array_Access is access all AdvertisementProduct_Access_Array_Access_Array;
 
-   type AdvertisementProduct is new AdvertisementProductInterface with record
+   type AdvertisementProduct is new Java_Object and AdvertisementProductInterface with record
       type_Id : Unbounded_String;
       link : Unbounded_String;
       number : Integer;

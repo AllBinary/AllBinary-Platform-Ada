@@ -33,6 +33,8 @@ package org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisi
    type IncludeFileExtensionsBooleanFileVisitor_Access is access all IncludeFileExtensionsBooleanFileVisitor'Class;
    type IncludeFileExtensionsBooleanFileVisitor_Access_Array is array (Natural range <>) of IncludeFileExtensionsBooleanFileVisitor_Access;
    type IncludeFileExtensionsBooleanFileVisitor_Access_Array_Access is access all IncludeFileExtensionsBooleanFileVisitor_Access_Array;
+   type IncludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array is array (Natural range <>) of IncludeFileExtensionsBooleanFileVisitor_Access_Array_Access;
+   type IncludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array_Access is access all IncludeFileExtensionsBooleanFileVisitor_Access_Array_Access_Array;
 
    type IncludeFileExtensionsBooleanFileVisitor is new BooleanFileVisitor with null record;
 

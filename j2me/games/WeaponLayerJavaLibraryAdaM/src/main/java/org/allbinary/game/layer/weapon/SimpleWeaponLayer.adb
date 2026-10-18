@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+with org.allbinary.animation.NullIndexedAnimationFactory_Package; use org.allbinary.animation.NullIndexedAnimationFactory_Package;
+with org.allbinary.game.combat.damage.ExplosionResources_Package; use org.allbinary.game.combat.damage.ExplosionResources_Package;
+with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package; use org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
+
 package body org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package is
 
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package NullIndexedAnimationFactory_Package renames Standard.org.allbinary.animation.NullIndexedAnimationFactory_Package;
+   package ExplosionResources_Package renames Standard.org.allbinary.game.combat.damage.ExplosionResources_Package;
    procedure Initialize_Fields (This : in out SimpleWeaponLayer'Class) is
    begin
       null;

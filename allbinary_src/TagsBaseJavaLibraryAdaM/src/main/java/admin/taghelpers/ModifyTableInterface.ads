@@ -28,6 +28,8 @@ package admin.taghelpers.ModifyTableInterface_Package is
    type ModifyTableInterface_Access is access all ModifyTableInterface'Class;
    type ModifyTableInterface_Access_Array is array (Natural range <>) of ModifyTableInterface_Access;
    type ModifyTableInterface_Access_Array_Access is access all ModifyTableInterface_Access_Array;
+   type ModifyTableInterface_Access_Array_Access_Array is array (Natural range <>) of ModifyTableInterface_Access_Array_Access;
+   type ModifyTableInterface_Access_Array_Access_Array_Access is access all ModifyTableInterface_Access_Array_Access_Array;
    function insert (This : in out ModifyTableInterface) return Unbounded_String is abstract;
    function delete (This : in out ModifyTableInterface) return Unbounded_String is abstract;
    function update (This : in out ModifyTableInterface) return Unbounded_String is abstract;

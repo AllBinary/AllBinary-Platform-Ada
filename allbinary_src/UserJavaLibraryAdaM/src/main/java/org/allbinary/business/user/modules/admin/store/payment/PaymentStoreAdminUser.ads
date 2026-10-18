@@ -34,6 +34,8 @@ package org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdmi
    type PaymentStoreAdminUser_Access is access all PaymentStoreAdminUser'Class;
    type PaymentStoreAdminUser_Access_Array is array (Natural range <>) of PaymentStoreAdminUser_Access;
    type PaymentStoreAdminUser_Access_Array_Access is access all PaymentStoreAdminUser_Access_Array;
+   type PaymentStoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of PaymentStoreAdminUser_Access_Array_Access;
+   type PaymentStoreAdminUser_Access_Array_Access_Array_Access is access all PaymentStoreAdminUser_Access_Array_Access_Array;
 
    type PaymentStoreAdminUser is new User with null record;
 

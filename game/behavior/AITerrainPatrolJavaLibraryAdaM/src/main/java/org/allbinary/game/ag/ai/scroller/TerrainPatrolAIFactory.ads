@@ -24,10 +24,7 @@ with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary
 with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package; use org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package; use org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package;
-with org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package; use org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package;
 
 package org.allbinary.game.ag.ai.scroller.TerrainPatrolAIFactory_Package is
 
@@ -35,15 +32,16 @@ package org.allbinary.game.ag.ai.scroller.TerrainPatrolAIFactory_Package is
    package ArtificialIntelligenceInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type TerrainPatrolAIFactory is tagged;
    type TerrainPatrolAIFactory_Access is access all TerrainPatrolAIFactory'Class;
    type TerrainPatrolAIFactory_Access_Array is array (Natural range <>) of TerrainPatrolAIFactory_Access;
    type TerrainPatrolAIFactory_Access_Array_Access is access all TerrainPatrolAIFactory_Access_Array;
+   type TerrainPatrolAIFactory_Access_Array_Access_Array is array (Natural range <>) of TerrainPatrolAIFactory_Access_Array_Access;
+   type TerrainPatrolAIFactory_Access_Array_Access_Array_Access is access all TerrainPatrolAIFactory_Access_Array_Access_Array;
 
-   type TerrainPatrolAIFactory is new ArtificialIntelligenceInterfaceFactoryInterface with null record;
+   type TerrainPatrolAIFactory is new Java_Object and ArtificialIntelligenceInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out TerrainPatrolAIFactory'Class);
    function Create return TerrainPatrolAIFactory_Access;

@@ -30,6 +30,8 @@ package org.allbinary.graphics.form.ItemPaintableFactory_Package is
    type ItemPaintableFactory_Access is access all ItemPaintableFactory'Class;
    type ItemPaintableFactory_Access_Array is array (Natural range <>) of ItemPaintableFactory_Access;
    type ItemPaintableFactory_Access_Array_Access is access all ItemPaintableFactory_Access_Array;
+   type ItemPaintableFactory_Access_Array_Access_Array is array (Natural range <>) of ItemPaintableFactory_Access_Array_Access;
+   type ItemPaintableFactory_Access_Array_Access_Array_Access is access all ItemPaintableFactory_Access_Array_Access_Array;
 
    type ItemPaintableFactory is new ItemPaintable with null record;
    instance : ItemPaintableFactory_Access;

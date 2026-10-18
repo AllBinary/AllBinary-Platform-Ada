@@ -28,6 +28,8 @@ package org.allbinary.game.identification.GroupInterface_Package is
    type GroupInterface_Access is access all GroupInterface'Class;
    type GroupInterface_Access_Array is array (Natural range <>) of GroupInterface_Access;
    type GroupInterface_Access_Array_Access is access all GroupInterface_Access_Array;
+   type GroupInterface_Access_Array_Access_Array is array (Natural range <>) of GroupInterface_Access_Array_Access;
+   type GroupInterface_Access_Array_Access_Array_Access is access all GroupInterface_Access_Array_Access_Array;
    function getGroupName (This : in out GroupInterface) return Unbounded_String is abstract;
    function getGroupId (This : in out GroupInterface) return Short_Integer is abstract;
 

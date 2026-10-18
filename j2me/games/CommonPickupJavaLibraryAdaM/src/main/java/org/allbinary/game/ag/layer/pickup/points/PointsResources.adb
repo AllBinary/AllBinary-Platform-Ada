@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.ag.layer.pickup.points.PointsResources_Package is
 
    procedure Initialize_Fields (This : in out PointsResources'Class) is

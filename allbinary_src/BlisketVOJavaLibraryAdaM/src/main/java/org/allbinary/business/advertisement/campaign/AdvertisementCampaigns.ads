@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.advertisement.AdvertisementInterface_Package; use org.allbinary.business.advertisement.AdvertisementInterface_Package;
 with org.allbinary.business.advertisement.AdvertisementsInterface_Package; use org.allbinary.business.advertisement.AdvertisementsInterface_Package;
 with org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package; use org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
@@ -30,7 +29,6 @@ with org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterfa
 package org.allbinary.business.advertisement.campaign.AdvertisementCampaigns_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package AdvertisementInterface_Package renames Standard.org.allbinary.business.advertisement.AdvertisementInterface_Package;
    package AdvertisementsInterface_Package renames Standard.org.allbinary.business.advertisement.AdvertisementsInterface_Package;
    package AdvertisementSearchInterface_Package renames Standard.org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
@@ -39,8 +37,10 @@ package org.allbinary.business.advertisement.campaign.AdvertisementCampaigns_Pac
    type AdvertisementCampaigns_Access is access all AdvertisementCampaigns'Class;
    type AdvertisementCampaigns_Access_Array is array (Natural range <>) of AdvertisementCampaigns_Access;
    type AdvertisementCampaigns_Access_Array_Access is access all AdvertisementCampaigns_Access_Array;
+   type AdvertisementCampaigns_Access_Array_Access_Array is array (Natural range <>) of AdvertisementCampaigns_Access_Array_Access;
+   type AdvertisementCampaigns_Access_Array_Access_Array_Access is access all AdvertisementCampaigns_Access_Array_Access_Array;
 
-   type AdvertisementCampaigns is new AdvertisementCampaignsInterface with record
+   type AdvertisementCampaigns is new Java_Object and AdvertisementCampaignsInterface with record
       advertisementsVector : BasicArrayList_Access;
    end record;
 

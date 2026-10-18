@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.util.ABCharacter_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ABCharacter is tagged;
    type ABCharacter_Access is access all ABCharacter'Class;
    type ABCharacter_Access_Array is array (Natural range <>) of ABCharacter_Access;
    type ABCharacter_Access_Array_Access is access all ABCharacter_Access_Array;
+   type ABCharacter_Access_Array_Access_Array is array (Natural range <>) of ABCharacter_Access_Array_Access;
+   type ABCharacter_Access_Array_Access_Array_Access is access all ABCharacter_Access_Array_Access_Array;
 
    type ABCharacter is new Java_Object with null record;
 

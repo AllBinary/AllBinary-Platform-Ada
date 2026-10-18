@@ -13,12 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+
 package body org.allbinary.logic.io.file.FilePathData_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
    procedure Initialize_Fields (This : in out FilePathData'Class) is
    begin
       null;
-      This.SEPARATORCHAR := File_Package.separatorChar_Case;
+      This.SEPARATORCHAR := File_Package.separatorChar;
       This.PATH_START := File_Package.separator;
    end Initialize_Fields;
 
@@ -31,8 +34,8 @@ package body org.allbinary.logic.io.file.FilePathData_Package is
    procedure Initialize (This : in out FilePathData'Class) is
    begin
       Initialize_Fields (This);
-        if (File_Package.separatorChar_Case) = ('\') then
-            This.PATH_START := (File_Package.separator) + (File_Package.separator);
+        if (File_Package.separatorChar) = ('\') then
+            This.PATH_START := File_Package.separator & File_Package.separator;
         end if;
    end Initialize;
 

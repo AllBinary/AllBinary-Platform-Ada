@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package; use org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package;
+
 package body org.allbinary.graphics.displayable.screen.CommandForm_Package is
 
+   package NullCommandListener_Package renames Standard.javax.microedition.lcdui.NullCommandListener_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out CommandForm'Class) is
    begin
       null;

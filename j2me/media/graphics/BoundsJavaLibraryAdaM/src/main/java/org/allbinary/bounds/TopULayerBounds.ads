@@ -32,6 +32,8 @@ package org.allbinary.bounds.TopULayerBounds_Package is
    type TopULayerBounds_Access is access all TopULayerBounds'Class;
    type TopULayerBounds_Access_Array is array (Natural range <>) of TopULayerBounds_Access;
    type TopULayerBounds_Access_Array_Access is access all TopULayerBounds_Access_Array;
+   type TopULayerBounds_Access_Array_Access_Array is array (Natural range <>) of TopULayerBounds_Access_Array_Access;
+   type TopULayerBounds_Access_Array_Access_Array_Access is access all TopULayerBounds_Access_Array_Access_Array;
 
    type TopULayerBounds is new LayerBounds with null record;
 

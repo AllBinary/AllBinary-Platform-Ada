@@ -29,6 +29,8 @@ package org.allbinary.animation.transition.shake.NoShakeAnimationListener_Packag
    type NoShakeAnimationListener_Access is access all NoShakeAnimationListener'Class;
    type NoShakeAnimationListener_Access_Array is array (Natural range <>) of NoShakeAnimationListener_Access;
    type NoShakeAnimationListener_Access_Array_Access is access all NoShakeAnimationListener_Access_Array;
+   type NoShakeAnimationListener_Access_Array_Access_Array is array (Natural range <>) of NoShakeAnimationListener_Access_Array_Access;
+   type NoShakeAnimationListener_Access_Array_Access_Array_Access is access all NoShakeAnimationListener_Access_Array_Access_Array;
 
    type NoShakeAnimationListener is new ShakeAnimationListener with null record;
    NO_SHAKE_ANIMATION_LISTENER : ShakeAnimationListener_Access;

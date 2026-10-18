@@ -12,6 +12,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton_Package;
+with org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package; use org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
+
 package body org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package is
 
    procedure Initialize_Fields (This : in out VisualWaypointLayer'Class) is
@@ -43,14 +46,14 @@ package body org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package is
         rtsLayerHudPaintable := WaypointInfoHudPaintableSingleton_Package.getInstance;
         rtsLayerHudPaintable.setBasicColorP (This.allBinaryGameLayerManagerP.getForegroundBasicColor);
         rtsLayerHudPaintable.setRtsLayer (VisualWaypointLayer_Access'(This'Unchecked_Access));
-        return rtsLayerHudPaintable;
+        return SelectionHudPaintable_Access (rtsLayerHudPaintable);
    end createHudPaintable;
 
    function getHudPaintable (This : in out VisualWaypointLayer) return SelectionHudPaintable_Access is
       rtsLayerHudPaintable : WaypointInfoHudPaintable_Access;
    begin
         rtsLayerHudPaintable := WaypointInfoHudPaintableSingleton_Package.getInstance;
-        return rtsLayerHudPaintable;
+        return SelectionHudPaintable_Access (rtsLayerHudPaintable);
    end getHudPaintable;
 
 end org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package;

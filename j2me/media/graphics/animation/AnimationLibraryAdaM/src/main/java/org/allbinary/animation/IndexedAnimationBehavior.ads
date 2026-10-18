@@ -29,6 +29,8 @@ package org.allbinary.animation.IndexedAnimationBehavior_Package is
    type IndexedAnimationBehavior_Access is access all IndexedAnimationBehavior'Class;
    type IndexedAnimationBehavior_Access_Array is array (Natural range <>) of IndexedAnimationBehavior_Access;
    type IndexedAnimationBehavior_Access_Array_Access is access all IndexedAnimationBehavior_Access_Array;
+   type IndexedAnimationBehavior_Access_Array_Access_Array is array (Natural range <>) of IndexedAnimationBehavior_Access_Array_Access;
+   type IndexedAnimationBehavior_Access_Array_Access_Array_Access is access all IndexedAnimationBehavior_Access_Array_Access_Array;
 
    type IndexedAnimationBehavior is new AnimationBehavior with record
       frameDelayTime : Long_Long_Integer;

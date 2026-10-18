@@ -20,28 +20,23 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
 with org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package; use org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
-with org.allbinary.business.user.modules.configuration.UserConfigurationView_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationView_Package;
 
 package org.allbinary.business.user.modules.configuration.UserConfigurationDomDocumentMapping_Package is
 
-   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
    package DomDocumentMappingInterface_Package renames Standard.org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
-   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type UserConfigurationDomDocumentMapping is tagged;
    type UserConfigurationDomDocumentMapping_Access is access all UserConfigurationDomDocumentMapping'Class;
    type UserConfigurationDomDocumentMapping_Access_Array is array (Natural range <>) of UserConfigurationDomDocumentMapping_Access;
    type UserConfigurationDomDocumentMapping_Access_Array_Access is access all UserConfigurationDomDocumentMapping_Access_Array;
+   type UserConfigurationDomDocumentMapping_Access_Array_Access_Array is array (Natural range <>) of UserConfigurationDomDocumentMapping_Access_Array_Access;
+   type UserConfigurationDomDocumentMapping_Access_Array_Access_Array_Access is access all UserConfigurationDomDocumentMapping_Access_Array_Access_Array;
 
-   type UserConfigurationDomDocumentMapping is new DomDocumentMappingInterface with record
+   type UserConfigurationDomDocumentMapping is new Java_Object and DomDocumentMappingInterface with record
       userConfigurationInterface : UserConfigurationInterface_Access;
    end record;
 

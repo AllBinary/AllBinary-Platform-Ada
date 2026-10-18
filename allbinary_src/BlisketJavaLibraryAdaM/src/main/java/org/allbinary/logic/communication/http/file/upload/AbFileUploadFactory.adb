@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.http.AbFileItemFactory_Package; use org.allbinary.logic.communication.http.AbFileItemFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.apache.commons.fileupload.FileItemIterator_Package; use org.apache.commons.fileupload.FileItemIterator_Package;
+with org.apache.commons.fileupload.FileItemStream_Package; use org.apache.commons.fileupload.FileItemStream_Package;
+with org.apache.commons.fileupload.FileItemUtil_Package; use org.apache.commons.fileupload.FileItemUtil_Package;
+with org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package; use org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package;
+with org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package; use org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
+with org.allbinary.logic.communication.http.file.upload.AbFileItem_Package; use org.allbinary.logic.communication.http.file.upload.AbFileItem_Package;
+
 package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package is
 
+   package AbFileItemFactory_Package renames Standard.org.allbinary.logic.communication.http.AbFileItemFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package FileItemIterator_Package renames Standard.org.apache.commons.fileupload.FileItemIterator_Package;
+   package FileItemStream_Package renames Standard.org.apache.commons.fileupload.FileItemStream_Package;
+   package FileItemUtil_Package renames Standard.org.apache.commons.fileupload.FileItemUtil_Package;
    procedure Initialize_Fields (This : in out AbFileUploadFactory'Class) is
    begin
       null;
@@ -53,7 +67,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
         begin
             fileUpload := AbFileUpload_Package.Create (AbFileItemFactory_Package.Create);
             iterator := fileUpload.getItemIterator (httpServletRequest);
-            items := ArrayList_Package.Create;
+            items := List_Access (ArrayList_Package.Create);
             while iterator.hasNext loop
                 fileItemStream := iterator.next;
                 HttpFileUploadUtil_Package.log (fileItemStream);

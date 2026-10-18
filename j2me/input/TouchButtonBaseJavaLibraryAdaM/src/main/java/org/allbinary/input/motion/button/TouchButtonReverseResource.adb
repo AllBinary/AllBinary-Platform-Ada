@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.motion.button.TouchButtonReverseResource_Package is
 
    procedure Initialize_Fields (This : in out TouchButtonReverseResource'Class) is
@@ -40,7 +41,7 @@ package body org.allbinary.input.motion.button.TouchButtonReverseResource_Packag
 
 begin
    null;
-   instance := TouchButtonReverseResource_Package.Create;
+   instance := TouchButtonResource_Access (TouchButtonReverseResource_Package.Create);
 
 end org.allbinary.input.motion.button.TouchButtonReverseResource_Package;
 

@@ -21,40 +21,25 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
-with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
-with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with tags.HelperTag_Package; use tags.HelperTag_Package;
-with views.admin.inventory.InventoryItemView_Package; use views.admin.inventory.InventoryItemView_Package;
 with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Package;
-with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghelpers.InventoryItemViewParentTagHelper_Package;
 
 package admin.taghelpers.InventoryRequestHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package AbTagData_Package renames Standard.admin.tags.AbTagData_Package;
    package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
    package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
-   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
-   package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package HelperTag_Package renames Standard.tags.HelperTag_Package;
-   package InventoryItemView_Package renames Standard.views.admin.inventory.InventoryItemView_Package;
 
    type InventoryRequestHelper is tagged;
    type InventoryRequestHelper_Access is access all InventoryRequestHelper'Class;
    type InventoryRequestHelper_Access_Array is array (Natural range <>) of InventoryRequestHelper_Access;
    type InventoryRequestHelper_Access_Array_Access is access all InventoryRequestHelper_Access_Array;
+   type InventoryRequestHelper_Access_Array_Access_Array is array (Natural range <>) of InventoryRequestHelper_Access_Array_Access;
+   type InventoryRequestHelper_Access_Array_Access_Array_Access is access all InventoryRequestHelper_Access_Array_Access_Array;
 
    type InventoryRequestHelper is new ModifyTable with record
       logUtil : LogUtil_Access;

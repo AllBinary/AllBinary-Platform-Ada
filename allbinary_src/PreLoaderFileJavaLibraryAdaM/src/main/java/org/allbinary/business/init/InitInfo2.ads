@@ -32,6 +32,8 @@ package org.allbinary.business.init.InitInfo2_Package is
    type InitInfo2_Access is access all InitInfo2'Class;
    type InitInfo2_Access_Array is array (Natural range <>) of InitInfo2_Access;
    type InitInfo2_Access_Array_Access is access all InitInfo2_Access_Array;
+   type InitInfo2_Access_Array_Access_Array is array (Natural range <>) of InitInfo2_Access_Array_Access;
+   type InitInfo2_Access_Array_Access_Array_Access is access all InitInfo2_Access_Array_Access_Array;
 
    type InitInfo2 is new Java_Object with record
       directory : Directory_Access;

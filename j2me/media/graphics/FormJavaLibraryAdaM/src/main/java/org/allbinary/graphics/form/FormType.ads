@@ -28,6 +28,8 @@ package org.allbinary.graphics.form.FormType_Package is
    type FormType_Access is access all FormType'Class;
    type FormType_Access_Array is array (Natural range <>) of FormType_Access;
    type FormType_Access_Array_Access is access all FormType_Access_Array;
+   type FormType_Access_Array_Access_Array is array (Natural range <>) of FormType_Access_Array_Access;
+   type FormType_Access_Array_Access_Array_Access is access all FormType_Access_Array_Access_Array;
 
    type FormType is new Java_Object with record
       name : Unbounded_String;

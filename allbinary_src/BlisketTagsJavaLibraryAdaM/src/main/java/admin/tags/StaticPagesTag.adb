@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.StaticPagesHelperFactory_Package; use admin.taghelpers.StaticPagesHelperFactory_Package;
+with admin.taghelpers.StaticPagesRequestHelperFactory_Package; use admin.taghelpers.StaticPagesRequestHelperFactory_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.control.search.SearchData_Package; use org.allbinary.logic.control.search.SearchData_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+
 package body admin.tags.StaticPagesTag_Package is
 
+   package StaticPagesHelperFactory_Package renames Standard.admin.taghelpers.StaticPagesHelperFactory_Package;
+   package StaticPagesRequestHelperFactory_Package renames Standard.admin.taghelpers.StaticPagesRequestHelperFactory_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package SearchData_Package renames Standard.org.allbinary.logic.control.search.SearchData_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
    procedure Initialize_Fields (This : in out StaticPagesTag'Class) is
    begin
       null;

@@ -28,6 +28,8 @@ package org.allbinary.logic.java.number.LongData_Package is
    type LongData_Access is access all LongData'Class;
    type LongData_Access_Array is array (Natural range <>) of LongData_Access;
    type LongData_Access_Array_Access is access all LongData_Access_Array;
+   type LongData_Access_Array_Access_Array is array (Natural range <>) of LongData_Access_Array_Access;
+   type LongData_Access_Array_Access_Array_Access is access all LongData_Access_Array_Access_Array;
 
    type LongData is new Java_Object with null record;
    MAX_LONG_LENGTH : Integer;

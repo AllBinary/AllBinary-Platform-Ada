@@ -31,6 +31,8 @@ package org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_Packag
    type CapitalEventHandlerFactory_Access is access all CapitalEventHandlerFactory'Class;
    type CapitalEventHandlerFactory_Access_Array is array (Natural range <>) of CapitalEventHandlerFactory_Access;
    type CapitalEventHandlerFactory_Access_Array_Access is access all CapitalEventHandlerFactory_Access_Array;
+   type CapitalEventHandlerFactory_Access_Array_Access_Array is array (Natural range <>) of CapitalEventHandlerFactory_Access_Array_Access;
+   type CapitalEventHandlerFactory_Access_Array_Access_Array_Access is access all CapitalEventHandlerFactory_Access_Array_Access_Array;
 
    type CapitalEventHandlerFactory is new Java_Object with null record;
    capitalEventHandlerArray : CapitalEventHandler_Access_Array_Access;

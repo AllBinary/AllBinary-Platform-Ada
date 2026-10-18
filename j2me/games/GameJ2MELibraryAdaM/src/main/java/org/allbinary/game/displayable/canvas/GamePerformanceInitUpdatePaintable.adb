@@ -13,14 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.canvas.GameStatisticsFactory_Package; use org.allbinary.canvas.GameStatisticsFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+
 package body org.allbinary.game.displayable.canvas.GamePerformanceInitUpdatePaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package GameStatisticsFactory_Package renames Standard.org.allbinary.canvas.GameStatisticsFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out GamePerformanceInitUpdatePaintable'Class) is
    begin
       null;
       This.halfHeight := DisplayInfoSingleton_Package.getInstance.getLastHalfHeight;
       This.yArray := new Integer_Array'((This.halfHeight) + (30), (This.halfHeight) + (30), ((This.halfHeight) + (30)) + (15), ((This.halfHeight) + (30)) + (15), ((This.halfHeight) + (30)) + (30), ((This.halfHeight) + (30)) + (30), ((This.halfHeight) + (30)) + (45), ((This.halfHeight) + (30)) + (45));
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (GamePerformanceInitUpdatePaintable_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (GamePerformanceInitUpdatePaintable_Access'(This'Unchecked_Access)));
       This.baseRefreshHelperCharArray := new Character_Array_Access_Array'(0 .. (0) - 1 => new Character_Array'(0 .. (0) - 1 => ASCII.NUL));
       This.defaultStringWidth := 0;
       This.RED := BasicColorFactory_Package.getInstance.RED.intValue;

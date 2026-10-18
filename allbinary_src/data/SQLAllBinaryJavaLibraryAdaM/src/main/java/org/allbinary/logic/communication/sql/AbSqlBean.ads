@@ -25,7 +25,6 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.communication.sql.AbSqlRow_Package; use org.allbinary.logic.communication.sql.AbSqlRow_Package;
 
 package org.allbinary.logic.communication.sql.AbSqlBean_Package is
@@ -33,12 +32,13 @@ package org.allbinary.logic.communication.sql.AbSqlBean_Package is
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type AbSqlBean is tagged;
    type AbSqlBean_Access is access all AbSqlBean'Class;
    type AbSqlBean_Access_Array is array (Natural range <>) of AbSqlBean_Access;
    type AbSqlBean_Access_Array_Access is access all AbSqlBean_Access_Array;
+   type AbSqlBean_Access_Array_Access_Array is array (Natural range <>) of AbSqlBean_Access_Array_Access;
+   type AbSqlBean_Access_Array_Access_Array_Access is access all AbSqlBean_Access_Array_Access_Array;
 
    type AbSqlBean is new AbSqlRow with record
       logUtil : LogUtil_Access;

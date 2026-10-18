@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package is
 
    procedure Initialize_Fields (This : in out BasicAccelerationProperties'Class) is

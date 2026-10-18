@@ -13,8 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
+
 package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Package is
 
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+   package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+   package RaceTrackGeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out PathFinder'Class) is
    begin
       null;
@@ -54,7 +70,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
       row : Integer;
       column : Integer;
    begin
-        This.geographicMapInterface := geographicMapInterface;
+        This.geographicMapInterface := Java_Object_Access (geographicMapInterface);
         tiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
         This.costArray := new PathFindingNodeCost_Access_Array_Access_Array'(0 .. (tiledLayer.getColumns) - 1 => new PathFindingNodeCost_Access_Array'(0 .. (tiledLayer.getRows) - 1 => null));
         basicGeographicMapCellPositionFactory := geographicMapInterface.getGeographicMapCellPositionFactory;
@@ -114,8 +130,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
       pathList : BasicArrayList_Access;
    begin
         list := PathFinder'Class (This).findPath (startPathFindingNode.geographicMapCellPosition, endPathFindingNode.geographicMapCellPosition);
-        pathList := BasicArrayListD_Package.Create;
-        pathList.add (list);
+        pathList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+        pathList.add (Java_Object_Access (list));
         return pathList;
    end search;
 
@@ -140,8 +156,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
         if (list) = (null) then
             return This.basicArrayListUtil.getImmutableInstance;
         end if;
-        pathList := BasicArrayListD_Package.Create;
-        pathList.add (list);
+        pathList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+        pathList.add (Java_Object_Access (list));
         multipassState.iteration := 0;
         multipassState.step := 0;
         return pathList;
@@ -332,12 +348,12 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
       current : PathFindingNodeCost_Access := PathFindingNodeCost_Access (current_Param);
       path : BasicArrayList_Access;
    begin
-        path := BasicArrayListD_Package.Create;
+        path := BasicArrayList_Access (BasicArrayListD_Package.Create);
         while (current.parent) /= (NullUtil_Package.getInstance.NULL_OBJECT) loop
             path.add (current.geographicMapCellPosition);
             current := PathFindingNodeCost_Access (current.parent);
         end loop;
-        path.add (start);
+        path.add (Java_Object_Access (start));
         This.basicArrayListUtil.reverse_Id (path);
         return path;
    end extractPath;

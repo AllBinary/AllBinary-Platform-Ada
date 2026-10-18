@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.button.TouchScreenTypeFactory_Package; use org.allbinary.input.motion.button.TouchScreenTypeFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
+
 package body org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
 
+   package TouchScreenTypeFactory_Package renames Standard.org.allbinary.input.motion.button.TouchScreenTypeFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package TouchScreenFactory_Package renames Standard.org.allbinary.input.motion.button.TouchScreenFactory_Package;
    procedure Initialize_Fields (This : in out ActivityFractureUtilAPI5'Class) is
    begin
       null;

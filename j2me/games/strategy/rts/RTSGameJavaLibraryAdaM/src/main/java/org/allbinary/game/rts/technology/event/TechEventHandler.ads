@@ -22,7 +22,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.game.rts.technology.event.TechEventListenerInterface_Package; use org.allbinary.game.rts.technology.event.TechEventListenerInterface_Package;
 
 package org.allbinary.game.rts.technology.event.TechEventHandler_Package is
 
@@ -34,6 +33,8 @@ package org.allbinary.game.rts.technology.event.TechEventHandler_Package is
    type TechEventHandler_Access is access all TechEventHandler'Class;
    type TechEventHandler_Access_Array is array (Natural range <>) of TechEventHandler_Access;
    type TechEventHandler_Access_Array_Access is access all TechEventHandler_Access_Array;
+   type TechEventHandler_Access_Array_Access_Array is array (Natural range <>) of TechEventHandler_Access_Array_Access;
+   type TechEventHandler_Access_Array_Access_Array_Access is access all TechEventHandler_Access_Array_Access_Array;
 
    type TechEventHandler is new BasicEventHandler with null record;
    eventHandler : TechEventHandler_Access;

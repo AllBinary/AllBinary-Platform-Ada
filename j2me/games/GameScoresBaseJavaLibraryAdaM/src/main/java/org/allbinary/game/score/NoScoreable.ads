@@ -29,6 +29,8 @@ package org.allbinary.game.score.NoScoreable_Package is
    type NoScoreable_Access is access all NoScoreable'Class;
    type NoScoreable_Access_Array is array (Natural range <>) of NoScoreable_Access;
    type NoScoreable_Access_Array_Access is access all NoScoreable_Access_Array;
+   type NoScoreable_Access_Array_Access_Array is array (Natural range <>) of NoScoreable_Access_Array_Access;
+   type NoScoreable_Access_Array_Access_Array_Access is access all NoScoreable_Access_Array_Access_Array;
 
    type NoScoreable is new Scoreable with null record;
    SINGLETON : NoScoreable_Access;

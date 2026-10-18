@@ -28,6 +28,8 @@ package org.allbinary.media.image.search.StatisticalMatchConstraints_Package is
    type StatisticalMatchConstraints_Access is access all StatisticalMatchConstraints'Class;
    type StatisticalMatchConstraints_Access_Array is array (Natural range <>) of StatisticalMatchConstraints_Access;
    type StatisticalMatchConstraints_Access_Array_Access is access all StatisticalMatchConstraints_Access_Array;
+   type StatisticalMatchConstraints_Access_Array_Access_Array is array (Natural range <>) of StatisticalMatchConstraints_Access_Array_Access;
+   type StatisticalMatchConstraints_Access_Array_Access_Array_Access is access all StatisticalMatchConstraints_Access_Array_Access_Array;
 
    type StatisticalMatchConstraints is new Java_Object with null record;
 

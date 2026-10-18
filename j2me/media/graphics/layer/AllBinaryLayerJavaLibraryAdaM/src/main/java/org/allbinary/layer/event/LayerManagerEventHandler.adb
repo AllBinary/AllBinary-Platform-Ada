@@ -13,12 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.layer.event.LayerManagerEvent_Package; use org.allbinary.layer.event.LayerManagerEvent_Package;
+with org.allbinary.layer.event.LayerManagerEventListenerInterface_Package; use org.allbinary.layer.event.LayerManagerEventListenerInterface_Package;
+
 package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
 
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out LayerManagerEventHandler'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.CREATE := To_Unbounded_String ("Create");
       This.DELETE := To_Unbounded_String ("Delete");
    end Initialize_Fields;
@@ -46,8 +53,8 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
    procedure addListener (This : in out LayerManagerEventHandler; layerManagerEventListener_Param : access LayerManagerEventListener_Package.LayerManagerEventListener'Class) is
       layerManagerEventListener : constant LayerManagerEventListener_Access := LayerManagerEventListener_Access (layerManagerEventListener_Param);
    begin
-        if not (This.list.contains (layerManagerEventListener)) then
-            This.list.add (layerManagerEventListener);
+        if not (This.list.contains (Java_Object_Access (layerManagerEventListener))) then
+            This.list.add (Java_Object_Access (layerManagerEventListener));
         end if;
    end addListener;
 
@@ -60,7 +67,7 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
    procedure removeListener (This : in out LayerManagerEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.list.remove (eventListenerInterface);
+        This.list.remove (Java_Object_Access (eventListenerInterface));
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 

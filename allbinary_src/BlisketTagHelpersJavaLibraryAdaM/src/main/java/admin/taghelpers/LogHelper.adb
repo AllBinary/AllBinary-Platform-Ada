@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tables.log.LogTableEntity_Package; use org.allbinary.data.tables.log.LogTableEntity_Package;
+with org.allbinary.data.tables.log.LogTableEntityFactory_Package; use org.allbinary.data.tables.log.LogTableEntityFactory_Package;
+with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+
 package body admin.taghelpers.LogHelper_Package is
 
+   package LogTableEntity_Package renames Standard.org.allbinary.data.tables.log.LogTableEntity_Package;
+   package LogTableEntityFactory_Package renames Standard.org.allbinary.data.tables.log.LogTableEntityFactory_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
    procedure Initialize_Fields (This : in out LogHelper'Class) is
    begin
       null;

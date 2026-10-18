@@ -45,6 +45,8 @@ package org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package is
    type WaypointLayerInterface_Access is access all WaypointLayerInterface'Class;
    type WaypointLayerInterface_Access_Array is array (Natural range <>) of WaypointLayerInterface_Access;
    type WaypointLayerInterface_Access_Array_Access is access all WaypointLayerInterface_Access_Array;
+   type WaypointLayerInterface_Access_Array_Access_Array is array (Natural range <>) of WaypointLayerInterface_Access_Array_Access;
+   type WaypointLayerInterface_Access_Array_Access_Array_Access is access all WaypointLayerInterface_Access_Array_Access_Array;
    procedure init (This : in out WaypointLayerInterface; geographicMapCellHistory_Param : access GeographicMapCellHistory_Package.GeographicMapCellHistory'Class; geographicMapCellPositionBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    function getMoveOutOfBuildAreaPath (This : in out WaypointLayerInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return BasicArrayList_Access is abstract;
    procedure setClosestGeographicMapCellHistory (This : in out WaypointLayerInterface; pathsList_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;

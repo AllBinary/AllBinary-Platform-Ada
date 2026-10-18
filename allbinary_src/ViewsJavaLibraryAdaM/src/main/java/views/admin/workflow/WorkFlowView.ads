@@ -42,6 +42,8 @@ package views.admin.workflow.WorkFlowView_Package is
    type WorkFlowView_Access is access all WorkFlowView'Class;
    type WorkFlowView_Access_Array is array (Natural range <>) of WorkFlowView_Access;
    type WorkFlowView_Access_Array_Access is access all WorkFlowView_Access_Array;
+   type WorkFlowView_Access_Array_Access_Array is array (Natural range <>) of WorkFlowView_Access_Array_Access;
+   type WorkFlowView_Access_Array_Access_Array_Access is access all WorkFlowView_Access_Array_Access_Array;
 
    type WorkFlowView is new HttpStoreComponentView and DomNodeInterface with record
       logUtil : LogUtil_Access;

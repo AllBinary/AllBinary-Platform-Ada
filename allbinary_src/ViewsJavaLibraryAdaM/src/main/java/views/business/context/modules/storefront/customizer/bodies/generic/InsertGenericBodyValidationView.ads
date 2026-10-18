@@ -20,39 +20,27 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.logic.visual.transform.template.customizer.bodies.GenericBodyValidation_Package; use org.allbinary.logic.visual.transform.template.customizer.bodies.GenericBodyValidation_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with views.business.context.modules.storefront.customizer.CustomizerUtil_Package; use views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
-with views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package; use views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package;
 with views.business.context.modules.storefront.customizer.bodies.generic_Id.GenericBodyCustomizerView_Package; use views.business.context.modules.storefront.customizer.bodies.generic_Id.GenericBodyCustomizerView_Package;
 
 package views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package is
 
-   package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package GenericBodyValidation_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.bodies.GenericBodyValidation_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
-   package CustomizerUtil_Package renames Standard.views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
-   package StoreCustomizerComponentUtil_Package renames Standard.views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package;
 
    type InsertGenericBodyValidationView is tagged;
    type InsertGenericBodyValidationView_Access is access all InsertGenericBodyValidationView'Class;
    type InsertGenericBodyValidationView_Access_Array is array (Natural range <>) of InsertGenericBodyValidationView_Access;
    type InsertGenericBodyValidationView_Access_Array_Access is access all InsertGenericBodyValidationView_Access_Array;
+   type InsertGenericBodyValidationView_Access_Array_Access_Array is array (Natural range <>) of InsertGenericBodyValidationView_Access_Array_Access;
+   type InsertGenericBodyValidationView_Access_Array_Access_Array_Access is access all InsertGenericBodyValidationView_Access_Array_Access_Array;
 
    type InsertGenericBodyValidationView is new GenericBodyCustomizerView and ValidationComponentInterface with record
       logUtil : LogUtil_Access;

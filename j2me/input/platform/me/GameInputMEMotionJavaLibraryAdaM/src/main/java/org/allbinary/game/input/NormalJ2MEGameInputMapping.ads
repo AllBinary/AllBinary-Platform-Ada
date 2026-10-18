@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.game.input.J2MEGameInputMapping_Package; use org.allbinary.game.input.J2MEGameInputMapping_Package;
-with org.allbinary.game.input.NormalJ2MEDefaultGameInputMapping_Package; use org.allbinary.game.input.NormalJ2MEDefaultGameInputMapping_Package;
 
 package org.allbinary.game.input.NormalJ2MEGameInputMapping_Package is
 
@@ -32,6 +31,8 @@ package org.allbinary.game.input.NormalJ2MEGameInputMapping_Package is
    type NormalJ2MEGameInputMapping_Access is access all NormalJ2MEGameInputMapping'Class;
    type NormalJ2MEGameInputMapping_Access_Array is array (Natural range <>) of NormalJ2MEGameInputMapping_Access;
    type NormalJ2MEGameInputMapping_Access_Array_Access is access all NormalJ2MEGameInputMapping_Access_Array;
+   type NormalJ2MEGameInputMapping_Access_Array_Access_Array is array (Natural range <>) of NormalJ2MEGameInputMapping_Access_Array_Access;
+   type NormalJ2MEGameInputMapping_Access_Array_Access_Array_Access is access all NormalJ2MEGameInputMapping_Access_Array_Access_Array;
 
    type NormalJ2MEGameInputMapping is new J2MEGameInputMapping with null record;
 

@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.logic.java.help.JLabel_Package; use org.allbinary.logic.java.help.JLabel_Package;
+
 package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
    procedure Initialize_Fields (This : in out JavaHelpUtil'Class) is
    begin
       null;

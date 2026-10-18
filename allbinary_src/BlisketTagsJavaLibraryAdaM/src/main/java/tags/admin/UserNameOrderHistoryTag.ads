@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
 
 package tags.admin.UserNameOrderHistoryTag_Package is
 
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type UserNameOrderHistoryTag is tagged;
    type UserNameOrderHistoryTag_Access is access all UserNameOrderHistoryTag'Class;
    type UserNameOrderHistoryTag_Access_Array is array (Natural range <>) of UserNameOrderHistoryTag_Access;
    type UserNameOrderHistoryTag_Access_Array_Access is access all UserNameOrderHistoryTag_Access_Array;
+   type UserNameOrderHistoryTag_Access_Array_Access_Array is array (Natural range <>) of UserNameOrderHistoryTag_Access_Array_Access;
+   type UserNameOrderHistoryTag_Access_Array_Access_Array_Access is access all UserNameOrderHistoryTag_Access_Array_Access_Array;
 
    type UserNameOrderHistoryTag is new StoreValidationTransformTag with record
       status : Unbounded_String;

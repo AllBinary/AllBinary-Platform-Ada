@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.ChoiceGroup_Package; use javax.microedition.lcdui.ChoiceGroup_Package;
+with org.allbinary.game.configuration.GameConfigurationGauge_Package; use org.allbinary.game.configuration.GameConfigurationGauge_Package;
+with org.allbinary.game.configuration.GameConfigurationUtil_Package; use org.allbinary.game.configuration.GameConfigurationUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with org.allbinary.game.configuration.feature.GameFeatureUtil_Package; use org.allbinary.game.configuration.feature.GameFeatureUtil_Package;
+
 package body org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package is
 
+   package ChoiceGroup_Package renames Standard.javax.microedition.lcdui.ChoiceGroup_Package;
+   package GameConfigurationGauge_Package renames Standard.org.allbinary.game.configuration.GameConfigurationGauge_Package;
+   package GameConfigurationUtil_Package renames Standard.org.allbinary.game.configuration.GameConfigurationUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out GameFeatureItemStateListener'Class) is
    begin
       null;
@@ -50,8 +67,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemStateListen
    procedure add (gameFeature_Param : access GameFeature_Package.GameFeature'Class) is
       gameFeature : constant GameFeature_Access := GameFeature_Access (gameFeature_Param);
    begin
-        if not (GameFeatureItemStateListener_Package.toggleList.contains (gameFeature)) then
-            GameFeatureItemStateListener_Package.toggleList.add (gameFeature);
+        if not (GameFeatureItemStateListener_Package.toggleList.contains (Java_Object_Access (gameFeature))) then
+            GameFeatureItemStateListener_Package.toggleList.add (Java_Object_Access (gameFeature));
         end if;
    end add;
 
@@ -87,7 +104,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemStateListen
 
 begin
    null;
-   toggleList := BasicArrayListD_Package.Create;
+   toggleList := BasicArrayList_Access (BasicArrayListD_Package.Create);
 
 end org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package;
 

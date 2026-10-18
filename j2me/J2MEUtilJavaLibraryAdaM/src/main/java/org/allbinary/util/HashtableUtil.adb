@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+
 package body org.allbinary.util.HashtableUtil_Package is
 
+   package Enumeration_Package renames Standard.java.util.Enumeration_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    procedure Initialize_Fields (This : in out HashtableUtil'Class) is
    begin
       null;
@@ -80,7 +86,7 @@ package body org.allbinary.util.HashtableUtil_Package is
       list : BasicArrayList_Access;
       enumeration : Enumeration_Access;
    begin
-        list := BasicArrayListS_Package.Create (hashtable.size);
+        list := BasicArrayList_Access (BasicArrayListS_Package.Create (hashtable.size));
         enumeration := hashtable.keys;
         while This.enumerationUtil.hasMoreElements (enumeration) loop
             list.add (This.enumerationUtil.nextElement (enumeration));

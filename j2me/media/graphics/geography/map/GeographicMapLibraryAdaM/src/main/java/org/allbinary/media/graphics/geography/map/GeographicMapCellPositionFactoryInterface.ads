@@ -30,6 +30,8 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFact
    type GeographicMapCellPositionFactoryInterface_Access is access all GeographicMapCellPositionFactoryInterface'Class;
    type GeographicMapCellPositionFactoryInterface_Access_Array is array (Natural range <>) of GeographicMapCellPositionFactoryInterface_Access;
    type GeographicMapCellPositionFactoryInterface_Access_Array_Access is access all GeographicMapCellPositionFactoryInterface_Access_Array;
+   type GeographicMapCellPositionFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionFactoryInterface_Access_Array_Access;
+   type GeographicMapCellPositionFactoryInterface_Access_Array_Access_Array_Access is access all GeographicMapCellPositionFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out GeographicMapCellPositionFactoryInterface; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access is abstract;
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;

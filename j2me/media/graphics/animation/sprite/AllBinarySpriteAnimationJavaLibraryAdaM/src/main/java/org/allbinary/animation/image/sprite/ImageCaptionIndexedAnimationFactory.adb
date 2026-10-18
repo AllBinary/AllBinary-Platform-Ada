@@ -13,8 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
+with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
+with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.animation.caption.CaptionIndexedAnimation_Package; use org.allbinary.animation.caption.CaptionIndexedAnimation_Package;
+with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.animation.image.ImageAnimation_Package;
+with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
+
 package body org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package is
 
+   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
+   package Player_Package renames Standard.javax.microedition.media.Player_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package CaptionIndexedAnimation_Package renames Standard.org.allbinary.animation.caption.CaptionIndexedAnimation_Package;
+   package ImageAnimation_Package renames Standard.org.allbinary.animation.image.ImageAnimation_Package;
+   package BasicColorUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorUtil_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    procedure Initialize_Fields (This : in out ImageCaptionIndexedAnimationFactory'Class) is
    begin
       null;
@@ -74,14 +90,14 @@ package body org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFa
       player : Player_Access;
    begin
         scaledImage := This.animationFactoryImageScaleUtil.createImage (This.captionImage, This.captionImage.getWidth, This.captionImage.getHeight, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
-        animationInterface := ImageAnimation_Package.Create (scaledImage, This.animationBehaviorFactory.getOrCreateInstance);
+        animationInterface := Animation_Access (ImageAnimation_Package.Create (scaledImage, This.animationBehaviorFactory.getOrCreateInstance));
         sprite := This.animationFactorySpriteScaleUtil.createImage (This.spriteMovieImage, This.frameWidth, This.frameHeight, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
-        movieIndexedAnimationInterface := SpriteIndexedAnimation_Package.Create (sprite, This.spriteMovieImage, BasicColorUtil_Package.getInstance.ZERO_ARRAY, This.animationBehaviorFactory.getOrCreateInstance);
+        movieIndexedAnimationInterface := IndexedAnimation_Access (SpriteIndexedAnimation_Package.Create (sprite, This.spriteMovieImage, BasicColorUtil_Package.getInstance.ZERO_ARRAY, This.animationBehaviorFactory.getOrCreateInstance));
         player := This.soundInterface.getPlayerP;
         if (player) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Sound Was not Initialized")));
         end if;
-        return CaptionIndexedAnimation_Package.Create (animationInterface, movieIndexedAnimationInterface, player, This.captionDx, This.captionDy, This.dx, This.dy, This.time, This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (CaptionIndexedAnimation_Package.Create (animationInterface, movieIndexedAnimationInterface, player, This.captionDx, This.captionDy, This.dx, This.dy, This.time, This.animationBehaviorFactory.getOrCreateInstance));
    end getInstance;
 
    procedure setInitialScale (This : in out ImageCaptionIndexedAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+
 package body org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Package is
 
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
    procedure Initialize_Fields (This : in out FullScreenPaintableFactory'Class) is
    begin
       null;

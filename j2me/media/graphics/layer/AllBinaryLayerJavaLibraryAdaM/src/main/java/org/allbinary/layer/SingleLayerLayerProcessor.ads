@@ -21,9 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
-with org.allbinary.layer.SingleLayerLayerManager_Package; use org.allbinary.layer.SingleLayerLayerManager_Package;
-with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
-with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 
 package org.allbinary.layer.SingleLayerLayerProcessor_Package is
@@ -33,6 +30,8 @@ package org.allbinary.layer.SingleLayerLayerProcessor_Package is
    type SingleLayerLayerProcessor_Access is access all SingleLayerLayerProcessor'Class;
    type SingleLayerLayerProcessor_Access_Array is array (Natural range <>) of SingleLayerLayerProcessor_Access;
    type SingleLayerLayerProcessor_Access_Array_Access is access all SingleLayerLayerProcessor_Access_Array;
+   type SingleLayerLayerProcessor_Access_Array_Access_Array is array (Natural range <>) of SingleLayerLayerProcessor_Access_Array_Access;
+   type SingleLayerLayerProcessor_Access_Array_Access_Array_Access is access all SingleLayerLayerProcessor_Access_Array_Access_Array;
 
    type SingleLayerLayerProcessor is new LayerProcessor with null record;
 

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGameFeature_Package is
 
    procedure Initialize_Fields (This : in out RaceTrackGameFeature'Class) is
@@ -35,8 +36,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGameF
 
 begin
    null;
-   MINI_MAP := RaceTrackGameFeature_Package.Create (To_Unbounded_String ("Mini Map"));
-   AUTO_FINISH_AI := RaceTrackGameFeature_Package.Create (To_Unbounded_String ("Auto Finish AI"));
+   MINI_MAP := GameFeature_Access (RaceTrackGameFeature_Package.Create (To_Unbounded_String ("Mini Map")));
+   AUTO_FINISH_AI := GameFeature_Access (RaceTrackGameFeature_Package.Create (To_Unbounded_String ("Auto Finish AI")));
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGameFeature_Package;
 

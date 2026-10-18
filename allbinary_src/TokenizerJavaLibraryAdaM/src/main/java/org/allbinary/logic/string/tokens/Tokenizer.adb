@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
 
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out Tokenizer'Class) is
    begin
       null;
@@ -55,13 +64,13 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
       size : Integer;
       end_Id : Integer;
    begin
-        tokenList := BasicArrayListD_Package.Create;
+        tokenList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         index := 0;
         size := Length (string_Id);
         while (index) < (size) loop
-            index := string_Id.indexOf (This.sep, index);
+            index := Java_Index_Of (string_Id, Java_Image (This.sep), index);
             if (index) /= (-(1)) then
-                end_Id := string_Id.indexOf (This.endSep, (index) + (Length (This.sep)));
+                end_Id := Java_Index_Of (string_Id, Java_Image (This.endSep), (index) + (Length (This.sep)));
                 if (end_Id) /= (-(1)) then
                     tokenList.add (Unbounded_Slice (string_Id, ((index) + (Length (This.sep))) + 1, (end_Id) - (((Length (This.endSep)) - (1)))));
                     index := (end_Id) + (Length (This.endSep));
@@ -83,7 +92,7 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
         index := 0;
         end_Id := 0;
         while (index) < (Length (string_Id)) loop
-            end_Id := string_Id.indexOf (This.sep, index);
+            end_Id := Java_Index_Of (string_Id, Java_Image (This.sep), index);
             if (end_Id) /= (-(1)) then
                 tokenVector.add (Unbounded_Slice (string_Id, (index) + 1, end_Id));
                 index := (end_Id) + (Length (This.sep));
@@ -109,7 +118,7 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
         size := stringVector.size;
         for index in 0 .. (size) - 1 loop
             string_Id := Java_Unbox (stringVector.objectArray (index));
-            end_Id := (Index (string_Id, Java_Image (This.sep)) - 1);
+            end_Id := Java_Index_Of (string_Id, Java_Image (This.sep));
             if (end_Id) >= (0) then
                 tokenHashtable.put (Unbounded_Slice (string_Id, (0) + 1, end_Id), Unbounded_Slice (string_Id, ((end_Id) + (1)) + 1, Length (string_Id)));
             end if;

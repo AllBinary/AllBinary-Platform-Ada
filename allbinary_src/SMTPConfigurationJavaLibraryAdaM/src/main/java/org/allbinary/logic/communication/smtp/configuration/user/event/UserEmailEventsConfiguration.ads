@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
@@ -30,13 +29,11 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventListenerFactory_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventListenerFactory_Package;
 
 package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package UserEmailEventListenerInterface_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
    package UserEmailEventNameData_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
@@ -47,8 +44,10 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
    type UserEmailEventsConfiguration_Access is access all UserEmailEventsConfiguration'Class;
    type UserEmailEventsConfiguration_Access_Array is array (Natural range <>) of UserEmailEventsConfiguration_Access;
    type UserEmailEventsConfiguration_Access_Array_Access is access all UserEmailEventsConfiguration_Access_Array;
+   type UserEmailEventsConfiguration_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventsConfiguration_Access_Array_Access;
+   type UserEmailEventsConfiguration_Access_Array_Access_Array_Access is access all UserEmailEventsConfiguration_Access_Array_Access_Array;
 
-   type UserEmailEventsConfiguration is new UserEmailEventsConfigurationInterface with record
+   type UserEmailEventsConfiguration is new Java_Object and UserEmailEventsConfigurationInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       emailEventHashMap : HashMap_Access;

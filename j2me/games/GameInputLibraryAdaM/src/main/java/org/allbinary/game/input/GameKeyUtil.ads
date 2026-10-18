@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 
 package org.allbinary.game.input.GameKeyUtil_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
 
    type GameKeyUtil is tagged;
    type GameKeyUtil_Access is access all GameKeyUtil'Class;
    type GameKeyUtil_Access_Array is array (Natural range <>) of GameKeyUtil_Access;
    type GameKeyUtil_Access_Array_Access is access all GameKeyUtil_Access_Array;
+   type GameKeyUtil_Access_Array_Access_Array is array (Natural range <>) of GameKeyUtil_Access_Array_Access;
+   type GameKeyUtil_Access_Array_Access_Array_Access is access all GameKeyUtil_Access_Array_Access_Array;
 
    type GameKeyUtil is new Java_Object with null record;
    instance : GameKeyUtil_Access;

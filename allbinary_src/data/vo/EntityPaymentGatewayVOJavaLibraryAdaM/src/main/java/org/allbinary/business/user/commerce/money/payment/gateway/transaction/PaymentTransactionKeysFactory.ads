@@ -29,6 +29,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.P
    type PaymentTransactionKeysFactory_Access is access all PaymentTransactionKeysFactory'Class;
    type PaymentTransactionKeysFactory_Access_Array is array (Natural range <>) of PaymentTransactionKeysFactory_Access;
    type PaymentTransactionKeysFactory_Access_Array_Access is access all PaymentTransactionKeysFactory_Access_Array;
+   type PaymentTransactionKeysFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionKeysFactory_Access_Array_Access;
+   type PaymentTransactionKeysFactory_Access_Array_Access_Array_Access is access all PaymentTransactionKeysFactory_Access_Array_Access_Array;
 
    type PaymentTransactionKeysFactory is new Java_Object with record
       TRXTYPE : PaymentTransactionKeys_Access;

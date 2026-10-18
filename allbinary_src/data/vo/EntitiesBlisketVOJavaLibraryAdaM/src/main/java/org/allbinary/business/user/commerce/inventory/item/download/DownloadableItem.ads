@@ -20,37 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.Calendar_Package; use java.util.Calendar_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
-with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
-with org.allbinary.data.generator.ProductIdGenerator_Package; use org.allbinary.data.generator.ProductIdGenerator_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
-with org.allbinary.time.TimeUtil_Package; use org.allbinary.time.TimeUtil_Package;
-with org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package;
 
 package org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package is
 
-   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
-   package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
-   package ProductIdGenerator_Package renames Standard.org.allbinary.data.generator.ProductIdGenerator_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package TimeUtil_Package renames Standard.org.allbinary.time.TimeUtil_Package;
 
    type DownloadableItem is tagged;
    type DownloadableItem_Access is access all DownloadableItem'Class;
    type DownloadableItem_Access_Array is array (Natural range <>) of DownloadableItem_Access;
    type DownloadableItem_Access_Array_Access is access all DownloadableItem_Access_Array;
+   type DownloadableItem_Access_Array_Access_Array is array (Natural range <>) of DownloadableItem_Access_Array_Access;
+   type DownloadableItem_Access_Array_Access_Array_Access is access all DownloadableItem_Access_Array_Access_Array;
 
    type DownloadableItem is new Java_Object with record
       id : Unbounded_String;

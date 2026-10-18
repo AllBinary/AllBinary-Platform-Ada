@@ -13,14 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.identification.GroupFactory_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out GroupFactory'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.NULL_GROUP_ARRAY := new Group_Access_Array'(0 .. (0) - 1 => null);
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.index := 0;
    end Initialize_Fields;
 
@@ -79,7 +86,7 @@ package body org.allbinary.game.identification.GroupFactory_Package is
                 stringMaker.delete (0, stringMaker.length);
                 name := stringMaker.append (TEAM).appendint (size).toString;
             end if;
-            This.list.add (Group_Package.Create (name, Short_Integer (((size) + (3)))));
+            This.list.add (Java_Object_Access (Group_Package.Create (name, Short_Integer (((size) + (3))))));
             size := size + 1;
         end loop;
    end init;

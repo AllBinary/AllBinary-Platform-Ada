@@ -35,6 +35,8 @@ package org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
    type DomDocumentHelper_Access is access all DomDocumentHelper'Class;
    type DomDocumentHelper_Access_Array is array (Natural range <>) of DomDocumentHelper_Access;
    type DomDocumentHelper_Access_Array_Access is access all DomDocumentHelper_Access_Array;
+   type DomDocumentHelper_Access_Array_Access_Array is array (Natural range <>) of DomDocumentHelper_Access_Array_Access;
+   type DomDocumentHelper_Access_Array_Access_Array_Access is access all DomDocumentHelper_Access_Array_Access_Array;
 
    type DomDocumentHelper is new Java_Object with null record;
 

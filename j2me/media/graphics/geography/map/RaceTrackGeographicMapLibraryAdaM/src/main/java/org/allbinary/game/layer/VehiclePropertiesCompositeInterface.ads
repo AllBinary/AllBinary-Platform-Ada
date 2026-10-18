@@ -29,6 +29,8 @@ package org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package is
    type VehiclePropertiesCompositeInterface_Access is access all VehiclePropertiesCompositeInterface'Class;
    type VehiclePropertiesCompositeInterface_Access_Array is array (Natural range <>) of VehiclePropertiesCompositeInterface_Access;
    type VehiclePropertiesCompositeInterface_Access_Array_Access is access all VehiclePropertiesCompositeInterface_Access_Array;
+   type VehiclePropertiesCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of VehiclePropertiesCompositeInterface_Access_Array_Access;
+   type VehiclePropertiesCompositeInterface_Access_Array_Access_Array_Access is access all VehiclePropertiesCompositeInterface_Access_Array_Access_Array;
    function getVehicleProperties (This : in out VehiclePropertiesCompositeInterface) return VehicleProperties_Access is abstract;
 
 end org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package;

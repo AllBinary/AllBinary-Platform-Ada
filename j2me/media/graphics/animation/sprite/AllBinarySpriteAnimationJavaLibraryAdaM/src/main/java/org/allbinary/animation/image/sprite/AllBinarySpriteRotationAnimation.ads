@@ -25,8 +25,6 @@ with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package;
 
 package org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Package is
@@ -36,13 +34,13 @@ package org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Pa
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type AllBinarySpriteRotationAnimation is tagged;
    type AllBinarySpriteRotationAnimation_Access is access all AllBinarySpriteRotationAnimation'Class;
    type AllBinarySpriteRotationAnimation_Access_Array is array (Natural range <>) of AllBinarySpriteRotationAnimation_Access;
    type AllBinarySpriteRotationAnimation_Access_Array_Access is access all AllBinarySpriteRotationAnimation_Access_Array;
+   type AllBinarySpriteRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AllBinarySpriteRotationAnimation_Access_Array_Access;
+   type AllBinarySpriteRotationAnimation_Access_Array_Access_Array_Access is access all AllBinarySpriteRotationAnimation_Access_Array_Access_Array;
 
    type AllBinarySpriteRotationAnimation is new HackRotationSpriteIndexedAnimation with null record;
 

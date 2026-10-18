@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.IndexedAnimationInterface_Package; use org.allbinary.animation.IndexedAnimationInterface_Package;
@@ -30,13 +29,14 @@ with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animat
 package org.allbinary.animation.IndexedAnimation_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type IndexedAnimation is tagged;
    type IndexedAnimation_Access is access all IndexedAnimation'Class;
    type IndexedAnimation_Access_Array is array (Natural range <>) of IndexedAnimation_Access;
    type IndexedAnimation_Access_Array_Access is access all IndexedAnimation_Access_Array;
+   type IndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of IndexedAnimation_Access_Array_Access;
+   type IndexedAnimation_Access_Array_Access_Array_Access is access all IndexedAnimation_Access_Array_Access_Array;
 
    type IndexedAnimation is new Animation and IndexedAnimationInterface with record
       logUtil : LogUtil_Access;

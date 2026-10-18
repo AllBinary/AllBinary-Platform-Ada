@@ -32,6 +32,8 @@ package org.allbinary.graphics.opengles.shader.UniformTextureOpenGLProcessor_Pac
    type UniformTextureOpenGLProcessor_Access is access all UniformTextureOpenGLProcessor'Class;
    type UniformTextureOpenGLProcessor_Access_Array is array (Natural range <>) of UniformTextureOpenGLProcessor_Access;
    type UniformTextureOpenGLProcessor_Access_Array_Access is access all UniformTextureOpenGLProcessor_Access_Array;
+   type UniformTextureOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of UniformTextureOpenGLProcessor_Access_Array_Access;
+   type UniformTextureOpenGLProcessor_Access_Array_Access_Array_Access is access all UniformTextureOpenGLProcessor_Access_Array_Access_Array;
 
    type UniformTextureOpenGLProcessor is new OpenGLObject3dProcessor with null record;
 

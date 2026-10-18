@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package; use org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
+with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package; use org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
+
 package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
 
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package CryptFileReader_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+   package AbFilePath_Package renames Standard.org.allbinary.logic.io.path.AbFilePath_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package TransformInfoHttpStoreInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
+   package TransformInfoTemplateData_Package renames Standard.org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
    procedure Initialize_Fields (This : in out StoreUriResolver'Class) is
    begin
       null;
@@ -50,7 +69,7 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
         begin
             stringBuffer := StringMaker_Package.Create;
             transformInfoHttpStoreInterface := TransformInfoHttpStoreInterface_Access (This.parentTransformInfoInterface);
-            stringBuffer.append (URLGLOBALS.getMainPath).append (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH).append (transformInfoHttpStoreInterface.getStoreName).append (AbPathData_Package.getInstance.SEPARATOR).append (href);
+            stringBuffer.append (URLGLOBALS_Package.getMainPath).append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH).append (transformInfoHttpStoreInterface.getStoreName).append (AbPathData_Package.getInstance.SEPARATOR).append (href);
             fileAbPath := AbPath_Access (AbFilePath_Package.Create (stringBuffer.toString));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XMLLOGGING) then
                 stringBuffer.delete (0, stringBuffer.length);
@@ -61,13 +80,13 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
                 stringBuffer.append (This.uriResolverStrings.NEW_PATH);
                 stringBuffer.append (fileAbPath.toString);
                 stringBuffer.append (This.uriResolverStrings.NOTE);
-                stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH);
+                stringBuffer.append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH);
                 stringBuffer.append (This.uriResolverStrings.URL_GLOBAL);
                 stringBuffer.append (This.uriResolverStrings.REQUIRED_EXTENSION);
                 stringBuffer.append (This.basicURIResolver.getExtension);
                 This.logUtil.putF (stringBuffer.toString, StoreUriResolver_Access'(This'Unchecked_Access), This.uriResolverStrings.RESOLVE);
             end if;
-            return StreamSource_Package.Create (CryptFileReader_Package.Create (TransformInfoTemplateData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION).getInputStream (fileAbPath));
+            return Source_Access (StreamSource_Package.Create (CryptFileReader_Package.Create (TransformInfoTemplateData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION).getInputStream (fileAbPath)));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -81,7 +100,7 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
    function toString (This : in out StoreUriResolver) return Unbounded_String is
    begin
         begin
-            return Java_Image ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH)) & To_Unbounded_String ("{Store Name if Any}/{import url}");
+            return Java_Image ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH)) & To_Unbounded_String ("{Store Name if Any}/{import url}");
         exception
             when Java_Occurrence : others =>
                 declare

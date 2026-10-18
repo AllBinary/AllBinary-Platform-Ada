@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_Packag
    type JvmStatisticsData_Access is access all JvmStatisticsData'Class;
    type JvmStatisticsData_Access_Array is array (Natural range <>) of JvmStatisticsData_Access;
    type JvmStatisticsData_Access_Array_Access is access all JvmStatisticsData_Access_Array;
+   type JvmStatisticsData_Access_Array_Access_Array is array (Natural range <>) of JvmStatisticsData_Access_Array_Access;
+   type JvmStatisticsData_Access_Array_Access_Array_Access is access all JvmStatisticsData_Access_Array_Access_Array;
 
    type JvmStatisticsData is new Java_Object with null record;
    JVM_STATISTICS : Unbounded_String;

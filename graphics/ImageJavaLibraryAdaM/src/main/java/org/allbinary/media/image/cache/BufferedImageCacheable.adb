@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.media.image.cache.BufferedImageCacheable_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out BufferedImageCacheable'Class) is
    begin
       null;
@@ -40,7 +43,7 @@ package body org.allbinary.media.image.cache.BufferedImageCacheable_Package is
 
    function getKey (This : in out BufferedImageCacheable) return Java_Object_Access is
    begin
-        return This.key;
+        return Java_Object_Access (This.key);
    end getKey;
 
    function getBufferedImage (This : in out BufferedImageCacheable) return BufferedImage_Access is

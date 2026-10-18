@@ -13,8 +13,28 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
+with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
+
 package body org.allbinary.math.NoDecimalTrigTable_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
    procedure Initialize_Fields (This : in out NoDecimalTrigTable'Class) is
    begin
       null;
@@ -37,7 +57,7 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
    begin
       Initialize_Fields (This);
         TOTAL_ANGLE := Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE);
-        MAX_VALUE := (Long_Long_Integer (Integer_Package.MAX_VALUE));
+        MAX_VALUE := (Long_Long_Integer (Integer'Last));
         This.noDecimalSin := new Long_Long_Integer_Array'(0 .. (TOTAL_ANGLE) - 1 => 0);
         This.noDecimalCos := new Long_Long_Integer_Array'(0 .. (TOTAL_ANGLE) - 1 => 0);
         This.noDecimalTan := new Long_Long_Integer_Array'(0 .. ((TOTAL_ANGLE) + (1)) - 1 => 0);
@@ -1155,8 +1175,8 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
       index : Integer;
       stringBuffer : StringMaker_Access;
    begin
-        MAX_VALUE := (Long_Long_Integer (Integer_Package.MAX_VALUE));
-        MIN_VALUE := (Long_Long_Integer (Integer_Package.MIN_VALUE));
+        MAX_VALUE := (Long_Long_Integer (Integer'Last));
+        MIN_VALUE := (Long_Long_Integer (Integer'First));
         ratio := ((MAX_VALUE) - (1));
         if (dy) /= (0) then
             dxl := (Long_Long_Integer (dx));

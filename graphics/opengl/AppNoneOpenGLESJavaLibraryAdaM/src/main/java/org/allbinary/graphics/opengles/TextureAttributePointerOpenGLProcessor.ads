@@ -32,6 +32,8 @@ package org.allbinary.graphics.opengles.TextureAttributePointerOpenGLProcessor_P
    type TextureAttributePointerOpenGLProcessor_Access is access all TextureAttributePointerOpenGLProcessor'Class;
    type TextureAttributePointerOpenGLProcessor_Access_Array is array (Natural range <>) of TextureAttributePointerOpenGLProcessor_Access;
    type TextureAttributePointerOpenGLProcessor_Access_Array_Access is access all TextureAttributePointerOpenGLProcessor_Access_Array;
+   type TextureAttributePointerOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of TextureAttributePointerOpenGLProcessor_Access_Array_Access;
+   type TextureAttributePointerOpenGLProcessor_Access_Array_Access_Array_Access is access all TextureAttributePointerOpenGLProcessor_Access_Array_Access_Array;
 
    type TextureAttributePointerOpenGLProcessor is new ObjectThreedOpenGLProcessor with null record;
    instance : TextureAttributePointerOpenGLProcessor_Access;

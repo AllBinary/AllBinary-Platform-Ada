@@ -32,6 +32,8 @@ package org.allbinary.business.context.modules.storefront.statistics.orders.hist
    type StoreFrontOrdersHistoryStatisticsInterface_Access is access all StoreFrontOrdersHistoryStatisticsInterface'Class;
    type StoreFrontOrdersHistoryStatisticsInterface_Access_Array is array (Natural range <>) of StoreFrontOrdersHistoryStatisticsInterface_Access;
    type StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access is access all StoreFrontOrdersHistoryStatisticsInterface_Access_Array;
+   type StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array is array (Natural range <>) of StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access;
+   type StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array_Access is access all StoreFrontOrdersHistoryStatisticsInterface_Access_Array_Access_Array;
    function getNumberOfOrders (This : in out StoreFrontOrdersHistoryStatisticsInterface) return Long_Long_Integer is abstract;
    function getSubTotal (This : in out StoreFrontOrdersHistoryStatisticsInterface) return Money_Access is abstract;
    function getShippingCost (This : in out StoreFrontOrdersHistoryStatisticsInterface) return Money_Access is abstract;

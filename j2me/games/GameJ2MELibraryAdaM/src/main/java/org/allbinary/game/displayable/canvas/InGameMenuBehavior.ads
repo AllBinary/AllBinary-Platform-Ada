@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 with org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package; use org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-with org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Package; use org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Package;
 
 package org.allbinary.game.displayable.canvas.InGameMenuBehavior_Package is
 
@@ -33,6 +32,8 @@ package org.allbinary.game.displayable.canvas.InGameMenuBehavior_Package is
    type InGameMenuBehavior_Access is access all InGameMenuBehavior'Class;
    type InGameMenuBehavior_Access_Array is array (Natural range <>) of InGameMenuBehavior_Access;
    type InGameMenuBehavior_Access_Array_Access is access all InGameMenuBehavior_Access_Array;
+   type InGameMenuBehavior_Access_Array_Access_Array is array (Natural range <>) of InGameMenuBehavior_Access_Array_Access;
+   type InGameMenuBehavior_Access_Array_Access_Array_Access is access all InGameMenuBehavior_Access_Array_Access_Array;
 
    type InGameMenuBehavior is new BaseMenuBehavior with null record;
    instanceC : InGameMenuBehavior_Access;

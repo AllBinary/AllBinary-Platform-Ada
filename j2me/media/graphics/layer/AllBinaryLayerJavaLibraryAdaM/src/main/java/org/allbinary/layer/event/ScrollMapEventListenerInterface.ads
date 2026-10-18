@@ -31,6 +31,8 @@ package org.allbinary.layer.event.ScrollMapEventListenerInterface_Package is
    type ScrollMapEventListenerInterface_Access is access all ScrollMapEventListenerInterface'Class;
    type ScrollMapEventListenerInterface_Access_Array is array (Natural range <>) of ScrollMapEventListenerInterface_Access;
    type ScrollMapEventListenerInterface_Access_Array_Access is access all ScrollMapEventListenerInterface_Access_Array;
+   type ScrollMapEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of ScrollMapEventListenerInterface_Access_Array_Access;
+   type ScrollMapEventListenerInterface_Access_Array_Access_Array_Access is access all ScrollMapEventListenerInterface_Access_Array_Access_Array;
    procedure onMoveEvent (This : in out ScrollMapEventListenerInterface; layerManagerEvent_Param : access ScrollMapEvent_Package.ScrollMapEvent'Class) is abstract;
 
 end org.allbinary.layer.event.ScrollMapEventListenerInterface_Package;

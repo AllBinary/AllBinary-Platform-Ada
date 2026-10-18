@@ -12,8 +12,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.RTSLayerEvent_Package; use org.allbinary.game.layer.RTSLayerEvent_Package;
+with org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package; use org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
+
 package body org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package is
 
+   package RTSLayerEvent_Package renames Standard.org.allbinary.game.layer.RTSLayerEvent_Package;
    procedure Initialize_Fields (This : in out LocalPlayerBuildingEventHandler'Class) is
    begin
       null;

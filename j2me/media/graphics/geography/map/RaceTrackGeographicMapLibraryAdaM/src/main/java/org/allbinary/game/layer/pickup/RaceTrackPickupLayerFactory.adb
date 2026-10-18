@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package; use org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
+
 package body org.allbinary.game.layer.pickup.RaceTrackPickupLayerFactory_Package is
 
    procedure Initialize_Fields (This : in out RaceTrackPickupLayerFactory'Class) is
@@ -36,7 +38,7 @@ package body org.allbinary.game.layer.pickup.RaceTrackPickupLayerFactory_Package
    --  throws Exception
    function getInstance (This : in out RaceTrackPickupLayerFactory) return AllBinaryLayer_Access is
    begin
-        return RaceTrackPickupLayer_Package.Create;
+        return AllBinaryLayer_Access (RaceTrackPickupLayer_Package.Create);
    end getInstance;
 
 end org.allbinary.game.layer.pickup.RaceTrackPickupLayerFactory_Package;

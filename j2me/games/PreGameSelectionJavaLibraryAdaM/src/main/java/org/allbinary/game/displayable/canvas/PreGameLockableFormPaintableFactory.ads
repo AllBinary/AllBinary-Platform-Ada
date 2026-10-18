@@ -23,20 +23,19 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.PaintableForm_Package; use org.allbinary.graphics.form.PaintableForm_Package;
-with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
-with org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package; use org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package;
 
 package org.allbinary.game.displayable.canvas.PreGameLockableFormPaintableFactory_Package is
 
    package ItemPaintable_Package renames Standard.org.allbinary.graphics.form.ItemPaintable_Package;
    package ItemPaintableFactory_Package renames Standard.org.allbinary.graphics.form.ItemPaintableFactory_Package;
    package PaintableForm_Package renames Standard.org.allbinary.graphics.form.PaintableForm_Package;
-   package ScrollCurrentSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
    type PreGameLockableFormPaintableFactory is tagged;
    type PreGameLockableFormPaintableFactory_Access is access all PreGameLockableFormPaintableFactory'Class;
    type PreGameLockableFormPaintableFactory_Access_Array is array (Natural range <>) of PreGameLockableFormPaintableFactory_Access;
    type PreGameLockableFormPaintableFactory_Access_Array_Access is access all PreGameLockableFormPaintableFactory_Access_Array;
+   type PreGameLockableFormPaintableFactory_Access_Array_Access_Array is array (Natural range <>) of PreGameLockableFormPaintableFactory_Access_Array_Access;
+   type PreGameLockableFormPaintableFactory_Access_Array_Access_Array_Access is access all PreGameLockableFormPaintableFactory_Access_Array_Access_Array;
 
    type PreGameLockableFormPaintableFactory is new ItemPaintableFactory with record
       lockedIndex : Integer;

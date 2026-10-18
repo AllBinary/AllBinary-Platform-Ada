@@ -30,6 +30,8 @@ package org.allbinary.media.audio.SoundInterface_Package is
    type SoundInterface_Access is access all SoundInterface'Class;
    type SoundInterface_Access_Array is array (Natural range <>) of SoundInterface_Access;
    type SoundInterface_Access_Array_Access is access all SoundInterface_Access_Array;
+   type SoundInterface_Access_Array_Access_Array is array (Natural range <>) of SoundInterface_Access_Array_Access;
+   type SoundInterface_Access_Array_Access_Array_Access is access all SoundInterface_Access_Array_Access_Array;
    function getResource (This : in out SoundInterface) return Unbounded_String is abstract;
    function getPlayerP (This : in out SoundInterface) return Player_Access is abstract;
    procedure init (This : in out SoundInterface) is abstract;

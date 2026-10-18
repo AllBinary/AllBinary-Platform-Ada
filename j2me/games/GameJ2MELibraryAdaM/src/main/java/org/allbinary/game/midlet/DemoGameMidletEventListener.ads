@@ -31,6 +31,8 @@ package org.allbinary.game.midlet.DemoGameMidletEventListener_Package is
    type DemoGameMidletEventListener_Access is access all DemoGameMidletEventListener'Class;
    type DemoGameMidletEventListener_Access_Array is array (Natural range <>) of DemoGameMidletEventListener_Access;
    type DemoGameMidletEventListener_Access_Array_Access is access all DemoGameMidletEventListener_Access_Array;
+   type DemoGameMidletEventListener_Access_Array_Access_Array is array (Natural range <>) of DemoGameMidletEventListener_Access_Array_Access;
+   type DemoGameMidletEventListener_Access_Array_Access_Array_Access is access all DemoGameMidletEventListener_Access_Array_Access_Array;
    procedure onDemoStart (This : in out DemoGameMidletEventListener) is abstract;
    procedure onGameStart (This : in out DemoGameMidletEventListener) is abstract;
    procedure onDemoGameMidletEvent (This : in out DemoGameMidletEventListener; demoGameMidletEvent_Param : access DemoGameMidletEvent_Package.DemoGameMidletEvent'Class) is abstract;

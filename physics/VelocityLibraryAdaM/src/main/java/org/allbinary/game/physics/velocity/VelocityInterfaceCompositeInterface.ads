@@ -29,6 +29,8 @@ package org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_
    type VelocityInterfaceCompositeInterface_Access is access all VelocityInterfaceCompositeInterface'Class;
    type VelocityInterfaceCompositeInterface_Access_Array is array (Natural range <>) of VelocityInterfaceCompositeInterface_Access;
    type VelocityInterfaceCompositeInterface_Access_Array_Access is access all VelocityInterfaceCompositeInterface_Access_Array;
+   type VelocityInterfaceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of VelocityInterfaceCompositeInterface_Access_Array_Access;
+   type VelocityInterfaceCompositeInterface_Access_Array_Access_Array_Access is access all VelocityInterfaceCompositeInterface_Access_Array_Access_Array;
    function getVelocityProperties (This : in out VelocityInterfaceCompositeInterface) return BasicVelocityProperties_Access is abstract;
 
 end org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;

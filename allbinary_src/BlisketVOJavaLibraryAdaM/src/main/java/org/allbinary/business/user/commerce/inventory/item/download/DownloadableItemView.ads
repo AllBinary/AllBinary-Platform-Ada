@@ -20,27 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.Calendar_Package; use java.util.Calendar_Package;
-with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
-with org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package;
 
 package org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package is
 
-   package Calendar_Package renames Standard.java.util.Calendar_Package;
-   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -49,8 +40,10 @@ package org.allbinary.business.user.commerce.inventory.item.download.Downloadabl
    type DownloadableItemView_Access is access all DownloadableItemView'Class;
    type DownloadableItemView_Access_Array is array (Natural range <>) of DownloadableItemView_Access;
    type DownloadableItemView_Access_Array_Access is access all DownloadableItemView_Access_Array;
+   type DownloadableItemView_Access_Array_Access_Array is array (Natural range <>) of DownloadableItemView_Access_Array_Access;
+   type DownloadableItemView_Access_Array_Access_Array_Access is access all DownloadableItemView_Access_Array_Access_Array;
 
-   type DownloadableItemView is new DomNodeInterface with record
+   type DownloadableItemView is new Java_Object and DomNodeInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       downloadableItem : DownloadableItem_Access;

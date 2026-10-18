@@ -33,6 +33,8 @@ package org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_P
    type PickedUpLayerInterfaceFactoryInterface_Access is access all PickedUpLayerInterfaceFactoryInterface'Class;
    type PickedUpLayerInterfaceFactoryInterface_Access_Array is array (Natural range <>) of PickedUpLayerInterfaceFactoryInterface_Access;
    type PickedUpLayerInterfaceFactoryInterface_Access_Array_Access is access all PickedUpLayerInterfaceFactoryInterface_Access_Array;
+   type PickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of PickedUpLayerInterfaceFactoryInterface_Access_Array_Access;
+   type PickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all PickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array;
    function getPickedUpLayerType (This : in out PickedUpLayerInterfaceFactoryInterface) return PickedUpLayerType_Access is abstract;
    function getIconLayer (This : in out PickedUpLayerInterfaceFactoryInterface) return AllBinaryLayer_Access is abstract;
    function getAnimationInterface (This : in out PickedUpLayerInterfaceFactoryInterface) return Animation_Access is abstract;

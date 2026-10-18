@@ -36,6 +36,8 @@ package org.allbinary.animation.vector.RectangleFilledAnimation_Package is
    type RectangleFilledAnimation_Access is access all RectangleFilledAnimation'Class;
    type RectangleFilledAnimation_Access_Array is array (Natural range <>) of RectangleFilledAnimation_Access;
    type RectangleFilledAnimation_Access_Array_Access is access all RectangleFilledAnimation_Access_Array;
+   type RectangleFilledAnimation_Access_Array_Access_Array is array (Natural range <>) of RectangleFilledAnimation_Access_Array_Access;
+   type RectangleFilledAnimation_Access_Array_Access_Array_Access is access all RectangleFilledAnimation_Access_Array_Access_Array;
 
    type RectangleFilledAnimation is new Animation and ColorCompositeInterface with record
       widthP : Integer;

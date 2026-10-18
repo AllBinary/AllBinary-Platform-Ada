@@ -28,6 +28,8 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgr
    type GeographicMapCellHistoryProgressBase_Access is access all GeographicMapCellHistoryProgressBase'Class;
    type GeographicMapCellHistoryProgressBase_Access_Array is array (Natural range <>) of GeographicMapCellHistoryProgressBase_Access;
    type GeographicMapCellHistoryProgressBase_Access_Array_Access is access all GeographicMapCellHistoryProgressBase_Access_Array;
+   type GeographicMapCellHistoryProgressBase_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellHistoryProgressBase_Access_Array_Access;
+   type GeographicMapCellHistoryProgressBase_Access_Array_Access_Array_Access is access all GeographicMapCellHistoryProgressBase_Access_Array_Access_Array;
 
    type GeographicMapCellHistoryProgressBase is new Java_Object with null record;
    instance : GeographicMapCellHistoryProgressBase_Access;

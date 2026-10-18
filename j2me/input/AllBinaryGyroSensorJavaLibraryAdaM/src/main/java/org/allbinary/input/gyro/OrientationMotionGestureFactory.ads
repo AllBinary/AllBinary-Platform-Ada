@@ -20,20 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 
 package org.allbinary.input.gyro.OrientationMotionGestureFactory_Package is
 
-   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
    package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type OrientationMotionGestureFactory is tagged;
    type OrientationMotionGestureFactory_Access is access all OrientationMotionGestureFactory'Class;
    type OrientationMotionGestureFactory_Access_Array is array (Natural range <>) of OrientationMotionGestureFactory_Access;
    type OrientationMotionGestureFactory_Access_Array_Access is access all OrientationMotionGestureFactory_Access_Array;
+   type OrientationMotionGestureFactory_Access_Array_Access_Array is array (Natural range <>) of OrientationMotionGestureFactory_Access_Array_Access;
+   type OrientationMotionGestureFactory_Access_Array_Access_Array_Access is access all OrientationMotionGestureFactory_Access_Array_Access_Array;
 
    type OrientationMotionGestureFactory is new Java_Object with record
       LEFT : MotionGestureInput_Access;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package is
 
    procedure Initialize_Fields (This : in out BasicItemData'Class) is

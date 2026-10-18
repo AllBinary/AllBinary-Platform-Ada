@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.communication.http.request.RequestData_Package; use org.allbinary.logic.communication.http.request.RequestData_Package;
+
 package body org.allbinary.logic.communication.http.request.RequestParams_Package is
 
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out RequestParams'Class) is
    begin
       null;
@@ -87,7 +95,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
       keys : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
-      key_Case : Unbounded_String;
+      key : Unbounded_String;
       values : Unbounded_String_Array_Access;
       i : Integer;
    begin
@@ -98,15 +106,15 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
             keyArray := keys.toArray;
             size := keyArray'Length;
             for i in 0 .. (size) - 1 loop
-                key_Case := Java_Unbox (keyArray (i));
-                values := Unbounded_String_Array_Access (This.map.get (Java_Box (key_Case)));
+                key := Java_Unbox (keyArray (i));
+                values := Unbounded_String_Array_Access (This.map.get (Java_Box (key)));
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (This.KEY);
-                stringBuffer.append (key_Case);
+                stringBuffer.append (key);
                 stringBuffer.append (This.VALUE);
                 stringBuffer.append (values (0));
                 This.logUtil.putF (stringBuffer.toString, RequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode(document)"));
-                node.appendChild (ModDomHelper_Package.createNameValueNodes (document, RequestData_Package.PARAMETER, Java_New_String (key_Case), Java_New_String (values (0))));
+                node.appendChild (ModDomHelper_Package.createNameValueNodes (document, RequestData_Package.PARAMETER, Java_New_String (key), Java_New_String (values (0))));
             end loop;
             return node;
         exception
@@ -127,7 +135,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
       stringBuffer : StringMaker_Access;
-      key_Case : Unbounded_String;
+      key : Unbounded_String;
       values : Unbounded_String_Array_Access;
       i : Integer;
    begin
@@ -137,9 +145,9 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
         size := keyArray'Length;
         stringBuffer := StringMaker_Package.Create;
         for i in 0 .. (size) - 1 loop
-            key_Case := Java_Unbox (keyArray (i));
-            values := Unbounded_String_Array_Access (This.map.get (Java_Box (key_Case)));
-            hashMap.put (Java_New_String (key_Case), Java_New_String (values (0)));
+            key := Java_Unbox (keyArray (i));
+            values := Unbounded_String_Array_Access (This.map.get (Java_Box (key)));
+            hashMap.put (Java_New_String (key), Java_New_String (values (0)));
         end loop;
         stringBuffer.delete (0, stringBuffer.length);
         stringBuffer.append (To_Unbounded_String ("RequestParams: "));

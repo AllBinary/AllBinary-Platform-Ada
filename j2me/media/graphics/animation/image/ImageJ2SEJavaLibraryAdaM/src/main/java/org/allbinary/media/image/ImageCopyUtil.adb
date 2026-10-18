@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.microemu.device.j2se.J2SEImmutableImage_Package; use org.microemu.device.j2se.J2SEImmutableImage_Package;
+
 package body org.allbinary.media.image.ImageCopyUtil_Package is
 
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package J2SEImmutableImage_Package renames Standard.org.microemu.device.j2se.J2SEImmutableImage_Package;
    procedure Initialize_Fields (This : in out ImageCopyUtil'Class) is
    begin
       null;
@@ -86,7 +91,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
         originalBufferedImage := This.imageUtil.getBufferedImage (originalImage);
         bufferedImage := This.imageUtil.createBufferedImageWithLargerCanvas (originalBufferedImage, newWidth, newHeight);
         image := J2SEImmutableImage_Package.Create (bufferedImage);
-        return image;
+        return Image_Access (image);
    end createImageScale;
 
    procedure createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) is

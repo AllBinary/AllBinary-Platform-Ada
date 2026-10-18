@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.form.ScreenInfo_Package; use org.allbinary.graphics.form.ScreenInfo_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+
 package body org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package ScreenInfo_Package renames Standard.org.allbinary.graphics.form.ScreenInfo_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
    procedure Initialize_Fields (This : in out LimitCommandsVisitor'Class) is
    begin
       null;
@@ -54,6 +65,18 @@ package body org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
 
    procedure visit (This : in out LimitCommandsVisitor; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Java_Object_Access := LimitCommandsVisitor'Class (This).visit (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end visit;
+
+   function visit (This : in out LimitCommandsVisitor; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return LimitCommandsVisitor'Class (This).visit (Java_Box (Value));
+   end visit;
+
+   procedure visit (This : in out LimitCommandsVisitor; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := LimitCommandsVisitor'Class (This).visit (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

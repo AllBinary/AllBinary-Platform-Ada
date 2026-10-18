@@ -23,11 +23,7 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package; use org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
-with org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
@@ -35,11 +31,7 @@ with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 package admin.taghelpers.ShippingHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package OrderInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
-   package ShippingMethodData_Package renames Standard.org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
    package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
@@ -47,6 +39,8 @@ package admin.taghelpers.ShippingHelper_Package is
    type ShippingHelper_Access is access all ShippingHelper'Class;
    type ShippingHelper_Access_Array is array (Natural range <>) of ShippingHelper_Access;
    type ShippingHelper_Access_Array_Access is access all ShippingHelper_Access_Array;
+   type ShippingHelper_Access_Array_Access_Array is array (Natural range <>) of ShippingHelper_Access_Array_Access;
+   type ShippingHelper_Access_Array_Access_Array_Access is access all ShippingHelper_Access_Array_Access_Array;
 
    type ShippingHelper is new TagHelper with record
       logUtil : LogUtil_Access;

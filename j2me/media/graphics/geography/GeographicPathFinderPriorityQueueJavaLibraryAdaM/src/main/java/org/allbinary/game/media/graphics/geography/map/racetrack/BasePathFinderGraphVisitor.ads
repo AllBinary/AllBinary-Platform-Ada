@@ -20,24 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package PathFinderGraphVisitorBase_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
-   package PathFindingNode_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type BasePathFinderGraphVisitor is tagged;
    type BasePathFinderGraphVisitor_Access is access all BasePathFinderGraphVisitor'Class;
    type BasePathFinderGraphVisitor_Access_Array is array (Natural range <>) of BasePathFinderGraphVisitor_Access;
    type BasePathFinderGraphVisitor_Access_Array_Access is access all BasePathFinderGraphVisitor_Access_Array;
+   type BasePathFinderGraphVisitor_Access_Array_Access_Array is array (Natural range <>) of BasePathFinderGraphVisitor_Access_Array_Access;
+   type BasePathFinderGraphVisitor_Access_Array_Access_Array_Access is access all BasePathFinderGraphVisitor_Access_Array_Access_Array;
 
    type BasePathFinderGraphVisitor is new PathFinderGraphVisitorBase with record
       geographicMapInterface : BasicGeographicMap_Access;
@@ -54,6 +52,10 @@ package org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinder
    procedure isValid (This : in out BasePathFinderGraphVisitor; graphPath_Param : access Java_Object'Class);
    function getInvalidReason (This : in out BasePathFinderGraphVisitor; graphPath_Param : access Java_Object'Class) return Unbounded_String;
    procedure getInvalidReason (This : in out BasePathFinderGraphVisitor; graphPath_Param : access Java_Object'Class);
+   function isValid (This : in out BasePathFinderGraphVisitor; Value : Unbounded_String) return Boolean;
+   procedure isValid (This : in out BasePathFinderGraphVisitor; Value : Unbounded_String);
+   function getInvalidReason (This : in out BasePathFinderGraphVisitor; Value : Unbounded_String) return Unbounded_String;
+   procedure getInvalidReason (This : in out BasePathFinderGraphVisitor; Value : Unbounded_String);
 
 end org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package;
 

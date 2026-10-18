@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimation_Package is
 
    procedure Initialize_Fields (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation'Class) is

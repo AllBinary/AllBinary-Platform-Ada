@@ -32,6 +32,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    type ProfileActionScriptInputInterface_Access is access all ProfileActionScriptInputInterface'Class;
    type ProfileActionScriptInputInterface_Access_Array is array (Natural range <>) of ProfileActionScriptInputInterface_Access;
    type ProfileActionScriptInputInterface_Access_Array_Access is access all ProfileActionScriptInputInterface_Access_Array;
+   type ProfileActionScriptInputInterface_Access_Array_Access_Array is array (Natural range <>) of ProfileActionScriptInputInterface_Access_Array_Access;
+   type ProfileActionScriptInputInterface_Access_Array_Access_Array_Access is access all ProfileActionScriptInputInterface_Access_Array_Access_Array;
    procedure setInputRobotInterface (This : in out ProfileActionScriptInputInterface; inputRobotInterface_Param : access InputRobotInterface_Package.InputRobotInterface'Class) is abstract;
    function getInputRobotInterface (This : in out ProfileActionScriptInputInterface) return InputRobotInterface_Access is abstract;
    function getTime (This : in out ProfileActionScriptInputInterface) return Integer is abstract;

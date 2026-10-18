@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.visual.transform.template.customizer.bodies.GenericBodyValidation_Package; use org.allbinary.logic.visual.transform.template.customizer.bodies.GenericBodyValidation_Package;
+with views.business.context.modules.storefront.customizer.CustomizerUtil_Package; use views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
+
 package body views.business.context.modules.storefront.customizer.bodies.generic_Id.NewGenericBodyValidationView_Package is
 
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package GenericBodyValidation_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.bodies.GenericBodyValidation_Package;
+   package CustomizerUtil_Package renames Standard.views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
    procedure Initialize_Fields (This : in out NewGenericBodyValidationView'Class) is
    begin
       null;

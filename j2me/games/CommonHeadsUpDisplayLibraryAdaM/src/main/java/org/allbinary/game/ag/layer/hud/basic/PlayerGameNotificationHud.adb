@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
+with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+
 package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
+   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
+   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    procedure Initialize_Fields (This : in out PlayerGameNotificationHud'Class) is
    begin
       null;
@@ -25,8 +44,8 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
       
       This.gameNotification := GameNotification_Package.Create;
       This.permanentGameNotification := GameNotification_Package.Create;
-      This.setAndRemoveProcessor := SetAndRemoveProcessor_Package.Create (PlayerGameNotificationHud_Access'(This'Unchecked_Access));
-      This.nextUnremoveableProcessor := NextUnremoveableProcessor_Package.Create (PlayerGameNotificationHud_Access'(This'Unchecked_Access));
+      This.setAndRemoveProcessor := Processor_Access (SetAndRemoveProcessor_Package.Create (PlayerGameNotificationHud_Access'(This'Unchecked_Access)));
+      This.nextUnremoveableProcessor := Processor_Access (NextUnremoveableProcessor_Package.Create (PlayerGameNotificationHud_Access'(This'Unchecked_Access)));
       This.processor := Processor_Package.getInstance;
       This.PERMANENT_GAME_NOTIFICATION := To_Unbounded_String ("Permanent Game Notification: ");
       This.lastString := StringUtil_Package.getInstance.EMPTY_STRING;
@@ -84,7 +103,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         This.point := CustomGPoint_Package.getInstance3 (0, 0);
         This.point.setX (x);
         This.point.setY (y);
-        return This.point;
+        return GPoint_Access (This.point);
    end getPoint;
 
    procedure add (This : in out PlayerGameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; permanent : Boolean) is
@@ -168,7 +187,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         time := Integer (This.permanentGameNotification.timeList.objectArray (index));
         This.timeDelayHelper.delay_Id := (Integer (time)) * (1000);
         PlayerGameNotificationHud'Class (This).setBasicColorP (BasicColor_Access (This.permanentGameNotification.colorList.objectArray (index)));
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
    end setNextUnremoveableProcess;
 
    procedure clear (This : in out PlayerGameNotificationHud) is
@@ -194,8 +213,27 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
 end org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
+with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+
 package body org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
+   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
+   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    procedure Initialize_Fields (This : in out SetAndRemoveProcessor'Class) is
    begin
       null;
@@ -227,8 +265,27 @@ package body org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package
 end org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
+with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+
 package body org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
+   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
+   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    procedure Initialize_Fields (This : in out NextUnremoveableProcessor'Class) is
    begin
       null;

@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.business.user.commerce.inventory.order.Order_Package; use org.allbinary.business.user.commerce.inventory.order.Order_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
@@ -32,7 +31,6 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEnti
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
    package Order_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.Order_Package;
    package OrderHistory_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
@@ -42,6 +40,8 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEnti
    type OrderHistoryEntityInterface_Access is access all OrderHistoryEntityInterface'Class;
    type OrderHistoryEntityInterface_Access_Array is array (Natural range <>) of OrderHistoryEntityInterface_Access;
    type OrderHistoryEntityInterface_Access_Array_Access is access all OrderHistoryEntityInterface_Access_Array;
+   type OrderHistoryEntityInterface_Access_Array_Access_Array is array (Natural range <>) of OrderHistoryEntityInterface_Access_Array_Access;
+   type OrderHistoryEntityInterface_Access_Array_Access_Array_Access is access all OrderHistoryEntityInterface_Access_Array_Access_Array;
    procedure insert (This : in out OrderHistoryEntityInterface; userName : Unbounded_String; order_Param : access Order_Package.Order'Class) is abstract;
    procedure setStatus (This : in out OrderHistoryEntityInterface; orderId : Unbounded_String; status : Unbounded_String) is abstract;
    procedure setPaymentMethod (This : in out OrderHistoryEntityInterface; orderId : Unbounded_String; status : Unbounded_String) is abstract;

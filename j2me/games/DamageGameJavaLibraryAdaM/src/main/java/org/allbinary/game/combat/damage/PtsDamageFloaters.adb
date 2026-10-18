@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.java.character_Id.CharArrayFactory_Package; use org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
+with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+
 package body org.allbinary.game.combat.damage.PtsDamageFloaters_Package is
 
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package CharArrayFactory_Package renames Standard.org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
    procedure Initialize_Fields (This : in out PtsDamageFloaters'Class) is
    begin
       null;
@@ -58,7 +69,7 @@ package body org.allbinary.game.combat.damage.PtsDamageFloaters_Package is
         This.lastDamage (index) := damage;
         This.lastDamageString (index) := This.primitiveLongUtil.getCharArray (This.lastDamage (index));
         This.lastDamageStringSizeArray (index) := This.primitiveLongUtil.getCurrentTotalDigits;
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
    end add;
 
    procedure paint (This : in out PtsDamageFloaters; graphics_Param : access Graphics_Package.Graphics'Class) is

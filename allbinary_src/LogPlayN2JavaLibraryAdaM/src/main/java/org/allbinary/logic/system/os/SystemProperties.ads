@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.logic.system.os.SystemProperties_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type SystemProperties is tagged;
    type SystemProperties_Access is access all SystemProperties'Class;
    type SystemProperties_Access_Array is array (Natural range <>) of SystemProperties_Access;
    type SystemProperties_Access_Array_Access is access all SystemProperties_Access_Array;
+   type SystemProperties_Access_Array_Access_Array is array (Natural range <>) of SystemProperties_Access_Array_Access;
+   type SystemProperties_Access_Array_Access_Array_Access is access all SystemProperties_Access_Array_Access_Array;
 
    type SystemProperties is new Java_Object with record
       OS_NAME : Unbounded_String;

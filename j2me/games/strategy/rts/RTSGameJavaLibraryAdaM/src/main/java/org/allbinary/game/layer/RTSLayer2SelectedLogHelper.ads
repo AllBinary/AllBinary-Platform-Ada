@@ -21,19 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.game.layer.RTSLayer2LogHelper_Package; use org.allbinary.game.layer.RTSLayer2LogHelper_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 
 package org.allbinary.game.layer.RTSLayer2SelectedLogHelper_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type RTSLayer2SelectedLogHelper is tagged;
    type RTSLayer2SelectedLogHelper_Access is access all RTSLayer2SelectedLogHelper'Class;
    type RTSLayer2SelectedLogHelper_Access_Array is array (Natural range <>) of RTSLayer2SelectedLogHelper_Access;
    type RTSLayer2SelectedLogHelper_Access_Array_Access is access all RTSLayer2SelectedLogHelper_Access_Array;
+   type RTSLayer2SelectedLogHelper_Access_Array_Access_Array is array (Natural range <>) of RTSLayer2SelectedLogHelper_Access_Array_Access;
+   type RTSLayer2SelectedLogHelper_Access_Array_Access_Array_Access is access all RTSLayer2SelectedLogHelper_Access_Array_Access_Array;
 
    type RTSLayer2SelectedLogHelper is new RTSLayer2LogHelper with record
       logUtil : LogUtil_Access;

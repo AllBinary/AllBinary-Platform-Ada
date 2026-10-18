@@ -25,44 +25,28 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletResponse_Package; use javax.servlet.http.HttpServletResponse_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
-with org.allbinary.logic.communication.http.AcceptableResponseGenerator_Package; use org.allbinary.logic.communication.http.AcceptableResponseGenerator_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.control.search.SearchParams_Package; use org.allbinary.logic.control.search.SearchParams_Package;
 with org.allbinary.logic.control.search.SearchRequest_Package; use org.allbinary.logic.control.search.SearchRequest_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-with views.admin.inventory.listings.InventoryViewFactory_Package; use views.admin.inventory.listings.InventoryViewFactory_Package;
-with views.admin.inventory.listings.InventoryViewSearchInterface_Package; use views.admin.inventory.listings.InventoryViewSearchInterface_Package;
 
 package taghelpers.InventoryHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package TagHelper_Package renames Standard.admin.taghelpers.TagHelper_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
    package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
    package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
-   package AcceptableResponseGenerator_Package renames Standard.org.allbinary.logic.communication.http.AcceptableResponseGenerator_Package;
    package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package SearchParams_Package renames Standard.org.allbinary.logic.control.search.SearchParams_Package;
    package SearchRequest_Package renames Standard.org.allbinary.logic.control.search.SearchRequest_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-   package InventoryViewFactory_Package renames Standard.views.admin.inventory.listings.InventoryViewFactory_Package;
-   package InventoryViewSearchInterface_Package renames Standard.views.admin.inventory.listings.InventoryViewSearchInterface_Package;
 
    type InventoryHelper is tagged;
    type InventoryHelper_Access is access all InventoryHelper'Class;
    type InventoryHelper_Access_Array is array (Natural range <>) of InventoryHelper_Access;
    type InventoryHelper_Access_Array_Access is access all InventoryHelper_Access_Array;
+   type InventoryHelper_Access_Array_Access_Array is array (Natural range <>) of InventoryHelper_Access_Array_Access;
+   type InventoryHelper_Access_Array_Access_Array_Access is access all InventoryHelper_Access_Array_Access_Array;
 
    type InventoryHelper is new TagHelper with record
       logUtil : LogUtil_Access;

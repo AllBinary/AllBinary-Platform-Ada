@@ -34,6 +34,8 @@ package org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFactory_
    type TouchButtonsPaintableCompositeFactory_Access is access all TouchButtonsPaintableCompositeFactory'Class;
    type TouchButtonsPaintableCompositeFactory_Access_Array is array (Natural range <>) of TouchButtonsPaintableCompositeFactory_Access;
    type TouchButtonsPaintableCompositeFactory_Access_Array_Access is access all TouchButtonsPaintableCompositeFactory_Access_Array;
+   type TouchButtonsPaintableCompositeFactory_Access_Array_Access_Array is array (Natural range <>) of TouchButtonsPaintableCompositeFactory_Access_Array_Access;
+   type TouchButtonsPaintableCompositeFactory_Access_Array_Access_Array_Access is access all TouchButtonsPaintableCompositeFactory_Access_Array_Access_Array;
 
    type TouchButtonsPaintableCompositeFactory is new Java_Object with null record;
 

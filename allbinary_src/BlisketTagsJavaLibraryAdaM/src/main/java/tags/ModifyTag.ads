@@ -24,26 +24,20 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
 with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.TagHelperFactoryInterface_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with tags.HelperTag_Package; use tags.HelperTag_Package;
 
 package tags.ModifyTag_Package is
 
    package TagHelperFactoryInterface_Package renames Standard.admin.taghelpers.TagHelperFactoryInterface_Package;
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ModifyTag is tagged;
    type ModifyTag_Access is access all ModifyTag'Class;
    type ModifyTag_Access_Array is array (Natural range <>) of ModifyTag_Access;
    type ModifyTag_Access_Array_Access is access all ModifyTag_Access_Array;
+   type ModifyTag_Access_Array_Access_Array is array (Natural range <>) of ModifyTag_Access_Array_Access;
+   type ModifyTag_Access_Array_Access_Array_Access is access all ModifyTag_Access_Array_Access_Array;
 
    type ModifyTag is new HelperTag with record
       logUtil : LogUtil_Access;

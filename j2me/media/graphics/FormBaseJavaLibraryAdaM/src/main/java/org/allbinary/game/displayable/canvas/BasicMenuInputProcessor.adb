@@ -13,12 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullCanvas_Package; use javax.microedition.lcdui.NullCanvas_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package is
 
+   package NullCanvas_Package renames Standard.javax.microedition.lcdui.NullCanvas_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BasicMenuInputProcessor'Class) is
    begin
       null;
-      This.motionGestureEventList := BasicArrayListD_Package.Create;
+      This.motionGestureEventList := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.canvas := NullCanvas_Package.NULL_CANVAS;
    end Initialize_Fields;
 
@@ -42,7 +47,7 @@ package body org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Packa
    procedure onMotionGestureEvent (This : in out BasicMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
       motionGestureEvent : constant MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
    begin
-        This.motionGestureEventList.add (motionGestureEvent);
+        This.motionGestureEventList.add (Java_Object_Access (motionGestureEvent));
    end onMotionGestureEvent;
 
    procedure onScrolledMotionGestureEvent (This : in out BasicMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
@@ -54,7 +59,7 @@ package body org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Packa
    procedure setCanvas (This : in out BasicMenuInputProcessor; canvas_Param : access MyCanvas_Package.MyCanvas'Class) is
       canvas : constant MyCanvas_Access := MyCanvas_Access (canvas_Param);
    begin
-        This.canvas := canvas;
+        This.canvas := Canvas_Access (canvas);
    end setCanvas;
 
    function getCanvas (This : in out BasicMenuInputProcessor) return MyCanvas_Access is

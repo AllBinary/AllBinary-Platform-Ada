@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.NullIndexedAnimation_Package is
 
    procedure Initialize_Fields (This : in out NullIndexedAnimation'Class) is

@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with java.io.StringReader_Package; use java.io.StringReader_Package;
 --  with java.io.StringWriter_Package; use java.io.StringWriter_Package;
 --  with java.io.Writer_Package; use java.io.Writer_Package;
@@ -31,26 +30,19 @@ with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Pa
 --  with javax.xml.transform.dom.DOMSource_Package; use javax.xml.transform.dom.DOMSource_Package;
 --  with javax.xml.transform.stream.StreamResult_Package; use javax.xml.transform.stream.StreamResult_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
-with org.allbinary.logic.java.characters.CharacterSetData_Package; use org.allbinary.logic.java.characters.CharacterSetData_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.xml.sax.InputSource_Package; use org.xml.sax.InputSource_Package;
 
 package org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
 
-   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package CharacterSetData_Package renames Standard.org.allbinary.logic.java.characters.CharacterSetData_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
-   package InputSource_Package renames Standard.org.xml.sax.InputSource_Package;
 
    type XmlDocumentHelper is tagged;
    type XmlDocumentHelper_Access is access all XmlDocumentHelper'Class;
    type XmlDocumentHelper_Access_Array is array (Natural range <>) of XmlDocumentHelper_Access;
    type XmlDocumentHelper_Access_Array_Access is access all XmlDocumentHelper_Access_Array;
+   type XmlDocumentHelper_Access_Array_Access_Array is array (Natural range <>) of XmlDocumentHelper_Access_Array_Access;
+   type XmlDocumentHelper_Access_Array_Access_Array_Access is access all XmlDocumentHelper_Access_Array_Access_Array;
 
    type XmlDocumentHelper is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigNoManipulationFactory_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigNoManipulationFactory_Package;
+
 package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulation_Package is
 
+   package TransformInfoObjectConfigNoManipulationFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigNoManipulationFactory_Package;
    procedure Initialize_Fields (This : in out TransformInfoHttpStoreNoManipulation'Class) is
    begin
       null;

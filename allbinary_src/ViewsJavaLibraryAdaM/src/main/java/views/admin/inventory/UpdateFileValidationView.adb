@@ -13,8 +13,41 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+with org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_Package;
+with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package; use org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.FileData_Package; use org.allbinary.logic.io.file.FileData_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
+
 package body views.admin.inventory.UpdateFileValidationView_Package is
 
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+   package BasicItemValidation_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_Package;
+   package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
+   package InventoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
+   package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package HttpFileUploadUtil_Package renames Standard.org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FileData_Package renames Standard.org.allbinary.logic.io.file.FileData_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
    procedure Initialize_Fields (This : in out UpdateFileValidationView'Class) is
    begin
       null;
@@ -49,7 +82,7 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
       fileName : Unbounded_String;
    begin
         begin
-            command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
+            command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2_Package.ADMINCOMMAND));
             if ((command) = (Null_Unbounded_String)) or else ((Java_Compare_To (command, UpdateFileValidationView_Package.UPDATEPRODUCT)) /= (0)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Invalid AdminCommand=") & command, UpdateFileValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
@@ -64,7 +97,7 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
             end if;
             storeFrontInterface := StoreFrontFactory_Package.getInstance (UpdateFileValidationView'Class (This).getWeblisketSession.getStoreName);
             stringBuffer := StringMaker_Package.Create;
-            stringBuffer.append (URLGLOBALS.getWebappPath);
+            stringBuffer.append (URLGLOBALS_Package.getWebappPath);
             stringBuffer.append (storeFrontInterface.getCurrentHostNamePath);
             stringBuffer.append (This.itemInterface.getCategory);
             fullCategory := stringBuffer.toString;
@@ -127,13 +160,13 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
       fileItemFieldName : Unbounded_String;
    begin
         stringBuffer := StringMaker_Package.Create;
-        command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2.ADMINCOMMAND));
+        command := Java_Unbox (UpdateFileValidationView'Class (This).getRequestHashMap.get (GLOBALS2_Package.ADMINCOMMAND));
         if ((command) = (Null_Unbounded_String)) or else ((Java_Compare_To (command, UpdateFileValidationView_Package.UPDATEPRODUCT)) /= (0)) then
             return CommonSeps_Package.getInstance.SPACE;
         end if;
         stringBuffer.append (BasicItemValidation_Package.Create (This.itemInterface).validationInfo);
         storeFrontInterface := StoreFrontFactory_Package.getInstance (UpdateFileValidationView'Class (This).getWeblisketSession.getStoreName);
-        fullCategory := ((Java_Unbox (URLGLOBALS.getWebappPath)) + (storeFrontInterface.getCurrentHostNamePath)) + (This.itemInterface.getCategory);
+        fullCategory := ((Java_Unbox (URLGLOBALS_Package.getWebappPath)) + (storeFrontInterface.getCurrentHostNamePath)) + (This.itemInterface.getCategory);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Category: ") & fullCategory, UpdateFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
         end if;

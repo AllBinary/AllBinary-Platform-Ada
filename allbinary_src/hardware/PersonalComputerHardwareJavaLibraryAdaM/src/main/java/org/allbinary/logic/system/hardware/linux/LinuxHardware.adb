@@ -13,8 +13,30 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.io.file.directory.SubDirectory_Package; use org.allbinary.logic.io.file.directory.SubDirectory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.system.hardware.components.linux.Cpu_Package; use org.allbinary.logic.system.hardware.components.linux.Cpu_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package; use org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package;
+
 package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
+   package SubDirectory_Package renames Standard.org.allbinary.logic.io.file.directory.SubDirectory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package Cpu_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.Cpu_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out LinuxHardware'Class) is
    begin
       null;
@@ -60,8 +82,8 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
         end if;
         cpu := Cpu_Package.Create;
         if (cpu) /= (null) then
-            This.cpuInterfaceVector.add (cpu);
-            This.componentInterfaceVector.add (cpu);
+            This.cpuInterfaceVector.add (Java_Object_Access (cpu));
+            This.componentInterfaceVector.add (Java_Object_Access (cpu));
         end if;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
             This.logUtil.putF (To_Unbounded_String ("Hardware Data: ") & LinuxHardware'Class (This).toString, LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
@@ -98,7 +120,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    --  throws Exception
    procedure init (This : in out LinuxHardware; lineNumberReader_Param : access LineNumberReader_Package.LineNumberReader'Class; filePath : Unbounded_String) is
       lineNumberReader : LineNumberReader_Access := LineNumberReader_Access (lineNumberReader_Param);
-      pciFile_Case : FileReader_Access;
+      pciFile : FileReader_Access;
       fileVector : BasicArrayList_Access;
       file : AbFile_Access;
       nextLine : Unbounded_String;
@@ -107,20 +129,20 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
       componentInterface : HardwareComponentInterface_Access;
    begin
         begin
-            This.componentInterfaceVector := BasicArrayListD_Package.Create;
-            This.videoInterfaceVector := BasicArrayListD_Package.Create;
-            This.hardDriveControllerInterfaceVector := BasicArrayListD_Package.Create;
-            This.cpuInterfaceVector := BasicArrayListD_Package.Create;
-            This.usbInterfaceVector := BasicArrayListD_Package.Create;
-            This.ethernetInterfaceVector := BasicArrayListD_Package.Create;
-            This.multimediaInterfaceVector := BasicArrayListD_Package.Create;
-            This.fireWireInterfaceVector := BasicArrayListD_Package.Create;
-            This.bridgeInterfaceVector := BasicArrayListD_Package.Create;
-            This.hardDriveInterfaceVector := BasicArrayListD_Package.Create;
-            This.macInterfaceVector := BasicArrayListD_Package.Create;
-            This.monitorInterfaceVector := BasicArrayListD_Package.Create;
-            pciFile_Case := FileReader_Package.Create (filePath);
-            lineNumberReader := LineNumberReader_Package.Create (pciFile_Case);
+            This.componentInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.videoInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.hardDriveControllerInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.cpuInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.usbInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.ethernetInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.multimediaInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.fireWireInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.bridgeInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.hardDriveInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.macInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            This.monitorInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
+            pciFile := FileReader_Package.Create (filePath);
+            lineNumberReader := LineNumberReader_Package.Create (pciFile);
             if (lineNumberReader) = (null) then
                 fileVector := SubDirectory_Package.getInstance.search (filePath, AbFile_Package.createAbFile (FilePathData_Package.getInstance.PATH_START));
                 if not (fileVector.isEmpty) then
@@ -161,7 +183,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
                     end loop;
                     componentInterface := PCComponentFactory_Package.getInstance.getInstance (componentType, componentData.toString);
                     if (componentInterface) /= (null) then
-                        This.componentInterfaceVector.add (componentInterface);
+                        This.componentInterfaceVector.add (Java_Object_Access (componentInterface));
                     end if;
                 end loop;
             else
@@ -274,7 +296,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
       index : Integer;
    begin
         if (nextLine) /= (Null_Unbounded_String) then
-            index := (Index (nextLine, Java_Image (To_Unbounded_String ("Bus"))) - 1);
+            index := Java_Index_Of (nextLine, Java_Image (To_Unbounded_String ("Bus")));
             if ((index) >= (0)) and then ((index) < (4)) then
                 return True;
             end if;

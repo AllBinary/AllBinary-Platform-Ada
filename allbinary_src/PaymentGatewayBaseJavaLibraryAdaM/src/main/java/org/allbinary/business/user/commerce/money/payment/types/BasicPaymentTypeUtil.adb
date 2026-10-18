@@ -13,12 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+
 package body org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out BasicPaymentTypeUtil'Class) is
    begin
       null;
-      This.paymentTypeVector := BasicArrayListD_Package.Create;
+      This.paymentTypeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -49,7 +54,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
    procedure add (This : in out BasicPaymentTypeUtil; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) is
       paymentType : constant BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
    begin
-        This.paymentTypeVector.add (paymentType);
+        This.paymentTypeVector.add (Java_Object_Access (paymentType));
    end add;
 
    --  throws Exception
@@ -71,7 +76,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
    function isContain (This : in out BasicPaymentTypeUtil; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) return Boolean is
       paymentType : constant BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
    begin
-        return This.paymentTypeVector.contains (paymentType);
+        return This.paymentTypeVector.contains (Java_Object_Access (paymentType));
    end isContain;
 
    function difference (This : in out BasicPaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicArrayList_Access is
@@ -81,12 +86,12 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
       paymentType : BasicPaymentType_Access;
       i : Integer;
    begin
-        diff := BasicArrayListD_Package.Create;
+        diff := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := This.paymentTypeVector.size;
         for i in 0 .. (size) - 1 loop
             paymentType := BasicPaymentType_Access (This.paymentTypeVector.get (i));
-            if not (a_PaymentTypeVector.contains (paymentType)) then
-                diff.add (paymentType);
+            if not (a_PaymentTypeVector.contains (Java_Object_Access (paymentType))) then
+                diff.add (Java_Object_Access (paymentType));
             end if;
         end loop;
         return diff;

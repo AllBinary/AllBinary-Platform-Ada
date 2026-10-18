@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package is
 
    procedure Initialize_Fields (This : in out GenericProfileActionData'Class) is

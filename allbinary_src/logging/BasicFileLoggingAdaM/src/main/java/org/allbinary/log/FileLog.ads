@@ -22,26 +22,23 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
 --  with java.io.BufferedWriter_Package; use java.io.BufferedWriter_Package;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileReader_Package; use java.io.FileReader_Package;
 --  with java.io.FileWriter_Package; use java.io.FileWriter_Package;
 --  with java.io.RandomAccessFile_Package; use java.io.RandomAccessFile_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
 package org.allbinary.log.FileLog_Package is
 
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package File_Package renames Standard.java.io.File_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package LogFormatUtil_Package renames Standard.org.allbinary.logic.communication.log.LogFormatUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type FileLog is tagged;
    type FileLog_Access is access all FileLog'Class;
    type FileLog_Access_Array is array (Natural range <>) of FileLog_Access;
    type FileLog_Access_Array_Access is access all FileLog_Access_Array;
+   type FileLog_Access_Array_Access_Array is array (Natural range <>) of FileLog_Access_Array_Access;
+   type FileLog_Access_Array_Access_Array_Access is access all FileLog_Access_Array_Access_Array;
 
    type FileLog is new Java_Object with null record;
    stringUtil : StringUtil_Access;

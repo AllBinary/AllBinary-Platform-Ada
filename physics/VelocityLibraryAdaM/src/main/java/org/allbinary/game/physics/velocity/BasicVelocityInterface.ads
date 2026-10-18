@@ -34,6 +34,8 @@ package org.allbinary.game.physics.velocity.BasicVelocityInterface_Package is
    type BasicVelocityInterface_Access is access all BasicVelocityInterface'Class;
    type BasicVelocityInterface_Access_Array is array (Natural range <>) of BasicVelocityInterface_Access;
    type BasicVelocityInterface_Access_Array_Access is access all BasicVelocityInterface_Access_Array;
+   type BasicVelocityInterface_Access_Array_Access_Array is array (Natural range <>) of BasicVelocityInterface_Access_Array_Access;
+   type BasicVelocityInterface_Access_Array_Access_Array_Access is access all BasicVelocityInterface_Access_Array_Access_Array;
    function getVelocityXBasicDecimalP (This : in out BasicVelocityInterface) return BasicDecimal_Access is abstract;
    function getVelocityYBasicDecimalP (This : in out BasicVelocityInterface) return BasicDecimal_Access is abstract;
    procedure zero (This : in out BasicVelocityInterface) is abstract;

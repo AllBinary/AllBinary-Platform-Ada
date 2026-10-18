@@ -31,6 +31,8 @@ package org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_
    type CapturedImageWorkerResultsEvent_Access is access all CapturedImageWorkerResultsEvent'Class;
    type CapturedImageWorkerResultsEvent_Access_Array is array (Natural range <>) of CapturedImageWorkerResultsEvent_Access;
    type CapturedImageWorkerResultsEvent_Access_Array_Access is access all CapturedImageWorkerResultsEvent_Access_Array;
+   type CapturedImageWorkerResultsEvent_Access_Array_Access_Array is array (Natural range <>) of CapturedImageWorkerResultsEvent_Access_Array_Access;
+   type CapturedImageWorkerResultsEvent_Access_Array_Access_Array_Access is access all CapturedImageWorkerResultsEvent_Access_Array_Access_Array;
 
    type CapturedImageWorkerResultsEvent is new AllBinaryEventObject with record
       frame : Long_Long_Integer;

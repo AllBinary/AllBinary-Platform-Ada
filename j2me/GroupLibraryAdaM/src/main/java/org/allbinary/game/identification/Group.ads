@@ -20,22 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.identification.GroupInterface_Package; use org.allbinary.game.identification.GroupInterface_Package;
-with org.allbinary.game.identification.GroupCommonFactory_Package; use org.allbinary.game.identification.GroupCommonFactory_Package;
 
 package org.allbinary.game.identification.Group_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type Group is tagged;
    type Group_Access is access all Group'Class;
    type Group_Access_Array is array (Natural range <>) of Group_Access;
    type Group_Access_Array_Access is access all Group_Access_Array;
+   type Group_Access_Array_Access_Array is array (Natural range <>) of Group_Access_Array_Access;
+   type Group_Access_Array_Access_Array_Access is access all Group_Access_Array_Access_Array;
 
-   type Group is new GroupInterface with record
+   type Group is new Java_Object and GroupInterface with record
       name : Unbounded_String;
       teamId : Short_Integer;
       string_Id : Unbounded_String;

@@ -28,6 +28,8 @@ package org.allbinary.game.input.event.RawKeyEventListener_Package is
    type RawKeyEventListener_Access is access all RawKeyEventListener'Class;
    type RawKeyEventListener_Access_Array is array (Natural range <>) of RawKeyEventListener_Access;
    type RawKeyEventListener_Access_Array_Access is access all RawKeyEventListener_Access_Array;
+   type RawKeyEventListener_Access_Array_Access_Array is array (Natural range <>) of RawKeyEventListener_Access_Array_Access;
+   type RawKeyEventListener_Access_Array_Access_Array_Access is access all RawKeyEventListener_Access_Array_Access_Array;
    procedure onEventRaw (This : in out RawKeyEventListener; keyCode : Integer; deviceId : Integer; repeated : Boolean) is abstract;
 
 end org.allbinary.game.input.event.RawKeyEventListener_Package;

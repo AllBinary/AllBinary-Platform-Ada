@@ -30,6 +30,8 @@ package org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package 
    type GameInputMotionInfoAPI5_Access is access all GameInputMotionInfoAPI5'Class;
    type GameInputMotionInfoAPI5_Access_Array is array (Natural range <>) of GameInputMotionInfoAPI5_Access;
    type GameInputMotionInfoAPI5_Access_Array_Access is access all GameInputMotionInfoAPI5_Access_Array;
+   type GameInputMotionInfoAPI5_Access_Array_Access_Array is array (Natural range <>) of GameInputMotionInfoAPI5_Access_Array_Access;
+   type GameInputMotionInfoAPI5_Access_Array_Access_Array_Access is access all GameInputMotionInfoAPI5_Access_Array_Access_Array;
 
    type GameInputMotionInfoAPI5 is new GameInputMotionInfo with null record;
    instance : GameInputMotionInfoAPI5_Access;

@@ -20,11 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.business.user.commerce.money.payment.Payment_Package; use org.allbinary.business.user.commerce.money.payment.Payment_Package;
-with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
-with org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package; use org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -34,11 +29,6 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.generic_Id.payment.PaymentView_Package is
 
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package Payment_Package renames Standard.org.allbinary.business.user.commerce.money.payment.Payment_Package;
-   package PaymentData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
-   package PaymentEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -50,6 +40,8 @@ package views.generic_Id.payment.PaymentView_Package is
    type PaymentView_Access is access all PaymentView'Class;
    type PaymentView_Access_Array is array (Natural range <>) of PaymentView_Access;
    type PaymentView_Access_Array_Access is access all PaymentView_Access_Array;
+   type PaymentView_Access_Array_Access_Array is array (Natural range <>) of PaymentView_Access_Array_Access;
+   type PaymentView_Access_Array_Access_Array_Access is access all PaymentView_Access_Array_Access_Array;
 
    type PaymentView is new HttpStoreComponentView and DomNodeInterface with record
       logUtil : LogUtil_Access;

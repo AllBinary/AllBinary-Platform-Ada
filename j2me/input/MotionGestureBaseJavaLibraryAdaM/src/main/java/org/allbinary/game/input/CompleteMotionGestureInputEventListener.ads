@@ -20,8 +20,10 @@ package org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package
    type CompleteMotionGestureInputEventListener_Access is access all CompleteMotionGestureInputEventListener'Class;
    type CompleteMotionGestureInputEventListener_Access_Array is array (Natural range <>) of CompleteMotionGestureInputEventListener_Access;
    type CompleteMotionGestureInputEventListener_Access_Array_Access is access all CompleteMotionGestureInputEventListener_Access_Array;
+   type CompleteMotionGestureInputEventListener_Access_Array_Access_Array is array (Natural range <>) of CompleteMotionGestureInputEventListener_Access_Array_Access;
+   type CompleteMotionGestureInputEventListener_Access_Array_Access_Array_Access is access all CompleteMotionGestureInputEventListener_Access_Array_Access_Array;
 
-   type CompleteMotionGestureInputEventListener is new CompleteMotionGestureInputEventListenerInterface with null record;
+   type CompleteMotionGestureInputEventListener is new Java_Object and CompleteMotionGestureInputEventListenerInterface with null record;
 
    procedure Initialize (This : in out CompleteMotionGestureInputEventListener'Class);
    function Create return CompleteMotionGestureInputEventListener_Access;

@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.logic.java.character_Id.CharArrayFactory_Package; use org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+
 package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package CharArrayFactory_Package renames Standard.org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out TechnologyRTSInterfaceImageItem'Class) is
    begin
       null;
@@ -23,7 +32,7 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
       This.LEVEL := To_Unbounded_String ("Level");
       This.COST := To_Unbounded_String ("Cost");
       This.DOLLAR := To_Unbounded_String ("$");
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (TechnologyRTSInterfaceImageItem_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (TechnologyRTSInterfaceImageItem_Access'(This'Unchecked_Access)));
       This.costString := CharArrayFactory_Package.getInstance.getZeroCharArray;
       This.costLength := 0;
       This.levelString := CharArrayFactory_Package.getInstance.getZeroCharArray;

@@ -13,13 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package is
 
    procedure Initialize_Fields (This : in out PathFindingNodeCostInfoData'Class) is
    begin
       null;
-      This.MAX_TOTAL_COST := Integer_Package.MAX_VALUE;
-      This.MAX_NODE_COST := (Integer_Package.MAX_VALUE) / (10000);
+      This.MAX_TOTAL_COST := Integer'Last;
+      This.MAX_NODE_COST := (Integer'Last) / (10000);
    end Initialize_Fields;
 
 

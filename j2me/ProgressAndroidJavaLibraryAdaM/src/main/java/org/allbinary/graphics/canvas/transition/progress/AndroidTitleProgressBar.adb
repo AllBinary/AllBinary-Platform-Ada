@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package is
 
+   package NullProgressActivity_Package renames Standard.org.allbinary.android.activity.NullProgressActivity_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out AndroidTitleProgressBar'Class) is
    begin
       null;
@@ -150,8 +157,15 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
 end org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package;
 
 
+with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package is
 
+   package NullProgressActivity_Package renames Standard.org.allbinary.android.activity.NullProgressActivity_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out TitleProgressBarSetProgressRunnable'Class) is
    begin
       null;
@@ -196,8 +210,15 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarS
 end org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
 
 
+with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package is
 
+   package NullProgressActivity_Package renames Standard.org.allbinary.android.activity.NullProgressActivity_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out TitleProgressBarPortionSetProgressRunnable'Class) is
    begin
       null;
@@ -242,8 +263,15 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarP
 end org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
 
 
+with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package is
 
+   package NullProgressActivity_Package renames Standard.org.allbinary.android.activity.NullProgressActivity_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out ShowTitleProgressBarRunnable'Class) is
    begin
       null;
@@ -288,8 +316,15 @@ package body org.allbinary.graphics.canvas.transition.progress.ShowTitleProgress
 end org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
 
 
+with org.allbinary.android.activity.NullProgressActivity_Package; use org.allbinary.android.activity.NullProgressActivity_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package is
 
+   package NullProgressActivity_Package renames Standard.org.allbinary.android.activity.NullProgressActivity_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out DismissTitleProgressBarRunnable'Class) is
    begin
       null;

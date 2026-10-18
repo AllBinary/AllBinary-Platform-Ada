@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.init.LicenseInitInfoUtil_Package; use org.allbinary.business.init.LicenseInitInfoUtil_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package; use org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package;
+with org.allbinary.AndroidResources_Package; use org.allbinary.AndroidResources_Package;
+
 package body org.allbinary.AllBinaryAndroidGameInitializationUtil_Package is
 
+   package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package PartnerIdentifierFileUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package;
    procedure Initialize_Fields (This : in out AllBinaryAndroidGameInitializationUtil'Class) is
    begin
       null;

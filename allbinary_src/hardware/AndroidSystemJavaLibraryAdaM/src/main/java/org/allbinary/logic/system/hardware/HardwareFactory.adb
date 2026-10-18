@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.hardware.android.AndroidHardware_Package; use org.allbinary.logic.system.hardware.android.AndroidHardware_Package;
+with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.hardware.NoHardware_Package; use org.allbinary.logic.system.hardware.NoHardware_Package;
+
 package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
+   package AndroidHardware_Package renames Standard.org.allbinary.logic.system.hardware.android.AndroidHardware_Package;
+   package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out HardwareFactory'Class) is
    begin
       null;
@@ -50,9 +58,9 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
         begin
             operatingSystems := OperatingSystems_Package.getInstance;
             if (This.tsUtil.compareTo (os.getName, operatingSystems.ANDROID)) = (0) then
-                return AndroidHardware_Package.Create;
+                return HardwareInterface_Access (AndroidHardware_Package.Create);
             elsif (This.tsUtil.compareTo (os.getName, operatingSystems.HARMONY)) = (0) then
-                return AndroidHardware_Package.Create;
+                return HardwareInterface_Access (AndroidHardware_Package.Create);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Hardware Imp for: ") & os.getName));
         exception
@@ -62,7 +70,7 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (To_Unbounded_String ("Ignoring Exception Returning NoHardware"), HardwareFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
-            return NoHardware_Package.Create;
+            return HardwareInterface_Access (NoHardware_Package.Create);
                 end;
         end;
    end getInstance;

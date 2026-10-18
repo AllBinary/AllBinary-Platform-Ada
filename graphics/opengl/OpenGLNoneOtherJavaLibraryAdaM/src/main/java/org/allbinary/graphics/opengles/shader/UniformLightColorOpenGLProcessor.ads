@@ -32,6 +32,8 @@ package org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_
    type UniformLightColorOpenGLProcessor_Access is access all UniformLightColorOpenGLProcessor'Class;
    type UniformLightColorOpenGLProcessor_Access_Array is array (Natural range <>) of UniformLightColorOpenGLProcessor_Access;
    type UniformLightColorOpenGLProcessor_Access_Array_Access is access all UniformLightColorOpenGLProcessor_Access_Array;
+   type UniformLightColorOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of UniformLightColorOpenGLProcessor_Access_Array_Access;
+   type UniformLightColorOpenGLProcessor_Access_Array_Access_Array_Access is access all UniformLightColorOpenGLProcessor_Access_Array_Access_Array;
 
    type UniformLightColorOpenGLProcessor is new OpenGLObject3dProcessor with null record;
 

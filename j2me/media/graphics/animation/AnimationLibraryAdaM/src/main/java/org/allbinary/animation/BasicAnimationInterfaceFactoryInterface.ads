@@ -28,6 +28,8 @@ package org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package 
    type BasicAnimationInterfaceFactoryInterface_Access is access all BasicAnimationInterfaceFactoryInterface'Class;
    type BasicAnimationInterfaceFactoryInterface_Access_Array is array (Natural range <>) of BasicAnimationInterfaceFactoryInterface_Access;
    type BasicAnimationInterfaceFactoryInterface_Access_Array_Access is access all BasicAnimationInterfaceFactoryInterface_Access_Array;
+   type BasicAnimationInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of BasicAnimationInterfaceFactoryInterface_Access_Array_Access;
+   type BasicAnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all BasicAnimationInterfaceFactoryInterface_Access_Array_Access_Array;
 
 end org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
 

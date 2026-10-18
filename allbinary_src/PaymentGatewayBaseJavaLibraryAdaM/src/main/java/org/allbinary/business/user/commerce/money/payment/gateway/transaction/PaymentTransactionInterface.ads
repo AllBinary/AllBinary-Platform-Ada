@@ -34,6 +34,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.P
    type PaymentTransactionInterface_Access is access all PaymentTransactionInterface'Class;
    type PaymentTransactionInterface_Access_Array is array (Natural range <>) of PaymentTransactionInterface_Access;
    type PaymentTransactionInterface_Access_Array_Access is access all PaymentTransactionInterface_Access_Array;
+   type PaymentTransactionInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionInterface_Access_Array_Access;
+   type PaymentTransactionInterface_Access_Array_Access_Array_Access is access all PaymentTransactionInterface_Access_Array_Access_Array;
    function getOrderHistory (This : in out PaymentTransactionInterface) return OrderHistory_Access is abstract;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;

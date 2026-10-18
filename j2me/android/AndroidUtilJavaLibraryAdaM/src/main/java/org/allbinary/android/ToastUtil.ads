@@ -10,22 +10,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.content.Context_Package; use android.content.Context_Package;
 with android.view.View_Package; use android.view.View_Package;
-with android.widget.Toast_Package; use android.widget.Toast_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.android.ToastUtil_Package is
 
    package Context_Package renames Standard.android.content.Context_Package;
    package View_Package renames Standard.android.view.View_Package;
-   package Toast_Package renames Standard.android.widget.Toast_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ToastUtil is tagged;
    type ToastUtil_Access is access all ToastUtil'Class;
    type ToastUtil_Access_Array is array (Natural range <>) of ToastUtil_Access;
    type ToastUtil_Access_Array_Access is access all ToastUtil_Access_Array;
+   type ToastUtil_Access_Array_Access_Array is array (Natural range <>) of ToastUtil_Access_Array_Access;
+   type ToastUtil_Access_Array_Access_Array_Access is access all ToastUtil_Access_Array_Access_Array;
 
    type ToastUtil is new Java_Object with record
       logUtil : LogUtil_Access;

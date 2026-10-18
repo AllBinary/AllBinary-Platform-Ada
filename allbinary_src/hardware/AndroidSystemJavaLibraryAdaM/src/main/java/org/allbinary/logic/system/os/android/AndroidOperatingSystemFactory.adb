@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.logic.system.os.NoOperatingSystem_Package;
+with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
+with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.os.android.AndroidOS_Package; use org.allbinary.logic.system.os.android.AndroidOS_Package;
+
 package body org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory_Package is
 
+   package NoOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.NoOperatingSystem_Package;
+   package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
+   package SystemProperties_Package renames Standard.org.allbinary.logic.system.os.SystemProperties_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out AndroidOperatingSystemFactory'Class) is
    begin
       null;
@@ -53,10 +63,10 @@ package body org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory
             systemProperties := SystemProperties_Package.getInstance;
             osName := systemProperties.getName;
             if (This.tsUtil.compareTo (osName, OperatingSystems_Package.getInstance.ANDROID)) = (0) then
-                GenericOperatingSystem := AndroidOS_Package.Create;
+                GenericOperatingSystem := GenericOperatingSystem_Access (AndroidOS_Package.Create);
             else
                 if OperatingSystems_Package.getInstance.isUnknownSpecificOSAllowed then
-                    GenericOperatingSystem := AndroidOS_Package.Create;
+                    GenericOperatingSystem := GenericOperatingSystem_Access (AndroidOS_Package.Create);
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Specific Android OS Not Supported: ") & osName));
                 end if;

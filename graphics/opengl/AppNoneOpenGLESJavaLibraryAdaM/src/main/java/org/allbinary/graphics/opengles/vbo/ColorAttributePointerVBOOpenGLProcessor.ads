@@ -32,6 +32,8 @@ package org.allbinary.graphics.opengles.vbo.ColorAttributePointerVBOOpenGLProces
    type ColorAttributePointerVBOOpenGLProcessor_Access is access all ColorAttributePointerVBOOpenGLProcessor'Class;
    type ColorAttributePointerVBOOpenGLProcessor_Access_Array is array (Natural range <>) of ColorAttributePointerVBOOpenGLProcessor_Access;
    type ColorAttributePointerVBOOpenGLProcessor_Access_Array_Access is access all ColorAttributePointerVBOOpenGLProcessor_Access_Array;
+   type ColorAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of ColorAttributePointerVBOOpenGLProcessor_Access_Array_Access;
+   type ColorAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array_Access is access all ColorAttributePointerVBOOpenGLProcessor_Access_Array_Access_Array;
 
    type ColorAttributePointerVBOOpenGLProcessor is new ObjectThreedOpenGLProcessor with null record;
    instance : ColorAttributePointerVBOOpenGLProcessor_Access;

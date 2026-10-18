@@ -22,29 +22,21 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
 with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.TagHelperFactoryInterface_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.OutputTypeData_Package; use org.allbinary.logic.io.OutputTypeData_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-with taghelpers.transform.info.TransformInfoRequestHelperFactory_Package; use taghelpers.transform.info.TransformInfoRequestHelperFactory_Package;
 with tags.ModifyTag_Package; use tags.ModifyTag_Package;
 
 package tags.transform.info.TransformInfoTag_Package is
 
    package TagHelperFactoryInterface_Package renames Standard.admin.taghelpers.TagHelperFactoryInterface_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package OutputTypeData_Package renames Standard.org.allbinary.logic.io.OutputTypeData_Package;
-   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-   package TransformInfoRequestHelperFactory_Package renames Standard.taghelpers.transform.info.TransformInfoRequestHelperFactory_Package;
    package ModifyTag_Package renames Standard.tags.ModifyTag_Package;
 
    type TransformInfoTag is tagged;
    type TransformInfoTag_Access is access all TransformInfoTag'Class;
    type TransformInfoTag_Access_Array is array (Natural range <>) of TransformInfoTag_Access;
    type TransformInfoTag_Access_Array_Access is access all TransformInfoTag_Access_Array;
+   type TransformInfoTag_Access_Array_Access_Array is array (Natural range <>) of TransformInfoTag_Access_Array_Access;
+   type TransformInfoTag_Access_Array_Access_Array_Access is access all TransformInfoTag_Access_Array_Access_Array;
 
    type TransformInfoTag is new ModifyTag with record
       logUtil : LogUtil_Access;

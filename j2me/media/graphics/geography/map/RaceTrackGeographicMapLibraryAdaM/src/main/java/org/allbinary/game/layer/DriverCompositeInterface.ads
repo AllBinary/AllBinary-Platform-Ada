@@ -29,6 +29,8 @@ package org.allbinary.game.layer.DriverCompositeInterface_Package is
    type DriverCompositeInterface_Access is access all DriverCompositeInterface'Class;
    type DriverCompositeInterface_Access_Array is array (Natural range <>) of DriverCompositeInterface_Access;
    type DriverCompositeInterface_Access_Array_Access is access all DriverCompositeInterface_Access_Array;
+   type DriverCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of DriverCompositeInterface_Access_Array_Access;
+   type DriverCompositeInterface_Access_Array_Access_Array_Access is access all DriverCompositeInterface_Access_Array_Access_Array;
    function getDriver (This : in out DriverCompositeInterface) return Driver_Access is abstract;
 
 end org.allbinary.game.layer.DriverCompositeInterface_Package;

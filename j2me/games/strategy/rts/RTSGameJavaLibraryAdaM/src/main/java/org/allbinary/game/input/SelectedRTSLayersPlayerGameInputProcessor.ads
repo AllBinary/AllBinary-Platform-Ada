@@ -30,6 +30,8 @@ package org.allbinary.game.input.SelectedRTSLayersPlayerGameInputProcessor_Packa
    type SelectedRTSLayersPlayerGameInputProcessor_Access is access all SelectedRTSLayersPlayerGameInputProcessor'Class;
    type SelectedRTSLayersPlayerGameInputProcessor_Access_Array is array (Natural range <>) of SelectedRTSLayersPlayerGameInputProcessor_Access;
    type SelectedRTSLayersPlayerGameInputProcessor_Access_Array_Access is access all SelectedRTSLayersPlayerGameInputProcessor_Access_Array;
+   type SelectedRTSLayersPlayerGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of SelectedRTSLayersPlayerGameInputProcessor_Access_Array_Access;
+   type SelectedRTSLayersPlayerGameInputProcessor_Access_Array_Access_Array_Access is access all SelectedRTSLayersPlayerGameInputProcessor_Access_Array_Access_Array;
 
    type SelectedRTSLayersPlayerGameInputProcessor is new GameInputProcessor with record
       selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access;

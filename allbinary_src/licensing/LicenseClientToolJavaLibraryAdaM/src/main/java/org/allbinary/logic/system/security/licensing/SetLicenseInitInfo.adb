@@ -13,12 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.init.LicenseInitInfoUtil_Package; use org.allbinary.business.init.LicenseInitInfoUtil_Package;
+with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io.file.FileFactory_Package;
+with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.logic.system.security.licensing.BasicArrayListD_Package; use org.allbinary.logic.system.security.licensing.BasicArrayListD_Package;
+with org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package; use org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package;
+
 package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Package is
 
+   package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
+   package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package File_Package renames Standard.java.io.File_Package;
    procedure Initialize_Fields (This : in out SetLicenseInitInfo'Class) is
    begin
       null;
-      This.vector := BasicArrayListD_Package.Create;
+      This.vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -26,7 +37,7 @@ package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Pa
       index : Integer;
    begin
       Initialize_Fields (This);
-        LicenseInitInfoUtil_Package.getInstance.setFilePath ((PrintLicenseInitInfo_Package.PATH) + (PATH_GLOBALS.getInstance.INIT_PATH));
+        LicenseInitInfoUtil_Package.getInstance.setFilePath ((PrintLicenseInitInfo_Package.PATH) + (PATH_GLOBALS_Package.getInstance.INIT_PATH));
         for index in 1 .. (options'Length) - 1 loop
             This.vector.add (options (index));
         end loop;

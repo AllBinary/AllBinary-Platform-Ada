@@ -20,23 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
-with org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package; use org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package;
-with org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package; use org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package;
 with android.app.Activity_Package; use android.app.Activity_Package;
 with org.allbinary.android.input.VirtualKeyboard_Package; use org.allbinary.android.input.VirtualKeyboard_Package;
 
 package org.allbinary.android.input.VirtualKeyboardFactory_Package is
 
-   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
-   package VirtualKeyboardAPI1_Package renames Standard.org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package;
-   package VirtualKeyboardAPI3_Package renames Standard.org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package;
    package Activity_Package renames Standard.android.app.Activity_Package;
 
    type VirtualKeyboardFactory is tagged;
    type VirtualKeyboardFactory_Access is access all VirtualKeyboardFactory'Class;
    type VirtualKeyboardFactory_Access_Array is array (Natural range <>) of VirtualKeyboardFactory_Access;
    type VirtualKeyboardFactory_Access_Array_Access is access all VirtualKeyboardFactory_Access_Array;
+   type VirtualKeyboardFactory_Access_Array_Access_Array is array (Natural range <>) of VirtualKeyboardFactory_Access_Array_Access;
+   type VirtualKeyboardFactory_Access_Array_Access_Array_Access is access all VirtualKeyboardFactory_Access_Array_Access_Array;
 
    type VirtualKeyboardFactory is new Java_Object with null record;
    virtualKeyboard : VirtualKeyboard_Access;

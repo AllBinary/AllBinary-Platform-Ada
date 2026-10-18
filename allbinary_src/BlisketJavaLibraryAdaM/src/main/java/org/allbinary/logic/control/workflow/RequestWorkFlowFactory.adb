@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package; use org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.logic.control.workflow.WorkFlowData_Package; use org.allbinary.logic.control.workflow.WorkFlowData_Package;
+
 package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package is
 
+   package WorkFlowEntityFactory_Package renames Standard.org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out RequestWorkFlowFactory'Class) is
    begin
       null;
@@ -48,7 +58,7 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
    begin
         httpRequest := HttpServletRequest_Access (request);
         requestCommand := httpRequest.getPathInfo;
-        index := (Index (requestCommand, Java_Image (AbPathData_Package.getInstance.SEPARATOR)) - 1);
+        index := Java_Index_Of (requestCommand, Java_Image (AbPathData_Package.getInstance.SEPARATOR));
         storeName := Unbounded_Slice (requestCommand, (0) + 1, index);
         requestName := Unbounded_Slice (requestCommand, (index) + 1, Length (requestCommand));
         return WorkFlowEntityFactory_Package.getInstance.create2.get (requestName, storeName);

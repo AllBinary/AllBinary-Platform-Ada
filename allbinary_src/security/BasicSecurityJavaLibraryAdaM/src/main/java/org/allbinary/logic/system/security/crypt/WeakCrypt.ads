@@ -21,26 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package; use org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
-with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package; use org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
 
 package org.allbinary.logic.system.security.crypt.WeakCrypt_Package is
 
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package AbCrypt_Package renames Standard.org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
-   package KeySpecFactory_Package renames Standard.org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type WeakCrypt is tagged;
    type WeakCrypt_Access is access all WeakCrypt'Class;
    type WeakCrypt_Access_Array is array (Natural range <>) of WeakCrypt_Access;
    type WeakCrypt_Access_Array_Access is access all WeakCrypt_Access_Array;
+   type WeakCrypt_Access_Array_Access_Array is array (Natural range <>) of WeakCrypt_Access_Array_Access;
+   type WeakCrypt_Access_Array_Access_Array_Access is access all WeakCrypt_Access_Array_Access_Array;
 
    type WeakCrypt is new Java_Object with record
       tsUtil : TsUtil_Access;

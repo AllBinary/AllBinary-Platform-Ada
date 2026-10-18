@@ -13,8 +13,30 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.rms.RecordEnumeration_Package; use javax.microedition.rms.RecordEnumeration_Package;
+with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
+with org.allbinary.game.configuration.persistance.NullRecordComparator_Package; use org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
+with org.allbinary.game.configuration.persistance.NullRecordFilter_Package; use org.allbinary.game.configuration.persistance.NullRecordFilter_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+
 package body org.allbinary.game.input.InputPersistance_Package is
 
+   package RecordEnumeration_Package renames Standard.javax.microedition.rms.RecordEnumeration_Package;
+   package RecordStore_Package renames Standard.javax.microedition.rms.RecordStore_Package;
+   package NullRecordComparator_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
+   package NullRecordFilter_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordFilter_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out InputPersistance'Class) is
    begin
       null;
@@ -56,7 +78,7 @@ package body org.allbinary.game.input.InputPersistance_Package is
             stringBuffer.delete (0, stringBuffer.length);
             This.logUtil.putF (stringBuffer.append (This.persistanceStrings.LOADING_ID).appendint (id).toString, InputPersistance_Access'(This'Unchecked_Access), This.persistanceStrings.LOAD_ALL);
             hashtable := StdUtil_Package.getInstance.createHashtable;
-            This.valueList.add (hashtable);
+            This.valueList.add (Java_Object_Access (hashtable));
             This.idList.add (smallIntegerSingletonFactory.getAt (id));
         end loop;
         recordStore.closeRecordStore;

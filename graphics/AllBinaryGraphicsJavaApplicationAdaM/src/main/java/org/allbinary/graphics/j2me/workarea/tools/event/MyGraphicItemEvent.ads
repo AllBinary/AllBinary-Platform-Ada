@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
 with org.allbinary.graphics.j2me.workarea.tools.event.EventObject_Package; use org.allbinary.graphics.j2me.workarea.tools.event.EventObject_Package;
-with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package is
 
@@ -31,6 +30,8 @@ package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Pack
    type MyGraphicItemEvent_Access is access all MyGraphicItemEvent'Class;
    type MyGraphicItemEvent_Access_Array is array (Natural range <>) of MyGraphicItemEvent_Access;
    type MyGraphicItemEvent_Access_Array_Access is access all MyGraphicItemEvent_Access_Array;
+   type MyGraphicItemEvent_Access_Array_Access_Array is array (Natural range <>) of MyGraphicItemEvent_Access_Array_Access;
+   type MyGraphicItemEvent_Access_Array_Access_Array_Access is access all MyGraphicItemEvent_Access_Array_Access_Array;
 
    type MyGraphicItemEvent is new EventObject with null record;
 

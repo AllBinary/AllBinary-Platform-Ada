@@ -20,34 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.resource.TouchButtonDowngradeResource_Package; use org.allbinary.game.input.resource.TouchButtonDowngradeResource_Package;
-with org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package; use org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
-with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
-with org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package; use org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package;
-with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
-with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
-with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 
 package org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package is
 
-   package TouchButtonDowngradeResource_Package renames Standard.org.allbinary.game.input.resource.TouchButtonDowngradeResource_Package;
-   package TouchButtonUpgradeResource_Package renames Standard.org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
 
    type UpgradeDowngradeTouchButtonsBuilder is tagged;
    type UpgradeDowngradeTouchButtonsBuilder_Access is access all UpgradeDowngradeTouchButtonsBuilder'Class;
    type UpgradeDowngradeTouchButtonsBuilder_Access_Array is array (Natural range <>) of UpgradeDowngradeTouchButtonsBuilder_Access;
    type UpgradeDowngradeTouchButtonsBuilder_Access_Array_Access is access all UpgradeDowngradeTouchButtonsBuilder_Access_Array;
+   type UpgradeDowngradeTouchButtonsBuilder_Access_Array_Access_Array is array (Natural range <>) of UpgradeDowngradeTouchButtonsBuilder_Access_Array_Access;
+   type UpgradeDowngradeTouchButtonsBuilder_Access_Array_Access_Array_Access is access all UpgradeDowngradeTouchButtonsBuilder_Access_Array_Access_Array;
 
    type UpgradeDowngradeTouchButtonsBuilder is new BaseTouchInput with record
       logUtil : LogUtil_Access;

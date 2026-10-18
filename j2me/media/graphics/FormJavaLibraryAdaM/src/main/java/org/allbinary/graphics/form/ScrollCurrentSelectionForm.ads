@@ -26,12 +26,10 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
@@ -42,13 +40,14 @@ package org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type ScrollCurrentSelectionForm is tagged;
    type ScrollCurrentSelectionForm_Access is access all ScrollCurrentSelectionForm'Class;
    type ScrollCurrentSelectionForm_Access_Array is array (Natural range <>) of ScrollCurrentSelectionForm_Access;
    type ScrollCurrentSelectionForm_Access_Array_Access is access all ScrollCurrentSelectionForm_Access_Array;
+   type ScrollCurrentSelectionForm_Access_Array_Access_Array is array (Natural range <>) of ScrollCurrentSelectionForm_Access_Array_Access;
+   type ScrollCurrentSelectionForm_Access_Array_Access_Array_Access is access all ScrollCurrentSelectionForm_Access_Array_Access_Array;
 
    type ScrollCurrentSelectionForm is new ScrollSelectionForm and UpdateMyFontInterface with record
       moveForSmallScreen : Boolean;
@@ -96,12 +95,10 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.TempHorizontalFormProcessor_Package is
@@ -112,13 +109,14 @@ package org.allbinary.graphics.form.TempHorizontalFormProcessor_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type TempHorizontalFormProcessor is tagged;
    type TempHorizontalFormProcessor_Access is access all TempHorizontalFormProcessor'Class;
    type TempHorizontalFormProcessor_Access_Array is array (Natural range <>) of TempHorizontalFormProcessor_Access;
    type TempHorizontalFormProcessor_Access_Array_Access is access all TempHorizontalFormProcessor_Access_Array;
+   type TempHorizontalFormProcessor_Access_Array_Access_Array is array (Natural range <>) of TempHorizontalFormProcessor_Access_Array_Access;
+   type TempHorizontalFormProcessor_Access_Array_Access_Array_Access is access all TempHorizontalFormProcessor_Access_Array_Access_Array;
 
    type TempHorizontalFormProcessor is new Processor with record
       scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access;
@@ -144,12 +142,10 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.HorizontalFormProcessor_Package is
@@ -160,13 +156,14 @@ package org.allbinary.graphics.form.HorizontalFormProcessor_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type HorizontalFormProcessor is tagged;
    type HorizontalFormProcessor_Access is access all HorizontalFormProcessor'Class;
    type HorizontalFormProcessor_Access_Array is array (Natural range <>) of HorizontalFormProcessor_Access;
    type HorizontalFormProcessor_Access_Array_Access is access all HorizontalFormProcessor_Access_Array;
+   type HorizontalFormProcessor_Access_Array_Access_Array is array (Natural range <>) of HorizontalFormProcessor_Access_Array_Access;
+   type HorizontalFormProcessor_Access_Array_Access_Array_Access is access all HorizontalFormProcessor_Access_Array_Access_Array;
 
    type HorizontalFormProcessor is new Processor with record
       scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access;
@@ -192,12 +189,10 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.VerticalFormProcessor_Package is
@@ -208,13 +203,14 @@ package org.allbinary.graphics.form.VerticalFormProcessor_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type VerticalFormProcessor is tagged;
    type VerticalFormProcessor_Access is access all VerticalFormProcessor'Class;
    type VerticalFormProcessor_Access_Array is array (Natural range <>) of VerticalFormProcessor_Access;
    type VerticalFormProcessor_Access_Array_Access is access all VerticalFormProcessor_Access_Array;
+   type VerticalFormProcessor_Access_Array_Access_Array is array (Natural range <>) of VerticalFormProcessor_Access_Array_Access;
+   type VerticalFormProcessor_Access_Array_Access_Array_Access is access all VerticalFormProcessor_Access_Array_Access_Array;
 
    type VerticalFormProcessor is new Processor with record
       scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access;
@@ -240,12 +236,10 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package is
@@ -256,13 +250,14 @@ package org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type TempHorizontalItemIndexDx is tagged;
    type TempHorizontalItemIndexDx_Access is access all TempHorizontalItemIndexDx'Class;
    type TempHorizontalItemIndexDx_Access_Array is array (Natural range <>) of TempHorizontalItemIndexDx_Access;
    type TempHorizontalItemIndexDx_Access_Array_Access is access all TempHorizontalItemIndexDx_Access_Array;
+   type TempHorizontalItemIndexDx_Access_Array_Access_Array is array (Natural range <>) of TempHorizontalItemIndexDx_Access_Array_Access;
+   type TempHorizontalItemIndexDx_Access_Array_Access_Array_Access is access all TempHorizontalItemIndexDx_Access_Array_Access_Array;
 
    type TempHorizontalItemIndexDx is new ItemIndexDx with record
       scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access;
@@ -289,12 +284,10 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.HorizontalItemIndexDx_Package is
@@ -305,13 +298,14 @@ package org.allbinary.graphics.form.HorizontalItemIndexDx_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type HorizontalItemIndexDx is tagged;
    type HorizontalItemIndexDx_Access is access all HorizontalItemIndexDx'Class;
    type HorizontalItemIndexDx_Access_Array is array (Natural range <>) of HorizontalItemIndexDx_Access;
    type HorizontalItemIndexDx_Access_Array_Access is access all HorizontalItemIndexDx_Access_Array;
+   type HorizontalItemIndexDx_Access_Array_Access_Array is array (Natural range <>) of HorizontalItemIndexDx_Access_Array_Access;
+   type HorizontalItemIndexDx_Access_Array_Access_Array_Access is access all HorizontalItemIndexDx_Access_Array_Access_Array;
 
    type HorizontalItemIndexDx is new ItemIndexDx with record
       scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access;
@@ -338,12 +332,10 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ItemIndexDx_Package; use org.allbinary.graphics.form.ItemIndexDx_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
-with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.VerticalItemIndexDx_Package is
@@ -354,13 +346,14 @@ package org.allbinary.graphics.form.VerticalItemIndexDx_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type VerticalItemIndexDx is tagged;
    type VerticalItemIndexDx_Access is access all VerticalItemIndexDx'Class;
    type VerticalItemIndexDx_Access_Array is array (Natural range <>) of VerticalItemIndexDx_Access;
    type VerticalItemIndexDx_Access_Array_Access is access all VerticalItemIndexDx_Access_Array;
+   type VerticalItemIndexDx_Access_Array_Access_Array is array (Natural range <>) of VerticalItemIndexDx_Access_Array_Access;
+   type VerticalItemIndexDx_Access_Array_Access_Array_Access is access all VerticalItemIndexDx_Access_Array_Access_Array;
 
    type VerticalItemIndexDx is new ItemIndexDx with record
       scrollCurrentSelectionForm : ScrollCurrentSelectionForm_Access;

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package;
+with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
+
 package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package is
 
+   package StoreFrontViewFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
    procedure Initialize_Fields (This : in out TransformStoreDocument'Class) is
    begin
       null;

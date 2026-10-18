@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package; use org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
+
 package body org.allbinary.input.gyro.AllBinaryOrientationSensor_Package is
 
+   package NoCompleteMotionGestureInputEventListener_Package renames Standard.org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
    procedure Initialize_Fields (This : in out AllBinaryOrientationSensor'Class) is
    begin
       null;

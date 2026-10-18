@@ -21,20 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.Points_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type Points is tagged;
    type Points_Access is access all Points'Class;
    type Points_Access_Array is array (Natural range <>) of Points_Access;
    type Points_Access_Array_Access is access all Points_Access_Array;
+   type Points_Access_Array_Access_Array is array (Natural range <>) of Points_Access_Array_Access;
+   type Points_Access_Array_Access_Array_Access is access all Points_Access_Array_Access_Array;
 
-   type Points is new PointsInterface with record
+   type Points is new Java_Object and PointsInterface with record
       pointVector : BasicArrayList_Access;
    end record;
 

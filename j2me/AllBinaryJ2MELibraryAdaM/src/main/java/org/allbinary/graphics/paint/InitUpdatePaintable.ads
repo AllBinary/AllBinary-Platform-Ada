@@ -30,6 +30,8 @@ package org.allbinary.graphics.paint.InitUpdatePaintable_Package is
    type InitUpdatePaintable_Access is access all InitUpdatePaintable'Class;
    type InitUpdatePaintable_Access_Array is array (Natural range <>) of InitUpdatePaintable_Access;
    type InitUpdatePaintable_Access_Array_Access is access all InitUpdatePaintable_Access_Array;
+   type InitUpdatePaintable_Access_Array_Access_Array is array (Natural range <>) of InitUpdatePaintable_Access_Array_Access;
+   type InitUpdatePaintable_Access_Array_Access_Array_Access is access all InitUpdatePaintable_Access_Array_Access_Array;
 
    type InitUpdatePaintable is new Paintable and InitUpdatePaintableInterface with null record;
 

@@ -20,28 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package; use org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
-with org.allbinary.input.gyro.GyroSensorFactory_Package; use org.allbinary.input.gyro.GyroSensorFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.input.AllBinarySensorManager_Package is
 
-   package AccelerometerSensorFactory_Package renames Standard.org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
-   package GyroSensorFactory_Package renames Standard.org.allbinary.input.gyro.GyroSensorFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AllBinarySensorManager is tagged;
    type AllBinarySensorManager_Access is access all AllBinarySensorManager'Class;
    type AllBinarySensorManager_Access_Array is array (Natural range <>) of AllBinarySensorManager_Access;
    type AllBinarySensorManager_Access_Array_Access is access all AllBinarySensorManager_Access_Array;
+   type AllBinarySensorManager_Access_Array_Access_Array is array (Natural range <>) of AllBinarySensorManager_Access_Array_Access;
+   type AllBinarySensorManager_Access_Array_Access_Array_Access is access all AllBinarySensorManager_Access_Array_Access_Array;
 
    type AllBinarySensorManager is new Java_Object with record
       logUtil : LogUtil_Access;

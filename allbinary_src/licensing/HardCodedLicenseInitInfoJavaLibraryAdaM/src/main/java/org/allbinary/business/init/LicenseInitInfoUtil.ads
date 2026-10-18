@@ -29,6 +29,8 @@ package org.allbinary.business.init.LicenseInitInfoUtil_Package is
    type LicenseInitInfoUtil_Access is access all LicenseInitInfoUtil'Class;
    type LicenseInitInfoUtil_Access_Array is array (Natural range <>) of LicenseInitInfoUtil_Access;
    type LicenseInitInfoUtil_Access_Array_Access is access all LicenseInitInfoUtil_Access_Array;
+   type LicenseInitInfoUtil_Access_Array_Access_Array is array (Natural range <>) of LicenseInitInfoUtil_Access_Array_Access;
+   type LicenseInitInfoUtil_Access_Array_Access_Array_Access is access all LicenseInitInfoUtil_Access_Array_Access_Array;
 
    type LicenseInitInfoUtil is new Java_Object with record
       INITFILENAME : Unbounded_String;

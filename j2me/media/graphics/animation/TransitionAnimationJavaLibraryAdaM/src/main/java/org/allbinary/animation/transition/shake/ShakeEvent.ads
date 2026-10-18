@@ -28,6 +28,8 @@ package org.allbinary.animation.transition.shake.ShakeEvent_Package is
    type ShakeEvent_Access is access all ShakeEvent'Class;
    type ShakeEvent_Access_Array is array (Natural range <>) of ShakeEvent_Access;
    type ShakeEvent_Access_Array_Access is access all ShakeEvent_Access_Array;
+   type ShakeEvent_Access_Array_Access_Array is array (Natural range <>) of ShakeEvent_Access_Array_Access;
+   type ShakeEvent_Access_Array_Access_Array_Access is access all ShakeEvent_Access_Array_Access_Array;
 
    type ShakeEvent is new Java_Object with null record;
 

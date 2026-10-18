@@ -17,6 +17,8 @@ package javax.microedition.khronos.opengles.GL11Ext_Package is
    type GL11Ext_Access is access all GL11Ext'Class;
    type GL11Ext_Access_Array is array (Natural range <>) of GL11Ext_Access;
    type GL11Ext_Access_Array_Access is access all GL11Ext_Access_Array;
+   type GL11Ext_Access_Array_Access_Array is array (Natural range <>) of GL11Ext_Access_Array_Access;
+   type GL11Ext_Access_Array_Access_Array_Access is access all GL11Ext_Access_Array_Access_Array;
 
 end javax.microedition.khronos.opengles.GL11Ext_Package;
 

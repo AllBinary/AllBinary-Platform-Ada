@@ -24,9 +24,7 @@ with org.allbinary.game.configuration.feature.Features_Package; use org.allbinar
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.eclipse.swt.SWT_Package; use org.eclipse.swt.SWT_Package;
 with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Package;
-with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 
 package org.allbinary.media.image.ImageSwtRotationUtil_Package is
@@ -35,14 +33,14 @@ package org.allbinary.media.image.ImageSwtRotationUtil_Package is
    package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package SWT_Package renames Standard.org.eclipse.swt.SWT_Package;
    package GC_Package renames Standard.org.eclipse.swt.graphics.GC_Package;
-   package ImageData_Package renames Standard.org.eclipse.swt.graphics.ImageData_Package;
 
    type ImageSwtRotationUtil is tagged;
    type ImageSwtRotationUtil_Access is access all ImageSwtRotationUtil'Class;
    type ImageSwtRotationUtil_Access_Array is array (Natural range <>) of ImageSwtRotationUtil_Access;
    type ImageSwtRotationUtil_Access_Array_Access is access all ImageSwtRotationUtil_Access_Array;
+   type ImageSwtRotationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageSwtRotationUtil_Access_Array_Access;
+   type ImageSwtRotationUtil_Access_Array_Access_Array_Access is access all ImageSwtRotationUtil_Access_Array_Access_Array;
 
    type ImageSwtRotationUtil is new Java_Object with record
       logUtil : LogUtil_Access;

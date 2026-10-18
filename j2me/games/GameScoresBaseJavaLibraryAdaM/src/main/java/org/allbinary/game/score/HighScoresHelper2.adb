@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
+
 package body org.allbinary.game.score.HighScoresHelper2_Package is
 
    procedure Initialize_Fields (This : in out HighScoresHelper2'Class) is
@@ -62,7 +64,7 @@ package body org.allbinary.game.score.HighScoresHelper2_Package is
             HighScoresHelper2'Class (This).setSelectedHighScores (NullHighScoresSingletonFactory_Package.getInstance);
             return;
         end if;
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
         highScores := This.highScoresArrayP (This.circularIndexUtil.getIndex);
         index := 0;
         while ((highScores.getTotal) < (1)) and then ((index) < (This.highScoresArrayP'Length)) loop

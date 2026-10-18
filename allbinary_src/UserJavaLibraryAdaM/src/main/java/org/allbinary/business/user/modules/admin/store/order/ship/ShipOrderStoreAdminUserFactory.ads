@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStoreAdminUserFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStor
    type ShipOrderStoreAdminUserFactory_Access is access all ShipOrderStoreAdminUserFactory'Class;
    type ShipOrderStoreAdminUserFactory_Access_Array is array (Natural range <>) of ShipOrderStoreAdminUserFactory_Access;
    type ShipOrderStoreAdminUserFactory_Access_Array_Access is access all ShipOrderStoreAdminUserFactory_Access_Array;
+   type ShipOrderStoreAdminUserFactory_Access_Array_Access_Array is array (Natural range <>) of ShipOrderStoreAdminUserFactory_Access_Array_Access;
+   type ShipOrderStoreAdminUserFactory_Access_Array_Access_Array_Access is access all ShipOrderStoreAdminUserFactory_Access_Array_Access_Array;
 
-   type ShipOrderStoreAdminUserFactory is new UserFactoryInterface with null record;
+   type ShipOrderStoreAdminUserFactory is new Java_Object and UserFactoryInterface with null record;
 
    procedure Initialize (This : in out ShipOrderStoreAdminUserFactory'Class);
    function Create return ShipOrderStoreAdminUserFactory_Access;

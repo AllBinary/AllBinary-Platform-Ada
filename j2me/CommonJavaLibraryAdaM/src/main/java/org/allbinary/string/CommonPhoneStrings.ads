@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.string_Id.CommonPhoneStrings_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type CommonPhoneStrings is tagged;
    type CommonPhoneStrings_Access is access all CommonPhoneStrings'Class;
    type CommonPhoneStrings_Access_Array is array (Natural range <>) of CommonPhoneStrings_Access;
    type CommonPhoneStrings_Access_Array_Access is access all CommonPhoneStrings_Access_Array;
+   type CommonPhoneStrings_Access_Array_Access_Array is array (Natural range <>) of CommonPhoneStrings_Access_Array_Access;
+   type CommonPhoneStrings_Access_Array_Access_Array_Access is access all CommonPhoneStrings_Access_Array_Access_Array;
 
    type CommonPhoneStrings is new Java_Object with record
       UP : Unbounded_String;

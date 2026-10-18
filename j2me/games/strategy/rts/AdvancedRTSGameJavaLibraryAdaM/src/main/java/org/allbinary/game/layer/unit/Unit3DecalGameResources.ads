@@ -21,21 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allbinary.game.layer.resources.BasicGameResources_Package;
-with org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package; use org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
-with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
-with org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package; use org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
 
 package org.allbinary.game.layer.unit.Unit3DecalGameResources_Package is
 
    package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
-   package GameGraphicsResourceUtil_Package renames Standard.org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
-   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
-   package GraphicsFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
 
    type Unit3DecalGameResources is tagged;
    type Unit3DecalGameResources_Access is access all Unit3DecalGameResources'Class;
    type Unit3DecalGameResources_Access_Array is array (Natural range <>) of Unit3DecalGameResources_Access;
    type Unit3DecalGameResources_Access_Array_Access is access all Unit3DecalGameResources_Access_Array;
+   type Unit3DecalGameResources_Access_Array_Access_Array is array (Natural range <>) of Unit3DecalGameResources_Access_Array_Access;
+   type Unit3DecalGameResources_Access_Array_Access_Array_Access is access all Unit3DecalGameResources_Access_Array_Access_Array;
 
    type Unit3DecalGameResources is new BasicGameResources with null record;
    instance : Unit3DecalGameResources_Access;

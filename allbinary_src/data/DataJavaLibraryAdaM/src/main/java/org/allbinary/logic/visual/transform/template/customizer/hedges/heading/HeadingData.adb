@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package is
 
    procedure Initialize_Fields (This : in out HeadingData'Class) is

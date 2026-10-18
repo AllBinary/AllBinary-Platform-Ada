@@ -32,6 +32,8 @@ package org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package 
    type AnalogLocationInputProcessor_Access is access all AnalogLocationInputProcessor'Class;
    type AnalogLocationInputProcessor_Access_Array is array (Natural range <>) of AnalogLocationInputProcessor_Access;
    type AnalogLocationInputProcessor_Access_Array_Access is access all AnalogLocationInputProcessor_Access_Array;
+   type AnalogLocationInputProcessor_Access_Array_Access_Array is array (Natural range <>) of AnalogLocationInputProcessor_Access_Array_Access;
+   type AnalogLocationInputProcessor_Access_Array_Access_Array_Access is access all AnalogLocationInputProcessor_Access_Array_Access_Array;
 
    type AnalogLocationInputProcessor is new Java_Object with null record;
 

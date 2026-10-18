@@ -29,6 +29,8 @@ package org.allbinary.game.midlet.DemoGameMidletStateFactory_Package is
    type DemoGameMidletStateFactory_Access is access all DemoGameMidletStateFactory'Class;
    type DemoGameMidletStateFactory_Access_Array is array (Natural range <>) of DemoGameMidletStateFactory_Access;
    type DemoGameMidletStateFactory_Access_Array_Access is access all DemoGameMidletStateFactory_Access_Array;
+   type DemoGameMidletStateFactory_Access_Array_Access_Array is array (Natural range <>) of DemoGameMidletStateFactory_Access_Array_Access;
+   type DemoGameMidletStateFactory_Access_Array_Access_Array_Access is access all DemoGameMidletStateFactory_Access_Array_Access_Array;
 
    type DemoGameMidletStateFactory is new Java_Object with record
       NONE : DemoGameMidletState_Access;

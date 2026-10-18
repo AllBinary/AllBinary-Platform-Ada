@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Pa
    type OrderHistoryData_Access is access all OrderHistoryData'Class;
    type OrderHistoryData_Access_Array is array (Natural range <>) of OrderHistoryData_Access;
    type OrderHistoryData_Access_Array_Access is access all OrderHistoryData_Access_Array;
+   type OrderHistoryData_Access_Array_Access_Array is array (Natural range <>) of OrderHistoryData_Access_Array_Access;
+   type OrderHistoryData_Access_Array_Access_Array_Access is access all OrderHistoryData_Access_Array_Access_Array;
 
    type OrderHistoryData is new Java_Object with null record;
    MAXIDLEN : Integer;

@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package is
 
@@ -34,6 +33,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographic
    type RaceTrackGeographicMapCellTypeFactory_Access is access all RaceTrackGeographicMapCellTypeFactory'Class;
    type RaceTrackGeographicMapCellTypeFactory_Access_Array is array (Natural range <>) of RaceTrackGeographicMapCellTypeFactory_Access;
    type RaceTrackGeographicMapCellTypeFactory_Access_Array_Access is access all RaceTrackGeographicMapCellTypeFactory_Access_Array;
+   type RaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array is array (Natural range <>) of RaceTrackGeographicMapCellTypeFactory_Access_Array_Access;
+   type RaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array_Access is access all RaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array;
 
    type RaceTrackGeographicMapCellTypeFactory is new GeographicMapCellTypeFactory with record
       EMPTY_CELL_TYPE : GeographicMapCellType_Access;

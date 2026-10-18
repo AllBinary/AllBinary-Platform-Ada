@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+
 package body org.allbinary.game.input.J2MEKeyFactory_Package is
 
    procedure Initialize_Fields (This : in out J2MEKeyFactory'Class) is

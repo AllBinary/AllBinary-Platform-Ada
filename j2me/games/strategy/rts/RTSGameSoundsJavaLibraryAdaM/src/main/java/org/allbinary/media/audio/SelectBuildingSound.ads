@@ -31,6 +31,8 @@ package org.allbinary.media.audio.SelectBuildingSound_Package is
    type SelectBuildingSound_Access is access all SelectBuildingSound'Class;
    type SelectBuildingSound_Access_Array is array (Natural range <>) of SelectBuildingSound_Access;
    type SelectBuildingSound_Access_Array_Access is access all SelectBuildingSound_Access_Array;
+   type SelectBuildingSound_Access_Array_Access_Array is array (Natural range <>) of SelectBuildingSound_Access_Array_Access;
+   type SelectBuildingSound_Access_Array_Access_Array_Access is access all SelectBuildingSound_Access_Array_Access_Array;
 
    type SelectBuildingSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

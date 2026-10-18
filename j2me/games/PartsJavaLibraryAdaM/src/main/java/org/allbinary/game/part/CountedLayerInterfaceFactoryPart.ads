@@ -20,32 +20,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
 
 package org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
-   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
    package CountedPickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
@@ -53,8 +45,10 @@ package org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
    type CountedLayerInterfaceFactoryPart_Access is access all CountedLayerInterfaceFactoryPart'Class;
    type CountedLayerInterfaceFactoryPart_Access_Array is array (Natural range <>) of CountedLayerInterfaceFactoryPart_Access;
    type CountedLayerInterfaceFactoryPart_Access_Array_Access is access all CountedLayerInterfaceFactoryPart_Access_Array;
+   type CountedLayerInterfaceFactoryPart_Access_Array_Access_Array is array (Natural range <>) of CountedLayerInterfaceFactoryPart_Access_Array_Access;
+   type CountedLayerInterfaceFactoryPart_Access_Array_Access_Array_Access is access all CountedLayerInterfaceFactoryPart_Access_Array_Access_Array;
 
-   type CountedLayerInterfaceFactoryPart is new PartInterface and UpdateMyFontInterface with record
+   type CountedLayerInterfaceFactoryPart is new Java_Object and PartInterface and UpdateMyFontInterface with record
       updateMyFontProcessor : MyFontProcessor_Access;
       myFontProcessor : MyFontProcessor_Access;
       animationInterface : Animation_Access;

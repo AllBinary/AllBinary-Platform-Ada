@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.system.hardware.components.linux.Usb_Package is
 
    procedure Initialize_Fields (This : in out Usb'Class) is

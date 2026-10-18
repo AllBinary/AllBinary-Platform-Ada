@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.control.validate.ValidatorFactory_Package is
 
    procedure Initialize_Fields (This : in out ValidatorFactory'Class) is

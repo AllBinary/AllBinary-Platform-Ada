@@ -28,6 +28,8 @@ package org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package is
    type SimpleWeaponProperties_Access is access all SimpleWeaponProperties'Class;
    type SimpleWeaponProperties_Access_Array is array (Natural range <>) of SimpleWeaponProperties_Access;
    type SimpleWeaponProperties_Access_Array_Access is access all SimpleWeaponProperties_Access_Array;
+   type SimpleWeaponProperties_Access_Array_Access_Array is array (Natural range <>) of SimpleWeaponProperties_Access_Array_Access;
+   type SimpleWeaponProperties_Access_Array_Access_Array_Access is access all SimpleWeaponProperties_Access_Array_Access_Array;
 
    type SimpleWeaponProperties is new Java_Object with record
       damage : Integer;

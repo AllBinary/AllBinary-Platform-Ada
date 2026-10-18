@@ -29,6 +29,8 @@ package org.allbinary.business.user.commerce.money.payment.types.AuthorizationTy
    type AuthorizationTypeFactory_Access is access all AuthorizationTypeFactory'Class;
    type AuthorizationTypeFactory_Access_Array is array (Natural range <>) of AuthorizationTypeFactory_Access;
    type AuthorizationTypeFactory_Access_Array_Access is access all AuthorizationTypeFactory_Access_Array;
+   type AuthorizationTypeFactory_Access_Array_Access_Array is array (Natural range <>) of AuthorizationTypeFactory_Access_Array_Access;
+   type AuthorizationTypeFactory_Access_Array_Access_Array_Access is access all AuthorizationTypeFactory_Access_Array_Access_Array;
 
    type AuthorizationTypeFactory is new Java_Object with record
       NONE : AuthorizationType_Access;

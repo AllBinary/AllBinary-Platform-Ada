@@ -28,6 +28,8 @@ package org.allbinary.game.displayable.canvas.PopupMenuInterface_Package is
    type PopupMenuInterface_Access is access all PopupMenuInterface'Class;
    type PopupMenuInterface_Access_Array is array (Natural range <>) of PopupMenuInterface_Access;
    type PopupMenuInterface_Access_Array_Access is access all PopupMenuInterface_Access_Array;
+   type PopupMenuInterface_Access_Array_Access_Array is array (Natural range <>) of PopupMenuInterface_Access_Array_Access;
+   type PopupMenuInterface_Access_Array_Access_Array_Access is access all PopupMenuInterface_Access_Array_Access_Array;
    procedure popupMenu (This : in out PopupMenuInterface) is abstract;
    procedure closeMenu (This : in out PopupMenuInterface) is abstract;
    procedure toggleMenu (This : in out PopupMenuInterface) is abstract;

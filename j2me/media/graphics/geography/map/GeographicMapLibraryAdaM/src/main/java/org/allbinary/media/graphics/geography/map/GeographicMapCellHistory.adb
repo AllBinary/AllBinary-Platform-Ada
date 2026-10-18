@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.text.TextAnimation_Package; use org.allbinary.animation.text.TextAnimation_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+
 package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package TextAnimation_Package renames Standard.org.allbinary.animation.text.TextAnimation_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out GeographicMapCellHistory'Class) is
    begin
       null;
@@ -23,8 +38,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
       
       
       This.MISSED_INFO := To_Unbounded_String ("Missed");
-      This.animation := TextAnimation_Package.Create (This.MISSED_INFO, AnimationBehavior_Package.getInstance);
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (GeographicMapCellHistory_Access'(This'Unchecked_Access));
+      This.animation := Animation_Access (TextAnimation_Package.Create (This.MISSED_INFO, AnimationBehavior_Package.getInstance));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (GeographicMapCellHistory_Access'(This'Unchecked_Access)));
       This.totalVisited := 0;
       This.halfWidth := 0;
       This.fontHeight := 0;
@@ -35,8 +50,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    procedure Initialize (This : in out GeographicMapCellHistory'Class) is
    begin
       Initialize_Fields (This);
-        This.list := BasicArrayListD_Package.Create;
-        This.visitedList := BasicArrayListD_Package.Create;
+        This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
+        This.visitedList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         GeographicMapCellHistory'Class (This).init;
    end Initialize;
 
@@ -90,8 +105,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    procedure track (This : in out GeographicMapCellHistory; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
-        if not (This.list.contains (geographicMapCellPosition)) then
-            This.list.add (geographicMapCellPosition);
+        if not (This.list.contains (Java_Object_Access (geographicMapCellPosition))) then
+            This.list.add (Java_Object_Access (geographicMapCellPosition));
             This.visitedList.add (This.booleanFactory.FALSE);
         end if;
    end track;
@@ -112,7 +127,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
       index : Integer;
    begin
         localList := This.list;
-        index := localList.indexOf (geographicMapCellPosition);
+        index := localList.indexOf (Java_Object_Access (geographicMapCellPosition));
         if (localList.size) > ((index) + (1)) then
             return GeographicMapCellPosition_Access (localList.get ((index) + (1)));
         end if;
@@ -165,14 +180,14 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       index : Integer;
    begin
-        inPathButNotTrackedList := BasicArrayListD_Package.Create;
+        inPathButNotTrackedList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         localList := This.list;
         size := pathList.size;
         geographicMapCellPosition := null;
         for index in 0 .. (size) - 1 loop
             geographicMapCellPosition := GeographicMapCellPosition_Access (pathList.get (index));
-            if not (localList.contains (geographicMapCellPosition)) then
-                inPathButNotTrackedList.add (geographicMapCellPosition);
+            if not (localList.contains (Java_Object_Access (geographicMapCellPosition))) then
+                inPathButNotTrackedList.add (Java_Object_Access (geographicMapCellPosition));
             end if;
         end loop;
         return inPathButNotTrackedList;
@@ -183,7 +198,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
       index : Integer;
       value : Boolean;
    begin
-        index := This.list.indexOf (geographicMapCellPosition);
+        index := This.list.indexOf (Java_Object_Access (geographicMapCellPosition));
         if (index) /= (-(1)) then
             value := Boolean (This.visitedList.get (index));
             if (value) = (This.booleanFactory.TRUE) then
@@ -201,7 +216,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
       value : Boolean;
       TRUE : Boolean;
    begin
-        index := This.list.indexOf (geographicMapCellPosition);
+        index := This.list.indexOf (Java_Object_Access (geographicMapCellPosition));
         value := null;
         if (index) /= (-(1)) then
             value := Boolean (This.visitedList.get (index));

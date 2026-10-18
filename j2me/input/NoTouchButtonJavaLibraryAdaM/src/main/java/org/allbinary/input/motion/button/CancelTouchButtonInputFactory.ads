@@ -20,20 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
-with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 
 package org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package is
 
-   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type CancelTouchButtonInputFactory is tagged;
    type CancelTouchButtonInputFactory_Access is access all CancelTouchButtonInputFactory'Class;
    type CancelTouchButtonInputFactory_Access_Array is array (Natural range <>) of CancelTouchButtonInputFactory_Access;
    type CancelTouchButtonInputFactory_Access_Array_Access is access all CancelTouchButtonInputFactory_Access_Array;
+   type CancelTouchButtonInputFactory_Access_Array_Access_Array is array (Natural range <>) of CancelTouchButtonInputFactory_Access_Array_Access;
+   type CancelTouchButtonInputFactory_Access_Array_Access_Array_Access is access all CancelTouchButtonInputFactory_Access_Array_Access_Array;
 
    type CancelTouchButtonInputFactory is new Java_Object with record
       cancelInputArray : TouchButtonInput_Access_Array_Access;

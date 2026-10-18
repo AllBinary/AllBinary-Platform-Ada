@@ -13,8 +13,37 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package; use org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputFactory_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputFactory_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.input.automation.actions.script.condition.GenericProfileActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.GenericProfileActionScriptConditionData_Package;
+with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package;
+with org.allbinary.input.automation.actions.script.condition.JMenuItem_Package; use org.allbinary.input.automation.actions.script.condition.JMenuItem_Package;
+with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package;
+with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package;
+with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package;
+
 package body org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package JTreeInterfaceFactory_Package renames Standard.org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
+   package GenericProfileActionScriptInputData_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package;
+   package KeyboardActionScriptInput_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package;
+   package MouseActionScriptInput_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package;
+   package ProfileActionScriptInputFactory_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputFactory_Package;
+   package GenericProfileActionScriptOutputData_Package renames Standard.org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package;
+   package ImageActionScriptOutput_Package renames Standard.org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;
+   package ProfileActionScriptOutputFactory_Package renames Standard.org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out BasicProfileActionScriptCondition'Class) is
    begin
       null;

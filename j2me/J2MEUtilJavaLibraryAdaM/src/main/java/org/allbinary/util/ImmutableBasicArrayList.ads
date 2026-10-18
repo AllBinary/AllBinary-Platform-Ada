@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 
 package org.allbinary.util.ImmutableBasicArrayList_Package is
 
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 
    type ImmutableBasicArrayList is tagged;
    type ImmutableBasicArrayList_Access is access all ImmutableBasicArrayList'Class;
    type ImmutableBasicArrayList_Access_Array is array (Natural range <>) of ImmutableBasicArrayList_Access;
    type ImmutableBasicArrayList_Access_Array_Access is access all ImmutableBasicArrayList_Access_Array;
+   type ImmutableBasicArrayList_Access_Array_Access_Array is array (Natural range <>) of ImmutableBasicArrayList_Access_Array_Access;
+   type ImmutableBasicArrayList_Access_Array_Access_Array_Access is access all ImmutableBasicArrayList_Access_Array_Access_Array;
 
    type ImmutableBasicArrayList is new BasicArrayListS with record
       name : Unbounded_String;
@@ -42,6 +42,8 @@ package org.allbinary.util.ImmutableBasicArrayList_Package is
    procedure add (This : in out ImmutableBasicArrayList; e_Param : access Java_Object'Class);
    procedure addAt (This : in out ImmutableBasicArrayList; index : Integer; element_Param : access Java_Object'Class);
    function toString (This : in out ImmutableBasicArrayList) return Unbounded_String;
+   function add (This : in out ImmutableBasicArrayList; Value : Unbounded_String) return Boolean;
+   procedure add (This : in out ImmutableBasicArrayList; Value : Unbounded_String);
 
 end org.allbinary.util.ImmutableBasicArrayList_Package;
 

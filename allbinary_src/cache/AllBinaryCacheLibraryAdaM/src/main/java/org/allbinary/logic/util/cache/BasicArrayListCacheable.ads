@@ -20,19 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 
 package org.allbinary.logic.util.cache.BasicArrayListCacheable_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicArrayListCacheable is tagged;
    type BasicArrayListCacheable_Access is access all BasicArrayListCacheable'Class;
    type BasicArrayListCacheable_Access_Array is array (Natural range <>) of BasicArrayListCacheable_Access;
    type BasicArrayListCacheable_Access_Array_Access is access all BasicArrayListCacheable_Access_Array;
+   type BasicArrayListCacheable_Access_Array_Access_Array is array (Natural range <>) of BasicArrayListCacheable_Access_Array_Access;
+   type BasicArrayListCacheable_Access_Array_Access_Array_Access is access all BasicArrayListCacheable_Access_Array_Access_Array;
 
    type BasicArrayListCacheable is new BasicArrayListD and CacheableInterface with null record;
 

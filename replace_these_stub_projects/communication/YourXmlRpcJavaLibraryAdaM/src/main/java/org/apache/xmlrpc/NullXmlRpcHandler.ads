@@ -21,22 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.apache.xmlrpc.XmlRpcHandler_Package; use org.apache.xmlrpc.XmlRpcHandler_Package;
 
 package org.apache.xmlrpc.NullXmlRpcHandler_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type NullXmlRpcHandler is tagged;
    type NullXmlRpcHandler_Access is access all NullXmlRpcHandler'Class;
    type NullXmlRpcHandler_Access_Array is array (Natural range <>) of NullXmlRpcHandler_Access;
    type NullXmlRpcHandler_Access_Array_Access is access all NullXmlRpcHandler_Access_Array;
+   type NullXmlRpcHandler_Access_Array_Access_Array is array (Natural range <>) of NullXmlRpcHandler_Access_Array_Access;
+   type NullXmlRpcHandler_Access_Array_Access_Array_Access is access all NullXmlRpcHandler_Access_Array_Access_Array;
 
-   type NullXmlRpcHandler is new XmlRpcHandler with null record;
+   type NullXmlRpcHandler is new Java_Object and XmlRpcHandler with null record;
    NULL_XML_RPC_HANDLER : NullXmlRpcHandler_Access;
 
    procedure Initialize (This : in out NullXmlRpcHandler'Class);

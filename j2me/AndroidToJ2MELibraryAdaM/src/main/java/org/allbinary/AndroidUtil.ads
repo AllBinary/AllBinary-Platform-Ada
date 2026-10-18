@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.app.Activity_Package; use android.app.Activity_Package;
-with android.os.Build_Package; use android.os.Build_Package;
 
 package org.allbinary.AndroidUtil_Package is
 
    package Activity_Package renames Standard.android.app.Activity_Package;
-   package Build_Package renames Standard.android.os.Build_Package;
 
    type AndroidUtil is tagged;
    type AndroidUtil_Access is access all AndroidUtil'Class;
    type AndroidUtil_Access_Array is array (Natural range <>) of AndroidUtil_Access;
    type AndroidUtil_Access_Array_Access is access all AndroidUtil_Access_Array;
+   type AndroidUtil_Access_Array_Access_Array is array (Natural range <>) of AndroidUtil_Access_Array_Access;
+   type AndroidUtil_Access_Array_Access_Array_Access is access all AndroidUtil_Access_Array_Access_Array;
 
    type AndroidUtil is new Java_Object with null record;
    NULL_ACTIVITY : Activity_Access;

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+
 package body org.allbinary.logic.communication.http.request.HttpRequestUtil_Package is
 
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
    procedure Initialize_Fields (This : in out HttpRequestUtil'Class) is
    begin
       null;
@@ -42,9 +45,9 @@ package body org.allbinary.logic.communication.http.request.HttpRequestUtil_Pack
    function getLastSeparatorIndex (This : in out HttpRequestUtil; requestPath : Unbounded_String) return Integer is
       beginIndex : Integer;
    begin
-        beginIndex := requestPath.lastIndexOf (AbPathData_Package.getInstance.SEPARATOR);
+        beginIndex := Java_Last_Index_Of (requestPath, Java_Image (AbPathData_Package.getInstance.SEPARATOR));
         if (beginIndex) < (0) then
-            beginIndex := requestPath.lastIndexOf (To_Unbounded_String ("\"));
+            beginIndex := Java_Last_Index_Of (requestPath, Java_Image (To_Unbounded_String ("\")));
         end if;
         return beginIndex;
    end getLastSeparatorIndex;

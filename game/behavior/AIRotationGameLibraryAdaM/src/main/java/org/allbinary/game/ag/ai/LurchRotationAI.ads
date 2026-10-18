@@ -21,27 +21,23 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.animation.RotationAnimationInterface_Package; use org.allbinary.animation.RotationAnimationInterface_Package;
-with org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package; use org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package;
 with org.allbinary.game.ag.ai.tactical.LurchAI_Package; use org.allbinary.game.ag.ai.tactical.LurchAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
 
 package org.allbinary.game.ag.ai.LurchRotationAI_Package is
 
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
-   package RotationAnimationInterface_Package renames Standard.org.allbinary.animation.RotationAnimationInterface_Package;
-   package RotationAnimationInterfaceCompositeInterface_Package renames Standard.org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package;
    package LurchAI_Package renames Standard.org.allbinary.game.ag.ai.tactical.LurchAI_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package AngleIncrementInfo_Package renames Standard.org.allbinary.math.AngleIncrementInfo_Package;
 
    type LurchRotationAI is tagged;
    type LurchRotationAI_Access is access all LurchRotationAI'Class;
    type LurchRotationAI_Access_Array is array (Natural range <>) of LurchRotationAI_Access;
    type LurchRotationAI_Access_Array_Access is access all LurchRotationAI_Access_Array;
+   type LurchRotationAI_Access_Array_Access_Array is array (Natural range <>) of LurchRotationAI_Access_Array_Access;
+   type LurchRotationAI_Access_Array_Access_Array_Access is access all LurchRotationAI_Access_Array_Access_Array;
 
    type LurchRotationAI is new LurchAI with record
       rotationAnimationInterface : IndexedAnimation_Access;

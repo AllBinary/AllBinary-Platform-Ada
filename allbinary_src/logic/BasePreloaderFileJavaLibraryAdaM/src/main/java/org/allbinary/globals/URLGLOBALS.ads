@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
 with org.allbinary.globals.UrlGlobalsInterface_Package; use org.allbinary.globals.UrlGlobalsInterface_Package;
 
 package org.allbinary.globals.URLGLOBALS_Package is
@@ -30,6 +29,8 @@ package org.allbinary.globals.URLGLOBALS_Package is
    type URLGLOBALS_Access is access all URLGLOBALS'Class;
    type URLGLOBALS_Access_Array is array (Natural range <>) of URLGLOBALS_Access;
    type URLGLOBALS_Access_Array_Access is access all URLGLOBALS_Access_Array;
+   type URLGLOBALS_Access_Array_Access_Array is array (Natural range <>) of URLGLOBALS_Access_Array_Access;
+   type URLGLOBALS_Access_Array_Access_Array_Access is access all URLGLOBALS_Access_Array_Access_Array;
 
    type URLGLOBALS is new Java_Object with null record;
    urlGlobalsInterface : UrlGlobalsInterface_Access;

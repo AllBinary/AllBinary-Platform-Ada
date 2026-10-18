@@ -21,10 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.VectorAnimationInterface_Package; use org.allbinary.animation.VectorAnimationInterface_Package;
@@ -33,16 +30,15 @@ with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animat
 package org.allbinary.animation.VectorAnimation_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type VectorAnimation is tagged;
    type VectorAnimation_Access is access all VectorAnimation'Class;
    type VectorAnimation_Access_Array is array (Natural range <>) of VectorAnimation_Access;
    type VectorAnimation_Access_Array_Access is access all VectorAnimation_Access_Array;
+   type VectorAnimation_Access_Array_Access_Array is array (Natural range <>) of VectorAnimation_Access_Array_Access;
+   type VectorAnimation_Access_Array_Access_Array_Access is access all VectorAnimation_Access_Array_Access_Array;
 
    type VectorAnimation is new IndexedAnimation and VectorAnimationInterface with record
       currentPoints : Integer_Array_Access_Array_Access_Array_Access;

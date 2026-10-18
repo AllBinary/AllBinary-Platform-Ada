@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.module.InputAutomationModuleData_Package; use org.allbinary.input.automation.module.InputAutomationModuleData_Package;
+
 package body org.allbinary.input.automation.module.game.test.TestModuleFactory_Package is
 
+   package InputAutomationModuleData_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleData_Package;
    procedure Initialize_Fields (This : in out TestModuleFactory'Class) is
    begin
       null;
@@ -42,7 +45,7 @@ package body org.allbinary.input.automation.module.game.test.TestModuleFactory_P
 
    function getConfigurationJPanel (This : in out TestModuleFactory) return JPanel_Access is
    begin
-        return This.blankModuleConfigurationJPanel;
+        return JPanel_Access (This.blankModuleConfigurationJPanel);
    end getConfigurationJPanel;
 
    --  throws Exception

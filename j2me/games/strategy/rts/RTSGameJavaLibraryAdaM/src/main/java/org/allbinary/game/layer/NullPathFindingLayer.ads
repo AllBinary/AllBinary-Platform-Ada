@@ -53,8 +53,10 @@ package org.allbinary.game.layer.NullPathFindingLayer_Package is
    type NullPathFindingLayer_Access is access all NullPathFindingLayer'Class;
    type NullPathFindingLayer_Access_Array is array (Natural range <>) of NullPathFindingLayer_Access;
    type NullPathFindingLayer_Access_Array_Access is access all NullPathFindingLayer_Access_Array;
+   type NullPathFindingLayer_Access_Array_Access_Array is array (Natural range <>) of NullPathFindingLayer_Access_Array_Access;
+   type NullPathFindingLayer_Access_Array_Access_Array_Access is access all NullPathFindingLayer_Access_Array_Access_Array;
 
-   type NullPathFindingLayer is new PathFindingLayerInterface with null record;
+   type NullPathFindingLayer is new Java_Object and PathFindingLayerInterface with null record;
    NULL_PATH_FINDING_LAYER : NullPathFindingLayer_Access;
 
    procedure Initialize (This : in out NullPathFindingLayer'Class);

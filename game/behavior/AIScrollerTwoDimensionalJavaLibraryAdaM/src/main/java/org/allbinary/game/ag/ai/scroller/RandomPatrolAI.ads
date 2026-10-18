@@ -20,9 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
-with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
@@ -30,9 +28,7 @@ with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package; use org.allbinary.g
 
 package org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
-   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
@@ -41,6 +37,8 @@ package org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package is
    type RandomPatrolAI_Access is access all RandomPatrolAI'Class;
    type RandomPatrolAI_Access_Array is array (Natural range <>) of RandomPatrolAI_Access;
    type RandomPatrolAI_Access_Array_Access is access all RandomPatrolAI_Access_Array;
+   type RandomPatrolAI_Access_Array_Access_Array is array (Natural range <>) of RandomPatrolAI_Access_Array_Access;
+   type RandomPatrolAI_Access_Array_Access_Array_Access is access all RandomPatrolAI_Access_Array_Access_Array;
 
    type RandomPatrolAI is new BasePatrolAI with record
       changedDirection : Boolean;

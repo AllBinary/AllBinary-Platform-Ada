@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProcessor_Package is
 
    procedure Initialize_Fields (This : in out ImmediateCommandFormInputProcessor'Class) is

@@ -21,27 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package; use org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
-with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
-with org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
-with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 
 package org.allbinary.game.layer.special.CollidableCharacterBehavior_Package is
 
    package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-   package CollisionType_Package renames Standard.org.allbinary.game.collision.CollisionType_Package;
-   package CollisionTypeFactory_Package renames Standard.org.allbinary.game.collision.CollisionTypeFactory_Package;
    package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package PickedUpLayerInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 
    type CollidableCharacterBehavior is tagged;
    type CollidableCharacterBehavior_Access is access all CollidableCharacterBehavior'Class;
    type CollidableCharacterBehavior_Access_Array is array (Natural range <>) of CollidableCharacterBehavior_Access;
    type CollidableCharacterBehavior_Access_Array_Access is access all CollidableCharacterBehavior_Access_Array;
+   type CollidableCharacterBehavior_Access_Array_Access_Array is array (Natural range <>) of CollidableCharacterBehavior_Access_Array_Access;
+   type CollidableCharacterBehavior_Access_Array_Access_Array_Access is access all CollidableCharacterBehavior_Access_Array_Access_Array;
 
    type CollidableCharacterBehavior is new CollidableDestroyableDamageableBehavior with null record;
 

@@ -22,19 +22,19 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.paint.InitUpdatePaintable_Package; use org.allbinary.graphics.paint.InitUpdatePaintable_Package;
-with org.allbinary.graphics.paint.NullInitUpdatePaintable_Package; use org.allbinary.graphics.paint.NullInitUpdatePaintable_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.game.layer.SelectionHudPaintable_Package;
 
 package org.allbinary.game.layer.RTSLayerInfoPaintable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package InitUpdatePaintable_Package renames Standard.org.allbinary.graphics.paint.InitUpdatePaintable_Package;
-   package NullInitUpdatePaintable_Package renames Standard.org.allbinary.graphics.paint.NullInitUpdatePaintable_Package;
 
    type RTSLayerInfoPaintable is tagged;
    type RTSLayerInfoPaintable_Access is access all RTSLayerInfoPaintable'Class;
    type RTSLayerInfoPaintable_Access_Array is array (Natural range <>) of RTSLayerInfoPaintable_Access;
    type RTSLayerInfoPaintable_Access_Array_Access is access all RTSLayerInfoPaintable_Access_Array;
+   type RTSLayerInfoPaintable_Access_Array_Access_Array is array (Natural range <>) of RTSLayerInfoPaintable_Access_Array_Access;
+   type RTSLayerInfoPaintable_Access_Array_Access_Array_Access is access all RTSLayerInfoPaintable_Access_Array_Access_Array;
 
    type RTSLayerInfoPaintable is new InitUpdatePaintable with record
       initUpdatePaintable : InitUpdatePaintable_Access;

@@ -21,21 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type RaceTrackData is tagged;
    type RaceTrackData_Access is access all RaceTrackData'Class;
    type RaceTrackData_Access_Array is array (Natural range <>) of RaceTrackData_Access;
    type RaceTrackData_Access_Array_Access is access all RaceTrackData_Access_Array;
+   type RaceTrackData_Access_Array_Access_Array is array (Natural range <>) of RaceTrackData_Access_Array_Access;
+   type RaceTrackData_Access_Array_Access_Array_Access is access all RaceTrackData_Access_Array_Access_Array;
 
    type RaceTrackData is new Java_Object with record
       tileSetImage : Image_Access;

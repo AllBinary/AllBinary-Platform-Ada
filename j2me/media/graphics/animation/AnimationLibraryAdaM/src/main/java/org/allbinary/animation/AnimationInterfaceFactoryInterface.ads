@@ -32,6 +32,8 @@ package org.allbinary.animation.AnimationInterfaceFactoryInterface_Package is
    type AnimationInterfaceFactoryInterface_Access is access all AnimationInterfaceFactoryInterface'Class;
    type AnimationInterfaceFactoryInterface_Access_Array is array (Natural range <>) of AnimationInterfaceFactoryInterface_Access;
    type AnimationInterfaceFactoryInterface_Access_Array_Access is access all AnimationInterfaceFactoryInterface_Access_Array;
+   type AnimationInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of AnimationInterfaceFactoryInterface_Access_Array_Access;
+   type AnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all AnimationInterfaceFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out AnimationInterfaceFactoryInterface; instanceId : Integer) return Animation_Access is abstract;
    procedure setInitialScale (This : in out AnimationInterfaceFactoryInterface; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is abstract;
 

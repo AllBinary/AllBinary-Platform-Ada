@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.http.AcceptableResponseUtil_Package; use org.allbinary.logic.communication.http.AcceptableResponseUtil_Package;
+
 package body org.allbinary.logic.communication.http.AcceptableResponse_Package is
 
    procedure Initialize_Fields (This : in out AcceptableResponse'Class) is

@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
-with org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package; use org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package;
 with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
 
 package org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package is
@@ -36,6 +35,8 @@ package org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_P
    type DestroyEventCircularStaticPool_Access is access all DestroyEventCircularStaticPool'Class;
    type DestroyEventCircularStaticPool_Access_Array is array (Natural range <>) of DestroyEventCircularStaticPool_Access;
    type DestroyEventCircularStaticPool_Access_Array_Access is access all DestroyEventCircularStaticPool_Access_Array;
+   type DestroyEventCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of DestroyEventCircularStaticPool_Access_Array_Access;
+   type DestroyEventCircularStaticPool_Access_Array_Access_Array_Access is access all DestroyEventCircularStaticPool_Access_Array_Access_Array;
 
    type DestroyEventCircularStaticPool is new Java_Object with record
       EVENT_POOL : AllBinaryEventCircularPool_Access;

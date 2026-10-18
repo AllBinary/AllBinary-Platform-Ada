@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
    type UserEmailEventConfigurationInterface_Access is access all UserEmailEventConfigurationInterface'Class;
    type UserEmailEventConfigurationInterface_Access_Array is array (Natural range <>) of UserEmailEventConfigurationInterface_Access;
    type UserEmailEventConfigurationInterface_Access_Array_Access is access all UserEmailEventConfigurationInterface_Access_Array;
+   type UserEmailEventConfigurationInterface_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventConfigurationInterface_Access_Array_Access;
+   type UserEmailEventConfigurationInterface_Access_Array_Access_Array_Access is access all UserEmailEventConfigurationInterface_Access_Array_Access_Array;
    function getName (This : in out UserEmailEventConfigurationInterface) return Unbounded_String is abstract;
    procedure setName (This : in out UserEmailEventConfigurationInterface; name : Unbounded_String) is abstract;
    function getEventListenerClassPath (This : in out UserEmailEventConfigurationInterface) return Unbounded_String is abstract;

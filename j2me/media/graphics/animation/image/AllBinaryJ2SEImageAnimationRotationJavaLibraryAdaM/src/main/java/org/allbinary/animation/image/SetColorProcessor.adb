@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.image.SetColorProcessor_Package is
 
    procedure Initialize_Fields (This : in out SetColorProcessor'Class) is

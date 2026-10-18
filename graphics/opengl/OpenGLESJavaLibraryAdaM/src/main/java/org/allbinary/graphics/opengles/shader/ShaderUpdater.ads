@@ -36,6 +36,8 @@ package org.allbinary.graphics.opengles.shader.ShaderUpdater_Package is
    type ShaderUpdater_Access is access all ShaderUpdater'Class;
    type ShaderUpdater_Access_Array is array (Natural range <>) of ShaderUpdater_Access;
    type ShaderUpdater_Access_Array_Access is access all ShaderUpdater_Access_Array;
+   type ShaderUpdater_Access_Array_Access_Array is array (Natural range <>) of ShaderUpdater_Access_Array_Access;
+   type ShaderUpdater_Access_Array_Access_Array_Access is access all ShaderUpdater_Access_Array_Access_Array;
 
    type ShaderUpdater is new Java_Object with record
       commonStrings : CommonStrings_Access;

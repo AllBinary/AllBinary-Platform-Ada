@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInte
    type FtpConfigurationInterface_Access is access all FtpConfigurationInterface'Class;
    type FtpConfigurationInterface_Access_Array is array (Natural range <>) of FtpConfigurationInterface_Access;
    type FtpConfigurationInterface_Access_Array_Access is access all FtpConfigurationInterface_Access_Array;
+   type FtpConfigurationInterface_Access_Array_Access_Array is array (Natural range <>) of FtpConfigurationInterface_Access_Array_Access;
+   type FtpConfigurationInterface_Access_Array_Access_Array_Access is access all FtpConfigurationInterface_Access_Array_Access_Array;
    function getServer (This : in out FtpConfigurationInterface) return Unbounded_String is abstract;
    function getPath (This : in out FtpConfigurationInterface) return Unbounded_String is abstract;
    function getUserName (This : in out FtpConfigurationInterface) return Unbounded_String is abstract;

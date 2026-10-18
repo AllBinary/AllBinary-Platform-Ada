@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.thread.Runnable_Package; use org.allbinary.thread.Runnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.PriorityRunnable_Package is
 
@@ -29,6 +29,8 @@ package org.allbinary.thread.PriorityRunnable_Package is
    type PriorityRunnable_Access is access all PriorityRunnable'Class;
    type PriorityRunnable_Access_Array is array (Natural range <>) of PriorityRunnable_Access;
    type PriorityRunnable_Access_Array_Access is access all PriorityRunnable_Access_Array;
+   type PriorityRunnable_Access_Array_Access_Array is array (Natural range <>) of PriorityRunnable_Access_Array_Access;
+   type PriorityRunnable_Access_Array_Access_Array_Access is access all PriorityRunnable_Access_Array_Access_Array;
    function getPriority (This : in out PriorityRunnable) return Integer is abstract;
    function isDone (This : in out PriorityRunnable) return Boolean is abstract;
    procedure reset (This : in out PriorityRunnable) is abstract;

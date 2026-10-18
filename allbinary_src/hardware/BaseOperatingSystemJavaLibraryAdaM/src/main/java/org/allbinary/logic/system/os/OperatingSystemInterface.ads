@@ -30,6 +30,8 @@ package org.allbinary.logic.system.os.OperatingSystemInterface_Package is
    type OperatingSystemInterface_Access is access all OperatingSystemInterface'Class;
    type OperatingSystemInterface_Access_Array is array (Natural range <>) of OperatingSystemInterface_Access;
    type OperatingSystemInterface_Access_Array_Access is access all OperatingSystemInterface_Access_Array;
+   type OperatingSystemInterface_Access_Array_Access_Array is array (Natural range <>) of OperatingSystemInterface_Access_Array_Access;
+   type OperatingSystemInterface_Access_Array_Access_Array_Access is access all OperatingSystemInterface_Access_Array_Access_Array;
    function getName (This : in out OperatingSystemInterface) return Unbounded_String is abstract;
    function getVersion (This : in out OperatingSystemInterface) return Unbounded_String is abstract;
    function getArch (This : in out OperatingSystemInterface) return Unbounded_String is abstract;

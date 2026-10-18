@@ -35,6 +35,8 @@ package org.allbinary.animation.image.SetColorProcessor_Package is
    type SetColorProcessor_Access is access all SetColorProcessor'Class;
    type SetColorProcessor_Access_Array is array (Natural range <>) of SetColorProcessor_Access;
    type SetColorProcessor_Access_Array_Access is access all SetColorProcessor_Access_Array;
+   type SetColorProcessor_Access_Array_Access_Array is array (Natural range <>) of SetColorProcessor_Access_Array_Access;
+   type SetColorProcessor_Access_Array_Access_Array_Access is access all SetColorProcessor_Access_Array_Access_Array;
 
    type SetColorProcessor is new ModifierBaseProcessor with null record;
    instanceC : SetColorProcessor_Access;

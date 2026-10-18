@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.LogHelperFactory_Package; use admin.taghelpers.LogHelperFactory_Package;
+
 package body admin.tags.LogTag_Package is
 
+   package LogHelperFactory_Package renames Standard.admin.taghelpers.LogHelperFactory_Package;
    procedure Initialize_Fields (This : in out LogTag'Class) is
    begin
       null;

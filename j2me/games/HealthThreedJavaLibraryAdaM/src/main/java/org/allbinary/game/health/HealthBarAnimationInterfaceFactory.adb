@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.health.HealthBarThreedAnimation_Package; use org.allbinary.game.health.HealthBarThreedAnimation_Package;
+
 package body org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package is
 
    procedure Initialize_Fields (This : in out HealthBarAnimationInterfaceFactory'Class) is
@@ -38,7 +40,7 @@ package body org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Packag
    function getInstanceByLocation (This : in out HealthBarAnimationInterfaceFactory; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer) return HealthBarAnimation_Access is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
-        return HealthBarThreedAnimation_Package.Create (layerInterface, location);
+        return HealthBarAnimation_Access (HealthBarThreedAnimation_Package.Create (layerInterface, location));
    end getInstanceByLocation;
 
    --  throws Exception

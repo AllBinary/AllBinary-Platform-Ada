@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
 with org.allbinary.logic.control.search.SearchRequest_Package; use org.allbinary.logic.control.search.SearchRequest_Package;
-with org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package; use org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package;
 with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package; use org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
 
 package org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_Package is
@@ -35,6 +34,8 @@ package org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_
    type TransformStoreDocumentFactory_Access is access all TransformStoreDocumentFactory'Class;
    type TransformStoreDocumentFactory_Access_Array is array (Natural range <>) of TransformStoreDocumentFactory_Access;
    type TransformStoreDocumentFactory_Access_Array_Access is access all TransformStoreDocumentFactory_Access_Array;
+   type TransformStoreDocumentFactory_Access_Array_Access_Array is array (Natural range <>) of TransformStoreDocumentFactory_Access_Array_Access;
+   type TransformStoreDocumentFactory_Access_Array_Access_Array_Access is access all TransformStoreDocumentFactory_Access_Array_Access_Array;
 
    type TransformStoreDocumentFactory is new Java_Object with null record;
 

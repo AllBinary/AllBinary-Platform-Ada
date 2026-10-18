@@ -34,6 +34,8 @@ package org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Package 
    type AboutCommandProcessor_Access is access all AboutCommandProcessor'Class;
    type AboutCommandProcessor_Access_Array is array (Natural range <>) of AboutCommandProcessor_Access;
    type AboutCommandProcessor_Access_Array_Access is access all AboutCommandProcessor_Access_Array;
+   type AboutCommandProcessor_Access_Array_Access_Array is array (Natural range <>) of AboutCommandProcessor_Access_Array_Access;
+   type AboutCommandProcessor_Access_Array_Access_Array_Access is access all AboutCommandProcessor_Access_Array_Access_Array;
 
    type AboutCommandProcessor is new Java_Object with null record;
    instance : AboutCommandProcessor_Access;

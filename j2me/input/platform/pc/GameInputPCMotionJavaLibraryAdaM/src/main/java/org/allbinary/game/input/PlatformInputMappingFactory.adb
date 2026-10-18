@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.input.MotionLaptopGameInputMapping_Package; use org.allbinary.game.input.MotionLaptopGameInputMapping_Package;
+
 package body org.allbinary.game.input.PlatformInputMappingFactory_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out PlatformInputMappingFactory'Class) is
    begin
       null;
@@ -45,7 +49,7 @@ package body org.allbinary.game.input.PlatformInputMappingFactory_Package is
    begin
         begin
             if (This.inputToGameKeyMapping) = (PersistentInputMapping_Package.getNullInstance) then
-                This.inputToGameKeyMapping := MotionLaptopGameInputMapping_Package.Create;
+                This.inputToGameKeyMapping := PersistentInputMapping_Access (MotionLaptopGameInputMapping_Package.Create);
             end if;
         exception
             when Java_Occurrence : others =>

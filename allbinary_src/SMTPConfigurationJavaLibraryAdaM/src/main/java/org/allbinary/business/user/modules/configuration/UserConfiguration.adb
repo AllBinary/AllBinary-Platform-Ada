@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
+
 package body org.allbinary.business.user.modules.configuration.UserConfiguration_Package is
 
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserEmailConfiguration_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
    procedure Initialize_Fields (This : in out UserConfiguration'Class) is
    begin
       null;

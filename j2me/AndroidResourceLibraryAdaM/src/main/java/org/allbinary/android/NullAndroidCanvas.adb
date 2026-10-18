@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.android.NullAndroidCanvas_Package is
 
    procedure Initialize_Fields (This : in out NullAndroidCanvas'Class) is

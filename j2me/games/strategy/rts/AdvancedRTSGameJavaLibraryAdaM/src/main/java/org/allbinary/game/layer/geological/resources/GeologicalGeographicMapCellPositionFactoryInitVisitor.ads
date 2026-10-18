@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInitVisitorInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInitVisitorInterface_Package;
-with org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package; use org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
 
 package org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPositionFactoryInitVisitor_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCel
    type GeologicalGeographicMapCellPositionFactoryInitVisitor_Access is access all GeologicalGeographicMapCellPositionFactoryInitVisitor'Class;
    type GeologicalGeographicMapCellPositionFactoryInitVisitor_Access_Array is array (Natural range <>) of GeologicalGeographicMapCellPositionFactoryInitVisitor_Access;
    type GeologicalGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access is access all GeologicalGeographicMapCellPositionFactoryInitVisitor_Access_Array;
+   type GeologicalGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array is array (Natural range <>) of GeologicalGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access;
+   type GeologicalGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array_Access is access all GeologicalGeographicMapCellPositionFactoryInitVisitor_Access_Array_Access_Array;
 
-   type GeologicalGeographicMapCellPositionFactoryInitVisitor is new GeographicMapCellPositionFactoryInitVisitorInterface with null record;
+   type GeologicalGeographicMapCellPositionFactoryInitVisitor is new Java_Object and GeographicMapCellPositionFactoryInitVisitorInterface with null record;
 
    procedure Initialize (This : in out GeologicalGeographicMapCellPositionFactoryInitVisitor'Class);
    function Create return GeologicalGeographicMapCellPositionFactoryInitVisitor_Access;

@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.configuration.persistance.NullRecordStore_Package; use org.allbinary.game.configuration.persistance.NullRecordStore_Package;
+
 package body org.allbinary.game.configuration.persistance.BasicPersitance_Package is
 
+   package RecordStore_Package renames Standard.javax.microedition.rms.RecordStore_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BasicPersitance'Class) is
    begin
       null;
@@ -23,8 +33,8 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
       This.persistanceStrings := PersistanceStrings_Package.getInstance;
       This.platformRecordIdUtil := PlatformRecordIdUtil_Package.getInstance;
       
-      This.valueList := BasicArrayListD_Package.Create;
-      This.idList := BasicArrayListD_Package.Create;
+      This.valueList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.idList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 

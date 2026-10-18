@@ -20,22 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
-with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
 
 package org.allbinary.media.image.ImageCopyUtil_Package is
 
-   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
    package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
-   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -43,6 +39,8 @@ package org.allbinary.media.image.ImageCopyUtil_Package is
    type ImageCopyUtil_Access is access all ImageCopyUtil'Class;
    type ImageCopyUtil_Access_Array is array (Natural range <>) of ImageCopyUtil_Access;
    type ImageCopyUtil_Access_Array_Access is access all ImageCopyUtil_Access_Array;
+   type ImageCopyUtil_Access_Array_Access_Array is array (Natural range <>) of ImageCopyUtil_Access_Array_Access;
+   type ImageCopyUtil_Access_Array_Access_Array_Access is access all ImageCopyUtil_Access_Array_Access_Array;
 
    type ImageCopyUtil is new Java_Object with record
       logUtil : LogUtil_Access;

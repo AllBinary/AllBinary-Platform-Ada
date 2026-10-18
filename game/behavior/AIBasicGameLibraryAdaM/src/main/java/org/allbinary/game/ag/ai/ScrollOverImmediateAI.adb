@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+
 package body org.allbinary.game.ag.ai.ScrollOverImmediateAI_Package is
 
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    procedure Initialize_Fields (This : in out ScrollOverImmediateAI'Class) is
    begin
       null;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package is
 
    procedure Initialize_Fields (This : in out WeaponLayerArrayLayerCircularStaticPool'Class) is
@@ -65,7 +66,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStatic
       weaponLayerArray : WeaponLayer_Access_Array_Access;
    begin
         weaponLayerArray := WeaponLayer_Access_Array_Access (This.ALL_WEAPONLAYER_ARRAY (size) (This.circularIndexUtil.getIndex));
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
         return weaponLayerArray;
    end getInstanceArray;
 

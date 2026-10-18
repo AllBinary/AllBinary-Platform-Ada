@@ -32,8 +32,10 @@ package org.allbinary.logic.system.hardware.components.linux.Bridge_Package is
    type Bridge_Access is access all Bridge'Class;
    type Bridge_Access_Array is array (Natural range <>) of Bridge_Access;
    type Bridge_Access_Array_Access is access all Bridge_Access_Array;
+   type Bridge_Access_Array_Access_Array is array (Natural range <>) of Bridge_Access_Array_Access;
+   type Bridge_Access_Array_Access_Array_Access is access all Bridge_Access_Array_Access_Array;
 
-   type Bridge is new HardwareComponentInterface and BridgeInterface with record
+   type Bridge is new Java_Object and HardwareComponentInterface and BridgeInterface with record
       data : Unbounded_String;
    end record;
 

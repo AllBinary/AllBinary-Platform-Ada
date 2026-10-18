@@ -29,6 +29,8 @@ package org.allbinary.game.health.HealthInterfaceCompositeInterface_Package is
    type HealthInterfaceCompositeInterface_Access is access all HealthInterfaceCompositeInterface'Class;
    type HealthInterfaceCompositeInterface_Access_Array is array (Natural range <>) of HealthInterfaceCompositeInterface_Access;
    type HealthInterfaceCompositeInterface_Access_Array_Access is access all HealthInterfaceCompositeInterface_Access_Array;
+   type HealthInterfaceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of HealthInterfaceCompositeInterface_Access_Array_Access;
+   type HealthInterfaceCompositeInterface_Access_Array_Access_Array_Access is access all HealthInterfaceCompositeInterface_Access_Array_Access_Array;
    function getHealthInterface (This : in out HealthInterfaceCompositeInterface) return Health_Access is abstract;
 
 end org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;

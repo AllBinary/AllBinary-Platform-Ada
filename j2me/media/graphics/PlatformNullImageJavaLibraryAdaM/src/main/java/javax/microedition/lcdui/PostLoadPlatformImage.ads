@@ -29,6 +29,8 @@ package javax.microedition.lcdui.PostLoadPlatformImage_Package is
    type PostLoadPlatformImage_Access is access all PostLoadPlatformImage'Class;
    type PostLoadPlatformImage_Access_Array is array (Natural range <>) of PostLoadPlatformImage_Access;
    type PostLoadPlatformImage_Access_Array_Access is access all PostLoadPlatformImage_Access_Array;
+   type PostLoadPlatformImage_Access_Array_Access_Array is array (Natural range <>) of PostLoadPlatformImage_Access_Array_Access;
+   type PostLoadPlatformImage_Access_Array_Access_Array_Access is access all PostLoadPlatformImage_Access_Array_Access_Array;
 
    type PostLoadPlatformImage is new PlatformImage with null record;
    instance : PostLoadPlatformImage_Access;

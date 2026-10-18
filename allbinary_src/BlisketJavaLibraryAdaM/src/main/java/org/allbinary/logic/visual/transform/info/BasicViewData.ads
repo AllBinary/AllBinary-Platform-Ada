@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.info.BasicViewData_Package is
    type BasicViewData_Access is access all BasicViewData'Class;
    type BasicViewData_Access_Array is array (Natural range <>) of BasicViewData_Access;
    type BasicViewData_Access_Array_Access is access all BasicViewData_Access_Array;
+   type BasicViewData_Access_Array_Access_Array is array (Natural range <>) of BasicViewData_Access_Array_Access;
+   type BasicViewData_Access_Array_Access_Array_Access is access all BasicViewData_Access_Array_Access_Array;
 
    type BasicViewData is new Java_Object with record
       GENERICDIR : Unbounded_String;

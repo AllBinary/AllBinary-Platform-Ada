@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.layer.SWTUtil_Package; use org.allbinary.game.layer.SWTUtil_Package;
+with org.allbinary.game.layer.GameLayerUtil_Package; use org.allbinary.game.layer.GameLayerUtil_Package;
+
 package body org.allbinary.game.layer.AllBinaryGameLayer_Package is
 
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out AllBinaryGameLayer'Class) is
    begin
       null;
@@ -31,7 +44,7 @@ package body org.allbinary.game.layer.AllBinaryGameLayer_Package is
 --              This.basicSetColorUtil.setBasicColorP (graphics, This.BLACK);
 --     end paint;
  else NullPaintable_Package.getInstance);
-      This.gameKeyEventList := BasicArrayListD_Package.Create;
+      This.gameKeyEventList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 

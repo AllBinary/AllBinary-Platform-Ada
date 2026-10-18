@@ -13,8 +13,75 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.Random_Package; use java.util.Random_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.init.db.HistoryDbInitInfo_Package; use org.allbinary.business.init.db.HistoryDbInitInfo_Package;
+with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
+with org.allbinary.business.user.address.BillingAddressData_Package; use org.allbinary.business.user.address.BillingAddressData_Package;
+with org.allbinary.business.user.address.ShippingAddressData_Package; use org.allbinary.business.user.address.ShippingAddressData_Package;
+with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
+with org.allbinary.business.user.commerce.inventory.basket.Basket_Package; use org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
+with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
+with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
+with org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package; use org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
+with org.allbinary.business.user.commerce.money.tax.TaxFactory_Package; use org.allbinary.business.user.commerce.money.tax.TaxFactory_Package;
+with org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
+with org.allbinary.business.user.commerce.shipping.ShippingMethods_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethods_Package;
+with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package; use org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
+with org.allbinary.data.generator.OrderHistoryIdGenerator_Package; use org.allbinary.data.generator.OrderHistoryIdGenerator_Package;
+with org.allbinary.data.tables.TableDataFactory_Package; use org.allbinary.data.tables.TableDataFactory_Package;
+with org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package; use org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package;
+with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package; use org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
+with org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package; use org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+
 package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package Random_Package renames Standard.java.util.Random_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package HistoryDbInitInfo_Package renames Standard.org.allbinary.business.init.db.HistoryDbInitInfo_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package BillingAddressData_Package renames Standard.org.allbinary.business.user.address.BillingAddressData_Package;
+   package ShippingAddressData_Package renames Standard.org.allbinary.business.user.address.ShippingAddressData_Package;
+   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
+   package Basket_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
+   package BasketInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+   package OrderData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
+   package OrderHistoryData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
+   package PaymentData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
+   package PaymentInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
+   package TaxFactory_Package renames Standard.org.allbinary.business.user.commerce.money.tax.TaxFactory_Package;
+   package ShippingMethodData_Package renames Standard.org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
+   package ShippingMethods_Package renames Standard.org.allbinary.business.user.commerce.shipping.ShippingMethods_Package;
+   package ShippingInterface_Package renames Standard.org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
+   package OrderHistoryIdGenerator_Package renames Standard.org.allbinary.data.generator.OrderHistoryIdGenerator_Package;
+   package TableDataFactory_Package renames Standard.org.allbinary.data.tables.TableDataFactory_Package;
+   package BillingAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Package;
+   package ShippingAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
+   package PaymentEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package SuperCrypt_Package renames Standard.org.allbinary.logic.control.crypt.SuperCrypt_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
    procedure Initialize_Fields (This : in out OrderHistoryEntity'Class) is
    begin
       null;
@@ -58,7 +125,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       time : Unbounded_String;
       random : Integer;
    begin
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         begin
             paymentInterface := PaymentEntity_Package.Create.getDefault (userName);
             billingAddress := BillingAddressesEntity_Package.Create (userName).getDefault;
@@ -244,7 +311,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       orderReview : OrderHistory_Access;
       i : Integer;
    begin
-        orderReviewVector := BasicArrayListD_Package.Create;
+        orderReviewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
         whereHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeFrontInterface.getName));
         orderHashMapVector := AbSqlBean (This).getRows (whereHashMap);
@@ -252,7 +319,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         for i in 0 .. (size) - 1 loop
             orderReviewHashMap := HashMap_Access (orderHashMapVector.get (i));
             orderReview := OrderHistory_Package.Create (Basket_Package.Create, orderReviewHashMap);
-            orderReviewVector.add (orderReview);
+            orderReviewVector.add (Java_Object_Access (orderReview));
         end loop;
         return orderReviewVector;
    end getStoreOrders;
@@ -267,7 +334,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       orderReview : OrderHistory_Access;
       index : Integer;
    begin
-        orderReviewVector := BasicArrayListD_Package.Create;
+        orderReviewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
         whereHashMap.put (UserData_Package.USERNAME, Java_Box (userName));
         orderHashMapVector := AbSqlBean (This).getRows (whereHashMap);
@@ -275,7 +342,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         for index in 0 .. (size) - 1 loop
             orderReviewHashMap := HashMap_Access (orderHashMapVector.get (index));
             orderReview := OrderHistory_Package.Create (Basket_Package.Create, orderReviewHashMap);
-            orderReviewVector.add (orderReview);
+            orderReviewVector.add (Java_Object_Access (orderReview));
         end loop;
         return orderReviewVector;
    end getOrders;
@@ -290,7 +357,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       orderReview : OrderHistory_Access;
       index : Integer;
    begin
-        orderReviewVector := BasicArrayListD_Package.Create;
+        orderReviewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         whereHashMap := StdUtil_Package.getInstance.createHashMap;
         whereHashMap.put (OrderHistoryData_Package.STATUS, Java_Box (status));
         orderHashMapVector := AbSqlBean (This).getRowsWhereBetween (whereHashMap, OrderHistoryData_Package.ORDERDATE, fromDate, toDate);
@@ -298,7 +365,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         for index in 0 .. (size) - 1 loop
             orderReviewHashMap := HashMap_Access (orderHashMapVector.get (index));
             orderReview := OrderHistory_Package.Create (Basket_Package.Create, orderReviewHashMap);
-            orderReviewVector.add (orderReview);
+            orderReviewVector.add (Java_Object_Access (orderReview));
         end loop;
         return orderReviewVector;
    end getOrders;
@@ -312,13 +379,13 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       orderReview : OrderHistory_Access;
       index : Integer;
    begin
-        orderReviewVector := BasicArrayListD_Package.Create;
+        orderReviewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         orderHashMapVector := AbSqlBean (This).getRowsWhereBetween (OrderHistoryData_Package.ORDERDATE, fromDate, toDate);
         size := orderHashMapVector.size;
         for index in 0 .. (size) - 1 loop
             orderReviewHashMap := HashMap_Access (orderHashMapVector.get (index));
             orderReview := OrderHistory_Package.Create (Basket_Package.Create, orderReviewHashMap);
-            orderReviewVector.add (orderReview);
+            orderReviewVector.add (Java_Object_Access (orderReview));
         end loop;
         return orderReviewVector;
    end getOrders;

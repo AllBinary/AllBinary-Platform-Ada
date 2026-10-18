@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.visual.transform.info.TransformInfoProperties_Package is
 
    procedure Initialize_Fields (This : in out TransformInfoProperties'Class) is

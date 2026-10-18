@@ -32,6 +32,8 @@ package org.allbinary.data.tables.user.commerce.money.payment.transaction.Transa
    type TransactionResultEntityInterface_Access is access all TransactionResultEntityInterface'Class;
    type TransactionResultEntityInterface_Access_Array is array (Natural range <>) of TransactionResultEntityInterface_Access;
    type TransactionResultEntityInterface_Access_Array_Access is access all TransactionResultEntityInterface_Access_Array;
+   type TransactionResultEntityInterface_Access_Array_Access_Array is array (Natural range <>) of TransactionResultEntityInterface_Access_Array_Access;
+   type TransactionResultEntityInterface_Access_Array_Access_Array_Access is access all TransactionResultEntityInterface_Access_Array_Access_Array;
    function getTransactionResultInterface (This : in out TransactionResultEntityInterface; orderNumber : Unbounded_String) return TransactionResultInterface_Access is abstract;
    procedure remove (This : in out TransactionResultEntityInterface; userName : Unbounded_String; orderNumber : Unbounded_String) is abstract;
    procedure add (This : in out TransactionResultEntityInterface; userName : Unbounded_String; orderNumber : Unbounded_String; resultInterface_Param : access TransactionResultInterface_Package.TransactionResultInterface'Class) is abstract;

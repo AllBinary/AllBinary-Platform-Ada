@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.motion.button.TouchButtonBlankResource_Package; use org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
 with org.allbinary.input.motion.button.TouchButtonResource_Package; use org.allbinary.input.motion.button.TouchButtonResource_Package;
 
 package org.allbinary.game.input.resource.TouchButtonDowngradeResource_Package is
 
-   package TouchButtonBlankResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
    package TouchButtonResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonResource_Package;
 
    type TouchButtonDowngradeResource is tagged;
    type TouchButtonDowngradeResource_Access is access all TouchButtonDowngradeResource'Class;
    type TouchButtonDowngradeResource_Access_Array is array (Natural range <>) of TouchButtonDowngradeResource_Access;
    type TouchButtonDowngradeResource_Access_Array_Access is access all TouchButtonDowngradeResource_Access_Array;
+   type TouchButtonDowngradeResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonDowngradeResource_Access_Array_Access;
+   type TouchButtonDowngradeResource_Access_Array_Access_Array_Access is access all TouchButtonDowngradeResource_Access_Array_Access_Array;
 
    type TouchButtonDowngradeResource is new TouchButtonResource with null record;
    instance : TouchButtonResource_Access;

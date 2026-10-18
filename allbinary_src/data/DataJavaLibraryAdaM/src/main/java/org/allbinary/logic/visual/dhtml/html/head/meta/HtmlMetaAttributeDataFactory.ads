@@ -29,6 +29,8 @@ package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDataFac
    type HtmlMetaAttributeDataFactory_Access is access all HtmlMetaAttributeDataFactory'Class;
    type HtmlMetaAttributeDataFactory_Access_Array is array (Natural range <>) of HtmlMetaAttributeDataFactory_Access;
    type HtmlMetaAttributeDataFactory_Access_Array_Access is access all HtmlMetaAttributeDataFactory_Access_Array;
+   type HtmlMetaAttributeDataFactory_Access_Array_Access_Array is array (Natural range <>) of HtmlMetaAttributeDataFactory_Access_Array_Access;
+   type HtmlMetaAttributeDataFactory_Access_Array_Access_Array_Access is access all HtmlMetaAttributeDataFactory_Access_Array_Access_Array;
 
    type HtmlMetaAttributeDataFactory is new Java_Object with record
       NAME : HtmlMetaAttributeData_Access;

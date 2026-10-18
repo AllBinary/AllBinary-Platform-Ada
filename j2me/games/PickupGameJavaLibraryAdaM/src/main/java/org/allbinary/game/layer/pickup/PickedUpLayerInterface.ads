@@ -31,6 +31,8 @@ package org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package is
    type PickedUpLayerInterface_Access is access all PickedUpLayerInterface'Class;
    type PickedUpLayerInterface_Access_Array is array (Natural range <>) of PickedUpLayerInterface_Access;
    type PickedUpLayerInterface_Access_Array_Access is access all PickedUpLayerInterface_Access_Array;
+   type PickedUpLayerInterface_Access_Array_Access_Array is array (Natural range <>) of PickedUpLayerInterface_Access_Array_Access;
+   type PickedUpLayerInterface_Access_Array_Access_Array_Access is access all PickedUpLayerInterface_Access_Array_Access_Array;
    function getPickedUpLayerInterfaceFactoryInterface (This : in out PickedUpLayerInterface) return PickedUpLayerInterfaceFactoryInterface_Access is abstract;
    procedure setPickedUp (This : in out PickedUpLayerInterface) is abstract;
 

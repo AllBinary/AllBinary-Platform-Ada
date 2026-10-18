@@ -28,6 +28,8 @@ package org.allbinary.input.automation.actions.script.condition.AlwaysActionScri
    type AlwaysActionScriptConditionData_Access is access all AlwaysActionScriptConditionData'Class;
    type AlwaysActionScriptConditionData_Access_Array is array (Natural range <>) of AlwaysActionScriptConditionData_Access;
    type AlwaysActionScriptConditionData_Access_Array_Access is access all AlwaysActionScriptConditionData_Access_Array;
+   type AlwaysActionScriptConditionData_Access_Array_Access_Array is array (Natural range <>) of AlwaysActionScriptConditionData_Access_Array_Access;
+   type AlwaysActionScriptConditionData_Access_Array_Access_Array_Access is access all AlwaysActionScriptConditionData_Access_Array_Access_Array;
 
    type AlwaysActionScriptConditionData is new Java_Object with null record;
    NAME : Unbounded_String;

@@ -28,6 +28,8 @@ package org.allbinary.graphics.GraphicsStrings_Package is
    type GraphicsStrings_Access is access all GraphicsStrings'Class;
    type GraphicsStrings_Access_Array is array (Natural range <>) of GraphicsStrings_Access;
    type GraphicsStrings_Access_Array_Access is access all GraphicsStrings_Access_Array;
+   type GraphicsStrings_Access_Array_Access_Array is array (Natural range <>) of GraphicsStrings_Access_Array_Access;
+   type GraphicsStrings_Access_Array_Access_Array_Access is access all GraphicsStrings_Access_Array_Access_Array;
 
    type GraphicsStrings is new Java_Object with record
       ANIMATION : Unbounded_String;

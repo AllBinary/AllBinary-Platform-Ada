@@ -30,6 +30,8 @@ package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventServi
    type MyGraphicItemEventService_Access is access all MyGraphicItemEventService'Class;
    type MyGraphicItemEventService_Access_Array is array (Natural range <>) of MyGraphicItemEventService_Access;
    type MyGraphicItemEventService_Access_Array_Access is access all MyGraphicItemEventService_Access_Array;
+   type MyGraphicItemEventService_Access_Array_Access_Array is array (Natural range <>) of MyGraphicItemEventService_Access_Array_Access;
+   type MyGraphicItemEventService_Access_Array_Access_Array_Access is access all MyGraphicItemEventService_Access_Array_Access_Array;
 
    type MyGraphicItemEventService is new Java_Object with null record;
    listenerList : EventListenerList_Access;

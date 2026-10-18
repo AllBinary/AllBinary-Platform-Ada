@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package is
 
    package DisplayChangeEvent_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
 
    type BaseMenuBehavior is tagged;
    type BaseMenuBehavior_Access is access all BaseMenuBehavior'Class;
    type BaseMenuBehavior_Access_Array is array (Natural range <>) of BaseMenuBehavior_Access;
    type BaseMenuBehavior_Access_Array_Access is access all BaseMenuBehavior_Access_Array;
+   type BaseMenuBehavior_Access_Array_Access_Array is array (Natural range <>) of BaseMenuBehavior_Access_Array_Access;
+   type BaseMenuBehavior_Access_Array_Access_Array_Access is access all BaseMenuBehavior_Access_Array_Access_Array;
 
    type BaseMenuBehavior is new Java_Object with null record;
    instance : BaseMenuBehavior_Access;

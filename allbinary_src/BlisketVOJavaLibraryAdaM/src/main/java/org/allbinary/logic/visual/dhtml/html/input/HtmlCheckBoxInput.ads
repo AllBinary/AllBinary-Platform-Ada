@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlCheckBoxInput_Package is
    type HtmlCheckBoxInput_Access is access all HtmlCheckBoxInput'Class;
    type HtmlCheckBoxInput_Access_Array is array (Natural range <>) of HtmlCheckBoxInput_Access;
    type HtmlCheckBoxInput_Access_Array_Access is access all HtmlCheckBoxInput_Access_Array;
+   type HtmlCheckBoxInput_Access_Array_Access_Array is array (Natural range <>) of HtmlCheckBoxInput_Access_Array_Access;
+   type HtmlCheckBoxInput_Access_Array_Access_Array_Access is access all HtmlCheckBoxInput_Access_Array_Access_Array;
 
    type HtmlCheckBoxInput is new Java_Object with null record;
 

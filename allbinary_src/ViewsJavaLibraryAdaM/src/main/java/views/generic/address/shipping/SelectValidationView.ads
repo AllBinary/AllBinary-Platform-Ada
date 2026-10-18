@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.globals.MESSAGES_Package; use org.allbinary.globals.MESSAGES_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
@@ -29,7 +28,6 @@ with views.generic_Id.address.shipping.ShippingAddressView_Package; use views.ge
 
 package views.generic_Id.address.shipping.SelectValidationView_Package is
 
-   package MESSAGES_Package renames Standard.org.allbinary.globals.MESSAGES_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
@@ -39,6 +37,8 @@ package views.generic_Id.address.shipping.SelectValidationView_Package is
    type SelectValidationView_Access is access all SelectValidationView'Class;
    type SelectValidationView_Access_Array is array (Natural range <>) of SelectValidationView_Access;
    type SelectValidationView_Access_Array_Access is access all SelectValidationView_Access_Array;
+   type SelectValidationView_Access_Array_Access_Array is array (Natural range <>) of SelectValidationView_Access_Array_Access;
+   type SelectValidationView_Access_Array_Access_Array_Access is access all SelectValidationView_Access_Array_Access_Array;
 
    type SelectValidationView is new ShippingAddressView and ValidationComponentInterface with null record;
 

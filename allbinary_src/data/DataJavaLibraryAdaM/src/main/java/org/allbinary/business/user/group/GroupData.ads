@@ -28,6 +28,8 @@ package org.allbinary.business.user.group.GroupData_Package is
    type GroupData_Access is access all GroupData'Class;
    type GroupData_Access_Array is array (Natural range <>) of GroupData_Access;
    type GroupData_Access_Array_Access is access all GroupData_Access_Array;
+   type GroupData_Access_Array_Access_Array is array (Natural range <>) of GroupData_Access_Array_Access;
+   type GroupData_Access_Array_Access_Array_Access is access all GroupData_Access_Array_Access_Array;
 
    type GroupData is new Java_Object with null record;
    NAME : Unbounded_String;

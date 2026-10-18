@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.collision.CollisionType_Package is
 
    procedure Initialize_Fields (This : in out CollisionType'Class) is

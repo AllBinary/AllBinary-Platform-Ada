@@ -25,7 +25,6 @@ with org.allbinary.bounds.BoundsVisitorInterface_Package; use org.allbinary.boun
 with org.allbinary.bounds.LayerBounds_Package; use org.allbinary.bounds.LayerBounds_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
-with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 
@@ -36,7 +35,6 @@ package org.allbinary.game.ag.ai.BoundBounceAI_Package is
    package LayerBounds_Package renames Standard.org.allbinary.bounds.LayerBounds_Package;
    package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
-   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
@@ -44,6 +42,8 @@ package org.allbinary.game.ag.ai.BoundBounceAI_Package is
    type BoundBounceAI_Access is access all BoundBounceAI'Class;
    type BoundBounceAI_Access_Array is array (Natural range <>) of BoundBounceAI_Access;
    type BoundBounceAI_Access_Array_Access is access all BoundBounceAI_Access_Array;
+   type BoundBounceAI_Access_Array_Access_Array is array (Natural range <>) of BoundBounceAI_Access_Array_Access;
+   type BoundBounceAI_Access_Array_Access_Array_Access is access all BoundBounceAI_Access_Array_Access_Array;
 
    type BoundBounceAI is new BasicAI with record
       currentRelativeAngle : Integer;

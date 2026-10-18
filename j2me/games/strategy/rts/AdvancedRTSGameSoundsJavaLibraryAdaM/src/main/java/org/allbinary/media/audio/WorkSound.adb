@@ -12,6 +12,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.audio.WorkSound_Package is
 
    procedure Initialize_Fields (This : in out WorkSound'Class) is
@@ -39,7 +40,7 @@ package body org.allbinary.media.audio.WorkSound_Package is
 
 begin
    null;
-   soundInterface := WorkSound_Package.Create;
+   soundInterface := Sound_Access (WorkSound_Package.Create);
 
 end org.allbinary.media.audio.WorkSound_Package;
 

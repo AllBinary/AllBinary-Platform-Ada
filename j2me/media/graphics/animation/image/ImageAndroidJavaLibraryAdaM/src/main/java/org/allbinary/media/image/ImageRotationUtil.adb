@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
+with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
+with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
+with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
+
 package body org.allbinary.media.image.ImageRotationUtil_Package is
 
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
+   package Canvas_Package renames Standard.android.graphics.Canvas_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
    procedure Initialize_Fields (This : in out ImageRotationUtil'Class) is
    begin
       null;

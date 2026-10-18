@@ -21,14 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package; use org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
 
 package org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityInterface_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package PaymentInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
@@ -36,6 +34,8 @@ package org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityInter
    type PaymentEntityInterface_Access is access all PaymentEntityInterface'Class;
    type PaymentEntityInterface_Access_Array is array (Natural range <>) of PaymentEntityInterface_Access;
    type PaymentEntityInterface_Access_Array_Access is access all PaymentEntityInterface_Access_Array;
+   type PaymentEntityInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentEntityInterface_Access_Array_Access;
+   type PaymentEntityInterface_Access_Array_Access_Array_Access is access all PaymentEntityInterface_Access_Array_Access_Array;
    function getLastId (This : in out PaymentEntityInterface; userName : Unbounded_String) return Unbounded_String is abstract;
    procedure setDefault (This : in out PaymentEntityInterface; userName : Unbounded_String; index : Integer) is abstract;
    function getDefault (This : in out PaymentEntityInterface; userName : Unbounded_String) return PaymentInterface_Access is abstract;

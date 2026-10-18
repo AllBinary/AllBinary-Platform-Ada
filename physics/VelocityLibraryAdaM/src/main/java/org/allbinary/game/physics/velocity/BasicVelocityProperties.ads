@@ -25,11 +25,7 @@ with org.allbinary.direction.DirectionUtil_Package; use org.allbinary.direction.
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.logic.math.vector.AxisMathVectorUtil_Package; use org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
-with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityInterface_Package; use org.allbinary.game.physics.velocity.BasicVelocityInterface_Package;
 
 package org.allbinary.game.physics.velocity.BasicVelocityProperties_Package is
@@ -39,18 +35,16 @@ package org.allbinary.game.physics.velocity.BasicVelocityProperties_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
    package AxisMathVectorUtil_Package renames Standard.org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
-   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type BasicVelocityProperties is tagged;
    type BasicVelocityProperties_Access is access all BasicVelocityProperties'Class;
    type BasicVelocityProperties_Access_Array is array (Natural range <>) of BasicVelocityProperties_Access;
    type BasicVelocityProperties_Access_Array_Access is access all BasicVelocityProperties_Access_Array;
+   type BasicVelocityProperties_Access_Array_Access_Array is array (Natural range <>) of BasicVelocityProperties_Access_Array_Access;
+   type BasicVelocityProperties_Access_Array_Access_Array_Access is access all BasicVelocityProperties_Access_Array_Access_Array;
 
-   type BasicVelocityProperties is new BasicVelocityInterface with record
+   type BasicVelocityProperties is new Java_Object and BasicVelocityInterface with record
       logUtil : LogUtil_Access;
       velocityXBasicDecimal : BasicDecimal_Access;
       velocityYBasicDecimal : BasicDecimal_Access;

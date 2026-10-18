@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
+
 package body org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
 
+   package NullPathFindingLayer_Package renames Standard.org.allbinary.game.layer.NullPathFindingLayer_Package;
    procedure Initialize_Fields (This : in out PrimaryWaypointHelper'Class) is
    begin
       null;
@@ -48,7 +51,7 @@ package body org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
    procedure setWaypointLayer (This : in out PrimaryWaypointHelper; waypointLayer_Param : access WaypointLayer_Package.WaypointLayer'Class) is
       waypointLayer : constant WaypointLayer_Access := WaypointLayer_Access (waypointLayer_Param);
    begin
-        This.waypointLayer := waypointLayer;
+        This.waypointLayer := PathFindingLayerInterface_Access (waypointLayer);
    end setWaypointLayer;
 
 begin

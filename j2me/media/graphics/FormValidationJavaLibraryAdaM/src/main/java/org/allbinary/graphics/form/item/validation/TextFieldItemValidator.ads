@@ -22,24 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.form.item.ABTextFieldItem_Package; use org.allbinary.graphics.form.item.ABTextFieldItem_Package;
 with org.allbinary.logic.control.validate.ValidatorBase_Package; use org.allbinary.logic.control.validate.ValidatorBase_Package;
-with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.graphics.form.item.validation.TextFieldItemValidator_Package is
 
    package ABTextFieldItem_Package renames Standard.org.allbinary.graphics.form.item.ABTextFieldItem_Package;
    package ValidatorBase_Package renames Standard.org.allbinary.logic.control.validate.ValidatorBase_Package;
-   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type TextFieldItemValidator is tagged;
    type TextFieldItemValidator_Access is access all TextFieldItemValidator'Class;
    type TextFieldItemValidator_Access_Array is array (Natural range <>) of TextFieldItemValidator_Access;
    type TextFieldItemValidator_Access_Array_Access is access all TextFieldItemValidator_Access_Array;
+   type TextFieldItemValidator_Access_Array_Access_Array is array (Natural range <>) of TextFieldItemValidator_Access_Array_Access;
+   type TextFieldItemValidator_Access_Array_Access_Array_Access is access all TextFieldItemValidator_Access_Array_Access_Array;
 
    type TextFieldItemValidator is new ValidatorBase with record
       textFieldItem : ABTextFieldItem_Access;

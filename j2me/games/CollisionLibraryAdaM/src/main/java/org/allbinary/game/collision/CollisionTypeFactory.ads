@@ -29,6 +29,8 @@ package org.allbinary.game.collision.CollisionTypeFactory_Package is
    type CollisionTypeFactory_Access is access all CollisionTypeFactory'Class;
    type CollisionTypeFactory_Access_Array is array (Natural range <>) of CollisionTypeFactory_Access;
    type CollisionTypeFactory_Access_Array_Access is access all CollisionTypeFactory_Access_Array;
+   type CollisionTypeFactory_Access_Array_Access_Array is array (Natural range <>) of CollisionTypeFactory_Access_Array_Access;
+   type CollisionTypeFactory_Access_Array_Access_Array_Access is access all CollisionTypeFactory_Access_Array_Access_Array;
 
    type CollisionTypeFactory is new Java_Object with record
       NONE : CollisionType_Access;

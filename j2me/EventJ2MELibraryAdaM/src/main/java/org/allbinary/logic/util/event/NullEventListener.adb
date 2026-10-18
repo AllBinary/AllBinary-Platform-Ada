@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.util.event.NullEventListener_Package is
 
    procedure Initialize_Fields (This : in out NullEventListener'Class) is

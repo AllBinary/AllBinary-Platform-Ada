@@ -20,33 +20,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 --  with java.nio.charset.StandardCharsets_Package; use java.nio.charset.StandardCharsets_Package;
 --  with java.util.ArrayList_Package; use java.util.ArrayList_Package;
 --  with java.util.List_Package; use java.util.List_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 with org.allbinary.logic.io.file.directory.TrackedStrings_Package; use org.allbinary.logic.io.file.directory.TrackedStrings_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.java.runtime.process.git.ProcessBuilder_Package; use org.allbinary.java.runtime.process.git.ProcessBuilder_Package;
-with org.allbinary.java.runtime.process.git.Process_Package; use org.allbinary.java.runtime.process.git.Process_Package;
 
 package org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
    package TrackedStrings_Package renames Standard.org.allbinary.logic.io.file.directory.TrackedStrings_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type GitProcessHelper is tagged;
    type GitProcessHelper_Access is access all GitProcessHelper'Class;
    type GitProcessHelper_Access_Array is array (Natural range <>) of GitProcessHelper_Access;
    type GitProcessHelper_Access_Array_Access is access all GitProcessHelper_Access_Array;
+   type GitProcessHelper_Access_Array_Access_Array is array (Natural range <>) of GitProcessHelper_Access_Array_Access;
+   type GitProcessHelper_Access_Array_Access_Array_Access is access all GitProcessHelper_Access_Array_Access_Array;
 
    type GitProcessHelper is new Java_Object with record
       trackedStrings : TrackedStrings_Access;

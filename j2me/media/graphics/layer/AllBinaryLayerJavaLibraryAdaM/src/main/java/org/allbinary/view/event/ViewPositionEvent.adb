@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.view.event.ViewPositionEvent_Package is
 
    procedure Initialize_Fields (This : in out ViewPositionEvent'Class) is

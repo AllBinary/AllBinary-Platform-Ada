@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.opengles.OpenGLLogUtil_Package; use org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+with org.allbinary.opengles.GLUtil_Package; use org.allbinary.opengles.GLUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package; use org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.allbinary.image.opengles.OpenGLESImageProcessor_Package; use org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+
 package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package OpenGLLogUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+   package GLUtil_Package renames Standard.org.allbinary.opengles.GLUtil_Package;
    procedure Initialize_Fields (This : in out OpenGLESGL10Image'Class) is
    begin
       null;
@@ -64,18 +73,18 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --              This.openGLESImageTranslate.translate2 (gl, OpenGLESGL10Image_Access'(This'Unchecked_Access));
 --              This.regionRectangleVertexFloatBuffer.put (This.regionRectangleFloatArray);
 --              This.glUtil.position (This.regionRectangleVertexFloatBuffer, 0);
---              gl.glVertexPointer (3, GL10.GL_FLOAT, 0, This.regionRectangleVertexFloatBuffer);
---              gl.glEnableClientState (GL10.GL_VERTEX_ARRAY);
---              gl.glEnable (GL10.GL_TEXTURE_2D);
---              gl.glBindTexture (GL10.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
---              gl.glEnableClientState (GL10.GL_TEXTURE_COORD_ARRAY);
+--              gl.glVertexPointer (3, GL10_Package.GL_FLOAT, 0, This.regionRectangleVertexFloatBuffer);
+--              gl.glEnableClientState (GL10_Package.GL_VERTEX_ARRAY);
+--              gl.glEnable (GL10_Package.GL_TEXTURE_2D);
+--              gl.glBindTexture (GL10_Package.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
+--              gl.glEnableClientState (GL10_Package.GL_TEXTURE_COORD_ARRAY);
 --              This.regionTextureVertexFloatBuffer.put (This.regionTextureRectangleFloatArray);
 --              This.glUtil.position (This.regionTextureVertexFloatBuffer, 0);
---              gl.glTexCoordPointer (2, GL10.GL_FLOAT, 0, This.regionTextureVertexFloatBuffer);
---              gl.glDrawArrays (GL10.GL_TRIANGLE_STRIP, 0, 4);
---              gl.glDisableClientState (GL10.GL_VERTEX_ARRAY);
---              gl.glDisableClientState (GL10.GL_TEXTURE_COORD_ARRAY);
---              gl.glDisable (GL10.GL_TEXTURE_2D);
+--              gl.glTexCoordPointer (2, GL10_Package.GL_FLOAT, 0, This.regionTextureVertexFloatBuffer);
+--              gl.glDrawArrays (GL10_Package.GL_TRIANGLE_STRIP, 0, 4);
+--              gl.glDisableClientState (GL10_Package.GL_VERTEX_ARRAY);
+--              gl.glDisableClientState (GL10_Package.GL_TEXTURE_COORD_ARRAY);
+--              gl.glDisable (GL10_Package.GL_TEXTURE_2D);
 --              gl.glPopMatrix;
 --     end drawRegion;
 --          
@@ -109,20 +118,20 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --              This.openGLESImageTranslate.translate2 (gl, OpenGLESGL10Image_Access'(This'Unchecked_Access));
 --              This.regionRectangleVertexFloatBuffer.put (This.regionRectangleFloatArray);
 --              This.glUtil.position (This.regionRectangleVertexFloatBuffer, 0);
---              gl.glVertexPointer (3, GL10.GL_FLOAT, 0, This.regionRectangleVertexFloatBuffer);
---              gl.glEnableClientState (GL10.GL_VERTEX_ARRAY);
---              gl.glEnable (GL10.GL_TEXTURE_2D);
---              gl.glBindTexture (GL10.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
---              gl.glEnableClientState (GL10.GL_TEXTURE_COORD_ARRAY);
+--              gl.glVertexPointer (3, GL10_Package.GL_FLOAT, 0, This.regionRectangleVertexFloatBuffer);
+--              gl.glEnableClientState (GL10_Package.GL_VERTEX_ARRAY);
+--              gl.glEnable (GL10_Package.GL_TEXTURE_2D);
+--              gl.glBindTexture (GL10_Package.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
+--              gl.glEnableClientState (GL10_Package.GL_TEXTURE_COORD_ARRAY);
 --              This.glUtil.rotateUVs (This.regionTextureRectangleFloatArray, -(This.openGLESImageProperties.angle), 0.5, 0.5);
 --              This.glUtil.position (This.textureVertexFloatBuffer, 0);
 --              This.textureVertexFloatBuffer.put (This.regionTextureRectangleFloatArray);
 --              This.glUtil.position (This.textureVertexFloatBuffer, 0);
---              gl.glTexCoordPointer (2, GL10.GL_FLOAT, 0, This.textureVertexFloatBuffer);
---              gl.glDrawArrays (GL10.GL_TRIANGLE_STRIP, 0, 4);
---              gl.glDisableClientState (GL10.GL_VERTEX_ARRAY);
---              gl.glDisableClientState (GL10.GL_TEXTURE_COORD_ARRAY);
---              gl.glDisable (GL10.GL_TEXTURE_2D);
+--              gl.glTexCoordPointer (2, GL10_Package.GL_FLOAT, 0, This.textureVertexFloatBuffer);
+--              gl.glDrawArrays (GL10_Package.GL_TRIANGLE_STRIP, 0, 4);
+--              gl.glDisableClientState (GL10_Package.GL_VERTEX_ARRAY);
+--              gl.glDisableClientState (GL10_Package.GL_TEXTURE_COORD_ARRAY);
+--              gl.glDisable (GL10_Package.GL_TEXTURE_2D);
 --              gl.glPopMatrix;
 --     end draw;
 ;
@@ -166,8 +175,8 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
    begin
         gl10 := GL10_Access (gl);
         if OpenGLESImage (This).initTexture (gl10) then
-            This.textureFactory.load (gl10, GL10.GL_TEXTURE_2D, 0, OpenGLESGL10Image_Access'(This'Unchecked_Access), 0, True);
-            gl10.glDisable (GL10.GL_TEXTURE_2D);
+            This.textureFactory.load (gl10, GL10_Package.GL_TEXTURE_2D, 0, OpenGLESGL10Image_Access'(This'Unchecked_Access), 0, True);
+            gl10.glDisable (GL10_Package.GL_TEXTURE_2D);
             This.openGLESImageDraw := This.realOpenGLESImageDraw;
             OpenGLLogUtil_Package.getInstance.logError (gl10, OpenGLESGL10Image_Access'(This'Unchecked_Access));
         end if;

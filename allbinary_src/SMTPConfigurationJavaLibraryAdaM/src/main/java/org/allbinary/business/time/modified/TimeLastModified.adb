@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.time.modified.TimeLastModified_Package is
 
    procedure Initialize_Fields (This : in out TimeLastModified'Class) is

@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package; use org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
@@ -29,7 +28,6 @@ with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinar
 package org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityInterface_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package PaymentGatewayInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
    package BasicPaymentType_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
@@ -38,6 +36,8 @@ package org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGat
    type PaymentGatewayEntityInterface_Access is access all PaymentGatewayEntityInterface'Class;
    type PaymentGatewayEntityInterface_Access_Array is array (Natural range <>) of PaymentGatewayEntityInterface_Access;
    type PaymentGatewayEntityInterface_Access_Array_Access is access all PaymentGatewayEntityInterface_Access_Array;
+   type PaymentGatewayEntityInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayEntityInterface_Access_Array_Access;
+   type PaymentGatewayEntityInterface_Access_Array_Access_Array_Access is access all PaymentGatewayEntityInterface_Access_Array_Access_Array;
    function getPaymentGatewayInterface (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) return PaymentGatewayInterface_Access is abstract;
    function findPaymentTypeVectorByStore (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
    procedure remove (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) is abstract;

@@ -21,20 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.input.automation.module.game.MeteredGameObject_Package; use org.allbinary.input.automation.module.game.MeteredGameObject_Package;
 with org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package; use org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package;
 
 package org.allbinary.input.automation.module.game.MagicGameObject_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type MagicGameObject is tagged;
    type MagicGameObject_Access is access all MagicGameObject'Class;
    type MagicGameObject_Access_Array is array (Natural range <>) of MagicGameObject_Access;
    type MagicGameObject_Access_Array_Access is access all MagicGameObject_Access_Array;
+   type MagicGameObject_Access_Array_Access_Array is array (Natural range <>) of MagicGameObject_Access_Array_Access;
+   type MagicGameObject_Access_Array_Access_Array_Access is access all MagicGameObject_Access_Array_Access_Array;
 
    type MagicGameObject is new MeteredGameObject and MagicGameObjectInterface with record
       MP_LABEL : Unbounded_String;

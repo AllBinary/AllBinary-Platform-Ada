@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package; use org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package;
+
 package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package is
 
    procedure Initialize_Fields (This : in out TransformHttpRequestDocumentFactory'Class) is

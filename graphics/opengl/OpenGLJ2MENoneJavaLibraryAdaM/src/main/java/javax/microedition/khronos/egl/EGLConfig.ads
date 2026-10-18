@@ -16,6 +16,8 @@ package javax.microedition.khronos.egl.EGLConfig_Package is
    type EGLConfig_Access is access all EGLConfig'Class;
    type EGLConfig_Access_Array is array (Natural range <>) of EGLConfig_Access;
    type EGLConfig_Access_Array_Access is access all EGLConfig_Access_Array;
+   type EGLConfig_Access_Array_Access_Array is array (Natural range <>) of EGLConfig_Access_Array_Access;
+   type EGLConfig_Access_Array_Access_Array_Access is access all EGLConfig_Access_Array_Access_Array;
 
    type EGLConfig is new Java_Object with null record;
 

@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeDefaultComboBoxModelFactory_Package is
 
-   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
 
    type InputAutomationTypeDefaultComboBoxModelFactory is tagged;
    type InputAutomationTypeDefaultComboBoxModelFactory_Access is access all InputAutomationTypeDefaultComboBoxModelFactory'Class;
    type InputAutomationTypeDefaultComboBoxModelFactory_Access_Array is array (Natural range <>) of InputAutomationTypeDefaultComboBoxModelFactory_Access;
    type InputAutomationTypeDefaultComboBoxModelFactory_Access_Array_Access is access all InputAutomationTypeDefaultComboBoxModelFactory_Access_Array;
+   type InputAutomationTypeDefaultComboBoxModelFactory_Access_Array_Access_Array is array (Natural range <>) of InputAutomationTypeDefaultComboBoxModelFactory_Access_Array_Access;
+   type InputAutomationTypeDefaultComboBoxModelFactory_Access_Array_Access_Array_Access is access all InputAutomationTypeDefaultComboBoxModelFactory_Access_Array_Access_Array;
 
    type InputAutomationTypeDefaultComboBoxModelFactory is new Java_Object with null record;
 

@@ -19,15 +19,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.RTSLayerEvent_Package; use org.allbinary.game.layer.RTSLayerEvent_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package; use org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
 
 package org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package is
 
-   package RTSLayerEvent_Package renames Standard.org.allbinary.game.layer.RTSLayerEvent_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
@@ -36,6 +33,8 @@ package org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package is
    type WaypointEventHandler_Access is access all WaypointEventHandler'Class;
    type WaypointEventHandler_Access_Array is array (Natural range <>) of WaypointEventHandler_Access;
    type WaypointEventHandler_Access_Array_Access is access all WaypointEventHandler_Access_Array;
+   type WaypointEventHandler_Access_Array_Access_Array is array (Natural range <>) of WaypointEventHandler_Access_Array_Access;
+   type WaypointEventHandler_Access_Array_Access_Array_Access is access all WaypointEventHandler_Access_Array_Access_Array;
 
    type WaypointEventHandler is new BasicEventHandler with null record;
 

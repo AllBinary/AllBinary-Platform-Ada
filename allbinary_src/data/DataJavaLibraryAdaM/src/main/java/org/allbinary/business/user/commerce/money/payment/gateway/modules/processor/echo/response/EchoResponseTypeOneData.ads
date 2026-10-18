@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.modules.proce
    type EchoResponseTypeOneData_Access is access all EchoResponseTypeOneData'Class;
    type EchoResponseTypeOneData_Access_Array is array (Natural range <>) of EchoResponseTypeOneData_Access;
    type EchoResponseTypeOneData_Access_Array_Access is access all EchoResponseTypeOneData_Access_Array;
+   type EchoResponseTypeOneData_Access_Array_Access_Array is array (Natural range <>) of EchoResponseTypeOneData_Access_Array_Access;
+   type EchoResponseTypeOneData_Access_Array_Access_Array_Access is access all EchoResponseTypeOneData_Access_Array_Access_Array;
 
    type EchoResponseTypeOneData is new Java_Object with null record;
    NAME : Unbounded_String;

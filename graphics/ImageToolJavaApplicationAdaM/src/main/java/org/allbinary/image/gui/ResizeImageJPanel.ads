@@ -22,30 +22,25 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 --  with java.awt.image.Raster_Package; use java.awt.image.Raster_Package;
---  with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
-with org.allbinary.media.image.ImagePersistanceUtil_Package; use org.allbinary.media.image.ImagePersistanceUtil_Package;
 with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
 with org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package; use org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
-with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
 
 package org.allbinary.image.gui.ResizeImageJPanel_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package FileWrapperUtil_Package renames Standard.org.allbinary.logic.io.file.FileWrapperUtil_Package;
-   package ImagePersistanceUtil_Package renames Standard.org.allbinary.media.image.ImagePersistanceUtil_Package;
    package ImageProcessorInput_Package renames Standard.org.allbinary.media.image.ImageProcessorInput_Package;
    package ImageProcessorInputCompositeInterface_Package renames Standard.org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
-   package ImageUtil_Package renames Standard.org.allbinary.media.image.ImageUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ResizeImageJPanel is tagged;
    type ResizeImageJPanel_Access is access all ResizeImageJPanel'Class;
    type ResizeImageJPanel_Access_Array is array (Natural range <>) of ResizeImageJPanel_Access;
    type ResizeImageJPanel_Access_Array_Access is access all ResizeImageJPanel_Access_Array;
+   type ResizeImageJPanel_Access_Array_Access_Array is array (Natural range <>) of ResizeImageJPanel_Access_Array_Access;
+   type ResizeImageJPanel_Access_Array_Access_Array_Access is access all ResizeImageJPanel_Access_Array_Access_Array;
 
    type ResizeImageJPanel is new JPanel and ImageProcessorInputCompositeInterface with record
       logUtil : LogUtil_Access;

@@ -9,27 +9,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.configuration.ApplicationConfiguration_Package is
 
    package Feature_Package renames Standard.org.allbinary.game.configuration.feature.Feature_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ApplicationConfiguration is tagged;
    type ApplicationConfiguration_Access is access all ApplicationConfiguration'Class;
    type ApplicationConfiguration_Access_Array is array (Natural range <>) of ApplicationConfiguration_Access;
    type ApplicationConfiguration_Access_Array_Access is access all ApplicationConfiguration_Access_Array;
+   type ApplicationConfiguration_Access_Array_Access_Array is array (Natural range <>) of ApplicationConfiguration_Access_Array_Access;
+   type ApplicationConfiguration_Access_Array_Access_Array_Access is access all ApplicationConfiguration_Access_Array_Access_Array;
 
    type ApplicationConfiguration is new Java_Object with record
       logUtil : LogUtil_Access;

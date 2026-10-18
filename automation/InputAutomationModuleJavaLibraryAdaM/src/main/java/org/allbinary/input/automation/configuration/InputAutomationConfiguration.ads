@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 --  with javax.xml.bind.JAXBContext_Package; use javax.xml.bind.JAXBContext_Package;
 --  with javax.xml.bind.Marshaller_Package; use javax.xml.bind.Marshaller_Package;
@@ -29,32 +29,19 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.xml.bind.annotation.XmlElement_Package; use javax.xml.bind.annotation.XmlElement_Package;
 --  with javax.xml.bind.annotation.XmlRootElement_Package; use javax.xml.bind.annotation.XmlRootElement_Package;
 --  with javax.xml.bind.annotation.XmlType_Package; use javax.xml.bind.annotation.XmlType_Package;
-with org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package;
-with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.file.FileUtil_Package; use org.allbinary.logic.io.file.FileUtil_Package;
-with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
-with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package is
 
-   package DomDocumentFileHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package;
-   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+   package File_Package renames Standard.java.io.File_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
-   package FileWrapperUtil_Package renames Standard.org.allbinary.logic.io.file.FileWrapperUtil_Package;
-   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type InputAutomationConfiguration is tagged;
    type InputAutomationConfiguration_Access is access all InputAutomationConfiguration'Class;
    type InputAutomationConfiguration_Access_Array is array (Natural range <>) of InputAutomationConfiguration_Access;
    type InputAutomationConfiguration_Access_Array_Access is access all InputAutomationConfiguration_Access_Array;
+   type InputAutomationConfiguration_Access_Array_Access_Array is array (Natural range <>) of InputAutomationConfiguration_Access_Array_Access;
+   type InputAutomationConfiguration_Access_Array_Access_Array_Access is access all InputAutomationConfiguration_Access_Array_Access_Array;
 
    type InputAutomationConfiguration is new Java_Object with record
       logUtil : LogUtil_Access;

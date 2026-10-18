@@ -30,6 +30,8 @@ package org.allbinary.media.audio.GameBeginSound_Package is
    type GameBeginSound_Access is access all GameBeginSound'Class;
    type GameBeginSound_Access_Array is array (Natural range <>) of GameBeginSound_Access;
    type GameBeginSound_Access_Array_Access is access all GameBeginSound_Access_Array;
+   type GameBeginSound_Access_Array_Access_Array is array (Natural range <>) of GameBeginSound_Access_Array_Access;
+   type GameBeginSound_Access_Array_Access_Array_Access is access all GameBeginSound_Access_Array_Access_Array;
 
    type GameBeginSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

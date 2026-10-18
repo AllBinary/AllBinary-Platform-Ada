@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.style.css.property.color.background.Bac
    type BackgroundColorData_Access is access all BackgroundColorData'Class;
    type BackgroundColorData_Access_Array is array (Natural range <>) of BackgroundColorData_Access;
    type BackgroundColorData_Access_Array_Access is access all BackgroundColorData_Access_Array;
+   type BackgroundColorData_Access_Array_Access_Array is array (Natural range <>) of BackgroundColorData_Access_Array_Access;
+   type BackgroundColorData_Access_Array_Access_Array_Access is access all BackgroundColorData_Access_Array_Access_Array;
 
    type BackgroundColorData is new Java_Object with record
       VALUE : Unbounded_String;

@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package;
+
 package body org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
    procedure Initialize_Fields (This : in out CssElementsValidationFactory'Class) is
    begin
       null;
@@ -43,14 +53,14 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFac
       cssValidationInterface : ValidationInterface_Access;
       index : Integer;
    begin
-        styles := BasicArrayListD_Package.Create;
+        styles := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := cssElementStyleNodeList.size;
         cssElementStyleNode := null;
         cssValidationInterface := null;
         for index in 0 .. (size) - 1 loop
             cssElementStyleNode := Node_Access (cssElementStyleNodeList.get (index));
             cssValidationInterface := ValidationInterface_Access (CssElementValidationFactory_Package.getInstance (cssElementStyleNode));
-            styles.add (cssValidationInterface);
+            styles.add (Java_Object_Access (cssValidationInterface));
         end loop;
         return styles;
    end getInstance;
@@ -59,7 +69,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFac
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       styles : BasicArrayList_Access;
    begin
-        styles := BasicArrayListD_Package.Create;
+        styles := BasicArrayList_Access (BasicArrayListD_Package.Create);
         return styles;
    end getInstance;
 

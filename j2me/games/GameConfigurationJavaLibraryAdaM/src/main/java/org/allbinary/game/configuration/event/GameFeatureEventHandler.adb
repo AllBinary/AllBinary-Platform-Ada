@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package; use org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
+with org.allbinary.game.configuration.event.GameFeatureEvent_Package; use org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+
 package body org.allbinary.game.configuration.event.GameFeatureEventHandler_Package is
 
    procedure Initialize_Fields (This : in out GameFeatureEventHandler'Class) is

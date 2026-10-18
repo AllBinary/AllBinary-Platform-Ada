@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
+with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
+with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
+with org.allbinary.animation.image.AlphaProcessor_Package; use org.allbinary.animation.image.AlphaProcessor_Package;
+
 package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package is
 
+   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
+   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
+   package CanvasImage_Package renames Standard.playn.core.CanvasImage_Package;
    procedure Initialize_Fields (This : in out AllBinaryHTMLImageRotationAnimation'Class) is
    begin
       null;

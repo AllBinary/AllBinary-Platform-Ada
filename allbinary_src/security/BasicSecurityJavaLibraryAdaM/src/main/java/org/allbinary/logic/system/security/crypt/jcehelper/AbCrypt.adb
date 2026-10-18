@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.bouncycastle.jce.provider.BouncyCastleProvider_Package; use org.bouncycastle.jce.provider.BouncyCastleProvider_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
+with org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package; use org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package;
+
 package body org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BouncyCastleProvider_Package renames Standard.org.bouncycastle.jce.provider.BouncyCastleProvider_Package;
    procedure Initialize_Fields (This : in out AbCrypt'Class) is
    begin
       null;
@@ -62,7 +73,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package
             keyFactory := SecretKeyFactory_Package.getInstance (This.algorithm);
             secretKey := keyFactory.generateSecret (keySpec);
             cipher := Cipher_Package.getInstance (This.algorithm);
-            This.secretComposite := SecretComposite_Package.Create (secretKey, cipher, key);
+            This.secretComposite := BaseSecretComposite_Access (SecretComposite_Package.Create (secretKey, cipher, key));
         exception
             when Java_Occurrence : others =>
                 declare

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.image.ScaleBaseProcessor_Package is
 
    procedure Initialize_Fields (This : in out ScaleBaseProcessor'Class) is

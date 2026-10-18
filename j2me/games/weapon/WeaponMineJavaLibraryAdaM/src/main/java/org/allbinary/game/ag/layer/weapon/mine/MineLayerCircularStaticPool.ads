@@ -22,8 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package; use org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
 with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.view.ViewPositionFactoryInterface_Package;
-with org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package;
-with org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package; use org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package;
 
 package org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Package is
 
@@ -34,6 +32,8 @@ package org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Pack
    type MineLayerCircularStaticPool_Access is access all MineLayerCircularStaticPool'Class;
    type MineLayerCircularStaticPool_Access_Array is array (Natural range <>) of MineLayerCircularStaticPool_Access;
    type MineLayerCircularStaticPool_Access_Array_Access is access all MineLayerCircularStaticPool_Access_Array;
+   type MineLayerCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of MineLayerCircularStaticPool_Access_Array_Access;
+   type MineLayerCircularStaticPool_Access_Array_Access_Array_Access is access all MineLayerCircularStaticPool_Access_Array_Access_Array;
 
    type MineLayerCircularStaticPool is new Java_Object with null record;
    WEAPON_LAYER_CIRCULAR_STATIC_POOL : WeaponLayerCircularPool_Access;

@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package is
 
@@ -33,6 +32,8 @@ package org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_P
    type CssElementValidationFactory_Access is access all CssElementValidationFactory'Class;
    type CssElementValidationFactory_Access_Array is array (Natural range <>) of CssElementValidationFactory_Access;
    type CssElementValidationFactory_Access_Array_Access is access all CssElementValidationFactory_Access_Array;
+   type CssElementValidationFactory_Access_Array_Access_Array is array (Natural range <>) of CssElementValidationFactory_Access_Array_Access;
+   type CssElementValidationFactory_Access_Array_Access_Array_Access is access all CssElementValidationFactory_Access_Array_Access_Array;
 
    type CssElementValidationFactory is new Java_Object with null record;
 

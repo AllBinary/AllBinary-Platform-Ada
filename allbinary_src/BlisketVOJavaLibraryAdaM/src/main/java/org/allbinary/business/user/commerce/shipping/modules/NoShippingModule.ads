@@ -35,8 +35,10 @@ package org.allbinary.business.user.commerce.shipping.modules.NoShippingModule_P
    type NoShippingModule_Access is access all NoShippingModule'Class;
    type NoShippingModule_Access_Array is array (Natural range <>) of NoShippingModule_Access;
    type NoShippingModule_Access_Array_Access is access all NoShippingModule_Access_Array;
+   type NoShippingModule_Access_Array_Access_Array is array (Natural range <>) of NoShippingModule_Access_Array_Access;
+   type NoShippingModule_Access_Array_Access_Array_Access is access all NoShippingModule_Access_Array_Access_Array;
 
-   type NoShippingModule is new ShippingInterface with record
+   type NoShippingModule is new Java_Object and ShippingInterface with record
       commonStrings : CommonStrings_Access;
       name : Unbounded_String;
       description : Unbounded_String;

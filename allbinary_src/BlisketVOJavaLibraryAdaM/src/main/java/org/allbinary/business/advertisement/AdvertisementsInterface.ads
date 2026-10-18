@@ -29,6 +29,8 @@ package org.allbinary.business.advertisement.AdvertisementsInterface_Package is
    type AdvertisementsInterface_Access is access all AdvertisementsInterface'Class;
    type AdvertisementsInterface_Access_Array is array (Natural range <>) of AdvertisementsInterface_Access;
    type AdvertisementsInterface_Access_Array_Access is access all AdvertisementsInterface_Access_Array;
+   type AdvertisementsInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementsInterface_Access_Array_Access;
+   type AdvertisementsInterface_Access_Array_Access_Array_Access is access all AdvertisementsInterface_Access_Array_Access_Array;
    procedure add (This : in out AdvertisementsInterface; advertisementInterface_Param : access AdvertisementInterface_Package.AdvertisementInterface'Class) is abstract;
    function get (This : in out AdvertisementsInterface; index : Integer) return AdvertisementInterface_Access is abstract;
    function getCurrentPageNum (This : in out AdvertisementsInterface) return Integer is abstract;

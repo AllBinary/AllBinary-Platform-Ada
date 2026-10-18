@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
+with bundle.input.automation.InputAutomationBundleActivator_Package; use bundle.input.automation.InputAutomationBundleActivator_Package;
+with org.allbinary.gui.dialog.BasicTextJDialog_Package; use org.allbinary.gui.dialog.BasicTextJDialog_Package;
+with org.allbinary.input.automation.osgi.JDialog_Package; use org.allbinary.input.automation.osgi.JDialog_Package;
+
 package body org.allbinary.input.automation.osgi.DesktopBundle_Package is
 
+   package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
+   package InputAutomationBundleActivator_Package renames Standard.bundle.input.automation.InputAutomationBundleActivator_Package;
+   package BasicTextJDialog_Package renames Standard.org.allbinary.gui.dialog.BasicTextJDialog_Package;
    procedure Initialize_Fields (This : in out DesktopBundle'Class) is
    begin
       null;
@@ -42,7 +50,7 @@ package body org.allbinary.input.automation.osgi.DesktopBundle_Package is
                 end if;
             end loop;
         else
-            textJDialog := BasicTextJDialog_Package.Create (To_Unbounded_String ("BundlContext is Null"));
+            textJDialog := JDialog_Access (BasicTextJDialog_Package.Create (To_Unbounded_String ("BundlContext is Null")));
             textJDialog.setVisible (True);
         end if;
    end Initialize;

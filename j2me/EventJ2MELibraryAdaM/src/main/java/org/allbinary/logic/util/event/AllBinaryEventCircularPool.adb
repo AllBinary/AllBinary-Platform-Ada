@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
+
 package body org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package is
 
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
    procedure Initialize_Fields (This : in out AllBinaryEventCircularPool'Class) is
    begin
       null;

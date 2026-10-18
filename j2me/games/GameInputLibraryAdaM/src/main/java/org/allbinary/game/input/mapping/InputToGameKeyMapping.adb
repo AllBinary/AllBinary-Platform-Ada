@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
 
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out InputToGameKeyMapping'Class) is
    begin
       null;
@@ -126,13 +143,13 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
       input : Input_Access;
       index : Integer;
    begin
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         inputFactory := InputFactory_Package.getInstance;
         for index in 0 .. (This.platformToGameKeyMapping'Length) - 1 loop
             if (This.platformToGameKeyMapping (index).getId) = (id) then
                 input := inputFactory.getInstanceById (index);
                 if (input) /= (null) then
-                    list.add (input);
+                    list.add (Java_Object_Access (input));
                 end if;
             end if;
         end loop;

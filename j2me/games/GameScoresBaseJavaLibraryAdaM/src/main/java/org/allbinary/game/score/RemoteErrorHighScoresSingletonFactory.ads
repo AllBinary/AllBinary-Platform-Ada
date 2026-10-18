@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 
 package org.allbinary.game.score.RemoteErrorHighScoresSingletonFactory_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type RemoteErrorHighScoresSingletonFactory is tagged;
    type RemoteErrorHighScoresSingletonFactory_Access is access all RemoteErrorHighScoresSingletonFactory'Class;
    type RemoteErrorHighScoresSingletonFactory_Access_Array is array (Natural range <>) of RemoteErrorHighScoresSingletonFactory_Access;
    type RemoteErrorHighScoresSingletonFactory_Access_Array_Access is access all RemoteErrorHighScoresSingletonFactory_Access_Array;
+   type RemoteErrorHighScoresSingletonFactory_Access_Array_Access_Array is array (Natural range <>) of RemoteErrorHighScoresSingletonFactory_Access_Array_Access;
+   type RemoteErrorHighScoresSingletonFactory_Access_Array_Access_Array_Access is access all RemoteErrorHighScoresSingletonFactory_Access_Array_Access_Array;
 
    type RemoteErrorHighScoresSingletonFactory is new Java_Object with null record;
    SINGLETON : HighScores_Access;

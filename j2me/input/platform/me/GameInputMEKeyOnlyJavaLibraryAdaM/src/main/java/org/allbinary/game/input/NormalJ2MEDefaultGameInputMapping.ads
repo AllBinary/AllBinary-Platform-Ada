@@ -20,21 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
-with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 
 package org.allbinary.game.input.NormalJ2MEDefaultGameInputMapping_Package is
 
-   package GamePersistanceStrings_Package renames Standard.org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
-   package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
    package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
 
    type NormalJ2MEDefaultGameInputMapping is tagged;
    type NormalJ2MEDefaultGameInputMapping_Access is access all NormalJ2MEDefaultGameInputMapping'Class;
    type NormalJ2MEDefaultGameInputMapping_Access_Array is array (Natural range <>) of NormalJ2MEDefaultGameInputMapping_Access;
    type NormalJ2MEDefaultGameInputMapping_Access_Array_Access is access all NormalJ2MEDefaultGameInputMapping_Access_Array;
+   type NormalJ2MEDefaultGameInputMapping_Access_Array_Access_Array is array (Natural range <>) of NormalJ2MEDefaultGameInputMapping_Access_Array_Access;
+   type NormalJ2MEDefaultGameInputMapping_Access_Array_Access_Array_Access is access all NormalJ2MEDefaultGameInputMapping_Access_Array_Access_Array;
 
    type NormalJ2MEDefaultGameInputMapping is new PersistentInputMapping with null record;
 

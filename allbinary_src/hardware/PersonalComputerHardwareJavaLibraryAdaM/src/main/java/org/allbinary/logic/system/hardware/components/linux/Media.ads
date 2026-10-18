@@ -32,8 +32,10 @@ package org.allbinary.logic.system.hardware.components.linux.Media_Package is
    type Media_Access is access all Media'Class;
    type Media_Access_Array is array (Natural range <>) of Media_Access;
    type Media_Access_Array_Access is access all Media_Access_Array;
+   type Media_Access_Array_Access_Array is array (Natural range <>) of Media_Access_Array_Access;
+   type Media_Access_Array_Access_Array_Access is access all Media_Access_Array_Access_Array;
 
-   type Media is new HardwareComponentInterface and MediaInterface with record
+   type Media is new Java_Object and HardwareComponentInterface and MediaInterface with record
       data : Unbounded_String;
    end record;
 

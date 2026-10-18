@@ -21,23 +21,21 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 
 package org.allbinary.layer.BasicLayerProcessor_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicLayerProcessor is tagged;
    type BasicLayerProcessor_Access is access all BasicLayerProcessor'Class;
    type BasicLayerProcessor_Access_Array is array (Natural range <>) of BasicLayerProcessor_Access;
    type BasicLayerProcessor_Access_Array_Access is access all BasicLayerProcessor_Access_Array;
+   type BasicLayerProcessor_Access_Array_Access_Array is array (Natural range <>) of BasicLayerProcessor_Access_Array_Access;
+   type BasicLayerProcessor_Access_Array_Access_Array_Access is access all BasicLayerProcessor_Access_Array_Access_Array;
 
    type BasicLayerProcessor is new Java_Object with record
       logUtil : LogUtil_Access;

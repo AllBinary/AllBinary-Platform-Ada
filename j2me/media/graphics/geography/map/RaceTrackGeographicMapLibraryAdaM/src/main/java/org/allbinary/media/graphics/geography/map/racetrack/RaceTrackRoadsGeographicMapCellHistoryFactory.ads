@@ -30,6 +30,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeogr
    type RaceTrackRoadsGeographicMapCellHistoryFactory_Access is access all RaceTrackRoadsGeographicMapCellHistoryFactory'Class;
    type RaceTrackRoadsGeographicMapCellHistoryFactory_Access_Array is array (Natural range <>) of RaceTrackRoadsGeographicMapCellHistoryFactory_Access;
    type RaceTrackRoadsGeographicMapCellHistoryFactory_Access_Array_Access is access all RaceTrackRoadsGeographicMapCellHistoryFactory_Access_Array;
+   type RaceTrackRoadsGeographicMapCellHistoryFactory_Access_Array_Access_Array is array (Natural range <>) of RaceTrackRoadsGeographicMapCellHistoryFactory_Access_Array_Access;
+   type RaceTrackRoadsGeographicMapCellHistoryFactory_Access_Array_Access_Array_Access is access all RaceTrackRoadsGeographicMapCellHistoryFactory_Access_Array_Access_Array;
 
    type RaceTrackRoadsGeographicMapCellHistoryFactory is new Java_Object with null record;
    geographicMapCellHistory : GeographicMapCellHistory_Access;

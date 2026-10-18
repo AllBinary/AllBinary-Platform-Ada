@@ -32,6 +32,8 @@ package org.allbinary.logic.io.AbDataOutputStream_Package is
    type AbDataOutputStream_Access is access all AbDataOutputStream'Class;
    type AbDataOutputStream_Access_Array is array (Natural range <>) of AbDataOutputStream_Access;
    type AbDataOutputStream_Access_Array_Access is access all AbDataOutputStream_Access_Array;
+   type AbDataOutputStream_Access_Array_Access_Array is array (Natural range <>) of AbDataOutputStream_Access_Array_Access;
+   type AbDataOutputStream_Access_Array_Access_Array_Access is access all AbDataOutputStream_Access_Array_Access_Array;
 
    type AbDataOutputStream is new DataOutputStream with null record;
 

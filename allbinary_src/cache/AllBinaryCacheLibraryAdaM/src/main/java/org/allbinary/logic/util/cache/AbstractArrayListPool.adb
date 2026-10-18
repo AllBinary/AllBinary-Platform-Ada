@@ -13,13 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.logic.util.cache.AbstractArrayListPool_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out AbstractArrayListPool'Class) is
    begin
       null;
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.buffers := BasicArrayListD_Package.Create;
+      This.buffers := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
    end Initialize_Fields;
 
@@ -56,7 +59,7 @@ package body org.allbinary.logic.util.cache.AbstractArrayListPool_Package is
    procedure add (This : in out AbstractArrayListPool; cacheableInterface_Param : access CacheableInterface_Package.CacheableInterface'Class) is
       cacheableInterface : constant CacheableInterface_Access := CacheableInterface_Access (cacheableInterface_Param);
    begin
-        This.buffers.add (cacheableInterface);
+        This.buffers.add (Java_Object_Access (cacheableInterface));
    end add;
 
    --  throws Exception
@@ -70,6 +73,18 @@ package body org.allbinary.logic.util.cache.AbstractArrayListPool_Package is
 
    procedure remove (This : in out AbstractArrayListPool; key_Param : access Java_Object'Class) is
       Java_Result : constant CacheableInterface_Access := AbstractArrayListPool'Class (This).remove (key_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end remove;
+
+   function remove (This : in out AbstractArrayListPool; Value : Unbounded_String) return CacheableInterface_Access is
+   begin
+      return AbstractArrayListPool'Class (This).remove (Java_Box (Value));
+   end remove;
+
+   procedure remove (This : in out AbstractArrayListPool; Value : Unbounded_String) is
+      Java_Result : constant CacheableInterface_Access := AbstractArrayListPool'Class (This).remove (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

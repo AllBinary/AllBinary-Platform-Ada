@@ -31,8 +31,10 @@ package org.allbinary.business.advertisement.image.AdvertisementImage_Package is
    type AdvertisementImage_Access is access all AdvertisementImage'Class;
    type AdvertisementImage_Access_Array is array (Natural range <>) of AdvertisementImage_Access;
    type AdvertisementImage_Access_Array_Access is access all AdvertisementImage_Access_Array;
+   type AdvertisementImage_Access_Array_Access_Array is array (Natural range <>) of AdvertisementImage_Access_Array_Access;
+   type AdvertisementImage_Access_Array_Access_Array_Access is access all AdvertisementImage_Access_Array_Access_Array;
 
-   type AdvertisementImage is new AdvertisementImageInterface with record
+   type AdvertisementImage is new Java_Object and AdvertisementImageInterface with record
       imageFileName : Unbounded_String;
       imageUrl : Unbounded_String;
       constraint : TwoDimensionalConstraintInterface_Access;

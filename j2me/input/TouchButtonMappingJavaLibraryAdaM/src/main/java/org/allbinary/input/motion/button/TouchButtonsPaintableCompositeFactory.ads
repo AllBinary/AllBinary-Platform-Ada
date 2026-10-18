@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.mapping.InputMappingInterface_Package; use org.allbinary.game.input.mapping.InputMappingInterface_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.paint.ProcessPaintable_Package; use org.allbinary.graphics.paint.ProcessPaintable_Package;
-with org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package; use org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package;
 
 package org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFactory_Package is
 
@@ -35,6 +34,8 @@ package org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFactory_
    type TouchButtonsPaintableCompositeFactory_Access is access all TouchButtonsPaintableCompositeFactory'Class;
    type TouchButtonsPaintableCompositeFactory_Access_Array is array (Natural range <>) of TouchButtonsPaintableCompositeFactory_Access;
    type TouchButtonsPaintableCompositeFactory_Access_Array_Access is access all TouchButtonsPaintableCompositeFactory_Access_Array;
+   type TouchButtonsPaintableCompositeFactory_Access_Array_Access_Array is array (Natural range <>) of TouchButtonsPaintableCompositeFactory_Access_Array_Access;
+   type TouchButtonsPaintableCompositeFactory_Access_Array_Access_Array_Access is access all TouchButtonsPaintableCompositeFactory_Access_Array_Access_Array;
 
    type TouchButtonsPaintableCompositeFactory is new Java_Object with null record;
 

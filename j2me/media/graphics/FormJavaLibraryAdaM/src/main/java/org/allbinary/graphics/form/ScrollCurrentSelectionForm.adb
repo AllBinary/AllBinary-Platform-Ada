@@ -13,13 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+
 package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
 
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out ScrollCurrentSelectionForm'Class) is
    begin
       null;
       
-      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access));
+      This.updateMyFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
       This.myFontProcessor := This.updateMyFontProcessor;
       This.processor := Processor_Package.getInstance;
       This.preItemIndexDx := ItemIndexDx_Package.getInstance;
@@ -55,14 +59,14 @@ package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
         ScrollSelectionForm (This).init (rectangle, formType);
         formTypeFactory := FormTypeFactory_Package.getInstance;
         if (formType) = (formTypeFactory.TEMP_HORIZONTAL_FORM) then
-            This.processor := TempHorizontalFormProcessor_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access));
-            This.preItemIndexDx := TempHorizontalItemIndexDx_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access));
+            This.processor := Processor_Access (TempHorizontalFormProcessor_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
+            This.preItemIndexDx := ItemIndexDx_Access (TempHorizontalItemIndexDx_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
         elsif (formType) = (formTypeFactory.HORIZONTAL_FORM) then
-            This.processor := HorizontalFormProcessor_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access));
-            This.preItemIndexDx := HorizontalItemIndexDx_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access));
+            This.processor := Processor_Access (HorizontalFormProcessor_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
+            This.preItemIndexDx := ItemIndexDx_Access (HorizontalItemIndexDx_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
         elsif (formType) = (formTypeFactory.VERTICAL_CENTER_FORM) then
-            This.processor := VerticalFormProcessor_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access));
-            This.preItemIndexDx := VerticalItemIndexDx_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access));
+            This.processor := Processor_Access (VerticalFormProcessor_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
+            This.preItemIndexDx := ItemIndexDx_Access (VerticalItemIndexDx_Package.Create (ScrollCurrentSelectionForm_Access'(This'Unchecked_Access)));
         elsif (formType) = (formTypeFactory.NULL_FORM_TYPE) then
             null;
         else
@@ -252,8 +256,12 @@ package body org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
 end org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
 
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+
 package body org.allbinary.graphics.form.TempHorizontalFormProcessor_Package is
 
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out TempHorizontalFormProcessor'Class) is
    begin
       null;
@@ -286,8 +294,12 @@ package body org.allbinary.graphics.form.TempHorizontalFormProcessor_Package is
 end org.allbinary.graphics.form.TempHorizontalFormProcessor_Package;
 
 
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+
 package body org.allbinary.graphics.form.HorizontalFormProcessor_Package is
 
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out HorizontalFormProcessor'Class) is
    begin
       null;
@@ -320,8 +332,12 @@ package body org.allbinary.graphics.form.HorizontalFormProcessor_Package is
 end org.allbinary.graphics.form.HorizontalFormProcessor_Package;
 
 
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+
 package body org.allbinary.graphics.form.VerticalFormProcessor_Package is
 
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out VerticalFormProcessor'Class) is
    begin
       null;
@@ -354,8 +370,12 @@ package body org.allbinary.graphics.form.VerticalFormProcessor_Package is
 end org.allbinary.graphics.form.VerticalFormProcessor_Package;
 
 
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+
 package body org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package is
 
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out TempHorizontalItemIndexDx'Class) is
    begin
       null;
@@ -395,8 +415,12 @@ package body org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package is
 end org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package;
 
 
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+
 package body org.allbinary.graphics.form.HorizontalItemIndexDx_Package is
 
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out HorizontalItemIndexDx'Class) is
    begin
       null;
@@ -436,8 +460,12 @@ package body org.allbinary.graphics.form.HorizontalItemIndexDx_Package is
 end org.allbinary.graphics.form.HorizontalItemIndexDx_Package;
 
 
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+
 package body org.allbinary.graphics.form.VerticalItemIndexDx_Package is
 
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out VerticalItemIndexDx'Class) is
    begin
       null;

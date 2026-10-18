@@ -32,6 +32,8 @@ package org.allbinary.graphics.paint.PaintableComposite_Package is
    type PaintableComposite_Access is access all PaintableComposite'Class;
    type PaintableComposite_Access_Array is array (Natural range <>) of PaintableComposite_Access;
    type PaintableComposite_Access_Array_Access is access all PaintableComposite_Access_Array;
+   type PaintableComposite_Access_Array_Access_Array is array (Natural range <>) of PaintableComposite_Access_Array_Access;
+   type PaintableComposite_Access_Array_Access_Array_Access is access all PaintableComposite_Access_Array_Access_Array;
 
    type PaintableComposite is new Paintable with record
       paintableArray : PaintableInterface_Access_Array_Access;

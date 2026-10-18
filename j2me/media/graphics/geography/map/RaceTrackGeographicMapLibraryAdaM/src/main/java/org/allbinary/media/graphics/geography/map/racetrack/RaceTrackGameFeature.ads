@@ -30,6 +30,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGameFeatur
    type RaceTrackGameFeature_Access is access all RaceTrackGameFeature'Class;
    type RaceTrackGameFeature_Access_Array is array (Natural range <>) of RaceTrackGameFeature_Access;
    type RaceTrackGameFeature_Access_Array_Access is access all RaceTrackGameFeature_Access_Array;
+   type RaceTrackGameFeature_Access_Array_Access_Array is array (Natural range <>) of RaceTrackGameFeature_Access_Array_Access;
+   type RaceTrackGameFeature_Access_Array_Access_Array_Access is access all RaceTrackGameFeature_Access_Array_Access_Array;
 
    type RaceTrackGameFeature is new GameFeature with null record;
    MINI_MAP : GameFeature_Access;

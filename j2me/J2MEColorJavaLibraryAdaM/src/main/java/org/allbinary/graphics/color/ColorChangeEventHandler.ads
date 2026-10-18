@@ -30,6 +30,8 @@ package org.allbinary.graphics.color.ColorChangeEventHandler_Package is
    type ColorChangeEventHandler_Access is access all ColorChangeEventHandler'Class;
    type ColorChangeEventHandler_Access_Array is array (Natural range <>) of ColorChangeEventHandler_Access;
    type ColorChangeEventHandler_Access_Array_Access is access all ColorChangeEventHandler_Access_Array;
+   type ColorChangeEventHandler_Access_Array_Access_Array is array (Natural range <>) of ColorChangeEventHandler_Access_Array_Access;
+   type ColorChangeEventHandler_Access_Array_Access_Array_Access is access all ColorChangeEventHandler_Access_Array_Access_Array;
 
    type ColorChangeEventHandler is new BasicEventHandler with null record;
    eventHandler : ColorChangeEventHandler_Access;

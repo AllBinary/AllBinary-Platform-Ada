@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with bundle.input.automation.module.InputAutomationModuleService_Package; use bundle.input.automation.module.InputAutomationModuleService_Package;
+
 package body org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package is
 
+   package InputAutomationModuleService_Package renames Standard.bundle.input.automation.module.InputAutomationModuleService_Package;
    procedure Initialize_Fields (This : in out InputAutomationModuleServiceFactory'Class) is
    begin
       null;
@@ -42,7 +45,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleSer
       registration : constant ServiceRegistration_Access := ServiceRegistration_Access (registration_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationModuleServiceFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getService"));
-        return InputAutomationModuleService_Package.Create (InputAutomationModuleServiceFactory'Class (This).getInputAutomationModuleInterfaceArray);
+        return Java_Object_Access (InputAutomationModuleService_Package.Create (InputAutomationModuleServiceFactory'Class (This).getInputAutomationModuleInterfaceArray));
    end getService;
 
    procedure ungetService (This : in out InputAutomationModuleServiceFactory; bundle_Param : access Bundle_Package.Bundle'Class; registration_Param : access ServiceRegistration_Package.ServiceRegistration'Class; service_Param : access Java_Object'Class) is

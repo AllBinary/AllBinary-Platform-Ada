@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
-with org.allbinary.logic.system.loader.AbeFactory_Package; use org.allbinary.logic.system.loader.AbeFactory_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
 
@@ -30,13 +29,14 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
 
    package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
    package UserEmailEventListenerInterface_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
-   package AbeFactory_Package renames Standard.org.allbinary.logic.system.loader.AbeFactory_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type UserEmailEventListenerFactory is tagged;
    type UserEmailEventListenerFactory_Access is access all UserEmailEventListenerFactory'Class;
    type UserEmailEventListenerFactory_Access_Array is array (Natural range <>) of UserEmailEventListenerFactory_Access;
    type UserEmailEventListenerFactory_Access_Array_Access is access all UserEmailEventListenerFactory_Access_Array;
+   type UserEmailEventListenerFactory_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventListenerFactory_Access_Array_Access;
+   type UserEmailEventListenerFactory_Access_Array_Access_Array_Access is access all UserEmailEventListenerFactory_Access_Array_Access_Array;
 
    type UserEmailEventListenerFactory is new Java_Object with null record;
 

@@ -22,22 +22,19 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
-with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package; use org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
 
 package org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Package is
 
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type ArtificialIntelligenceInterfaceFactoryInterfaceFactory is tagged;
    type ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access is access all ArtificialIntelligenceInterfaceFactoryInterfaceFactory'Class;
    type ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access_Array is array (Natural range <>) of ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access;
    type ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access_Array_Access is access all ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access_Array;
+   type ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access_Array_Access;
+   type ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access_Array_Access_Array_Access is access all ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access_Array_Access_Array;
 
    type ArtificialIntelligenceInterfaceFactoryInterfaceFactory is new Java_Object with record
       list : BasicArrayList_Access;

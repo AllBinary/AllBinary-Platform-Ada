@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.java.anyType.ConstructorUtil_Package; use org.allbinary.logic.java.anyType.ConstructorUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.system.security.AbKeys_Package; use org.allbinary.logic.system.security.AbKeys_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
+with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
+with org.allbinary.logic.system.loader.AbeClassLoader_Package; use org.allbinary.logic.system.loader.AbeClassLoader_Package;
+
 package body org.allbinary.logic.system.loader.AbeFactory_Package is
 
+   package ConstructorUtil_Package renames Standard.org.allbinary.logic.java.anyType.ConstructorUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AbKeys_Package renames Standard.org.allbinary.logic.system.security.AbKeys_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out AbeFactory'Class) is
    begin
       null;
@@ -73,7 +87,7 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
         begin
             parent := WebappClassLoaderInfo_Package.getLoader;
             if This.useCustomLoader then
-                loader := AbeClassLoader_Package.Create (parent, AbKeys_Package.getInstance.getKey (abeClientInformation, className));
+                loader := ClassLoader_Access (AbeClassLoader_Package.Create (parent, AbKeys_Package.getInstance.getKey (abeClientInformation, className)));
                 myClass := loader.loadClass (className);
                 constructor := myClass.getConstructor (classes);
                 return constructor.newInstance (params);
@@ -110,7 +124,7 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
         begin
             parent := WebappClassLoaderInfo_Package.getLoader;
             if This.useCustomLoader then
-                loader := AbeClassLoader_Package.Create (parent, AbKeys_Package.getInstance.getKey (abeClientInformation, className));
+                loader := ClassLoader_Access (AbeClassLoader_Package.Create (parent, AbKeys_Package.getInstance.getKey (abeClientInformation, className)));
                 c := loader.loadClass (className);
                 return c;
             else

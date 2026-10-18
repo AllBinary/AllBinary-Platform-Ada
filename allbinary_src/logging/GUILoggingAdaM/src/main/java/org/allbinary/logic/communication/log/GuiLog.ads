@@ -22,9 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
-with org.allbinary.logic.communication.log.JDialog_Package; use org.allbinary.logic.communication.log.JDialog_Package;
-with org.allbinary.logic.communication.log.GridLayout_Package; use org.allbinary.logic.communication.log.GridLayout_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 
 package org.allbinary.logic.communication.log.GuiLog_Package is
 
@@ -34,6 +31,8 @@ package org.allbinary.logic.communication.log.GuiLog_Package is
    type GuiLog_Access is access all GuiLog'Class;
    type GuiLog_Access_Array is array (Natural range <>) of GuiLog_Access;
    type GuiLog_Access_Array_Access is access all GuiLog_Access_Array;
+   type GuiLog_Access_Array_Access_Array is array (Natural range <>) of GuiLog_Access_Array_Access;
+   type GuiLog_Access_Array_Access_Array_Access is access all GuiLog_Access_Array_Access_Array;
 
    type GuiLog is new Java_Object with record
       logFormatUtil : LogFormatUtil_Access;

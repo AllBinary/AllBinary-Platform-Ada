@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.form.item.ABTextItem_Package; use org.allbinary.graphics.form.item.ABTextItem_Package;
-with org.allbinary.graphics.form.item.ABStringComponent_Package; use org.allbinary.graphics.form.item.ABStringComponent_Package;
 
 package org.allbinary.graphics.form.item.SelectableTextItem_Package is
 
@@ -34,6 +33,8 @@ package org.allbinary.graphics.form.item.SelectableTextItem_Package is
    type SelectableTextItem_Access is access all SelectableTextItem'Class;
    type SelectableTextItem_Access_Array is array (Natural range <>) of SelectableTextItem_Access;
    type SelectableTextItem_Access_Array_Access is access all SelectableTextItem_Access_Array;
+   type SelectableTextItem_Access_Array_Access_Array is array (Natural range <>) of SelectableTextItem_Access_Array_Access;
+   type SelectableTextItem_Access_Array_Access_Array_Access is access all SelectableTextItem_Access_Array_Access_Array;
 
    type SelectableTextItem is new ABTextItem with null record;
 

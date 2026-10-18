@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package; use org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package;
 
 package org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PaymentGatewayEntityFactory is tagged;
    type PaymentGatewayEntityFactory_Access is access all PaymentGatewayEntityFactory'Class;
    type PaymentGatewayEntityFactory_Access_Array is array (Natural range <>) of PaymentGatewayEntityFactory_Access;
    type PaymentGatewayEntityFactory_Access_Array_Access is access all PaymentGatewayEntityFactory_Access_Array;
+   type PaymentGatewayEntityFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayEntityFactory_Access_Array_Access;
+   type PaymentGatewayEntityFactory_Access_Array_Access_Array_Access is access all PaymentGatewayEntityFactory_Access_Array_Access_Array;
 
    type PaymentGatewayEntityFactory is new Java_Object with null record;
 

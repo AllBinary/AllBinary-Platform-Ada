@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.gyro.OrientationData_Package is
 
    procedure Initialize_Fields (This : in out OrientationData'Class) is

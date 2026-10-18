@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory_Package;
+
 package body org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package is
 
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    procedure Initialize_Fields (This : in out CachingGeographicMapCellPositionFactory'Class) is
    begin
       null;

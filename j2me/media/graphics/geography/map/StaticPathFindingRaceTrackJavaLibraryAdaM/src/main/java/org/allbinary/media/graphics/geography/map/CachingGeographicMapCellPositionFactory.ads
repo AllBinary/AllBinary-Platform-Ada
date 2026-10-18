@@ -20,22 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
 package org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package is
 
-   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
-   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type CachingGeographicMapCellPositionFactory is tagged;
    type CachingGeographicMapCellPositionFactory_Access is access all CachingGeographicMapCellPositionFactory'Class;
    type CachingGeographicMapCellPositionFactory_Access_Array is array (Natural range <>) of CachingGeographicMapCellPositionFactory_Access;
    type CachingGeographicMapCellPositionFactory_Access_Array_Access is access all CachingGeographicMapCellPositionFactory_Access_Array;
+   type CachingGeographicMapCellPositionFactory_Access_Array_Access_Array is array (Natural range <>) of CachingGeographicMapCellPositionFactory_Access_Array_Access;
+   type CachingGeographicMapCellPositionFactory_Access_Array_Access_Array_Access is access all CachingGeographicMapCellPositionFactory_Access_Array_Access_Array;
 
    type CachingGeographicMapCellPositionFactory is new BasicGeographicMapCellPositionFactory with null record;
 

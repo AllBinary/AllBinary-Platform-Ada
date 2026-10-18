@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+
 package body views.generic_Id.inventory.InventoryColumnUtil_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    procedure Initialize_Fields (This : in out InventoryColumnUtil'Class) is
    begin
       null;
@@ -50,13 +57,13 @@ package body views.generic_Id.inventory.InventoryColumnUtil_Package is
       index : Integer;
    begin
         This.logUtil.putF (To_Unbounded_String ("Start Category: ") & category, InventoryColumnUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getKeywords"));
-        keywords := BasicArrayListD_Package.Create;
+        keywords := BasicArrayList_Access (BasicArrayListD_Package.Create);
         vectorOfHashMaps := inventoryEntity.getAllRows;
         size := vectorOfHashMaps.size;
         for index in 0 .. (size) - 1 loop
             hashMap := HashMap_Access (vectorOfHashMaps.get (index));
             categoryName := Java_Unbox (hashMap.get (This.basicItemData.CATEGORY));
-            if (not (StringValidationUtil_Package.getInstance.isEmpty (categoryName))) and then (categoryName.startsWith (category)) then
+            if (not (StringValidationUtil_Package.getInstance.isEmpty (categoryName))) and then (Java_Starts_With (categoryName, category)) then
                 keywords.add (hashMap.get (Java_Box (column)));
             end if;
         end loop;

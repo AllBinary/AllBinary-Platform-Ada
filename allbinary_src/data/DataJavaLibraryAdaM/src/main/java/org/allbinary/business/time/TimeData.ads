@@ -28,6 +28,8 @@ package org.allbinary.business.time.TimeData_Package is
    type TimeData_Access is access all TimeData'Class;
    type TimeData_Access_Array is array (Natural range <>) of TimeData_Access;
    type TimeData_Access_Array_Access is access all TimeData_Access_Array;
+   type TimeData_Access_Array_Access_Array is array (Natural range <>) of TimeData_Access_Array_Access;
+   type TimeData_Access_Array_Access_Array_Access is access all TimeData_Access_Array_Access_Array;
 
    type TimeData is new Java_Object with record
       NAME : Unbounded_String;

@@ -29,6 +29,8 @@ package org.allbinary.view.CenterViewPositionFactory_Package is
    type CenterViewPositionFactory_Access is access all CenterViewPositionFactory'Class;
    type CenterViewPositionFactory_Access_Array is array (Natural range <>) of CenterViewPositionFactory_Access;
    type CenterViewPositionFactory_Access_Array_Access is access all CenterViewPositionFactory_Access_Array;
+   type CenterViewPositionFactory_Access_Array_Access_Array is array (Natural range <>) of CenterViewPositionFactory_Access_Array_Access;
+   type CenterViewPositionFactory_Access_Array_Access_Array_Access is access all CenterViewPositionFactory_Access_Array_Access_Array;
 
    type CenterViewPositionFactory is new CenterStaticViewPositionFactory with null record;
 

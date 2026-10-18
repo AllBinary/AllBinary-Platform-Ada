@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.TouchFeatureFactory_Package; use org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
+with org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package; use org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package;
+with org.allbinary.graphics.form.CommandCurrentSelectionForm_Package; use org.allbinary.graphics.form.CommandCurrentSelectionForm_Package;
+
 package body org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Package is
 
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package TouchFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
    procedure Initialize_Fields (This : in out CommandCurrentSelectionFormFactory'Class) is
    begin
       null;
@@ -42,7 +49,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Pack
       scrollSelectionForm : ScrollSelectionForm_Access;
    begin
         if Features_Package.getInstance.isFeature (TouchFeatureFactory_Package.getInstance.TOUCH_ENABLED) then
-            scrollSelectionForm := CommandCurrentSelectionForm_Package.Create (title, items, border, moveForSmallScreen, backgroundBasicColor, foregroundBasicColor);
+            scrollSelectionForm := ScrollSelectionForm_Access (CommandCurrentSelectionForm_Package.Create (title, items, border, moveForSmallScreen, backgroundBasicColor, foregroundBasicColor));
             scrollSelectionForm.init (rectangle, formType);
             return scrollSelectionForm;
         else

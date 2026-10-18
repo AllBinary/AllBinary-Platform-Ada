@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.allbinary.logic.visual.transform.ContextTransformer_Package; use org.allbinary.logic.visual.transform.ContextTransformer_Package;
+with org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package; use org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package;
+
 package body views.business.context.HttpContextView_Package is
 
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package ContextTransformer_Package renames Standard.org.allbinary.logic.visual.transform.ContextTransformer_Package;
+   package TransformHttpRequestDocumentFactory_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package;
    procedure Initialize_Fields (This : in out HttpContextView'Class) is
    begin
       null;

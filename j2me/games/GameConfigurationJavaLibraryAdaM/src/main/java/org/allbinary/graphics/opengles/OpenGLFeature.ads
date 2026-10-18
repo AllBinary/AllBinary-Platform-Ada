@@ -30,6 +30,8 @@ package org.allbinary.graphics.opengles.OpenGLFeature_Package is
    type OpenGLFeature_Access is access all OpenGLFeature'Class;
    type OpenGLFeature_Access_Array is array (Natural range <>) of OpenGLFeature_Access;
    type OpenGLFeature_Access_Array_Access is access all OpenGLFeature_Access_Array;
+   type OpenGLFeature_Access_Array_Access_Array is array (Natural range <>) of OpenGLFeature_Access_Array_Access;
+   type OpenGLFeature_Access_Array_Access_Array_Access is access all OpenGLFeature_Access_Array_Access_Array;
 
    type OpenGLFeature is new Feature with null record;
 

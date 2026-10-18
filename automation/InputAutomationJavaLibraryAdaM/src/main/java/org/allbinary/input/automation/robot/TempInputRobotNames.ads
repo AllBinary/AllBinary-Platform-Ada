@@ -28,6 +28,8 @@ package org.allbinary.input.automation.robot.TempInputRobotNames_Package is
    type TempInputRobotNames_Access is access all TempInputRobotNames'Class;
    type TempInputRobotNames_Access_Array is array (Natural range <>) of TempInputRobotNames_Access;
    type TempInputRobotNames_Access_Array_Access is access all TempInputRobotNames_Access_Array;
+   type TempInputRobotNames_Access_Array_Access_Array is array (Natural range <>) of TempInputRobotNames_Access_Array_Access;
+   type TempInputRobotNames_Access_Array_Access_Array_Access is access all TempInputRobotNames_Access_Array_Access_Array;
 
    type TempInputRobotNames is new Java_Object with null record;
    LOW_NAME : Unbounded_String;

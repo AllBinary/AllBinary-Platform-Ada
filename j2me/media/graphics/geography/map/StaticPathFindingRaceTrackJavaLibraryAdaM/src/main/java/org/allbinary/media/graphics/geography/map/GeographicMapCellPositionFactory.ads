@@ -20,11 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
@@ -32,17 +28,15 @@ with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use 
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type GeographicMapCellPositionFactory is tagged;
    type GeographicMapCellPositionFactory_Access is access all GeographicMapCellPositionFactory'Class;
    type GeographicMapCellPositionFactory_Access_Array is array (Natural range <>) of GeographicMapCellPositionFactory_Access;
    type GeographicMapCellPositionFactory_Access_Array_Access is access all GeographicMapCellPositionFactory_Access_Array;
+   type GeographicMapCellPositionFactory_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionFactory_Access_Array_Access;
+   type GeographicMapCellPositionFactory_Access_Array_Access_Array_Access is access all GeographicMapCellPositionFactory_Access_Array_Access_Array;
 
    type GeographicMapCellPositionFactory is new GeographicMapCellPositionBaseFactory with record
       logUtil : LogUtil_Access;

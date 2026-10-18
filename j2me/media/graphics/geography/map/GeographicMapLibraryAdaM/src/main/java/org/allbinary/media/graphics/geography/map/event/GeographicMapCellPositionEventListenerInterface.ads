@@ -31,6 +31,8 @@ package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositi
    type GeographicMapCellPositionEventListenerInterface_Access is access all GeographicMapCellPositionEventListenerInterface'Class;
    type GeographicMapCellPositionEventListenerInterface_Access_Array is array (Natural range <>) of GeographicMapCellPositionEventListenerInterface_Access;
    type GeographicMapCellPositionEventListenerInterface_Access_Array_Access is access all GeographicMapCellPositionEventListenerInterface_Access_Array;
+   type GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionEventListenerInterface_Access_Array_Access;
+   type GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Access is access all GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array;
    procedure onGeographicMapCellPositionEvent (This : in out GeographicMapCellPositionEventListenerInterface; geographicMapCellPositionEvent_Param : access GeographicMapCellPositionEvent_Package.GeographicMapCellPositionEvent'Class) is abstract;
    procedure onRemoveGeographicMapCellPositionEvent (This : in out GeographicMapCellPositionEventListenerInterface; geographicMapCellPositionEvent_Param : access GeographicMapCellPositionEvent_Package.GeographicMapCellPositionEvent'Class) is abstract;
 

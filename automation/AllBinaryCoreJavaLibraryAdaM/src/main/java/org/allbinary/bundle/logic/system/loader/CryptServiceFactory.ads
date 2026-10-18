@@ -39,8 +39,10 @@ package org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package is
    type CryptServiceFactory_Access is access all CryptServiceFactory'Class;
    type CryptServiceFactory_Access_Array is array (Natural range <>) of CryptServiceFactory_Access;
    type CryptServiceFactory_Access_Array_Access is access all CryptServiceFactory_Access_Array;
+   type CryptServiceFactory_Access_Array_Access_Array is array (Natural range <>) of CryptServiceFactory_Access_Array_Access;
+   type CryptServiceFactory_Access_Array_Access_Array_Access is access all CryptServiceFactory_Access_Array_Access_Array;
 
-   type CryptServiceFactory is new ServiceFactory with record
+   type CryptServiceFactory is new Java_Object and ServiceFactory with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       cryptService : CryptService_Access;

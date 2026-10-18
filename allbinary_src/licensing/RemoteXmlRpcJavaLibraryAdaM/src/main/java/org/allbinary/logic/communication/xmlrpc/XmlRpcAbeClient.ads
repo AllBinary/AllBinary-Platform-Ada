@@ -21,30 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.apache.xmlrpc.NullXmlRpcHandler_Package; use org.apache.xmlrpc.NullXmlRpcHandler_Package;
 with org.apache.xmlrpc.XmlRpcClient_Package; use org.apache.xmlrpc.XmlRpcClient_Package;
 with org.apache.xmlrpc.XmlRpcHandler_Package; use org.apache.xmlrpc.XmlRpcHandler_Package;
 
 package org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
 
    package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package NullXmlRpcHandler_Package renames Standard.org.apache.xmlrpc.NullXmlRpcHandler_Package;
    package XmlRpcClient_Package renames Standard.org.apache.xmlrpc.XmlRpcClient_Package;
    package XmlRpcHandler_Package renames Standard.org.apache.xmlrpc.XmlRpcHandler_Package;
 
@@ -52,6 +40,8 @@ package org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    type XmlRpcAbeClient_Access is access all XmlRpcAbeClient'Class;
    type XmlRpcAbeClient_Access_Array is array (Natural range <>) of XmlRpcAbeClient_Access;
    type XmlRpcAbeClient_Access_Array_Access is access all XmlRpcAbeClient_Access_Array;
+   type XmlRpcAbeClient_Access_Array_Access_Array is array (Natural range <>) of XmlRpcAbeClient_Access_Array_Access;
+   type XmlRpcAbeClient_Access_Array_Access_Array_Access is access all XmlRpcAbeClient_Access_Array_Access_Array;
 
    type XmlRpcAbeClient is new Java_Object with record
       logUtil : LogUtil_Access;
@@ -97,6 +87,10 @@ package org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    function isIsDone (This : in out XmlRpcAbeClient) return Boolean;
    procedure setIsDone (This : in out XmlRpcAbeClient; isDone : Boolean);
    function getRemoteMethod (This : in out XmlRpcAbeClient) return Unbounded_String;
+   function get (This : in out XmlRpcAbeClient; Value : Unbounded_String) return Java_Object_Access;
+   procedure get (This : in out XmlRpcAbeClient; Value : Unbounded_String);
+   function tryAnother (This : in out XmlRpcAbeClient; Value : Unbounded_String) return Java_Object_Access;
+   procedure tryAnother (This : in out XmlRpcAbeClient; Value : Unbounded_String);
 
 end org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
 

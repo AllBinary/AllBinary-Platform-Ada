@@ -21,22 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.image.analysis.ImageAnalysisResults_Package; use org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
-with org.allbinary.media.image.analysis.ImageColorRangeResults_Package; use org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
-with org.allbinary.media.image.analysis.ImageColorResults_Package; use org.allbinary.media.image.analysis.ImageColorResults_Package;
-with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
 
 package org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package is
 
    package ImageAnalysisResults_Package renames Standard.org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
-   package ImageColorRangeResults_Package renames Standard.org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
-   package ImageColorResults_Package renames Standard.org.allbinary.media.image.analysis.ImageColorResults_Package;
-   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
 
    type ImageAnalysisResultsJPanel is tagged;
    type ImageAnalysisResultsJPanel_Access is access all ImageAnalysisResultsJPanel'Class;
    type ImageAnalysisResultsJPanel_Access_Array is array (Natural range <>) of ImageAnalysisResultsJPanel_Access;
    type ImageAnalysisResultsJPanel_Access_Array_Access is access all ImageAnalysisResultsJPanel_Access_Array;
+   type ImageAnalysisResultsJPanel_Access_Array_Access_Array is array (Natural range <>) of ImageAnalysisResultsJPanel_Access_Array_Access;
+   type ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access is access all ImageAnalysisResultsJPanel_Access_Array_Access_Array;
 
    type ImageAnalysisResultsJPanel is new JPanel with record
       avgBlueJTextField : JTextField_Access;

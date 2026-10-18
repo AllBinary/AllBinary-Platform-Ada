@@ -29,6 +29,8 @@ package org.allbinary.graphics.j2me.workarea.tools.PointsCompositeInterface_Pack
    type PointsCompositeInterface_Access is access all PointsCompositeInterface'Class;
    type PointsCompositeInterface_Access_Array is array (Natural range <>) of PointsCompositeInterface_Access;
    type PointsCompositeInterface_Access_Array_Access is access all PointsCompositeInterface_Access_Array;
+   type PointsCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of PointsCompositeInterface_Access_Array_Access;
+   type PointsCompositeInterface_Access_Array_Access_Array_Access is access all PointsCompositeInterface_Access_Array_Access_Array;
    function getPointsInterface (This : in out PointsCompositeInterface) return PointsInterface_Access is abstract;
 
 end org.allbinary.graphics.j2me.workarea.tools.PointsCompositeInterface_Package;

@@ -22,16 +22,12 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
-with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package admin.taghelpers.CustomLoaderHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
-   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -39,6 +35,8 @@ package admin.taghelpers.CustomLoaderHelper_Package is
    type CustomLoaderHelper_Access is access all CustomLoaderHelper'Class;
    type CustomLoaderHelper_Access_Array is array (Natural range <>) of CustomLoaderHelper_Access;
    type CustomLoaderHelper_Access_Array_Access is access all CustomLoaderHelper_Access_Array;
+   type CustomLoaderHelper_Access_Array_Access_Array is array (Natural range <>) of CustomLoaderHelper_Access_Array_Access;
+   type CustomLoaderHelper_Access_Array_Access_Array_Access is access all CustomLoaderHelper_Access_Array_Access_Array;
 
    type CustomLoaderHelper is new Java_Object with record
       logUtil : LogUtil_Access;

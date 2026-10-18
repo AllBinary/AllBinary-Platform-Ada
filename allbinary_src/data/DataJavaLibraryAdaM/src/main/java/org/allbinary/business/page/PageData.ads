@@ -28,6 +28,8 @@ package org.allbinary.business.page.PageData_Package is
    type PageData_Access is access all PageData'Class;
    type PageData_Access_Array is array (Natural range <>) of PageData_Access;
    type PageData_Access_Array_Access is access all PageData_Access_Array;
+   type PageData_Access_Array_Access_Array is array (Natural range <>) of PageData_Access_Array_Access;
+   type PageData_Access_Array_Access_Array_Access is access all PageData_Access_Array_Access_Array;
 
    type PageData is new Java_Object with record
       NAME : Unbounded_String;

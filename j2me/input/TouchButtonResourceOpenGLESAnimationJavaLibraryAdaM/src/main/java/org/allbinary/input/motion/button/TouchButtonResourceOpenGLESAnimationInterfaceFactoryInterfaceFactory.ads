@@ -20,21 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-with org.allbinary.image.opengles.OpenGLImageCacheFactory_Package; use org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
 with org.allbinary.input.motion.button.TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.input.motion.button.TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Package;
 
 package org.allbinary.input.motion.button.TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Package is
 
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package OpenGLImageCacheFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
 
    type TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory is tagged;
    type TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access is access all TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory'Class;
    type TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access_Array is array (Natural range <>) of TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access;
    type TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access is access all TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access_Array;
+   type TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access;
+   type TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array_Access is access all TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access_Array_Access_Array;
 
    type TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory is new TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory with null record;
 

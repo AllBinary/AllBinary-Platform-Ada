@@ -21,29 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
-with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
-with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
-with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbinary.game.input.event.GameKeyEventFactory_Package;
 with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
-with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package is
 
    package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
-   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
-   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
-   package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
    package GameKeyCompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
-   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ReleaseTouchInputToGameKeyEventAction is tagged;
    type ReleaseTouchInputToGameKeyEventAction_Access is access all ReleaseTouchInputToGameKeyEventAction'Class;
    type ReleaseTouchInputToGameKeyEventAction_Access_Array is array (Natural range <>) of ReleaseTouchInputToGameKeyEventAction_Access;
    type ReleaseTouchInputToGameKeyEventAction_Access_Array_Access is access all ReleaseTouchInputToGameKeyEventAction_Access_Array;
+   type ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of ReleaseTouchInputToGameKeyEventAction_Access_Array_Access;
+   type ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all ReleaseTouchInputToGameKeyEventAction_Access_Array_Access_Array;
 
    type ReleaseTouchInputToGameKeyEventAction is new GameKeyCompleteMotionGestureInputEvent with record
       NONE : GameKey_Access;

@@ -30,6 +30,8 @@ package org.allbinary.business.user.commerce.inventory.order.OrderInterface_Pack
    type OrderInterface_Access is access all OrderInterface'Class;
    type OrderInterface_Access_Array is array (Natural range <>) of OrderInterface_Access;
    type OrderInterface_Access_Array_Access is access all OrderInterface_Access_Array;
+   type OrderInterface_Access_Array_Access_Array is array (Natural range <>) of OrderInterface_Access_Array_Access;
+   type OrderInterface_Access_Array_Access_Array_Access is access all OrderInterface_Access_Array_Access_Array;
    procedure setShippingMethod (This : in out OrderInterface; shippingType : Unbounded_String) is abstract;
    procedure setPaymentMethod (This : in out OrderInterface; value : Unbounded_String) is abstract;
    procedure setSpecial (This : in out OrderInterface; special : Unbounded_String) is abstract;

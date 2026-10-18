@@ -13,8 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.sort.StringComparator_Package; use org.allbinary.logic.control.sort.StringComparator_Package;
+with org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package; use org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package;
+with org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizerData_Package; use org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizerData_Package;
+with org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizersData_Package; use org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizersData_Package;
+with org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package; use org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package;
+with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
+with org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package; use org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package;
+
 package body views.admin.customizers.CustomizersView_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package TransformInfoEntityBuilder_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringComparator_Package renames Standard.org.allbinary.logic.control.sort.StringComparator_Package;
+   package CustomizerTransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package;
+   package TransformTemplateCustomizerData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizerData_Package;
+   package TransformTemplateCustomizersData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizersData_Package;
+   package BodyData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package;
+   package TitleData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
+   package TransformTemplateCustomizerUtil_Package renames Standard.org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package;
    procedure Initialize_Fields (This : in out CustomizersView'Class) is
    begin
       null;
@@ -51,11 +76,11 @@ package body views.admin.customizers.CustomizersView_Package is
    begin
         begin
             node := document.createElement (TransformTemplateCustomizersData_Package.NAME);
-            unsortedCustomizerViewVector := BasicArrayListD_Package.Create;
+            unsortedCustomizerViewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             size := This.customizersVector.size;
             for index in 0 .. (size) - 1 loop
                 viewName := Java_Unbox (This.customizersVector.get (index));
-                if (((((Index (viewName, Java_Image (CustomizerTransformInfoData_Package.NAME)) - 1)) > (0)) and then (((Index (viewName, Java_Image (GLOBALS2.EDIT)) - 1)) > (0))) and then (((Index (viewName, Java_Image (BodyData_Package.getInstance.VIEWNAMEKEY)) - 1)) > (0))) and then (((Index (viewName, Java_Image (TitleData_Package.getInstance.VIEWNAMEKEY)) - 1)) > (0)) then
+                if ((((Java_Index_Of (viewName, Java_Image (CustomizerTransformInfoData_Package.NAME))) > (0)) and then ((Java_Index_Of (viewName, Java_Image (GLOBALS2_Package.EDIT))) > (0))) and then ((Java_Index_Of (viewName, Java_Image (BodyData_Package.getInstance.VIEWNAMEKEY))) > (0))) and then ((Java_Index_Of (viewName, Java_Image (TitleData_Package.getInstance.VIEWNAMEKEY))) > (0)) then
                     unsortedCustomizerViewVector.add (viewName);
                 end if;
             end loop;

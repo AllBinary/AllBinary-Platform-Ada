@@ -21,15 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
-with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
 
 package org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package is
 
    package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
-   package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -37,6 +34,8 @@ package org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Pa
    type BasicTouchButtonCellPositionFactory_Access is access all BasicTouchButtonCellPositionFactory'Class;
    type BasicTouchButtonCellPositionFactory_Access_Array is array (Natural range <>) of BasicTouchButtonCellPositionFactory_Access;
    type BasicTouchButtonCellPositionFactory_Access_Array_Access is access all BasicTouchButtonCellPositionFactory_Access_Array;
+   type BasicTouchButtonCellPositionFactory_Access_Array_Access_Array is array (Natural range <>) of BasicTouchButtonCellPositionFactory_Access_Array_Access;
+   type BasicTouchButtonCellPositionFactory_Access_Array_Access_Array_Access is access all BasicTouchButtonCellPositionFactory_Access_Array_Access_Array;
 
    type BasicTouchButtonCellPositionFactory is new Java_Object with record
       logUtil : LogUtil_Access;

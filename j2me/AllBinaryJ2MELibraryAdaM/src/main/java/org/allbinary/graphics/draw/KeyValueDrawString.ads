@@ -23,23 +23,21 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.graphics.draw.KeyValueDrawString_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type KeyValueDrawString is tagged;
    type KeyValueDrawString_Access is access all KeyValueDrawString'Class;
    type KeyValueDrawString_Access_Array is array (Natural range <>) of KeyValueDrawString_Access;
    type KeyValueDrawString_Access_Array_Access is access all KeyValueDrawString_Access_Array;
+   type KeyValueDrawString_Access_Array_Access_Array is array (Natural range <>) of KeyValueDrawString_Access_Array_Access;
+   type KeyValueDrawString_Access_Array_Access_Array_Access is access all KeyValueDrawString_Access_Array_Access_Array;
 
-   type KeyValueDrawString is new UpdateMyFontInterface with record
+   type KeyValueDrawString is new Java_Object and UpdateMyFontInterface with record
       myFontProcessor : MyFontProcessor_Access;
       LABEL : Unbounded_String;
       labelX : Integer;
@@ -47,8 +45,8 @@ package org.allbinary.graphics.draw.KeyValueDrawString_Package is
       value : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out KeyValueDrawString'Class; label_Case : Unbounded_String; x : Integer);
-   function Create (label_Case : Unbounded_String; x : Integer) return KeyValueDrawString_Access;
+   procedure Initialize (This : in out KeyValueDrawString'Class; label : Unbounded_String; x : Integer);
+   function Create (label : Unbounded_String; x : Integer) return KeyValueDrawString_Access;
    procedure updateMeasurement (This : in out KeyValueDrawString; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure paint (This : in out KeyValueDrawString; graphics_Param : access Graphics_Package.Graphics'Class; y : Integer);
    procedure update (This : in out KeyValueDrawString; value : Unbounded_String);

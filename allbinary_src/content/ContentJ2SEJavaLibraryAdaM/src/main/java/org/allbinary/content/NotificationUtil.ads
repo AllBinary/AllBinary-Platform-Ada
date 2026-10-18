@@ -21,25 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.content.Context_Package; use org.allbinary.content.Context_Package;
 with org.allbinary.content.NotificationManager_Package; use org.allbinary.content.NotificationManager_Package;
-with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.CommandUriAction_Package;
-with org.allbinary.content.Intent_Package; use org.allbinary.content.Intent_Package;
-with org.allbinary.content.Notification_Package; use org.allbinary.content.Notification_Package;
-with org.allbinary.content.PendingIntent_Package; use org.allbinary.content.PendingIntent_Package;
 
 package org.allbinary.content.NotificationUtil_Package is
 
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
-   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
 
    type NotificationUtil is tagged;
    type NotificationUtil_Access is access all NotificationUtil'Class;
    type NotificationUtil_Access_Array is array (Natural range <>) of NotificationUtil_Access;
    type NotificationUtil_Access_Array_Access is access all NotificationUtil_Access_Array;
+   type NotificationUtil_Access_Array_Access_Array is array (Natural range <>) of NotificationUtil_Access_Array_Access;
+   type NotificationUtil_Access_Array_Access_Array_Access is access all NotificationUtil_Access_Array_Access_Array;
 
    type NotificationUtil is new Java_Object with record
       notificationManager : NotificationManager_Access;

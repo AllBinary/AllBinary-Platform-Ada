@@ -13,8 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
+with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.PrimaryThreadPool_Package; use org.allbinary.thread.PrimaryThreadPool_Package;
+with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
+with org.allbinary.midlet.MidletExitProcessorFactory_Package; use org.allbinary.midlet.MidletExitProcessorFactory_Package;
+with org.allbinary.midlet.ExitRunnable_Package; use org.allbinary.midlet.ExitRunnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
+
 package body org.allbinary.midlet.ProgressMidlet_Package is
 
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package Globals_Package renames Standard.org.allbinary.globals.Globals_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package PrimaryThreadPool_Package renames Standard.org.allbinary.thread.PrimaryThreadPool_Package;
+   package ThreadPool_Package renames Standard.org.allbinary.thread.ThreadPool_Package;
    procedure Initialize_Fields (This : in out ProgressMidlet'Class) is
    begin
       null;
@@ -52,7 +68,7 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
         processor := MidletExitProcessorFactory_Package.getInstance.getExitInstance (ProgressMidlet_Access'(This'Unchecked_Access));
         begin
             primaryThreadPool := PrimaryThreadPool_Package.getInstance;
-            runnable := ExitRunnable_Package.Create (ProgressMidlet_Access'(This'Unchecked_Access), processor, isProgress);
+            runnable := Runnable_Access (ExitRunnable_Package.Create (ProgressMidlet_Access'(This'Unchecked_Access), processor, isProgress));
             primaryThreadPool.runTask (runnable);
         exception
             when Java_Occurrence : others =>

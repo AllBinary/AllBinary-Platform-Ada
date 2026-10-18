@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.StoreFront_Package; use org.allbinary.business.context.modules.storefront.StoreFront_Package;
+
 package body views.admin.storefront.StoreFrontComponent_Package is
 
+   package StoreFront_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFront_Package;
    procedure Initialize_Fields (This : in out StoreFrontComponent'Class) is
    begin
       null;

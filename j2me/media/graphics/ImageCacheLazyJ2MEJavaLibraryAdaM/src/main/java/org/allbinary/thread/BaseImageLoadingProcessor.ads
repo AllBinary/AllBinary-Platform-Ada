@@ -28,6 +28,8 @@ package org.allbinary.thread.BaseImageLoadingProcessor_Package is
    type BaseImageLoadingProcessor_Access is access all BaseImageLoadingProcessor'Class;
    type BaseImageLoadingProcessor_Access_Array is array (Natural range <>) of BaseImageLoadingProcessor_Access;
    type BaseImageLoadingProcessor_Access_Array_Access is access all BaseImageLoadingProcessor_Access_Array;
+   type BaseImageLoadingProcessor_Access_Array_Access_Array is array (Natural range <>) of BaseImageLoadingProcessor_Access_Array_Access;
+   type BaseImageLoadingProcessor_Access_Array_Access_Array_Access is access all BaseImageLoadingProcessor_Access_Array_Access_Array;
 
    type BaseImageLoadingProcessor is new Java_Object with null record;
    instance : BaseImageLoadingProcessor_Access;

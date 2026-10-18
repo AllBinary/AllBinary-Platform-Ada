@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package; use org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+
 package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package SecondaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
    procedure Initialize_Fields (This : in out HorizontalScreenPatrolAI'Class) is
    begin
       null;
@@ -78,7 +89,7 @@ package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package 
                 end if;
                 if (This.firedIndex) > (FIRE) then
                     This.firedIndex := 0;
-                    This.firingX := Integer_Package.MIN_VALUE;
+                    This.firingX := Integer'First;
                 end if;
                 This.firedIndex := This.firedIndex + 1;
             end if;

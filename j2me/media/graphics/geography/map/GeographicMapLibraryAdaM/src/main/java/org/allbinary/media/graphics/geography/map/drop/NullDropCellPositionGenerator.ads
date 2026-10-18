@@ -29,6 +29,8 @@ package org.allbinary.media.graphics.geography.map.drop.NullDropCellPositionGene
    type NullDropCellPositionGenerator_Access is access all NullDropCellPositionGenerator'Class;
    type NullDropCellPositionGenerator_Access_Array is array (Natural range <>) of NullDropCellPositionGenerator_Access;
    type NullDropCellPositionGenerator_Access_Array_Access is access all NullDropCellPositionGenerator_Access_Array;
+   type NullDropCellPositionGenerator_Access_Array_Access_Array is array (Natural range <>) of NullDropCellPositionGenerator_Access_Array_Access;
+   type NullDropCellPositionGenerator_Access_Array_Access_Array_Access is access all NullDropCellPositionGenerator_Access_Array_Access_Array;
 
    type NullDropCellPositionGenerator is new BaseDropCellPositionGenerator with null record;
    instance : NullDropCellPositionGenerator_Access;

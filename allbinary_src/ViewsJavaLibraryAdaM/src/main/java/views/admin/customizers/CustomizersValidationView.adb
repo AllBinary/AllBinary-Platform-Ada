@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body views.admin.customizers.CustomizersValidationView_Package is
 
    procedure Initialize_Fields (This : in out CustomizersValidationView'Class) is

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.InputOutputTypeData_Package; use org.allbinary.logic.io.InputOutputTypeData_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.generator.BasicGenerator_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.BasicGenerator_Package;
+
 package body org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package is
 
+   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out TransformInfoObjectConfigGeneratorFactory'Class) is
    begin
       null;
@@ -52,9 +59,9 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
             This.logUtil.putF (To_Unbounded_String ("Generating Instance for type: ") & type_Id, TransformInfoObjectConfigGeneratorFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         end if;
         if (((type_Id) = (Null_Unbounded_String)) or else ((Java_Compare_To (type_Id, InputOutputTypeData_Package.getInstance.RESPONSE)) = (0))) or else (transformInfoInterface.isChild) then
-            return BasicGenerator_Package.Create;
+            return TransformInfoObjectConfigGenerator_Access (BasicGenerator_Package.Create);
         elsif (Java_Compare_To (type_Id, InputOutputTypeData_Package.getInstance.FILE)) = (0) then
-            return StoreFileGenerator_Package.Create (transformInfoInterface);
+            return TransformInfoObjectConfigGenerator_Access (StoreFileGenerator_Package.Create (transformInfoInterface));
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such TransformInfoObjectConfigGenerator Type")));
         end if;

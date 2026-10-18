@@ -24,30 +24,26 @@ with java.io.InputStream_Package; use java.io.InputStream_Package;
 --  with java.io.StringBufferInputStream_Package; use java.io.StringBufferInputStream_Package;
 --  with javax.xml.transform.URIResolver_Package; use javax.xml.transform.URIResolver_Package;
 --  with javax.xml.transform.stream.StreamSource_Package; use javax.xml.transform.stream.StreamSource_Package;
-with org.allbinary.data.tree.dom.XslHelper_Package; use org.allbinary.data.tree.dom.XslHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGenerator_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGenerator_Package;
-with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.visual.transform.BasicTransformerInterface_Package; use org.allbinary.logic.visual.transform.BasicTransformerInterface_Package;
 
 package org.allbinary.logic.visual.transform.AbTransformer_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
-   package XslHelper_Package renames Standard.org.allbinary.data.tree.dom.XslHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfoObjectConfigGenerator_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGenerator_Package;
-   package TransformInfoObjectConfigGeneratorFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AbTransformer is tagged;
    type AbTransformer_Access is access all AbTransformer'Class;
    type AbTransformer_Access_Array is array (Natural range <>) of AbTransformer_Access;
    type AbTransformer_Access_Array_Access is access all AbTransformer_Access_Array;
+   type AbTransformer_Access_Array_Access_Array is array (Natural range <>) of AbTransformer_Access_Array_Access;
+   type AbTransformer_Access_Array_Access_Array_Access is access all AbTransformer_Access_Array_Access_Array;
 
-   type AbTransformer is new BasicTransformerInterface with record
+   type AbTransformer is new Java_Object and BasicTransformerInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       transformInfoInterface : TransformInfoInterface_Access;

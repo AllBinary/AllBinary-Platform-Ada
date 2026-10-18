@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Package is
 
    procedure Initialize_Fields (This : in out CssPropertyView'Class) is

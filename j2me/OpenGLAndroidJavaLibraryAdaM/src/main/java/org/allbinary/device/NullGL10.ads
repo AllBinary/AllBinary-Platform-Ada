@@ -24,19 +24,19 @@ with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.kh
 --  with java.nio.Buffer_Package; use java.nio.Buffer_Package;
 --  with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
 --  with java.nio.IntBuffer_Package; use java.nio.IntBuffer_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.device.NullGL10_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type NullGL10 is tagged;
    type NullGL10_Access is access all NullGL10'Class;
    type NullGL10_Access_Array is array (Natural range <>) of NullGL10_Access;
    type NullGL10_Access_Array_Access is access all NullGL10_Access_Array;
+   type NullGL10_Access_Array_Access_Array is array (Natural range <>) of NullGL10_Access_Array_Access;
+   type NullGL10_Access_Array_Access_Array_Access is access all NullGL10_Access_Array_Access_Array;
 
-   type NullGL10 is new GL10 with null record;
+   type NullGL10 is new Java_Object and GL10 with null record;
    NULL_GL10 : NullGL10_Access;
 
    procedure Initialize (This : in out NullGL10'Class);

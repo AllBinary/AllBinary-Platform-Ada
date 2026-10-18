@@ -32,6 +32,8 @@ package org.allbinary.game.paint.MainGameDemoStatePaintable_Package is
    type MainGameDemoStatePaintable_Access is access all MainGameDemoStatePaintable'Class;
    type MainGameDemoStatePaintable_Access_Array is array (Natural range <>) of MainGameDemoStatePaintable_Access;
    type MainGameDemoStatePaintable_Access_Array_Access is access all MainGameDemoStatePaintable_Access_Array;
+   type MainGameDemoStatePaintable_Access_Array_Access_Array is array (Natural range <>) of MainGameDemoStatePaintable_Access_Array_Access;
+   type MainGameDemoStatePaintable_Access_Array_Access_Array_Access is access all MainGameDemoStatePaintable_Access_Array_Access_Array;
 
    type MainGameDemoStatePaintable is new Paintable with record
       ownershipPaintableInterface : Paintable_Access;

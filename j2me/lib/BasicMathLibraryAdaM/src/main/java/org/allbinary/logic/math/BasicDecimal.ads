@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logic.math.ScaleFactorFactory_Package;
 
 package org.allbinary.logic.math.BasicDecimal_Package is
 
@@ -29,6 +28,8 @@ package org.allbinary.logic.math.BasicDecimal_Package is
    type BasicDecimal_Access is access all BasicDecimal'Class;
    type BasicDecimal_Access_Array is array (Natural range <>) of BasicDecimal_Access;
    type BasicDecimal_Access_Array_Access is access all BasicDecimal_Access_Array;
+   type BasicDecimal_Access_Array_Access_Array is array (Natural range <>) of BasicDecimal_Access_Array_Access;
+   type BasicDecimal_Access_Array_Access_Array_Access is access all BasicDecimal_Access_Array_Access_Array;
 
    type BasicDecimal is new Java_Object with record
       units : Long_Long_Integer;

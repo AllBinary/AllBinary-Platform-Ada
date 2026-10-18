@@ -22,20 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package views.ValidationOnlyTempUtil_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ValidationOnlyTempUtil is tagged;
    type ValidationOnlyTempUtil_Access is access all ValidationOnlyTempUtil'Class;
    type ValidationOnlyTempUtil_Access_Array is array (Natural range <>) of ValidationOnlyTempUtil_Access;
    type ValidationOnlyTempUtil_Access_Array_Access is access all ValidationOnlyTempUtil_Access_Array;
+   type ValidationOnlyTempUtil_Access_Array_Access_Array is array (Natural range <>) of ValidationOnlyTempUtil_Access_Array_Access;
+   type ValidationOnlyTempUtil_Access_Array_Access_Array_Access is access all ValidationOnlyTempUtil_Access_Array_Access_Array;
 
    type ValidationOnlyTempUtil is new Java_Object with record
       logUtil : LogUtil_Access;

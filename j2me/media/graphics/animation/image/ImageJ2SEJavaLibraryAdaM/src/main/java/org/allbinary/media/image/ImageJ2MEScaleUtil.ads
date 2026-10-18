@@ -30,6 +30,8 @@ package org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
    type ImageJ2MEScaleUtil_Access is access all ImageJ2MEScaleUtil'Class;
    type ImageJ2MEScaleUtil_Access_Array is array (Natural range <>) of ImageJ2MEScaleUtil_Access;
    type ImageJ2MEScaleUtil_Access_Array_Access is access all ImageJ2MEScaleUtil_Access_Array;
+   type ImageJ2MEScaleUtil_Access_Array_Access_Array is array (Natural range <>) of ImageJ2MEScaleUtil_Access_Array_Access;
+   type ImageJ2MEScaleUtil_Access_Array_Access_Array_Access is access all ImageJ2MEScaleUtil_Access_Array_Access_Array;
 
    type ImageJ2MEScaleUtil is new Java_Object with null record;
    instance : ImageJ2MEScaleUtil_Access;

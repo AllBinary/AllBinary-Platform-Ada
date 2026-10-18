@@ -28,6 +28,8 @@ package org.allbinary.game.input.GameKeyEventSourceInterface_Package is
    type GameKeyEventSourceInterface_Access is access all GameKeyEventSourceInterface'Class;
    type GameKeyEventSourceInterface_Access_Array is array (Natural range <>) of GameKeyEventSourceInterface_Access;
    type GameKeyEventSourceInterface_Access_Array_Access is access all GameKeyEventSourceInterface_Access_Array;
+   type GameKeyEventSourceInterface_Access_Array_Access_Array is array (Natural range <>) of GameKeyEventSourceInterface_Access_Array_Access;
+   type GameKeyEventSourceInterface_Access_Array_Access_Array_Access is access all GameKeyEventSourceInterface_Access_Array_Access_Array;
    function getSourceId (This : in out GameKeyEventSourceInterface) return Integer is abstract;
 
 end org.allbinary.game.input.GameKeyEventSourceInterface_Package;

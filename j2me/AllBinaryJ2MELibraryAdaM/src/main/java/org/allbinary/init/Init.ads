@@ -31,8 +31,10 @@ package org.allbinary.init.Init_Package is
    type Init_Access is access all Init'Class;
    type Init_Access_Array is array (Natural range <>) of Init_Access;
    type Init_Access_Array_Access is access all Init_Access_Array;
+   type Init_Access_Array_Access_Array is array (Natural range <>) of Init_Access_Array_Access;
+   type Init_Access_Array_Access_Array_Access is access all Init_Access_Array_Access_Array;
 
-   type Init is new InitInterface with record
+   type Init is new Java_Object and InitInterface with record
       commonStrings : CommonStrings_Access;
    end record;
 

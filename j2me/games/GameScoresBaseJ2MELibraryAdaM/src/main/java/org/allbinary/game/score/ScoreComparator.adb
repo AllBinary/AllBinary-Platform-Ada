@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.game.score.ScoreComparator_Package is
 
+   package DataInputStream_Package renames Standard.java.io.DataInputStream_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out ScoreComparator'Class) is
    begin
       null;
@@ -38,7 +43,7 @@ package body org.allbinary.game.score.ScoreComparator_Package is
 
    function getBestScore (This : in out ScoreComparator) return Long_Long_Integer is
    begin
-        return (if This.isHighestBest then Long_Package.MAX_VALUE else 0);
+        return (if This.isHighestBest then Long_Long_Integer'Last else 0);
    end getBestScore;
 
    function compare (This : in out ScoreComparator; recordOne : Short_Short_Integer_Array_Access; recordTwo : Short_Short_Integer_Array_Access) return Integer is

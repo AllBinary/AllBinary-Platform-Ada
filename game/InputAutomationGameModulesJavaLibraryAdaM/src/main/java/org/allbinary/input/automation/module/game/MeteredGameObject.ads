@@ -21,22 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.input.automation.module.game.MeteredGameObjectInterface_Package; use org.allbinary.input.automation.module.game.MeteredGameObjectInterface_Package;
-with org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package; use org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package;
 
 package org.allbinary.input.automation.module.game.MeteredGameObject_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type MeteredGameObject is tagged;
    type MeteredGameObject_Access is access all MeteredGameObject'Class;
    type MeteredGameObject_Access_Array is array (Natural range <>) of MeteredGameObject_Access;
    type MeteredGameObject_Access_Array_Access is access all MeteredGameObject_Access_Array;
+   type MeteredGameObject_Access_Array_Access_Array is array (Natural range <>) of MeteredGameObject_Access_Array_Access;
+   type MeteredGameObject_Access_Array_Access_Array_Access is access all MeteredGameObject_Access_Array_Access_Array;
 
-   type MeteredGameObject is new MeteredGameObjectInterface with record
+   type MeteredGameObject is new Java_Object and MeteredGameObjectInterface with record
       ratios : Long_Float_Array_Access;
       good : Boolean;
       dropping : Boolean;

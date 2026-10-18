@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.advertisement.area.AdvertisementArea_Package; use org.allbinary.business.advertisement.area.AdvertisementArea_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
+with org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package AdvertisementArea_Package renames Standard.org.allbinary.business.advertisement.area.AdvertisementArea_Package;
+   package AdvertisementAreaData_Package renames Standard.org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
+   package AdvertisementCampaignData_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out AdvertisementAreasEntity'Class) is
    begin
       null;
@@ -68,7 +87,7 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
         hashMapVector := AbSqlBean (This).getRows (keysAndValues);
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := hashMapVector.size;
         for index in 0 .. (size) - 1 loop
             hashMap := HashMap_Access (hashMapVector.get (index));

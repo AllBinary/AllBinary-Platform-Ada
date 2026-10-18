@@ -20,28 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackStartPointUtil_Package is
 
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
-   package PathFindingNode_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 
    type RaceTrackStartPointUtil is tagged;
    type RaceTrackStartPointUtil_Access is access all RaceTrackStartPointUtil'Class;
    type RaceTrackStartPointUtil_Access_Array is array (Natural range <>) of RaceTrackStartPointUtil_Access;
    type RaceTrackStartPointUtil_Access_Array_Access is access all RaceTrackStartPointUtil_Access_Array;
+   type RaceTrackStartPointUtil_Access_Array_Access_Array is array (Natural range <>) of RaceTrackStartPointUtil_Access_Array_Access;
+   type RaceTrackStartPointUtil_Access_Array_Access_Array_Access is access all RaceTrackStartPointUtil_Access_Array_Access_Array;
 
    type RaceTrackStartPointUtil is new Java_Object with null record;
 

@@ -21,19 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 
 package org.allbinary.game.layer.SteeringVisitor_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
 
    type SteeringVisitor is tagged;
    type SteeringVisitor_Access is access all SteeringVisitor'Class;
    type SteeringVisitor_Access_Array is array (Natural range <>) of SteeringVisitor_Access;
    type SteeringVisitor_Access_Array_Access is access all SteeringVisitor_Access_Array;
+   type SteeringVisitor_Access_Array_Access_Array is array (Natural range <>) of SteeringVisitor_Access_Array_Access;
+   type SteeringVisitor_Access_Array_Access_Array_Access is access all SteeringVisitor_Access_Array_Access_Array;
 
    type SteeringVisitor is new Visitor with record
       list : BasicArrayList_Access;

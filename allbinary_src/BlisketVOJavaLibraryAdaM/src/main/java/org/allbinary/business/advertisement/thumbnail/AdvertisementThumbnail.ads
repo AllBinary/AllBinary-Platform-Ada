@@ -31,8 +31,10 @@ package org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Pa
    type AdvertisementThumbnail_Access is access all AdvertisementThumbnail'Class;
    type AdvertisementThumbnail_Access_Array is array (Natural range <>) of AdvertisementThumbnail_Access;
    type AdvertisementThumbnail_Access_Array_Access is access all AdvertisementThumbnail_Access_Array;
+   type AdvertisementThumbnail_Access_Array_Access_Array is array (Natural range <>) of AdvertisementThumbnail_Access_Array_Access;
+   type AdvertisementThumbnail_Access_Array_Access_Array_Access is access all AdvertisementThumbnail_Access_Array_Access_Array;
 
-   type AdvertisementThumbnail is new AdvertisementThumbnailInterface with record
+   type AdvertisementThumbnail is new Java_Object and AdvertisementThumbnailInterface with record
       imageFileName : Unbounded_String;
       imageUrl : Unbounded_String;
       constraint : TwoDimensionalConstraintInterface_Access;

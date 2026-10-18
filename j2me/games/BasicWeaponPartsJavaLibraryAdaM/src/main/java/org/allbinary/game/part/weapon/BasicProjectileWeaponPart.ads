@@ -22,9 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.game.combat.weapon.WeaponProperties_Package; use org.allbinary.game.combat.weapon.WeaponProperties_Package;
-with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game.layer.weapon.WeaponLayer_Package;
 with org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package; use org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
-with org.allbinary.game.score.NoScoreable_Package; use org.allbinary.game.score.NoScoreable_Package;
 with org.allbinary.game.score.ScoreableInterface_Package; use org.allbinary.game.score.ScoreableInterface_Package;
 with org.allbinary.graphics.RelativeRelationship_Package; use org.allbinary.graphics.RelativeRelationship_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
@@ -35,9 +33,7 @@ package org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package is
 
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
-   package WeaponLayer_Package renames Standard.org.allbinary.game.layer.weapon.WeaponLayer_Package;
    package WeaponLayerCircularPool_Package renames Standard.org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
-   package NoScoreable_Package renames Standard.org.allbinary.game.score.NoScoreable_Package;
    package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
    package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
@@ -47,6 +43,8 @@ package org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package is
    type BasicProjectileWeaponPart_Access is access all BasicProjectileWeaponPart'Class;
    type BasicProjectileWeaponPart_Access_Array is array (Natural range <>) of BasicProjectileWeaponPart_Access;
    type BasicProjectileWeaponPart_Access_Array_Access is access all BasicProjectileWeaponPart_Access_Array;
+   type BasicProjectileWeaponPart_Access_Array_Access_Array is array (Natural range <>) of BasicProjectileWeaponPart_Access_Array_Access;
+   type BasicProjectileWeaponPart_Access_Array_Access_Array_Access is access all BasicProjectileWeaponPart_Access_Array_Access_Array;
 
    type BasicProjectileWeaponPart is new BasicWeaponPart with record
       weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access;

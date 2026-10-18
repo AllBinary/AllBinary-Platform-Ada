@@ -29,6 +29,8 @@ package org.allbinary.time.RendererInitializedStupidTimerFactory_Package is
    type RendererInitializedStupidTimerFactory_Access is access all RendererInitializedStupidTimerFactory'Class;
    type RendererInitializedStupidTimerFactory_Access_Array is array (Natural range <>) of RendererInitializedStupidTimerFactory_Access;
    type RendererInitializedStupidTimerFactory_Access_Array_Access is access all RendererInitializedStupidTimerFactory_Access_Array;
+   type RendererInitializedStupidTimerFactory_Access_Array_Access_Array is array (Natural range <>) of RendererInitializedStupidTimerFactory_Access_Array_Access;
+   type RendererInitializedStupidTimerFactory_Access_Array_Access_Array_Access is access all RendererInitializedStupidTimerFactory_Access_Array_Access_Array;
 
    type RendererInitializedStupidTimerFactory is new Java_Object with null record;
    instance : StupidTimer_Access;

@@ -34,6 +34,8 @@ package org.allbinary.business.user.modules.customer.wholesale.WholesaleUser_Pac
    type WholesaleUser_Access is access all WholesaleUser'Class;
    type WholesaleUser_Access_Array is array (Natural range <>) of WholesaleUser_Access;
    type WholesaleUser_Access_Array_Access is access all WholesaleUser_Access_Array;
+   type WholesaleUser_Access_Array_Access_Array is array (Natural range <>) of WholesaleUser_Access_Array_Access;
+   type WholesaleUser_Access_Array_Access_Array_Access is access all WholesaleUser_Access_Array_Access_Array;
 
    type WholesaleUser is new User with null record;
 

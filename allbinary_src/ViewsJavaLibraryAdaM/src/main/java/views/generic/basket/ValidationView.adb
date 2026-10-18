@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.MESSAGES_Package; use org.allbinary.globals.MESSAGES_Package;
+
 package body views.generic_Id.basket.ValidationView_Package is
 
+   package MESSAGES_Package renames Standard.org.allbinary.globals.MESSAGES_Package;
    procedure Initialize_Fields (This : in out ValidationView'Class) is
    begin
       null;
@@ -52,7 +55,7 @@ package body views.generic_Id.basket.ValidationView_Package is
 
    function validationInfo (This : in out ValidationView) return Unbounded_String is
    begin
-        return MESSAGES.CONTACTADMIN;
+        return MESSAGES_Package.CONTACTADMIN;
    end validationInfo;
 
    procedure toValidationInfoNode (This : in out ValidationView; document_Param : access Document_Package.Document'Class) is

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Package is
 
    procedure Initialize_Fields (This : in out TransformInfoHttpComposite'Class) is
@@ -44,7 +45,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpComposit
    --  throws Exception
    function getTransformInfoInterface (This : in out TransformInfoHttpComposite) return TransformInfoInterface_Access is
    begin
-        return This.transformInfoInterface;
+        return TransformInfoInterface_Access (This.transformInfoInterface);
    end getTransformInfoInterface;
 
    function getWeblisketSession (This : in out TransformInfoHttpComposite) return WeblisketSession_Access is

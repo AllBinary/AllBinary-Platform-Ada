@@ -20,14 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
 with org.allbinary.graphics.GPointCircularPool_Package; use org.allbinary.graphics.GPointCircularPool_Package;
 with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package; use org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
 with org.allbinary.input.motion.MotionRecognizer_Package; use org.allbinary.input.motion.MotionRecognizer_Package;
 
 package org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package is
 
-   package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
    package GPointCircularPool_Package renames Standard.org.allbinary.graphics.GPointCircularPool_Package;
    package MotionGestureRecognizer_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
 
@@ -35,6 +33,8 @@ package org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package is
    type GestureOnlyMotionRecognizer_Access is access all GestureOnlyMotionRecognizer'Class;
    type GestureOnlyMotionRecognizer_Access_Array is array (Natural range <>) of GestureOnlyMotionRecognizer_Access;
    type GestureOnlyMotionRecognizer_Access_Array_Access is access all GestureOnlyMotionRecognizer_Access_Array;
+   type GestureOnlyMotionRecognizer_Access_Array_Access_Array is array (Natural range <>) of GestureOnlyMotionRecognizer_Access_Array_Access;
+   type GestureOnlyMotionRecognizer_Access_Array_Access_Array_Access is access all GestureOnlyMotionRecognizer_Access_Array_Access_Array;
 
    type GestureOnlyMotionRecognizer is new MotionRecognizer with record
       motionGestureRecognizer : MotionGestureRecognizer_Access;

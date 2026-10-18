@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.visual.dhtml.html.HtmlAnchor_Package is
 
    procedure Initialize_Fields (This : in out HtmlAnchor'Class) is

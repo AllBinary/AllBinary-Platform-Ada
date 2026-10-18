@@ -20,35 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
-with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
-with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
-with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 
 package org.allbinary.math.NoDecimalTrigTable_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
-   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type NoDecimalTrigTable is tagged;
    type NoDecimalTrigTable_Access is access all NoDecimalTrigTable'Class;
    type NoDecimalTrigTable_Access_Array is array (Natural range <>) of NoDecimalTrigTable_Access;
    type NoDecimalTrigTable_Access_Array_Access is access all NoDecimalTrigTable_Access_Array;
+   type NoDecimalTrigTable_Access_Array_Access_Array is array (Natural range <>) of NoDecimalTrigTable_Access_Array_Access;
+   type NoDecimalTrigTable_Access_Array_Access_Array_Access is access all NoDecimalTrigTable_Access_Array_Access_Array;
 
    type NoDecimalTrigTable is new Java_Object with record
       mathUtil : MathUtil_Access;

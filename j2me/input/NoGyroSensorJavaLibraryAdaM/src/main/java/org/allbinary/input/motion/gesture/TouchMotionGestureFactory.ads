@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 
 package org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package is
 
-   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type TouchMotionGestureFactory is tagged;
    type TouchMotionGestureFactory_Access is access all TouchMotionGestureFactory'Class;
    type TouchMotionGestureFactory_Access_Array is array (Natural range <>) of TouchMotionGestureFactory_Access;
    type TouchMotionGestureFactory_Access_Array_Access is access all TouchMotionGestureFactory_Access_Array;
+   type TouchMotionGestureFactory_Access_Array_Access_Array is array (Natural range <>) of TouchMotionGestureFactory_Access_Array_Access;
+   type TouchMotionGestureFactory_Access_Array_Access_Array_Access is access all TouchMotionGestureFactory_Access_Array_Access_Array;
 
    type TouchMotionGestureFactory is new Java_Object with record
       LEFT : MotionGestureInput_Access;

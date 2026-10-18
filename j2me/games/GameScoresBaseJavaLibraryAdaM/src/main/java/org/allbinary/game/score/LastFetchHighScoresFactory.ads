@@ -20,18 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.game.score.NoHighScoresFactory_Package; use org.allbinary.game.score.NoHighScoresFactory_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 
 package org.allbinary.game.score.LastFetchHighScoresFactory_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type LastFetchHighScoresFactory is tagged;
    type LastFetchHighScoresFactory_Access is access all LastFetchHighScoresFactory'Class;
    type LastFetchHighScoresFactory_Access_Array is array (Natural range <>) of LastFetchHighScoresFactory_Access;
    type LastFetchHighScoresFactory_Access_Array_Access is access all LastFetchHighScoresFactory_Access_Array;
+   type LastFetchHighScoresFactory_Access_Array_Access_Array is array (Natural range <>) of LastFetchHighScoresFactory_Access_Array_Access;
+   type LastFetchHighScoresFactory_Access_Array_Access_Array_Access is access all LastFetchHighScoresFactory_Access_Array_Access_Array;
 
    type LastFetchHighScoresFactory is new Java_Object with record
       highScoresArray : HighScores_Access_Array_Access;

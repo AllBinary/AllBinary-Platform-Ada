@@ -32,6 +32,8 @@ package bundle.input.automation.module.InputAutomationModuleServiceInterface_Pac
    type InputAutomationModuleServiceInterface_Access is access all InputAutomationModuleServiceInterface'Class;
    type InputAutomationModuleServiceInterface_Access_Array is array (Natural range <>) of InputAutomationModuleServiceInterface_Access;
    type InputAutomationModuleServiceInterface_Access_Array_Access is access all InputAutomationModuleServiceInterface_Access_Array;
+   type InputAutomationModuleServiceInterface_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModuleServiceInterface_Access_Array_Access;
+   type InputAutomationModuleServiceInterface_Access_Array_Access_Array_Access is access all InputAutomationModuleServiceInterface_Access_Array_Access_Array;
    function getInputAutomationModuleInterfaceArray (This : in out InputAutomationModuleServiceInterface) return InputAutomationModuleFactoryInterface_Access_Array_Access is abstract;
 
 end bundle.input.automation.module.InputAutomationModuleServiceInterface_Package;

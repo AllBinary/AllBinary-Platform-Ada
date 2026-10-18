@@ -30,6 +30,8 @@ package org.allbinary.media.audio.NullJ2SEControl_Package is
    type NullJ2SEControl_Access is access all NullJ2SEControl'Class;
    type NullJ2SEControl_Access_Array is array (Natural range <>) of NullJ2SEControl_Access;
    type NullJ2SEControl_Access_Array_Access is access all NullJ2SEControl_Access_Array;
+   type NullJ2SEControl_Access_Array_Access_Array is array (Natural range <>) of NullJ2SEControl_Access_Array_Access;
+   type NullJ2SEControl_Access_Array_Access_Array_Access is access all NullJ2SEControl_Access_Array_Access_Array;
 
    type NullJ2SEControl is new Control with null record;
 

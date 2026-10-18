@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with taghelpers.InventoryHelper_Package; use taghelpers.InventoryHelper_Package;
+
 package body taghelpers.InventoryHelperFactory_Package is
 
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out InventoryHelperFactory'Class) is
    begin
       null;
@@ -42,7 +48,7 @@ package body taghelpers.InventoryHelperFactory_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            return InventoryHelper_Package.Create (hashMap, pageContext);
+            return Java_Object_Access (InventoryHelper_Package.Create (hashMap, pageContext));
         exception
             when Java_Occurrence : others =>
                 declare

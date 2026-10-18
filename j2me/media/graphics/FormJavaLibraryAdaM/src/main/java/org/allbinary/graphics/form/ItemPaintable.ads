@@ -30,6 +30,8 @@ package org.allbinary.graphics.form.ItemPaintable_Package is
    type ItemPaintable_Access is access all ItemPaintable'Class;
    type ItemPaintable_Access_Array is array (Natural range <>) of ItemPaintable_Access;
    type ItemPaintable_Access_Array_Access is access all ItemPaintable_Access_Array;
+   type ItemPaintable_Access_Array_Access_Array is array (Natural range <>) of ItemPaintable_Access_Array_Access;
+   type ItemPaintable_Access_Array_Access_Array_Access is access all ItemPaintable_Access_Array_Access_Array;
 
    type ItemPaintable is new Java_Object with null record;
 

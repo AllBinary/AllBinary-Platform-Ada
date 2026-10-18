@@ -21,22 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
-with org.allbinary.AppletUtil_Package; use org.allbinary.AppletUtil_Package;
-with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
-with org.allbinary.midlet.MidletExitProcessor_Package; use org.allbinary.midlet.MidletExitProcessor_Package;
 
 package org.allbinary.midlet.MidletExitProcessorFactory_Package is
 
    package MIDlet_Package renames Standard.javax.microedition.midlet.MIDlet_Package;
-   package AppletUtil_Package renames Standard.org.allbinary.AppletUtil_Package;
-   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
 
    type MidletExitProcessorFactory is tagged;
    type MidletExitProcessorFactory_Access is access all MidletExitProcessorFactory'Class;
    type MidletExitProcessorFactory_Access_Array is array (Natural range <>) of MidletExitProcessorFactory_Access;
    type MidletExitProcessorFactory_Access_Array_Access is access all MidletExitProcessorFactory_Access_Array;
+   type MidletExitProcessorFactory_Access_Array_Access_Array is array (Natural range <>) of MidletExitProcessorFactory_Access_Array_Access;
+   type MidletExitProcessorFactory_Access_Array_Access_Array_Access is access all MidletExitProcessorFactory_Access_Array_Access_Array;
 
    type MidletExitProcessorFactory is new Java_Object with null record;
    instance : MidletExitProcessorFactory_Access;

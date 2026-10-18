@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
+with min3d.core.ColorBufferList_Package; use min3d.core.ColorBufferList_Package;
+with min3d.core.Number3dBufferList_Package; use min3d.core.Number3dBufferList_Package;
+with min3d.vos.Number3d_Package; use min3d.vos.Number3d_Package;
+with org.allbinary.device.OpenGLESGraphics_Package; use org.allbinary.device.OpenGLESGraphics_Package;
+with org.allbinary.graphics.threed.min3d.renderer.Object3dProcessorUtil_Package; use org.allbinary.graphics.threed.min3d.renderer.Object3dProcessorUtil_Package;
+with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+
 package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
 
+   package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
+   package ColorBufferList_Package renames Standard.min3d.core.ColorBufferList_Package;
+   package Number3dBufferList_Package renames Standard.min3d.core.Number3dBufferList_Package;
+   package Number3d_Package renames Standard.min3d.vos.Number3d_Package;
+   package OpenGLESGraphics_Package renames Standard.org.allbinary.device.OpenGLESGraphics_Package;
+   package Object3dProcessorUtil_Package renames Standard.org.allbinary.graphics.threed.min3d.renderer.Object3dProcessorUtil_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
    procedure Initialize_Fields (This : in out HealthBarThreedAnimation'Class) is
    begin
       null;

@@ -20,15 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 
 package org.allbinary.gui.dialog.FileJDialogListenerInterface_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
 
    type FileJDialogListenerInterface is interface;
    type FileJDialogListenerInterface_Access is access all FileJDialogListenerInterface'Class;
    type FileJDialogListenerInterface_Access_Array is array (Natural range <>) of FileJDialogListenerInterface_Access;
    type FileJDialogListenerInterface_Access_Array_Access is access all FileJDialogListenerInterface_Access_Array;
+   type FileJDialogListenerInterface_Access_Array_Access_Array is array (Natural range <>) of FileJDialogListenerInterface_Access_Array_Access;
+   type FileJDialogListenerInterface_Access_Array_Access_Array_Access is access all FileJDialogListenerInterface_Access_Array_Access_Array;
    procedure onFiles (This : in out FileJDialogListenerInterface; files : File_Access_Array_Access) is abstract;
 
 end org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;

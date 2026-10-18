@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.init.db.InitDbHelperFactory_Package; use org.allbinary.business.init.db.InitDbHelperFactory_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body org.allbinary.business.installer.DynamicInitDb_Package is
 
+   package InitDbHelperFactory_Package renames Standard.org.allbinary.business.init.db.InitDbHelperFactory_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out DynamicInitDb'Class) is
    begin
       null;

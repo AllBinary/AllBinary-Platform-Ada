@@ -28,6 +28,8 @@ package org.allbinary.thirdparty.store.LongArrayIdentifierInterface_Package is
    type LongArrayIdentifierInterface_Access is access all LongArrayIdentifierInterface'Class;
    type LongArrayIdentifierInterface_Access_Array is array (Natural range <>) of LongArrayIdentifierInterface_Access;
    type LongArrayIdentifierInterface_Access_Array_Access is access all LongArrayIdentifierInterface_Access_Array;
+   type LongArrayIdentifierInterface_Access_Array_Access_Array is array (Natural range <>) of LongArrayIdentifierInterface_Access_Array_Access;
+   type LongArrayIdentifierInterface_Access_Array_Access_Array_Access is access all LongArrayIdentifierInterface_Access_Array_Access_Array;
    function getLongArrayIdentifier (This : in out LongArrayIdentifierInterface) return Long_Long_Integer_Array_Access is abstract;
 
 end org.allbinary.thirdparty.store.LongArrayIdentifierInterface_Package;

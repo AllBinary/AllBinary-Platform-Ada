@@ -22,30 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.context.modules.storefront.StoreFront_Package; use org.allbinary.business.context.modules.storefront.StoreFront_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.StoreFrontHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StoreFront_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFront_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type StoreFrontHelper is tagged;
    type StoreFrontHelper_Access is access all StoreFrontHelper'Class;
    type StoreFrontHelper_Access_Array is array (Natural range <>) of StoreFrontHelper_Access;
    type StoreFrontHelper_Access_Array_Access is access all StoreFrontHelper_Access_Array;
+   type StoreFrontHelper_Access_Array_Access_Array is array (Natural range <>) of StoreFrontHelper_Access_Array_Access;
+   type StoreFrontHelper_Access_Array_Access_Array_Access is access all StoreFrontHelper_Access_Array_Access_Array;
 
    type StoreFrontHelper is new TagHelper with record
       storeFrontInterface : StoreFrontInterface_Access;

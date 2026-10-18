@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package; use org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+
 package body org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package is
 
+   package VelocityInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
    procedure Initialize_Fields (This : in out ReverseVelocityBoundsVisitor'Class) is
    begin
       null;

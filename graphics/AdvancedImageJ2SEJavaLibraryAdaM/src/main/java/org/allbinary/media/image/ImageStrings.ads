@@ -28,6 +28,8 @@ package org.allbinary.media.image.ImageStrings_Package is
    type ImageStrings_Access is access all ImageStrings'Class;
    type ImageStrings_Access_Array is array (Natural range <>) of ImageStrings_Access;
    type ImageStrings_Access_Array_Access is access all ImageStrings_Access_Array;
+   type ImageStrings_Access_Array_Access_Array is array (Natural range <>) of ImageStrings_Access_Array_Access;
+   type ImageStrings_Access_Array_Access_Array_Access is access all ImageStrings_Access_Array_Access_Array;
 
    type ImageStrings is new Java_Object with record
       PNG : Unbounded_String;

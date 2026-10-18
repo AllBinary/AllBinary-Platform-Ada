@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
+with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out InputMappingHelpPaintable'Class) is
    begin
       null;
@@ -167,7 +182,7 @@ package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
                 stringMaker.delete (0, stringMaker.length);
                 This.logUtil.putF (stringMaker.append (To_Unbounded_String ("Found: selected GameKey: ")).append (This.stringUtil.toString (selectedGameKey)).toString, InputMappingHelpPaintable_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
                 actionBasicColor (index) := This.selectedBasicColor;
-                indexOfSelectedInput := list.indexOf (selectedInput);
+                indexOfSelectedInput := list.indexOf (Java_Object_Access (selectedInput));
                 if (indexOfSelectedInput) >= (0) then
                     stringMaker.delete (0, stringMaker.length);
                     This.logUtil.putF (stringMaker.append (To_Unbounded_String ("Found: selected Input: ")).append (This.stringUtil.toString (selectedInput)).toString, InputMappingHelpPaintable_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
@@ -225,7 +240,7 @@ package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
       actionString : Unbounded_String;
       input : Input_Access;
       list : BasicArrayList_Access;
-      sep_Case : Unbounded_String;
+      sep : Unbounded_String;
       beginWidth : Integer;
       index2 : Integer;
       index : Integer;
@@ -242,7 +257,7 @@ package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
         actionString := Null_Unbounded_String;
         input := null;
         list := null;
-        sep_Case := Null_Unbounded_String;
+        sep := Null_Unbounded_String;
         beginWidth := 0;
         for index in 0 .. (size) - 1 loop
             y := (((index) + (3))) * (This.updateMyFontProperties.charHeight);
@@ -259,9 +274,9 @@ package body org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
                 graphics.setColor (This.inputBasicColorArray (index) (index2).intValue);
                 graphics.drawString (input.getName, ((halfWidth) - (beginWidth)) + (deltaX), y, This.anchor);
                 deltaX := (deltaX) + (This.updateMyFontProperties.inputDeltaXArray (index) (index2));
-                sep_Case := This.updateMyFontProperties.sepArray (index) (index2);
+                sep := This.updateMyFontProperties.sepArray (index) (index2);
                 graphics.setColor (This.basicColor.intValue);
-                graphics.drawString (sep_Case, ((halfWidth) - (beginWidth)) + (deltaX), y, This.anchor);
+                graphics.drawString (sep, ((halfWidth) - (beginWidth)) + (deltaX), y, This.anchor);
                 deltaX := (deltaX) + (This.updateMyFontProperties.sepWidthArray (index) (index2));
             end loop;
         end loop;
@@ -283,8 +298,23 @@ begin
 end org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
+with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.game.paint.help.UpdateMyFontProperties_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out UpdateMyFontProperties'Class) is
    begin
       null;

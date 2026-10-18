@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
 
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out PixelDelta'Class) is
    begin
       null;
@@ -50,7 +57,7 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
       point : constant GPoint_Access := GPoint_Access (point_Param);
       colorDelta : constant ColorDelta_Access := ColorDelta_Access (colorDelta_Param);
    begin
-        return StringMaker_Package.Create.appendint (Integer (TsUtil_Package.getInstance.hashCode (point))).append (CommonSeps_Package.getInstance.UNDERSCORE).append (colorDelta.getKey.toString).toString;
+        return Java_Box (StringMaker_Package.Create.appendint (Integer (TsUtil_Package.getInstance.hashCode (point))).append (CommonSeps_Package.getInstance.UNDERSCORE).append (colorDelta.getKey.toString).toString);
    end getKey;
 
    function getPoint (This : in out PixelDelta) return GPoint_Access is

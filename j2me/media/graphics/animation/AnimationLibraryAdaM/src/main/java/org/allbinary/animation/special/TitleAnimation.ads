@@ -23,12 +23,9 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.animation.special.SpecialAnimation_Package; use org.allbinary.animation.special.SpecialAnimation_Package;
 
 package org.allbinary.animation.special.TitleAnimation_Package is
@@ -36,17 +33,16 @@ package org.allbinary.animation.special.TitleAnimation_Package is
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
-   package IndexedAnimationBehavior_Package renames Standard.org.allbinary.animation.IndexedAnimationBehavior_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
    type TitleAnimation is tagged;
    type TitleAnimation_Access is access all TitleAnimation'Class;
    type TitleAnimation_Access_Array is array (Natural range <>) of TitleAnimation_Access;
    type TitleAnimation_Access_Array_Access is access all TitleAnimation_Access_Array;
+   type TitleAnimation_Access_Array_Access_Array is array (Natural range <>) of TitleAnimation_Access_Array_Access;
+   type TitleAnimation_Access_Array_Access_Array_Access is access all TitleAnimation_Access_Array_Access_Array;
 
    type TitleAnimation is new SpecialAnimation with record
       systemWrapper : ABSystemWrapper_Access;

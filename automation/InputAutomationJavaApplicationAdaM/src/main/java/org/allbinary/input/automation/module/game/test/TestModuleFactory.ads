@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package; use org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package;
-with org.allbinary.input.automation.module.InputAutomationModuleData_Package; use org.allbinary.input.automation.module.InputAutomationModuleData_Package;
 with org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package; use org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.input.automation.module.game.test.JPanel_Package; use org.allbinary.input.automation.module.game.test.JPanel_Package;
@@ -29,7 +28,6 @@ with org.allbinary.input.automation.module.game.test.JPanel_Package; use org.all
 package org.allbinary.input.automation.module.game.test.TestModuleFactory_Package is
 
    package AbstractInputAutomationFactory_Package renames Standard.org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package;
-   package InputAutomationModuleData_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleData_Package;
    package BlankModuleConfigurationJPanel_Package renames Standard.org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package;
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
 
@@ -37,6 +35,8 @@ package org.allbinary.input.automation.module.game.test.TestModuleFactory_Packag
    type TestModuleFactory_Access is access all TestModuleFactory'Class;
    type TestModuleFactory_Access_Array is array (Natural range <>) of TestModuleFactory_Access;
    type TestModuleFactory_Access_Array_Access is access all TestModuleFactory_Access_Array;
+   type TestModuleFactory_Access_Array_Access_Array is array (Natural range <>) of TestModuleFactory_Access_Array_Access;
+   type TestModuleFactory_Access_Array_Access_Array_Access is access all TestModuleFactory_Access_Array_Access_Array;
 
    type TestModuleFactory is new AbstractInputAutomationFactory with record
       blankModuleConfigurationJPanel : BlankModuleConfigurationJPanel_Access;

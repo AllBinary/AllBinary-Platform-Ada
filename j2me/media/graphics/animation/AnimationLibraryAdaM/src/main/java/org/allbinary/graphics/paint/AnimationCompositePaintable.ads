@@ -33,6 +33,8 @@ package org.allbinary.graphics.paint.AnimationCompositePaintable_Package is
    type AnimationCompositePaintable_Access is access all AnimationCompositePaintable'Class;
    type AnimationCompositePaintable_Access_Array is array (Natural range <>) of AnimationCompositePaintable_Access;
    type AnimationCompositePaintable_Access_Array_Access is access all AnimationCompositePaintable_Access_Array;
+   type AnimationCompositePaintable_Access_Array_Access_Array is array (Natural range <>) of AnimationCompositePaintable_Access_Array_Access;
+   type AnimationCompositePaintable_Access_Array_Access_Array_Access is access all AnimationCompositePaintable_Access_Array_Access_Array;
 
    type AnimationCompositePaintable is new InitUpdatePaintable with record
       animationInterface : Animation_Access;

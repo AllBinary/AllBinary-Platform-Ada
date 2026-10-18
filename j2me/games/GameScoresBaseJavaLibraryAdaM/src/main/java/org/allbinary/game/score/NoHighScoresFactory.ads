@@ -25,7 +25,6 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.game.score.HighScoresBase_Package; use org.allbinary.game.score.HighScoresBase_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 with org.allbinary.game.score.HighScoresResultsListener_Package; use org.allbinary.game.score.HighScoresResultsListener_Package;
-with org.allbinary.game.score.HighScoresHelperBase_Package; use org.allbinary.game.score.HighScoresHelperBase_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
 
 package org.allbinary.game.score.NoHighScoresFactory_Package is
@@ -37,6 +36,8 @@ package org.allbinary.game.score.NoHighScoresFactory_Package is
    type NoHighScoresFactory_Access is access all NoHighScoresFactory'Class;
    type NoHighScoresFactory_Access_Array is array (Natural range <>) of NoHighScoresFactory_Access;
    type NoHighScoresFactory_Access_Array_Access is access all NoHighScoresFactory_Access_Array;
+   type NoHighScoresFactory_Access_Array_Access_Array is array (Natural range <>) of NoHighScoresFactory_Access_Array_Access;
+   type NoHighScoresFactory_Access_Array_Access_Array_Access is access all NoHighScoresFactory_Access_Array_Access_Array;
 
    type NoHighScoresFactory is new HighScoresBase with record
       logUtil : LogUtil_Access;

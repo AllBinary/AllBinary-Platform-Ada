@@ -20,36 +20,29 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.List_Package; use java.util.List_Package;
-with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-with org.allbinary.input.automation.module.InputAutomationModuleData_Package; use org.allbinary.input.automation.module.InputAutomationModuleData_Package;
-with org.allbinary.input.automation.module.NewInputAutomationModulesData_Package; use org.allbinary.input.automation.module.NewInputAutomationModulesData_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 
 package org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package InputAutomationModuleData_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleData_Package;
-   package NewInputAutomationModulesData_Package renames Standard.org.allbinary.input.automation.module.NewInputAutomationModulesData_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
-   package Node_Package renames Standard.org.w3c.dom.Node_Package;
-   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type InputAutomationModuleConfigurations is tagged;
    type InputAutomationModuleConfigurations_Access is access all InputAutomationModuleConfigurations'Class;
    type InputAutomationModuleConfigurations_Access_Array is array (Natural range <>) of InputAutomationModuleConfigurations_Access;
    type InputAutomationModuleConfigurations_Access_Array_Access is access all InputAutomationModuleConfigurations_Access_Array;
+   type InputAutomationModuleConfigurations_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModuleConfigurations_Access_Array_Access;
+   type InputAutomationModuleConfigurations_Access_Array_Access_Array_Access is access all InputAutomationModuleConfigurations_Access_Array_Access_Array;
 
    type InputAutomationModuleConfigurations is new Java_Object with record
       logUtil : LogUtil_Access;

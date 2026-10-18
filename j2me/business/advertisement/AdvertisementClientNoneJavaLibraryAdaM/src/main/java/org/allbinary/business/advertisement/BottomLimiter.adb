@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
+
 package body org.allbinary.business.advertisement.BottomLimiter_Package is
 
+   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    procedure Initialize_Fields (This : in out BottomLimiter'Class) is
    begin
       null;

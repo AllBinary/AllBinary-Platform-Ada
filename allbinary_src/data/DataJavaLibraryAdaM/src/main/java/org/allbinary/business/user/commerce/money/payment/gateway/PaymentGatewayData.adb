@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package is
 
    procedure Initialize_Fields (This : in out PaymentGatewayData'Class) is
@@ -22,16 +23,16 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentGatewayData'Class; value_Case : Unbounded_String) is
+   procedure Initialize (This : in out PaymentGatewayData'Class; value : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.key := value_Case;
+        This.key := value;
    end Initialize;
 
-   function Create (value_Case : Unbounded_String) return PaymentGatewayData_Access is
+   function Create (value : Unbounded_String) return PaymentGatewayData_Access is
       This : constant PaymentGatewayData_Access := new PaymentGatewayData;
    begin
-      PaymentGatewayData_Package.Initialize (This.all, value_Case);
+      PaymentGatewayData_Package.Initialize (This.all, value);
       return This;
    end Create;
 

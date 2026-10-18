@@ -20,43 +20,25 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.Calendar_Package; use java.util.Calendar_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
-with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
-with org.allbinary.business.quoterequest.QuoteRequestData_Package; use org.allbinary.business.quoterequest.QuoteRequestData_Package;
-with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
-with org.allbinary.data.generator.QuoteRequestIdGenerator_Package; use org.allbinary.data.generator.QuoteRequestIdGenerator_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.sql.AbSqlData_Package; use org.allbinary.logic.communication.sql.AbSqlData_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.business.user.quoterequest.QuoteRequest_Package is
 
-   package Calendar_Package renames Standard.java.util.Calendar_Package;
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
-   package QuoteRequestData_Package renames Standard.org.allbinary.business.quoterequest.QuoteRequestData_Package;
-   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
-   package QuoteRequestIdGenerator_Package renames Standard.org.allbinary.data.generator.QuoteRequestIdGenerator_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlData_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlData_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type QuoteRequest is tagged;
    type QuoteRequest_Access is access all QuoteRequest'Class;
    type QuoteRequest_Access_Array is array (Natural range <>) of QuoteRequest_Access;
    type QuoteRequest_Access_Array_Access is access all QuoteRequest_Access_Array;
+   type QuoteRequest_Access_Array_Access_Array is array (Natural range <>) of QuoteRequest_Access_Array_Access;
+   type QuoteRequest_Access_Array_Access_Array_Access is access all QuoteRequest_Access_Array_Access_Array;
 
    type QuoteRequest is new Java_Object with record
       logUtil : LogUtil_Access;

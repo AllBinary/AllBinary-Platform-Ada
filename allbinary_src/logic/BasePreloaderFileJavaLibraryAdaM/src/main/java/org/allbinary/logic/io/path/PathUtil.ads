@@ -21,8 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.io.path.AbFilePath_Package; use org.allbinary.logic.io.path.AbFilePath_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
@@ -30,13 +28,13 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 package org.allbinary.logic.io.path.PathUtil_Package is
 
    package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type PathUtil is tagged;
    type PathUtil_Access is access all PathUtil'Class;
    type PathUtil_Access_Array is array (Natural range <>) of PathUtil_Access;
    type PathUtil_Access_Array_Access is access all PathUtil_Access_Array;
+   type PathUtil_Access_Array_Access_Array is array (Natural range <>) of PathUtil_Access_Array_Access;
+   type PathUtil_Access_Array_Access_Array_Access is access all PathUtil_Access_Array_Access_Array;
 
    type PathUtil is new Java_Object with record
       abPathData : AbPathData_Access;

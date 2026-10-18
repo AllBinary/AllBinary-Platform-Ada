@@ -30,6 +30,8 @@ package org.allbinary.game.tracking.Tracking_Package is
    type Tracking_Access is access all Tracking'Class;
    type Tracking_Access_Array is array (Natural range <>) of Tracking_Access;
    type Tracking_Access_Array_Access is access all Tracking_Access_Array;
+   type Tracking_Access_Array_Access_Array is array (Natural range <>) of Tracking_Access_Array_Access;
+   type Tracking_Access_Array_Access_Array_Access is access all Tracking_Access_Array_Access_Array;
 
    type Tracking is new Java_Object with null record;
 

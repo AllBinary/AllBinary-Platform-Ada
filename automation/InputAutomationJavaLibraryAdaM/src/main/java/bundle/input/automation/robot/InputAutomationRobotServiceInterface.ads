@@ -32,6 +32,8 @@ package bundle.input.automation.robot.InputAutomationRobotServiceInterface_Packa
    type InputAutomationRobotServiceInterface_Access is access all InputAutomationRobotServiceInterface'Class;
    type InputAutomationRobotServiceInterface_Access_Array is array (Natural range <>) of InputAutomationRobotServiceInterface_Access;
    type InputAutomationRobotServiceInterface_Access_Array_Access is access all InputAutomationRobotServiceInterface_Access_Array;
+   type InputAutomationRobotServiceInterface_Access_Array_Access_Array is array (Natural range <>) of InputAutomationRobotServiceInterface_Access_Array_Access;
+   type InputAutomationRobotServiceInterface_Access_Array_Access_Array_Access is access all InputAutomationRobotServiceInterface_Access_Array_Access_Array;
    function getInputRobotInterfaceArray (This : in out InputAutomationRobotServiceInterface) return InputRobotInterface_Access_Array_Access is abstract;
 
 end bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;

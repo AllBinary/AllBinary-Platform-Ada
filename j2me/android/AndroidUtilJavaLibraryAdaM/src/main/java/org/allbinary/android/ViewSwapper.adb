@@ -1,8 +1,11 @@
 --  Generated Code Do Not Modify
 
 
+with android.view.ViewGroup_Package; use android.view.ViewGroup_Package;
+
 package body org.allbinary.android.ViewSwapper_Package is
 
+   package ViewGroup_Package renames Standard.android.view.ViewGroup_Package;
    procedure Initialize_Fields (This : in out ViewSwapper'Class) is
    begin
       null;

@@ -31,6 +31,8 @@ package org.allbinary.media.image.ImageProcessedVisitor_Package is
    type ImageProcessedVisitor_Access is access all ImageProcessedVisitor'Class;
    type ImageProcessedVisitor_Access_Array is array (Natural range <>) of ImageProcessedVisitor_Access;
    type ImageProcessedVisitor_Access_Array_Access is access all ImageProcessedVisitor_Access_Array;
+   type ImageProcessedVisitor_Access_Array_Access_Array is array (Natural range <>) of ImageProcessedVisitor_Access_Array_Access;
+   type ImageProcessedVisitor_Access_Array_Access_Array_Access is access all ImageProcessedVisitor_Access_Array_Access_Array;
    procedure visit (This : in out ImageProcessedVisitor; generatedBufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; nameEnding : Unbounded_String; index : Integer) is abstract;
 
 end org.allbinary.media.image.ImageProcessedVisitor_Package;

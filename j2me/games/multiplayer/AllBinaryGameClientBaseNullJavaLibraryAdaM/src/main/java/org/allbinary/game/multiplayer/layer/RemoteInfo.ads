@@ -12,16 +12,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.game.multiplayer.layer.RemoteInfo_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type RemoteInfo is tagged;
    type RemoteInfo_Access is access all RemoteInfo'Class;
    type RemoteInfo_Access_Array is array (Natural range <>) of RemoteInfo_Access;
    type RemoteInfo_Access_Array_Access is access all RemoteInfo_Access_Array;
+   type RemoteInfo_Access_Array_Access_Array is array (Natural range <>) of RemoteInfo_Access_Array_Access;
+   type RemoteInfo_Access_Array_Access_Array_Access is access all RemoteInfo_Access_Array_Access_Array;
 
    type RemoteInfo is new Java_Object with null record;
    NEW_PLAYER_ID : Integer;

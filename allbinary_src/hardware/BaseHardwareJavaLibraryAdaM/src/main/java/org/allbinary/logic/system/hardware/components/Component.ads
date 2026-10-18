@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.Component_Package is
    type Component_Access is access all Component'Class;
    type Component_Access_Array is array (Natural range <>) of Component_Access;
    type Component_Access_Array_Access is access all Component_Access_Array;
+   type Component_Access_Array_Access_Array is array (Natural range <>) of Component_Access_Array_Access;
+   type Component_Access_Array_Access_Array_Access is access all Component_Access_Array_Access_Array;
 
    type Component is new Java_Object with record
       name : Unbounded_String;

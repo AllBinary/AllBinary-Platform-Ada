@@ -20,23 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
 
 package org.allbinary.business.init.db.DbConnectionInfo_Package is
 
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type DbConnectionInfo is tagged;
    type DbConnectionInfo_Access is access all DbConnectionInfo'Class;
    type DbConnectionInfo_Access_Array is array (Natural range <>) of DbConnectionInfo_Access;
    type DbConnectionInfo_Access_Array_Access is access all DbConnectionInfo_Access_Array;
+   type DbConnectionInfo_Access_Array_Access_Array is array (Natural range <>) of DbConnectionInfo_Access_Array_Access;
+   type DbConnectionInfo_Access_Array_Access_Array_Access is access all DbConnectionInfo_Access_Array_Access_Array;
 
-   type DbConnectionInfo is new DatabaseConnectionInfoInterface with record
+   type DbConnectionInfo is new Java_Object and DatabaseConnectionInfoInterface with record
       jdbcDriver : Unbounded_String;
       name : Unbounded_String;
       userName : Unbounded_String;

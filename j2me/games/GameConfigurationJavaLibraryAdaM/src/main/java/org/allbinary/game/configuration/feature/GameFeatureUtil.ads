@@ -20,36 +20,27 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Enumeration_Package; use java.util.Enumeration_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package; use javax.microedition.lcdui.ChoiceGroup_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
-with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
-with org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package; use org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
 
 package org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
 
    package ChoiceGroup_Package renames Standard.javax.microedition.lcdui.ChoiceGroup_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package EnumerationUtil_Package renames Standard.org.allbinary.util.EnumerationUtil_Package;
-   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
 
    type GameFeatureUtil is tagged;
    type GameFeatureUtil_Access is access all GameFeatureUtil'Class;
    type GameFeatureUtil_Access_Array is array (Natural range <>) of GameFeatureUtil_Access;
    type GameFeatureUtil_Access_Array_Access is access all GameFeatureUtil_Access_Array;
+   type GameFeatureUtil_Access_Array_Access_Array is array (Natural range <>) of GameFeatureUtil_Access_Array_Access;
+   type GameFeatureUtil_Access_Array_Access_Array_Access is access all GameFeatureUtil_Access_Array_Access_Array;
 
    type GameFeatureUtil is new Java_Object with record
       logUtil : LogUtil_Access;

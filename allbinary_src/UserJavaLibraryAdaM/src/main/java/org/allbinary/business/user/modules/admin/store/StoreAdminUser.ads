@@ -34,6 +34,8 @@ package org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package i
    type StoreAdminUser_Access is access all StoreAdminUser'Class;
    type StoreAdminUser_Access_Array is array (Natural range <>) of StoreAdminUser_Access;
    type StoreAdminUser_Access_Array_Access is access all StoreAdminUser_Access_Array;
+   type StoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of StoreAdminUser_Access_Array_Access;
+   type StoreAdminUser_Access_Array_Access_Array_Access is access all StoreAdminUser_Access_Array_Access_Array;
 
    type StoreAdminUser is new User with null record;
 

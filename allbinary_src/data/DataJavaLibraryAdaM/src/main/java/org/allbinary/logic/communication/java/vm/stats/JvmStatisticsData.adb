@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_Package is
 
    procedure Initialize_Fields (This : in out JvmStatisticsData'Class) is

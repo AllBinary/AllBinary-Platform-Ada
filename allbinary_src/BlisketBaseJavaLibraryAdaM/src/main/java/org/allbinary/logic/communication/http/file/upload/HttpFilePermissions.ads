@@ -21,21 +21,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.business.user.role.BasicUserRoleFactory_Package; use org.allbinary.business.user.role.BasicUserRoleFactory_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.communication.http.file.upload.FileUploadData_Package; use org.allbinary.logic.communication.http.file.upload.FileUploadData_Package;
 
 package org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package BasicUserRoleFactory_Package renames Standard.org.allbinary.business.user.role.BasicUserRoleFactory_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
@@ -45,6 +38,8 @@ package org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_P
    type HttpFilePermissions_Access is access all HttpFilePermissions'Class;
    type HttpFilePermissions_Access_Array is array (Natural range <>) of HttpFilePermissions_Access;
    type HttpFilePermissions_Access_Array_Access is access all HttpFilePermissions_Access_Array;
+   type HttpFilePermissions_Access_Array_Access_Array is array (Natural range <>) of HttpFilePermissions_Access_Array_Access;
+   type HttpFilePermissions_Access_Array_Access_Array_Access is access all HttpFilePermissions_Access_Array_Access_Array;
 
    type HttpFilePermissions is new Java_Object with record
       logUtil : LogUtil_Access;

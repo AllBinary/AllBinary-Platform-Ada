@@ -21,26 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
-with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
-with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn.PlaynImage_Package;
-with org.allbinary.media.image.Hashtable_Package; use org.allbinary.media.image.Hashtable_Package;
 
 package org.allbinary.media.image.ImageCompleteUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
-   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
-   package PlaynImage_Package renames Standard.org.microemu.device.playn.PlaynImage_Package;
 
    type ImageCompleteUtil is tagged;
    type ImageCompleteUtil_Access is access all ImageCompleteUtil'Class;
    type ImageCompleteUtil_Access_Array is array (Natural range <>) of ImageCompleteUtil_Access;
    type ImageCompleteUtil_Access_Array_Access is access all ImageCompleteUtil_Access_Array;
+   type ImageCompleteUtil_Access_Array_Access_Array is array (Natural range <>) of ImageCompleteUtil_Access_Array_Access;
+   type ImageCompleteUtil_Access_Array_Access_Array_Access is access all ImageCompleteUtil_Access_Array_Access_Array;
 
    type ImageCompleteUtil is new Java_Object with record
       timeDelayHelper : TimeDelayHelper_Access;

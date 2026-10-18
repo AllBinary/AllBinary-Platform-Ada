@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.http.file.upload.FileUploadData_Packag
    type FileUploadData_Access is access all FileUploadData'Class;
    type FileUploadData_Access_Array is array (Natural range <>) of FileUploadData_Access;
    type FileUploadData_Access_Array_Access is access all FileUploadData_Access_Array;
+   type FileUploadData_Access_Array_Access_Array is array (Natural range <>) of FileUploadData_Access_Array_Access;
+   type FileUploadData_Access_Array_Access_Array_Access is access all FileUploadData_Access_Array_Access_Array;
 
    type FileUploadData is new Java_Object with record
       FILE : Unbounded_String;

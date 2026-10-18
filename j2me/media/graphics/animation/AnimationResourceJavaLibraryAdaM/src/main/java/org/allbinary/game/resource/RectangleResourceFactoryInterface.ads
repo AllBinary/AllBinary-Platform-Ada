@@ -30,6 +30,8 @@ package org.allbinary.game.resource.RectangleResourceFactoryInterface_Package is
    type RectangleResourceFactoryInterface_Access is access all RectangleResourceFactoryInterface'Class;
    type RectangleResourceFactoryInterface_Access_Array is array (Natural range <>) of RectangleResourceFactoryInterface_Access;
    type RectangleResourceFactoryInterface_Access_Array_Access is access all RectangleResourceFactoryInterface_Access_Array;
+   type RectangleResourceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of RectangleResourceFactoryInterface_Access_Array_Access;
+   type RectangleResourceFactoryInterface_Access_Array_Access_Array_Access is access all RectangleResourceFactoryInterface_Access_Array_Access_Array;
    function getRectangle (This : in out RectangleResourceFactoryInterface; resource : Unbounded_String) return Rectangle_Access is abstract;
    function getRectangleArrayOfArrays (This : in out RectangleResourceFactoryInterface; resource : Unbounded_String) return Rectangle_Access_Array_Access_Array_Access is abstract;
 

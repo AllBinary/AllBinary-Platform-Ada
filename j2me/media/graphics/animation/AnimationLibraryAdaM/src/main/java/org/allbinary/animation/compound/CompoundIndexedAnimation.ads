@@ -25,7 +25,6 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.compound.CompoundAnimationInterface_Package; use org.allbinary.animation.compound.CompoundAnimationInterface_Package;
 
@@ -36,13 +35,14 @@ package org.allbinary.animation.compound.CompoundIndexedAnimation_Package is
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type CompoundIndexedAnimation is tagged;
    type CompoundIndexedAnimation_Access is access all CompoundIndexedAnimation'Class;
    type CompoundIndexedAnimation_Access_Array is array (Natural range <>) of CompoundIndexedAnimation_Access;
    type CompoundIndexedAnimation_Access_Array_Access is access all CompoundIndexedAnimation_Access_Array;
+   type CompoundIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of CompoundIndexedAnimation_Access_Array_Access;
+   type CompoundIndexedAnimation_Access_Array_Access_Array_Access is access all CompoundIndexedAnimation_Access_Array_Access_Array;
 
    type CompoundIndexedAnimation is new IndexedAnimation and CompoundAnimationInterface with record
       circularIndexUtil : CircularIndexUtil_Access;

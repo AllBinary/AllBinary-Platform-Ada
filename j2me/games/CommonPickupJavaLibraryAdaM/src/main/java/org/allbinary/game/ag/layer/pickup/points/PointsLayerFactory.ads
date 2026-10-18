@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
-with org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package; use org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package;
 
 package org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package is
 
@@ -33,8 +32,10 @@ package org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package is
    type PointsLayerFactory_Access is access all PointsLayerFactory'Class;
    type PointsLayerFactory_Access_Array is array (Natural range <>) of PointsLayerFactory_Access;
    type PointsLayerFactory_Access_Array_Access is access all PointsLayerFactory_Access_Array;
+   type PointsLayerFactory_Access_Array_Access_Array is array (Natural range <>) of PointsLayerFactory_Access_Array_Access;
+   type PointsLayerFactory_Access_Array_Access_Array_Access is access all PointsLayerFactory_Access_Array_Access_Array;
 
-   type PointsLayerFactory is new AllBinaryLayerFactoryInterface with record
+   type PointsLayerFactory is new Java_Object and AllBinaryLayerFactoryInterface with record
       points : Integer;
    end record;
 

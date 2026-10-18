@@ -31,6 +31,8 @@ package org.allbinary.logic.communication.sql.AbSqlTablePresentation_Package is
    type AbSqlTablePresentation_Access is access all AbSqlTablePresentation'Class;
    type AbSqlTablePresentation_Access_Array is array (Natural range <>) of AbSqlTablePresentation_Access;
    type AbSqlTablePresentation_Access_Array_Access is access all AbSqlTablePresentation_Access_Array;
+   type AbSqlTablePresentation_Access_Array_Access_Array is array (Natural range <>) of AbSqlTablePresentation_Access_Array_Access;
+   type AbSqlTablePresentation_Access_Array_Access_Array_Access is access all AbSqlTablePresentation_Access_Array_Access_Array;
 
    type AbSqlTablePresentation is new AbSqlBasic with null record;
 

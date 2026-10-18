@@ -32,6 +32,8 @@ package org.allbinary.graphics.opengles.VertexAttributePointerOpenGLProcessor_Pa
    type VertexAttributePointerOpenGLProcessor_Access is access all VertexAttributePointerOpenGLProcessor'Class;
    type VertexAttributePointerOpenGLProcessor_Access_Array is array (Natural range <>) of VertexAttributePointerOpenGLProcessor_Access;
    type VertexAttributePointerOpenGLProcessor_Access_Array_Access is access all VertexAttributePointerOpenGLProcessor_Access_Array;
+   type VertexAttributePointerOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of VertexAttributePointerOpenGLProcessor_Access_Array_Access;
+   type VertexAttributePointerOpenGLProcessor_Access_Array_Access_Array_Access is access all VertexAttributePointerOpenGLProcessor_Access_Array_Access_Array;
 
    type VertexAttributePointerOpenGLProcessor is new ObjectThreedOpenGLProcessor with null record;
    instance : VertexAttributePointerOpenGLProcessor_Access;

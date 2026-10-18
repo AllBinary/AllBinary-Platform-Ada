@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
+
 package body org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package is
 
    procedure Initialize_Fields (This : in out AdjustedImageArrayRotationAnimation'Class) is

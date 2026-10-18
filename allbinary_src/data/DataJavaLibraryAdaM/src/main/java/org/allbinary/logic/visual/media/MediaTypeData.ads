@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.media.MediaTypeData_Package is
    type MediaTypeData_Access is access all MediaTypeData'Class;
    type MediaTypeData_Access_Array is array (Natural range <>) of MediaTypeData_Access;
    type MediaTypeData_Access_Array_Access is access all MediaTypeData_Access_Array;
+   type MediaTypeData_Access_Array_Access_Array is array (Natural range <>) of MediaTypeData_Access_Array_Access;
+   type MediaTypeData_Access_Array_Access_Array_Access is access all MediaTypeData_Access_Array_Access_Array;
 
    type MediaTypeData is new Java_Object with record
       RESIZABLE_MEDIA : Unbounded_String;

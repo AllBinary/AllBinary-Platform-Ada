@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.vector.VectorCenterGenerator_Package; use org.allbinary.animation.vector.VectorCenterGenerator_Package;
+with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
+with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+
 package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
 
+   package VectorCenterGenerator_Package renames Standard.org.allbinary.animation.vector.VectorCenterGenerator_Package;
+   package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package WorkAreaJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+   package GraphicItemFactory_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
+   package GraphicItemInterface_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
+   package LinesGraphicItem_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out CanvasDom'Class) is
    begin
       null;
@@ -35,10 +54,10 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
       sizeNode : Node_Access;
       xNode : Node_Access;
       xTextNode : Node_Access;
-      x_Case : Integer;
+      x : Integer;
       yNode : Node_Access;
       yTextNode : Node_Access;
-      y_Case : Integer;
+      y : Integer;
       zoomNode : Node_Access;
       zoomTextNode : Node_Access;
       gridNode : Node_Access;
@@ -57,7 +76,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
    begin
       Initialize_Fields (This);
         This.grid_Case := Grid_Package.Create;
-        This.grid_Case.grid_Case := PointFactory_Package.getInstance.createXY (0, 0);
+        This.grid_Case.grid := PointFactory_Package.getInstance.createXY (0, 0);
         This.dimension := IntegerDimension_Package.Create (0, 0);
         name := canvasNode.getNodeName;
         if (Java_Compare_To (name, CanvasDom_Package.FRAME)) = (0) then
@@ -69,11 +88,11 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
             sizeNode := DomHelper_Package.getInstance.searchNodeList (SIZE, canvasNode.getChildNodes);
             xNode := DomHelper_Package.getInstance.searchNodeList (X, sizeNode.getChildNodes);
             xTextNode := xNode.getFirstChild;
-            x_Case := xTextNode.getNodeValue.intValue;
+            x := xTextNode.getNodeValue.intValue;
             yNode := DomHelper_Package.getInstance.searchNodeList (Y, sizeNode.getChildNodes);
             yTextNode := yNode.getFirstChild;
-            y_Case := yTextNode.getNodeValue.intValue;
-            CanvasDom'Class (This).setWorkArea (x_Case, y_Case);
+            y := yTextNode.getNodeValue.intValue;
+            CanvasDom'Class (This).setWorkArea (x, y);
             zoomNode := DomHelper_Package.getInstance.searchNodeList (ZOOM, canvasNode.getChildNodes);
             zoomTextNode := zoomNode.getFirstChild;
             This.grid_Case.setZoom (zoomTextNode.getNodeValue.intValue);
@@ -142,15 +161,15 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
    end setAngle;
 
    --  throws Exception
-   procedure setWorkArea (This : in out CanvasDom; x_Case : Integer; y_Case : Integer) is
+   procedure setWorkArea (This : in out CanvasDom; x : Integer; y : Integer) is
    begin
-        CanvasDom'Class (This).setDimension (IntegerDimension_Package.Create (x_Case, y_Case));
+        CanvasDom'Class (This).setDimension (IntegerDimension_Package.Create (x, y));
    end setWorkArea;
 
    --  throws Exception
    procedure setGrid (This : in out CanvasDom; gridX : Integer; gridY : Integer) is
    begin
-        This.grid_Case.grid_Case := PointFactory_Package.getInstance.createXY (gridX, gridY);
+        This.grid_Case.grid := PointFactory_Package.getInstance.createXY (gridX, gridY);
    end setGrid;
 
    function getPointNode (This : in out CanvasDom; point_Param : access GPoint_Package.GPoint'Class; pointName : Unbounded_String) return Node_Access is
@@ -198,7 +217,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
       heightTextNode : Node_Access;
       graphicItemNode : Node_Access;
       graphicItemArray : Java_Object_Access_Array_Access;
-      size_Case : Integer;
+      size : Integer;
       item : GraphicItemInterface_Access;
       index : Integer;
    begin
@@ -212,7 +231,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         zoomTextNode := Node_Access (document.createTextNode (CanvasDom'Class (This).getGrid.getZoom.toString));
         zoomNode.appendChild (zoomTextNode);
         gridNode := Node_Access (document.createElement (GRID));
-        gridSizeNode := Node_Access (CanvasDom'Class (This).getPointNode (CanvasDom'Class (This).getGrid.grid_Case, SIZE));
+        gridSizeNode := Node_Access (CanvasDom'Class (This).getPointNode (CanvasDom'Class (This).getGrid.grid, SIZE));
         gridNode.appendChild (gridSizeNode);
         enableNode := Node_Access (document.createElement (ENABLED));
         enableTextNode := Node_Access (document.createTextNode (CanvasDom'Class (This).getGrid.isGridOn.toString));
@@ -240,8 +259,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         frameNode.appendChild (realSizeNode);
         graphicItemNode := Node_Access (document.createElement (GRAPHICITEMS));
         graphicItemArray := CanvasDom'Class (This).getGraphicItemHashMap.keySet.toArray;
-        size_Case := graphicItemArray'Length;
-        for index in 0 .. (size_Case) - 1 loop
+        size := graphicItemArray'Length;
+        for index in 0 .. (size) - 1 loop
             item := GraphicItemInterface_Access (This.graphicItemHashMap.get (graphicItemArray (index)));
             if (item.getName) = (LinesGraphicItem_Package.getStaticName) then
                 if item.isValid then

@@ -22,18 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.net.URL_Package; use java.net.URL_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
 
 package org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type JavaHelpSetNotifier is tagged;
    type JavaHelpSetNotifier_Access is access all JavaHelpSetNotifier'Class;
    type JavaHelpSetNotifier_Access_Array is array (Natural range <>) of JavaHelpSetNotifier_Access;
    type JavaHelpSetNotifier_Access_Array_Access is access all JavaHelpSetNotifier_Access_Array;
+   type JavaHelpSetNotifier_Access_Array_Access_Array is array (Natural range <>) of JavaHelpSetNotifier_Access_Array_Access;
+   type JavaHelpSetNotifier_Access_Array_Access_Array_Access is access all JavaHelpSetNotifier_Access_Array_Access_Array;
 
    type JavaHelpSetNotifier is new Java_Object with null record;
    vector : BasicArrayList_Access;

@@ -20,19 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 
 package org.allbinary.logic.communication.log.TestRemoteLogUtil_Package is
 
-   package Globals_Package renames Standard.org.allbinary.globals.Globals_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TestRemoteLogUtil is tagged;
    type TestRemoteLogUtil_Access is access all TestRemoteLogUtil'Class;
    type TestRemoteLogUtil_Access_Array is array (Natural range <>) of TestRemoteLogUtil_Access;
    type TestRemoteLogUtil_Access_Array_Access is access all TestRemoteLogUtil_Access_Array;
+   type TestRemoteLogUtil_Access_Array_Access_Array is array (Natural range <>) of TestRemoteLogUtil_Access_Array_Access;
+   type TestRemoteLogUtil_Access_Array_Access_Array_Access is access all TestRemoteLogUtil_Access_Array_Access_Array;
 
    type TestRemoteLogUtil is new Java_Object with null record;
    PATH : Unbounded_String;

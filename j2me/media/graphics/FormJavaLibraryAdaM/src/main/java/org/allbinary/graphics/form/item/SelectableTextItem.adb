@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.form.item.ABStringComponent_Package; use org.allbinary.graphics.form.item.ABStringComponent_Package;
+
 package body org.allbinary.graphics.form.item.SelectableTextItem_Package is
 
    procedure Initialize_Fields (This : in out SelectableTextItem'Class) is

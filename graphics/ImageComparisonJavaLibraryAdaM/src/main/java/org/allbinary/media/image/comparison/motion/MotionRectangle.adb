@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Vector_Package; use java.util.Vector_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.media.image.comparison.motion.MotionRectangle_Package is
 
+   package Vector_Package renames Standard.java.util.Vector_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out MotionRectangle'Class) is
    begin
       null;
@@ -65,7 +70,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangle_Package
    begin
         motionRectangle := MotionRectangle_Package.Create (Rectangle_Access (MotionRectangle'Class (This).getRectangle.clone));
         motionRectangle.setPixelDeltaVector (BasicArrayList_Access (MotionRectangle'Class (This).getPixelDeltaVector.clone));
-        return motionRectangle;
+        return Java_Object_Access (motionRectangle);
    end clone;
 
 end org.allbinary.media.image.comparison.motion.MotionRectangle_Package;

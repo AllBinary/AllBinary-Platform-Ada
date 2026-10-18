@@ -29,6 +29,8 @@ package org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package is
    type NativeLibraryClassLoader_Access is access all NativeLibraryClassLoader'Class;
    type NativeLibraryClassLoader_Access_Array is array (Natural range <>) of NativeLibraryClassLoader_Access;
    type NativeLibraryClassLoader_Access_Array_Access is access all NativeLibraryClassLoader_Access_Array;
+   type NativeLibraryClassLoader_Access_Array_Access_Array is array (Natural range <>) of NativeLibraryClassLoader_Access_Array_Access;
+   type NativeLibraryClassLoader_Access_Array_Access_Array_Access is access all NativeLibraryClassLoader_Access_Array_Access_Array;
 
    type NativeLibraryClassLoader is new ClassLoader with record
       message : Unbounded_String;

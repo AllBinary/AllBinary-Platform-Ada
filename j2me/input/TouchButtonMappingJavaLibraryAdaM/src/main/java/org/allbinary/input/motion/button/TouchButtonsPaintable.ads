@@ -24,9 +24,7 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package; use org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.input.motion.button.TouchButtonFactory_Package; use org.allbinary.input.motion.button.TouchButtonFactory_Package;
-with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
 
 package org.allbinary.input.motion.button.TouchButtonsPaintable_Package is
 
@@ -34,12 +32,13 @@ package org.allbinary.input.motion.button.TouchButtonsPaintable_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package BasicColorSetUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorSetUtil_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type TouchButtonsPaintable is tagged;
    type TouchButtonsPaintable_Access is access all TouchButtonsPaintable'Class;
    type TouchButtonsPaintable_Access_Array is array (Natural range <>) of TouchButtonsPaintable_Access;
    type TouchButtonsPaintable_Access_Array_Access is access all TouchButtonsPaintable_Access_Array;
+   type TouchButtonsPaintable_Access_Array_Access_Array is array (Natural range <>) of TouchButtonsPaintable_Access_Array_Access;
+   type TouchButtonsPaintable_Access_Array_Access_Array_Access is access all TouchButtonsPaintable_Access_Array_Access_Array;
 
    type TouchButtonsPaintable is new Paintable with record
       foregroundBasicColor : BasicColor_Access;

@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package is
    type HtmlInputData_Access is access all HtmlInputData'Class;
    type HtmlInputData_Access_Array is array (Natural range <>) of HtmlInputData_Access;
    type HtmlInputData_Access_Array_Access is access all HtmlInputData_Access_Array;
+   type HtmlInputData_Access_Array_Access_Array is array (Natural range <>) of HtmlInputData_Access_Array_Access;
+   type HtmlInputData_Access_Array_Access_Array_Access is access all HtmlInputData_Access_Array_Access_Array;
 
    type HtmlInputData is new Java_Object with record
       TEXT : Unbounded_String;

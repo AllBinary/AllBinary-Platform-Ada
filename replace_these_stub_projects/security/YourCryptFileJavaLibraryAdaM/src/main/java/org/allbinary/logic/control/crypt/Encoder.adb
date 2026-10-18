@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.control.crypt.Encoder_Package is
 
    procedure Initialize_Fields (This : in out Encoder'Class) is

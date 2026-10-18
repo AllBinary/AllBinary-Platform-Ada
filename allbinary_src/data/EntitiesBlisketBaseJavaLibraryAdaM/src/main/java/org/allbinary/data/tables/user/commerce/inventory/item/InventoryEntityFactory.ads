@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
 
 package org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InventoryEntityFactory is tagged;
    type InventoryEntityFactory_Access is access all InventoryEntityFactory'Class;
    type InventoryEntityFactory_Access_Array is array (Natural range <>) of InventoryEntityFactory_Access;
    type InventoryEntityFactory_Access_Array_Access is access all InventoryEntityFactory_Access_Array;
+   type InventoryEntityFactory_Access_Array_Access_Array is array (Natural range <>) of InventoryEntityFactory_Access_Array_Access;
+   type InventoryEntityFactory_Access_Array_Access_Array_Access is access all InventoryEntityFactory_Access_Array_Access_Array;
 
    type InventoryEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -20,22 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
-with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
-with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 
 package org.allbinary.logic.string_Id.StringUtil_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
-   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type StringUtil is tagged;
    type StringUtil_Access is access all StringUtil'Class;
    type StringUtil_Access_Array is array (Natural range <>) of StringUtil_Access;
    type StringUtil_Access_Array_Access is access all StringUtil_Access_Array;
+   type StringUtil_Access_Array_Access_Array is array (Natural range <>) of StringUtil_Access_Array_Access;
+   type StringUtil_Access_Array_Access_Array_Access is access all StringUtil_Access_Array_Access_Array;
 
    type StringUtil is new Java_Object with record
       INIT_STRING : Unbounded_String;
@@ -56,6 +50,8 @@ package org.allbinary.logic.string_Id.StringUtil_Package is
    procedure count (This : in out StringUtil; string_Id : Unbounded_String; aChar : Character);
    function toString (This : in out StringUtil; anyType_Param : access Java_Object'Class) return Unbounded_String;
    procedure toString (This : in out StringUtil; anyType_Param : access Java_Object'Class);
+   function toString (This : in out StringUtil; Value : Unbounded_String) return Unbounded_String;
+   procedure toString (This : in out StringUtil; Value : Unbounded_String);
 
 end org.allbinary.logic.string_Id.StringUtil_Package;
 

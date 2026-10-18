@@ -35,6 +35,8 @@ package org.allbinary.animation.image.ChangeColorProcessor_Package is
    type ChangeColorProcessor_Access is access all ChangeColorProcessor'Class;
    type ChangeColorProcessor_Access_Array is array (Natural range <>) of ChangeColorProcessor_Access;
    type ChangeColorProcessor_Access_Array_Access is access all ChangeColorProcessor_Access_Array;
+   type ChangeColorProcessor_Access_Array_Access_Array is array (Natural range <>) of ChangeColorProcessor_Access_Array_Access;
+   type ChangeColorProcessor_Access_Array_Access_Array_Access is access all ChangeColorProcessor_Access_Array_Access_Array;
 
    type ChangeColorProcessor is new ModifierBaseProcessor with null record;
    instanceC : ChangeColorProcessor_Access;

@@ -40,6 +40,8 @@ package org.allbinary.input.automation.module.TestInputAutomationWorker_Package 
    type TestInputAutomationWorker_Access is access all TestInputAutomationWorker'Class;
    type TestInputAutomationWorker_Access_Array is array (Natural range <>) of TestInputAutomationWorker_Access;
    type TestInputAutomationWorker_Access_Array_Access is access all TestInputAutomationWorker_Access_Array;
+   type TestInputAutomationWorker_Access_Array_Access_Array is array (Natural range <>) of TestInputAutomationWorker_Access_Array_Access;
+   type TestInputAutomationWorker_Access_Array_Access_Array_Access is access all TestInputAutomationWorker_Access_Array_Access_Array;
 
    type TestInputAutomationWorker is new Java_Object with record
       captureWorker : ScreenCaptureImagesWorker_Access;

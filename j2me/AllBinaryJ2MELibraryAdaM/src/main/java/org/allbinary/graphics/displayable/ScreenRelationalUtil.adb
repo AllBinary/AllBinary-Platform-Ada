@@ -1,6 +1,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+
 package body org.allbinary.graphics.displayable.ScreenRelationalUtil_Package is
 
    procedure Initialize_Fields (This : in out ScreenRelationalUtil'Class) is

@@ -33,6 +33,8 @@ package org.allbinary.input.gyro.NoGyroSensor_Package is
    type NoGyroSensor_Access is access all NoGyroSensor'Class;
    type NoGyroSensor_Access_Array is array (Natural range <>) of NoGyroSensor_Access;
    type NoGyroSensor_Access_Array_Access is access all NoGyroSensor_Access_Array;
+   type NoGyroSensor_Access_Array_Access_Array is array (Natural range <>) of NoGyroSensor_Access_Array_Access;
+   type NoGyroSensor_Access_Array_Access_Array_Access is access all NoGyroSensor_Access_Array_Access_Array;
 
    type NoGyroSensor is new AllBinaryOrientationSensor and AllBinarySensorListener with null record;
 

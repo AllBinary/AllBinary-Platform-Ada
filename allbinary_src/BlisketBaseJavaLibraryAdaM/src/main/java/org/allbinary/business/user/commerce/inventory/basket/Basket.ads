@@ -23,30 +23,22 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.Serializable_Package; use java.io.Serializable_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
 with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
-with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
-with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
-with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
 
 package org.allbinary.business.user.commerce.inventory.basket.Basket_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
    package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
-   package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
-   package InventoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
-   package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type Basket is tagged;
    type Basket_Access is access all Basket'Class;
    type Basket_Access_Array is array (Natural range <>) of Basket_Access;
    type Basket_Access_Array_Access is access all Basket_Access_Array;
+   type Basket_Access_Array_Access_Array is array (Natural range <>) of Basket_Access_Array_Access;
+   type Basket_Access_Array_Access_Array_Access is access all Basket_Access_Array_Access_Array;
 
-   type Basket is new BasketInterface and Serializable with record
+   type Basket is new Java_Object and BasketInterface and Serializable with record
       items : HashMap_Access;
    end record;
 

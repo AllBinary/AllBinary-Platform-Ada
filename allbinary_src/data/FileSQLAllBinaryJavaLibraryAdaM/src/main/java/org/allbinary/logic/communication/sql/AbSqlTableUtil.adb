@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
+with org.allbinary.logic.io.BufferedLineReader_Package; use org.allbinary.logic.io.BufferedLineReader_Package;
+with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.FileUtil_Package; use org.allbinary.logic.io.file.FileUtil_Package;
+with org.allbinary.logic.io.file.directory.Directory_Package; use org.allbinary.logic.io.file.directory.Directory_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
+
 package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package AbFileOutputStream_Package renames Standard.org.allbinary.logic.io.AbFileOutputStream_Package;
+   package BufferedLineReader_Package renames Standard.org.allbinary.logic.io.BufferedLineReader_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
+   package Directory_Package renames Standard.org.allbinary.logic.io.file.directory.Directory_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
    procedure Initialize_Fields (This : in out AbSqlTableUtil'Class) is
    begin
       null;
@@ -82,7 +103,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
                 backupFile.delete;
             end if;
             backupFile.createNewFile;
-            outputStream := AbFileOutputStream_Package.Create (backupFile);
+            outputStream := OutputStream_Access (AbFileOutputStream_Package.Create (backupFile));
             return outputStream;
         exception
             when Java_Occurrence : others =>
@@ -153,7 +174,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         index := 0;
         lastIndex := 0;
         while (index) < (Length (value)) loop
-            index := value.indexOf (This.specialCharArray (0), lastIndex);
+            index := Java_Index_Of (value, Java_Image (This.specialCharArray (0)), lastIndex);
             if (index) /= (-(1)) then
                 nextLine := Unbounded_Slice (value, (lastIndex) + 1, (index) - (1));
                 stringBuffer.append (nextLine);
@@ -189,7 +210,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         begin
             count := 0;
             sqlStatement := Java_Image (This.sqlStrings.SELECT_ALL_FROM) & tableName;
-            path := (org_Package.allbinary.globals.URLGLOBALS.getMainPath) + (PATH_GLOBALS.getInstance.BACKUP_PATH);
+            path := (org_Package.allbinary.globals.URLGLOBALS.getMainPath) + (PATH_GLOBALS_Package.getInstance.BACKUP_PATH);
             if not (Directory_Package.create (AbPath_Package.Create (path))) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (This.ERROR_CREATING & Java_Image (path), AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_BACKUP_TABLE);
@@ -243,13 +264,13 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
       size : Long_Long_Integer;
       section : Long_Long_Integer;
       start : Long_Long_Integer;
-      end_Case_Id : Long_Long_Integer;
+      end_Id : Long_Long_Integer;
       stringBuffer : StringMaker_Access;
       line : Unbounded_String;
    begin
         tableName := abSqlTable.getTableName;
         begin
-            path := (org_Package.allbinary.globals.URLGLOBALS.getMainPath) + (PATH_GLOBALS.getInstance.BACKUP_PATH);
+            path := (org_Package.allbinary.globals.URLGLOBALS.getMainPath) + (PATH_GLOBALS_Package.getInstance.BACKUP_PATH);
             current := portion.getCurrent.intValue;
             if (current) = (0) then
                 if Directory_Package.create (AbPath_Package.Create (path)) then
@@ -263,9 +284,9 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             size := bufferedLineReader.getSize;
             section := ((size) / (portion.getTotal.intValue)) + (1);
             start := (section) * (Long_Long_Integer (current));
-            end_Case_Id := (start) + (section);
-            if (end_Case_Id) > (size) then
-                end_Case_Id := size;
+            end_Id := (start) + (section);
+            if (end_Id) > (size) then
+                end_Id := size;
             end if;
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (This.TOTAL_LABEL);
@@ -273,13 +294,13 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             stringBuffer.append (This.SECTION_LABEL);
             stringBuffer.append (start);
             stringBuffer.append (This.DASH);
-            stringBuffer.append (end_Case_Id);
+            stringBuffer.append (end_Id);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (stringBuffer.toString, AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_RESTORE_TABLE);
             end if;
             bufferedLineReader.readUpToLines (start);
             line := This.stringUtil.EMPTY_STRING;
-            while ((bufferedLineReader.getCurrent) < (end_Case_Id)) and then (((Java_Assign (line, bufferedLineReader.readLine))) /= (null)) loop
+            while ((bufferedLineReader.getCurrent) < (end_Id)) and then (((Java_Assign (line, bufferedLineReader.readLine))) /= (null)) loop
                 if (Length (line)) > (1) then
                     abSqlTable.executeSQLStatement (line);
                 end if;

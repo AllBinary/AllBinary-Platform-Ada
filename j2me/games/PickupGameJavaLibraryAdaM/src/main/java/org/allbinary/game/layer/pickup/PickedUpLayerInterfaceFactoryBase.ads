@@ -34,8 +34,10 @@ package org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_Packag
    type PickedUpLayerInterfaceFactoryBase_Access is access all PickedUpLayerInterfaceFactoryBase'Class;
    type PickedUpLayerInterfaceFactoryBase_Access_Array is array (Natural range <>) of PickedUpLayerInterfaceFactoryBase_Access;
    type PickedUpLayerInterfaceFactoryBase_Access_Array_Access is access all PickedUpLayerInterfaceFactoryBase_Access_Array;
+   type PickedUpLayerInterfaceFactoryBase_Access_Array_Access_Array is array (Natural range <>) of PickedUpLayerInterfaceFactoryBase_Access_Array_Access;
+   type PickedUpLayerInterfaceFactoryBase_Access_Array_Access_Array_Access is access all PickedUpLayerInterfaceFactoryBase_Access_Array_Access_Array;
 
-   type PickedUpLayerInterfaceFactoryBase is new PickedUpLayerInterfaceFactoryInterface with null record;
+   type PickedUpLayerInterfaceFactoryBase is new Java_Object and PickedUpLayerInterfaceFactoryInterface with null record;
    NULL_PICKED_UP_LAYER_FACTORY_BASE : PickedUpLayerInterfaceFactoryBase_Access;
 
    procedure Initialize (This : in out PickedUpLayerInterfaceFactoryBase'Class);

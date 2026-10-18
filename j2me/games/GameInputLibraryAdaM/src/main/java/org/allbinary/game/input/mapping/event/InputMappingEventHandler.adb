@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package; use org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package;
+with org.allbinary.game.input.mapping.event.InputMappingEvent_Package; use org.allbinary.game.input.mapping.event.InputMappingEvent_Package;
+
 package body org.allbinary.game.input.mapping.event.InputMappingEventHandler_Package is
 
    procedure Initialize_Fields (This : in out InputMappingEventHandler'Class) is

@@ -21,8 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
-with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.actions.script.condition.JPanel_Package; use org.allbinary.input.automation.actions.script.condition.JPanel_Package;
 with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package;
@@ -30,14 +28,14 @@ with org.allbinary.input.automation.actions.script.condition.ColorAtActionScript
 package org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package ColorRangeInterface_Package renames Standard.org.allbinary.media.image.analysis.ColorRangeInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ColorAtActionScriptConditionJPanel is tagged;
    type ColorAtActionScriptConditionJPanel_Access is access all ColorAtActionScriptConditionJPanel'Class;
    type ColorAtActionScriptConditionJPanel_Access_Array is array (Natural range <>) of ColorAtActionScriptConditionJPanel_Access;
    type ColorAtActionScriptConditionJPanel_Access_Array_Access is access all ColorAtActionScriptConditionJPanel_Access_Array;
+   type ColorAtActionScriptConditionJPanel_Access_Array_Access_Array is array (Natural range <>) of ColorAtActionScriptConditionJPanel_Access_Array_Access;
+   type ColorAtActionScriptConditionJPanel_Access_Array_Access_Array_Access is access all ColorAtActionScriptConditionJPanel_Access_Array_Access_Array;
 
    type ColorAtActionScriptConditionJPanel is new JPanel with record
       logUtil : LogUtil_Access;

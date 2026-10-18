@@ -13,14 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
+with org.allbinary.PostGameCommandFactory_Package; use org.allbinary.PostGameCommandFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.graphics.paint.SimpleTextPaintable_Package; use org.allbinary.graphics.paint.SimpleTextPaintable_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+with org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package; use org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package;
+
 package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package TextField_Package renames Standard.javax.microedition.lcdui.TextField_Package;
+   package PostGameCommandFactory_Package renames Standard.org.allbinary.PostGameCommandFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package SimpleTextPaintable_Package renames Standard.org.allbinary.graphics.paint.SimpleTextPaintable_Package;
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+   package InApplicationPurchaseFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package;
    procedure Initialize_Fields (This : in out HighScoreTextBox'Class) is
    begin
       null;
       This.virtualKeyboardEventHandler := VirtualKeyboardEventHandler_Package.getInstance;
       
-      This.pleaseWait := SimpleTextPaintable_Package.Create (This.commonStrings.PLEASE_WAIT, BasicColorFactory_Package.getInstance.WHITE);
+      This.pleaseWait := Paintable_Access (SimpleTextPaintable_Package.Create (This.commonStrings.PLEASE_WAIT, BasicColorFactory_Package.getInstance.WHITE));
       This.paintable := NullPaintable_Package.getInstance;
       This.submitted := False;
    end Initialize_Fields;

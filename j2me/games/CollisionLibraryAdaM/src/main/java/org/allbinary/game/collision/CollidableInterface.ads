@@ -35,6 +35,8 @@ package org.allbinary.game.collision.CollidableInterface_Package is
    type CollidableInterface_Access is access all CollidableInterface'Class;
    type CollidableInterface_Access_Array is array (Natural range <>) of CollidableInterface_Access;
    type CollidableInterface_Access_Array_Access is access all CollidableInterface_Access_Array;
+   type CollidableInterface_Access_Array_Access_Array is array (Natural range <>) of CollidableInterface_Access_Array_Access;
+   type CollidableInterface_Access_Array_Access_Array_Access is access all CollidableInterface_Access_Array_Access_Array;
    function isCollidable (This : in out CollidableInterface; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean is abstract;
    function isCollision (This : in out CollidableInterface; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean is abstract;
    procedure collide (This : in out CollidableInterface; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is abstract;

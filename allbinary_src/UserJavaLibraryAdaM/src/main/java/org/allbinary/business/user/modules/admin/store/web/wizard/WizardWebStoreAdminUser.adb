@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUser_Package is
 
    procedure Initialize_Fields (This : in out WizardWebStoreAdminUser'Class) is

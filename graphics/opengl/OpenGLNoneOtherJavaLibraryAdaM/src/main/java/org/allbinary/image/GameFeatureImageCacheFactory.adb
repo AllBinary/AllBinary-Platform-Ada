@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+
 package body org.allbinary.image.GameFeatureImageCacheFactory_Package is
 
    procedure Initialize_Fields (This : in out GameFeatureImageCacheFactory'Class) is

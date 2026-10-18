@@ -21,21 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinary.game.layer.WaypointPathRunnableBase_Package;
-with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 
 package org.allbinary.game.layer.WaypointPathRunnable_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
    type WaypointPathRunnable is tagged;
    type WaypointPathRunnable_Access is access all WaypointPathRunnable'Class;
    type WaypointPathRunnable_Access_Array is array (Natural range <>) of WaypointPathRunnable_Access;
    type WaypointPathRunnable_Access_Array_Access is access all WaypointPathRunnable_Access_Array;
+   type WaypointPathRunnable_Access_Array_Access_Array is array (Natural range <>) of WaypointPathRunnable_Access_Array_Access;
+   type WaypointPathRunnable_Access_Array_Access_Array_Access is access all WaypointPathRunnable_Access_Array_Access_Array;
 
    type WaypointPathRunnable is new WaypointPathRunnableBase with record
       logUtil : LogUtil_Access;

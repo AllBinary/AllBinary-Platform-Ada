@@ -13,12 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with android.os.Debug_Package; use android.os.Debug_Package;
+
 package body org.allbinary.debug.AndroidDebug_Package is
 
+   package Debug_Package renames Standard.android.os.Debug_Package;
    procedure Initialize_Fields (This : in out AndroidDebug'Class) is
    begin
       null;
-      This.startTime := Long_Package.MAX_VALUE;
+      This.startTime := Long_Long_Integer'Last;
       This.running := False;
       This.bufferSize := ((32) * (1024)) * (1024);
    end Initialize_Fields;
@@ -45,7 +48,7 @@ package body org.allbinary.debug.AndroidDebug_Package is
 
    procedure stop (This : in out AndroidDebug) is
    begin
-        This.startTime := Long_Package.MAX_VALUE;
+        This.startTime := Long_Long_Integer'Last;
         Debug_Package.stopMethodTracing;
         AndroidDebug'Class (This).setRunning (False);
    end stop;

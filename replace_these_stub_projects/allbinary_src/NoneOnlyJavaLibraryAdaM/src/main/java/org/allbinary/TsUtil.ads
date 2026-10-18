@@ -28,6 +28,8 @@ package org.allbinary.TsUtil_Package is
    type TsUtil_Access is access all TsUtil'Class;
    type TsUtil_Access_Array is array (Natural range <>) of TsUtil_Access;
    type TsUtil_Access_Array_Access is access all TsUtil_Access_Array;
+   type TsUtil_Access_Array_Access_Array is array (Natural range <>) of TsUtil_Access_Array_Access;
+   type TsUtil_Access_Array_Access_Array_Access is access all TsUtil_Access_Array_Access_Array;
 
    type TsUtil is new Java_Object with null record;
    instance : TsUtil_Access;
@@ -56,6 +58,11 @@ package org.allbinary.TsUtil_Package is
    procedure isItemListener (This : in out TsUtil; owner_Param : access Java_Object'Class);
    procedure printAvailableMethods (This : in out TsUtil; anyType_Param : access Java_Object'Class);
    procedure gc (This : in out TsUtil);
+   function hashCode (This : in out TsUtil; Value : Unbounded_String) return Integer;
+   procedure hashCode (This : in out TsUtil; Value : Unbounded_String);
+   function isItemListener (This : in out TsUtil; Value : Unbounded_String) return Boolean;
+   procedure isItemListener (This : in out TsUtil; Value : Unbounded_String);
+   procedure printAvailableMethods (This : in out TsUtil; Value : Unbounded_String);
 
 end org.allbinary.TsUtil_Package;
 

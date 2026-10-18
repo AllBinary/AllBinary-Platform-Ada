@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 
 package org.allbinary.data.tables.TableDataFactory_Package is
 
-   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
 
    type TableDataFactory is tagged;
    type TableDataFactory_Access is access all TableDataFactory'Class;
    type TableDataFactory_Access_Array is array (Natural range <>) of TableDataFactory_Access;
    type TableDataFactory_Access_Array_Access is access all TableDataFactory_Access_Array;
+   type TableDataFactory_Access_Array_Access_Array is array (Natural range <>) of TableDataFactory_Access_Array_Access;
+   type TableDataFactory_Access_Array_Access_Array_Access is access all TableDataFactory_Access_Array_Access_Array;
 
    type TableDataFactory is new Java_Object with record
       INTEGER_MAX_VALUE_STRING : Unbounded_String;

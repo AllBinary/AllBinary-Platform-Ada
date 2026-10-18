@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package;
+with org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package; use org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package;
+
 package body org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Package is
 
    procedure Initialize_Fields (This : in out MineLayerCircularStaticPool'Class) is

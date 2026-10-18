@@ -30,6 +30,8 @@ package org.allbinary.business.user.modules.admin.configuration.AdminConfigurati
    type AdminConfigurationInterface_Access is access all AdminConfigurationInterface'Class;
    type AdminConfigurationInterface_Access_Array is array (Natural range <>) of AdminConfigurationInterface_Access;
    type AdminConfigurationInterface_Access_Array_Access is access all AdminConfigurationInterface_Access_Array;
+   type AdminConfigurationInterface_Access_Array_Access_Array is array (Natural range <>) of AdminConfigurationInterface_Access_Array_Access;
+   type AdminConfigurationInterface_Access_Array_Access_Array_Access is access all AdminConfigurationInterface_Access_Array_Access_Array;
    procedure write (This : in out AdminConfigurationInterface) is abstract;
    function getContextConfigurationInterface (This : in out AdminConfigurationInterface) return ContextConfigurationInterface_Access is abstract;
    procedure setContextConfigurationInterface (This : in out AdminConfigurationInterface; contextConfigurationInterface_Param : access ContextConfigurationInterface_Package.ContextConfigurationInterface'Class) is abstract;

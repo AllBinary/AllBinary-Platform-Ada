@@ -21,29 +21,24 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
-with org.allbinary.animation.image.LazyImageRotationAnimation_Package; use org.allbinary.animation.image.LazyImageRotationAnimation_Package;
 
 package org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package is
 
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type LazyImageRotationAnimationFactory is tagged;
    type LazyImageRotationAnimationFactory_Access is access all LazyImageRotationAnimationFactory'Class;
    type LazyImageRotationAnimationFactory_Access_Array is array (Natural range <>) of LazyImageRotationAnimationFactory_Access;
    type LazyImageRotationAnimationFactory_Access_Array_Access is access all LazyImageRotationAnimationFactory_Access_Array;
+   type LazyImageRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of LazyImageRotationAnimationFactory_Access_Array_Access;
+   type LazyImageRotationAnimationFactory_Access_Array_Access_Array_Access is access all LazyImageRotationAnimationFactory_Access_Array_Access_Array;
 
-   type LazyImageRotationAnimationFactory is new AnimationInterfaceFactoryInterface with record
+   type LazyImageRotationAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       layoutIndex : Integer;
       animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access;
       scaleProperties : ScaleProperties_Access;

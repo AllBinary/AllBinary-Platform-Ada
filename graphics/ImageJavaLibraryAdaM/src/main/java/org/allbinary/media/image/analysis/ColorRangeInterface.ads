@@ -29,6 +29,8 @@ package org.allbinary.media.image.analysis.ColorRangeInterface_Package is
    type ColorRangeInterface_Access is access all ColorRangeInterface'Class;
    type ColorRangeInterface_Access_Array is array (Natural range <>) of ColorRangeInterface_Access;
    type ColorRangeInterface_Access_Array_Access is access all ColorRangeInterface_Access_Array;
+   type ColorRangeInterface_Access_Array_Access_Array is array (Natural range <>) of ColorRangeInterface_Access_Array_Access;
+   type ColorRangeInterface_Access_Array_Access_Array_Access is access all ColorRangeInterface_Access_Array_Access_Array;
    function getMinRed (This : in out ColorRangeInterface) return Integer is abstract;
    procedure setMinRed (This : in out ColorRangeInterface; minRed : Integer) is abstract;
    function getMaxRed (This : in out ColorRangeInterface) return Integer is abstract;

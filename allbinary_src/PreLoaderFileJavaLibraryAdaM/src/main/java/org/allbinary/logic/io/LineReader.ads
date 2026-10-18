@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
 
@@ -30,13 +29,14 @@ package org.allbinary.logic.io.LineReader_Package is
 
    package DataInputStream_Package renames Standard.java.io.DataInputStream_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type LineReader is tagged;
    type LineReader_Access is access all LineReader'Class;
    type LineReader_Access_Array is array (Natural range <>) of LineReader_Access;
    type LineReader_Access_Array_Access is access all LineReader_Access_Array;
+   type LineReader_Access_Array_Access_Array is array (Natural range <>) of LineReader_Access_Array_Access;
+   type LineReader_Access_Array_Access_Array_Access is access all LineReader_Access_Array_Access_Array;
 
    type LineReader is new Java_Object with record
       logUtil : LogUtil_Access;

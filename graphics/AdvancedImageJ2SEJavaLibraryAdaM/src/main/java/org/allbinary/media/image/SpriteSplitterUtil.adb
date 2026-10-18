@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.media.image.ImageUnifierProperties_Package; use org.allbinary.media.image.ImageUnifierProperties_Package;
+with org.allbinary.media.image.ImageUnifierCell_Package; use org.allbinary.media.image.ImageUnifierCell_Package;
+with org.allbinary.media.image.ImageUnifierUtil_Package; use org.allbinary.media.image.ImageUnifierUtil_Package;
+
 package body org.allbinary.media.image.SpriteSplitterUtil_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out SpriteSplitterUtil'Class) is
    begin
       null;

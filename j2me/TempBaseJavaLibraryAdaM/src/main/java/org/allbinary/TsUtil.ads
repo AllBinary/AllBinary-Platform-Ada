@@ -28,6 +28,8 @@ package org.allbinary.TsUtil_Package is
    type TsUtil_Access is access all TsUtil'Class;
    type TsUtil_Access_Array is array (Natural range <>) of TsUtil_Access;
    type TsUtil_Access_Array_Access is access all TsUtil_Access_Array;
+   type TsUtil_Access_Array_Access_Array is array (Natural range <>) of TsUtil_Access_Array_Access;
+   type TsUtil_Access_Array_Access_Array_Access is access all TsUtil_Access_Array_Access_Array;
 
    type TsUtil is new Java_Object with null record;
    instance : TsUtil_Access;
@@ -40,6 +42,8 @@ package org.allbinary.TsUtil_Package is
    procedure waitFor (This : in out TsUtil; any_Param : access Java_Object'Class; timeoutMillis : Long_Long_Integer);
    function compareTo (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String) return Integer;
    procedure compareTo (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String);
+   function hashCode (This : in out TsUtil; Value : Unbounded_String) return Integer;
+   procedure hashCode (This : in out TsUtil; Value : Unbounded_String);
 
 end org.allbinary.TsUtil_Package;
 

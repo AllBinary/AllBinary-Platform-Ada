@@ -30,6 +30,8 @@ package org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_
    type ShippingAddressesEntity_Access is access all ShippingAddressesEntity'Class;
    type ShippingAddressesEntity_Access_Array is array (Natural range <>) of ShippingAddressesEntity_Access;
    type ShippingAddressesEntity_Access_Array_Access is access all ShippingAddressesEntity_Access_Array;
+   type ShippingAddressesEntity_Access_Array_Access_Array is array (Natural range <>) of ShippingAddressesEntity_Access_Array_Access;
+   type ShippingAddressesEntity_Access_Array_Access_Array_Access is access all ShippingAddressesEntity_Access_Array_Access_Array;
 
    type ShippingAddressesEntity is new StreetAddressesEntity with record
       TABLENAME : Unbounded_String;

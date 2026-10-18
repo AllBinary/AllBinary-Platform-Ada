@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.util.event.EventStrings_Package is
 
    procedure Initialize_Fields (This : in out EventStrings'Class) is

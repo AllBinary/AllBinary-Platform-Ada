@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
+
 package body org.allbinary.media.audio.NoPlayer_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out NoPlayer'Class) is
    begin
       null;
@@ -47,7 +51,7 @@ package body org.allbinary.media.audio.NoPlayer_Package is
 
    function getControl (This : in out NoPlayer; controlType : Unbounded_String) return Control_Access is
    begin
-        return NullControl_Package.Create;
+        return Control_Access (NullControl_Package.Create);
    end getControl;
 
    function getControls (This : in out NoPlayer) return Control_Access_Array_Access is

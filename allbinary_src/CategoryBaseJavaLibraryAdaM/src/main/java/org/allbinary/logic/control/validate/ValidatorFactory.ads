@@ -28,6 +28,8 @@ package org.allbinary.logic.control.validate.ValidatorFactory_Package is
    type ValidatorFactory_Access is access all ValidatorFactory'Class;
    type ValidatorFactory_Access_Array is array (Natural range <>) of ValidatorFactory_Access;
    type ValidatorFactory_Access_Array_Access is access all ValidatorFactory_Access_Array;
+   type ValidatorFactory_Access_Array_Access_Array is array (Natural range <>) of ValidatorFactory_Access_Array_Access;
+   type ValidatorFactory_Access_Array_Access_Array_Access is access all ValidatorFactory_Access_Array_Access_Array;
 
    type ValidatorFactory is new Java_Object with null record;
 

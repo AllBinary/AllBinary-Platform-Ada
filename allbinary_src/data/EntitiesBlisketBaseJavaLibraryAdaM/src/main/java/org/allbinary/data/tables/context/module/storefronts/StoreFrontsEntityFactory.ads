@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package; use org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package;
 
 package org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type StoreFrontsEntityFactory is tagged;
    type StoreFrontsEntityFactory_Access is access all StoreFrontsEntityFactory'Class;
    type StoreFrontsEntityFactory_Access_Array is array (Natural range <>) of StoreFrontsEntityFactory_Access;
    type StoreFrontsEntityFactory_Access_Array_Access is access all StoreFrontsEntityFactory_Access_Array;
+   type StoreFrontsEntityFactory_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsEntityFactory_Access_Array_Access;
+   type StoreFrontsEntityFactory_Access_Array_Access_Array_Access is access all StoreFrontsEntityFactory_Access_Array_Access_Array;
 
    type StoreFrontsEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

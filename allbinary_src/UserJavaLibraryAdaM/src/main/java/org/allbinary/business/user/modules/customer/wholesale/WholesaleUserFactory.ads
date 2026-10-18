@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.modules.customer.wholesale.WholesaleUser_Package; use org.allbinary.business.user.modules.customer.wholesale.WholesaleUser_Package;
 
 package org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFact
    type WholesaleUserFactory_Access is access all WholesaleUserFactory'Class;
    type WholesaleUserFactory_Access_Array is array (Natural range <>) of WholesaleUserFactory_Access;
    type WholesaleUserFactory_Access_Array_Access is access all WholesaleUserFactory_Access_Array;
+   type WholesaleUserFactory_Access_Array_Access_Array is array (Natural range <>) of WholesaleUserFactory_Access_Array_Access;
+   type WholesaleUserFactory_Access_Array_Access_Array_Access is access all WholesaleUserFactory_Access_Array_Access_Array;
 
-   type WholesaleUserFactory is new UserFactoryInterface with null record;
+   type WholesaleUserFactory is new Java_Object and UserFactoryInterface with null record;
 
    procedure Initialize (This : in out WholesaleUserFactory'Class);
    function Create return WholesaleUserFactory_Access;

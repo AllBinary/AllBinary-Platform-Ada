@@ -28,6 +28,8 @@ package org.allbinary.logic.java.character_Id.CharacterSet_Package is
    type CharacterSet_Access is access all CharacterSet'Class;
    type CharacterSet_Access_Array is array (Natural range <>) of CharacterSet_Access;
    type CharacterSet_Access_Array_Access is access all CharacterSet_Access_Array;
+   type CharacterSet_Access_Array_Access_Array is array (Natural range <>) of CharacterSet_Access_Array_Access;
+   type CharacterSet_Access_Array_Access_Array_Access is access all CharacterSet_Access_Array_Access_Array;
 
    type CharacterSet is new Java_Object with null record;
 

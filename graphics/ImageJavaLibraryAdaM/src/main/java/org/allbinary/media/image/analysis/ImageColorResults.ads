@@ -30,6 +30,8 @@ package org.allbinary.media.image.analysis.ImageColorResults_Package is
    type ImageColorResults_Access is access all ImageColorResults'Class;
    type ImageColorResults_Access_Array is array (Natural range <>) of ImageColorResults_Access;
    type ImageColorResults_Access_Array_Access is access all ImageColorResults_Access_Array;
+   type ImageColorResults_Access_Array_Access_Array is array (Natural range <>) of ImageColorResults_Access_Array_Access;
+   type ImageColorResults_Access_Array_Access_Array_Access is access all ImageColorResults_Access_Array_Access_Array;
 
    type ImageColorResults is new Java_Object with record
       colorRange : ColorRange_Access;

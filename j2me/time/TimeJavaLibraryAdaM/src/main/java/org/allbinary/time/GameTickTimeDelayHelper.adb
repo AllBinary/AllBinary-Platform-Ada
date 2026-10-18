@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.time.GameTickTimeDelayHelper_Package is
 
    procedure Initialize_Fields (This : in out GameTickTimeDelayHelper'Class) is
@@ -46,7 +47,7 @@ package body org.allbinary.time.GameTickTimeDelayHelper_Package is
 
    procedure loop_Id (This : in out GameTickTimeDelayHelper) is
    begin
-        if (This.lastStartTime) = (Long_Package.MIN_VALUE) then
+        if (This.lastStartTime) = (Long_Long_Integer'First) then
             This.timeDelta := 0;
         else
             This.timeDelta := (Java_Current_Time_Millis) - (This.lastStartTime);

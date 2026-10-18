@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.modules.customer.wholesale.WholesaleUser_Package; use org.allbinary.business.user.modules.customer.wholesale.WholesaleUser_Package;
+
 package body org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package is
 
    procedure Initialize_Fields (This : in out WholesaleUserFactory'Class) is
@@ -37,14 +39,14 @@ package body org.allbinary.business.user.modules.customer.wholesale.WholesaleUse
    --  throws Exception
    function getInstance (This : in out WholesaleUserFactory) return UserInterface_Access is
    begin
-        return WholesaleUser_Package.Create;
+        return UserInterface_Access (WholesaleUser_Package.Create);
    end getInstance;
 
    --  throws Exception
    function getInstance (This : in out WholesaleUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        return WholesaleUser_Package.Create (hashMap);
+        return UserInterface_Access (WholesaleUser_Package.Create (hashMap));
    end getInstance;
 
    procedure getInstance (This : in out WholesaleUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) is

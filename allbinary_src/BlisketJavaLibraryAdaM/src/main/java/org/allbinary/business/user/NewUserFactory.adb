@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
+with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
+with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+with org.allbinary.business.user.CreateUserFactory_Package; use org.allbinary.business.user.CreateUserFactory_Package;
+
 package body org.allbinary.business.user.NewUserFactory_Package is
 
+   package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
+   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
    procedure Initialize_Fields (This : in out NewUserFactory'Class) is
    begin
       null;
@@ -37,7 +47,7 @@ package body org.allbinary.business.user.NewUserFactory_Package is
    --  throws Exception
    function getInstance return UserInterface_Access is
    begin
-        return User_Package.Create;
+        return UserInterface_Access (User_Package.Create);
    end getInstance;
 
    --  throws Exception

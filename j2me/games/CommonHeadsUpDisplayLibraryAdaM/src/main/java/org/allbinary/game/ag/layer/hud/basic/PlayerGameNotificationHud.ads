@@ -20,49 +20,31 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
-with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
 with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
-   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
    package GameNotification_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
    package GameNotificationHud_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
    package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
@@ -70,6 +52,8 @@ package org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package 
    type PlayerGameNotificationHud_Access is access all PlayerGameNotificationHud'Class;
    type PlayerGameNotificationHud_Access_Array is array (Natural range <>) of PlayerGameNotificationHud_Access;
    type PlayerGameNotificationHud_Access_Array_Access is access all PlayerGameNotificationHud_Access_Array;
+   type PlayerGameNotificationHud_Access_Array_Access_Array is array (Natural range <>) of PlayerGameNotificationHud_Access_Array_Access;
+   type PlayerGameNotificationHud_Access_Array_Access_Array_Access is access all PlayerGameNotificationHud_Access_Array_Access_Array;
 
    type PlayerGameNotificationHud is new GameNotificationHud and UpdateMyFontInterface with record
       gameTickTimeDelayHelper : GameTickTimeDelayHelper_Access;
@@ -113,49 +97,31 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
-with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
 with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
-   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
    package GameNotification_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
    package GameNotificationHud_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
    package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
@@ -163,6 +129,8 @@ package org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package is
    type SetAndRemoveProcessor_Access is access all SetAndRemoveProcessor'Class;
    type SetAndRemoveProcessor_Access_Array is array (Natural range <>) of SetAndRemoveProcessor_Access;
    type SetAndRemoveProcessor_Access_Array_Access is access all SetAndRemoveProcessor_Access_Array;
+   type SetAndRemoveProcessor_Access_Array_Access_Array is array (Natural range <>) of SetAndRemoveProcessor_Access_Array_Access;
+   type SetAndRemoveProcessor_Access_Array_Access_Array_Access is access all SetAndRemoveProcessor_Access_Array_Access_Array;
 
    type SetAndRemoveProcessor is new Processor with record
       updateMeasurementProcessor : PlayerGameNotificationHud_Access;
@@ -182,49 +150,31 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
-with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
 with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
-   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
    package GameNotification_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
    package GameNotificationHud_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
    package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
@@ -232,6 +182,8 @@ package org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package 
    type NextUnremoveableProcessor_Access is access all NextUnremoveableProcessor'Class;
    type NextUnremoveableProcessor_Access_Array is array (Natural range <>) of NextUnremoveableProcessor_Access;
    type NextUnremoveableProcessor_Access_Array_Access is access all NextUnremoveableProcessor_Access_Array;
+   type NextUnremoveableProcessor_Access_Array_Access_Array is array (Natural range <>) of NextUnremoveableProcessor_Access_Array_Access;
+   type NextUnremoveableProcessor_Access_Array_Access_Array_Access is access all NextUnremoveableProcessor_Access_Array_Access_Array;
 
    type NextUnremoveableProcessor is new Processor with record
       updateMeasurementProcessor : PlayerGameNotificationHud_Access;

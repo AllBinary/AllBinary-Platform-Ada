@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.SpecialItemsHelperFactory_Package; use admin.taghelpers.SpecialItemsHelperFactory_Package;
+with admin.taghelpers.SpecialItemsRequestHelperFactory_Package; use admin.taghelpers.SpecialItemsRequestHelperFactory_Package;
+
 package body admin.tags.SpecialItemsTag_Package is
 
+   package SpecialItemsHelperFactory_Package renames Standard.admin.taghelpers.SpecialItemsHelperFactory_Package;
+   package SpecialItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.SpecialItemsRequestHelperFactory_Package;
    procedure Initialize_Fields (This : in out SpecialItemsTag'Class) is
    begin
       null;

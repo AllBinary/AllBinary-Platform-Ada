@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.vector.LineAnimation_Package; use org.allbinary.animation.vector.LineAnimation_Package;
+
 package body org.allbinary.animation.vector.LineAnimationFactory_Package is
 
    procedure Initialize_Fields (This : in out LineAnimationFactory'Class) is
@@ -39,7 +41,7 @@ package body org.allbinary.animation.vector.LineAnimationFactory_Package is
    --  throws Exception
    function getInstance (This : in out LineAnimationFactory; instanceId : Integer) return Animation_Access is
    begin
-        return LineAnimation_Package.Create (This.basicColor);
+        return Animation_Access (LineAnimation_Package.Create (This.basicColor));
    end getInstance;
 
    procedure setInitialScale (This : in out LineAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is

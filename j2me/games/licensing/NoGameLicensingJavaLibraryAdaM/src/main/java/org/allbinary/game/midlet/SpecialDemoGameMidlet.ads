@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package; use org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
-with org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package; use org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package;
 with org.allbinary.game.midlet.DemoGameMidlet_Package; use org.allbinary.game.midlet.DemoGameMidlet_Package;
 with org.allbinary.game.midlet.LicenseLoadingType_Package; use org.allbinary.game.midlet.LicenseLoadingType_Package;
 with org.allbinary.game.midlet.LicensedDemoSetupFactory_Package; use org.allbinary.game.midlet.LicensedDemoSetupFactory_Package;
@@ -30,12 +29,13 @@ with org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package; use org.allb
 package org.allbinary.game.midlet.SpecialDemoGameMidlet_Package is
 
    package ClientInformationFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
-   package LicenseServerInitFileUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package;
 
    type SpecialDemoGameMidlet is tagged;
    type SpecialDemoGameMidlet_Access is access all SpecialDemoGameMidlet'Class;
    type SpecialDemoGameMidlet_Access_Array is array (Natural range <>) of SpecialDemoGameMidlet_Access;
    type SpecialDemoGameMidlet_Access_Array_Access is access all SpecialDemoGameMidlet_Access_Array;
+   type SpecialDemoGameMidlet_Access_Array_Access_Array is array (Natural range <>) of SpecialDemoGameMidlet_Access_Array_Access;
+   type SpecialDemoGameMidlet_Access_Array_Access_Array_Access is access all SpecialDemoGameMidlet_Access_Array_Access_Array;
 
    type SpecialDemoGameMidlet is new DemoGameMidlet with null record;
 

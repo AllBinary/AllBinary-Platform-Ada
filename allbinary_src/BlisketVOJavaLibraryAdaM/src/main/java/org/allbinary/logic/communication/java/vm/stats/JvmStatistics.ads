@@ -29,6 +29,8 @@ package org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package is
    type JvmStatistics_Access is access all JvmStatistics'Class;
    type JvmStatistics_Access_Array is array (Natural range <>) of JvmStatistics_Access;
    type JvmStatistics_Access_Array_Access is access all JvmStatistics_Access_Array;
+   type JvmStatistics_Access_Array_Access_Array is array (Natural range <>) of JvmStatistics_Access_Array_Access;
+   type JvmStatistics_Access_Array_Access_Array_Access is access all JvmStatistics_Access_Array_Access_Array;
 
    type JvmStatistics is new Java_Object with record
       runtime : Runtime_Access;

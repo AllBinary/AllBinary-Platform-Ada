@@ -21,21 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
-with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
 package org.allbinary.graphics.displayable.screen.DisplayPointScalar_Package is
 
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
    type DisplayPointScalar is tagged;
    type DisplayPointScalar_Access is access all DisplayPointScalar'Class;
    type DisplayPointScalar_Access_Array is array (Natural range <>) of DisplayPointScalar_Access;
    type DisplayPointScalar_Access_Array_Access is access all DisplayPointScalar_Access_Array;
+   type DisplayPointScalar_Access_Array_Access_Array is array (Natural range <>) of DisplayPointScalar_Access_Array_Access;
+   type DisplayPointScalar_Access_Array_Access_Array_Access is access all DisplayPointScalar_Access_Array_Access_Array;
 
    type DisplayPointScalar is new Java_Object with null record;
    instance : DisplayPointScalar_Access;

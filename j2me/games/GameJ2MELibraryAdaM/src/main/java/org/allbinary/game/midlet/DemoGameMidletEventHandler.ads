@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.game.midlet.DemoGameMidletEventListener_Package; use org.allbinary.game.midlet.DemoGameMidletEventListener_Package;
-with org.allbinary.game.midlet.DemoGameMidletEvent_Package; use org.allbinary.game.midlet.DemoGameMidletEvent_Package;
 
 package org.allbinary.game.midlet.DemoGameMidletEventHandler_Package is
 
@@ -36,6 +34,8 @@ package org.allbinary.game.midlet.DemoGameMidletEventHandler_Package is
    type DemoGameMidletEventHandler_Access is access all DemoGameMidletEventHandler'Class;
    type DemoGameMidletEventHandler_Access_Array is array (Natural range <>) of DemoGameMidletEventHandler_Access;
    type DemoGameMidletEventHandler_Access_Array_Access is access all DemoGameMidletEventHandler_Access_Array;
+   type DemoGameMidletEventHandler_Access_Array_Access_Array is array (Natural range <>) of DemoGameMidletEventHandler_Access_Array_Access;
+   type DemoGameMidletEventHandler_Access_Array_Access_Array_Access is access all DemoGameMidletEventHandler_Access_Array_Access_Array;
 
    type DemoGameMidletEventHandler is new BasicEventHandler with null record;
    gameKeyEventHandler : DemoGameMidletEventHandler_Access;

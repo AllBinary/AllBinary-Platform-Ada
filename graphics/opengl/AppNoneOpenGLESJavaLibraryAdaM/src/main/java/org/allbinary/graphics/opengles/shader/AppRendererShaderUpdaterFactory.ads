@@ -31,6 +31,8 @@ package org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFactory_P
    type AppRendererShaderUpdaterFactory_Access is access all AppRendererShaderUpdaterFactory'Class;
    type AppRendererShaderUpdaterFactory_Access_Array is array (Natural range <>) of AppRendererShaderUpdaterFactory_Access;
    type AppRendererShaderUpdaterFactory_Access_Array_Access is access all AppRendererShaderUpdaterFactory_Access_Array;
+   type AppRendererShaderUpdaterFactory_Access_Array_Access_Array is array (Natural range <>) of AppRendererShaderUpdaterFactory_Access_Array_Access;
+   type AppRendererShaderUpdaterFactory_Access_Array_Access_Array_Access is access all AppRendererShaderUpdaterFactory_Access_Array_Access_Array;
 
    type AppRendererShaderUpdaterFactory is new ShaderUpdater with record
       NULL_SHADER_COMPOSITE_ARRAY : ShaderComposite_Access_Array_Access;
@@ -44,6 +46,7 @@ package org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFactory_P
    function getInstance return AppRendererShaderUpdaterFactory_Access;
    function getTestShaders (This : in out AppRendererShaderUpdaterFactory) return ShaderOpenGLProcessor_Access_Array_Access;
    procedure setShaderComposite (This : in out AppRendererShaderUpdaterFactory; object3d_Param : access Java_Object'Class);
+   procedure setShaderComposite (This : in out AppRendererShaderUpdaterFactory; Value : Unbounded_String);
 
 end org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFactory_Package;
 

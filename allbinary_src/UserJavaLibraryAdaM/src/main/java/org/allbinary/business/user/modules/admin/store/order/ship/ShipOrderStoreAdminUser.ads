@@ -34,6 +34,8 @@ package org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStor
    type ShipOrderStoreAdminUser_Access is access all ShipOrderStoreAdminUser'Class;
    type ShipOrderStoreAdminUser_Access_Array is array (Natural range <>) of ShipOrderStoreAdminUser_Access;
    type ShipOrderStoreAdminUser_Access_Array_Access is access all ShipOrderStoreAdminUser_Access_Array;
+   type ShipOrderStoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of ShipOrderStoreAdminUser_Access_Array_Access;
+   type ShipOrderStoreAdminUser_Access_Array_Access_Array_Access is access all ShipOrderStoreAdminUser_Access_Array_Access_Array;
 
    type ShipOrderStoreAdminUser is new User with null record;
 

@@ -31,6 +31,8 @@ package org.allbinary.collision.RectangleCollisionUtil_Package is
    type RectangleCollisionUtil_Access is access all RectangleCollisionUtil'Class;
    type RectangleCollisionUtil_Access_Array is array (Natural range <>) of RectangleCollisionUtil_Access;
    type RectangleCollisionUtil_Access_Array_Access is access all RectangleCollisionUtil_Access_Array;
+   type RectangleCollisionUtil_Access_Array_Access_Array is array (Natural range <>) of RectangleCollisionUtil_Access_Array_Access;
+   type RectangleCollisionUtil_Access_Array_Access_Array_Access is access all RectangleCollisionUtil_Access_Array_Access_Array;
 
    type RectangleCollisionUtil is new Java_Object with null record;
 

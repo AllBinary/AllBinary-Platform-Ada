@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 
 package org.allbinary.graphics.color.ColorChangeListener_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type ColorChangeListener is interface and EventListenerInterface;
    type ColorChangeListener_Access is access all ColorChangeListener'Class;
    type ColorChangeListener_Access_Array is array (Natural range <>) of ColorChangeListener_Access;
    type ColorChangeListener_Access_Array_Access is access all ColorChangeListener_Access_Array;
+   type ColorChangeListener_Access_Array_Access_Array is array (Natural range <>) of ColorChangeListener_Access_Array_Access;
+   type ColorChangeListener_Access_Array_Access_Array_Access is access all ColorChangeListener_Access_Array_Access_Array;
 
 end org.allbinary.graphics.color.ColorChangeListener_Package;
 

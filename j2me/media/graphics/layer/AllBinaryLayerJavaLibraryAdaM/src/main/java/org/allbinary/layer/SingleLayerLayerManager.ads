@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
-with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.LayerManagerNoDebug_Package;
 
 package org.allbinary.layer.SingleLayerLayerManager_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.layer.SingleLayerLayerManager_Package is
    type SingleLayerLayerManager_Access is access all SingleLayerLayerManager'Class;
    type SingleLayerLayerManager_Access_Array is array (Natural range <>) of SingleLayerLayerManager_Access;
    type SingleLayerLayerManager_Access_Array_Access is access all SingleLayerLayerManager_Access_Array;
+   type SingleLayerLayerManager_Access_Array_Access_Array is array (Natural range <>) of SingleLayerLayerManager_Access_Array_Access;
+   type SingleLayerLayerManager_Access_Array_Access_Array_Access is access all SingleLayerLayerManager_Access_Array_Access_Array;
 
    type SingleLayerLayerManager is new LayerManager with null record;
 

@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
 package org.allbinary.logic.java.anyType.ParamsUtil_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type ParamsUtil is tagged;
    type ParamsUtil_Access is access all ParamsUtil'Class;
    type ParamsUtil_Access_Array is array (Natural range <>) of ParamsUtil_Access;
    type ParamsUtil_Access_Array_Access is access all ParamsUtil_Access_Array;
+   type ParamsUtil_Access_Array_Access_Array is array (Natural range <>) of ParamsUtil_Access_Array_Access;
+   type ParamsUtil_Access_Array_Access_Array_Access is access all ParamsUtil_Access_Array_Access_Array;
 
    type ParamsUtil is new Java_Object with null record;
 

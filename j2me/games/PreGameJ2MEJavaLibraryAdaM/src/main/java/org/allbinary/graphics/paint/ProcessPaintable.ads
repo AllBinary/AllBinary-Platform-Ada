@@ -29,6 +29,8 @@ package org.allbinary.graphics.paint.ProcessPaintable_Package is
    type ProcessPaintable_Access is access all ProcessPaintable'Class;
    type ProcessPaintable_Access_Array is array (Natural range <>) of ProcessPaintable_Access;
    type ProcessPaintable_Access_Array_Access is access all ProcessPaintable_Access_Array;
+   type ProcessPaintable_Access_Array_Access_Array is array (Natural range <>) of ProcessPaintable_Access_Array_Access;
+   type ProcessPaintable_Access_Array_Access_Array_Access is access all ProcessPaintable_Access_Array_Access_Array;
 
    type ProcessPaintable is new Paintable with null record;
 

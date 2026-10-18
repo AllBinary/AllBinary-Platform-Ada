@@ -29,6 +29,8 @@ package org.allbinary.input.automation.module.game.MagicGameObjectInterface_Pack
    type MagicGameObjectInterface_Access is access all MagicGameObjectInterface'Class;
    type MagicGameObjectInterface_Access_Array is array (Natural range <>) of MagicGameObjectInterface_Access;
    type MagicGameObjectInterface_Access_Array_Access is access all MagicGameObjectInterface_Access_Array;
+   type MagicGameObjectInterface_Access_Array_Access_Array is array (Natural range <>) of MagicGameObjectInterface_Access_Array_Access;
+   type MagicGameObjectInterface_Access_Array_Access_Array_Access is access all MagicGameObjectInterface_Access_Array_Access_Array;
 
 end org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package;
 

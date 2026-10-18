@@ -22,14 +22,12 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.tagext.TagSupport_Package; use javax.servlet.jsp.tagext.TagSupport_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package workflows.template.data.Properties_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -37,6 +35,8 @@ package workflows.template.data.Properties_Package is
    type Properties_Access is access all Properties'Class;
    type Properties_Access_Array is array (Natural range <>) of Properties_Access;
    type Properties_Access_Array_Access is access all Properties_Access_Array;
+   type Properties_Access_Array_Access_Array is array (Natural range <>) of Properties_Access_Array_Access;
+   type Properties_Access_Array_Access_Array_Access is access all Properties_Access_Array_Access_Array;
 
    type Properties is new Java_Object with record
       logUtil : LogUtil_Access;

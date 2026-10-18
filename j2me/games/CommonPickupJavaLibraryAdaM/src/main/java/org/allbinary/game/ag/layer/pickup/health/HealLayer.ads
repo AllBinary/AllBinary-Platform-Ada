@@ -23,27 +23,21 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.health.HealthInterface_Package; use org.allbinary.game.health.HealthInterface_Package;
 with org.allbinary.game.health.HealthVisitorInterface_Package; use org.allbinary.game.health.HealthVisitorInterface_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
-with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 
 package org.allbinary.game.ag.layer.pickup.health.HealLayer_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package HealthInterface_Package renames Standard.org.allbinary.game.health.HealthInterface_Package;
    package HealthVisitorInterface_Package renames Standard.org.allbinary.game.health.HealthVisitorInterface_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type HealLayer is tagged;
    type HealLayer_Access is access all HealLayer'Class;
    type HealLayer_Access_Array is array (Natural range <>) of HealLayer_Access;
    type HealLayer_Access_Array_Access is access all HealLayer_Access_Array;
+   type HealLayer_Access_Array_Access_Array is array (Natural range <>) of HealLayer_Access_Array_Access;
+   type HealLayer_Access_Array_Access_Array_Access is access all HealLayer_Access_Array_Access_Array;
 
    type HealLayer is new AllBinaryLayer and HealthVisitorInterface with null record;
 

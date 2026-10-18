@@ -29,8 +29,10 @@ package org.allbinary.graphics.ScreenEmptyListener_Package is
    type ScreenEmptyListener_Access is access all ScreenEmptyListener'Class;
    type ScreenEmptyListener_Access_Array is array (Natural range <>) of ScreenEmptyListener_Access;
    type ScreenEmptyListener_Access_Array_Access is access all ScreenEmptyListener_Access_Array;
+   type ScreenEmptyListener_Access_Array_Access_Array is array (Natural range <>) of ScreenEmptyListener_Access_Array_Access;
+   type ScreenEmptyListener_Access_Array_Access_Array_Access is access all ScreenEmptyListener_Access_Array_Access_Array;
 
-   type ScreenEmptyListener is new ScreenListenerInterface with null record;
+   type ScreenEmptyListener is new Java_Object and ScreenListenerInterface with null record;
 
    procedure Initialize (This : in out ScreenEmptyListener'Class);
    function Create return ScreenEmptyListener_Access;

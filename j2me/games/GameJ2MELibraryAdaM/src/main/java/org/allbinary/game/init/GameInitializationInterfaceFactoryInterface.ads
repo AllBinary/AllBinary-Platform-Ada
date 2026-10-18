@@ -29,6 +29,8 @@ package org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Pack
    type GameInitializationInterfaceFactoryInterface_Access is access all GameInitializationInterfaceFactoryInterface'Class;
    type GameInitializationInterfaceFactoryInterface_Access_Array is array (Natural range <>) of GameInitializationInterfaceFactoryInterface_Access;
    type GameInitializationInterfaceFactoryInterface_Access_Array_Access is access all GameInitializationInterfaceFactoryInterface_Access_Array;
+   type GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of GameInitializationInterfaceFactoryInterface_Access_Array_Access;
+   type GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all GameInitializationInterfaceFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out GameInitializationInterfaceFactoryInterface) return GameInitializationInterface_Access is abstract;
 
 end org.allbinary.game.init.GameInitializationInterfaceFactoryInterface_Package;

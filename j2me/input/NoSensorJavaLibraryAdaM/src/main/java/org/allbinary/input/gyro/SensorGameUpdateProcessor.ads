@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.AllBinarySensor_Package; use org.allbinary.input.AllBinarySensor_Package;
-with org.allbinary.input.NoAllBinarySensor_Package; use org.allbinary.input.NoAllBinarySensor_Package;
 
 package org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
 
    package AllBinarySensor_Package renames Standard.org.allbinary.input.AllBinarySensor_Package;
-   package NoAllBinarySensor_Package renames Standard.org.allbinary.input.NoAllBinarySensor_Package;
 
    type SensorGameUpdateProcessor is tagged;
    type SensorGameUpdateProcessor_Access is access all SensorGameUpdateProcessor'Class;
    type SensorGameUpdateProcessor_Access_Array is array (Natural range <>) of SensorGameUpdateProcessor_Access;
    type SensorGameUpdateProcessor_Access_Array_Access is access all SensorGameUpdateProcessor_Access_Array;
+   type SensorGameUpdateProcessor_Access_Array_Access_Array is array (Natural range <>) of SensorGameUpdateProcessor_Access_Array_Access;
+   type SensorGameUpdateProcessor_Access_Array_Access_Array_Access is access all SensorGameUpdateProcessor_Access_Array_Access_Array;
 
    type SensorGameUpdateProcessor is new Java_Object with record
       inputSensor : AllBinarySensor_Access;
@@ -45,6 +45,8 @@ package org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
    procedure sendNotifications (This : in out SensorGameUpdateProcessor; anyType_Param : access Java_Object'Class);
    function isAnySensor (This : in out SensorGameUpdateProcessor) return Boolean;
    procedure setNoSensors (This : in out SensorGameUpdateProcessor);
+   procedure process (This : in out SensorGameUpdateProcessor; Value : Unbounded_String);
+   procedure sendNotifications (This : in out SensorGameUpdateProcessor; Value : Unbounded_String);
 
 end org.allbinary.input.gyro.SensorGameUpdateProcessor_Package;
 

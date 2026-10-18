@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.animation.VectorRotationAnimation_Package; use org.allbinary.animation.VectorRotationAnimation_Package;
+
 package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Package is
 
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out VectorRotationAnimationInterfaceFactory'Class) is
    begin
       null;
@@ -44,7 +50,7 @@ package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Pac
    --  throws Exception
    function getInstance (This : in out VectorRotationAnimationInterfaceFactory; instanceId : Integer) return Animation_Access is
    begin
-        return VectorRotationAnimation_Package.Create (This.currentPoints, VectorRotationAnimationInterfaceFactory'Class (This).getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (VectorRotationAnimation_Package.Create (This.currentPoints, VectorRotationAnimationInterfaceFactory'Class (This).getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance));
    end getInstance;
 
    procedure setBasicColorP (This : in out VectorRotationAnimationInterfaceFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class) is

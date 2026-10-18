@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with admin.taghelpers.InitHelperFactory_Package; use admin.taghelpers.InitHelperFactory_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.InitTag_Package is
 
-   package InitHelperFactory_Package renames Standard.admin.taghelpers.InitHelperFactory_Package;
 
    type InitTag is tagged;
    type InitTag_Access is access all InitTag'Class;
    type InitTag_Access_Array is array (Natural range <>) of InitTag_Access;
    type InitTag_Access_Array_Access is access all InitTag_Access_Array;
+   type InitTag_Access_Array_Access_Array is array (Natural range <>) of InitTag_Access_Array_Access;
+   type InitTag_Access_Array_Access_Array_Access is access all InitTag_Access_Array_Access_Array;
 
    type InitTag is new TableTag with null record;
 

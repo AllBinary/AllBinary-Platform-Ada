@@ -20,20 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 
 package org.allbinary.graphics.color.BasicColorCacheFactory_Package is
 
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type BasicColorCacheFactory is tagged;
    type BasicColorCacheFactory_Access is access all BasicColorCacheFactory'Class;
    type BasicColorCacheFactory_Access_Array is array (Natural range <>) of BasicColorCacheFactory_Access;
    type BasicColorCacheFactory_Access_Array_Access is access all BasicColorCacheFactory_Access_Array;
+   type BasicColorCacheFactory_Access_Array_Access_Array is array (Natural range <>) of BasicColorCacheFactory_Access_Array_Access;
+   type BasicColorCacheFactory_Access_Array_Access_Array_Access is access all BasicColorCacheFactory_Access_Array_Access_Array;
 
    type BasicColorCacheFactory is new Java_Object with record
       hashtable : ABHashtable_Access;

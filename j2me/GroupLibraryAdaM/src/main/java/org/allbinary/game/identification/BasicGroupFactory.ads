@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
 
 package org.allbinary.game.identification.BasicGroupFactory_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type BasicGroupFactory is tagged;
    type BasicGroupFactory_Access is access all BasicGroupFactory'Class;
    type BasicGroupFactory_Access_Array is array (Natural range <>) of BasicGroupFactory_Access;
    type BasicGroupFactory_Access_Array_Access is access all BasicGroupFactory_Access_Array;
+   type BasicGroupFactory_Access_Array_Access_Array is array (Natural range <>) of BasicGroupFactory_Access_Array_Access;
+   type BasicGroupFactory_Access_Array_Access_Array_Access is access all BasicGroupFactory_Access_Array_Access_Array;
 
    type BasicGroupFactory is new Java_Object with record
       NAME : Unbounded_String;

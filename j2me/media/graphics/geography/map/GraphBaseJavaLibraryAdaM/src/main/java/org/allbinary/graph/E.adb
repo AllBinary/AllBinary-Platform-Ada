@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graph.E_Package is
 
    procedure Initialize_Fields (This : in out E'Class) is

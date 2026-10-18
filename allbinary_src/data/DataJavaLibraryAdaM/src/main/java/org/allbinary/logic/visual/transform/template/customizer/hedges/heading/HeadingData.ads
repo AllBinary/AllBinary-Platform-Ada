@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.template.customizer.hedges.heading.
    type HeadingData_Access is access all HeadingData'Class;
    type HeadingData_Access_Array is array (Natural range <>) of HeadingData_Access;
    type HeadingData_Access_Array_Access is access all HeadingData_Access_Array;
+   type HeadingData_Access_Array_Access_Array is array (Natural range <>) of HeadingData_Access_Array_Access;
+   type HeadingData_Access_Array_Access_Array_Access is access all HeadingData_Access_Array_Access_Array;
 
    type HeadingData is new Java_Object with null record;
    NAME : Unbounded_String;

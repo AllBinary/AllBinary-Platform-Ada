@@ -21,14 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackAdjacentDropLayerFactory_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    package LayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
 
@@ -36,6 +34,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackAdjac
    type RaceTrackAdjacentDropLayerFactory_Access is access all RaceTrackAdjacentDropLayerFactory'Class;
    type RaceTrackAdjacentDropLayerFactory_Access_Array is array (Natural range <>) of RaceTrackAdjacentDropLayerFactory_Access;
    type RaceTrackAdjacentDropLayerFactory_Access_Array_Access is access all RaceTrackAdjacentDropLayerFactory_Access_Array;
+   type RaceTrackAdjacentDropLayerFactory_Access_Array_Access_Array is array (Natural range <>) of RaceTrackAdjacentDropLayerFactory_Access_Array_Access;
+   type RaceTrackAdjacentDropLayerFactory_Access_Array_Access_Array_Access is access all RaceTrackAdjacentDropLayerFactory_Access_Array_Access_Array;
 
    type RaceTrackAdjacentDropLayerFactory is new Java_Object with record
       list : BasicArrayList_Access;

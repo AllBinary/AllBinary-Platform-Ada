@@ -29,6 +29,8 @@ package org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Pack
    type AllBinaryEventObjectFactoryInterface_Access is access all AllBinaryEventObjectFactoryInterface'Class;
    type AllBinaryEventObjectFactoryInterface_Access_Array is array (Natural range <>) of AllBinaryEventObjectFactoryInterface_Access;
    type AllBinaryEventObjectFactoryInterface_Access_Array_Access is access all AllBinaryEventObjectFactoryInterface_Access_Array;
+   type AllBinaryEventObjectFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of AllBinaryEventObjectFactoryInterface_Access_Array_Access;
+   type AllBinaryEventObjectFactoryInterface_Access_Array_Access_Array_Access is access all AllBinaryEventObjectFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out AllBinaryEventObjectFactoryInterface) return AllBinaryEventObject_Access is abstract;
 
 end org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;

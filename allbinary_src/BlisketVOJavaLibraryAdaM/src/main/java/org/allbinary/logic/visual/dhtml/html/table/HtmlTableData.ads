@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.logic.visual.dhtml.html.table.HtmlTableData_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type HtmlTableData is tagged;
    type HtmlTableData_Access is access all HtmlTableData'Class;
    type HtmlTableData_Access_Array is array (Natural range <>) of HtmlTableData_Access;
    type HtmlTableData_Access_Array_Access is access all HtmlTableData_Access_Array;
+   type HtmlTableData_Access_Array_Access_Array is array (Natural range <>) of HtmlTableData_Access_Array_Access;
+   type HtmlTableData_Access_Array_Access_Array_Access is access all HtmlTableData_Access_Array_Access_Array;
 
    type HtmlTableData is new Java_Object with record
       LEFT : Unbounded_String;

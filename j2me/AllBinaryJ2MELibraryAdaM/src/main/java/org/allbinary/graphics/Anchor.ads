@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 
 package org.allbinary.graphics.Anchor_Package is
 
-   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
 
    type Anchor is tagged;
    type Anchor_Access is access all Anchor'Class;
    type Anchor_Access_Array is array (Natural range <>) of Anchor_Access;
    type Anchor_Access_Array_Access is access all Anchor_Access_Array;
+   type Anchor_Access_Array_Access_Array is array (Natural range <>) of Anchor_Access_Array_Access;
+   type Anchor_Access_Array_Access_Array_Access is access all Anchor_Access_Array_Access_Array;
 
    type Anchor is new Java_Object with null record;
    TOP_LEFT : Integer;

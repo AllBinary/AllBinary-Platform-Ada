@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+
 package body org.allbinary.util.ImmutableBasicArrayList_Package is
 
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    procedure Initialize_Fields (This : in out ImmutableBasicArrayList'Class) is
    begin
       null;
@@ -56,6 +59,18 @@ package body org.allbinary.util.ImmutableBasicArrayList_Package is
 
    procedure add (This : in out ImmutableBasicArrayList; e_Param : access Java_Object'Class) is
       Java_Result : constant Boolean := ImmutableBasicArrayList'Class (This).add (e_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end add;
+
+   function add (This : in out ImmutableBasicArrayList; Value : Unbounded_String) return Boolean is
+   begin
+      return ImmutableBasicArrayList'Class (This).add (Java_Box (Value));
+   end add;
+
+   procedure add (This : in out ImmutableBasicArrayList; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ImmutableBasicArrayList'Class (This).add (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

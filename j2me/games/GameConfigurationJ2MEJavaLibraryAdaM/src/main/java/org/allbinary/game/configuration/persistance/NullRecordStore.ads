@@ -30,6 +30,8 @@ package org.allbinary.game.configuration.persistance.NullRecordStore_Package is
    type NullRecordStore_Access is access all NullRecordStore'Class;
    type NullRecordStore_Access_Array is array (Natural range <>) of NullRecordStore_Access;
    type NullRecordStore_Access_Array_Access is access all NullRecordStore_Access_Array;
+   type NullRecordStore_Access_Array_Access_Array is array (Natural range <>) of NullRecordStore_Access_Array_Access;
+   type NullRecordStore_Access_Array_Access_Array_Access is access all NullRecordStore_Access_Array_Access_Array;
 
    type NullRecordStore is new RecordStore with null record;
    NULL_RECORD_STORE : NullRecordStore_Access;

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.AvianUtil_Package; use org.allbinary.AvianUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
 
+   package AvianUtil_Package renames Standard.org.allbinary.AvianUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out TrueTypeFontUtilBase'Class) is
    begin
       null;
@@ -25,7 +30,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
       This.U_characterWidth := new Integer_Array'(0 .. (Length (This.pattern)) - 1 => 0);
       This.characterArray := new Character_Array'(0 .. (1) - 1 => ASCII.NUL);
       This.size := Length (This.pattern);
-      This.lastCapIndex := (Index (This.pattern, Java_Image ('Z')) - 1);
+      This.lastCapIndex := Java_Index_Of (This.pattern, Java_Image ('Z'));
       This.currentFont := Font_Package.getDefaultFont;
       
       

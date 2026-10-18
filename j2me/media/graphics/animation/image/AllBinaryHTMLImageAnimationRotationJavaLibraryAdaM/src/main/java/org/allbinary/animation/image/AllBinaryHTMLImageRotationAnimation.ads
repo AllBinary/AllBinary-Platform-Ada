@@ -25,15 +25,11 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
 with org.allbinary.media.image.ImageRotationUtil_Package; use org.allbinary.media.image.ImageRotationUtil_Package;
-with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
-with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
 with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
 with org.allbinary.animation.image.ImageBaseRotationAnimation_Package; use org.allbinary.animation.image.ImageBaseRotationAnimation_Package;
 with org.allbinary.animation.image.AlphaBaseProcessor_Package; use org.allbinary.animation.image.AlphaBaseProcessor_Package;
-with org.allbinary.animation.image.AlphaProcessor_Package; use org.allbinary.animation.image.AlphaProcessor_Package;
 
 package org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package is
 
@@ -42,17 +38,16 @@ package org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Packag
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
    package ImageModifierUtil_Package renames Standard.org.allbinary.media.image.ImageModifierUtil_Package;
    package ImageRotationUtil_Package renames Standard.org.allbinary.media.image.ImageRotationUtil_Package;
-   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
-   package CanvasImage_Package renames Standard.playn.core.CanvasImage_Package;
    package CanvasSurface_Package renames Standard.playn.core.CanvasSurface_Package;
 
    type AllBinaryHTMLImageRotationAnimation is tagged;
    type AllBinaryHTMLImageRotationAnimation_Access is access all AllBinaryHTMLImageRotationAnimation'Class;
    type AllBinaryHTMLImageRotationAnimation_Access_Array is array (Natural range <>) of AllBinaryHTMLImageRotationAnimation_Access;
    type AllBinaryHTMLImageRotationAnimation_Access_Array_Access is access all AllBinaryHTMLImageRotationAnimation_Access_Array;
+   type AllBinaryHTMLImageRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AllBinaryHTMLImageRotationAnimation_Access_Array_Access;
+   type AllBinaryHTMLImageRotationAnimation_Access_Array_Access_Array_Access is access all AllBinaryHTMLImageRotationAnimation_Access_Array_Access_Array;
 
    type AllBinaryHTMLImageRotationAnimation is new ImageBaseRotationAnimation with record
       imageRotationUtil : ImageRotationUtil_Access;

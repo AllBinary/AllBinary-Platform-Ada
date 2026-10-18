@@ -20,20 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.KotlinUtil_Package; use org.allbinary.KotlinUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.logic.system.SoftwareInformation_Package is
 
-   package KotlinUtil_Package renames Standard.org.allbinary.KotlinUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type SoftwareInformation is tagged;
    type SoftwareInformation_Access is access all SoftwareInformation'Class;
    type SoftwareInformation_Access_Array is array (Natural range <>) of SoftwareInformation_Access;
    type SoftwareInformation_Access_Array_Access is access all SoftwareInformation_Access_Array;
+   type SoftwareInformation_Access_Array_Access_Array is array (Natural range <>) of SoftwareInformation_Access_Array_Access;
+   type SoftwareInformation_Access_Array_Access_Array_Access is access all SoftwareInformation_Access_Array_Access_Array;
 
    type SoftwareInformation is new Java_Object with record
       name : Unbounded_String;

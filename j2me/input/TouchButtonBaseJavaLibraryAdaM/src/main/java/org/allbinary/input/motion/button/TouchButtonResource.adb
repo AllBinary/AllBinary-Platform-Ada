@@ -5,6 +5,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.motion.button.TouchButtonResource_Package is
 
    procedure Initialize_Fields (This : in out TouchButtonResource'Class) is
@@ -15,17 +16,17 @@ package body org.allbinary.input.motion.button.TouchButtonResource_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TouchButtonResource'Class; resource_Case : Unbounded_String; hint_Case : Unbounded_String) is
+   procedure Initialize (This : in out TouchButtonResource'Class; resource : Unbounded_String; hint : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.RESOURCE := resource_Case;
-        This.HINT := hint_Case;
+        This.RESOURCE := resource;
+        This.HINT := hint;
    end Initialize;
 
-   function Create (resource_Case : Unbounded_String; hint_Case : Unbounded_String) return TouchButtonResource_Access is
+   function Create (resource : Unbounded_String; hint : Unbounded_String) return TouchButtonResource_Access is
       This : constant TouchButtonResource_Access := new TouchButtonResource;
    begin
-      TouchButtonResource_Package.Initialize (This.all, resource_Case, hint_Case);
+      TouchButtonResource_Package.Initialize (This.all, resource, hint);
       return This;
    end Create;
 

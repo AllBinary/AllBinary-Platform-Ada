@@ -21,31 +21,25 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
-with org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package; use org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package;
 
 package org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
 
    package PlayerGameInput_Package renames Standard.org.allbinary.game.input.PlayerGameInput_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type PressGameKeyEventHandler is tagged;
    type PressGameKeyEventHandler_Access is access all PressGameKeyEventHandler'Class;
    type PressGameKeyEventHandler_Access_Array is array (Natural range <>) of PressGameKeyEventHandler_Access;
    type PressGameKeyEventHandler_Access_Array_Access is access all PressGameKeyEventHandler_Access_Array;
+   type PressGameKeyEventHandler_Access_Array_Access_Array is array (Natural range <>) of PressGameKeyEventHandler_Access_Array_Access;
+   type PressGameKeyEventHandler_Access_Array_Access_Array_Access is access all PressGameKeyEventHandler_Access_Array_Access_Array;
 
    type PressGameKeyEventHandler is new BasicEventHandler with record
       list : BasicArrayList_Access;

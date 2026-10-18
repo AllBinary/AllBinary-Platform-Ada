@@ -21,21 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
 package org.allbinary.game.layer.hud.event.GameNotificationEvent_Package is
 
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type GameNotificationEvent is tagged;
    type GameNotificationEvent_Access is access all GameNotificationEvent'Class;
    type GameNotificationEvent_Access_Array is array (Natural range <>) of GameNotificationEvent_Access;
    type GameNotificationEvent_Access_Array_Access is access all GameNotificationEvent_Access_Array;
+   type GameNotificationEvent_Access_Array_Access_Array is array (Natural range <>) of GameNotificationEvent_Access_Array_Access;
+   type GameNotificationEvent_Access_Array_Access_Array_Access is access all GameNotificationEvent_Access_Array_Access_Array;
 
    type GameNotificationEvent is new AllBinaryEventObject with record
       string_Id : Unbounded_String;

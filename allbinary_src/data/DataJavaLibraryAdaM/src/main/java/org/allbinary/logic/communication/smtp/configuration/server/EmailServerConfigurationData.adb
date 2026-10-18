@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package is
 
    procedure Initialize_Fields (This : in out EmailServerConfigurationData'Class) is

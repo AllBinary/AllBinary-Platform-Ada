@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.tick.TickableLayerManager_Package; use org.allbinary.game.tick.TickableLayerManager_Package;
+with org.allbinary.game.tick.TickableInterface_Package; use org.allbinary.game.tick.TickableInterface_Package;
+
 package body org.allbinary.game.tick.TickableLayerProcessor_Package is
 
    procedure Initialize_Fields (This : in out TickableLayerProcessor'Class) is

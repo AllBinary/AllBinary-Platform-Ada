@@ -21,21 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with tags.ValidationTransformTag_Package; use tags.ValidationTransformTag_Package;
 
 package tags.StoreValidationTransformTag_Package is
 
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type StoreValidationTransformTag is tagged;
    type StoreValidationTransformTag_Access is access all StoreValidationTransformTag'Class;
    type StoreValidationTransformTag_Access_Array is array (Natural range <>) of StoreValidationTransformTag_Access;
    type StoreValidationTransformTag_Access_Array_Access is access all StoreValidationTransformTag_Access_Array;
+   type StoreValidationTransformTag_Access_Array_Access_Array is array (Natural range <>) of StoreValidationTransformTag_Access_Array_Access;
+   type StoreValidationTransformTag_Access_Array_Access_Array_Access is access all StoreValidationTransformTag_Access_Array_Access_Array;
 
    type StoreValidationTransformTag is new ValidationTransformTag with record
       logUtil : LogUtil_Access;

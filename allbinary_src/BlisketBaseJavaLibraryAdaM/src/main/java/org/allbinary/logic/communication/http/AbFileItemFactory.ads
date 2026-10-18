@@ -30,6 +30,8 @@ package org.allbinary.logic.communication.http.AbFileItemFactory_Package is
    type AbFileItemFactory_Access is access all AbFileItemFactory'Class;
    type AbFileItemFactory_Access_Array is array (Natural range <>) of AbFileItemFactory_Access;
    type AbFileItemFactory_Access_Array_Access is access all AbFileItemFactory_Access_Array;
+   type AbFileItemFactory_Access_Array_Access_Array is array (Natural range <>) of AbFileItemFactory_Access_Array_Access;
+   type AbFileItemFactory_Access_Array_Access_Array_Access is access all AbFileItemFactory_Access_Array_Access_Array;
 
    type AbFileItemFactory is new DefaultFileItemFactory with null record;
 

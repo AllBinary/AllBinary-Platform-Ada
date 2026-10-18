@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
+with org.osgi.framework.Constants_Package; use org.osgi.framework.Constants_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
+with org.allbinary.logic.io.file.directory.SubDirectory_Package; use org.allbinary.logic.io.file.directory.SubDirectory_Package;
+with org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package; use org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
+   package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
+   package Constants_Package renames Standard.org.osgi.framework.Constants_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package FileWrapperUtil_Package renames Standard.org.allbinary.logic.io.file.FileWrapperUtil_Package;
+   package SubDirectory_Package renames Standard.org.allbinary.logic.io.file.directory.SubDirectory_Package;
+   package BasicFileFilterUtil_Package renames Standard.org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out InputAutomationNewBundleRunnable'Class) is
    begin
       null;
@@ -31,7 +52,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    begin
       Initialize_Fields (This);
         This.inputAutomationBundleActivator := inputAutomationBundleActivator;
-        This.fileBasicArrayList := BasicArrayListD_Package.Create;
+        This.fileBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create (inputAutomationBundleActivator_Param : access InputAutomationBundleActivator_Package.InputAutomationBundleActivator'Class) return InputAutomationNewBundleRunnable_Access is
@@ -82,7 +103,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       hashMap : HashMap_Access;
       jarFileBasicArrayList : BasicArrayList_Access;
       size : Integer;
-      file_Case : File_Access;
+      file : File_Access;
       fileInputStream : FileInputStream_Access;
       jarInputStream : JarInputStream_Access;
       manifest : Manifest_Access;
@@ -94,11 +115,11 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
         jarFileBasicArrayList := InputAutomationNewBundleRunnable'Class (This).getJarModuleFileBasicArrayList;
         This.logUtil.putF (To_Unbounded_String ("Jar Module Files: ") & Java_Image (jarFileBasicArrayList), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getAllJarSymbolicNameHashMap"));
         size := jarFileBasicArrayList.size;
-        file_Case := null;
+        file := null;
         for index in 0 .. (size) - 1 loop
-            file_Case := File_Access (jarFileBasicArrayList.get (index));
-            if not (file_Case.isDirectory) then
-                fileInputStream := FileInputStream_Package.Create (file_Case);
+            file := File_Access (jarFileBasicArrayList.get (index));
+            if not (file.isDirectory) then
+                fileInputStream := FileInputStream_Package.Create (file);
                 jarInputStream := JarInputStream_Package.Create (fileInputStream);
                 manifest := jarInputStream.getManifest;
                 if (manifest) = (null) then
@@ -106,7 +127,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
                 else
                     symbolicName := manifest.getMainAttributes.getValue (Constants_Package.BUNDLE_SYMBOLICNAME);
                     if (symbolicName) /= (Null_Unbounded_String) then
-                        hashMap.put (Java_Box (symbolicName), URL_Package.Create ((InputAutomationNewBundleRunnable_Package.FILE) + (file_Case.getAbsolutePath)));
+                        hashMap.put (Java_Box (symbolicName), URL_Package.Create ((InputAutomationNewBundleRunnable_Package.FILE) + (file.getAbsolutePath)));
                     end if;
                 end if;
             end if;
@@ -118,19 +139,19 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       baseJarPath : Unbounded_String;
       jarFileFilter : FileFilter_Access;
       path : Unbounded_String;
-      file_Case : File_Access;
+      file : File_Access;
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getJarModuleFileBasicArrayList"));
         baseJarPath := Java_Get_Property (JAR_DIR_PROP);
-        if baseJarPath.startsWith (InputAutomationNewBundleRunnable_Package.FILE) then
+        if Java_Starts_With (baseJarPath, InputAutomationNewBundleRunnable_Package.FILE) then
             baseJarPath := Unbounded_Slice (baseJarPath, (Length (InputAutomationNewBundleRunnable_Package.FILE)) + 1, Length (baseJarPath));
         end if;
         jarFileFilter := BasicFileFilterUtil_Package.getInstance (To_Unbounded_String (".jar"));
         path := baseJarPath & Java_Image (InputAutomationNewBundleRunnable_Package.INPUT_AUTMATION_MODULE_BUNDLE_JAR_PATH);
         This.logUtil.putF (To_Unbounded_String ("Path: ") & path, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getJarModuleFileBasicArrayList"));
-        file_Case := File_Package.Create (path);
-        This.logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file_Case.getAbsolutePath) & To_Unbounded_String (" isDirectory: ") & Java_Image (file_Case.isDirectory), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getJarModuleFileBasicArrayList"));
-        return SubDirectory_Package.getInstance.search (jarFileFilter, FileWrapperUtil_Package.wrapFile (file_Case));
+        file := File_Package.Create (path);
+        This.logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file.getAbsolutePath) & To_Unbounded_String (" isDirectory: ") & Java_Image (file.isDirectory), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getJarModuleFileBasicArrayList"));
+        return SubDirectory_Package.getInstance.search (jarFileFilter, FileWrapperUtil_Package.wrapFile (file));
    end getJarModuleFileBasicArrayList;
 
    --  throws Exception
@@ -142,7 +163,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       index : Integer;
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstalledJarSymbolicNameBasicArrayList"));
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         bundleContext := InputAutomationBundleActivator_Package.getBundleContext;
         bundleArray := bundleContext.getBundles;
         if (bundleArray) /= (null) then
@@ -186,7 +207,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       index : Integer;
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("findNewModules"));
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         hashMap := InputAutomationNewBundleRunnable'Class (This).getAllJarSymbolicNameHashMap;
         This.logUtil.putF (To_Unbounded_String ("All: ") & Java_Image (hashMap), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("findNewModules"));
         set := hashMap.keySet;

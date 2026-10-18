@@ -22,21 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.TagHelperFactoryInterface_Package;
-with admin.taghelpers.HelperFactory_Package; use admin.taghelpers.HelperFactory_Package;
 
 package admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type BasicOptionItemsRequestHelperFactory is tagged;
    type BasicOptionItemsRequestHelperFactory_Access is access all BasicOptionItemsRequestHelperFactory'Class;
    type BasicOptionItemsRequestHelperFactory_Access_Array is array (Natural range <>) of BasicOptionItemsRequestHelperFactory_Access;
    type BasicOptionItemsRequestHelperFactory_Access_Array_Access is access all BasicOptionItemsRequestHelperFactory_Access_Array;
+   type BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemsRequestHelperFactory_Access_Array_Access;
+   type BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all BasicOptionItemsRequestHelperFactory_Access_Array_Access_Array;
 
-   type BasicOptionItemsRequestHelperFactory is new TagHelperFactoryInterface with null record;
+   type BasicOptionItemsRequestHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;
    FACTORYNAME : Unbounded_String;
 

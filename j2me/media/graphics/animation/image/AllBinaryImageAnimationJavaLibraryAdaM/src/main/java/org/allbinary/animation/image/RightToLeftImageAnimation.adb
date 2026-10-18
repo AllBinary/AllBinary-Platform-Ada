@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+
 package body org.allbinary.animation.image.RightToLeftImageAnimation_Package is
 
+   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out RightToLeftImageAnimation'Class) is
    begin
       null;

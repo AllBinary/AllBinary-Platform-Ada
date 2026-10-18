@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.globals.GLOBALS2_Package is
 
    procedure Initialize_Fields (This : in out GLOBALS2'Class) is

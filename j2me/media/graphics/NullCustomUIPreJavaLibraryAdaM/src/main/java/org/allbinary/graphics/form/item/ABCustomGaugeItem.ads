@@ -9,20 +9,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 
 package org.allbinary.graphics.form.item.ABCustomGaugeItem_Package is
 
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ABCustomGaugeItem is tagged;
    type ABCustomGaugeItem_Access is access all ABCustomGaugeItem'Class;
    type ABCustomGaugeItem_Access_Array is array (Natural range <>) of ABCustomGaugeItem_Access;
    type ABCustomGaugeItem_Access_Array_Access is access all ABCustomGaugeItem_Access_Array;
+   type ABCustomGaugeItem_Access_Array_Access_Array is array (Natural range <>) of ABCustomGaugeItem_Access_Array_Access;
+   type ABCustomGaugeItem_Access_Array_Access_Array_Access is access all ABCustomGaugeItem_Access_Array_Access_Array;
 
    type ABCustomGaugeItem is new ABCustomItem with null record;
    NULL_GAUGE_ITEM : ABCustomGaugeItem_Access;

@@ -28,6 +28,8 @@ package org.allbinary.business.user.subscription.Subscription_Package is
    type Subscription_Access is access all Subscription'Class;
    type Subscription_Access_Array is array (Natural range <>) of Subscription_Access;
    type Subscription_Access_Array_Access is access all Subscription_Access_Array;
+   type Subscription_Access_Array_Access_Array is array (Natural range <>) of Subscription_Access_Array_Access;
+   type Subscription_Access_Array_Access_Array_Access is access all Subscription_Access_Array_Access_Array;
 
    type Subscription is new Java_Object with null record;
 

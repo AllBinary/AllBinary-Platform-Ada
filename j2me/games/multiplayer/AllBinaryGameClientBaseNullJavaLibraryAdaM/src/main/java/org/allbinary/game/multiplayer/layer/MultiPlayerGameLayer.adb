@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package is
 
    procedure Initialize_Fields (This : in out MultiPlayerGameLayer'Class) is

@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.system.os.android.AndroidSystemProperties_Package; use org.allbinary.logic.system.os.android.AndroidSystemProperties_Package;
+
 package body org.allbinary.logic.system.os.android.AndroidOS_Package is
 
+   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out AndroidOS'Class) is
    begin
       null;
@@ -112,7 +118,7 @@ package body org.allbinary.logic.system.os.android.AndroidOS_Package is
       properties : AndroidSystemProperties_Access;
    begin
         properties := AndroidSystemProperties_Package.getInstance;
-        if ((Index (properties.getDevice.toLowerCase, Java_Image (This.OUYA)) - 1)) >= (0) then
+        if (Java_Index_Of (properties.getDevice.toLowerCase, Java_Image (This.OUYA))) >= (0) then
             return True;
         end if;
         return False;

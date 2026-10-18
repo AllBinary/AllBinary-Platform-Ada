@@ -28,6 +28,8 @@ package bundle.input.automation.InputAutomationBundleActivatorListenerInterface_
    type InputAutomationBundleActivatorListenerInterface_Access is access all InputAutomationBundleActivatorListenerInterface'Class;
    type InputAutomationBundleActivatorListenerInterface_Access_Array is array (Natural range <>) of InputAutomationBundleActivatorListenerInterface_Access;
    type InputAutomationBundleActivatorListenerInterface_Access_Array_Access is access all InputAutomationBundleActivatorListenerInterface_Access_Array;
+   type InputAutomationBundleActivatorListenerInterface_Access_Array_Access_Array is array (Natural range <>) of InputAutomationBundleActivatorListenerInterface_Access_Array_Access;
+   type InputAutomationBundleActivatorListenerInterface_Access_Array_Access_Array_Access is access all InputAutomationBundleActivatorListenerInterface_Access_Array_Access_Array;
    procedure registerAsService (This : in out InputAutomationBundleActivatorListenerInterface) is abstract;
    procedure useServices (This : in out InputAutomationBundleActivatorListenerInterface) is abstract;
 

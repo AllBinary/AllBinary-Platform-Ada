@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehaviorFactory_Package is
 
    procedure Initialize_Fields (This : in out CollidableAlwaysPickupNeverCollideBehaviorFactory'Class) is
@@ -42,7 +43,7 @@ package body org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBeha
 
    function createBehavior (This : in out CollidableAlwaysPickupNeverCollideBehaviorFactory) return CollidableBaseBehavior_Access is
    begin
-        return This.instance;
+        return CollidableBaseBehavior_Access (This.instance);
    end createBehavior;
 
 begin

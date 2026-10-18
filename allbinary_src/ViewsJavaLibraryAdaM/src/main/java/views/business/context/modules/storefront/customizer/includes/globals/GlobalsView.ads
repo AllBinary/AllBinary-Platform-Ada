@@ -42,6 +42,8 @@ package views.business.context.modules.storefront.customizer.includes.globals.Gl
    type GlobalsView_Access is access all GlobalsView'Class;
    type GlobalsView_Access_Array is array (Natural range <>) of GlobalsView_Access;
    type GlobalsView_Access_Array_Access is access all GlobalsView_Access_Array;
+   type GlobalsView_Access_Array_Access_Array is array (Natural range <>) of GlobalsView_Access_Array_Access;
+   type GlobalsView_Access_Array_Access_Array_Access is access all GlobalsView_Access_Array_Access_Array;
 
    type GlobalsView is new HttpStoreComponentView and DomNodeInterface with record
       logUtil : LogUtil_Access;

@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.input.motion.button.TouchButtonsPaintable_Package; use org.allbinary.input.motion.button.TouchButtonsPaintable_Package;
 
 package org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Package is
 
@@ -33,6 +32,8 @@ package org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Package i
    type TouchButtonsPaintableFactory_Access is access all TouchButtonsPaintableFactory'Class;
    type TouchButtonsPaintableFactory_Access_Array is array (Natural range <>) of TouchButtonsPaintableFactory_Access;
    type TouchButtonsPaintableFactory_Access_Array_Access is access all TouchButtonsPaintableFactory_Access_Array;
+   type TouchButtonsPaintableFactory_Access_Array_Access_Array is array (Natural range <>) of TouchButtonsPaintableFactory_Access_Array_Access;
+   type TouchButtonsPaintableFactory_Access_Array_Access_Array_Access is access all TouchButtonsPaintableFactory_Access_Array_Access_Array;
 
    type TouchButtonsPaintableFactory is new Java_Object with null record;
 

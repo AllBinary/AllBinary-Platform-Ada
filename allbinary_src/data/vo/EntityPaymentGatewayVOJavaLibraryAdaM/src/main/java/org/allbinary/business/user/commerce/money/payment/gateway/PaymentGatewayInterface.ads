@@ -22,20 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.data.tables.TableMappingInterface_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
 
    type PaymentGatewayInterface is interface and TableMappingInterface;
    type PaymentGatewayInterface_Access is access all PaymentGatewayInterface'Class;
    type PaymentGatewayInterface_Access_Array is array (Natural range <>) of PaymentGatewayInterface_Access;
    type PaymentGatewayInterface_Access_Array_Access is access all PaymentGatewayInterface_Access_Array;
+   type PaymentGatewayInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayInterface_Access_Array_Access;
+   type PaymentGatewayInterface_Access_Array_Access_Array_Access is access all PaymentGatewayInterface_Access_Array_Access_Array;
    function getEnable (This : in out PaymentGatewayInterface) return Unbounded_String is abstract;
    function getStoreName (This : in out PaymentGatewayInterface) return Unbounded_String is abstract;
    function getName (This : in out PaymentGatewayInterface) return Unbounded_String is abstract;

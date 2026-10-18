@@ -13,12 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.layer.waypoint.WaypointBase_Package is
 
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package NoSound_Package renames Standard.org.allbinary.media.audio.NoSound_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out WaypointBase'Class) is
    begin
       null;
-      This.connectedWaypointList := BasicArrayListD_Package.Create;
+      This.connectedWaypointList := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
       This.allBinaryGameLayerManagerP := AllBinaryGameLayerManager_Package.getNullInstance;
    end Initialize_Fields;

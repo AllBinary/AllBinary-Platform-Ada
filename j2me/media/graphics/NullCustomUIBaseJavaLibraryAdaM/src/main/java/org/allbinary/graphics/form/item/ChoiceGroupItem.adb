@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.form.item.ChoiceGroupItem_Package is
 
    procedure Initialize_Fields (This : in out ChoiceGroupItem'Class) is

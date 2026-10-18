@@ -21,19 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.app.Activity_Package; use android.app.Activity_Package;
-with android.view.View_Package; use android.view.View_Package;
 with org.allbinary.android.api5.ActivityFractureUtilAPI5_Package; use org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
 
 package org.allbinary.android.api16.ActivityFractureUtilAPI16_Package is
 
    package Activity_Package renames Standard.android.app.Activity_Package;
-   package View_Package renames Standard.android.view.View_Package;
    package ActivityFractureUtilAPI5_Package renames Standard.org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
 
    type ActivityFractureUtilAPI16 is tagged;
    type ActivityFractureUtilAPI16_Access is access all ActivityFractureUtilAPI16'Class;
    type ActivityFractureUtilAPI16_Access_Array is array (Natural range <>) of ActivityFractureUtilAPI16_Access;
    type ActivityFractureUtilAPI16_Access_Array_Access is access all ActivityFractureUtilAPI16_Access_Array;
+   type ActivityFractureUtilAPI16_Access_Array_Access_Array is array (Natural range <>) of ActivityFractureUtilAPI16_Access_Array_Access;
+   type ActivityFractureUtilAPI16_Access_Array_Access_Array_Access is access all ActivityFractureUtilAPI16_Access_Array_Access_Array;
 
    type ActivityFractureUtilAPI16 is new ActivityFractureUtilAPI5 with null record;
    instance16 : ActivityFractureUtilAPI16_Access;

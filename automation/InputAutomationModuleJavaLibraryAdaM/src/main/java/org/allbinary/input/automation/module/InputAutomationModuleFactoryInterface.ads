@@ -32,6 +32,8 @@ package org.allbinary.input.automation.module.InputAutomationModuleFactoryInterf
    type InputAutomationModuleFactoryInterface_Access is access all InputAutomationModuleFactoryInterface'Class;
    type InputAutomationModuleFactoryInterface_Access_Array is array (Natural range <>) of InputAutomationModuleFactoryInterface_Access;
    type InputAutomationModuleFactoryInterface_Access_Array_Access is access all InputAutomationModuleFactoryInterface_Access_Array;
+   type InputAutomationModuleFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModuleFactoryInterface_Access_Array_Access;
+   type InputAutomationModuleFactoryInterface_Access_Array_Access_Array_Access is access all InputAutomationModuleFactoryInterface_Access_Array_Access_Array;
 
    type InputAutomationModuleFactoryInterface is new Java_Object with null record;
 

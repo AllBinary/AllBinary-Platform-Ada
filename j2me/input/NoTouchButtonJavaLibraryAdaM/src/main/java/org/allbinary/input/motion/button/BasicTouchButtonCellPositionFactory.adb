@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package is
 
    procedure Initialize_Fields (This : in out BasicTouchButtonCellPositionFactory'Class) is

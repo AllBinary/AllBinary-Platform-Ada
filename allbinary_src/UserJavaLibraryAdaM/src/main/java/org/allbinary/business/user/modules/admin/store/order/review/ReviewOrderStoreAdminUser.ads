@@ -34,6 +34,8 @@ package org.allbinary.business.user.modules.admin.store.order.review.ReviewOrder
    type ReviewOrderStoreAdminUser_Access is access all ReviewOrderStoreAdminUser'Class;
    type ReviewOrderStoreAdminUser_Access_Array is array (Natural range <>) of ReviewOrderStoreAdminUser_Access;
    type ReviewOrderStoreAdminUser_Access_Array_Access is access all ReviewOrderStoreAdminUser_Access_Array;
+   type ReviewOrderStoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of ReviewOrderStoreAdminUser_Access_Array_Access;
+   type ReviewOrderStoreAdminUser_Access_Array_Access_Array_Access is access all ReviewOrderStoreAdminUser_Access_Array_Access_Array;
 
    type ReviewOrderStoreAdminUser is new User with null record;
 

@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package is
 
    procedure Initialize_Fields (This : in out OpenGLObject3dProcessor'Class) is

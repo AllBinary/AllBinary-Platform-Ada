@@ -8,47 +8,34 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
-with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 
 package org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type MultipleScrollSelectionHorizontalForm is tagged;
    type MultipleScrollSelectionHorizontalForm_Access is access all MultipleScrollSelectionHorizontalForm'Class;
    type MultipleScrollSelectionHorizontalForm_Access_Array is array (Natural range <>) of MultipleScrollSelectionHorizontalForm_Access;
    type MultipleScrollSelectionHorizontalForm_Access_Array_Access is access all MultipleScrollSelectionHorizontalForm_Access_Array;
+   type MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array is array (Natural range <>) of MultipleScrollSelectionHorizontalForm_Access_Array_Access;
+   type MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access is access all MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array;
 
    type MultipleScrollSelectionHorizontalForm is new ScrollSelectionForm and UpdateMyFontInterface with record
       rectPaintable : Paintable_Access;
@@ -83,47 +70,34 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
-with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 
 package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type MultipleScrollSelectionFormHorizontalPaintable is tagged;
    type MultipleScrollSelectionFormHorizontalPaintable_Access is access all MultipleScrollSelectionFormHorizontalPaintable'Class;
    type MultipleScrollSelectionFormHorizontalPaintable_Access_Array is array (Natural range <>) of MultipleScrollSelectionFormHorizontalPaintable_Access;
    type MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access is access all MultipleScrollSelectionFormHorizontalPaintable_Access_Array;
+   type MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array is array (Natural range <>) of MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access;
+   type MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Access is access all MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array;
 
    type MultipleScrollSelectionFormHorizontalPaintable is new ItemIndexPaintable with record
       multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access;
@@ -144,47 +118,34 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 with org.allbinary.graphics.form.ItemIndexPaintable_Package; use org.allbinary.graphics.form.ItemIndexPaintable_Package;
-with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 
 package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type MultipleScrollSelectionFormVerticalPaintable is tagged;
    type MultipleScrollSelectionFormVerticalPaintable_Access is access all MultipleScrollSelectionFormVerticalPaintable'Class;
    type MultipleScrollSelectionFormVerticalPaintable_Access_Array is array (Natural range <>) of MultipleScrollSelectionFormVerticalPaintable_Access;
    type MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access is access all MultipleScrollSelectionFormVerticalPaintable_Access_Array;
+   type MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array is array (Natural range <>) of MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access;
+   type MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Access is access all MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array;
 
    type MultipleScrollSelectionFormVerticalPaintable is new ItemIndexPaintable with record
       multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access;

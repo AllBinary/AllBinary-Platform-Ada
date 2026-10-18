@@ -22,25 +22,21 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.animation.image.ImageSegmentAnimation_Package; use org.allbinary.animation.image.ImageSegmentAnimation_Package;
 
 package org.allbinary.animation.image.BottomToTopImageAnimation_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
-   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
    type BottomToTopImageAnimation is tagged;
    type BottomToTopImageAnimation_Access is access all BottomToTopImageAnimation'Class;
    type BottomToTopImageAnimation_Access_Array is array (Natural range <>) of BottomToTopImageAnimation_Access;
    type BottomToTopImageAnimation_Access_Array_Access is access all BottomToTopImageAnimation_Access_Array;
+   type BottomToTopImageAnimation_Access_Array_Access_Array is array (Natural range <>) of BottomToTopImageAnimation_Access_Array_Access;
+   type BottomToTopImageAnimation_Access_Array_Access_Array_Access is access all BottomToTopImageAnimation_Access_Array_Access_Array;
 
    type BottomToTopImageAnimation is new ImageSegmentAnimation with record
       startHeight : Integer;

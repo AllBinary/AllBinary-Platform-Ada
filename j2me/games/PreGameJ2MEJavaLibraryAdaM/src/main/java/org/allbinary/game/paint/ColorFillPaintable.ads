@@ -35,6 +35,8 @@ package org.allbinary.game.paint.ColorFillPaintable_Package is
    type ColorFillPaintable_Access is access all ColorFillPaintable'Class;
    type ColorFillPaintable_Access_Array is array (Natural range <>) of ColorFillPaintable_Access;
    type ColorFillPaintable_Access_Array_Access is access all ColorFillPaintable_Access_Array;
+   type ColorFillPaintable_Access_Array_Access_Array is array (Natural range <>) of ColorFillPaintable_Access_Array_Access;
+   type ColorFillPaintable_Access_Array_Access_Array_Access is access all ColorFillPaintable_Access_Array_Access_Array;
 
    type ColorFillPaintable is new ColorFillBasePaintable with record
       displayInfoSingleton : DisplayInfoSingleton_Access;

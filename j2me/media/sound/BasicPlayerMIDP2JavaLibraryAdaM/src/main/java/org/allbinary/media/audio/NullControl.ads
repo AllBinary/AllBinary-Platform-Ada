@@ -30,8 +30,10 @@ package org.allbinary.media.audio.NullControl_Package is
    type NullControl_Access is access all NullControl'Class;
    type NullControl_Access_Array is array (Natural range <>) of NullControl_Access;
    type NullControl_Access_Array_Access is access all NullControl_Access_Array;
+   type NullControl_Access_Array_Access_Array is array (Natural range <>) of NullControl_Access_Array_Access;
+   type NullControl_Access_Array_Access_Array_Access is access all NullControl_Access_Array_Access_Array;
 
-   type NullControl is new Control with null record;
+   type NullControl is new Java_Object and Control with null record;
 
    procedure Initialize (This : in out NullControl'Class);
    function Create return NullControl_Access;

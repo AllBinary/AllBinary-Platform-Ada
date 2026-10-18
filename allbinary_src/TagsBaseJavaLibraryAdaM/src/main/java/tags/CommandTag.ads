@@ -30,6 +30,8 @@ package tags.CommandTag_Package is
    type CommandTag_Access is access all CommandTag'Class;
    type CommandTag_Access_Array is array (Natural range <>) of CommandTag_Access;
    type CommandTag_Access_Array_Access is access all CommandTag_Access_Array;
+   type CommandTag_Access_Array_Access_Array is array (Natural range <>) of CommandTag_Access_Array_Access;
+   type CommandTag_Access_Array_Access_Array_Access is access all CommandTag_Access_Array_Access_Array;
 
    type CommandTag is new CustomTagSupport with record
       tagStrings : TagStrings_Access;

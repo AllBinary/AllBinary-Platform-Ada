@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
+with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package; use org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
+
 package body views.generic_Id.address.shipping.ValidationView_Package is
 
+   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
+   package ShippingAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
    procedure Initialize_Fields (This : in out ValidationView'Class) is
    begin
       null;
@@ -49,7 +54,7 @@ package body views.generic_Id.address.shipping.ValidationView_Package is
         for index in 0 .. (size) - 1 loop
             streetAddress := StreetAddress_Access (This.streetAddressList.get (index));
             if (streetAddress.isValid) = (False) then
-                This.streetAddressList.remove (streetAddress);
+                This.streetAddressList.remove (Java_Object_Access (streetAddress));
             end if;
         end loop;
         if (This.streetAddressList.size) < (1) then

@@ -25,7 +25,6 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimation_Package; use org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
-with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
 
 package org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package is
 
@@ -38,6 +37,8 @@ package org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Packag
    type AdjustedImageArrayRotationAnimation_Access is access all AdjustedImageArrayRotationAnimation'Class;
    type AdjustedImageArrayRotationAnimation_Access_Array is array (Natural range <>) of AdjustedImageArrayRotationAnimation_Access;
    type AdjustedImageArrayRotationAnimation_Access_Array_Access is access all AdjustedImageArrayRotationAnimation_Access_Array;
+   type AdjustedImageArrayRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AdjustedImageArrayRotationAnimation_Access_Array_Access;
+   type AdjustedImageArrayRotationAnimation_Access_Array_Access_Array_Access is access all AdjustedImageArrayRotationAnimation_Access_Array_Access_Array;
 
    type AdjustedImageArrayRotationAnimation is new ImageArrayRotationAnimation with record
       dx : Integer;

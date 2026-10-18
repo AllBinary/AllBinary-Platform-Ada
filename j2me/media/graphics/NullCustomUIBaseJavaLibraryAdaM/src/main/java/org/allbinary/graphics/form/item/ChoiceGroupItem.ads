@@ -16,6 +16,8 @@ package org.allbinary.graphics.form.item.ChoiceGroupItem_Package is
    type ChoiceGroupItem_Access is access all ChoiceGroupItem'Class;
    type ChoiceGroupItem_Access_Array is array (Natural range <>) of ChoiceGroupItem_Access;
    type ChoiceGroupItem_Access_Array_Access is access all ChoiceGroupItem_Access_Array;
+   type ChoiceGroupItem_Access_Array_Access_Array is array (Natural range <>) of ChoiceGroupItem_Access_Array_Access;
+   type ChoiceGroupItem_Access_Array_Access_Array_Access is access all ChoiceGroupItem_Access_Array_Access_Array;
 
    type ChoiceGroupItem is new Java_Object with null record;
 

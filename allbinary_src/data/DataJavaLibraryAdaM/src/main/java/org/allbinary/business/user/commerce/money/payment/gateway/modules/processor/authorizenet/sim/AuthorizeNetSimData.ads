@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.modules.proce
    type AuthorizeNetSimData_Access is access all AuthorizeNetSimData'Class;
    type AuthorizeNetSimData_Access_Array is array (Natural range <>) of AuthorizeNetSimData_Access;
    type AuthorizeNetSimData_Access_Array_Access is access all AuthorizeNetSimData_Access_Array;
+   type AuthorizeNetSimData_Access_Array_Access_Array is array (Natural range <>) of AuthorizeNetSimData_Access_Array_Access;
+   type AuthorizeNetSimData_Access_Array_Access_Array_Access is access all AuthorizeNetSimData_Access_Array_Access_Array;
 
    type AuthorizeNetSimData is new Java_Object with null record;
    X_FP_HASH : Unbounded_String;

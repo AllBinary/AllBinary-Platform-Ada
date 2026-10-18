@@ -22,19 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package; use org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package; use org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
 
 package org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package is
 
    package StreetAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ShippingAddressesEntityFactory is tagged;
    type ShippingAddressesEntityFactory_Access is access all ShippingAddressesEntityFactory'Class;
    type ShippingAddressesEntityFactory_Access_Array is array (Natural range <>) of ShippingAddressesEntityFactory_Access;
    type ShippingAddressesEntityFactory_Access_Array_Access is access all ShippingAddressesEntityFactory_Access_Array;
+   type ShippingAddressesEntityFactory_Access_Array_Access_Array is array (Natural range <>) of ShippingAddressesEntityFactory_Access_Array_Access;
+   type ShippingAddressesEntityFactory_Access_Array_Access_Array_Access is access all ShippingAddressesEntityFactory_Access_Array_Access_Array;
 
    type ShippingAddressesEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

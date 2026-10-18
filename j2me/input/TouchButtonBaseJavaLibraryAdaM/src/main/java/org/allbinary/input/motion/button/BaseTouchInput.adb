@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.motion.button.BaseTouchInput_Package is
 
    procedure Initialize_Fields (This : in out BaseTouchInput'Class) is

@@ -25,9 +25,7 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
-with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 
 package org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package is
 
@@ -36,14 +34,14 @@ package org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_
    package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
-   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type HackRotationSpriteIndexedAnimation is tagged;
    type HackRotationSpriteIndexedAnimation_Access is access all HackRotationSpriteIndexedAnimation'Class;
    type HackRotationSpriteIndexedAnimation_Access_Array is array (Natural range <>) of HackRotationSpriteIndexedAnimation_Access;
    type HackRotationSpriteIndexedAnimation_Access_Array_Access is access all HackRotationSpriteIndexedAnimation_Access_Array;
+   type HackRotationSpriteIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of HackRotationSpriteIndexedAnimation_Access_Array_Access;
+   type HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Access is access all HackRotationSpriteIndexedAnimation_Access_Array_Access_Array;
 
    type HackRotationSpriteIndexedAnimation is new RotationAnimation with record
       sprite : Sprite_Access;

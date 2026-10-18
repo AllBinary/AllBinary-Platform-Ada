@@ -13,14 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.role.BasicUserRoleFactory_Package; use org.allbinary.business.user.role.BasicUserRoleFactory_Package;
+
 package body org.allbinary.business.user.role.StoreRoleFactory_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out StoreRoleFactory'Class) is
    begin
       null;
-      This.roles := BasicArrayListD_Package.Create;
-      This.subscriberRoles := BasicArrayListD_Package.Create;
-      This.wholesaleRoles := BasicArrayListD_Package.Create;
+      This.roles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.subscriberRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.wholesaleRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 

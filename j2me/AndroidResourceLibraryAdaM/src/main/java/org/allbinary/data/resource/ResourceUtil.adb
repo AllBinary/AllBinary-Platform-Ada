@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.debug.DebugFactory_Package; use org.allbinary.debug.DebugFactory_Package;
+with org.allbinary.debug.NoDebug_Package; use org.allbinary.debug.NoDebug_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
+
 package body org.allbinary.data.resource.ResourceUtil_Package is
 
+   package DebugFactory_Package renames Standard.org.allbinary.debug.DebugFactory_Package;
+   package NoDebug_Package renames Standard.org.allbinary.debug.NoDebug_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
    procedure Initialize_Fields (This : in out ResourceUtil'Class) is
    begin
       null;
@@ -56,13 +77,13 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    procedure setContextFromActivity (This : in out ResourceUtil; activity_Param : access Activity_Package.Activity'Class) is
       activity : constant Activity_Access := Activity_Access (activity_Param);
    begin
-        This.context := activity;
+        This.context := Java_Object_Access (activity);
    end setContextFromActivity;
 
    procedure setContext (This : in out ResourceUtil; aContext_Param : access Context_Package.Context'Class) is
       aContext : constant Context_Access := Context_Access (aContext_Param);
    begin
-        This.context := aContext;
+        This.context := Java_Object_Access (aContext);
    end setContext;
 
    function getResourceId (This : in out ResourceUtil; resource : Unbounded_String) return Integer is
@@ -110,7 +131,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
       resources : constant Resources_Access := Resources_Access (resources_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Resource Loader: ")).append (To_Unbounded_String (Ada.Tags.Expanded_Name (resources.all'Tag))).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setResources"));
-        This.resources := resources;
+        This.resources := Java_Object_Access (resources);
    end setResources;
 
    --  throws Exception

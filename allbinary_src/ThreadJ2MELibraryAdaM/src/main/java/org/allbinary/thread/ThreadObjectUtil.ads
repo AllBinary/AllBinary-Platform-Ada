@@ -8,18 +8,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.thread.NullPriorityRunnable_Package; use org.allbinary.thread.NullPriorityRunnable_Package;
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.ThreadObjectUtil_Package is
 
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
 
    type ThreadObjectUtil is tagged;
    type ThreadObjectUtil_Access is access all ThreadObjectUtil'Class;
    type ThreadObjectUtil_Access_Array is array (Natural range <>) of ThreadObjectUtil_Access;
    type ThreadObjectUtil_Access_Array_Access is access all ThreadObjectUtil_Access_Array;
+   type ThreadObjectUtil_Access_Array_Access_Array is array (Natural range <>) of ThreadObjectUtil_Access_Array_Access;
+   type ThreadObjectUtil_Access_Array_Access_Array_Access is access all ThreadObjectUtil_Access_Array_Access_Array;
 
    type ThreadObjectUtil is new Java_Object with record
       NULL_PRIORITY_RUNNABLE : PriorityRunnable_Access;
@@ -33,6 +33,8 @@ package org.allbinary.thread.ThreadObjectUtil_Package is
    procedure waitObject (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class);
    procedure waitObjectFor (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class; delay_Id : Long_Long_Integer);
    procedure processThread (This : in out ThreadObjectUtil; runnable_Param : access Runnable_Package.Runnable'Class);
+   procedure notifyObject (This : in out ThreadObjectUtil; Value : Unbounded_String);
+   procedure waitObject (This : in out ThreadObjectUtil; Value : Unbounded_String);
 
 end org.allbinary.thread.ThreadObjectUtil_Package;
 

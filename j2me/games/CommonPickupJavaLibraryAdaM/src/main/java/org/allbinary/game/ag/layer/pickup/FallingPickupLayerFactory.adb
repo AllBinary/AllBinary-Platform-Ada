@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+with org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package; use org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package;
+
 package body org.allbinary.game.ag.layer.pickup.FallingPickupLayerFactory_Package is
 
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
    procedure Initialize_Fields (This : in out FallingPickupLayerFactory'Class) is
    begin
       null;
@@ -36,7 +40,7 @@ package body org.allbinary.game.ag.layer.pickup.FallingPickupLayerFactory_Packag
    --  throws Exception
    function getInstance (This : in out FallingPickupLayerFactory) return AllBinaryLayer_Access is
    begin
-        return FallingPickupLayer_Package.Create (RemoteInfo_Package.REMOTE_INFO);
+        return AllBinaryLayer_Access (FallingPickupLayer_Package.Create (RemoteInfo_Package.REMOTE_INFO));
    end getInstance;
 
 end org.allbinary.game.ag.layer.pickup.FallingPickupLayerFactory_Package;

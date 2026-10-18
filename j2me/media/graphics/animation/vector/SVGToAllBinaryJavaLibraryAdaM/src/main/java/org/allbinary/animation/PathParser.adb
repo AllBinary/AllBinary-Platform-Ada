@@ -1,8 +1,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.animation.FixedPoint_Package; use org.allbinary.animation.FixedPoint_Package;
+with org.allbinary.animation.PGUtil_Package; use org.allbinary.animation.PGUtil_Package;
+
 package body org.allbinary.animation.PathParser_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out PathParser'Class) is
    begin
       null;
@@ -28,7 +37,7 @@ package body org.allbinary.animation.PathParser_Package is
       i : Integer;
       res : Unbounded_String_Array_Access;
    begin
-        tokens := BasicArrayListD_Package.Create;
+        tokens := BasicArrayList_Access (BasicArrayListD_Package.Create);
         sb := StringBuffer_Package.Create;
         for i in 0 .. (Length (d)) - 1 loop
             c := Element (d, (i) + 1);
@@ -178,7 +187,7 @@ package body org.allbinary.animation.PathParser_Package is
       c : Character;
    begin
         c := Element (tok, (0) + 1);
-        return ((Index (To_Unbounded_String ("MmLlVvCcZz"), Java_Image (c)) - 1)) >= (0);
+        return (Java_Index_Of (To_Unbounded_String ("MmLlVvCcZz"), Java_Image (c))) >= (0);
    end isCommand;
 
    procedure tokenize (d : Unbounded_String) is

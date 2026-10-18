@@ -30,6 +30,8 @@ package org.allbinary.thirdparty.store.ThirdPartyStoreFactory_Package is
    type ThirdPartyStoreFactory_Access is access all ThirdPartyStoreFactory'Class;
    type ThirdPartyStoreFactory_Access_Array is array (Natural range <>) of ThirdPartyStoreFactory_Access;
    type ThirdPartyStoreFactory_Access_Array_Access is access all ThirdPartyStoreFactory_Access_Array;
+   type ThirdPartyStoreFactory_Access_Array_Access_Array is array (Natural range <>) of ThirdPartyStoreFactory_Access_Array_Access;
+   type ThirdPartyStoreFactory_Access_Array_Access_Array_Access is access all ThirdPartyStoreFactory_Access_Array_Access_Array;
 
    type ThirdPartyStoreFactory is new Java_Object with null record;
    instance : NoThirdPartyStore_Access;

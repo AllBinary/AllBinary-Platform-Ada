@@ -32,6 +32,8 @@ package org.allbinary.graphics.form.InputProcessor_Package is
    type InputProcessor_Access is access all InputProcessor'Class;
    type InputProcessor_Access_Array is array (Natural range <>) of InputProcessor_Access;
    type InputProcessor_Access_Array_Access is access all InputProcessor_Access_Array;
+   type InputProcessor_Access_Array_Access_Array is array (Natural range <>) of InputProcessor_Access_Array_Access;
+   type InputProcessor_Access_Array_Access_Array_Access is access all InputProcessor_Access_Array_Access_Array;
 
    type InputProcessor is new Processor with record
       playerGameInputCompositeInterface : PlayerGameInputCompositeInterface_Access;

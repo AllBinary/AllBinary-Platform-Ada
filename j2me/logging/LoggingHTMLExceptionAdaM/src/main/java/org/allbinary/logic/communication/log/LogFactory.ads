@@ -29,6 +29,8 @@ package org.allbinary.logic.communication.log.LogFactory_Package is
    type LogFactory_Access is access all LogFactory'Class;
    type LogFactory_Access_Array is array (Natural range <>) of LogFactory_Access;
    type LogFactory_Access_Array_Access is access all LogFactory_Access_Array;
+   type LogFactory_Access_Array_Access_Array is array (Natural range <>) of LogFactory_Access_Array_Access;
+   type LogFactory_Access_Array_Access_Array_Access is access all LogFactory_Access_Array_Access_Array;
 
    type LogFactory is new Java_Object with null record;
 

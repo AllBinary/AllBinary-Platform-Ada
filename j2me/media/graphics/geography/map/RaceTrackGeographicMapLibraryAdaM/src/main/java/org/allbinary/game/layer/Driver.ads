@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.game.layer.Aggression_Package; use org.allbinary.game.layer.Aggression_Package;
 
 package org.allbinary.game.layer.Driver_Package is
 
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type Driver is tagged;
    type Driver_Access is access all Driver'Class;
    type Driver_Access_Array is array (Natural range <>) of Driver_Access;
    type Driver_Access_Array_Access is access all Driver_Access_Array;
+   type Driver_Access_Array_Access_Array is array (Natural range <>) of Driver_Access_Array_Access;
+   type Driver_Access_Array_Access_Array_Access is access all Driver_Access_Array_Access_Array;
 
    type Driver is new Java_Object with record
       turnSpeed : Integer;

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package;
+
 package body org.allbinary.business.context.configuration.ContextConfiguration_Package is
 
+   package EmailServerConfiguration_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package;
    procedure Initialize_Fields (This : in out ContextConfiguration'Class) is
    begin
       null;

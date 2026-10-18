@@ -20,6 +20,8 @@ package org.osgi.framework.BundleContext_Package is
    type BundleContext_Access is access all BundleContext'Class;
    type BundleContext_Access_Array is array (Natural range <>) of BundleContext_Access;
    type BundleContext_Access_Array_Access is access all BundleContext_Access_Array;
+   type BundleContext_Access_Array_Access_Array is array (Natural range <>) of BundleContext_Access_Array_Access;
+   type BundleContext_Access_Array_Access_Array_Access is access all BundleContext_Access_Array_Access_Array;
    function getBundles (This : in out BundleContext) return Bundle_Access_Array_Access is abstract;
    function installBundle (This : in out BundleContext; location : Unbounded_String) return Bundle_Access is abstract;
    function registerService (This : in out BundleContext; clazz : Unbounded_String; service_Param : access Java_Object'Class; properties_Param : access Dictionary_Package.Dictionary'Class) return ServiceRegistration_Access is abstract;

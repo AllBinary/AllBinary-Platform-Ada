@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.view.ViewPositionFactoryInterface_Package;
-with org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package; use org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package;
 
 package org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package is
 
@@ -33,8 +32,10 @@ package org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package is
    type StaticTileLayerViewPositionFactory_Access is access all StaticTileLayerViewPositionFactory'Class;
    type StaticTileLayerViewPositionFactory_Access_Array is array (Natural range <>) of StaticTileLayerViewPositionFactory_Access;
    type StaticTileLayerViewPositionFactory_Access_Array_Access is access all StaticTileLayerViewPositionFactory_Access_Array;
+   type StaticTileLayerViewPositionFactory_Access_Array_Access_Array is array (Natural range <>) of StaticTileLayerViewPositionFactory_Access_Array_Access;
+   type StaticTileLayerViewPositionFactory_Access_Array_Access_Array_Access is access all StaticTileLayerViewPositionFactory_Access_Array_Access_Array;
 
-   type StaticTileLayerViewPositionFactory is new ViewPositionFactoryInterface with null record;
+   type StaticTileLayerViewPositionFactory is new Java_Object and ViewPositionFactoryInterface with null record;
 
    procedure Initialize (This : in out StaticTileLayerViewPositionFactory'Class);
    function Create return StaticTileLayerViewPositionFactory_Access;

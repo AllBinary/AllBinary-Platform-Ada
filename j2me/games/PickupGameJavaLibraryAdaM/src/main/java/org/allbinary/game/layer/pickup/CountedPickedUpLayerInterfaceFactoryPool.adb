@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out CountedPickedUpLayerInterfaceFactoryPool'Class) is
    begin
       null;
@@ -25,7 +28,7 @@ package body org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactor
    procedure Initialize (This : in out CountedPickedUpLayerInterfaceFactoryPool'Class) is
    begin
       Initialize_Fields (This);
-        This.list := BasicArrayListD_Package.Create;
+        This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create return CountedPickedUpLayerInterfaceFactoryPool_Access is

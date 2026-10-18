@@ -34,6 +34,8 @@ package org.allbinary.business.user.commerce.inventory.order.OrderHistoryInterfa
    type OrderHistoryInterface_Access is access all OrderHistoryInterface'Class;
    type OrderHistoryInterface_Access_Array is array (Natural range <>) of OrderHistoryInterface_Access;
    type OrderHistoryInterface_Access_Array_Access is access all OrderHistoryInterface_Access_Array;
+   type OrderHistoryInterface_Access_Array_Access_Array is array (Natural range <>) of OrderHistoryInterface_Access_Array_Access;
+   type OrderHistoryInterface_Access_Array_Access_Array_Access is access all OrderHistoryInterface_Access_Array_Access_Array;
    procedure setUserName (This : in out OrderHistoryInterface; value : Unbounded_String) is abstract;
    procedure setDefaultShippingAddress (This : in out OrderHistoryInterface; shippingAddress_Param : access StreetAddress_Package.StreetAddress'Class) is abstract;
    procedure setBillingAddress (This : in out OrderHistoryInterface; billingAddress_Param : access StreetAddress_Package.StreetAddress'Class) is abstract;

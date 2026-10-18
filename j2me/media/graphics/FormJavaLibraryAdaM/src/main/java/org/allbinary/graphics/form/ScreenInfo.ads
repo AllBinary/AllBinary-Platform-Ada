@@ -16,6 +16,8 @@ package org.allbinary.graphics.form.ScreenInfo_Package is
    type ScreenInfo_Access is access all ScreenInfo'Class;
    type ScreenInfo_Access_Array is array (Natural range <>) of ScreenInfo_Access;
    type ScreenInfo_Access_Array_Access is access all ScreenInfo_Access_Array;
+   type ScreenInfo_Access_Array_Access_Array is array (Natural range <>) of ScreenInfo_Access_Array_Access;
+   type ScreenInfo_Access_Array_Access_Array_Access is access all ScreenInfo_Access_Array_Access_Array;
 
    type ScreenInfo is new Java_Object with record
       SMALL_WIDTH : Integer;

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
+
 package body org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotationAnimation_Package is
 
+   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
    procedure Initialize_Fields (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation'Class) is
    begin
       null;

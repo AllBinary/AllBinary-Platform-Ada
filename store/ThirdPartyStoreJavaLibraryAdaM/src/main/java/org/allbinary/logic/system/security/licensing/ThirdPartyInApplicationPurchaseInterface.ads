@@ -29,6 +29,8 @@ package org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPur
    type ThirdPartyInApplicationPurchaseInterface_Access is access all ThirdPartyInApplicationPurchaseInterface'Class;
    type ThirdPartyInApplicationPurchaseInterface_Access_Array is array (Natural range <>) of ThirdPartyInApplicationPurchaseInterface_Access;
    type ThirdPartyInApplicationPurchaseInterface_Access_Array_Access is access all ThirdPartyInApplicationPurchaseInterface_Access_Array;
+   type ThirdPartyInApplicationPurchaseInterface_Access_Array_Access_Array is array (Natural range <>) of ThirdPartyInApplicationPurchaseInterface_Access_Array_Access;
+   type ThirdPartyInApplicationPurchaseInterface_Access_Array_Access_Array_Access is access all ThirdPartyInApplicationPurchaseInterface_Access_Array_Access_Array;
    function isPurchased (This : in out ThirdPartyInApplicationPurchaseInterface; lockableFeature_Param : access LockableFeature_Package.LockableFeature'Class) return Boolean is abstract;
    procedure onCreate (This : in out ThirdPartyInApplicationPurchaseInterface; anyType_Param : access Java_Object'Class; stateObject_Param : access Java_Object'Class) is abstract;
    procedure onDestroy (This : in out ThirdPartyInApplicationPurchaseInterface) is abstract;

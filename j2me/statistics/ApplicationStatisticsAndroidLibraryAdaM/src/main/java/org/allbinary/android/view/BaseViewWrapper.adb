@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.android.view.BaseViewWrapper_Package is
 
    procedure Initialize_Fields (This : in out BaseViewWrapper'Class) is

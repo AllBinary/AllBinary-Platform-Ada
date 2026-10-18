@@ -13,12 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+
 package body org.allbinary.animation.NullIndexedAnimationFactory_Package is
 
    procedure Initialize_Fields (This : in out NullIndexedAnimationFactory'Class) is
    begin
       null;
-      This.NULL_ANIMATION := NullIndexedAnimationInner_Package.Create;
+      This.NULL_ANIMATION := Animation_Access (NullIndexedAnimationInner_Package.Create);
    end Initialize_Fields;
 
 
@@ -80,6 +82,8 @@ begin
 
 end org.allbinary.animation.NullIndexedAnimationFactory_Package;
 
+
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 
 package body org.allbinary.animation.NullIndexedAnimationInner_Package is
 

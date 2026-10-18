@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package; use org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
+
 package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
 
+   package Enumeration_Package renames Standard.java.util.Enumeration_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
    procedure Initialize_Fields (This : in out GameFeatureUtil'Class) is
    begin
       null;
@@ -216,9 +229,9 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
       size : Integer;
       index : Integer;
    begin
-        if list.contains (gameFeature) then
+        if list.contains (Java_Object_Access (gameFeature)) then
             features := Features_Package.getInstance;
-            addIndex := list.indexOf (gameFeature);
+            addIndex := list.indexOf (Java_Object_Access (gameFeature));
             size := list.size;
             for index in 0 .. (size) - 1 loop
                 if (addIndex) /= (index) then

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.address.StreetAddressData_Package; use org.allbinary.business.user.address.StreetAddressData_Package;
+with views.generic_Id.address.StatesView_Package; use views.generic_Id.address.StatesView_Package;
+
 package body views.generic_Id.address.billing.BillingAddressView_Package is
 
+   package StreetAddressData_Package renames Standard.org.allbinary.business.user.address.StreetAddressData_Package;
+   package StatesView_Package renames Standard.views.generic_Id.address.StatesView_Package;
    procedure Initialize_Fields (This : in out BillingAddressView'Class) is
    begin
       null;

@@ -20,20 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 
 package org.allbinary.time.TimeDelayHelper_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type TimeDelayHelper is tagged;
    type TimeDelayHelper_Access is access all TimeDelayHelper'Class;
    type TimeDelayHelper_Access_Array is array (Natural range <>) of TimeDelayHelper_Access;
    type TimeDelayHelper_Access_Array_Access is access all TimeDelayHelper_Access_Array;
+   type TimeDelayHelper_Access_Array_Access_Array is array (Natural range <>) of TimeDelayHelper_Access_Array_Access;
+   type TimeDelayHelper_Access_Array_Access_Array_Access is access all TimeDelayHelper_Access_Array_Access_Array;
 
    type TimeDelayHelper is new Java_Object with record
       startTime : Long_Long_Integer;

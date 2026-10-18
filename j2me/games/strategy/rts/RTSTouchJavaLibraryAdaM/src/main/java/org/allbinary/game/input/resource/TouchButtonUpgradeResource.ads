@@ -30,6 +30,8 @@ package org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package is
    type TouchButtonUpgradeResource_Access is access all TouchButtonUpgradeResource'Class;
    type TouchButtonUpgradeResource_Access_Array is array (Natural range <>) of TouchButtonUpgradeResource_Access;
    type TouchButtonUpgradeResource_Access_Array_Access is access all TouchButtonUpgradeResource_Access_Array;
+   type TouchButtonUpgradeResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonUpgradeResource_Access_Array_Access;
+   type TouchButtonUpgradeResource_Access_Array_Access_Array_Access is access all TouchButtonUpgradeResource_Access_Array_Access_Array;
 
    type TouchButtonUpgradeResource is new TouchButtonResource with null record;
    instance : TouchButtonResource_Access;

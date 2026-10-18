@@ -28,6 +28,8 @@ package org.allbinary.logic.system.os.SystemProperties_Package is
    type SystemProperties_Access is access all SystemProperties'Class;
    type SystemProperties_Access_Array is array (Natural range <>) of SystemProperties_Access;
    type SystemProperties_Access_Array_Access is access all SystemProperties_Access_Array;
+   type SystemProperties_Access_Array_Access_Array is array (Natural range <>) of SystemProperties_Access_Array_Access;
+   type SystemProperties_Access_Array_Access_Array_Access is access all SystemProperties_Access_Array_Access_Array;
 
    type SystemProperties is new Java_Object with record
       OS_NAME : Unbounded_String;

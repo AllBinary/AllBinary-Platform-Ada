@@ -34,6 +34,8 @@ package org.allbinary.input.automation.actions.script.condition.AlwaysActionScri
    type AlwaysActionScriptConditionJPanel_Access is access all AlwaysActionScriptConditionJPanel'Class;
    type AlwaysActionScriptConditionJPanel_Access_Array is array (Natural range <>) of AlwaysActionScriptConditionJPanel_Access;
    type AlwaysActionScriptConditionJPanel_Access_Array_Access is access all AlwaysActionScriptConditionJPanel_Access_Array;
+   type AlwaysActionScriptConditionJPanel_Access_Array_Access_Array is array (Natural range <>) of AlwaysActionScriptConditionJPanel_Access_Array_Access;
+   type AlwaysActionScriptConditionJPanel_Access_Array_Access_Array_Access is access all AlwaysActionScriptConditionJPanel_Access_Array_Access_Array;
 
    type AlwaysActionScriptConditionJPanel is new JPanel with record
       logUtil : LogUtil_Access;

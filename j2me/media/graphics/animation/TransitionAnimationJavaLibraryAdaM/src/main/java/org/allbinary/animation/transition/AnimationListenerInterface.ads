@@ -28,6 +28,8 @@ package org.allbinary.animation.transition.AnimationListenerInterface_Package is
    type AnimationListenerInterface_Access is access all AnimationListenerInterface'Class;
    type AnimationListenerInterface_Access_Array is array (Natural range <>) of AnimationListenerInterface_Access;
    type AnimationListenerInterface_Access_Array_Access is access all AnimationListenerInterface_Access_Array;
+   type AnimationListenerInterface_Access_Array_Access_Array is array (Natural range <>) of AnimationListenerInterface_Access_Array_Access;
+   type AnimationListenerInterface_Access_Array_Access_Array_Access is access all AnimationListenerInterface_Access_Array_Access_Array;
    procedure onPlatformAnimationStart (This : in out AnimationListenerInterface) is abstract;
    procedure onPlatformAnimationEnd (This : in out AnimationListenerInterface) is abstract;
    procedure onPlatformAnimationRepeat (This : in out AnimationListenerInterface) is abstract;

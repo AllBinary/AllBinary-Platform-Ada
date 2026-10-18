@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package is
 
    procedure Initialize_Fields (This : in out MyGraphicItemEventSource'Class) is

@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfilesData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfilesData_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileData_Package;
+
 package body org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfiles_Package is
 
+   package DataOutputStream_Package renames Standard.java.io.DataOutputStream_Package;
+   package File_Package renames Standard.java.io.File_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package GenericProfileActionData_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out GenericProfiles'Class) is
    begin
       null;
@@ -43,7 +62,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             idFile := FileInputStream_Package.Create (fileName);
             length := idFile.read (bytes);
             data := Java_New_String (bytes);
-            endIndex := data.lastIndexOf ('>');
+            endIndex := Java_Last_Index_Of (data, Java_Image ('>'));
             document := DomDocumentHelper_Package.create (Unbounded_Slice (data, (0) + 1, (endIndex) + (1)));
             nodeList := document.getElementsByTagName (GenericProfilesData_Package.NAME);
             This.logUtil.putF (To_Unbounded_String ("Number Of Profiles Specified: ") & Java_Image (nodeList.getLength), GenericProfiles_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));

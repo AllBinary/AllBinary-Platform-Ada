@@ -20,26 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbinary.game.displayable.canvas.GameRunnable_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.GameCanvasPauseRunnable_Package is
 
-   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type GameCanvasPauseRunnable is tagged;
    type GameCanvasPauseRunnable_Access is access all GameCanvasPauseRunnable'Class;
    type GameCanvasPauseRunnable_Access_Array is array (Natural range <>) of GameCanvasPauseRunnable_Access;
    type GameCanvasPauseRunnable_Access_Array_Access is access all GameCanvasPauseRunnable_Access_Array;
+   type GameCanvasPauseRunnable_Access_Array_Access_Array is array (Natural range <>) of GameCanvasPauseRunnable_Access_Array_Access;
+   type GameCanvasPauseRunnable_Access_Array_Access_Array_Access is access all GameCanvasPauseRunnable_Access_Array_Access_Array;
 
    type GameCanvasPauseRunnable is new GameRunnable with record
       logUtil : LogUtil_Access;

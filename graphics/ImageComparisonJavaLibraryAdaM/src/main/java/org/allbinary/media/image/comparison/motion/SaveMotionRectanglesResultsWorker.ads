@@ -21,35 +21,27 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsListener_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsListener_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
 
 package org.allbinary.media.image.comparison.motion.SaveMotionRectanglesResultsWorker_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type SaveMotionRectanglesResultsWorker is tagged;
    type SaveMotionRectanglesResultsWorker_Access is access all SaveMotionRectanglesResultsWorker'Class;
    type SaveMotionRectanglesResultsWorker_Access_Array is array (Natural range <>) of SaveMotionRectanglesResultsWorker_Access;
    type SaveMotionRectanglesResultsWorker_Access_Array_Access is access all SaveMotionRectanglesResultsWorker_Access_Array;
+   type SaveMotionRectanglesResultsWorker_Access_Array_Access_Array is array (Natural range <>) of SaveMotionRectanglesResultsWorker_Access_Array_Access;
+   type SaveMotionRectanglesResultsWorker_Access_Array_Access_Array_Access is access all SaveMotionRectanglesResultsWorker_Access_Array_Access_Array;
 
-   type SaveMotionRectanglesResultsWorker is new MotionRectanglesResultsListener with record
+   type SaveMotionRectanglesResultsWorker is new Java_Object and MotionRectanglesResultsListener with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       running : Boolean;

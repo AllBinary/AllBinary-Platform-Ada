@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.ImageJ2SERotationUtil_Package; use org.allbinary.media.image.ImageJ2SERotationUtil_Package;
+
 package body org.allbinary.media.image.ImageArrayRotationUtil_Package is
 
    procedure Initialize_Fields (This : in out ImageArrayRotationUtil'Class) is

@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.file.CommonDataFileStrings_Package; use org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 
 package org.allbinary.business.context.configuration.ContextConfigurationData_Package is
 
-   package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 
    type ContextConfigurationData is tagged;
    type ContextConfigurationData_Access is access all ContextConfigurationData'Class;
    type ContextConfigurationData_Access_Array is array (Natural range <>) of ContextConfigurationData_Access;
    type ContextConfigurationData_Access_Array_Access is access all ContextConfigurationData_Access_Array;
+   type ContextConfigurationData_Access_Array_Access_Array is array (Natural range <>) of ContextConfigurationData_Access_Array_Access;
+   type ContextConfigurationData_Access_Array_Access_Array_Access is access all ContextConfigurationData_Access_Array_Access_Array;
 
    type ContextConfigurationData is new Java_Object with record
       NAME : Unbounded_String;

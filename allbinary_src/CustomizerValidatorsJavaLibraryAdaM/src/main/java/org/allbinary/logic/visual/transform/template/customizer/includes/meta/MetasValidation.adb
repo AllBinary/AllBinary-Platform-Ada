@@ -13,8 +13,26 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDataFactory_Package; use org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDataFactory_Package;
+with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package; use org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package;
+with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetasData_Package; use org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetasData_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.visual.transform.template.customizer.includes.meta.MetaValidation_Package; use org.allbinary.logic.visual.transform.template.customizer.includes.meta.MetaValidation_Package;
+
 package body org.allbinary.logic.visual.transform.template.customizer.includes.meta.MetasValidation_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package HtmlMetaAttributeDataFactory_Package renames Standard.org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDataFactory_Package;
+   package HtmlMetaAttributeValuesData_Package renames Standard.org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package;
+   package HtmlMetasData_Package renames Standard.org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetasData_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out MetasValidation'Class) is
    begin
       null;
@@ -33,14 +51,14 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
-        This.metaValidationVector := BasicArrayListD_Package.Create;
+        This.metaValidationVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         contentValue := This.storeFrontInterface.getName & To_Unbounded_String (" E-Commerce Site");
         keywordsMetaValidation := MetaValidation_Package.Create (HtmlMetaAttributeDataFactory_Package.getInstance.NAME, To_Unbounded_String ("Keywords"), HtmlMetaAttributeValuesData_Package.getInstance.KEYWORDS, contentValue);
         abstractMetaValidation := MetaValidation_Package.Create (HtmlMetaAttributeDataFactory_Package.getInstance.NAME, To_Unbounded_String ("Abstract"), HtmlMetaAttributeValuesData_Package.getInstance.ABSTRACT_Id, contentValue);
         descriptionMetaValidation := MetaValidation_Package.Create (HtmlMetaAttributeDataFactory_Package.getInstance.NAME, To_Unbounded_String ("Description"), HtmlMetaAttributeValuesData_Package.getInstance.DESCRIPTION, contentValue);
-        This.metaValidationVector.add (keywordsMetaValidation);
-        This.metaValidationVector.add (abstractMetaValidation);
-        This.metaValidationVector.add (descriptionMetaValidation);
+        This.metaValidationVector.add (Java_Object_Access (keywordsMetaValidation));
+        This.metaValidationVector.add (Java_Object_Access (abstractMetaValidation));
+        This.metaValidationVector.add (Java_Object_Access (descriptionMetaValidation));
    end Initialize;
 
    function Create (storeName : Unbounded_String) return MetasValidation_Access is

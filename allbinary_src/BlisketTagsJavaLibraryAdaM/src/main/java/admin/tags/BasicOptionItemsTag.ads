@@ -21,20 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with admin.taghelpers.BasicOptionItemsHelperFactory_Package; use admin.taghelpers.BasicOptionItemsHelperFactory_Package;
-with admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package; use admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.BasicOptionItemsTag_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package BasicOptionItemsHelperFactory_Package renames Standard.admin.taghelpers.BasicOptionItemsHelperFactory_Package;
-   package BasicOptionItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package;
 
    type BasicOptionItemsTag is tagged;
    type BasicOptionItemsTag_Access is access all BasicOptionItemsTag'Class;
    type BasicOptionItemsTag_Access_Array is array (Natural range <>) of BasicOptionItemsTag_Access;
    type BasicOptionItemsTag_Access_Array_Access is access all BasicOptionItemsTag_Access_Array;
+   type BasicOptionItemsTag_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemsTag_Access_Array_Access;
+   type BasicOptionItemsTag_Access_Array_Access_Array_Access is access all BasicOptionItemsTag_Access_Array_Access_Array;
 
    type BasicOptionItemsTag is new TableTag with record
       propertiesHashMap : HashMap_Access;

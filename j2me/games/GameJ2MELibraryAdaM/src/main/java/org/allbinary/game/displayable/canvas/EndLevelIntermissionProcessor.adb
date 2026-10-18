@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.displayable.canvas.EndLevelIntermissionProcessor_Package is
 
    procedure Initialize_Fields (This : in out EndLevelIntermissionProcessor'Class) is

@@ -20,28 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
-with org.allbinary.logic.io.file.FilePathUtil_Package; use org.allbinary.logic.io.file.FilePathUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.logic.io.path.PathUtil_Package; use org.allbinary.logic.io.path.PathUtil_Package;
 
 package org.allbinary.logic.io.path.AbPath_Package is
 
-   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
-   package FilePathUtil_Package renames Standard.org.allbinary.logic.io.file.FilePathUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type AbPath is tagged;
    type AbPath_Access is access all AbPath'Class;
    type AbPath_Access_Array is array (Natural range <>) of AbPath_Access;
    type AbPath_Access_Array_Access is access all AbPath_Access_Array;
+   type AbPath_Access_Array_Access_Array is array (Natural range <>) of AbPath_Access_Array_Access;
+   type AbPath_Access_Array_Access_Array_Access is access all AbPath_Access_Array_Access_Array;
 
    type AbPath is new Java_Object with record
       commonSeps : CommonSeps_Access;

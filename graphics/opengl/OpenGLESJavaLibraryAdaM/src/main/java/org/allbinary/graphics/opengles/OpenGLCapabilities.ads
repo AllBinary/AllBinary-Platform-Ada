@@ -21,47 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
-with javax.microedition.khronos.opengles.GL11_Package; use javax.microedition.khronos.opengles.GL11_Package;
-with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
-with org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package; use org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package;
-with org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package; use org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package;
-with org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package; use org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package; use org.allbinary.graphics.opengles.OpenGLFeature_Package;
 
 package org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
-   package GL11_Package renames Standard.javax.microedition.khronos.opengles.GL11_Package;
-   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
-   package OpenGLESGL10ImageFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package;
-   package OpenGLESGL11VBOImageFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package;
-   package OpenGLImageSpecificFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package Tokenizer_Package renames Standard.org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type OpenGLCapabilities is tagged;
    type OpenGLCapabilities_Access is access all OpenGLCapabilities'Class;
    type OpenGLCapabilities_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access;
    type OpenGLCapabilities_Access_Array_Access is access all OpenGLCapabilities_Access_Array;
+   type OpenGLCapabilities_Access_Array_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access_Array_Access;
+   type OpenGLCapabilities_Access_Array_Access_Array_Access is access all OpenGLCapabilities_Access_Array_Access_Array;
 
    type OpenGLCapabilities is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.osgi.framework.Bundle_Package; use org.osgi.framework.Bundle_Package;
 with org.osgi.framework.ServiceFactory_Package; use org.osgi.framework.ServiceFactory_Package;
 with org.osgi.framework.ServiceRegistration_Package; use org.osgi.framework.ServiceRegistration_Package;
-with bundle.input.automation.module.InputAutomationModuleService_Package; use bundle.input.automation.module.InputAutomationModuleService_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
@@ -33,7 +32,6 @@ package org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceF
    package Bundle_Package renames Standard.org.osgi.framework.Bundle_Package;
    package ServiceFactory_Package renames Standard.org.osgi.framework.ServiceFactory_Package;
    package ServiceRegistration_Package renames Standard.org.osgi.framework.ServiceRegistration_Package;
-   package InputAutomationModuleService_Package renames Standard.bundle.input.automation.module.InputAutomationModuleService_Package;
    package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
@@ -42,8 +40,10 @@ package org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceF
    type InputAutomationModuleServiceFactory_Access is access all InputAutomationModuleServiceFactory'Class;
    type InputAutomationModuleServiceFactory_Access_Array is array (Natural range <>) of InputAutomationModuleServiceFactory_Access;
    type InputAutomationModuleServiceFactory_Access_Array_Access is access all InputAutomationModuleServiceFactory_Access_Array;
+   type InputAutomationModuleServiceFactory_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModuleServiceFactory_Access_Array_Access;
+   type InputAutomationModuleServiceFactory_Access_Array_Access_Array_Access is access all InputAutomationModuleServiceFactory_Access_Array_Access_Array;
 
-   type InputAutomationModuleServiceFactory is new ServiceFactory with record
+   type InputAutomationModuleServiceFactory is new Java_Object and ServiceFactory with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       inputAutomationModuleInterfaceArray : InputAutomationModuleFactoryInterface_Access_Array_Access;

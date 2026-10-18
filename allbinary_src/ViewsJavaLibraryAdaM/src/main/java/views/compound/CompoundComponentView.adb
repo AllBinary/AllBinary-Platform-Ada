@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with views.compound.CompoundTransform_Package; use views.compound.CompoundTransform_Package;
+
 package body views.compound.CompoundComponentView_Package is
 
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
    procedure Initialize_Fields (This : in out CompoundComponentView'Class) is
    begin
       null;

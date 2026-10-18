@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+
 package body org.allbinary.logic.communication.http.request.AbResponseHandler_Package is
 
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    procedure Initialize_Fields (This : in out AbResponseHandler'Class) is
    begin
       null;
@@ -46,7 +53,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 logUtil.put (To_Unbounded_String ("Jsp Tag Exception"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspRedirect()"), e);
             end if;
-            AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS.getInstance.ERRORPAGE);
+            AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS_Package.getInstance.ERRORPAGE);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -71,7 +78,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 logUtil.put (To_Unbounded_String ("Jsp Tag Exception"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspRedirect()"), e);
             end if;
-            AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS.getInstance.ERRORPAGE);
+            AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS_Package.getInstance.ERRORPAGE);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -96,7 +103,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 logUtil.put (To_Unbounded_String ("Licensing Exception"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspTagLicensingRedirect()"), e);
             end if;
-            AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS.getInstance.LICENSEERRORPAGE);
+            AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS_Package.getInstance.LICENSEERRORPAGE);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -121,7 +128,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 logUtil.put (To_Unbounded_String ("Licensing Exception"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendServletLicensingRedirect()"), e);
             end if;
-            AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS.getInstance.LICENSEERRORPAGE);
+            AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS_Package.getInstance.LICENSEERRORPAGE);
         exception
             when Java_Occurrence : others =>
                 declare

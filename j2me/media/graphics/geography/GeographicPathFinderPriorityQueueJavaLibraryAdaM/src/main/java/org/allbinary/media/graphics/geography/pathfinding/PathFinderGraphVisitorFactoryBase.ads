@@ -31,6 +31,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisito
    type PathFinderGraphVisitorFactoryBase_Access is access all PathFinderGraphVisitorFactoryBase'Class;
    type PathFinderGraphVisitorFactoryBase_Access_Array is array (Natural range <>) of PathFinderGraphVisitorFactoryBase_Access;
    type PathFinderGraphVisitorFactoryBase_Access_Array_Access is access all PathFinderGraphVisitorFactoryBase_Access_Array;
+   type PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array is array (Natural range <>) of PathFinderGraphVisitorFactoryBase_Access_Array_Access;
+   type PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access is access all PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array;
 
    type PathFinderGraphVisitorFactoryBase is new Java_Object with null record;
 

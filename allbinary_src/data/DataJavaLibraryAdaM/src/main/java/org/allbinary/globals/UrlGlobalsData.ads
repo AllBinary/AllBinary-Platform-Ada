@@ -28,6 +28,8 @@ package org.allbinary.globals.UrlGlobalsData_Package is
    type UrlGlobalsData_Access is access all UrlGlobalsData'Class;
    type UrlGlobalsData_Access_Array is array (Natural range <>) of UrlGlobalsData_Access;
    type UrlGlobalsData_Access_Array_Access is access all UrlGlobalsData_Access_Array;
+   type UrlGlobalsData_Access_Array_Access_Array is array (Natural range <>) of UrlGlobalsData_Access_Array_Access;
+   type UrlGlobalsData_Access_Array_Access_Array_Access is access all UrlGlobalsData_Access_Array_Access_Array;
 
    type UrlGlobalsData is new Java_Object with null record;
    NAME : Unbounded_String;

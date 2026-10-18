@@ -20,18 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangle_Package; use org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
-with org.allbinary.media.image.comparison.motion.Rectangle_Package; use org.allbinary.media.image.comparison.motion.Rectangle_Package;
 
 package org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package is
 
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package ImageComparisonResult_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonResult_Package;
    package PixelDelta_Package renames Standard.org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
@@ -39,6 +34,8 @@ package org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package 
    type AllMotionRectangles_Access is access all AllMotionRectangles'Class;
    type AllMotionRectangles_Access_Array is array (Natural range <>) of AllMotionRectangles_Access;
    type AllMotionRectangles_Access_Array_Access is access all AllMotionRectangles_Access_Array;
+   type AllMotionRectangles_Access_Array_Access_Array is array (Natural range <>) of AllMotionRectangles_Access_Array_Access;
+   type AllMotionRectangles_Access_Array_Access_Array_Access is access all AllMotionRectangles_Access_Array_Access_Array;
 
    type AllMotionRectangles is new MotionRectangles with null record;
    NAME : Unbounded_String;

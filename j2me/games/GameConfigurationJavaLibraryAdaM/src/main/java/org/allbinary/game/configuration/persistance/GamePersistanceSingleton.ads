@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.configuration.persistance.KeyValuePersistance_Package; use org.allbinary.game.configuration.persistance.KeyValuePersistance_Package;
-with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
 
 package org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.game.configuration.persistance.GamePersistanceSingleton_Pa
    type GamePersistanceSingleton_Access is access all GamePersistanceSingleton'Class;
    type GamePersistanceSingleton_Access_Array is array (Natural range <>) of GamePersistanceSingleton_Access;
    type GamePersistanceSingleton_Access_Array_Access is access all GamePersistanceSingleton_Access_Array;
+   type GamePersistanceSingleton_Access_Array_Access_Array is array (Natural range <>) of GamePersistanceSingleton_Access_Array_Access;
+   type GamePersistanceSingleton_Access_Array_Access_Array_Access is access all GamePersistanceSingleton_Access_Array_Access_Array;
 
    type GamePersistanceSingleton is new KeyValuePersistance with null record;
    GAME_PERSISTANCE : GamePersistanceSingleton_Access;

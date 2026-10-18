@@ -21,41 +21,26 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
-with org.allbinary.logic.system.hardware.SystemHardwareFactory_Package; use org.allbinary.logic.system.hardware.SystemHardwareFactory_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.logic.system.os.NoOperatingSystem_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
 
 package org.allbinary.logic.system.security.licensing.ClientInformation_Package is
 
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package HardwareInterface_Package renames Standard.org.allbinary.logic.system.hardware.HardwareInterface_Package;
-   package SystemHardwareFactory_Package renames Standard.org.allbinary.logic.system.hardware.SystemHardwareFactory_Package;
    package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-   package NoOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.NoOperatingSystem_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type ClientInformation is tagged;
    type ClientInformation_Access is access all ClientInformation'Class;
    type ClientInformation_Access_Array is array (Natural range <>) of ClientInformation_Access;
    type ClientInformation_Access_Array_Access is access all ClientInformation_Access_Array;
+   type ClientInformation_Access_Array_Access_Array is array (Natural range <>) of ClientInformation_Access_Array_Access;
+   type ClientInformation_Access_Array_Access_Array_Access is access all ClientInformation_Access_Array_Access_Array;
 
-   type ClientInformation is new AbeClientInformationInterface with record
+   type ClientInformation is new Java_Object and AbeClientInformationInterface with record
       operatingSystemInterface : GenericOperatingSystem_Access;
       tsUtil : TsUtil_Access;
       name : Unbounded_String;

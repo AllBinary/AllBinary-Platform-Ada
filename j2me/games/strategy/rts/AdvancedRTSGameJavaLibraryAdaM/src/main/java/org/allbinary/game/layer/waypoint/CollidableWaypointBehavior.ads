@@ -34,6 +34,8 @@ package org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package is
    type CollidableWaypointBehavior_Access is access all CollidableWaypointBehavior'Class;
    type CollidableWaypointBehavior_Access_Array is array (Natural range <>) of CollidableWaypointBehavior_Access;
    type CollidableWaypointBehavior_Access_Array_Access is access all CollidableWaypointBehavior_Access_Array;
+   type CollidableWaypointBehavior_Access_Array_Access_Array is array (Natural range <>) of CollidableWaypointBehavior_Access_Array_Access;
+   type CollidableWaypointBehavior_Access_Array_Access_Array_Access is access all CollidableWaypointBehavior_Access_Array_Access_Array;
 
    type CollidableWaypointBehavior is new CollidableRTSBehavior with null record;
 

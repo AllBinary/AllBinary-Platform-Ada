@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.device.OpenGLESNullGraphicsFactory_Package; use org.allbinary.device.OpenGLESNullGraphicsFactory_Package;
 with org.allbinary.device.OpenGLESGraphics_Package; use org.allbinary.device.OpenGLESGraphics_Package;
 
 package org.allbinary.device.OpenGLESGraphicsFactory_Package is
@@ -30,6 +29,8 @@ package org.allbinary.device.OpenGLESGraphicsFactory_Package is
    type OpenGLESGraphicsFactory_Access is access all OpenGLESGraphicsFactory'Class;
    type OpenGLESGraphicsFactory_Access_Array is array (Natural range <>) of OpenGLESGraphicsFactory_Access;
    type OpenGLESGraphicsFactory_Access_Array_Access is access all OpenGLESGraphicsFactory_Access_Array;
+   type OpenGLESGraphicsFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLESGraphicsFactory_Access_Array_Access;
+   type OpenGLESGraphicsFactory_Access_Array_Access_Array_Access is access all OpenGLESGraphicsFactory_Access_Array_Access_Array;
 
    type OpenGLESGraphicsFactory is new Java_Object with null record;
 

@@ -13,12 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.java.character_Id.CharArrayFactory_Package; use org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+
 package body org.allbinary.graphics.draw.KeyValueDrawCharArray_Package is
 
+   package CharArrayFactory_Package renames Standard.org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out KeyValueDrawCharArray'Class) is
    begin
       null;
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (KeyValueDrawCharArray_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (KeyValueDrawCharArray_Access'(This'Unchecked_Access)));
       
       
       This.valueX := 0;
@@ -27,17 +32,17 @@ package body org.allbinary.graphics.draw.KeyValueDrawCharArray_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out KeyValueDrawCharArray'Class; label_Case : Unbounded_String; x : Integer) is
+   procedure Initialize (This : in out KeyValueDrawCharArray'Class; label : Unbounded_String; x : Integer) is
    begin
       Initialize_Fields (This);
-        This.LABEL := label_Case;
+        This.LABEL := label;
         This.labelX := x;
    end Initialize;
 
-   function Create (label_Case : Unbounded_String; x : Integer) return KeyValueDrawCharArray_Access is
+   function Create (label : Unbounded_String; x : Integer) return KeyValueDrawCharArray_Access is
       This : constant KeyValueDrawCharArray_Access := new KeyValueDrawCharArray;
    begin
-      KeyValueDrawCharArray_Package.Initialize (This.all, label_Case, x);
+      KeyValueDrawCharArray_Package.Initialize (This.all, label, x);
       return This;
    end Create;
 

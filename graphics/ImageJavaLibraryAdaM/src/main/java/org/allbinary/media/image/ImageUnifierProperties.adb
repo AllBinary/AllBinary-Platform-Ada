@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.image.ImageUnifierProperties_Package is
 
    procedure Initialize_Fields (This : in out ImageUnifierProperties'Class) is

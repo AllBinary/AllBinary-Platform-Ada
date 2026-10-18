@@ -21,20 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 
 package org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
 
    type BufferedImageFrameCacheable is tagged;
    type BufferedImageFrameCacheable_Access is access all BufferedImageFrameCacheable'Class;
    type BufferedImageFrameCacheable_Access_Array is array (Natural range <>) of BufferedImageFrameCacheable_Access;
    type BufferedImageFrameCacheable_Access_Array_Access is access all BufferedImageFrameCacheable_Access_Array;
+   type BufferedImageFrameCacheable_Access_Array_Access_Array is array (Natural range <>) of BufferedImageFrameCacheable_Access_Array_Access;
+   type BufferedImageFrameCacheable_Access_Array_Access_Array_Access is access all BufferedImageFrameCacheable_Access_Array_Access_Array;
 
-   type BufferedImageFrameCacheable is new CacheableInterface with record
+   type BufferedImageFrameCacheable is new Java_Object and CacheableInterface with record
       frame : Long_Long_Integer;
       bufferedImage : BufferedImage_Access;
    end record;

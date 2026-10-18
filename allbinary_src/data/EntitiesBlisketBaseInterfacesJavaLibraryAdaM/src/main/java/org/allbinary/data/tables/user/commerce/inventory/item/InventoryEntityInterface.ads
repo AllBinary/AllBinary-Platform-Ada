@@ -22,26 +22,24 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
-with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
 
 package org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
    package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
-   package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
    type InventoryEntityInterface is interface and BasicDataTableInterface;
    type InventoryEntityInterface_Access is access all InventoryEntityInterface'Class;
    type InventoryEntityInterface_Access_Array is array (Natural range <>) of InventoryEntityInterface_Access;
    type InventoryEntityInterface_Access_Array_Access is access all InventoryEntityInterface_Access_Array;
+   type InventoryEntityInterface_Access_Array_Access_Array is array (Natural range <>) of InventoryEntityInterface_Access_Array_Access;
+   type InventoryEntityInterface_Access_Array_Access_Array_Access is access all InventoryEntityInterface_Access_Array_Access_Array;
    function getItem (This : in out InventoryEntityInterface; id : Unbounded_String) return ItemInterface_Access is abstract;
    function getItems (This : in out InventoryEntityInterface; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access is abstract;
    function getWeight (This : in out InventoryEntityInterface; id : Unbounded_String) return Unbounded_String is abstract;

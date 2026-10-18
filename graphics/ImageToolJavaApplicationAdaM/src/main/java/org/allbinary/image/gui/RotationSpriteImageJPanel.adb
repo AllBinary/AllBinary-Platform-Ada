@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.media.image.ImageJ2SERotationUtil_Package; use org.allbinary.media.image.ImageJ2SERotationUtil_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
+
 package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ImageJ2SERotationUtil_Package renames Standard.org.allbinary.media.image.ImageJ2SERotationUtil_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out RotationSpriteImageJPanel'Class) is
    begin
       null;
@@ -83,7 +95,7 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 --                          file := imageProcessorInput.getFiles (index);
 --                          if not (This.writeOverOriginalJCheckBox.isSelected) then
 --                              filePath := file.getAbsolutePath;
---                              extensionIndex := (Index (filePath, Java_Image (This.imageStrings.PNG_EXTENSION)) - 1);
+--                              extensionIndex := Java_Index_Of (filePath, Java_Image (This.imageStrings.PNG_EXTENSION));
 --                              filePath := StringMaker_Package.Create.append (Unbounded_Slice (filePath, (0) + 1, extensionIndex)).append (CommonSeps_Package.getInstance.UNDERSCORE).append (To_Unbounded_String ("sprite")).append (This.imageStrings.PNG_EXTENSION).toString;
 --                              logUtil.putF (To_Unbounded_String ("New File Path: ") & filePath, RotationSpriteImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN);
 --                              file := File_Package.Create (filePath);
@@ -130,8 +142,8 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
         This.jLabel2 := JLabel_Package.Create;
         jPanel1Layout := GroupLayout_Package.Create (This.jPanel1);
         This.jPanel1.setLayout (jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup (jPanel1Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (0, 436, Short_Package.MAX_VALUE));
-        jPanel1Layout.setVerticalGroup (jPanel1Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (0, 227, Short_Package.MAX_VALUE));
+        jPanel1Layout.setHorizontalGroup (jPanel1Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (0, 436, Short_Integer'Last));
+        jPanel1Layout.setVerticalGroup (jPanel1Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (0, 227, Short_Integer'Last));
         This.totalFramesJComboBox.setModel (DefaultComboBoxModel_Package.Create (new Unbounded_String_Array'(CommonPhoneStrings_Package.getInstance.FOUR, CommonPhoneStrings_Package.getInstance.NINE, To_Unbounded_String ("18"), To_Unbounded_String ("20"), To_Unbounded_String ("36"))));
         This.jLabel1.setText (To_Unbounded_String ("Total Frames:"));
         This.generateJButton.setText (To_Unbounded_String ("Generate"));
@@ -156,17 +168,17 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
         This.writeOverOriginalJCheckBox.setText (To_Unbounded_String ("Write Over Original"));
         jPanel2Layout := GroupLayout_Package.Create (This.jPanel2);
         This.jPanel2.setLayout (jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup (jPanel2Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel2Layout.createSequentialGroup.add (8, 8, 8).add (This.jLabel1).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.totalFramesJComboBox, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jLabel3).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.totalAngleJComboBox, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.writeOverOriginalJCheckBox).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.generateJButton).addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
+        jPanel2Layout.setHorizontalGroup (jPanel2Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel2Layout.createSequentialGroup.add (8, 8, 8).add (This.jLabel1).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.totalFramesJComboBox, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jLabel3).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.totalAngleJComboBox, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.writeOverOriginalJCheckBox).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.generateJButton).addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)));
         jPanel2Layout.setVerticalGroup (jPanel2Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel2Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.BASELINE).add (This.jLabel1).add (This.totalFramesJComboBox, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).add (This.generateJButton).add (This.totalAngleJComboBox, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).add (This.jLabel3).add (This.writeOverOriginalJCheckBox)));
         This.jLabel2.setText (To_Unbounded_String ("Results:"));
         jPanel3Layout := GroupLayout_Package.Create (This.jPanel3);
         This.jPanel3.setLayout (jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel3Layout.createSequentialGroup.add (This.jLabel2).addContainerGap (377, Short_Package.MAX_VALUE)));
+        jPanel3Layout.setHorizontalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel3Layout.createSequentialGroup.add (This.jLabel2).addContainerGap (377, Short_Integer'Last)));
         jPanel3Layout.setVerticalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (This.jLabel2));
         layout := GroupLayout_Package.Create (RotationSpriteImageJPanel_Access'(This'Unchecked_Access));
         RotationSpriteImageJPanel'Class (This).setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, This.jPanel2, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).add (layout.createSequentialGroup.addContainerGap.add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addContainerGap).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE));
-        layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.UNRELATED).add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
+        layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, This.jPanel2, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last).add (layout.createSequentialGroup.addContainerGap.add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last).addContainerGap).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last));
+        layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.UNRELATED).add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)));
    end initComponents;
 
    procedure generateJButtonActionPerformed (This : in out RotationSpriteImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is

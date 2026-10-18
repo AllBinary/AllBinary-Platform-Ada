@@ -20,21 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
-with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 
 package org.allbinary.math.FrameUtil_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type FrameUtil is tagged;
    type FrameUtil_Access is access all FrameUtil'Class;
    type FrameUtil_Access_Array is array (Natural range <>) of FrameUtil_Access;
    type FrameUtil_Access_Array_Access is access all FrameUtil_Access_Array;
+   type FrameUtil_Access_Array_Access_Array is array (Natural range <>) of FrameUtil_Access_Array_Access;
+   type FrameUtil_Access_Array_Access_Array_Access is access all FrameUtil_Access_Array_Access_Array;
 
    type FrameUtil is new Java_Object with null record;
    instance : FrameUtil_Access;

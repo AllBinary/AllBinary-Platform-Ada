@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
 
@@ -30,7 +29,6 @@ package org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityIn
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
@@ -38,6 +36,8 @@ package org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityIn
    type StoreFrontsEntityInterface_Access is access all StoreFrontsEntityInterface'Class;
    type StoreFrontsEntityInterface_Access_Array is array (Natural range <>) of StoreFrontsEntityInterface_Access;
    type StoreFrontsEntityInterface_Access_Array_Access is access all StoreFrontsEntityInterface_Access_Array;
+   type StoreFrontsEntityInterface_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsEntityInterface_Access_Array_Access;
+   type StoreFrontsEntityInterface_Access_Array_Access_Array_Access is access all StoreFrontsEntityInterface_Access_Array_Access_Array;
    function getStoreFrontInterface (This : in out StoreFrontsEntityInterface; name : Unbounded_String) return StoreFrontInterface_Access is abstract;
    function getStoreFrontNames (This : in out StoreFrontsEntityInterface) return BasicArrayList_Access is abstract;
    procedure delete (This : in out StoreFrontsEntityInterface; value : Unbounded_String) is abstract;

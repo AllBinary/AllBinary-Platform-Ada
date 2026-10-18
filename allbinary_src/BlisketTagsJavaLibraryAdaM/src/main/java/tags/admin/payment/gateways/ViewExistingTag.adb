@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+
 package body tags.admin.payment.gateways.ViewExistingTag_Package is
 
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    procedure Initialize_Fields (This : in out ViewExistingTag'Class) is
    begin
       null;

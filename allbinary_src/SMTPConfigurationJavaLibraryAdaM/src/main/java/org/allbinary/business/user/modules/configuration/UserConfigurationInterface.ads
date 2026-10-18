@@ -34,6 +34,8 @@ package org.allbinary.business.user.modules.configuration.UserConfigurationInter
    type UserConfigurationInterface_Access is access all UserConfigurationInterface'Class;
    type UserConfigurationInterface_Access_Array is array (Natural range <>) of UserConfigurationInterface_Access;
    type UserConfigurationInterface_Access_Array_Access is access all UserConfigurationInterface_Access_Array;
+   type UserConfigurationInterface_Access_Array_Access_Array is array (Natural range <>) of UserConfigurationInterface_Access_Array_Access;
+   type UserConfigurationInterface_Access_Array_Access_Array_Access is access all UserConfigurationInterface_Access_Array_Access_Array;
    function getUserEmailConfigurationInterface (This : in out UserConfigurationInterface) return UserEmailConfigurationInterface_Access is abstract;
    procedure setUserEmailConfigurationInterface (This : in out UserConfigurationInterface; userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface_Package.UserEmailConfigurationInterface'Class) is abstract;
    function getTimeCreated (This : in out UserConfigurationInterface) return TimeCreated_Access is abstract;

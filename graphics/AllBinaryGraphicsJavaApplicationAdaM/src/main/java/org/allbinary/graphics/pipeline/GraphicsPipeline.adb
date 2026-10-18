@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.graphics.pipeline.GraphicsPipeline_Package is
 
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out GraphicsPipeline'Class) is
    begin
       null;
@@ -44,14 +51,14 @@ package body org.allbinary.graphics.pipeline.GraphicsPipeline_Package is
       point : GPoint_Access;
       index : Integer;
    begin
-        newVector := BasicArrayListD_Package.Create;
+        newVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := This.pointBasicArrayList.size;
         for index in 0 .. (size) - 1 loop
             secondPoint := GPoint_Access (This.pointBasicArrayList.get (index));
             secondX := (((secondPoint.getX) * (Ada.Numerics.Long_Elementary_Functions.Cos (aTheta)))) - (((secondPoint.getY) * (Ada.Numerics.Long_Elementary_Functions.Sin (aTheta))));
             secondY := (((secondPoint.getX) * (Ada.Numerics.Long_Elementary_Functions.Sin (aTheta)))) + (((secondPoint.getY) * (Ada.Numerics.Long_Elementary_Functions.Cos (aTheta))));
             point := PointFactory_Package.getInstance.createXY ((Integer (secondX)), (Integer (secondY)));
-            newVector.add (point);
+            newVector.add (Java_Object_Access (point));
         end loop;
         This.pointBasicArrayList := newVector;
    end rotateTheta;

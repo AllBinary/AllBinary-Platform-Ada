@@ -29,6 +29,8 @@ package org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHudCo
    type GameNotificationHudCompositeInterface_Access is access all GameNotificationHudCompositeInterface'Class;
    type GameNotificationHudCompositeInterface_Access_Array is array (Natural range <>) of GameNotificationHudCompositeInterface_Access;
    type GameNotificationHudCompositeInterface_Access_Array_Access is access all GameNotificationHudCompositeInterface_Access_Array;
+   type GameNotificationHudCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of GameNotificationHudCompositeInterface_Access_Array_Access;
+   type GameNotificationHudCompositeInterface_Access_Array_Access_Array_Access is access all GameNotificationHudCompositeInterface_Access_Array_Access_Array;
    function getGameNotificationHud (This : in out GameNotificationHudCompositeInterface) return GameNotificationHud_Access is abstract;
 
 end org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHudCompositeInterface_Package;

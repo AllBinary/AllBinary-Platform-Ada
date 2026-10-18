@@ -32,6 +32,8 @@ package org.allbinary.logic.system.hardware.HardwareInterface_Package is
    type HardwareInterface_Access is access all HardwareInterface'Class;
    type HardwareInterface_Access_Array is array (Natural range <>) of HardwareInterface_Access;
    type HardwareInterface_Access_Array_Access is access all HardwareInterface_Access_Array;
+   type HardwareInterface_Access_Array_Access_Array is array (Natural range <>) of HardwareInterface_Access_Array_Access;
+   type HardwareInterface_Access_Array_Access_Array_Access is access all HardwareInterface_Access_Array_Access_Array;
    function getComponent (This : in out HardwareInterface; index : Integer) return HardwareComponentInterface_Access is abstract;
    function toString (This : in out HardwareInterface) return Unbounded_String is abstract;
    function compareTo (This : in out HardwareInterface; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) return Boolean is abstract;

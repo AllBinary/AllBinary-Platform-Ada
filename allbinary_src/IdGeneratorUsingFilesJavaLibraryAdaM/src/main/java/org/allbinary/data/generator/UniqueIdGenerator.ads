@@ -22,34 +22,22 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.AbDataInputStream_Package; use org.allbinary.logic.io.AbDataInputStream_Package;
-with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
-with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
-with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
-with org.allbinary.logic.io.DataOutputStreamFactory_Package; use org.allbinary.logic.io.DataOutputStreamFactory_Package;
-with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.generator.IdGeneratorInterface_Package; use org.allbinary.data.generator.IdGeneratorInterface_Package;
 
 package org.allbinary.data.generator.UniqueIdGenerator_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbDataInputStream_Package renames Standard.org.allbinary.logic.io.AbDataInputStream_Package;
-   package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
-   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
-   package AbFileOutputStream_Package renames Standard.org.allbinary.logic.io.AbFileOutputStream_Package;
-   package DataOutputStreamFactory_Package renames Standard.org.allbinary.logic.io.DataOutputStreamFactory_Package;
-   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type UniqueIdGenerator is tagged;
    type UniqueIdGenerator_Access is access all UniqueIdGenerator'Class;
    type UniqueIdGenerator_Access_Array is array (Natural range <>) of UniqueIdGenerator_Access;
    type UniqueIdGenerator_Access_Array_Access is access all UniqueIdGenerator_Access_Array;
+   type UniqueIdGenerator_Access_Array_Access_Array is array (Natural range <>) of UniqueIdGenerator_Access_Array_Access;
+   type UniqueIdGenerator_Access_Array_Access_Array_Access is access all UniqueIdGenerator_Access_Array_Access_Array;
 
-   type UniqueIdGenerator is new IdGeneratorInterface with record
+   type UniqueIdGenerator is new Java_Object and IdGeneratorInterface with record
       logUtil : LogUtil_Access;
       newFile : AbFile_Access;
       id : Long_Long_Integer;

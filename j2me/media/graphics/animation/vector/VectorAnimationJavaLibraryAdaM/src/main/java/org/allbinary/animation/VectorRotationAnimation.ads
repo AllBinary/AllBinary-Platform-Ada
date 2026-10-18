@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.VectorBaseRotationAnimation_Package; use org.allbinary.animation.VectorBaseRotationAnimation_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 
@@ -33,13 +31,13 @@ package org.allbinary.animation.VectorRotationAnimation_Package is
    package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type VectorRotationAnimation is tagged;
    type VectorRotationAnimation_Access is access all VectorRotationAnimation'Class;
    type VectorRotationAnimation_Access_Array is array (Natural range <>) of VectorRotationAnimation_Access;
    type VectorRotationAnimation_Access_Array_Access is access all VectorRotationAnimation_Access_Array;
+   type VectorRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of VectorRotationAnimation_Access_Array_Access;
+   type VectorRotationAnimation_Access_Array_Access_Array_Access is access all VectorRotationAnimation_Access_Array_Access_Array;
 
    type VectorRotationAnimation is new VectorBaseRotationAnimation with null record;
 

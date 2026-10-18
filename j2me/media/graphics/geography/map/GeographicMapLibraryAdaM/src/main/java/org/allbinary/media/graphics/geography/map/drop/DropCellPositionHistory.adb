@@ -13,14 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out DropCellPositionHistory'Class) is
    begin
       null;
       This.cellPositionFactory := CellPositionFactory_Package.getInstance;
-      This.positionList := BasicArrayListD_Package.Create;
-      This.layerList := BasicArrayListD_Package.Create;
+      This.positionList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.layerList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out DropCellPositionHistory'Class) is
@@ -45,8 +48,8 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
       cellPosition : constant CellPosition_Access := CellPosition_Access (cellPosition_Param);
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
-        This.positionList.add (cellPosition);
-        This.layerList.add (layerInterface);
+        This.positionList.add (Java_Object_Access (cellPosition));
+        This.layerList.add (Java_Object_Access (layerInterface));
    end add;
 
    procedure addAll (This : in out DropCellPositionHistory; list_Param : access BasicArrayList_Package.BasicArrayList'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
@@ -63,7 +66,7 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
       cellPosition : constant CellPosition_Access := CellPosition_Access (cellPosition_Param);
       index : Integer;
    begin
-        index := This.positionList.indexOf (cellPosition);
+        index := This.positionList.indexOf (Java_Object_Access (cellPosition));
         if (index) >= (0) then
             This.positionList.removeAt (index);
             This.layerList.removeAt (index);
@@ -76,7 +79,7 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
    begin
         index := 0;
         while (index) /= (-(1)) loop
-            index := This.layerList.indexOf (layerInterface);
+            index := This.layerList.indexOf (Java_Object_Access (layerInterface));
             if (index) >= (0) then
                 This.positionList.removeAt (index);
                 This.layerList.removeAt (index);
@@ -93,7 +96,7 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
    function isCellPositionWithDrop (This : in out DropCellPositionHistory; cellPosition_Param : access CellPosition_Package.CellPosition'Class) return Boolean is
       cellPosition : constant CellPosition_Access := CellPosition_Access (cellPosition_Param);
    begin
-        return This.positionList.contains (cellPosition);
+        return This.positionList.contains (Java_Object_Access (cellPosition));
    end isCellPositionWithDrop;
 
    function anyCellPositionWithDrop (This : in out DropCellPositionHistory; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean is
@@ -127,7 +130,7 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
       cellPosition : constant CellPosition_Access := CellPosition_Access (cellPosition_Param);
       index : Integer;
    begin
-        index := This.positionList.indexOf (cellPosition);
+        index := This.positionList.indexOf (Java_Object_Access (cellPosition));
         if (index) >= (0) then
             return AllBinaryLayer_Access (This.layerList.get (index));
         else

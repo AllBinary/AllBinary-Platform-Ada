@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFactory_Package is
 
    procedure Initialize_Fields (This : in out AppRendererShaderUpdaterFactory'Class) is
@@ -51,6 +52,11 @@ package body org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFact
       object3d : constant Java_Object_Access := Java_Object_Access (object3d_Param);
    begin
         null;
+   end setShaderComposite;
+
+   procedure setShaderComposite (This : in out AppRendererShaderUpdaterFactory; Value : Unbounded_String) is
+   begin
+      AppRendererShaderUpdaterFactory'Class (This).setShaderComposite (Java_Box (Value));
    end setShaderComposite;
 
 begin

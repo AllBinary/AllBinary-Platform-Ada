@@ -34,8 +34,10 @@ package org.allbinary.layer.LayerProcessor_Package is
    type LayerProcessor_Access is access all LayerProcessor'Class;
    type LayerProcessor_Access_Array is array (Natural range <>) of LayerProcessor_Access;
    type LayerProcessor_Access_Array_Access is access all LayerProcessor_Access_Array;
+   type LayerProcessor_Access_Array_Access_Array is array (Natural range <>) of LayerProcessor_Access_Array_Access;
+   type LayerProcessor_Access_Array_Access_Array_Access is access all LayerProcessor_Access_Array_Access_Array;
 
-   type LayerProcessor is new LayerProcessorInterface with record
+   type LayerProcessor is new Java_Object and LayerProcessorInterface with record
       commonStrings : CommonStrings_Access;
       layerManager : LayerManager_Access;
    end record;

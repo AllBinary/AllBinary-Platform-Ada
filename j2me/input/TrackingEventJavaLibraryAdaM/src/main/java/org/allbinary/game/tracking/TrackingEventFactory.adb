@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
+with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
+
 package body org.allbinary.game.tracking.TrackingEventFactory_Package is
 
    procedure Initialize_Fields (This : in out TrackingEventFactory'Class) is
@@ -36,7 +39,7 @@ package body org.allbinary.game.tracking.TrackingEventFactory_Package is
 
    function getInstance (This : in out TrackingEventFactory) return AllBinaryEventObject_Access is
    begin
-        return TrackingEvent_Package.Create (TrackingEventHandler_Package.getInstance);
+        return AllBinaryEventObject_Access (TrackingEvent_Package.Create (TrackingEventHandler_Package.getInstance));
    end getInstance;
 
 end org.allbinary.game.tracking.TrackingEventFactory_Package;

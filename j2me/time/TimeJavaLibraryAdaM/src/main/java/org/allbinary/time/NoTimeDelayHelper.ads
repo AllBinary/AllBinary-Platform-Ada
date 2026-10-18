@@ -29,6 +29,8 @@ package org.allbinary.time.NoTimeDelayHelper_Package is
    type NoTimeDelayHelper_Access is access all NoTimeDelayHelper'Class;
    type NoTimeDelayHelper_Access_Array is array (Natural range <>) of NoTimeDelayHelper_Access;
    type NoTimeDelayHelper_Access_Array_Access is access all NoTimeDelayHelper_Access_Array;
+   type NoTimeDelayHelper_Access_Array_Access_Array is array (Natural range <>) of NoTimeDelayHelper_Access_Array_Access;
+   type NoTimeDelayHelper_Access_Array_Access_Array_Access is access all NoTimeDelayHelper_Access_Array_Access_Array;
 
    type NoTimeDelayHelper is new TimeDelayHelper with null record;
    SINGLETON : NoTimeDelayHelper_Access;

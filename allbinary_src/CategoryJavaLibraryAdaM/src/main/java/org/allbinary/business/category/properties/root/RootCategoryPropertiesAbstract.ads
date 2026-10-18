@@ -22,12 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
 with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package; use org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package;
@@ -36,12 +32,8 @@ package org.allbinary.business.category.properties.root.RootCategoryPropertiesAb
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
    package CategoryHierarchyInterface_Package renames Standard.org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -49,8 +41,10 @@ package org.allbinary.business.category.properties.root.RootCategoryPropertiesAb
    type RootCategoryPropertiesAbstract_Access is access all RootCategoryPropertiesAbstract'Class;
    type RootCategoryPropertiesAbstract_Access_Array is array (Natural range <>) of RootCategoryPropertiesAbstract_Access;
    type RootCategoryPropertiesAbstract_Access_Array_Access is access all RootCategoryPropertiesAbstract_Access_Array;
+   type RootCategoryPropertiesAbstract_Access_Array_Access_Array is array (Natural range <>) of RootCategoryPropertiesAbstract_Access_Array_Access;
+   type RootCategoryPropertiesAbstract_Access_Array_Access_Array_Access is access all RootCategoryPropertiesAbstract_Access_Array_Access_Array;
 
-   type RootCategoryPropertiesAbstract is new RootCategoryPropertiesInterface with record
+   type RootCategoryPropertiesAbstract is new Java_Object and RootCategoryPropertiesInterface with record
       category : Unbounded_String;
       fileName : Unbounded_String;
    end record;

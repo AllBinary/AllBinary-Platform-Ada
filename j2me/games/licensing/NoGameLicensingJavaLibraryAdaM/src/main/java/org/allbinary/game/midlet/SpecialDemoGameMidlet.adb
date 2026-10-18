@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package; use org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package;
+
 package body org.allbinary.game.midlet.SpecialDemoGameMidlet_Package is
 
+   package LicenseServerInitFileUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package;
    procedure Initialize_Fields (This : in out SpecialDemoGameMidlet'Class) is
    begin
       null;

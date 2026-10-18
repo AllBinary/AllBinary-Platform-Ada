@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package; use org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
 with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
@@ -28,7 +27,6 @@ with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Pac
 
 package org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModule_Package is
 
-   package BasketInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
    package OrderInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
    package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
@@ -37,8 +35,10 @@ package org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippin
    type BasicWeightShippingModule_Access is access all BasicWeightShippingModule'Class;
    type BasicWeightShippingModule_Access_Array is array (Natural range <>) of BasicWeightShippingModule_Access;
    type BasicWeightShippingModule_Access_Array_Access is access all BasicWeightShippingModule_Access_Array;
+   type BasicWeightShippingModule_Access_Array_Access_Array is array (Natural range <>) of BasicWeightShippingModule_Access_Array_Access;
+   type BasicWeightShippingModule_Access_Array_Access_Array_Access is access all BasicWeightShippingModule_Access_Array_Access_Array;
 
-   type BasicWeightShippingModule is new ShippingInterface with record
+   type BasicWeightShippingModule is new Java_Object and ShippingInterface with record
       commonStrings : CommonStrings_Access;
       name : Unbounded_String;
       description : Unbounded_String;

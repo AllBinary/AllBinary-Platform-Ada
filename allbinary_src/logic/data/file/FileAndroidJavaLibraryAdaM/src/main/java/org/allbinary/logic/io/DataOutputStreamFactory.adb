@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
+with org.allbinary.logic.io.FileStreamFactory_Package; use org.allbinary.logic.io.FileStreamFactory_Package;
+
 package body org.allbinary.logic.io.DataOutputStreamFactory_Package is
 
    procedure Initialize_Fields (This : in out DataOutputStreamFactory'Class) is

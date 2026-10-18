@@ -43,6 +43,8 @@ package org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimat
    type AllBinaryFlickerAndroidImageRotationAnimation_Access is access all AllBinaryFlickerAndroidImageRotationAnimation'Class;
    type AllBinaryFlickerAndroidImageRotationAnimation_Access_Array is array (Natural range <>) of AllBinaryFlickerAndroidImageRotationAnimation_Access;
    type AllBinaryFlickerAndroidImageRotationAnimation_Access_Array_Access is access all AllBinaryFlickerAndroidImageRotationAnimation_Access_Array;
+   type AllBinaryFlickerAndroidImageRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AllBinaryFlickerAndroidImageRotationAnimation_Access_Array_Access;
+   type AllBinaryFlickerAndroidImageRotationAnimation_Access_Array_Access_Array_Access is access all AllBinaryFlickerAndroidImageRotationAnimation_Access_Array_Access_Array;
 
    type AllBinaryFlickerAndroidImageRotationAnimation is new ImageBaseRotationAnimation with record
       imageModifierUtil : ImageModifierUtil_Access;

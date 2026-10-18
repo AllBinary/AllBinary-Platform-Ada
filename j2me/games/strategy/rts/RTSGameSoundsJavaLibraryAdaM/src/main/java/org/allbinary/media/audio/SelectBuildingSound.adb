@@ -12,6 +12,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.audio.SelectBuildingSound_Package is
 
    procedure Initialize_Fields (This : in out SelectBuildingSound'Class) is
@@ -39,7 +40,7 @@ package body org.allbinary.media.audio.SelectBuildingSound_Package is
 
 begin
    null;
-   soundInterface := SelectBuildingSound_Package.Create;
+   soundInterface := Sound_Access (SelectBuildingSound_Package.Create);
 
 end org.allbinary.media.audio.SelectBuildingSound_Package;
 

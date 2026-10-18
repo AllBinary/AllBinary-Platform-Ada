@@ -33,6 +33,8 @@ package org.allbinary.logic.java.jar.JarUtil_Package is
    type JarUtil_Access is access all JarUtil'Class;
    type JarUtil_Access_Array is array (Natural range <>) of JarUtil_Access;
    type JarUtil_Access_Array_Access is access all JarUtil_Access_Array;
+   type JarUtil_Access_Array_Access_Array is array (Natural range <>) of JarUtil_Access_Array_Access;
+   type JarUtil_Access_Array_Access_Array_Access is access all JarUtil_Access_Array_Access_Array;
 
    type JarUtil is new Java_Object with record
       jarURL : URL_Access;

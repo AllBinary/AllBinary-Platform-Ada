@@ -20,18 +20,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.UserDomNode_Package; use org.allbinary.business.user.UserDomNode_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with views.business.context.HttpContextView_Package; use views.business.context.HttpContextView_Package;
 
 package views.admin.user.UserView_Package is
 
-   package UserDomNode_Package renames Standard.org.allbinary.business.user.UserDomNode_Package;
    package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
-   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package HttpContextView_Package renames Standard.views.business.context.HttpContextView_Package;
@@ -40,6 +36,8 @@ package views.admin.user.UserView_Package is
    type UserView_Access is access all UserView'Class;
    type UserView_Access_Array is array (Natural range <>) of UserView_Access;
    type UserView_Access_Array_Access is access all UserView_Access_Array;
+   type UserView_Access_Array_Access_Array is array (Natural range <>) of UserView_Access_Array_Access;
+   type UserView_Access_Array_Access_Array_Access is access all UserView_Access_Array_Access_Array;
 
    type UserView is new HttpContextView with record
       logUtil : LogUtil_Access;

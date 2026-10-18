@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.category.CategoryView_Package; use org.allbinary.business.category.CategoryView_Package;
+
 package body org.allbinary.business.category.CategoriesView_Package is
 
    procedure Initialize_Fields (This : in out CategoriesView'Class) is

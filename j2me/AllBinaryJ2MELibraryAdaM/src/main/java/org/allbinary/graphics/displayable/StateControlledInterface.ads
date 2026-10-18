@@ -28,6 +28,8 @@ package org.allbinary.graphics.displayable.StateControlledInterface_Package is
    type StateControlledInterface_Access is access all StateControlledInterface'Class;
    type StateControlledInterface_Access_Array is array (Natural range <>) of StateControlledInterface_Access;
    type StateControlledInterface_Access_Array_Access is access all StateControlledInterface_Access_Array;
+   type StateControlledInterface_Access_Array_Access_Array is array (Natural range <>) of StateControlledInterface_Access_Array_Access;
+   type StateControlledInterface_Access_Array_Access_Array_Access is access all StateControlledInterface_Access_Array_Access_Array;
    procedure setState (This : in out StateControlledInterface; state : Integer) is abstract;
 
 end org.allbinary.graphics.displayable.StateControlledInterface_Package;

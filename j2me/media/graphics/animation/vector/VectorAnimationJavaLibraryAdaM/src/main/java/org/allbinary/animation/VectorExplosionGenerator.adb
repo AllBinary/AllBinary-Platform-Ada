@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.pipeline.RandomTranslation_Package; use org.allbinary.graphics.pipeline.RandomTranslation_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+
 package body org.allbinary.animation.VectorExplosionGenerator_Package is
 
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package RandomTranslation_Package renames Standard.org.allbinary.graphics.pipeline.RandomTranslation_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
    procedure Initialize_Fields (This : in out VectorExplosionGenerator'Class) is
    begin
       null;
@@ -85,7 +96,7 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
       pointBasicArrayList : BasicArrayList_Access;
    begin
         begin
-            pointsBasicArrayList := BasicArrayListS_Package.Create (howMuch);
+            pointsBasicArrayList := BasicArrayList_Access (BasicArrayListS_Package.Create (howMuch));
             pointsBasicArrayList.add (VectorExplosionGenerator'Class (This).createPointsBasicArrayList (points));
             frameIndex := 0;
             tempBasicArrayList := null;
@@ -93,7 +104,7 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
             while (frameIndex) < (howMuch) loop
                 tempBasicArrayList := BasicArrayList_Access (pointsBasicArrayList.objectArray (frameIndex));
                 pointBasicArrayList := VectorExplosionGenerator'Class (This).createListFromPoints (tempBasicArrayList, points, howMuch, type_Id);
-                pointsBasicArrayList.add (pointBasicArrayList);
+                pointsBasicArrayList.add (Java_Object_Access (pointBasicArrayList));
                 frameIndex := frameIndex + 1;
             end loop;
             if not (startFrame) then
@@ -121,10 +132,10 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
       index2 : Integer;
    begin
         index := 0;
-        pointBasicArrayList := BasicArrayListD_Package.Create;
+        pointBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         sectionBasicArrayList := null;
         while (index) < (points'Length) loop
-            sectionBasicArrayList := BasicArrayListD_Package.Create;
+            sectionBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             while (points (index) (0)) /= (1000) loop
                 sectionBasicArrayList.add (tempBasicArrayList.objectArray (index));
                 index := index + 1;
@@ -159,7 +170,7 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
         if (points'Length) = (0) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Points Provided")));
         end if;
-        firstPointBasicArrayList := BasicArrayListS_Package.Create (points'Length);
+        firstPointBasicArrayList := BasicArrayList_Access (BasicArrayListS_Package.Create (points'Length));
         pointFactory := PointFactory_Package.getInstance;
         for index in 0 .. (points'Length) - 1 loop
             firstPointBasicArrayList.add (pointFactory.createXY (points (index) (0), points (index) (1)));

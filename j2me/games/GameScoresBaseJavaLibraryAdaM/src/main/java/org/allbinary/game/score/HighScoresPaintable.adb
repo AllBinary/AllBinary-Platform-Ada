@@ -13,13 +13,28 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.color.ColorChangeEvent_Package; use org.allbinary.graphics.color.ColorChangeEvent_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
+with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
+
 package body org.allbinary.game.score.HighScoresPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package ColorChangeEvent_Package renames Standard.org.allbinary.graphics.color.ColorChangeEvent_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out HighScoresPaintable'Class) is
    begin
       null;
       This.displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (HighScoresPaintable_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (HighScoresPaintable_Access'(This'Unchecked_Access)));
       This.basicColor := BasicColorFactory_Package.getInstance.WHITE;
       This.highScores := NullHighScoresSingletonFactory_Package.getInstance;
       This.anchor := Anchor_Package.TOP_LEFT;

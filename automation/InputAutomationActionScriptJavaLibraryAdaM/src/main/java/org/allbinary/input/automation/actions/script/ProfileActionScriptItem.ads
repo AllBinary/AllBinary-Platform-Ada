@@ -28,7 +28,6 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package; use org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package;
 with org.allbinary.input.automation.actions.script.JPopupMenu_Package; use org.allbinary.input.automation.actions.script.JPopupMenu_Package;
-with org.allbinary.input.automation.actions.script.JMenuItem_Package; use org.allbinary.input.automation.actions.script.JMenuItem_Package;
 
 package org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package is
 
@@ -40,6 +39,8 @@ package org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Pa
    type ProfileActionScriptItem_Access is access all ProfileActionScriptItem'Class;
    type ProfileActionScriptItem_Access_Array is array (Natural range <>) of ProfileActionScriptItem_Access;
    type ProfileActionScriptItem_Access_Array_Access is access all ProfileActionScriptItem_Access_Array;
+   type ProfileActionScriptItem_Access_Array_Access_Array is array (Natural range <>) of ProfileActionScriptItem_Access_Array_Access;
+   type ProfileActionScriptItem_Access_Array_Access_Array_Access is access all ProfileActionScriptItem_Access_Array_Access_Array;
 
    type ProfileActionScriptItem is new DefaultMutableTreeNode and ProfileActionScriptItemInterface and ActionListener with record
       logUtil : LogUtil_Access;

@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tree.category.CategoryLoader_Package; use org.allbinary.data.tree.category.CategoryLoader_Package;
+
 package body org.allbinary.data.tree.category.CategoryLoaderFactory_Package is
 
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out CategoryLoaderFactory'Class) is
    begin
       null;
@@ -41,7 +47,7 @@ package body org.allbinary.data.tree.category.CategoryLoaderFactory_Package is
    begin
         logUtil := LogUtil_Package.getInstance;
         begin
-            return CategoryLoader_Package.Create (categoryFactoryInterface);
+            return CategoryLoaderInterface_Access (CategoryLoader_Package.Create (categoryFactoryInterface));
         exception
             when Java_Occurrence : others =>
                 declare

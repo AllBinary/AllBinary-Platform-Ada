@@ -33,6 +33,8 @@ package org.allbinary.game.displayable.canvas.EndGamePaintable_Package is
    type EndGamePaintable_Access is access all EndGamePaintable'Class;
    type EndGamePaintable_Access_Array is array (Natural range <>) of EndGamePaintable_Access;
    type EndGamePaintable_Access_Array_Access is access all EndGamePaintable_Access_Array;
+   type EndGamePaintable_Access_Array_Access_Array is array (Natural range <>) of EndGamePaintable_Access_Array_Access;
+   type EndGamePaintable_Access_Array_Access_Array_Access is access all EndGamePaintable_Access_Array_Access_Array;
 
    type EndGamePaintable is new Paintable with record
       gameCanvas : AllBinaryGameCanvas_Access;

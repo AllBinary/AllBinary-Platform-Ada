@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.opengles.OpenGLUtil_Package; use org.allbinary.graphics.opengles.OpenGLUtil_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.animation.image.ImageAnimation_Package;
+with org.allbinary.animation.image.AdjustedImageAnimation_Package; use org.allbinary.animation.image.AdjustedImageAnimation_Package;
+
 package body org.allbinary.animation.image.ImageAnimationFactory_Package is
 
+   package OpenGLUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLUtil_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out ImageAnimationFactory'Class) is
    begin
       null;
@@ -52,9 +59,9 @@ package body org.allbinary.animation.image.ImageAnimationFactory_Package is
         scaledImage := openGLUtil.addImage (scaledImage);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
             This.animationFactoryImageScaleUtil.processAdjust (ImageAnimationFactory_Access'(This'Unchecked_Access));
-            return AdjustedImageAnimation_Package.Create (scaledImage, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (AdjustedImageAnimation_Package.Create (scaledImage, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
         else
-            return ImageAnimation_Package.Create (scaledImage, This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (ImageAnimation_Package.Create (scaledImage, This.animationBehaviorFactory.getOrCreateInstance));
         end if;
    end getInstance;
 

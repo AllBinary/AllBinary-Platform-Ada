@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.cache.BufferedImageCacheable_Package; use org.allbinary.media.image.cache.BufferedImageCacheable_Package;
+with org.allbinary.media.image.cache.BufferedImageInfo_Package; use org.allbinary.media.image.cache.BufferedImageInfo_Package;
+
 package body org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package is
 
    procedure Initialize_Fields (This : in out BufferedImageCacheableFactory'Class) is
@@ -37,11 +40,23 @@ package body org.allbinary.media.image.cache.BufferedImageCacheableFactory_Packa
    function getInstance (This : in out BufferedImageCacheableFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
-        return BufferedImageCacheable_Package.Create (BufferedImageInfo_Access (key));
+        return CacheableInterface_Access (BufferedImageCacheable_Package.Create (BufferedImageInfo_Access (key)));
    end getInstance;
 
    procedure getInstance (This : in out BufferedImageCacheableFactory; key_Param : access Java_Object'Class) is
       Java_Result : constant CacheableInterface_Access := BufferedImageCacheableFactory'Class (This).getInstance (key_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   function getInstance (This : in out BufferedImageCacheableFactory; Value : Unbounded_String) return CacheableInterface_Access is
+   begin
+      return BufferedImageCacheableFactory'Class (This).getInstance (Java_Box (Value));
+   end getInstance;
+
+   procedure getInstance (This : in out BufferedImageCacheableFactory; Value : Unbounded_String) is
+      Java_Result : constant CacheableInterface_Access := BufferedImageCacheableFactory'Class (This).getInstance (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

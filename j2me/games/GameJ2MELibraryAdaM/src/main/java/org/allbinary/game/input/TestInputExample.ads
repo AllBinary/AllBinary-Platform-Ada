@@ -31,8 +31,10 @@ package org.allbinary.game.input.TestInputExample_Package is
    type TestInputExample_Access is access all TestInputExample'Class;
    type TestInputExample_Access_Array is array (Natural range <>) of TestInputExample_Access;
    type TestInputExample_Access_Array_Access is access all TestInputExample_Access_Array;
+   type TestInputExample_Access_Array_Access_Array is array (Natural range <>) of TestInputExample_Access_Array_Access;
+   type TestInputExample_Access_Array_Access_Array_Access is access all TestInputExample_Access_Array_Access_Array;
 
-   type TestInputExample is new TestInputInterface with record
+   type TestInputExample is new Java_Object and TestInputInterface with record
       testValue : Integer;
    end record;
 

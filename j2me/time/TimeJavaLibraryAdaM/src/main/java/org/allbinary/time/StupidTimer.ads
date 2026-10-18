@@ -10,9 +10,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.ThreadObjectUtil_Package;
@@ -22,9 +19,6 @@ package org.allbinary.time.StupidTimer_Package is
 
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package ThreadObjectUtil_Package renames Standard.org.allbinary.thread.ThreadObjectUtil_Package;
@@ -33,6 +27,8 @@ package org.allbinary.time.StupidTimer_Package is
    type StupidTimer_Access is access all StupidTimer'Class;
    type StupidTimer_Access_Array is array (Natural range <>) of StupidTimer_Access;
    type StupidTimer_Access_Array_Access is access all StupidTimer_Access_Array;
+   type StupidTimer_Access_Array_Access_Array is array (Natural range <>) of StupidTimer_Access_Array_Access;
+   type StupidTimer_Access_Array_Access_Array_Access is access all StupidTimer_Access_Array_Access_Array;
 
    type StupidTimer is new Java_Object with record
       logUtil : LogUtil_Access;

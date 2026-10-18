@@ -20,19 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.combat.destroy.DestroyableInterface_Package; use org.allbinary.game.combat.destroy.DestroyableInterface_Package;
 
 package org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type DestroyableBaseBehavior is tagged;
    type DestroyableBaseBehavior_Access is access all DestroyableBaseBehavior'Class;
    type DestroyableBaseBehavior_Access_Array is array (Natural range <>) of DestroyableBaseBehavior_Access;
    type DestroyableBaseBehavior_Access_Array_Access is access all DestroyableBaseBehavior_Access_Array;
+   type DestroyableBaseBehavior_Access_Array_Access_Array is array (Natural range <>) of DestroyableBaseBehavior_Access_Array_Access;
+   type DestroyableBaseBehavior_Access_Array_Access_Array_Access is access all DestroyableBaseBehavior_Access_Array_Access_Array;
 
-   type DestroyableBaseBehavior is new DestroyableInterface with null record;
+   type DestroyableBaseBehavior is new Java_Object and DestroyableInterface with null record;
    instance : DestroyableBaseBehavior_Access;
 
    procedure Initialize (This : in out DestroyableBaseBehavior'Class);

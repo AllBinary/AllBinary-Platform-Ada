@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
+
 package body views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package is
 
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    procedure Initialize_Fields (This : in out ThemeCustomizerView'Class) is
    begin
       null;

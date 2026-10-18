@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.staticpages.StaticPagesEntity_Package; use org.allbinary.data.tables.staticpages.StaticPagesEntity_Package;
 
 package org.allbinary.data.tables.staticpages.StaticPagesEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type StaticPagesEntityFactory is tagged;
    type StaticPagesEntityFactory_Access is access all StaticPagesEntityFactory'Class;
    type StaticPagesEntityFactory_Access_Array is array (Natural range <>) of StaticPagesEntityFactory_Access;
    type StaticPagesEntityFactory_Access_Array_Access is access all StaticPagesEntityFactory_Access_Array;
+   type StaticPagesEntityFactory_Access_Array_Access_Array is array (Natural range <>) of StaticPagesEntityFactory_Access_Array_Access;
+   type StaticPagesEntityFactory_Access_Array_Access_Array_Access is access all StaticPagesEntityFactory_Access_Array_Access_Array;
 
    type StaticPagesEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

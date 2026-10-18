@@ -13,12 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package; use org.allbinary.view.event.ViewPositionEvent_Package;
+with org.allbinary.view.event.ViewPositionEventListenerInterface_Package; use org.allbinary.view.event.ViewPositionEventListenerInterface_Package;
+
 package body org.allbinary.view.event.ViewPositionEventHandler_Package is
 
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out ViewPositionEventHandler'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -44,8 +51,8 @@ package body org.allbinary.view.event.ViewPositionEventHandler_Package is
    procedure addListener (This : in out ViewPositionEventHandler; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
-        if not (This.list.contains (layerInterface)) then
-            This.list.add (layerInterface);
+        if not (This.list.contains (Java_Object_Access (layerInterface))) then
+            This.list.add (Java_Object_Access (layerInterface));
         end if;
    end addListener;
 
@@ -58,7 +65,7 @@ package body org.allbinary.view.event.ViewPositionEventHandler_Package is
    procedure removeListener (This : in out ViewPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.list.remove (eventListenerInterface);
+        This.list.remove (Java_Object_Access (eventListenerInterface));
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 

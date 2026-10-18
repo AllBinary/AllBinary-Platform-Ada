@@ -13,8 +13,26 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package; use org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package;
+with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package; use org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+with org.allbinary.physics.movement.NoMovementFactory_Package; use org.allbinary.physics.movement.NoMovementFactory_Package;
+with org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package; use org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package;
+
 package body org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package is
 
+   package DropWeaponSound_Package renames Standard.org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package;
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package SecondaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+   package NoMovementFactory_Package renames Standard.org.allbinary.physics.movement.NoMovementFactory_Package;
    procedure Initialize_Fields (This : in out MineLayer'Class) is
    begin
       null;

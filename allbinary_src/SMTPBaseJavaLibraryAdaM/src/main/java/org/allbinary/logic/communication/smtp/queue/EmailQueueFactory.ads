@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package; use org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package;
 with org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package; use org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package;
 
 package org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package is
@@ -30,6 +29,8 @@ package org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package i
    type EmailQueueFactory_Access is access all EmailQueueFactory'Class;
    type EmailQueueFactory_Access_Array is array (Natural range <>) of EmailQueueFactory_Access;
    type EmailQueueFactory_Access_Array_Access is access all EmailQueueFactory_Access_Array;
+   type EmailQueueFactory_Access_Array_Access_Array is array (Natural range <>) of EmailQueueFactory_Access_Array_Access;
+   type EmailQueueFactory_Access_Array_Access_Array_Access is access all EmailQueueFactory_Access_Array_Access_Array;
 
    type EmailQueueFactory is new Java_Object with null record;
    emailQueueInterface : EmailQueueInterface_Access;

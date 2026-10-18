@@ -1,8 +1,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
+with org.allbinary.game.input.AndroidAPI12KeyFactory_Package; use org.allbinary.game.input.AndroidAPI12KeyFactory_Package;
+with org.allbinary.game.input.AndroidAPI9KeyFactory_Package; use org.allbinary.game.input.AndroidAPI9KeyFactory_Package;
+with org.allbinary.game.input.AndroidAPI1KeyFactory_Package; use org.allbinary.game.input.AndroidAPI1KeyFactory_Package;
+
 package body org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package is
 
+   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
    procedure Initialize_Fields (This : in out ActivityFractureControllerUtilFactory'Class) is
    begin
       null;

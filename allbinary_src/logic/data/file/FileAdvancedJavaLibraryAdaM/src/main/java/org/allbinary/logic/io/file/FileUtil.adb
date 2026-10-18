@@ -13,8 +13,34 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.OutputStream_Package; use java.io.OutputStream_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.io.AbFileLocalInputStream_Package; use org.allbinary.logic.io.AbFileLocalInputStream_Package;
+with org.allbinary.logic.io.AbIOSystem_Package; use org.allbinary.logic.io.AbIOSystem_Package;
+with org.allbinary.logic.io.DataOutputStreamFactory_Package; use org.allbinary.logic.io.DataOutputStreamFactory_Package;
+with org.allbinary.logic.io.FileStreamFactory_Package; use org.allbinary.logic.io.FileStreamFactory_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
+with org.allbinary.logic.io.file.FileUtil2_Package; use org.allbinary.logic.io.file.FileUtil2_Package;
+
 package body org.allbinary.logic.io.file.FileUtil_Package is
 
+   package OutputStream_Package renames Standard.java.io.OutputStream_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package AbFileLocalInputStream_Package renames Standard.org.allbinary.logic.io.AbFileLocalInputStream_Package;
+   package AbIOSystem_Package renames Standard.org.allbinary.logic.io.AbIOSystem_Package;
+   package DataOutputStreamFactory_Package renames Standard.org.allbinary.logic.io.DataOutputStreamFactory_Package;
+   package FileStreamFactory_Package renames Standard.org.allbinary.logic.io.FileStreamFactory_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out FileUtil'Class) is
    begin
       null;
@@ -165,7 +191,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 end if;
             end if;
             dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (outFile);
-            fileInputStream := AbFileLocalInputStream_Package.Create (file);
+            fileInputStream := AbFileInputStream_Access (AbFileLocalInputStream_Package.Create (file));
             FileUtil'Class (This).copy (fileInputStream, dataOutputStream);
         exception
             when Java_Occurrence : others =>
@@ -216,7 +242,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 end if;
             end if;
             dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (outFile);
-            fileInputStream := AbFileLocalInputStream_Package.Create (file);
+            fileInputStream := AbFileInputStream_Access (AbFileLocalInputStream_Package.Create (file));
             FileUtil'Class (This).copy (fileInputStream, dataOutputStream);
         exception
             when Java_Occurrence : others =>
@@ -347,10 +373,10 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
         if AbIOSystem_Package.getInstance.isType (To_Unbounded_String ("com.vobject.appengine.java.io")) then
             separatorChar := AbPathData_Package.getInstance.SEPARATOR;
         end if;
-        lastIndex := newDirectory.lastIndexOf (separatorChar);
+        lastIndex := Java_Last_Index_Of (newDirectory, Java_Image (separatorChar));
         if (lastIndex) >= (Length (newDirectory)) then
             newDirectory := Unbounded_Slice (newDirectory, (0) + 1, (Length (newDirectory)) - (1));
-            lastIndex := newDirectory.lastIndexOf (separatorChar);
+            lastIndex := Java_Last_Index_Of (newDirectory, Java_Image (separatorChar));
         end if;
         return Unbounded_Slice (newDirectory, (lastIndex) + 1, Length (newDirectory));
    end getNewDirectory;
@@ -405,8 +431,8 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             else
                 path := AbPath_Package.Create (nextFile.getPath, StringUtil_Package.getInstance.EMPTY_STRING).getPath;
                 beginIndex := fromDirectoryAbPath.getPath.length;
-                if (path.indexOf (URLGLOBALS.getWebappPath)) < (0) then
-                    beginIndex := (beginIndex) - (AbPath_Package.Create (URLGLOBALS.getWebappPath, StringUtil_Package.getInstance.EMPTY_STRING).getPath.length);
+                if (path.indexOf (URLGLOBALS_Package.getWebappPath)) < (0) then
+                    beginIndex := (beginIndex) - (AbPath_Package.Create (URLGLOBALS_Package.getWebappPath, StringUtil_Package.getInstance.EMPTY_STRING).getPath.length);
                 end if;
                 newPath := Java_Image (toDirectoryAbPath.toFileSystemString) & path.substring (beginIndex);
                 toFile := AbFile_Package.createAbFileFromAbPath (AbPath_Package.Create (newPath, StringUtil_Package.getInstance.EMPTY_STRING));

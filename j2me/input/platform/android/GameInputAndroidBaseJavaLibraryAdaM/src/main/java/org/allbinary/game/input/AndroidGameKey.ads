@@ -8,18 +8,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 
 package org.allbinary.game.input.AndroidGameKey_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type AndroidGameKey is tagged;
    type AndroidGameKey_Access is access all AndroidGameKey'Class;
    type AndroidGameKey_Access_Array is array (Natural range <>) of AndroidGameKey_Access;
    type AndroidGameKey_Access_Array_Access is access all AndroidGameKey_Access_Array;
+   type AndroidGameKey_Access_Array_Access_Array is array (Natural range <>) of AndroidGameKey_Access_Array_Access;
+   type AndroidGameKey_Access_Array_Access_Array_Access is access all AndroidGameKey_Access_Array_Access_Array;
 
    type AndroidGameKey is new Input with null record;
 

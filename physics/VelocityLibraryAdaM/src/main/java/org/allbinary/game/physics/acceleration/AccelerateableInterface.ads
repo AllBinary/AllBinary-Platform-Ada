@@ -30,6 +30,8 @@ package org.allbinary.game.physics.acceleration.AccelerateableInterface_Package 
    type AccelerateableInterface_Access is access all AccelerateableInterface'Class;
    type AccelerateableInterface_Access_Array is array (Natural range <>) of AccelerateableInterface_Access;
    type AccelerateableInterface_Access_Array_Access is access all AccelerateableInterface_Access_Array;
+   type AccelerateableInterface_Access_Array_Access_Array is array (Natural range <>) of AccelerateableInterface_Access_Array_Access;
+   type AccelerateableInterface_Access_Array_Access_Array_Access is access all AccelerateableInterface_Access_Array_Access_Array;
    procedure accelerate (This : in out AccelerateableInterface; accelerate_Param : access BasicDecimal_Package.BasicDecimal'Class) is abstract;
 
 end org.allbinary.game.physics.acceleration.AccelerateableInterface_Package;

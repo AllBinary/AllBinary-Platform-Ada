@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+with org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package; use org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package; use org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package;
+
 package body org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Tokenizer_Package renames Standard.org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+   package HtmlNameMathData_Package renames Standard.org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out NameSpaceRequestParam'Class) is
    begin
       null;
@@ -42,10 +54,10 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
       packagePropertiesHashMap : HashMap_Access;
    begin
       Initialize_Fields (This);
-        This.nameSpaceVector := BasicArrayListD_Package.Create;
+        This.nameSpaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         This.nameSpacePropertiesHashMap := StdUtil_Package.getInstance.createHashMap;
         This.value := value;
-        beginIndex := (Index (nameSpace, Java_Image (NameSpaceRequestParamData_Package.NAME)) - 1);
+        beginIndex := Java_Index_Of (nameSpace, Java_Image (NameSpaceRequestParamData_Package.NAME));
         if (beginIndex) < (0) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not a NameSpaceRequest")));
         end if;
@@ -57,7 +69,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         end if;
         nameSpaceAndPropertiesTokenizer := Tokenizer_Package.Create (NameSpaceRequestParamData_Package.PROPERTIES);
         packageIndex := 0;
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         index := 0;
         size := nameSpaceWithPropertiesVector.size;
         while (index) < (size) loop
@@ -140,7 +152,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         propertiesTokenizer := Tokenizer_Package.Create (NameSpaceRequestParamData_Package.PROPERTIESSEPARATOR);
         packagePropertiesHashMap := StdUtil_Package.getInstance.createHashMap;
         propertyVector := propertiesTokenizer.getTokensFromString (properties, BasicArrayListD_Package.Create);
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         propertyTokenizer := Tokenizer_Package.Create (HtmlNameMathData_Package.getInstance.EQUALS);
         index := 0;
         size := propertyVector.size;

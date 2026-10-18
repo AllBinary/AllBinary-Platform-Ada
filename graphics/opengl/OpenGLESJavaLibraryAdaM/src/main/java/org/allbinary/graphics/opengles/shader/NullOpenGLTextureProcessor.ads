@@ -29,6 +29,8 @@ package org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_Packag
    type NullOpenGLTextureProcessor_Access is access all NullOpenGLTextureProcessor'Class;
    type NullOpenGLTextureProcessor_Access_Array is array (Natural range <>) of NullOpenGLTextureProcessor_Access;
    type NullOpenGLTextureProcessor_Access_Array_Access is access all NullOpenGLTextureProcessor_Access_Array;
+   type NullOpenGLTextureProcessor_Access_Array_Access_Array is array (Natural range <>) of NullOpenGLTextureProcessor_Access_Array_Access;
+   type NullOpenGLTextureProcessor_Access_Array_Access_Array_Access is access all NullOpenGLTextureProcessor_Access_Array_Access_Array;
 
    type NullOpenGLTextureProcessor is new Java_Object with null record;
    instance : OpenGLObject3dProcessor_Access;

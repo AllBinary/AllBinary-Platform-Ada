@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.health.HealthBarTwodAnimation_Package; use org.allbinary.game.health.HealthBarTwodAnimation_Package;
+
 package body org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
 
+   package HealthBarTwodAnimation_Package renames Standard.org.allbinary.game.health.HealthBarTwodAnimation_Package;
    procedure Initialize_Fields (This : in out HealthIncludingLifeBar'Class) is
    begin
       null;
@@ -45,7 +48,7 @@ package body org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
         This.allbinaryLayer := layerInterface;
         This.animationInterface := animationInterface;
         This.life := life;
-        This.healthInterface := healthInterface;
+        This.healthInterface := HealthInterface_Access (healthInterface);
         This.healthInterface.addListener (HealthIncludingLifeBar_Access'(This'Unchecked_Access));
         HealthIncludingLifeBar'Class (This).onHealthChange;
    end Initialize;

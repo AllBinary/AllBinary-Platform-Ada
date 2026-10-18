@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with org.allbinary.data.tree.dom.XslHelper_Package; use org.allbinary.data.tree.dom.XslHelper_Package;
+
 package body org.allbinary.data.tree.dom.AbXslHelper_Package is
 
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
    procedure Initialize_Fields (This : in out AbXslHelper'Class) is
    begin
       null;

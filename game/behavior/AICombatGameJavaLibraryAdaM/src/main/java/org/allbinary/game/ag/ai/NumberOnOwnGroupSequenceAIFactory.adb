@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.ag.ai.NumberInSameGroupSequence_Package; use org.allbinary.game.ag.ai.NumberInSameGroupSequence_Package;
+with org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package; use org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package;
+
 package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out NumberOnOwnGroupSequenceAIFactory'Class) is
    begin
       null;
@@ -48,7 +59,7 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package 
       numberOnSameTeam : Integer_Array_Access;
    begin
         integerArray := NumberInSameGroupSequence_Package.getInstance.NUMBER_ON_SAME_TEAM_SEQUENCE;
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         for index in 0 .. (integerArray'Length) - 1 loop
             integerCanBeNull := hashtable.get (Java_Object_Access (integerArray (index)));
             if (integerCanBeNull) = (null) then
@@ -74,7 +85,7 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package 
         for index in 0 .. (numberOnSameTeam'Length) - 1 loop
             numberOnSameTeam (index) := Integer (list.objectArray (index));
         end loop;
-        return NumberOnOwnGroupSequenceAI_Package.Create (numberOnSameTeam, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
+        return ArtificialIntelligenceInterface_Access (NumberOnOwnGroupSequenceAI_Package.Create (numberOnSameTeam, artificialIntelligenceInterface, ownerLayerInterface, gameInput));
    end getInstance;
 
    procedure getInstance (This : in out NumberOnOwnGroupSequenceAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is

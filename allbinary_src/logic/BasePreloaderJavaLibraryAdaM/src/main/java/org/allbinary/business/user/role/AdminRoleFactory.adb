@@ -13,22 +13,26 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.role.BasicUserRoleFactory_Package; use org.allbinary.business.user.role.BasicUserRoleFactory_Package;
+
 package body org.allbinary.business.user.role.AdminRoleFactory_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out AdminRoleFactory'Class) is
    begin
       null;
-      This.adminRoles := BasicArrayListD_Package.Create;
-      This.storeAdminRoles := BasicArrayListD_Package.Create;
-      This.storeManagementRoles := BasicArrayListD_Package.Create;
-      This.productManagementRoles := BasicArrayListD_Package.Create;
-      This.reviewManagementRoles := BasicArrayListD_Package.Create;
-      This.customerManagementRoles := BasicArrayListD_Package.Create;
-      This.workflowManagementRoles := BasicArrayListD_Package.Create;
-      This.orderManagementRoles := BasicArrayListD_Package.Create;
-      This.adjusterManagementRoles := BasicArrayListD_Package.Create;
-      This.shippingManagementRoles := BasicArrayListD_Package.Create;
-      This.webManagementRoles := BasicArrayListD_Package.Create;
+      This.adminRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.storeAdminRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.storeManagementRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.productManagementRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.reviewManagementRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.customerManagementRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.workflowManagementRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.orderManagementRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.adjusterManagementRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.shippingManagementRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.webManagementRoles := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 

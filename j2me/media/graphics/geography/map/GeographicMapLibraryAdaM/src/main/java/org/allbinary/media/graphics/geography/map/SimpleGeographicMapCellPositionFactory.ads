@@ -31,8 +31,10 @@ package org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositi
    type SimpleGeographicMapCellPositionFactory_Access is access all SimpleGeographicMapCellPositionFactory'Class;
    type SimpleGeographicMapCellPositionFactory_Access_Array is array (Natural range <>) of SimpleGeographicMapCellPositionFactory_Access;
    type SimpleGeographicMapCellPositionFactory_Access_Array_Access is access all SimpleGeographicMapCellPositionFactory_Access_Array;
+   type SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array is array (Natural range <>) of SimpleGeographicMapCellPositionFactory_Access_Array_Access;
+   type SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Access is access all SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array;
 
-   type SimpleGeographicMapCellPositionFactory is new GeographicMapCellPositionFactoryInterface with null record;
+   type SimpleGeographicMapCellPositionFactory is new Java_Object and GeographicMapCellPositionFactoryInterface with null record;
    NULL_GEOGRAPHIC_MAP_CELL_POSITION : GeographicMapCellPosition_Access;
 
    procedure Initialize (This : in out SimpleGeographicMapCellPositionFactory'Class);

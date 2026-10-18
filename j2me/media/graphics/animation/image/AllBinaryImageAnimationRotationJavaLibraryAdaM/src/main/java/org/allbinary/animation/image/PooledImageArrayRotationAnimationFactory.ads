@@ -24,13 +24,7 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.media.image.ImageToRotationImageArrayUtil_Package; use org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
-with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
-with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package; use org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
 
 package org.allbinary.animation.image.PooledImageArrayRotationAnimationFactory_Package is
 
@@ -38,18 +32,16 @@ package org.allbinary.animation.image.PooledImageArrayRotationAnimationFactory_P
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
-   package ImageToRotationImageArrayUtil_Package renames Standard.org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
 
    type PooledImageArrayRotationAnimationFactory is tagged;
    type PooledImageArrayRotationAnimationFactory_Access is access all PooledImageArrayRotationAnimationFactory'Class;
    type PooledImageArrayRotationAnimationFactory_Access_Array is array (Natural range <>) of PooledImageArrayRotationAnimationFactory_Access;
    type PooledImageArrayRotationAnimationFactory_Access_Array_Access is access all PooledImageArrayRotationAnimationFactory_Access_Array;
+   type PooledImageArrayRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of PooledImageArrayRotationAnimationFactory_Access_Array_Access;
+   type PooledImageArrayRotationAnimationFactory_Access_Array_Access_Array_Access is access all PooledImageArrayRotationAnimationFactory_Access_Array_Access_Array;
 
-   type PooledImageArrayRotationAnimationFactory is new AnimationInterfaceFactoryInterface with record
+   type PooledImageArrayRotationAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       allBinaryImageRotationAnimationInfo : Java_Object_Access;
       animationBehaviorFactory : AnimationBehaviorFactory_Access;
    end record;

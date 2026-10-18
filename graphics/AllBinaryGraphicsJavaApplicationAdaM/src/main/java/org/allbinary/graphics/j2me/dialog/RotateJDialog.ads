@@ -20,27 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package; use org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.j2me.dialog.JDialog_Package; use org.allbinary.graphics.j2me.dialog.JDialog_Package;
 
 package org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
 
-   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package HashMapJDialogListenerInterface_Package renames Standard.org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type RotateJDialog is tagged;
    type RotateJDialog_Access is access all RotateJDialog'Class;
    type RotateJDialog_Access_Array is array (Natural range <>) of RotateJDialog_Access;
    type RotateJDialog_Access_Array_Access is access all RotateJDialog_Access_Array;
+   type RotateJDialog_Access_Array_Access_Array is array (Natural range <>) of RotateJDialog_Access_Array_Access;
+   type RotateJDialog_Access_Array_Access_Array_Access is access all RotateJDialog_Access_Array_Access_Array;
 
    type RotateJDialog is new JDialog with record
       logUtil : LogUtil_Access;

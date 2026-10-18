@@ -29,6 +29,8 @@ package org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package is
    type ColorChooser_Access is access all ColorChooser'Class;
    type ColorChooser_Access_Array is array (Natural range <>) of ColorChooser_Access;
    type ColorChooser_Access_Array_Access is access all ColorChooser_Access_Array;
+   type ColorChooser_Access_Array_Access_Array is array (Natural range <>) of ColorChooser_Access_Array_Access;
+   type ColorChooser_Access_Array_Access_Array_Access is access all ColorChooser_Access_Array_Access_Array;
 
    type ColorChooser is new JPanel with record
       jColorChooser1 : JColorChooser_Access;

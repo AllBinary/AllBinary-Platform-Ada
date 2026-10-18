@@ -29,6 +29,8 @@ package org.allbinary.animation.text.TextInterface_Package is
    type TextInterface_Access is access all TextInterface'Class;
    type TextInterface_Access_Array is array (Natural range <>) of TextInterface_Access;
    type TextInterface_Access_Array_Access is access all TextInterface_Access_Array;
+   type TextInterface_Access_Array_Access_Array is array (Natural range <>) of TextInterface_Access_Array_Access;
+   type TextInterface_Access_Array_Access_Array_Access is access all TextInterface_Access_Array_Access_Array;
    procedure setTextWithOnMeasure (This : in out TextInterface; text : Unbounded_String; textChangeListener_Param : access TextChangeListener_Package.TextChangeListener'Class) is abstract;
    function getText (This : in out TextInterface) return Unbounded_String is abstract;
    procedure setText (This : in out TextInterface; text : Unbounded_String) is abstract;

@@ -20,28 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.input.automation.ImageOutputData_Package; use org.allbinary.input.automation.ImageOutputData_Package;
-with org.allbinary.logic.java.number.LongUtil_Package; use org.allbinary.logic.java.number.LongUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.input.automation.log.FrameLog_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package ImageOutputData_Package renames Standard.org.allbinary.input.automation.ImageOutputData_Package;
-   package LongUtil_Package renames Standard.org.allbinary.logic.java.number.LongUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type FrameLog is tagged;
    type FrameLog_Access is access all FrameLog'Class;
    type FrameLog_Access_Array is array (Natural range <>) of FrameLog_Access;
    type FrameLog_Access_Array_Access is access all FrameLog_Access_Array;
+   type FrameLog_Access_Array_Access_Array is array (Natural range <>) of FrameLog_Access_Array_Access;
+   type FrameLog_Access_Array_Access_Array_Access is access all FrameLog_Access_Array_Access_Array;
 
    type FrameLog is new Java_Object with record
       frame : Long_Long_Integer;

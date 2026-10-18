@@ -30,6 +30,8 @@ package org.allbinary.game.input.TestInputInterface_Package is
    type TestInputInterface_Access is access all TestInputInterface'Class;
    type TestInputInterface_Access_Array is array (Natural range <>) of TestInputInterface_Access;
    type TestInputInterface_Access_Array_Access is access all TestInputInterface_Access_Array;
+   type TestInputInterface_Access_Array_Access_Array is array (Natural range <>) of TestInputInterface_Access_Array_Access;
+   type TestInputInterface_Access_Array_Access_Array_Access is access all TestInputInterface_Access_Array_Access_Array;
    procedure up (This : in out TestInputInterface) is abstract;
    procedure down (This : in out TestInputInterface) is abstract;
    procedure left (This : in out TestInputInterface) is abstract;

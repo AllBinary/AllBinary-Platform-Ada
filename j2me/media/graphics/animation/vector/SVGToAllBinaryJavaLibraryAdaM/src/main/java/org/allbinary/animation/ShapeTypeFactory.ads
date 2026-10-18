@@ -29,6 +29,8 @@ package org.allbinary.animation.ShapeTypeFactory_Package is
    type ShapeTypeFactory_Access is access all ShapeTypeFactory'Class;
    type ShapeTypeFactory_Access_Array is array (Natural range <>) of ShapeTypeFactory_Access;
    type ShapeTypeFactory_Access_Array_Access is access all ShapeTypeFactory_Access_Array;
+   type ShapeTypeFactory_Access_Array_Access_Array is array (Natural range <>) of ShapeTypeFactory_Access_Array_Access;
+   type ShapeTypeFactory_Access_Array_Access_Array_Access is access all ShapeTypeFactory_Access_Array_Access_Array;
 
    type ShapeTypeFactory is new Java_Object with record
       KEY_LINE : Unbounded_String;

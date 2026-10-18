@@ -28,6 +28,8 @@ package org.allbinary.graphics.ScreenCapture_Package is
    type ScreenCapture_Access is access all ScreenCapture'Class;
    type ScreenCapture_Access_Array is array (Natural range <>) of ScreenCapture_Access;
    type ScreenCapture_Access_Array_Access is access all ScreenCapture_Access_Array;
+   type ScreenCapture_Access_Array_Access_Array is array (Natural range <>) of ScreenCapture_Access_Array_Access;
+   type ScreenCapture_Access_Array_Access_Array_Access is access all ScreenCapture_Access_Array_Access_Array;
 
    type ScreenCapture is new Java_Object with null record;
 

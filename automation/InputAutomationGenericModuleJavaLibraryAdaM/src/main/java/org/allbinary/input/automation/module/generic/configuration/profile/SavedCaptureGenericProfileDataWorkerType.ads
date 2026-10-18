@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.media.image.InputImageType_Package; use org.allbinary.input.media.image.InputImageType_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package is
 
-   package InputImageType_Package renames Standard.org.allbinary.input.media.image.InputImageType_Package;
 
    type SavedCaptureGenericProfileDataWorkerType is tagged;
    type SavedCaptureGenericProfileDataWorkerType_Access is access all SavedCaptureGenericProfileDataWorkerType'Class;
    type SavedCaptureGenericProfileDataWorkerType_Access_Array is array (Natural range <>) of SavedCaptureGenericProfileDataWorkerType_Access;
    type SavedCaptureGenericProfileDataWorkerType_Access_Array_Access is access all SavedCaptureGenericProfileDataWorkerType_Access_Array;
+   type SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array is array (Natural range <>) of SavedCaptureGenericProfileDataWorkerType_Access_Array_Access;
+   type SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array_Access is access all SavedCaptureGenericProfileDataWorkerType_Access_Array_Access_Array;
 
    type SavedCaptureGenericProfileDataWorkerType is new GenericProfileDataWorkerType with record
       path : Unbounded_String;

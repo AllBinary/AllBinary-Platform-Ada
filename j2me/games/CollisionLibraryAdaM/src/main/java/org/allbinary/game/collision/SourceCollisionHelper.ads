@@ -33,6 +33,8 @@ package org.allbinary.game.collision.SourceCollisionHelper_Package is
    type SourceCollisionHelper_Access is access all SourceCollisionHelper'Class;
    type SourceCollisionHelper_Access_Array is array (Natural range <>) of SourceCollisionHelper_Access;
    type SourceCollisionHelper_Access_Array_Access is access all SourceCollisionHelper_Access_Array;
+   type SourceCollisionHelper_Access_Array_Access_Array is array (Natural range <>) of SourceCollisionHelper_Access_Array_Access;
+   type SourceCollisionHelper_Access_Array_Access_Array_Access is access all SourceCollisionHelper_Access_Array_Access_Array;
 
    type SourceCollisionHelper is new CollisionHelper with null record;
 

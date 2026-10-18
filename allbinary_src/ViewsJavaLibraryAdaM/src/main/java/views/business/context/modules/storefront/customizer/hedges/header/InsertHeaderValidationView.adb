@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.communication.http.request.MultipartRequestParams_Package; use org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingValidation_Package; use org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingValidation_Package;
+with org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package;
+with views.business.context.modules.storefront.customizer.CustomizerUtil_Package; use views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
+
 package body views.business.context.modules.storefront.customizer.hedges.header.InsertHeaderValidationView_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package MultipartRequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package HeadingValidation_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingValidation_Package;
+   package LogoData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package;
+   package CustomizerUtil_Package renames Standard.views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
    procedure Initialize_Fields (This : in out InsertHeaderValidationView'Class) is
    begin
       null;
@@ -33,7 +54,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
         Initialize_Fields (This);
         multipartRequestHashMap := MultipartRequestParams_Package.Create (InsertHeaderValidationView'Class (This).getPageContext).toHashMap;
         storeFrontInterface := StoreFrontFactory_Package.getInstance (InsertHeaderValidationView'Class (This).getWeblisketSession.getStoreName);
-        fullPath := Java_Image ((URLGLOBALS.getWebappPath) + (storeFrontInterface.getCurrentHostNamePath)) & This.LOGOPATH;
+        fullPath := Java_Image ((URLGLOBALS_Package.getWebappPath) + (storeFrontInterface.getCurrentHostNamePath)) & This.LOGOPATH;
         multipartRequestHashMap.put (LogoData_Package.getInstance.IMAGEPATH, Java_Box (fullPath));
         This.heading := HeadingValidation_Package.Create (multipartRequestHashMap);
    end Initialize;

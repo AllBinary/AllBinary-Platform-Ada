@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with taghelpers.StoreTagWorkFlowHelper_Package; use taghelpers.StoreTagWorkFlowHelper_Package;
+
 package body taghelpers.StoreTagWorkFlowHelperFactory_Package is
 
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out StoreTagWorkFlowHelperFactory'Class) is
    begin
       null;
@@ -42,7 +46,7 @@ package body taghelpers.StoreTagWorkFlowHelperFactory_Package is
       pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         begin
-            return StoreTagWorkFlowHelper_Package.Create (hashMap, pageContext);
+            return Java_Object_Access (StoreTagWorkFlowHelper_Package.Create (hashMap, pageContext));
         exception
             when Java_Occurrence : others =>
                 declare

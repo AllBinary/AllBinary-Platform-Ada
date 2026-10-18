@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.osgi.framework.BaseServiceReference_Package is
 
    procedure Initialize_Fields (This : in out BaseServiceReference'Class) is
@@ -61,6 +62,18 @@ package body org.osgi.framework.BaseServiceReference_Package is
 
    procedure compareTo (This : in out BaseServiceReference; o_Param : access Java_Object'Class) is
       Java_Result : constant Integer := BaseServiceReference'Class (This).compareTo (o_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end compareTo;
+
+   function compareTo (This : in out BaseServiceReference; Value : Unbounded_String) return Integer is
+   begin
+      return BaseServiceReference'Class (This).compareTo (Java_Box (Value));
+   end compareTo;
+
+   procedure compareTo (This : in out BaseServiceReference; Value : Unbounded_String) is
+      Java_Result : constant Integer := BaseServiceReference'Class (This).compareTo (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

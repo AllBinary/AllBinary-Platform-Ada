@@ -31,6 +31,8 @@ package org.allbinary.image.opengles.OpenGLESImageTranslate_Package is
    type OpenGLESImageTranslate_Access is access all OpenGLESImageTranslate'Class;
    type OpenGLESImageTranslate_Access_Array is array (Natural range <>) of OpenGLESImageTranslate_Access;
    type OpenGLESImageTranslate_Access_Array_Access is access all OpenGLESImageTranslate_Access_Array;
+   type OpenGLESImageTranslate_Access_Array_Access_Array is array (Natural range <>) of OpenGLESImageTranslate_Access_Array_Access;
+   type OpenGLESImageTranslate_Access_Array_Access_Array_Access is access all OpenGLESImageTranslate_Access_Array_Access_Array;
 
    type OpenGLESImageTranslate is new Java_Object with null record;
    instance : OpenGLESImageTranslate_Access;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.paint.StatePaintable_Package is
 
    procedure Initialize_Fields (This : in out StatePaintable'Class) is

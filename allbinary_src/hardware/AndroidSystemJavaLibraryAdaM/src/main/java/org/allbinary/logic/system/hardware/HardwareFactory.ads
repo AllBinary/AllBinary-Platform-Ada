@@ -22,26 +22,21 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.hardware.android.AndroidHardware_Package; use org.allbinary.logic.system.hardware.android.AndroidHardware_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.system.hardware.NoHardware_Package; use org.allbinary.logic.system.hardware.NoHardware_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 
 package org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AndroidHardware_Package renames Standard.org.allbinary.logic.system.hardware.android.AndroidHardware_Package;
    package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-   package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type HardwareFactory is tagged;
    type HardwareFactory_Access is access all HardwareFactory'Class;
    type HardwareFactory_Access_Array is array (Natural range <>) of HardwareFactory_Access;
    type HardwareFactory_Access_Array_Access is access all HardwareFactory_Access_Array;
+   type HardwareFactory_Access_Array_Access_Array is array (Natural range <>) of HardwareFactory_Access_Array_Access;
+   type HardwareFactory_Access_Array_Access_Array_Access is access all HardwareFactory_Access_Array_Access_Array;
 
    type HardwareFactory is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -13,8 +13,41 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Map_Package; use java.util.Map_Package;
+with org.allbinary.business.category.CategoryComponent_Package; use org.allbinary.business.category.CategoryComponent_Package;
+with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
+with org.allbinary.business.category.store.StoreCategoryFactory_Package; use org.allbinary.business.category.store.StoreCategoryFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.data.tree.category.CategoryLoaderFactory_Package; use org.allbinary.data.tree.category.CategoryLoaderFactory_Package;
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package; use org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+
 package body admin.taghelpers.CategoryRequestHelper_Package is
 
+   package Map_Package renames Standard.java.util.Map_Package;
+   package CategoryComponent_Package renames Standard.org.allbinary.business.category.CategoryComponent_Package;
+   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
+   package StoreCategoryFactory_Package renames Standard.org.allbinary.business.category.store.StoreCategoryFactory_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package CategoryLoaderFactory_Package renames Standard.org.allbinary.data.tree.category.CategoryLoaderFactory_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package TransformInfoBasic_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
    procedure Initialize_Fields (This : in out CategoryRequestHelper'Class) is
    begin
       null;
@@ -82,9 +115,9 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
             if (size) > (0) then
                 xmlRequest := Java_Unbox (keyArray (0));
                 index := 1;
-                while ((index) < (size)) and then (not (xmlRequest.startsWith (CategoryRequestHelper_Package.categoryRequest))) loop
+                while ((index) < (size)) and then (not (Java_Starts_With (xmlRequest, CategoryRequestHelper_Package.categoryRequest))) loop
                     xmlRequest := Java_Unbox (keyArray (index));
-                    if xmlRequest.startsWith (CategoryRequestHelper_Package.categoryRequest) then
+                    if Java_Starts_With (xmlRequest, CategoryRequestHelper_Package.categoryRequest) then
                         exit;
                     end if;
                 end loop;

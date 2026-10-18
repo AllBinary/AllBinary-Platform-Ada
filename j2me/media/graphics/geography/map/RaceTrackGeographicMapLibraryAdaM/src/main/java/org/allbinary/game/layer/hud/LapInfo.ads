@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
 package org.allbinary.game.layer.hud.LapInfo_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type LapInfo is tagged;
    type LapInfo_Access is access all LapInfo'Class;
    type LapInfo_Access_Array is array (Natural range <>) of LapInfo_Access;
    type LapInfo_Access_Array_Access is access all LapInfo_Access_Array;
+   type LapInfo_Access_Array_Access_Array is array (Natural range <>) of LapInfo_Access_Array_Access;
+   type LapInfo_Access_Array_Access_Array_Access is access all LapInfo_Access_Array_Access_Array;
 
    type LapInfo is new Java_Object with record
       numberOfLaps : Integer;

@@ -31,6 +31,8 @@ package org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package is
    type PlatformBitmapBaseFactory_Access is access all PlatformBitmapBaseFactory'Class;
    type PlatformBitmapBaseFactory_Access_Array is array (Natural range <>) of PlatformBitmapBaseFactory_Access;
    type PlatformBitmapBaseFactory_Access_Array_Access is access all PlatformBitmapBaseFactory_Access_Array;
+   type PlatformBitmapBaseFactory_Access_Array_Access_Array is array (Natural range <>) of PlatformBitmapBaseFactory_Access_Array_Access;
+   type PlatformBitmapBaseFactory_Access_Array_Access_Array_Access is access all PlatformBitmapBaseFactory_Access_Array_Access_Array;
 
    type PlatformBitmapBaseFactory is new Java_Object with null record;
    NULL_PLATFORM_BITMAP_BASE_FACTORY : PlatformBitmapBaseFactory_Access;

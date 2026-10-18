@@ -30,6 +30,8 @@ package org.allbinary.media.audio.GameYouWinSound_Package is
    type GameYouWinSound_Access is access all GameYouWinSound'Class;
    type GameYouWinSound_Access_Array is array (Natural range <>) of GameYouWinSound_Access;
    type GameYouWinSound_Access_Array_Access is access all GameYouWinSound_Access_Array;
+   type GameYouWinSound_Access_Array_Access_Array is array (Natural range <>) of GameYouWinSound_Access_Array_Access;
+   type GameYouWinSound_Access_Array_Access_Array_Access is access all GameYouWinSound_Access_Array_Access_Array;
 
    type GameYouWinSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

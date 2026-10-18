@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
---  with java.io.File_Package; use java.io.File_Package;
 --  with java.net.URI_Package; use java.net.URI_Package;
 --  with java.net.URL_Package; use java.net.URL_Package;
 --  with javax.help.CSH_Package; use javax.help.CSH_Package;
@@ -31,7 +30,6 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.help.Point_Package; use org.allbinary.logic.java.help.Point_Package;
 with org.allbinary.logic.java.help.Dimension_Package; use org.allbinary.logic.java.help.Dimension_Package;
-with org.allbinary.logic.java.help.JLabel_Package; use org.allbinary.logic.java.help.JLabel_Package;
 
 package org.allbinary.logic.java.help.JavaHelpUtil_Package is
 
@@ -42,6 +40,8 @@ package org.allbinary.logic.java.help.JavaHelpUtil_Package is
    type JavaHelpUtil_Access is access all JavaHelpUtil'Class;
    type JavaHelpUtil_Access_Array is array (Natural range <>) of JavaHelpUtil_Access;
    type JavaHelpUtil_Access_Array_Access is access all JavaHelpUtil_Access_Array;
+   type JavaHelpUtil_Access_Array_Access_Array is array (Natural range <>) of JavaHelpUtil_Access_Array_Access;
+   type JavaHelpUtil_Access_Array_Access_Array_Access is access all JavaHelpUtil_Access_Array_Access_Array;
 
    type JavaHelpUtil is new Java_Object with record
       logUtil : LogUtil_Access;

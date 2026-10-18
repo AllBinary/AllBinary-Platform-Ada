@@ -29,8 +29,10 @@ package org.allbinary.thread.ABRunnable_Package is
    type ABRunnable_Access is access all ABRunnable'Class;
    type ABRunnable_Access_Array is array (Natural range <>) of ABRunnable_Access;
    type ABRunnable_Access_Array_Access is access all ABRunnable_Access_Array;
+   type ABRunnable_Access_Array_Access_Array is array (Natural range <>) of ABRunnable_Access_Array_Access;
+   type ABRunnable_Access_Array_Access_Array_Access is access all ABRunnable_Access_Array_Access_Array;
 
-   type ABRunnable is new RunnableInterface with record
+   type ABRunnable is new Java_Object and RunnableInterface with record
       running : Boolean;
    end record;
 

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+
 package body org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package is
 
+   package FormTypeFactory_Package renames Standard.org.allbinary.graphics.form.FormTypeFactory_Package;
    procedure Initialize_Fields (This : in out PreGameScrollSelectionForm'Class) is
    begin
       null;

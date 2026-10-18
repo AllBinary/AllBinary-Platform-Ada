@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.io.InputTypeData_Package is
 
    procedure Initialize_Fields (This : in out InputTypeData'Class) is

@@ -1,8 +1,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapExtractedPathCacheFactory_Package; use org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapExtractedPathCacheFactory_Package;
+
 package body org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapExtractedPathsCacheFactory_Package is
 
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
    procedure Initialize_Fields (This : in out BasicGeographicMapExtractedPathsCacheFactory'Class) is
    begin
       null;
@@ -35,7 +39,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.BasicGeographicM
    begin
         if (maxConcurrentPaths) /= (This.maxConcurrentPaths) then
             for index in reverse This.maxConcurrentPaths .. maxConcurrentPaths loop
-                This.list.add (BasicArrayListS_Package.Create (maxPaths));
+                This.list.add (Java_Object_Access (BasicArrayListS_Package.Create (maxPaths)));
             end loop;
             This.maxConcurrentPaths := maxConcurrentPaths;
         end if;
@@ -47,7 +51,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.BasicGeographicM
         if (This.list.size) > (0) then
             return BasicArrayList_Access (This.list.removeAt (0));
         else
-            return BasicArrayListS_Package.Create (This.maxPaths);
+            return BasicArrayList_Access (BasicArrayListS_Package.Create (This.maxPaths));
         end if;
    end getPaths;
 
@@ -59,7 +63,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.BasicGeographicM
             BasicGeographicMapExtractedPathCacheFactory_Package.getInstance.release (BasicArrayList_Access (list.get (index)));
         end loop;
         list.clear;
-        This.list.add (list);
+        This.list.add (Java_Object_Access (list));
    end release;
 
 begin

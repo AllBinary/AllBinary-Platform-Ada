@@ -38,6 +38,8 @@ package org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsUtil_P
    type LayerCoveringCellPositionsUtil_Access is access all LayerCoveringCellPositionsUtil'Class;
    type LayerCoveringCellPositionsUtil_Access_Array is array (Natural range <>) of LayerCoveringCellPositionsUtil_Access;
    type LayerCoveringCellPositionsUtil_Access_Array_Access is access all LayerCoveringCellPositionsUtil_Access_Array;
+   type LayerCoveringCellPositionsUtil_Access_Array_Access_Array is array (Natural range <>) of LayerCoveringCellPositionsUtil_Access_Array_Access;
+   type LayerCoveringCellPositionsUtil_Access_Array_Access_Array_Access is access all LayerCoveringCellPositionsUtil_Access_Array_Access_Array;
 
    type LayerCoveringCellPositionsUtil is new Java_Object with record
       cellPositionsUtil : CellPositionsUtil_Access;

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.activity.MidletActivityBase_Package; use org.allbinary.android.activity.MidletActivityBase_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package is
 
+   package MidletActivityBase_Package renames Standard.org.allbinary.android.activity.MidletActivityBase_Package;
    procedure Initialize_Fields (This : in out ProgressRunnable'Class) is
    begin
       null;

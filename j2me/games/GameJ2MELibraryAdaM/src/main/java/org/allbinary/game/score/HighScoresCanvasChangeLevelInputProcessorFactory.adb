@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_Package; use org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_Package;
+
 package body org.allbinary.game.score.HighScoresCanvasChangeLevelInputProcessorFactory_Package is
 
    procedure Initialize_Fields (This : in out HighScoresCanvasChangeLevelInputProcessorFactory'Class) is
@@ -36,7 +38,7 @@ package body org.allbinary.game.score.HighScoresCanvasChangeLevelInputProcessorF
    function getInstance (This : in out HighScoresCanvasChangeLevelInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) return HighScoresCanvasInputProcessor_Access is
       highScoresCanvas : constant HighScoresCanvas_Access := HighScoresCanvas_Access (highScoresCanvas_Param);
    begin
-        return HighScoresCanvasLevelChangeInputProcessor_Package.Create (highScoresCanvas);
+        return HighScoresCanvasInputProcessor_Access (HighScoresCanvasLevelChangeInputProcessor_Package.Create (highScoresCanvas));
    end getInstance;
 
    procedure getInstance (This : in out HighScoresCanvasChangeLevelInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) is

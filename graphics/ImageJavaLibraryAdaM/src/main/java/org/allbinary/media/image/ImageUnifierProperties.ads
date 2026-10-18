@@ -29,6 +29,8 @@ package org.allbinary.media.image.ImageUnifierProperties_Package is
    type ImageUnifierProperties_Access is access all ImageUnifierProperties'Class;
    type ImageUnifierProperties_Access_Array is array (Natural range <>) of ImageUnifierProperties_Access;
    type ImageUnifierProperties_Access_Array_Access is access all ImageUnifierProperties_Access_Array;
+   type ImageUnifierProperties_Access_Array_Access_Array is array (Natural range <>) of ImageUnifierProperties_Access_Array_Access;
+   type ImageUnifierProperties_Access_Array_Access_Array_Access is access all ImageUnifierProperties_Access_Array_Access_Array;
 
    type ImageUnifierProperties is new Java_Object with record
       rows : Integer;

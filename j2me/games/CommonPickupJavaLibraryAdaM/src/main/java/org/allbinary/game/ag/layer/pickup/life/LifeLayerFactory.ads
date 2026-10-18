@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
-with org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package; use org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package;
 
 package org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package is
 
@@ -33,8 +32,10 @@ package org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package is
    type LifeLayerFactory_Access is access all LifeLayerFactory'Class;
    type LifeLayerFactory_Access_Array is array (Natural range <>) of LifeLayerFactory_Access;
    type LifeLayerFactory_Access_Array_Access is access all LifeLayerFactory_Access_Array;
+   type LifeLayerFactory_Access_Array_Access_Array is array (Natural range <>) of LifeLayerFactory_Access_Array_Access;
+   type LifeLayerFactory_Access_Array_Access_Array_Access is access all LifeLayerFactory_Access_Array_Access_Array;
 
-   type LifeLayerFactory is new AllBinaryLayerFactoryInterface with null record;
+   type LifeLayerFactory is new Java_Object and AllBinaryLayerFactoryInterface with null record;
 
    procedure Initialize (This : in out LifeLayerFactory'Class);
    function Create return LifeLayerFactory_Access;

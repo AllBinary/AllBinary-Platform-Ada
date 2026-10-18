@@ -13,8 +13,41 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.visual.transform.TransformFactory_Package; use org.allbinary.logic.visual.transform.TransformFactory_Package;
+with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
+with org.allbinary.logic.visual.transform.info.GeneratorTransformInfoData_Package; use org.allbinary.logic.visual.transform.info.GeneratorTransformInfoData_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfo_Package; use org.allbinary.logic.visual.transform.info.TransformInfo_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfosData_Package; use org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with views.business.context.modules.storefront.customizer.template.objectConfig.InsertTemplateCustomizerTransformInfoObjectConfig_Package; use views.business.context.modules.storefront.customizer.template.objectConfig.InsertTemplateCustomizerTransformInfoObjectConfig_Package;
+with views.business.context.modules.storefront.customizer.template.objectConfig.NoTemplateTransformInfoObjectConfig_Package; use views.business.context.modules.storefront.customizer.template.objectConfig.NoTemplateTransformInfoObjectConfig_Package;
+
 package body views.business.context.modules.storefront.customizer.template.InsertCustomizerValidationView_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package TransformInfoEntityBuilder_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TransformFactory_Package renames Standard.org.allbinary.logic.visual.transform.TransformFactory_Package;
+   package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
+   package GeneratorTransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.GeneratorTransformInfoData_Package;
+   package TransformInfo_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfo_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package InsertTemplateCustomizerTransformInfoObjectConfig_Package renames Standard.views.business.context.modules.storefront.customizer.template.objectConfig.InsertTemplateCustomizerTransformInfoObjectConfig_Package;
+   package NoTemplateTransformInfoObjectConfig_Package renames Standard.views.business.context.modules.storefront.customizer.template.objectConfig.NoTemplateTransformInfoObjectConfig_Package;
    procedure Initialize_Fields (This : in out InsertCustomizerValidationView'Class) is
    begin
       null;
@@ -91,23 +124,23 @@ package body views.business.context.modules.storefront.customizer.template.Inser
                     componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, transformInfoName, InsertCustomizerValidationView'Class (This).getTransformInfoInterface);
                     templateViewObjectConfig := InsertTemplateCustomizerTransformInfoObjectConfig_Package.Create (componentInterface.getTransformInfoInterface, componentInterface.getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
                     storeName := InsertCustomizerValidationView'Class (This).getTransformInfoInterface.getStoreName;
-                    endIndex := ((Index (This.viewName, Java_Image (storeName)) - 1)) + (Length (storeName));
+                    endIndex := (Java_Index_Of (This.viewName, Java_Image (storeName))) + (Length (storeName));
                     storePrepend := Unbounded_Slice (This.viewName, (0) + 1, endIndex);
                     viewNamePostfix := Unbounded_Slice (This.viewName, (endIndex) + 1, Length (This.viewName));
                     newViewNameStringBuffer := StringMaker_Package.Create;
                     newViewNameStringBuffer.append (storePrepend);
                     commonSeps := CommonSeps_Package.getInstance;
                     transformInfosData := TransformInfosData_Package.getInstance;
-                    if ((Index (transformInfoName, Java_Image (transformInfosData.SMALL_PREVIEW)) - 1)) >= (0) then
+                    if (Java_Index_Of (transformInfoName, Java_Image (transformInfosData.SMALL_PREVIEW))) >= (0) then
                         newViewNameStringBuffer.append (commonSeps.SPACE);
                         newViewNameStringBuffer.append (transformInfosData.SMALL_PREVIEW);
-                    elsif ((Index (transformInfoName, Java_Image (transformInfosData.PREVIEW)) - 1)) >= (0) then
+                    elsif (Java_Index_Of (transformInfoName, Java_Image (transformInfosData.PREVIEW))) >= (0) then
                         newViewNameStringBuffer.append (commonSeps.SPACE);
                         newViewNameStringBuffer.append (transformInfosData.PREVIEW);
                     end if;
                     newViewNameStringBuffer.append (commonSeps.SPACE);
                     newViewNameStringBuffer.append (viewNamePostfix);
-                    if ((Index (transformInfoName, Java_Image (GeneratorTransformInfoData_Package.NAME)) - 1)) >= (0) then
+                    if (Java_Index_Of (transformInfoName, Java_Image (GeneratorTransformInfoData_Package.NAME))) >= (0) then
                         newViewNameStringBuffer.append (commonSeps.SPACE);
                         newViewNameStringBuffer.append (GeneratorTransformInfoData_Package.NAME);
                     end if;

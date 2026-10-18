@@ -29,6 +29,8 @@ package org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package is
    type NullWaitGameRunnable_Access is access all NullWaitGameRunnable'Class;
    type NullWaitGameRunnable_Access_Array is array (Natural range <>) of NullWaitGameRunnable_Access;
    type NullWaitGameRunnable_Access_Array_Access is access all NullWaitGameRunnable_Access_Array;
+   type NullWaitGameRunnable_Access_Array_Access_Array is array (Natural range <>) of NullWaitGameRunnable_Access_Array_Access;
+   type NullWaitGameRunnable_Access_Array_Access_Array_Access is access all NullWaitGameRunnable_Access_Array_Access_Array;
 
    type NullWaitGameRunnable is new GameRunnable with null record;
    instance : GameRunnable_Access;

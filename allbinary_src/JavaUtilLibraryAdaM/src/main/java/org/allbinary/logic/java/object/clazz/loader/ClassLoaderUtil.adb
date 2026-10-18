@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.java.anyType.clazz.loader.ClassLoader_Package; use org.allbinary.logic.java.anyType.clazz.loader.ClassLoader_Package;
+
 package body org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Package is
 
    procedure Initialize_Fields (This : in out ClassLoaderUtil'Class) is
@@ -48,6 +50,18 @@ package body org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Packa
 
    procedure getName (anyType_Param : access Java_Object'Class) is
       Java_Result : constant Unbounded_String := getName (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getName;
+
+   function getName (Value : Unbounded_String) return Unbounded_String is
+   begin
+      return getName (Java_Box (Value));
+   end getName;
+
+   procedure getName (Value : Unbounded_String) is
+      Java_Result : constant Unbounded_String := getName (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

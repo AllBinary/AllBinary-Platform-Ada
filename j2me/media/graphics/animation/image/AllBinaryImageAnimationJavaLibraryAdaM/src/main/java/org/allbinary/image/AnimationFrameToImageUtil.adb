@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
+
 package body org.allbinary.image.AnimationFrameToImageUtil_Package is
 
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    procedure Initialize_Fields (This : in out AnimationFrameToImageUtil'Class) is
    begin
       null;

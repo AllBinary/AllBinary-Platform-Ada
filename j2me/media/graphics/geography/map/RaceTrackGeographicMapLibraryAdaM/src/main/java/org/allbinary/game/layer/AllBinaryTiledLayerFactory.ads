@@ -20,32 +20,25 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.game.TiledLayer_Package; use javax.microedition.lcdui.game.TiledLayer_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-with org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package; use org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package;
 
 package org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
 
-   package TiledLayer_Package renames Standard.javax.microedition.lcdui.game.TiledLayer_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    package AllBinaryTiledLayerFactoryInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
    package RaceTrackData_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
    package RaceTrackInfo_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
-   package TiledLayerFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package;
 
    type AllBinaryTiledLayerFactory is tagged;
    type AllBinaryTiledLayerFactory_Access is access all AllBinaryTiledLayerFactory'Class;
    type AllBinaryTiledLayerFactory_Access_Array is array (Natural range <>) of AllBinaryTiledLayerFactory_Access;
    type AllBinaryTiledLayerFactory_Access_Array_Access is access all AllBinaryTiledLayerFactory_Access_Array;
+   type AllBinaryTiledLayerFactory_Access_Array_Access_Array is array (Natural range <>) of AllBinaryTiledLayerFactory_Access_Array_Access;
+   type AllBinaryTiledLayerFactory_Access_Array_Access_Array_Access is access all AllBinaryTiledLayerFactory_Access_Array_Access_Array;
 
-   type AllBinaryTiledLayerFactory is new AllBinaryTiledLayerFactoryInterface with null record;
+   type AllBinaryTiledLayerFactory is new Java_Object and AllBinaryTiledLayerFactoryInterface with null record;
 
    procedure Initialize (This : in out AllBinaryTiledLayerFactory'Class);
    function Create return AllBinaryTiledLayerFactory_Access;

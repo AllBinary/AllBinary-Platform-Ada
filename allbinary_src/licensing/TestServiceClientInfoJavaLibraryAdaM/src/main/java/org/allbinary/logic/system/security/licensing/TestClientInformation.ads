@@ -29,6 +29,8 @@ package org.allbinary.logic.system.security.licensing.TestClientInformation_Pack
    type TestClientInformation_Access is access all TestClientInformation'Class;
    type TestClientInformation_Access_Array is array (Natural range <>) of TestClientInformation_Access;
    type TestClientInformation_Access_Array_Access is access all TestClientInformation_Access_Array;
+   type TestClientInformation_Access_Array_Access_Array is array (Natural range <>) of TestClientInformation_Access_Array_Access;
+   type TestClientInformation_Access_Array_Access_Array_Access is access all TestClientInformation_Access_Array_Access_Array;
 
    type TestClientInformation is new AbeClientInformation with null record;
 

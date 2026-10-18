@@ -33,8 +33,10 @@ package admin.taghelpers.ModifyTable_Package is
    type ModifyTable_Access is access all ModifyTable'Class;
    type ModifyTable_Access_Array is array (Natural range <>) of ModifyTable_Access;
    type ModifyTable_Access_Array_Access is access all ModifyTable_Access_Array;
+   type ModifyTable_Access_Array_Access_Array is array (Natural range <>) of ModifyTable_Access_Array_Access;
+   type ModifyTable_Access_Array_Access_Array_Access is access all ModifyTable_Access_Array_Access_Array;
 
-   type ModifyTable is new ModifyTableInterface with record
+   type ModifyTable is new Java_Object and ModifyTableInterface with record
       commonStrings : CommonStrings_Access;
       tagStrings : TagStrings_Access;
    end record;

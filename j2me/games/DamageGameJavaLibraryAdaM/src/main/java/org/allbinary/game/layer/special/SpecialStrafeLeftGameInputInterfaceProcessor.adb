@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package is
 
    procedure Initialize_Fields (This : in out SpecialStrafeLeftGameInputInterfaceProcessor'Class) is

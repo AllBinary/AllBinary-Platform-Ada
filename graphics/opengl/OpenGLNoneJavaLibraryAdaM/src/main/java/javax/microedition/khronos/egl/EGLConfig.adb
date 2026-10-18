@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body javax.microedition.khronos.egl.EGLConfig_Package is
 
    procedure Initialize_Fields (This : in out EGLConfig'Class) is

@@ -21,8 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.j2me.workarea.tools.JPanel_Package; use org.allbinary.graphics.j2me.workarea.tools.JPanel_Package;
-with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
-with org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 
@@ -31,6 +29,8 @@ package org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
    type ToolJPanel_Access is access all ToolJPanel'Class;
    type ToolJPanel_Access_Array is array (Natural range <>) of ToolJPanel_Access;
    type ToolJPanel_Access_Array_Access is access all ToolJPanel_Access_Array;
+   type ToolJPanel_Access_Array_Access_Array is array (Natural range <>) of ToolJPanel_Access_Array_Access;
+   type ToolJPanel_Access_Array_Access_Array_Access is access all ToolJPanel_Access_Array_Access_Array;
 
    type ToolJPanel is new JPanel with record
       arcJButton : JButton_Access;

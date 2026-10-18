@@ -26,11 +26,7 @@ with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.color.ColorCompositeInterface_Package; use org.allbinary.graphics.color.ColorCompositeInterface_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 
 package org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package is
 
@@ -40,16 +36,14 @@ package org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package is
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package ColorCompositeInterface_Package renames Standard.org.allbinary.graphics.color.ColorCompositeInterface_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type SpriteIndexedAnimation is tagged;
    type SpriteIndexedAnimation_Access is access all SpriteIndexedAnimation'Class;
    type SpriteIndexedAnimation_Access_Array is array (Natural range <>) of SpriteIndexedAnimation_Access;
    type SpriteIndexedAnimation_Access_Array_Access is access all SpriteIndexedAnimation_Access_Array;
+   type SpriteIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of SpriteIndexedAnimation_Access_Array_Access;
+   type SpriteIndexedAnimation_Access_Array_Access_Array_Access is access all SpriteIndexedAnimation_Access_Array_Access_Array;
 
    type SpriteIndexedAnimation is new IndexedAnimation and ColorCompositeInterface with record
       sprite : Sprite_Access;

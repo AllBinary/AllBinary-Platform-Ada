@@ -28,6 +28,8 @@ package org.allbinary.image.opengles.OpenGLESImageProperties_Package is
    type OpenGLESImageProperties_Access is access all OpenGLESImageProperties'Class;
    type OpenGLESImageProperties_Access_Array is array (Natural range <>) of OpenGLESImageProperties_Access;
    type OpenGLESImageProperties_Access_Array_Access is access all OpenGLESImageProperties_Access_Array;
+   type OpenGLESImageProperties_Access_Array_Access_Array is array (Natural range <>) of OpenGLESImageProperties_Access_Array_Access;
+   type OpenGLESImageProperties_Access_Array_Access_Array_Access is access all OpenGLESImageProperties_Access_Array_Access_Array;
 
    type OpenGLESImageProperties is new Java_Object with record
       textureID : Integer;

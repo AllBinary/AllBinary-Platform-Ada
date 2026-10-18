@@ -28,6 +28,8 @@ package org.allbinary.game.layer.pickup.PickupableInterface_Package is
    type PickupableInterface_Access is access all PickupableInterface'Class;
    type PickupableInterface_Access_Array is array (Natural range <>) of PickupableInterface_Access;
    type PickupableInterface_Access_Array_Access is access all PickupableInterface_Access_Array;
+   type PickupableInterface_Access_Array_Access_Array is array (Natural range <>) of PickupableInterface_Access_Array_Access;
+   type PickupableInterface_Access_Array_Access_Array_Access is access all PickupableInterface_Access_Array_Access_Array;
 
 end org.allbinary.game.layer.pickup.PickupableInterface_Package;
 

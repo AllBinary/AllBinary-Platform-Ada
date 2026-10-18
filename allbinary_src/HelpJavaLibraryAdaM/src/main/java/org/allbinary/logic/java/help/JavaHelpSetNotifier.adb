@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out JavaHelpSetNotifier'Class) is
    begin
       null;
@@ -58,7 +61,7 @@ package body org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
                 isNotified := True;
             end if;
         end loop;
-        JavaHelpSetNotifier_Package.vector.add (url);
+        JavaHelpSetNotifier_Package.vector.add (Java_Object_Access (url));
         return isNotified;
    end isNotified;
 
@@ -71,7 +74,7 @@ package body org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
 
 begin
    null;
-   vector := BasicArrayListD_Package.Create;
+   vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
 
 end org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
 

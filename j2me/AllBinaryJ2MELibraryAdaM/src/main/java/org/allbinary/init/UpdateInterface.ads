@@ -28,6 +28,8 @@ package org.allbinary.init.UpdateInterface_Package is
    type UpdateInterface_Access is access all UpdateInterface'Class;
    type UpdateInterface_Access_Array is array (Natural range <>) of UpdateInterface_Access;
    type UpdateInterface_Access_Array_Access is access all UpdateInterface_Access_Array;
+   type UpdateInterface_Access_Array_Access_Array is array (Natural range <>) of UpdateInterface_Access_Array_Access;
+   type UpdateInterface_Access_Array_Access_Array_Access is access all UpdateInterface_Access_Array_Access_Array;
    procedure update (This : in out UpdateInterface) is abstract;
 
 end org.allbinary.init.UpdateInterface_Package;

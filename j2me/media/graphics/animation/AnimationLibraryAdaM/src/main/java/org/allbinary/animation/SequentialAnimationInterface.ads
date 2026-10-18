@@ -30,6 +30,8 @@ package org.allbinary.animation.SequentialAnimationInterface_Package is
    type SequentialAnimationInterface_Access is access all SequentialAnimationInterface'Class;
    type SequentialAnimationInterface_Access_Array is array (Natural range <>) of SequentialAnimationInterface_Access;
    type SequentialAnimationInterface_Access_Array_Access is access all SequentialAnimationInterface_Access_Array;
+   type SequentialAnimationInterface_Access_Array_Access_Array is array (Natural range <>) of SequentialAnimationInterface_Access_Array_Access;
+   type SequentialAnimationInterface_Access_Array_Access_Array_Access is access all SequentialAnimationInterface_Access_Array_Access_Array;
    function getSize (This : in out SequentialAnimationInterface) return Integer is abstract;
    procedure previousFrame (This : in out SequentialAnimationInterface) is abstract;
 

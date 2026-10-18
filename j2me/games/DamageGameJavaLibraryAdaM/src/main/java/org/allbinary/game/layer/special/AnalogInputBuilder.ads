@@ -20,31 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
-with org.allbinary.game.layer.special.SpecialUpGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialUpGameInputProcessor_Package;
-with org.allbinary.game.layer.special.SpecialDownGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialDownGameInputProcessor_Package;
-with org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package;
-with org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package;
-with org.allbinary.game.layer.special.Special1GameInputProcessor_Package; use org.allbinary.game.layer.special.Special1GameInputProcessor_Package;
-with org.allbinary.game.layer.special.Special3GameInputProcessor_Package; use org.allbinary.game.layer.special.Special3GameInputProcessor_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-with org.allbinary.game.layer.special.SpecialAnalogUpGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogUpGameInputProcessor_Package;
-with org.allbinary.game.layer.special.SpecialAnalogDownGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogDownGameInputProcessor_Package;
-with org.allbinary.game.layer.special.SpecialAnalogRightGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogRightGameInputProcessor_Package;
-with org.allbinary.game.layer.special.SpecialAnalogLeftGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogLeftGameInputProcessor_Package;
-with org.allbinary.game.layer.special.SpecialAnalogLeftTriggerGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogLeftTriggerGameInputProcessor_Package;
-with org.allbinary.game.layer.special.SpecialAnalogRightTriggerGameInputProcessor_Package; use org.allbinary.game.layer.special.SpecialAnalogRightTriggerGameInputProcessor_Package;
 
 package org.allbinary.game.layer.special.AnalogInputBuilder_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package GameInputProcessor_Package renames Standard.org.allbinary.game.input.GameInputProcessor_Package;
 
    type AnalogInputBuilder is tagged;
    type AnalogInputBuilder_Access is access all AnalogInputBuilder'Class;
    type AnalogInputBuilder_Access_Array is array (Natural range <>) of AnalogInputBuilder_Access;
    type AnalogInputBuilder_Access_Array_Access is access all AnalogInputBuilder_Access_Array;
+   type AnalogInputBuilder_Access_Array_Access_Array is array (Natural range <>) of AnalogInputBuilder_Access_Array_Access;
+   type AnalogInputBuilder_Access_Array_Access_Array_Access is access all AnalogInputBuilder_Access_Array_Access_Array;
 
    type AnalogInputBuilder is new Java_Object with null record;
    instance : AnalogInputBuilder_Access;

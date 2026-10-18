@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.GameInputLayerManager_Package; use org.allbinary.game.input.GameInputLayerManager_Package;
+with org.allbinary.game.input.GameInputInterface_Package; use org.allbinary.game.input.GameInputInterface_Package;
+
 package body org.allbinary.game.input.GameInputLayerProcessor_Package is
 
    procedure Initialize_Fields (This : in out GameInputLayerProcessor'Class) is

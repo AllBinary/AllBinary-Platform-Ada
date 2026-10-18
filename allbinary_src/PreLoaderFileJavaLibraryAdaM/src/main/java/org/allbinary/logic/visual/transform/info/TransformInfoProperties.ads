@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoProperties_Packag
    type TransformInfoProperties_Access is access all TransformInfoProperties'Class;
    type TransformInfoProperties_Access_Array is array (Natural range <>) of TransformInfoProperties_Access;
    type TransformInfoProperties_Access_Array_Access is access all TransformInfoProperties_Access_Array;
+   type TransformInfoProperties_Access_Array_Access_Array is array (Natural range <>) of TransformInfoProperties_Access_Array_Access;
+   type TransformInfoProperties_Access_Array_Access_Array_Access is access all TransformInfoProperties_Access_Array_Access_Array;
 
    type TransformInfoProperties is new Java_Object with record
       name : Unbounded_String;

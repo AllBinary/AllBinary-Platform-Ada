@@ -8,17 +8,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.cache.CacheType_Package; use org.allbinary.logic.util.cache.CacheType_Package;
 
 package org.allbinary.logic.util.cache.CacheTypeFactory_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type CacheTypeFactory is tagged;
    type CacheTypeFactory_Access is access all CacheTypeFactory'Class;
    type CacheTypeFactory_Access_Array is array (Natural range <>) of CacheTypeFactory_Access;
    type CacheTypeFactory_Access_Array_Access is access all CacheTypeFactory_Access_Array;
+   type CacheTypeFactory_Access_Array_Access_Array is array (Natural range <>) of CacheTypeFactory_Access_Array_Access;
+   type CacheTypeFactory_Access_Array_Access_Array_Access is access all CacheTypeFactory_Access_Array_Access_Array;
 
    type CacheTypeFactory is new Java_Object with record
       NO_CACHE : CacheType_Access;

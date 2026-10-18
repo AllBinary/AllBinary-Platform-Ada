@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.audio.NullAudioFormat_Package is
 
    procedure Initialize_Fields (This : in out NullAudioFormat'Class) is

@@ -28,6 +28,8 @@ package org.allbinary.data.tree.dom.URIResolverStrings_Package is
    type URIResolverStrings_Access is access all URIResolverStrings'Class;
    type URIResolverStrings_Access_Array is array (Natural range <>) of URIResolverStrings_Access;
    type URIResolverStrings_Access_Array_Access is access all URIResolverStrings_Access_Array;
+   type URIResolverStrings_Access_Array_Access_Array is array (Natural range <>) of URIResolverStrings_Access_Array_Access;
+   type URIResolverStrings_Access_Array_Access_Array_Access is access all URIResolverStrings_Access_Array_Access_Array;
 
    type URIResolverStrings is new Java_Object with record
       IMPORT_URL : Unbounded_String;

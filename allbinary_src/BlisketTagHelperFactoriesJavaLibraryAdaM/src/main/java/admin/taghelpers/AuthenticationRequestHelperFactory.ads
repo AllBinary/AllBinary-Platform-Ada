@@ -24,20 +24,19 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with admin.taghelpers.TagHelperFactory_Package; use admin.taghelpers.TagHelperFactory_Package;
-with admin.taghelpers.AuthenticationRequestHelper_Package; use admin.taghelpers.AuthenticationRequestHelper_Package;
 
 package admin.taghelpers.AuthenticationRequestHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type AuthenticationRequestHelperFactory is tagged;
    type AuthenticationRequestHelperFactory_Access is access all AuthenticationRequestHelperFactory'Class;
    type AuthenticationRequestHelperFactory_Access_Array is array (Natural range <>) of AuthenticationRequestHelperFactory_Access;
    type AuthenticationRequestHelperFactory_Access_Array_Access is access all AuthenticationRequestHelperFactory_Access_Array;
+   type AuthenticationRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of AuthenticationRequestHelperFactory_Access_Array_Access;
+   type AuthenticationRequestHelperFactory_Access_Array_Access_Array_Access is access all AuthenticationRequestHelperFactory_Access_Array_Access_Array;
 
    type AuthenticationRequestHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

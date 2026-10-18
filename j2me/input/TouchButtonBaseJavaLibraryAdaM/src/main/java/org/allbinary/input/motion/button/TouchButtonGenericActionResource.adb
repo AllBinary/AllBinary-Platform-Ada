@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.motion.button.TouchButtonGenericActionResource_Package is
 
    procedure Initialize_Fields (This : in out TouchButtonGenericActionResource'Class) is
@@ -40,7 +41,7 @@ package body org.allbinary.input.motion.button.TouchButtonGenericActionResource_
 
 begin
    null;
-   instance := TouchButtonGenericActionResource_Package.Create;
+   instance := TouchButtonResource_Access (TouchButtonGenericActionResource_Package.Create);
 
 end org.allbinary.input.motion.button.TouchButtonGenericActionResource_Package;
 

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.NormalJ2MEDefaultGameInputMapping_Package; use org.allbinary.game.input.NormalJ2MEDefaultGameInputMapping_Package;
+
 package body org.allbinary.game.input.NormalJ2MEGameInputMapping_Package is
 
    procedure Initialize_Fields (This : in out NormalJ2MEGameInputMapping'Class) is

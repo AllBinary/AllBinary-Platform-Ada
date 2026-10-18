@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.magnetic.field.AllBinaryMagneticFieldSensor_Package is
 
    procedure Initialize_Fields (This : in out AllBinaryMagneticFieldSensor'Class) is

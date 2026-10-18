@@ -21,24 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectangle_Package; use org.allbinary.media.image.comparison.motion.MotionRectangle_Package;
-with org.allbinary.media.image.comparison.motion.Rectangle_Package; use org.allbinary.media.image.comparison.motion.Rectangle_Package;
 
 package org.allbinary.media.image.comparison.motion.ConsolidateMotionRectangles_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type ConsolidateMotionRectangles is tagged;
    type ConsolidateMotionRectangles_Access is access all ConsolidateMotionRectangles'Class;
    type ConsolidateMotionRectangles_Access_Array is array (Natural range <>) of ConsolidateMotionRectangles_Access;
    type ConsolidateMotionRectangles_Access_Array_Access is access all ConsolidateMotionRectangles_Access_Array;
+   type ConsolidateMotionRectangles_Access_Array_Access_Array is array (Natural range <>) of ConsolidateMotionRectangles_Access_Array_Access;
+   type ConsolidateMotionRectangles_Access_Array_Access_Array_Access is access all ConsolidateMotionRectangles_Access_Array_Access_Array;
 
    type ConsolidateMotionRectangles is new MotionRectangles with record
       logUtil : LogUtil_Access;

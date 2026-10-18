@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.audio.SelectSound_Package; use org.allbinary.media.audio.SelectSound_Package;
+with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
+
 package body org.allbinary.media.audio.EarlySoundsFactory_Package is
 
    procedure Initialize_Fields (This : in out EarlySoundsFactory'Class) is

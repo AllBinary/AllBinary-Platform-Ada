@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 --  with java.util.Arrays_Package; use java.util.Arrays_Package;
 --  with java.util.Comparator_Package; use java.util.Comparator_Package;
 --  with javax.imageio.ImageIO_Package; use javax.imageio.ImageIO_Package;
@@ -30,42 +30,27 @@ with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package; use org.allb
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
 with org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package; use org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
-with org.allbinary.media.image.analysis.ColorRange_Package; use org.allbinary.media.image.analysis.ColorRange_Package;
 with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.allbinary.media.image.analysis.ColorRangeInterface_Package;
-with org.allbinary.media.image.analysis.ImageAnalysis_Package; use org.allbinary.media.image.analysis.ImageAnalysis_Package;
-with org.allbinary.media.image.analysis.ImageAnalysisResults_Package; use org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
-with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.image.gui.JFrame_Package; use org.allbinary.image.gui.JFrame_Package;
-with org.allbinary.image.gui.ImageUnifierJPanel_Package; use org.allbinary.image.gui.ImageUnifierJPanel_Package;
-with org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package; use org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package;
-with org.allbinary.image.gui.RotationSpriteImageJPanel_Package; use org.allbinary.image.gui.RotationSpriteImageJPanel_Package;
-with org.allbinary.image.gui.SpriteSplitterImageJPanel_Package; use org.allbinary.image.gui.SpriteSplitterImageJPanel_Package;
-with org.allbinary.image.gui.RotationImageJPanel_Package; use org.allbinary.image.gui.RotationImageJPanel_Package;
-with org.allbinary.image.gui.ResizeImageJPanel_Package; use org.allbinary.image.gui.ResizeImageJPanel_Package;
-with org.allbinary.image.gui.CreateIconImagesJPanel_Package; use org.allbinary.image.gui.CreateIconImagesJPanel_Package;
-with org.allbinary.image.gui.CanvasImageJPanel_Package; use org.allbinary.image.gui.CanvasImageJPanel_Package;
-with org.allbinary.image.gui.MirrorSpriteImageJPanel_Package; use org.allbinary.image.gui.MirrorSpriteImageJPanel_Package;
-with org.allbinary.image.gui.MirrorImageJPanel_Package; use org.allbinary.image.gui.MirrorImageJPanel_Package;
 
 package org.allbinary.image.gui.ImageToolJFrame_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
    package FileJDialog_Package renames Standard.org.allbinary.gui.dialog.FileJDialog_Package;
    package FileJDialogListenerInterface_Package renames Standard.org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ImageProcessorInput_Package renames Standard.org.allbinary.media.image.ImageProcessorInput_Package;
    package ImageProcessorInputCompositeInterface_Package renames Standard.org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
-   package ColorRange_Package renames Standard.org.allbinary.media.image.analysis.ColorRange_Package;
    package ColorRangeInterface_Package renames Standard.org.allbinary.media.image.analysis.ColorRangeInterface_Package;
-   package ImageAnalysis_Package renames Standard.org.allbinary.media.image.analysis.ImageAnalysis_Package;
-   package ImageAnalysisResults_Package renames Standard.org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
-   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ImageToolJFrame is tagged;
    type ImageToolJFrame_Access is access all ImageToolJFrame'Class;
    type ImageToolJFrame_Access_Array is array (Natural range <>) of ImageToolJFrame_Access;
    type ImageToolJFrame_Access_Array_Access is access all ImageToolJFrame_Access_Array;
+   type ImageToolJFrame_Access_Array_Access_Array is array (Natural range <>) of ImageToolJFrame_Access_Array_Access;
+   type ImageToolJFrame_Access_Array_Access_Array_Access is access all ImageToolJFrame_Access_Array_Access_Array;
 
    type ImageToolJFrame is new JFrame and FileJDialogListenerInterface with record
       logUtil : LogUtil_Access;

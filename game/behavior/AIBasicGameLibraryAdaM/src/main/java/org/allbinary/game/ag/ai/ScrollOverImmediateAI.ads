@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 
@@ -30,7 +29,6 @@ package org.allbinary.game.ag.ai.ScrollOverImmediateAI_Package is
 
    package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
@@ -38,6 +36,8 @@ package org.allbinary.game.ag.ai.ScrollOverImmediateAI_Package is
    type ScrollOverImmediateAI_Access is access all ScrollOverImmediateAI'Class;
    type ScrollOverImmediateAI_Access_Array is array (Natural range <>) of ScrollOverImmediateAI_Access;
    type ScrollOverImmediateAI_Access_Array_Access is access all ScrollOverImmediateAI_Access_Array;
+   type ScrollOverImmediateAI_Access_Array_Access_Array is array (Natural range <>) of ScrollOverImmediateAI_Access_Array_Access;
+   type ScrollOverImmediateAI_Access_Array_Access_Array_Access is access all ScrollOverImmediateAI_Access_Array_Access_Array;
 
    type ScrollOverImmediateAI is new BasicAI with null record;
 

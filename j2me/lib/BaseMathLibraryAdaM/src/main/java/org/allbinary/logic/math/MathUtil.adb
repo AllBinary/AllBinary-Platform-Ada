@@ -1,8 +1,11 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+
 package body org.allbinary.logic.math.MathUtil_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    procedure Initialize_Fields (This : in out MathUtil'Class) is
    begin
       null;

@@ -13,6 +13,10 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.GameTypeFactory_Package; use org.allbinary.game.GameTypeFactory_Package;
+with org.allbinary.game.GameMode_Package; use org.allbinary.game.GameMode_Package;
+with org.allbinary.game.PlayerTypesFactory_Package; use org.allbinary.game.PlayerTypesFactory_Package;
+
 package body org.allbinary.game.BasicHighScoresGameInfoFactory_Package is
 
    procedure Initialize_Fields (This : in out BasicHighScoresGameInfoFactory'Class) is

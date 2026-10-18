@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.globals.PATH_GLOBALS_Package is
 
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out PATH_GLOBALS'Class) is
    begin
       null;
@@ -28,7 +35,7 @@ package body org.allbinary.globals.PATH_GLOBALS_Package is
 
    function getInstance return PATH_GLOBALS_Access is
    begin
-        return PATH_GLOBALS.instance;
+        return PATH_GLOBALS_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out PATH_GLOBALS'Class) is

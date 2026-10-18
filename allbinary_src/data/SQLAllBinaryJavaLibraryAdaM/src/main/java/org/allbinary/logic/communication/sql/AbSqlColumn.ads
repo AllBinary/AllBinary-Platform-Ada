@@ -22,24 +22,22 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.sql.ResultSet_Package; use java.sql.ResultSet_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.communication.sql.AbSqlTable_Package; use org.allbinary.logic.communication.sql.AbSqlTable_Package;
 
 package org.allbinary.logic.communication.sql.AbSqlColumn_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type AbSqlColumn is tagged;
    type AbSqlColumn_Access is access all AbSqlColumn'Class;
    type AbSqlColumn_Access_Array is array (Natural range <>) of AbSqlColumn_Access;
    type AbSqlColumn_Access_Array_Access is access all AbSqlColumn_Access_Array;
+   type AbSqlColumn_Access_Array_Access_Array is array (Natural range <>) of AbSqlColumn_Access_Array_Access;
+   type AbSqlColumn_Access_Array_Access_Array_Access is access all AbSqlColumn_Access_Array_Access_Array;
 
    type AbSqlColumn is new AbSqlTable with record
       logUtil : LogUtil_Access;

@@ -31,8 +31,10 @@ package org.allbinary.logic.math.vector.MathVector_Package is
    type MathVector_Access is access all MathVector'Class;
    type MathVector_Access_Array is array (Natural range <>) of MathVector_Access;
    type MathVector_Access_Array_Access is access all MathVector_Access_Array;
+   type MathVector_Access_Array_Access_Array is array (Natural range <>) of MathVector_Access_Array_Access;
+   type MathVector_Access_Array_Access_Array_Access is access all MathVector_Access_Array_Access_Array;
 
-   type MathVector is new MathVectorInterface with record
+   type MathVector is new Java_Object and MathVectorInterface with record
       magnitudeBasicDecimal : BasicDecimal_Access;
       direction : Integer;
       resultBasicDecimal : BasicDecimal_Access;

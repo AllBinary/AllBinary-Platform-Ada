@@ -21,27 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
-with org.allbinary.game.identification.GroupCommonFactory_Package; use org.allbinary.game.identification.GroupCommonFactory_Package;
 
 package org.allbinary.game.identification.CompositeGroup_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type CompositeGroup is tagged;
    type CompositeGroup_Access is access all CompositeGroup'Class;
    type CompositeGroup_Access_Array is array (Natural range <>) of CompositeGroup_Access;
    type CompositeGroup_Access_Array_Access is access all CompositeGroup_Access_Array;
+   type CompositeGroup_Access_Array_Access_Array is array (Natural range <>) of CompositeGroup_Access_Array_Access;
+   type CompositeGroup_Access_Array_Access_Array_Access is access all CompositeGroup_Access_Array_Access_Array;
 
    type CompositeGroup is new Java_Object with record
       logUtil : LogUtil_Access;

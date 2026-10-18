@@ -29,6 +29,8 @@ package org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package i
    type BasicWeaponPartFactoryInterface_Access is access all BasicWeaponPartFactoryInterface'Class;
    type BasicWeaponPartFactoryInterface_Access_Array is array (Natural range <>) of BasicWeaponPartFactoryInterface_Access;
    type BasicWeaponPartFactoryInterface_Access_Array_Access is access all BasicWeaponPartFactoryInterface_Access_Array;
+   type BasicWeaponPartFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of BasicWeaponPartFactoryInterface_Access_Array_Access;
+   type BasicWeaponPartFactoryInterface_Access_Array_Access_Array_Access is access all BasicWeaponPartFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out BasicWeaponPartFactoryInterface) return BasicWeaponPart_Access is abstract;
 
 end org.allbinary.game.part.weapon.BasicWeaponPartFactoryInterface_Package;

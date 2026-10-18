@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGestureInput_Package is
 
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CompleteMotionGestureInputToGameMotionGestureInput is tagged;
    type CompleteMotionGestureInputToGameMotionGestureInput_Access is access all CompleteMotionGestureInputToGameMotionGestureInput'Class;
    type CompleteMotionGestureInputToGameMotionGestureInput_Access_Array is array (Natural range <>) of CompleteMotionGestureInputToGameMotionGestureInput_Access;
    type CompleteMotionGestureInputToGameMotionGestureInput_Access_Array_Access is access all CompleteMotionGestureInputToGameMotionGestureInput_Access_Array;
+   type CompleteMotionGestureInputToGameMotionGestureInput_Access_Array_Access_Array is array (Natural range <>) of CompleteMotionGestureInputToGameMotionGestureInput_Access_Array_Access;
+   type CompleteMotionGestureInputToGameMotionGestureInput_Access_Array_Access_Array_Access is access all CompleteMotionGestureInputToGameMotionGestureInput_Access_Array_Access_Array;
 
    type CompleteMotionGestureInputToGameMotionGestureInput is new Java_Object with record
       commonStrings : CommonStrings_Access;

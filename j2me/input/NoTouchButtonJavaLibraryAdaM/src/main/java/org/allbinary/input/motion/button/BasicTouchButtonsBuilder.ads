@@ -21,24 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
 
 package org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type BasicTouchButtonsBuilder is tagged;
    type BasicTouchButtonsBuilder_Access is access all BasicTouchButtonsBuilder'Class;
    type BasicTouchButtonsBuilder_Access_Array is array (Natural range <>) of BasicTouchButtonsBuilder_Access;
    type BasicTouchButtonsBuilder_Access_Array_Access is access all BasicTouchButtonsBuilder_Access_Array;
+   type BasicTouchButtonsBuilder_Access_Array_Access_Array is array (Natural range <>) of BasicTouchButtonsBuilder_Access_Array_Access;
+   type BasicTouchButtonsBuilder_Access_Array_Access_Array_Access is access all BasicTouchButtonsBuilder_Access_Array_Access_Array;
 
    type BasicTouchButtonsBuilder is new BaseTouchInput with record
       logUtil : LogUtil_Access;

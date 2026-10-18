@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+
 package body org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package is
 
+   package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
    procedure Initialize_Fields (This : in out InputAutomationConfigurationUtil'Class) is
    begin
       null;

@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
+
 package body org.allbinary.game.tracking.TrackingEvent_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out TrackingEvent'Class) is
    begin
       null;
@@ -71,6 +75,11 @@ package body org.allbinary.game.tracking.TrackingEvent_Package is
         stringBuffer.append (This.layerInterface.toString);
         return stringBuffer.toString;
    end toString;
+
+   procedure init (This : in out TrackingEvent; Value : Unbounded_String) is
+   begin
+      TrackingEvent'Class (This).init (Java_Box (Value));
+   end init;
 
 end org.allbinary.game.tracking.TrackingEvent_Package;
 

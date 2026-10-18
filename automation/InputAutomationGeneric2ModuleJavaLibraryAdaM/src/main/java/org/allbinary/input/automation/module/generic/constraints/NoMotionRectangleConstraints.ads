@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.input.automation.module.MotionRectangleConstraints_Package; use org.allbinary.input.automation.module.MotionRectangleConstraints_Package;
-with org.allbinary.input.automation.module.generic_Id.constraints.Dimension_Package; use org.allbinary.input.automation.module.generic_Id.constraints.Dimension_Package;
 with org.allbinary.input.automation.module.generic_Id.constraints.Rectangle_Package; use org.allbinary.input.automation.module.generic_Id.constraints.Rectangle_Package;
 
 package org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package is
@@ -33,6 +32,8 @@ package org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRec
    type NoMotionRectangleConstraints_Access is access all NoMotionRectangleConstraints'Class;
    type NoMotionRectangleConstraints_Access_Array is array (Natural range <>) of NoMotionRectangleConstraints_Access;
    type NoMotionRectangleConstraints_Access_Array_Access is access all NoMotionRectangleConstraints_Access_Array;
+   type NoMotionRectangleConstraints_Access_Array_Access_Array is array (Natural range <>) of NoMotionRectangleConstraints_Access_Array_Access;
+   type NoMotionRectangleConstraints_Access_Array_Access_Array_Access is access all NoMotionRectangleConstraints_Access_Array_Access_Array;
 
    type NoMotionRectangleConstraints is new MotionRectangleConstraints with null record;
 

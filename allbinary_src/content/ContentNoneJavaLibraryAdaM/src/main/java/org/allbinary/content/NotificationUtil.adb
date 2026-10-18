@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.content.NotificationUtil_Package is
 
    procedure Initialize_Fields (This : in out NotificationUtil'Class) is

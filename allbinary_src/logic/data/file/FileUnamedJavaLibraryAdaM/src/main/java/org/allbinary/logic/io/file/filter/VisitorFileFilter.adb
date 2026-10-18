@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.file.FileWrapperUtil_Package; use org.allbinary.logic.io.file.FileWrapperUtil_Package;
+
 package body org.allbinary.logic.io.file.filter.VisitorFileFilter_Package is
 
+   package FileWrapperUtil_Package renames Standard.org.allbinary.logic.io.file.FileWrapperUtil_Package;
    procedure Initialize_Fields (This : in out VisitorFileFilter'Class) is
    begin
       null;

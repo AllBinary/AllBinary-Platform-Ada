@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.media.image.InputImageType_Package; use org.allbinary.input.media.image.InputImageType_Package;
+
 package body org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package is
 
+   package InputImageType_Package renames Standard.org.allbinary.input.media.image.InputImageType_Package;
    procedure Initialize_Fields (This : in out SavedCaptureGenericProfileDataWorkerType'Class) is
    begin
       null;

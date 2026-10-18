@@ -34,6 +34,8 @@ package org.allbinary.game.layer.resources.OnDemandResources_Package is
    type OnDemandResources_Access is access all OnDemandResources'Class;
    type OnDemandResources_Access_Array is array (Natural range <>) of OnDemandResources_Access;
    type OnDemandResources_Access_Array_Access is access all OnDemandResources_Access_Array;
+   type OnDemandResources_Access_Array_Access_Array is array (Natural range <>) of OnDemandResources_Access_Array_Access;
+   type OnDemandResources_Access_Array_Access_Array_Access is access all OnDemandResources_Access_Array_Access_Array;
 
    type OnDemandResources is new Java_Object with record
       logUtil : LogUtil_Access;

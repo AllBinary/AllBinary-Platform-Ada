@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.mapeditor.core.TileLayer_Package; use org.mapeditor.core.TileLayer_Package;
+
 package body org.allbinary.game.behavior.topview.placement.PropsTileMapPlacementVisitor_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package TileLayer_Package renames Standard.org.mapeditor.core.TileLayer_Package;
    procedure Initialize_Fields (This : in out PropsTileMapPlacementVisitor'Class) is
    begin
       null;

@@ -29,6 +29,8 @@ package org.allbinary.input.automation.module.configuration.BlankModuleConfigura
    type BlankModuleConfigurationJPanel_Access is access all BlankModuleConfigurationJPanel'Class;
    type BlankModuleConfigurationJPanel_Access_Array is array (Natural range <>) of BlankModuleConfigurationJPanel_Access;
    type BlankModuleConfigurationJPanel_Access_Array_Access is access all BlankModuleConfigurationJPanel_Access_Array;
+   type BlankModuleConfigurationJPanel_Access_Array_Access_Array is array (Natural range <>) of BlankModuleConfigurationJPanel_Access_Array_Access;
+   type BlankModuleConfigurationJPanel_Access_Array_Access_Array_Access is access all BlankModuleConfigurationJPanel_Access_Array_Access_Array;
 
    type BlankModuleConfigurationJPanel is new JPanel with record
       jLabel1 : JLabel_Access;

@@ -18,6 +18,8 @@ package org.platform.opengl.OpenGLGLU_Package is
    type OpenGLGLU_Access is access all OpenGLGLU'Class;
    type OpenGLGLU_Access_Array is array (Natural range <>) of OpenGLGLU_Access;
    type OpenGLGLU_Access_Array_Access is access all OpenGLGLU_Access_Array;
+   type OpenGLGLU_Access_Array_Access_Array is array (Natural range <>) of OpenGLGLU_Access_Array_Access;
+   type OpenGLGLU_Access_Array_Access_Array_Access is access all OpenGLGLU_Access_Array_Access_Array;
 
    type OpenGLGLU is new Java_Object with null record;
    instance : OpenGLGLU_Access;

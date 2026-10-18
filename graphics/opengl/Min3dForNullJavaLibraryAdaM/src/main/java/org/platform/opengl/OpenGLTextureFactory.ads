@@ -23,6 +23,8 @@ package org.platform.opengl.OpenGLTextureFactory_Package is
    type OpenGLTextureFactory_Access is access all OpenGLTextureFactory'Class;
    type OpenGLTextureFactory_Access_Array is array (Natural range <>) of OpenGLTextureFactory_Access;
    type OpenGLTextureFactory_Access_Array_Access is access all OpenGLTextureFactory_Access_Array;
+   type OpenGLTextureFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLTextureFactory_Access_Array_Access;
+   type OpenGLTextureFactory_Access_Array_Access_Array_Access is access all OpenGLTextureFactory_Access_Array_Access_Array;
 
    type OpenGLTextureFactory is new PlatformTextureBaseFactory with record
       gluUtils : OpenGLGLUUtils_Access;

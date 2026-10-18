@@ -22,27 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
-with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
-with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
-with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.CreateUserFactory_Package; use org.allbinary.business.user.CreateUserFactory_Package;
 
 package org.allbinary.business.user.NewUserFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
-   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
-   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
-   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
    type NewUserFactory is tagged;
    type NewUserFactory_Access is access all NewUserFactory'Class;
    type NewUserFactory_Access_Array is array (Natural range <>) of NewUserFactory_Access;
    type NewUserFactory_Access_Array_Access is access all NewUserFactory_Access_Array;
+   type NewUserFactory_Access_Array_Access_Array is array (Natural range <>) of NewUserFactory_Access_Array_Access;
+   type NewUserFactory_Access_Array_Access_Array_Access is access all NewUserFactory_Access_Array_Access_Array;
 
    type NewUserFactory is new Java_Object with null record;
 

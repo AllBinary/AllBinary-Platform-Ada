@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.platform.opengl.OpenGLTextureFactory_Package is
 
    procedure Initialize_Fields (This : in out OpenGLTextureFactory'Class) is

@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.j2me.GraphicsException_Package; use org.allbinary.graphics.j2me.GraphicsException_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
+with org.allbinary.graphics.j2me.dialog.JButton_Package; use org.allbinary.graphics.j2me.dialog.JButton_Package;
+with org.allbinary.graphics.j2me.dialog.GridLayout_Package; use org.allbinary.graphics.j2me.dialog.GridLayout_Package;
+with org.allbinary.graphics.j2me.dialog.JLabel_Package; use org.allbinary.graphics.j2me.dialog.JLabel_Package;
+
 package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
 
+   package GraphicsException_Package renames Standard.org.allbinary.graphics.j2me.GraphicsException_Package;
+   package WorkAreaJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+   package WorkAreaJPanelInterface_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
    procedure Initialize_Fields (This : in out NewWorkAreaJDialog'Class) is
    begin
       null;

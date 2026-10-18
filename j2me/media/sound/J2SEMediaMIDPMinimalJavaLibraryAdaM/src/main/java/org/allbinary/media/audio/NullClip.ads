@@ -31,7 +31,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.sound.sampled.LineListener_Package; use javax.sound.sampled.LineListener_Package;
 --  with javax.sound.sampled.LineUnavailableException_Package; use javax.sound.sampled.LineUnavailableException_Package;
 with org.allbinary.media.audio.NullJ2SEControl_Package; use org.allbinary.media.audio.NullJ2SEControl_Package;
-with org.allbinary.media.audio.NullAudioFormat_Package; use org.allbinary.media.audio.NullAudioFormat_Package;
 
 package org.allbinary.media.audio.NullClip_Package is
 
@@ -40,8 +39,10 @@ package org.allbinary.media.audio.NullClip_Package is
    type NullClip_Access is access all NullClip'Class;
    type NullClip_Access_Array is array (Natural range <>) of NullClip_Access;
    type NullClip_Access_Array_Access is access all NullClip_Access_Array;
+   type NullClip_Access_Array_Access_Array is array (Natural range <>) of NullClip_Access_Array_Access;
+   type NullClip_Access_Array_Access_Array_Access is access all NullClip_Access_Array_Access_Array;
 
-   type NullClip is new Clip with null record;
+   type NullClip is new Java_Object and Clip with null record;
    NULL_CONTROL : NullJ2SEControl_Access;
 
    procedure Initialize (This : in out NullClip'Class);

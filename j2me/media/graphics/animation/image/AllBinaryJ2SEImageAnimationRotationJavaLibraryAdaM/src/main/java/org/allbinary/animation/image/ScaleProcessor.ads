@@ -37,6 +37,8 @@ package org.allbinary.animation.image.ScaleProcessor_Package is
    type ScaleProcessor_Access is access all ScaleProcessor'Class;
    type ScaleProcessor_Access_Array is array (Natural range <>) of ScaleProcessor_Access;
    type ScaleProcessor_Access_Array_Access is access all ScaleProcessor_Access_Array;
+   type ScaleProcessor_Access_Array_Access_Array is array (Natural range <>) of ScaleProcessor_Access_Array_Access;
+   type ScaleProcessor_Access_Array_Access_Array_Access is access all ScaleProcessor_Access_Array_Access_Array;
 
    type ScaleProcessor is new ScaleBaseProcessor with record
       logUtil : LogUtil_Access;

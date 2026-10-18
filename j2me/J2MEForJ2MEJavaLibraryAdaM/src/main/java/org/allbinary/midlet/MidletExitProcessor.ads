@@ -32,6 +32,8 @@ package org.allbinary.midlet.MidletExitProcessor_Package is
    type MidletExitProcessor_Access is access all MidletExitProcessor'Class;
    type MidletExitProcessor_Access_Array is array (Natural range <>) of MidletExitProcessor_Access;
    type MidletExitProcessor_Access_Array_Access is access all MidletExitProcessor_Access_Array;
+   type MidletExitProcessor_Access_Array_Access_Array is array (Natural range <>) of MidletExitProcessor_Access_Array_Access;
+   type MidletExitProcessor_Access_Array_Access_Array_Access is access all MidletExitProcessor_Access_Array_Access_Array;
 
    type MidletExitProcessor is new Processor with record
       midlet : MIDlet_Access;

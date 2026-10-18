@@ -30,8 +30,10 @@ package org.allbinary.game.configuration.persistance.NullRecordComparator_Packag
    type NullRecordComparator_Access is access all NullRecordComparator'Class;
    type NullRecordComparator_Access_Array is array (Natural range <>) of NullRecordComparator_Access;
    type NullRecordComparator_Access_Array_Access is access all NullRecordComparator_Access_Array;
+   type NullRecordComparator_Access_Array_Access_Array is array (Natural range <>) of NullRecordComparator_Access_Array_Access;
+   type NullRecordComparator_Access_Array_Access_Array_Access is access all NullRecordComparator_Access_Array_Access_Array;
 
-   type NullRecordComparator is new RecordComparator with null record;
+   type NullRecordComparator is new Java_Object and RecordComparator with null record;
    NULL_RECORD_COMPARATOR : NullRecordComparator_Access;
 
    procedure Initialize (This : in out NullRecordComparator'Class);

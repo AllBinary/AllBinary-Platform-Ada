@@ -23,34 +23,20 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
-with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
-with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
-with org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimation_Package;
-with org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package;
 
 package org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimationFactory_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type AllBinaryAndroidImageRotationAnimationFactory is tagged;
    type AllBinaryAndroidImageRotationAnimationFactory_Access is access all AllBinaryAndroidImageRotationAnimationFactory'Class;
    type AllBinaryAndroidImageRotationAnimationFactory_Access_Array is array (Natural range <>) of AllBinaryAndroidImageRotationAnimationFactory_Access;
    type AllBinaryAndroidImageRotationAnimationFactory_Access_Array_Access is access all AllBinaryAndroidImageRotationAnimationFactory_Access_Array;
+   type AllBinaryAndroidImageRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of AllBinaryAndroidImageRotationAnimationFactory_Access_Array_Access;
+   type AllBinaryAndroidImageRotationAnimationFactory_Access_Array_Access_Array_Access is access all AllBinaryAndroidImageRotationAnimationFactory_Access_Array_Access_Array;
 
    type AllBinaryAndroidImageRotationAnimationFactory is new BaseImageAnimationFactory with record
       angleIncrement : Short_Integer;

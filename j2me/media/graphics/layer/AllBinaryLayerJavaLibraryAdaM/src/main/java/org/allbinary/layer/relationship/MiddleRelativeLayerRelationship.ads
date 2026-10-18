@@ -20,21 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.layer.relationship.RelativeLayerRelationship_Package; use org.allbinary.layer.relationship.RelativeLayerRelationship_Package;
 
 package org.allbinary.layer.relationship.MiddleRelativeLayerRelationship_Package is
 
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type MiddleRelativeLayerRelationship is tagged;
    type MiddleRelativeLayerRelationship_Access is access all MiddleRelativeLayerRelationship'Class;
    type MiddleRelativeLayerRelationship_Access_Array is array (Natural range <>) of MiddleRelativeLayerRelationship_Access;
    type MiddleRelativeLayerRelationship_Access_Array_Access is access all MiddleRelativeLayerRelationship_Access_Array;
+   type MiddleRelativeLayerRelationship_Access_Array_Access_Array is array (Natural range <>) of MiddleRelativeLayerRelationship_Access_Array_Access;
+   type MiddleRelativeLayerRelationship_Access_Array_Access_Array_Access is access all MiddleRelativeLayerRelationship_Access_Array_Access_Array;
 
    type MiddleRelativeLayerRelationship is new RelativeLayerRelationship with null record;
 

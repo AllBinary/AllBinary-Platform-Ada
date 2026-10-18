@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+with org.allbinary.game.paint.ColorFillPaintable_Package; use org.allbinary.game.paint.ColorFillPaintable_Package;
+with org.allbinary.game.paint.OverScanColorFillPaintable_Package; use org.allbinary.game.paint.OverScanColorFillPaintable_Package;
+
 package body org.allbinary.game.paint.ColorFillPaintableFactory_Package is
 
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
    procedure Initialize_Fields (This : in out ColorFillPaintableFactory'Class) is
    begin
       null;
@@ -44,9 +51,9 @@ package body org.allbinary.game.paint.ColorFillPaintableFactory_Package is
    begin
         operatingSystem := OperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
         if operatingSystem.isOverScan then
-            return OverScanColorFillPaintable_Package.Create (basicColor);
+            return ColorFillBasePaintable_Access (OverScanColorFillPaintable_Package.Create (basicColor));
         else
-            return ColorFillPaintable_Package.Create (basicColor);
+            return ColorFillBasePaintable_Access (ColorFillPaintable_Package.Create (basicColor));
         end if;
    end getInstance;
 

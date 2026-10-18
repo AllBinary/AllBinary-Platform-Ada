@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.category.CategoryEntity_Package; use org.allbinary.data.tables.category.CategoryEntity_Package;
 
 package org.allbinary.data.tables.category.CategoryEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CategoryEntityFactory is tagged;
    type CategoryEntityFactory_Access is access all CategoryEntityFactory'Class;
    type CategoryEntityFactory_Access_Array is array (Natural range <>) of CategoryEntityFactory_Access;
    type CategoryEntityFactory_Access_Array_Access is access all CategoryEntityFactory_Access_Array;
+   type CategoryEntityFactory_Access_Array_Access_Array is array (Natural range <>) of CategoryEntityFactory_Access_Array_Access;
+   type CategoryEntityFactory_Access_Array_Access_Array_Access is access all CategoryEntityFactory_Access_Array_Access_Array;
 
    type CategoryEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

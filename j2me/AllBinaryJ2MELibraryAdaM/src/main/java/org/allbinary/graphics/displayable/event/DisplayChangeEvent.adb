@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package is
 
    procedure Initialize_Fields (This : in out DisplayChangeEvent'Class) is

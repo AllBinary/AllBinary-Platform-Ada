@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllBinaryMidlet_Package;
+
 package body org.allbinary.midlet.MidletFactoryInterface_Package is
 
    procedure Initialize_Fields (This : in out MidletFactoryInterface'Class) is

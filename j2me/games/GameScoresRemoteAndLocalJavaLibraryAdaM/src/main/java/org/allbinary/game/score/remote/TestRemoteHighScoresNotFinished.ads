@@ -28,6 +28,8 @@ package org.allbinary.game.score.remote.TestRemoteHighScoresNotFinished_Package 
    type TestRemoteHighScoresNotFinished_Access is access all TestRemoteHighScoresNotFinished'Class;
    type TestRemoteHighScoresNotFinished_Access_Array is array (Natural range <>) of TestRemoteHighScoresNotFinished_Access;
    type TestRemoteHighScoresNotFinished_Access_Array_Access is access all TestRemoteHighScoresNotFinished_Access_Array;
+   type TestRemoteHighScoresNotFinished_Access_Array_Access_Array is array (Natural range <>) of TestRemoteHighScoresNotFinished_Access_Array_Access;
+   type TestRemoteHighScoresNotFinished_Access_Array_Access_Array_Access is access all TestRemoteHighScoresNotFinished_Access_Array_Access_Array;
 
    type TestRemoteHighScoresNotFinished is new Java_Object with null record;
    PATH : Unbounded_String;

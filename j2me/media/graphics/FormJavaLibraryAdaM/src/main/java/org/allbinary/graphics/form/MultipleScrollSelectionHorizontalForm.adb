@@ -1,15 +1,31 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+
 package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out MultipleScrollSelectionHorizontalForm'Class) is
    begin
       null;
       This.rectPaintable := NullPaintable_Package.getInstance;
       This.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable := ItemIndexPaintable_Package.getInstance;
       This.backgroundColor := BasicColorFactory_Package.getInstance.TRANSPARENT_GREY.intValue;
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access)));
       This.logged := False;
       This.fontHeight := 0;
    end Initialize_Fields;
@@ -23,7 +39,7 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
       foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       scrollSelectionForm : ScrollSelectionForm_Access;
    begin
-        scrollSelectionForm := MultipleScrollSelectionHorizontalForm_Package.Create (title, items, ItemPaintableFactory_Package.getInstance, border, backgroundBasicColor, foregroundBasicColor);
+        scrollSelectionForm := ScrollSelectionForm_Access (MultipleScrollSelectionHorizontalForm_Package.Create (title, items, ItemPaintableFactory_Package.getInstance, border, backgroundBasicColor, foregroundBasicColor));
         scrollSelectionForm.init (rectangle, formType);
         return scrollSelectionForm;
    end createForm;
@@ -39,7 +55,7 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
             null;
         else
             --  Java nested class MPaintable: move it to its own package
-            This.rectPaintable := MPaintable_Package.Create;
+            This.rectPaintable := Paintable_Access (MPaintable_Package.Create);
         end if;
    end Initialize;
 
@@ -66,9 +82,9 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
         ScrollSelectionForm (This).init (rectangle, formType);
         formTypeFactory := FormTypeFactory_Package.getInstance;
         if (formType) = (formTypeFactory.HORIZONTAL_FORM) then
-            This.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable := MultipleScrollSelectionFormHorizontalPaintable_Package.Create (MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access));
+            This.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable := ItemIndexPaintable_Access (MultipleScrollSelectionFormHorizontalPaintable_Package.Create (MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access)));
         elsif (formType) = (formTypeFactory.VERTICAL_CENTER_FORM) then
-            This.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable := MultipleScrollSelectionFormVerticalPaintable_Package.Create (MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access));
+            This.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable := ItemIndexPaintable_Access (MultipleScrollSelectionFormVerticalPaintable_Package.Create (MultipleScrollSelectionHorizontalForm_Access'(This'Unchecked_Access)));
         elsif (formType) = (formTypeFactory.NULL_FORM_TYPE) then
             null;
         else
@@ -177,8 +193,24 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
 end org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+
 package body org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out MultipleScrollSelectionFormHorizontalPaintable'Class) is
    begin
       null;
@@ -219,8 +251,24 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPa
 end org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+
 package body org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out MultipleScrollSelectionFormVerticalPaintable'Class) is
    begin
       null;

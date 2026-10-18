@@ -20,44 +20,26 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.eclipse.swt.SWT_Package; use org.eclipse.swt.SWT_Package;
 with org.eclipse.swt.widgets.Canvas_Package; use org.eclipse.swt.widgets.Canvas_Package;
 with org.eclipse.swt.widgets.Composite_Package; use org.eclipse.swt.widgets.Composite_Package;
-with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Package;
-with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.eclipse.swt.events.PaintEvent_Package; use org.eclipse.swt.events.PaintEvent_Package;
-with org.eclipse.swt.events.PaintListener_Package; use org.eclipse.swt.events.PaintListener_Package;
-with org.eclipse.swt.graphics.Transform_Package; use org.eclipse.swt.graphics.Transform_Package;
-with org.eclipse.swt.widgets.Display_Package; use org.eclipse.swt.widgets.Display_Package;
-with org.microemu.app.BareMain_Package; use org.microemu.app.BareMain_Package;
 
 package org.allbinary.media.image.ImageUtil_Package is
 
-   package SWT_Package renames Standard.org.eclipse.swt.SWT_Package;
    package Canvas_Package renames Standard.org.eclipse.swt.widgets.Canvas_Package;
    package Composite_Package renames Standard.org.eclipse.swt.widgets.Composite_Package;
-   package GC_Package renames Standard.org.eclipse.swt.graphics.GC_Package;
-   package ImageData_Package renames Standard.org.eclipse.swt.graphics.ImageData_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package PaintEvent_Package renames Standard.org.eclipse.swt.events.PaintEvent_Package;
-   package PaintListener_Package renames Standard.org.eclipse.swt.events.PaintListener_Package;
-   package Transform_Package renames Standard.org.eclipse.swt.graphics.Transform_Package;
-   package Display_Package renames Standard.org.eclipse.swt.widgets.Display_Package;
-   package BareMain_Package renames Standard.org.microemu.app.BareMain_Package;
 
    type ImageUtil is tagged;
    type ImageUtil_Access is access all ImageUtil'Class;
    type ImageUtil_Access_Array is array (Natural range <>) of ImageUtil_Access;
    type ImageUtil_Access_Array_Access is access all ImageUtil_Access_Array;
+   type ImageUtil_Access_Array_Access_Array is array (Natural range <>) of ImageUtil_Access_Array_Access;
+   type ImageUtil_Access_Array_Access_Array_Access is access all ImageUtil_Access_Array_Access_Array;
 
    type ImageUtil is new Java_Object with record
       logUtil : LogUtil_Access;

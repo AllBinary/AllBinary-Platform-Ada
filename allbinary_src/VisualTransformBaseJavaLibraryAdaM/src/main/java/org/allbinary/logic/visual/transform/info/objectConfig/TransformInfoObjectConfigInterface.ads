@@ -21,14 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package; use org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
 package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package DomDocumentMappingInterface_Package renames Standard.org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
@@ -36,6 +34,8 @@ package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObje
    type TransformInfoObjectConfigInterface_Access is access all TransformInfoObjectConfigInterface'Class;
    type TransformInfoObjectConfigInterface_Access_Array is array (Natural range <>) of TransformInfoObjectConfigInterface_Access;
    type TransformInfoObjectConfigInterface_Access_Array_Access is access all TransformInfoObjectConfigInterface_Access_Array;
+   type TransformInfoObjectConfigInterface_Access_Array_Access_Array is array (Natural range <>) of TransformInfoObjectConfigInterface_Access_Array_Access;
+   type TransformInfoObjectConfigInterface_Access_Array_Access_Array_Access is access all TransformInfoObjectConfigInterface_Access_Array_Access_Array;
    function containsView (This : in out TransformInfoObjectConfigInterface; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return Boolean is abstract;
    function getName (This : in out TransformInfoObjectConfigInterface) return Unbounded_String is abstract;
    function getTransformsGroup (This : in out TransformInfoObjectConfigInterface; group : Unbounded_String) return BasicArrayList_Access is abstract;

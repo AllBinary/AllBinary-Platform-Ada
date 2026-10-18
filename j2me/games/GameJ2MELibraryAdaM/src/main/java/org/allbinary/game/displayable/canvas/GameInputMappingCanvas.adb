@@ -13,8 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
+with org.allbinary.game.paint.ColorFillPaintableFactory_Package; use org.allbinary.game.paint.ColorFillPaintableFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package; use org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
+
 package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package is
 
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package ColorFillPaintableFactory_Package renames Standard.org.allbinary.game.paint.ColorFillPaintableFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out GameInputMappingCanvas'Class) is
    begin
       null;
@@ -25,7 +41,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
       This.NONE := GameKeyFactory_Package.getInstance.NONE;
       
       This.selectedGameKey := This.NONE;
-      This.selectedInput := This.NONE;
+      This.selectedInput := Input_Access (This.NONE);
       This.inputFactory := InputFactory_Package.getInstance;
    end Initialize_Fields;
 
@@ -62,7 +78,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
         GameCommandCanvas (This).close;
         This.paintable.process;
         This.selectedGameKey := This.NONE;
-        This.selectedInput := This.NONE;
+        This.selectedInput := Input_Access (This.NONE);
         GameInputMappingCanvas'Class (This).update;
    end close;
 
@@ -140,7 +156,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Selected GameKey: ")).append (This.stringUtil.toString (gameKey)).toString, GameInputMappingCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedAction"));
         This.selectedGameKey := gameKey;
-        This.selectedInput := This.NONE;
+        This.selectedInput := Input_Access (This.NONE);
         This.helpPaintable.update (This.selectedGameKey, This.selectedInput);
         This.repaintBehavior.onChangeRepaint (GameInputMappingCanvas_Access'(This'Unchecked_Access));
    end setSelectedAction;
@@ -161,7 +177,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
         This.logUtil.putF (stringBuffer.toString, GameInputMappingCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("gameActionCrud"));
         if (This.selectedInput) = (This.NONE) then
             list := This.inputMapping.getInputMapping.getMappedInput (This.selectedGameKey);
-            isInputAlreadyMappedToSelectedAction := list.contains (input);
+            isInputAlreadyMappedToSelectedAction := list.contains (Java_Object_Access (input));
             if isInputAlreadyMappedToSelectedAction then
                 This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Already Mapped Input: ")).append (This.stringUtil.toString (input)).toString, GameInputMappingCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("gameActionCrud"));
                 This.selectedInput := input;
@@ -221,7 +237,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
             stringBuffer.append (This.stringUtil.toString (This.selectedInput));
             This.logUtil.putF (stringBuffer.toString, GameInputMappingCanvas_Access'(This'Unchecked_Access), METHOD_NAME);
             This.inputMapping.getInputMapping.remove (This.selectedGameKey, This.selectedInput);
-            This.selectedInput := This.NONE;
+            This.selectedInput := Input_Access (This.NONE);
             GameInputMappingCanvas'Class (This).update;
         else
             This.logUtil.putF (To_Unbounded_String ("Can't Remove Last Key Mapping"), GameInputMappingCanvas_Access'(This'Unchecked_Access), METHOD_NAME);

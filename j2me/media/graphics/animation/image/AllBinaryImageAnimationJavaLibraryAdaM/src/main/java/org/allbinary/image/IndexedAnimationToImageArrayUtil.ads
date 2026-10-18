@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.image.AnimationFrameToImageUtil_Package; use org.allbinary.image.AnimationFrameToImageUtil_Package;
 
 package org.allbinary.image.IndexedAnimationToImageArrayUtil_Package is
 
@@ -33,6 +32,8 @@ package org.allbinary.image.IndexedAnimationToImageArrayUtil_Package is
    type IndexedAnimationToImageArrayUtil_Access is access all IndexedAnimationToImageArrayUtil'Class;
    type IndexedAnimationToImageArrayUtil_Access_Array is array (Natural range <>) of IndexedAnimationToImageArrayUtil_Access;
    type IndexedAnimationToImageArrayUtil_Access_Array_Access is access all IndexedAnimationToImageArrayUtil_Access_Array;
+   type IndexedAnimationToImageArrayUtil_Access_Array_Access_Array is array (Natural range <>) of IndexedAnimationToImageArrayUtil_Access_Array_Access;
+   type IndexedAnimationToImageArrayUtil_Access_Array_Access_Array_Access is access all IndexedAnimationToImageArrayUtil_Access_Array_Access_Array;
 
    type IndexedAnimationToImageArrayUtil is new Java_Object with null record;
 

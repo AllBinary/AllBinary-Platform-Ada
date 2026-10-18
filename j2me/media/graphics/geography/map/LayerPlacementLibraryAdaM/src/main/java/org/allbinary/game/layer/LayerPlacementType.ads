@@ -28,6 +28,8 @@ package org.allbinary.game.layer.LayerPlacementType_Package is
    type LayerPlacementType_Access is access all LayerPlacementType'Class;
    type LayerPlacementType_Access_Array is array (Natural range <>) of LayerPlacementType_Access;
    type LayerPlacementType_Access_Array_Access is access all LayerPlacementType_Access_Array;
+   type LayerPlacementType_Access_Array_Access_Array is array (Natural range <>) of LayerPlacementType_Access_Array_Access;
+   type LayerPlacementType_Access_Array_Access_Array_Access is access all LayerPlacementType_Access_Array_Access_Array;
 
    type LayerPlacementType is new Java_Object with record
       type_Id : Integer;

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.eclipse.swt.SWT_Package; use org.eclipse.swt.SWT_Package;
+with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
+
 package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
 
+   package SWT_Package renames Standard.org.eclipse.swt.SWT_Package;
+   package ImageData_Package renames Standard.org.eclipse.swt.graphics.ImageData_Package;
    procedure Initialize_Fields (This : in out ImageSwtRotationUtil'Class) is
    begin
       null;

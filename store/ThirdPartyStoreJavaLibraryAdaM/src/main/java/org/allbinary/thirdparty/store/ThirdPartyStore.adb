@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.thirdparty.store.ThirdPartyStore_Package is
 
    procedure Initialize_Fields (This : in out ThirdPartyStore'Class) is

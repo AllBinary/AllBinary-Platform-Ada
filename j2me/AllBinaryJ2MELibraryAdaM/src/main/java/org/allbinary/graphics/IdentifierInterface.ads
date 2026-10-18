@@ -28,6 +28,8 @@ package org.allbinary.graphics.IdentifierInterface_Package is
    type IdentifierInterface_Access is access all IdentifierInterface'Class;
    type IdentifierInterface_Access_Array is array (Natural range <>) of IdentifierInterface_Access;
    type IdentifierInterface_Access_Array_Access is access all IdentifierInterface_Access_Array;
+   type IdentifierInterface_Access_Array_Access_Array is array (Natural range <>) of IdentifierInterface_Access_Array_Access;
+   type IdentifierInterface_Access_Array_Access_Array_Access is access all IdentifierInterface_Access_Array_Access_Array;
    function getId (This : in out IdentifierInterface) return Integer is abstract;
 
 end org.allbinary.graphics.IdentifierInterface_Package;

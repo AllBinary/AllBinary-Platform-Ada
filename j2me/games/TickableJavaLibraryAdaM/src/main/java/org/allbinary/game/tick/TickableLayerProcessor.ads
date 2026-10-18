@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
-with org.allbinary.game.tick.TickableLayerManager_Package; use org.allbinary.game.tick.TickableLayerManager_Package;
-with org.allbinary.game.tick.TickableInterface_Package; use org.allbinary.game.tick.TickableInterface_Package;
 
 package org.allbinary.game.tick.TickableLayerProcessor_Package is
 
@@ -36,6 +34,8 @@ package org.allbinary.game.tick.TickableLayerProcessor_Package is
    type TickableLayerProcessor_Access is access all TickableLayerProcessor'Class;
    type TickableLayerProcessor_Access_Array is array (Natural range <>) of TickableLayerProcessor_Access;
    type TickableLayerProcessor_Access_Array_Access is access all TickableLayerProcessor_Access_Array;
+   type TickableLayerProcessor_Access_Array_Access_Array is array (Natural range <>) of TickableLayerProcessor_Access_Array_Access;
+   type TickableLayerProcessor_Access_Array_Access_Array_Access is access all TickableLayerProcessor_Access_Array_Access_Array;
 
    type TickableLayerProcessor is new LayerProcessor with null record;
 

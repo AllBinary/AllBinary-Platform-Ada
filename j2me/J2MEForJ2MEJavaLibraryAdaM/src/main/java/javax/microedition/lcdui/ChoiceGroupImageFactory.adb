@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body javax.microedition.lcdui.ChoiceGroupImageFactory_Package is
 
    procedure Initialize_Fields (This : in out ChoiceGroupImageFactory'Class) is

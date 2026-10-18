@@ -28,6 +28,8 @@ package org.allbinary.game.ag.vector.MineVectorData_Package is
    type MineVectorData_Access is access all MineVectorData'Class;
    type MineVectorData_Access_Array is array (Natural range <>) of MineVectorData_Access;
    type MineVectorData_Access_Array_Access is access all MineVectorData_Access_Array;
+   type MineVectorData_Access_Array_Access_Array is array (Natural range <>) of MineVectorData_Access_Array_Access;
+   type MineVectorData_Access_Array_Access_Array_Access is access all MineVectorData_Access_Array_Access_Array;
 
    type MineVectorData is new Java_Object with null record;
    points : Integer_Array_Access_Array_Access_Array_Access;

@@ -13,14 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+
 package body org.allbinary.game.layer.item.RTSLayerTextAnimation_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out RTSLayerTextAnimation'Class) is
    begin
       null;
       
       
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (RTSLayerTextAnimation_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (RTSLayerTextAnimation_Access'(This'Unchecked_Access)));
       This.fontHeight := 0;
    end Initialize_Fields;
 

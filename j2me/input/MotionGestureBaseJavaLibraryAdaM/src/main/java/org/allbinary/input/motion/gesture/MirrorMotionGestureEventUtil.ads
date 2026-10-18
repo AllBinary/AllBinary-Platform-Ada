@@ -20,15 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package; use org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 
 package org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package is
 
-   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package MotionEventCircularPool_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
    package MotionGestureEvent_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 
@@ -36,6 +32,8 @@ package org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package 
    type MirrorMotionGestureEventUtil_Access is access all MirrorMotionGestureEventUtil'Class;
    type MirrorMotionGestureEventUtil_Access_Array is array (Natural range <>) of MirrorMotionGestureEventUtil_Access;
    type MirrorMotionGestureEventUtil_Access_Array_Access is access all MirrorMotionGestureEventUtil_Access_Array;
+   type MirrorMotionGestureEventUtil_Access_Array_Access_Array is array (Natural range <>) of MirrorMotionGestureEventUtil_Access_Array_Access;
+   type MirrorMotionGestureEventUtil_Access_Array_Access_Array_Access is access all MirrorMotionGestureEventUtil_Access_Array_Access_Array;
 
    type MirrorMotionGestureEventUtil is new Java_Object with record
       motionEventCircularPool : MotionEventCircularPool_Access;

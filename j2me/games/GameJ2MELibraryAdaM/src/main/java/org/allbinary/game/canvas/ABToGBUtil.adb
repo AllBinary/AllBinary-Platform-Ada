@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullCanvas_Package; use javax.microedition.lcdui.NullCanvas_Package;
+
 package body org.allbinary.game.canvas.ABToGBUtil_Package is
 
+   package NullCanvas_Package renames Standard.javax.microedition.lcdui.NullCanvas_Package;
    procedure Initialize_Fields (This : in out ABToGBUtil'Class) is
    begin
       null;

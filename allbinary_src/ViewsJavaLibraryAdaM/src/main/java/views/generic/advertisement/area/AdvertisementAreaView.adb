@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
+with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityFactory_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityFactory_Package;
+with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
+
 package body views.generic_Id.advertisement.area.AdvertisementAreaView_Package is
 
+   package AdvertisementAreaData_Package renames Standard.org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
+   package AdvertisementAreaInterface_Package renames Standard.org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
+   package AdvertisementAreasEntityFactory_Package renames Standard.org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityFactory_Package;
+   package AdvertisementAreasEntityInterface_Package renames Standard.org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
    procedure Initialize_Fields (This : in out AdvertisementAreaView'Class) is
    begin
       null;

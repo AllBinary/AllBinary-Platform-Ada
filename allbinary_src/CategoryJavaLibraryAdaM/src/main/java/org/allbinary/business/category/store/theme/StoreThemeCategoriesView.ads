@@ -20,16 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;
-with org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoriesView_Package is
 
-   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -38,8 +35,10 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoriesView_Pac
    type StoreThemeCategoriesView_Access is access all StoreThemeCategoriesView'Class;
    type StoreThemeCategoriesView_Access_Array is array (Natural range <>) of StoreThemeCategoriesView_Access;
    type StoreThemeCategoriesView_Access_Array_Access is access all StoreThemeCategoriesView_Access_Array;
+   type StoreThemeCategoriesView_Access_Array_Access_Array is array (Natural range <>) of StoreThemeCategoriesView_Access_Array_Access;
+   type StoreThemeCategoriesView_Access_Array_Access_Array_Access is access all StoreThemeCategoriesView_Access_Array_Access_Array;
 
-   type StoreThemeCategoriesView is new DomNodeInterface with record
+   type StoreThemeCategoriesView is new Java_Object and DomNodeInterface with record
       categoryInterface : StoreThemeCategoryInterface_Access;
    end record;
 

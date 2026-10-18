@@ -21,32 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
-with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
-with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package;
 
 package org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
-   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
-   package Tokenizer_Package renames Standard.org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicStoreFront is tagged;
    type BasicStoreFront_Access is access all BasicStoreFront'Class;
    type BasicStoreFront_Access_Array is array (Natural range <>) of BasicStoreFront_Access;
    type BasicStoreFront_Access_Array_Access is access all BasicStoreFront_Access_Array;
+   type BasicStoreFront_Access_Array_Access_Array is array (Natural range <>) of BasicStoreFront_Access_Array_Access;
+   type BasicStoreFront_Access_Array_Access_Array_Access is access all BasicStoreFront_Access_Array_Access_Array;
 
-   type BasicStoreFront is new BasicStoreFrontInterface with record
+   type BasicStoreFront is new Java_Object and BasicStoreFrontInterface with record
       name : Unbounded_String;
       userName : Unbounded_String;
       basketName : Unbounded_String;

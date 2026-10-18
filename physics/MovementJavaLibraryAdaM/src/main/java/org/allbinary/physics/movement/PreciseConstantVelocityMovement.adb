@@ -1,8 +1,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logic.math.ScaleFactorFactory_Package;
+
 package body org.allbinary.physics.movement.PreciseConstantVelocityMovement_Package is
 
+   package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
+   package ScaleFactorFactory_Package renames Standard.org.allbinary.logic.math.ScaleFactorFactory_Package;
    procedure Initialize_Fields (This : in out PreciseConstantVelocityMovement'Class) is
    begin
       null;

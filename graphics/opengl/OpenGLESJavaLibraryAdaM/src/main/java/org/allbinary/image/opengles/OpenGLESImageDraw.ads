@@ -30,6 +30,8 @@ package org.allbinary.image.opengles.OpenGLESImageDraw_Package is
    type OpenGLESImageDraw_Access is access all OpenGLESImageDraw'Class;
    type OpenGLESImageDraw_Access_Array is array (Natural range <>) of OpenGLESImageDraw_Access;
    type OpenGLESImageDraw_Access_Array_Access is access all OpenGLESImageDraw_Access_Array;
+   type OpenGLESImageDraw_Access_Array_Access_Array is array (Natural range <>) of OpenGLESImageDraw_Access_Array_Access;
+   type OpenGLESImageDraw_Access_Array_Access_Array_Access is access all OpenGLESImageDraw_Access_Array_Access_Array;
 
    type OpenGLESImageDraw is new Java_Object with null record;
    instance : OpenGLESImageDraw_Access;

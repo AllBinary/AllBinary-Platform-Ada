@@ -21,8 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.draw.CanvasDrawLineString_Package; use org.allbinary.graphics.draw.CanvasDrawLineString_Package;
 with org.allbinary.graphics.paint.InitUpdatePaintable_Package; use org.allbinary.graphics.paint.InitUpdatePaintable_Package;
 with org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package; use org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package;
@@ -30,8 +28,6 @@ with org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package; u
 package org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package CanvasDrawLineString_Package renames Standard.org.allbinary.graphics.draw.CanvasDrawLineString_Package;
    package InitUpdatePaintable_Package renames Standard.org.allbinary.graphics.paint.InitUpdatePaintable_Package;
 
@@ -39,6 +35,8 @@ package org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package i
    type PreGameSelectorPaintable_Access is access all PreGameSelectorPaintable'Class;
    type PreGameSelectorPaintable_Access_Array is array (Natural range <>) of PreGameSelectorPaintable_Access;
    type PreGameSelectorPaintable_Access_Array_Access is access all PreGameSelectorPaintable_Access_Array;
+   type PreGameSelectorPaintable_Access_Array_Access_Array is array (Natural range <>) of PreGameSelectorPaintable_Access_Array_Access;
+   type PreGameSelectorPaintable_Access_Array_Access_Array_Access is access all PreGameSelectorPaintable_Access_Array_Access_Array;
 
    type PreGameSelectorPaintable is new InitUpdatePaintable with record
       title : Unbounded_String;

@@ -29,6 +29,8 @@ package org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package i
    type TouchButtonTurnRightResource_Access is access all TouchButtonTurnRightResource'Class;
    type TouchButtonTurnRightResource_Access_Array is array (Natural range <>) of TouchButtonTurnRightResource_Access;
    type TouchButtonTurnRightResource_Access_Array_Access is access all TouchButtonTurnRightResource_Access_Array;
+   type TouchButtonTurnRightResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonTurnRightResource_Access_Array_Access;
+   type TouchButtonTurnRightResource_Access_Array_Access_Array_Access is access all TouchButtonTurnRightResource_Access_Array_Access_Array;
 
    type TouchButtonTurnRightResource is new TouchButtonResource with null record;
    instance : TouchButtonResource_Access;

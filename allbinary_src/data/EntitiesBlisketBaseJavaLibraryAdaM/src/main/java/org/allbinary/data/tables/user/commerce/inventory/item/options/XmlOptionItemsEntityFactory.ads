@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntity_Package;
 
 package org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type XmlOptionItemsEntityFactory is tagged;
    type XmlOptionItemsEntityFactory_Access is access all XmlOptionItemsEntityFactory'Class;
    type XmlOptionItemsEntityFactory_Access_Array is array (Natural range <>) of XmlOptionItemsEntityFactory_Access;
    type XmlOptionItemsEntityFactory_Access_Array_Access is access all XmlOptionItemsEntityFactory_Access_Array;
+   type XmlOptionItemsEntityFactory_Access_Array_Access_Array is array (Natural range <>) of XmlOptionItemsEntityFactory_Access_Array_Access;
+   type XmlOptionItemsEntityFactory_Access_Array_Access_Array_Access is access all XmlOptionItemsEntityFactory_Access_Array_Access_Array;
 
    type XmlOptionItemsEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

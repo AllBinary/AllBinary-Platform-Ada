@@ -20,22 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.math.PrimitiveLongSingleton_Package; use org.allbinary.logic.math.PrimitiveLongSingleton_Package;
-with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
 
 package org.allbinary.logic.math.PrimitiveLongUtil_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PrimitiveLongUtil is tagged;
    type PrimitiveLongUtil_Access is access all PrimitiveLongUtil'Class;
    type PrimitiveLongUtil_Access_Array is array (Natural range <>) of PrimitiveLongUtil_Access;
    type PrimitiveLongUtil_Access_Array_Access is access all PrimitiveLongUtil_Access_Array;
+   type PrimitiveLongUtil_Access_Array_Access_Array is array (Natural range <>) of PrimitiveLongUtil_Access_Array_Access;
+   type PrimitiveLongUtil_Access_Array_Access_Array_Access is access all PrimitiveLongUtil_Access_Array_Access_Array;
 
    type PrimitiveLongUtil is new Java_Object with record
       logUtil : LogUtil_Access;

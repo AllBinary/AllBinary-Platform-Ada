@@ -32,6 +32,8 @@ package org.allbinary.graphics.opengles.shader.UniformLightPositionOpenGLProcess
    type UniformLightPositionOpenGLProcessor_Access is access all UniformLightPositionOpenGLProcessor'Class;
    type UniformLightPositionOpenGLProcessor_Access_Array is array (Natural range <>) of UniformLightPositionOpenGLProcessor_Access;
    type UniformLightPositionOpenGLProcessor_Access_Array_Access is access all UniformLightPositionOpenGLProcessor_Access_Array;
+   type UniformLightPositionOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of UniformLightPositionOpenGLProcessor_Access_Array_Access;
+   type UniformLightPositionOpenGLProcessor_Access_Array_Access_Array_Access is access all UniformLightPositionOpenGLProcessor_Access_Array_Access_Array;
 
    type UniformLightPositionOpenGLProcessor is new OpenGLObject3dProcessor with null record;
 

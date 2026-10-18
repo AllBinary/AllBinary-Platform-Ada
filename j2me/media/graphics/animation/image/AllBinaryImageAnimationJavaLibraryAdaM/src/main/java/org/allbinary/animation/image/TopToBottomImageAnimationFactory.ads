@@ -24,7 +24,6 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
-with org.allbinary.animation.image.TopToBottomImageAnimation_Package; use org.allbinary.animation.image.TopToBottomImageAnimation_Package;
 
 package org.allbinary.animation.image.TopToBottomImageAnimationFactory_Package is
 
@@ -36,6 +35,8 @@ package org.allbinary.animation.image.TopToBottomImageAnimationFactory_Package i
    type TopToBottomImageAnimationFactory_Access is access all TopToBottomImageAnimationFactory'Class;
    type TopToBottomImageAnimationFactory_Access_Array is array (Natural range <>) of TopToBottomImageAnimationFactory_Access;
    type TopToBottomImageAnimationFactory_Access_Array_Access is access all TopToBottomImageAnimationFactory_Access_Array;
+   type TopToBottomImageAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of TopToBottomImageAnimationFactory_Access_Array_Access;
+   type TopToBottomImageAnimationFactory_Access_Array_Access_Array_Access is access all TopToBottomImageAnimationFactory_Access_Array_Access_Array;
 
    type TopToBottomImageAnimationFactory is new BaseImageAnimationFactory with null record;
 

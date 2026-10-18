@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.logic.util.cache.ImageCacheable_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ImageCacheable is tagged;
    type ImageCacheable_Access is access all ImageCacheable'Class;
    type ImageCacheable_Access_Array is array (Natural range <>) of ImageCacheable_Access;
    type ImageCacheable_Access_Array_Access is access all ImageCacheable_Access_Array;
+   type ImageCacheable_Access_Array_Access_Array is array (Natural range <>) of ImageCacheable_Access_Array_Access;
+   type ImageCacheable_Access_Array_Access_Array_Access is access all ImageCacheable_Access_Array_Access_Array;
 
    type ImageCacheable is new Java_Object with record
       name : Unbounded_String;

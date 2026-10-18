@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.event.NullEventListener_Package; use org.allbinary.logic.util.event.NullEventListener_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationListenerInterface_Package; use org.allbinary.game.layer.hud.event.GameNotificationListenerInterface_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEvent_Package; use org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
+
 package body org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package is
 
+   package NullEventListener_Package renames Standard.org.allbinary.logic.util.event.NullEventListener_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out GameNotificationEventHandler'Class) is
    begin
       null;

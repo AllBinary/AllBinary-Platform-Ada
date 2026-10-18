@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
+
 package body org.allbinary.servlet.BlisketServletUtil_Package is
 
+   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package WebappClassLoaderInfo_Package renames Standard.org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
    procedure Initialize_Fields (This : in out BlisketServletUtil'Class) is
    begin
       null;
@@ -44,7 +53,7 @@ package body org.allbinary.servlet.BlisketServletUtil_Package is
    begin
         urlGlobals := AppUrlGlobals_Package.Create;
         urlGlobals.setWebappPath (request.getServletContext.getRealPath (AbPathData_Package.getInstance.SEPARATOR));
-        URLGLOBALS.init (urlGlobals);
+        URLGLOBALS_Package.init (urlGlobals);
         WebappClassLoaderInfo_Package.setLoader (BlisketServletUtil'Class (This).getClass.getClassLoader);
    end init;
 

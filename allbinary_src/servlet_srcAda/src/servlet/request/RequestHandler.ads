@@ -20,29 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.control.workflow.WorkFlowInterface_Package; use org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
-with org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package; use org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package;
 with servlet.request.HttpServlet_Package; use servlet.request.HttpServlet_Package;
 with servlet.request.ServletConfig_Package; use servlet.request.ServletConfig_Package;
-with servlet.request.PrintWriter_Package; use servlet.request.PrintWriter_Package;
-with servlet.request.ServletRequest_Package; use servlet.request.ServletRequest_Package;
-with servlet.request.ServletResponse_Package; use servlet.request.ServletResponse_Package;
 with servlet.request.HttpServletRequest_Package; use servlet.request.HttpServletRequest_Package;
 with servlet.request.HttpServletResponse_Package; use servlet.request.HttpServletResponse_Package;
 
 package servlet.request.RequestHandler_Package is
 
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package WorkFlowInterface_Package renames Standard.org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
-   package RequestWorkFlowFactory_Package renames Standard.org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package;
 
    type RequestHandler is tagged;
    type RequestHandler_Access is access all RequestHandler'Class;
    type RequestHandler_Access_Array is array (Natural range <>) of RequestHandler_Access;
    type RequestHandler_Access_Array_Access is access all RequestHandler_Access_Array;
+   type RequestHandler_Access_Array_Access_Array is array (Natural range <>) of RequestHandler_Access_Array_Access;
+   type RequestHandler_Access_Array_Access_Array_Access is access all RequestHandler_Access_Array_Access_Array;
 
    type RequestHandler is new HttpServlet with record
       logUtil : LogUtil_Access;

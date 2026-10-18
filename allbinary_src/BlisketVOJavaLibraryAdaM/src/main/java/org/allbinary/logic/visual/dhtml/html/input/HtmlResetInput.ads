@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlResetInput_Package is
    type HtmlResetInput_Access is access all HtmlResetInput'Class;
    type HtmlResetInput_Access_Array is array (Natural range <>) of HtmlResetInput_Access;
    type HtmlResetInput_Access_Array_Access is access all HtmlResetInput_Access_Array;
+   type HtmlResetInput_Access_Array_Access_Array is array (Natural range <>) of HtmlResetInput_Access_Array_Access;
+   type HtmlResetInput_Access_Array_Access_Array_Access is access all HtmlResetInput_Access_Array_Access_Array;
 
    type HtmlResetInput is new Java_Object with null record;
 

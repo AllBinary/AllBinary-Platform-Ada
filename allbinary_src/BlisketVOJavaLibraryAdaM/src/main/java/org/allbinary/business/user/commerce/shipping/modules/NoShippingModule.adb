@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.commerce.shipping.modules.NoShippingModule_Package is
 
    procedure Initialize_Fields (This : in out NoShippingModule'Class) is

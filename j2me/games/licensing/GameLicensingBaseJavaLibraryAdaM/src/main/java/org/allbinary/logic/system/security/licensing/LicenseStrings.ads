@@ -28,6 +28,8 @@ package org.allbinary.logic.system.security.licensing.LicenseStrings_Package is
    type LicenseStrings_Access is access all LicenseStrings'Class;
    type LicenseStrings_Access_Array is array (Natural range <>) of LicenseStrings_Access;
    type LicenseStrings_Access_Array_Access is access all LicenseStrings_Access_Array;
+   type LicenseStrings_Access_Array_Access_Array is array (Natural range <>) of LicenseStrings_Access_Array_Access;
+   type LicenseStrings_Access_Array_Access_Array_Access is access all LicenseStrings_Access_Array_Access_Array;
 
    type LicenseStrings is new Java_Object with record
       LOCKED : Unbounded_String;

@@ -20,31 +20,27 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with views.business.context.modules.storefront.customizer.CustomizerUtil_Package; use views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
 with views.business.context.modules.storefront.customizer.includes.globals.GlobalsView_Package; use views.business.context.modules.storefront.customizer.includes.globals.GlobalsView_Package;
 
 package views.business.context.modules.storefront.customizer.includes.globals.NewGlobalsValidationView_Package is
 
-   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
-   package CustomizerUtil_Package renames Standard.views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
 
    type NewGlobalsValidationView is tagged;
    type NewGlobalsValidationView_Access is access all NewGlobalsValidationView'Class;
    type NewGlobalsValidationView_Access_Array is array (Natural range <>) of NewGlobalsValidationView_Access;
    type NewGlobalsValidationView_Access_Array_Access is access all NewGlobalsValidationView_Access_Array;
+   type NewGlobalsValidationView_Access_Array_Access_Array is array (Natural range <>) of NewGlobalsValidationView_Access_Array_Access;
+   type NewGlobalsValidationView_Access_Array_Access_Array_Access is access all NewGlobalsValidationView_Access_Array_Access_Array;
 
    type NewGlobalsValidationView is new GlobalsView and ValidationComponentInterface with record
       logUtil : LogUtil_Access;

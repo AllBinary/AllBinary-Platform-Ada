@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 --  with java.net.URI_Package; use java.net.URI_Package;
 --  with java.net.URL_Package; use java.net.URL_Package;
 --  with java.awt.Desktop_Package; use java.awt.Desktop_Package;
@@ -33,54 +32,27 @@ with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package; use bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
 with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package; use bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
 with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package; use bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
-with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
-with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
-with org.allbinary.gui.dialog.BasicTextJDialog_Package; use org.allbinary.gui.dialog.BasicTextJDialog_Package;
-with org.allbinary.gui.swing.workers.JListSwingWorker_Package; use org.allbinary.gui.swing.workers.JListSwingWorker_Package;
-with org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package; use org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;
-with org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package;
 with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
-with org.allbinary.input.automation.osgi.DesktopBundle_Package; use org.allbinary.input.automation.osgi.DesktopBundle_Package;
-with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-with org.allbinary.logic.java.help.JavaHelpUtil_Package; use org.allbinary.logic.java.help.JavaHelpUtil_Package;
-with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
-with org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package; use org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.input.automation.JFrame_Package; use org.allbinary.input.automation.JFrame_Package;
 
 package org.allbinary.input.automation.InputAutomationJFrame_Package is
 
-   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package InputAutomationBundleActivatorListenerInterface_Package renames Standard.bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
    package InputAutomationConfigurationModuleChangeListener_Package renames Standard.bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
    package InputAutomationRobotChangeListener_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
-   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
-   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
-   package BasicTextJDialog_Package renames Standard.org.allbinary.gui.dialog.BasicTextJDialog_Package;
-   package JListSwingWorker_Package renames Standard.org.allbinary.gui.swing.workers.JListSwingWorker_Package;
-   package InputAutomationConfiguration_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;
-   package InputAutomationConfigurationFactory_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package;
    package InputAutomationConfigurationModuleChangeEvent_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
    package InputAutomationModuleFactoryFactory_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package;
    package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-   package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
    package InputAutomationModuleConfigurations_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
-   package DesktopBundle_Package renames Standard.org.allbinary.input.automation.osgi.DesktopBundle_Package;
-   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
    package InputAutomationRobotChangeEvent_Package renames Standard.org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-   package JavaHelpUtil_Package renames Standard.org.allbinary.logic.java.help.JavaHelpUtil_Package;
-   package WebappClassLoaderInfo_Package renames Standard.org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
-   package InputAutomationClientInformationFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
 
@@ -88,6 +60,8 @@ package org.allbinary.input.automation.InputAutomationJFrame_Package is
    type InputAutomationJFrame_Access is access all InputAutomationJFrame'Class;
    type InputAutomationJFrame_Access_Array is array (Natural range <>) of InputAutomationJFrame_Access;
    type InputAutomationJFrame_Access_Array_Access is access all InputAutomationJFrame_Access_Array;
+   type InputAutomationJFrame_Access_Array_Access_Array is array (Natural range <>) of InputAutomationJFrame_Access_Array_Access;
+   type InputAutomationJFrame_Access_Array_Access_Array_Access is access all InputAutomationJFrame_Access_Array_Access_Array;
 
    type InputAutomationJFrame is new JFrame and InputAutomationConfigurationModuleChangeListener and InputAutomationRobotChangeListener and HelpSetListener with record
       logUtil : LogUtil_Access;

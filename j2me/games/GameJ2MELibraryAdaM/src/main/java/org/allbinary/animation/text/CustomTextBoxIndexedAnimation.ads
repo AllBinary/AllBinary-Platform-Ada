@@ -20,34 +20,30 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.game.input.event.RawKeyEventListener_Package; use org.allbinary.game.input.event.RawKeyEventListener_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.form.item.CustomTextBox_Package; use org.allbinary.graphics.form.item.CustomTextBox_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.animation.text.TextInterface_Package; use org.allbinary.animation.text.TextInterface_Package;
 with org.allbinary.animation.text.TextChangeListener_Package; use org.allbinary.animation.text.TextChangeListener_Package;
 
 package org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
    package RawKeyEventListener_Package renames Standard.org.allbinary.game.input.event.RawKeyEventListener_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
    package CustomTextBox_Package renames Standard.org.allbinary.graphics.form.item.CustomTextBox_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type CustomTextBoxIndexedAnimation is tagged;
    type CustomTextBoxIndexedAnimation_Access is access all CustomTextBoxIndexedAnimation'Class;
    type CustomTextBoxIndexedAnimation_Access_Array is array (Natural range <>) of CustomTextBoxIndexedAnimation_Access;
    type CustomTextBoxIndexedAnimation_Access_Array_Access is access all CustomTextBoxIndexedAnimation_Access_Array;
+   type CustomTextBoxIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of CustomTextBoxIndexedAnimation_Access_Array_Access;
+   type CustomTextBoxIndexedAnimation_Access_Array_Access_Array_Access is access all CustomTextBoxIndexedAnimation_Access_Array_Access_Array;
 
    type CustomTextBoxIndexedAnimation is new IndexedAnimation and RawKeyEventListener and UpdateMyFontInterface and TextInterface with record
       customTextBox : CustomTextBox_Access;

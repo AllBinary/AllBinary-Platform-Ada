@@ -13,14 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with playn.core.PlayN_Package; use playn.core.PlayN_Package;
+
 package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package PlayN_Package renames Standard.playn.core.PlayN_Package;
    procedure Initialize_Fields (This : in out WebCommandProcessor'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.aboutCommandProcessor := AboutCommandProcessor_Package.getInstance;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out WebCommandProcessor'Class) is

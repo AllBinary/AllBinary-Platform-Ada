@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package; use org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package;
-with org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package; use org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
 
 package org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package is
 
@@ -32,6 +31,8 @@ package org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package is
    type DestroyableSimpleBehavior_Access is access all DestroyableSimpleBehavior'Class;
    type DestroyableSimpleBehavior_Access_Array is array (Natural range <>) of DestroyableSimpleBehavior_Access;
    type DestroyableSimpleBehavior_Access_Array_Access is access all DestroyableSimpleBehavior_Access_Array;
+   type DestroyableSimpleBehavior_Access_Array_Access_Array is array (Natural range <>) of DestroyableSimpleBehavior_Access_Array_Access;
+   type DestroyableSimpleBehavior_Access_Array_Access_Array_Access is access all DestroyableSimpleBehavior_Access_Array_Access_Array;
 
    type DestroyableSimpleBehavior is new DestroyableBaseBehavior with record
       ownerLayer : CollidableCompositeLayer_Access;

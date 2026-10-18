@@ -20,21 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.game.terrain.BasicTerrainInfo_Package; use org.allbinary.game.terrain.BasicTerrainInfo_Package;
 
 package org.allbinary.game.terrain.TerrainEvent_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type TerrainEvent is tagged;
    type TerrainEvent_Access is access all TerrainEvent'Class;
    type TerrainEvent_Access_Array is array (Natural range <>) of TerrainEvent_Access;
    type TerrainEvent_Access_Array_Access is access all TerrainEvent_Access_Array;
+   type TerrainEvent_Access_Array_Access_Array is array (Natural range <>) of TerrainEvent_Access_Array_Access;
+   type TerrainEvent_Access_Array_Access_Array_Access is access all TerrainEvent_Access_Array_Access_Array;
 
    type TerrainEvent is new AllBinaryEventObject with record
       basicTerrainInfo : BasicTerrainInfo_Access;

@@ -29,6 +29,8 @@ package org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Pack
    type ItemArraySingletonFactoryInterface_Access is access all ItemArraySingletonFactoryInterface'Class;
    type ItemArraySingletonFactoryInterface_Access_Array is array (Natural range <>) of ItemArraySingletonFactoryInterface_Access;
    type ItemArraySingletonFactoryInterface_Access_Array_Access is access all ItemArraySingletonFactoryInterface_Access_Array;
+   type ItemArraySingletonFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of ItemArraySingletonFactoryInterface_Access_Array_Access;
+   type ItemArraySingletonFactoryInterface_Access_Array_Access_Array_Access is access all ItemArraySingletonFactoryInterface_Access_Array_Access_Array;
    function getItems (This : in out ItemArraySingletonFactoryInterface) return ABCustomItem_Access_Array_Access is abstract;
 
 end org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package;

@@ -23,55 +23,42 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
-with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
-with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
 with org.allbinary.game.input.mapping.InputMappingInterface_Package; use org.allbinary.game.input.mapping.InputMappingInterface_Package;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.paint.ColorFillBasePaintable_Package; use org.allbinary.game.paint.ColorFillBasePaintable_Package;
-with org.allbinary.game.paint.ColorFillPaintableFactory_Package; use org.allbinary.game.paint.ColorFillPaintableFactory_Package;
 with org.allbinary.game.paint.help.HelpPaintable_Package; use org.allbinary.game.paint.help.HelpPaintable_Package;
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package; use org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 with org.allbinary.graphics.paint.ProcessPaintable_Package; use org.allbinary.graphics.paint.ProcessPaintable_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
-with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package; use org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package is
 
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
    package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
-   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
    package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
    package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
-   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
    package InputMappingInterface_Package renames Standard.org.allbinary.game.input.mapping.InputMappingInterface_Package;
    package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
    package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
    package ColorFillBasePaintable_Package renames Standard.org.allbinary.game.paint.ColorFillBasePaintable_Package;
-   package ColorFillPaintableFactory_Package renames Standard.org.allbinary.game.paint.ColorFillPaintableFactory_Package;
    package HelpPaintable_Package renames Standard.org.allbinary.game.paint.help.HelpPaintable_Package;
    package InputMappingHelpPaintable_Package renames Standard.org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
    package ProcessPaintable_Package renames Standard.org.allbinary.graphics.paint.ProcessPaintable_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type GameInputMappingCanvas is tagged;
    type GameInputMappingCanvas_Access is access all GameInputMappingCanvas'Class;
    type GameInputMappingCanvas_Access_Array is array (Natural range <>) of GameInputMappingCanvas_Access;
    type GameInputMappingCanvas_Access_Array_Access is access all GameInputMappingCanvas_Access_Array;
+   type GameInputMappingCanvas_Access_Array_Access_Array is array (Natural range <>) of GameInputMappingCanvas_Access_Array_Access;
+   type GameInputMappingCanvas_Access_Array_Access_Array_Access is access all GameInputMappingCanvas_Access_Array_Access_Array;
 
    type GameInputMappingCanvas is new GameCommandCanvas and InputMappingInterface with record
       paintable : ProcessPaintable_Access;

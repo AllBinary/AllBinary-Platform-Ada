@@ -30,6 +30,8 @@ package org.allbinary.view.event.ViewPositionEvent_Package is
    type ViewPositionEvent_Access is access all ViewPositionEvent'Class;
    type ViewPositionEvent_Access_Array is array (Natural range <>) of ViewPositionEvent_Access;
    type ViewPositionEvent_Access_Array_Access is access all ViewPositionEvent_Access_Array;
+   type ViewPositionEvent_Access_Array_Access_Array is array (Natural range <>) of ViewPositionEvent_Access_Array_Access;
+   type ViewPositionEvent_Access_Array_Access_Array_Access is access all ViewPositionEvent_Access_Array_Access_Array;
 
    type ViewPositionEvent is new AllBinaryEventObject with null record;
 

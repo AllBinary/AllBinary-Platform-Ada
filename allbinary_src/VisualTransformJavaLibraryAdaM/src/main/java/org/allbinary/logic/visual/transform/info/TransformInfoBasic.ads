@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.business.context.AbContext_Package; use org.allbinary.business.context.AbContext_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
@@ -35,7 +34,6 @@ package org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package AbContext_Package renames Standard.org.allbinary.business.context.AbContext_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
@@ -46,6 +44,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
    type TransformInfoBasic_Access is access all TransformInfoBasic'Class;
    type TransformInfoBasic_Access_Array is array (Natural range <>) of TransformInfoBasic_Access;
    type TransformInfoBasic_Access_Array_Access is access all TransformInfoBasic_Access_Array;
+   type TransformInfoBasic_Access_Array_Access_Array is array (Natural range <>) of TransformInfoBasic_Access_Array_Access;
+   type TransformInfoBasic_Access_Array_Access_Array_Access is access all TransformInfoBasic_Access_Array_Access_Array;
 
    type TransformInfoBasic is new AbContext and TransformInfoHttpInterface with record
       storeFrontInterface : StoreFrontInterface_Access;
@@ -83,6 +83,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
    function getKey (This : in out TransformInfoBasic) return Java_Object_Access;
    function toVector (This : in out TransformInfoBasic) return BasicArrayList_Access;
    function toHashMap (This : in out TransformInfoBasic) return HashMap_Access;
+   procedure setObject (This : in out TransformInfoBasic; Value : Unbounded_String);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package;
 

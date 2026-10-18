@@ -20,26 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
-with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-with org.allbinary.game.input.PCKeyFactory_Package; use org.allbinary.game.input.PCKeyFactory_Package;
-with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 
 package org.allbinary.game.input.MotionLaptopDefaultGameInputMapping_Package is
 
-   package GamePersistanceStrings_Package renames Standard.org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
-   package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
    package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-   package BasicTouchInputFactory_Package renames Standard.org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 
    type MotionLaptopDefaultGameInputMapping is tagged;
    type MotionLaptopDefaultGameInputMapping_Access is access all MotionLaptopDefaultGameInputMapping'Class;
    type MotionLaptopDefaultGameInputMapping_Access_Array is array (Natural range <>) of MotionLaptopDefaultGameInputMapping_Access;
    type MotionLaptopDefaultGameInputMapping_Access_Array_Access is access all MotionLaptopDefaultGameInputMapping_Access_Array;
+   type MotionLaptopDefaultGameInputMapping_Access_Array_Access_Array is array (Natural range <>) of MotionLaptopDefaultGameInputMapping_Access_Array_Access;
+   type MotionLaptopDefaultGameInputMapping_Access_Array_Access_Array_Access is access all MotionLaptopDefaultGameInputMapping_Access_Array_Access_Array;
 
    type MotionLaptopDefaultGameInputMapping is new PersistentInputMapping with null record;
 

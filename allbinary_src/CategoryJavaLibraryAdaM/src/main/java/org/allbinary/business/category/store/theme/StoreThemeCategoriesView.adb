@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
+with org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package;
+
 package body org.allbinary.business.category.store.theme.StoreThemeCategoriesView_Package is
 
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
    procedure Initialize_Fields (This : in out StoreThemeCategoriesView'Class) is
    begin
       null;

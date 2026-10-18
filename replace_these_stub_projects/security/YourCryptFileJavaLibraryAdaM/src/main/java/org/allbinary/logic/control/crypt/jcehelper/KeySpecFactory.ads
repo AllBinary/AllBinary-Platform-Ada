@@ -29,6 +29,8 @@ package org.allbinary.logic.control.crypt.jcehelper.KeySpecFactory_Package is
    type KeySpecFactory_Access is access all KeySpecFactory'Class;
    type KeySpecFactory_Access_Array is array (Natural range <>) of KeySpecFactory_Access;
    type KeySpecFactory_Access_Array_Access is access all KeySpecFactory_Access_Array;
+   type KeySpecFactory_Access_Array_Access_Array is array (Natural range <>) of KeySpecFactory_Access_Array_Access;
+   type KeySpecFactory_Access_Array_Access_Array_Access is access all KeySpecFactory_Access_Array_Access_Array;
 
    type KeySpecFactory is new Java_Object with null record;
    DES : Unbounded_String;

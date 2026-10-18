@@ -15,9 +15,6 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.game.score.HighScoresBase_Package; use org.allbinary.game.score.HighScoresBase_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 with org.allbinary.game.score.HighScoresResultsListener_Package; use org.allbinary.game.score.HighScoresResultsListener_Package;
-with org.allbinary.game.score.RecordStoreHighScores_Package; use org.allbinary.game.score.RecordStoreHighScores_Package;
-with org.allbinary.game.score.ScoreComparator_Package; use org.allbinary.game.score.ScoreComparator_Package;
-with org.allbinary.game.score.HighScoresHelper2_Package; use org.allbinary.game.score.HighScoresHelper2_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
 
 package org.allbinary.game.score.BasicHighScoresFactory_Package is
@@ -31,6 +28,8 @@ package org.allbinary.game.score.BasicHighScoresFactory_Package is
    type BasicHighScoresFactory_Access is access all BasicHighScoresFactory'Class;
    type BasicHighScoresFactory_Access_Array is array (Natural range <>) of BasicHighScoresFactory_Access;
    type BasicHighScoresFactory_Access_Array_Access is access all BasicHighScoresFactory_Access_Array;
+   type BasicHighScoresFactory_Access_Array_Access_Array is array (Natural range <>) of BasicHighScoresFactory_Access_Array_Access;
+   type BasicHighScoresFactory_Access_Array_Access_Array_Access is access all BasicHighScoresFactory_Access_Array_Access_Array;
 
    type BasicHighScoresFactory is new HighScoresBase with record
       logUtil : LogUtil_Access;

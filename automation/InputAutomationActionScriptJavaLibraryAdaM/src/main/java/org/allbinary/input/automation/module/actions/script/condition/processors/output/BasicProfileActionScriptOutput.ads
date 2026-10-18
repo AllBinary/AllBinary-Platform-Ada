@@ -24,7 +24,6 @@ with org.allbinary.input.automation.actions.script.condition.processors.BasicPro
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputInterface_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputInterface_Package;
-with org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package;
 
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package is
 
@@ -36,6 +35,8 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    type BasicProfileActionScriptOutput_Access is access all BasicProfileActionScriptOutput'Class;
    type BasicProfileActionScriptOutput_Access_Array is array (Natural range <>) of BasicProfileActionScriptOutput_Access;
    type BasicProfileActionScriptOutput_Access_Array_Access is access all BasicProfileActionScriptOutput_Access_Array;
+   type BasicProfileActionScriptOutput_Access_Array_Access_Array is array (Natural range <>) of BasicProfileActionScriptOutput_Access_Array_Access;
+   type BasicProfileActionScriptOutput_Access_Array_Access_Array_Access is access all BasicProfileActionScriptOutput_Access_Array_Access_Array;
 
    type BasicProfileActionScriptOutput is new BasicProfileActionScriptProcessor and ProfileActionScriptOutputInterface with null record;
 

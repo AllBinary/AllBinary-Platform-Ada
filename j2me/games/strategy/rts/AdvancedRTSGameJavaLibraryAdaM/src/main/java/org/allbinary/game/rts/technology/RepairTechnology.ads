@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
-with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package; use org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
 
 package org.allbinary.game.rts.technology.RepairTechnology_Package is
 
@@ -31,8 +30,10 @@ package org.allbinary.game.rts.technology.RepairTechnology_Package is
    type RepairTechnology_Access is access all RepairTechnology'Class;
    type RepairTechnology_Access_Array is array (Natural range <>) of RepairTechnology_Access;
    type RepairTechnology_Access_Array_Access is access all RepairTechnology_Access_Array;
+   type RepairTechnology_Access_Array_Access_Array is array (Natural range <>) of RepairTechnology_Access_Array_Access;
+   type RepairTechnology_Access_Array_Access_Array_Access is access all RepairTechnology_Access_Array_Access_Array;
 
-   type RepairTechnology is new RTSInterface with record
+   type RepairTechnology is new Java_Object and RTSInterface with record
       level : Integer;
       maxLevel : Integer;
    end record;

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
+with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
+with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
+
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 
+   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
+   package CanvasImage_Package renames Standard.playn.core.CanvasImage_Package;
+   package CanvasSurface_Package renames Standard.playn.core.CanvasSurface_Package;
    procedure Initialize_Fields (This : in out ImageModifierUtil'Class) is
    begin
       null;

@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer.RTSInterface_Package;
-with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package; use org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
 
 package org.allbinary.game.rts.technology.DamageTechnology_Package is
 
@@ -31,8 +30,10 @@ package org.allbinary.game.rts.technology.DamageTechnology_Package is
    type DamageTechnology_Access is access all DamageTechnology'Class;
    type DamageTechnology_Access_Array is array (Natural range <>) of DamageTechnology_Access;
    type DamageTechnology_Access_Array_Access is access all DamageTechnology_Access_Array;
+   type DamageTechnology_Access_Array_Access_Array is array (Natural range <>) of DamageTechnology_Access_Array_Access;
+   type DamageTechnology_Access_Array_Access_Array_Access is access all DamageTechnology_Access_Array_Access_Array;
 
-   type DamageTechnology is new RTSInterface with record
+   type DamageTechnology is new Java_Object and RTSInterface with record
       level : Integer;
       maxLevel : Integer;
    end record;

@@ -28,6 +28,8 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Pa
    type ProgressEndListener_Access is access all ProgressEndListener'Class;
    type ProgressEndListener_Access_Array is array (Natural range <>) of ProgressEndListener_Access;
    type ProgressEndListener_Access_Array_Access is access all ProgressEndListener_Access_Array;
+   type ProgressEndListener_Access_Array_Access_Array is array (Natural range <>) of ProgressEndListener_Access_Array_Access;
+   type ProgressEndListener_Access_Array_Access_Array_Access is access all ProgressEndListener_Access_Array_Access_Array;
 
    type ProgressEndListener is new Java_Object with null record;
    instance : ProgressEndListener_Access;

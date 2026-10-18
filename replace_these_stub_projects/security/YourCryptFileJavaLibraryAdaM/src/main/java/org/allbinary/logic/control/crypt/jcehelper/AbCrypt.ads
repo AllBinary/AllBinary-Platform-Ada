@@ -28,6 +28,8 @@ package org.allbinary.logic.control.crypt.jcehelper.AbCrypt_Package is
    type AbCrypt_Access is access all AbCrypt'Class;
    type AbCrypt_Access_Array is array (Natural range <>) of AbCrypt_Access;
    type AbCrypt_Access_Array_Access is access all AbCrypt_Access_Array;
+   type AbCrypt_Access_Array_Access_Array is array (Natural range <>) of AbCrypt_Access_Array_Access;
+   type AbCrypt_Access_Array_Access_Array_Access is access all AbCrypt_Access_Array_Access_Array;
 
    type AbCrypt is new Java_Object with null record;
 

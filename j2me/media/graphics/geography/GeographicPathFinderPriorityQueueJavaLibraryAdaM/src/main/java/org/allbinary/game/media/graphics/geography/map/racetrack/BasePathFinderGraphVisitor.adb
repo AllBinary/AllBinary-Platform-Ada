@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
+
 package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package PathFindingNode_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
    procedure Initialize_Fields (This : in out BasePathFinderGraphVisitor'Class) is
    begin
       null;
@@ -89,6 +94,30 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
 
    procedure getInvalidReason (This : in out BasePathFinderGraphVisitor; graphPath_Param : access Java_Object'Class) is
       Java_Result : constant Unbounded_String := BasePathFinderGraphVisitor'Class (This).getInvalidReason (graphPath_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInvalidReason;
+
+   function isValid (This : in out BasePathFinderGraphVisitor; Value : Unbounded_String) return Boolean is
+   begin
+      return BasePathFinderGraphVisitor'Class (This).isValid (Java_Box (Value));
+   end isValid;
+
+   procedure isValid (This : in out BasePathFinderGraphVisitor; Value : Unbounded_String) is
+      Java_Result : constant Boolean := BasePathFinderGraphVisitor'Class (This).isValid (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   function getInvalidReason (This : in out BasePathFinderGraphVisitor; Value : Unbounded_String) return Unbounded_String is
+   begin
+      return BasePathFinderGraphVisitor'Class (This).getInvalidReason (Java_Box (Value));
+   end getInvalidReason;
+
+   procedure getInvalidReason (This : in out BasePathFinderGraphVisitor; Value : Unbounded_String) is
+      Java_Result : constant Unbounded_String := BasePathFinderGraphVisitor'Class (This).getInvalidReason (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

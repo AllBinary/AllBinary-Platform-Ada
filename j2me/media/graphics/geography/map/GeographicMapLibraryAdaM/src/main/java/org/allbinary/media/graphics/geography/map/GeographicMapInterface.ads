@@ -38,6 +38,8 @@ package org.allbinary.media.graphics.geography.map.GeographicMapInterface_Packag
    type GeographicMapInterface_Access is access all GeographicMapInterface'Class;
    type GeographicMapInterface_Access_Array is array (Natural range <>) of GeographicMapInterface_Access;
    type GeographicMapInterface_Access_Array_Access is access all GeographicMapInterface_Access_Array;
+   type GeographicMapInterface_Access_Array_Access_Array is array (Natural range <>) of GeographicMapInterface_Access_Array_Access;
+   type GeographicMapInterface_Access_Array_Access_Array_Access is access all GeographicMapInterface_Access_Array_Access_Array;
    function getId (This : in out GeographicMapInterface) return Integer is abstract;
    function getName (This : in out GeographicMapInterface) return Unbounded_String is abstract;
    procedure reset (This : in out GeographicMapInterface) is abstract;

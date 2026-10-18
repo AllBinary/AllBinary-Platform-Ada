@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.image.ImageSegmentAnimation_Package is
 
    procedure Initialize_Fields (This : in out ImageSegmentAnimation'Class) is
@@ -50,12 +51,12 @@ package body org.allbinary.animation.image.ImageSegmentAnimation_Package is
 
    procedure nextFrame (This : in out ImageSegmentAnimation) is
    begin
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
    end nextFrame;
 
    procedure previousFrame (This : in out ImageSegmentAnimation) is
    begin
-        This.circularIndexUtil.previous;
+        declare Java_Result renames This.circularIndexUtil.previous; pragma Unreferenced (Java_Result); begin null; end;
    end previousFrame;
 
    procedure setFrame (This : in out ImageSegmentAnimation; index : Integer) is

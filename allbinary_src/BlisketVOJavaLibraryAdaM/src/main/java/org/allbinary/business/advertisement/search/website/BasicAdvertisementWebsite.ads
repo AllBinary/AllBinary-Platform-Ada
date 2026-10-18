@@ -29,8 +29,10 @@ package org.allbinary.business.advertisement.search.website.BasicAdvertisementWe
    type BasicAdvertisementWebsite_Access is access all BasicAdvertisementWebsite'Class;
    type BasicAdvertisementWebsite_Access_Array is array (Natural range <>) of BasicAdvertisementWebsite_Access;
    type BasicAdvertisementWebsite_Access_Array_Access is access all BasicAdvertisementWebsite_Access_Array;
+   type BasicAdvertisementWebsite_Access_Array_Access_Array is array (Natural range <>) of BasicAdvertisementWebsite_Access_Array_Access;
+   type BasicAdvertisementWebsite_Access_Array_Access_Array_Access is access all BasicAdvertisementWebsite_Access_Array_Access_Array;
 
-   type BasicAdvertisementWebsite is new AdvertisementWebsiteInterface with record
+   type BasicAdvertisementWebsite is new Java_Object and AdvertisementWebsiteInterface with record
       websiteId : Unbounded_String;
    end record;
 

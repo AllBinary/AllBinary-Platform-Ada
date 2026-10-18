@@ -30,6 +30,8 @@ package org.allbinary.input.automation.configuration.InputAutomationConfiguratio
    type InputAutomationConfigurationModuleChangeEvent_Access is access all InputAutomationConfigurationModuleChangeEvent'Class;
    type InputAutomationConfigurationModuleChangeEvent_Access_Array is array (Natural range <>) of InputAutomationConfigurationModuleChangeEvent_Access;
    type InputAutomationConfigurationModuleChangeEvent_Access_Array_Access is access all InputAutomationConfigurationModuleChangeEvent_Access_Array;
+   type InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array is array (Natural range <>) of InputAutomationConfigurationModuleChangeEvent_Access_Array_Access;
+   type InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access is access all InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array;
 
    type InputAutomationConfigurationModuleChangeEvent is new Java_Object with record
       inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access;

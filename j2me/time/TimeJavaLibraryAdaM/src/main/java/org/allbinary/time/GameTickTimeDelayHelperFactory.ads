@@ -29,6 +29,8 @@ package org.allbinary.time.GameTickTimeDelayHelperFactory_Package is
    type GameTickTimeDelayHelperFactory_Access is access all GameTickTimeDelayHelperFactory'Class;
    type GameTickTimeDelayHelperFactory_Access_Array is array (Natural range <>) of GameTickTimeDelayHelperFactory_Access;
    type GameTickTimeDelayHelperFactory_Access_Array_Access is access all GameTickTimeDelayHelperFactory_Access_Array;
+   type GameTickTimeDelayHelperFactory_Access_Array_Access_Array is array (Natural range <>) of GameTickTimeDelayHelperFactory_Access_Array_Access;
+   type GameTickTimeDelayHelperFactory_Access_Array_Access_Array_Access is access all GameTickTimeDelayHelperFactory_Access_Array_Access_Array;
 
    type GameTickTimeDelayHelperFactory is new Java_Object with null record;
    instance : GameTickTimeDelayHelper_Access;

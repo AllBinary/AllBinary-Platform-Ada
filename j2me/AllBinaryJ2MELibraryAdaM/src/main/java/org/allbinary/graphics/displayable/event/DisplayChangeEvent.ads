@@ -30,6 +30,8 @@ package org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package is
    type DisplayChangeEvent_Access is access all DisplayChangeEvent'Class;
    type DisplayChangeEvent_Access_Array is array (Natural range <>) of DisplayChangeEvent_Access;
    type DisplayChangeEvent_Access_Array_Access is access all DisplayChangeEvent_Access_Array;
+   type DisplayChangeEvent_Access_Array_Access_Array is array (Natural range <>) of DisplayChangeEvent_Access_Array_Access;
+   type DisplayChangeEvent_Access_Array_Access_Array_Access is access all DisplayChangeEvent_Access_Array_Access_Array;
 
    type DisplayChangeEvent is new AllBinaryEventObject with null record;
 

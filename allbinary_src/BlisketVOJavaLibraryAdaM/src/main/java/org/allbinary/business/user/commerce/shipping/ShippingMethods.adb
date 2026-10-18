@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package;
+
 package body org.allbinary.business.user.commerce.shipping.ShippingMethods_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out ShippingMethods'Class) is
    begin
       null;

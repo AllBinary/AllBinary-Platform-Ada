@@ -21,6 +21,8 @@ package javax.microedition.khronos.opengles.GL11Ext_Package is
    type GL11Ext_Access is access all GL11Ext'Class;
    type GL11Ext_Access_Array is array (Natural range <>) of GL11Ext_Access;
    type GL11Ext_Access_Array_Access is access all GL11Ext_Access_Array;
+   type GL11Ext_Access_Array_Access_Array is array (Natural range <>) of GL11Ext_Access_Array_Access;
+   type GL11Ext_Access_Array_Access_Array_Access is access all GL11Ext_Access_Array_Access_Array;
    GL_MATRIX_INDEX_ARRAY_BUFFER_BINDING_OES : Integer := 35742;
    GL_MATRIX_INDEX_ARRAY_OES : Integer := 34884;
    GL_MATRIX_INDEX_ARRAY_POINTER_OES : Integer := 34889;

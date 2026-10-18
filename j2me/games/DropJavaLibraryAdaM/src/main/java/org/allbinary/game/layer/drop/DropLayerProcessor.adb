@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.game.layer.drop.DropLayerInterface_Package; use org.allbinary.game.layer.drop.DropLayerInterface_Package;
+
 package body org.allbinary.game.layer.drop.DropLayerProcessor_Package is
 
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out DropLayerProcessor'Class) is
    begin
       null;
@@ -64,7 +70,7 @@ package body org.allbinary.game.layer.drop.DropLayerProcessor_Package is
 
 begin
    null;
-   LAYER_PROCESSOR := DropLayerProcessor_Package.Create;
+   LAYER_PROCESSOR := BasicLayerProcessor_Access (DropLayerProcessor_Package.Create);
 
 end org.allbinary.game.layer.drop.DropLayerProcessor_Package;
 

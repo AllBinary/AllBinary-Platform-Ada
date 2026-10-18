@@ -21,23 +21,21 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 
 package org.allbinary.layer.AllBinaryLayerFactory_Package is
 
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type AllBinaryLayerFactory is tagged;
    type AllBinaryLayerFactory_Access is access all AllBinaryLayerFactory'Class;
    type AllBinaryLayerFactory_Access_Array is array (Natural range <>) of AllBinaryLayerFactory_Access;
    type AllBinaryLayerFactory_Access_Array_Access is access all AllBinaryLayerFactory_Access_Array;
+   type AllBinaryLayerFactory_Access_Array_Access_Array is array (Natural range <>) of AllBinaryLayerFactory_Access_Array_Access;
+   type AllBinaryLayerFactory_Access_Array_Access_Array_Access is access all AllBinaryLayerFactory_Access_Array_Access_Array;
 
-   type AllBinaryLayerFactory is new AllBinaryLayerFactoryInterface with record
+   type AllBinaryLayerFactory is new Java_Object and AllBinaryLayerFactoryInterface with record
       rectangle : Rectangle_Access;
    end record;
 

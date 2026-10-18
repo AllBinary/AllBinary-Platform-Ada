@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.form.PrimaryWaypointHelper_Package; use org.allbinary.game.input.form.PrimaryWaypointHelper_Package;
+with org.allbinary.game.layer.SensorActionFactory_Package; use org.allbinary.game.layer.SensorActionFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+
 package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
 
+   package PrimaryWaypointHelper_Package renames Standard.org.allbinary.game.input.form.PrimaryWaypointHelper_Package;
+   package SensorActionFactory_Package renames Standard.org.allbinary.game.layer.SensorActionFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package SimpleGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    procedure Initialize_Fields (This : in out UnitWaypointBehavior'Class) is
    begin
       null;
@@ -32,7 +53,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
       This.moving := False;
       This.movingFromStopped := False;
       This.waypointPathsListP := BasicArrayListUtil_Package.getInstance.getImmutableInstance;
-      This.currentTargetDistance := Integer_Package.MAX_VALUE;
+      This.currentTargetDistance := Integer'Last;
       This.currentTargetLayerInterfaceP := CollidableDestroyableDamageableLayer_Package.getNullInstance;
       This.trackingWaypoint := False;
       This.repeatedToLong := TimeDelayHelper_Package.Create (22000);
@@ -47,8 +68,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
       Initialize_Fields (This);
         This.associatedAdvancedRTSGameLayer := associatedAdvancedRTSGameLayer;
         This.completeTimeDelayHelper := TimeDelayHelper_Package.Create (30000);
-        This.targetList := BasicArrayListD_Package.Create;
-        This.possibleTargetList := BasicArrayListD_Package.Create;
+        This.targetList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+        This.possibleTargetList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         UnitWaypointBehavior'Class (This).setWaypointPathsList (BasicArrayListUtil_Package.getInstance.getImmutableInstance);
         This.currentGeographicMapCellHistoryP := GeographicMapCellHistory_Package.Create;
         This.FAKE_WAYPOINT_LAYER := fakeWaypoint;
@@ -98,12 +119,12 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
       advancedRTSGameLayer : constant AdvancedRTSGameLayer_Access := AdvancedRTSGameLayer_Access (advancedRTSGameLayer_Param);
    begin
         if ((advancedRTSGameLayer) = (PrimaryWaypointHelper_Package.getInstance.getWaypointLayer)) or else ((advancedRTSGameLayer.getParentLayer) = (This.associatedAdvancedRTSGameLayer.getParentLayer)) then
-            if not (This.targetList.contains (advancedRTSGameLayer)) then
+            if not (This.targetList.contains (Java_Object_Access (advancedRTSGameLayer))) then
                 This.associatedAdvancedRTSGameLayer.waypointLogHelperP.addWaypointFromBuilding (This.associatedAdvancedRTSGameLayer, advancedRTSGameLayer);
                 if advancedRTSGameLayer.isDestroyed then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Trying to add a dead: ") & Java_Image (advancedRTSGameLayer)));
                 end if;
-                This.targetList.add (advancedRTSGameLayer);
+                This.targetList.add (Java_Object_Access (advancedRTSGameLayer));
                 This.associatedAdvancedRTSGameLayer.waypointLogHelperP.addWaypointFromBuildingList (This.associatedAdvancedRTSGameLayer, advancedRTSGameLayer, This.targetList);
             end if;
         end if;
@@ -123,7 +144,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
             if rtsLayer.isDestroyed then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Trying to add a dead: ") & Java_Image (rtsLayer)));
             end if;
-            This.targetList.addAt (index, rtsLayer);
+            This.targetList.addAt (index, Java_Object_Access (rtsLayer));
             This.associatedAdvancedRTSGameLayer.waypointLogHelperP.insertWaypointList (This.associatedAdvancedRTSGameLayer, index, rtsLayer, UnitWaypointBehavior'Class (This).getName, This.targetList);
             return True;
         end if;
@@ -173,7 +194,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    begin
         if (This.targetList.size) > (4) then
             null;
-        elsif This.targetList.contains (rtsLayer) then
+        elsif This.targetList.contains (Java_Object_Access (rtsLayer)) then
             null;
         else
             return True;
@@ -198,7 +219,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    begin
         geographicMapCellPosition := This.associatedAdvancedRTSGameLayer.getCurrentGeographicMapCellPosition;
         list := buildingLayer.geographicMapCellPositionAreaBase.getOccupyingGeographicMapCellPositionList;
-        if list.contains (geographicMapCellPosition) then
+        if list.contains (Java_Object_Access (geographicMapCellPosition)) then
             if UnitWaypointBehavior'Class (This).insertWaypoint (0, This.FAKE_WAYPOINT_LAYER) then
                 This.associatedAdvancedRTSGameLayer.waypointLogHelperP.moveAwayFromBuilding (This.associatedAdvancedRTSGameLayer);
                 UnitWaypointBehavior'Class (This).setCurrentTargetLayerInterface (CollidableDestroyableDamageableLayer_Access (This.FAKE_WAYPOINT_LAYER));

@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    type PaymentGatewaysData_Access is access all PaymentGatewaysData'Class;
    type PaymentGatewaysData_Access_Array is array (Natural range <>) of PaymentGatewaysData_Access;
    type PaymentGatewaysData_Access_Array_Access is access all PaymentGatewaysData_Access_Array;
+   type PaymentGatewaysData_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewaysData_Access_Array_Access;
+   type PaymentGatewaysData_Access_Array_Access_Array_Access is access all PaymentGatewaysData_Access_Array_Access_Array;
 
    type PaymentGatewaysData is new Java_Object with null record;
    NAME : Unbounded_String;

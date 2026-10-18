@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.interfaces.HardDriveInter
    type HardDriveInterface_Access is access all HardDriveInterface'Class;
    type HardDriveInterface_Access_Array is array (Natural range <>) of HardDriveInterface_Access;
    type HardDriveInterface_Access_Array_Access is access all HardDriveInterface_Access_Array;
+   type HardDriveInterface_Access_Array_Access_Array is array (Natural range <>) of HardDriveInterface_Access_Array_Access;
+   type HardDriveInterface_Access_Array_Access_Array_Access is access all HardDriveInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.system.hardware.components.interfaces.HardDriveInterface_Package;
 

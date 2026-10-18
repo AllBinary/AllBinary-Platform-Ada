@@ -24,55 +24,35 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.LinkedList_Package; use java.util.LinkedList_Package;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
-with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
-with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
 with org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package; use org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
-with org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package; use org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
-with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.graphics.j2me.workarea.JPanel_Package; use org.allbinary.graphics.j2me.workarea.JPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
-with org.allbinary.graphics.j2me.workarea.Runnable_Package; use org.allbinary.graphics.j2me.workarea.Runnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
-with org.allbinary.graphics.j2me.workarea.Component_Package; use org.allbinary.graphics.j2me.workarea.Component_Package;
 with org.allbinary.graphics.j2me.workarea.Dimension_Package; use org.allbinary.graphics.j2me.workarea.Dimension_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
-with org.allbinary.graphics.j2me.workarea.GridLayout_Package; use org.allbinary.graphics.j2me.workarea.GridLayout_Package;
-with org.allbinary.graphics.j2me.workarea.GridBagLayout_Package; use org.allbinary.graphics.j2me.workarea.GridBagLayout_Package;
-with org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package; use org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package;
 
 package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
-   package StatusFactory_Package renames Standard.org.allbinary.graphics.j2me.StatusFactory_Package;
-   package CanvasDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
    package CanvasJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
    package MyCanvasEvent_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
    package MyCanvasEventListener_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
-   package MyCanvasEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
    package PropertiesJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
-   package ToolJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
-   package LOGGING_Package renames Standard.org.allbinary.log.LOGGING_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
-   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type WorkAreaJPanel is tagged;
    type WorkAreaJPanel_Access is access all WorkAreaJPanel'Class;
    type WorkAreaJPanel_Access_Array is array (Natural range <>) of WorkAreaJPanel_Access;
    type WorkAreaJPanel_Access_Array_Access is access all WorkAreaJPanel_Access_Array;
+   type WorkAreaJPanel_Access_Array_Access_Array is array (Natural range <>) of WorkAreaJPanel_Access_Array_Access;
+   type WorkAreaJPanel_Access_Array_Access_Array_Access is access all WorkAreaJPanel_Access_Array_Access_Array;
 
    type WorkAreaJPanel is new JPanel and WorkAreaJPanelInterface and MyCanvasEventListener and EventListener and Runnable with record
       logUtil : LogUtil_Access;

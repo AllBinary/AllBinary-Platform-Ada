@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUser_Package;
+
 package body org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUserFactory_Package is
 
    procedure Initialize_Fields (This : in out PaymentStoreAdminUserFactory'Class) is
@@ -37,14 +39,14 @@ package body org.allbinary.business.user.modules.admin.store.payment.PaymentStor
    --  throws Exception
    function getInstance (This : in out PaymentStoreAdminUserFactory) return UserInterface_Access is
    begin
-        return PaymentStoreAdminUser_Package.Create;
+        return UserInterface_Access (PaymentStoreAdminUser_Package.Create);
    end getInstance;
 
    --  throws Exception
    function getInstance (This : in out PaymentStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        return PaymentStoreAdminUser_Package.Create (hashMap);
+        return UserInterface_Access (PaymentStoreAdminUser_Package.Create (hashMap));
    end getInstance;
 
    procedure getInstance (This : in out PaymentStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) is

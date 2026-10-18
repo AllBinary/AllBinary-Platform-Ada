@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.media.image.analysis.ColorAverage_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type ColorAverage is tagged;
    type ColorAverage_Access is access all ColorAverage'Class;
    type ColorAverage_Access_Array is array (Natural range <>) of ColorAverage_Access;
    type ColorAverage_Access_Array_Access is access all ColorAverage_Access_Array;
+   type ColorAverage_Access_Array_Access_Array is array (Natural range <>) of ColorAverage_Access_Array_Access;
+   type ColorAverage_Access_Array_Access_Array_Access is access all ColorAverage_Access_Array_Access_Array;
 
    type ColorAverage is new Java_Object with record
       avgRed : Float;

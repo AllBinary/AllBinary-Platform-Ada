@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+
 package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissionsUtil_Package is
 
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    procedure Initialize_Fields (This : in out HttpFilePermissionsUtil'Class) is
    begin
       null;

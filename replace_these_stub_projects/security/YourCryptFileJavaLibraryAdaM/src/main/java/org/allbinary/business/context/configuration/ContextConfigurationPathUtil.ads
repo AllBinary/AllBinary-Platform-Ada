@@ -20,6 +20,8 @@ package org.allbinary.business.context.configuration.ContextConfigurationPathUti
    type ContextConfigurationPathUtil_Access is access all ContextConfigurationPathUtil'Class;
    type ContextConfigurationPathUtil_Access_Array is array (Natural range <>) of ContextConfigurationPathUtil_Access;
    type ContextConfigurationPathUtil_Access_Array_Access is access all ContextConfigurationPathUtil_Access_Array;
+   type ContextConfigurationPathUtil_Access_Array_Access_Array is array (Natural range <>) of ContextConfigurationPathUtil_Access_Array_Access;
+   type ContextConfigurationPathUtil_Access_Array_Access_Array_Access is access all ContextConfigurationPathUtil_Access_Array_Access_Array;
 
    type ContextConfigurationPathUtil is new Java_Object with null record;
 

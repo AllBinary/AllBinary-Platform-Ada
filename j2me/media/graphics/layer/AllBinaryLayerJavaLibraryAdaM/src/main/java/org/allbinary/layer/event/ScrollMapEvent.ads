@@ -30,6 +30,8 @@ package org.allbinary.layer.event.ScrollMapEvent_Package is
    type ScrollMapEvent_Access is access all ScrollMapEvent'Class;
    type ScrollMapEvent_Access_Array is array (Natural range <>) of ScrollMapEvent_Access;
    type ScrollMapEvent_Access_Array_Access is access all ScrollMapEvent_Access_Array;
+   type ScrollMapEvent_Access_Array_Access_Array is array (Natural range <>) of ScrollMapEvent_Access_Array_Access;
+   type ScrollMapEvent_Access_Array_Access_Array_Access is access all ScrollMapEvent_Access_Array_Access_Array;
 
    type ScrollMapEvent is new AllBinaryEventObject with record
       dx : Integer;

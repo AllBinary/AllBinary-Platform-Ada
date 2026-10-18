@@ -32,6 +32,8 @@ package org.allbinary.game.ag.ai.NullAI_Package is
    type NullAI_Access is access all NullAI'Class;
    type NullAI_Access_Array is array (Natural range <>) of NullAI_Access;
    type NullAI_Access_Array_Access is access all NullAI_Access_Array;
+   type NullAI_Access_Array_Access_Array is array (Natural range <>) of NullAI_Access_Array_Access;
+   type NullAI_Access_Array_Access_Array_Access is access all NullAI_Access_Array_Access_Array;
 
    type NullAI is new ArtificialIntelligence with null record;
 

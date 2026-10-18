@@ -23,34 +23,25 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
 with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
-with org.allbinary.data.tables.user.UserEntityFactory_Package; use org.allbinary.data.tables.user.UserEntityFactory_Package;
-with org.allbinary.data.tables.user.UserEntityInterface_Package; use org.allbinary.data.tables.user.UserEntityInterface_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
-with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package; use org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package;
 
 package org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
    package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
-   package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
-   package UserEntityInterface_Package renames Standard.org.allbinary.data.tables.user.UserEntityInterface_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type StoreFrontUsersStatistics is tagged;
    type StoreFrontUsersStatistics_Access is access all StoreFrontUsersStatistics'Class;
    type StoreFrontUsersStatistics_Access_Array is array (Natural range <>) of StoreFrontUsersStatistics_Access;
    type StoreFrontUsersStatistics_Access_Array_Access is access all StoreFrontUsersStatistics_Access_Array;
+   type StoreFrontUsersStatistics_Access_Array_Access_Array is array (Natural range <>) of StoreFrontUsersStatistics_Access_Array_Access;
+   type StoreFrontUsersStatistics_Access_Array_Access_Array_Access is access all StoreFrontUsersStatistics_Access_Array_Access_Array;
 
-   type StoreFrontUsersStatistics is new StoreFrontUsersStatisticsInterface with record
+   type StoreFrontUsersStatistics is new Java_Object and StoreFrontUsersStatisticsInterface with record
       totalNumberOfUsers : Long_Long_Integer;
       totalUsersByRoleHashMap : HashMap_Access;
    end record;

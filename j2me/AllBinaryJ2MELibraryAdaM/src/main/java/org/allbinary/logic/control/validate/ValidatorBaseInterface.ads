@@ -32,6 +32,8 @@ package org.allbinary.logic.control.validate.ValidatorBaseInterface_Package is
    type ValidatorBaseInterface_Access is access all ValidatorBaseInterface'Class;
    type ValidatorBaseInterface_Access_Array is array (Natural range <>) of ValidatorBaseInterface_Access;
    type ValidatorBaseInterface_Access_Array_Access is access all ValidatorBaseInterface_Access_Array;
+   type ValidatorBaseInterface_Access_Array_Access_Array is array (Natural range <>) of ValidatorBaseInterface_Access_Array_Access;
+   type ValidatorBaseInterface_Access_Array_Access_Array_Access is access all ValidatorBaseInterface_Access_Array_Access_Array;
    function isValid (This : in out ValidatorBaseInterface) return Boolean is abstract;
    function validationInfo (This : in out ValidatorBaseInterface) return Unbounded_String is abstract;
    function toHashtable (This : in out ValidatorBaseInterface) return ABHashtable_Access is abstract;

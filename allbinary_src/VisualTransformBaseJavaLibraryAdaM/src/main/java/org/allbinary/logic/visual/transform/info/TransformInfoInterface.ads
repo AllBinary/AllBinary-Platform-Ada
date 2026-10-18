@@ -38,6 +38,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package
    type TransformInfoInterface_Access is access all TransformInfoInterface'Class;
    type TransformInfoInterface_Access_Array is array (Natural range <>) of TransformInfoInterface_Access;
    type TransformInfoInterface_Access_Array_Access is access all TransformInfoInterface_Access_Array;
+   type TransformInfoInterface_Access_Array_Access_Array is array (Natural range <>) of TransformInfoInterface_Access_Array_Access;
+   type TransformInfoInterface_Access_Array_Access_Array_Access is access all TransformInfoInterface_Access_Array_Access_Array;
    function log (This : in out TransformInfoInterface) return Unbounded_String is abstract;
    procedure override (This : in out TransformInfoInterface; hashMap_Param : access HashMap_Package.HashMap'Class) is abstract;
    function getName (This : in out TransformInfoInterface) return Unbounded_String is abstract;

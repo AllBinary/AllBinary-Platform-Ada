@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+
 package body org.allbinary.business.category.properties.root.RootCategoryPropertiesAbstract_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
    procedure Initialize_Fields (This : in out RootCategoryPropertiesAbstract'Class) is
    begin
       null;
@@ -121,7 +130,7 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
    function toVector (This : in out RootCategoryPropertiesAbstract) return BasicArrayList_Access is
       categoryVector : BasicArrayList_Access;
    begin
-        categoryVector := BasicArrayListD_Package.Create;
+        categoryVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         categoryVector.add (This.category);
         return categoryVector;
    end toVector;

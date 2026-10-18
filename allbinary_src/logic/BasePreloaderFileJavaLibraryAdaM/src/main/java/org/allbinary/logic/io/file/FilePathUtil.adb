@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
+
 package body org.allbinary.logic.io.file.FilePathUtil_Package is
 
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    procedure Initialize_Fields (This : in out FilePathUtil'Class) is
    begin
       null;
@@ -46,7 +52,7 @@ package body org.allbinary.logic.io.file.FilePathUtil_Package is
         if stringValidationUtil.isEmpty (path) then
             return filePathData.PATH_START;
         end if;
-        path := path.replace (abPathData.SEPARATORCHAR, filePathData.SEPARATORCHAR);
+        path := Java_Replace (path, Java_Image (abPathData.SEPARATORCHAR), Java_Image (filePathData.SEPARATORCHAR));
         return path;
    end adjust;
 

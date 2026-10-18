@@ -22,21 +22,21 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 with org.allbinary.game.input.LayerPositionFinderInterface_Package; use org.allbinary.game.input.LayerPositionFinderInterface_Package;
 
 package org.allbinary.game.input.RTSGameLayerPositionFinder_Package is
 
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package DropCellPositionHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 
    type RTSGameLayerPositionFinder is tagged;
    type RTSGameLayerPositionFinder_Access is access all RTSGameLayerPositionFinder'Class;
    type RTSGameLayerPositionFinder_Access_Array is array (Natural range <>) of RTSGameLayerPositionFinder_Access;
    type RTSGameLayerPositionFinder_Access_Array_Access is access all RTSGameLayerPositionFinder_Access_Array;
+   type RTSGameLayerPositionFinder_Access_Array_Access_Array is array (Natural range <>) of RTSGameLayerPositionFinder_Access_Array_Access;
+   type RTSGameLayerPositionFinder_Access_Array_Access_Array_Access is access all RTSGameLayerPositionFinder_Access_Array_Access_Array;
 
-   type RTSGameLayerPositionFinder is new LayerPositionFinderInterface with null record;
+   type RTSGameLayerPositionFinder is new Java_Object and LayerPositionFinderInterface with null record;
    instance : RTSGameLayerPositionFinder_Access;
 
    procedure Initialize (This : in out RTSGameLayerPositionFinder'Class);

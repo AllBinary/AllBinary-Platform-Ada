@@ -20,9 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 with org.allbinary.util.ABHashMap_Package; use org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package; use org.allbinary.util.ABStack_Package;
@@ -30,9 +27,6 @@ with org.allbinary.util.ABVector_Package; use org.allbinary.util.ABVector_Packag
 
 package org.allbinary.logic.StdUtil_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
    package ABHashMap_Package renames Standard.org.allbinary.util.ABHashMap_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    package ABStack_Package renames Standard.org.allbinary.util.ABStack_Package;
@@ -42,6 +36,8 @@ package org.allbinary.logic.StdUtil_Package is
    type StdUtil_Access is access all StdUtil'Class;
    type StdUtil_Access_Array is array (Natural range <>) of StdUtil_Access;
    type StdUtil_Access_Array_Access is access all StdUtil_Access_Array;
+   type StdUtil_Access_Array_Access_Array is array (Natural range <>) of StdUtil_Access_Array_Access;
+   type StdUtil_Access_Array_Access_Array_Access is access all StdUtil_Access_Array_Access_Array;
 
    type StdUtil is new Java_Object with record
       EMPTY_VECTOR : ABVector_Access;

@@ -13,13 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package; use org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
+
 package body org.allbinary.game.resource.FeaturedResourceFactory_Package is
 
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GraphicsFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out FeaturedResourceFactory'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.commonStrings := CommonStrings_Package.getInstance;
       This.ANIMATION_FEATURES := To_Unbounded_String ("Animation Features: Vector: ");
       This.IMAGE_LABEL := To_Unbounded_String (" Image: ");
@@ -98,7 +114,7 @@ package body org.allbinary.game.resource.FeaturedResourceFactory_Package is
       featureInterface : constant GameFeatureControlledInterface_Access := GameFeatureControlledInterface_Access (featureInterface_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (featureInterface)).toString, FeaturedResourceFactory_Access'(This'Unchecked_Access), This.commonStrings.ADD);
-        This.list.add (featureInterface);
+        This.list.add (Java_Object_Access (featureInterface));
    end add;
 
    function getList (This : in out FeaturedResourceFactory) return BasicArrayList_Access is

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package is
 
    procedure Initialize_Fields (This : in out SecretComposite'Class) is

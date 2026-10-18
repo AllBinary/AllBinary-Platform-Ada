@@ -13,8 +13,53 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.search.SearchParams_Package; use org.allbinary.logic.control.search.SearchParams_Package;
+with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
+with org.allbinary.logic.io.DataOutputStreamFactory_Package; use org.allbinary.logic.io.DataOutputStreamFactory_Package;
+with org.allbinary.logic.io.InputOutputTypeData_Package; use org.allbinary.logic.io.InputOutputTypeData_Package;
+with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.SpecialCharacterUtil_Package; use org.allbinary.logic.string_Id.SpecialCharacterUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+with org.allbinary.logic.string_Id.tokens.UniqueTokens_Package; use org.allbinary.logic.string_Id.tokens.UniqueTokens_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with views.generic_Id.inventory.InventoryColumnUtil_Package; use views.generic_Id.inventory.InventoryColumnUtil_Package;
+with views.generic_Id.inventory.InventorySearchUtil_Package; use views.generic_Id.inventory.InventorySearchUtil_Package;
+
 package body views.admin.inventory.listings.ProductListing_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package SearchParams_Package renames Standard.org.allbinary.logic.control.search.SearchParams_Package;
+   package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
+   package DataOutputStreamFactory_Package renames Standard.org.allbinary.logic.io.DataOutputStreamFactory_Package;
+   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package SpecialCharacterUtil_Package renames Standard.org.allbinary.logic.string_Id.SpecialCharacterUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+   package UniqueTokens_Package renames Standard.org.allbinary.logic.string_Id.tokens.UniqueTokens_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package InventoryColumnUtil_Package renames Standard.views.generic_Id.inventory.InventoryColumnUtil_Package;
+   package InventorySearchUtil_Package renames Standard.views.generic_Id.inventory.InventorySearchUtil_Package;
    procedure Initialize_Fields (This : in out ProductListing'Class) is
    begin
       null;
@@ -168,7 +213,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
         keywordArray := keywordHashSet.toArray;
         size := keywordArray'Length;
         for index in 0 .. (size) - 1 loop
-            insertVector := BasicArrayListD_Package.Create;
+            insertVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             keywordData := Java_Unbox (keywordArray (index));
             fileName := Java_Unbox (keywordFilenameHashMap.get (Java_Box (keywordData)));
             insertVector.add (storeFront.getName);
@@ -195,7 +240,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
         begin
             storeFront := This.searchRequest.getStoreFront;
             stringBuffer := StringMaker_Package.Create;
-            stringBuffer.append (URLGLOBALS.getWebappPath);
+            stringBuffer.append (URLGLOBALS_Package.getWebappPath);
             stringBuffer.append (storeFront.getName);
             stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
             stringBuffer.append (storeFront.getStaticPath);
@@ -251,7 +296,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
         begin
             stringBuffer := StringMaker_Package.Create;
             if (storeName) /= (Null_Unbounded_String) then
-                if (Java_Compare_To (storeName, GLOBALS2.GENERATEALLSTORES)) /= (0) then
+                if (Java_Compare_To (storeName, GLOBALS2_Package.GENERATEALLSTORES)) /= (0) then
                     This.searchRequest.setStoreFront (This.storeFronts.getStoreFrontInterface (storeName));
                     stringBuffer.append (ProductListing'Class (This).generateAll);
                     stringBuffer.append (To_Unbounded_String ("<br />"));

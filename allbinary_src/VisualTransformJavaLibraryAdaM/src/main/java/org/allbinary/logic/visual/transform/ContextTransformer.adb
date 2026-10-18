@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
+with org.allbinary.data.tree.dom.ContextUriResolver_Package; use org.allbinary.data.tree.dom.ContextUriResolver_Package;
+
 package body org.allbinary.logic.visual.transform.ContextTransformer_Package is
 
+   package BasicUriResolver_Package renames Standard.org.allbinary.data.tree.dom.BasicUriResolver_Package;
+   package ContextUriResolver_Package renames Standard.org.allbinary.data.tree.dom.ContextUriResolver_Package;
    procedure Initialize_Fields (This : in out ContextTransformer'Class) is
    begin
       null;

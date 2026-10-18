@@ -30,6 +30,8 @@ package org.allbinary.android.input.motion.MotionEventProcessor_Package is
    type MotionEventProcessor_Access is access all MotionEventProcessor'Class;
    type MotionEventProcessor_Access_Array is array (Natural range <>) of MotionEventProcessor_Access;
    type MotionEventProcessor_Access_Array_Access is access all MotionEventProcessor_Access_Array;
+   type MotionEventProcessor_Access_Array_Access_Array is array (Natural range <>) of MotionEventProcessor_Access_Array_Access;
+   type MotionEventProcessor_Access_Array_Access_Array_Access is access all MotionEventProcessor_Access_Array_Access_Array;
 
    type MotionEventProcessor is new Java_Object with null record;
 

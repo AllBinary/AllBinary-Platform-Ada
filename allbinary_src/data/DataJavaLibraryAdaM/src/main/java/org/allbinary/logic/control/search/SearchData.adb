@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.control.search.SearchData_Package is
 
    procedure Initialize_Fields (This : in out SearchData'Class) is

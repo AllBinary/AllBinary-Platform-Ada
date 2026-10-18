@@ -31,6 +31,8 @@ package org.allbinary.game.combat.destroy.event.DestroyedEventListenerInterface_
    type DestroyedEventListenerInterface_Access is access all DestroyedEventListenerInterface'Class;
    type DestroyedEventListenerInterface_Access_Array is array (Natural range <>) of DestroyedEventListenerInterface_Access;
    type DestroyedEventListenerInterface_Access_Array_Access is access all DestroyedEventListenerInterface_Access_Array;
+   type DestroyedEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of DestroyedEventListenerInterface_Access_Array_Access;
+   type DestroyedEventListenerInterface_Access_Array_Access_Array_Access is access all DestroyedEventListenerInterface_Access_Array_Access_Array;
    procedure onDestroyed (This : in out DestroyedEventListenerInterface; destroyedEvent_Param : access DestroyedEvent_Package.DestroyedEvent'Class) is abstract;
 
 end org.allbinary.game.combat.destroy.event.DestroyedEventListenerInterface_Package;

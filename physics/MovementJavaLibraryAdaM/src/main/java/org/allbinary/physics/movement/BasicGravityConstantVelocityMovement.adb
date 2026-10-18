@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
+
 package body org.allbinary.physics.movement.BasicGravityConstantVelocityMovement_Package is
 
+   package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
    procedure Initialize_Fields (This : in out BasicGravityConstantVelocityMovement'Class) is
    begin
       null;

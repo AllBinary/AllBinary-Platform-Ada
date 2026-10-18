@@ -21,23 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.game.commands.GameCommandsFactory_Package is
 
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
-   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type GameCommandsFactory is tagged;
    type GameCommandsFactory_Access is access all GameCommandsFactory'Class;
    type GameCommandsFactory_Access_Array is array (Natural range <>) of GameCommandsFactory_Access;
    type GameCommandsFactory_Access_Array_Access is access all GameCommandsFactory_Access_Array;
+   type GameCommandsFactory_Access_Array_Access_Array is array (Natural range <>) of GameCommandsFactory_Access_Array_Access;
+   type GameCommandsFactory_Access_Array_Access_Array_Access is access all GameCommandsFactory_Access_Array_Access_Array;
 
    type GameCommandsFactory is new Java_Object with record
       TOGGLE_FULLSCREEN : Command_Access;

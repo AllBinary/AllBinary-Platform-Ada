@@ -21,20 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
 
 package tags.generic_Id.shipping.ShippingMethodsTag_Package is
 
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type ShippingMethodsTag is tagged;
    type ShippingMethodsTag_Access is access all ShippingMethodsTag'Class;
    type ShippingMethodsTag_Access_Array is array (Natural range <>) of ShippingMethodsTag_Access;
    type ShippingMethodsTag_Access_Array_Access is access all ShippingMethodsTag_Access_Array;
+   type ShippingMethodsTag_Access_Array_Access_Array is array (Natural range <>) of ShippingMethodsTag_Access_Array_Access;
+   type ShippingMethodsTag_Access_Array_Access_Array_Access is access all ShippingMethodsTag_Access_Array_Access_Array;
 
    type ShippingMethodsTag is new StoreValidationTransformTag with null record;
 

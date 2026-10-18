@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
+
 package body org.allbinary.emulator.swt.SWTProcessor_Package is
 
+   package NullRunnable_Package renames Standard.org.allbinary.thread.NullRunnable_Package;
    procedure Initialize_Fields (This : in out SWTProcessor'Class) is
    begin
       null;

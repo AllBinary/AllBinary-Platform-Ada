@@ -31,6 +31,8 @@ package org.allbinary.canvas.GameStatisticsFactory_Package is
    type GameStatisticsFactory_Access is access all GameStatisticsFactory'Class;
    type GameStatisticsFactory_Access_Array is array (Natural range <>) of GameStatisticsFactory_Access;
    type GameStatisticsFactory_Access_Array_Access is access all GameStatisticsFactory_Access_Array;
+   type GameStatisticsFactory_Access_Array_Access_Array is array (Natural range <>) of GameStatisticsFactory_Access_Array_Access;
+   type GameStatisticsFactory_Access_Array_Access_Array_Access is access all GameStatisticsFactory_Access_Array_Access_Array;
 
    type GameStatisticsFactory is new BaseGameStatistics with record
       stringBuffer : StringMaker_Access;

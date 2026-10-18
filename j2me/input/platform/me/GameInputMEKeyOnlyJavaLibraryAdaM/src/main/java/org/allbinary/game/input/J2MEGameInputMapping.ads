@@ -20,16 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.game.input.J2MEKeyFactory_Package; use org.allbinary.game.input.J2MEKeyFactory_Package;
-with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 
 package org.allbinary.game.input.J2MEGameInputMapping_Package is
 
-   package GamePersistanceStrings_Package renames Standard.org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
    package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
@@ -37,6 +33,8 @@ package org.allbinary.game.input.J2MEGameInputMapping_Package is
    type J2MEGameInputMapping_Access is access all J2MEGameInputMapping'Class;
    type J2MEGameInputMapping_Access_Array is array (Natural range <>) of J2MEGameInputMapping_Access;
    type J2MEGameInputMapping_Access_Array_Access is access all J2MEGameInputMapping_Access_Array;
+   type J2MEGameInputMapping_Access_Array_Access_Array is array (Natural range <>) of J2MEGameInputMapping_Access_Array_Access;
+   type J2MEGameInputMapping_Access_Array_Access_Array_Access is access all J2MEGameInputMapping_Access_Array_Access_Array;
 
    type J2MEGameInputMapping is new PersistentInputMapping with null record;
 

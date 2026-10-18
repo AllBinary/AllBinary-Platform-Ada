@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out SimpleFileUtil'Class) is
    begin
       null;
@@ -197,7 +204,7 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
       returnLine : Integer;
       s : Unbounded_String;
    begin
-        stringList := BasicArrayListD_Package.Create;
+        stringList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         if (inputStream) = (null) then
             return stringList;
         end if;

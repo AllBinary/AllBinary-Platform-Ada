@@ -1,8 +1,11 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+
 package body org.allbinary.time.TimeTypeUtil_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
    procedure Initialize_Fields (This : in out TimeTypeUtil'Class) is
    begin
       null;

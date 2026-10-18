@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.hardware.NoHardware_Package; use org.allbinary.logic.system.hardware.NoHardware_Package;
+
 package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
    procedure Initialize_Fields (This : in out HardwareFactory'Class) is

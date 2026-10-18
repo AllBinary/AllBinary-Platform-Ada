@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
+with org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package; use org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package;
+
 package body org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
 
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package WorkAreaJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
    procedure Initialize_Fields (This : in out PointsDomUtil'Class) is
    begin
       null;

@@ -24,7 +24,6 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
-with org.allbinary.business.category.CategoryView_Package; use org.allbinary.business.category.CategoryView_Package;
 
 package org.allbinary.business.category.CategoriesView_Package is
 
@@ -36,8 +35,10 @@ package org.allbinary.business.category.CategoriesView_Package is
    type CategoriesView_Access is access all CategoriesView'Class;
    type CategoriesView_Access_Array is array (Natural range <>) of CategoriesView_Access;
    type CategoriesView_Access_Array_Access is access all CategoriesView_Access_Array;
+   type CategoriesView_Access_Array_Access_Array is array (Natural range <>) of CategoriesView_Access_Array_Access;
+   type CategoriesView_Access_Array_Access_Array_Access is access all CategoriesView_Access_Array_Access_Array;
 
-   type CategoriesView is new DomNodeInterface with record
+   type CategoriesView is new Java_Object and DomNodeInterface with record
       categoryInterface : CategoryInterface_Access;
    end record;
 

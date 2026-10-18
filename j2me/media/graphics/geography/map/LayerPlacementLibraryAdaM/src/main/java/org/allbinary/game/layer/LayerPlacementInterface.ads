@@ -31,6 +31,8 @@ package org.allbinary.game.layer.LayerPlacementInterface_Package is
    type LayerPlacementInterface_Access is access all LayerPlacementInterface'Class;
    type LayerPlacementInterface_Access_Array is array (Natural range <>) of LayerPlacementInterface_Access;
    type LayerPlacementInterface_Access_Array_Access is access all LayerPlacementInterface_Access_Array;
+   type LayerPlacementInterface_Access_Array_Access_Array is array (Natural range <>) of LayerPlacementInterface_Access_Array_Access;
+   type LayerPlacementInterface_Access_Array_Access_Array_Access is access all LayerPlacementInterface_Access_Array_Access_Array;
    function getWidth (This : in out LayerPlacementInterface) return Integer is abstract;
    function getHeight (This : in out LayerPlacementInterface) return Integer is abstract;
    function getLayerType (This : in out LayerPlacementInterface) return LayerPlacementType_Access is abstract;

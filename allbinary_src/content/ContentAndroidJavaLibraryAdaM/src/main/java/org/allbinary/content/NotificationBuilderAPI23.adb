@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with android.app.Notification_Package; use android.app.Notification_Package;
+with android.app.Notification.Builder_Package; use android.app.Notification.Builder_Package;
+
 package body org.allbinary.content.NotificationBuilderAPI23_Package is
 
+   package Notification_Package renames Standard.android.app.Notification_Package;
+   package Builder_Package renames Standard.android.app.Notification.Builder_Package;
    procedure Initialize_Fields (This : in out NotificationBuilderAPI23'Class) is
    begin
       null;
@@ -41,7 +46,7 @@ package body org.allbinary.content.NotificationBuilderAPI23_Package is
       notification : Notification_Access;
    begin
         notification := Builder_Package.Create (context).setSmallIcon (Integer (integer_Id)).setTicker (message).setWhen (Java_Current_Time_Millis).setContentTitle (command.getLabel).setContentText (message).setContentIntent (pendingIntent).build;
-        return notification;
+        return Parcelable_Access (notification);
    end build;
 
    procedure build (This : in out NotificationBuilderAPI23; context_Param : access Context_Package.Context'Class; command_Param : access Command_Package.Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent_Package.PendingIntent'Class) is

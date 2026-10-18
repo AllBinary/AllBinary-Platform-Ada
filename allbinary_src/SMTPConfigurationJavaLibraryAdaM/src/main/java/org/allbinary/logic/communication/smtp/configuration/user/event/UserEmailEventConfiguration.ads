@@ -22,22 +22,21 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package;
 
 package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfiguration_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type UserEmailEventConfiguration is tagged;
    type UserEmailEventConfiguration_Access is access all UserEmailEventConfiguration'Class;
    type UserEmailEventConfiguration_Access_Array is array (Natural range <>) of UserEmailEventConfiguration_Access;
    type UserEmailEventConfiguration_Access_Array_Access is access all UserEmailEventConfiguration_Access_Array;
+   type UserEmailEventConfiguration_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventConfiguration_Access_Array_Access;
+   type UserEmailEventConfiguration_Access_Array_Access_Array_Access is access all UserEmailEventConfiguration_Access_Array_Access_Array;
 
-   type UserEmailEventConfiguration is new UserEmailEventConfigurationInterface with record
+   type UserEmailEventConfiguration is new Java_Object and UserEmailEventConfigurationInterface with record
       logUtil : LogUtil_Access;
       name : Unbounded_String;
       eventListenerClassPath : Unbounded_String;

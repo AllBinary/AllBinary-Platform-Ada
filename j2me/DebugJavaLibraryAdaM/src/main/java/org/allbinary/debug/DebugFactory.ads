@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.debug.NoDebug_Package; use org.allbinary.debug.NoDebug_Package;
 with org.allbinary.debug.DebugInterface_Package; use org.allbinary.debug.DebugInterface_Package;
 
 package org.allbinary.debug.DebugFactory_Package is
@@ -30,6 +29,8 @@ package org.allbinary.debug.DebugFactory_Package is
    type DebugFactory_Access is access all DebugFactory'Class;
    type DebugFactory_Access_Array is array (Natural range <>) of DebugFactory_Access;
    type DebugFactory_Access_Array_Access is access all DebugFactory_Access_Array;
+   type DebugFactory_Access_Array_Access_Array is array (Natural range <>) of DebugFactory_Access_Array_Access;
+   type DebugFactory_Access_Array_Access_Array_Access is access all DebugFactory_Access_Array_Access_Array;
 
    type DebugFactory is new Java_Object with null record;
 

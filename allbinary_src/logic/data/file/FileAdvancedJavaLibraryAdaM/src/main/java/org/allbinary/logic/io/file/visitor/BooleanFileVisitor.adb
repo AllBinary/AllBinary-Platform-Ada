@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+
 package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
 
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    procedure Initialize_Fields (This : in out BooleanFileVisitor'Class) is
    begin
       null;
@@ -96,6 +99,18 @@ package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
 
    procedure visit (This : in out BooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String) is
       Java_Result : constant Boolean := BooleanFileVisitor'Class (This).visit (file_Param, fileNameString);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end visit;
+
+   function visit (This : in out BooleanFileVisitor; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return BooleanFileVisitor'Class (This).visit (Java_Box (Value));
+   end visit;
+
+   procedure visit (This : in out BooleanFileVisitor; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := BooleanFileVisitor'Class (This).visit (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

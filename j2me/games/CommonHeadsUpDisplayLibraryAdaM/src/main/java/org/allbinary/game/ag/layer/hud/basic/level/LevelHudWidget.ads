@@ -20,28 +20,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package BasicHud_Package renames Standard.org.allbinary.game.graphics.hud.BasicHud_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
 
    type LevelHudWidget is tagged;
    type LevelHudWidget_Access is access all LevelHudWidget'Class;
    type LevelHudWidget_Access_Array is array (Natural range <>) of LevelHudWidget_Access;
    type LevelHudWidget_Access_Array_Access is access all LevelHudWidget_Access_Array;
+   type LevelHudWidget_Access_Array_Access_Array is array (Natural range <>) of LevelHudWidget_Access_Array_Access;
+   type LevelHudWidget_Access_Array_Access_Array_Access is access all LevelHudWidget_Access_Array_Access_Array;
 
    type LevelHudWidget is new BasicHud and PaintableInterface with record
       level : Integer;

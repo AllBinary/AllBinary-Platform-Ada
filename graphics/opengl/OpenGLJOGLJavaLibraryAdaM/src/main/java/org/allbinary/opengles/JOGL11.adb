@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.opengles.JOGL11_Package is
 
    procedure Initialize_Fields (This : in out JOGL11'Class) is

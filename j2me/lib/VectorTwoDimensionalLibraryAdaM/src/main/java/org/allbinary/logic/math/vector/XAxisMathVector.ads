@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.logic.math.vector.MathVector_Package; use org.allbinary.logic.math.vector.MathVector_Package;
-with org.allbinary.logic.math.vector.YAxisMathVectorUtil_Package; use org.allbinary.logic.math.vector.YAxisMathVectorUtil_Package;
 
 package org.allbinary.logic.math.vector.XAxisMathVector_Package is
 
@@ -32,6 +31,8 @@ package org.allbinary.logic.math.vector.XAxisMathVector_Package is
    type XAxisMathVector_Access is access all XAxisMathVector'Class;
    type XAxisMathVector_Access_Array is array (Natural range <>) of XAxisMathVector_Access;
    type XAxisMathVector_Access_Array_Access is access all XAxisMathVector_Access_Array;
+   type XAxisMathVector_Access_Array_Access_Array is array (Natural range <>) of XAxisMathVector_Access_Array_Access;
+   type XAxisMathVector_Access_Array_Access_Array_Access is access all XAxisMathVector_Access_Array_Access_Array;
 
    type XAxisMathVector is new MathVector with null record;
 

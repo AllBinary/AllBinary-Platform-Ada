@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.Vector_Package; use java.util.Vector_Package;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.util.ABVector_Package is
 
    package Vector_Package renames Standard.java.util.Vector_Package;
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ABVector is tagged;
    type ABVector_Access is access all ABVector'Class;
    type ABVector_Access_Array is array (Natural range <>) of ABVector_Access;
    type ABVector_Access_Array_Access is access all ABVector_Access_Array;
+   type ABVector_Access_Array_Access_Array is array (Natural range <>) of ABVector_Access_Array_Access;
+   type ABVector_Access_Array_Access_Array_Access is access all ABVector_Access_Array_Access_Array;
 
    type ABVector is new Vector with null record;
 
@@ -75,6 +75,18 @@ package org.allbinary.util.ABVector_Package is
    function hashCode (This : in out ABVector) return Integer;
    function toString (This : in out ABVector) return Unbounded_String;
    procedure removeRange (This : in out ABVector; fromIndex : Integer; toIndex : Integer);
+   function contains (This : in out ABVector; Value : Unbounded_String) return Boolean;
+   procedure contains (This : in out ABVector; Value : Unbounded_String);
+   function indexOf (This : in out ABVector; Value : Unbounded_String) return Integer;
+   procedure indexOf (This : in out ABVector; Value : Unbounded_String);
+   function lastIndexOf (This : in out ABVector; Value : Unbounded_String) return Integer;
+   procedure lastIndexOf (This : in out ABVector; Value : Unbounded_String);
+   function removeElement (This : in out ABVector; Value : Unbounded_String) return Boolean;
+   procedure removeElement (This : in out ABVector; Value : Unbounded_String);
+   function remove (This : in out ABVector; Value : Unbounded_String) return Boolean;
+   procedure remove (This : in out ABVector; Value : Unbounded_String);
+   function equals (This : in out ABVector; Value : Unbounded_String) return Boolean;
+   procedure equals (This : in out ABVector; Value : Unbounded_String);
 
 end org.allbinary.util.ABVector_Package;
 

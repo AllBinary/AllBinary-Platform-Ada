@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.money.payment.PaymentException_Package; use org.allbinary.business.user.commerce.money.payment.PaymentException_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package is
 
-   package PaymentException_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentException_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
 
    type PaymentProcessorInterface is interface and DomNodeInterface;
    type PaymentProcessorInterface_Access is access all PaymentProcessorInterface'Class;
    type PaymentProcessorInterface_Access_Array is array (Natural range <>) of PaymentProcessorInterface_Access;
    type PaymentProcessorInterface_Access_Array_Access is access all PaymentProcessorInterface_Access_Array;
+   type PaymentProcessorInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentProcessorInterface_Access_Array_Access;
+   type PaymentProcessorInterface_Access_Array_Access_Array_Access is access all PaymentProcessorInterface_Access_Array_Access_Array;
    procedure process (This : in out PaymentProcessorInterface) is abstract;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package is
 
    procedure Initialize_Fields (This : in out CanvasTreeLabel'Class) is

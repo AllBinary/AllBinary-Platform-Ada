@@ -20,33 +20,25 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-with org.allbinary.graphics.displayable.command.MyCommandsFactory_Package; use org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.game.midlet.Runnable_Package; use org.allbinary.game.midlet.Runnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 with org.allbinary.game.midlet.DemoGameMidlet_Package; use org.allbinary.game.midlet.DemoGameMidlet_Package;
 with org.allbinary.game.midlet.DemoGameMidletEvent_Package; use org.allbinary.game.midlet.DemoGameMidletEvent_Package;
-with org.allbinary.game.midlet.DemoGameMidletStateFactory_Package; use org.allbinary.game.midlet.DemoGameMidletStateFactory_Package;
-with org.allbinary.game.midlet.DemoGameMidletEventHandler_Package; use org.allbinary.game.midlet.DemoGameMidletEventHandler_Package;
 
 package org.allbinary.game.midlet.DemoRunnable_Package is
 
-   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package MyCommandsFactory_Package renames Standard.org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type DemoRunnable is tagged;
    type DemoRunnable_Access is access all DemoRunnable'Class;
    type DemoRunnable_Access_Array is array (Natural range <>) of DemoRunnable_Access;
    type DemoRunnable_Access_Array_Access is access all DemoRunnable_Access_Array;
+   type DemoRunnable_Access_Array_Access_Array is array (Natural range <>) of DemoRunnable_Access_Array_Access;
+   type DemoRunnable_Access_Array_Access_Array_Access is access all DemoRunnable_Access_Array_Access_Array;
 
-   type DemoRunnable is new Runnable with record
+   type DemoRunnable is new Java_Object and Runnable with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       demoGameMidlet : DemoGameMidlet_Access;

@@ -13,24 +13,51 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.NullCanvas_Package; use javax.microedition.lcdui.NullCanvas_Package;
+with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.PathFindingThreadPool_Package; use org.allbinary.thread.PathFindingThreadPool_Package;
+with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package NullCanvas_Package renames Standard.javax.microedition.lcdui.NullCanvas_Package;
+   package NullCommandListener_Package renames Standard.javax.microedition.lcdui.NullCommandListener_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package PathFindingThreadPool_Package renames Standard.org.allbinary.thread.PathFindingThreadPool_Package;
+   package ThreadPool_Package renames Standard.org.allbinary.thread.ThreadPool_Package;
    procedure Initialize_Fields (This : in out ProgressCanvas'Class) is
    begin
       null;
       This.hasPainted := False;
       
-      This.GAUGE_PAINTABLE := ProgressPaintable_Package.Create (ProgressCanvas_Access'(This'Unchecked_Access));
+      This.GAUGE_PAINTABLE := Paintable_Access (ProgressPaintable_Package.Create (ProgressCanvas_Access'(This'Unchecked_Access)));
       This.maxValue := 100.0;
       
       This.TEXT := This.commonStrings.LOADING;
-      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (ProgressCanvas_Access'(This'Unchecked_Access));
+      This.updateMyFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (ProgressCanvas_Access'(This'Unchecked_Access)));
       This.myFontProcessor := This.updateMyFontProcessor;
       This.allbinaryMidlet := AllBinaryMidlet_Package.getNullInstance;
       This.value := 0.0;
       This.text_Case := This.TEXT;
       This.background := True;
-      This.paintable := This.GAUGE_PAINTABLE;
+      This.paintable := PaintableInterface_Access (This.GAUGE_PAINTABLE);
       This.inProgress := False;
       This.IN_GAME_PROCESSOR := Processor_Package.Create  --  Java anonymous class body: implement it as a named type
 --          This.pathFindingThreadPool := PathFindingThreadPool_Package.getInstance;
@@ -109,7 +136,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
         ProgressCanvas'Class (This).setText (This.TEXT);
         ProgressCanvas'Class (This).setValue (0);
         This.inGameProcessor := Processor_Package.getInstance;
-        This.paintable := This.GAUGE_PAINTABLE;
+        This.paintable := PaintableInterface_Access (This.GAUGE_PAINTABLE);
         This.inProgress := True;
    end start;
 
@@ -122,7 +149,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
         ProgressCanvas'Class (This).setText (This.TEXT);
         ProgressCanvas'Class (This).setValue (0);
         This.inGameProcessor := Processor_Package.getInstance;
-        This.paintable := This.GAUGE_PAINTABLE;
+        This.paintable := PaintableInterface_Access (This.GAUGE_PAINTABLE);
    end startBackground;
 
    procedure endActual (This : in out ProgressCanvas) is
@@ -166,25 +193,25 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
         null;
    end endIfPaintedSinceStart;
 
-   procedure addEarlyPortion (This : in out ProgressCanvas; value : Integer; text_Case : Unbounded_String; index : Integer) is
+   procedure addEarlyPortion (This : in out ProgressCanvas; value : Integer; text : Unbounded_String; index : Integer) is
    begin
-        ProgressCanvas'Class (This).setText (StringMaker_Package.Create.append (text_Case).append (SmallIntegerSingletonFactory_Package.getInstance.getAt (index).toString).toString);
+        ProgressCanvas'Class (This).setText (StringMaker_Package.Create.append (text).append (SmallIntegerSingletonFactory_Package.getInstance.getAt (index).toString).toString);
         This.gauge.setValue ((This.gauge.getValue) + ((ProgressCanvas'Class (This).getMaxValue) / (Float (value))));
    end addEarlyPortion;
 
-   procedure addPortion (This : in out ProgressCanvas; value : Integer; text_Case : Unbounded_String; index : Integer) is
+   procedure addPortion (This : in out ProgressCanvas; value : Integer; text : Unbounded_String; index : Integer) is
    begin
-        ProgressCanvas'Class (This).setText (StringMaker_Package.Create.append (text_Case).append (SmallIntegerSingletonFactory_Package.getInstance.getAt (index).toString).toString);
+        ProgressCanvas'Class (This).setText (StringMaker_Package.Create.append (text).append (SmallIntegerSingletonFactory_Package.getInstance.getAt (index).toString).toString);
         PreLogUtil_Package.put (This.text_Case, ProgressCanvas_Access'(This'Unchecked_Access), This.ADD_PORTION);
         This.gauge.setValue ((This.gauge.getValue) + ((ProgressCanvas'Class (This).getMaxValue) / (Float (value))));
    end addPortion;
 
-   procedure addNormalPortion (This : in out ProgressCanvas; value : Integer; text_Case : Unbounded_String) is
+   procedure addNormalPortion (This : in out ProgressCanvas; value : Integer; text : Unbounded_String) is
    begin
-        if (This.text_Case) /= (text_Case) then
-            PreLogUtil_Package.put (text_Case, ProgressCanvas_Access'(This'Unchecked_Access), This.ADD_PORTION);
+        if (This.text_Case) /= (text) then
+            PreLogUtil_Package.put (text, ProgressCanvas_Access'(This'Unchecked_Access), This.ADD_PORTION);
         end if;
-        ProgressCanvas'Class (This).setText (text_Case);
+        ProgressCanvas'Class (This).setText (text);
         This.gauge.setValue ((This.gauge.getValue) + ((ProgressCanvas'Class (This).getMaxValue) / (Float (value))));
    end addNormalPortion;
 
@@ -221,9 +248,9 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
         return This.value;
    end getValue;
 
-   procedure setText (This : in out ProgressCanvas; text_Case : Unbounded_String) is
+   procedure setText (This : in out ProgressCanvas; text : Unbounded_String) is
    begin
-        This.text_Case := text_Case;
+        This.text_Case := text;
    end setText;
 
    function getText (This : in out ProgressCanvas) return Unbounded_String is
@@ -244,8 +271,35 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
 end org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.NullCanvas_Package; use javax.microedition.lcdui.NullCanvas_Package;
+with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.PathFindingThreadPool_Package; use org.allbinary.thread.PathFindingThreadPool_Package;
+with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package NullCanvas_Package renames Standard.javax.microedition.lcdui.NullCanvas_Package;
+   package NullCommandListener_Package renames Standard.javax.microedition.lcdui.NullCommandListener_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package PathFindingThreadPool_Package renames Standard.org.allbinary.thread.PathFindingThreadPool_Package;
+   package ThreadPool_Package renames Standard.org.allbinary.thread.ThreadPool_Package;
    procedure Initialize_Fields (This : in out ProgressPaintable'Class) is
    begin
       null;

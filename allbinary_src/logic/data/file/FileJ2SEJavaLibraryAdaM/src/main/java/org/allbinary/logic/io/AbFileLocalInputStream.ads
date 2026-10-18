@@ -22,18 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileNotFoundException_Package; use java.io.FileNotFoundException_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
 
 package org.allbinary.logic.io.AbFileLocalInputStream_Package is
 
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
    type AbFileLocalInputStream is tagged;
    type AbFileLocalInputStream_Access is access all AbFileLocalInputStream'Class;
    type AbFileLocalInputStream_Access_Array is array (Natural range <>) of AbFileLocalInputStream_Access;
    type AbFileLocalInputStream_Access_Array_Access is access all AbFileLocalInputStream_Access_Array;
+   type AbFileLocalInputStream_Access_Array_Access_Array is array (Natural range <>) of AbFileLocalInputStream_Access_Array_Access;
+   type AbFileLocalInputStream_Access_Array_Access_Array_Access is access all AbFileLocalInputStream_Access_Array_Access_Array;
 
    type AbFileLocalInputStream is new AbFileInputStream with null record;
 

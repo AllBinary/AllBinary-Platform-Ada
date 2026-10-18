@@ -22,34 +22,26 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
-with org.allbinary.DisposalUtil_Package; use org.allbinary.DisposalUtil_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
-with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
-with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 
 package org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
-   package DisposalUtil_Package renames Standard.org.allbinary.DisposalUtil_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
-   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    package ImageModifierUtil_Package renames Standard.org.allbinary.media.image.ImageModifierUtil_Package;
-   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type ImageArrayBaseRotationAnimation is tagged;
    type ImageArrayBaseRotationAnimation_Access is access all ImageArrayBaseRotationAnimation'Class;
    type ImageArrayBaseRotationAnimation_Access_Array is array (Natural range <>) of ImageArrayBaseRotationAnimation_Access;
    type ImageArrayBaseRotationAnimation_Access_Array_Access is access all ImageArrayBaseRotationAnimation_Access_Array;
+   type ImageArrayBaseRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of ImageArrayBaseRotationAnimation_Access_Array_Access;
+   type ImageArrayBaseRotationAnimation_Access_Array_Access_Array_Access is access all ImageArrayBaseRotationAnimation_Access_Array_Access_Array;
 
    type ImageArrayBaseRotationAnimation is new RotationAnimation with record
       imageModifierUtil : ImageModifierUtil_Access;

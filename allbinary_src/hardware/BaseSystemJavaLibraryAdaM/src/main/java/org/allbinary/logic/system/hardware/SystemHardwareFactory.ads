@@ -21,19 +21,13 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.system.hardware.NoHardware_Package; use org.allbinary.logic.system.hardware.NoHardware_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
-with org.allbinary.logic.system.hardware.HardwareFactory_Package; use org.allbinary.logic.system.hardware.HardwareFactory_Package;
 
 package org.allbinary.logic.system.hardware.SystemHardwareFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -41,6 +35,8 @@ package org.allbinary.logic.system.hardware.SystemHardwareFactory_Package is
    type SystemHardwareFactory_Access is access all SystemHardwareFactory'Class;
    type SystemHardwareFactory_Access_Array is array (Natural range <>) of SystemHardwareFactory_Access;
    type SystemHardwareFactory_Access_Array_Access is access all SystemHardwareFactory_Access_Array;
+   type SystemHardwareFactory_Access_Array_Access_Array is array (Natural range <>) of SystemHardwareFactory_Access_Array_Access;
+   type SystemHardwareFactory_Access_Array_Access_Array_Access is access all SystemHardwareFactory_Access_Array_Access_Array;
 
    type SystemHardwareFactory is new Java_Object with record
       logUtil : LogUtil_Access;

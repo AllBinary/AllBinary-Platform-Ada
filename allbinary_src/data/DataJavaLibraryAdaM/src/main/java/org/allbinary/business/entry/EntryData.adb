@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.entry_Id.EntryData_Package is
 
    procedure Initialize_Fields (This : in out EntryData'Class) is

@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+
 package body org.allbinary.animation.VectorRotationGenerator_Package is
 
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package BasicGraphicsPipeline_Package renames Standard.org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
    procedure Initialize_Fields (This : in out VectorRotationGenerator'Class) is
    begin
       null;
@@ -62,8 +73,8 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
         begin
             totalAngle := This.angleFactory.TOTAL_ANGLE;
             angleIncrement := (Integer (totalAngle)) / (frames);
-            pointsBasicArrayList := BasicArrayListS_Package.Create ((Integer (totalAngle)) / (angleIncrement));
-            pointBasicArrayList := BasicArrayListS_Package.Create (points'Length);
+            pointsBasicArrayList := BasicArrayList_Access (BasicArrayListS_Package.Create ((Integer (totalAngle)) / (angleIncrement)));
+            pointBasicArrayList := BasicArrayList_Access (BasicArrayListS_Package.Create (points'Length));
             pointFactory := PointFactory_Package.getInstance;
             size := points'Length;
             for index in 0 .. (size) - 1 loop

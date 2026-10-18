@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
    type UserEmailEventConfigurationData_Access is access all UserEmailEventConfigurationData'Class;
    type UserEmailEventConfigurationData_Access_Array is array (Natural range <>) of UserEmailEventConfigurationData_Access;
    type UserEmailEventConfigurationData_Access_Array_Access is access all UserEmailEventConfigurationData_Access_Array;
+   type UserEmailEventConfigurationData_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventConfigurationData_Access_Array_Access;
+   type UserEmailEventConfigurationData_Access_Array_Access_Array_Access is access all UserEmailEventConfigurationData_Access_Array_Access_Array;
 
    type UserEmailEventConfigurationData is new Java_Object with null record;
    NAME : Unbounded_String;

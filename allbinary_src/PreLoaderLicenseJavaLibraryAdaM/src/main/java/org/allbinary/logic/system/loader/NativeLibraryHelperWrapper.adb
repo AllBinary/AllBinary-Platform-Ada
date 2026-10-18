@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package; use org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package;
+
 package body org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out NativeLibraryHelperWrapper'Class) is
    begin
       null;
@@ -50,7 +54,7 @@ package body org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Packag
         params (0) := NativeLibraryHelperWrapper'Class (This).getLibraryName;
         classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => Ada.Tags.No_Tag);
         classes (0) := NativeLibraryHelperWrapper'Class (This).getLibraryName.all'Tag;
-        This.loader := NativeLibraryClassLoader_Package.Create (This.all'Tag.getClassLoader);
+        This.loader := ClassLoader_Access (NativeLibraryClassLoader_Package.Create (This.all'Tag.getClassLoader));
         myClass := This.loader.loadClass (To_Unbounded_String ("dynamic.NativeLibraryHelper"));
         constructor := myClass.getConstructor (classes);
         This.anyType := constructor.newInstance (params);

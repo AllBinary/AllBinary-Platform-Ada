@@ -37,6 +37,8 @@ package org.allbinary.animation.image.ImageSegmentAnimation_Package is
    type ImageSegmentAnimation_Access is access all ImageSegmentAnimation'Class;
    type ImageSegmentAnimation_Access_Array is array (Natural range <>) of ImageSegmentAnimation_Access;
    type ImageSegmentAnimation_Access_Array_Access is access all ImageSegmentAnimation_Access_Array;
+   type ImageSegmentAnimation_Access_Array_Access_Array is array (Natural range <>) of ImageSegmentAnimation_Access_Array_Access;
+   type ImageSegmentAnimation_Access_Array_Access_Array_Access is access all ImageSegmentAnimation_Access_Array_Access_Array;
 
    type ImageSegmentAnimation is new ImageAnimation with record
       startX : Integer;

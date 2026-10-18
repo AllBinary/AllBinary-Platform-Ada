@@ -28,6 +28,8 @@ package org.allbinary.business.user.modules.admin.configuration.AdminConfigurati
    type AdminConfigurationData_Access is access all AdminConfigurationData'Class;
    type AdminConfigurationData_Access_Array is array (Natural range <>) of AdminConfigurationData_Access;
    type AdminConfigurationData_Access_Array_Access is access all AdminConfigurationData_Access_Array;
+   type AdminConfigurationData_Access_Array_Access_Array is array (Natural range <>) of AdminConfigurationData_Access_Array_Access;
+   type AdminConfigurationData_Access_Array_Access_Array_Access is access all AdminConfigurationData_Access_Array_Access_Array;
 
    type AdminConfigurationData is new Java_Object with null record;
    CONTEXTNAME : Unbounded_String;

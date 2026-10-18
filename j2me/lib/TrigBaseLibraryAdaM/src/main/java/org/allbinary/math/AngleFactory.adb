@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+
 package body org.allbinary.math.AngleFactory_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
    procedure Initialize_Fields (This : in out AngleFactory'Class) is
    begin
       null;
@@ -84,20 +101,20 @@ package body org.allbinary.math.AngleFactory_Package is
    function getClosestDirection (This : in out AngleFactory; angle : Integer) return Angle_Access is
    begin
         if ((((angle) >= (315)) and then ((angle) < (360)))) or else ((((angle) >= (0)) and then ((angle) < (45)))) then
-            return This.UP;
+            return Angle_Access (This.UP);
         elsif ((angle) >= (45)) and then ((angle) < (135)) then
-            return This.RIGHT;
+            return Angle_Access (This.RIGHT);
         elsif ((angle) >= (135)) and then ((angle) < (225)) then
-            return This.DOWN;
+            return Angle_Access (This.DOWN);
         elsif ((angle) >= (225)) and then ((angle) < (315)) then
-            return This.LEFT;
+            return Angle_Access (This.LEFT);
         end if;
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getClosestDirection;
 
    function getGeneralDirection (This : in out AngleFactory) return Angle_Access is
    begin
-        return This.NOT_ANGLE;
+        return Angle_Access (This.NOT_ANGLE);
    end getGeneralDirection;
 
    procedure main (args : Unbounded_String_Array_Access) is

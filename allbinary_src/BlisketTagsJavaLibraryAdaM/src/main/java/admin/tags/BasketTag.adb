@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.BasketHelperFactory_Package; use admin.taghelpers.BasketHelperFactory_Package;
+with admin.taghelpers.BasketRequestHelperFactory_Package; use admin.taghelpers.BasketRequestHelperFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.business.user.commerce.inventory.basket.BasketData_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body admin.tags.BasketTag_Package is
 
+   package BasketHelperFactory_Package renames Standard.admin.taghelpers.BasketHelperFactory_Package;
+   package BasketRequestHelperFactory_Package renames Standard.admin.taghelpers.BasketRequestHelperFactory_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package BasketData_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out BasketTag'Class) is
    begin
       null;
@@ -148,9 +163,9 @@ package body admin.tags.BasketTag_Package is
                         This.pageContext.getOut.println (To_Unbounded_String ("Item is not currently being sold.<p/>"));
                     end if;
                 elsif (Java_Compare_To (This.command, BasketData_Package.DELETE)) = (0) then
-                    BasketTag'Class (This).removeItemFromBasket;
+                    declare Java_Result renames BasketTag'Class (This).removeItemFromBasket; pragma Unreferenced (Java_Result); begin null; end;
                 elsif (Java_Compare_To (This.command, BasketData_Package.ADJUST)) = (0) then
-                    BasketTag'Class (This).adjustBasket;
+                    declare Java_Result renames BasketTag'Class (This).adjustBasket; pragma Unreferenced (Java_Result); begin null; end;
                 elsif (Java_Compare_To (This.command, BasketData_Package.ISEMPTY)) = (0) then
                     if BasketTag'Class (This).isBasketEmpty then
                         return This.EVAL_BODY_INCLUDE;

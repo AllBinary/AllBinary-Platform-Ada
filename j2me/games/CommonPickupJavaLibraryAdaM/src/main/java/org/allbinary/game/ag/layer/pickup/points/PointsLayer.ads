@@ -22,26 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.score.ScoreableInterface_Package; use org.allbinary.game.score.ScoreableInterface_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
-with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 
 package org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type PointsLayer is tagged;
    type PointsLayer_Access is access all PointsLayer'Class;
    type PointsLayer_Access_Array is array (Natural range <>) of PointsLayer_Access;
    type PointsLayer_Access_Array_Access is access all PointsLayer_Access_Array;
+   type PointsLayer_Access_Array_Access_Array is array (Natural range <>) of PointsLayer_Access_Array_Access;
+   type PointsLayer_Access_Array_Access_Array_Access is access all PointsLayer_Access_Array_Access_Array;
 
    type PointsLayer is new AllBinaryLayer with record
       points : Integer;

@@ -33,8 +33,10 @@ package org.allbinary.physics.movement.Movement_Package is
    type Movement_Access is access all Movement'Class;
    type Movement_Access_Array is array (Natural range <>) of Movement_Access;
    type Movement_Access_Array_Access is access all Movement_Access_Array;
+   type Movement_Access_Array_Access_Array is array (Natural range <>) of Movement_Access_Array_Access;
+   type Movement_Access_Array_Access_Array_Access is access all Movement_Access_Array_Access_Array;
 
-   type Movement is new MovementInterface with null record;
+   type Movement is new Java_Object and MovementInterface with null record;
 
    procedure Initialize (This : in out Movement'Class);
    function Create return Movement_Access;

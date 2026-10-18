@@ -30,6 +30,8 @@ package admin.taghelpers.TableInterface_Package is
    type TableInterface_Access is access all TableInterface'Class;
    type TableInterface_Access_Array is array (Natural range <>) of TableInterface_Access;
    type TableInterface_Access_Array_Access is access all TableInterface_Access_Array;
+   type TableInterface_Access_Array_Access_Array is array (Natural range <>) of TableInterface_Access_Array_Access;
+   type TableInterface_Access_Array_Access_Array_Access is access all TableInterface_Access_Array_Access_Array;
 
 end admin.taghelpers.TableInterface_Package;
 

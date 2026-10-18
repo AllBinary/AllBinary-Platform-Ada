@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.image.PaintableToImageUtil_Package; use org.allbinary.image.PaintableToImageUtil_Package;
+
 package body org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package PaintableToImageUtil_Package renames Standard.org.allbinary.image.PaintableToImageUtil_Package;
    procedure Initialize_Fields (This : in out ImageMiniMapLayer'Class) is
    begin
       null;

@@ -29,6 +29,8 @@ package org.allbinary.input.NoAllBinarySensor_Package is
    type NoAllBinarySensor_Access is access all NoAllBinarySensor'Class;
    type NoAllBinarySensor_Access_Array is array (Natural range <>) of NoAllBinarySensor_Access;
    type NoAllBinarySensor_Access_Array_Access is access all NoAllBinarySensor_Access_Array;
+   type NoAllBinarySensor_Access_Array_Access_Array is array (Natural range <>) of NoAllBinarySensor_Access_Array_Access;
+   type NoAllBinarySensor_Access_Array_Access_Array_Access is access all NoAllBinarySensor_Access_Array_Access_Array;
 
    type NoAllBinarySensor is new AllBinarySensor with null record;
    instance : NoAllBinarySensor_Access;

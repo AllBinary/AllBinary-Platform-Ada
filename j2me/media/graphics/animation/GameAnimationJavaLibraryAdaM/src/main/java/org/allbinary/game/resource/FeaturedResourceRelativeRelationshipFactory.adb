@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.RelativeRelationship_Package; use org.allbinary.graphics.RelativeRelationship_Package;
+with org.allbinary.layer.relationship.RelativeLayerRelationship_Package; use org.allbinary.layer.relationship.RelativeLayerRelationship_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package; use org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package;
+
 package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package is
 
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
+   package RelativeLayerRelationship_Package renames Standard.org.allbinary.layer.relationship.RelativeLayerRelationship_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out FeaturedResourceRelativeRelationshipFactory'Class) is
    begin
       null;
@@ -75,11 +87,11 @@ package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFac
       index : Integer;
    begin
         pointFactory := PointFactory_Package.getInstance;
-        newList := BasicArrayListD_Package.Create;
+        newList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := list.size;
         for index in 0 .. (size) - 1 loop
             relativeRelationship := RelativeRelationship_Access (list.objectArray (index));
-            newList.add (RelativeLayerRelationship_Package.Create (layer, pointFactory.createXY (relativeRelationship.getX, relativeRelationship.getY), BasicArrayListUtil_Package.getInstance.getImmutableInstance));
+            newList.add (Java_Object_Access (RelativeLayerRelationship_Package.Create (layer, pointFactory.createXY (relativeRelationship.getX, relativeRelationship.getY), BasicArrayListUtil_Package.getInstance.getImmutableInstance)));
         end loop;
         return newList;
    end duplicate;

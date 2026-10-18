@@ -38,6 +38,8 @@ package org.allbinary.business.advertisement.AdvertisementInterface_Package is
    type AdvertisementInterface_Access is access all AdvertisementInterface'Class;
    type AdvertisementInterface_Access_Array is array (Natural range <>) of AdvertisementInterface_Access;
    type AdvertisementInterface_Access_Array_Access is access all AdvertisementInterface_Access_Array;
+   type AdvertisementInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementInterface_Access_Array_Access;
+   type AdvertisementInterface_Access_Array_Access_Array_Access is access all AdvertisementInterface_Access_Array_Access_Array;
    function getArtist (This : in out AdvertisementInterface) return Unbounded_String is abstract;
    function getArtistLink (This : in out AdvertisementInterface) return Unbounded_String is abstract;
    function getTitle (This : in out AdvertisementInterface) return Unbounded_String is abstract;

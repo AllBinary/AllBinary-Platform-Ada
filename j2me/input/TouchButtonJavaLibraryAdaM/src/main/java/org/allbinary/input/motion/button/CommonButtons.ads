@@ -20,20 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
 package org.allbinary.input.motion.button.CommonButtons_Package is
 
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
    type CommonButtons is tagged;
    type CommonButtons_Access is access all CommonButtons'Class;
    type CommonButtons_Access_Array is array (Natural range <>) of CommonButtons_Access;
    type CommonButtons_Access_Array_Access is access all CommonButtons_Access_Array;
+   type CommonButtons_Access_Array_Access_Array is array (Natural range <>) of CommonButtons_Access_Array_Access;
+   type CommonButtons_Access_Array_Access_Array_Access is access all CommonButtons_Access_Array_Access_Array;
 
    type CommonButtons is new Java_Object with record
       STANDARD_BUTTON_SIZE : Integer;

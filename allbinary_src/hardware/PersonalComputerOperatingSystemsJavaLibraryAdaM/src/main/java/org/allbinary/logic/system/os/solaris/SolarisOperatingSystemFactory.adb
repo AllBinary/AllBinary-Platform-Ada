@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.logic.system.os.NoOperatingSystem_Package;
+with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
+with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.os.solaris.SolarisOS_Package; use org.allbinary.logic.system.os.solaris.SolarisOS_Package;
+
 package body org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Package is
 
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package NoOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.NoOperatingSystem_Package;
+   package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
+   package SystemProperties_Package renames Standard.org.allbinary.logic.system.os.SystemProperties_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out SolarisOperatingSystemFactory'Class) is
    begin
       null;
@@ -51,10 +65,10 @@ package body org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory
             osName := SystemProperties_Package.getInstance.getName;
             operatingSystemInterface := null;
             if (Java_Compare_To (osName, operatingSystems.SOLARIS)) = (0) then
-                operatingSystemInterface := SolarisOS_Package.Create;
+                operatingSystemInterface := GenericOperatingSystem_Access (SolarisOS_Package.Create);
             else
                 if operatingSystems.isUnknownSpecificOSAllowed then
-                    operatingSystemInterface := SolarisOS_Package.Create;
+                    operatingSystemInterface := GenericOperatingSystem_Access (SolarisOS_Package.Create);
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Specific Solaris OS Not Supported: ") & osName));
                 end if;

@@ -28,6 +28,8 @@ package org.allbinary.game.configuration.persistance.PersistanceStrings_Package 
    type PersistanceStrings_Access is access all PersistanceStrings'Class;
    type PersistanceStrings_Access_Array is array (Natural range <>) of PersistanceStrings_Access;
    type PersistanceStrings_Access_Array_Access is access all PersistanceStrings_Access_Array;
+   type PersistanceStrings_Access_Array_Access_Array is array (Natural range <>) of PersistanceStrings_Access_Array_Access;
+   type PersistanceStrings_Access_Array_Access_Array_Access is access all PersistanceStrings_Access_Array_Access_Array;
 
    type PersistanceStrings is new Java_Object with record
       SAVING : Unbounded_String;

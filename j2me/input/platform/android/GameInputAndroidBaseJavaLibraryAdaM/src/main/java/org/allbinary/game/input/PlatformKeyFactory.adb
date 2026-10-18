@@ -1,8 +1,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package; use org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package;
+with org.allbinary.game.input.AndroidGameKey_Package; use org.allbinary.game.input.AndroidGameKey_Package;
+
 package body org.allbinary.game.input.PlatformKeyFactory_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out PlatformKeyFactory'Class) is
    begin
       null;

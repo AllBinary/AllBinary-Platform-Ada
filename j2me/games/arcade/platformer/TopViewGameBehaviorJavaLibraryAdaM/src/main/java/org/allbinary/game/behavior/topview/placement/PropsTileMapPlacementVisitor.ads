@@ -22,8 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.mapeditor.core.TileLayer_Package; use org.mapeditor.core.TileLayer_Package;
 with org.mapeditor.core.TiledMap_Package; use org.mapeditor.core.TiledMap_Package;
 with org.allbinary.game.behavior.topview.placement.TileMapPlacementVisitor_Package; use org.allbinary.game.behavior.topview.placement.TileMapPlacementVisitor_Package;
 
@@ -31,14 +29,14 @@ package org.allbinary.game.behavior.topview.placement.PropsTileMapPlacementVisit
 
    package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package TileLayer_Package renames Standard.org.mapeditor.core.TileLayer_Package;
    package TiledMap_Package renames Standard.org.mapeditor.core.TiledMap_Package;
 
    type PropsTileMapPlacementVisitor is tagged;
    type PropsTileMapPlacementVisitor_Access is access all PropsTileMapPlacementVisitor'Class;
    type PropsTileMapPlacementVisitor_Access_Array is array (Natural range <>) of PropsTileMapPlacementVisitor_Access;
    type PropsTileMapPlacementVisitor_Access_Array_Access is access all PropsTileMapPlacementVisitor_Access_Array;
+   type PropsTileMapPlacementVisitor_Access_Array_Access_Array is array (Natural range <>) of PropsTileMapPlacementVisitor_Access_Array_Access;
+   type PropsTileMapPlacementVisitor_Access_Array_Access_Array_Access is access all PropsTileMapPlacementVisitor_Access_Array_Access_Array;
 
    type PropsTileMapPlacementVisitor is new TileMapPlacementVisitor with record
       logUtil : LogUtil_Access;

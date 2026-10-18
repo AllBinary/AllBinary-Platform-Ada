@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.modules.proce
    type AuthorizeNetAimData_Access is access all AuthorizeNetAimData'Class;
    type AuthorizeNetAimData_Access_Array is array (Natural range <>) of AuthorizeNetAimData_Access;
    type AuthorizeNetAimData_Access_Array_Access is access all AuthorizeNetAimData_Access_Array;
+   type AuthorizeNetAimData_Access_Array_Access_Array is array (Natural range <>) of AuthorizeNetAimData_Access_Array_Access;
+   type AuthorizeNetAimData_Access_Array_Access_Array_Access is access all AuthorizeNetAimData_Access_Array_Access_Array;
 
    type AuthorizeNetAimData is new Java_Object with null record;
    X_DELIM_DATA : Unbounded_String;

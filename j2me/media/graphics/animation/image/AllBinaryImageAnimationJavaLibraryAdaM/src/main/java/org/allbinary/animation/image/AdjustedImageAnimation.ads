@@ -35,6 +35,8 @@ package org.allbinary.animation.image.AdjustedImageAnimation_Package is
    type AdjustedImageAnimation_Access is access all AdjustedImageAnimation'Class;
    type AdjustedImageAnimation_Access_Array is array (Natural range <>) of AdjustedImageAnimation_Access;
    type AdjustedImageAnimation_Access_Array_Access is access all AdjustedImageAnimation_Access_Array;
+   type AdjustedImageAnimation_Access_Array_Access_Array is array (Natural range <>) of AdjustedImageAnimation_Access_Array_Access;
+   type AdjustedImageAnimation_Access_Array_Access_Array_Access is access all AdjustedImageAnimation_Access_Array_Access_Array;
 
    type AdjustedImageAnimation is new ImageAnimation with record
       dx : Integer;

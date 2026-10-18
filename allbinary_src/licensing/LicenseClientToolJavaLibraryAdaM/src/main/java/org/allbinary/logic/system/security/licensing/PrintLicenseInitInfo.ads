@@ -21,23 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
-with org.allbinary.business.init.LicenseInitInfoUtil_Package; use org.allbinary.business.init.LicenseInitInfoUtil_Package;
-with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io.file.FileFactory_Package;
-with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package is
 
    package LicenseInitInfo_Package renames Standard.org.allbinary.business.init.LicenseInitInfo_Package;
-   package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
-   package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
-   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type PrintLicenseInitInfo is tagged;
    type PrintLicenseInitInfo_Access is access all PrintLicenseInitInfo'Class;
    type PrintLicenseInitInfo_Access_Array is array (Natural range <>) of PrintLicenseInitInfo_Access;
    type PrintLicenseInitInfo_Access_Array_Access is access all PrintLicenseInitInfo_Access_Array;
+   type PrintLicenseInitInfo_Access_Array_Access_Array is array (Natural range <>) of PrintLicenseInitInfo_Access_Array_Access;
+   type PrintLicenseInitInfo_Access_Array_Access_Array_Access is access all PrintLicenseInitInfo_Access_Array_Access_Array;
 
    type PrintLicenseInitInfo is new Java_Object with null record;
    PATH : Unbounded_String;

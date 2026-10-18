@@ -20,21 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
-with org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package; use org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package;
-with org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package; use org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package;
 with org.allbinary.android.input.motion.GameInputMotionInfo_Package; use org.allbinary.android.input.motion.GameInputMotionInfo_Package;
 
 package org.allbinary.android.input.motion.GameInputMotionInfoFactory_Package is
 
-   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
-   package GameInputMotionInfoAPI1_Package renames Standard.org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package;
-   package GameInputMotionInfoAPI5_Package renames Standard.org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package;
 
    type GameInputMotionInfoFactory is tagged;
    type GameInputMotionInfoFactory_Access is access all GameInputMotionInfoFactory'Class;
    type GameInputMotionInfoFactory_Access_Array is array (Natural range <>) of GameInputMotionInfoFactory_Access;
    type GameInputMotionInfoFactory_Access_Array_Access is access all GameInputMotionInfoFactory_Access_Array;
+   type GameInputMotionInfoFactory_Access_Array_Access_Array is array (Natural range <>) of GameInputMotionInfoFactory_Access_Array_Access;
+   type GameInputMotionInfoFactory_Access_Array_Access_Array_Access is access all GameInputMotionInfoFactory_Access_Array_Access_Array;
 
    type GameInputMotionInfoFactory is new Java_Object with null record;
 

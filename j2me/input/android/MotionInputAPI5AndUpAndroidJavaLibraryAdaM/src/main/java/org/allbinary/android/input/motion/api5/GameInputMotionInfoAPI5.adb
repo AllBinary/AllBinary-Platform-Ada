@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package is
 
    procedure Initialize_Fields (This : in out GameInputMotionInfoAPI5'Class) is
@@ -28,7 +29,7 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Pac
 
    procedure Initialize (This : in out GameInputMotionInfoAPI5'Class) is
    begin
-        GameInputMotionInfo_Package.Initialize (This, Integer_Package.MAX_VALUE, 10);
+        GameInputMotionInfo_Package.Initialize (This, Integer'Last, 10);
    end Initialize;
 
    function Create return GameInputMotionInfoAPI5_Access is

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.opengles.shader.ShaderManager_Package is
 
    procedure Initialize_Fields (This : in out ShaderManager'Class) is

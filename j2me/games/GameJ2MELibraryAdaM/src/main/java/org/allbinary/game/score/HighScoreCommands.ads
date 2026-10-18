@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.game.score.HighScoreCommands_Package is
 
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type HighScoreCommands is tagged;
    type HighScoreCommands_Access is access all HighScoreCommands'Class;
    type HighScoreCommands_Access_Array is array (Natural range <>) of HighScoreCommands_Access;
    type HighScoreCommands_Access_Array_Access is access all HighScoreCommands_Access_Array;
+   type HighScoreCommands_Access_Array_Access_Array is array (Natural range <>) of HighScoreCommands_Access_Array_Access;
+   type HighScoreCommands_Access_Array_Access_Array_Access is access all HighScoreCommands_Access_Array_Access_Array;
 
    type HighScoreCommands is new Java_Object with record
       DISPLAY : Command_Access;

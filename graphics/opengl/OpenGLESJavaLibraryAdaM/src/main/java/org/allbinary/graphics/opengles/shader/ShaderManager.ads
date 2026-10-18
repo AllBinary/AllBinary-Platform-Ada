@@ -34,6 +34,8 @@ package org.allbinary.graphics.opengles.shader.ShaderManager_Package is
    type ShaderManager_Access is access all ShaderManager'Class;
    type ShaderManager_Access_Array is array (Natural range <>) of ShaderManager_Access;
    type ShaderManager_Access_Array_Access is access all ShaderManager_Access_Array;
+   type ShaderManager_Access_Array_Access_Array is array (Natural range <>) of ShaderManager_Access_Array_Access;
+   type ShaderManager_Access_Array_Access_Array_Access is access all ShaderManager_Access_Array_Access_Array;
 
    type ShaderManager is new Java_Object with record
       commonStrings : CommonStrings_Access;

@@ -13,13 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.debug.DebugFactory_Package; use org.allbinary.debug.DebugFactory_Package;
+with org.allbinary.debug.NoDebug_Package; use org.allbinary.debug.NoDebug_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.business.init.LicenseInitInfo_Package is
 
+   package DebugFactory_Package renames Standard.org.allbinary.debug.DebugFactory_Package;
+   package NoDebug_Package renames Standard.org.allbinary.debug.NoDebug_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out LicenseInitInfo'Class) is
    begin
       null;
       This.id := StringUtil_Package.getInstance.EMPTY_STRING;
-      This.serverVector := BasicArrayListD_Package.Create;
+      This.serverVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -58,7 +67,7 @@ package body org.allbinary.business.init.LicenseInitInfo_Package is
 
    procedure clearServers (This : in out LicenseInitInfo) is
    begin
-        This.serverVector := BasicArrayListD_Package.Create;
+        This.serverVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end clearServers;
 
    procedure setServer (This : in out LicenseInitInfo; value : Unbounded_String; index : Integer) is

@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package org.platform.ThreedObjResources_Package is
 
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type ThreedObjResources is tagged;
    type ThreedObjResources_Access is access all ThreedObjResources'Class;
    type ThreedObjResources_Access_Array is array (Natural range <>) of ThreedObjResources_Access;
    type ThreedObjResources_Access_Array_Access is access all ThreedObjResources_Access_Array;
+   type ThreedObjResources_Access_Array_Access_Array is array (Natural range <>) of ThreedObjResources_Access_Array_Access;
+   type ThreedObjResources_Access_Array_Access_Array_Access is access all ThreedObjResources_Access_Array_Access_Array;
 
    type ThreedObjResources is new Java_Object with record
       hashtable : ABHashtable_Access;

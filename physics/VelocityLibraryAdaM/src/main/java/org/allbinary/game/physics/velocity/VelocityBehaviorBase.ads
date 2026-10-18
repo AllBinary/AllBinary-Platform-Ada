@@ -29,6 +29,8 @@ package org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package is
    type VelocityBehaviorBase_Access is access all VelocityBehaviorBase'Class;
    type VelocityBehaviorBase_Access_Array is array (Natural range <>) of VelocityBehaviorBase_Access;
    type VelocityBehaviorBase_Access_Array_Access is access all VelocityBehaviorBase_Access_Array;
+   type VelocityBehaviorBase_Access_Array_Access_Array is array (Natural range <>) of VelocityBehaviorBase_Access_Array_Access;
+   type VelocityBehaviorBase_Access_Array_Access_Array_Access is access all VelocityBehaviorBase_Access_Array_Access_Array;
 
    type VelocityBehaviorBase is new Java_Object with null record;
 

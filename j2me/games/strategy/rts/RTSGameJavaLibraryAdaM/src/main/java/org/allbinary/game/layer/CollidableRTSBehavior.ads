@@ -20,21 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
-with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
 with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
 
 package org.allbinary.game.layer.CollidableRTSBehavior_Package is
 
-   package CollisionType_Package renames Standard.org.allbinary.game.collision.CollisionType_Package;
-   package CollisionTypeFactory_Package renames Standard.org.allbinary.game.collision.CollisionTypeFactory_Package;
    package CollidableDestroyableDamageableBehavior_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
 
    type CollidableRTSBehavior is tagged;
    type CollidableRTSBehavior_Access is access all CollidableRTSBehavior'Class;
    type CollidableRTSBehavior_Access_Array is array (Natural range <>) of CollidableRTSBehavior_Access;
    type CollidableRTSBehavior_Access_Array_Access is access all CollidableRTSBehavior_Access_Array;
+   type CollidableRTSBehavior_Access_Array_Access_Array is array (Natural range <>) of CollidableRTSBehavior_Access_Array_Access;
+   type CollidableRTSBehavior_Access_Array_Access_Array_Access is access all CollidableRTSBehavior_Access_Array_Access_Array;
 
    type CollidableRTSBehavior is new CollidableDestroyableDamageableBehavior with null record;
 

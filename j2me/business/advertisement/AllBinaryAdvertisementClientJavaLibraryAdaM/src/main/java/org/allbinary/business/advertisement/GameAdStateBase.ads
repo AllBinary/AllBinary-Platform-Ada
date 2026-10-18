@@ -22,9 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.business.advertisement.AdConfiguration_Package; use org.allbinary.business.advertisement.AdConfiguration_Package;
 with org.allbinary.business.advertisement.Advertisements_Package; use org.allbinary.business.advertisement.Advertisements_Package;
 
@@ -32,14 +30,14 @@ package org.allbinary.business.advertisement.GameAdStateBase_Package is
 
    package GameType_Package renames Standard.org.allbinary.game.GameType_Package;
    package GameState_Package renames Standard.org.allbinary.game.state.GameState_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type GameAdStateBase is tagged;
    type GameAdStateBase_Access is access all GameAdStateBase'Class;
    type GameAdStateBase_Access_Array is array (Natural range <>) of GameAdStateBase_Access;
    type GameAdStateBase_Access_Array_Access is access all GameAdStateBase_Access_Array;
+   type GameAdStateBase_Access_Array_Access_Array is array (Natural range <>) of GameAdStateBase_Access_Array_Access;
+   type GameAdStateBase_Access_Array_Access_Array_Access is access all GameAdStateBase_Access_Array_Access_Array;
 
    type GameAdStateBase is new Java_Object with record
       adConfigurationP : AdConfiguration_Access;
@@ -71,6 +69,7 @@ package org.allbinary.business.advertisement.GameAdStateBase_Package is
    procedure setOkayToShowAds (This : in out GameAdStateBase; okayToShowAds : Boolean);
    function isOkayToShowAds (This : in out GameAdStateBase) return Boolean;
    function isEnabled (This : in out GameAdStateBase) return Boolean;
+   procedure onStart (This : in out GameAdStateBase; Value : Unbounded_String);
 
 end org.allbinary.business.advertisement.GameAdStateBase_Package;
 

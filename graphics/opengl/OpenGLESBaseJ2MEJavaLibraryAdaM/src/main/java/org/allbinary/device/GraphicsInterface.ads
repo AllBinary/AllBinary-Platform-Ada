@@ -32,6 +32,8 @@ package org.allbinary.device.GraphicsInterface_Package is
    type GraphicsInterface_Access is access all GraphicsInterface'Class;
    type GraphicsInterface_Access_Array is array (Natural range <>) of GraphicsInterface_Access;
    type GraphicsInterface_Access_Array_Access is access all GraphicsInterface_Access_Array;
+   type GraphicsInterface_Access_Array_Access_Array is array (Natural range <>) of GraphicsInterface_Access_Array_Access;
+   type GraphicsInterface_Access_Array_Access_Array_Access is access all GraphicsInterface_Access_Array_Access_Array;
    procedure setFontDebug (This : in out GraphicsInterface; font_Param : access Font_Package.Font'Class; fontDebug_Param : access FontDebugBase_Package.FontDebugBase'Class) is abstract;
 
 end org.allbinary.device.GraphicsInterface_Package;

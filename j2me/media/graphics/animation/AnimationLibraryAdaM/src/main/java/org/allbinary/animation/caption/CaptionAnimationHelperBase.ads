@@ -34,6 +34,8 @@ package org.allbinary.animation.caption.CaptionAnimationHelperBase_Package is
    type CaptionAnimationHelperBase_Access is access all CaptionAnimationHelperBase'Class;
    type CaptionAnimationHelperBase_Access_Array is array (Natural range <>) of CaptionAnimationHelperBase_Access;
    type CaptionAnimationHelperBase_Access_Array_Access is access all CaptionAnimationHelperBase_Access_Array;
+   type CaptionAnimationHelperBase_Access_Array_Access_Array is array (Natural range <>) of CaptionAnimationHelperBase_Access_Array_Access;
+   type CaptionAnimationHelperBase_Access_Array_Access_Array_Access is access all CaptionAnimationHelperBase_Access_Array_Access_Array;
 
    type CaptionAnimationHelperBase is new Animation with null record;
    INSTANCE : CaptionAnimationHelperBase_Access;

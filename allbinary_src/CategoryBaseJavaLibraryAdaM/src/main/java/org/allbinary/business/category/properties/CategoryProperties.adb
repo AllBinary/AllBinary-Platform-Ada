@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
+with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
+with org.allbinary.business.category.CategoryUtil_Package; use org.allbinary.business.category.CategoryUtil_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.sql.AbSqlData_Package; use org.allbinary.logic.communication.sql.AbSqlData_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.business.category.properties.CategoryProperties_Package is
 
+   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
+   package CategoryUtil_Package renames Standard.org.allbinary.business.category.CategoryUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbSqlData_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlData_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out CategoryProperties'Class) is
    begin
       null;
@@ -97,7 +118,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
    begin
         abPathData := AbPathData_Package.getInstance;
         pathStringBuffer := StringMaker_Package.Create;
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         nextParentCategoryInterface := categoryHierarchyInterface.getParent;
         if (CategoryProperties_Access'(This'Unchecked_Access)) /= (nextParentCategoryInterface.getProperties) then
             depthIndex := 0;
@@ -172,7 +193,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
    function toVector (This : in out CategoryProperties) return BasicArrayList_Access is
       categoryVector : BasicArrayList_Access;
    begin
-        categoryVector := BasicArrayListD_Package.Create;
+        categoryVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         categoryVector.add (This.category);
         return categoryVector;
    end toVector;

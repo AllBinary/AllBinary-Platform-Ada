@@ -30,6 +30,8 @@ package org.allbinary.input.automation.actions.script.condition.TimeIntervalActi
    type TimeIntervalActionScriptConditionInterface_Access is access all TimeIntervalActionScriptConditionInterface'Class;
    type TimeIntervalActionScriptConditionInterface_Access_Array is array (Natural range <>) of TimeIntervalActionScriptConditionInterface_Access;
    type TimeIntervalActionScriptConditionInterface_Access_Array_Access is access all TimeIntervalActionScriptConditionInterface_Access_Array;
+   type TimeIntervalActionScriptConditionInterface_Access_Array_Access_Array is array (Natural range <>) of TimeIntervalActionScriptConditionInterface_Access_Array_Access;
+   type TimeIntervalActionScriptConditionInterface_Access_Array_Access_Array_Access is access all TimeIntervalActionScriptConditionInterface_Access_Array_Access_Array;
    function getTimeDelayHelper (This : in out TimeIntervalActionScriptConditionInterface) return TimeDelayHelper_Access is abstract;
    procedure log (This : in out TimeIntervalActionScriptConditionInterface) is abstract;
 

@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
 
 package org.allbinary.media.image.ImageCreationUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
 
    type ImageCreationUtil is tagged;
    type ImageCreationUtil_Access is access all ImageCreationUtil'Class;
    type ImageCreationUtil_Access_Array is array (Natural range <>) of ImageCreationUtil_Access;
    type ImageCreationUtil_Access_Array_Access is access all ImageCreationUtil_Access_Array;
+   type ImageCreationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageCreationUtil_Access_Array_Access;
+   type ImageCreationUtil_Access_Array_Access_Array_Access is access all ImageCreationUtil_Access_Array_Access_Array;
 
    type ImageCreationUtil is new Java_Object with null record;
    instance : ImageCreationUtil_Access;

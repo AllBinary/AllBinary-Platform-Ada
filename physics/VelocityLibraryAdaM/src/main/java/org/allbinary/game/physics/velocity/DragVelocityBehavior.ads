@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package; use org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
 
 package org.allbinary.game.physics.velocity.DragVelocityBehavior_Package is
 
-   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type DragVelocityBehavior is tagged;
    type DragVelocityBehavior_Access is access all DragVelocityBehavior'Class;
    type DragVelocityBehavior_Access_Array is array (Natural range <>) of DragVelocityBehavior_Access;
    type DragVelocityBehavior_Access_Array_Access is access all DragVelocityBehavior_Access_Array;
+   type DragVelocityBehavior_Access_Array_Access_Array is array (Natural range <>) of DragVelocityBehavior_Access_Array_Access;
+   type DragVelocityBehavior_Access_Array_Access_Array_Access is access all DragVelocityBehavior_Access_Array_Access_Array;
 
    type DragVelocityBehavior is new VelocityBehaviorBase with null record;
    instance : DragVelocityBehavior_Access;

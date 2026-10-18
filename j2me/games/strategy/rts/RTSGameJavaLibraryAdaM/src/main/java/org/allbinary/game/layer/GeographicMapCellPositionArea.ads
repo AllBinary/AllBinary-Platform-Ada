@@ -27,8 +27,6 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package; use org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package; use org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package;
 
 package org.allbinary.game.layer.GeographicMapCellPositionArea_Package is
@@ -40,13 +38,13 @@ package org.allbinary.game.layer.GeographicMapCellPositionArea_Package is
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package CellPositionsUtil_Package renames Standard.org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type GeographicMapCellPositionArea is tagged;
    type GeographicMapCellPositionArea_Access is access all GeographicMapCellPositionArea'Class;
    type GeographicMapCellPositionArea_Access_Array is array (Natural range <>) of GeographicMapCellPositionArea_Access;
    type GeographicMapCellPositionArea_Access_Array_Access is access all GeographicMapCellPositionArea_Access_Array;
+   type GeographicMapCellPositionArea_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionArea_Access_Array_Access;
+   type GeographicMapCellPositionArea_Access_Array_Access_Array_Access is access all GeographicMapCellPositionArea_Access_Array_Access_Array;
 
    type GeographicMapCellPositionArea is new GeographicMapCellPositionAreaBase with record
       cellPositionsUtil : CellPositionsUtil_Access;

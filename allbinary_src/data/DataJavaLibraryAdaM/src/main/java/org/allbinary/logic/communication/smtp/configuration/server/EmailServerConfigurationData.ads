@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.smtp.configuration.server.EmailServerC
    type EmailServerConfigurationData_Access is access all EmailServerConfigurationData'Class;
    type EmailServerConfigurationData_Access_Array is array (Natural range <>) of EmailServerConfigurationData_Access;
    type EmailServerConfigurationData_Access_Array_Access is access all EmailServerConfigurationData_Access_Array;
+   type EmailServerConfigurationData_Access_Array_Access_Array is array (Natural range <>) of EmailServerConfigurationData_Access_Array_Access;
+   type EmailServerConfigurationData_Access_Array_Access_Array_Access is access all EmailServerConfigurationData_Access_Array_Access_Array;
 
    type EmailServerConfigurationData is new Java_Object with null record;
    NAME : Unbounded_String;

@@ -22,19 +22,19 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
 with org.allbinary.animation.special.SpecialAnimationInterface_Package; use org.allbinary.animation.special.SpecialAnimationInterface_Package;
 
 package org.allbinary.animation.special.SpecialAnimation_Package is
 
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
-   package IndexedAnimationBehavior_Package renames Standard.org.allbinary.animation.IndexedAnimationBehavior_Package;
 
    type SpecialAnimation is tagged;
    type SpecialAnimation_Access is access all SpecialAnimation'Class;
    type SpecialAnimation_Access_Array is array (Natural range <>) of SpecialAnimation_Access;
    type SpecialAnimation_Access_Array_Access is access all SpecialAnimation_Access_Array;
+   type SpecialAnimation_Access_Array_Access_Array is array (Natural range <>) of SpecialAnimation_Access_Array_Access;
+   type SpecialAnimation_Access_Array_Access_Array_Access is access all SpecialAnimation_Access_Array_Access_Array;
 
    type SpecialAnimation is new IndexedAnimation and SpecialAnimationInterface with null record;
    NULL_SPECIAL_ANIMATION : SpecialAnimation_Access;

@@ -29,6 +29,8 @@ package org.allbinary.game.layer.TiledLayerUtil_Package is
    type TiledLayerUtil_Access is access all TiledLayerUtil'Class;
    type TiledLayerUtil_Access_Array is array (Natural range <>) of TiledLayerUtil_Access;
    type TiledLayerUtil_Access_Array_Access is access all TiledLayerUtil_Access_Array;
+   type TiledLayerUtil_Access_Array_Access_Array is array (Natural range <>) of TiledLayerUtil_Access_Array_Access;
+   type TiledLayerUtil_Access_Array_Access_Array_Access is access all TiledLayerUtil_Access_Array_Access_Array;
 
    type TiledLayerUtil is new Java_Object with null record;
    instance : TiledLayerUtil_Access;

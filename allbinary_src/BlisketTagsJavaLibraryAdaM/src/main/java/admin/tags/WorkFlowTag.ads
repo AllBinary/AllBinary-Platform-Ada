@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with admin.taghelpers.WorkFlowHelperFactory_Package; use admin.taghelpers.WorkFlowHelperFactory_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.WorkFlowTag_Package is
 
-   package WorkFlowHelperFactory_Package renames Standard.admin.taghelpers.WorkFlowHelperFactory_Package;
 
    type WorkFlowTag is tagged;
    type WorkFlowTag_Access is access all WorkFlowTag'Class;
    type WorkFlowTag_Access_Array is array (Natural range <>) of WorkFlowTag_Access;
    type WorkFlowTag_Access_Array_Access is access all WorkFlowTag_Access_Array;
+   type WorkFlowTag_Access_Array_Access_Array is array (Natural range <>) of WorkFlowTag_Access_Array_Access;
+   type WorkFlowTag_Access_Array_Access_Array_Access is access all WorkFlowTag_Access_Array_Access_Array;
 
    type WorkFlowTag is new TableTag with null record;
 

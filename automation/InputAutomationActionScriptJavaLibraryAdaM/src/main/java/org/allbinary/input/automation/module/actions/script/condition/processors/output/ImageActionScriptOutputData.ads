@@ -28,6 +28,8 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    type ImageActionScriptOutputData_Access is access all ImageActionScriptOutputData'Class;
    type ImageActionScriptOutputData_Access_Array is array (Natural range <>) of ImageActionScriptOutputData_Access;
    type ImageActionScriptOutputData_Access_Array_Access is access all ImageActionScriptOutputData_Access_Array;
+   type ImageActionScriptOutputData_Access_Array_Access_Array is array (Natural range <>) of ImageActionScriptOutputData_Access_Array_Access;
+   type ImageActionScriptOutputData_Access_Array_Access_Array_Access is access all ImageActionScriptOutputData_Access_Array_Access_Array;
 
    type ImageActionScriptOutputData is new Java_Object with null record;
    NAME : Unbounded_String;

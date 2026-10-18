@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemValidator_Package is
 
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out NumberTextFieldItemValidator'Class) is
    begin
       null;
@@ -50,7 +59,7 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
 
    function toNumberVector (This : in out NumberTextFieldItemValidator; value : Integer) return BasicArrayList_Access is
    begin
-        return BasicArrayListD_Package.Create;
+        return BasicArrayList_Access (BasicArrayListD_Package.Create);
    end toNumberVector;
 
    function isValid (This : in out NumberTextFieldItemValidator) return Boolean is
@@ -92,7 +101,7 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
       stringMaker : StringMaker_Access;
       number : Integer;
    begin
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         string_Id := This.textFieldItem.getString;
         textLength := Length (string_Id);
         label := This.textFieldItem.getLabel;

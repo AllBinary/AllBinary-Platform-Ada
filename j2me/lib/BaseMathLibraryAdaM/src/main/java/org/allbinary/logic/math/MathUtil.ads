@@ -8,16 +8,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.logic.math.MathUtil_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type MathUtil is tagged;
    type MathUtil_Access is access all MathUtil'Class;
    type MathUtil_Access_Array is array (Natural range <>) of MathUtil_Access;
    type MathUtil_Access_Array_Access is access all MathUtil_Access_Array;
+   type MathUtil_Access_Array_Access_Array is array (Natural range <>) of MathUtil_Access_Array_Access;
+   type MathUtil_Access_Array_Access_Array_Access is access all MathUtil_Access_Array_Access_Array;
 
    type MathUtil is new Java_Object with record
       ACCURACY : Integer;

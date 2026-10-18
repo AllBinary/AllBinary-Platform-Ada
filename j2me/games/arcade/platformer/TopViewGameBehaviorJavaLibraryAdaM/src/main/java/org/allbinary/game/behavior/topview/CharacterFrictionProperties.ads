@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.physics.FrictionProperties_Package; use org.allbinary.game.physics.FrictionProperties_Package;
-with org.allbinary.game.physics.friction.FrictionData_Package; use org.allbinary.game.physics.friction.FrictionData_Package;
 
 package org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package is
 
    package FrictionProperties_Package renames Standard.org.allbinary.game.physics.FrictionProperties_Package;
-   package FrictionData_Package renames Standard.org.allbinary.game.physics.friction.FrictionData_Package;
 
    type CharacterFrictionProperties is tagged;
    type CharacterFrictionProperties_Access is access all CharacterFrictionProperties'Class;
    type CharacterFrictionProperties_Access_Array is array (Natural range <>) of CharacterFrictionProperties_Access;
    type CharacterFrictionProperties_Access_Array_Access is access all CharacterFrictionProperties_Access_Array;
+   type CharacterFrictionProperties_Access_Array_Access_Array is array (Natural range <>) of CharacterFrictionProperties_Access_Array_Access;
+   type CharacterFrictionProperties_Access_Array_Access_Array_Access is access all CharacterFrictionProperties_Access_Array_Access_Array;
 
    type CharacterFrictionProperties is new FrictionProperties with record
       WATER_FRICTION_NOMINATOR : Integer;

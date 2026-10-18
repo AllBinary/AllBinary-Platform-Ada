@@ -29,6 +29,8 @@ package org.allbinary.game.configuration.feature.GraphicsFeature_Package is
    type GraphicsFeature_Access is access all GraphicsFeature'Class;
    type GraphicsFeature_Access_Array is array (Natural range <>) of GraphicsFeature_Access;
    type GraphicsFeature_Access_Array_Access is access all GraphicsFeature_Access_Array;
+   type GraphicsFeature_Access_Array_Access_Array is array (Natural range <>) of GraphicsFeature_Access_Array_Access;
+   type GraphicsFeature_Access_Array_Access_Array_Access is access all GraphicsFeature_Access_Array_Access_Array;
 
    type GraphicsFeature is new Feature with null record;
 

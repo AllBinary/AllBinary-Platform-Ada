@@ -28,6 +28,8 @@ package org.allbinary.game.layer.SensorAction_Package is
    type SensorAction_Access is access all SensorAction'Class;
    type SensorAction_Access_Array is array (Natural range <>) of SensorAction_Access;
    type SensorAction_Access_Array_Access is access all SensorAction_Access_Array;
+   type SensorAction_Access_Array_Access_Array is array (Natural range <>) of SensorAction_Access_Array_Access;
+   type SensorAction_Access_Array_Access_Array_Access is access all SensorAction_Access_Array_Access_Array;
 
    type SensorAction is new Java_Object with record
       name : Unbounded_String;

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+
 package body org.allbinary.logic.visual.dhtml.html.HtmlTags_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out HtmlTags'Class) is
    begin
       null;
@@ -25,7 +30,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlTags_Package is
    procedure Initialize (This : in out HtmlTags'Class) is
    begin
       Initialize_Fields (This);
-        This.htmlTagVector := BasicArrayListD_Package.Create;
+        This.htmlTagVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create return HtmlTags_Access is
@@ -43,7 +48,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlTags_Package is
    procedure add (This : in out HtmlTags; htmlTag_Param : access HtmlTag_Package.HtmlTag'Class) is
       htmlTag : constant HtmlTag_Access := HtmlTag_Access (htmlTag_Param);
    begin
-        This.htmlTagVector.add (htmlTag);
+        This.htmlTagVector.add (Java_Object_Access (htmlTag));
    end add;
 
    function size (This : in out HtmlTags) return Integer is

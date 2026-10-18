@@ -20,16 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 
 package org.allbinary.logic.io.file.AbFileNativeUtil_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
 
    type AbFileNativeUtil is tagged;
    type AbFileNativeUtil_Access is access all AbFileNativeUtil'Class;
    type AbFileNativeUtil_Access_Array is array (Natural range <>) of AbFileNativeUtil_Access;
    type AbFileNativeUtil_Access_Array_Access is access all AbFileNativeUtil_Access_Array;
+   type AbFileNativeUtil_Access_Array_Access_Array is array (Natural range <>) of AbFileNativeUtil_Access_Array_Access;
+   type AbFileNativeUtil_Access_Array_Access_Array_Access is access all AbFileNativeUtil_Access_Array_Access_Array;
 
    type AbFileNativeUtil is new Java_Object with null record;
 

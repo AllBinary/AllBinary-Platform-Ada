@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.automation.module.game.skill.GameSkillType_Package is
 
    procedure Initialize_Fields (This : in out GameSkillType'Class) is

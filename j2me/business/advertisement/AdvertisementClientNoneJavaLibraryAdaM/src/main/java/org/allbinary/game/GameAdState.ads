@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.business.advertisement.GameAdStateBase_Package; use org.allbinary.business.advertisement.GameAdStateBase_Package;
 with org.allbinary.business.advertisement.AdConfiguration_Package; use org.allbinary.business.advertisement.AdConfiguration_Package;
 with org.allbinary.input.event.VirtualKeyboardEvent_Package; use org.allbinary.input.event.VirtualKeyboardEvent_Package;
-with org.allbinary.input.event.VirtualKeyboardEventHandler_Package; use org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
 with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package; use org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
 
 package org.allbinary.game.GameAdState_Package is
@@ -31,13 +30,14 @@ package org.allbinary.game.GameAdState_Package is
    package GameAdStateBase_Package renames Standard.org.allbinary.business.advertisement.GameAdStateBase_Package;
    package AdConfiguration_Package renames Standard.org.allbinary.business.advertisement.AdConfiguration_Package;
    package VirtualKeyboardEvent_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEvent_Package;
-   package VirtualKeyboardEventHandler_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
    package VirtualKeyboardEventListenerInterface_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
 
    type GameAdState is tagged;
    type GameAdState_Access is access all GameAdState'Class;
    type GameAdState_Access_Array is array (Natural range <>) of GameAdState_Access;
    type GameAdState_Access_Array_Access is access all GameAdState_Access_Array;
+   type GameAdState_Access_Array_Access_Array is array (Natural range <>) of GameAdState_Access_Array_Access;
+   type GameAdState_Access_Array_Access_Array_Access is access all GameAdState_Access_Array_Access_Array;
 
    type GameAdState is new GameAdStateBase and VirtualKeyboardEventListenerInterface with null record;
 

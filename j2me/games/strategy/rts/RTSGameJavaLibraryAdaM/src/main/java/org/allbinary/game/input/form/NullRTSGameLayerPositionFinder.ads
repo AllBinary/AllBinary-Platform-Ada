@@ -23,21 +23,21 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.LayerPositionFinderInterface_Package; use org.allbinary.game.input.LayerPositionFinderInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package; use org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 
 package org.allbinary.game.input.form.NullRTSGameLayerPositionFinder_Package is
 
    package LayerPositionFinderInterface_Package renames Standard.org.allbinary.game.input.LayerPositionFinderInterface_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package DropCellPositionHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 
    type NullRTSGameLayerPositionFinder is tagged;
    type NullRTSGameLayerPositionFinder_Access is access all NullRTSGameLayerPositionFinder'Class;
    type NullRTSGameLayerPositionFinder_Access_Array is array (Natural range <>) of NullRTSGameLayerPositionFinder_Access;
    type NullRTSGameLayerPositionFinder_Access_Array_Access is access all NullRTSGameLayerPositionFinder_Access_Array;
+   type NullRTSGameLayerPositionFinder_Access_Array_Access_Array is array (Natural range <>) of NullRTSGameLayerPositionFinder_Access_Array_Access;
+   type NullRTSGameLayerPositionFinder_Access_Array_Access_Array_Access is access all NullRTSGameLayerPositionFinder_Access_Array_Access_Array;
 
-   type NullRTSGameLayerPositionFinder is new LayerPositionFinderInterface with null record;
+   type NullRTSGameLayerPositionFinder is new Java_Object and LayerPositionFinderInterface with null record;
    instance : NullRTSGameLayerPositionFinder_Access;
 
    procedure Initialize (This : in out NullRTSGameLayerPositionFinder'Class);

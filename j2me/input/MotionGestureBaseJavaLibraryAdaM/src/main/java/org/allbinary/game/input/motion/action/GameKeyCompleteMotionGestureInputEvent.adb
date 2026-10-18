@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package; use org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package;
+
 package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out GameKeyCompleteMotionGestureInputEvent'Class) is
    begin
       null;

@@ -30,6 +30,8 @@ package org.allbinary.game.input.PlayerGameInputCompositeInterface_Package is
    type PlayerGameInputCompositeInterface_Access is access all PlayerGameInputCompositeInterface'Class;
    type PlayerGameInputCompositeInterface_Access_Array is array (Natural range <>) of PlayerGameInputCompositeInterface_Access;
    type PlayerGameInputCompositeInterface_Access_Array_Access is access all PlayerGameInputCompositeInterface_Access_Array;
+   type PlayerGameInputCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of PlayerGameInputCompositeInterface_Access_Array_Access;
+   type PlayerGameInputCompositeInterface_Access_Array_Access_Array_Access is access all PlayerGameInputCompositeInterface_Access_Array_Access_Array;
    function getPlayerGameInput (This : in out PlayerGameInputCompositeInterface) return PlayerGameInput_Access is abstract;
 
 end org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;

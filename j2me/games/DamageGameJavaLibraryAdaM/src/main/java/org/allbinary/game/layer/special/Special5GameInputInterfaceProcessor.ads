@@ -34,6 +34,8 @@ package org.allbinary.game.layer.special.Special5GameInputInterfaceProcessor_Pac
    type Special5GameInputInterfaceProcessor_Access is access all Special5GameInputInterfaceProcessor'Class;
    type Special5GameInputInterfaceProcessor_Access_Array is array (Natural range <>) of Special5GameInputInterfaceProcessor_Access;
    type Special5GameInputInterfaceProcessor_Access_Array_Access is access all Special5GameInputInterfaceProcessor_Access_Array;
+   type Special5GameInputInterfaceProcessor_Access_Array_Access_Array is array (Natural range <>) of Special5GameInputInterfaceProcessor_Access_Array_Access;
+   type Special5GameInputInterfaceProcessor_Access_Array_Access_Array_Access is access all Special5GameInputInterfaceProcessor_Access_Array_Access_Array;
 
    type Special5GameInputInterfaceProcessor is new SpecialGameInputInterfaceProcessor with null record;
 

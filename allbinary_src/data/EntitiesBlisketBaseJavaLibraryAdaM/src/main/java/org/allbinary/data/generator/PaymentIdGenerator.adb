@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.data.generator.PaymentIdGenerator_Package is
 
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out PaymentIdGenerator'Class) is
    begin
       null;
@@ -28,8 +35,8 @@ package body org.allbinary.data.generator.PaymentIdGenerator_Package is
       UniqueIdGenerator_Package.Initialize (This);
       Initialize_Fields (This);
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (URLGLOBALS.getMainPath);
-        stringBuffer.append (PATH_GLOBALS.getInstance.INIT_PATH);
+        stringBuffer.append (URLGLOBALS_Package.getMainPath);
+        stringBuffer.append (PATH_GLOBALS_Package.getInstance.INIT_PATH);
         stringBuffer.append (This.IDFILE);
         stringBuffer.append (UniqueIdGenerator_Package.EXT);
         UniqueIdGenerator (This).setFile (stringBuffer.toString, This.IDFILE);

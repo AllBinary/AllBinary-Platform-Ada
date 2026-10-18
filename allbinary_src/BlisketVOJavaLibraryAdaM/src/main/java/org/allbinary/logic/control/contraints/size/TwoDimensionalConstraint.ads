@@ -32,8 +32,10 @@ package org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Pac
    type TwoDimensionalConstraint_Access is access all TwoDimensionalConstraint'Class;
    type TwoDimensionalConstraint_Access_Array is array (Natural range <>) of TwoDimensionalConstraint_Access;
    type TwoDimensionalConstraint_Access_Array_Access is access all TwoDimensionalConstraint_Access_Array;
+   type TwoDimensionalConstraint_Access_Array_Access_Array is array (Natural range <>) of TwoDimensionalConstraint_Access_Array_Access;
+   type TwoDimensionalConstraint_Access_Array_Access_Array_Access is access all TwoDimensionalConstraint_Access_Array_Access_Array;
 
-   type TwoDimensionalConstraint is new TwoDimensionalConstraintInterface with record
+   type TwoDimensionalConstraint is new Java_Object and TwoDimensionalConstraintInterface with record
       widthSizeConstraintInterface : SizeConstraintInterface_Access;
       heightSizeConstraintInterface : SizeConstraintInterface_Access;
    end record;

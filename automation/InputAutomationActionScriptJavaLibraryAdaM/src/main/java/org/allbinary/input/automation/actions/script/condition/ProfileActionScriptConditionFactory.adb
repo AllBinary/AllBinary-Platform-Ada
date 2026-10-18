@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionData_Package;
+with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionData_Package;
+with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionData_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionData_Package;
+with org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package;
+with org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package;
+with org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package; use org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package;
+
 package body org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package is
 
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
    procedure Initialize_Fields (This : in out ProfileActionScriptConditionFactory'Class) is
    begin
       null;
@@ -41,11 +50,11 @@ package body org.allbinary.input.automation.actions.script.condition.ProfileActi
    begin
         profileActionScriptConditionInterface := null;
         if (DomSearchHelper_Package.getNodeNoThrow (ColorAtActionScriptConditionData_Package.NAME, node.getChildNodes)) /= (null) then
-            profileActionScriptConditionInterface := ColorAtActionScriptCondition_Package.Create (node);
+            profileActionScriptConditionInterface := ProfileActionScriptConditionInterface_Access (ColorAtActionScriptCondition_Package.Create (node));
         elsif (DomSearchHelper_Package.getNodeNoThrow (TimeIntervalActionScriptConditionData_Package.NAME, node.getChildNodes)) /= (null) then
-            profileActionScriptConditionInterface := TimeIntervalActionScriptCondition_Package.Create (node);
+            profileActionScriptConditionInterface := ProfileActionScriptConditionInterface_Access (TimeIntervalActionScriptCondition_Package.Create (node));
         elsif (DomSearchHelper_Package.getNodeNoThrow (AlwaysActionScriptConditionData_Package.NAME, node.getChildNodes)) /= (null) then
-            profileActionScriptConditionInterface := AlwaysActionScriptCondition_Package.Create (node);
+            profileActionScriptConditionInterface := ProfileActionScriptConditionInterface_Access (AlwaysActionScriptCondition_Package.Create (node));
         end if;
         return profileActionScriptConditionInterface;
    end getInstance;

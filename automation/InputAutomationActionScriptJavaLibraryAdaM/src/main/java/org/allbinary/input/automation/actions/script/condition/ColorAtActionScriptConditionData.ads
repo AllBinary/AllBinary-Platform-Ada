@@ -28,6 +28,8 @@ package org.allbinary.input.automation.actions.script.condition.ColorAtActionScr
    type ColorAtActionScriptConditionData_Access is access all ColorAtActionScriptConditionData'Class;
    type ColorAtActionScriptConditionData_Access_Array is array (Natural range <>) of ColorAtActionScriptConditionData_Access;
    type ColorAtActionScriptConditionData_Access_Array_Access is access all ColorAtActionScriptConditionData_Access_Array;
+   type ColorAtActionScriptConditionData_Access_Array_Access_Array is array (Natural range <>) of ColorAtActionScriptConditionData_Access_Array_Access;
+   type ColorAtActionScriptConditionData_Access_Array_Access_Array_Access is access all ColorAtActionScriptConditionData_Access_Array_Access_Array;
 
    type ColorAtActionScriptConditionData is new Java_Object with null record;
    NAME : Unbounded_String;

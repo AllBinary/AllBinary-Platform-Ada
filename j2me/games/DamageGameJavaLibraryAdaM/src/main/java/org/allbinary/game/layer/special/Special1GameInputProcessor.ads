@@ -34,6 +34,8 @@ package org.allbinary.game.layer.special.Special1GameInputProcessor_Package is
    type Special1GameInputProcessor_Access is access all Special1GameInputProcessor'Class;
    type Special1GameInputProcessor_Access_Array is array (Natural range <>) of Special1GameInputProcessor_Access;
    type Special1GameInputProcessor_Access_Array_Access is access all Special1GameInputProcessor_Access_Array;
+   type Special1GameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of Special1GameInputProcessor_Access_Array_Access;
+   type Special1GameInputProcessor_Access_Array_Access_Array_Access is access all Special1GameInputProcessor_Access_Array_Access_Array;
 
    type Special1GameInputProcessor is new SpecialGameInputProcessor with null record;
 

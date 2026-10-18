@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Form_Package; use javax.microedition.lcdui.Form_Package;
+with javax.microedition.rms.InvalidRecordIDException_Package; use javax.microedition.rms.InvalidRecordIDException_Package;
+with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
+with javax.microedition.rms.RecordStoreException_Package; use javax.microedition.rms.RecordStoreException_Package;
+with javax.microedition.rms.RecordStoreNotOpenException_Package; use javax.microedition.rms.RecordStoreNotOpenException_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+
 package body org.allbinary.TsUtil_Package is
 
+   package Form_Package renames Standard.javax.microedition.lcdui.Form_Package;
+   package InvalidRecordIDException_Package renames Standard.javax.microedition.rms.InvalidRecordIDException_Package;
+   package RecordStore_Package renames Standard.javax.microedition.rms.RecordStore_Package;
+   package RecordStoreException_Package renames Standard.javax.microedition.rms.RecordStoreException_Package;
+   package RecordStoreNotOpenException_Package renames Standard.javax.microedition.rms.RecordStoreNotOpenException_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out TsUtil'Class) is
    begin
       null;
@@ -190,6 +203,30 @@ package body org.allbinary.TsUtil_Package is
    begin
       null;
    end isItemListener;
+
+   function hashCode (This : in out TsUtil; Value : Unbounded_String) return Integer is
+   begin
+      return TsUtil'Class (This).hashCode (Java_Box (Value));
+   end hashCode;
+
+   procedure hashCode (This : in out TsUtil; Value : Unbounded_String) is
+      Java_Result : constant Integer := TsUtil'Class (This).hashCode (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end hashCode;
+
+   function getClassClassLoader (This : in out TsUtil; Value : Unbounded_String) return ClassLoader_Access is
+   begin
+      return TsUtil'Class (This).getClassClassLoader (Java_Box (Value));
+   end getClassClassLoader;
+
+   procedure getClassClassLoader (This : in out TsUtil; Value : Unbounded_String) is
+      Java_Result : constant ClassLoader_Access := TsUtil'Class (This).getClassClassLoader (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getClassClassLoader;
 
 begin
    null;

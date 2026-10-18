@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package; use org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulation_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulation_Package;
+
 package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package TransformInfoEntityBuilder_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+   package TransformInfoHttpStoreNoManipulation_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulation_Package;
    procedure Initialize_Fields (This : in out TransformInfoRequestHelper'Class) is
    begin
       null;
@@ -29,7 +38,7 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
    begin
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
-        This.transformInfoInterface := TransformInfoHttpStoreNoManipulation_Package.Create (propertiesHashMap, pageContext);
+        This.transformInfoInterface := TransformInfoHttpInterface_Access (TransformInfoHttpStoreNoManipulation_Package.Create (propertiesHashMap, pageContext));
    end Initialize;
 
    function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoRequestHelper_Access is

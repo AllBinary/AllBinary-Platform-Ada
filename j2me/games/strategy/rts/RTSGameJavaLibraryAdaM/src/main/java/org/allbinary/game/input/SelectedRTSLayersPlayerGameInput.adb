@@ -13,16 +13,58 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.game.layer.RTSGameStrings_Package; use org.allbinary.game.layer.RTSGameStrings_Package;
+with org.allbinary.game.layer.capital.Capital_Package; use org.allbinary.game.layer.capital.Capital_Package;
+with org.allbinary.media.audio.DowngradeSound_Package; use org.allbinary.media.audio.DowngradeSound_Package;
+with org.allbinary.media.audio.UpgradeSound_Package; use org.allbinary.media.audio.UpgradeSound_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package; use org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.RTSPlayerGameInput_Package; use org.allbinary.game.input.RTSPlayerGameInput_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package;
+with org.allbinary.game.input.SelectedRTSLayersPlayerDowngradeGameInputProcessor_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerDowngradeGameInputProcessor_Package;
+with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
+
 package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
+   package RTSGameStrings_Package renames Standard.org.allbinary.game.layer.RTSGameStrings_Package;
+   package Capital_Package renames Standard.org.allbinary.game.layer.capital.Capital_Package;
+   package DowngradeSound_Package renames Standard.org.allbinary.media.audio.DowngradeSound_Package;
+   package UpgradeSound_Package renames Standard.org.allbinary.media.audio.UpgradeSound_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package ErrorSound_Package renames Standard.org.allbinary.media.audio.ErrorSound_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
    procedure Initialize_Fields (This : in out SelectedRTSLayersPlayerGameInput'Class) is
    begin
       null;
       This.inputProcessorArray := new GameInputProcessor_Access_Array'(0 .. (InputFactory_Package.getInstance.MAX) - 1 => null);
       
       This.isSingleKeyProcessing := (Features_Package.getInstance.isFeature (InputFeatureFactory_Package.getInstance.SINGLE_KEY_REPEAT_PRESS)) or else (Features_Package.getInstance.isFeature (InputFeatureFactory_Package.getInstance.SINGLE_KEY_PRESS));
-      This.selectedRTSLayersList := BasicArrayListD_Package.Create;
-      This.preSelectedRTSLayersList := BasicArrayListD_Package.Create;
+      This.selectedRTSLayersList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.preSelectedRTSLayersList := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.paintSelectedRTSLayersList := BasicArrayListUtil_Package.getInstance.getImmutableInstance;
       
       
@@ -76,7 +118,7 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
    function isSelected (This : in out SelectedRTSLayersPlayerGameInput; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) return Boolean is
       rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
-        if This.selectedRTSLayersList.contains (rtsLayer) then
+        if This.selectedRTSLayersList.contains (Java_Object_Access (rtsLayer)) then
             return True;
         else
             return False;
@@ -210,8 +252,8 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
             SelectedRTSLayersPlayerGameInput'Class (This).deselectAll;
             This.selectedRTSLayersList.clear;
         else
-            if not (This.selectedRTSLayersList.contains (selectedLayer)) then
-                This.selectedRTSLayersList.add (selectedLayer);
+            if not (This.selectedRTSLayersList.contains (Java_Object_Access (selectedLayer))) then
+                This.selectedRTSLayersList.add (Java_Object_Access (selectedLayer));
             end if;
         end if;
         This.paintSelectedRTSLayersList := This.selectedRTSLayersList;
@@ -239,7 +281,7 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Preselected: ")).append (This.preSelectedRTSLayersList.toString).toString, SelectedRTSLayersPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedRTSLayer"));
         end if;
         if (selectedLayer) /= (CollidableDestroyableDamageableLayer_Package.getNullInstance) then
-            This.selectedRTSLayersList.add (selectedLayer);
+            This.selectedRTSLayersList.add (Java_Object_Access (selectedLayer));
         end if;
         This.paintSelectedRTSLayersList := This.selectedRTSLayersList;
    end setSelectedRTSLayer;

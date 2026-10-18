@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.system.loader.ClassLoader_Package; use org.allbinary.logic.system.loader.ClassLoader_Package;
 
 package org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type WebappClassLoaderInfo is tagged;
    type WebappClassLoaderInfo_Access is access all WebappClassLoaderInfo'Class;
    type WebappClassLoaderInfo_Access_Array is array (Natural range <>) of WebappClassLoaderInfo_Access;
    type WebappClassLoaderInfo_Access_Array_Access is access all WebappClassLoaderInfo_Access_Array;
+   type WebappClassLoaderInfo_Access_Array_Access_Array is array (Natural range <>) of WebappClassLoaderInfo_Access_Array_Access;
+   type WebappClassLoaderInfo_Access_Array_Access_Array_Access is access all WebappClassLoaderInfo_Access_Array_Access_Array;
 
    type WebappClassLoaderInfo is new Java_Object with null record;
    classLoader : Java_Object_Access;

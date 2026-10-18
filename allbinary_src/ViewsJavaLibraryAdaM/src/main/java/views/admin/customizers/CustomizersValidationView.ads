@@ -39,6 +39,8 @@ package views.admin.customizers.CustomizersValidationView_Package is
    type CustomizersValidationView_Access is access all CustomizersValidationView'Class;
    type CustomizersValidationView_Access_Array is array (Natural range <>) of CustomizersValidationView_Access;
    type CustomizersValidationView_Access_Array_Access is access all CustomizersValidationView_Access_Array;
+   type CustomizersValidationView_Access_Array_Access_Array is array (Natural range <>) of CustomizersValidationView_Access_Array_Access;
+   type CustomizersValidationView_Access_Array_Access_Array_Access is access all CustomizersValidationView_Access_Array_Access_Array;
 
    type CustomizersValidationView is new CustomizersView and ValidationComponentInterface with record
       logUtil : LogUtil_Access;

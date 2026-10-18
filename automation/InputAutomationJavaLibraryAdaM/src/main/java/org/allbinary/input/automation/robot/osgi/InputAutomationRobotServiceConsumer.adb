@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package; use bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServiceVisitor_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServiceVisitor_Package;
+
 package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package is
 
+   package InputAutomationRobotServiceInterface_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
    procedure Initialize_Fields (This : in out InputAutomationRobotServiceConsumer'Class) is
    begin
       null;

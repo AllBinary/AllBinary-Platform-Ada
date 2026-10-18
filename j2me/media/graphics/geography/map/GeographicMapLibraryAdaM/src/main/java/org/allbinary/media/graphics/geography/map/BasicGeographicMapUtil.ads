@@ -34,6 +34,8 @@ package org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Packag
    type BasicGeographicMapUtil_Access is access all BasicGeographicMapUtil'Class;
    type BasicGeographicMapUtil_Access_Array is array (Natural range <>) of BasicGeographicMapUtil_Access;
    type BasicGeographicMapUtil_Access_Array_Access is access all BasicGeographicMapUtil_Access_Array;
+   type BasicGeographicMapUtil_Access_Array_Access_Array is array (Natural range <>) of BasicGeographicMapUtil_Access_Array_Access;
+   type BasicGeographicMapUtil_Access_Array_Access_Array_Access is access all BasicGeographicMapUtil_Access_Array_Access_Array;
 
    type BasicGeographicMapUtil is new Java_Object with record
       logUtil : LogUtil_Access;

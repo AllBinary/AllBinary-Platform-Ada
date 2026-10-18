@@ -30,6 +30,8 @@ package org.allbinary.graphics.opengles.OpenGLVUtilBase_Package is
    type OpenGLVUtilBase_Access is access all OpenGLVUtilBase'Class;
    type OpenGLVUtilBase_Access_Array is array (Natural range <>) of OpenGLVUtilBase_Access;
    type OpenGLVUtilBase_Access_Array_Access is access all OpenGLVUtilBase_Access_Array;
+   type OpenGLVUtilBase_Access_Array_Access_Array is array (Natural range <>) of OpenGLVUtilBase_Access_Array_Access;
+   type OpenGLVUtilBase_Access_Array_Access_Array_Access is access all OpenGLVUtilBase_Access_Array_Access_Array;
 
    type OpenGLVUtilBase is new Java_Object with null record;
 

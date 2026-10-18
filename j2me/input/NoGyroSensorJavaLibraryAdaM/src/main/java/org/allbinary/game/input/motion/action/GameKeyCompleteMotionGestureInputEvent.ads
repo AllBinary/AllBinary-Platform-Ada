@@ -40,6 +40,8 @@ package org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInput
    type GameKeyCompleteMotionGestureInputEvent_Access is access all GameKeyCompleteMotionGestureInputEvent'Class;
    type GameKeyCompleteMotionGestureInputEvent_Access_Array is array (Natural range <>) of GameKeyCompleteMotionGestureInputEvent_Access;
    type GameKeyCompleteMotionGestureInputEvent_Access_Array_Access is access all GameKeyCompleteMotionGestureInputEvent_Access_Array;
+   type GameKeyCompleteMotionGestureInputEvent_Access_Array_Access_Array is array (Natural range <>) of GameKeyCompleteMotionGestureInputEvent_Access_Array_Access;
+   type GameKeyCompleteMotionGestureInputEvent_Access_Array_Access_Array_Access is access all GameKeyCompleteMotionGestureInputEvent_Access_Array_Access_Array;
 
    type GameKeyCompleteMotionGestureInputEvent is new CompleteMotionGestureInputEvent and GameKeyEventSourceInterface with record
       gameKey : GameKey_Access;

@@ -21,21 +21,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileFilter_Package; use java.io.FileFilter_Package;
-with org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package; use org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.io.file.filter.VisitorFileFilter_Package; use org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
 
 package org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package is
 
-   package IncludeFileExtensionsBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicFileFilterUtil is tagged;
    type BasicFileFilterUtil_Access is access all BasicFileFilterUtil'Class;
    type BasicFileFilterUtil_Access_Array is array (Natural range <>) of BasicFileFilterUtil_Access;
    type BasicFileFilterUtil_Access_Array_Access is access all BasicFileFilterUtil_Access_Array;
+   type BasicFileFilterUtil_Access_Array_Access_Array is array (Natural range <>) of BasicFileFilterUtil_Access_Array_Access;
+   type BasicFileFilterUtil_Access_Array_Access_Array_Access is access all BasicFileFilterUtil_Access_Array_Access_Array;
 
    type BasicFileFilterUtil is new Java_Object with null record;
 

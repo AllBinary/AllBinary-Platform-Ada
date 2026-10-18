@@ -30,8 +30,10 @@ package org.allbinary.device.NullGL10_Package is
    type NullGL10_Access is access all NullGL10'Class;
    type NullGL10_Access_Array is array (Natural range <>) of NullGL10_Access;
    type NullGL10_Access_Array_Access is access all NullGL10_Access_Array;
+   type NullGL10_Access_Array_Access_Array is array (Natural range <>) of NullGL10_Access_Array_Access;
+   type NullGL10_Access_Array_Access_Array_Access is access all NullGL10_Access_Array_Access_Array;
 
-   type NullGL10 is new GL10 with null record;
+   type NullGL10 is new Java_Object and GL10 with null record;
    NULL_GL10 : NullGL10_Access;
 
    procedure Initialize (This : in out NullGL10'Class);

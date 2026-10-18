@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package; use org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package;
+
 package body org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package is
 
    procedure Initialize_Fields (This : in out MineLayerFactory'Class) is
@@ -39,7 +41,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package is
    --  throws Exception
    function getInstance (This : in out MineLayerFactory) return AllBinaryLayer_Access is
    begin
-        return MineLayer_Package.Create (This.viewPositionFactoryInterface.getInstance);
+        return AllBinaryLayer_Access (MineLayer_Package.Create (This.viewPositionFactoryInterface.getInstance));
    end getInstance;
 
 end org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package;

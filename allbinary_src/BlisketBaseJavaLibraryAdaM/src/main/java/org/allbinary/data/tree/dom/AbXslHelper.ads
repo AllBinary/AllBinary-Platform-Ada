@@ -20,16 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with javax.xml.transform.stream.StreamResult_Package; use javax.xml.transform.stream.StreamResult_Package;
 --  with javax.xml.transform.stream.StreamSource_Package; use javax.xml.transform.stream.StreamSource_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.data.tree.dom.XslHelper_Package; use org.allbinary.data.tree.dom.XslHelper_Package;
 
 package org.allbinary.data.tree.dom.AbXslHelper_Package is
 
-   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
 
@@ -37,6 +34,8 @@ package org.allbinary.data.tree.dom.AbXslHelper_Package is
    type AbXslHelper_Access is access all AbXslHelper'Class;
    type AbXslHelper_Access_Array is array (Natural range <>) of AbXslHelper_Access;
    type AbXslHelper_Access_Array_Access is access all AbXslHelper_Access_Array;
+   type AbXslHelper_Access_Array_Access_Array is array (Natural range <>) of AbXslHelper_Access_Array_Access;
+   type AbXslHelper_Access_Array_Access_Array_Access is access all AbXslHelper_Access_Array_Access_Array;
 
    type AbXslHelper is new Java_Object with null record;
    instance : AbXslHelper_Access;

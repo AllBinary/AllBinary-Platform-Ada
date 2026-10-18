@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.configuration.feature.SensorFeature_Package is
 
    procedure Initialize_Fields (This : in out SensorFeature'Class) is

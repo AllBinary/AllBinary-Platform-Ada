@@ -30,6 +30,8 @@ package org.allbinary.animation.special.SpecialAnimationInterface_Package is
    type SpecialAnimationInterface_Access is access all SpecialAnimationInterface'Class;
    type SpecialAnimationInterface_Access_Array is array (Natural range <>) of SpecialAnimationInterface_Access;
    type SpecialAnimationInterface_Access_Array_Access is access all SpecialAnimationInterface_Access_Array;
+   type SpecialAnimationInterface_Access_Array_Access_Array is array (Natural range <>) of SpecialAnimationInterface_Access_Array_Access;
+   type SpecialAnimationInterface_Access_Array_Access_Array_Access is access all SpecialAnimationInterface_Access_Array_Access_Array;
    procedure setLastFrame (This : in out SpecialAnimationInterface) is abstract;
    function isComplete (This : in out SpecialAnimationInterface) return Boolean is abstract;
 

@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.microemu.device.playn.PlaynImmutableImage_Package; use org.microemu.device.playn.PlaynImmutableImage_Package;
+with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
+with playn.core.Canvas_Package; use playn.core.Canvas_Package;
+with playn.core.CoreImage_Package; use playn.core.CoreImage_Package;
+with playn.core.ImageImpl_Package; use playn.core.ImageImpl_Package;
+with playn.core.PlayN_Package; use playn.core.PlayN_Package;
+with playn.html.HtmlGraphics_Package; use playn.html.HtmlGraphics_Package;
+with playn.html.HtmlImage_Package; use playn.html.HtmlImage_Package;
+
 package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 
+   package PlaynImmutableImage_Package renames Standard.org.microemu.device.playn.PlaynImmutableImage_Package;
+   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
+   package Canvas_Package renames Standard.playn.core.Canvas_Package;
+   package CoreImage_Package renames Standard.playn.core.CoreImage_Package;
+   package ImageImpl_Package renames Standard.playn.core.ImageImpl_Package;
+   package PlayN_Package renames Standard.playn.core.PlayN_Package;
+   package HtmlGraphics_Package renames Standard.playn.html.HtmlGraphics_Package;
+   package HtmlImage_Package renames Standard.playn.html.HtmlImage_Package;
    procedure Initialize_Fields (This : in out ImageJ2MEScaleUtil'Class) is
    begin
       null;

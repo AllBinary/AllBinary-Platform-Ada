@@ -28,6 +28,8 @@ package org.allbinary.game.displayable.canvas.TitleResource_Package is
    type TitleResource_Access is access all TitleResource'Class;
    type TitleResource_Access_Array is array (Natural range <>) of TitleResource_Access;
    type TitleResource_Access_Array_Access is access all TitleResource_Access_Array;
+   type TitleResource_Access_Array_Access_Array is array (Natural range <>) of TitleResource_Access_Array_Access;
+   type TitleResource_Access_Array_Access_Array_Access is access all TitleResource_Access_Array_Access_Array;
 
    type TitleResource is new Java_Object with null record;
    RESOURCE_TITLE : Unbounded_String;

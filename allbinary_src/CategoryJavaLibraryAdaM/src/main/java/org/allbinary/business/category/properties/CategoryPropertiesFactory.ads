@@ -22,25 +22,24 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
-with org.allbinary.business.category.properties.CategoryProperties_Package; use org.allbinary.business.category.properties.CategoryProperties_Package;
 
 package org.allbinary.business.category.properties.CategoryPropertiesFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type CategoryPropertiesFactory is tagged;
    type CategoryPropertiesFactory_Access is access all CategoryPropertiesFactory'Class;
    type CategoryPropertiesFactory_Access_Array is array (Natural range <>) of CategoryPropertiesFactory_Access;
    type CategoryPropertiesFactory_Access_Array_Access is access all CategoryPropertiesFactory_Access_Array;
+   type CategoryPropertiesFactory_Access_Array_Access_Array is array (Natural range <>) of CategoryPropertiesFactory_Access_Array_Access;
+   type CategoryPropertiesFactory_Access_Array_Access_Array_Access is access all CategoryPropertiesFactory_Access_Array_Access_Array;
 
-   type CategoryPropertiesFactory is new CategoryPropertiesFactoryInterface with record
+   type CategoryPropertiesFactory is new Java_Object and CategoryPropertiesFactoryInterface with record
       logUtil : LogUtil_Access;
       categoryPropertiesInterface : CategoryPropertiesInterface_Access;
    end record;

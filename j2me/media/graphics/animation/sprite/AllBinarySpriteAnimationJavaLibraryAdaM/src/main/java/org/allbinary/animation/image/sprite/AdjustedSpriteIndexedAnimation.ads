@@ -25,7 +25,6 @@ with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_
 with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
 
 package org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package is
@@ -35,12 +34,13 @@ package org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Pack
    package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorUtil_Package;
 
    type AdjustedSpriteIndexedAnimation is tagged;
    type AdjustedSpriteIndexedAnimation_Access is access all AdjustedSpriteIndexedAnimation'Class;
    type AdjustedSpriteIndexedAnimation_Access_Array is array (Natural range <>) of AdjustedSpriteIndexedAnimation_Access;
    type AdjustedSpriteIndexedAnimation_Access_Array_Access is access all AdjustedSpriteIndexedAnimation_Access_Array;
+   type AdjustedSpriteIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of AdjustedSpriteIndexedAnimation_Access_Array_Access;
+   type AdjustedSpriteIndexedAnimation_Access_Array_Access_Array_Access is access all AdjustedSpriteIndexedAnimation_Access_Array_Access_Array;
 
    type AdjustedSpriteIndexedAnimation is new SpriteIndexedAnimation with record
       dx : Integer;

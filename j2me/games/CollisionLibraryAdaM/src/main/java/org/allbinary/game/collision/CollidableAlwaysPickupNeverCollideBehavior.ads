@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.game.collision.CollidableNeverCollideBehavior_Package; use org.allbinary.game.collision.CollidableNeverCollideBehavior_Package;
-with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
 with org.allbinary.game.collision.CollisionType_Package; use org.allbinary.game.collision.CollisionType_Package;
 
 package org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package is
@@ -33,6 +32,8 @@ package org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_
    type CollidableAlwaysPickupNeverCollideBehavior_Access is access all CollidableAlwaysPickupNeverCollideBehavior'Class;
    type CollidableAlwaysPickupNeverCollideBehavior_Access_Array is array (Natural range <>) of CollidableAlwaysPickupNeverCollideBehavior_Access;
    type CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access is access all CollidableAlwaysPickupNeverCollideBehavior_Access_Array;
+   type CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access_Array is array (Natural range <>) of CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access;
+   type CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access_Array_Access is access all CollidableAlwaysPickupNeverCollideBehavior_Access_Array_Access_Array;
 
    type CollidableAlwaysPickupNeverCollideBehavior is new CollidableNeverCollideBehavior with null record;
 

@@ -28,6 +28,8 @@ package org.allbinary.game.input.form.PlayersSingletonFactory_Package is
    type PlayersSingletonFactory_Access is access all PlayersSingletonFactory'Class;
    type PlayersSingletonFactory_Access_Array is array (Natural range <>) of PlayersSingletonFactory_Access;
    type PlayersSingletonFactory_Access_Array_Access is access all PlayersSingletonFactory_Access_Array;
+   type PlayersSingletonFactory_Access_Array_Access_Array is array (Natural range <>) of PlayersSingletonFactory_Access_Array_Access;
+   type PlayersSingletonFactory_Access_Array_Access_Array_Access is access all PlayersSingletonFactory_Access_Array_Access_Array;
 
    type PlayersSingletonFactory is new Java_Object with null record;
    total : Integer;

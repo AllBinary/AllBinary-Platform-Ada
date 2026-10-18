@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.configuration.GameConfigurationSingleton_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out GameConfigurationSingleton'Class) is
    begin
       null;
@@ -31,7 +36,7 @@ package body org.allbinary.game.configuration.GameConfigurationSingleton_Package
    procedure Initialize (This : in out GameConfigurationSingleton'Class) is
    begin
       Initialize_Fields (This);
-        This.list := BasicArrayListD_Package.Create;
+        This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         This.hashtable := StdUtil_Package.getInstance.createHashtable;
    end Initialize;
 
@@ -55,7 +60,7 @@ package body org.allbinary.game.configuration.GameConfigurationSingleton_Package
    procedure add (This : in out GameConfigurationSingleton; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class) is
       gameConfiguration : constant GameConfiguration_Access := GameConfiguration_Access (gameConfiguration_Param);
    begin
-        This.list.add (gameConfiguration);
+        This.list.add (Java_Object_Access (gameConfiguration));
    end add;
 
    function getHashtable (This : in out GameConfigurationSingleton) return ABHashtable_Access is

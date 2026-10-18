@@ -24,20 +24,19 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with admin.taghelpers.TagHelperFactory_Package; use admin.taghelpers.TagHelperFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
-with taghelpers.ValidationViewHelper_Package; use taghelpers.ValidationViewHelper_Package;
 
 package taghelpers.ValidatedViewHelperFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package TagHelperFactory_Package renames Standard.admin.taghelpers.TagHelperFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type ValidatedViewHelperFactory is tagged;
    type ValidatedViewHelperFactory_Access is access all ValidatedViewHelperFactory'Class;
    type ValidatedViewHelperFactory_Access_Array is array (Natural range <>) of ValidatedViewHelperFactory_Access;
    type ValidatedViewHelperFactory_Access_Array_Access is access all ValidatedViewHelperFactory_Access_Array;
+   type ValidatedViewHelperFactory_Access_Array_Access_Array is array (Natural range <>) of ValidatedViewHelperFactory_Access_Array_Access;
+   type ValidatedViewHelperFactory_Access_Array_Access_Array_Access is access all ValidatedViewHelperFactory_Access_Array_Access_Array;
 
    type ValidatedViewHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

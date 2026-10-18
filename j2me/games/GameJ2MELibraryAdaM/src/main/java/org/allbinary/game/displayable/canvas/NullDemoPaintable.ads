@@ -29,8 +29,10 @@ package org.allbinary.game.displayable.canvas.NullDemoPaintable_Package is
    type NullDemoPaintable_Access is access all NullDemoPaintable'Class;
    type NullDemoPaintable_Access_Array is array (Natural range <>) of NullDemoPaintable_Access;
    type NullDemoPaintable_Access_Array_Access is access all NullDemoPaintable_Access_Array;
+   type NullDemoPaintable_Access_Array_Access_Array is array (Natural range <>) of NullDemoPaintable_Access_Array_Access;
+   type NullDemoPaintable_Access_Array_Access_Array_Access is access all NullDemoPaintable_Access_Array_Access_Array;
 
-   type NullDemoPaintable is new DemoPaintableInterface with null record;
+   type NullDemoPaintable is new Java_Object and DemoPaintableInterface with null record;
    NULL_DEMO_PAINTABLE : NullDemoPaintable_Access;
 
    procedure Initialize (This : in out NullDemoPaintable'Class);

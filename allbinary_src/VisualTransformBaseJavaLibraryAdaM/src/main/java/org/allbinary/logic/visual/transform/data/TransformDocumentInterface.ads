@@ -32,6 +32,8 @@ package org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Pac
    type TransformDocumentInterface_Access is access all TransformDocumentInterface'Class;
    type TransformDocumentInterface_Access_Array is array (Natural range <>) of TransformDocumentInterface_Access;
    type TransformDocumentInterface_Access_Array_Access is access all TransformDocumentInterface_Access_Array;
+   type TransformDocumentInterface_Access_Array_Access_Array is array (Natural range <>) of TransformDocumentInterface_Access_Array_Access;
+   type TransformDocumentInterface_Access_Array_Access_Array_Access is access all TransformDocumentInterface_Access_Array_Access_Array;
    function getBaseNode (This : in out TransformDocumentInterface) return Node_Access is abstract;
    function getDoc (This : in out TransformDocumentInterface) return Document_Access is abstract;
 

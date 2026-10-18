@@ -5,8 +5,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out InApplicationPurchaseFactory'Class) is
    begin
       null;
@@ -106,6 +109,11 @@ package body org.allbinary.logic.system.security.licensing.InApplicationPurchase
    begin
       null;
    end isPurchased;
+
+   procedure onSaveState (This : in out InApplicationPurchaseFactory; Value : Unbounded_String) is
+   begin
+      InApplicationPurchaseFactory'Class (This).onSaveState (Java_Box (Value));
+   end onSaveState;
 
 begin
    null;

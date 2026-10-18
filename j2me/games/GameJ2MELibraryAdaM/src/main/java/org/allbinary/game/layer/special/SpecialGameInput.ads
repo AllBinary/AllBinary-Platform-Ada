@@ -35,8 +35,10 @@ package org.allbinary.game.layer.special.SpecialGameInput_Package is
    type SpecialGameInput_Access is access all SpecialGameInput'Class;
    type SpecialGameInput_Access_Array is array (Natural range <>) of SpecialGameInput_Access;
    type SpecialGameInput_Access_Array_Access is access all SpecialGameInput_Access_Array;
+   type SpecialGameInput_Access_Array_Access_Array is array (Natural range <>) of SpecialGameInput_Access_Array_Access;
+   type SpecialGameInput_Access_Array_Access_Array_Access is access all SpecialGameInput_Access_Array_Access_Array;
 
-   type SpecialGameInput is new SpecialGameInputInterface with null record;
+   type SpecialGameInput is new Java_Object and SpecialGameInputInterface with null record;
 
    procedure Initialize (This : in out SpecialGameInput'Class);
    function Create return SpecialGameInput_Access;

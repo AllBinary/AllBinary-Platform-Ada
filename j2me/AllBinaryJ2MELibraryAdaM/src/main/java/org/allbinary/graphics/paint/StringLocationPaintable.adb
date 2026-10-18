@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.paint.StringLocationPaintable_Package is
 
    procedure Initialize_Fields (This : in out StringLocationPaintable'Class) is

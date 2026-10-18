@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+
 package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
    procedure Initialize_Fields (This : in out MultipassWaypointPathRunnable'Class) is
    begin
       null;
@@ -24,16 +34,16 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
       This.done := False;
       This.list := This.basicArrayListUtil.getImmutableInstance;
       This.pathFindingInfo := NullUtil_Package.getInstance.NULL_OBJECT;
-      This.FIRST_RUNNABLE := FirstRunnable_Package.Create (MultipassWaypointPathRunnable_Access'(This'Unchecked_Access));
-      This.SECOND_RUNNABLE := SecondRunnable_Package.Create (MultipassWaypointPathRunnable_Access'(This'Unchecked_Access));
-      This.END_RUNNABLE := EndRunnable_Package.Create (MultipassWaypointPathRunnable_Access'(This'Unchecked_Access));
-      This.ALREADY_ENDED_RUNNABLE := ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
+      This.FIRST_RUNNABLE := Runnable_Access (FirstRunnable_Package.Create (MultipassWaypointPathRunnable_Access'(This'Unchecked_Access)));
+      This.SECOND_RUNNABLE := Runnable_Access (SecondRunnable_Package.Create (MultipassWaypointPathRunnable_Access'(This'Unchecked_Access)));
+      This.END_RUNNABLE := Runnable_Access (EndRunnable_Package.Create (MultipassWaypointPathRunnable_Access'(This'Unchecked_Access)));
+      This.ALREADY_ENDED_RUNNABLE := Runnable_Access (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
 --          
 --     procedure run (This : in out ) is
 --     begin
 --              Java_Throw (Java_New_Exception ("RuntimeException"));
 --     end run;
-;
+);
       This.currentPassRunnable := This.FIRST_RUNNABLE;
    end Initialize_Fields;
 
@@ -189,8 +199,18 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
 end org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+
 package body org.allbinary.game.layer.FirstRunnable_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
    procedure Initialize_Fields (This : in out FirstRunnable'Class) is
    begin
       null;
@@ -221,8 +241,18 @@ package body org.allbinary.game.layer.FirstRunnable_Package is
 end org.allbinary.game.layer.FirstRunnable_Package;
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+
 package body org.allbinary.game.layer.SecondRunnable_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
    procedure Initialize_Fields (This : in out SecondRunnable'Class) is
    begin
       null;
@@ -253,8 +283,18 @@ package body org.allbinary.game.layer.SecondRunnable_Package is
 end org.allbinary.game.layer.SecondRunnable_Package;
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+
 package body org.allbinary.game.layer.EndRunnable_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
    procedure Initialize_Fields (This : in out EndRunnable'Class) is
    begin
       null;

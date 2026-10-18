@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
 with org.allbinary.logic.visual.transform.TransformInterface_Package; use org.allbinary.logic.visual.transform.TransformInterface_Package;
 with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package; use org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -30,7 +29,6 @@ with org.allbinary.business.category.CategoryInterface_Package; use org.allbinar
 
 package org.allbinary.business.category.CategoryComponent_Package is
 
-   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
    package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
    package TransformDocumentInterface_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -40,6 +38,8 @@ package org.allbinary.business.category.CategoryComponent_Package is
    type CategoryComponent_Access is access all CategoryComponent'Class;
    type CategoryComponent_Access_Array is array (Natural range <>) of CategoryComponent_Access;
    type CategoryComponent_Access_Array_Access is access all CategoryComponent_Access_Array;
+   type CategoryComponent_Access_Array_Access_Array is array (Natural range <>) of CategoryComponent_Access_Array_Access;
+   type CategoryComponent_Access_Array_Access_Array_Access is access all CategoryComponent_Access_Array_Access_Array;
 
    type CategoryComponent is new CategoryView and TransformInterface with record
       NO_TYPE : Integer;

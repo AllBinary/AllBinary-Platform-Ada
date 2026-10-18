@@ -31,6 +31,8 @@ package org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package i
    type UpGameKeyEventListenerInterface_Access is access all UpGameKeyEventListenerInterface'Class;
    type UpGameKeyEventListenerInterface_Access_Array is array (Natural range <>) of UpGameKeyEventListenerInterface_Access;
    type UpGameKeyEventListenerInterface_Access_Array_Access is access all UpGameKeyEventListenerInterface_Access_Array;
+   type UpGameKeyEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of UpGameKeyEventListenerInterface_Access_Array_Access;
+   type UpGameKeyEventListenerInterface_Access_Array_Access_Array_Access is access all UpGameKeyEventListenerInterface_Access_Array_Access_Array;
    procedure onUpGameKeyEvent (This : in out UpGameKeyEventListenerInterface; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is abstract;
 
 end org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package;

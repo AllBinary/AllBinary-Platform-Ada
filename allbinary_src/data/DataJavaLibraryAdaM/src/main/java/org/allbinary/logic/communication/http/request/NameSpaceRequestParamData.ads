@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.http.request.NameSpaceRequestParamData
    type NameSpaceRequestParamData_Access is access all NameSpaceRequestParamData'Class;
    type NameSpaceRequestParamData_Access_Array is array (Natural range <>) of NameSpaceRequestParamData_Access;
    type NameSpaceRequestParamData_Access_Array_Access is access all NameSpaceRequestParamData_Access_Array;
+   type NameSpaceRequestParamData_Access_Array_Access_Array is array (Natural range <>) of NameSpaceRequestParamData_Access_Array_Access;
+   type NameSpaceRequestParamData_Access_Array_Access_Array_Access is access all NameSpaceRequestParamData_Access_Array_Access_Array;
 
    type NameSpaceRequestParamData is new Java_Object with null record;
    NAME : Unbounded_String;

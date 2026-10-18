@@ -16,6 +16,8 @@ package org.allbinary.animation.FixedPoint_Package is
    type FixedPoint_Access is access all FixedPoint'Class;
    type FixedPoint_Access_Array is array (Natural range <>) of FixedPoint_Access;
    type FixedPoint_Access_Array_Access is access all FixedPoint_Access_Array;
+   type FixedPoint_Access_Array_Access_Array is array (Natural range <>) of FixedPoint_Access_Array_Access;
+   type FixedPoint_Access_Array_Access_Array_Access is access all FixedPoint_Access_Array_Access_Array;
 
    type FixedPoint is new Java_Object with record
       ONE : Integer;

@@ -29,6 +29,8 @@ package org.allbinary.graphics.opengles.shader.SimpleCompositeShaderUpdater_Pack
    type SimpleCompositeShaderUpdater_Access is access all SimpleCompositeShaderUpdater'Class;
    type SimpleCompositeShaderUpdater_Access_Array is array (Natural range <>) of SimpleCompositeShaderUpdater_Access;
    type SimpleCompositeShaderUpdater_Access_Array_Access is access all SimpleCompositeShaderUpdater_Access_Array;
+   type SimpleCompositeShaderUpdater_Access_Array_Access_Array is array (Natural range <>) of SimpleCompositeShaderUpdater_Access_Array_Access;
+   type SimpleCompositeShaderUpdater_Access_Array_Access_Array_Access is access all SimpleCompositeShaderUpdater_Access_Array_Access_Array;
 
    type SimpleCompositeShaderUpdater is new CompositeShaderUpdater with null record;
 

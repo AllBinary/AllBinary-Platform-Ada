@@ -13,12 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.commerce.inventory.item.ItemView_Package; use org.allbinary.business.user.commerce.inventory.item.ItemView_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.business.user.commerce.inventory.basket.BasketData_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
+
 package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemView_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out BasketReview'Class) is
    begin
       null;
-      This.items := BasicArrayListD_Package.Create;
+      This.items := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -43,7 +51,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
    procedure addItem (This : in out BasketReview; item_Param : access Item_Package.Item'Class) is
       item : constant Item_Access := Item_Access (item_Param);
    begin
-        This.items.add (item);
+        This.items.add (Java_Object_Access (item));
    end addItem;
 
    function getItems (This : in out BasketReview) return BasicArrayList_Access is
@@ -62,7 +70,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
         for index in 0 .. (size) - 1 loop
             item := Item_Access (itemArray (index));
             if (item.getId.compareTo (id)) = (0) then
-                This.items.remove (item);
+                This.items.remove (Java_Object_Access (item));
             end if;
         end loop;
    end removeItem;

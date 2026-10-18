@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+
 package body org.allbinary.util.ABStack_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    procedure Initialize_Fields (This : in out ABStack'Class) is
    begin
       null;
@@ -83,6 +86,30 @@ package body org.allbinary.util.ABStack_Package is
 
    procedure removeElement (This : in out ABStack; obj_Param : access Java_Object'Class) is
       Java_Result : constant Boolean := ABStack'Class (This).removeElement (obj_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end removeElement;
+
+   function search (This : in out ABStack; Value : Unbounded_String) return Integer is
+   begin
+      return ABStack'Class (This).search (Java_Box (Value));
+   end search;
+
+   procedure search (This : in out ABStack; Value : Unbounded_String) is
+      Java_Result : constant Integer := ABStack'Class (This).search (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end search;
+
+   function removeElement (This : in out ABStack; Value : Unbounded_String) return Boolean is
+   begin
+      return ABStack'Class (This).removeElement (Java_Box (Value));
+   end removeElement;
+
+   procedure removeElement (This : in out ABStack; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ABStack'Class (This).removeElement (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -29,6 +29,8 @@ package org.allbinary.media.AllBinaryNoVibration_Package is
    type AllBinaryNoVibration_Access is access all AllBinaryNoVibration'Class;
    type AllBinaryNoVibration_Access_Array is array (Natural range <>) of AllBinaryNoVibration_Access;
    type AllBinaryNoVibration_Access_Array_Access is access all AllBinaryNoVibration_Access_Array;
+   type AllBinaryNoVibration_Access_Array_Access_Array is array (Natural range <>) of AllBinaryNoVibration_Access_Array_Access;
+   type AllBinaryNoVibration_Access_Array_Access_Array_Access is access all AllBinaryNoVibration_Access_Array_Access_Array;
 
    type AllBinaryNoVibration is new AllBinaryVibrationME with null record;
    NO_VIBRATION : AllBinaryVibrationME_Access;

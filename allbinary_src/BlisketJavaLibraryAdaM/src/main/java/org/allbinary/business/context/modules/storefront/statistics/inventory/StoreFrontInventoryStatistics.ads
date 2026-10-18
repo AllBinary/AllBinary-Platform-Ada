@@ -22,34 +22,25 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; use org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
 with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
-with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
-with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package;
-with org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package; use org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsData_Package;
 
 package org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
    package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
-   package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
-   package InventoryEntityInterface_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type StoreFrontInventoryStatistics is tagged;
    type StoreFrontInventoryStatistics_Access is access all StoreFrontInventoryStatistics'Class;
    type StoreFrontInventoryStatistics_Access_Array is array (Natural range <>) of StoreFrontInventoryStatistics_Access;
    type StoreFrontInventoryStatistics_Access_Array_Access is access all StoreFrontInventoryStatistics_Access_Array;
+   type StoreFrontInventoryStatistics_Access_Array_Access_Array is array (Natural range <>) of StoreFrontInventoryStatistics_Access_Array_Access;
+   type StoreFrontInventoryStatistics_Access_Array_Access_Array_Access is access all StoreFrontInventoryStatistics_Access_Array_Access_Array;
 
-   type StoreFrontInventoryStatistics is new StoreFrontInventoryStatisticsInterface with record
+   type StoreFrontInventoryStatistics is new Java_Object and StoreFrontInventoryStatisticsInterface with record
       totalNumberOfItems : Long_Long_Integer;
       totalInventorySaleValueMoney : Money_Access;
    end record;

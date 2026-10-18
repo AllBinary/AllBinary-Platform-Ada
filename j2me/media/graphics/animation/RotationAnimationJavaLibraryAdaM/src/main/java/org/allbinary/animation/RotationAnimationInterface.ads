@@ -33,6 +33,8 @@ package org.allbinary.animation.RotationAnimationInterface_Package is
    type RotationAnimationInterface_Access is access all RotationAnimationInterface'Class;
    type RotationAnimationInterface_Access_Array is array (Natural range <>) of RotationAnimationInterface_Access;
    type RotationAnimationInterface_Access_Array_Access is access all RotationAnimationInterface_Access_Array;
+   type RotationAnimationInterface_Access_Array_Access_Array is array (Natural range <>) of RotationAnimationInterface_Access_Array_Access;
+   type RotationAnimationInterface_Access_Array_Access_Array_Access is access all RotationAnimationInterface_Access_Array_Access_Array;
    function getAngleInfoP (This : in out RotationAnimationInterface) return AngleInfo_Access is abstract;
    procedure nextRotation (This : in out RotationAnimationInterface) is abstract;
    procedure previousRotation (This : in out RotationAnimationInterface) is abstract;

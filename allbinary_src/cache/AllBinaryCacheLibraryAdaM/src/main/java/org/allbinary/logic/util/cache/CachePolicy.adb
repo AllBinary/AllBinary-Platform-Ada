@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.util.cache.CachePolicy_Package is
 
    procedure Initialize_Fields (This : in out CachePolicy'Class) is

@@ -20,18 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.view.StaticViewPosition_Package; use org.allbinary.view.StaticViewPosition_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 
 package org.allbinary.view.CenterStaticViewPositionFactory_Package is
 
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
    type CenterStaticViewPositionFactory is tagged;
    type CenterStaticViewPositionFactory_Access is access all CenterStaticViewPositionFactory'Class;
    type CenterStaticViewPositionFactory_Access_Array is array (Natural range <>) of CenterStaticViewPositionFactory_Access;
    type CenterStaticViewPositionFactory_Access_Array_Access is access all CenterStaticViewPositionFactory_Access_Array;
+   type CenterStaticViewPositionFactory_Access_Array_Access_Array is array (Natural range <>) of CenterStaticViewPositionFactory_Access_Array_Access;
+   type CenterStaticViewPositionFactory_Access_Array_Access_Array_Access is access all CenterStaticViewPositionFactory_Access_Array_Access_Array;
 
    type CenterStaticViewPositionFactory is new Java_Object with null record;
 

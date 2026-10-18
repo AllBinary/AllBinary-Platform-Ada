@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.transition.shake.ShakeEventFactory_Package is
 
    procedure Initialize_Fields (This : in out ShakeEventFactory'Class) is

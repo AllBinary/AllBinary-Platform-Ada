@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+
 package body org.allbinary.game.health.HealthBarAnimation_Package is
 
+   package BasicHudFactory_Package renames Standard.org.allbinary.game.graphics.hud.BasicHudFactory_Package;
    procedure Initialize_Fields (This : in out HealthBarAnimation'Class) is
    begin
       null;

@@ -24,9 +24,6 @@ with org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package; use org
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.logic.util.cache.PoolInterface_Package;
-with org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package;
-with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
-with org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;
 
 package org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package is
 
@@ -39,6 +36,8 @@ package org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package is
    type ImageArrayRotationAnimationPool_Access is access all ImageArrayRotationAnimationPool'Class;
    type ImageArrayRotationAnimationPool_Access_Array is array (Natural range <>) of ImageArrayRotationAnimationPool_Access;
    type ImageArrayRotationAnimationPool_Access_Array_Access is access all ImageArrayRotationAnimationPool_Access_Array;
+   type ImageArrayRotationAnimationPool_Access_Array_Access_Array is array (Natural range <>) of ImageArrayRotationAnimationPool_Access_Array_Access;
+   type ImageArrayRotationAnimationPool_Access_Array_Access_Array_Access is access all ImageArrayRotationAnimationPool_Access_Array_Access_Array;
 
    type ImageArrayRotationAnimationPool is new BasicArrayListResetablePool with null record;
    IMAGE_ROTATION_ANIMATION_POOL : PoolInterface_Access;
@@ -48,6 +47,8 @@ package org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package is
    function getInstance return PoolInterface_Access;
    function remove (This : in out ImageArrayRotationAnimationPool; key_Param : access Java_Object'Class) return CacheableInterface_Access;
    procedure remove (This : in out ImageArrayRotationAnimationPool; key_Param : access Java_Object'Class);
+   function remove (This : in out ImageArrayRotationAnimationPool; Value : Unbounded_String) return CacheableInterface_Access;
+   procedure remove (This : in out ImageArrayRotationAnimationPool; Value : Unbounded_String);
 
 end org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package;
 

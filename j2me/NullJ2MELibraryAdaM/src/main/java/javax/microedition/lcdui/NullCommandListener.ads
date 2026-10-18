@@ -19,8 +19,10 @@ package javax.microedition.lcdui.NullCommandListener_Package is
    type NullCommandListener_Access is access all NullCommandListener'Class;
    type NullCommandListener_Access_Array is array (Natural range <>) of NullCommandListener_Access;
    type NullCommandListener_Access_Array_Access is access all NullCommandListener_Access_Array;
+   type NullCommandListener_Access_Array_Access_Array is array (Natural range <>) of NullCommandListener_Access_Array_Access;
+   type NullCommandListener_Access_Array_Access_Array_Access is access all NullCommandListener_Access_Array_Access_Array;
 
-   type NullCommandListener is new CommandListener with null record;
+   type NullCommandListener is new Java_Object and CommandListener with null record;
    NULL_COMMAND_LISTENER : NullCommandListener_Access;
 
    procedure Initialize (This : in out NullCommandListener'Class);

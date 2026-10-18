@@ -30,6 +30,8 @@ package org.allbinary.input.event.VirtualKeyboardEvent_Package is
    type VirtualKeyboardEvent_Access is access all VirtualKeyboardEvent'Class;
    type VirtualKeyboardEvent_Access_Array is array (Natural range <>) of VirtualKeyboardEvent_Access;
    type VirtualKeyboardEvent_Access_Array_Access is access all VirtualKeyboardEvent_Access_Array;
+   type VirtualKeyboardEvent_Access_Array_Access_Array is array (Natural range <>) of VirtualKeyboardEvent_Access_Array_Access;
+   type VirtualKeyboardEvent_Access_Array_Access_Array_Access is access all VirtualKeyboardEvent_Access_Array_Access_Array;
 
    type VirtualKeyboardEvent is new AllBinaryEventObject with null record;
 

@@ -17,6 +17,8 @@ package javax.microedition.khronos.opengles.GL11_Package is
    type GL11_Access is access all GL11'Class;
    type GL11_Access_Array is array (Natural range <>) of GL11_Access;
    type GL11_Access_Array_Access is access all GL11_Access_Array;
+   type GL11_Access_Array_Access_Array is array (Natural range <>) of GL11_Access_Array_Access;
+   type GL11_Access_Array_Access_Array_Access is access all GL11_Access_Array_Access_Array;
    GL_ACTIVE_TEXTURE : Integer := 34016;
    GL_ADD_SIGNED : Integer := 34164;
    GL_ALPHA_SCALE : Integer := 3356;

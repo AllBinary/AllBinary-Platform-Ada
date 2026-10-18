@@ -36,6 +36,8 @@ package org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package is
    type Waypoint2LogHelper_Access is access all Waypoint2LogHelper'Class;
    type Waypoint2LogHelper_Access_Array is array (Natural range <>) of Waypoint2LogHelper_Access;
    type Waypoint2LogHelper_Access_Array_Access is access all Waypoint2LogHelper_Access_Array;
+   type Waypoint2LogHelper_Access_Array_Access_Array is array (Natural range <>) of Waypoint2LogHelper_Access_Array_Access;
+   type Waypoint2LogHelper_Access_Array_Access_Array_Access is access all Waypoint2LogHelper_Access_Array_Access_Array;
 
    type Waypoint2LogHelper is new Java_Object with null record;
    instance : Waypoint2LogHelper_Access;

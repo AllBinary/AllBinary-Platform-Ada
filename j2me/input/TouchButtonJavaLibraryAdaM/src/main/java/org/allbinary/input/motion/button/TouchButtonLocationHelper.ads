@@ -20,19 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
 
 package org.allbinary.input.motion.button.TouchButtonLocationHelper_Package is
 
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type TouchButtonLocationHelper is tagged;
    type TouchButtonLocationHelper_Access is access all TouchButtonLocationHelper'Class;
    type TouchButtonLocationHelper_Access_Array is array (Natural range <>) of TouchButtonLocationHelper_Access;
    type TouchButtonLocationHelper_Access_Array_Access is access all TouchButtonLocationHelper_Access_Array;
+   type TouchButtonLocationHelper_Access_Array_Access_Array is array (Natural range <>) of TouchButtonLocationHelper_Access_Array_Access;
+   type TouchButtonLocationHelper_Access_Array_Access_Array_Access is access all TouchButtonLocationHelper_Access_Array_Access_Array;
 
    type TouchButtonLocationHelper is new Java_Object with record
       totalColumns : Integer;

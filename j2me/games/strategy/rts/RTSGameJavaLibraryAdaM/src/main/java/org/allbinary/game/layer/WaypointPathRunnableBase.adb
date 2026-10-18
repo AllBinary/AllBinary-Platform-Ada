@@ -13,15 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
+
 package body org.allbinary.game.layer.WaypointPathRunnableBase_Package is
 
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    procedure Initialize_Fields (This : in out WaypointPathRunnableBase'Class) is
    begin
       null;
       This.layerDistanceUtil := LayerDistanceUtil_Package.getInstance;
       This.pathFindingLayer := NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER;
       This.targetPathFindingLayer := NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER;
-      This.priorityP := Integer_Package.MAX_VALUE;
+      This.priorityP := Integer'Last;
       This.runningP := False;
    end Initialize_Fields;
 

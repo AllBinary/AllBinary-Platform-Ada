@@ -25,11 +25,8 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
 with org.allbinary.game.health.Health_Package; use org.allbinary.game.health.Health_Package;
 with org.allbinary.game.health.HealthListenerInterface_Package; use org.allbinary.game.health.HealthListenerInterface_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.time.GameTickTimeDelayHelper_Package; use org.allbinary.time.GameTickTimeDelayHelper_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
-with org.allbinary.time.NoTimeDelayHelper_Package; use org.allbinary.time.NoTimeDelayHelper_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package is
@@ -39,17 +36,16 @@ package org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package is
    package BasicHud_Package renames Standard.org.allbinary.game.graphics.hud.BasicHud_Package;
    package Health_Package renames Standard.org.allbinary.game.health.Health_Package;
    package HealthListenerInterface_Package renames Standard.org.allbinary.game.health.HealthListenerInterface_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
    package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
-   package NoTimeDelayHelper_Package renames Standard.org.allbinary.time.NoTimeDelayHelper_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type HealthHudWidget is tagged;
    type HealthHudWidget_Access is access all HealthHudWidget'Class;
    type HealthHudWidget_Access_Array is array (Natural range <>) of HealthHudWidget_Access;
    type HealthHudWidget_Access_Array_Access is access all HealthHudWidget_Access_Array;
+   type HealthHudWidget_Access_Array_Access_Array is array (Natural range <>) of HealthHudWidget_Access_Array_Access;
+   type HealthHudWidget_Access_Array_Access_Array_Access is access all HealthHudWidget_Access_Array_Access_Array;
 
    type HealthHudWidget is new BasicHud and PaintableInterface and HealthListenerInterface with record
       healthScale : Integer;

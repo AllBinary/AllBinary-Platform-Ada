@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with android.view.WindowManager_Package; use android.view.WindowManager_Package;
+
 package body org.allbinary.android.api1.ActivityFractureUtilAPI1_Package is
 
+   package WindowManager_Package renames Standard.android.view.WindowManager_Package;
    procedure Initialize_Fields (This : in out ActivityFractureUtilAPI1'Class) is
    begin
       null;

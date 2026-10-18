@@ -1,8 +1,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+
 package body org.allbinary.graphics.form.item.ABStringComponent_Package is
 
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    procedure Initialize_Fields (This : in out ABStringComponent'Class) is
    begin
       null;

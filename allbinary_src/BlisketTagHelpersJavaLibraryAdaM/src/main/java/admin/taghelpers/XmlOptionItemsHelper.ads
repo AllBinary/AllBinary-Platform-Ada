@@ -23,23 +23,21 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
-with org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntityFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Package;
 
 package admin.taghelpers.XmlOptionItemsHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
-   package XmlOptionItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntityFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 
    type XmlOptionItemsHelper is tagged;
    type XmlOptionItemsHelper_Access is access all XmlOptionItemsHelper'Class;
    type XmlOptionItemsHelper_Access_Array is array (Natural range <>) of XmlOptionItemsHelper_Access;
    type XmlOptionItemsHelper_Access_Array_Access is access all XmlOptionItemsHelper_Access_Array;
+   type XmlOptionItemsHelper_Access_Array_Access_Array is array (Natural range <>) of XmlOptionItemsHelper_Access_Array_Access;
+   type XmlOptionItemsHelper_Access_Array_Access_Array_Access is access all XmlOptionItemsHelper_Access_Array_Access_Array;
 
    type XmlOptionItemsHelper is new BasicTable with record
       logUtil : LogUtil_Access;

@@ -13,12 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
+
 package body org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package is
 
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out AnalogControllerConfigurationEventHandler'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -44,8 +50,8 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
    procedure addListener (This : in out AnalogControllerConfigurationEventHandler; analogControllerConfigurationEventListenerInterface_Param : access AnalogControllerConfigurationEventListenerInterface_Package.AnalogControllerConfigurationEventListenerInterface'Class) is
       analogControllerConfigurationEventListenerInterface : constant AnalogControllerConfigurationEventListenerInterface_Access := AnalogControllerConfigurationEventListenerInterface_Access (analogControllerConfigurationEventListenerInterface_Param);
    begin
-        if not (This.list.contains (analogControllerConfigurationEventListenerInterface)) then
-            This.list.add (analogControllerConfigurationEventListenerInterface);
+        if not (This.list.contains (Java_Object_Access (analogControllerConfigurationEventListenerInterface))) then
+            This.list.add (Java_Object_Access (analogControllerConfigurationEventListenerInterface));
         end if;
    end addListener;
 
@@ -58,7 +64,7 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
    procedure removeListener (This : in out AnalogControllerConfigurationEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.list.remove (eventListenerInterface);
+        This.list.remove (Java_Object_Access (eventListenerInterface));
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 

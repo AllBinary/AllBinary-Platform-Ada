@@ -29,6 +29,8 @@ package org.allbinary.logic.system.security.licensing.InputAutomationClientInfor
    type InputAutomationClientInformationFactory_Access is access all InputAutomationClientInformationFactory'Class;
    type InputAutomationClientInformationFactory_Access_Array is array (Natural range <>) of InputAutomationClientInformationFactory_Access;
    type InputAutomationClientInformationFactory_Access_Array_Access is access all InputAutomationClientInformationFactory_Access_Array;
+   type InputAutomationClientInformationFactory_Access_Array_Access_Array is array (Natural range <>) of InputAutomationClientInformationFactory_Access_Array_Access;
+   type InputAutomationClientInformationFactory_Access_Array_Access_Array_Access is access all InputAutomationClientInformationFactory_Access_Array_Access_Array;
 
    type InputAutomationClientInformationFactory is new Java_Object with null record;
    instance : InputAutomationClientInformation_Access;

@@ -29,6 +29,8 @@ package org.allbinary.thread.SoundThreadPool_Package is
    type SoundThreadPool_Access is access all SoundThreadPool'Class;
    type SoundThreadPool_Access_Array is array (Natural range <>) of SoundThreadPool_Access;
    type SoundThreadPool_Access_Array_Access is access all SoundThreadPool_Access_Array;
+   type SoundThreadPool_Access_Array_Access_Array is array (Natural range <>) of SoundThreadPool_Access_Array_Access;
+   type SoundThreadPool_Access_Array_Access_Array_Access is access all SoundThreadPool_Access_Array_Access_Array;
 
    type SoundThreadPool is new Java_Object with null record;
    instance : ThreadPool_Access;

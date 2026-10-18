@@ -28,6 +28,8 @@ package org.allbinary.input.motion.button.TouchScreenType_Package is
    type TouchScreenType_Access is access all TouchScreenType'Class;
    type TouchScreenType_Access_Array is array (Natural range <>) of TouchScreenType_Access;
    type TouchScreenType_Access_Array_Access is access all TouchScreenType_Access_Array;
+   type TouchScreenType_Access_Array_Access_Array is array (Natural range <>) of TouchScreenType_Access_Array_Access;
+   type TouchScreenType_Access_Array_Access_Array_Access is access all TouchScreenType_Access_Array_Access_Array;
 
    type TouchScreenType is new Java_Object with record
       name : Unbounded_String;

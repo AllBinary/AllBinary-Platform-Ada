@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Vector_Package; use java.util.Vector_Package;
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+
 package body org.allbinary.logic.VectorUtil_Package is
 
+   package Vector_Package renames Standard.java.util.Vector_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    procedure Initialize_Fields (This : in out VectorUtil'Class) is
    begin
       null;
@@ -67,6 +72,18 @@ package body org.allbinary.logic.VectorUtil_Package is
    begin
       null;
    end elementAt;
+
+   function getSize (This : in out VectorUtil; Value : Unbounded_String) return Integer is
+   begin
+      return VectorUtil'Class (This).getSize (Java_Box (Value));
+   end getSize;
+
+   procedure getSize (This : in out VectorUtil; Value : Unbounded_String) is
+      Java_Result : constant Integer := VectorUtil'Class (This).getSize (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getSize;
 
 begin
    null;

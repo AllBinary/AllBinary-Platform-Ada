@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package is
 
    procedure Initialize_Fields (This : in out BlankModuleConfigurationJPanel'Class) is
@@ -43,8 +44,8 @@ package body org.allbinary.input.automation.module.configuration.BlankModuleConf
         This.jLabel1.setText (To_Unbounded_String ("No Configuration Available"));
         layout := GroupLayout_Package.Create (BlankModuleConfigurationJPanel_Access'(This'Unchecked_Access));
         BlankModuleConfigurationJPanel'Class (This).setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup.addContainerGap (231, Short_Package.MAX_VALUE).addComponent (This.jLabel1).addGap (225, 225, 225)));
-        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.jLabel1).addContainerGap (362, Short_Package.MAX_VALUE)));
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup.addContainerGap (231, Short_Integer'Last).addComponent (This.jLabel1).addGap (225, 225, 225)));
+        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.jLabel1).addContainerGap (362, Short_Integer'Last)));
    end initComponents;
 
 end org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package;

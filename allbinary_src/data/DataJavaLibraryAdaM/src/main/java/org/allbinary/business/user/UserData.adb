@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.UserData_Package is
 
    procedure Initialize_Fields (This : in out UserData'Class) is

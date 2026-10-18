@@ -21,32 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.app.Activity_Package; use android.app.Activity_Package;
-with android.content.Context_Package; use android.content.Context_Package;
-with android.view.View_Package; use android.view.View_Package;
-with android.view.inputmethod.InputMethodManager_Package; use android.view.inputmethod.InputMethodManager_Package;
-with org.allbinary.android.activity.ViewCompositeInterface_Package; use org.allbinary.android.activity.ViewCompositeInterface_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.android.input.api3.Runnable_Package; use org.allbinary.android.input.api3.Runnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Package is
 
    package Activity_Package renames Standard.android.app.Activity_Package;
-   package Context_Package renames Standard.android.content.Context_Package;
-   package View_Package renames Standard.android.view.View_Package;
-   package InputMethodManager_Package renames Standard.android.view.inputmethod.InputMethodManager_Package;
-   package ViewCompositeInterface_Package renames Standard.org.allbinary.android.activity.ViewCompositeInterface_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ShowVirtualKeyboardRunnable is tagged;
    type ShowVirtualKeyboardRunnable_Access is access all ShowVirtualKeyboardRunnable'Class;
    type ShowVirtualKeyboardRunnable_Access_Array is array (Natural range <>) of ShowVirtualKeyboardRunnable_Access;
    type ShowVirtualKeyboardRunnable_Access_Array_Access is access all ShowVirtualKeyboardRunnable_Access_Array;
+   type ShowVirtualKeyboardRunnable_Access_Array_Access_Array is array (Natural range <>) of ShowVirtualKeyboardRunnable_Access_Array_Access;
+   type ShowVirtualKeyboardRunnable_Access_Array_Access_Array_Access is access all ShowVirtualKeyboardRunnable_Access_Array_Access_Array;
 
-   type ShowVirtualKeyboardRunnable is new Runnable with record
+   type ShowVirtualKeyboardRunnable is new Java_Object and Runnable with record
       logUtil : LogUtil_Access;
       activity : Activity_Access;
    end record;

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+
 package body org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package is
 
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    procedure Initialize_Fields (This : in out MirrorMotionGestureEventUtil'Class) is
    begin
       null;
@@ -25,7 +30,7 @@ package body org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Pac
    procedure Initialize (This : in out MirrorMotionGestureEventUtil'Class) is
    begin
       Initialize_Fields (This);
-        This.motionEventCircularPool := MotionEventCircularPool_Package.createPool (Integer_Package.MAX_VALUE);
+        This.motionEventCircularPool := MotionEventCircularPool_Package.createPool (Integer'Last);
    end Initialize;
 
    function Create return MirrorMotionGestureEventUtil_Access is

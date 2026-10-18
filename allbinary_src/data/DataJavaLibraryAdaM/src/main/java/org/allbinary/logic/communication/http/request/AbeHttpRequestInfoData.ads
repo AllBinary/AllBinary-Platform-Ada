@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData_Pa
    type AbeHttpRequestInfoData_Access is access all AbeHttpRequestInfoData'Class;
    type AbeHttpRequestInfoData_Access_Array is array (Natural range <>) of AbeHttpRequestInfoData_Access;
    type AbeHttpRequestInfoData_Access_Array_Access is access all AbeHttpRequestInfoData_Access_Array;
+   type AbeHttpRequestInfoData_Access_Array_Access_Array is array (Natural range <>) of AbeHttpRequestInfoData_Access_Array_Access;
+   type AbeHttpRequestInfoData_Access_Array_Access_Array_Access is access all AbeHttpRequestInfoData_Access_Array_Access_Array;
 
    type AbeHttpRequestInfoData is new Java_Object with record
       HTTP_USER_AGENT : Unbounded_String;

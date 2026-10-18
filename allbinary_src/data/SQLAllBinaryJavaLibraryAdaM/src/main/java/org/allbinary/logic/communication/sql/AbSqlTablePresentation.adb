@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.communication.sql.AbSqlTablePresentation_Package is
 
    procedure Initialize_Fields (This : in out AbSqlTablePresentation'Class) is

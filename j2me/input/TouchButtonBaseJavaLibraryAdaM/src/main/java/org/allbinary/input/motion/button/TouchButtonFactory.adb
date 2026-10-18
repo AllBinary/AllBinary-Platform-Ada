@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+
 package body org.allbinary.input.motion.button.TouchButtonFactory_Package is
 
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    procedure Initialize_Fields (This : in out TouchButtonFactory'Class) is
    begin
       null;
@@ -49,11 +52,11 @@ package body org.allbinary.input.motion.button.TouchButtonFactory_Package is
         TouchButtonFactory'Class (This).toggle (False, This.LIST);
    end defaultList;
 
-   procedure toggle (This : in out TouchButtonFactory; save : Boolean; list_Case_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      list_Case : constant BasicArrayList_Access := BasicArrayList_Access (list_Case_Param);
+   procedure toggle (This : in out TouchButtonFactory; save : Boolean; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
-        if (list_Case) /= (BasicArrayListUtil_Package.getInstance.getImmutableInstance) then
-            This.savedList := list_Case;
+        if (list) /= (BasicArrayListUtil_Package.getInstance.getImmutableInstance) then
+            This.savedList := list;
             if not (This.saved) then
                 This.list_Case := This.savedList;
             end if;
@@ -74,13 +77,13 @@ package body org.allbinary.input.motion.button.TouchButtonFactory_Package is
    end toggle;
 
    --  throws Exception
-   procedure setList (This : in out TouchButtonFactory; list_Case_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      list_Case : constant BasicArrayList_Access := BasicArrayList_Access (list_Case_Param);
+   procedure setList (This : in out TouchButtonFactory; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
-        if (list_Case) = (null) then
+        if (list) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Null List")));
         end if;
-        This.list_Case := list_Case;
+        This.list_Case := list;
    end setList;
 
    function getList (This : in out TouchButtonFactory) return BasicArrayList_Access is

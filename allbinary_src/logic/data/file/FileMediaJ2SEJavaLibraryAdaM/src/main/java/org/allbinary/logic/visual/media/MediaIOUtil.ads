@@ -17,6 +17,8 @@ package org.allbinary.logic.visual.media.MediaIOUtil_Package is
    type MediaIOUtil_Access is access all MediaIOUtil'Class;
    type MediaIOUtil_Access_Array is array (Natural range <>) of MediaIOUtil_Access;
    type MediaIOUtil_Access_Array_Access is access all MediaIOUtil_Access_Array;
+   type MediaIOUtil_Access_Array_Access_Array is array (Natural range <>) of MediaIOUtil_Access_Array_Access;
+   type MediaIOUtil_Access_Array_Access_Array_Access is access all MediaIOUtil_Access_Array_Access_Array;
 
    type MediaIOUtil is new Java_Object with null record;
    instance : MediaIOUtil_Access;

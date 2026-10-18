@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.PaymentProcessHelperFactory_Package; use admin.taghelpers.PaymentProcessHelperFactory_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body admin.tags.PaymentProcessTag_Package is
 
+   package PaymentProcessHelperFactory_Package renames Standard.admin.taghelpers.PaymentProcessHelperFactory_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out PaymentProcessTag'Class) is
    begin
       null;

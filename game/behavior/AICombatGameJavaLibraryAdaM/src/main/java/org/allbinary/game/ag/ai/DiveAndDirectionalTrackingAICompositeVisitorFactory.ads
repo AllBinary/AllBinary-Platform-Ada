@@ -31,6 +31,8 @@ package org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAICompositeVisitorFac
    type DiveAndDirectionalTrackingAICompositeVisitorFactory_Access is access all DiveAndDirectionalTrackingAICompositeVisitorFactory'Class;
    type DiveAndDirectionalTrackingAICompositeVisitorFactory_Access_Array is array (Natural range <>) of DiveAndDirectionalTrackingAICompositeVisitorFactory_Access;
    type DiveAndDirectionalTrackingAICompositeVisitorFactory_Access_Array_Access is access all DiveAndDirectionalTrackingAICompositeVisitorFactory_Access_Array;
+   type DiveAndDirectionalTrackingAICompositeVisitorFactory_Access_Array_Access_Array is array (Natural range <>) of DiveAndDirectionalTrackingAICompositeVisitorFactory_Access_Array_Access;
+   type DiveAndDirectionalTrackingAICompositeVisitorFactory_Access_Array_Access_Array_Access is access all DiveAndDirectionalTrackingAICompositeVisitorFactory_Access_Array_Access_Array;
 
    type DiveAndDirectionalTrackingAICompositeVisitorFactory is new Java_Object with null record;
 

@@ -22,15 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.osgi.framework.BundleActivator_Package; use org.osgi.framework.BundleActivator_Package;
 with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleContext_Package;
-with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package; use bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
-with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package; use bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
-with org.allbinary.input.automation.InputAutomationJFrame_Package; use org.allbinary.input.automation.InputAutomationJFrame_Package;
-with org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceConsumer_Package; use org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceConsumer_Package;
-with org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package; use org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package;
-with org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package; use org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package;
-with org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package; use bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
 
@@ -38,23 +30,17 @@ package bundle.input.automation.InputAutomationBundleActivator_Package is
 
    package BundleActivator_Package renames Standard.org.osgi.framework.BundleActivator_Package;
    package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
-   package InputAutomationConfigurationModuleChangeListener_Package renames Standard.bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
-   package InputAutomationRobotChangeListener_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
-   package InputAutomationJFrame_Package renames Standard.org.allbinary.input.automation.InputAutomationJFrame_Package;
-   package InputAutomationModuleServiceConsumer_Package renames Standard.org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceConsumer_Package;
-   package InputAutomationNewBundleRunnable_Package renames Standard.org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package;
-   package InputAutomationServiceFactory_Package renames Standard.org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package;
-   package InputAutomationRobotServiceConsumer_Package renames Standard.org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package OSGIActivatorUtil_Package renames Standard.org.allbinary.osgi.OSGIActivatorUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InputAutomationBundleActivator is tagged;
    type InputAutomationBundleActivator_Access is access all InputAutomationBundleActivator'Class;
    type InputAutomationBundleActivator_Access_Array is array (Natural range <>) of InputAutomationBundleActivator_Access;
    type InputAutomationBundleActivator_Access_Array_Access is access all InputAutomationBundleActivator_Access_Array;
+   type InputAutomationBundleActivator_Access_Array_Access_Array is array (Natural range <>) of InputAutomationBundleActivator_Access_Array_Access;
+   type InputAutomationBundleActivator_Access_Array_Access_Array_Access is access all InputAutomationBundleActivator_Access_Array_Access_Array;
 
-   type InputAutomationBundleActivator is new BundleActivator and InputAutomationBundleActivatorListenerInterface with record
+   type InputAutomationBundleActivator is new Java_Object and BundleActivator and InputAutomationBundleActivatorListenerInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;

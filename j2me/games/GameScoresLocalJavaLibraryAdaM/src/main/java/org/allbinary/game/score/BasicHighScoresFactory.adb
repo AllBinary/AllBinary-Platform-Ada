@@ -1,6 +1,10 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.score.RecordStoreHighScores_Package; use org.allbinary.game.score.RecordStoreHighScores_Package;
+with org.allbinary.game.score.ScoreComparator_Package; use org.allbinary.game.score.ScoreComparator_Package;
+with org.allbinary.game.score.HighScoresHelper2_Package; use org.allbinary.game.score.HighScoresHelper2_Package;
+
 package body org.allbinary.game.score.BasicHighScoresFactory_Package is
 
    procedure Initialize_Fields (This : in out BasicHighScoresFactory'Class) is
@@ -59,7 +63,7 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
 
    function createHighScoresHelper (This : in out BasicHighScoresFactory) return HighScoresHelperBaseInterface_Access is
    begin
-        return HighScoresHelper2_Package.Create;
+        return HighScoresHelperBaseInterface_Access (HighScoresHelper2_Package.Create);
    end createHighScoresHelper;
 
    function loaded (index2 : Integer) return Boolean is

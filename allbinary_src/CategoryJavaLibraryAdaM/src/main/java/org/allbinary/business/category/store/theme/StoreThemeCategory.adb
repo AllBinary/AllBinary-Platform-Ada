@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.visual.theme.ThemeData_Package; use org.allbinary.logic.visual.theme.ThemeData_Package;
+with org.allbinary.logic.visual.theme.ThemesData_Package; use org.allbinary.logic.visual.theme.ThemesData_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+
 package body org.allbinary.business.category.store.theme.StoreThemeCategory_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ThemeData_Package renames Standard.org.allbinary.logic.visual.theme.ThemeData_Package;
+   package ThemesData_Package renames Standard.org.allbinary.logic.visual.theme.ThemesData_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out StoreThemeCategory'Class) is
    begin
       null;
@@ -30,7 +43,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         Category_Package.Initialize (This, categoryPropertiesFactoryInterface, level);
         Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
-        This.themeVector := BasicArrayListD_Package.Create;
+        This.themeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class; level : Integer) return StoreThemeCategory_Access is
@@ -49,7 +62,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         Category_Package.Initialize (This, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface);
         Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
-        This.themeVector := BasicArrayListD_Package.Create;
+        This.themeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class) return StoreThemeCategory_Access is
@@ -67,7 +80,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         Category_Package.Initialize (This, categoryPropertiesFactoryInterface, level);
         Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
-        This.themeVector := BasicArrayListD_Package.Create;
+        This.themeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         StoreThemeCategory'Class (This).addThemes (node);
    end Initialize;
 
@@ -88,7 +101,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         Category_Package.Initialize (This, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface);
         Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
-        This.themeVector := BasicArrayListD_Package.Create;
+        This.themeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         StoreThemeCategory'Class (This).addThemes (node);
    end Initialize;
 
@@ -117,7 +130,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         for index in 0 .. (nodeList.getLength) - 1 loop
             themeNode := nodeList.item (index);
             if (themeNode.getNodeName.compareTo (ThemeData_Package.getInstance.NAME)) = (0) then
-                This.themeVector.add (ThemeValidation_Package.Create (StoreThemeCategory_Access'(This'Unchecked_Access), themeNode));
+                This.themeVector.add (Java_Object_Access (ThemeValidation_Package.Create (StoreThemeCategory_Access'(This'Unchecked_Access), themeNode)));
             end if;
         end loop;
    end addThemes;
@@ -125,7 +138,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
    procedure addTheme (This : in out StoreThemeCategory; themeValidation_Param : access ThemeValidation_Package.ThemeValidation'Class) is
       themeValidation : constant ThemeValidation_Access := ThemeValidation_Access (themeValidation_Param);
    begin
-        This.themeVector.add (themeValidation);
+        This.themeVector.add (Java_Object_Access (themeValidation));
    end addTheme;
 
    function getThemes (This : in out StoreThemeCategory) return BasicArrayList_Access is

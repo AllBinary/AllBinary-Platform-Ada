@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.template.TransformTemplateInterface
    type TransformTemplateInterface_Access is access all TransformTemplateInterface'Class;
    type TransformTemplateInterface_Access_Array is array (Natural range <>) of TransformTemplateInterface_Access;
    type TransformTemplateInterface_Access_Array_Access is access all TransformTemplateInterface_Access_Array;
+   type TransformTemplateInterface_Access_Array_Access_Array is array (Natural range <>) of TransformTemplateInterface_Access_Array_Access;
+   type TransformTemplateInterface_Access_Array_Access_Array_Access is access all TransformTemplateInterface_Access_Array_Access_Array;
    function getName (This : in out TransformTemplateInterface) return Unbounded_String is abstract;
 
 end org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package;

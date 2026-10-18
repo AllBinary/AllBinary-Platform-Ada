@@ -20,23 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
 --  with java.io.FileOutputStream_Package; use java.io.FileOutputStream_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.file.AbFileSystem_Package; use org.allbinary.logic.io.file.AbFileSystem_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.logic.io.SmallInsert_Package is
 
-   package DataOutputStream_Package renames Standard.java.io.DataOutputStream_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFileSystem_Package renames Standard.org.allbinary.logic.io.file.AbFileSystem_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type SmallInsert is tagged;
    type SmallInsert_Access is access all SmallInsert'Class;
    type SmallInsert_Access_Array is array (Natural range <>) of SmallInsert_Access;
    type SmallInsert_Access_Array_Access is access all SmallInsert_Access_Array;
+   type SmallInsert_Access_Array_Access_Array is array (Natural range <>) of SmallInsert_Access_Array_Access;
+   type SmallInsert_Access_Array_Access_Array_Access is access all SmallInsert_Access_Array_Access_Array;
 
    type SmallInsert is new Java_Object with record
       logUtil : LogUtil_Access;

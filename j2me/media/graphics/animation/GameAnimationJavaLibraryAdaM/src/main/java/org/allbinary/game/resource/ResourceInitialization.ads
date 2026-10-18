@@ -30,6 +30,8 @@ package org.allbinary.game.resource.ResourceInitialization_Package is
    type ResourceInitialization_Access is access all ResourceInitialization'Class;
    type ResourceInitialization_Access_Array is array (Natural range <>) of ResourceInitialization_Access;
    type ResourceInitialization_Access_Array_Access is access all ResourceInitialization_Access_Array;
+   type ResourceInitialization_Access_Array_Access_Array is array (Natural range <>) of ResourceInitialization_Access_Array_Access;
+   type ResourceInitialization_Access_Array_Access_Array_Access is access all ResourceInitialization_Access_Array_Access_Array;
 
    type ResourceInitialization is new Init with null record;
 

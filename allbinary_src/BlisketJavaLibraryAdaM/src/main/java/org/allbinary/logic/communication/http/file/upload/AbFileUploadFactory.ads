@@ -23,29 +23,18 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.util.ArrayList_Package; use java.util.ArrayList_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
-with org.allbinary.logic.communication.http.AbFileItemFactory_Package; use org.allbinary.logic.communication.http.AbFileItemFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.apache.commons.fileupload.FileItemIterator_Package; use org.apache.commons.fileupload.FileItemIterator_Package;
-with org.apache.commons.fileupload.FileItemStream_Package; use org.apache.commons.fileupload.FileItemStream_Package;
-with org.apache.commons.fileupload.FileItemUtil_Package; use org.apache.commons.fileupload.FileItemUtil_Package;
-with org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package; use org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package;
-with org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package; use org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
-with org.allbinary.logic.communication.http.file.upload.AbFileItem_Package; use org.allbinary.logic.communication.http.file.upload.AbFileItem_Package;
 
 package org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package is
 
-   package AbFileItemFactory_Package renames Standard.org.allbinary.logic.communication.http.AbFileItemFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package FileItemIterator_Package renames Standard.org.apache.commons.fileupload.FileItemIterator_Package;
-   package FileItemStream_Package renames Standard.org.apache.commons.fileupload.FileItemStream_Package;
-   package FileItemUtil_Package renames Standard.org.apache.commons.fileupload.FileItemUtil_Package;
 
    type AbFileUploadFactory is tagged;
    type AbFileUploadFactory_Access is access all AbFileUploadFactory'Class;
    type AbFileUploadFactory_Access_Array is array (Natural range <>) of AbFileUploadFactory_Access;
    type AbFileUploadFactory_Access_Array_Access is access all AbFileUploadFactory_Access_Array;
+   type AbFileUploadFactory_Access_Array_Access_Array is array (Natural range <>) of AbFileUploadFactory_Access_Array_Access;
+   type AbFileUploadFactory_Access_Array_Access_Array_Access is access all AbFileUploadFactory_Access_Array_Access_Array;
 
    type AbFileUploadFactory is new Java_Object with record
       logUtil : LogUtil_Access;

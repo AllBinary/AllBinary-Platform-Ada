@@ -22,19 +22,19 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.canvas.RunnableCanvas_Package; use org.allbinary.canvas.RunnableCanvas_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbinary.game.displayable.canvas.GameRunnable_Package;
 
 package org.allbinary.game.displayable.canvas.RunnableCanvasSingleThreadStartRunnable_Package is
 
    package RunnableCanvas_Package renames Standard.org.allbinary.canvas.RunnableCanvas_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type RunnableCanvasSingleThreadStartRunnable is tagged;
    type RunnableCanvasSingleThreadStartRunnable_Access is access all RunnableCanvasSingleThreadStartRunnable'Class;
    type RunnableCanvasSingleThreadStartRunnable_Access_Array is array (Natural range <>) of RunnableCanvasSingleThreadStartRunnable_Access;
    type RunnableCanvasSingleThreadStartRunnable_Access_Array_Access is access all RunnableCanvasSingleThreadStartRunnable_Access_Array;
+   type RunnableCanvasSingleThreadStartRunnable_Access_Array_Access_Array is array (Natural range <>) of RunnableCanvasSingleThreadStartRunnable_Access_Array_Access;
+   type RunnableCanvasSingleThreadStartRunnable_Access_Array_Access_Array_Access is access all RunnableCanvasSingleThreadStartRunnable_Access_Array_Access_Array;
 
    type RunnableCanvasSingleThreadStartRunnable is new GameRunnable with record
       logUtil : LogUtil_Access;

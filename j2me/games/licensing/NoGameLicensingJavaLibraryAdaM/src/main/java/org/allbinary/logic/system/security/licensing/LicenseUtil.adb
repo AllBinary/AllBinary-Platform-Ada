@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.system.security.licensing.LicenseUtil_Package is
 
    procedure Initialize_Fields (This : in out LicenseUtil'Class) is

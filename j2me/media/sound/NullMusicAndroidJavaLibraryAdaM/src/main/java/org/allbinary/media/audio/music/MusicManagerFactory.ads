@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.media.audio.music.MusicManager_Package; use org.allbinary.media.audio.music.MusicManager_Package;
-with org.allbinary.media.audio.music.MusicService_Package; use org.allbinary.media.audio.music.MusicService_Package;
 
 package org.allbinary.media.audio.music.MusicManagerFactory_Package is
 
@@ -32,6 +31,8 @@ package org.allbinary.media.audio.music.MusicManagerFactory_Package is
    type MusicManagerFactory_Access is access all MusicManagerFactory'Class;
    type MusicManagerFactory_Access_Array is array (Natural range <>) of MusicManagerFactory_Access;
    type MusicManagerFactory_Access_Array_Access is access all MusicManagerFactory_Access_Array;
+   type MusicManagerFactory_Access_Array_Access_Array is array (Natural range <>) of MusicManagerFactory_Access_Array_Access;
+   type MusicManagerFactory_Access_Array_Access_Array_Access is access all MusicManagerFactory_Access_Array_Access_Array;
 
    type MusicManagerFactory is new Java_Object with null record;
 

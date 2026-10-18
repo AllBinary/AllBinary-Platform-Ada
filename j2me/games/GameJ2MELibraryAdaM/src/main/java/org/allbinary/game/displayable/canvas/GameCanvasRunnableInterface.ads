@@ -40,6 +40,8 @@ package org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Packag
    type GameCanvasRunnableInterface_Access is access all GameCanvasRunnableInterface'Class;
    type GameCanvasRunnableInterface_Access_Array is array (Natural range <>) of GameCanvasRunnableInterface_Access;
    type GameCanvasRunnableInterface_Access_Array_Access is access all GameCanvasRunnableInterface_Access_Array;
+   type GameCanvasRunnableInterface_Access_Array_Access_Array is array (Natural range <>) of GameCanvasRunnableInterface_Access_Array_Access;
+   type GameCanvasRunnableInterface_Access_Array_Access_Array_Access is access all GameCanvasRunnableInterface_Access_Array_Access_Array;
    function getTitle (This : in out GameCanvasRunnableInterface) return Unbounded_String is abstract;
    function isInitialized (This : in out GameCanvasRunnableInterface) return Boolean is abstract;
    function isPaused (This : in out GameCanvasRunnableInterface) return Boolean is abstract;

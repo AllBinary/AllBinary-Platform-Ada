@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.interfaces.MachineAccessC
    type MachineAccessControlAddressInterface_Access is access all MachineAccessControlAddressInterface'Class;
    type MachineAccessControlAddressInterface_Access_Array is array (Natural range <>) of MachineAccessControlAddressInterface_Access;
    type MachineAccessControlAddressInterface_Access_Array_Access is access all MachineAccessControlAddressInterface_Access_Array;
+   type MachineAccessControlAddressInterface_Access_Array_Access_Array is array (Natural range <>) of MachineAccessControlAddressInterface_Access_Array_Access;
+   type MachineAccessControlAddressInterface_Access_Array_Access_Array_Access is access all MachineAccessControlAddressInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package;
 

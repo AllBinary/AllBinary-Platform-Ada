@@ -31,6 +31,8 @@ package org.allbinary.media.graphics.geography.map.MultiGeographicMapBehavior_Pa
    type MultiGeographicMapBehavior_Access is access all MultiGeographicMapBehavior'Class;
    type MultiGeographicMapBehavior_Access_Array is array (Natural range <>) of MultiGeographicMapBehavior_Access;
    type MultiGeographicMapBehavior_Access_Array_Access is access all MultiGeographicMapBehavior_Access_Array;
+   type MultiGeographicMapBehavior_Access_Array_Access_Array is array (Natural range <>) of MultiGeographicMapBehavior_Access_Array_Access;
+   type MultiGeographicMapBehavior_Access_Array_Access_Array_Access is access all MultiGeographicMapBehavior_Access_Array_Access_Array;
 
    type MultiGeographicMapBehavior is new Java_Object with null record;
 

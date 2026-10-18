@@ -20,28 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
-with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package; use org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package; use org.allbinary.game.displayable.canvas.DemoGameBehavior_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.BaseGameBehavior_Package is
 
-   package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
-   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package CurrentDisplayableFactory_Package renames Standard.org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
-   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type BaseGameBehavior is tagged;
    type BaseGameBehavior_Access is access all BaseGameBehavior'Class;
    type BaseGameBehavior_Access_Array is array (Natural range <>) of BaseGameBehavior_Access;
    type BaseGameBehavior_Access_Array_Access is access all BaseGameBehavior_Access_Array;
+   type BaseGameBehavior_Access_Array_Access_Array is array (Natural range <>) of BaseGameBehavior_Access_Array_Access;
+   type BaseGameBehavior_Access_Array_Access_Array_Access is access all BaseGameBehavior_Access_Array_Access_Array;
 
    type BaseGameBehavior is new DemoGameBehavior with null record;
    instanceC : BaseGameBehavior_Access;

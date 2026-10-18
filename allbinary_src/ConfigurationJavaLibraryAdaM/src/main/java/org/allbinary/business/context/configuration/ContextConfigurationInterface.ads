@@ -30,6 +30,8 @@ package org.allbinary.business.context.configuration.ContextConfigurationInterfa
    type ContextConfigurationInterface_Access is access all ContextConfigurationInterface'Class;
    type ContextConfigurationInterface_Access_Array is array (Natural range <>) of ContextConfigurationInterface_Access;
    type ContextConfigurationInterface_Access_Array_Access is access all ContextConfigurationInterface_Access_Array;
+   type ContextConfigurationInterface_Access_Array_Access_Array is array (Natural range <>) of ContextConfigurationInterface_Access_Array_Access;
+   type ContextConfigurationInterface_Access_Array_Access_Array_Access is access all ContextConfigurationInterface_Access_Array_Access_Array;
    function getEmailServerConfigurationInterface (This : in out ContextConfigurationInterface) return EmailServerConfigurationInterface_Access is abstract;
    procedure setEmailServerConfigurationInterface (This : in out ContextConfigurationInterface; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface_Package.EmailServerConfigurationInterface'Class) is abstract;
 

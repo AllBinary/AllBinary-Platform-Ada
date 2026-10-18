@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.image.filter.ImageFileFilter_Package is
 
    procedure Initialize_Fields (This : in out ImageFileFilter'Class) is
@@ -44,7 +45,7 @@ package body org.allbinary.media.image.filter.ImageFileFilter_Package is
             return True;
         end if;
         s := f.getName;
-        i := s.lastIndexOf ('.');
+        i := Java_Last_Index_Of (s, Java_Image ('.'));
         if ((i) > (0)) and then ((i) < ((Length (s)) - (1))) then
             ext := Translate (Unbounded_Slice (s, ((i) + (1)) + 1, Length (s)), Ada.Strings.Maps.Constants.Lower_Case_Map);
             if ((ext = To_Unbounded_String ("jpg"))) or else ((ext = To_Unbounded_String ("jpeg"))) then

@@ -29,6 +29,8 @@ package org.allbinary.logic.communication.http.AcceptableResponseFactory_Package
    type AcceptableResponseFactory_Access is access all AcceptableResponseFactory'Class;
    type AcceptableResponseFactory_Access_Array is array (Natural range <>) of AcceptableResponseFactory_Access;
    type AcceptableResponseFactory_Access_Array_Access is access all AcceptableResponseFactory_Access_Array;
+   type AcceptableResponseFactory_Access_Array_Access_Array is array (Natural range <>) of AcceptableResponseFactory_Access_Array_Access;
+   type AcceptableResponseFactory_Access_Array_Access_Array_Access is access all AcceptableResponseFactory_Access_Array_Access_Array;
 
    type AcceptableResponseFactory is new Java_Object with record
       HTML : AcceptableResponse_Access;

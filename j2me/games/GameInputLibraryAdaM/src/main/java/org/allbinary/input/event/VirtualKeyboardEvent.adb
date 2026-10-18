@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.event.VirtualKeyboardEvent_Package is
 
    procedure Initialize_Fields (This : in out VirtualKeyboardEvent'Class) is

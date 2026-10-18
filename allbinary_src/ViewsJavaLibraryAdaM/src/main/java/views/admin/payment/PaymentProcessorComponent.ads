@@ -20,21 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package;
-with org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactory_Package; use org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactory_Package;
-with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
 package views.admin.payment.PaymentProcessorComponent_Package is
 
-   package PaymentProcessorInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package;
-   package PaymentProcessorInterfaceFactory_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactory_Package;
-   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
@@ -42,6 +34,8 @@ package views.admin.payment.PaymentProcessorComponent_Package is
    type PaymentProcessorComponent_Access is access all PaymentProcessorComponent'Class;
    type PaymentProcessorComponent_Access_Array is array (Natural range <>) of PaymentProcessorComponent_Access;
    type PaymentProcessorComponent_Access_Array_Access is access all PaymentProcessorComponent_Access_Array;
+   type PaymentProcessorComponent_Access_Array_Access_Array is array (Natural range <>) of PaymentProcessorComponent_Access_Array_Access;
+   type PaymentProcessorComponent_Access_Array_Access_Array_Access is access all PaymentProcessorComponent_Access_Array_Access_Array;
 
    type PaymentProcessorComponent is new HttpStoreComponentView with record
       logUtil : LogUtil_Access;

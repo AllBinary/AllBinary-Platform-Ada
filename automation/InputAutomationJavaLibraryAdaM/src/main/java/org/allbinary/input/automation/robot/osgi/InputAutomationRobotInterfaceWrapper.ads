@@ -30,6 +30,8 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceW
    type InputAutomationRobotInterfaceWrapper_Access is access all InputAutomationRobotInterfaceWrapper'Class;
    type InputAutomationRobotInterfaceWrapper_Access_Array is array (Natural range <>) of InputAutomationRobotInterfaceWrapper_Access;
    type InputAutomationRobotInterfaceWrapper_Access_Array_Access is access all InputAutomationRobotInterfaceWrapper_Access_Array;
+   type InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array is array (Natural range <>) of InputAutomationRobotInterfaceWrapper_Access_Array_Access;
+   type InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array_Access is access all InputAutomationRobotInterfaceWrapper_Access_Array_Access_Array;
 
    type InputAutomationRobotInterfaceWrapper is new Java_Object with record
       inputRobotInterface : InputRobotInterface_Access;

@@ -20,22 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
 with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
-with org.allbinary.input.gyro.NoGyroSensor_Package; use org.allbinary.input.gyro.NoGyroSensor_Package;
 
 package org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
 
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package SensorFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
    package Orientation_Package renames Standard.org.allbinary.logic.math.Orientation_Package;
 
    type OrientationToGameKeyEvent is tagged;
    type OrientationToGameKeyEvent_Access is access all OrientationToGameKeyEvent'Class;
    type OrientationToGameKeyEvent_Access_Array is array (Natural range <>) of OrientationToGameKeyEvent_Access;
    type OrientationToGameKeyEvent_Access_Array_Access is access all OrientationToGameKeyEvent_Access_Array;
+   type OrientationToGameKeyEvent_Access_Array_Access_Array is array (Natural range <>) of OrientationToGameKeyEvent_Access_Array_Access;
+   type OrientationToGameKeyEvent_Access_Array_Access_Array_Access is access all OrientationToGameKeyEvent_Access_Array_Access_Array;
 
    type OrientationToGameKeyEvent is new Java_Object with record
       allBinaryGyroSensor : AllBinaryOrientationSensor_Access;

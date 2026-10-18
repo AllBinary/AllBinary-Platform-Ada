@@ -13,8 +13,37 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with java.util.Random_Package; use java.util.Random_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
+with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
+with org.allbinary.business.user.commerce.money.payment.Payment_Package; use org.allbinary.business.user.commerce.money.payment.Payment_Package;
+with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
+with org.allbinary.data.generator.PaymentIdGenerator_Package; use org.allbinary.data.generator.PaymentIdGenerator_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package Random_Package renames Standard.java.util.Random_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package Payment_Package renames Standard.org.allbinary.business.user.commerce.money.payment.Payment_Package;
+   package PaymentData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
+   package PaymentIdGenerator_Package renames Standard.org.allbinary.data.generator.PaymentIdGenerator_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package SuperCrypt_Package renames Standard.org.allbinary.logic.control.crypt.SuperCrypt_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out PaymentEntity'Class) is
    begin
       null;
@@ -85,7 +114,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
       index : Integer;
    begin
         begin
-            paymentVector := BasicArrayListD_Package.Create;
+            paymentVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             keyAndValue := StdUtil_Package.getInstance.createHashMap;
             keyAndValue.put (UserData_Package.USERNAME, Java_Box (userName));
             paymentList := AbSqlBean (This).getRows (keyAndValue);
@@ -94,7 +123,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
                 paymentHashMap := HashMap_Access (paymentList.get (index));
                 payment := Payment_Package.Create (paymentHashMap);
                 if (payment) /= (null) then
-                    paymentVector.add (payment);
+                    paymentVector.add (Java_Object_Access (payment));
                 end if;
             end loop;
             return paymentVector;
@@ -175,7 +204,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
       time : Unbounded_String;
    begin
         begin
-            vector := BasicArrayListD_Package.Create;
+            vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             vector.add (PaymentIdGenerator_Package.Create.getNext);
             vector.add (userName);
             vector.add (StringUtil_Package.getInstance.EMPTY_STRING);

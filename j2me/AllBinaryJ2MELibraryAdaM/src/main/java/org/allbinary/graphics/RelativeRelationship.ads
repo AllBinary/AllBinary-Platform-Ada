@@ -21,19 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 
 package org.allbinary.graphics.RelativeRelationship_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type RelativeRelationship is tagged;
    type RelativeRelationship_Access is access all RelativeRelationship'Class;
    type RelativeRelationship_Access_Array is array (Natural range <>) of RelativeRelationship_Access;
    type RelativeRelationship_Access_Array_Access is access all RelativeRelationship_Access_Array;
+   type RelativeRelationship_Access_Array_Access_Array is array (Natural range <>) of RelativeRelationship_Access_Array_Access;
+   type RelativeRelationship_Access_Array_Access_Array_Access is access all RelativeRelationship_Access_Array_Access_Array;
 
    type RelativeRelationship is new Java_Object with record
       typesAllowedList : BasicArrayList_Access;

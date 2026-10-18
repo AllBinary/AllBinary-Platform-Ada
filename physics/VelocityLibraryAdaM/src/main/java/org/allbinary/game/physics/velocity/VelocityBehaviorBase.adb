@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package is
 
    procedure Initialize_Fields (This : in out VelocityBehaviorBase'Class) is

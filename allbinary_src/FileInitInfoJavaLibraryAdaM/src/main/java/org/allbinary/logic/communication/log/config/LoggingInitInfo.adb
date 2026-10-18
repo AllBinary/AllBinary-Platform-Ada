@@ -13,8 +13,34 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.io.AbFileLocalInputStream_Package; use org.allbinary.logic.io.AbFileLocalInputStream_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.log.config.LogConfigsData_Package; use org.allbinary.logic.communication.log.config.LogConfigsData_Package;
+with org.allbinary.logic.communication.log.config.LogConfigData_Package; use org.allbinary.logic.communication.log.config.LogConfigData_Package;
+with org.allbinary.logic.communication.log.config.LogConfig_Package; use org.allbinary.logic.communication.log.config.LogConfig_Package;
+
 package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Package is
 
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package AbFileLocalInputStream_Package renames Standard.org.allbinary.logic.io.AbFileLocalInputStream_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out LoggingInitInfo'Class) is
    begin
       null;
@@ -41,7 +67,7 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
       file : AbFile_Access;
       document : Document_Access;
    begin
-        path := (URLGLOBALS.getWebappPath) + (LoggingInitInfo_Package.PACKAGE_Id);
+        path := (URLGLOBALS_Package.getWebappPath) + (LoggingInitInfo_Package.PACKAGE_Id);
         FILEABPATH := AbPath_Package.Create (path, INITFILENAME);
         file := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
         document := DomDocumentHelper_Package.create (AbFileLocalInputStream_Package.Create (file));
@@ -84,7 +110,7 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
             for i in 0 .. (size) - 1 loop
                 node := Node_Access (logConfigNodeVector.get (i));
                 logConfigInfo := LogConfig_Package.Create (node);
-                LoggingInitInfo_Package.logConfigInfoList.add (logConfigInfo);
+                LoggingInitInfo_Package.logConfigInfoList.add (Java_Object_Access (logConfigInfo));
             end loop;
         exception
             when Java_Occurrence : others =>
@@ -149,7 +175,7 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
       index : Integer;
    begin
         LoggingInitInfo_Package.updateIfNeeded;
-        allLogTypeVector := BasicArrayListD_Package.Create;
+        allLogTypeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := LoggingInitInfo_Package.logConfigInfoList.size;
         for index in 0 .. (size) - 1 loop
             logConfigInfo := LogConfig_Access (LoggingInitInfo_Package.logConfigInfoList.objectArray (index));
@@ -170,7 +196,7 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
       index : Integer;
    begin
         LoggingInitInfo_Package.updateIfNeeded;
-        allLogTypeVector := BasicArrayListD_Package.Create;
+        allLogTypeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := LoggingInitInfo_Package.logConfigInfoList.size;
         for index in 0 .. (size) - 1 loop
             logConfigInfo := LogConfig_Access (LoggingInitInfo_Package.logConfigInfoList.objectArray (index));
@@ -207,7 +233,7 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
 begin
    null;
    INITFILENAME := To_Unbounded_String ("logConfig.xml");
-   PACKAGE_Id := PATH_GLOBALS.getInstance.INIT_PATH;
+   PACKAGE_Id := PATH_GLOBALS_Package.getInstance.INIT_PATH;
    logConfigInfoList := null;
    hasRead := False;
 

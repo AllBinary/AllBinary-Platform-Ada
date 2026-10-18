@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.paint.ColorFillPaintableFactory_Package; use org.allbinary.game.paint.ColorFillPaintableFactory_Package;
+
 package body org.allbinary.game.displayable.canvas.BasicPaintablesCanvas_Package is
 
+   package ColorFillPaintableFactory_Package renames Standard.org.allbinary.game.paint.ColorFillPaintableFactory_Package;
    procedure Initialize_Fields (This : in out BasicPaintablesCanvas'Class) is
    begin
       null;

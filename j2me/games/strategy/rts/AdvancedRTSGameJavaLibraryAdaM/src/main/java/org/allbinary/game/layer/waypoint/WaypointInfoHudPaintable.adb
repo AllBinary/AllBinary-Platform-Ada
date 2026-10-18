@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
+
 package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package NullPathFindingLayer_Package renames Standard.org.allbinary.game.layer.NullPathFindingLayer_Package;
    procedure Initialize_Fields (This : in out WaypointInfoHudPaintable'Class) is
    begin
       null;
@@ -59,7 +64,7 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package 
    procedure setRtsLayer (This : in out WaypointInfoHudPaintable; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
       rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
-        This.rtsLayerP := rtsLayer;
+        This.rtsLayerP := PathFindingLayerInterface_Access (rtsLayer);
    end setRtsLayer;
 
    function getRtsLayer (This : in out WaypointInfoHudPaintable) return PathFindingLayerInterface_Access is

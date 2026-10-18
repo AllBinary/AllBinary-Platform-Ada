@@ -35,8 +35,10 @@ package org.allbinary.game.score.HighScoresBase_Package is
    type HighScoresBase_Access is access all HighScoresBase'Class;
    type HighScoresBase_Access_Array is array (Natural range <>) of HighScoresBase_Access;
    type HighScoresBase_Access_Array_Access is access all HighScoresBase_Access_Array;
+   type HighScoresBase_Access_Array_Access_Array is array (Natural range <>) of HighScoresBase_Access_Array_Access;
+   type HighScoresBase_Access_Array_Access_Array_Access is access all HighScoresBase_Access_Array_Access_Array;
 
-   type HighScoresBase is new HighScoresFactoryInterface with record
+   type HighScoresBase is new Java_Object and HighScoresFactoryInterface with record
       commonStrings : CommonStrings_Access;
    end record;
 

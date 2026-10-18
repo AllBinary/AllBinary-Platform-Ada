@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package 
    type RootTransformInfoData_Access is access all RootTransformInfoData'Class;
    type RootTransformInfoData_Access_Array is array (Natural range <>) of RootTransformInfoData_Access;
    type RootTransformInfoData_Access_Array_Access is access all RootTransformInfoData_Access_Array;
+   type RootTransformInfoData_Access_Array_Access_Array is array (Natural range <>) of RootTransformInfoData_Access_Array_Access;
+   type RootTransformInfoData_Access_Array_Access_Array_Access is access all RootTransformInfoData_Access_Array_Access_Array;
 
    type RootTransformInfoData is new Java_Object with null record;
    NAME : Unbounded_String;

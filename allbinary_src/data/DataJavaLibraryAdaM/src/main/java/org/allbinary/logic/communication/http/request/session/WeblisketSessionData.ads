@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.http.request.session.WeblisketSessionD
    type WeblisketSessionData_Access is access all WeblisketSessionData'Class;
    type WeblisketSessionData_Access_Array is array (Natural range <>) of WeblisketSessionData_Access;
    type WeblisketSessionData_Access_Array_Access is access all WeblisketSessionData_Access_Array;
+   type WeblisketSessionData_Access_Array_Access_Array is array (Natural range <>) of WeblisketSessionData_Access_Array_Access;
+   type WeblisketSessionData_Access_Array_Access_Array_Access is access all WeblisketSessionData_Access_Array_Access_Array;
 
    type WeblisketSessionData is new Java_Object with null record;
    INVALIDATESESSION : Unbounded_String;

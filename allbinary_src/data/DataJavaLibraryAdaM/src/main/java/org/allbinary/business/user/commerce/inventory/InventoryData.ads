@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.InventoryData_Package is
    type InventoryData_Access is access all InventoryData'Class;
    type InventoryData_Access_Array is array (Natural range <>) of InventoryData_Access;
    type InventoryData_Access_Array_Access is access all InventoryData_Access_Array;
+   type InventoryData_Access_Array_Access_Array is array (Natural range <>) of InventoryData_Access_Array_Access;
+   type InventoryData_Access_Array_Access_Array_Access is access all InventoryData_Access_Array_Access_Array;
 
    type InventoryData is new Java_Object with null record;
    INVENTORY : Unbounded_String;

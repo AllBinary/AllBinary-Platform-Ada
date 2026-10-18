@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.data.resource.ResourceUtil_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out ResourceUtil'Class) is
    begin
       null;
@@ -62,7 +69,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
                 inputStream := ResourceUtil'Class (This).getResourceAsStreamAtStart (resource, 1);
                 if (inputStream) = (null) then
                     stringMaker := StringMaker_Package.Create;
-                    index := resource.lastIndexOf ('/');
+                    index := Java_Last_Index_Of (resource, Java_Image ('/'));
                     resourcePath := Unbounded_Slice (resource, ((index) + (1)) + 1, Length (resource));
                     inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
                     if (inputStream) = (null) then
@@ -119,7 +126,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
       inputStream : InputStream_Access;
    begin
         stringMaker := StringMaker_Package.Create;
-        index := (Index (resource, Java_Image (CommonSeps_Package.getInstance.COLON)) - 1);
+        index := Java_Index_Of (resource, Java_Image (CommonSeps_Package.getInstance.COLON));
         resourcePath := Unbounded_Slice (resource, ((index) + (startIndex)) + 1, Length (resource));
         inputStream := resource.all'Tag.getResourceAsStream (resourcePath);
         if (inputStream) /= (null) then

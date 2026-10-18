@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package; use org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
+
 package body org.allbinary.logic.communication.smtp.BasicEmail_Package is
 
+   package BasicEmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
    procedure Initialize_Fields (This : in out BasicEmail'Class) is
    begin
       null;

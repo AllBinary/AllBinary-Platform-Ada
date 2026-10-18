@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.game.IntermissionInterface_Package; use org.allbinary.game.IntermissionInterface_Package;
-with org.allbinary.game.NullIntermissionEnableListener_Package; use org.allbinary.game.NullIntermissionEnableListener_Package;
 with org.allbinary.game.IntermissionEnableListenerInterface_Package; use org.allbinary.game.IntermissionEnableListenerInterface_Package;
 
 package org.allbinary.game.Intermission_Package is
@@ -33,8 +32,10 @@ package org.allbinary.game.Intermission_Package is
    type Intermission_Access is access all Intermission'Class;
    type Intermission_Access_Array is array (Natural range <>) of Intermission_Access;
    type Intermission_Access_Array_Access is access all Intermission_Access_Array;
+   type Intermission_Access_Array_Access_Array is array (Natural range <>) of Intermission_Access_Array_Access;
+   type Intermission_Access_Array_Access_Array_Access is access all Intermission_Access_Array_Access_Array;
 
-   type Intermission is new IntermissionInterface with record
+   type Intermission is new Java_Object and IntermissionInterface with record
       enabled : Boolean;
       timeElapsedHelper : TimeDelayHelper_Access;
       intermissionEnableListener : IntermissionEnableListenerInterface_Access;

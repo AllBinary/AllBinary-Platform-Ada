@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData
    type FtpConfigurationData_Access is access all FtpConfigurationData'Class;
    type FtpConfigurationData_Access_Array is array (Natural range <>) of FtpConfigurationData_Access;
    type FtpConfigurationData_Access_Array_Access is access all FtpConfigurationData_Access_Array;
+   type FtpConfigurationData_Access_Array_Access_Array is array (Natural range <>) of FtpConfigurationData_Access_Array_Access;
+   type FtpConfigurationData_Access_Array_Access_Array_Access is access all FtpConfigurationData_Access_Array_Access_Array;
 
    type FtpConfigurationData is new Java_Object with null record;
    NAME : Unbounded_String;

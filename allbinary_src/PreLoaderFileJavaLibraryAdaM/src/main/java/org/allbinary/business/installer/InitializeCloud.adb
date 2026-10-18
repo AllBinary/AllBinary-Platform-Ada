@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.io.AbIOSystem_Package; use org.allbinary.logic.io.AbIOSystem_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.FileUtil_Package; use org.allbinary.logic.io.file.FileUtil_Package;
+with org.allbinary.logic.io.file.directory.Directory_Package; use org.allbinary.logic.io.file.directory.Directory_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+
 package body org.allbinary.business.installer.InitializeCloud_Package is
 
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package AbIOSystem_Package renames Standard.org.allbinary.logic.io.AbIOSystem_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
+   package Directory_Package renames Standard.org.allbinary.logic.io.file.directory.Directory_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out InitializeCloud'Class) is
    begin
       null;
@@ -35,7 +56,7 @@ package body org.allbinary.business.installer.InitializeCloud_Package is
       return This;
    end Create;
 
-   function initialize (This : in out InitializeCloud; cloud_Case : Unbounded_String; overwriteNewer : Boolean; overwriteAll : Boolean; current : Integer; total : Integer) return Boolean is
+   function initialize (This : in out InitializeCloud; cloud : Unbounded_String; overwriteNewer : Boolean; overwriteAll : Boolean; current : Integer; total : Integer) return Boolean is
       stringBuffer : StringMaker_Access;
       path : AbPath_Access;
       realPath : AbPath_Access;
@@ -51,12 +72,12 @@ package body org.allbinary.business.installer.InitializeCloud_Package is
         begin
             if AbIOSystem_Package.getInstance.isType (To_Unbounded_String ("com.vobject.appengine.java.io")) then
                 stringBuffer := StringMaker_Package.Create;
-                stringBuffer.append (URLGLOBALS.getWebappPath);
-                stringBuffer.append (cloud_Case);
-                stringBuffer.append (PATH_GLOBALS.getInstance.DATA_PATH);
+                stringBuffer.append (URLGLOBALS_Package.getWebappPath);
+                stringBuffer.append (cloud);
+                stringBuffer.append (PATH_GLOBALS_Package.getInstance.DATA_PATH);
                 path := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
                 stringBuffer.delete (0, stringBuffer.length);
-                stringBuffer.append (URLGLOBALS.getWebappPath);
+                stringBuffer.append (URLGLOBALS_Package.getWebappPath);
                 realPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
                 file := AbFile_Package.createAbFileFromAbPath (path);
                 fileBasicArrayList := Directory_Package.getInstance.search (file, True);
@@ -83,7 +104,7 @@ package body org.allbinary.business.installer.InitializeCloud_Package is
                     if nextFile.isDirectory then
                         null;
                     else
-                        FileUtil_Package.getInstance.copyToCloud (nextFile, path, realPath, cloud_Case, overwriteNewer, overwriteAll);
+                        FileUtil_Package.getInstance.copyToCloud (nextFile, path, realPath, cloud, overwriteNewer, overwriteAll);
                     end if;
                 end loop;
                 This.logUtil.putF (To_Unbounded_String ("Copied Files To Cloud"), InitializeCloud_Access'(This'Unchecked_Access), To_Unbounded_String ("initialize()"));
@@ -100,8 +121,8 @@ package body org.allbinary.business.installer.InitializeCloud_Package is
         end;
    end initialize;
 
-   procedure initialize (This : in out InitializeCloud; cloud_Case : Unbounded_String; overwriteNewer : Boolean; overwriteAll : Boolean; current : Integer; total : Integer) is
-      Java_Result : constant Boolean := InitializeCloud'Class (This).initialize (cloud_Case, overwriteNewer, overwriteAll, current, total);
+   procedure initialize (This : in out InitializeCloud; cloud : Unbounded_String; overwriteNewer : Boolean; overwriteAll : Boolean; current : Integer; total : Integer) is
+      Java_Result : constant Boolean := InitializeCloud'Class (This).initialize (cloud, overwriteNewer, overwriteAll, current, total);
       pragma Unreferenced (Java_Result);
    begin
       null;

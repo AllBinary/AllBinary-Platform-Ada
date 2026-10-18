@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.visual.theme.ThemesData_Package; use org.allbinary.logic.visual.theme.ThemesData_Package;
+
 package body org.allbinary.logic.visual.theme.ThemesValidation_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out ThemesValidation'Class) is
    begin
       null;
@@ -26,7 +32,7 @@ package body org.allbinary.logic.visual.theme.ThemesValidation_Package is
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
-        This.themeVector := BasicArrayListD_Package.Create;
+        This.themeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create return ThemesValidation_Access is

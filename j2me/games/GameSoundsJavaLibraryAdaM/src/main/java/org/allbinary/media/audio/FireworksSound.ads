@@ -30,6 +30,8 @@ package org.allbinary.media.audio.FireworksSound_Package is
    type FireworksSound_Access is access all FireworksSound'Class;
    type FireworksSound_Access_Array is array (Natural range <>) of FireworksSound_Access;
    type FireworksSound_Access_Array_Access is access all FireworksSound_Access_Array;
+   type FireworksSound_Access_Array_Access_Array is array (Natural range <>) of FireworksSound_Access_Array_Access;
+   type FireworksSound_Access_Array_Access_Array_Access is access all FireworksSound_Access_Array_Access_Array;
 
    type FireworksSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

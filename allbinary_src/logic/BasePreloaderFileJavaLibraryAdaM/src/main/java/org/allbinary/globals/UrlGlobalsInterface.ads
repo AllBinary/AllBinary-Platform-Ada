@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.globals.UrlGlobalsInterface_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type UrlGlobalsInterface is tagged;
    type UrlGlobalsInterface_Access is access all UrlGlobalsInterface'Class;
    type UrlGlobalsInterface_Access_Array is array (Natural range <>) of UrlGlobalsInterface_Access;
    type UrlGlobalsInterface_Access_Array_Access is access all UrlGlobalsInterface_Access_Array;
+   type UrlGlobalsInterface_Access_Array_Access_Array is array (Natural range <>) of UrlGlobalsInterface_Access_Array_Access;
+   type UrlGlobalsInterface_Access_Array_Access_Array_Access is access all UrlGlobalsInterface_Access_Array_Access_Array;
 
    type UrlGlobalsInterface is new Java_Object with null record;
 

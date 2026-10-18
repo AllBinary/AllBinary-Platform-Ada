@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.business.context.modules.storefronts.BasicStoreFrontsEntity_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFrontsEntity_Package;
+
 package body org.allbinary.business.context.modules.storefronts.BasicStoreFrontFactory_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out BasicStoreFrontFactory'Class) is
    begin
       null;

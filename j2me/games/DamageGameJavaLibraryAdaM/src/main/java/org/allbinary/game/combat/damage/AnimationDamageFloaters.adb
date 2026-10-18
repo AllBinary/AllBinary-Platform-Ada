@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
+with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+
 package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
 
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
    procedure Initialize_Fields (This : in out AnimationDamageFloaters'Class) is
    begin
       null;
@@ -55,7 +64,7 @@ package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
    begin
         i := This.circularIndexUtil.getIndex;
         This.animationInterfaceArray (i).setFrame (0);
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
    end add;
 
    procedure paint (This : in out AnimationDamageFloaters; graphics_Param : access Graphics_Package.Graphics'Class) is

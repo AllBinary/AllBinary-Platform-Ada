@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+with org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package; use org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package;
+
 package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBehavior2_Package is
 
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package SimpleGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
    procedure Initialize_Fields (This : in out GeographicMapTopViewGameLayerBehavior2'Class) is
    begin
       null;

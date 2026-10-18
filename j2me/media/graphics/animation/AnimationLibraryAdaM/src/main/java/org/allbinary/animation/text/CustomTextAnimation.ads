@@ -24,7 +24,6 @@ with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Pa
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.graphics.font.FontDebugFactory_Package; use org.allbinary.graphics.font.FontDebugFactory_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.animation.text.TextAnimation_Package; use org.allbinary.animation.text.TextAnimation_Package;
 with org.allbinary.animation.text.TextInterface_Package; use org.allbinary.animation.text.TextInterface_Package;
 
@@ -34,12 +33,13 @@ package org.allbinary.animation.text.CustomTextAnimation_Package is
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package FontDebugFactory_Package renames Standard.org.allbinary.graphics.font.FontDebugFactory_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type CustomTextAnimation is tagged;
    type CustomTextAnimation_Access is access all CustomTextAnimation'Class;
    type CustomTextAnimation_Access_Array is array (Natural range <>) of CustomTextAnimation_Access;
    type CustomTextAnimation_Access_Array_Access is access all CustomTextAnimation_Access_Array;
+   type CustomTextAnimation_Access_Array_Access_Array is array (Natural range <>) of CustomTextAnimation_Access_Array_Access;
+   type CustomTextAnimation_Access_Array_Access_Array_Access is access all CustomTextAnimation_Access_Array_Access_Array;
 
    type CustomTextAnimation is new TextAnimation and TextInterface with record
       fontDebugFactory : FontDebugFactory_Access;

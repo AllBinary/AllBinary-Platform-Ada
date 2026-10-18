@@ -23,29 +23,21 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with admin.taghelpers.ShippingHelperFactory_Package; use admin.taghelpers.ShippingHelperFactory_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.ShippingTag_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package ShippingHelperFactory_Package renames Standard.admin.taghelpers.ShippingHelperFactory_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package CustomTagSupport_Package renames Standard.tags.CustomTagSupport_Package;
 
    type ShippingTag is tagged;
    type ShippingTag_Access is access all ShippingTag'Class;
    type ShippingTag_Access_Array is array (Natural range <>) of ShippingTag_Access;
    type ShippingTag_Access_Array_Access is access all ShippingTag_Access_Array;
+   type ShippingTag_Access_Array_Access_Array is array (Natural range <>) of ShippingTag_Access_Array_Access;
+   type ShippingTag_Access_Array_Access_Array_Access is access all ShippingTag_Access_Array_Access_Array;
 
    type ShippingTag is new CustomTagSupport with record
       logUtil : LogUtil_Access;

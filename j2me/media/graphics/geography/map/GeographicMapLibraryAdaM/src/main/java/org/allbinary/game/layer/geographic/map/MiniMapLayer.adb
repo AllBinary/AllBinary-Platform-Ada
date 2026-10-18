@@ -13,8 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.color.ColorCompositeInterface_Package; use org.allbinary.graphics.color.ColorCompositeInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package;
+
 package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package ColorCompositeInterface_Package renames Standard.org.allbinary.graphics.color.ColorCompositeInterface_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package GeographicMapCellPositionEventHandler_Package renames Standard.org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package;
    procedure Initialize_Fields (This : in out MiniMapLayer'Class) is
    begin
       null;
@@ -36,9 +61,9 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
         This.allBinaryTiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
         This.geographicMapCellPositionFactory := geographicMapInterface.getGeographicMapCellPositionFactory;
         This.animationInterface := CircleFilledAnimation_Package.Create (This.allBinaryTiledLayer.getCellWidth, This.allBinaryTiledLayer.getCellHeight, BasicColorFactory_Package.getInstance.WHITE);
-        This.list := BasicArrayListD_Package.Create;
-        This.basicColorList := BasicArrayListD_Package.Create;
-        This.positionList := BasicArrayListD_Package.Create;
+        This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
+        This.basicColorList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+        This.positionList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         GeographicMapCellPositionEventHandler_Package.getInstance.addListener (MiniMapLayer_Access'(This'Unchecked_Access));
         MiniMapLayer'Class (This).init;
    end Initialize;
@@ -69,7 +94,7 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
       index : Integer;
    begin
         colorCompositeInterface := ColorCompositeInterface_Access (geographicMapCellPositionEvent.getSource);
-        index := This.list.indexOf (colorCompositeInterface);
+        index := This.list.indexOf (Java_Object_Access (colorCompositeInterface));
         if (index) >= (0) then
             This.list.removeAt (index);
             This.basicColorList.removeAt (index);
@@ -103,13 +128,13 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
         geographicMapCellPosition := This.geographicMapCellPositionFactory.getInstance (geographicMapCellPositionEvent.getGeographicMapCellPosition);
         point := geographicMapCellPosition.getPoint;
         if (layerIndex) = (-(1)) then
-            This.list.add (colorCompositeInterface);
+            This.list.add (Java_Object_Access (colorCompositeInterface));
             basicColor := colorCompositeInterface.getBasicColorP;
-            This.basicColorList.add (basicColor);
-            This.positionList.add (point);
+            This.basicColorList.add (Java_Object_Access (basicColor));
+            This.positionList.add (Java_Object_Access (point));
             layerIndex := (This.basicColorList.size) - (1);
         else
-            This.positionList.set (layerIndex, point);
+            This.positionList.set (layerIndex, Java_Object_Access (point));
         end if;
    end onGeographicMapCellPositionEvent;
 

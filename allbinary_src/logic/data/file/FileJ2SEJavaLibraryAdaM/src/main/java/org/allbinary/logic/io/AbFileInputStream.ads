@@ -20,21 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.io.FileNotFoundException_Package; use java.io.FileNotFoundException_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
 package org.allbinary.logic.io.AbFileInputStream_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
    type AbFileInputStream is tagged;
    type AbFileInputStream_Access is access all AbFileInputStream'Class;
    type AbFileInputStream_Access_Array is array (Natural range <>) of AbFileInputStream_Access;
    type AbFileInputStream_Access_Array_Access is access all AbFileInputStream_Access_Array;
+   type AbFileInputStream_Access_Array_Access_Array is array (Natural range <>) of AbFileInputStream_Access_Array_Access;
+   type AbFileInputStream_Access_Array_Access_Array_Access is access all AbFileInputStream_Access_Array_Access_Array;
 
    type AbFileInputStream is new FileInputStream with null record;
 

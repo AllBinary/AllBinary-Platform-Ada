@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.io.IIOImageCacheable_Package; use org.allbinary.media.image.io.IIOImageCacheable_Package;
+
 package body org.allbinary.media.image.io.IIOImageCacheableFactory_Package is
 
    procedure Initialize_Fields (This : in out IIOImageCacheableFactory'Class) is
@@ -37,11 +39,23 @@ package body org.allbinary.media.image.io.IIOImageCacheableFactory_Package is
    function getInstance (This : in out IIOImageCacheableFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access is
       key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
-        return IIOImageCacheable_Package.Create (Java_Unbox (key));
+        return CacheableInterface_Access (IIOImageCacheable_Package.Create (Java_Unbox (key)));
    end getInstance;
 
    procedure getInstance (This : in out IIOImageCacheableFactory; key_Param : access Java_Object'Class) is
       Java_Result : constant CacheableInterface_Access := IIOImageCacheableFactory'Class (This).getInstance (key_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   function getInstance (This : in out IIOImageCacheableFactory; Value : Unbounded_String) return CacheableInterface_Access is
+   begin
+      return IIOImageCacheableFactory'Class (This).getInstance (Java_Box (Value));
+   end getInstance;
+
+   procedure getInstance (This : in out IIOImageCacheableFactory; Value : Unbounded_String) is
+      Java_Result : constant CacheableInterface_Access := IIOImageCacheableFactory'Class (This).getInstance (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

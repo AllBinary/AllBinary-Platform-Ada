@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.input.media.image.InputImageType_Package; use org.allbinary.input.media.image.InputImageType_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package;
+with org.allbinary.input.automation.module.actions.script.condition.processors.output.DefaultListModel_Package; use org.allbinary.input.automation.module.actions.script.condition.processors.output.DefaultListModel_Package;
+
 package body org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputJPanel_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package InputImageType_Package renames Standard.org.allbinary.input.media.image.InputImageType_Package;
    procedure Initialize_Fields (This : in out ImageActionScriptOutputJPanel'Class) is
    begin
       null;
@@ -182,8 +191,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         This.jScrollPane1.setViewportView (This.itemTypesJList);
         capturedImageActionJDialogLayout := GroupLayout_Package.Create (This.capturedImageActionJDialog.getContentPane);
         This.capturedImageActionJDialog.getContentPane.setLayout (capturedImageActionJDialogLayout);
-        capturedImageActionJDialogLayout.setHorizontalGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addGap (61, 61, 61).addComponent (This.titleJLabel)).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addContainerGap.addGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.displayJCheckBox).addComponent (This.saveJCheckBox, javax_Package.swing.GroupLayout.Alignment.TRAILING)).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addGap (84, 84, 84).addComponent (This.okJButton)))).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addContainerGap.addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 216, Short_Package.MAX_VALUE))).addContainerGap));
-        capturedImageActionJDialogLayout.setVerticalGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addComponent (This.titleJLabel).addGap (5, 5, 5).addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 105, Short_Package.MAX_VALUE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.saveJCheckBox).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.displayJCheckBox).addGap (9, 9, 9).addComponent (This.okJButton).addContainerGap));
+        capturedImageActionJDialogLayout.setHorizontalGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addGap (61, 61, 61).addComponent (This.titleJLabel)).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addContainerGap.addGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.displayJCheckBox).addComponent (This.saveJCheckBox, javax_Package.swing.GroupLayout.Alignment.TRAILING)).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addGap (84, 84, 84).addComponent (This.okJButton)))).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addContainerGap.addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 216, Short_Integer'Last))).addContainerGap));
+        capturedImageActionJDialogLayout.setVerticalGroup (capturedImageActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (capturedImageActionJDialogLayout.createSequentialGroup.addComponent (This.titleJLabel).addGap (5, 5, 5).addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 105, Short_Integer'Last).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.saveJCheckBox).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.displayJCheckBox).addGap (9, 9, 9).addComponent (This.okJButton).addContainerGap));
         ImageActionScriptOutputJPanel'Class (This).setMinimumSize (Dimension_Package.Create (100, 0));
         This.capturedImageActionJButton.setText (To_Unbounded_String ("Edit"));
         This.capturedImageActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
@@ -197,7 +206,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         This.jLabel1.setText (To_Unbounded_String ("Capture Image:"));
         layout := GroupLayout_Package.Create (ImageActionScriptOutputJPanel_Access'(This'Unchecked_Access));
         ImageActionScriptOutputJPanel'Class (This).setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.capturedImageActionJButton)));
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Integer'Last).addComponent (This.capturedImageActionJButton)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.capturedImageActionJButton)));
    end initComponents;
 

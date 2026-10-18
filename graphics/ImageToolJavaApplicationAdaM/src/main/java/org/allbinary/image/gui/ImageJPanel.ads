@@ -37,6 +37,8 @@ package org.allbinary.image.gui.ImageJPanel_Package is
    type ImageJPanel_Access is access all ImageJPanel'Class;
    type ImageJPanel_Access_Array is array (Natural range <>) of ImageJPanel_Access;
    type ImageJPanel_Access_Array_Access is access all ImageJPanel_Access_Array;
+   type ImageJPanel_Access_Array_Access_Array is array (Natural range <>) of ImageJPanel_Access_Array_Access;
+   type ImageJPanel_Access_Array_Access_Array_Access is access all ImageJPanel_Access_Array_Access_Array;
 
    type ImageJPanel is new JPanel with record
       logUtil : LogUtil_Access;

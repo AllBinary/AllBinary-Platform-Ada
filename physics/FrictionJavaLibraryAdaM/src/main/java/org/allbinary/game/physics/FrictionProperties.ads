@@ -20,20 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.physics.friction.FrictionData_Package; use org.allbinary.game.physics.friction.FrictionData_Package;
-with org.allbinary.game.physics.velocity.DragVelocityBehavior_Package; use org.allbinary.game.physics.velocity.DragVelocityBehavior_Package;
 with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
 
 package org.allbinary.game.physics.FrictionProperties_Package is
 
-   package FrictionData_Package renames Standard.org.allbinary.game.physics.friction.FrictionData_Package;
-   package DragVelocityBehavior_Package renames Standard.org.allbinary.game.physics.velocity.DragVelocityBehavior_Package;
    package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
 
    type FrictionProperties is tagged;
    type FrictionProperties_Access is access all FrictionProperties'Class;
    type FrictionProperties_Access_Array is array (Natural range <>) of FrictionProperties_Access;
    type FrictionProperties_Access_Array_Access is access all FrictionProperties_Access_Array;
+   type FrictionProperties_Access_Array_Access_Array is array (Natural range <>) of FrictionProperties_Access_Array_Access;
+   type FrictionProperties_Access_Array_Access_Array_Access is access all FrictionProperties_Access_Array_Access_Array;
 
    type FrictionProperties is new Java_Object with null record;
 

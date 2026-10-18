@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+
 package body org.allbinary.graphics.color.ColorChangeEvent_Package is
 
    procedure Initialize_Fields (This : in out ColorChangeEvent'Class) is

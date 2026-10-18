@@ -28,6 +28,8 @@ package org.allbinary.game.ag.layer.pickup.points.PointsResources_Package is
    type PointsResources_Access is access all PointsResources'Class;
    type PointsResources_Access_Array is array (Natural range <>) of PointsResources_Access;
    type PointsResources_Access_Array_Access is access all PointsResources_Access_Array;
+   type PointsResources_Access_Array_Access_Array is array (Natural range <>) of PointsResources_Access_Array_Access;
+   type PointsResources_Access_Array_Access_Array_Access is access all PointsResources_Access_Array_Access_Array;
 
    type PointsResources is new Java_Object with record
       RESOURCE : Unbounded_String;

@@ -28,6 +28,8 @@ package org.allbinary.logic.java.byteutil.ByteUtil_Package is
    type ByteUtil_Access is access all ByteUtil'Class;
    type ByteUtil_Access_Array is array (Natural range <>) of ByteUtil_Access;
    type ByteUtil_Access_Array_Access is access all ByteUtil_Access_Array;
+   type ByteUtil_Access_Array_Access_Array is array (Natural range <>) of ByteUtil_Access_Array_Access;
+   type ByteUtil_Access_Array_Access_Array_Access is access all ByteUtil_Access_Array_Access_Array;
 
    type ByteUtil is new Java_Object with null record;
    instance : ByteUtil_Access;

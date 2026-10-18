@@ -29,6 +29,8 @@ package org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurat
    type MotionGestureConfigurationFactory_Access is access all MotionGestureConfigurationFactory'Class;
    type MotionGestureConfigurationFactory_Access_Array is array (Natural range <>) of MotionGestureConfigurationFactory_Access;
    type MotionGestureConfigurationFactory_Access_Array_Access is access all MotionGestureConfigurationFactory_Access_Array;
+   type MotionGestureConfigurationFactory_Access_Array_Access_Array is array (Natural range <>) of MotionGestureConfigurationFactory_Access_Array_Access;
+   type MotionGestureConfigurationFactory_Access_Array_Access_Array_Access is access all MotionGestureConfigurationFactory_Access_Array_Access_Array;
 
    type MotionGestureConfigurationFactory is new Java_Object with null record;
    config : MotionGestureConfiguration_Access;

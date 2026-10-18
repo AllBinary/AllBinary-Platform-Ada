@@ -28,6 +28,8 @@ package org.allbinary.input.automation.module.game.skill.GameSkillPropertyInterf
    type GameSkillPropertyInterface_Access is access all GameSkillPropertyInterface'Class;
    type GameSkillPropertyInterface_Access_Array is array (Natural range <>) of GameSkillPropertyInterface_Access;
    type GameSkillPropertyInterface_Access_Array_Access is access all GameSkillPropertyInterface_Access_Array;
+   type GameSkillPropertyInterface_Access_Array_Access_Array is array (Natural range <>) of GameSkillPropertyInterface_Access_Array_Access;
+   type GameSkillPropertyInterface_Access_Array_Access_Array_Access is access all GameSkillPropertyInterface_Access_Array_Access_Array;
    function getName (This : in out GameSkillPropertyInterface) return Unbounded_String is abstract;
    function getValue (This : in out GameSkillPropertyInterface) return Unbounded_String is abstract;
 

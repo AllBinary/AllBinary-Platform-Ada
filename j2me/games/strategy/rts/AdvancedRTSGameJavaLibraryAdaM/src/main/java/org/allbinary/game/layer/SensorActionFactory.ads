@@ -29,6 +29,8 @@ package org.allbinary.game.layer.SensorActionFactory_Package is
    type SensorActionFactory_Access is access all SensorActionFactory'Class;
    type SensorActionFactory_Access_Array is array (Natural range <>) of SensorActionFactory_Access;
    type SensorActionFactory_Access_Array_Access is access all SensorActionFactory_Access_Array;
+   type SensorActionFactory_Access_Array_Access_Array is array (Natural range <>) of SensorActionFactory_Access_Array_Access;
+   type SensorActionFactory_Access_Array_Access_Array_Access is access all SensorActionFactory_Access_Array_Access_Array;
 
    type SensorActionFactory is new Java_Object with record
       ATTACK : SensorAction_Access;

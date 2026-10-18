@@ -13,12 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package;
+with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package;
+
 package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    procedure Initialize_Fields (This : in out GeographicMapCellPositionEventHandler'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -44,8 +51,8 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    procedure addListener (This : in out GeographicMapCellPositionEventHandler; miniMapLayer_Param : access MiniMapLayer_Package.MiniMapLayer'Class) is
       miniMapLayer : constant MiniMapLayer_Access := MiniMapLayer_Access (miniMapLayer_Param);
    begin
-        if not (This.list.contains (miniMapLayer)) then
-            This.list.add (miniMapLayer);
+        if not (This.list.contains (Java_Object_Access (miniMapLayer))) then
+            This.list.add (Java_Object_Access (miniMapLayer));
         end if;
    end addListener;
 
@@ -58,7 +65,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    procedure removeListener (This : in out GeographicMapCellPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.list.remove (eventListenerInterface);
+        This.list.remove (Java_Object_Access (eventListenerInterface));
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 

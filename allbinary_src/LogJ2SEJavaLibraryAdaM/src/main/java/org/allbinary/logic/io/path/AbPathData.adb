@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.logic.io.path.AbPathData_Package is
 
+   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out AbPathData'Class) is
    begin
       null;
@@ -46,8 +53,8 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
       indexOfFileExtensionDelmiter : Integer;
       indexOfLatDelimiter : Integer;
    begin
-        indexOfFileExtensionDelmiter := filePath.lastIndexOf (This.EXTENSION_SEP);
-        indexOfLatDelimiter := filePath.lastIndexOf (This.SEPARATORCHAR);
+        indexOfFileExtensionDelmiter := Java_Last_Index_Of (filePath, Java_Image (This.EXTENSION_SEP));
+        indexOfLatDelimiter := Java_Last_Index_Of (filePath, Java_Image (This.SEPARATORCHAR));
         if (indexOfFileExtensionDelmiter) < (0) then
             return -(1);
         end if;
@@ -85,9 +92,9 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
       endIndex : Integer;
       categoryName : Unbounded_String;
    begin
-        endIndex := path.lastIndexOf (This.SEPARATORCHAR);
+        endIndex := Java_Last_Index_Of (path, Java_Image (This.SEPARATORCHAR));
         if (endIndex) < (0) then
-            endIndex := path.lastIndexOf (FilePathData_Package.getInstance.SEPARATORCHAR);
+            endIndex := Java_Last_Index_Of (path, Java_Image (FilePathData_Package.getInstance.SEPARATORCHAR));
         end if;
         if (endIndex) < (0) then
             return path;
@@ -105,9 +112,9 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
       endIndex : Integer;
       pathWithoutName : Unbounded_String;
    begin
-        endIndex := path.lastIndexOf (This.SEPARATORCHAR);
+        endIndex := Java_Last_Index_Of (path, Java_Image (This.SEPARATORCHAR));
         if (endIndex) < (0) then
-            endIndex := path.lastIndexOf (FilePathData_Package.getInstance.SEPARATORCHAR);
+            endIndex := Java_Last_Index_Of (path, Java_Image (FilePathData_Package.getInstance.SEPARATORCHAR));
         end if;
         if (endIndex) < (0) then
             return StringUtil_Package.getInstance.EMPTY_STRING;

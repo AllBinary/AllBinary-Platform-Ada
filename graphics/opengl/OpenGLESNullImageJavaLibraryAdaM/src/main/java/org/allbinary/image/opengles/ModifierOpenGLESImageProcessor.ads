@@ -29,6 +29,8 @@ package org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package is
    type ModifierOpenGLESImageProcessor_Access is access all ModifierOpenGLESImageProcessor'Class;
    type ModifierOpenGLESImageProcessor_Access_Array is array (Natural range <>) of ModifierOpenGLESImageProcessor_Access;
    type ModifierOpenGLESImageProcessor_Access_Array_Access is access all ModifierOpenGLESImageProcessor_Access_Array;
+   type ModifierOpenGLESImageProcessor_Access_Array_Access_Array is array (Natural range <>) of ModifierOpenGLESImageProcessor_Access_Array_Access;
+   type ModifierOpenGLESImageProcessor_Access_Array_Access_Array_Access is access all ModifierOpenGLESImageProcessor_Access_Array_Access_Array;
 
    type ModifierOpenGLESImageProcessor is new OpenGLESImageProcessor with null record;
    instanceC : ModifierOpenGLESImageProcessor_Access;

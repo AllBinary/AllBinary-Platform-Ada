@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.io.OutputTypeData_Package; use org.allbinary.logic.io.OutputTypeData_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+with taghelpers.transform.info.TransformInfoRequestHelperFactory_Package; use taghelpers.transform.info.TransformInfoRequestHelperFactory_Package;
+
 package body tags.transform.info.TransformInfoTag_Package is
 
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package OutputTypeData_Package renames Standard.org.allbinary.logic.io.OutputTypeData_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package TransformInfoRequestHelperFactory_Package renames Standard.taghelpers.transform.info.TransformInfoRequestHelperFactory_Package;
    procedure Initialize_Fields (This : in out TransformInfoTag'Class) is
    begin
       null;

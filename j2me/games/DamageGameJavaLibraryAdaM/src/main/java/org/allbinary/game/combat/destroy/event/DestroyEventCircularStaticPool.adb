@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package; use org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package;
+
 package body org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package is
 
    procedure Initialize_Fields (This : in out DestroyEventCircularStaticPool'Class) is

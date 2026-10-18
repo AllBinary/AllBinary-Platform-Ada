@@ -28,6 +28,8 @@ package org.allbinary.bounds.BoundsVisitorInterface_Package is
    type BoundsVisitorInterface_Access is access all BoundsVisitorInterface'Class;
    type BoundsVisitorInterface_Access_Array is array (Natural range <>) of BoundsVisitorInterface_Access;
    type BoundsVisitorInterface_Access_Array_Access is access all BoundsVisitorInterface_Access_Array;
+   type BoundsVisitorInterface_Access_Array_Access_Array is array (Natural range <>) of BoundsVisitorInterface_Access_Array_Access;
+   type BoundsVisitorInterface_Access_Array_Access_Array_Access is access all BoundsVisitorInterface_Access_Array_Access_Array;
    function getX (This : in out BoundsVisitorInterface) return Integer is abstract;
    function getY (This : in out BoundsVisitorInterface) return Integer is abstract;
    procedure maxX (This : in out BoundsVisitorInterface) is abstract;

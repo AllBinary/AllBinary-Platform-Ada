@@ -23,41 +23,25 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
 --  with javax.servlet.jsp.tagext.TagSupport_Package; use javax.servlet.jsp.tagext.TagSupport_Package;
-with admin.taghelpers.AuthenticationHelperFactory_Package; use admin.taghelpers.AuthenticationHelperFactory_Package;
-with admin.taghelpers.AuthenticationRequestHelperFactory_Package; use admin.taghelpers.AuthenticationRequestHelperFactory_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-with org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.AuthenticationTag_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package AuthenticationHelperFactory_Package renames Standard.admin.taghelpers.AuthenticationHelperFactory_Package;
-   package AuthenticationRequestHelperFactory_Package renames Standard.admin.taghelpers.AuthenticationRequestHelperFactory_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package WeblisketSessionData_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package CustomTagSupport_Package renames Standard.tags.CustomTagSupport_Package;
 
    type AuthenticationTag is tagged;
    type AuthenticationTag_Access is access all AuthenticationTag'Class;
    type AuthenticationTag_Access_Array is array (Natural range <>) of AuthenticationTag_Access;
    type AuthenticationTag_Access_Array_Access is access all AuthenticationTag_Access_Array;
+   type AuthenticationTag_Access_Array_Access_Array is array (Natural range <>) of AuthenticationTag_Access_Array_Access;
+   type AuthenticationTag_Access_Array_Access_Array_Access is access all AuthenticationTag_Access_Array_Access_Array;
 
    type AuthenticationTag is new CustomTagSupport with record
       logUtil : LogUtil_Access;

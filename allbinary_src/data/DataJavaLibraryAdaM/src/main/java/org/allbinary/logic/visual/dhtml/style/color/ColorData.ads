@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.style.color.ColorData_Package is
    type ColorData_Access is access all ColorData'Class;
    type ColorData_Access_Array is array (Natural range <>) of ColorData_Access;
    type ColorData_Access_Array_Access is access all ColorData_Access_Array;
+   type ColorData_Access_Array_Access_Array is array (Natural range <>) of ColorData_Access_Array_Access;
+   type ColorData_Access_Array_Access_Array_Access is access all ColorData_Access_Array_Access_Array;
 
    type ColorData is new Java_Object with record
       NAME : Unbounded_String;

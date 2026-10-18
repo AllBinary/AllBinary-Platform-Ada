@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
@@ -30,7 +29,6 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 package org.allbinary.business.context.AbContext_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
    package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
@@ -39,6 +37,8 @@ package org.allbinary.business.context.AbContext_Package is
    type AbContext_Access is access all AbContext'Class;
    type AbContext_Access_Array is array (Natural range <>) of AbContext_Access;
    type AbContext_Access_Array_Access is access all AbContext_Access_Array;
+   type AbContext_Access_Array_Access_Array is array (Natural range <>) of AbContext_Access_Array_Access;
+   type AbContext_Access_Array_Access_Array_Access is access all AbContext_Access_Array_Access_Array;
 
    type AbContext is new Java_Object with record
       logUtil : LogUtil_Access;

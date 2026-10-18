@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.InitHelperFactory_Package; use admin.taghelpers.InitHelperFactory_Package;
+
 package body admin.tags.InitTag_Package is
 
+   package InitHelperFactory_Package renames Standard.admin.taghelpers.InitHelperFactory_Package;
    procedure Initialize_Fields (This : in out InitTag'Class) is
    begin
       null;

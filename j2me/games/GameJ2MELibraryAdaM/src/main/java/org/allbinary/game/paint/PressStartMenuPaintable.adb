@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.AppletUtil_Package; use org.allbinary.AppletUtil_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.game.paint.PressStartMenuPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package AppletUtil_Package renames Standard.org.allbinary.AppletUtil_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package TouchScreenFactory_Package renames Standard.org.allbinary.input.motion.button.TouchScreenFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out PressStartMenuPaintable'Class) is
    begin
       null;
@@ -22,7 +35,7 @@ package body org.allbinary.game.paint.PressStartMenuPaintable_Package is
       This.PRESS_START := To_Unbounded_String ("Press Screen To Start");
       This.KEY_START := To_Unbounded_String ("Press or Click F2 To Begin");
       This.MENU_START := To_Unbounded_String ("Press Start From The Menu To Begin");
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (PressStartMenuPaintable_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (PressStartMenuPaintable_Access'(This'Unchecked_Access)));
       This.startString := StringUtil_Package.getInstance.EMPTY_STRING;
       This.timeDelayHelper := TimeDelayHelper_Package.Create (1100);
       This.flash := False;

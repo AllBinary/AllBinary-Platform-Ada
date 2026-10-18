@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 
 package org.allbinary.graphics.color.ColorChangeEvent_Package is
@@ -32,6 +31,8 @@ package org.allbinary.graphics.color.ColorChangeEvent_Package is
    type ColorChangeEvent_Access is access all ColorChangeEvent'Class;
    type ColorChangeEvent_Access_Array is array (Natural range <>) of ColorChangeEvent_Access;
    type ColorChangeEvent_Access_Array_Access is access all ColorChangeEvent_Access_Array;
+   type ColorChangeEvent_Access_Array_Access_Array is array (Natural range <>) of ColorChangeEvent_Access_Array_Access;
+   type ColorChangeEvent_Access_Array_Access_Array_Access is access all ColorChangeEvent_Access_Array_Access_Array;
 
    type ColorChangeEvent is new AllBinaryEventObject with record
       basicColor : BasicColor_Access;

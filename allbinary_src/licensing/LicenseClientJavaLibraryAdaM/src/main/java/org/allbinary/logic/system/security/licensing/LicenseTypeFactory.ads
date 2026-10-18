@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.system.security.licensing.LicenseType_Package; use org.allbinary.logic.system.security.licensing.LicenseType_Package;
 
 package org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type LicenseTypeFactory is tagged;
    type LicenseTypeFactory_Access is access all LicenseTypeFactory'Class;
    type LicenseTypeFactory_Access_Array is array (Natural range <>) of LicenseTypeFactory_Access;
    type LicenseTypeFactory_Access_Array_Access is access all LicenseTypeFactory_Access_Array;
+   type LicenseTypeFactory_Access_Array_Access_Array is array (Natural range <>) of LicenseTypeFactory_Access_Array_Access;
+   type LicenseTypeFactory_Access_Array_Access_Array_Access is access all LicenseTypeFactory_Access_Array_Access_Array;
 
    type LicenseTypeFactory is new Java_Object with record
       UNKNOWN : LicenseType_Access;

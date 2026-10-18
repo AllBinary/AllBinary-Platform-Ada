@@ -20,14 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.error.ErrorData_Package; use org.allbinary.business.error.ErrorData_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 
 package org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package is
 
-   package ErrorData_Package renames Standard.org.allbinary.business.error.ErrorData_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -35,6 +32,8 @@ package org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package is
    type BasicErrorNodeUtil_Access is access all BasicErrorNodeUtil'Class;
    type BasicErrorNodeUtil_Access_Array is array (Natural range <>) of BasicErrorNodeUtil_Access;
    type BasicErrorNodeUtil_Access_Array_Access is access all BasicErrorNodeUtil_Access_Array;
+   type BasicErrorNodeUtil_Access_Array_Access_Array is array (Natural range <>) of BasicErrorNodeUtil_Access_Array_Access;
+   type BasicErrorNodeUtil_Access_Array_Access_Array_Access is access all BasicErrorNodeUtil_Access_Array_Access_Array;
 
    type BasicErrorNodeUtil is new Java_Object with null record;
 

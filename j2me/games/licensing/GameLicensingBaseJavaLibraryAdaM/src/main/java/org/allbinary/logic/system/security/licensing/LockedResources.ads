@@ -28,6 +28,8 @@ package org.allbinary.logic.system.security.licensing.LockedResources_Package is
    type LockedResources_Access is access all LockedResources'Class;
    type LockedResources_Access_Array is array (Natural range <>) of LockedResources_Access;
    type LockedResources_Access_Array_Access is access all LockedResources_Access_Array;
+   type LockedResources_Access_Array_Access_Array is array (Natural range <>) of LockedResources_Access_Array_Access;
+   type LockedResources_Access_Array_Access_Array_Access is access all LockedResources_Access_Array_Access_Array;
 
    type LockedResources is new Java_Object with record
       LOCKED_DEMO_GAME_FEATURE_RESOURCE : Unbounded_String;

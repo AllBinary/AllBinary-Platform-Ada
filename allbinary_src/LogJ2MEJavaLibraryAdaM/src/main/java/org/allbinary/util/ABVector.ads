@@ -30,6 +30,8 @@ package org.allbinary.util.ABVector_Package is
    type ABVector_Access is access all ABVector'Class;
    type ABVector_Access_Array is array (Natural range <>) of ABVector_Access;
    type ABVector_Access_Array_Access is access all ABVector_Access_Array;
+   type ABVector_Access_Array_Access_Array is array (Natural range <>) of ABVector_Access_Array_Access;
+   type ABVector_Access_Array_Access_Array_Access is access all ABVector_Access_Array_Access_Array;
 
    type ABVector is new Vector with null record;
 

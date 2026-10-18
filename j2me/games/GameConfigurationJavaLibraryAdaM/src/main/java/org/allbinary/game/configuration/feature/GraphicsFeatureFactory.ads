@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.configuration.feature.GraphicsFeature_Package; use org.allbinary.game.configuration.feature.GraphicsFeature_Package;
 
 package org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type GraphicsFeatureFactory is tagged;
    type GraphicsFeatureFactory_Access is access all GraphicsFeatureFactory'Class;
    type GraphicsFeatureFactory_Access_Array is array (Natural range <>) of GraphicsFeatureFactory_Access;
    type GraphicsFeatureFactory_Access_Array_Access is access all GraphicsFeatureFactory_Access_Array;
+   type GraphicsFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of GraphicsFeatureFactory_Access_Array_Access;
+   type GraphicsFeatureFactory_Access_Array_Access_Array_Access is access all GraphicsFeatureFactory_Access_Array_Access_Array;
 
    type GraphicsFeatureFactory is new Java_Object with record
       NONE : GraphicsFeature_Access;

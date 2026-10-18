@@ -22,23 +22,21 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
 with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
-with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.animation.image.ImageSegmentAnimation_Package; use org.allbinary.animation.image.ImageSegmentAnimation_Package;
 
 package org.allbinary.animation.image.LeftToRightImageAnimation_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
    package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
-   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
 
    type LeftToRightImageAnimation is tagged;
    type LeftToRightImageAnimation_Access is access all LeftToRightImageAnimation'Class;
    type LeftToRightImageAnimation_Access_Array is array (Natural range <>) of LeftToRightImageAnimation_Access;
    type LeftToRightImageAnimation_Access_Array_Access is access all LeftToRightImageAnimation_Access_Array;
+   type LeftToRightImageAnimation_Access_Array_Access_Array is array (Natural range <>) of LeftToRightImageAnimation_Access_Array_Access;
+   type LeftToRightImageAnimation_Access_Array_Access_Array_Access is access all LeftToRightImageAnimation_Access_Array_Access_Array;
 
    type LeftToRightImageAnimation is new ImageSegmentAnimation with record
       currentWidth : Integer;

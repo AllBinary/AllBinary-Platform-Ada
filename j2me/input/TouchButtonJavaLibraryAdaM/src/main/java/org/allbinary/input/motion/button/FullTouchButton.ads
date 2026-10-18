@@ -21,10 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
@@ -33,16 +30,15 @@ with org.allbinary.input.motion.button.TouchButtonResource_Package; use org.allb
 package org.allbinary.input.motion.button.FullTouchButton_Package is
 
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
    package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
-   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
 
    type FullTouchButton is tagged;
    type FullTouchButton_Access is access all FullTouchButton'Class;
    type FullTouchButton_Access_Array is array (Natural range <>) of FullTouchButton_Access;
    type FullTouchButton_Access_Array_Access is access all FullTouchButton_Access_Array;
+   type FullTouchButton_Access_Array_Access_Array is array (Natural range <>) of FullTouchButton_Access_Array_Access;
+   type FullTouchButton_Access_Array_Access_Array_Access is access all FullTouchButton_Access_Array_Access_Array;
 
    type FullTouchButton is new TouchButton with null record;
 

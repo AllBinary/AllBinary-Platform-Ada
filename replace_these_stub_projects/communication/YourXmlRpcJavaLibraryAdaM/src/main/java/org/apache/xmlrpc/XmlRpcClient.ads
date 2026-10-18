@@ -12,24 +12,22 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.net.MalformedURLException_Package; use java.net.MalformedURLException_Package;
 --  with java.net.URL_Package; use java.net.URL_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.apache.xmlrpc.XmlRpcHandler_Package; use org.apache.xmlrpc.XmlRpcHandler_Package;
 
 package org.apache.xmlrpc.XmlRpcClient_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type XmlRpcClient is tagged;
    type XmlRpcClient_Access is access all XmlRpcClient'Class;
    type XmlRpcClient_Access_Array is array (Natural range <>) of XmlRpcClient_Access;
    type XmlRpcClient_Access_Array_Access is access all XmlRpcClient_Access_Array;
+   type XmlRpcClient_Access_Array_Access_Array is array (Natural range <>) of XmlRpcClient_Access_Array_Access;
+   type XmlRpcClient_Access_Array_Access_Array_Access is access all XmlRpcClient_Access_Array_Access_Array;
 
-   type XmlRpcClient is new XmlRpcHandler with record
+   type XmlRpcClient is new Java_Object and XmlRpcHandler with record
       url : URL_Access;
    end record;
 

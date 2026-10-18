@@ -28,6 +28,8 @@ package org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package 
    type SecuredNativeLibraryInterface_Access is access all SecuredNativeLibraryInterface'Class;
    type SecuredNativeLibraryInterface_Access_Array is array (Natural range <>) of SecuredNativeLibraryInterface_Access;
    type SecuredNativeLibraryInterface_Access_Array_Access is access all SecuredNativeLibraryInterface_Access_Array;
+   type SecuredNativeLibraryInterface_Access_Array_Access_Array is array (Natural range <>) of SecuredNativeLibraryInterface_Access_Array_Access;
+   type SecuredNativeLibraryInterface_Access_Array_Access_Array_Access is access all SecuredNativeLibraryInterface_Access_Array_Access_Array;
    procedure load (This : in out SecuredNativeLibraryInterface) is abstract;
    procedure unload (This : in out SecuredNativeLibraryInterface) is abstract;
    function unlock (This : in out SecuredNativeLibraryInterface; key : Unbounded_String) return Boolean is abstract;

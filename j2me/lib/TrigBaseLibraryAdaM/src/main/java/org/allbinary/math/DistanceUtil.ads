@@ -30,6 +30,8 @@ package org.allbinary.math.DistanceUtil_Package is
    type DistanceUtil_Access is access all DistanceUtil'Class;
    type DistanceUtil_Access_Array is array (Natural range <>) of DistanceUtil_Access;
    type DistanceUtil_Access_Array_Access is access all DistanceUtil_Access_Array;
+   type DistanceUtil_Access_Array_Access_Array is array (Natural range <>) of DistanceUtil_Access_Array_Access;
+   type DistanceUtil_Access_Array_Access_Array_Access is access all DistanceUtil_Access_Array_Access_Array;
 
    type DistanceUtil is new Java_Object with record
       mathUtil : MathUtil_Access;

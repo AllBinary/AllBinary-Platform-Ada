@@ -13,8 +13,58 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.context.configuration.ContextConfiguration_Package; use org.allbinary.business.context.configuration.ContextConfiguration_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationDomDocumentMapping_Package; use org.allbinary.business.context.configuration.ContextConfigurationDomDocumentMapping_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationInterfaceFactory_Package; use org.allbinary.business.context.configuration.ContextConfigurationInterfaceFactory_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.FileUtil_Package; use org.allbinary.logic.io.file.FileUtil_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.SpecialCharacterUtil_Package; use org.allbinary.logic.string_Id.SpecialCharacterUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.apache.commons.lang3.StringEscapeUtils_Package; use org.apache.commons.lang3.StringEscapeUtils_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+
 package body org.allbinary.business.context.modules.storefront.StoreFront_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ContextConfiguration_Package renames Standard.org.allbinary.business.context.configuration.ContextConfiguration_Package;
+   package ContextConfigurationDomDocumentMapping_Package renames Standard.org.allbinary.business.context.configuration.ContextConfigurationDomDocumentMapping_Package;
+   package ContextConfigurationInterfaceFactory_Package renames Standard.org.allbinary.business.context.configuration.ContextConfigurationInterfaceFactory_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package SpecialCharacterUtil_Package renames Standard.org.allbinary.logic.string_Id.SpecialCharacterUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+   package Tokenizer_Package renames Standard.org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StringEscapeUtils_Package renames Standard.org.apache.commons.lang3.StringEscapeUtils_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
    procedure Initialize_Fields (This : in out StoreFront'Class) is
    begin
       null;
@@ -62,7 +112,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    procedure Initialize (This : in out StoreFront'Class) is
    begin
       Initialize_Fields (This);
-        This.contextConfigurationInterface := ContextConfiguration_Package.Create;
+        This.contextConfigurationInterface := ContextConfigurationInterface_Access (ContextConfiguration_Package.Create);
    end Initialize;
 
    function Create return StoreFront_Access is
@@ -775,7 +825,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    function createDirectories (This : in out StoreFront) return Boolean is
       storeAbPath : AbPath_Access;
    begin
-        storeAbPath := AbPath_Package.Create ((URLGLOBALS.getWebappPath) + (StoreFront'Class (This).getCurrentHomeHostNamePath), StringUtil_Package.getInstance.EMPTY_STRING);
+        storeAbPath := AbPath_Package.Create ((URLGLOBALS_Package.getWebappPath) + (StoreFront'Class (This).getCurrentHomeHostNamePath), StringUtil_Package.getInstance.EMPTY_STRING);
         if not (This.directory.create (storeAbPath)) then
             return False;
         end if;
@@ -806,12 +856,12 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
             end if;
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.delete (0, stringBuffer.length);
-            stringBuffer.append (URLGLOBALS.getMainPath);
-            stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH);
+            stringBuffer.append (URLGLOBALS_Package.getMainPath);
+            stringBuffer.append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH);
             viewPath := stringBuffer.toString;
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (viewPath);
-            stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.INSTALLPATH);
+            stringBuffer.append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.INSTALLPATH);
             fromDirectoryAbPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (viewPath);
@@ -882,7 +932,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         installCategoryAbPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
         stringBuffer.delete (0, stringBuffer.length);
-        stringBuffer.append (URLGLOBALS.getMainPath);
+        stringBuffer.append (URLGLOBALS_Package.getMainPath);
         stringBuffer.append (StoreFront'Class (This).getCurrentHomeHostNamePath);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         stringBuffer.append (StoreFront'Class (This).getCategoryPath);
@@ -900,11 +950,11 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (fromDirectoryAbPath.toString);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
-        stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.TEMPLATEPATH);
+        stringBuffer.append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.TEMPLATEPATH);
         stringBuffer.append (To_Unbounded_String ("images"));
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         viewStoreImagesDirectoryAbPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
-        storeAbPath := AbPath_Package.Create ((URLGLOBALS.getWebappPath) + (StoreFront'Class (This).getCurrentHomeHostNamePath), StringUtil_Package.getInstance.EMPTY_STRING);
+        storeAbPath := AbPath_Package.Create ((URLGLOBALS_Package.getWebappPath) + (StoreFront'Class (This).getCurrentHomeHostNamePath), StringUtil_Package.getInstance.EMPTY_STRING);
         FileUtil_Package.getInstance.copyDirectoryPortion (viewStoreImagesDirectoryAbPath, storeAbPath, True, False, current, total);
    end installMedia;
 
@@ -915,7 +965,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       calendar : Calendar_Access;
       time : Unbounded_String;
    begin
-        dataVector := BasicArrayListD_Package.Create;
+        dataVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         dataVector.add (This.name);
         dataVector.add (This.homeHostName);
         dataVector.add (This.homeHostNamePath.toString);

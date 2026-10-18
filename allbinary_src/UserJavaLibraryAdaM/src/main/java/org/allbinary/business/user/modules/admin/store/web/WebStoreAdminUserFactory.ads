@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUserFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUserFac
    type WebStoreAdminUserFactory_Access is access all WebStoreAdminUserFactory'Class;
    type WebStoreAdminUserFactory_Access_Array is array (Natural range <>) of WebStoreAdminUserFactory_Access;
    type WebStoreAdminUserFactory_Access_Array_Access is access all WebStoreAdminUserFactory_Access_Array;
+   type WebStoreAdminUserFactory_Access_Array_Access_Array is array (Natural range <>) of WebStoreAdminUserFactory_Access_Array_Access;
+   type WebStoreAdminUserFactory_Access_Array_Access_Array_Access is access all WebStoreAdminUserFactory_Access_Array_Access_Array;
 
-   type WebStoreAdminUserFactory is new UserFactoryInterface with null record;
+   type WebStoreAdminUserFactory is new Java_Object and UserFactoryInterface with null record;
 
    procedure Initialize (This : in out WebStoreAdminUserFactory'Class);
    function Create return WebStoreAdminUserFactory_Access;

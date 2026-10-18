@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package is
 
+   package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out GeographicMapCellPositionEvent'Class) is
    begin
       null;
@@ -47,7 +54,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    procedure setGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
-        This.geographicMapCellPosition := geographicMapCellPosition;
+        This.geographicMapCellPosition := CellPosition_Access (geographicMapCellPosition);
    end setGeographicMapCellPosition;
 
    function getGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent) return GeographicMapCellPosition_Access is
@@ -64,6 +71,11 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
         stringBuffer.append (StringUtil_Package.getInstance.toString (GeographicMapCellPositionEvent'Class (This).getGeographicMapCellPosition));
         return stringBuffer.toString;
    end toString;
+
+   procedure init (This : in out GeographicMapCellPositionEvent; Value : Unbounded_String) is
+   begin
+      GeographicMapCellPositionEvent'Class (This).init (Java_Box (Value));
+   end init;
 
 end org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package;
 

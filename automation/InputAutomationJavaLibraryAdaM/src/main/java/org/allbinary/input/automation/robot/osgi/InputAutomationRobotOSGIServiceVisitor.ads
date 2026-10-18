@@ -20,9 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package; use bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
-with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSGIServiceInterface_Package;
 with org.allbinary.osgi.OSGIServiceVisitorInterface_Package; use org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
@@ -30,9 +27,6 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServiceVisitor_Package is
 
-   package InputAutomationRobotServiceInterface_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
-   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
-   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package OSGIServiceInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceInterface_Package;
    package OSGIServiceVisitorInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
@@ -42,8 +36,10 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServic
    type InputAutomationRobotOSGIServiceVisitor_Access is access all InputAutomationRobotOSGIServiceVisitor'Class;
    type InputAutomationRobotOSGIServiceVisitor_Access_Array is array (Natural range <>) of InputAutomationRobotOSGIServiceVisitor_Access;
    type InputAutomationRobotOSGIServiceVisitor_Access_Array_Access is access all InputAutomationRobotOSGIServiceVisitor_Access_Array;
+   type InputAutomationRobotOSGIServiceVisitor_Access_Array_Access_Array is array (Natural range <>) of InputAutomationRobotOSGIServiceVisitor_Access_Array_Access;
+   type InputAutomationRobotOSGIServiceVisitor_Access_Array_Access_Array_Access is access all InputAutomationRobotOSGIServiceVisitor_Access_Array_Access_Array;
 
-   type InputAutomationRobotOSGIServiceVisitor is new OSGIServiceVisitorInterface with record
+   type InputAutomationRobotOSGIServiceVisitor is new Java_Object and OSGIServiceVisitorInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;
@@ -54,6 +50,8 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServic
    procedure visit (This : in out InputAutomationRobotOSGIServiceVisitor; anyType_Param : access Java_Object'Class);
    function visit (This : in out InputAutomationRobotOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface_Package.OSGIServiceInterface'Class) return Boolean;
    procedure visit (This : in out InputAutomationRobotOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface_Package.OSGIServiceInterface'Class);
+   function visit (This : in out InputAutomationRobotOSGIServiceVisitor; Value : Unbounded_String) return Java_Object_Access;
+   procedure visit (This : in out InputAutomationRobotOSGIServiceVisitor; Value : Unbounded_String);
 
 end org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServiceVisitor_Package;
 

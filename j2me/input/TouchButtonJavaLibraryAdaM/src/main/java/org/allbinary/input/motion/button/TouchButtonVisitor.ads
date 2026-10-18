@@ -29,6 +29,8 @@ package org.allbinary.input.motion.button.TouchButtonVisitor_Package is
    type TouchButtonVisitor_Access is access all TouchButtonVisitor'Class;
    type TouchButtonVisitor_Access_Array is array (Natural range <>) of TouchButtonVisitor_Access;
    type TouchButtonVisitor_Access_Array_Access is access all TouchButtonVisitor_Access_Array;
+   type TouchButtonVisitor_Access_Array_Access_Array is array (Natural range <>) of TouchButtonVisitor_Access_Array_Access;
+   type TouchButtonVisitor_Access_Array_Access_Array_Access is access all TouchButtonVisitor_Access_Array_Access_Array;
 
    type TouchButtonVisitor is new Java_Object with null record;
 

@@ -13,12 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package is
 
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out AllBinaryRendererBase3'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out AllBinaryRendererBase3'Class) is
@@ -50,7 +55,7 @@ package body org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Pac
    procedure add (This : in out AllBinaryRendererBase3; image_Param : access Image_Package.Image'Class) is
       image : constant Image_Access := Image_Access (image_Param);
    begin
-        This.list.add (image);
+        This.list.add (Java_Object_Access (image));
    end add;
 
 end org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package;

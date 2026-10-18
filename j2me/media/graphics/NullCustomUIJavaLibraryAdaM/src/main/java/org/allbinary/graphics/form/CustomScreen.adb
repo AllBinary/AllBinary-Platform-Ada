@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.form.CustomScreen_Package is
 
    procedure Initialize_Fields (This : in out CustomScreen'Class) is

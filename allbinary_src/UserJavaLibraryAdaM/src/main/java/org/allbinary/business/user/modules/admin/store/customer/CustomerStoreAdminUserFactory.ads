@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUserFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAd
    type CustomerStoreAdminUserFactory_Access is access all CustomerStoreAdminUserFactory'Class;
    type CustomerStoreAdminUserFactory_Access_Array is array (Natural range <>) of CustomerStoreAdminUserFactory_Access;
    type CustomerStoreAdminUserFactory_Access_Array_Access is access all CustomerStoreAdminUserFactory_Access_Array;
+   type CustomerStoreAdminUserFactory_Access_Array_Access_Array is array (Natural range <>) of CustomerStoreAdminUserFactory_Access_Array_Access;
+   type CustomerStoreAdminUserFactory_Access_Array_Access_Array_Access is access all CustomerStoreAdminUserFactory_Access_Array_Access_Array;
 
-   type CustomerStoreAdminUserFactory is new UserFactoryInterface with null record;
+   type CustomerStoreAdminUserFactory is new Java_Object and UserFactoryInterface with null record;
 
    procedure Initialize (This : in out CustomerStoreAdminUserFactory'Class);
    function Create return CustomerStoreAdminUserFactory_Access;

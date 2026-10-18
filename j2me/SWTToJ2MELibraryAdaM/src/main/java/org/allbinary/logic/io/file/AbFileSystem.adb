@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.io.file.AbFileSystem_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out AbFileSystem'Class) is
    begin
       null;
@@ -77,8 +86,8 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
    begin
         closeable := NullUtil_Package.getInstance.NULL_OBJECT;
         begin
-            idFile := FileInputStream_Package.Create (fileName);
-            closeable := idFile;
+            idFile := InputStream_Access (FileInputStream_Package.Create (fileName));
+            closeable := Java_Object_Access (idFile);
             size := idFile.read (bytes);
             if (size) > (0) then
                 return Java_New_String (bytes, 0, size);
@@ -156,6 +165,18 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
 
    procedure close (This : in out AbFileSystem; closeable_Param : access Java_Object'Class) is
       Java_Result : constant Boolean := AbFileSystem'Class (This).close (closeable_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end close;
+
+   function close (This : in out AbFileSystem; Value : Unbounded_String) return Boolean is
+   begin
+      return AbFileSystem'Class (This).close (Java_Box (Value));
+   end close;
+
+   procedure close (This : in out AbFileSystem; Value : Unbounded_String) is
+      Java_Result : constant Boolean := AbFileSystem'Class (This).close (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

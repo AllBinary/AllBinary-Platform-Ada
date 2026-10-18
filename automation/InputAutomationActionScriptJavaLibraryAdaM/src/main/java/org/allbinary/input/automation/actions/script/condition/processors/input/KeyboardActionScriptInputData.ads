@@ -28,6 +28,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    type KeyboardActionScriptInputData_Access is access all KeyboardActionScriptInputData'Class;
    type KeyboardActionScriptInputData_Access_Array is array (Natural range <>) of KeyboardActionScriptInputData_Access;
    type KeyboardActionScriptInputData_Access_Array_Access is access all KeyboardActionScriptInputData_Access_Array;
+   type KeyboardActionScriptInputData_Access_Array_Access_Array is array (Natural range <>) of KeyboardActionScriptInputData_Access_Array_Access;
+   type KeyboardActionScriptInputData_Access_Array_Access_Array_Access is access all KeyboardActionScriptInputData_Access_Array_Access_Array;
 
    type KeyboardActionScriptInputData is new Java_Object with null record;
    NAME : Unbounded_String;

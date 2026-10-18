@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+with org.allbinary.game.ag.ai.MultiKeyPressesAI_Package; use org.allbinary.game.ag.ai.MultiKeyPressesAI_Package;
+with org.allbinary.game.ag.ai.KeyPressesAI_Package; use org.allbinary.game.ag.ai.KeyPressesAI_Package;
+
 package body org.allbinary.game.ag.ai.KeyPressesAIFactory_Package is
 
+   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
    procedure Initialize_Fields (This : in out KeyPressesAIFactory'Class) is
    begin
       null;
@@ -42,9 +47,9 @@ package body org.allbinary.game.ag.ai.KeyPressesAIFactory_Package is
    begin
         isSingleKeyProcessing := InputFeatureFactory_Package.getInstance.isSingleKeyProcessing;
         if isSingleKeyProcessing then
-            return KeyPressesAI_Package.Create (hashtable, ownerLayerInterface, gameInput);
+            return ArtificialIntelligenceInterface_Access (KeyPressesAI_Package.Create (hashtable, ownerLayerInterface, gameInput));
         else
-            return MultiKeyPressesAI_Package.Create (hashtable, ownerLayerInterface, gameInput);
+            return ArtificialIntelligenceInterface_Access (MultiKeyPressesAI_Package.Create (hashtable, ownerLayerInterface, gameInput));
         end if;
    end getInstance;
 

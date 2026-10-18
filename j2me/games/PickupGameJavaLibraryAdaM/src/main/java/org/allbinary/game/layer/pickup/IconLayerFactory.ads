@@ -31,6 +31,8 @@ package org.allbinary.game.layer.pickup.IconLayerFactory_Package is
    type IconLayerFactory_Access is access all IconLayerFactory'Class;
    type IconLayerFactory_Access_Array is array (Natural range <>) of IconLayerFactory_Access;
    type IconLayerFactory_Access_Array_Access is access all IconLayerFactory_Access_Array;
+   type IconLayerFactory_Access_Array_Access_Array is array (Natural range <>) of IconLayerFactory_Access_Array_Access;
+   type IconLayerFactory_Access_Array_Access_Array_Access is access all IconLayerFactory_Access_Array_Access_Array;
 
    type IconLayerFactory is new Java_Object with null record;
 

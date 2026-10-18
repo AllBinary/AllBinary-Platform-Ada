@@ -31,6 +31,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Packa
    type RaceTrackInfo_Access is access all RaceTrackInfo'Class;
    type RaceTrackInfo_Access_Array is array (Natural range <>) of RaceTrackInfo_Access;
    type RaceTrackInfo_Access_Array_Access is access all RaceTrackInfo_Access_Array;
+   type RaceTrackInfo_Access_Array_Access_Array is array (Natural range <>) of RaceTrackInfo_Access_Array_Access;
+   type RaceTrackInfo_Access_Array_Access_Array_Access is access all RaceTrackInfo_Access_Array_Access_Array;
 
    type RaceTrackInfo is new Java_Object with record
       id : Integer;

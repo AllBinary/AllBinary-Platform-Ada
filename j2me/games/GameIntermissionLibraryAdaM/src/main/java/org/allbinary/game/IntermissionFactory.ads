@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
-with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
 
 package org.allbinary.game.IntermissionFactory_Package is
 
    package GameState_Package renames Standard.org.allbinary.game.state.GameState_Package;
-   package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
 
    type IntermissionFactory is tagged;
    type IntermissionFactory_Access is access all IntermissionFactory'Class;
    type IntermissionFactory_Access_Array is array (Natural range <>) of IntermissionFactory_Access;
    type IntermissionFactory_Access_Array_Access is access all IntermissionFactory_Access_Array;
+   type IntermissionFactory_Access_Array_Access_Array is array (Natural range <>) of IntermissionFactory_Access_Array_Access;
+   type IntermissionFactory_Access_Array_Access_Array_Access is access all IntermissionFactory_Access_Array_Access_Array;
 
    type IntermissionFactory is new Java_Object with record
       START_LEVEL_INTERMISSION_GAME_STATE : GameState_Access;

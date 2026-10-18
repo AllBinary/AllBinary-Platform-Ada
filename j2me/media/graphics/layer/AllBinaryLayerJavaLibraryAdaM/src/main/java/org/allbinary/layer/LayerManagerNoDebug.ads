@@ -29,6 +29,8 @@ package org.allbinary.layer.LayerManagerNoDebug_Package is
    type LayerManagerNoDebug_Access is access all LayerManagerNoDebug'Class;
    type LayerManagerNoDebug_Access_Array is array (Natural range <>) of LayerManagerNoDebug_Access;
    type LayerManagerNoDebug_Access_Array_Access is access all LayerManagerNoDebug_Access_Array;
+   type LayerManagerNoDebug_Access_Array_Access_Array is array (Natural range <>) of LayerManagerNoDebug_Access_Array_Access;
+   type LayerManagerNoDebug_Access_Array_Access_Array_Access is access all LayerManagerNoDebug_Access_Array_Access_Array;
 
    type LayerManagerNoDebug is new LayerManagerLoggingBase with null record;
    instance : LayerManagerNoDebug_Access;

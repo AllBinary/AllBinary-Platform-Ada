@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.ScreenCaptureNoneFactory_Package; use org.allbinary.graphics.ScreenCaptureNoneFactory_Package;
 with org.allbinary.graphics.ScreenCapture_Package; use org.allbinary.graphics.ScreenCapture_Package;
 
 package org.allbinary.graphics.ScreenCaptureFactory_Package is
@@ -30,6 +29,8 @@ package org.allbinary.graphics.ScreenCaptureFactory_Package is
    type ScreenCaptureFactory_Access is access all ScreenCaptureFactory'Class;
    type ScreenCaptureFactory_Access_Array is array (Natural range <>) of ScreenCaptureFactory_Access;
    type ScreenCaptureFactory_Access_Array_Access is access all ScreenCaptureFactory_Access_Array;
+   type ScreenCaptureFactory_Access_Array_Access_Array is array (Natural range <>) of ScreenCaptureFactory_Access_Array_Access;
+   type ScreenCaptureFactory_Access_Array_Access_Array_Access is access all ScreenCaptureFactory_Access_Array_Access_Array;
 
    type ScreenCaptureFactory is new Java_Object with null record;
    instance : ScreenCapture_Access;

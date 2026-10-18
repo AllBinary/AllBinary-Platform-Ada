@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 
 package org.allbinary.canvas.GameGlobalsFactory_Package is
 
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
 
    type GameGlobalsFactory is tagged;
    type GameGlobalsFactory_Access is access all GameGlobalsFactory'Class;
    type GameGlobalsFactory_Access_Array is array (Natural range <>) of GameGlobalsFactory_Access;
    type GameGlobalsFactory_Access_Array_Access is access all GameGlobalsFactory_Access_Array;
+   type GameGlobalsFactory_Access_Array_Access_Array is array (Natural range <>) of GameGlobalsFactory_Access_Array_Access;
+   type GameGlobalsFactory_Access_Array_Access_Array_Access is access all GameGlobalsFactory_Access_Array_Access_Array;
 
    type GameGlobalsFactory is new Java_Object with record
       newCanvas : Boolean;

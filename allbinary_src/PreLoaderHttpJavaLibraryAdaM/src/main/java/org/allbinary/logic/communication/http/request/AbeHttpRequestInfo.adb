@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package is
 
+   package Enumeration_Package renames Standard.java.util.Enumeration_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out AbeHttpRequestInfo'Class) is
    begin
       null;
@@ -65,7 +76,7 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
         while enumuration.hasMoreElements loop
             key := Java_Unbox (enumuration.nextElement);
             value := httpServletRequest.getHeader (key);
-            if ((Index (key, Java_Image (To_Unbounded_String ("user"))) - 1)) >= (0) then
+            if (Java_Index_Of (key, Java_Image (To_Unbounded_String ("user")))) >= (0) then
                 This.httpUserAgent := To_Unbounded_String ("key: ") & key & To_Unbounded_String (" value: ") & value;
             end if;
         end loop;
@@ -99,7 +110,7 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
    function toVector (This : in out AbeHttpRequestInfo) return BasicArrayList_Access is
       vector : BasicArrayList_Access;
    begin
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         vector.add (This.httpUserAgent);
         vector.add (This.remoteAddress);
         vector.add (This.remoteHost);

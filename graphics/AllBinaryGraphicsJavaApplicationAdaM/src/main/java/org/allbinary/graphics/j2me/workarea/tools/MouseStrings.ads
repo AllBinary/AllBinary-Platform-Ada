@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package is
 
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type MouseStrings is tagged;
    type MouseStrings_Access is access all MouseStrings'Class;
    type MouseStrings_Access_Array is array (Natural range <>) of MouseStrings_Access;
    type MouseStrings_Access_Array_Access is access all MouseStrings_Access_Array;
+   type MouseStrings_Access_Array_Access_Array is array (Natural range <>) of MouseStrings_Access_Array_Access;
+   type MouseStrings_Access_Array_Access_Array_Access is access all MouseStrings_Access_Array_Access_Array;
 
    type MouseStrings is new Java_Object with record
       MOUSE_PRESSED : Unbounded_String;

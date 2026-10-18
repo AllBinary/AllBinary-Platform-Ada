@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.NormalRaceTrackGeographicMapCellTypeFactory_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.NormalRaceTrackGeog
    type NormalRaceTrackGeographicMapCellTypeFactory_Access is access all NormalRaceTrackGeographicMapCellTypeFactory'Class;
    type NormalRaceTrackGeographicMapCellTypeFactory_Access_Array is array (Natural range <>) of NormalRaceTrackGeographicMapCellTypeFactory_Access;
    type NormalRaceTrackGeographicMapCellTypeFactory_Access_Array_Access is access all NormalRaceTrackGeographicMapCellTypeFactory_Access_Array;
+   type NormalRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array is array (Natural range <>) of NormalRaceTrackGeographicMapCellTypeFactory_Access_Array_Access;
+   type NormalRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array_Access is access all NormalRaceTrackGeographicMapCellTypeFactory_Access_Array_Access_Array;
 
    type NormalRaceTrackGeographicMapCellTypeFactory is new RaceTrackGeographicMapCellTypeFactory with null record;
    instanceC : NormalRaceTrackGeographicMapCellTypeFactory_Access;

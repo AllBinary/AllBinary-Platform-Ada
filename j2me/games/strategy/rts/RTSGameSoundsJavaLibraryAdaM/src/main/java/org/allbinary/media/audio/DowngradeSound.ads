@@ -31,6 +31,8 @@ package org.allbinary.media.audio.DowngradeSound_Package is
    type DowngradeSound_Access is access all DowngradeSound'Class;
    type DowngradeSound_Access_Array is array (Natural range <>) of DowngradeSound_Access;
    type DowngradeSound_Access_Array_Access is access all DowngradeSound_Access_Array;
+   type DowngradeSound_Access_Array_Access_Array is array (Natural range <>) of DowngradeSound_Access_Array_Access;
+   type DowngradeSound_Access_Array_Access_Array_Access is access all DowngradeSound_Access_Array_Access_Array;
 
    type DowngradeSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

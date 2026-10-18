@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.paint.AboutPaintable_Package; use org.allbinary.game.paint.AboutPaintable_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.graphics.displayable.screen.AboutPaintableFactory_Package is
 
+   package AboutPaintable_Package renames Standard.org.allbinary.game.paint.AboutPaintable_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out AboutPaintableFactory'Class) is
    begin
       null;

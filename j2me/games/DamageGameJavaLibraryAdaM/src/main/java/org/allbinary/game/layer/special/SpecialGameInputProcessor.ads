@@ -31,6 +31,8 @@ package org.allbinary.game.layer.special.SpecialGameInputProcessor_Package is
    type SpecialGameInputProcessor_Access is access all SpecialGameInputProcessor'Class;
    type SpecialGameInputProcessor_Access_Array is array (Natural range <>) of SpecialGameInputProcessor_Access;
    type SpecialGameInputProcessor_Access_Array_Access is access all SpecialGameInputProcessor_Access_Array;
+   type SpecialGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of SpecialGameInputProcessor_Access_Array_Access;
+   type SpecialGameInputProcessor_Access_Array_Access_Array_Access is access all SpecialGameInputProcessor_Access_Array_Access_Array;
 
    type SpecialGameInputProcessor is new GameInputProcessor with record
       collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access;

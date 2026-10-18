@@ -29,6 +29,8 @@ package org.allbinary.audio.AudioContentTypeDataFactory_Package is
    type AudioContentTypeDataFactory_Access is access all AudioContentTypeDataFactory'Class;
    type AudioContentTypeDataFactory_Access_Array is array (Natural range <>) of AudioContentTypeDataFactory_Access;
    type AudioContentTypeDataFactory_Access_Array_Access is access all AudioContentTypeDataFactory_Access_Array;
+   type AudioContentTypeDataFactory_Access_Array_Access_Array is array (Natural range <>) of AudioContentTypeDataFactory_Access_Array_Access;
+   type AudioContentTypeDataFactory_Access_Array_Access_Array_Access is access all AudioContentTypeDataFactory_Access_Array_Access_Array;
 
    type AudioContentTypeDataFactory is new Java_Object with record
       MIME_AUDIO_TONE : AudioContentTypeData_Access;

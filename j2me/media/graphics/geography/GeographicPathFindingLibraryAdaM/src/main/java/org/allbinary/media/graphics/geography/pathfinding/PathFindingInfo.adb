@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+
 package body org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package is
 
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    procedure Initialize_Fields (This : in out PathFindingInfo'Class) is
    begin
       null;
@@ -61,13 +64,13 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_
    procedure addStartPathFindingNode (This : in out PathFindingInfo; startPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class) is
       startPathFindingNode : constant PathFindingNode_Access := PathFindingNode_Access (startPathFindingNode_Param);
    begin
-        This.startPathFindingNodeList.add (startPathFindingNode);
+        This.startPathFindingNodeList.add (Java_Object_Access (startPathFindingNode));
    end addStartPathFindingNode;
 
    procedure addEndPathFindingNode (This : in out PathFindingInfo; endPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class) is
       endPathFindingNode : constant PathFindingNode_Access := PathFindingNode_Access (endPathFindingNode_Param);
    begin
-        This.endPathFindingNodeList.add (endPathFindingNode);
+        This.endPathFindingNodeList.add (Java_Object_Access (endPathFindingNode));
    end addEndPathFindingNode;
 
    procedure setPathFinder (This : in out PathFindingInfo; pathFinder_Param : access GeographicPathFinderBase_Package.GeographicPathFinderBase'Class) is

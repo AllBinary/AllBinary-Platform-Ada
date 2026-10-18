@@ -21,17 +21,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.io.file.SimpleFileUtil_Package; use org.allbinary.logic.io.file.SimpleFileUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 
 package org.allbinary.logic.io.file.FileUtil2_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
    package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
@@ -40,6 +37,8 @@ package org.allbinary.logic.io.file.FileUtil2_Package is
    type FileUtil2_Access is access all FileUtil2'Class;
    type FileUtil2_Access_Array is array (Natural range <>) of FileUtil2_Access;
    type FileUtil2_Access_Array_Access is access all FileUtil2_Access_Array;
+   type FileUtil2_Access_Array_Access_Array is array (Natural range <>) of FileUtil2_Access_Array_Access;
+   type FileUtil2_Access_Array_Access_Array_Access is access all FileUtil2_Access_Array_Access_Array;
 
    type FileUtil2 is new Java_Object with record
       logUtil : LogUtil_Access;

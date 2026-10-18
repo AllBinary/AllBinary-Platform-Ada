@@ -32,6 +32,8 @@ package org.allbinary.data.tables.TableMappingInterface_Package is
    type TableMappingInterface_Access is access all TableMappingInterface'Class;
    type TableMappingInterface_Access_Array is array (Natural range <>) of TableMappingInterface_Access;
    type TableMappingInterface_Access_Array_Access is access all TableMappingInterface_Access_Array;
+   type TableMappingInterface_Access_Array_Access_Array is array (Natural range <>) of TableMappingInterface_Access_Array_Access;
+   type TableMappingInterface_Access_Array_Access_Array_Access is access all TableMappingInterface_Access_Array_Access_Array;
    function getKey (This : in out TableMappingInterface) return Java_Object_Access is abstract;
    function toVector (This : in out TableMappingInterface) return BasicArrayList_Access is abstract;
    function toHashMap (This : in out TableMappingInterface) return HashMap_Access is abstract;

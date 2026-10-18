@@ -28,6 +28,8 @@ package org.allbinary.media.graphics.geography.pathfinding.MultipassState_Packag
    type MultipassState_Access is access all MultipassState'Class;
    type MultipassState_Access_Array is array (Natural range <>) of MultipassState_Access;
    type MultipassState_Access_Array_Access is access all MultipassState_Access_Array;
+   type MultipassState_Access_Array_Access_Array is array (Natural range <>) of MultipassState_Access_Array_Access;
+   type MultipassState_Access_Array_Access_Array_Access is access all MultipassState_Access_Array_Access_Array;
 
    type MultipassState is new Java_Object with record
       step : Integer;

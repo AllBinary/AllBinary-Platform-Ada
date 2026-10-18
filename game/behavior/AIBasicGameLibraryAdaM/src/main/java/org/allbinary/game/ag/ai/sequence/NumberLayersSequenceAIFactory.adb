@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAI_Package; use org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAI_Package;
+
 package body org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package is
 
    procedure Initialize_Fields (This : in out NumberLayersSequenceAIFactory'Class) is
@@ -37,7 +39,7 @@ package body org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Pac
       ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
       gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
    begin
-        return NumberLayersSequenceAI_Package.Create (numberOfEnemiesLeft, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
+        return ArtificialIntelligenceInterface_Access (NumberLayersSequenceAI_Package.Create (numberOfEnemiesLeft, artificialIntelligenceInterface, ownerLayerInterface, gameInput));
    end getInstance;
 
    procedure getInstance (This : in out NumberLayersSequenceAIFactory; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.role.UserRoleData_Package is
 
    procedure Initialize_Fields (This : in out UserRoleData'Class) is

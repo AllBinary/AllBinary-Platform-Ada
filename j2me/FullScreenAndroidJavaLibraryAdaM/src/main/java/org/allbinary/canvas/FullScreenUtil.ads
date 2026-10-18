@@ -32,6 +32,8 @@ package org.allbinary.canvas.FullScreenUtil_Package is
    type FullScreenUtil_Access is access all FullScreenUtil'Class;
    type FullScreenUtil_Access_Array is array (Natural range <>) of FullScreenUtil_Access;
    type FullScreenUtil_Access_Array_Access is access all FullScreenUtil_Access_Array;
+   type FullScreenUtil_Access_Array_Access_Array is array (Natural range <>) of FullScreenUtil_Access_Array_Access;
+   type FullScreenUtil_Access_Array_Access_Array_Access is access all FullScreenUtil_Access_Array_Access_Array;
 
    type FullScreenUtil is new Java_Object with null record;
    instance : FullScreenUtil_Access;

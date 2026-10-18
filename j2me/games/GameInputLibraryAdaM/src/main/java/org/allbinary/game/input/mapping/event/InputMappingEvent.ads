@@ -32,6 +32,8 @@ package org.allbinary.game.input.mapping.event.InputMappingEvent_Package is
    type InputMappingEvent_Access is access all InputMappingEvent'Class;
    type InputMappingEvent_Access_Array is array (Natural range <>) of InputMappingEvent_Access;
    type InputMappingEvent_Access_Array_Access is access all InputMappingEvent_Access_Array;
+   type InputMappingEvent_Access_Array_Access_Array is array (Natural range <>) of InputMappingEvent_Access_Array_Access;
+   type InputMappingEvent_Access_Array_Access_Array_Access is access all InputMappingEvent_Access_Array_Access_Array;
 
    type InputMappingEvent is new AllBinaryEventObject with record
       inputToGameKeyMapping : InputToGameKeyMapping_Access;

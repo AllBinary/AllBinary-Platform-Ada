@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.paint.NullInitUpdatePaintable_Package; use org.allbinary.graphics.paint.NullInitUpdatePaintable_Package;
+
 package body org.allbinary.game.layer.RTSLayerInfoPaintable_Package is
 
+   package NullInitUpdatePaintable_Package renames Standard.org.allbinary.graphics.paint.NullInitUpdatePaintable_Package;
    procedure Initialize_Fields (This : in out RTSLayerInfoPaintable'Class) is
    begin
       null;
@@ -57,7 +60,7 @@ package body org.allbinary.game.layer.RTSLayerInfoPaintable_Package is
       hudPaintable : constant SelectionHudPaintable_Access := SelectionHudPaintable_Access (hudPaintable_Param);
    begin
         hudPaintable.updateSelectionInfo;
-        This.initUpdatePaintable := hudPaintable;
+        This.initUpdatePaintable := InitUpdatePaintable_Access (hudPaintable);
    end updateRTSLayerInfoSelection;
 
 end org.allbinary.game.layer.RTSLayerInfoPaintable_Package;

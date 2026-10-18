@@ -29,6 +29,8 @@ package org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudP
    type GeologicalResourceInfoHudPaintableSingleton_Access is access all GeologicalResourceInfoHudPaintableSingleton'Class;
    type GeologicalResourceInfoHudPaintableSingleton_Access_Array is array (Natural range <>) of GeologicalResourceInfoHudPaintableSingleton_Access;
    type GeologicalResourceInfoHudPaintableSingleton_Access_Array_Access is access all GeologicalResourceInfoHudPaintableSingleton_Access_Array;
+   type GeologicalResourceInfoHudPaintableSingleton_Access_Array_Access_Array is array (Natural range <>) of GeologicalResourceInfoHudPaintableSingleton_Access_Array_Access;
+   type GeologicalResourceInfoHudPaintableSingleton_Access_Array_Access_Array_Access is access all GeologicalResourceInfoHudPaintableSingleton_Access_Array_Access_Array;
 
    type GeologicalResourceInfoHudPaintableSingleton is new Java_Object with null record;
    instance : GeologicalResourceInfoHudPaintable_Access;

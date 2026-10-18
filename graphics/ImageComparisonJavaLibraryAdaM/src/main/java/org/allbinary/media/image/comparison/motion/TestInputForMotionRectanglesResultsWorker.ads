@@ -24,40 +24,27 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.InputEvent_Package; use java.awt.event.InputEvent_Package;
 --  with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
-with org.allbinary.input.automation.robot.TempInputRobotNames_Package; use org.allbinary.input.automation.robot.TempInputRobotNames_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsListener_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsListener_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package;
-with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 
 package org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
-   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
-   package TempInputRobotNames_Package renames Standard.org.allbinary.input.automation.robot.TempInputRobotNames_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
-   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type TestInputForMotionRectanglesResultsWorker is tagged;
    type TestInputForMotionRectanglesResultsWorker_Access is access all TestInputForMotionRectanglesResultsWorker'Class;
    type TestInputForMotionRectanglesResultsWorker_Access_Array is array (Natural range <>) of TestInputForMotionRectanglesResultsWorker_Access;
    type TestInputForMotionRectanglesResultsWorker_Access_Array_Access is access all TestInputForMotionRectanglesResultsWorker_Access_Array;
+   type TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array is array (Natural range <>) of TestInputForMotionRectanglesResultsWorker_Access_Array_Access;
+   type TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Access is access all TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array;
 
-   type TestInputForMotionRectanglesResultsWorker is new MotionRectanglesResultsListener with record
+   type TestInputForMotionRectanglesResultsWorker is new Java_Object and MotionRectanglesResultsListener with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       index : Long_Long_Integer;

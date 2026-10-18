@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.game.TiledLayer_Package; use javax.microedition.lcdui.game.TiledLayer_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package;
+with org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package; use org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package;
+
 package body org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
 
+   package TiledLayer_Package renames Standard.javax.microedition.lcdui.game.TiledLayer_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package TiledLayerFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package;
    procedure Initialize_Fields (This : in out AllBinaryTiledLayerFactory'Class) is
    begin
       null;
@@ -42,7 +52,7 @@ package body org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
    begin
         allbinaryTiledLayer := null;
         tiledLayer := TiledLayerFactory_Package.Create.getInstance (raceTrackData);
-        allbinaryTiledLayer := AllBinaryJ2METiledLayer_Package.Create (raceTrackData.getId, tiledLayer, raceTrackData.getMapArray, BasicColorFactory_Package.getInstance.RED.intValue);
+        allbinaryTiledLayer := AllBinaryTiledLayer_Access (AllBinaryJ2METiledLayer_Package.Create (raceTrackData.getId, tiledLayer, raceTrackData.getMapArray, BasicColorFactory_Package.getInstance.RED.intValue));
         allbinaryTiledLayer.setCells (raceTrackData.getMapArray);
         return allbinaryTiledLayer;
    end getInstance;
@@ -56,7 +66,7 @@ package body org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
    begin
         smallIntegerSingletonFactory := SmallIntegerSingletonFactory_Package.getInstance;
         tiledLayer := TiledLayerFactory_Package.Create.getMiniInstance (raceTrackData);
-        allbinaryTiledLayer := AllBinaryJ2METiledLayer_Package.Create (smallIntegerSingletonFactory.getAt (((raceTrackData.getId.intValue) + (100)) + (1)), tiledLayer, raceTrackData.getMapArray, BasicColorFactory_Package.getInstance.RED.intValue);
+        allbinaryTiledLayer := AllBinaryTiledLayer_Access (AllBinaryJ2METiledLayer_Package.Create (smallIntegerSingletonFactory.getAt (((raceTrackData.getId.intValue) + (100)) + (1)), tiledLayer, raceTrackData.getMapArray, BasicColorFactory_Package.getInstance.RED.intValue));
         allbinaryTiledLayer.setCells (raceTrackData.getMapArray);
         return allbinaryTiledLayer;
    end getMiniInstance;

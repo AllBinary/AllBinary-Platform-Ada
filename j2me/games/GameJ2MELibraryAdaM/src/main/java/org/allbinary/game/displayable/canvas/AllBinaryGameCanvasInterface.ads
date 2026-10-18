@@ -32,6 +32,8 @@ package org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Packa
    type AllBinaryGameCanvasInterface_Access is access all AllBinaryGameCanvasInterface'Class;
    type AllBinaryGameCanvasInterface_Access_Array is array (Natural range <>) of AllBinaryGameCanvasInterface_Access;
    type AllBinaryGameCanvasInterface_Access_Array_Access is access all AllBinaryGameCanvasInterface_Access_Array;
+   type AllBinaryGameCanvasInterface_Access_Array_Access_Array is array (Natural range <>) of AllBinaryGameCanvasInterface_Access_Array_Access;
+   type AllBinaryGameCanvasInterface_Access_Array_Access_Array_Access is access all AllBinaryGameCanvasInterface_Access_Array_Access_Array;
    function getLayerManager (This : in out AllBinaryGameCanvasInterface) return AllBinaryGameLayerManager_Access is abstract;
 
 end org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;

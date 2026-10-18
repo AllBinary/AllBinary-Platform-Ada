@@ -13,8 +13,16 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.thread.ImageThreadPool_Package; use org.allbinary.thread.ImageThreadPool_Package;
+
 package body org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
 
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out ConcurrentImageLoadingProcessor'Class) is
    begin
       null;
@@ -28,7 +36,7 @@ package body org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
    begin
       BaseImageLoadingProcessor_Package.Initialize (This);
       Initialize_Fields (This);
-        This.runnable := ImageCacheRunnable_Package.Create (imageCache);
+        This.runnable := ABRunnable_Access (ImageCacheRunnable_Package.Create (imageCache));
    end Initialize;
 
    function Create (imageCache_Param : access ImageCache_Package.ImageCache'Class) return ConcurrentImageLoadingProcessor_Access is
@@ -48,8 +56,16 @@ package body org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
 end org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
 
 
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.thread.ImageThreadPool_Package; use org.allbinary.thread.ImageThreadPool_Package;
+
 package body org.allbinary.thread.ImageCacheRunnable_Package is
 
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out ImageCacheRunnable'Class) is
    begin
       null;

@@ -22,22 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
 with views.admin.payment.PaymentProcessorComponent_Package; use views.admin.payment.PaymentProcessorComponent_Package;
 with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.PaymentProcessHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package TransformInfoHttpFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_Package;
-   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
    package PaymentProcessorComponent_Package renames Standard.views.admin.payment.PaymentProcessorComponent_Package;
 
    type PaymentProcessHelper is tagged;
    type PaymentProcessHelper_Access is access all PaymentProcessHelper'Class;
    type PaymentProcessHelper_Access_Array is array (Natural range <>) of PaymentProcessHelper_Access;
    type PaymentProcessHelper_Access_Array_Access is access all PaymentProcessHelper_Access_Array;
+   type PaymentProcessHelper_Access_Array_Access_Array is array (Natural range <>) of PaymentProcessHelper_Access_Array_Access;
+   type PaymentProcessHelper_Access_Array_Access_Array_Access is access all PaymentProcessHelper_Access_Array_Access_Array;
 
    type PaymentProcessHelper is new TagHelper with record
       paymentProcessorComponent : PaymentProcessorComponent_Access;

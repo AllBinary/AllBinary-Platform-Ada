@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBaseFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBaseFactory_Package;
-with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
 
@@ -32,6 +31,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorF
    type CustomMapGeneratorFactory_Access is access all CustomMapGeneratorFactory'Class;
    type CustomMapGeneratorFactory_Access_Array is array (Natural range <>) of CustomMapGeneratorFactory_Access;
    type CustomMapGeneratorFactory_Access_Array_Access is access all CustomMapGeneratorFactory_Access_Array;
+   type CustomMapGeneratorFactory_Access_Array_Access_Array is array (Natural range <>) of CustomMapGeneratorFactory_Access_Array_Access;
+   type CustomMapGeneratorFactory_Access_Array_Access_Array_Access is access all CustomMapGeneratorFactory_Access_Array_Access_Array;
 
    type CustomMapGeneratorFactory is new CustomMapGeneratorBaseFactory with null record;
 

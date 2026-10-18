@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.physics.friction.FrictionData_Package; use org.allbinary.game.physics.friction.FrictionData_Package;
+
 package body org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package is
 
+   package FrictionData_Package renames Standard.org.allbinary.game.physics.friction.FrictionData_Package;
    procedure Initialize_Fields (This : in out CharacterFrictionProperties'Class) is
    begin
       null;

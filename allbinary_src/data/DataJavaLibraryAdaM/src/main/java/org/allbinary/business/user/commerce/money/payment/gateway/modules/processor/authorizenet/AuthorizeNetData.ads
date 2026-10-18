@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.modules.proce
    type AuthorizeNetData_Access is access all AuthorizeNetData'Class;
    type AuthorizeNetData_Access_Array is array (Natural range <>) of AuthorizeNetData_Access;
    type AuthorizeNetData_Access_Array_Access is access all AuthorizeNetData_Access_Array;
+   type AuthorizeNetData_Access_Array_Access_Array is array (Natural range <>) of AuthorizeNetData_Access_Array_Access;
+   type AuthorizeNetData_Access_Array_Access_Array_Access is access all AuthorizeNetData_Access_Array_Access_Array;
 
    type AuthorizeNetData is new Java_Object with null record;
    X_LOGIN : Unbounded_String;

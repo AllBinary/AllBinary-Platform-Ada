@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.io.path.PathUtil_Package; use org.allbinary.logic.io.path.PathUtil_Package;
 
 package org.allbinary.logic.io.path.AbFilePath_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type AbFilePath is tagged;
    type AbFilePath_Access is access all AbFilePath'Class;
    type AbFilePath_Access_Array is array (Natural range <>) of AbFilePath_Access;
    type AbFilePath_Access_Array_Access is access all AbFilePath_Access_Array;
+   type AbFilePath_Access_Array_Access_Array is array (Natural range <>) of AbFilePath_Access_Array_Access;
+   type AbFilePath_Access_Array_Access_Array_Access is access all AbFilePath_Access_Array_Access_Array;
 
    type AbFilePath is new AbPath with null record;
 

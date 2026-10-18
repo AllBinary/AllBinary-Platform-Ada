@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package;
+with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidationFactory_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidationFactory_Package;
+
 package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
    procedure Initialize_Fields (This : in out CssPropertiesValidationFactory'Class) is
    begin
       null;
@@ -42,12 +53,12 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesVa
       cssPropertyValidationInterface : ValidationInterface_Access;
       index : Integer;
    begin
-        propertiesVector := BasicArrayListD_Package.Create;
+        propertiesVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         for index in 0 .. (nodeList.getLength) - 1 loop
             node := nodeList.item (index);
             if (node.getNodeName.compareTo (CssPropertyData_Package.getInstance.NAME)) = (0) then
                 cssPropertyValidationInterface := ValidationInterface_Access (CssPropertyValidationFactory_Package.getInstance (node));
-                propertiesVector.add (cssPropertyValidationInterface);
+                propertiesVector.add (Java_Object_Access (cssPropertyValidationInterface));
             end if;
         end loop;
         return propertiesVector;
@@ -57,7 +68,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesVa
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       styles : BasicArrayList_Access;
    begin
-        styles := BasicArrayListD_Package.Create;
+        styles := BasicArrayList_Access (BasicArrayListD_Package.Create);
         return styles;
    end getInstance;
 

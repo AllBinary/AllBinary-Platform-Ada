@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package; use bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
+with bundle.input.automation.robot.InputAutomationRobotChangeListener_Package; use bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
+with org.allbinary.input.automation.InputAutomationJFrame_Package; use org.allbinary.input.automation.InputAutomationJFrame_Package;
+with org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceConsumer_Package; use org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceConsumer_Package;
+with org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package; use org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package;
+with org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package; use org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package;
+with org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package;
+with org.allbinary.osgi.OSGIActivatorUtil_Package; use org.allbinary.osgi.OSGIActivatorUtil_Package;
+
 package body bundle.input.automation.InputAutomationBundleActivator_Package is
 
+   package InputAutomationConfigurationModuleChangeListener_Package renames Standard.bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
+   package InputAutomationRobotChangeListener_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
+   package InputAutomationJFrame_Package renames Standard.org.allbinary.input.automation.InputAutomationJFrame_Package;
+   package InputAutomationModuleServiceConsumer_Package renames Standard.org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceConsumer_Package;
+   package InputAutomationNewBundleRunnable_Package renames Standard.org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package;
+   package InputAutomationServiceFactory_Package renames Standard.org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package;
+   package InputAutomationRobotServiceConsumer_Package renames Standard.org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package;
+   package OSGIActivatorUtil_Package renames Standard.org.allbinary.osgi.OSGIActivatorUtil_Package;
    procedure Initialize_Fields (This : in out InputAutomationBundleActivator'Class) is
    begin
       null;

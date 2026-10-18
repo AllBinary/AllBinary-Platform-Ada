@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapFactory_Package; use org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapFactory_Package;
+
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out RaceTrackGeographicMap'Class) is
    begin
       null;

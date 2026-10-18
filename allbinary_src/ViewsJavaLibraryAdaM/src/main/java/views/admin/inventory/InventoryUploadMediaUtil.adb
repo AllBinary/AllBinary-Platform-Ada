@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package; use org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.FileUtil_Package; use org.allbinary.logic.io.file.FileUtil_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.logic.visual.media.MediaTypeData_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body views.admin.inventory.InventoryUploadMediaUtil_Package is
 
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package UploadMediaSingleton_Package renames Standard.org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package MediaTypeData_Package renames Standard.org.allbinary.logic.visual.media.MediaTypeData_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out InventoryUploadMediaUtil'Class) is
    begin
       null;
@@ -76,7 +95,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
         end if;
         fileUtil := FileUtil_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (URLGLOBALS.getWebappPath);
+        stringBuffer.append (URLGLOBALS_Package.getWebappPath);
         stringBuffer.append (This.storeFrontInterface.getCurrentHostNamePath);
         stringBuffer.append (This.itemInterface.getCategory);
         fullPath := stringBuffer.toString;

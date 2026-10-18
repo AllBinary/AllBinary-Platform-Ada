@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+
 package body org.allbinary.game.configuration.feature.InputFeatureFactory_Package is
 
    procedure Initialize_Fields (This : in out InputFeatureFactory'Class) is

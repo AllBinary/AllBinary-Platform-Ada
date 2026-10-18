@@ -28,6 +28,8 @@ package org.allbinary.logic.java.characters.CharacterSetData_Package is
    type CharacterSetData_Access is access all CharacterSetData'Class;
    type CharacterSetData_Access_Array is array (Natural range <>) of CharacterSetData_Access;
    type CharacterSetData_Access_Array_Access is access all CharacterSetData_Access_Array;
+   type CharacterSetData_Access_Array_Access_Array is array (Natural range <>) of CharacterSetData_Access_Array_Access;
+   type CharacterSetData_Access_Array_Access_Array_Access is access all CharacterSetData_Access_Array_Access_Array;
 
    type CharacterSetData is new Java_Object with record
       US_ASCII : Unbounded_String;

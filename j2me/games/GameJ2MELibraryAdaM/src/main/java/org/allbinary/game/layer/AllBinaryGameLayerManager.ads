@@ -21,35 +21,25 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
-with org.allbinary.game.input.NullPlayerGameInputComposite_Package; use org.allbinary.game.input.NullPlayerGameInputComposite_Package;
 with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
-with org.allbinary.graphics.ItemColorFactory_Package; use org.allbinary.graphics.ItemColorFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
 
    package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
-   package NullPlayerGameInputComposite_Package renames Standard.org.allbinary.game.input.NullPlayerGameInputComposite_Package;
    package PlayerGameInputCompositeInterface_Package renames Standard.org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
-   package ItemColorFactory_Package renames Standard.org.allbinary.graphics.ItemColorFactory_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
-   package LayerProcessor_Package renames Standard.org.allbinary.layer.LayerProcessor_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type AllBinaryGameLayerManager is tagged;
    type AllBinaryGameLayerManager_Access is access all AllBinaryGameLayerManager'Class;
    type AllBinaryGameLayerManager_Access_Array is array (Natural range <>) of AllBinaryGameLayerManager_Access;
    type AllBinaryGameLayerManager_Access_Array_Access is access all AllBinaryGameLayerManager_Access_Array;
+   type AllBinaryGameLayerManager_Access_Array_Access_Array is array (Natural range <>) of AllBinaryGameLayerManager_Access_Array_Access;
+   type AllBinaryGameLayerManager_Access_Array_Access_Array_Access is access all AllBinaryGameLayerManager_Access_Array_Access_Array;
 
    type AllBinaryGameLayerManager is new AllBinaryLayerManager with record
       backgroundBasicColor : BasicColor_Access;

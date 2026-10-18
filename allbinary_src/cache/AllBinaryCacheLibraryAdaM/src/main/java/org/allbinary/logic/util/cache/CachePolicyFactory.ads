@@ -29,6 +29,8 @@ package org.allbinary.logic.util.cache.CachePolicyFactory_Package is
    type CachePolicyFactory_Access is access all CachePolicyFactory'Class;
    type CachePolicyFactory_Access_Array is array (Natural range <>) of CachePolicyFactory_Access;
    type CachePolicyFactory_Access_Array_Access is access all CachePolicyFactory_Access_Array;
+   type CachePolicyFactory_Access_Array_Access_Array is array (Natural range <>) of CachePolicyFactory_Access_Array_Access;
+   type CachePolicyFactory_Access_Array_Access_Array_Access is access all CachePolicyFactory_Access_Array_Access_Array;
 
    type CachePolicyFactory is new Java_Object with record
       NAME : Unbounded_String;

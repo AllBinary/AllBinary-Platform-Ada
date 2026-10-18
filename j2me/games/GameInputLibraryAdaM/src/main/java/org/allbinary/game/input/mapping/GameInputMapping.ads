@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.game.input.mapping.GameInputMapping_Package is
 
    package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type GameInputMapping is tagged;
    type GameInputMapping_Access is access all GameInputMapping'Class;
    type GameInputMapping_Access_Array is array (Natural range <>) of GameInputMapping_Access;
    type GameInputMapping_Access_Array_Access is access all GameInputMapping_Access_Array;
+   type GameInputMapping_Access_Array_Access_Array is array (Natural range <>) of GameInputMapping_Access_Array_Access;
+   type GameInputMapping_Access_Array_Access_Array_Access is access all GameInputMapping_Access_Array_Access_Array;
 
    type GameInputMapping is new Java_Object with record
       name : Unbounded_String;

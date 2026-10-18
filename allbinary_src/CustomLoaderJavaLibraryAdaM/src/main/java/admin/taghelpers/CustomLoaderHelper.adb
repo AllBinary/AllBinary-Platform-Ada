@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+
 package body admin.taghelpers.CustomLoaderHelper_Package is
 
+   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    procedure Initialize_Fields (This : in out CustomLoaderHelper'Class) is
    begin
       null;
@@ -73,7 +78,7 @@ package body admin.taghelpers.CustomLoaderHelper_Package is
         begin
             urlGlobals := AppUrlGlobals_Package.Create;
             urlGlobals.setWebappPath (path);
-            URLGLOBALS.init (urlGlobals);
+            URLGLOBALS_Package.init (urlGlobals);
         exception
             when Java_Occurrence : others =>
                 declare

@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.logic.communication.log.ExceptionFactory_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ExceptionFactory is tagged;
    type ExceptionFactory_Access is access all ExceptionFactory'Class;
    type ExceptionFactory_Access_Array is array (Natural range <>) of ExceptionFactory_Access;
    type ExceptionFactory_Access_Array_Access is access all ExceptionFactory_Access_Array;
+   type ExceptionFactory_Access_Array_Access_Array is array (Natural range <>) of ExceptionFactory_Access_Array_Access;
+   type ExceptionFactory_Access_Array_Access_Array_Access is access all ExceptionFactory_Access_Array_Access_Array;
 
    type ExceptionFactory is new Java_Object with null record;
 

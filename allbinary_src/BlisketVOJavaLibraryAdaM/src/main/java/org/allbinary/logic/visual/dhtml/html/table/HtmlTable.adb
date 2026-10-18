@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+
 package body org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
    procedure Initialize_Fields (This : in out HtmlTable'Class) is
    begin
       null;
@@ -47,25 +56,25 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HtmlTable'Class; before : Unbounded_String; cellpadding_Case : Unbounded_String; cellspacing_Case : Unbounded_String; after : Unbounded_String) is
+   procedure Initialize (This : in out HtmlTable'Class; before : Unbounded_String; cellpadding : Unbounded_String; cellspacing : Unbounded_String; after : Unbounded_String) is
    begin
       HtmlTag_Package.Initialize (This);
       Initialize_Fields (This);
         This.before := before;
-        This.cellpadding_Case := cellpadding_Case;
-        This.cellspacing_Case := cellspacing_Case;
+        This.cellpadding_Case := cellpadding;
+        This.cellspacing_Case := cellspacing;
         This.after := after;
-        This.htmlRowsVector := BasicArrayListD_Package.Create;
+        This.htmlRowsVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         HtmlTable'Class (This).addAttribute (This.BORDER, CommonPhoneStrings_Package.getInstance.ZERO);
         HtmlTable'Class (This).addAttribute (This.CELLPADDING, This.cellpadding_Case);
         HtmlTable'Class (This).addAttribute (This.CELLSPACING, This.cellspacing_Case);
         HtmlTable'Class (This).addAttribute (This.STYLE, This.BORDERCOLLAPSE);
    end Initialize;
 
-   function Create (before : Unbounded_String; cellpadding_Case : Unbounded_String; cellspacing_Case : Unbounded_String; after : Unbounded_String) return HtmlTable_Access is
+   function Create (before : Unbounded_String; cellpadding : Unbounded_String; cellspacing : Unbounded_String; after : Unbounded_String) return HtmlTable_Access is
       This : constant HtmlTable_Access := new HtmlTable;
    begin
-      HtmlTable_Package.Initialize (This.all, before, cellpadding_Case, cellspacing_Case, after);
+      HtmlTable_Package.Initialize (This.all, before, cellpadding, cellspacing, after);
       return This;
    end Create;
 
@@ -75,7 +84,7 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
         if (This.numberOfColumns) < (htmlRow.getNumberOfColumns) then
             This.numberOfColumns := htmlRow.getNumberOfColumns;
         end if;
-        This.htmlRowsVector.add (htmlRow);
+        This.htmlRowsVector.add (Java_Object_Access (htmlRow));
    end addRow;
 
    function toString (This : in out HtmlTable) return Unbounded_String is

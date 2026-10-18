@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 
 package org.allbinary.graphics.displayable.CanvasStrings_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type CanvasStrings is tagged;
    type CanvasStrings_Access is access all CanvasStrings'Class;
    type CanvasStrings_Access_Array is array (Natural range <>) of CanvasStrings_Access;
    type CanvasStrings_Access_Array_Access is access all CanvasStrings_Access_Array;
+   type CanvasStrings_Access_Array_Access_Array is array (Natural range <>) of CanvasStrings_Access_Array_Access;
+   type CanvasStrings_Access_Array_Access_Array_Access is access all CanvasStrings_Access_Array_Access_Array;
 
    type CanvasStrings is new Java_Object with record
       CONSTRUCTOR : Unbounded_String;

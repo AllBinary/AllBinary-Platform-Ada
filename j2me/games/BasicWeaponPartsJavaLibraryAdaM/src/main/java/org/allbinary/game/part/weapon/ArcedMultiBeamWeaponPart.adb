@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game.layer.weapon.WeaponLayer_Package;
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+
 package body org.allbinary.game.part.weapon.ArcedMultiBeamWeaponPart_Package is
 
+   package WeaponLayer_Package renames Standard.org.allbinary.game.layer.weapon.WeaponLayer_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    procedure Initialize_Fields (This : in out ArcedMultiBeamWeaponPart'Class) is
    begin
       null;

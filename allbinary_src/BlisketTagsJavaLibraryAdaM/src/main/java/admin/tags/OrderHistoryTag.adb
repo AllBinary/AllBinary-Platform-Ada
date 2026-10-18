@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.OrderHistoryHelperFactory_Package; use admin.taghelpers.OrderHistoryHelperFactory_Package;
+with admin.taghelpers.OrderHistoryRequestHelperFactory_Package; use admin.taghelpers.OrderHistoryRequestHelperFactory_Package;
+with org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body admin.tags.OrderHistoryTag_Package is
 
+   package OrderHistoryHelperFactory_Package renames Standard.admin.taghelpers.OrderHistoryHelperFactory_Package;
+   package OrderHistoryRequestHelperFactory_Package renames Standard.admin.taghelpers.OrderHistoryRequestHelperFactory_Package;
+   package OrderHistoryData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out OrderHistoryTag'Class) is
    begin
       null;
@@ -88,7 +99,7 @@ package body admin.tags.OrderHistoryTag_Package is
                 if (OrderHistoryTag'Class (This).getCommand) /= (null) then
                     OrderHistoryTag'Class (This).getPropertiesHashMap.put (OrderHistoryData_Package.STATUS, This.status);
                     if (OrderHistoryTag'Class (This).getCommand.compareTo (OrderHistoryData_Package.SETSTATUS)) = (0) then
-                        OrderHistoryTag'Class (This).setOrderStatus;
+                        declare Java_Result renames OrderHistoryTag'Class (This).setOrderStatus; pragma Unreferenced (Java_Result); begin null; end;
                     else
                         return TableTag (This).doStartTag;
                     end if;

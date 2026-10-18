@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with javax.microedition.lcdui.OpenGLESPostLoadPlatformImage_Package; use javax.microedition.lcdui.OpenGLESPostLoadPlatformImage_Package;
+with javax.microedition.lcdui.PostLoadImageProcessor_Package; use javax.microedition.lcdui.PostLoadImageProcessor_Package;
+with org.allbinary.graphics.GraphicsStrings_Package; use org.allbinary.graphics.GraphicsStrings_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.image.opengles.OpenGLImageCacheFactory_Package; use org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
+
 package body org.allbinary.image.opengles.OpenGLESImage_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package OpenGLESPostLoadPlatformImage_Package renames Standard.javax.microedition.lcdui.OpenGLESPostLoadPlatformImage_Package;
+   package PostLoadImageProcessor_Package renames Standard.javax.microedition.lcdui.PostLoadImageProcessor_Package;
+   package GraphicsStrings_Package renames Standard.org.allbinary.graphics.GraphicsStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out OpenGLESImage'Class) is
    begin
       null;
@@ -72,17 +86,17 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
         if not (OpenGLESImage_Package.texture2dList.contains (OpenGLESImage_Access'(This'Unchecked_Access))) then
             OpenGLESImage_Package.texture2dList.add (OpenGLESImage_Access'(This'Unchecked_Access));
             textures := new Integer_Array'(0 .. (1) - 1 => 0);
-            gl.glEnable (GL10.GL_TEXTURE_2D);
+            gl.glEnable (GL10_Package.GL_TEXTURE_2D);
             if (This.openGLESImageProperties.textureID) /= (-(1)) then
                 textures (0) := This.openGLESImageProperties.textureID;
                 gl.glDeleteTextures (1, textures, 0);
             end if;
             gl.glGenTextures (1, textures, 0);
             This.openGLESImageProperties.textureID := textures (0);
-            gl.glBindTexture (GL10.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
-            gl.glTexParameterf (GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MIN_FILTER, GL10.GL_NEAREST);
-            gl.glTexParameterf (GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_S, GL10.GL_CLAMP_TO_EDGE);
-            gl.glTexParameterf (GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_T, GL10.GL_CLAMP_TO_EDGE);
+            gl.glBindTexture (GL10_Package.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
+            gl.glTexParameterf (GL10_Package.GL_TEXTURE_2D, GL10_Package.GL_TEXTURE_MIN_FILTER, GL10_Package.GL_NEAREST);
+            gl.glTexParameterf (GL10_Package.GL_TEXTURE_2D, GL10_Package.GL_TEXTURE_WRAP_S, GL10_Package.GL_CLAMP_TO_EDGE);
+            gl.glTexParameterf (GL10_Package.GL_TEXTURE_2D, GL10_Package.GL_TEXTURE_WRAP_T, GL10_Package.GL_CLAMP_TO_EDGE);
             return True;
         end if;
         return False;
@@ -122,7 +136,7 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
 begin
    null;
    NULL_OPENGL_IMAGE := OpenGLESImage_Package.Create (NullImage_Package.NULL_IMAGE, PlatformBitmapBaseFactory_Package.NULL_PLATFORM_BITMAP_BASE_FACTORY, PlatformTextureBaseFactory_Package.NULL_PLATFORM_TEXTURE_BASE_FACTORY);
-   texture2dList := BasicArrayListD_Package.Create;
+   texture2dList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    TYPE_Id := 4;
 
 end org.allbinary.image.opengles.OpenGLESImage_Package;

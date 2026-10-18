@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.interfaces.MediaInterface
    type MediaInterface_Access is access all MediaInterface'Class;
    type MediaInterface_Access_Array is array (Natural range <>) of MediaInterface_Access;
    type MediaInterface_Access_Array_Access is access all MediaInterface_Access_Array;
+   type MediaInterface_Access_Array_Access_Array is array (Natural range <>) of MediaInterface_Access_Array_Access;
+   type MediaInterface_Access_Array_Access_Array_Access is access all MediaInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package;
 

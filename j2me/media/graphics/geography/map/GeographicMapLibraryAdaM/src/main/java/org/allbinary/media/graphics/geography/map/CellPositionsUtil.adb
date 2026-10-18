@@ -13,12 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+
 package body org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package is
 
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
    procedure Initialize_Fields (This : in out CellPositionsUtil'Class) is
    begin
       null;
-      This.reusableSingleThreadedSurroundingList := BasicArrayListS_Package.Create (8);
+      This.reusableSingleThreadedSurroundingList := BasicArrayList_Access (BasicArrayListS_Package.Create (8));
       This.surroundArray := new Integer_Array_Access_Array'(new Integer_Array'(-(1), -(1)), new Integer_Array'(0, -(1)), new Integer_Array'(1, -(1)), new Integer_Array'(-(1), 1), new Integer_Array'(0, 1), new Integer_Array'(1, 1), new Integer_Array'(1, 0), new Integer_Array'(-(1), 0));
    end Initialize_Fields;
 
@@ -62,7 +68,7 @@ package body org.allbinary.media.graphics.geography.map.CellPositionsUtil_Packag
         for rowIndex in 0 .. (rows) - 1 loop
             for columnIndex in 0 .. (columns) - 1 loop
                 geographicMapCellPosition := geographicMapCellPositionFactory.getAt ((topRightGeographicMapCellPosition.getColumn) + (columnIndex), (topRightGeographicMapCellPosition.getRow) + (rowIndex));
-                reusableList.add (geographicMapCellPosition);
+                reusableList.add (Java_Object_Access (geographicMapCellPosition));
             end loop;
         end loop;
         return reusableList;
@@ -85,8 +91,8 @@ package body org.allbinary.media.graphics.geography.map.CellPositionsUtil_Packag
             surroundingGeographicMapCellPositionList := CellPositionsUtil'Class (This).getAllSurroundingAt (geographicMapInterface, layerGeographicMapCellPosition, This.reusableSingleThreadedSurroundingList);
             for index2 in reverse 0 .. (surroundingGeographicMapCellPositionList.size) - (1) loop
                 geographicMapCellPosition := GeographicMapCellPosition_Access (surroundingGeographicMapCellPositionList.get (index2));
-                if (not (reusableList.contains (geographicMapCellPosition))) and then (not (occupyList.contains (geographicMapCellPosition))) then
-                    reusableList.add (geographicMapCellPosition);
+                if (not (reusableList.contains (Java_Object_Access (geographicMapCellPosition)))) and then (not (occupyList.contains (Java_Object_Access (geographicMapCellPosition)))) then
+                    reusableList.add (Java_Object_Access (geographicMapCellPosition));
                 end if;
             end loop;
         end loop;
@@ -115,7 +121,7 @@ package body org.allbinary.media.graphics.geography.map.CellPositionsUtil_Packag
             row := (layerGeographicMapCellPosition.getRow) + (This.surroundArray (index) (1));
             if tiledLayer.isOnTileLayer (column, row) then
                 geographicMapCellPosition := geographicMapCellPositionFactory.getAt (column, row);
-                reusableSurroundingList.add (geographicMapCellPosition);
+                reusableSurroundingList.add (Java_Object_Access (geographicMapCellPosition));
             end if;
         end loop;
         return reusableSurroundingList;

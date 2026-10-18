@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+
 package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
    procedure Initialize_Fields (This : in out BasicEventHandler'Class) is
    begin
       null;
@@ -28,7 +41,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
    procedure Initialize (This : in out BasicEventHandler'Class) is
    begin
       Initialize_Fields (This);
-        This.eventListenerInterfaceList := BasicArrayListD_Package.Create;
+        This.eventListenerInterfaceList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create return BasicEventHandler_Access is
@@ -40,7 +53,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
 
    procedure removeAllListeners (This : in out BasicEventHandler) is
    begin
-        This.eventListenerInterfaceList := BasicArrayListD_Package.Create;
+        This.eventListenerInterfaceList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end removeAllListeners;
 
    procedure addListeners (This : in out BasicEventHandler; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
@@ -74,29 +87,29 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
    procedure addListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        if not (This.eventListenerInterfaceList.contains (eventListenerInterface)) then
-            This.eventListenerInterfaceList.add (eventListenerInterface);
+        if not (This.eventListenerInterfaceList.contains (Java_Object_Access (eventListenerInterface))) then
+            This.eventListenerInterfaceList.add (Java_Object_Access (eventListenerInterface));
         end if;
    end addListenerSingleThreaded;
 
    procedure addListenerInterface (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        if not (This.eventListenerInterfaceList.contains (eventListenerInterface)) then
-            This.eventListenerInterfaceList.add (eventListenerInterface);
+        if not (This.eventListenerInterfaceList.contains (Java_Object_Access (eventListenerInterface))) then
+            This.eventListenerInterfaceList.add (Java_Object_Access (eventListenerInterface));
         end if;
    end addListenerInterface;
 
    procedure removeListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.eventListenerInterfaceList.remove (eventListenerInterface);
+        This.eventListenerInterfaceList.remove (Java_Object_Access (eventListenerInterface));
    end removeListenerSingleThreaded;
 
    procedure removeListener (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.eventListenerInterfaceList.remove (eventListenerInterface);
+        This.eventListenerInterfaceList.remove (Java_Object_Access (eventListenerInterface));
    end removeListener;
 
    --  throws Exception

@@ -32,8 +32,10 @@ package org.allbinary.business.user.role.UserRole_Package is
    type UserRole_Access is access all UserRole'Class;
    type UserRole_Access_Array is array (Natural range <>) of UserRole_Access;
    type UserRole_Access_Array_Access is access all UserRole_Access_Array;
+   type UserRole_Access_Array_Access_Array is array (Natural range <>) of UserRole_Access_Array_Access;
+   type UserRole_Access_Array_Access_Array_Access is access all UserRole_Access_Array_Access_Array;
 
-   type UserRole is new Serializable with record
+   type UserRole is new Java_Object and Serializable with record
       basicUserRole : BasicUserRole_Access;
       userFactoryInterface : UserFactoryInterface_Access;
    end record;

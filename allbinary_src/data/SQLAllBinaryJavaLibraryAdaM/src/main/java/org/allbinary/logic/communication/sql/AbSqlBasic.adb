@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.sql.ClassLoader_Package; use org.allbinary.logic.communication.sql.ClassLoader_Package;
+
 package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
 
    procedure Initialize_Fields (This : in out AbSqlBasic'Class) is
@@ -182,7 +184,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
 
    function getDatabaseConnectionInfoInterface (This : in out AbSqlBasic) return DatabaseConnectionInfoInterface_Access is
    begin
-        return This.databaseConnectionInfoInterface;
+        return DatabaseConnectionInfoInterface_Access (This.databaseConnectionInfoInterface);
    end getDatabaseConnectionInfoInterface;
 
    procedure setDatabaseConnectionInfoInterface (This : in out AbSqlBasic; databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) is

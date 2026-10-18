@@ -30,6 +30,8 @@ package org.allbinary.business.time.modified.TimeLastModified_Package is
    type TimeLastModified_Access is access all TimeLastModified'Class;
    type TimeLastModified_Access_Array is array (Natural range <>) of TimeLastModified_Access;
    type TimeLastModified_Access_Array_Access is access all TimeLastModified_Access_Array;
+   type TimeLastModified_Access_Array_Access_Array is array (Natural range <>) of TimeLastModified_Access_Array_Access;
+   type TimeLastModified_Access_Array_Access_Array_Access is access all TimeLastModified_Access_Array_Access_Array;
 
    type TimeLastModified is new Time with null record;
 

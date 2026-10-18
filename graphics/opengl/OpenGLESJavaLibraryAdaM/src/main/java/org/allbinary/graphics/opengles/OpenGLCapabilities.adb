@@ -13,8 +13,36 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.khronos.opengles.GL11_Package; use javax.microedition.khronos.opengles.GL11_Package;
+with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
+with org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package; use org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package;
+with org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package; use org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package;
+with org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package; use org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+
 package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
+   package GL11_Package renames Standard.javax.microedition.khronos.opengles.GL11_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package OpenGLESGL10ImageFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package;
+   package OpenGLESGL11VBOImageFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package;
+   package OpenGLImageSpecificFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package Tokenizer_Package renames Standard.org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
    procedure Initialize_Fields (This : in out OpenGLCapabilities'Class) is
    begin
       null;
@@ -98,19 +126,19 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
             openGLFeatureFactory := OpenGLFeatureFactory_Package.getInstance;
             openGLImageSpecificFactory := OpenGLImageSpecificFactory_Package.getInstance;
             stringBuffer := StringMaker_Package.Create;
-            This.glVersionString := gl.glGetString (GL10.GL_VERSION);
+            This.glVersionString := gl.glGetString (GL10_Package.GL_VERSION);
             GL_SHADING_LANGUAGE_VERSION := 16#8b8c#;
             This.glShaderVersionString := gl.glGetString (GL_SHADING_LANGUAGE_VERSION);
             if (This.glShaderVersionString) = (Null_Unbounded_String) then
                 This.glShaderVersionString := This.stringUtil.EMPTY_STRING;
             end if;
             begin
-                if ((This.glShaderVersionString) /= (Null_Unbounded_String)) and then (((Index (This.glShaderVersionString, Java_Image ('.')) - 1)) >= (0)) then
-                    startIndex := This.glShaderVersionString.lastIndexOf (' ');
+                if ((This.glShaderVersionString) /= (Null_Unbounded_String)) and then ((Java_Index_Of (This.glShaderVersionString, Java_Image ('.'))) >= (0)) then
+                    startIndex := Java_Last_Index_Of (This.glShaderVersionString, Java_Image (' '));
                     if (startIndex) >= (0) then
                         This.glShaderVersionString := Unbounded_Slice (This.glShaderVersionString, ((startIndex) + (1)) + 1, Length (This.glShaderVersionString));
                     end if;
-                    This.shaderVersion := Integer'Value (To_String (This.glShaderVersionString.replace (CommonSeps_Package.getInstance.PERIOD, StringUtil_Package.getInstance.EMPTY_STRING)));
+                    This.shaderVersion := Integer'Value (To_String (Java_Replace (This.glShaderVersionString, Java_Image (CommonSeps_Package.getInstance.PERIOD), Java_Image (StringUtil_Package.getInstance.EMPTY_STRING))));
                 end if;
             exception
                 when Java_Occurrence : others =>
@@ -121,15 +149,15 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                 This.logUtil.put (commonStrings.EXCEPTION_Id, OpenGLCapabilities_Access'(This'Unchecked_Access), METHOD_NAME, e);
                     end;
             end;
-            This.glRenderer := gl.glGetString (GL10.GL_RENDERER);
-            This.glVendor := gl.glGetString (GL10.GL_VENDOR);
-            This.glExtensions := gl.glGetString (GL10.GL_EXTENSIONS);
-            if ((Index (This.glExtensions, Java_Image (This.GL_EXT_GPU_SHADER_100)) - 1)) >= (0) then
+            This.glRenderer := gl.glGetString (GL10_Package.GL_RENDERER);
+            This.glVendor := gl.glGetString (GL10_Package.GL_VENDOR);
+            This.glExtensions := gl.glGetString (GL10_Package.GL_EXTENSIONS);
+            if (Java_Index_Of (This.glExtensions, Java_Image (This.GL_EXT_GPU_SHADER_100))) >= (0) then
                 This.glExtensionGPUShader100 := True;
             else
                 This.glExtensionGPUShader100 := False;
             end if;
-            if ((Index (This.glExtensions, Java_Image (This.GL_EXT_GPU_SHADER4)) - 1)) >= (0) then
+            if (Java_Index_Of (This.glExtensions, Java_Image (This.GL_EXT_GPU_SHADER4))) >= (0) then
                 This.glExtensionGPUShader4 := True;
             else
                 This.glExtensionGPUShader4 := False;
@@ -137,7 +165,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
             if (This.glRenderer) = (Null_Unbounded_String) then
                 This.glRenderer := This.stringUtil.EMPTY_STRING;
             end if;
-            if ((Index (Translate (This.glRenderer, Ada.Strings.Maps.Constants.Lower_Case_Map), Java_Image (To_Unbounded_String ("pixelflinger"))) - 1)) >= (0) then
+            if (Java_Index_Of (Translate (This.glRenderer, Ada.Strings.Maps.Constants.Lower_Case_Map), Java_Image (To_Unbounded_String ("pixelflinger")))) >= (0) then
                 This.acceleratedString := To_Unbounded_String ("Probably Not for ") & This.glRenderer;
                 This.possiblyAccelerated := False;
             else
@@ -148,9 +176,9 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
             if (This.glVersionString) = (Null_Unbounded_String) then
                 This.glVersionString := This.stringUtil.EMPTY_STRING;
                 This.glVersion := This.VERSION_UNK;
-            elsif ((Index (This.glVersionString, Java_Image (To_Unbounded_String (" 1.0"))) - 1)) >= (0) then
+            elsif (Java_Index_Of (This.glVersionString, Java_Image (To_Unbounded_String (" 1.0")))) >= (0) then
                 This.glVersion := This.VERSION_1_0;
-            elsif ((Index (This.glVersionString, Java_Image (To_Unbounded_String (" 1.1"))) - 1)) >= (0) then
+            elsif (Java_Index_Of (This.glVersionString, Java_Image (To_Unbounded_String (" 1.1")))) >= (0) then
                 This.glVersion := This.VERSION_1_1;
             else
                 This.glVersion := This.VERSION_UNK;
@@ -194,7 +222,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                 openGLImageSpecificFactory.setImageFactory (OpenGLESGL10ImageFactory_Package.Create);
             end if;
             maxTextureSizeArray := new Integer_Array'(0 .. (1) - 1 => 0);
-            gl.glGetIntegerv (GL10.GL_MAX_TEXTURE_SIZE, maxTextureSizeArray, 0);
+            gl.glGetIntegerv (GL10_Package.GL_MAX_TEXTURE_SIZE, maxTextureSizeArray, 0);
             This.maxTextureSize := maxTextureSizeArray (0);
             This.initialized := True;
         exception
@@ -212,7 +240,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
       gameFeature : constant OpenGLFeature_Access := OpenGLFeature_Access (gameFeature_Param);
       index : Integer;
    begin
-        index := (Index (This.glExtensions, Java_Image (gameFeature.getName)) - 1);
+        index := Java_Index_Of (This.glExtensions, Java_Image (gameFeature.getName));
         if (index) >= (0) then
             return True;
         else

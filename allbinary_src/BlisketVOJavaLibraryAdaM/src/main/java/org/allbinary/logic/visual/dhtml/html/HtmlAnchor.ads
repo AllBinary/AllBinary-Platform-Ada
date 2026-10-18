@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.html.HtmlAnchor_Package is
    type HtmlAnchor_Access is access all HtmlAnchor'Class;
    type HtmlAnchor_Access_Array is array (Natural range <>) of HtmlAnchor_Access;
    type HtmlAnchor_Access_Array_Access is access all HtmlAnchor_Access_Array;
+   type HtmlAnchor_Access_Array_Access_Array is array (Natural range <>) of HtmlAnchor_Access_Array_Access;
+   type HtmlAnchor_Access_Array_Access_Array_Access is access all HtmlAnchor_Access_Array_Access_Array;
 
    type HtmlAnchor is new Java_Object with null record;
 

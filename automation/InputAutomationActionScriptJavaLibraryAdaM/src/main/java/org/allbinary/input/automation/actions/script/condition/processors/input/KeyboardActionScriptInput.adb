@@ -13,8 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.KeySingletonFactory_Package;
+with org.allbinary.input.KeyUtil_Package; use org.allbinary.input.KeyUtil_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputData_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputData_Package;
+with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardInputAutomationProcessor_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardInputAutomationProcessor_Package;
+
 package body org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package KeySingletonFactory_Package renames Standard.org.allbinary.input.KeySingletonFactory_Package;
+   package KeyUtil_Package renames Standard.org.allbinary.input.KeyUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out KeyboardActionScriptInput'Class) is
    begin
       null;
@@ -44,7 +69,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         actionNode := DomSearchHelper_Package.getNode (KeyboardActionScriptInputData_Package.NAME, node.getChildNodes);
         if (actionNode) /= (null) then
             nodeList := actionNode.getChildNodes;
-            vector := BasicArrayListD_Package.Create;
+            vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             for index in 0 .. (nodeList.getLength) - 1 loop
                 childNode := nodeList.item (index);
                 if childNode.getNodeName.startsWith (KeyboardActionScriptInputData_Package.KEY) then
@@ -200,13 +225,13 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       integerArray : Integer_Array_Access;
    begin
         This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & text, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("integerArrayValue"));
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         index := 0;
         while (index) < (Length (text)) loop
             aChar := Element (text, (index) + 1);
             if (aChar) = ('&') then
                 if (Element (text, ((index) + (1)) + 1)) = ('#') then
-                    endIndex := text.indexOf (';', (index) + (1));
+                    endIndex := Java_Index_Of (text, Java_Image (';'), (index) + (1));
                     if (endIndex) /= (-(1)) then
                         nextCharString := Unbounded_Slice (text, ((index) + (2)) + 1, endIndex);
                         This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.NEXT) & To_Unbounded_String (" Char String: ") & nextCharString, KeyboardActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("integerArrayValue"));

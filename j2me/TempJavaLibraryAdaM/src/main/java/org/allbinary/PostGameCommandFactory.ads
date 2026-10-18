@@ -30,6 +30,8 @@ package org.allbinary.PostGameCommandFactory_Package is
    type PostGameCommandFactory_Access is access all PostGameCommandFactory'Class;
    type PostGameCommandFactory_Access_Array is array (Natural range <>) of PostGameCommandFactory_Access;
    type PostGameCommandFactory_Access_Array_Access is access all PostGameCommandFactory_Access_Array;
+   type PostGameCommandFactory_Access_Array_Access_Array is array (Natural range <>) of PostGameCommandFactory_Access_Array_Access;
+   type PostGameCommandFactory_Access_Array_Access_Array_Access is access all PostGameCommandFactory_Access_Array_Access_Array;
 
    type PostGameCommandFactory is new Java_Object with null record;
    instance : PostGameCommandFactory_Access;

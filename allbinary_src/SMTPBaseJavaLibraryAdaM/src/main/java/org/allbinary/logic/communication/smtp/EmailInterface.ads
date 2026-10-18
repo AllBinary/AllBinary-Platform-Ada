@@ -33,6 +33,8 @@ package org.allbinary.logic.communication.smtp.EmailInterface_Package is
    type EmailInterface_Access is access all EmailInterface'Class;
    type EmailInterface_Access_Array is array (Natural range <>) of EmailInterface_Access;
    type EmailInterface_Access_Array_Access is access all EmailInterface_Access_Array;
+   type EmailInterface_Access_Array_Access_Array is array (Natural range <>) of EmailInterface_Access_Array_Access;
+   type EmailInterface_Access_Array_Access_Array_Access is access all EmailInterface_Access_Array_Access_Array;
    function getDebugInfo (This : in out EmailInterface) return Unbounded_String is abstract;
    function getMimeMessage (This : in out EmailInterface) return MimeMessage_Access is abstract;
    function log (This : in out EmailInterface) return Unbounded_String is abstract;

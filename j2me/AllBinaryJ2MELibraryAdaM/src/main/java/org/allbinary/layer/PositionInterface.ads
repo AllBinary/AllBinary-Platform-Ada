@@ -28,6 +28,8 @@ package org.allbinary.layer.PositionInterface_Package is
    type PositionInterface_Access is access all PositionInterface'Class;
    type PositionInterface_Access_Array is array (Natural range <>) of PositionInterface_Access;
    type PositionInterface_Access_Array_Access is access all PositionInterface_Access_Array;
+   type PositionInterface_Access_Array_Access_Array is array (Natural range <>) of PositionInterface_Access_Array_Access;
+   type PositionInterface_Access_Array_Access_Array_Access is access all PositionInterface_Access_Array_Access_Array;
    procedure setPosition (This : in out PositionInterface; x : Integer; y : Integer; z : Integer) is abstract;
 
 end org.allbinary.layer.PositionInterface_Package;

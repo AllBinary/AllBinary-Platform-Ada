@@ -20,44 +20,30 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationView_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationView_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationMapping_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationMapping_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationData_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
 
 package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationView_Package is
 
-   package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
-   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type UserEmailEventsConfigurationView is tagged;
    type UserEmailEventsConfigurationView_Access is access all UserEmailEventsConfigurationView'Class;
    type UserEmailEventsConfigurationView_Access_Array is array (Natural range <>) of UserEmailEventsConfigurationView_Access;
    type UserEmailEventsConfigurationView_Access_Array_Access is access all UserEmailEventsConfigurationView_Access_Array;
+   type UserEmailEventsConfigurationView_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventsConfigurationView_Access_Array_Access;
+   type UserEmailEventsConfigurationView_Access_Array_Access_Array_Access is access all UserEmailEventsConfigurationView_Access_Array_Access_Array;
 
-   type UserEmailEventsConfigurationView is new DomNodeInterface with record
+   type UserEmailEventsConfigurationView is new Java_Object and DomNodeInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access;

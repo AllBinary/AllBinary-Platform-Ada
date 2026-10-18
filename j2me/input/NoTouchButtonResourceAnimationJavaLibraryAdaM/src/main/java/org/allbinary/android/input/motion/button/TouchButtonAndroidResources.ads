@@ -30,6 +30,8 @@ package org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Pa
    type TouchButtonAndroidResources_Access is access all TouchButtonAndroidResources'Class;
    type TouchButtonAndroidResources_Access_Array is array (Natural range <>) of TouchButtonAndroidResources_Access;
    type TouchButtonAndroidResources_Access_Array_Access is access all TouchButtonAndroidResources_Access_Array;
+   type TouchButtonAndroidResources_Access_Array_Access_Array is array (Natural range <>) of TouchButtonAndroidResources_Access_Array_Access;
+   type TouchButtonAndroidResources_Access_Array_Access_Array_Access is access all TouchButtonAndroidResources_Access_Array_Access_Array;
 
    type TouchButtonAndroidResources is new Init with null record;
 

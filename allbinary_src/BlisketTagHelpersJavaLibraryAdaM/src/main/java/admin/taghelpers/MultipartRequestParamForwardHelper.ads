@@ -20,38 +20,25 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.logic.communication.http.request.RequestMapInterface_Package; use org.allbinary.logic.communication.http.request.RequestMapInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with tags.HelperTag_Package; use tags.HelperTag_Package;
-with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghelpers.InventoryItemViewParentTagHelper_Package;
 
 package admin.taghelpers.MultipartRequestParamForwardHelper_Package is
 
-   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    package RequestMapInterface_Package renames Standard.org.allbinary.logic.communication.http.request.RequestMapInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package HelperTag_Package renames Standard.tags.HelperTag_Package;
 
    type MultipartRequestParamForwardHelper is tagged;
    type MultipartRequestParamForwardHelper_Access is access all MultipartRequestParamForwardHelper'Class;
    type MultipartRequestParamForwardHelper_Access_Array is array (Natural range <>) of MultipartRequestParamForwardHelper_Access;
    type MultipartRequestParamForwardHelper_Access_Array_Access is access all MultipartRequestParamForwardHelper_Access_Array;
+   type MultipartRequestParamForwardHelper_Access_Array_Access_Array is array (Natural range <>) of MultipartRequestParamForwardHelper_Access_Array_Access;
+   type MultipartRequestParamForwardHelper_Access_Array_Access_Array_Access is access all MultipartRequestParamForwardHelper_Access_Array_Access_Array;
 
    type MultipartRequestParamForwardHelper is new Java_Object with record
       logUtil : LogUtil_Access;

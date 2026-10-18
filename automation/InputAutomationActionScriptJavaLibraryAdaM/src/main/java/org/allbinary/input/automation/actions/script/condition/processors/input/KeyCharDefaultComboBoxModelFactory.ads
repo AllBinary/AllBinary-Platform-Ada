@@ -20,20 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with abbot.tester.KeyStrokeMap_Package; use abbot.tester.KeyStrokeMap_Package;
-with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.KeySingletonFactory_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.input.KeyStroke_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyStroke_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.KeyCharDefaultComboBoxModelFactory_Package is
 
-   package KeyStrokeMap_Package renames Standard.abbot.tester.KeyStrokeMap_Package;
-   package KeySingletonFactory_Package renames Standard.org.allbinary.input.KeySingletonFactory_Package;
 
    type KeyCharDefaultComboBoxModelFactory is tagged;
    type KeyCharDefaultComboBoxModelFactory_Access is access all KeyCharDefaultComboBoxModelFactory'Class;
    type KeyCharDefaultComboBoxModelFactory_Access_Array is array (Natural range <>) of KeyCharDefaultComboBoxModelFactory_Access;
    type KeyCharDefaultComboBoxModelFactory_Access_Array_Access is access all KeyCharDefaultComboBoxModelFactory_Access_Array;
+   type KeyCharDefaultComboBoxModelFactory_Access_Array_Access_Array is array (Natural range <>) of KeyCharDefaultComboBoxModelFactory_Access_Array_Access;
+   type KeyCharDefaultComboBoxModelFactory_Access_Array_Access_Array_Access is access all KeyCharDefaultComboBoxModelFactory_Access_Array_Access_Array;
 
    type KeyCharDefaultComboBoxModelFactory is new Java_Object with null record;
 

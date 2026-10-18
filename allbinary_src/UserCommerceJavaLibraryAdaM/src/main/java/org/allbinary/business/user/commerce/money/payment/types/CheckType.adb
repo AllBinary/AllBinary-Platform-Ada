@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.commerce.money.payment.types.CheckType_Package is
 
    procedure Initialize_Fields (This : in out CheckType'Class) is

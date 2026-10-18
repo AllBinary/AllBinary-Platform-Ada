@@ -21,37 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.game.Sprite_Package; use javax.microedition.lcdui.game.Sprite_Package;
-with javax.microedition.media.Player_Package; use javax.microedition.media.Player_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animation.IndexedAnimation_Package;
-with org.allbinary.animation.caption.CaptionIndexedAnimation_Package; use org.allbinary.animation.caption.CaptionIndexedAnimation_Package;
-with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.animation.image.ImageAnimation_Package;
-with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
 with org.allbinary.image.AnimationFactoryImageScaleUtil_Package; use org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
 with org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package; use org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
-with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package; use org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package;
 
 package org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package Sprite_Package renames Standard.javax.microedition.lcdui.game.Sprite_Package;
-   package Player_Package renames Standard.javax.microedition.media.Player_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
-   package CaptionIndexedAnimation_Package renames Standard.org.allbinary.animation.caption.CaptionIndexedAnimation_Package;
-   package ImageAnimation_Package renames Standard.org.allbinary.animation.image.ImageAnimation_Package;
-   package BasicColorUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorUtil_Package;
    package AnimationFactoryImageScaleUtil_Package renames Standard.org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
    package AnimationFactorySpriteScaleUtil_Package renames Standard.org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
    package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
 
@@ -59,8 +44,10 @@ package org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory
    type ImageCaptionIndexedAnimationFactory_Access is access all ImageCaptionIndexedAnimationFactory'Class;
    type ImageCaptionIndexedAnimationFactory_Access_Array is array (Natural range <>) of ImageCaptionIndexedAnimationFactory_Access;
    type ImageCaptionIndexedAnimationFactory_Access_Array_Access is access all ImageCaptionIndexedAnimationFactory_Access_Array;
+   type ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of ImageCaptionIndexedAnimationFactory_Access_Array_Access;
+   type ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array_Access is access all ImageCaptionIndexedAnimationFactory_Access_Array_Access_Array;
 
-   type ImageCaptionIndexedAnimationFactory is new AnimationInterfaceFactoryInterface with record
+   type ImageCaptionIndexedAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       animationFactoryImageScaleUtil : AnimationFactoryImageScaleUtil_Access;
       animationFactorySpriteScaleUtil : AnimationFactorySpriteScaleUtil_Access;
       captionImage : Image_Access;

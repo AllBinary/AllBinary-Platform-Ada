@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.android.view.AllBinaryRenderer_Package is
 
    procedure Initialize_Fields (This : in out AllBinaryRenderer'Class) is

@@ -29,6 +29,8 @@ package org.allbinary.game.state.GameStateCompositeInterface_Package is
    type GameStateCompositeInterface_Access is access all GameStateCompositeInterface'Class;
    type GameStateCompositeInterface_Access_Array is array (Natural range <>) of GameStateCompositeInterface_Access;
    type GameStateCompositeInterface_Access_Array_Access is access all GameStateCompositeInterface_Access_Array;
+   type GameStateCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of GameStateCompositeInterface_Access_Array_Access;
+   type GameStateCompositeInterface_Access_Array_Access_Array_Access is access all GameStateCompositeInterface_Access_Array_Access_Array;
    procedure setGameState (This : in out GameStateCompositeInterface; gameState_Param : access GameState_Package.GameState'Class) is abstract;
    function getGameState (This : in out GameStateCompositeInterface) return GameState_Access is abstract;
 

@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.io.CloudStreamUtil_Package; use org.allbinary.logic.io.CloudStreamUtil_Package;
+with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.servlet.BlisketServletUtil_Package; use org.allbinary.servlet.BlisketServletUtil_Package;
+
 package body org.allbinary.servlet.ImageServlet_Package is
 
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package CloudStreamUtil_Package renames Standard.org.allbinary.logic.io.CloudStreamUtil_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    procedure Initialize_Fields (This : in out ImageServlet'Class) is
    begin
       null;
@@ -50,7 +64,7 @@ package body org.allbinary.servlet.ImageServlet_Package is
         begin
             BlisketServletUtil_Package.getInstance.init (request);
             requestURI := request.getRequestURI;
-            file := AbFile_Package.createAbFile (Java_Image (URLGLOBALS.getWebappPath) & requestURI);
+            file := AbFile_Package.createAbFile (Java_Image (URLGLOBALS_Package.getWebappPath) & requestURI);
             inputStream := CloudStreamUtil_Package.getInstance.getFileLocal (file);
             outputStream := ByteArrayOutputStream_Package.Create (8000);
             byteArray := StreamUtil_Package.getInstance.getByteArray (inputStream, outputStream, new Short_Short_Integer_Array'(0 .. (16384) - 1 => 0));

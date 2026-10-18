@@ -28,6 +28,8 @@ package org.allbinary.game.input.KeyInterface_Package is
    type KeyInterface_Access is access all KeyInterface'Class;
    type KeyInterface_Access_Array is array (Natural range <>) of KeyInterface_Access;
    type KeyInterface_Access_Array_Access is access all KeyInterface_Access_Array;
+   type KeyInterface_Access_Array_Access_Array is array (Natural range <>) of KeyInterface_Access_Array_Access;
+   type KeyInterface_Access_Array_Access_Array_Access is access all KeyInterface_Access_Array_Access_Array;
    procedure keyPressed (This : in out KeyInterface; keyCode : Integer) is abstract;
    procedure keyReleased (This : in out KeyInterface; keyCode : Integer) is abstract;
    procedure keyPressedByDevice (This : in out KeyInterface; keyCode : Integer; deviceId : Integer) is abstract;

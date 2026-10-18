@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.input.RTSPlayerRightGameInputProcessor_Package is
 
    procedure Initialize_Fields (This : in out RTSPlayerRightGameInputProcessor'Class) is

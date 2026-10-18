@@ -20,14 +20,10 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
@@ -36,13 +32,9 @@ with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; 
 
 package org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package is
 
-   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -51,8 +43,10 @@ package org.allbinary.business.user.commerce.inventory.item.BasicItemView_Packag
    type BasicItemView_Access is access all BasicItemView'Class;
    type BasicItemView_Access_Array is array (Natural range <>) of BasicItemView_Access;
    type BasicItemView_Access_Array_Access is access all BasicItemView_Access_Array;
+   type BasicItemView_Access_Array_Access_Array is array (Natural range <>) of BasicItemView_Access_Array_Access;
+   type BasicItemView_Access_Array_Access_Array_Access is access all BasicItemView_Access_Array_Access_Array;
 
-   type BasicItemView is new DomNodeInterface with record
+   type BasicItemView is new Java_Object and DomNodeInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       basicItemData : BasicItemData_Access;

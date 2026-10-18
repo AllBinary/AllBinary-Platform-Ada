@@ -8,7 +8,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.osgi.framework.Comparable_Package; use org.osgi.framework.Comparable_Package;
+with java.lang.Comparable_Package; use java.lang.Comparable_Package;
 
 package org.osgi.framework.ServiceReference_Package is
 
@@ -17,6 +17,8 @@ package org.osgi.framework.ServiceReference_Package is
    type ServiceReference_Access is access all ServiceReference'Class;
    type ServiceReference_Access_Array is array (Natural range <>) of ServiceReference_Access;
    type ServiceReference_Access_Array_Access is access all ServiceReference_Access_Array;
+   type ServiceReference_Access_Array_Access_Array is array (Natural range <>) of ServiceReference_Access_Array_Access;
+   type ServiceReference_Access_Array_Access_Array_Access is access all ServiceReference_Access_Array_Access_Array;
    function getProperty (This : in out ServiceReference; key : Unbounded_String) return Java_Object_Access is abstract;
    function getPropertyKeys (This : in out ServiceReference) return Unbounded_String_Array_Access is abstract;
 

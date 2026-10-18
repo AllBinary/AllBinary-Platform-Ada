@@ -16,6 +16,8 @@ package org.allbinary.graphics.form.item.ABChoiceItemInterface_Package is
    type ABChoiceItemInterface_Access is access all ABChoiceItemInterface'Class;
    type ABChoiceItemInterface_Access_Array is array (Natural range <>) of ABChoiceItemInterface_Access;
    type ABChoiceItemInterface_Access_Array_Access is access all ABChoiceItemInterface_Access_Array;
+   type ABChoiceItemInterface_Access_Array_Access_Array is array (Natural range <>) of ABChoiceItemInterface_Access_Array_Access;
+   type ABChoiceItemInterface_Access_Array_Access_Array_Access is access all ABChoiceItemInterface_Access_Array_Access_Array;
 
 end org.allbinary.graphics.form.item.ABChoiceItemInterface_Package;
 

@@ -30,6 +30,8 @@ package org.allbinary.business.time.created.TimeCreated_Package is
    type TimeCreated_Access is access all TimeCreated'Class;
    type TimeCreated_Access_Array is array (Natural range <>) of TimeCreated_Access;
    type TimeCreated_Access_Array_Access is access all TimeCreated_Access_Array;
+   type TimeCreated_Access_Array_Access_Array is array (Natural range <>) of TimeCreated_Access_Array_Access;
+   type TimeCreated_Access_Array_Access_Array_Access is access all TimeCreated_Access_Array_Access_Array;
 
    type TimeCreated is new Time with null record;
 

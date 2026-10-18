@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.automation.PointFactory_Package is
 
    procedure Initialize_Fields (This : in out PointFactory'Class) is

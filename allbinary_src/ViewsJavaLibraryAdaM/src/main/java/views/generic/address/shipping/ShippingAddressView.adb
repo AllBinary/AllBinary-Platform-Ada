@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.address.StreetAddressData_Package; use org.allbinary.business.user.address.StreetAddressData_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+with views.generic_Id.address.StatesView_Package; use views.generic_Id.address.StatesView_Package;
+
 package body views.generic_Id.address.shipping.ShippingAddressView_Package is
 
+   package StreetAddressData_Package renames Standard.org.allbinary.business.user.address.StreetAddressData_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package StatesView_Package renames Standard.views.generic_Id.address.StatesView_Package;
    procedure Initialize_Fields (This : in out ShippingAddressView'Class) is
    begin
       null;

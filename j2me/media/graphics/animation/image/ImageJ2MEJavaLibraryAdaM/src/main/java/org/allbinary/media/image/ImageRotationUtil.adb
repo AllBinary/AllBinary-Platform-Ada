@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+
 package body org.allbinary.media.image.ImageRotationUtil_Package is
 
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
    procedure Initialize_Fields (This : in out ImageRotationUtil'Class) is
    begin
       null;

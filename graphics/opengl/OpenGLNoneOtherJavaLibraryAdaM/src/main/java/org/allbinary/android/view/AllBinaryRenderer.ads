@@ -20,6 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.view.AllBinaryRenderer_Package is
 
@@ -28,6 +29,8 @@ package org.allbinary.android.view.AllBinaryRenderer_Package is
    type AllBinaryRenderer_Access is access all AllBinaryRenderer'Class;
    type AllBinaryRenderer_Access_Array is array (Natural range <>) of AllBinaryRenderer_Access;
    type AllBinaryRenderer_Access_Array_Access is access all AllBinaryRenderer_Access_Array;
+   type AllBinaryRenderer_Access_Array_Access_Array is array (Natural range <>) of AllBinaryRenderer_Access_Array_Access;
+   type AllBinaryRenderer_Access_Array_Access_Array_Access is access all AllBinaryRenderer_Access_Array_Access_Array;
 
    type AllBinaryRenderer is new Java_Object with null record;
    instance : AllBinaryRenderer_Access;

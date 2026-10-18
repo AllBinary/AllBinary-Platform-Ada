@@ -13,13 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out GameKeyCompleteMotionGestureInputEventFactory'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.eventList := BasicArrayListD_Package.Create;
+      This.eventList := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out GameKeyCompleteMotionGestureInputEventFactory'Class) is
@@ -43,7 +50,7 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
    procedure add (This : in out GameKeyCompleteMotionGestureInputEventFactory; gameKeyCompleteMotionGestureInputEvent_Param : access GameKeyCompleteMotionGestureInputEvent_Package.GameKeyCompleteMotionGestureInputEvent'Class) is
       gameKeyCompleteMotionGestureInputEvent : constant GameKeyCompleteMotionGestureInputEvent_Access := GameKeyCompleteMotionGestureInputEvent_Access (gameKeyCompleteMotionGestureInputEvent_Param);
    begin
-        This.eventList.add (gameKeyCompleteMotionGestureInputEvent);
+        This.eventList.add (Java_Object_Access (gameKeyCompleteMotionGestureInputEvent));
    end add;
 
    procedure updateAll (This : in out GameKeyCompleteMotionGestureInputEventFactory) is

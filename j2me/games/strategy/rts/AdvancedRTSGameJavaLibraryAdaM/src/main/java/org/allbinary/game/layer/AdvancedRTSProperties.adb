@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
+with org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package; use org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package;
+with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+with org.allbinary.media.AllBinaryNoVibration_Package; use org.allbinary.media.AllBinaryNoVibration_Package;
+with org.allbinary.media.AllBinaryVibration_Package; use org.allbinary.media.AllBinaryVibration_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+
 package body org.allbinary.game.layer.AdvancedRTSProperties_Package is
 
+   package NoShakeAnimationListener_Package renames Standard.org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
+   package ShakeAnimationListenerFactory_Package renames Standard.org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package AllBinaryNoVibration_Package renames Standard.org.allbinary.media.AllBinaryNoVibration_Package;
+   package AllBinaryVibration_Package renames Standard.org.allbinary.media.AllBinaryVibration_Package;
    procedure Initialize_Fields (This : in out AdvancedRTSProperties'Class) is
    begin
       null;

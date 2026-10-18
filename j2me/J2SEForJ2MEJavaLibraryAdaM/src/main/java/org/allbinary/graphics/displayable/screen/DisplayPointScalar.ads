@@ -30,6 +30,8 @@ package org.allbinary.graphics.displayable.screen.DisplayPointScalar_Package is
    type DisplayPointScalar_Access is access all DisplayPointScalar'Class;
    type DisplayPointScalar_Access_Array is array (Natural range <>) of DisplayPointScalar_Access;
    type DisplayPointScalar_Access_Array_Access is access all DisplayPointScalar_Access_Array;
+   type DisplayPointScalar_Access_Array_Access_Array is array (Natural range <>) of DisplayPointScalar_Access_Array_Access;
+   type DisplayPointScalar_Access_Array_Access_Array_Access is access all DisplayPointScalar_Access_Array_Access_Array;
 
    type DisplayPointScalar is new Java_Object with null record;
    instance : DisplayPointScalar_Access;

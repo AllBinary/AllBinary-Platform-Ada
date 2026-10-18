@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
+with org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package; use org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package;
+with org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package; use org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package;
+
 package body org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package is
 
+   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
+   package GameInputMotionEventProcessorAPI1_Package renames Standard.org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package;
+   package GameInputMotionEventProcessorAPI5_Package renames Standard.org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package;
    procedure Initialize_Fields (This : in out GameInputMotionEventProcessorFactory'Class) is
    begin
       null;

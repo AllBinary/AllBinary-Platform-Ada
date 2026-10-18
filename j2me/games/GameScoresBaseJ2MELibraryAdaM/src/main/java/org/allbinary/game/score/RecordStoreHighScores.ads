@@ -21,63 +21,36 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
-with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
 --  with java.io.EOFException_Package; use java.io.EOFException_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with javax.microedition.rms.RecordComparator_Package; use javax.microedition.rms.RecordComparator_Package;
-with javax.microedition.rms.RecordEnumeration_Package; use javax.microedition.rms.RecordEnumeration_Package;
-with javax.microedition.rms.RecordStore_Package; use javax.microedition.rms.RecordStore_Package;
-with javax.microedition.rms.RecordStoreException_Package; use javax.microedition.rms.RecordStoreException_Package;
-with javax.microedition.rms.RecordStoreNotFoundException_Package; use javax.microedition.rms.RecordStoreNotFoundException_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
-with org.allbinary.game.configuration.persistance.NullRecordComparator_Package; use org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
-with org.allbinary.game.configuration.persistance.NullRecordFilter_Package; use org.allbinary.game.configuration.persistance.NullRecordFilter_Package;
-with org.allbinary.game.configuration.persistance.NullRecordStore_Package; use org.allbinary.game.configuration.persistance.NullRecordStore_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.persistance.PlatformRecordIdUtil_Package; use org.allbinary.persistance.PlatformRecordIdUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
-with org.allbinary.game.score.ScoreComparator_Package; use org.allbinary.game.score.ScoreComparator_Package;
 
 package org.allbinary.game.score.RecordStoreHighScores_Package is
 
-   package DataInputStream_Package renames Standard.java.io.DataInputStream_Package;
    package RecordComparator_Package renames Standard.javax.microedition.rms.RecordComparator_Package;
-   package RecordEnumeration_Package renames Standard.javax.microedition.rms.RecordEnumeration_Package;
-   package RecordStore_Package renames Standard.javax.microedition.rms.RecordStore_Package;
-   package RecordStoreException_Package renames Standard.javax.microedition.rms.RecordStoreException_Package;
-   package RecordStoreNotFoundException_Package renames Standard.javax.microedition.rms.RecordStoreNotFoundException_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
-   package NullRecordComparator_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
-   package NullRecordFilter_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordFilter_Package;
-   package NullRecordStore_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordStore_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package PlatformRecordIdUtil_Package renames Standard.org.allbinary.persistance.PlatformRecordIdUtil_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type RecordStoreHighScores is tagged;
    type RecordStoreHighScores_Access is access all RecordStoreHighScores'Class;
    type RecordStoreHighScores_Access_Array is array (Natural range <>) of RecordStoreHighScores_Access;
    type RecordStoreHighScores_Access_Array_Access is access all RecordStoreHighScores_Access_Array;
+   type RecordStoreHighScores_Access_Array_Access_Array is array (Natural range <>) of RecordStoreHighScores_Access_Array_Access;
+   type RecordStoreHighScores_Access_Array_Access_Array_Access is access all RecordStoreHighScores_Access_Array_Access_Array;
 
    type RecordStoreHighScores is new HighScores with record
       logUtil : LogUtil_Access;

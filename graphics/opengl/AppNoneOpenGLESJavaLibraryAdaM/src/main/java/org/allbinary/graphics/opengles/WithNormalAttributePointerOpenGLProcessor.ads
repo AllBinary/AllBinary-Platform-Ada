@@ -32,6 +32,8 @@ package org.allbinary.graphics.opengles.WithNormalAttributePointerOpenGLProcesso
    type WithNormalAttributePointerOpenGLProcessor_Access is access all WithNormalAttributePointerOpenGLProcessor'Class;
    type WithNormalAttributePointerOpenGLProcessor_Access_Array is array (Natural range <>) of WithNormalAttributePointerOpenGLProcessor_Access;
    type WithNormalAttributePointerOpenGLProcessor_Access_Array_Access is access all WithNormalAttributePointerOpenGLProcessor_Access_Array;
+   type WithNormalAttributePointerOpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of WithNormalAttributePointerOpenGLProcessor_Access_Array_Access;
+   type WithNormalAttributePointerOpenGLProcessor_Access_Array_Access_Array_Access is access all WithNormalAttributePointerOpenGLProcessor_Access_Array_Access_Array;
 
    type WithNormalAttributePointerOpenGLProcessor is new ObjectThreedOpenGLProcessor with null record;
    instance : WithNormalAttributePointerOpenGLProcessor_Access;

@@ -29,6 +29,8 @@ package org.allbinary.media.audio.SoundsFactoryInterface_Package is
    type SoundsFactoryInterface_Access is access all SoundsFactoryInterface'Class;
    type SoundsFactoryInterface_Access_Array is array (Natural range <>) of SoundsFactoryInterface_Access;
    type SoundsFactoryInterface_Access_Array_Access is access all SoundsFactoryInterface_Access_Array;
+   type SoundsFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of SoundsFactoryInterface_Access_Array_Access;
+   type SoundsFactoryInterface_Access_Array_Access_Array_Access is access all SoundsFactoryInterface_Access_Array_Access_Array;
    procedure init (This : in out SoundsFactoryInterface) is abstract;
    function getSoundInterfaceArray (This : in out SoundsFactoryInterface) return Sound_Access_Array_Access is abstract;
    procedure setInitialized (This : in out SoundsFactoryInterface; initialized : Boolean) is abstract;

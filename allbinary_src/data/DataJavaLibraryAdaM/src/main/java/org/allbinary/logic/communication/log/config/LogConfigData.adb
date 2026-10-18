@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.communication.log.config.LogConfigData_Package is
 
    procedure Initialize_Fields (This : in out LogConfigData'Class) is

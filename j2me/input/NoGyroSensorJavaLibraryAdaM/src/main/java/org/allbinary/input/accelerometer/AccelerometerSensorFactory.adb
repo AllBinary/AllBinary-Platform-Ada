@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+with org.allbinary.input.accelerometer.NoAccelerometerSensor_Package; use org.allbinary.input.accelerometer.NoAccelerometerSensor_Package;
+
 package body org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package is
 
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package SensorFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
    procedure Initialize_Fields (This : in out AccelerometerSensorFactory'Class) is
    begin
       null;

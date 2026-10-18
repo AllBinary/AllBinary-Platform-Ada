@@ -21,19 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.InputOutputTypeData_Package; use org.allbinary.logic.io.InputOutputTypeData_Package;
 with tags.TransformTag_Package; use tags.TransformTag_Package;
 
 package tags.generic_Id.GenericViewTag_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
    package TransformTag_Package renames Standard.tags.TransformTag_Package;
 
    type GenericViewTag is tagged;
    type GenericViewTag_Access is access all GenericViewTag'Class;
    type GenericViewTag_Access_Array is array (Natural range <>) of GenericViewTag_Access;
    type GenericViewTag_Access_Array_Access is access all GenericViewTag_Access_Array;
+   type GenericViewTag_Access_Array_Access_Array is array (Natural range <>) of GenericViewTag_Access_Array_Access;
+   type GenericViewTag_Access_Array_Access_Array_Access is access all GenericViewTag_Access_Array_Access_Array;
 
    type GenericViewTag is new TransformTag with record
       logUtil : LogUtil_Access;

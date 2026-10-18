@@ -28,6 +28,8 @@ package org.allbinary.graphics.opengles.shader.ShaderStrings_Package is
    type ShaderStrings_Access is access all ShaderStrings'Class;
    type ShaderStrings_Access_Array is array (Natural range <>) of ShaderStrings_Access;
    type ShaderStrings_Access_Array_Access is access all ShaderStrings_Access_Array;
+   type ShaderStrings_Access_Array_Access_Array is array (Natural range <>) of ShaderStrings_Access_Array_Access;
+   type ShaderStrings_Access_Array_Access_Array_Access is access all ShaderStrings_Access_Array_Access_Array;
 
    type ShaderStrings is new Java_Object with record
       NO_PROGRAM_HANDLE : Unbounded_String;

@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.gui.dialog.JDialog_Package; use org.allbinary.gui.dialog.JDialog_Package;
 with org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package; use org.allbinary.gui.dialog.CloseJDialogListenerInterface_Package;
 
 package org.allbinary.gui.dialog.BasicTextJDialog_Package is
 
-   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
 
    type BasicTextJDialog is tagged;
    type BasicTextJDialog_Access is access all BasicTextJDialog'Class;
    type BasicTextJDialog_Access_Array is array (Natural range <>) of BasicTextJDialog_Access;
    type BasicTextJDialog_Access_Array_Access is access all BasicTextJDialog_Access_Array;
+   type BasicTextJDialog_Access_Array_Access_Array is array (Natural range <>) of BasicTextJDialog_Access_Array_Access;
+   type BasicTextJDialog_Access_Array_Access_Array_Access is access all BasicTextJDialog_Access_Array_Access_Array;
 
    type BasicTextJDialog is new JDialog with record
       closeListenerInterface : CloseJDialogListenerInterface_Access;

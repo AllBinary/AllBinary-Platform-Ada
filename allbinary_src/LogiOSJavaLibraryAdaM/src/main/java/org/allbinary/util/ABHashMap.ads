@@ -30,6 +30,8 @@ package org.allbinary.util.ABHashMap_Package is
    type ABHashMap_Access is access all ABHashMap'Class;
    type ABHashMap_Access_Array is array (Natural range <>) of ABHashMap_Access;
    type ABHashMap_Access_Array_Access is access all ABHashMap_Access_Array;
+   type ABHashMap_Access_Array_Access_Array is array (Natural range <>) of ABHashMap_Access_Array_Access;
+   type ABHashMap_Access_Array_Access_Array_Access is access all ABHashMap_Access_Array_Access_Array;
 
    type ABHashMap is new HashMap with null record;
 

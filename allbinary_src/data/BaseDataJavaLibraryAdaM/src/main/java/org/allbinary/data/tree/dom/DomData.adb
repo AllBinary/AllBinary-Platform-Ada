@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.data.tree.dom.DomData_Package is
 
    procedure Initialize_Fields (This : in out DomData'Class) is

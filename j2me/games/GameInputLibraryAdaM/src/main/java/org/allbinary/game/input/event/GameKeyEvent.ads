@@ -20,20 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
 package org.allbinary.game.input.event.GameKeyEvent_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type GameKeyEvent is tagged;
    type GameKeyEvent_Access is access all GameKeyEvent'Class;
    type GameKeyEvent_Access_Array is array (Natural range <>) of GameKeyEvent_Access;
    type GameKeyEvent_Access_Array_Access is access all GameKeyEvent_Access_Array;
+   type GameKeyEvent_Access_Array_Access_Array is array (Natural range <>) of GameKeyEvent_Access_Array_Access;
+   type GameKeyEvent_Access_Array_Access_Array_Access is access all GameKeyEvent_Access_Array_Access_Array;
 
    type GameKeyEvent is new AllBinaryEventObject with record
       sourceId : Integer;
@@ -58,6 +56,7 @@ package org.allbinary.game.input.event.GameKeyEvent_Package is
    function getGameActionKey (This : in out GameKeyEvent) return Integer;
    procedure setGameActionKey (This : in out GameKeyEvent; gameActionKey : Integer);
    function getSourceId (This : in out GameKeyEvent) return Integer;
+   procedure init (This : in out GameKeyEvent; Value : Unbounded_String);
 
 end org.allbinary.game.input.event.GameKeyEvent_Package;
 

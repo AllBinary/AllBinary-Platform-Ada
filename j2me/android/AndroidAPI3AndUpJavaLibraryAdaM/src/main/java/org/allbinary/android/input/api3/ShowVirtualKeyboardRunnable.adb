@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with android.content.Context_Package; use android.content.Context_Package;
+with android.view.View_Package; use android.view.View_Package;
+with android.view.inputmethod.InputMethodManager_Package; use android.view.inputmethod.InputMethodManager_Package;
+with org.allbinary.android.activity.ViewCompositeInterface_Package; use org.allbinary.android.activity.ViewCompositeInterface_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Package is
 
+   package Context_Package renames Standard.android.content.Context_Package;
+   package View_Package renames Standard.android.view.View_Package;
+   package InputMethodManager_Package renames Standard.android.view.inputmethod.InputMethodManager_Package;
+   package ViewCompositeInterface_Package renames Standard.org.allbinary.android.activity.ViewCompositeInterface_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out ShowVirtualKeyboardRunnable'Class) is
    begin
       null;

@@ -29,8 +29,10 @@ package org.allbinary.game.ag.life.Life_Package is
    type Life_Access is access all Life'Class;
    type Life_Access_Array is array (Natural range <>) of Life_Access;
    type Life_Access_Array_Access is access all Life_Access_Array;
+   type Life_Access_Array_Access_Array is array (Natural range <>) of Life_Access_Array_Access;
+   type Life_Access_Array_Access_Array_Access is access all Life_Access_Array_Access_Array;
 
-   type Life is new LifeInterface with record
+   type Life is new Java_Object and LifeInterface with record
       lives : Short_Integer;
       startLives : Short_Integer;
       maxlives : Short_Integer;

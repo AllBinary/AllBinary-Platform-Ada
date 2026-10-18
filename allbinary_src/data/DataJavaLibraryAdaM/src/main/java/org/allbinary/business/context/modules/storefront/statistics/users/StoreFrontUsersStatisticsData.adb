@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsData_Package is
 
    procedure Initialize_Fields (This : in out StoreFrontUsersStatisticsData'Class) is

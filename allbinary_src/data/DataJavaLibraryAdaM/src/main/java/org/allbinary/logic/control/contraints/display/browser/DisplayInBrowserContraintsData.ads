@@ -28,6 +28,8 @@ package org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserC
    type DisplayInBrowserContraintsData_Access is access all DisplayInBrowserContraintsData'Class;
    type DisplayInBrowserContraintsData_Access_Array is array (Natural range <>) of DisplayInBrowserContraintsData_Access;
    type DisplayInBrowserContraintsData_Access_Array_Access is access all DisplayInBrowserContraintsData_Access_Array;
+   type DisplayInBrowserContraintsData_Access_Array_Access_Array is array (Natural range <>) of DisplayInBrowserContraintsData_Access_Array_Access;
+   type DisplayInBrowserContraintsData_Access_Array_Access_Array_Access is access all DisplayInBrowserContraintsData_Access_Array_Access_Array;
 
    type DisplayInBrowserContraintsData is new Java_Object with null record;
    NAME : Unbounded_String;

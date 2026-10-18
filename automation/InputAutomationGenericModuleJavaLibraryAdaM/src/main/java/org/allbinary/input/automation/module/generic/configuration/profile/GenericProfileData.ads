@@ -28,6 +28,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
    type GenericProfileData_Access is access all GenericProfileData'Class;
    type GenericProfileData_Access_Array is array (Natural range <>) of GenericProfileData_Access;
    type GenericProfileData_Access_Array_Access is access all GenericProfileData_Access_Array;
+   type GenericProfileData_Access_Array_Access_Array is array (Natural range <>) of GenericProfileData_Access_Array_Access;
+   type GenericProfileData_Access_Array_Access_Array_Access is access all GenericProfileData_Access_Array_Access_Array;
 
    type GenericProfileData is new Java_Object with null record;
    NAME : Unbounded_String;

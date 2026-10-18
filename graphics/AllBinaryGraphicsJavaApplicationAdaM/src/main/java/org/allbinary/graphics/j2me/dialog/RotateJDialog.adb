@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package; use org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
 
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package HashMapJDialogListenerInterface_Package renames Standard.org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out RotateJDialog'Class) is
    begin
       null;
@@ -70,12 +79,12 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
 );
         jPanel1Layout := GroupLayout_Package.Create (This.jPanel1);
         This.jPanel1.setLayout (jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (jPanel1Layout.createSequentialGroup.addGap (62, 62, 62).addComponent (This.jButton1).addContainerGap (62, Short_Package.MAX_VALUE)));
+        jPanel1Layout.setHorizontalGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (jPanel1Layout.createSequentialGroup.addGap (62, 62, 62).addComponent (This.jButton1).addContainerGap (62, Short_Integer'Last)));
         jPanel1Layout.setVerticalGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.jButton1));
         layout := GroupLayout_Package.Create (RotateJDialog'Class (This).getContentPane);
         RotateJDialog'Class (This).getContentPane.setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.jLabel1).addComponent (This.jLabel2)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.UNRELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.totalRotationJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 31, Short_Package.MAX_VALUE).addComponent (This.angleIncrementJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 31, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addContainerGap).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE));
-        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.angleIncrementJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel1)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.totalRotationJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel2)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short_Package.MAX_VALUE).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap));
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.jLabel1).addComponent (This.jLabel2)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.UNRELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.totalRotationJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 31, Short_Integer'Last).addComponent (This.angleIncrementJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 31, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addContainerGap).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Integer'Last));
+        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.angleIncrementJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel1)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.totalRotationJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel2)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short_Integer'Last).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap));
         RotateJDialog'Class (This).pack;
    end initComponents;
 

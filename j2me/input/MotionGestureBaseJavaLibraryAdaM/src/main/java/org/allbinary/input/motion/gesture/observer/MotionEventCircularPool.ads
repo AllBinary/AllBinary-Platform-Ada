@@ -20,24 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
-with org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package; use org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package;
 with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 
 package org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package is
 
-   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
    package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
    package AllBinaryEventCircularPool_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
 
    type MotionEventCircularPool is tagged;
    type MotionEventCircularPool_Access is access all MotionEventCircularPool'Class;
    type MotionEventCircularPool_Access_Array is array (Natural range <>) of MotionEventCircularPool_Access;
    type MotionEventCircularPool_Access_Array_Access is access all MotionEventCircularPool_Access_Array;
+   type MotionEventCircularPool_Access_Array_Access_Array is array (Natural range <>) of MotionEventCircularPool_Access_Array_Access;
+   type MotionEventCircularPool_Access_Array_Access_Array_Access is access all MotionEventCircularPool_Access_Array_Access_Array;
 
    type MotionEventCircularPool is new Java_Object with record
       MIN : Integer;

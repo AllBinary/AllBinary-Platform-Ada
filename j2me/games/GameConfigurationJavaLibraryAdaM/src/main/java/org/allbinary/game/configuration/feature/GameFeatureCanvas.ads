@@ -32,6 +32,8 @@ package org.allbinary.game.configuration.feature.GameFeatureCanvas_Package is
    type GameFeatureCanvas_Access is access all GameFeatureCanvas'Class;
    type GameFeatureCanvas_Access_Array is array (Natural range <>) of GameFeatureCanvas_Access;
    type GameFeatureCanvas_Access_Array_Access is access all GameFeatureCanvas_Access_Array;
+   type GameFeatureCanvas_Access_Array_Access_Array is array (Natural range <>) of GameFeatureCanvas_Access_Array_Access;
+   type GameFeatureCanvas_Access_Array_Access_Array_Access is access all GameFeatureCanvas_Access_Array_Access_Array;
 
    type GameFeatureCanvas is new Canvas with null record;
 

@@ -33,6 +33,8 @@ package org.allbinary.logic.communication.sql.AbSqlTable_Package is
    type AbSqlTable_Access is access all AbSqlTable'Class;
    type AbSqlTable_Access_Array is array (Natural range <>) of AbSqlTable_Access;
    type AbSqlTable_Access_Array_Access is access all AbSqlTable_Access_Array;
+   type AbSqlTable_Access_Array_Access_Array is array (Natural range <>) of AbSqlTable_Access_Array_Access;
+   type AbSqlTable_Access_Array_Access_Array_Access is access all AbSqlTable_Access_Array_Access_Array;
 
    type AbSqlTable is new AbSqlBasic with record
       logUtil : LogUtil_Access;

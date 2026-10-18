@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
 
    procedure Initialize_Fields (This : in out OpenGLESGraphicsCompositeFactory'Class) is

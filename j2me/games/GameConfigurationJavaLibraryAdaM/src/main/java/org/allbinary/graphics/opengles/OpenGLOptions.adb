@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package; use org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+
 package body org.allbinary.graphics.opengles.OpenGLOptions_Package is
 
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureChoiceGroups_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out OpenGLOptions'Class) is
    begin
       null;
@@ -41,14 +51,14 @@ package body org.allbinary.graphics.opengles.OpenGLOptions_Package is
    begin
         openGLFeatureFactory := OpenGLFeatureFactory_Package.getInstance;
         if Features_Package.getInstance.isFeature (openGLFeatureFactory.OPENGL_OPTIONS) then
-            openGLMultipleList := BasicArrayListD_Package.Create;
+            openGLMultipleList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             openGLMultipleList.add (openGLFeatureFactory.OPENGL);
             GameFeatureChoiceGroups_Package.getMultipleInstance.add (To_Unbounded_String ("OpenGL (Complete Restart)"), openGLMultipleList);
-            openGLVersionSelectorMultipleList := BasicArrayListD_Package.Create;
+            openGLVersionSelectorMultipleList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             openGLVersionSelectorMultipleList.add (openGLFeatureFactory.OPENGL_AUTO_SELECT);
             openGLVersionSelectorMultipleList.add (openGLFeatureFactory.OPENGL_MINIMUM);
             GameFeatureChoiceGroups_Package.getExclusiveInstance.add (To_Unbounded_String ("OpenGL Version Selector"), openGLVersionSelectorMultipleList);
-            openGLImageColorMultipleList := BasicArrayListD_Package.Create;
+            openGLImageColorMultipleList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             openGLImageColorMultipleList.add (openGLFeatureFactory.IMAGE_COLOR_DEPTH_4444);
             openGLImageColorMultipleList.add (openGLFeatureFactory.IMAGE_COLOR_DEPTH_8888);
             GameFeatureChoiceGroups_Package.getExclusiveInstance.add (To_Unbounded_String ("OpenGL Image Color RGBA"), openGLImageColorMultipleList);

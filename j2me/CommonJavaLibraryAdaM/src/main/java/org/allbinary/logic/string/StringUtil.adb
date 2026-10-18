@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+
 package body org.allbinary.logic.string_Id.StringUtil_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
    procedure Initialize_Fields (This : in out StringUtil'Class) is
    begin
       null;
@@ -99,6 +108,18 @@ package body org.allbinary.logic.string_Id.StringUtil_Package is
 
    procedure toString (This : in out StringUtil; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Unbounded_String := StringUtil'Class (This).toString (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toString;
+
+   function toString (This : in out StringUtil; Value : Unbounded_String) return Unbounded_String is
+   begin
+      return StringUtil'Class (This).toString (Java_Box (Value));
+   end toString;
+
+   procedure toString (This : in out StringUtil; Value : Unbounded_String) is
+      Java_Result : constant Unbounded_String := StringUtil'Class (This).toString (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

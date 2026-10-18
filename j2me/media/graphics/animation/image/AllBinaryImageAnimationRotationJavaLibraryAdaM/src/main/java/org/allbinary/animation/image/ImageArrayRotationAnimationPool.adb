@@ -13,6 +13,10 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
+with org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package; use org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package;
+
 package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package is
 
    procedure Initialize_Fields (This : in out ImageArrayRotationAnimationPool'Class) is
@@ -60,9 +64,21 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Packa
       null;
    end remove;
 
+   function remove (This : in out ImageArrayRotationAnimationPool; Value : Unbounded_String) return CacheableInterface_Access is
+   begin
+      return ImageArrayRotationAnimationPool'Class (This).remove (Java_Box (Value));
+   end remove;
+
+   procedure remove (This : in out ImageArrayRotationAnimationPool; Value : Unbounded_String) is
+      Java_Result : constant CacheableInterface_Access := ImageArrayRotationAnimationPool'Class (This).remove (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end remove;
+
 begin
    null;
-   IMAGE_ROTATION_ANIMATION_POOL := ImageArrayRotationAnimationPool_Package.Create (ImageArrayRotationAnimationCacheableInterfaceFactory_Package.Create);
+   IMAGE_ROTATION_ANIMATION_POOL := PoolInterface_Access (ImageArrayRotationAnimationPool_Package.Create (ImageArrayRotationAnimationCacheableInterfaceFactory_Package.Create));
 
 end org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package;
 

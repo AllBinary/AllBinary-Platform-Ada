@@ -28,6 +28,8 @@ package org.allbinary.logic.system.security.licensing.LockableFeature_Package is
    type LockableFeature_Access is access all LockableFeature'Class;
    type LockableFeature_Access_Array is array (Natural range <>) of LockableFeature_Access;
    type LockableFeature_Access_Array_Access is access all LockableFeature_Access_Array;
+   type LockableFeature_Access_Array_Access_Array is array (Natural range <>) of LockableFeature_Access_Array_Access;
+   type LockableFeature_Access_Array_Access_Array_Access is access all LockableFeature_Access_Array_Access_Array;
 
    type LockableFeature is new Java_Object with record
       name : Unbounded_String;

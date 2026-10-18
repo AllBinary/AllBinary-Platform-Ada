@@ -29,6 +29,8 @@ package org.allbinary.graphics.ResizableListenerHandler_Package is
    type ResizableListenerHandler_Access is access all ResizableListenerHandler'Class;
    type ResizableListenerHandler_Access_Array is array (Natural range <>) of ResizableListenerHandler_Access;
    type ResizableListenerHandler_Access_Array_Access is access all ResizableListenerHandler_Access_Array;
+   type ResizableListenerHandler_Access_Array_Access_Array is array (Natural range <>) of ResizableListenerHandler_Access_Array_Access;
+   type ResizableListenerHandler_Access_Array_Access_Array_Access is access all ResizableListenerHandler_Access_Array_Access_Array;
 
    type ResizableListenerHandler is new Java_Object with null record;
    instance : ResizableListenerHandler_Access;

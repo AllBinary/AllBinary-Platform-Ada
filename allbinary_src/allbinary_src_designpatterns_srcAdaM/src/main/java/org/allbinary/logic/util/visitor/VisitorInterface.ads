@@ -28,6 +28,8 @@ package org.allbinary.logic.util.visitor.VisitorInterface_Package is
    type VisitorInterface_Access is access all VisitorInterface'Class;
    type VisitorInterface_Access_Array is array (Natural range <>) of VisitorInterface_Access;
    type VisitorInterface_Access_Array_Access is access all VisitorInterface_Access_Array;
+   type VisitorInterface_Access_Array_Access_Array is array (Natural range <>) of VisitorInterface_Access_Array_Access;
+   type VisitorInterface_Access_Array_Access_Array_Access is access all VisitorInterface_Access_Array_Access_Array;
    function visit (This : in out VisitorInterface; anyType_Param : access Java_Object'Class) return Java_Object_Access is abstract;
 
 end org.allbinary.logic.util.visitor.VisitorInterface_Package;

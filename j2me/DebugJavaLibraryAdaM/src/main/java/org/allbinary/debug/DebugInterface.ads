@@ -28,6 +28,8 @@ package org.allbinary.debug.DebugInterface_Package is
    type DebugInterface_Access is access all DebugInterface'Class;
    type DebugInterface_Access_Array is array (Natural range <>) of DebugInterface_Access;
    type DebugInterface_Access_Array_Access is access all DebugInterface_Access_Array;
+   type DebugInterface_Access_Array_Access_Array is array (Natural range <>) of DebugInterface_Access_Array_Access;
+   type DebugInterface_Access_Array_Access_Array_Access is access all DebugInterface_Access_Array_Access_Array;
    procedure start (This : in out DebugInterface) is abstract;
    procedure stop (This : in out DebugInterface) is abstract;
    function getStartTime (This : in out DebugInterface) return Long_Long_Integer is abstract;

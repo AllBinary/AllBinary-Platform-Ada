@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package; use org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package;
+
 package body org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package is
 
    procedure Initialize_Fields (This : in out ScreenRepaintProcessor'Class) is

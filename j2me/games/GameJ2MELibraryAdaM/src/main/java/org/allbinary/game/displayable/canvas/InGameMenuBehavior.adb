@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Package; use org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Package;
+
 package body org.allbinary.game.displayable.canvas.InGameMenuBehavior_Package is
 
    procedure Initialize_Fields (This : in out InGameMenuBehavior'Class) is

@@ -20,41 +20,31 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
-with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
-with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandlerInterface_Package; use org.allbinary.logic.util.event.handler.BasicEventHandlerInterface_Package;
 
 package org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
    package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
-   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type BasicEventHandler is tagged;
    type BasicEventHandler_Access is access all BasicEventHandler'Class;
    type BasicEventHandler_Access_Array is array (Natural range <>) of BasicEventHandler_Access;
    type BasicEventHandler_Access_Array_Access is access all BasicEventHandler_Access_Array;
+   type BasicEventHandler_Access_Array_Access_Array is array (Natural range <>) of BasicEventHandler_Access_Array_Access;
+   type BasicEventHandler_Access_Array_Access_Array_Access is access all BasicEventHandler_Access_Array_Access_Array;
 
-   type BasicEventHandler is new BasicEventHandlerInterface with record
+   type BasicEventHandler is new Java_Object and BasicEventHandlerInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       eventStrings : EventStrings_Access;

@@ -13,8 +13,41 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+with org.allbinary.logic.io.InputOutputTypeData_Package; use org.allbinary.logic.io.InputOutputTypeData_Package;
+with org.allbinary.logic.io.file.FileUtil_Package; use org.allbinary.logic.io.file.FileUtil_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfosData_Package; use org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
+   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package TransformInfoHttpStoreInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
+   package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out StoreFileGenerator'Class) is
    begin
       null;
@@ -44,7 +77,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
         httpTransformInfoInterface := TransformInfoHttpInterface_Access (transformInfoInterface);
         weblisketSession := WeblisketSession_Package.Create (httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext);
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (URLGLOBALS.getWebappPath);
+        stringBuffer.append (URLGLOBALS_Package.getWebappPath);
         stringBuffer.append (weblisketSession.getStoreName);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         abPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
@@ -101,7 +134,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
             This.file.createNewFile;
         end if;
         if This.file.exists then
-            inputStream := ByteArrayInputStream_Package.Create (input.getBytes);
+            inputStream := InputStream_Access (ByteArrayInputStream_Package.Create (input.getBytes));
             FileUtil_Package.getInstance.write (inputStream, This.file);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Could Not Create: ") & This.fileAbPath.toString));

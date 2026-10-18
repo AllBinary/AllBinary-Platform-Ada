@@ -20,14 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.AllBinarySensorListener_Package; use org.allbinary.input.AllBinarySensorListener_Package;
 
 package org.allbinary.input.AllBinarySensor_Package is
 
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -35,8 +33,10 @@ package org.allbinary.input.AllBinarySensor_Package is
    type AllBinarySensor_Access is access all AllBinarySensor'Class;
    type AllBinarySensor_Access_Array is array (Natural range <>) of AllBinarySensor_Access;
    type AllBinarySensor_Access_Array_Access is access all AllBinarySensor_Access_Array;
+   type AllBinarySensor_Access_Array_Access_Array is array (Natural range <>) of AllBinarySensor_Access_Array_Access;
+   type AllBinarySensor_Access_Array_Access_Array_Access is access all AllBinarySensor_Access_Array_Access_Array;
 
-   type AllBinarySensor is new AllBinarySensorListener with record
+   type AllBinarySensor is new Java_Object and AllBinarySensorListener with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;

@@ -21,26 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.resource.ClassLoader_Package; use org.allbinary.data.resource.ClassLoader_Package;
 
 package org.allbinary.data.resource.ResourceUtil_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ResourceUtil is tagged;
    type ResourceUtil_Access is access all ResourceUtil'Class;
    type ResourceUtil_Access_Array is array (Natural range <>) of ResourceUtil_Access;
    type ResourceUtil_Access_Array_Access is access all ResourceUtil_Access_Array;
+   type ResourceUtil_Access_Array_Access_Array is array (Natural range <>) of ResourceUtil_Access_Array_Access;
+   type ResourceUtil_Access_Array_Access_Array_Access is access all ResourceUtil_Access_Array_Access_Array;
 
    type ResourceUtil is new Java_Object with record
       logUtil : LogUtil_Access;

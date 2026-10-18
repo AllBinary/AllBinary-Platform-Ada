@@ -20,20 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.globals.UrlGlobalsData_Package; use org.allbinary.globals.UrlGlobalsData_Package;
 
 package org.allbinary.globals.UrlGlobalsView_Package is
 
-   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -41,8 +34,10 @@ package org.allbinary.globals.UrlGlobalsView_Package is
    type UrlGlobalsView_Access is access all UrlGlobalsView'Class;
    type UrlGlobalsView_Access_Array is array (Natural range <>) of UrlGlobalsView_Access;
    type UrlGlobalsView_Access_Array_Access is access all UrlGlobalsView_Access_Array;
+   type UrlGlobalsView_Access_Array_Access_Array is array (Natural range <>) of UrlGlobalsView_Access_Array_Access;
+   type UrlGlobalsView_Access_Array_Access_Array_Access is access all UrlGlobalsView_Access_Array_Access_Array;
 
-   type UrlGlobalsView is new DomNodeInterface with null record;
+   type UrlGlobalsView is new Java_Object and DomNodeInterface with null record;
 
    procedure Initialize (This : in out UrlGlobalsView'Class);
    function Create return UrlGlobalsView_Access;

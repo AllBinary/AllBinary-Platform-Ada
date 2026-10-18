@@ -29,6 +29,8 @@ package org.allbinary.view.StaticViewPosition_Package is
    type StaticViewPosition_Access is access all StaticViewPosition'Class;
    type StaticViewPosition_Access_Array is array (Natural range <>) of StaticViewPosition_Access;
    type StaticViewPosition_Access_Array_Access is access all StaticViewPosition_Access_Array;
+   type StaticViewPosition_Access_Array_Access_Array is array (Natural range <>) of StaticViewPosition_Access_Array_Access;
+   type StaticViewPosition_Access_Array_Access_Array_Access is access all StaticViewPosition_Access_Array_Access_Array;
 
    type StaticViewPosition is new ViewPosition with null record;
 

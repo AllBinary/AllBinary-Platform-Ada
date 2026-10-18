@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.layer.LayerManagerLoggingBase_Package is
 
    procedure Initialize_Fields (This : in out LayerManagerLoggingBase'Class) is

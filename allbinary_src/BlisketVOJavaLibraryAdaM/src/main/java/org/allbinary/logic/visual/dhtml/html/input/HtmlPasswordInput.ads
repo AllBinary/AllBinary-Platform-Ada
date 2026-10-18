@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package; use org.allbinary.logic.visual.dhtml.html.input.HtmlLengthInput_Package;
-with org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package; use org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package;
 
 package org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlPasswordInput_Package is
    type HtmlPasswordInput_Access is access all HtmlPasswordInput'Class;
    type HtmlPasswordInput_Access_Array is array (Natural range <>) of HtmlPasswordInput_Access;
    type HtmlPasswordInput_Access_Array_Access is access all HtmlPasswordInput_Access_Array;
+   type HtmlPasswordInput_Access_Array_Access_Array is array (Natural range <>) of HtmlPasswordInput_Access_Array_Access;
+   type HtmlPasswordInput_Access_Array_Access_Array_Access is access all HtmlPasswordInput_Access_Array_Access_Array;
 
    type HtmlPasswordInput is new HtmlLengthInput with null record;
 

@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with taghelpers.transform.info.TransformInfoRequestHelper_Package; use taghelpers.transform.info.TransformInfoRequestHelper_Package;
+
 package body taghelpers.transform.info.TransformInfoRequestHelperFactory_Package is
 
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out TransformInfoRequestHelperFactory'Class) is
    begin
       null;
@@ -42,7 +46,7 @@ package body taghelpers.transform.info.TransformInfoRequestHelperFactory_Package
       pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         begin
-            return TransformInfoRequestHelper_Package.Create (hashMap, pageContext);
+            return Java_Object_Access (TransformInfoRequestHelper_Package.Create (hashMap, pageContext));
         exception
             when Java_Occurrence : others =>
                 declare

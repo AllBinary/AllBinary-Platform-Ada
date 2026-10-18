@@ -1,6 +1,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
+
 package body org.allbinary.media.image.BufferedImageUtil2_Package is
 
    procedure Initialize_Fields (This : in out BufferedImageUtil2'Class) is

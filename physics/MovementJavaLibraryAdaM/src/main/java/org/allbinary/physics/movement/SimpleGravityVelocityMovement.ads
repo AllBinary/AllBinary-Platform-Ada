@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
 with org.allbinary.game.physics.acceleration.GravityUtil_Package; use org.allbinary.game.physics.acceleration.GravityUtil_Package;
-with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package; use org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;
 
@@ -30,13 +29,14 @@ package org.allbinary.physics.movement.SimpleGravityVelocityMovement_Package is
 
    package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
    package GravityUtil_Package renames Standard.org.allbinary.game.physics.acceleration.GravityUtil_Package;
-   package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
    package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type SimpleGravityVelocityMovement is tagged;
    type SimpleGravityVelocityMovement_Access is access all SimpleGravityVelocityMovement'Class;
    type SimpleGravityVelocityMovement_Access_Array is array (Natural range <>) of SimpleGravityVelocityMovement_Access;
    type SimpleGravityVelocityMovement_Access_Array_Access is access all SimpleGravityVelocityMovement_Access_Array;
+   type SimpleGravityVelocityMovement_Access_Array_Access_Array is array (Natural range <>) of SimpleGravityVelocityMovement_Access_Array_Access;
+   type SimpleGravityVelocityMovement_Access_Array_Access_Array_Access is access all SimpleGravityVelocityMovement_Access_Array_Access_Array;
 
    type SimpleGravityVelocityMovement is new BasicConstantVelocityMovement with record
       gravityUtil : GravityUtil_Access;

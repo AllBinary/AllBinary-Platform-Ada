@@ -32,6 +32,8 @@ package org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package is
    type OpenGLESDeviceImageTranslate_Access is access all OpenGLESDeviceImageTranslate'Class;
    type OpenGLESDeviceImageTranslate_Access_Array is array (Natural range <>) of OpenGLESDeviceImageTranslate_Access;
    type OpenGLESDeviceImageTranslate_Access_Array_Access is access all OpenGLESDeviceImageTranslate_Access_Array;
+   type OpenGLESDeviceImageTranslate_Access_Array_Access_Array is array (Natural range <>) of OpenGLESDeviceImageTranslate_Access_Array_Access;
+   type OpenGLESDeviceImageTranslate_Access_Array_Access_Array_Access is access all OpenGLESDeviceImageTranslate_Access_Array_Access_Array;
 
    type OpenGLESDeviceImageTranslate is new OpenGLESImageTranslate with record
       translateX : Float;

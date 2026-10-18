@@ -28,6 +28,8 @@ package org.allbinary.animation.IndexedAnimationInterfaceCompositeInterface_Pack
    type IndexedAnimationInterfaceCompositeInterface_Access is access all IndexedAnimationInterfaceCompositeInterface'Class;
    type IndexedAnimationInterfaceCompositeInterface_Access_Array is array (Natural range <>) of IndexedAnimationInterfaceCompositeInterface_Access;
    type IndexedAnimationInterfaceCompositeInterface_Access_Array_Access is access all IndexedAnimationInterfaceCompositeInterface_Access_Array;
+   type IndexedAnimationInterfaceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of IndexedAnimationInterfaceCompositeInterface_Access_Array_Access;
+   type IndexedAnimationInterfaceCompositeInterface_Access_Array_Access_Array_Access is access all IndexedAnimationInterfaceCompositeInterface_Access_Array_Access_Array;
 
 end org.allbinary.animation.IndexedAnimationInterfaceCompositeInterface_Package;
 

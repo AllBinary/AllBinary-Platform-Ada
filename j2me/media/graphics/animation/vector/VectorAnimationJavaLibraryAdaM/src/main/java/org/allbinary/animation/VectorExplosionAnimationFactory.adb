@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.animation.VectorAnimationInterface_Package; use org.allbinary.animation.VectorAnimationInterface_Package;
+with org.allbinary.animation.VectorRotationAnimation_Package; use org.allbinary.animation.VectorRotationAnimation_Package;
+
 package body org.allbinary.animation.VectorExplosionAnimationFactory_Package is
 
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    procedure Initialize_Fields (This : in out VectorExplosionAnimationFactory'Class) is
    begin
       null;
@@ -52,7 +57,7 @@ package body org.allbinary.animation.VectorExplosionAnimationFactory_Package is
         frame := vectorRotationAnimationInterface.getFrame;
         framePoints := vectorRotationAnimationInterface.getPoints (frame);
         points := This.vectorExplosionGenerator.getInstance (framePoints, 6, This.vectorExplosionGenerator.ROTATION);
-        return VectorRotationAnimation_Package.Create (points, VectorExplosionAnimationFactory'Class (This).getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (VectorRotationAnimation_Package.Create (points, VectorExplosionAnimationFactory'Class (This).getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance));
    end getInstanceAnimation;
 
    procedure setBasicColorP (This : in out VectorExplosionAnimationFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class) is

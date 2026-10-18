@@ -22,18 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package is
 
    package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
 
    type GeographicMapCellPosition is tagged;
    type GeographicMapCellPosition_Access is access all GeographicMapCellPosition'Class;
    type GeographicMapCellPosition_Access_Array is array (Natural range <>) of GeographicMapCellPosition_Access;
    type GeographicMapCellPosition_Access_Array_Access is access all GeographicMapCellPosition_Access_Array;
+   type GeographicMapCellPosition_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPosition_Access_Array_Access;
+   type GeographicMapCellPosition_Access_Array_Access_Array_Access is access all GeographicMapCellPosition_Access_Array_Access_Array;
 
    type GeographicMapCellPosition is new CellPosition with record
       point : GPoint_Access;

@@ -5,6 +5,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package is
 
    procedure Initialize_Fields (This : in out AbDatabaseManagement'Class) is

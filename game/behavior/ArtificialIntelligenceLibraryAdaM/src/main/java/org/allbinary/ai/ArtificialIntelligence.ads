@@ -31,8 +31,10 @@ package org.allbinary.ai.ArtificialIntelligence_Package is
    type ArtificialIntelligence_Access is access all ArtificialIntelligence'Class;
    type ArtificialIntelligence_Access_Array is array (Natural range <>) of ArtificialIntelligence_Access;
    type ArtificialIntelligence_Access_Array_Access is access all ArtificialIntelligence_Access_Array;
+   type ArtificialIntelligence_Access_Array_Access_Array is array (Natural range <>) of ArtificialIntelligence_Access_Array_Access;
+   type ArtificialIntelligence_Access_Array_Access_Array_Access is access all ArtificialIntelligence_Access_Array_Access_Array;
 
-   type ArtificialIntelligence is new ArtificialIntelligenceInterface with null record;
+   type ArtificialIntelligence is new Java_Object and ArtificialIntelligenceInterface with null record;
    AI_ID : Integer;
    instance : ArtificialIntelligence_Access;
 

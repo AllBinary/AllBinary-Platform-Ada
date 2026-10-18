@@ -8,7 +8,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
@@ -16,7 +15,6 @@ with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animat
 
 package org.allbinary.animation.NullRotationAnimation_Package is
 
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
    package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
@@ -24,6 +22,8 @@ package org.allbinary.animation.NullRotationAnimation_Package is
    type NullRotationAnimation_Access is access all NullRotationAnimation'Class;
    type NullRotationAnimation_Access_Array is array (Natural range <>) of NullRotationAnimation_Access;
    type NullRotationAnimation_Access_Array_Access is access all NullRotationAnimation_Access_Array;
+   type NullRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of NullRotationAnimation_Access_Array_Access;
+   type NullRotationAnimation_Access_Array_Access_Array_Access is access all NullRotationAnimation_Access_Array_Access_Array;
 
    type NullRotationAnimation is new RotationAnimation with null record;
 

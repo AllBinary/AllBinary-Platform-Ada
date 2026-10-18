@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary.business.user.UserFactoryInterface_Package;
 with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
-with org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUser_Package;
 
 package org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUserFactory_Package is
 
@@ -35,8 +34,10 @@ package org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEdit
    type ViewEditorWebStoreAdminUserFactory_Access is access all ViewEditorWebStoreAdminUserFactory'Class;
    type ViewEditorWebStoreAdminUserFactory_Access_Array is array (Natural range <>) of ViewEditorWebStoreAdminUserFactory_Access;
    type ViewEditorWebStoreAdminUserFactory_Access_Array_Access is access all ViewEditorWebStoreAdminUserFactory_Access_Array;
+   type ViewEditorWebStoreAdminUserFactory_Access_Array_Access_Array is array (Natural range <>) of ViewEditorWebStoreAdminUserFactory_Access_Array_Access;
+   type ViewEditorWebStoreAdminUserFactory_Access_Array_Access_Array_Access is access all ViewEditorWebStoreAdminUserFactory_Access_Array_Access_Array;
 
-   type ViewEditorWebStoreAdminUserFactory is new UserFactoryInterface with null record;
+   type ViewEditorWebStoreAdminUserFactory is new Java_Object and UserFactoryInterface with null record;
 
    procedure Initialize (This : in out ViewEditorWebStoreAdminUserFactory'Class);
    function Create return ViewEditorWebStoreAdminUserFactory_Access;

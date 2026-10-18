@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package; use org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out TitleProgressBarPortionSetProgressRunnable'Class) is
    begin
       null;

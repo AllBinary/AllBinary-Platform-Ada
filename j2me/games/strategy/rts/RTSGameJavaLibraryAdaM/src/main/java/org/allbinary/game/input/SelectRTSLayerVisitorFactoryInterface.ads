@@ -31,6 +31,8 @@ package org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package i
    type SelectRTSLayerVisitorFactoryInterface_Access is access all SelectRTSLayerVisitorFactoryInterface'Class;
    type SelectRTSLayerVisitorFactoryInterface_Access_Array is array (Natural range <>) of SelectRTSLayerVisitorFactoryInterface_Access;
    type SelectRTSLayerVisitorFactoryInterface_Access_Array_Access is access all SelectRTSLayerVisitorFactoryInterface_Access_Array;
+   type SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of SelectRTSLayerVisitorFactoryInterface_Access_Array_Access;
+   type SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Access is access all SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array;
    function create (This : in out SelectRTSLayerVisitorFactoryInterface; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) return Visitor_Access is abstract;
 
 end org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;

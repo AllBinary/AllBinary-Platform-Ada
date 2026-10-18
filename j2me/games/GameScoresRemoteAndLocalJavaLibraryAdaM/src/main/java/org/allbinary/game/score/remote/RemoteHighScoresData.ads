@@ -28,6 +28,8 @@ package org.allbinary.game.score.remote.RemoteHighScoresData_Package is
    type RemoteHighScoresData_Access is access all RemoteHighScoresData'Class;
    type RemoteHighScoresData_Access_Array is array (Natural range <>) of RemoteHighScoresData_Access;
    type RemoteHighScoresData_Access_Array_Access is access all RemoteHighScoresData_Access_Array;
+   type RemoteHighScoresData_Access_Array_Access_Array is array (Natural range <>) of RemoteHighScoresData_Access_Array_Access;
+   type RemoteHighScoresData_Access_Array_Access_Array_Access is access all RemoteHighScoresData_Access_Array_Access_Array;
 
    type RemoteHighScoresData is new Java_Object with record
       HIGH_SCORES : Unbounded_String;

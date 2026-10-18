@@ -28,6 +28,8 @@ package tags.TagStrings_Package is
    type TagStrings_Access is access all TagStrings'Class;
    type TagStrings_Access_Array is array (Natural range <>) of TagStrings_Access;
    type TagStrings_Access_Array_Access is access all TagStrings_Access_Array;
+   type TagStrings_Access_Array_Access_Array is array (Natural range <>) of TagStrings_Access_Array_Access;
+   type TagStrings_Access_Array_Access_Array_Access is access all TagStrings_Access_Array_Access_Array;
 
    type TagStrings is new Java_Object with record
       DO_START_TAG : Unbounded_String;

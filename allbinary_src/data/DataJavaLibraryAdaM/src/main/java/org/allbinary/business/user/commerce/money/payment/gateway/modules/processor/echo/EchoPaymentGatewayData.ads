@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.modules.proce
    type EchoPaymentGatewayData_Access is access all EchoPaymentGatewayData'Class;
    type EchoPaymentGatewayData_Access_Array is array (Natural range <>) of EchoPaymentGatewayData_Access;
    type EchoPaymentGatewayData_Access_Array_Access is access all EchoPaymentGatewayData_Access_Array;
+   type EchoPaymentGatewayData_Access_Array_Access_Array is array (Natural range <>) of EchoPaymentGatewayData_Access_Array_Access;
+   type EchoPaymentGatewayData_Access_Array_Access_Array_Access is access all EchoPaymentGatewayData_Access_Array_Access_Array;
 
    type EchoPaymentGatewayData is new Java_Object with null record;
    TRANSACTION_TYPE : Unbounded_String;

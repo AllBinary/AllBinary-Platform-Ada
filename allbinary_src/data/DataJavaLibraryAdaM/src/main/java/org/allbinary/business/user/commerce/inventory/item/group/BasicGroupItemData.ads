@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.item.group.BasicGroupItem
    type BasicGroupItemData_Access is access all BasicGroupItemData'Class;
    type BasicGroupItemData_Access_Array is array (Natural range <>) of BasicGroupItemData_Access;
    type BasicGroupItemData_Access_Array_Access is access all BasicGroupItemData_Access_Array;
+   type BasicGroupItemData_Access_Array_Access_Array is array (Natural range <>) of BasicGroupItemData_Access_Array_Access;
+   type BasicGroupItemData_Access_Array_Access_Array_Access is access all BasicGroupItemData_Access_Array_Access_Array;
 
    type BasicGroupItemData is new Java_Object with null record;
    ITEM_ONE : Unbounded_String;

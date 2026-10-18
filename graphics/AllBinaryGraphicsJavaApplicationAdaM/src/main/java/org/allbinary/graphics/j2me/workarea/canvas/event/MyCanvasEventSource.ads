@@ -29,6 +29,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Pa
    type MyCanvasEventSource_Access is access all MyCanvasEventSource'Class;
    type MyCanvasEventSource_Access_Array is array (Natural range <>) of MyCanvasEventSource_Access;
    type MyCanvasEventSource_Access_Array_Access is access all MyCanvasEventSource_Access_Array;
+   type MyCanvasEventSource_Access_Array_Access_Array is array (Natural range <>) of MyCanvasEventSource_Access_Array_Access;
+   type MyCanvasEventSource_Access_Array_Access_Array_Access is access all MyCanvasEventSource_Access_Array_Access_Array;
 
    type MyCanvasEventSource is new Java_Object with record
       command : Unbounded_String;

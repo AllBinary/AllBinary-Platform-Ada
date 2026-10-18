@@ -13,8 +13,37 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.animation.NullIndexedAnimationFactory_Package; use org.allbinary.animation.NullIndexedAnimationFactory_Package;
+with org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package; use org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
+with org.allbinary.game.identification.GroupFactory_Package; use org.allbinary.game.identification.GroupFactory_Package;
+with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.game.input.form.NullRTSFormInputFactory_Package; use org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
+with org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package; use org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
+with org.allbinary.graphics.RectangleFactory_Package; use org.allbinary.graphics.RectangleFactory_Package;
+with org.allbinary.view.event.ViewPositionEventHandler_Package; use org.allbinary.view.event.ViewPositionEventHandler_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+with org.allbinary.game.layer.GeographicMapCellPositionArea_Package; use org.allbinary.game.layer.GeographicMapCellPositionArea_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+
 package body org.allbinary.game.layer.RTSLayer_Package is
 
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package NullIndexedAnimationFactory_Package renames Standard.org.allbinary.animation.NullIndexedAnimationFactory_Package;
+   package DestroyedLayerProcessor_Package renames Standard.org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
+   package GroupFactory_Package renames Standard.org.allbinary.game.identification.GroupFactory_Package;
+   package GameInputProcessorUtil_Package renames Standard.org.allbinary.game.input.GameInputProcessorUtil_Package;
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package NullRTSFormInputFactory_Package renames Standard.org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
+   package TileLayerPositionIntoViewPosition_Package renames Standard.org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
+   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
+   package ViewPositionEventHandler_Package renames Standard.org.allbinary.view.event.ViewPositionEventHandler_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
    procedure Initialize_Fields (This : in out RTSLayer'Class) is
    begin
       null;
@@ -101,8 +130,8 @@ package body org.allbinary.game.layer.RTSLayer_Package is
         This.initRangeAnimation := animation;
         This.sensorRangeAnimation := animation;
         This.initSensorRangeAnimation := animation;
-        This.animationInterface := This.initAnimationInterface;
-        This.geographicMapCellPositionAreaBase := GeographicMapCellPositionArea_Package.Create (RTSLayer_Access'(This'Unchecked_Access));
+        This.animationInterface := Animation_Access (This.initAnimationInterface);
+        This.geographicMapCellPositionAreaBase := GeographicMapCellPositionAreaBase_Access (GeographicMapCellPositionArea_Package.Create (RTSLayer_Access'(This'Unchecked_Access)));
    end Initialize;
 
    function Create (remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface_Param : access Health_Package.Health'Class; rtsFormInput_Param : access RTSFormInput_Package.RTSFormInput'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface_Package.ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return RTSLayer_Access is
@@ -190,7 +219,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    procedure processBuiltTick (This : in out RTSLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
       allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
-        This.animationInterface := This.indexedButShouldBeRotationAnimationInterface;
+        This.animationInterface := Animation_Access (This.indexedButShouldBeRotationAnimationInterface);
    end processBuiltTick;
 
    procedure processTick (This : in out RTSLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
@@ -342,7 +371,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
 
    function getVerticleBuildAnimationInterface (This : in out RTSLayer) return Animation_Access is
    begin
-        return This.verticleBuildAnimationInterface;
+        return Animation_Access (This.verticleBuildAnimationInterface);
    end getVerticleBuildAnimationInterface;
 
    function getAnimationInterface (This : in out RTSLayer) return Animation_Access is
@@ -629,7 +658,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    procedure setRotationAnimationInterface (This : in out RTSLayer; rotationAnimationInterface_Param : access RotationAnimation_Package.RotationAnimation'Class) is
       rotationAnimationInterface : constant RotationAnimation_Access := RotationAnimation_Access (rotationAnimationInterface_Param);
    begin
-        This.indexedButShouldBeRotationAnimationInterface := rotationAnimationInterface;
+        This.indexedButShouldBeRotationAnimationInterface := IndexedAnimation_Access (rotationAnimationInterface);
    end setRotationAnimationInterface;
 
    procedure createSimulatedInstance (remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class) is

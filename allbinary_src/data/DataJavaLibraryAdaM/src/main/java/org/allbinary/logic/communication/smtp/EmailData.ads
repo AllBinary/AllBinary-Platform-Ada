@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.smtp.EmailData_Package is
    type EmailData_Access is access all EmailData'Class;
    type EmailData_Access_Array is array (Natural range <>) of EmailData_Access;
    type EmailData_Access_Array_Access is access all EmailData_Access_Array;
+   type EmailData_Access_Array_Access_Array is array (Natural range <>) of EmailData_Access_Array_Access;
+   type EmailData_Access_Array_Access_Array_Access is access all EmailData_Access_Array_Access_Array;
 
    type EmailData is new Java_Object with null record;
    SERVER : Unbounded_String;

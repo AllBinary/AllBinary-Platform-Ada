@@ -20,10 +20,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
@@ -34,10 +32,8 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package GeographicMapCellPositionBaseFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
    package GeographicMapCellPositionFactoryInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
@@ -47,6 +43,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeogra
    type BaseRaceTrackGeographicMap_Access is access all BaseRaceTrackGeographicMap'Class;
    type BaseRaceTrackGeographicMap_Access_Array is array (Natural range <>) of BaseRaceTrackGeographicMap_Access;
    type BaseRaceTrackGeographicMap_Access_Array_Access is access all BaseRaceTrackGeographicMap_Access_Array;
+   type BaseRaceTrackGeographicMap_Access_Array_Access_Array is array (Natural range <>) of BaseRaceTrackGeographicMap_Access_Array_Access;
+   type BaseRaceTrackGeographicMap_Access_Array_Access_Array_Access is access all BaseRaceTrackGeographicMap_Access_Array_Access_Array;
 
    type BaseRaceTrackGeographicMap is new BasicGeographicMap and RaceTrackGeographicMapInterface with record
       logUtil : LogUtil_Access;

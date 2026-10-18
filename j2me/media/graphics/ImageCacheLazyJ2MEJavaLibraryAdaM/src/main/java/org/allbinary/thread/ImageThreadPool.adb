@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.thread.ImageThreadPool_Package is
 
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out ImageThreadPool'Class) is
    begin
       null;
@@ -60,7 +67,7 @@ package body org.allbinary.thread.ImageThreadPool_Package is
 
 begin
    null;
-   instance := ImageThreadPool_Package.Create (To_Unbounded_String ("ImageLoader"), 1, ThreadPool_Package.NORMAL_PRIORITY);
+   instance := ThreadPool_Access (ImageThreadPool_Package.Create (To_Unbounded_String ("ImageLoader"), 1, ThreadPool_Package.NORMAL_PRIORITY));
 
 end org.allbinary.thread.ImageThreadPool_Package;
 

@@ -20,15 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.game.input.PCKeyFactory_Package; use org.allbinary.game.input.PCKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 
 package org.allbinary.game.input.PCGameInputMapping_Package is
 
-   package GamePersistanceStrings_Package renames Standard.org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
    package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
@@ -36,6 +33,8 @@ package org.allbinary.game.input.PCGameInputMapping_Package is
    type PCGameInputMapping_Access is access all PCGameInputMapping'Class;
    type PCGameInputMapping_Access_Array is array (Natural range <>) of PCGameInputMapping_Access;
    type PCGameInputMapping_Access_Array_Access is access all PCGameInputMapping_Access_Array;
+   type PCGameInputMapping_Access_Array_Access_Array is array (Natural range <>) of PCGameInputMapping_Access_Array_Access;
+   type PCGameInputMapping_Access_Array_Access_Array_Access is access all PCGameInputMapping_Access_Array_Access_Array;
 
    type PCGameInputMapping is new PersistentInputMapping with null record;
 

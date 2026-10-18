@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    type PaymentGatewayData_Access is access all PaymentGatewayData'Class;
    type PaymentGatewayData_Access_Array is array (Natural range <>) of PaymentGatewayData_Access;
    type PaymentGatewayData_Access_Array_Access is access all PaymentGatewayData_Access_Array;
+   type PaymentGatewayData_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayData_Access_Array_Access;
+   type PaymentGatewayData_Access_Array_Access_Array_Access is access all PaymentGatewayData_Access_Array_Access_Array;
 
    type PaymentGatewayData is new Java_Object with record
       key : Unbounded_String;
@@ -65,8 +67,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    SPECIAL8 : PaymentGatewayData_Access;
    SPECIAL9 : PaymentGatewayData_Access;
 
-   procedure Initialize (This : in out PaymentGatewayData'Class; value_Case : Unbounded_String);
-   function Create (value_Case : Unbounded_String) return PaymentGatewayData_Access;
+   procedure Initialize (This : in out PaymentGatewayData'Class; value : Unbounded_String);
+   function Create (value : Unbounded_String) return PaymentGatewayData_Access;
    function toString (This : in out PaymentGatewayData) return Unbounded_String;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;

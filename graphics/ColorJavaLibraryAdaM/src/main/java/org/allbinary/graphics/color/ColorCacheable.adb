@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.color.ColorCacheable_Package is
 
    procedure Initialize_Fields (This : in out ColorCacheable'Class) is

@@ -20,64 +20,41 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.data.tree.dom.XslHelper_Package; use org.allbinary.data.tree.dom.XslHelper_Package;
-with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
-with org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package; use org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package;
 with org.allbinary.graphics.j2me.dialog.RotateJDialog_Package; use org.allbinary.graphics.j2me.dialog.RotateJDialog_Package;
-with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
-with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
 with org.allbinary.gui.dialog.FileJDialog_Package; use org.allbinary.gui.dialog.FileJDialog_Package;
 with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package; use org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
 with org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package; use org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
-with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
 with org.allbinary.logic.communication.log.GuiLog_Package; use org.allbinary.logic.communication.log.GuiLog_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.graphics.j2me.JFrame_Package; use org.allbinary.graphics.j2me.JFrame_Package;
 with org.allbinary.graphics.j2me.KeyListener_Package; use org.allbinary.graphics.j2me.KeyListener_Package;
-with org.allbinary.graphics.j2me.Dimension_Package; use org.allbinary.graphics.j2me.Dimension_Package;
-with org.allbinary.graphics.j2me.GridLayout_Package; use org.allbinary.graphics.j2me.GridLayout_Package;
 with org.allbinary.graphics.j2me.JPanel_Package; use org.allbinary.graphics.j2me.JPanel_Package;
 
 package org.allbinary.graphics.j2me.MyFrame_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package XslHelper_Package renames Standard.org.allbinary.data.tree.dom.XslHelper_Package;
-   package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
-   package NewWorkAreaJDialog_Package renames Standard.org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package;
    package RotateJDialog_Package renames Standard.org.allbinary.graphics.j2me.dialog.RotateJDialog_Package;
-   package WorkAreaDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
-   package WorkAreaJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
    package WorkAreaJPanelInterface_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
-   package MyCanvasEvent_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
-   package MyCanvasEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
-   package MyCanvasEventSource_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
    package FileJDialog_Package renames Standard.org.allbinary.gui.dialog.FileJDialog_Package;
    package FileJDialogListenerInterface_Package renames Standard.org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
    package HashMapJDialogListenerInterface_Package renames Standard.org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
-   package LOGGING_Package renames Standard.org.allbinary.log.LOGGING_Package;
    package GuiLog_Package renames Standard.org.allbinary.logic.communication.log.GuiLog_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type MyFrame is tagged;
    type MyFrame_Access is access all MyFrame'Class;
    type MyFrame_Access_Array is array (Natural range <>) of MyFrame_Access;
    type MyFrame_Access_Array_Access is access all MyFrame_Access_Array;
+   type MyFrame_Access_Array_Access_Array is array (Natural range <>) of MyFrame_Access_Array_Access;
+   type MyFrame_Access_Array_Access_Array_Access is access all MyFrame_Access_Array_Access_Array;
 
    type MyFrame is new JFrame and FileJDialogListenerInterface and HashMapJDialogListenerInterface and KeyListener with record
       logUtil : LogUtil_Access;

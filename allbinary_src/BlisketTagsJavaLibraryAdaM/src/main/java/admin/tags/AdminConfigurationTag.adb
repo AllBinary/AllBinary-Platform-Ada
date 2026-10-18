@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.AdminConfigurationHelperFactory_Package; use admin.taghelpers.AdminConfigurationHelperFactory_Package;
+with admin.taghelpers.AdminConfigurationRequestHelperFactory_Package; use admin.taghelpers.AdminConfigurationRequestHelperFactory_Package;
+
 package body admin.tags.AdminConfigurationTag_Package is
 
+   package AdminConfigurationHelperFactory_Package renames Standard.admin.taghelpers.AdminConfigurationHelperFactory_Package;
+   package AdminConfigurationRequestHelperFactory_Package renames Standard.admin.taghelpers.AdminConfigurationRequestHelperFactory_Package;
    procedure Initialize_Fields (This : in out AdminConfigurationTag'Class) is
    begin
       null;

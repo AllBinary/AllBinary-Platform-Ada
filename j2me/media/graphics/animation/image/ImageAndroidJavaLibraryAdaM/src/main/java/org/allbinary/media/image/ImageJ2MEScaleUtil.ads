@@ -21,18 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
-with org.allbinary.media.image.ImageScaleUtil_Package; use org.allbinary.media.image.ImageScaleUtil_Package;
 
 package org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
 
    type ImageJ2MEScaleUtil is tagged;
    type ImageJ2MEScaleUtil_Access is access all ImageJ2MEScaleUtil'Class;
    type ImageJ2MEScaleUtil_Access_Array is array (Natural range <>) of ImageJ2MEScaleUtil_Access;
    type ImageJ2MEScaleUtil_Access_Array_Access is access all ImageJ2MEScaleUtil_Access_Array;
+   type ImageJ2MEScaleUtil_Access_Array_Access_Array is array (Natural range <>) of ImageJ2MEScaleUtil_Access_Array_Access;
+   type ImageJ2MEScaleUtil_Access_Array_Access_Array_Access is access all ImageJ2MEScaleUtil_Access_Array_Access_Array;
 
    type ImageJ2MEScaleUtil is new Java_Object with null record;
    instance : ImageJ2MEScaleUtil_Access;

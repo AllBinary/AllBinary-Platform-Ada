@@ -1,6 +1,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.device.NullGL10_Package; use org.allbinary.device.NullGL10_Package;
+
 package body org.allbinary.device.OpenGLESGraphics_Package is
 
    procedure Initialize_Fields (This : in out OpenGLESGraphics'Class) is

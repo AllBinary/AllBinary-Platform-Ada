@@ -13,8 +13,48 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
+with org.allbinary.business.category.CategoryFactoryInterface_Package; use org.allbinary.business.category.CategoryFactoryInterface_Package;
+with org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package; use org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package;
+with org.allbinary.data.tree.category.CategoryLoaderFactory_Package; use org.allbinary.data.tree.category.CategoryLoaderFactory_Package;
+with org.allbinary.data.tree.category.CategoryLoaderInterface_Package; use org.allbinary.data.tree.category.CategoryLoaderInterface_Package;
+with org.allbinary.data.tree.dom.DomData_Package; use org.allbinary.data.tree.dom.DomData_Package;
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.sql.AbSqlData_Package; use org.allbinary.logic.communication.sql.AbSqlData_Package;
+with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.io.path.PathUtil_Package; use org.allbinary.logic.io.path.PathUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.visual.theme.ThemeData_Package; use org.allbinary.logic.visual.theme.ThemeData_Package;
+
 package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
+   package CategoryFactoryInterface_Package renames Standard.org.allbinary.business.category.CategoryFactoryInterface_Package;
+   package StoreThemeCategoryFactory_Package renames Standard.org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package;
+   package CategoryLoaderFactory_Package renames Standard.org.allbinary.data.tree.category.CategoryLoaderFactory_Package;
+   package CategoryLoaderInterface_Package renames Standard.org.allbinary.data.tree.category.CategoryLoaderInterface_Package;
+   package DomData_Package renames Standard.org.allbinary.data.tree.dom.DomData_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbSqlData_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlData_Package;
+   package CryptFileReader_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package PathUtil_Package renames Standard.org.allbinary.logic.io.path.PathUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    procedure Initialize_Fields (This : in out ThemeValidation'Class) is
    begin
       null;
@@ -42,7 +82,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
         pathUtil := PathUtil_Package.getInstance;
         This.categoryAbPath := pathUtil.removeNameFromPath (categoryThemePath);
         This.themeName := pathData.getNameFromPath (categoryThemePath);
-        This.styleValidationInterface := cssStyleValidation;
+        This.styleValidationInterface := ValidationInterface_Access (cssStyleValidation);
         ThemeValidation'Class (This).init;
    end Initialize;
 
@@ -122,7 +162,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
       categoryLoaderInterface : CategoryLoaderInterface_Access;
       rootStoreThemeCategoryInterface : StoreThemeCategoryInterface_Access;
    begin
-        categoryFactoryInterface := StoreThemeCategoryFactory_Package.Create (ThemeValidation'Class (This).getTransformInfoInterface);
+        categoryFactoryInterface := CategoryFactoryInterface_Access (StoreThemeCategoryFactory_Package.Create (ThemeValidation'Class (This).getTransformInfoInterface));
         categoryLoaderInterface := CategoryLoaderFactory_Package.getInstance (categoryFactoryInterface);
         rootStoreThemeCategoryInterface := StoreThemeCategoryInterface_Access (categoryFactoryInterface.getRootInstance);
         ThemeValidation'Class (This).init (rootStoreThemeCategoryInterface);
@@ -172,7 +212,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
             cssStyleFileAbPath := AbPath_Package.Create (This.fileAbPath.toString, This.themeName & Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & Java_Image (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION));
             cryptFileReader := CryptFileReader_Package.Create (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION, CategoryData_Package.getInstance.ENCRYPTED_EXTENSION);
             document := DomDocumentHelper_Package.create (cryptFileReader.get (cssStyleFileAbPath));
-            This.styleValidationInterface := CssStyleValidation_Package.Create (document);
+            This.styleValidationInterface := ValidationInterface_Access (CssStyleValidation_Package.Create (document));
         end if;
         return CssStyleValidation_Access (This.styleValidationInterface);
    end getCssStyleValidation;
@@ -250,7 +290,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
    function toVector (This : in out ThemeValidation) return BasicArrayList_Access is
       vector : BasicArrayList_Access;
    begin
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         vector.add (ThemeValidation'Class (This).getName);
         vector.add (ThemeValidation'Class (This).getPath);
         vector.add (ThemeValidation'Class (This).getPreviewImageName);

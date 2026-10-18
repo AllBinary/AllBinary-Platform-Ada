@@ -20,27 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.util.cache.CachePolicyFactory_Package; use org.allbinary.logic.util.cache.CachePolicyFactory_Package;
 with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.logic.util.cache.PoolInterface_Package;
-with org.allbinary.logic.util.cache.PoolInterfaceFactory_Package; use org.allbinary.logic.util.cache.PoolInterfaceFactory_Package;
-with org.allbinary.logic.util.cache.PoolTypeFactory_Package; use org.allbinary.logic.util.cache.PoolTypeFactory_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package; use org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package;
 
 package org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CachePolicyFactory_Package renames Standard.org.allbinary.logic.util.cache.CachePolicyFactory_Package;
    package PoolInterface_Package renames Standard.org.allbinary.logic.util.cache.PoolInterface_Package;
-   package PoolInterfaceFactory_Package renames Standard.org.allbinary.logic.util.cache.PoolInterfaceFactory_Package;
-   package PoolTypeFactory_Package renames Standard.org.allbinary.logic.util.cache.PoolTypeFactory_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BufferedImagePoolSingleton is tagged;
    type BufferedImagePoolSingleton_Access is access all BufferedImagePoolSingleton'Class;
    type BufferedImagePoolSingleton_Access_Array is array (Natural range <>) of BufferedImagePoolSingleton_Access;
    type BufferedImagePoolSingleton_Access_Array_Access is access all BufferedImagePoolSingleton_Access_Array;
+   type BufferedImagePoolSingleton_Access_Array_Access_Array is array (Natural range <>) of BufferedImagePoolSingleton_Access_Array_Access;
+   type BufferedImagePoolSingleton_Access_Array_Access_Array_Access is access all BufferedImagePoolSingleton_Access_Array_Access_Array;
 
    type BufferedImagePoolSingleton is new Java_Object with null record;
    poolInterface : PoolInterface_Access;

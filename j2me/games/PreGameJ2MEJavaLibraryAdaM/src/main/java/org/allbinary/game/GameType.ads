@@ -28,6 +28,8 @@ package org.allbinary.game.GameType_Package is
    type GameType_Access is access all GameType'Class;
    type GameType_Access_Array is array (Natural range <>) of GameType_Access;
    type GameType_Access_Array_Access is access all GameType_Access_Array;
+   type GameType_Access_Array_Access_Array is array (Natural range <>) of GameType_Access_Array_Access;
+   type GameType_Access_Array_Access_Array_Access is access all GameType_Access_Array_Access_Array;
 
    type GameType is new Java_Object with record
       name : Unbounded_String;

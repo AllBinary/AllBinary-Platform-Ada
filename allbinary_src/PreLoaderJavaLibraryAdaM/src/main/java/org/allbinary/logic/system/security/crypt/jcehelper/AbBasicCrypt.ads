@@ -27,22 +27,19 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.crypto.SecretKey_Package; use javax.crypto.SecretKey_Package;
 --  with javax.crypto.SecretKeyFactory_Package; use javax.crypto.SecretKeyFactory_Package;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
 
 package org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package is
 
    package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AbBasicCrypt is tagged;
    type AbBasicCrypt_Access is access all AbBasicCrypt'Class;
    type AbBasicCrypt_Access_Array is array (Natural range <>) of AbBasicCrypt_Access;
    type AbBasicCrypt_Access_Array_Access is access all AbBasicCrypt_Access_Array;
+   type AbBasicCrypt_Access_Array_Access_Array is array (Natural range <>) of AbBasicCrypt_Access_Array_Access;
+   type AbBasicCrypt_Access_Array_Access_Array_Access is access all AbBasicCrypt_Access_Array_Access_Array;
 
-   type AbBasicCrypt is new CryptInterface with record
+   type AbBasicCrypt is new Java_Object and CryptInterface with record
       cipher : Cipher_Access;
       secretKey : SecretKey_Access;
       algorithm : Unbounded_String;

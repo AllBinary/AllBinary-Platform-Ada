@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package; use org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package;
+
 package body org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Package is
 
    procedure Initialize_Fields (This : in out SelectionToolFactory'Class) is
@@ -36,7 +38,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Pac
    function getInstance (This : in out SelectionToolFactory; canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) return GraphicItemInterface_Access is
       canvasJPanel : constant CanvasJPanel_Access := CanvasJPanel_Access (canvasJPanel_Param);
    begin
-        return SelectionTool_Package.Create (canvasJPanel);
+        return GraphicItemInterface_Access (SelectionTool_Package.Create (canvasJPanel));
    end getInstance;
 
    procedure getInstance (This : in out SelectionToolFactory; canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) is

@@ -28,6 +28,8 @@ package org.allbinary.AndroidUtil_Package is
    type AndroidUtil_Access is access all AndroidUtil'Class;
    type AndroidUtil_Access_Array is array (Natural range <>) of AndroidUtil_Access;
    type AndroidUtil_Access_Array_Access is access all AndroidUtil_Access_Array;
+   type AndroidUtil_Access_Array_Access_Array is array (Natural range <>) of AndroidUtil_Access_Array_Access;
+   type AndroidUtil_Access_Array_Access_Array_Access is access all AndroidUtil_Access_Array_Access_Array;
 
    type AndroidUtil is new Java_Object with null record;
 

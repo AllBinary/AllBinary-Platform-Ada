@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package; use org.allbinary.game.rts.technology.UnitTechnologySingletonFactory_Package;
+
 package body org.allbinary.game.rts.technology.HealthTechnology_Package is
 
    procedure Initialize_Fields (This : in out HealthTechnology'Class) is

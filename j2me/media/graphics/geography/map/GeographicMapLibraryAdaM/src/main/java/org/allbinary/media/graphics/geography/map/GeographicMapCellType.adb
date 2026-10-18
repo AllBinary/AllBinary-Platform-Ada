@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+
 package body org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package is
 
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    procedure Initialize_Fields (This : in out GeographicMapCellType'Class) is
    begin
       null;
@@ -29,7 +33,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellType_Pa
    begin
       Initialize_Fields (This);
         This.type_Id := type_Id;
-        if (type_Id) /= (Integer_Package.MIN_VALUE) then
+        if (type_Id) /= (Integer'First) then
             geographicMapCellTypeFactory := GeographicMapCellTypeFactory_Package.getInstance;
             geographicMapCellTypeArray := geographicMapCellTypeFactory.getGeographicMapCellTypeArray;
             if ((geographicMapCellTypeArray (type_Id)) = (null)) or else ((reset) = (1)) then
@@ -62,7 +66,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellType_Pa
 begin
    null;
    NULL_GEOGRAPHIC_MAP_CELL_TYPE_ARRAY := new GeographicMapCellType_Access_Array'(0 .. (0) - 1 => null);
-   NULL_GEOGRAPHIC_MAP_CELL_TYPE := GeographicMapCellType_Package.Create (Integer_Package.MIN_VALUE, 0);
+   NULL_GEOGRAPHIC_MAP_CELL_TYPE := GeographicMapCellType_Package.Create (Integer'First, 0);
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 

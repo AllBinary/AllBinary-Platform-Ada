@@ -22,30 +22,26 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.animation.image.ImageArrayAnimation_Package; use org.allbinary.animation.image.ImageArrayAnimation_Package;
-with org.allbinary.animation.image.AdjustedImageArrayAnimation_Package; use org.allbinary.animation.image.AdjustedImageArrayAnimation_Package;
 
 package org.allbinary.animation.image.ImageArrayAnimationFactory_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
-   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type ImageArrayAnimationFactory is tagged;
    type ImageArrayAnimationFactory_Access is access all ImageArrayAnimationFactory'Class;
    type ImageArrayAnimationFactory_Access_Array is array (Natural range <>) of ImageArrayAnimationFactory_Access;
    type ImageArrayAnimationFactory_Access_Array_Access is access all ImageArrayAnimationFactory_Access_Array;
+   type ImageArrayAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of ImageArrayAnimationFactory_Access_Array_Access;
+   type ImageArrayAnimationFactory_Access_Array_Access_Array_Access is access all ImageArrayAnimationFactory_Access_Array_Access_Array;
 
-   type ImageArrayAnimationFactory is new AnimationInterfaceFactoryInterface with record
+   type ImageArrayAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       dx : Integer;
       dy : Integer;
       imageArray : Image_Access_Array_Access;

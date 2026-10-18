@@ -29,6 +29,8 @@ package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSourc
    type MyGraphicItemEventSource_Access is access all MyGraphicItemEventSource'Class;
    type MyGraphicItemEventSource_Access_Array is array (Natural range <>) of MyGraphicItemEventSource_Access;
    type MyGraphicItemEventSource_Access_Array_Access is access all MyGraphicItemEventSource_Access_Array;
+   type MyGraphicItemEventSource_Access_Array_Access_Array is array (Natural range <>) of MyGraphicItemEventSource_Access_Array_Access;
+   type MyGraphicItemEventSource_Access_Array_Access_Array_Access is access all MyGraphicItemEventSource_Access_Array_Access_Array;
 
    type MyGraphicItemEventSource is new Java_Object with record
       command : Unbounded_String;

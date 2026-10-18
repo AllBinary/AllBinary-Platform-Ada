@@ -21,24 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.motion.button.TouchButtonsListBuilder_Package; use org.allbinary.input.motion.button.TouchButtonsListBuilder_Package;
-with org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package;
-with org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package;
 
 package org.allbinary.input.motion.button.EndLevelNoBuildingSelectedTouchButtonsBuilder_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type EndLevelNoBuildingSelectedTouchButtonsBuilder is tagged;
    type EndLevelNoBuildingSelectedTouchButtonsBuilder_Access is access all EndLevelNoBuildingSelectedTouchButtonsBuilder'Class;
    type EndLevelNoBuildingSelectedTouchButtonsBuilder_Access_Array is array (Natural range <>) of EndLevelNoBuildingSelectedTouchButtonsBuilder_Access;
    type EndLevelNoBuildingSelectedTouchButtonsBuilder_Access_Array_Access is access all EndLevelNoBuildingSelectedTouchButtonsBuilder_Access_Array;
+   type EndLevelNoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array is array (Natural range <>) of EndLevelNoBuildingSelectedTouchButtonsBuilder_Access_Array_Access;
+   type EndLevelNoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Access is access all EndLevelNoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array;
 
    type EndLevelNoBuildingSelectedTouchButtonsBuilder is new TouchButtonsListBuilder with record
       logUtil : LogUtil_Access;

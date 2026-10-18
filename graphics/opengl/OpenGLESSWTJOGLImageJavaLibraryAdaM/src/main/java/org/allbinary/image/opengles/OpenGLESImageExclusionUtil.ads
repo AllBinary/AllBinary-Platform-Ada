@@ -22,18 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type OpenGLESImageExclusionUtil is tagged;
    type OpenGLESImageExclusionUtil_Access is access all OpenGLESImageExclusionUtil'Class;
    type OpenGLESImageExclusionUtil_Access_Array is array (Natural range <>) of OpenGLESImageExclusionUtil_Access;
    type OpenGLESImageExclusionUtil_Access_Array_Access is access all OpenGLESImageExclusionUtil_Access_Array;
+   type OpenGLESImageExclusionUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLESImageExclusionUtil_Access_Array_Access;
+   type OpenGLESImageExclusionUtil_Access_Array_Access_Array_Access is access all OpenGLESImageExclusionUtil_Access_Array_Access_Array;
 
    type OpenGLESImageExclusionUtil is new Java_Object with record
       EXCLUSION : Unbounded_String;

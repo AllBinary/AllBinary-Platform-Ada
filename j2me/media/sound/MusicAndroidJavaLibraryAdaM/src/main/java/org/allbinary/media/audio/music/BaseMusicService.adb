@@ -1,8 +1,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.NullAndroidCanvas_Package; use org.allbinary.android.NullAndroidCanvas_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with org.allbinary.media.audio.music.MusicStrings_Package; use org.allbinary.media.audio.music.MusicStrings_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
+
 package body org.allbinary.media.audio.music.BaseMusicService_Package is
 
+   package NullAndroidCanvas_Package renames Standard.org.allbinary.android.NullAndroidCanvas_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    procedure Initialize_Fields (This : in out BaseMusicService'Class) is
    begin
       null;
@@ -125,7 +134,7 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
                 player := This.player;
                 This.logUtil.putF (This.ALREADY_PLAYING, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.ON_START_COMMAND);
                 --  Java nested class MusicRunnable: move it to its own package
-                runnable := MusicRunnable_Package.Create (BaseMusicService_Access'(This'Unchecked_Access));
+                runnable := Runnable_Access (MusicRunnable_Package.Create (BaseMusicService_Access'(This'Unchecked_Access)));
                 thread := Thread_Package.Create (runnable);
                 thread.start;
                 return;

@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.logic.java.bool.BooleanUtil_Package; use org.allbinary.logic.java.bool.BooleanUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.business.init.InitInfoEntity_Package; use org.allbinary.business.init.InitInfoEntity_Package;
+
 package body org.allbinary.business.init.InitInfo_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package BooleanUtil_Package renames Standard.org.allbinary.logic.java.bool.BooleanUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out InitInfo'Class) is
    begin
       null;
@@ -219,9 +233,9 @@ package body org.allbinary.business.init.InitInfo_Package is
    end isTestHtmlPathValid;
 
    --  throws Exception
-   function isTestingValid (This : in out InitInfo; testing_Case : Unbounded_String) return Boolean is
+   function isTestingValid (This : in out InitInfo; testing : Unbounded_String) return Boolean is
    begin
-        return BooleanUtil_Package.getInstance.isStringBoolean (testing_Case);
+        return BooleanUtil_Package.getInstance.isStringBoolean (testing);
    end isTestingValid;
 
    function toHashMap (This : in out InitInfo) return HashMap_Access is
@@ -248,8 +262,8 @@ package body org.allbinary.business.init.InitInfo_Package is
       null;
    end isTestHtmlPathValid;
 
-   procedure isTestingValid (This : in out InitInfo; testing_Case : Unbounded_String) is
-      Java_Result : constant Boolean := InitInfo'Class (This).isTestingValid (testing_Case);
+   procedure isTestingValid (This : in out InitInfo; testing : Unbounded_String) is
+      Java_Result : constant Boolean := InitInfo'Class (This).isTestingValid (testing);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
+
 package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
 
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
    procedure Initialize_Fields (This : in out KeyPressesAI'Class) is
    begin
       null;

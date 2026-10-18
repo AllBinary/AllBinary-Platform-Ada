@@ -22,18 +22,14 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
 with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package; use org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
-with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.ag.ai.MultiKeyPressesAI_Package; use org.allbinary.game.ag.ai.MultiKeyPressesAI_Package;
-with org.allbinary.game.ag.ai.KeyPressesAI_Package; use org.allbinary.game.ag.ai.KeyPressesAI_Package;
 
 package org.allbinary.game.ag.ai.KeyPressesAIFactory_Package is
 
    package ArtificialIntelligenceInterface_Package renames Standard.org.allbinary.ai.ArtificialIntelligenceInterface_Package;
    package ArtificialIntelligenceInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
-   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
@@ -42,8 +38,10 @@ package org.allbinary.game.ag.ai.KeyPressesAIFactory_Package is
    type KeyPressesAIFactory_Access is access all KeyPressesAIFactory'Class;
    type KeyPressesAIFactory_Access_Array is array (Natural range <>) of KeyPressesAIFactory_Access;
    type KeyPressesAIFactory_Access_Array_Access is access all KeyPressesAIFactory_Access_Array;
+   type KeyPressesAIFactory_Access_Array_Access_Array is array (Natural range <>) of KeyPressesAIFactory_Access_Array_Access;
+   type KeyPressesAIFactory_Access_Array_Access_Array_Access is access all KeyPressesAIFactory_Access_Array_Access_Array;
 
-   type KeyPressesAIFactory is new ArtificialIntelligenceInterfaceFactoryInterface with null record;
+   type KeyPressesAIFactory is new Java_Object and ArtificialIntelligenceInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out KeyPressesAIFactory'Class);
    function Create return KeyPressesAIFactory_Access;

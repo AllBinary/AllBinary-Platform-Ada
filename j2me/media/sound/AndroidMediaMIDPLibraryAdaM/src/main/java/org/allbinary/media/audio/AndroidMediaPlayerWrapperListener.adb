@@ -1,18 +1,25 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out AndroidMediaPlayerWrapperListener'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
       This.androidMediaPlayerWrapper := AndroidMediaPlayerWrapper_Package.NULL_ANDROID_MEDIA_PLAYER_WRAPPER;
-      This.mOnBufferingUpdateListener := AndroidMediaPlayerOnBufferingUpdateListener_Package.Create (AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access));
-      This.mOnPreparedListener := AndroidMediaPlayerOnPreparedListener_Package.Create (AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access));
-      This.mOnErrorListener := AndroidMediaPlayerOnErrorListener_Package.Create (AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access));
-      This.mOnCompletionListener := AndroidMediaPlayerOnCompletionListener_Package.Create (AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access));
+      This.mOnBufferingUpdateListener := OnBufferingUpdateListener_Access (AndroidMediaPlayerOnBufferingUpdateListener_Package.Create (AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access)));
+      This.mOnPreparedListener := OnPreparedListener_Access (AndroidMediaPlayerOnPreparedListener_Package.Create (AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access)));
+      This.mOnErrorListener := OnErrorListener_Access (AndroidMediaPlayerOnErrorListener_Package.Create (AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access)));
+      This.mOnCompletionListener := OnCompletionListener_Access (AndroidMediaPlayerOnCompletionListener_Package.Create (AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access)));
    end Initialize_Fields;
 
 
@@ -49,8 +56,15 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package
 end org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package;
 
 
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out MediaPlayerOnBufferingUpdateListener'Class) is
    begin
       null;
@@ -78,8 +92,15 @@ package body org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Pack
 end org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package;
 
 
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out MediaPlayerOnPreparedListener'Class) is
    begin
       null;
@@ -107,8 +128,15 @@ package body org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package is
 end org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package;
 
 
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.media.audio.MediaPlayerOnErrorListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out MediaPlayerOnErrorListener'Class) is
    begin
       null;
@@ -143,8 +171,15 @@ package body org.allbinary.media.audio.MediaPlayerOnErrorListener_Package is
 end org.allbinary.media.audio.MediaPlayerOnErrorListener_Package;
 
 
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out MediaPlayerOnCompletionListener'Class) is
    begin
       null;
@@ -172,8 +207,15 @@ package body org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package i
 end org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package;
 
 
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out AndroidMediaPlayerOnBufferingUpdateListener'Class) is
    begin
       null;
@@ -209,8 +251,15 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListen
 end org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package;
 
 
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out AndroidMediaPlayerOnPreparedListener'Class) is
    begin
       null;
@@ -248,8 +297,15 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Pack
 end org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package;
 
 
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out AndroidMediaPlayerOnErrorListener'Class) is
    begin
       null;
@@ -293,8 +349,15 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package
 end org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package;
 
 
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Package is
 
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out AndroidMediaPlayerOnCompletionListener'Class) is
    begin
       null;

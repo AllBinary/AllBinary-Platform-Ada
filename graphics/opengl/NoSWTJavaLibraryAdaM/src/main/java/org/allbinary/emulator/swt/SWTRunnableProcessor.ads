@@ -31,6 +31,8 @@ package org.allbinary.emulator.swt.SWTRunnableProcessor_Package is
    type SWTRunnableProcessor_Access is access all SWTRunnableProcessor'Class;
    type SWTRunnableProcessor_Access_Array is array (Natural range <>) of SWTRunnableProcessor_Access;
    type SWTRunnableProcessor_Access_Array_Access is access all SWTRunnableProcessor_Access_Array;
+   type SWTRunnableProcessor_Access_Array_Access_Array is array (Natural range <>) of SWTRunnableProcessor_Access_Array_Access;
+   type SWTRunnableProcessor_Access_Array_Access_Array_Access is access all SWTRunnableProcessor_Access_Array_Access_Array;
 
    type SWTRunnableProcessor is new SWTProcessor with null record;
    instanceR : SWTRunnableProcessor_Access;

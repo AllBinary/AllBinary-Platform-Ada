@@ -14,7 +14,6 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.SynchObject_Package; use org.allbinary.thread.SynchObject_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.layer.LayerManagerLoggingBase_Package; use org.allbinary.layer.LayerManagerLoggingBase_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
@@ -28,13 +27,14 @@ package org.allbinary.layer.LayerManager_Package is
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package SynchObject_Package renames Standard.org.allbinary.thread.SynchObject_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
 
    type LayerManager is tagged;
    type LayerManager_Access is access all LayerManager'Class;
    type LayerManager_Access_Array is array (Natural range <>) of LayerManager_Access;
    type LayerManager_Access_Array_Access is access all LayerManager_Access_Array;
+   type LayerManager_Access_Array_Access_Array is array (Natural range <>) of LayerManager_Access_Array_Access;
+   type LayerManager_Access_Array_Access_Array_Access is access all LayerManager_Access_Array_Access_Array;
 
    type LayerManager is new Java_Object with record
       logUtil : LogUtil_Access;

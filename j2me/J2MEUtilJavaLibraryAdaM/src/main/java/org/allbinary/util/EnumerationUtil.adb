@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+
 package body org.allbinary.util.EnumerationUtil_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
    procedure Initialize_Fields (This : in out EnumerationUtil'Class) is
    begin
       null;
@@ -54,7 +61,7 @@ package body org.allbinary.util.EnumerationUtil_Package is
       enumeration : constant Enumeration_Access := Enumeration_Access (enumeration_Param);
       basicArrayList : BasicArrayList_Access;
    begin
-        basicArrayList := BasicArrayListD_Package.Create;
+        basicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         while EnumerationUtil'Class (This).hasMoreElements (enumeration) loop
             basicArrayList.add (EnumerationUtil'Class (This).nextElement (enumeration));
         end loop;

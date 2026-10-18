@@ -29,6 +29,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    type ActionScriptItemJPanel_Access is access all ActionScriptItemJPanel'Class;
    type ActionScriptItemJPanel_Access_Array is array (Natural range <>) of ActionScriptItemJPanel_Access;
    type ActionScriptItemJPanel_Access_Array_Access is access all ActionScriptItemJPanel_Access_Array;
+   type ActionScriptItemJPanel_Access_Array_Access_Array is array (Natural range <>) of ActionScriptItemJPanel_Access_Array_Access;
+   type ActionScriptItemJPanel_Access_Array_Access_Array_Access is access all ActionScriptItemJPanel_Access_Array_Access_Array;
 
    type ActionScriptItemJPanel is new JPanel with record
       childActionScriptConditionJPanel : JPanel_Access;

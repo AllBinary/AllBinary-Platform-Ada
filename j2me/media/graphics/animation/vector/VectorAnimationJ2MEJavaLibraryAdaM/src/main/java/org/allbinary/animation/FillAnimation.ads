@@ -22,6 +22,8 @@ package org.allbinary.animation.FillAnimation_Package is
    type FillAnimation_Access is access all FillAnimation'Class;
    type FillAnimation_Access_Array is array (Natural range <>) of FillAnimation_Access;
    type FillAnimation_Access_Array_Access is access all FillAnimation_Access_Array;
+   type FillAnimation_Access_Array_Access_Array is array (Natural range <>) of FillAnimation_Access_Array_Access;
+   type FillAnimation_Access_Array_Access_Array_Access is access all FillAnimation_Access_Array_Access_Array;
 
    type FillAnimation is new IndexedAnimation with record
       pixelBuffer : Integer_Array_Access;

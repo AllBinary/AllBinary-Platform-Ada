@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionData_Package is
 
    procedure Initialize_Fields (This : in out AlwaysActionScriptConditionData'Class) is

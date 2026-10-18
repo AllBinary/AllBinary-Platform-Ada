@@ -29,6 +29,8 @@ package org.allbinary.business.category.properties.CategoryPropertiesFactoryInte
    type CategoryPropertiesFactoryInterface_Access is access all CategoryPropertiesFactoryInterface'Class;
    type CategoryPropertiesFactoryInterface_Access_Array is array (Natural range <>) of CategoryPropertiesFactoryInterface_Access;
    type CategoryPropertiesFactoryInterface_Access_Array_Access is access all CategoryPropertiesFactoryInterface_Access_Array;
+   type CategoryPropertiesFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of CategoryPropertiesFactoryInterface_Access_Array_Access;
+   type CategoryPropertiesFactoryInterface_Access_Array_Access_Array_Access is access all CategoryPropertiesFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out CategoryPropertiesFactoryInterface) return CategoryPropertiesInterface_Access is abstract;
 
 end org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;

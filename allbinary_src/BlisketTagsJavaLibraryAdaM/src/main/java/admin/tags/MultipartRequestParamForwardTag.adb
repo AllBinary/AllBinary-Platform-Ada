@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with admin.taghelpers.MultipartRequestParamForwardHelper_Package; use admin.taghelpers.MultipartRequestParamForwardHelper_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with tags.HelperTag_Package; use tags.HelperTag_Package;
+with admin.tags.ParentInventoryTagHelper_Package; use admin.tags.ParentInventoryTagHelper_Package;
+with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
+
 package body admin.tags.MultipartRequestParamForwardTag_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package MultipartRequestParamForwardHelper_Package renames Standard.admin.taghelpers.MultipartRequestParamForwardHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package HelperTag_Package renames Standard.tags.HelperTag_Package;
    procedure Initialize_Fields (This : in out MultipartRequestParamForwardTag'Class) is
    begin
       null;

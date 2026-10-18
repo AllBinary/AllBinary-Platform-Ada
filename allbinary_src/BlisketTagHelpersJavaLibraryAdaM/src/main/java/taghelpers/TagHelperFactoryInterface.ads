@@ -22,17 +22,17 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
 package taghelpers.TagHelperFactoryInterface_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type TagHelperFactoryInterface is interface;
    type TagHelperFactoryInterface_Access is access all TagHelperFactoryInterface'Class;
    type TagHelperFactoryInterface_Access_Array is array (Natural range <>) of TagHelperFactoryInterface_Access;
    type TagHelperFactoryInterface_Access_Array_Access is access all TagHelperFactoryInterface_Access_Array;
+   type TagHelperFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of TagHelperFactoryInterface_Access_Array_Access;
+   type TagHelperFactoryInterface_Access_Array_Access_Array_Access is access all TagHelperFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out TagHelperFactoryInterface; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return Java_Object_Access is abstract;
 
 end taghelpers.TagHelperFactoryInterface_Package;

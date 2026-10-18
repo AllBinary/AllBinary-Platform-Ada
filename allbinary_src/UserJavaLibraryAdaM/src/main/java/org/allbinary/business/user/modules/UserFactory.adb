@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
+
 package body org.allbinary.business.user.modules.UserFactory_Package is
 
    procedure Initialize_Fields (This : in out UserFactory'Class) is
@@ -38,7 +40,7 @@ package body org.allbinary.business.user.modules.UserFactory_Package is
    function getInstance (This : in out UserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        return User_Package.Create (hashMap);
+        return UserInterface_Access (User_Package.Create (hashMap));
    end getInstance;
 
    procedure getInstance (This : in out UserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) is

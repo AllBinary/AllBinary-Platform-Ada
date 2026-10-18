@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.midlet.MidletIcon_Package is
 
    procedure Initialize_Fields (This : in out MidletIcon'Class) is

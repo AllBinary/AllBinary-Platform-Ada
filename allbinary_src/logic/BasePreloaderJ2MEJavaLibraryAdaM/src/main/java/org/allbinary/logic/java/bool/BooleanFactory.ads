@@ -28,6 +28,8 @@ package org.allbinary.logic.java.bool.BooleanFactory_Package is
    type BooleanFactory_Access is access all BooleanFactory'Class;
    type BooleanFactory_Access_Array is array (Natural range <>) of BooleanFactory_Access;
    type BooleanFactory_Access_Array_Access is access all BooleanFactory_Access_Array;
+   type BooleanFactory_Access_Array_Access_Array is array (Natural range <>) of BooleanFactory_Access_Array_Access;
+   type BooleanFactory_Access_Array_Access_Array_Access is access all BooleanFactory_Access_Array_Access_Array;
 
    type BooleanFactory is new Java_Object with record
       TRUE : Boolean;

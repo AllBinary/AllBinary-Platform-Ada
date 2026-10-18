@@ -20,21 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
---  with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.gui.dialog.JDialog_Package; use org.allbinary.gui.dialog.JDialog_Package;
 with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package; use org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
 
 package org.allbinary.gui.dialog.FileJDialog_Package is
 
-   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type FileJDialog is tagged;
    type FileJDialog_Access is access all FileJDialog'Class;
    type FileJDialog_Access_Array is array (Natural range <>) of FileJDialog_Access;
    type FileJDialog_Access_Array_Access is access all FileJDialog_Access_Array;
+   type FileJDialog_Access_Array_Access_Array is array (Natural range <>) of FileJDialog_Access_Array_Access;
+   type FileJDialog_Access_Array_Access_Array_Access is access all FileJDialog_Access_Array_Access_Array;
 
    type FileJDialog is new JDialog with record
       logUtil : LogUtil_Access;

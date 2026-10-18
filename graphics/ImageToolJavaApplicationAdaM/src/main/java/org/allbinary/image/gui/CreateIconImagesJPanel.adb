@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.media.image.ImagePersistanceUtil_Package; use org.allbinary.media.image.ImagePersistanceUtil_Package;
+with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ImagePersistanceUtil_Package renames Standard.org.allbinary.media.image.ImagePersistanceUtil_Package;
+   package ImageUtil_Package renames Standard.org.allbinary.media.image.ImageUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out CreateIconImagesJPanel'Class) is
    begin
       null;
@@ -87,8 +104,8 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 --                      stringMaker := StringMaker_Package.Create;
 --                      imageProcessorInput := CreateIconImagesJPanel'Class (This).getImageProcessorInput;
 --                      files := imageProcessorInput.getFiles;
---                      iconWidthList := BasicArrayListD_Package.Create;
---                      iconHeightList := BasicArrayListD_Package.Create;
+--                      iconWidthList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+--                      iconHeightList := BasicArrayList_Access (BasicArrayListD_Package.Create);
 --                      iconWidthList.add (864);
 --                      iconHeightList.add (864);
 --                      ANDROID := To_Unbounded_String ("android-icon-");
@@ -103,7 +120,7 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 --                          imagePersistanceUtil := ImagePersistanceUtil_Package.getInstance;
 --                          for index in 0 .. (generatedBufferedImageArray'Length) - 1 loop
 --                              filePath := files (index).getAbsolutePath;
---                              endIndex := filePath.lastIndexOf ('\');
+--                              endIndex := Java_Last_Index_Of (filePath, Java_Image ('\'));
 --                              path := Unbounded_Slice (filePath, (0) + 1, (endIndex) + (1));
 --                              stringMaker.delete (0, stringMaker.length);
 --                              stringMaker.append (path).append (ANDROID).appendint (width).append (CanvasStrings_Package.getInstance.U_PNG);
@@ -154,8 +171,8 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 );
         layout := GroupLayout_Package.Create (CreateIconImagesJPanel_Access'(This'Unchecked_Access));
         CreateIconImagesJPanel'Class (This).setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.aboveJButton).addGap (0, 335, Short_Package.MAX_VALUE)));
-        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.aboveJButton).addContainerGap (286, Short_Package.MAX_VALUE)));
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.aboveJButton).addGap (0, 335, Short_Integer'Last)));
+        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.aboveJButton).addContainerGap (286, Short_Integer'Last)));
    end initComponents;
 
    procedure aboveJButtonActionPerformed (This : in out CreateIconImagesJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is

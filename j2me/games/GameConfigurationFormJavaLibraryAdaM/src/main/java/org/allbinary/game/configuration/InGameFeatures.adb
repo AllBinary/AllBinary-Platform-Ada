@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package; use org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
+with org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package; use org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package;
+with org.allbinary.game.configuration.feature.SensorFeatureFactory_Package; use org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+with org.allbinary.game.configuration.feature.TouchFeatureFactory_Package; use org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
+with org.allbinary.input.gyro.OrientationData_Package; use org.allbinary.input.gyro.OrientationData_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.configuration.InGameFeatures_Package is
 
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureChoiceGroups_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
+   package InGameFeatureChoiceGroups_Package renames Standard.org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package;
+   package SensorFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+   package TouchFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
+   package OrientationData_Package renames Standard.org.allbinary.input.gyro.OrientationData_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out InGameFeatures'Class) is
    begin
       null;
@@ -62,7 +79,7 @@ package body org.allbinary.game.configuration.InGameFeatures_Package is
         end if;
         features := Features_Package.getInstance;
         if ((features.isFeature (TouchFeatureFactory_Package.getInstance.SHOW_SCREEN_BUTTONS)) or else (features.isFeature (TouchFeatureFactory_Package.getInstance.AUTO_HIDE_SHOW_SCREEN_BUTTONS))) or else (features.isFeature (TouchFeatureFactory_Package.getInstance.HIDE_SCREEN_BUTTONS)) then
-            exclusiveScreenButtonsVector := BasicArrayListD_Package.Create;
+            exclusiveScreenButtonsVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             touchFeatureFactory := TouchFeatureFactory_Package.getInstance;
             exclusiveScreenButtonsVector.add (touchFeatureFactory.AUTO_HIDE_SHOW_SCREEN_BUTTONS);
             exclusiveScreenButtonsVector.add (touchFeatureFactory.SHOW_SCREEN_BUTTONS);
@@ -76,7 +93,7 @@ package body org.allbinary.game.configuration.InGameFeatures_Package is
       inGameExclusiveOrientationSensorVector : BasicArrayList_Access;
    begin
         orientationData := OrientationData_Package.getInstance;
-        inGameExclusiveOrientationSensorVector := BasicArrayListD_Package.Create;
+        inGameExclusiveOrientationSensorVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         inGameExclusiveOrientationSensorVector.add (SensorFeatureFactory_Package.getInstance.ORIENTATION_SENSORS);
         inGameExclusiveOrientationSensorVector.add (SensorFeatureFactory_Package.getInstance.NO_ORIENTATION);
         InGameFeatureChoiceGroups_Package.getExclusiveInstance.add (orientationData.ORIENTATION_SENSOR_INPUT, inGameExclusiveOrientationSensorVector);

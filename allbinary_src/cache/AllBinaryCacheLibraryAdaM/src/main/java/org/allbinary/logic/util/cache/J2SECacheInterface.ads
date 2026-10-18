@@ -30,6 +30,8 @@ package org.allbinary.logic.util.cache.J2SECacheInterface_Package is
    type J2SECacheInterface_Access is access all J2SECacheInterface'Class;
    type J2SECacheInterface_Access_Array is array (Natural range <>) of J2SECacheInterface_Access;
    type J2SECacheInterface_Access_Array_Access is access all J2SECacheInterface_Access_Array;
+   type J2SECacheInterface_Access_Array_Access_Array is array (Natural range <>) of J2SECacheInterface_Access_Array_Access;
+   type J2SECacheInterface_Access_Array_Access_Array_Access is access all J2SECacheInterface_Access_Array_Access_Array;
    function keySet (This : in out J2SECacheInterface) return Set_Access is abstract;
 
 end org.allbinary.logic.util.cache.J2SECacheInterface_Package;

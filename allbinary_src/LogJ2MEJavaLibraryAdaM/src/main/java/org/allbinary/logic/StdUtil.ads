@@ -34,6 +34,8 @@ package org.allbinary.logic.StdUtil_Package is
    type StdUtil_Access is access all StdUtil'Class;
    type StdUtil_Access_Array is array (Natural range <>) of StdUtil_Access;
    type StdUtil_Access_Array_Access is access all StdUtil_Access_Array;
+   type StdUtil_Access_Array_Access_Array is array (Natural range <>) of StdUtil_Access_Array_Access;
+   type StdUtil_Access_Array_Access_Array_Access is access all StdUtil_Access_Array_Access_Array;
 
    type StdUtil is new Java_Object with record
       EMPTY_VECTOR : ABVector_Access;

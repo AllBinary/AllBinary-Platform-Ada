@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.generator.OrderIdGenerator_Package; use org.allbinary.data.generator.OrderIdGenerator_Package;
+with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
+with org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
+
 package body org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package is
 
+   package OrderIdGenerator_Package renames Standard.org.allbinary.data.generator.OrderIdGenerator_Package;
+   package OrderHistoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
+   package OrderItemsEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
    procedure Initialize_Fields (This : in out OrderProcessorUtil'Class) is
    begin
       null;

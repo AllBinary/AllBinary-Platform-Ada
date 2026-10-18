@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
+with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.business.user.role.UserRole_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package; use org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package;
+with org.allbinary.logic.communication.http.request.HttpRequestUtil_Package; use org.allbinary.logic.communication.http.request.HttpRequestUtil_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body admin.taghelpers.AuthenticationHelperUtil_Package is
 
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
+   package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package HttpFilePermissions_Package renames Standard.org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package;
+   package HttpRequestUtil_Package renames Standard.org.allbinary.logic.communication.http.request.HttpRequestUtil_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out AuthenticationHelperUtil'Class) is
    begin
       null;
@@ -53,12 +74,12 @@ package body admin.taghelpers.AuthenticationHelperUtil_Package is
             This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & filePath, AuthenticationHelperUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("isAuthorized()"));
         end if;
         endIndex := HttpRequestUtil_Package.getInstance.getLastSeparatorIndex (filePath);
-        fullPath := AbPath_Package.Create (Java_Image (URLGLOBALS.getWebappPath) & Unbounded_Slice (filePath, (0) + 1, endIndex), StringUtil_Package.getInstance.EMPTY_STRING);
+        fullPath := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & Unbounded_Slice (filePath, (0) + 1, endIndex), StringUtil_Package.getInstance.EMPTY_STRING);
         downloadFilePermissions := HttpFilePermissions_Package.Create (fullPath);
         userRoles := downloadFilePermissions.getUserRoles;
         userRole := authenticationHelper.getRole;
         basicUserRole := userRole.getBasicUserRole;
-        if userRoles.contains (basicUserRole) then
+        if userRoles.contains (Java_Object_Access (basicUserRole)) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Authorized"), AuthenticationHelperUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("isAuthorized()"));
             end if;

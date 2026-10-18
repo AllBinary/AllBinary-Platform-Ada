@@ -25,7 +25,6 @@ with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.game.health.HealthBarThreedAnimation_Package; use org.allbinary.game.health.HealthBarThreedAnimation_Package;
 with org.allbinary.game.health.HealthBarAnimation_Package; use org.allbinary.game.health.HealthBarAnimation_Package;
 
 package org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package is
@@ -40,8 +39,10 @@ package org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package is
    type HealthBarAnimationInterfaceFactory_Access is access all HealthBarAnimationInterfaceFactory'Class;
    type HealthBarAnimationInterfaceFactory_Access_Array is array (Natural range <>) of HealthBarAnimationInterfaceFactory_Access;
    type HealthBarAnimationInterfaceFactory_Access_Array_Access is access all HealthBarAnimationInterfaceFactory_Access_Array;
+   type HealthBarAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of HealthBarAnimationInterfaceFactory_Access_Array_Access;
+   type HealthBarAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all HealthBarAnimationInterfaceFactory_Access_Array_Access_Array;
 
-   type HealthBarAnimationInterfaceFactory is new AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with null record;
+   type HealthBarAnimationInterfaceFactory is new Java_Object and AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out HealthBarAnimationInterfaceFactory'Class);
    function Create return HealthBarAnimationInterfaceFactory_Access;

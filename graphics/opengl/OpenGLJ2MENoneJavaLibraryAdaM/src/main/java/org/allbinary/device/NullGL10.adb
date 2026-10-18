@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.device.NullGL10_Package is
 
    procedure Initialize_Fields (This : in out NullGL10'Class) is

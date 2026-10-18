@@ -29,8 +29,10 @@ package org.allbinary.thread.NullPriorityRunnable_Package is
    type NullPriorityRunnable_Access is access all NullPriorityRunnable'Class;
    type NullPriorityRunnable_Access_Array is array (Natural range <>) of NullPriorityRunnable_Access;
    type NullPriorityRunnable_Access_Array_Access is access all NullPriorityRunnable_Access_Array;
+   type NullPriorityRunnable_Access_Array_Access_Array is array (Natural range <>) of NullPriorityRunnable_Access_Array_Access;
+   type NullPriorityRunnable_Access_Array_Access_Array_Access is access all NullPriorityRunnable_Access_Array_Access_Array;
 
-   type NullPriorityRunnable is new PriorityRunnable with null record;
+   type NullPriorityRunnable is new Java_Object and PriorityRunnable with null record;
 
    procedure Initialize (This : in out NullPriorityRunnable'Class);
    function Create return NullPriorityRunnable_Access;

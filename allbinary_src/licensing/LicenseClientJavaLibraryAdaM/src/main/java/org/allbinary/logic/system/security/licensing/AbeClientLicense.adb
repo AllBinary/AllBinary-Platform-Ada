@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
+with org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package; use org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Package;
+
 package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out AbeClientLicense'Class) is
    begin
       null;
@@ -47,7 +60,7 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
         end if;
         This.id := Java_Unbox (hashtable.get (abeClientInformationData.LICENSEID));
         vector := BasicArrayList_Access (hashtable.get (abeClientInformationData.LICENSESERVERS));
-        This.servers := BasicArrayListD_Package.Create;
+        This.servers := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             This.servers.add (vector.get (index));

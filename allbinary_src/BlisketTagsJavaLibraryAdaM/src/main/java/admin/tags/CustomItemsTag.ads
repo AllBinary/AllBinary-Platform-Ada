@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with admin.taghelpers.CustomItemsHelperFactory_Package; use admin.taghelpers.CustomItemsHelperFactory_Package;
-with admin.taghelpers.CustomItemsRequestHelperFactory_Package; use admin.taghelpers.CustomItemsRequestHelperFactory_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.CustomItemsTag_Package is
 
-   package CustomItemsHelperFactory_Package renames Standard.admin.taghelpers.CustomItemsHelperFactory_Package;
-   package CustomItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.CustomItemsRequestHelperFactory_Package;
 
    type CustomItemsTag is tagged;
    type CustomItemsTag_Access is access all CustomItemsTag'Class;
    type CustomItemsTag_Access_Array is array (Natural range <>) of CustomItemsTag_Access;
    type CustomItemsTag_Access_Array_Access is access all CustomItemsTag_Access_Array;
+   type CustomItemsTag_Access_Array_Access_Array is array (Natural range <>) of CustomItemsTag_Access_Array_Access;
+   type CustomItemsTag_Access_Array_Access_Array_Access is access all CustomItemsTag_Access_Array_Access_Array;
 
    type CustomItemsTag is new TableTag with null record;
 

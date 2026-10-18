@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.info.GeneratorTransformInfoData_Pac
    type GeneratorTransformInfoData_Access is access all GeneratorTransformInfoData'Class;
    type GeneratorTransformInfoData_Access_Array is array (Natural range <>) of GeneratorTransformInfoData_Access;
    type GeneratorTransformInfoData_Access_Array_Access is access all GeneratorTransformInfoData_Access_Array;
+   type GeneratorTransformInfoData_Access_Array_Access_Array is array (Natural range <>) of GeneratorTransformInfoData_Access_Array_Access;
+   type GeneratorTransformInfoData_Access_Array_Access_Array_Access is access all GeneratorTransformInfoData_Access_Array_Access_Array;
 
    type GeneratorTransformInfoData is new Java_Object with null record;
    NAME : Unbounded_String;

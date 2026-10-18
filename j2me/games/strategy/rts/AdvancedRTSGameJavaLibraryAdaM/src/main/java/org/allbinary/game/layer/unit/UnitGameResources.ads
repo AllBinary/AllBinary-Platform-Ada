@@ -21,23 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allbinary.game.layer.resources.BasicGameResources_Package;
-with org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package; use org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
-with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
-with org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package; use org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.game.layer.unit.UnitGameResources_Package is
 
    package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
-   package GameGraphicsResourceUtil_Package renames Standard.org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
-   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
-   package GraphicsFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type UnitGameResources is tagged;
    type UnitGameResources_Access is access all UnitGameResources'Class;
    type UnitGameResources_Access_Array is array (Natural range <>) of UnitGameResources_Access;
    type UnitGameResources_Access_Array_Access is access all UnitGameResources_Access_Array;
+   type UnitGameResources_Access_Array_Access_Array is array (Natural range <>) of UnitGameResources_Access_Array_Access;
+   type UnitGameResources_Access_Array_Access_Array_Access is access all UnitGameResources_Access_Array_Access_Array;
 
    type UnitGameResources is new BasicGameResources with record
       NAME : Unbounded_String;

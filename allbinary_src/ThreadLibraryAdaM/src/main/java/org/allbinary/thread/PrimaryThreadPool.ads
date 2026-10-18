@@ -20,19 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPool_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.PrimaryThreadPool_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type PrimaryThreadPool is tagged;
    type PrimaryThreadPool_Access is access all PrimaryThreadPool'Class;
    type PrimaryThreadPool_Access_Array is array (Natural range <>) of PrimaryThreadPool_Access;
    type PrimaryThreadPool_Access_Array_Access is access all PrimaryThreadPool_Access_Array;
+   type PrimaryThreadPool_Access_Array_Access_Array is array (Natural range <>) of PrimaryThreadPool_Access_Array_Access;
+   type PrimaryThreadPool_Access_Array_Access_Array_Access is access all PrimaryThreadPool_Access_Array_Access_Array;
 
    type PrimaryThreadPool is new ThreadPool with null record;
    THREAD_POOL : ThreadPool_Access;

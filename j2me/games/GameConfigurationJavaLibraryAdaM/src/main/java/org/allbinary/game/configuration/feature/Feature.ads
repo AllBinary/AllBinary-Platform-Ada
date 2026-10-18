@@ -20,20 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package; use org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package org.allbinary.game.configuration.feature.Feature_Package is
 
-   package ChangedGameFeatureListener_Package renames Standard.org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type Feature is tagged;
    type Feature_Access is access all Feature'Class;
    type Feature_Access_Array is array (Natural range <>) of Feature_Access;
    type Feature_Access_Array_Access is access all Feature_Access_Array;
+   type Feature_Access_Array_Access_Array is array (Natural range <>) of Feature_Access_Array_Access;
+   type Feature_Access_Array_Access_Array_Access is access all Feature_Access_Array_Access_Array;
 
    type Feature is new Java_Object with record
       name : Unbounded_String;

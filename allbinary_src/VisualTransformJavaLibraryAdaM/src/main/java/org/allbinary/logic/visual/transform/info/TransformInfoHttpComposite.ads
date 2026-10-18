@@ -39,6 +39,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Pac
    type TransformInfoHttpComposite_Access is access all TransformInfoHttpComposite'Class;
    type TransformInfoHttpComposite_Access_Array is array (Natural range <>) of TransformInfoHttpComposite_Access;
    type TransformInfoHttpComposite_Access_Array_Access is access all TransformInfoHttpComposite_Access_Array;
+   type TransformInfoHttpComposite_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHttpComposite_Access_Array_Access;
+   type TransformInfoHttpComposite_Access_Array_Access_Array_Access is access all TransformInfoHttpComposite_Access_Array_Access_Array;
 
    type TransformInfoHttpComposite is new Java_Object with record
       logUtil : LogUtil_Access;

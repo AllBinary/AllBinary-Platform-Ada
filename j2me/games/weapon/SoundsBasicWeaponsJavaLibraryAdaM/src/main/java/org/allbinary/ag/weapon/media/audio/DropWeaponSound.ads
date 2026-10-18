@@ -32,6 +32,8 @@ package org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package is
    type DropWeaponSound_Access is access all DropWeaponSound'Class;
    type DropWeaponSound_Access_Array is array (Natural range <>) of DropWeaponSound_Access;
    type DropWeaponSound_Access_Array_Access is access all DropWeaponSound_Access_Array;
+   type DropWeaponSound_Access_Array_Access_Array is array (Natural range <>) of DropWeaponSound_Access_Array_Access;
+   type DropWeaponSound_Access_Array_Access_Array_Access is access all DropWeaponSound_Access_Array_Access_Array;
 
    type DropWeaponSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

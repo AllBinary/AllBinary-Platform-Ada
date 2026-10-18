@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.business.category.properties.CategoryPropertiesView_Package; use org.allbinary.business.category.properties.CategoryPropertiesView_Package;
@@ -32,7 +31,6 @@ package org.allbinary.business.category.properties.CategoryPropertiesValidationV
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -40,6 +38,8 @@ package org.allbinary.business.category.properties.CategoryPropertiesValidationV
    type CategoryPropertiesValidationView_Access is access all CategoryPropertiesValidationView'Class;
    type CategoryPropertiesValidationView_Access_Array is array (Natural range <>) of CategoryPropertiesValidationView_Access;
    type CategoryPropertiesValidationView_Access_Array_Access is access all CategoryPropertiesValidationView_Access_Array;
+   type CategoryPropertiesValidationView_Access_Array_Access_Array is array (Natural range <>) of CategoryPropertiesValidationView_Access_Array_Access;
+   type CategoryPropertiesValidationView_Access_Array_Access_Array_Access is access all CategoryPropertiesValidationView_Access_Array_Access_Array;
 
    type CategoryPropertiesValidationView is new CategoryPropertiesView and ValidationInterface with record
       logUtil : LogUtil_Access;

@@ -1,12 +1,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.layer.drop.PlacedLayerFactory_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out PlacedLayerFactory'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.basicArrayListUtil := BasicArrayListUtil_Package.getInstance;
    end Initialize_Fields;
 
@@ -47,7 +50,7 @@ package body org.allbinary.game.layer.drop.PlacedLayerFactory_Package is
    procedure add (This : in out PlacedLayerFactory; layerInterfaceFactoryInterface_Param : access AllBinaryLayerFactoryInterface_Package.AllBinaryLayerFactoryInterface'Class) is
       layerInterfaceFactoryInterface : constant AllBinaryLayerFactoryInterface_Access := AllBinaryLayerFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
    begin
-        This.list.add (layerInterfaceFactoryInterface);
+        This.list.add (Java_Object_Access (layerInterfaceFactoryInterface));
    end add;
 
 begin

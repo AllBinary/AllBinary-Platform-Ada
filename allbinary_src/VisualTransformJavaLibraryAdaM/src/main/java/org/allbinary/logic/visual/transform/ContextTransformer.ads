@@ -21,16 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.xml.transform.URIResolver_Package; use javax.xml.transform.URIResolver_Package;
-with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
-with org.allbinary.data.tree.dom.ContextUriResolver_Package; use org.allbinary.data.tree.dom.ContextUriResolver_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.logic.visual.transform.BasicTransformer_Package; use org.allbinary.logic.visual.transform.BasicTransformer_Package;
 
 package org.allbinary.logic.visual.transform.ContextTransformer_Package is
 
-   package BasicUriResolver_Package renames Standard.org.allbinary.data.tree.dom.BasicUriResolver_Package;
-   package ContextUriResolver_Package renames Standard.org.allbinary.data.tree.dom.ContextUriResolver_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
@@ -38,6 +34,8 @@ package org.allbinary.logic.visual.transform.ContextTransformer_Package is
    type ContextTransformer_Access is access all ContextTransformer'Class;
    type ContextTransformer_Access_Array is array (Natural range <>) of ContextTransformer_Access;
    type ContextTransformer_Access_Array_Access is access all ContextTransformer_Access_Array;
+   type ContextTransformer_Access_Array_Access_Array is array (Natural range <>) of ContextTransformer_Access_Array_Access;
+   type ContextTransformer_Access_Array_Access_Array_Access is access all ContextTransformer_Access_Array_Access_Array;
 
    type ContextTransformer is new BasicTransformer with null record;
 

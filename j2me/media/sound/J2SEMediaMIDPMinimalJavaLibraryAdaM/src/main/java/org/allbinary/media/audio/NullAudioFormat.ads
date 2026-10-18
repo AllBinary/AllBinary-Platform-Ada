@@ -29,6 +29,8 @@ package org.allbinary.media.audio.NullAudioFormat_Package is
    type NullAudioFormat_Access is access all NullAudioFormat'Class;
    type NullAudioFormat_Access_Array is array (Natural range <>) of NullAudioFormat_Access;
    type NullAudioFormat_Access_Array_Access is access all NullAudioFormat_Access_Array;
+   type NullAudioFormat_Access_Array_Access_Array is array (Natural range <>) of NullAudioFormat_Access_Array_Access;
+   type NullAudioFormat_Access_Array_Access_Array_Access is access all NullAudioFormat_Access_Array_Access_Array;
 
    type NullAudioFormat is new Java_Object with null record;
    NULL_AUDIO_FORMAT : AudioFormat_Access;

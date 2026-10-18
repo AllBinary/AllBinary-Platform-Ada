@@ -13,12 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.ScreenEmptyListener_Package; use org.allbinary.graphics.ScreenEmptyListener_Package;
+
 package body org.allbinary.graphics.ScreenListenerHandler_Package is
 
    procedure Initialize_Fields (This : in out ScreenListenerHandler'Class) is
    begin
       null;
-      This.screenListenerInterface := ScreenEmptyListener_Package.Create;
+      This.screenListenerInterface := ScreenListenerInterface_Access (ScreenEmptyListener_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out ScreenListenerHandler'Class) is

@@ -28,6 +28,8 @@ package org.allbinary.thread.SynchObject_Package is
    type SynchObject_Access is access all SynchObject'Class;
    type SynchObject_Access_Array is array (Natural range <>) of SynchObject_Access;
    type SynchObject_Access_Array_Access is access all SynchObject_Access_Array;
+   type SynchObject_Access_Array_Access_Array is array (Natural range <>) of SynchObject_Access_Array_Access;
+   type SynchObject_Access_Array_Access_Array_Access is access all SynchObject_Access_Array_Access_Array;
 
    type SynchObject is new Java_Object with null record;
 

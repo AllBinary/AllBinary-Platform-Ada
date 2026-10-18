@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypes_Package;
+
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package is
 
    procedure Initialize_Fields (This : in out RaceTrackGeographicMapCellTypeFactory'Class) is

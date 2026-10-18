@@ -22,17 +22,17 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.lang.reflect.Method_Package; use java.lang.reflect.Method_Package;
 with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.business.init.db.DbConnectionInfo_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
 package org.allbinary.business.installer.InitDb_Package is
 
    package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type InitDb is tagged;
    type InitDb_Access is access all InitDb'Class;
    type InitDb_Access_Array is array (Natural range <>) of InitDb_Access;
    type InitDb_Access_Array_Access is access all InitDb_Access_Array;
+   type InitDb_Access_Array_Access_Array is array (Natural range <>) of InitDb_Access_Array_Access;
+   type InitDb_Access_Array_Access_Array_Access is access all InitDb_Access_Array_Access_Array;
 
    type InitDb is new Java_Object with record
       anyType : Java_Object_Access;
@@ -56,6 +56,7 @@ package org.allbinary.business.installer.InitDb_Package is
    function addTables (This : in out InitDb) return Boolean;
    function useTemporaryMainPath (This : in out InitDb) return Boolean;
    function useNormalMainPath (This : in out InitDb) return Boolean;
+   procedure setHelper (This : in out InitDb; Value : Unbounded_String);
 
 end org.allbinary.business.installer.InitDb_Package;
 

@@ -20,28 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-with org.allbinary.game.configuration.GameConfigurationUtil_Package; use org.allbinary.game.configuration.GameConfigurationUtil_Package;
-with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
-with org.allbinary.game.layer.pickup.IconLayerFactory_Package; use org.allbinary.game.layer.pickup.IconLayerFactory_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
-with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
 with org.allbinary.game.layer.pickup.PickupProcessorInterface_Package; use org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStaticPool_Package; use org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStaticPool_Package;
-with org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package; use org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package;
-with org.allbinary.game.ag.layer.pickup.points.PointsResources_Package; use org.allbinary.game.ag.layer.pickup.points.PointsResources_Package;
 
 package org.allbinary.game.ag.layer.pickup.points.Points30kPickedUpLayerInterfaceFactory_Package is
 
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package GameConfigurationUtil_Package renames Standard.org.allbinary.game.configuration.GameConfigurationUtil_Package;
-   package CountedPickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
-   package IconLayerFactory_Package renames Standard.org.allbinary.game.layer.pickup.IconLayerFactory_Package;
    package PickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package;
    package PickedUpLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
-   package PickedUpLayerTypeFactory_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
    package PickupProcessorInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
@@ -49,6 +37,8 @@ package org.allbinary.game.ag.layer.pickup.points.Points30kPickedUpLayerInterfac
    type Points30kPickedUpLayerInterfaceFactory_Access is access all Points30kPickedUpLayerInterfaceFactory'Class;
    type Points30kPickedUpLayerInterfaceFactory_Access_Array is array (Natural range <>) of Points30kPickedUpLayerInterfaceFactory_Access;
    type Points30kPickedUpLayerInterfaceFactory_Access_Array_Access is access all Points30kPickedUpLayerInterfaceFactory_Access_Array;
+   type Points30kPickedUpLayerInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of Points30kPickedUpLayerInterfaceFactory_Access_Array_Access;
+   type Points30kPickedUpLayerInterfaceFactory_Access_Array_Access_Array_Access is access all Points30kPickedUpLayerInterfaceFactory_Access_Array_Access_Array;
 
    type Points30kPickedUpLayerInterfaceFactory is new PickedUpLayerInterfaceFactory and PickupProcessorInterface with record
       pool : PointsLayerCircularStaticPool_Access;

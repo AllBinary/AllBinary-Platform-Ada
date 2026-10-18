@@ -37,6 +37,8 @@ package org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAI_Package is
    type NumberLayersSequenceAI_Access is access all NumberLayersSequenceAI'Class;
    type NumberLayersSequenceAI_Access_Array is array (Natural range <>) of NumberLayersSequenceAI_Access;
    type NumberLayersSequenceAI_Access_Array_Access is access all NumberLayersSequenceAI_Access_Array;
+   type NumberLayersSequenceAI_Access_Array_Access_Array is array (Natural range <>) of NumberLayersSequenceAI_Access_Array_Access;
+   type NumberLayersSequenceAI_Access_Array_Access_Array_Access is access all NumberLayersSequenceAI_Access_Array_Access_Array;
 
    type NumberLayersSequenceAI is new SequenceAI with record
       numberOfLayersLeft : Integer;

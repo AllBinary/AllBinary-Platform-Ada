@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
+
 package body org.allbinary.game.configuration.event.GameInitializedEvent_Package is
 
+   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
    procedure Initialize_Fields (This : in out GameInitializedEvent'Class) is
    begin
       null;

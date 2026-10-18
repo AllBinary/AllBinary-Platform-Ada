@@ -29,10 +29,7 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.swing.ListModel_Package; use javax.swing.ListModel_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.java.help.JavaHelpSetNotifier_Package; use org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.DefaultListModelHelper_Package; use org.allbinary.input.automation.module.DefaultListModelHelper_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 
@@ -41,15 +38,14 @@ package org.allbinary.input.automation.module.InputAutomationModuleFactoryFactor
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
    package InputAutomationModuleConfigurations_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package JavaHelpSetNotifier_Package renames Standard.org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InputAutomationModuleFactoryFactory is tagged;
    type InputAutomationModuleFactoryFactory_Access is access all InputAutomationModuleFactoryFactory'Class;
    type InputAutomationModuleFactoryFactory_Access_Array is array (Natural range <>) of InputAutomationModuleFactoryFactory_Access;
    type InputAutomationModuleFactoryFactory_Access_Array_Access is access all InputAutomationModuleFactoryFactory_Access_Array;
+   type InputAutomationModuleFactoryFactory_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModuleFactoryFactory_Access_Array_Access;
+   type InputAutomationModuleFactoryFactory_Access_Array_Access_Array_Access is access all InputAutomationModuleFactoryFactory_Access_Array_Access_Array;
 
    type InputAutomationModuleFactoryFactory is new Java_Object with record
       logUtil : LogUtil_Access;

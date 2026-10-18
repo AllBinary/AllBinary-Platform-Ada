@@ -29,6 +29,8 @@ package org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterfac
    type DemoLockedWithCostLayerInterfaceFactoryInterface_Access is access all DemoLockedWithCostLayerInterfaceFactoryInterface'Class;
    type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array is array (Natural range <>) of DemoLockedWithCostLayerInterfaceFactoryInterface_Access;
    type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access is access all DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array;
+   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access;
+   type DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all DemoLockedWithCostLayerInterfaceFactoryInterface_Access_Array_Access_Array;
    function isDemoLocked (This : in out DemoLockedWithCostLayerInterfaceFactoryInterface) return Boolean is abstract;
 
 end org.allbinary.game.layer.DemoLockedWithCostLayerInterfaceFactoryInterface_Package;

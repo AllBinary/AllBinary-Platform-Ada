@@ -13,8 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
+with org.allbinary.logic.control.crypt.jcehelper.AbCrypt_Package; use org.allbinary.logic.control.crypt.jcehelper.AbCrypt_Package;
+with org.allbinary.logic.control.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.control.crypt.jcehelper.KeySpecFactory_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.io.path.PathUtil_Package; use org.allbinary.logic.io.path.PathUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.system.security.AbKeys_Package; use org.allbinary.logic.system.security.AbKeys_Package;
+with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package; use org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
+
 package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
 
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package BasicUriResolver_Package renames Standard.org.allbinary.data.tree.dom.BasicUriResolver_Package;
+   package AbCrypt_Package renames Standard.org.allbinary.logic.control.crypt.jcehelper.AbCrypt_Package;
+   package KeySpecFactory_Package renames Standard.org.allbinary.logic.control.crypt.jcehelper.KeySpecFactory_Package;
+   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package PathUtil_Package renames Standard.org.allbinary.logic.io.path.PathUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AbKeys_Package renames Standard.org.allbinary.logic.system.security.AbKeys_Package;
+   package TransformInfoTemplateData_Package renames Standard.org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
    procedure Initialize_Fields (This : in out BasicTransformer'Class) is
    begin
       null;

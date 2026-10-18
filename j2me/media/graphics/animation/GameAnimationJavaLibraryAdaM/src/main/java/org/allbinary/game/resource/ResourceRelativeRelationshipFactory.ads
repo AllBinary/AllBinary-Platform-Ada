@@ -21,28 +21,26 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.RelativeRelationship_Package; use org.allbinary.graphics.RelativeRelationship_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package; use org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package;
 
 package org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Package is
 
    package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type ResourceRelativeRelationshipFactory is tagged;
    type ResourceRelativeRelationshipFactory_Access is access all ResourceRelativeRelationshipFactory'Class;
    type ResourceRelativeRelationshipFactory_Access_Array is array (Natural range <>) of ResourceRelativeRelationshipFactory_Access;
    type ResourceRelativeRelationshipFactory_Access_Array_Access is access all ResourceRelativeRelationshipFactory_Access_Array;
+   type ResourceRelativeRelationshipFactory_Access_Array_Access_Array is array (Natural range <>) of ResourceRelativeRelationshipFactory_Access_Array_Access;
+   type ResourceRelativeRelationshipFactory_Access_Array_Access_Array_Access is access all ResourceRelativeRelationshipFactory_Access_Array_Access_Array;
 
-   type ResourceRelativeRelationshipFactory is new ResourceRelativeRelationshipFactoryInterface with record
+   type ResourceRelativeRelationshipFactory is new Java_Object and ResourceRelativeRelationshipFactoryInterface with record
       basicArrayListUtil : BasicArrayListUtil_Access;
       hashtable : ABHashtable_Access;
       initialized : Boolean;

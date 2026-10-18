@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.BillingAddressHelperFactory_Package; use admin.taghelpers.BillingAddressHelperFactory_Package;
+with org.allbinary.business.user.address.BillingAddressData_Package; use org.allbinary.business.user.address.BillingAddressData_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body admin.tags.BillingAddressTag_Package is
 
+   package BillingAddressHelperFactory_Package renames Standard.admin.taghelpers.BillingAddressHelperFactory_Package;
+   package BillingAddressData_Package renames Standard.org.allbinary.business.user.address.BillingAddressData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out BillingAddressTag'Class) is
    begin
       null;
@@ -98,10 +107,10 @@ package body admin.tags.BillingAddressTag_Package is
             if BillingAddressTag'Class (This).isEnabled then
                 if (BillingAddressTag'Class (This).getCommand) /= (null) then
                     if (BillingAddressTag'Class (This).getCommand.compareTo (BillingAddressData_Package.SELECT_Id)) = (0) then
-                        BillingAddressTag'Class (This).set;
+                        declare Java_Result renames BillingAddressTag'Class (This).set; pragma Unreferenced (Java_Result); begin null; end;
                         return This.EVAL_BODY_INCLUDE;
                     elsif (BillingAddressTag'Class (This).getCommand.compareTo (BillingAddressData_Package.SETTOSHIPPINGADDRESS)) = (0) then
-                        BillingAddressTag'Class (This).setToShippingAddress;
+                        declare Java_Result renames BillingAddressTag'Class (This).setToShippingAddress; pragma Unreferenced (Java_Result); begin null; end;
                     else
                         return TableTag (This).doStartTag;
                     end if;

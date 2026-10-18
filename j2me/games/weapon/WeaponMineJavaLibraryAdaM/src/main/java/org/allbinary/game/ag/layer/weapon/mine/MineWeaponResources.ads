@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allbinary.game.layer.resources.BasicGameResources_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 
 package org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package is
 
    package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type MineWeaponResources is tagged;
    type MineWeaponResources_Access is access all MineWeaponResources'Class;
    type MineWeaponResources_Access_Array is array (Natural range <>) of MineWeaponResources_Access;
    type MineWeaponResources_Access_Array_Access is access all MineWeaponResources_Access_Array;
+   type MineWeaponResources_Access_Array_Access_Array is array (Natural range <>) of MineWeaponResources_Access_Array_Access;
+   type MineWeaponResources_Access_Array_Access_Array_Access is access all MineWeaponResources_Access_Array_Access_Array;
 
    type MineWeaponResources is new BasicGameResources with record
       DROP_TEXT_RESOURCE : Unbounded_String;

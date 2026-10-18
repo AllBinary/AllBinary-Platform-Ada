@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntity_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntityFactory_Package;
+with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+
 package body admin.taghelpers.BasicGroupItemsHelper_Package is
 
+   package BasicGroupItemsEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntity_Package;
+   package BasicGroupItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntityFactory_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
    procedure Initialize_Fields (This : in out BasicGroupItemsHelper'Class) is
    begin
       null;

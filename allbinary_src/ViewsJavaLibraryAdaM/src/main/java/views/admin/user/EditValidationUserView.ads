@@ -20,14 +20,9 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
-with org.allbinary.business.user.username.UserName_Package; use org.allbinary.business.user.username.UserName_Package;
-with org.allbinary.data.tables.user.UserEntityFactory_Package; use org.allbinary.data.tables.user.UserEntityFactory_Package;
-with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
@@ -35,13 +30,8 @@ with views.admin.user.UserView_Package; use views.admin.user.UserView_Package;
 
 package views.admin.user.EditValidationUserView_Package is
 
-   package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package UserName_Package renames Standard.org.allbinary.business.user.username.UserName_Package;
-   package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
-   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -50,6 +40,8 @@ package views.admin.user.EditValidationUserView_Package is
    type EditValidationUserView_Access is access all EditValidationUserView'Class;
    type EditValidationUserView_Access_Array is array (Natural range <>) of EditValidationUserView_Access;
    type EditValidationUserView_Access_Array_Access is access all EditValidationUserView_Access_Array;
+   type EditValidationUserView_Access_Array_Access_Array is array (Natural range <>) of EditValidationUserView_Access_Array_Access;
+   type EditValidationUserView_Access_Array_Access_Array_Access is access all EditValidationUserView_Access_Array_Access_Array;
 
    type EditValidationUserView is new UserView and ValidationComponentInterface with record
       logUtil : LogUtil_Access;

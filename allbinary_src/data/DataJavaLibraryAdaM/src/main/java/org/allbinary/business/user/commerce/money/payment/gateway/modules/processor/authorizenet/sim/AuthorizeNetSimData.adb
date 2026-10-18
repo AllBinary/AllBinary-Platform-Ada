@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.commerce.money.payment.gateway.modules.processor.authorizenet.sim.AuthorizeNetSimData_Package is
 
    procedure Initialize_Fields (This : in out AuthorizeNetSimData'Class) is

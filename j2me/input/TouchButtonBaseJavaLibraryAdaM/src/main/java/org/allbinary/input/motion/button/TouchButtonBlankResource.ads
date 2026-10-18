@@ -29,6 +29,8 @@ package org.allbinary.input.motion.button.TouchButtonBlankResource_Package is
    type TouchButtonBlankResource_Access is access all TouchButtonBlankResource'Class;
    type TouchButtonBlankResource_Access_Array is array (Natural range <>) of TouchButtonBlankResource_Access;
    type TouchButtonBlankResource_Access_Array_Access is access all TouchButtonBlankResource_Access_Array;
+   type TouchButtonBlankResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonBlankResource_Access_Array_Access;
+   type TouchButtonBlankResource_Access_Array_Access_Array_Access is access all TouchButtonBlankResource_Access_Array_Access_Array;
 
    type TouchButtonBlankResource is new TouchButtonResource with null record;
    instance : TouchButtonResource_Access;

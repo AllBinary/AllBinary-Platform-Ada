@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.business.user.role.BasicUserRole_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BasicUserRole'Class) is
    begin
       null;
@@ -129,7 +132,7 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
 
 begin
    null;
-   roleVector := BasicArrayListD_Package.Create;
+   roleVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
 
 end org.allbinary.business.user.role.BasicUserRole_Package;
 

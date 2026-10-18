@@ -16,6 +16,8 @@ package org.allbinary.game.BasicGameInfoFactory_Package is
    type BasicGameInfoFactory_Access is access all BasicGameInfoFactory'Class;
    type BasicGameInfoFactory_Access_Array is array (Natural range <>) of BasicGameInfoFactory_Access;
    type BasicGameInfoFactory_Access_Array_Access is access all BasicGameInfoFactory_Access_Array;
+   type BasicGameInfoFactory_Access_Array_Access_Array is array (Natural range <>) of BasicGameInfoFactory_Access_Array_Access;
+   type BasicGameInfoFactory_Access_Array_Access_Array_Access is access all BasicGameInfoFactory_Access_Array_Access_Array;
 
    type BasicGameInfoFactory is new Java_Object with record
       currentReleaseIndex : Integer;

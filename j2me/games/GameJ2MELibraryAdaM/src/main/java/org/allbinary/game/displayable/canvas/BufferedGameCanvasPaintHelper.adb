@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullCanvas_Package; use javax.microedition.lcdui.NullCanvas_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
+
 package body org.allbinary.game.displayable.canvas.BufferedGameCanvasPaintHelper_Package is
 
+   package NullCanvas_Package renames Standard.javax.microedition.lcdui.NullCanvas_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
    procedure Initialize_Fields (This : in out BufferedGameCanvasPaintHelper'Class) is
    begin
       null;
@@ -47,8 +56,8 @@ package body org.allbinary.game.displayable.canvas.BufferedGameCanvasPaintHelper
    begin
         myCanvas := (MyCanvas_Access (This.gameCanvas));
         myCanvas.draw (This.offScreenImage (This.circularIndexUtil.getIndex).getGraphics);
-        This.circularIndexUtil.next;
-        This.drawCircularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
+        declare Java_Result renames This.drawCircularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
    end process;
 
    procedure paint (This : in out BufferedGameCanvasPaintHelper; graphics_Param : access Graphics_Package.Graphics'Class) is

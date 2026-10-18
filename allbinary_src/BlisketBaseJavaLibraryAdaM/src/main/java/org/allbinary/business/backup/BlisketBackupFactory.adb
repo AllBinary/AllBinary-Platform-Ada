@@ -13,8 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package; use org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package;
+with org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package; use org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package;
+with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.zip.ZipFileUtil_Package; use org.allbinary.logic.io.file.zip.ZipFileUtil_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.business.backup.BlisketBackupFactory_Package is
 
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package StoreFrontsEntity_Package renames Standard.org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_Package;
+   package StoreFrontsEntityFactory_Package renames Standard.org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityFactory_Package;
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package ZipFileUtil_Package renames Standard.org.allbinary.logic.io.file.zip.ZipFileUtil_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BlisketBackupFactory'Class) is
    begin
       null;
@@ -61,8 +84,8 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
         begin
             This.logUtil.putF (This.commonStrings.START, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"));
             stringBuffer := StringMaker_Package.Create;
-            stringBuffer.append (URLGLOBALS.getWebappPath);
-            stringBuffer.append (PATH_GLOBALS.getInstance.BACKUP_PATH);
+            stringBuffer.append (URLGLOBALS_Package.getWebappPath);
+            stringBuffer.append (PATH_GLOBALS_Package.getInstance.BACKUP_PATH);
             backupPath := stringBuffer.toString;
             path := AbPath_Package.Create (backupPath, This.stringUtil.EMPTY_STRING);
             fileBasicArrayList := BlisketBackupFactory'Class (This).getFileBasicArrayList (backupPath);
@@ -92,11 +115,11 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
         begin
             This.logUtil.putF (This.commonStrings.START, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupViews()"));
             stringBuffer := StringMaker_Package.Create;
-            stringBuffer.append (URLGLOBALS.getWebappPath);
-            stringBuffer.append (PATH_GLOBALS.getInstance.BACKUP_PATH);
+            stringBuffer.append (URLGLOBALS_Package.getWebappPath);
+            stringBuffer.append (PATH_GLOBALS_Package.getInstance.BACKUP_PATH);
             backupPath := stringBuffer.toString;
             path := AbPath_Package.Create (backupPath, This.stringUtil.EMPTY_STRING);
-            fileBasicArrayList := BasicArrayListD_Package.Create;
+            fileBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             storeFrontsEntity := StoreFrontsEntityFactory_Package.getInstance.getStoreFrontsEntityInstance;
             storeFrontNamesBasicArrayList := storeFrontsEntity.getStoreFrontNames;
             size := storeFrontNamesBasicArrayList.size;
@@ -105,8 +128,8 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             for index in 0 .. (size) - 1 loop
                 nextStore := Java_Unbox (storeFrontNamesBasicArrayList.get (index));
                 stringBuffer.delete (0, stringBuffer.length);
-                stringBuffer.append (URLGLOBALS.getWebappPath);
-                stringBuffer.append (PATH_GLOBALS.getInstance.VIEWS_PATH);
+                stringBuffer.append (URLGLOBALS_Package.getWebappPath);
+                stringBuffer.append (PATH_GLOBALS_Package.getInstance.VIEWS_PATH);
                 stringBuffer.append (nextStore);
                 viewsPath := stringBuffer.toString;
                 stringBuffer.delete (0, stringBuffer.length);
@@ -144,11 +167,11 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
         begin
             This.logUtil.putF (This.commonStrings.START, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupResources()"));
             stringBuffer := StringMaker_Package.Create;
-            stringBuffer.append (URLGLOBALS.getWebappPath);
-            stringBuffer.append (PATH_GLOBALS.getInstance.BACKUP_PATH);
+            stringBuffer.append (URLGLOBALS_Package.getWebappPath);
+            stringBuffer.append (PATH_GLOBALS_Package.getInstance.BACKUP_PATH);
             backupPath := stringBuffer.toString;
             path := AbPath_Package.Create (backupPath, This.stringUtil.EMPTY_STRING);
-            fileBasicArrayList := BasicArrayListD_Package.Create;
+            fileBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             storeFrontsEntity := StoreFrontsEntityFactory_Package.getInstance.getStoreFrontsEntityInstance;
             storeFrontNamesBasicArrayList := storeFrontsEntity.getStoreFrontNames;
             size := storeFrontNamesBasicArrayList.size;
@@ -159,7 +182,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
                 nextStore := Java_Unbox (storeFrontNamesBasicArrayList.get (index));
                 storeFrontInterface := storeFrontsEntity.getStoreFrontInterface (nextStore);
                 stringBuffer.delete (0, stringBuffer.length);
-                stringBuffer.append (URLGLOBALS.getWebappPath);
+                stringBuffer.append (URLGLOBALS_Package.getWebappPath);
                 stringBuffer.append (storeFrontInterface.getCurrentHostNamePath);
                 stringBuffer.append (storeFrontInterface.getCategoryPath);
                 resourcesPath := stringBuffer.toString;
@@ -196,11 +219,11 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
         begin
             This.logUtil.putF (This.commonStrings.START, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupJsps()"));
             stringBuffer := StringMaker_Package.Create;
-            stringBuffer.append (URLGLOBALS.getWebappPath);
-            stringBuffer.append (PATH_GLOBALS.getInstance.BACKUP_PATH);
+            stringBuffer.append (URLGLOBALS_Package.getWebappPath);
+            stringBuffer.append (PATH_GLOBALS_Package.getInstance.BACKUP_PATH);
             backupPath := stringBuffer.toString;
             path := AbPath_Package.Create (backupPath, This.stringUtil.EMPTY_STRING);
-            fileBasicArrayList := BasicArrayListD_Package.Create;
+            fileBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             storeFrontsEntity := StoreFrontsEntityFactory_Package.getInstance.getStoreFrontsEntityInstance;
             storeFrontNamesBasicArrayList := storeFrontsEntity.getStoreFrontNames;
             size := storeFrontNamesBasicArrayList.size;
@@ -209,7 +232,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
                 nextStore := Java_Unbox (storeFrontNamesBasicArrayList.get (index));
                 PreLogUtil_Package.put (To_Unbounded_String ("Backup Store Jsps: ") & nextStore, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupJsps()"));
                 stringBuffer.delete (0, stringBuffer.length);
-                stringBuffer.append (URLGLOBALS.getWebappPath);
+                stringBuffer.append (URLGLOBALS_Package.getWebappPath);
                 stringBuffer.append (nextStore);
                 fileBasicArrayList.addAllList (BlisketBackupFactory'Class (This).getFileBasicArrayList (stringBuffer.toString));
             end loop;

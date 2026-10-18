@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package; use org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package;
+with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
+with org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package; use org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package;
+with org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package; use org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package;
+with org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package; use org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package;
+with org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package; use org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package;
+
 package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAIFactory_Package is
 
+   package BasicRandomAIFactory_Package renames Standard.org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package;
+   package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
    procedure Initialize_Fields (This : in out DiveAndDirectionalTrackingAIFactory'Class) is
    begin
       null;
@@ -49,7 +60,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAIFactory_Packag
         hashtable2 := BasicProbabilityAIDataFactory_Package.Create.getInstance;
         hashtable2.put (BasicAI_Package.AI_VISITOR, LastKeyAIVisitorFactory_Package.getInstance);
         artificialIntelligenceInterface := BasicRandomAIFactory_Package.Create.getInstance (hashtable2, ownerLayerInterface, gameInput);
-        return DiveAndDirectionalTrackingAI_Package.Create (ownerLayerInterface, artificialIntelligenceInterface, gameInput, Visitor_Access (visitorCanBeNull));
+        return ArtificialIntelligenceInterface_Access (DiveAndDirectionalTrackingAI_Package.Create (ownerLayerInterface, artificialIntelligenceInterface, gameInput, Visitor_Access (visitorCanBeNull)));
    end getInstance;
 
    procedure getInstance (This : in out DiveAndDirectionalTrackingAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is

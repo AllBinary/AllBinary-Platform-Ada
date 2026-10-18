@@ -30,8 +30,10 @@ package org.allbinary.logic.util.event.NullEventListener_Package is
    type NullEventListener_Access is access all NullEventListener'Class;
    type NullEventListener_Access_Array is array (Natural range <>) of NullEventListener_Access;
    type NullEventListener_Access_Array_Access is access all NullEventListener_Access_Array;
+   type NullEventListener_Access_Array_Access_Array is array (Natural range <>) of NullEventListener_Access_Array_Access;
+   type NullEventListener_Access_Array_Access_Array_Access is access all NullEventListener_Access_Array_Access_Array;
 
-   type NullEventListener is new EventListenerInterface with null record;
+   type NullEventListener is new Java_Object and EventListenerInterface with null record;
    NULL_EVENT_LISTENER : NullEventListener_Access;
 
    procedure Initialize (This : in out NullEventListener'Class);

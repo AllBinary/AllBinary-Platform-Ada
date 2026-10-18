@@ -29,6 +29,8 @@ package org.allbinary.input.motion.button.TouchButtonFireResource_Package is
    type TouchButtonFireResource_Access is access all TouchButtonFireResource'Class;
    type TouchButtonFireResource_Access_Array is array (Natural range <>) of TouchButtonFireResource_Access;
    type TouchButtonFireResource_Access_Array_Access is access all TouchButtonFireResource_Access_Array;
+   type TouchButtonFireResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonFireResource_Access_Array_Access;
+   type TouchButtonFireResource_Access_Array_Access_Array_Access is access all TouchButtonFireResource_Access_Array_Access_Array;
 
    type TouchButtonFireResource is new TouchButtonResource with null record;
    instance : TouchButtonResource_Access;

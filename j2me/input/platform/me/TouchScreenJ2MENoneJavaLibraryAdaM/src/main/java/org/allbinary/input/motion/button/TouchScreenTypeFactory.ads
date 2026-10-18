@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
 
 package org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
 
@@ -29,6 +28,8 @@ package org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
    type TouchScreenTypeFactory_Access is access all TouchScreenTypeFactory'Class;
    type TouchScreenTypeFactory_Access_Array is array (Natural range <>) of TouchScreenTypeFactory_Access;
    type TouchScreenTypeFactory_Access_Array_Access is access all TouchScreenTypeFactory_Access_Array;
+   type TouchScreenTypeFactory_Access_Array_Access_Array is array (Natural range <>) of TouchScreenTypeFactory_Access_Array_Access;
+   type TouchScreenTypeFactory_Access_Array_Access_Array_Access is access all TouchScreenTypeFactory_Access_Array_Access_Array;
 
    type TouchScreenTypeFactory is new Java_Object with null record;
    instance : TouchScreenTypeFactory_Access;

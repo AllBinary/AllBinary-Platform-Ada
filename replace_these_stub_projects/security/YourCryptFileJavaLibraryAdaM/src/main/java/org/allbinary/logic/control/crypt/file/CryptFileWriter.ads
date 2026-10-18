@@ -20,6 +20,8 @@ package org.allbinary.logic.control.crypt.file.CryptFileWriter_Package is
    type CryptFileWriter_Access is access all CryptFileWriter'Class;
    type CryptFileWriter_Access_Array is array (Natural range <>) of CryptFileWriter_Access;
    type CryptFileWriter_Access_Array_Access is access all CryptFileWriter_Access_Array;
+   type CryptFileWriter_Access_Array_Access_Array is array (Natural range <>) of CryptFileWriter_Access_Array_Access;
+   type CryptFileWriter_Access_Array_Access_Array_Access is access all CryptFileWriter_Access_Array_Access_Array;
 
    type CryptFileWriter is new Java_Object with null record;
 

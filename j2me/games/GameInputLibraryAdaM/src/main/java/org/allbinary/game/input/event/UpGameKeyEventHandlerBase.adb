@@ -13,12 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package; use org.allbinary.game.input.event.UpGameKeyEventListenerInterface_Package;
+
 package body org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out UpGameKeyEventHandlerBase'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -39,8 +48,8 @@ package body org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package is
    procedure addListener (This : in out UpGameKeyEventHandlerBase; playerGameInput_Param : access PlayerGameInput_Package.PlayerGameInput'Class) is
       playerGameInput : constant PlayerGameInput_Access := PlayerGameInput_Access (playerGameInput_Param);
    begin
-        if not (This.list.contains (playerGameInput)) then
-            This.list.add (playerGameInput);
+        if not (This.list.contains (Java_Object_Access (playerGameInput))) then
+            This.list.add (Java_Object_Access (playerGameInput));
         end if;
    end addListener;
 
@@ -53,14 +62,14 @@ package body org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package is
    procedure removeListenerSingleThreaded (This : in out UpGameKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.list.remove (eventListenerInterface);
+        This.list.remove (Java_Object_Access (eventListenerInterface));
         BasicEventHandler (This).removeListenerSingleThreaded (eventListenerInterface);
    end removeListenerSingleThreaded;
 
    procedure removeListener (This : in out UpGameKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.list.remove (eventListenerInterface);
+        This.list.remove (Java_Object_Access (eventListenerInterface));
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 

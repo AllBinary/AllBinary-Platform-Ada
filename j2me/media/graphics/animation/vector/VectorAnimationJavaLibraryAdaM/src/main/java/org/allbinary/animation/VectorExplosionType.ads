@@ -28,6 +28,8 @@ package org.allbinary.animation.VectorExplosionType_Package is
    type VectorExplosionType_Access is access all VectorExplosionType'Class;
    type VectorExplosionType_Access_Array is array (Natural range <>) of VectorExplosionType_Access;
    type VectorExplosionType_Access_Array_Access is access all VectorExplosionType_Access_Array;
+   type VectorExplosionType_Access_Array_Access_Array is array (Natural range <>) of VectorExplosionType_Access_Array_Access;
+   type VectorExplosionType_Access_Array_Access_Array_Access is access all VectorExplosionType_Access_Array_Access_Array;
 
    type VectorExplosionType is new Java_Object with null record;
 

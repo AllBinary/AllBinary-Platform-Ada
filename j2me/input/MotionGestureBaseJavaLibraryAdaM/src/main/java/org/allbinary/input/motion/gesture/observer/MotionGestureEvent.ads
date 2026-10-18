@@ -21,24 +21,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 
 package org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package is
 
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
@@ -46,6 +36,8 @@ package org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package i
    type MotionGestureEvent_Access is access all MotionGestureEvent'Class;
    type MotionGestureEvent_Access_Array is array (Natural range <>) of MotionGestureEvent_Access;
    type MotionGestureEvent_Access_Array_Access is access all MotionGestureEvent_Access_Array;
+   type MotionGestureEvent_Access_Array_Access_Array is array (Natural range <>) of MotionGestureEvent_Access_Array_Access;
+   type MotionGestureEvent_Access_Array_Access_Array_Access is access all MotionGestureEvent_Access_Array_Access_Array;
 
    type MotionGestureEvent is new AllBinaryEventObject with record
       motionGesture : MotionGestureInput_Access;

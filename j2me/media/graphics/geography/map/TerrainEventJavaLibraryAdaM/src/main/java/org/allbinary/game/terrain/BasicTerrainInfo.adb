@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+
 package body org.allbinary.game.terrain.BasicTerrainInfo_Package is
 
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    procedure Initialize_Fields (This : in out BasicTerrainInfo'Class) is
    begin
       null;

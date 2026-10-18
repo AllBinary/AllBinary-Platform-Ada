@@ -28,6 +28,8 @@ package org.allbinary.init.InitInterface_Package is
    type InitInterface_Access is access all InitInterface'Class;
    type InitInterface_Access_Array is array (Natural range <>) of InitInterface_Access;
    type InitInterface_Access_Array_Access is access all InitInterface_Access_Array;
+   type InitInterface_Access_Array_Access_Array is array (Natural range <>) of InitInterface_Access_Array_Access;
+   type InitInterface_Access_Array_Access_Array_Access is access all InitInterface_Access_Array_Access_Array;
    procedure init (This : in out InitInterface) is abstract;
 
 end org.allbinary.init.InitInterface_Package;

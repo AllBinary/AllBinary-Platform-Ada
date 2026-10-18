@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.globals.MESSAGES_Package is
 
    procedure Initialize_Fields (This : in out MESSAGES'Class) is

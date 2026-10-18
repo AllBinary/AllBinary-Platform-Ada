@@ -13,12 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.game.displayable.GameLevelDisplayChangeEventListenersFactory_Package is
 
+   package DisplayChangeEventHandler_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
+   package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out GameLevelDisplayChangeEventListenersFactory'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
    procedure Initialize (This : in out GameLevelDisplayChangeEventListenersFactory'Class) is
@@ -42,7 +49,7 @@ package body org.allbinary.game.displayable.GameLevelDisplayChangeEventListeners
    procedure add (This : in out GameLevelDisplayChangeEventListenersFactory; displayChangeEventListener_Param : access DisplayChangeEventListener_Package.DisplayChangeEventListener'Class) is
       displayChangeEventListener : constant DisplayChangeEventListener_Access := DisplayChangeEventListener_Access (displayChangeEventListener_Param);
    begin
-        This.list.add (displayChangeEventListener);
+        This.list.add (Java_Object_Access (displayChangeEventListener));
         DisplayChangeEventHandler_Package.getInstance.addListenerInterface (displayChangeEventListener);
    end add;
 

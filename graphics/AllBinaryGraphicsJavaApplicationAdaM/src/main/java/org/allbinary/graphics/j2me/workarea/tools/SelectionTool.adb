@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.math.RectangleCollisionPointUtil_Package; use org.allbinary.math.RectangleCollisionPointUtil_Package;
+with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+with org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package; use org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package;
+
 package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package RectangleCollisionPointUtil_Package renames Standard.org.allbinary.math.RectangleCollisionPointUtil_Package;
    procedure Initialize_Fields (This : in out SelectionTool'Class) is
    begin
       null;

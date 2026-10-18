@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.KeySingletonFactory_Package;
+
 package body org.allbinary.input.automation.actions.script.condition.processors.input.KeyNameDefaultComboBoxModelFactory_Package is
 
+   package KeySingletonFactory_Package renames Standard.org.allbinary.input.KeySingletonFactory_Package;
    procedure Initialize_Fields (This : in out KeyNameDefaultComboBoxModelFactory'Class) is
    begin
       null;

@@ -30,6 +30,8 @@ package org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Pac
    type CategoryHierarchyInterface_Access is access all CategoryHierarchyInterface'Class;
    type CategoryHierarchyInterface_Access_Array is array (Natural range <>) of CategoryHierarchyInterface_Access;
    type CategoryHierarchyInterface_Access_Array_Access is access all CategoryHierarchyInterface_Access_Array;
+   type CategoryHierarchyInterface_Access_Array_Access_Array is array (Natural range <>) of CategoryHierarchyInterface_Access_Array_Access;
+   type CategoryHierarchyInterface_Access_Array_Access_Array_Access is access all CategoryHierarchyInterface_Access_Array_Access_Array;
    function getLevel (This : in out CategoryHierarchyInterface) return Integer is abstract;
    function getLevelString (This : in out CategoryHierarchyInterface) return Unbounded_String is abstract;
    function getRoot (This : in out CategoryHierarchyInterface) return CategoryInterface_Access is abstract;

@@ -30,6 +30,8 @@ package org.allbinary.animation.resource.ResourceAnimationInterfaceFactoryInterf
    type ResourceAnimationInterfaceFactoryInterface_Access is access all ResourceAnimationInterfaceFactoryInterface'Class;
    type ResourceAnimationInterfaceFactoryInterface_Access_Array is array (Natural range <>) of ResourceAnimationInterfaceFactoryInterface_Access;
    type ResourceAnimationInterfaceFactoryInterface_Access_Array_Access is access all ResourceAnimationInterfaceFactoryInterface_Access_Array;
+   type ResourceAnimationInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of ResourceAnimationInterfaceFactoryInterface_Access_Array_Access;
+   type ResourceAnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all ResourceAnimationInterfaceFactoryInterface_Access_Array_Access_Array;
    function getBasicAnimationInterfaceFactoryInstance (This : in out ResourceAnimationInterfaceFactoryInterface; resource : Unbounded_String) return BasicAnimationInterfaceFactoryInterface_Access is abstract;
 
 end org.allbinary.animation.resource.ResourceAnimationInterfaceFactoryInterface_Package;

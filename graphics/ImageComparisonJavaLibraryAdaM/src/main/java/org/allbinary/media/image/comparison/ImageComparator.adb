@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.color.ColorCacheFactory_Package; use org.allbinary.graphics.color.ColorCacheFactory_Package;
+with org.allbinary.graphics.color.ColorCacheable_Package; use org.allbinary.graphics.color.ColorCacheable_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.util.cache.AutomaticCacheInterface_Package; use org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
+with org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package; use org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package;
+with org.allbinary.media.image.comparison.Color_Package; use org.allbinary.media.image.comparison.Color_Package;
+
 package body org.allbinary.media.image.comparison.ImageComparator_Package is
 
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package ColorCacheFactory_Package renames Standard.org.allbinary.graphics.color.ColorCacheFactory_Package;
+   package ColorCacheable_Package renames Standard.org.allbinary.graphics.color.ColorCacheable_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AutomaticCacheInterface_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
+   package PixelDeltaFactory_Package renames Standard.org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package;
    procedure Initialize_Fields (This : in out ImageComparator'Class) is
    begin
       null;

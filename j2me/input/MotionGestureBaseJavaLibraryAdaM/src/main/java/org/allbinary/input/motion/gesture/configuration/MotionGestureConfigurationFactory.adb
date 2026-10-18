@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package is
 
    procedure Initialize_Fields (This : in out MotionGestureConfigurationFactory'Class) is

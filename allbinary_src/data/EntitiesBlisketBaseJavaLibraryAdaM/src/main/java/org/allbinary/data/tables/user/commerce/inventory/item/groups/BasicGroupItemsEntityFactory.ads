@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntity_Package;
 
 package org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BasicGroupItemsEntityFactory is tagged;
    type BasicGroupItemsEntityFactory_Access is access all BasicGroupItemsEntityFactory'Class;
    type BasicGroupItemsEntityFactory_Access_Array is array (Natural range <>) of BasicGroupItemsEntityFactory_Access;
    type BasicGroupItemsEntityFactory_Access_Array_Access is access all BasicGroupItemsEntityFactory_Access_Array;
+   type BasicGroupItemsEntityFactory_Access_Array_Access_Array is array (Natural range <>) of BasicGroupItemsEntityFactory_Access_Array_Access;
+   type BasicGroupItemsEntityFactory_Access_Array_Access_Array_Access is access all BasicGroupItemsEntityFactory_Access_Array_Access_Array;
 
    type BasicGroupItemsEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

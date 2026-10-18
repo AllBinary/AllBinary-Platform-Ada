@@ -25,10 +25,7 @@ with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lc
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.paint.ColorFillBasePaintable_Package; use org.allbinary.game.paint.ColorFillBasePaintable_Package;
-with org.allbinary.game.paint.ColorFillPaintableFactory_Package; use org.allbinary.game.paint.ColorFillPaintableFactory_Package;
-with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
 with org.allbinary.graphics.draw.DrawStringUtil_Package; use org.allbinary.graphics.draw.DrawStringUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
 
 package org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package is
@@ -38,15 +35,14 @@ package org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
    package ColorFillBasePaintable_Package renames Standard.org.allbinary.game.paint.ColorFillBasePaintable_Package;
-   package ColorFillPaintableFactory_Package renames Standard.org.allbinary.game.paint.ColorFillPaintableFactory_Package;
-   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
    package DrawStringUtil_Package renames Standard.org.allbinary.graphics.draw.DrawStringUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type GameInputMappingInstructionsCanvas is tagged;
    type GameInputMappingInstructionsCanvas_Access is access all GameInputMappingInstructionsCanvas'Class;
    type GameInputMappingInstructionsCanvas_Access_Array is array (Natural range <>) of GameInputMappingInstructionsCanvas_Access;
    type GameInputMappingInstructionsCanvas_Access_Array_Access is access all GameInputMappingInstructionsCanvas_Access_Array;
+   type GameInputMappingInstructionsCanvas_Access_Array_Access_Array is array (Natural range <>) of GameInputMappingInstructionsCanvas_Access_Array_Access;
+   type GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access is access all GameInputMappingInstructionsCanvas_Access_Array_Access_Array;
 
    type GameInputMappingInstructionsCanvas is new GameCommandCanvas with record
       drawStringUtil : DrawStringUtil_Access;

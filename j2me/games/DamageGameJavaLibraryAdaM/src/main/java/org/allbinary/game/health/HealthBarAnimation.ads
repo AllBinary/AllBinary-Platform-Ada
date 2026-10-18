@@ -21,14 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
 with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 
 package org.allbinary.game.health.HealthBarAnimation_Package is
 
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
-   package BasicHudFactory_Package renames Standard.org.allbinary.game.graphics.hud.BasicHudFactory_Package;
    package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
@@ -36,6 +34,8 @@ package org.allbinary.game.health.HealthBarAnimation_Package is
    type HealthBarAnimation_Access is access all HealthBarAnimation'Class;
    type HealthBarAnimation_Access_Array is array (Natural range <>) of HealthBarAnimation_Access;
    type HealthBarAnimation_Access_Array_Access is access all HealthBarAnimation_Access_Array;
+   type HealthBarAnimation_Access_Array_Access_Array is array (Natural range <>) of HealthBarAnimation_Access_Array_Access;
+   type HealthBarAnimation_Access_Array_Access_Array_Access is access all HealthBarAnimation_Access_Array_Access_Array;
 
    type HealthBarAnimation is new Animation with record
       basicColorFactory : BasicColorFactory_Access;

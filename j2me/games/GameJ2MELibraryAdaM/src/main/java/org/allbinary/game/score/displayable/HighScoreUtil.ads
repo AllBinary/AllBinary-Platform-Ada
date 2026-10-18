@@ -24,15 +24,12 @@ with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Comm
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
 with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
-with org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package; use org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
 with org.allbinary.game.score.HighScoresFactoryInterface_Package; use org.allbinary.game.score.HighScoresFactoryInterface_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
 with org.allbinary.game.score.HighScoresResultsListener_Package; use org.allbinary.game.score.HighScoresResultsListener_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
@@ -42,15 +39,12 @@ package org.allbinary.game.score.displayable.HighScoreUtil_Package is
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
    package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
    package HighScore_Package renames Standard.org.allbinary.game.score.HighScore_Package;
-   package HighScoreNamePersistanceSingleton_Package renames Standard.org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package;
    package HighScores_Package renames Standard.org.allbinary.game.score.HighScores_Package;
    package HighScoresFactoryInterface_Package renames Standard.org.allbinary.game.score.HighScoresFactoryInterface_Package;
    package HighScoresHelperBaseInterface_Package renames Standard.org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
    package HighScoresResultsListener_Package renames Standard.org.allbinary.game.score.HighScoresResultsListener_Package;
    package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -58,8 +52,10 @@ package org.allbinary.game.score.displayable.HighScoreUtil_Package is
    type HighScoreUtil_Access is access all HighScoreUtil'Class;
    type HighScoreUtil_Access_Array is array (Natural range <>) of HighScoreUtil_Access;
    type HighScoreUtil_Access_Array_Access is access all HighScoreUtil_Access_Array;
+   type HighScoreUtil_Access_Array_Access_Array is array (Natural range <>) of HighScoreUtil_Access_Array_Access;
+   type HighScoreUtil_Access_Array_Access_Array_Access is access all HighScoreUtil_Access_Array_Access_Array;
 
-   type HighScoreUtil is new HighScoresResultsListener with record
+   type HighScoreUtil is new Java_Object and HighScoresResultsListener with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       highScoresFactoryInterface : HighScoresFactoryInterface_Access;

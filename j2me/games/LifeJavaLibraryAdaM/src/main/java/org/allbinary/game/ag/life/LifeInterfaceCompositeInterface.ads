@@ -29,6 +29,8 @@ package org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package is
    type LifeInterfaceCompositeInterface_Access is access all LifeInterfaceCompositeInterface'Class;
    type LifeInterfaceCompositeInterface_Access_Array is array (Natural range <>) of LifeInterfaceCompositeInterface_Access;
    type LifeInterfaceCompositeInterface_Access_Array_Access is access all LifeInterfaceCompositeInterface_Access_Array;
+   type LifeInterfaceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of LifeInterfaceCompositeInterface_Access_Array_Access;
+   type LifeInterfaceCompositeInterface_Access_Array_Access_Array_Access is access all LifeInterfaceCompositeInterface_Access_Array_Access_Array;
    function getLifeInterface (This : in out LifeInterfaceCompositeInterface) return Life_Access is abstract;
 
 end org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package;

@@ -21,30 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.java.bool.BooleanUtil_Package; use org.allbinary.logic.java.bool.BooleanUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.business.init.InitInfoEntity_Package; use org.allbinary.business.init.InitInfoEntity_Package;
 
 package org.allbinary.business.init.InitInfo_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
-   package BooleanUtil_Package renames Standard.org.allbinary.logic.java.bool.BooleanUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type InitInfo is tagged;
    type InitInfo_Access is access all InitInfo'Class;
    type InitInfo_Access_Array is array (Natural range <>) of InitInfo_Access;
    type InitInfo_Access_Array_Access is access all InitInfo_Access_Array;
+   type InitInfo_Access_Array_Access_Array is array (Natural range <>) of InitInfo_Access_Array_Access;
+   type InitInfo_Access_Array_Access_Array_Access is access all InitInfo_Access_Array_Access_Array;
 
    type InitInfo is new Java_Object with record
       TESTING : Unbounded_String;
@@ -76,8 +65,8 @@ package org.allbinary.business.init.InitInfo_Package is
    procedure isMainPathValid (This : in out InitInfo; abPath_Param : access AbPath_Package.AbPath'Class);
    function isTestHtmlPathValid (This : in out InitInfo; abPath_Param : access AbPath_Package.AbPath'Class) return Boolean;
    procedure isTestHtmlPathValid (This : in out InitInfo; abPath_Param : access AbPath_Package.AbPath'Class);
-   function isTestingValid (This : in out InitInfo; testing_Case : Unbounded_String) return Boolean;
-   procedure isTestingValid (This : in out InitInfo; testing_Case : Unbounded_String);
+   function isTestingValid (This : in out InitInfo; testing : Unbounded_String) return Boolean;
+   procedure isTestingValid (This : in out InitInfo; testing : Unbounded_String);
    function toHashMap (This : in out InitInfo) return HashMap_Access;
 
 end org.allbinary.business.init.InitInfo_Package;

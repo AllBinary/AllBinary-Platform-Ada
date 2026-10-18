@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_Package is
 
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out TransformInfoHttpSearch'Class) is
    begin
       null;
@@ -47,8 +58,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_P
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
-        stringBuffer.append (URLGLOBALS.getMainPath);
-        stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH);
+        stringBuffer.append (URLGLOBALS_Package.getMainPath);
+        stringBuffer.append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH);
         stringBuffer.append (TransformInfoHttpSearch'Class (This).getStoreName);
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         return stringBuffer.toString;

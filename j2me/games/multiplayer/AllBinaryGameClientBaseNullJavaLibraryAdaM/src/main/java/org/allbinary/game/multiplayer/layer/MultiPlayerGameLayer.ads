@@ -39,6 +39,8 @@ package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package is
    type MultiPlayerGameLayer_Access is access all MultiPlayerGameLayer'Class;
    type MultiPlayerGameLayer_Access_Array is array (Natural range <>) of MultiPlayerGameLayer_Access;
    type MultiPlayerGameLayer_Access_Array_Access is access all MultiPlayerGameLayer_Access_Array;
+   type MultiPlayerGameLayer_Access_Array_Access_Array is array (Natural range <>) of MultiPlayerGameLayer_Access_Array_Access;
+   type MultiPlayerGameLayer_Access_Array_Access_Array_Access is access all MultiPlayerGameLayer_Access_Array_Access_Array;
 
    type MultiPlayerGameLayer is new CollidableDestroyableDamageableLayer and MultiPlayerGameLayerInterface with null record;
 

@@ -31,6 +31,8 @@ package org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_P
    type WaypointEventListenerInterface_Access is access all WaypointEventListenerInterface'Class;
    type WaypointEventListenerInterface_Access_Array is array (Natural range <>) of WaypointEventListenerInterface_Access;
    type WaypointEventListenerInterface_Access_Array_Access is access all WaypointEventListenerInterface_Access_Array;
+   type WaypointEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of WaypointEventListenerInterface_Access_Array_Access;
+   type WaypointEventListenerInterface_Access_Array_Access_Array_Access is access all WaypointEventListenerInterface_Access_Array_Access_Array;
    procedure onWaypointEvent (This : in out WaypointEventListenerInterface; event_Param : access RTSLayerEvent_Package.RTSLayerEvent'Class) is abstract;
 
 end org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;

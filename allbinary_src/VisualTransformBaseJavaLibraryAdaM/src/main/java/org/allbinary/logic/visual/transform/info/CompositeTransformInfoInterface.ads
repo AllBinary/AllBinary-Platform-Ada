@@ -29,6 +29,8 @@ package org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterfac
    type CompositeTransformInfoInterface_Access is access all CompositeTransformInfoInterface'Class;
    type CompositeTransformInfoInterface_Access_Array is array (Natural range <>) of CompositeTransformInfoInterface_Access;
    type CompositeTransformInfoInterface_Access_Array_Access is access all CompositeTransformInfoInterface_Access_Array;
+   type CompositeTransformInfoInterface_Access_Array_Access_Array is array (Natural range <>) of CompositeTransformInfoInterface_Access_Array_Access;
+   type CompositeTransformInfoInterface_Access_Array_Access_Array_Access is access all CompositeTransformInfoInterface_Access_Array_Access_Array;
    function getTransformInfoInterface (This : in out CompositeTransformInfoInterface) return TransformInfoInterface_Access is abstract;
 
 end org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterface_Package;

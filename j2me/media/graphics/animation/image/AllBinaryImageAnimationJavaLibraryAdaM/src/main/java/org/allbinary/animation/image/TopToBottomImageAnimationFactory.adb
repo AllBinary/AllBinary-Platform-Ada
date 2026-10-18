@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.image.TopToBottomImageAnimation_Package; use org.allbinary.animation.image.TopToBottomImageAnimation_Package;
+
 package body org.allbinary.animation.image.TopToBottomImageAnimationFactory_Package is
 
    procedure Initialize_Fields (This : in out TopToBottomImageAnimationFactory'Class) is
@@ -40,7 +42,7 @@ package body org.allbinary.animation.image.TopToBottomImageAnimationFactory_Pack
       scaledImage : Image_Access;
    begin
         scaledImage := This.animationFactoryImageScaleUtil.createImage (TopToBottomImageAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
-        return TopToBottomImageAnimation_Package.Create (scaledImage, TopToBottomImageAnimationFactory'Class (This).getSequenceArray, This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (TopToBottomImageAnimation_Package.Create (scaledImage, TopToBottomImageAnimationFactory'Class (This).getSequenceArray, This.animationBehaviorFactory.getOrCreateInstance));
    end getInstance;
 
    procedure getInstance (This : in out TopToBottomImageAnimationFactory; instanceId : Integer) is

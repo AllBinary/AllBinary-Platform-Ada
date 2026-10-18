@@ -29,6 +29,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterfac
    type TransformInfoHttpStoreInterface_Access is access all TransformInfoHttpStoreInterface'Class;
    type TransformInfoHttpStoreInterface_Access_Array is array (Natural range <>) of TransformInfoHttpStoreInterface_Access;
    type TransformInfoHttpStoreInterface_Access_Array_Access is access all TransformInfoHttpStoreInterface_Access_Array;
+   type TransformInfoHttpStoreInterface_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHttpStoreInterface_Access_Array_Access;
+   type TransformInfoHttpStoreInterface_Access_Array_Access_Array_Access is access all TransformInfoHttpStoreInterface_Access_Array_Access_Array;
    procedure setStoreName (This : in out TransformInfoHttpStoreInterface; value : Unbounded_String) is abstract;
    function getStoreName (This : in out TransformInfoHttpStoreInterface) return Unbounded_String is abstract;
 

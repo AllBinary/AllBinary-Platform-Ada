@@ -29,6 +29,8 @@ package org.allbinary.input.motion.button.TouchButtonReverseResource_Package is
    type TouchButtonReverseResource_Access is access all TouchButtonReverseResource'Class;
    type TouchButtonReverseResource_Access_Array is array (Natural range <>) of TouchButtonReverseResource_Access;
    type TouchButtonReverseResource_Access_Array_Access is access all TouchButtonReverseResource_Access_Array;
+   type TouchButtonReverseResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonReverseResource_Access_Array_Access;
+   type TouchButtonReverseResource_Access_Array_Access_Array_Access is access all TouchButtonReverseResource_Access_Array_Access_Array;
 
    type TouchButtonReverseResource is new TouchButtonResource with null record;
    instance : TouchButtonResource_Access;

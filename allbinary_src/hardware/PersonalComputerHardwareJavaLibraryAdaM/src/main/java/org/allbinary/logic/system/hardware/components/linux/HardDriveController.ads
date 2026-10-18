@@ -32,8 +32,10 @@ package org.allbinary.logic.system.hardware.components.linux.HardDriveController
    type HardDriveController_Access is access all HardDriveController'Class;
    type HardDriveController_Access_Array is array (Natural range <>) of HardDriveController_Access;
    type HardDriveController_Access_Array_Access is access all HardDriveController_Access_Array;
+   type HardDriveController_Access_Array_Access_Array is array (Natural range <>) of HardDriveController_Access_Array_Access;
+   type HardDriveController_Access_Array_Access_Array_Access is access all HardDriveController_Access_Array_Access_Array;
 
-   type HardDriveController is new HardwareComponentInterface and HardDriveControllerInterface with record
+   type HardDriveController is new Java_Object and HardwareComponentInterface and HardDriveControllerInterface with record
       data : Unbounded_String;
    end record;
 

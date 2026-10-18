@@ -31,6 +31,8 @@ package org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package is
    type BasicArrayListResetablePool_Access is access all BasicArrayListResetablePool'Class;
    type BasicArrayListResetablePool_Access_Array is array (Natural range <>) of BasicArrayListResetablePool_Access;
    type BasicArrayListResetablePool_Access_Array_Access is access all BasicArrayListResetablePool_Access_Array;
+   type BasicArrayListResetablePool_Access_Array_Access_Array is array (Natural range <>) of BasicArrayListResetablePool_Access_Array_Access;
+   type BasicArrayListResetablePool_Access_Array_Access_Array_Access is access all BasicArrayListResetablePool_Access_Array_Access_Array;
 
    type BasicArrayListResetablePool is new AbstractArrayListPool with null record;
 
@@ -39,6 +41,8 @@ package org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package is
    procedure clear (This : in out BasicArrayListResetablePool);
    function remove (This : in out BasicArrayListResetablePool; key_Param : access Java_Object'Class) return CacheableInterface_Access;
    procedure remove (This : in out BasicArrayListResetablePool; key_Param : access Java_Object'Class);
+   function remove (This : in out BasicArrayListResetablePool; Value : Unbounded_String) return CacheableInterface_Access;
+   procedure remove (This : in out BasicArrayListResetablePool; Value : Unbounded_String);
 
 end org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package;
 

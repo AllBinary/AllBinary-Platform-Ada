@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
+
 package body org.allbinary.game.IntermissionFactory_Package is
 
+   package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
    procedure Initialize_Fields (This : in out IntermissionFactory'Class) is
    begin
       null;

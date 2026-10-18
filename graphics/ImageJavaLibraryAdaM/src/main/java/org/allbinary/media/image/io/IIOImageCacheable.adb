@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.media.image.io.IIOImageCacheable_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out IIOImageCacheable'Class) is
    begin
       null;
@@ -38,7 +41,7 @@ package body org.allbinary.media.image.io.IIOImageCacheable_Package is
 
    function getKey (This : in out IIOImageCacheable) return Java_Object_Access is
    begin
-        return This.key;
+        return Java_Box (This.key);
    end getKey;
 
    procedure setBufferedImage (This : in out IIOImageCacheable; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is

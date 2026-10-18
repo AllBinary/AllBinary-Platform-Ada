@@ -1,6 +1,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package; use org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package;
+
 package body org.allbinary.business.advertisement.GameAdStateFactory_Package is
 
    procedure Initialize_Fields (This : in out GameAdStateFactory'Class) is

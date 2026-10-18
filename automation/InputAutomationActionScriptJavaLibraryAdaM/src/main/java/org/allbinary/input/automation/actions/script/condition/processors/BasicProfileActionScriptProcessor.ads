@@ -21,19 +21,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
-with org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package; use org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
 with org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package; use org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
-with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
-with org.allbinary.input.automation.actions.script.condition.processors.GenericProfileActionScriptProcessorData_Package; use org.allbinary.input.automation.actions.script.condition.processors.GenericProfileActionScriptProcessorData_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package is
 
-   package JTreeInterfaceFactory_Package renames Standard.org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
    package ProfileActionScriptItem_Package renames Standard.org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
-   package ProfileActionScriptConditionInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -41,6 +36,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.Basic
    type BasicProfileActionScriptProcessor_Access is access all BasicProfileActionScriptProcessor'Class;
    type BasicProfileActionScriptProcessor_Access_Array is array (Natural range <>) of BasicProfileActionScriptProcessor_Access;
    type BasicProfileActionScriptProcessor_Access_Array_Access is access all BasicProfileActionScriptProcessor_Access_Array;
+   type BasicProfileActionScriptProcessor_Access_Array_Access_Array is array (Natural range <>) of BasicProfileActionScriptProcessor_Access_Array_Access;
+   type BasicProfileActionScriptProcessor_Access_Array_Access_Array_Access is access all BasicProfileActionScriptProcessor_Access_Array_Access_Array;
 
    type BasicProfileActionScriptProcessor is new ProfileActionScriptItem and ProfileActionScriptProcessorInterface with null record;
 

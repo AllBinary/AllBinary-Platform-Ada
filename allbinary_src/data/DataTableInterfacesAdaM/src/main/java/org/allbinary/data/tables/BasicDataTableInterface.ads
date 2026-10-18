@@ -28,6 +28,8 @@ package org.allbinary.data.tables.BasicDataTableInterface_Package is
    type BasicDataTableInterface_Access is access all BasicDataTableInterface'Class;
    type BasicDataTableInterface_Access_Array is array (Natural range <>) of BasicDataTableInterface_Access;
    type BasicDataTableInterface_Access_Array_Access is access all BasicDataTableInterface_Access_Array;
+   type BasicDataTableInterface_Access_Array_Access_Array is array (Natural range <>) of BasicDataTableInterface_Access_Array_Access;
+   type BasicDataTableInterface_Access_Array_Access_Array_Access is access all BasicDataTableInterface_Access_Array_Access_Array;
    function createTable (This : in out BasicDataTableInterface) return Unbounded_String is abstract;
    function dropTable (This : in out BasicDataTableInterface) return Unbounded_String is abstract;
 

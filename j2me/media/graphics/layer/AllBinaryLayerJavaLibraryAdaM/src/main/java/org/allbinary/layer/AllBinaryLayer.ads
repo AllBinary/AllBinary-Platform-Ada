@@ -21,18 +21,9 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.game.identification.BasicGroupFactory_Package; use org.allbinary.game.identification.BasicGroupFactory_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
-with org.allbinary.graphics.RectangleFactory_Package; use org.allbinary.graphics.RectangleFactory_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.event.ViewPositionEvent_Package; use org.allbinary.view.event.ViewPositionEvent_Package;
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
@@ -41,18 +32,9 @@ with org.allbinary.layer.LayerInterface_Package; use org.allbinary.layer.LayerIn
 package org.allbinary.layer.AllBinaryLayer_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
    package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
-   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
-   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
-   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
    package ViewPositionEvent_Package renames Standard.org.allbinary.view.event.ViewPositionEvent_Package;
 
@@ -60,6 +42,8 @@ package org.allbinary.layer.AllBinaryLayer_Package is
    type AllBinaryLayer_Access is access all AllBinaryLayer'Class;
    type AllBinaryLayer_Access_Array is array (Natural range <>) of AllBinaryLayer_Access;
    type AllBinaryLayer_Access_Array_Access is access all AllBinaryLayer_Access_Array;
+   type AllBinaryLayer_Access_Array_Access_Array is array (Natural range <>) of AllBinaryLayer_Access_Array_Access;
+   type AllBinaryLayer_Access_Array_Access_Array_Access is access all AllBinaryLayer_Access_Array_Access_Array;
 
    type AllBinaryLayer is new Layer and LayerInterface with record
       viewPositionEvent : ViewPositionEvent_Access;

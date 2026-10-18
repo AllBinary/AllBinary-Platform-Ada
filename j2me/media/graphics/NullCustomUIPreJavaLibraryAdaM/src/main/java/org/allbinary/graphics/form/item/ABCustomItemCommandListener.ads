@@ -16,6 +16,8 @@ package org.allbinary.graphics.form.item.ABCustomItemCommandListener_Package is
    type ABCustomItemCommandListener_Access is access all ABCustomItemCommandListener'Class;
    type ABCustomItemCommandListener_Access_Array is array (Natural range <>) of ABCustomItemCommandListener_Access;
    type ABCustomItemCommandListener_Access_Array_Access is access all ABCustomItemCommandListener_Access_Array;
+   type ABCustomItemCommandListener_Access_Array_Access_Array is array (Natural range <>) of ABCustomItemCommandListener_Access_Array_Access;
+   type ABCustomItemCommandListener_Access_Array_Access_Array_Access is access all ABCustomItemCommandListener_Access_Array_Access_Array;
 
 end org.allbinary.graphics.form.item.ABCustomItemCommandListener_Package;
 

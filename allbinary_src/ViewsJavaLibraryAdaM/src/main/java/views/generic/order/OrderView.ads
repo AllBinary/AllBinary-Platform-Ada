@@ -21,10 +21,8 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
-with org.allbinary.business.user.commerce.inventory.basket.Basket_Package; use org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
 with org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package;
 with org.allbinary.business.user.commerce.inventory.order.Order_Package; use org.allbinary.business.user.commerce.inventory.order.Order_Package;
-with org.allbinary.business.user.commerce.inventory.order.OrderData_Package; use org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
 with org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package; use org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
@@ -35,10 +33,8 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.generic_Id.order.OrderView_Package is
 
-   package Basket_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
    package BasketReview_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package;
    package Order_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.Order_Package;
-   package OrderData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
    package OrderHistory_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
@@ -51,6 +47,8 @@ package views.generic_Id.order.OrderView_Package is
    type OrderView_Access is access all OrderView'Class;
    type OrderView_Access_Array is array (Natural range <>) of OrderView_Access;
    type OrderView_Access_Array_Access is access all OrderView_Access_Array;
+   type OrderView_Access_Array_Access_Array is array (Natural range <>) of OrderView_Access_Array_Access;
+   type OrderView_Access_Array_Access_Array_Access is access all OrderView_Access_Array_Access_Array;
 
    type OrderView is new HttpStoreComponentView and DomNodeInterface with record
       logUtil : LogUtil_Access;

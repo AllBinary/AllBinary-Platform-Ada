@@ -24,10 +24,8 @@ with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package; use
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.image.comparison.ImageComparisonWorker_Package; use org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
-with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.input.automation.module.InputAutomationActionInterface_Package; use org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
 
 package org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package is
@@ -36,17 +34,17 @@ package org.allbinary.input.automation.module.AbstractInputAutomationWorker_Pack
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ImageComparisonWorker_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
    package MotionRectanglesWorker_Package renames Standard.org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
-   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type AbstractInputAutomationWorker is tagged;
    type AbstractInputAutomationWorker_Access is access all AbstractInputAutomationWorker'Class;
    type AbstractInputAutomationWorker_Access_Array is array (Natural range <>) of AbstractInputAutomationWorker_Access;
    type AbstractInputAutomationWorker_Access_Array_Access is access all AbstractInputAutomationWorker_Access_Array;
+   type AbstractInputAutomationWorker_Access_Array_Access_Array is array (Natural range <>) of AbstractInputAutomationWorker_Access_Array_Access;
+   type AbstractInputAutomationWorker_Access_Array_Access_Array_Access is access all AbstractInputAutomationWorker_Access_Array_Access_Array;
 
-   type AbstractInputAutomationWorker is new RunnableInterface with record
+   type AbstractInputAutomationWorker is new Java_Object and RunnableInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       index : Long_Long_Integer;

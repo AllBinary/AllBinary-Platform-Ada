@@ -28,6 +28,8 @@ package org.allbinary.business.context.modules.storefront.statistics.inventory.S
    type StoreFrontInventoryStatisticsData_Access is access all StoreFrontInventoryStatisticsData'Class;
    type StoreFrontInventoryStatisticsData_Access_Array is array (Natural range <>) of StoreFrontInventoryStatisticsData_Access;
    type StoreFrontInventoryStatisticsData_Access_Array_Access is access all StoreFrontInventoryStatisticsData_Access_Array;
+   type StoreFrontInventoryStatisticsData_Access_Array_Access_Array is array (Natural range <>) of StoreFrontInventoryStatisticsData_Access_Array_Access;
+   type StoreFrontInventoryStatisticsData_Access_Array_Access_Array_Access is access all StoreFrontInventoryStatisticsData_Access_Array_Access_Array;
 
    type StoreFrontInventoryStatisticsData is new Java_Object with record
       NAME : Unbounded_String;

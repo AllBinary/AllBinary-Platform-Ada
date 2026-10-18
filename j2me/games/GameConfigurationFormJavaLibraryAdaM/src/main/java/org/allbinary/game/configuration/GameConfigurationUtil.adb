@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.configuration.GameConfigurationSingleton_Package; use org.allbinary.game.configuration.GameConfigurationSingleton_Package;
+with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
+
 package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
 
+   package Item_Package renames Standard.javax.microedition.lcdui.Item_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out GameConfigurationUtil'Class) is
    begin
       null;

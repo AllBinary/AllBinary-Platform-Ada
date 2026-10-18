@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+with org.allbinary.game.ag.ai.SpinnerAI_Package; use org.allbinary.game.ag.ai.SpinnerAI_Package;
+
 package body org.allbinary.game.ag.ai.SpinnerAIFactory_Package is
 
+   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    procedure Initialize_Fields (This : in out SpinnerAIFactory'Class) is
    begin
       null;
@@ -40,7 +44,7 @@ package body org.allbinary.game.ag.ai.SpinnerAIFactory_Package is
       direction : Integer_Array_Access;
    begin
         direction := new Integer_Array'(0 => Canvas_Package.LEFT);
-        return SpinnerAI_Package.Create (direction, ownerLayerInterface, gameInput);
+        return ArtificialIntelligenceInterface_Access (SpinnerAI_Package.Create (direction, ownerLayerInterface, gameInput));
    end getInstance;
 
    procedure getInstance (This : in out SpinnerAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is

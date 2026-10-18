@@ -34,6 +34,8 @@ package org.allbinary.game.layer.LinePathAnimation_Package is
    type LinePathAnimation_Access is access all LinePathAnimation'Class;
    type LinePathAnimation_Access_Array is array (Natural range <>) of LinePathAnimation_Access;
    type LinePathAnimation_Access_Array_Access is access all LinePathAnimation_Access_Array;
+   type LinePathAnimation_Access_Array_Access_Array is array (Natural range <>) of LinePathAnimation_Access_Array_Access;
+   type LinePathAnimation_Access_Array_Access_Array_Access is access all LinePathAnimation_Access_Array_Access_Array;
 
    type LinePathAnimation is new Java_Object with null record;
    instance : LinePathAnimation_Access;

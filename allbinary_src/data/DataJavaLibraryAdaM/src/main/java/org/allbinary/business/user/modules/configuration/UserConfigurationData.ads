@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.file.CommonDataFileStrings_Package; use org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 
 package org.allbinary.business.user.modules.configuration.UserConfigurationData_Package is
 
-   package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 
    type UserConfigurationData is tagged;
    type UserConfigurationData_Access is access all UserConfigurationData'Class;
    type UserConfigurationData_Access_Array is array (Natural range <>) of UserConfigurationData_Access;
    type UserConfigurationData_Access_Array_Access is access all UserConfigurationData_Access_Array;
+   type UserConfigurationData_Access_Array_Access_Array is array (Natural range <>) of UserConfigurationData_Access_Array_Access;
+   type UserConfigurationData_Access_Array_Access_Array_Access is access all UserConfigurationData_Access_Array_Access_Array;
 
    type UserConfigurationData is new Java_Object with null record;
    NAME : Unbounded_String;

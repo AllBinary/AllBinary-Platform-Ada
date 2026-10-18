@@ -29,6 +29,8 @@ package org.allbinary.logic.visual.dhtml.html.HtmlPostForm_Package is
    type HtmlPostForm_Access is access all HtmlPostForm'Class;
    type HtmlPostForm_Access_Array is array (Natural range <>) of HtmlPostForm_Access;
    type HtmlPostForm_Access_Array_Access is access all HtmlPostForm_Access_Array;
+   type HtmlPostForm_Access_Array_Access_Array is array (Natural range <>) of HtmlPostForm_Access_Array_Access;
+   type HtmlPostForm_Access_Array_Access_Array_Access is access all HtmlPostForm_Access_Array_Access_Array;
 
    type HtmlPostForm is new HtmlForm with null record;
 

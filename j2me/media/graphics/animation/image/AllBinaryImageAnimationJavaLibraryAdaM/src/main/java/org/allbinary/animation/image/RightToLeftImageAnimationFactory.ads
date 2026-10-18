@@ -23,22 +23,20 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
-with org.allbinary.animation.image.RightToLeftImageAnimation_Package; use org.allbinary.animation.image.RightToLeftImageAnimation_Package;
-with org.allbinary.animation.image.AdjustedRightToLeftImageAnimation_Package; use org.allbinary.animation.image.AdjustedRightToLeftImageAnimation_Package;
 
 package org.allbinary.animation.image.RightToLeftImageAnimationFactory_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
    type RightToLeftImageAnimationFactory is tagged;
    type RightToLeftImageAnimationFactory_Access is access all RightToLeftImageAnimationFactory'Class;
    type RightToLeftImageAnimationFactory_Access_Array is array (Natural range <>) of RightToLeftImageAnimationFactory_Access;
    type RightToLeftImageAnimationFactory_Access_Array_Access is access all RightToLeftImageAnimationFactory_Access_Array;
+   type RightToLeftImageAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of RightToLeftImageAnimationFactory_Access_Array_Access;
+   type RightToLeftImageAnimationFactory_Access_Array_Access_Array_Access is access all RightToLeftImageAnimationFactory_Access_Array_Access_Array;
 
    type RightToLeftImageAnimationFactory is new BaseImageAnimationFactory with null record;
 

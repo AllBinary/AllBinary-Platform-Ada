@@ -21,29 +21,21 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
-with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package;
-with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
-with org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package;
 
 package org.allbinary.business.advertisement.area.AdvertisementArea_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package AdvertisementCampaignData_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
-   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type AdvertisementArea is tagged;
    type AdvertisementArea_Access is access all AdvertisementArea'Class;
    type AdvertisementArea_Access_Array is array (Natural range <>) of AdvertisementArea_Access;
    type AdvertisementArea_Access_Array_Access is access all AdvertisementArea_Access_Array;
+   type AdvertisementArea_Access_Array_Access_Array is array (Natural range <>) of AdvertisementArea_Access_Array_Access;
+   type AdvertisementArea_Access_Array_Access_Array_Access is access all AdvertisementArea_Access_Array_Access_Array;
 
-   type AdvertisementArea is new AdvertisementAreaInterface with record
+   type AdvertisementArea is new Java_Object and AdvertisementAreaInterface with record
       name : Unbounded_String;
       storeName : Unbounded_String;
       description : Unbounded_String;

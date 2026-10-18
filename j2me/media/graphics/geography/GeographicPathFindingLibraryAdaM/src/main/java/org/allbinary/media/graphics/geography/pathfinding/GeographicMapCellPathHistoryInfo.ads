@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 
 package org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package is
 
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package SimpleGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 
    type GeographicMapCellPathHistoryInfo is tagged;
    type GeographicMapCellPathHistoryInfo_Access is access all GeographicMapCellPathHistoryInfo'Class;
    type GeographicMapCellPathHistoryInfo_Access_Array is array (Natural range <>) of GeographicMapCellPathHistoryInfo_Access;
    type GeographicMapCellPathHistoryInfo_Access_Array_Access is access all GeographicMapCellPathHistoryInfo_Access_Array;
+   type GeographicMapCellPathHistoryInfo_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPathHistoryInfo_Access_Array_Access;
+   type GeographicMapCellPathHistoryInfo_Access_Array_Access_Array_Access is access all GeographicMapCellPathHistoryInfo_Access_Array_Access_Array;
 
    type GeographicMapCellPathHistoryInfo is new Java_Object with record
       previousGeographicMapCellPosition : GeographicMapCellPosition_Access;

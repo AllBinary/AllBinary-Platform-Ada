@@ -22,20 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
-with org.allbinary.business.init.InitInfoEntity_Package; use org.allbinary.business.init.InitInfoEntity_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Package;
 
 package admin.taghelpers.InitHelper_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package InitInfoEntity_Package renames Standard.org.allbinary.business.init.InitInfoEntity_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type InitHelper is tagged;
    type InitHelper_Access is access all InitHelper'Class;
    type InitHelper_Access_Array is array (Natural range <>) of InitHelper_Access;
    type InitHelper_Access_Array_Access is access all InitHelper_Access_Array;
+   type InitHelper_Access_Array_Access_Array is array (Natural range <>) of InitHelper_Access_Array_Access;
+   type InitHelper_Access_Array_Access_Array_Access is access all InitHelper_Access_Array_Access_Array;
 
    type InitHelper is new BasicTable with record
       logUtil : LogUtil_Access;

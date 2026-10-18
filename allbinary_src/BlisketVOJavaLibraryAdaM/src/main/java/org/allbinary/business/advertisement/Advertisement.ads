@@ -39,8 +39,10 @@ package org.allbinary.business.advertisement.Advertisement_Package is
    type Advertisement_Access is access all Advertisement'Class;
    type Advertisement_Access_Array is array (Natural range <>) of Advertisement_Access;
    type Advertisement_Access_Array_Access is access all Advertisement_Access_Array;
+   type Advertisement_Access_Array_Access_Array is array (Natural range <>) of Advertisement_Access_Array_Access;
+   type Advertisement_Access_Array_Access_Array_Access is access all Advertisement_Access_Array_Access_Array;
 
-   type Advertisement is new AdvertisementInterface with record
+   type Advertisement is new Java_Object and AdvertisementInterface with record
       artist : Unbounded_String;
       artistLink : Unbounded_String;
       title : Unbounded_String;

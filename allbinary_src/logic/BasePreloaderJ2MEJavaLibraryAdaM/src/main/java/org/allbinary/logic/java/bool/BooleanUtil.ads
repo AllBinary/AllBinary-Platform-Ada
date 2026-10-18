@@ -21,20 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
-with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 
 package org.allbinary.logic.java.bool.BooleanUtil_Package is
 
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type BooleanUtil is tagged;
    type BooleanUtil_Access is access all BooleanUtil'Class;
    type BooleanUtil_Access_Array is array (Natural range <>) of BooleanUtil_Access;
    type BooleanUtil_Access_Array_Access is access all BooleanUtil_Access_Array;
+   type BooleanUtil_Access_Array_Access_Array is array (Natural range <>) of BooleanUtil_Access_Array_Access;
+   type BooleanUtil_Access_Array_Access_Array_Access is access all BooleanUtil_Access_Array_Access_Array;
 
    type BooleanUtil is new Java_Object with record
       tsUtil : TsUtil_Access;

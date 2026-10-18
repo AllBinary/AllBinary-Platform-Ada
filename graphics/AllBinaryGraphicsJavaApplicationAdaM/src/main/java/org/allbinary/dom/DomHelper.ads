@@ -20,8 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 --  with javax.xml.parsers.DocumentBuilder_Package; use javax.xml.parsers.DocumentBuilder_Package;
 --  with javax.xml.parsers.DocumentBuilderFactory_Package; use javax.xml.parsers.DocumentBuilderFactory_Package;
 --  with javax.xml.transform.Transformer_Package; use javax.xml.transform.Transformer_Package;
@@ -30,17 +29,15 @@ with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Pa
 --  with javax.xml.transform.stream.StreamResult_Package; use javax.xml.transform.stream.StreamResult_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 
 package org.allbinary.dom.DomHelper_Package is
 
-   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package File_Package renames Standard.java.io.File_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
@@ -49,6 +46,8 @@ package org.allbinary.dom.DomHelper_Package is
    type DomHelper_Access is access all DomHelper'Class;
    type DomHelper_Access_Array is array (Natural range <>) of DomHelper_Access;
    type DomHelper_Access_Array_Access is access all DomHelper_Access_Array;
+   type DomHelper_Access_Array_Access_Array is array (Natural range <>) of DomHelper_Access_Array_Access;
+   type DomHelper_Access_Array_Access_Array_Access is access all DomHelper_Access_Array_Access_Array;
 
    type DomHelper is new Java_Object with record
       logUtil : LogUtil_Access;

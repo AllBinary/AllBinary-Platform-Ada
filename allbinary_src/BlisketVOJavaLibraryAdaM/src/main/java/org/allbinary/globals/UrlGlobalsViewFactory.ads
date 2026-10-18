@@ -21,20 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.globals.UrlGlobalsView_Package; use org.allbinary.globals.UrlGlobalsView_Package;
 
 package org.allbinary.globals.UrlGlobalsViewFactory_Package is
 
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type UrlGlobalsViewFactory is tagged;
    type UrlGlobalsViewFactory_Access is access all UrlGlobalsViewFactory'Class;
    type UrlGlobalsViewFactory_Access_Array is array (Natural range <>) of UrlGlobalsViewFactory_Access;
    type UrlGlobalsViewFactory_Access_Array_Access is access all UrlGlobalsViewFactory_Access_Array;
+   type UrlGlobalsViewFactory_Access_Array_Access_Array is array (Natural range <>) of UrlGlobalsViewFactory_Access_Array_Access;
+   type UrlGlobalsViewFactory_Access_Array_Access_Array_Access is access all UrlGlobalsViewFactory_Access_Array_Access_Array;
 
    type UrlGlobalsViewFactory is new Java_Object with null record;
 

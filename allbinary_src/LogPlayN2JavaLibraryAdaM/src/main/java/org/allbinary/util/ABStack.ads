@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.Stack_Package; use java.util.Stack_Package;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.util.ABStack_Package is
 
    package Stack_Package renames Standard.java.util.Stack_Package;
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ABStack is tagged;
    type ABStack_Access is access all ABStack'Class;
    type ABStack_Access_Array is array (Natural range <>) of ABStack_Access;
    type ABStack_Access_Array_Access is access all ABStack_Access_Array;
+   type ABStack_Access_Array_Access_Array is array (Natural range <>) of ABStack_Access_Array_Access;
+   type ABStack_Access_Array_Access_Array_Access is access all ABStack_Access_Array_Access_Array;
 
    type ABStack is new Stack with null record;
 
@@ -46,6 +46,10 @@ package org.allbinary.util.ABStack_Package is
    procedure search (This : in out ABStack; obj_Param : access Java_Object'Class);
    function removeElement (This : in out ABStack; obj_Param : access Java_Object'Class) return Boolean;
    procedure removeElement (This : in out ABStack; obj_Param : access Java_Object'Class);
+   function search (This : in out ABStack; Value : Unbounded_String) return Integer;
+   procedure search (This : in out ABStack; Value : Unbounded_String);
+   function removeElement (This : in out ABStack; Value : Unbounded_String) return Boolean;
+   procedure removeElement (This : in out ABStack; Value : Unbounded_String);
 
 end org.allbinary.util.ABStack_Package;
 

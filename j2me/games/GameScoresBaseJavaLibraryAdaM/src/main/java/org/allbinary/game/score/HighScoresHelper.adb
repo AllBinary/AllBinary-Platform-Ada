@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.score.HighScoresHelper_Package is
 
    procedure Initialize_Fields (This : in out HighScoresHelper'Class) is
@@ -49,7 +50,7 @@ package body org.allbinary.game.score.HighScoresHelper_Package is
         highScores := This.highScoresArrayP (This.circularIndexUtil.getIndex);
         index := 0;
         while ((((highScores.getTotal) < (1)) or else ((This.lastIndex) = (This.circularIndexUtil.getIndex)))) and then ((index) < (This.highScoresArrayP'Length)) loop
-            This.circularIndexUtil.next;
+            declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
             highScores := This.highScoresArrayP (This.circularIndexUtil.getIndex);
             index := index + 1;
         end loop;

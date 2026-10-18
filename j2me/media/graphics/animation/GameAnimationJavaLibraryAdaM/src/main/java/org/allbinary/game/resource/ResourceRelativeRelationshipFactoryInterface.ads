@@ -34,6 +34,8 @@ package org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface
    type ResourceRelativeRelationshipFactoryInterface_Access is access all ResourceRelativeRelationshipFactoryInterface'Class;
    type ResourceRelativeRelationshipFactoryInterface_Access_Array is array (Natural range <>) of ResourceRelativeRelationshipFactoryInterface_Access;
    type ResourceRelativeRelationshipFactoryInterface_Access_Array_Access is access all ResourceRelativeRelationshipFactoryInterface_Access_Array;
+   type ResourceRelativeRelationshipFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of ResourceRelativeRelationshipFactoryInterface_Access_Array_Access;
+   type ResourceRelativeRelationshipFactoryInterface_Access_Array_Access_Array_Access is access all ResourceRelativeRelationshipFactoryInterface_Access_Array_Access_Array;
    function getResourceRelativeRelationshipList (This : in out ResourceRelativeRelationshipFactoryInterface; resource : Unbounded_String) return BasicArrayList_Access is abstract;
    procedure addResourceRelativeRelationship (This : in out ResourceRelativeRelationshipFactoryInterface; resource : Unbounded_String; relativeRelationship_Param : access RelativeRelationship_Package.RelativeRelationship'Class) is abstract;
 

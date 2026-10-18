@@ -35,6 +35,8 @@ package org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactor
    type FeatureResourceAnimationInterfaceFactoryInterface_Access is access all FeatureResourceAnimationInterfaceFactoryInterface'Class;
    type FeatureResourceAnimationInterfaceFactoryInterface_Access_Array is array (Natural range <>) of FeatureResourceAnimationInterfaceFactoryInterface_Access;
    type FeatureResourceAnimationInterfaceFactoryInterface_Access_Array_Access is access all FeatureResourceAnimationInterfaceFactoryInterface_Access_Array;
+   type FeatureResourceAnimationInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of FeatureResourceAnimationInterfaceFactoryInterface_Access_Array_Access;
+   type FeatureResourceAnimationInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all FeatureResourceAnimationInterfaceFactoryInterface_Access_Array_Access_Array;
    function getHashtable (This : in out FeatureResourceAnimationInterfaceFactoryInterface) return ABHashtable_Access is abstract;
 
 end org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package;

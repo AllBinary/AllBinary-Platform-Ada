@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
-with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 
 package org.allbinary.game.input.GameKeyMappingFactory_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type GameKeyMappingFactory is tagged;
    type GameKeyMappingFactory_Access is access all GameKeyMappingFactory'Class;
    type GameKeyMappingFactory_Access_Array is array (Natural range <>) of GameKeyMappingFactory_Access;
    type GameKeyMappingFactory_Access_Array_Access is access all GameKeyMappingFactory_Access_Array;
+   type GameKeyMappingFactory_Access_Array_Access_Array is array (Natural range <>) of GameKeyMappingFactory_Access_Array_Access;
+   type GameKeyMappingFactory_Access_Array_Access_Array_Access is access all GameKeyMappingFactory_Access_Array_Access_Array;
 
    type GameKeyMappingFactory is new Java_Object with record
       intKeyToGameKey : GameKey_Access_Array_Access;

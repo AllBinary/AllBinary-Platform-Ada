@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.init.db.InventoryDbInitInfo_Package; use org.allbinary.business.init.db.InventoryDbInitInfo_Package;
+with org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package;
+with org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package; use org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package InventoryDbInitInfo_Package renames Standard.org.allbinary.business.init.db.InventoryDbInitInfo_Package;
+   package DownloadItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package;
+   package DownloadableItem_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out DownloadItemsEntity'Class) is
    begin
       null;
@@ -91,14 +106,14 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
       hashMap : HashMap_Access;
       index : Integer;
    begin
-        returnVector := BasicArrayListD_Package.Create;
+        returnVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (This.basicItemData.ID, Java_Box (id));
         vector := AbSqlBean (This).getRows (keysAndValues);
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             hashMap := HashMap_Access (vector.get (index));
-            returnVector.add (DownloadableItem_Package.Create (hashMap));
+            returnVector.add (Java_Object_Access (DownloadableItem_Package.Create (hashMap)));
         end loop;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("Found: ") & Java_Image (size), DownloadItemsEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getForItem"));
@@ -114,7 +129,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
       hashMap : HashMap_Access;
       index : Integer;
    begin
-        returnVector := BasicArrayListD_Package.Create;
+        returnVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues := StdUtil_Package.getInstance.createHashMap;
         keysAndValues.put (This.basicItemData.ID, Java_Box (id));
         keysAndValues.put (DownloadItemData_Package.ID, Java_Box (downloadItemId));
@@ -122,7 +137,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             hashMap := HashMap_Access (vector.get (index));
-            returnVector.add (DownloadableItem_Package.Create (hashMap));
+            returnVector.add (Java_Object_Access (DownloadableItem_Package.Create (hashMap)));
         end loop;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("Found: ") & Java_Image (size), DownloadItemsEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getForItem"));

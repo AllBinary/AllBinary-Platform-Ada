@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
-with org.allbinary.logic.math.permutations.IntPermutationVisitor_Package; use org.allbinary.logic.math.permutations.IntPermutationVisitor_Package;
 
 package org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUtil_Package is
 
@@ -31,6 +30,8 @@ package org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUtil_Pac
    type OrderedIntArrayPermutationUtil_Access is access all OrderedIntArrayPermutationUtil'Class;
    type OrderedIntArrayPermutationUtil_Access_Array is array (Natural range <>) of OrderedIntArrayPermutationUtil_Access;
    type OrderedIntArrayPermutationUtil_Access_Array_Access is access all OrderedIntArrayPermutationUtil_Access_Array;
+   type OrderedIntArrayPermutationUtil_Access_Array_Access_Array is array (Natural range <>) of OrderedIntArrayPermutationUtil_Access_Array_Access;
+   type OrderedIntArrayPermutationUtil_Access_Array_Access_Array_Access is access all OrderedIntArrayPermutationUtil_Access_Array_Access_Array;
 
    type OrderedIntArrayPermutationUtil is new Java_Object with record
       TOTAL_ITERATIONS_TABLE : Unbounded_String;

@@ -32,8 +32,10 @@ package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationA
    type GenericInputAutomationAction_Access is access all GenericInputAutomationAction'Class;
    type GenericInputAutomationAction_Access_Array is array (Natural range <>) of GenericInputAutomationAction_Access;
    type GenericInputAutomationAction_Access_Array_Access is access all GenericInputAutomationAction_Access_Array;
+   type GenericInputAutomationAction_Access_Array_Access_Array is array (Natural range <>) of GenericInputAutomationAction_Access_Array_Access;
+   type GenericInputAutomationAction_Access_Array_Access_Array_Access is access all GenericInputAutomationAction_Access_Array_Access_Array;
 
-   type GenericInputAutomationAction is new InputAutomationActionInterface with null record;
+   type GenericInputAutomationAction is new Java_Object and InputAutomationActionInterface with null record;
 
    procedure Initialize (This : in out GenericInputAutomationAction'Class);
    function Create return GenericInputAutomationAction_Access;

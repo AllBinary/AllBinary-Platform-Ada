@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package is
 
    procedure Initialize_Fields (This : in out FedExShippingModule'Class) is

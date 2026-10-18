@@ -45,8 +45,10 @@ package org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeogra
    type NullRaceTrackGeographicMap_Access is access all NullRaceTrackGeographicMap'Class;
    type NullRaceTrackGeographicMap_Access_Array is array (Natural range <>) of NullRaceTrackGeographicMap_Access;
    type NullRaceTrackGeographicMap_Access_Array_Access is access all NullRaceTrackGeographicMap_Access_Array;
+   type NullRaceTrackGeographicMap_Access_Array_Access_Array is array (Natural range <>) of NullRaceTrackGeographicMap_Access_Array_Access;
+   type NullRaceTrackGeographicMap_Access_Array_Access_Array_Access is access all NullRaceTrackGeographicMap_Access_Array_Access_Array;
 
-   type NullRaceTrackGeographicMap is new RaceTrackGeographicMapInterface with null record;
+   type NullRaceTrackGeographicMap is new Java_Object and RaceTrackGeographicMapInterface with null record;
    NULL_RACE_TRACK_GEOGRAPHIC_MAP : NullRaceTrackGeographicMap_Access;
 
    procedure Initialize (This : in out NullRaceTrackGeographicMap'Class);

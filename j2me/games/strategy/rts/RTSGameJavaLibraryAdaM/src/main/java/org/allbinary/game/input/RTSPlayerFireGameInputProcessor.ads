@@ -34,6 +34,8 @@ package org.allbinary.game.input.RTSPlayerFireGameInputProcessor_Package is
    type RTSPlayerFireGameInputProcessor_Access is access all RTSPlayerFireGameInputProcessor'Class;
    type RTSPlayerFireGameInputProcessor_Access_Array is array (Natural range <>) of RTSPlayerFireGameInputProcessor_Access;
    type RTSPlayerFireGameInputProcessor_Access_Array_Access is access all RTSPlayerFireGameInputProcessor_Access_Array;
+   type RTSPlayerFireGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of RTSPlayerFireGameInputProcessor_Access_Array_Access;
+   type RTSPlayerFireGameInputProcessor_Access_Array_Access_Array_Access is access all RTSPlayerFireGameInputProcessor_Access_Array_Access_Array;
 
    type RTSPlayerFireGameInputProcessor is new RTSPlayerGameInputProcessor with null record;
 

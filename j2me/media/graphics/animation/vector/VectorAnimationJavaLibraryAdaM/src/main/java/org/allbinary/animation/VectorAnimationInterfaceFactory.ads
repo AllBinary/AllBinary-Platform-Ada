@@ -21,25 +21,24 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
-with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animation.VectorAnimation_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.VectorAnimationInterfaceFactory_Package is
 
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type VectorAnimationInterfaceFactory is tagged;
    type VectorAnimationInterfaceFactory_Access is access all VectorAnimationInterfaceFactory'Class;
    type VectorAnimationInterfaceFactory_Access_Array is array (Natural range <>) of VectorAnimationInterfaceFactory_Access;
    type VectorAnimationInterfaceFactory_Access_Array_Access is access all VectorAnimationInterfaceFactory_Access_Array;
+   type VectorAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of VectorAnimationInterfaceFactory_Access_Array_Access;
+   type VectorAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all VectorAnimationInterfaceFactory_Access_Array_Access_Array;
 
-   type VectorAnimationInterfaceFactory is new AnimationInterfaceFactoryInterface with record
+   type VectorAnimationInterfaceFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       currentPoints : Integer_Array_Access_Array_Access_Array_Access;
       basicColor : BasicColor_Access;
       animationBehaviorFactory : AnimationBehaviorFactory_Access;

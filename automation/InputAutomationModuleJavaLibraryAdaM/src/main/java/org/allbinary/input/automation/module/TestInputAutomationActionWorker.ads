@@ -21,28 +21,24 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package; use org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package; use org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package; use org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;
 with org.allbinary.input.automation.module.InputAutomationActionInterface_Package; use org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
 
 package org.allbinary.input.automation.module.TestInputAutomationActionWorker_Package is
 
-   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
-   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ImageComparatorConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
    package MotionRectangleConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
-   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type TestInputAutomationActionWorker is tagged;
    type TestInputAutomationActionWorker_Access is access all TestInputAutomationActionWorker'Class;
    type TestInputAutomationActionWorker_Access_Array is array (Natural range <>) of TestInputAutomationActionWorker_Access;
    type TestInputAutomationActionWorker_Access_Array_Access is access all TestInputAutomationActionWorker_Access_Array;
+   type TestInputAutomationActionWorker_Access_Array_Access_Array is array (Natural range <>) of TestInputAutomationActionWorker_Access_Array_Access;
+   type TestInputAutomationActionWorker_Access_Array_Access_Array_Access is access all TestInputAutomationActionWorker_Access_Array_Access_Array;
 
    type TestInputAutomationActionWorker is new AbstractInputAutomationWorker with record
       logUtil : LogUtil_Access;

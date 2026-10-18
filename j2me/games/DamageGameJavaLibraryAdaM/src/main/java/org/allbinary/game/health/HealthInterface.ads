@@ -29,6 +29,8 @@ package org.allbinary.game.health.HealthInterface_Package is
    type HealthInterface_Access is access all HealthInterface'Class;
    type HealthInterface_Access_Array is array (Natural range <>) of HealthInterface_Access;
    type HealthInterface_Access_Array_Access is access all HealthInterface_Access_Array;
+   type HealthInterface_Access_Array_Access_Array is array (Natural range <>) of HealthInterface_Access_Array_Access;
+   type HealthInterface_Access_Array_Access_Array_Access is access all HealthInterface_Access_Array_Access_Array;
    function isAlive (This : in out HealthInterface) return Boolean is abstract;
    procedure damage (This : in out HealthInterface; ahealth : Integer) is abstract;
    procedure heal (This : in out HealthInterface; ahealth : Integer) is abstract;

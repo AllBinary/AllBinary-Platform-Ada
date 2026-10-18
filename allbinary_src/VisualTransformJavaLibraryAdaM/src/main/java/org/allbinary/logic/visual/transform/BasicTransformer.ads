@@ -21,48 +21,28 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
-with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
-with java.io.InputStream_Package; use java.io.InputStream_Package;
 --  with javax.xml.transform.URIResolver_Package; use javax.xml.transform.URIResolver_Package;
-with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.control.crypt.jcehelper.AbCrypt_Package; use org.allbinary.logic.control.crypt.jcehelper.AbCrypt_Package;
-with org.allbinary.logic.control.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.control.crypt.jcehelper.KeySpecFactory_Package;
-with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.io.path.PathUtil_Package; use org.allbinary.logic.io.path.PathUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.system.security.AbKeys_Package; use org.allbinary.logic.system.security.AbKeys_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package; use org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
 with org.allbinary.logic.visual.transform.AbTransformer_Package; use org.allbinary.logic.visual.transform.AbTransformer_Package;
 
 package org.allbinary.logic.visual.transform.BasicTransformer_Package is
 
-   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
-   package InputStream_Package renames Standard.java.io.InputStream_Package;
-   package BasicUriResolver_Package renames Standard.org.allbinary.data.tree.dom.BasicUriResolver_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbCrypt_Package renames Standard.org.allbinary.logic.control.crypt.jcehelper.AbCrypt_Package;
-   package KeySpecFactory_Package renames Standard.org.allbinary.logic.control.crypt.jcehelper.KeySpecFactory_Package;
-   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
    package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
-   package PathUtil_Package renames Standard.org.allbinary.logic.io.path.PathUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package AbKeys_Package renames Standard.org.allbinary.logic.system.security.AbKeys_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfoTemplateData_Package renames Standard.org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
 
    type BasicTransformer is tagged;
    type BasicTransformer_Access is access all BasicTransformer'Class;
    type BasicTransformer_Access_Array is array (Natural range <>) of BasicTransformer_Access;
    type BasicTransformer_Access_Array_Access is access all BasicTransformer_Access_Array;
+   type BasicTransformer_Access_Array_Access_Array is array (Natural range <>) of BasicTransformer_Access_Array_Access;
+   type BasicTransformer_Access_Array_Access_Array_Access is access all BasicTransformer_Access_Array_Access_Array;
 
    type BasicTransformer is new AbTransformer with record
       logUtil : LogUtil_Access;

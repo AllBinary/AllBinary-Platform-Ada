@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
-with org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package; use org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package;
 
 package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package is
 
@@ -33,6 +32,8 @@ package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package
    type ScreenRepaintProcessor_Access is access all ScreenRepaintProcessor'Class;
    type ScreenRepaintProcessor_Access_Array is array (Natural range <>) of ScreenRepaintProcessor_Access;
    type ScreenRepaintProcessor_Access_Array_Access is access all ScreenRepaintProcessor_Access_Array;
+   type ScreenRepaintProcessor_Access_Array_Access_Array is array (Natural range <>) of ScreenRepaintProcessor_Access_Array_Access;
+   type ScreenRepaintProcessor_Access_Array_Access_Array_Access is access all ScreenRepaintProcessor_Access_Array_Access_Array;
 
    type ScreenRepaintProcessor is new Processor with record
       displayable : Displayable_Access;

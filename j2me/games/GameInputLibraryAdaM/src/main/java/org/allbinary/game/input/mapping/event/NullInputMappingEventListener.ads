@@ -32,8 +32,10 @@ package org.allbinary.game.input.mapping.event.NullInputMappingEventListener_Pac
    type NullInputMappingEventListener_Access is access all NullInputMappingEventListener'Class;
    type NullInputMappingEventListener_Access_Array is array (Natural range <>) of NullInputMappingEventListener_Access;
    type NullInputMappingEventListener_Access_Array_Access is access all NullInputMappingEventListener_Access_Array;
+   type NullInputMappingEventListener_Access_Array_Access_Array is array (Natural range <>) of NullInputMappingEventListener_Access_Array_Access;
+   type NullInputMappingEventListener_Access_Array_Access_Array_Access is access all NullInputMappingEventListener_Access_Array_Access_Array;
 
-   type NullInputMappingEventListener is new InputMappingEventListenerInterface with null record;
+   type NullInputMappingEventListener is new Java_Object and InputMappingEventListenerInterface with null record;
    NULL_INPUT_MAPPING_EVENT_LISTENER : NullInputMappingEventListener_Access;
 
    procedure Initialize (This : in out NullInputMappingEventListener'Class);

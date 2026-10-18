@@ -21,23 +21,21 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.Rectangle_Package; use java.awt.Rectangle_Package;
-with java.util.Vector_Package; use java.util.Vector_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.media.image.comparison.motion.Cloneable_Package; use org.allbinary.media.image.comparison.motion.Cloneable_Package;
+with java.lang.Cloneable_Package; use java.lang.Cloneable_Package;
 
 package org.allbinary.media.image.comparison.motion.MotionRectangle_Package is
 
-   package Vector_Package renames Standard.java.util.Vector_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type MotionRectangle is tagged;
    type MotionRectangle_Access is access all MotionRectangle'Class;
    type MotionRectangle_Access_Array is array (Natural range <>) of MotionRectangle_Access;
    type MotionRectangle_Access_Array_Access is access all MotionRectangle_Access_Array;
+   type MotionRectangle_Access_Array_Access_Array is array (Natural range <>) of MotionRectangle_Access_Array_Access;
+   type MotionRectangle_Access_Array_Access_Array_Access is access all MotionRectangle_Access_Array_Access_Array;
 
-   type MotionRectangle is new Cloneable with record
+   type MotionRectangle is new Java_Object and Cloneable with record
       rectangle : Rectangle_Access;
       pixelDeltaVector : BasicArrayList_Access;
    end record;

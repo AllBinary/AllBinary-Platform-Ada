@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Choice_Package; use javax.microedition.lcdui.Choice_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+with org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package; use org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
 
+   package Choice_Package renames Standard.javax.microedition.lcdui.Choice_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package GameDifficultyFactory_Package renames Standard.org.allbinary.game.configuration.persistance.GameDifficultyFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out GameDifficultyOptions'Class) is
    begin
       null;

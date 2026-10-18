@@ -33,6 +33,8 @@ package org.allbinary.graphics.opengles.shader.ShaderInitializer_Package is
    type ShaderInitializer_Access is access all ShaderInitializer'Class;
    type ShaderInitializer_Access_Array is array (Natural range <>) of ShaderInitializer_Access;
    type ShaderInitializer_Access_Array_Access is access all ShaderInitializer_Access_Array;
+   type ShaderInitializer_Access_Array_Access_Array is array (Natural range <>) of ShaderInitializer_Access_Array_Access;
+   type ShaderInitializer_Access_Array_Access_Array_Access is access all ShaderInitializer_Access_Array_Access_Array;
 
    type ShaderInitializer is new Java_Object with record
       commonStrings : CommonStrings_Access;

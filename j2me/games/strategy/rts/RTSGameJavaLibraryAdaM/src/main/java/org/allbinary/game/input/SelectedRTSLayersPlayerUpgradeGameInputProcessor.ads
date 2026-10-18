@@ -34,6 +34,8 @@ package org.allbinary.game.input.SelectedRTSLayersPlayerUpgradeGameInputProcesso
    type SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access is access all SelectedRTSLayersPlayerUpgradeGameInputProcessor'Class;
    type SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access_Array is array (Natural range <>) of SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access;
    type SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access_Array_Access is access all SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access_Array;
+   type SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access_Array_Access;
+   type SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access_Array_Access_Array_Access is access all SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access_Array_Access_Array;
 
    type SelectedRTSLayersPlayerUpgradeGameInputProcessor is new SelectedRTSLayersPlayerGameInputProcessor with null record;
 

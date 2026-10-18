@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfoInterface_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfoInterface_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package;
 with org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package; use org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package;
@@ -30,14 +29,15 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type PathFindingInfo is tagged;
    type PathFindingInfo_Access is access all PathFindingInfo'Class;
    type PathFindingInfo_Access_Array is array (Natural range <>) of PathFindingInfo_Access;
    type PathFindingInfo_Access_Array_Access is access all PathFindingInfo_Access_Array;
+   type PathFindingInfo_Access_Array_Access_Array is array (Natural range <>) of PathFindingInfo_Access_Array_Access;
+   type PathFindingInfo_Access_Array_Access_Array_Access is access all PathFindingInfo_Access_Array_Access_Array;
 
-   type PathFindingInfo is new PathFindingInfoInterface with record
+   type PathFindingInfo is new Java_Object and PathFindingInfoInterface with record
       pathFinder : GeographicPathFinderBase_Access;
       startPathFindingNodeList : BasicArrayList_Access;
       endPathFindingNodeList : BasicArrayList_Access;

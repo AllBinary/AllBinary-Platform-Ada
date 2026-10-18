@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.displayable.canvas.TitleResource_Package is
 
    procedure Initialize_Fields (This : in out TitleResource'Class) is

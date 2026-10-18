@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package is
 
    procedure Initialize_Fields (This : in out InputAutomationTypeJPanel'Class) is
@@ -57,7 +58,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.jLabel1.setText (To_Unbounded_String ("Input Type:"));
         layout := GroupLayout_Package.Create (InputAutomationTypeJPanel_Access'(This'Unchecked_Access));
         InputAutomationTypeJPanel'Class (This).setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.inputAutomationTypeJComboBox, 0, 98, Short_Package.MAX_VALUE)));
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.inputAutomationTypeJComboBox, 0, 98, Short_Integer'Last)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.inputAutomationTypeJComboBox, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)));
    end initComponents;
 

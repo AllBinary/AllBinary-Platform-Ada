@@ -23,44 +23,33 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
-with org.allbinary.game.health.Health_Package; use org.allbinary.game.health.Health_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
-with org.allbinary.game.input.form.NullRTSFormInputFactory_Package; use org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
 with org.allbinary.game.layer.AdvancedRTSGameLayer_Package; use org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
-with org.allbinary.game.layer.AdvancedRTSProperties_Package; use org.allbinary.game.layer.AdvancedRTSProperties_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
-with org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package; use org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-with org.allbinary.media.audio.AttackSound_Package; use org.allbinary.media.audio.AttackSound_Package;
-with org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package; use org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package;
-with org.allbinary.game.layer.waypoint.Waypoint_Package; use org.allbinary.game.layer.waypoint.Waypoint_Package;
-with org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package; use org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package;
 
 package org.allbinary.game.layer.waypoint.WaypointLayer_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
    package ProceduralAnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
-   package Health_Package renames Standard.org.allbinary.game.health.Health_Package;
    package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
-   package NullRTSFormInputFactory_Package renames Standard.org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
    package AdvancedRTSGameLayer_Package renames Standard.org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
-   package AdvancedRTSProperties_Package renames Standard.org.allbinary.game.layer.AdvancedRTSProperties_Package;
    package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
-   package TileLayerPositionIntoViewPosition_Package renames Standard.org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package RTSPlayerLayerInterface_Package renames Standard.org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
    package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-   package AttackSound_Package renames Standard.org.allbinary.media.audio.AttackSound_Package;
 
    type WaypointLayer is tagged;
    type WaypointLayer_Access is access all WaypointLayer'Class;
    type WaypointLayer_Access_Array is array (Natural range <>) of WaypointLayer_Access;
    type WaypointLayer_Access_Array_Access is access all WaypointLayer_Access_Array;
+   type WaypointLayer_Access_Array_Access_Array is array (Natural range <>) of WaypointLayer_Access_Array_Access;
+   type WaypointLayer_Access_Array_Access_Array_Access is access all WaypointLayer_Access_Array_Access_Array;
 
    type WaypointLayer is new AdvancedRTSGameLayer with null record;
 

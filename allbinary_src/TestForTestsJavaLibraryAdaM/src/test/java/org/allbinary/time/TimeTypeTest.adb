@@ -1,8 +1,17 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.junit.jupiter.api.Assertions_Package; use org.junit.jupiter.api.Assertions_Package;
+with org.junit.jupiter.api.DisplayName_Package; use org.junit.jupiter.api.DisplayName_Package;
+with org.junit.jupiter.api.Test_Package; use org.junit.jupiter.api.Test_Package;
+
 package body org.allbinary.time.TimeTypeTest_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package Assertions_Package renames Standard.org.junit.jupiter.api.Assertions_Package;
+   package DisplayName_Package renames Standard.org.junit.jupiter.api.DisplayName_Package;
+   package Test_Package renames Standard.org.junit.jupiter.api.Test_Package;
    procedure Initialize_Fields (This : in out TimeTypeTest'Class) is
    begin
       null;
@@ -60,9 +69,9 @@ package body org.allbinary.time.TimeTypeTest_Package is
       nightUtil : TimeTypeUtil_Access;
       dayUtil : TimeTypeUtil_Access;
    begin
-        nightUtil := TestableTimeTypeUtil_Package.Create (0);
+        nightUtil := TimeTypeUtil_Access (TestableTimeTypeUtil_Package.Create (0));
         Assertions_Package.assertEquals (nightUtil.NIGHT, nightUtil.getNightOrDay);
-        dayUtil := TestableTimeTypeUtil_Package.Create (12);
+        dayUtil := TimeTypeUtil_Access (TestableTimeTypeUtil_Package.Create (12));
         Assertions_Package.assertEquals (dayUtil.DAY, dayUtil.getNightOrDay);
    end getNightOrDay_returns_expected_label;
 
@@ -137,8 +146,17 @@ package body org.allbinary.time.TimeTypeTest_Package is
 end org.allbinary.time.TimeTypeTest_Package;
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.junit.jupiter.api.Assertions_Package; use org.junit.jupiter.api.Assertions_Package;
+with org.junit.jupiter.api.DisplayName_Package; use org.junit.jupiter.api.DisplayName_Package;
+with org.junit.jupiter.api.Test_Package; use org.junit.jupiter.api.Test_Package;
+
 package body org.allbinary.time.TestableTimeTypeUtil_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package Assertions_Package renames Standard.org.junit.jupiter.api.Assertions_Package;
+   package DisplayName_Package renames Standard.org.junit.jupiter.api.DisplayName_Package;
+   package Test_Package renames Standard.org.junit.jupiter.api.Test_Package;
    procedure Initialize_Fields (This : in out TestableTimeTypeUtil'Class) is
    begin
       null;

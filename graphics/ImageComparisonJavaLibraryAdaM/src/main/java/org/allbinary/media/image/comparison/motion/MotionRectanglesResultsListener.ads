@@ -31,6 +31,8 @@ package org.allbinary.media.image.comparison.motion.MotionRectanglesResultsListe
    type MotionRectanglesResultsListener_Access is access all MotionRectanglesResultsListener'Class;
    type MotionRectanglesResultsListener_Access_Array is array (Natural range <>) of MotionRectanglesResultsListener_Access;
    type MotionRectanglesResultsListener_Access_Array_Access is access all MotionRectanglesResultsListener_Access_Array;
+   type MotionRectanglesResultsListener_Access_Array_Access_Array is array (Natural range <>) of MotionRectanglesResultsListener_Access_Array_Access;
+   type MotionRectanglesResultsListener_Access_Array_Access_Array_Access is access all MotionRectanglesResultsListener_Access_Array_Access_Array;
    procedure onMotionRectanglesImageComparisonResultsEvent (This : in out MotionRectanglesResultsListener; motionRectanglesImageComparisonResultsEvent_Param : access MotionRectanglesResultsEvent_Package.MotionRectanglesResultsEvent'Class) is abstract;
 
 end org.allbinary.media.image.comparison.motion.MotionRectanglesResultsListener_Package;

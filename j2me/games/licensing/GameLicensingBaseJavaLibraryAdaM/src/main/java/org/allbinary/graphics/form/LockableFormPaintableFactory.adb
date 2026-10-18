@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.form.LockablePaintable_Package; use org.allbinary.graphics.form.LockablePaintable_Package;
+
 package body org.allbinary.graphics.form.LockableFormPaintableFactory_Package is
 
    procedure Initialize_Fields (This : in out LockableFormPaintableFactory'Class) is
@@ -40,7 +42,7 @@ package body org.allbinary.graphics.form.LockableFormPaintableFactory_Package is
    function getInstanceItemPaintable (This : in out LockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class) return ItemPaintable_Access is
       paintableForm : constant PaintableForm_Access := PaintableForm_Access (paintableForm_Param);
    begin
-        return LockablePaintable_Package.Create (This.lockedIndex);
+        return ItemPaintable_Access (LockablePaintable_Package.Create (This.lockedIndex));
    end getInstanceItemPaintable;
 
    procedure getInstanceItemPaintable (This : in out LockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class) is

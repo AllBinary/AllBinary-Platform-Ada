@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.modules.admin.configuration.AdminConfigurationData_Package is
 
    procedure Initialize_Fields (This : in out AdminConfigurationData'Class) is

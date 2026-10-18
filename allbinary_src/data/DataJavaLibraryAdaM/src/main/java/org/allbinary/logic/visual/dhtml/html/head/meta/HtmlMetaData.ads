@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaData_Package is
    type HtmlMetaData_Access is access all HtmlMetaData'Class;
    type HtmlMetaData_Access_Array is array (Natural range <>) of HtmlMetaData_Access;
    type HtmlMetaData_Access_Array_Access is access all HtmlMetaData_Access_Array;
+   type HtmlMetaData_Access_Array_Access_Array is array (Natural range <>) of HtmlMetaData_Access_Array_Access;
+   type HtmlMetaData_Access_Array_Access_Array_Access is access all HtmlMetaData_Access_Array_Access_Array;
 
    type HtmlMetaData is new Java_Object with record
       NAME : Unbounded_String;

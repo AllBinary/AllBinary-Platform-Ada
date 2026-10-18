@@ -28,6 +28,8 @@ package org.allbinary.animation.SideScrollerAnimation_Package is
    type SideScrollerAnimation_Access is access all SideScrollerAnimation'Class;
    type SideScrollerAnimation_Access_Array is array (Natural range <>) of SideScrollerAnimation_Access;
    type SideScrollerAnimation_Access_Array_Access is access all SideScrollerAnimation_Access_Array;
+   type SideScrollerAnimation_Access_Array_Access_Array is array (Natural range <>) of SideScrollerAnimation_Access_Array_Access;
+   type SideScrollerAnimation_Access_Array_Access_Array_Access is access all SideScrollerAnimation_Access_Array_Access_Array;
 
    type SideScrollerAnimation is new Java_Object with null record;
 

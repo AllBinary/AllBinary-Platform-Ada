@@ -21,22 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package org.allbinary.input.KeySingletonFactory_Package is
 
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type KeySingletonFactory is tagged;
    type KeySingletonFactory_Access is access all KeySingletonFactory'Class;
    type KeySingletonFactory_Access_Array is array (Natural range <>) of KeySingletonFactory_Access;
    type KeySingletonFactory_Access_Array_Access is access all KeySingletonFactory_Access_Array;
+   type KeySingletonFactory_Access_Array_Access_Array is array (Natural range <>) of KeySingletonFactory_Access_Array_Access;
+   type KeySingletonFactory_Access_Array_Access_Array_Access is access all KeySingletonFactory_Access_Array_Access_Array;
 
    type KeySingletonFactory is new Java_Object with record
       logUtil : LogUtil_Access;

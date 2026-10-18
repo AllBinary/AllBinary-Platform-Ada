@@ -21,19 +21,11 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.List_Package; use java.util.List_Package;
-with android.app.ActivityManager_Package; use android.app.ActivityManager_Package;
-with android.app.ActivityManager.RunningServiceInfo_Package; use android.app.ActivityManager.RunningServiceInfo_Package;
-with android.content.ComponentName_Package; use android.content.ComponentName_Package;
-with android.content.Context_Package; use android.content.Context_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 
 package org.allbinary.android.AndroidServicesUtil_Package is
 
-   package ActivityManager_Package renames Standard.android.app.ActivityManager_Package;
-   package RunningServiceInfo_Package renames Standard.android.app.ActivityManager.RunningServiceInfo_Package;
-   package ComponentName_Package renames Standard.android.content.ComponentName_Package;
-   package Context_Package renames Standard.android.content.Context_Package;
    package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
@@ -41,6 +33,8 @@ package org.allbinary.android.AndroidServicesUtil_Package is
    type AndroidServicesUtil_Access is access all AndroidServicesUtil'Class;
    type AndroidServicesUtil_Access_Array is array (Natural range <>) of AndroidServicesUtil_Access;
    type AndroidServicesUtil_Access_Array_Access is access all AndroidServicesUtil_Access_Array;
+   type AndroidServicesUtil_Access_Array_Access_Array is array (Natural range <>) of AndroidServicesUtil_Access_Array_Access;
+   type AndroidServicesUtil_Access_Array_Access_Array_Access is access all AndroidServicesUtil_Access_Array_Access_Array;
 
    type AndroidServicesUtil is new Java_Object with record
       logUtil : LogUtil_Access;

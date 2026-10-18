@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+with org.allbinary.animation.image.BottomToTopImageAnimation_Package; use org.allbinary.animation.image.BottomToTopImageAnimation_Package;
+
 package body org.allbinary.animation.image.BottomToTopImageAnimationFactory_Package is
 
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out BottomToTopImageAnimationFactory'Class) is
    begin
       null;
@@ -40,7 +44,7 @@ package body org.allbinary.animation.image.BottomToTopImageAnimationFactory_Pack
       scaledImage : Image_Access;
    begin
         scaledImage := This.animationFactoryImageScaleUtil.createImage (BottomToTopImageAnimationFactory'Class (This).getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
-        return BottomToTopImageAnimation_Package.Create (scaledImage, This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (BottomToTopImageAnimation_Package.Create (scaledImage, This.animationBehaviorFactory.getOrCreateInstance));
    end getInstance;
 
    procedure getInstance (This : in out BottomToTopImageAnimationFactory; instanceId : Integer) is

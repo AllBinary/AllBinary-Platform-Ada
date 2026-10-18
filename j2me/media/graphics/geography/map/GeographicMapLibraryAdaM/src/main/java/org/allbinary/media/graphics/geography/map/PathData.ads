@@ -28,6 +28,8 @@ package org.allbinary.media.graphics.geography.map.PathData_Package is
    type PathData_Access is access all PathData'Class;
    type PathData_Access_Array is array (Natural range <>) of PathData_Access;
    type PathData_Access_Array_Access is access all PathData_Access_Array;
+   type PathData_Access_Array_Access_Array is array (Natural range <>) of PathData_Access_Array_Access;
+   type PathData_Access_Array_Access_Array_Access is access all PathData_Access_Array_Access_Array;
 
    type PathData is new Java_Object with record
       OFFSET : Integer;

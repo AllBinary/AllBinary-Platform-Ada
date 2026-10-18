@@ -21,6 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.transition.AnimationListenerInterface_Package; use org.allbinary.animation.transition.AnimationListenerInterface_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.animation.transition.RunAtEndAnimationListener_Package is
 
@@ -29,8 +30,10 @@ package org.allbinary.animation.transition.RunAtEndAnimationListener_Package is
    type RunAtEndAnimationListener_Access is access all RunAtEndAnimationListener'Class;
    type RunAtEndAnimationListener_Access_Array is array (Natural range <>) of RunAtEndAnimationListener_Access;
    type RunAtEndAnimationListener_Access_Array_Access is access all RunAtEndAnimationListener_Access_Array;
+   type RunAtEndAnimationListener_Access_Array_Access_Array is array (Natural range <>) of RunAtEndAnimationListener_Access_Array_Access;
+   type RunAtEndAnimationListener_Access_Array_Access_Array_Access is access all RunAtEndAnimationListener_Access_Array_Access_Array;
 
-   type RunAtEndAnimationListener is new AnimationListenerInterface with record
+   type RunAtEndAnimationListener is new Java_Object and AnimationListenerInterface with record
       runnable : Runnable_Access;
    end record;
 

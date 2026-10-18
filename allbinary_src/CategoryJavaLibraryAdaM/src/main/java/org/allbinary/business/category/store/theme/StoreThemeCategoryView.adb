@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.theme.ThemeValidation_Package; use org.allbinary.logic.visual.theme.ThemeValidation_Package;
+with org.allbinary.business.category.store.theme.ThemeComparator_Package; use org.allbinary.business.category.store.theme.ThemeComparator_Package;
+
 package body org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package is
 
+   package ThemeValidation_Package renames Standard.org.allbinary.logic.visual.theme.ThemeValidation_Package;
    procedure Initialize_Fields (This : in out StoreThemeCategoryView'Class) is
    begin
       null;

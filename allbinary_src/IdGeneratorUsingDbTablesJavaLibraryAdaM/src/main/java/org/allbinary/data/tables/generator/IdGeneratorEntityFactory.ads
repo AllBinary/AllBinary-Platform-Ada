@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package; use org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package;
 
 package org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type IdGeneratorEntityFactory is tagged;
    type IdGeneratorEntityFactory_Access is access all IdGeneratorEntityFactory'Class;
    type IdGeneratorEntityFactory_Access_Array is array (Natural range <>) of IdGeneratorEntityFactory_Access;
    type IdGeneratorEntityFactory_Access_Array_Access is access all IdGeneratorEntityFactory_Access_Array;
+   type IdGeneratorEntityFactory_Access_Array_Access_Array is array (Natural range <>) of IdGeneratorEntityFactory_Access_Array_Access;
+   type IdGeneratorEntityFactory_Access_Array_Access_Array_Access is access all IdGeneratorEntityFactory_Access_Array_Access_Array;
 
    type IdGeneratorEntityFactory is new Java_Object with null record;
 

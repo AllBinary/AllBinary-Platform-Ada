@@ -20,19 +20,15 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 
 package org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
    package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
@@ -40,6 +36,8 @@ package org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package is
    type HorizontalManeuverAI_Access is access all HorizontalManeuverAI'Class;
    type HorizontalManeuverAI_Access_Array is array (Natural range <>) of HorizontalManeuverAI_Access;
    type HorizontalManeuverAI_Access_Array_Access is access all HorizontalManeuverAI_Access_Array;
+   type HorizontalManeuverAI_Access_Array_Access_Array is array (Natural range <>) of HorizontalManeuverAI_Access_Array_Access;
+   type HorizontalManeuverAI_Access_Array_Access_Array_Access is access all HorizontalManeuverAI_Access_Array_Access_Array;
 
    type HorizontalManeuverAI is new BasicAI with record
       currentRelativeAngle : Integer;

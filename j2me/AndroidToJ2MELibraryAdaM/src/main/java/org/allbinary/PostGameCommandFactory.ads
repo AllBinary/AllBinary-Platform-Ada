@@ -20,24 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
-with org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package; use org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
-with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
 
 package org.allbinary.PostGameCommandFactory_Package is
 
-   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
-   package MultiPlayerGameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package;
    package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
-   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
 
    type PostGameCommandFactory is tagged;
    type PostGameCommandFactory_Access is access all PostGameCommandFactory'Class;
    type PostGameCommandFactory_Access_Array is array (Natural range <>) of PostGameCommandFactory_Access;
    type PostGameCommandFactory_Access_Array_Access is access all PostGameCommandFactory_Access_Array;
+   type PostGameCommandFactory_Access_Array_Access_Array is array (Natural range <>) of PostGameCommandFactory_Access_Array_Access;
+   type PostGameCommandFactory_Access_Array_Access_Array_Access is access all PostGameCommandFactory_Access_Array_Access_Array;
 
    type PostGameCommandFactory is new Java_Object with null record;
    instance : PostGameCommandFactory_Access;

@@ -22,8 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.khronos.egl.EGLConfig_Package; use javax.microedition.khronos.egl.EGLConfig_Package;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.graphics.opengles.shader.ShaderUpdater_Package; use org.allbinary.graphics.opengles.shader.ShaderUpdater_Package;
 with org.allbinary.graphics.opengles.shader.ShaderStrings_Package; use org.allbinary.graphics.opengles.shader.ShaderStrings_Package;
@@ -32,14 +30,14 @@ package org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package is
 
    package EGLConfig_Package renames Standard.javax.microedition.khronos.egl.EGLConfig_Package;
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type CompositeShaderUpdater is tagged;
    type CompositeShaderUpdater_Access is access all CompositeShaderUpdater'Class;
    type CompositeShaderUpdater_Access_Array is array (Natural range <>) of CompositeShaderUpdater_Access;
    type CompositeShaderUpdater_Access_Array_Access is access all CompositeShaderUpdater_Access_Array;
+   type CompositeShaderUpdater_Access_Array_Access_Array is array (Natural range <>) of CompositeShaderUpdater_Access_Array_Access;
+   type CompositeShaderUpdater_Access_Array_Access_Array_Access is access all CompositeShaderUpdater_Access_Array_Access_Array;
 
    type CompositeShaderUpdater is new ShaderUpdater with record
       commonSeps : CommonSeps_Access;

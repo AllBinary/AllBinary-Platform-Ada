@@ -20,26 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
 
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type Tokenizer is tagged;
    type Tokenizer_Access is access all Tokenizer'Class;
    type Tokenizer_Access_Array is array (Natural range <>) of Tokenizer_Access;
    type Tokenizer_Access_Array_Access is access all Tokenizer_Access_Array;
+   type Tokenizer_Access_Array_Access_Array is array (Natural range <>) of Tokenizer_Access_Array_Access;
+   type Tokenizer_Access_Array_Access_Array_Access is access all Tokenizer_Access_Array_Access_Array;
 
    type Tokenizer is new Java_Object with record
       sep : Unbounded_String;

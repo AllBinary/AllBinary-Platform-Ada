@@ -31,8 +31,10 @@ package org.allbinary.logic.visual.transform.info.objectConfig.generator.Transfo
    type TransformInfoObjectConfigGenerator_Access is access all TransformInfoObjectConfigGenerator'Class;
    type TransformInfoObjectConfigGenerator_Access_Array is array (Natural range <>) of TransformInfoObjectConfigGenerator_Access;
    type TransformInfoObjectConfigGenerator_Access_Array_Access is access all TransformInfoObjectConfigGenerator_Access_Array;
+   type TransformInfoObjectConfigGenerator_Access_Array_Access_Array is array (Natural range <>) of TransformInfoObjectConfigGenerator_Access_Array_Access;
+   type TransformInfoObjectConfigGenerator_Access_Array_Access_Array_Access is access all TransformInfoObjectConfigGenerator_Access_Array_Access_Array;
 
-   type TransformInfoObjectConfigGenerator is new TransformInfoObjectConfigGeneratorInterface with record
+   type TransformInfoObjectConfigGenerator is new Java_Object and TransformInfoObjectConfigGeneratorInterface with record
       commonStrings : CommonStrings_Access;
    end record;
 

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.graphics.j2me.workarea.tools.Points_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out Points'Class) is
    begin
       null;
@@ -25,7 +28,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.Points_Package is
    procedure Initialize (This : in out Points'Class) is
    begin
       Initialize_Fields (This);
-        This.pointVector := BasicArrayListD_Package.Create;
+        This.pointVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create return Points_Access is

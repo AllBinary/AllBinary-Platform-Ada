@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package is
 
    procedure Initialize_Fields (This : in out MyGraphicItemEventService'Class) is
@@ -59,13 +60,13 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
                 if (evt.getCommand.compareTo (MyGraphicItemEventService_Package.SELECT_Id)) = (0) then
                     (MyGraphicItemEventListener_Access (listeners ((i) + (1)))).highlight (evt);
                 elsif (evt.getCommand.compareTo (MyGraphicItemEventService_Package.DESELECT)) = (0) then
-                    (MyGraphicItemEventListener_Access (listeners ((i) + (1)))).deselect_Case (evt);
+                    (MyGraphicItemEventListener_Access (listeners ((i) + (1)))).deselect (evt);
                 elsif (evt.getCommand.compareTo (MyGraphicItemEventService_Package.DELETE)) = (0) then
-                    (MyGraphicItemEventListener_Access (listeners ((i) + (1)))).delete_Case (evt);
+                    (MyGraphicItemEventListener_Access (listeners ((i) + (1)))).delete (evt);
                 elsif (evt.getCommand.compareTo (MyGraphicItemEventService_Package.DUPLICATE)) = (0) then
-                    (MyGraphicItemEventListener_Access (listeners ((i) + (1)))).duplicate_Case (evt);
+                    (MyGraphicItemEventListener_Access (listeners ((i) + (1)))).duplicate (evt);
                 elsif (evt.getCommand.compareTo (MyGraphicItemEventService_Package.ROTATE)) = (0) then
-                    (MyGraphicItemEventListener_Access (listeners ((i) + (1)))).rotate_Case (evt);
+                    (MyGraphicItemEventListener_Access (listeners ((i) + (1)))).rotate (evt);
                 end if;
             end if;
             i := (i) + (2);

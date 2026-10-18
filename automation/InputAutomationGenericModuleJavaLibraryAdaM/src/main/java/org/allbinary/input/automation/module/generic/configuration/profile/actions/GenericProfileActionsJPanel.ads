@@ -20,17 +20,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.automation.module.DefaultListModelHelper_Package; use org.allbinary.input.automation.module.DefaultListModelHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.JPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.JPanel_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
-with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package is
 
-   package DefaultListModelHelper_Package renames Standard.org.allbinary.input.automation.module.DefaultListModelHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -38,6 +35,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    type GenericProfileActionsJPanel_Access is access all GenericProfileActionsJPanel'Class;
    type GenericProfileActionsJPanel_Access_Array is array (Natural range <>) of GenericProfileActionsJPanel_Access;
    type GenericProfileActionsJPanel_Access_Array_Access is access all GenericProfileActionsJPanel_Access_Array;
+   type GenericProfileActionsJPanel_Access_Array_Access_Array is array (Natural range <>) of GenericProfileActionsJPanel_Access_Array_Access;
+   type GenericProfileActionsJPanel_Access_Array_Access_Array_Access is access all GenericProfileActionsJPanel_Access_Array_Access_Array;
 
    type GenericProfileActionsJPanel is new JPanel with record
       logUtil : LogUtil_Access;

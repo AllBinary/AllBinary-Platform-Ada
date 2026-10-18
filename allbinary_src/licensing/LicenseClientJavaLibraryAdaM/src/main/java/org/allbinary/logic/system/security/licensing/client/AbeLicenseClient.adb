@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
+with org.allbinary.business.init.LicenseInitInfoUtil_Package; use org.allbinary.business.init.LicenseInitInfoUtil_Package;
+with org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package; use org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package; use org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package;
+
 package body org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package is
 
+   package LicenseInitInfo_Package renames Standard.org.allbinary.business.init.LicenseInitInfo_Package;
+   package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
+   package XmlRpcAbeClient_Package renames Standard.org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out AbeLicenseClient'Class) is
    begin
       null;
@@ -51,7 +63,7 @@ package body org.allbinary.logic.system.security.licensing.client.AbeLicenseClie
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, AbeLicenseClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
-            xmlRpcAbeLicenseClient := XmlRpcAbeLicenseRetrievalClient_Package.Create (abeClientInformation);
+            xmlRpcAbeLicenseClient := XmlRpcAbeClient_Access (XmlRpcAbeLicenseRetrievalClient_Package.Create (abeClientInformation));
             abeLicenseInterface := AbeLicenseInterface_Access (xmlRpcAbeLicenseClient.get (null));
             licenseId := abeLicenseInterface.getLicenseId;
             servers := abeLicenseInterface.getServers;

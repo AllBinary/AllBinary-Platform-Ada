@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
-with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
 
 package org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
 
    type AllBinaryObjectFactoryInterface is interface;
    type AllBinaryObjectFactoryInterface_Access is access all AllBinaryObjectFactoryInterface'Class;
    type AllBinaryObjectFactoryInterface_Access_Array is array (Natural range <>) of AllBinaryObjectFactoryInterface_Access;
    type AllBinaryObjectFactoryInterface_Access_Array_Access is access all AllBinaryObjectFactoryInterface_Access_Array;
+   type AllBinaryObjectFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of AllBinaryObjectFactoryInterface_Access_Array_Access;
+   type AllBinaryObjectFactoryInterface_Access_Array_Access_Array_Access is access all AllBinaryObjectFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out AllBinaryObjectFactoryInterface) return Java_Object_Access is abstract;
 
 end org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;

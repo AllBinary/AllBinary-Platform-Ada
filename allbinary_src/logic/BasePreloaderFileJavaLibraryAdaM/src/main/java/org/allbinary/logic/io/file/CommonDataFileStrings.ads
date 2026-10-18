@@ -28,6 +28,8 @@ package org.allbinary.logic.io.file.CommonDataFileStrings_Package is
    type CommonDataFileStrings_Access is access all CommonDataFileStrings'Class;
    type CommonDataFileStrings_Access_Array is array (Natural range <>) of CommonDataFileStrings_Access;
    type CommonDataFileStrings_Access_Array_Access is access all CommonDataFileStrings_Access_Array;
+   type CommonDataFileStrings_Access_Array_Access_Array is array (Natural range <>) of CommonDataFileStrings_Access_Array_Access;
+   type CommonDataFileStrings_Access_Array_Access_Array_Access is access all CommonDataFileStrings_Access_Array_Access_Array;
 
    type CommonDataFileStrings is new Java_Object with record
       XML : Unbounded_String;

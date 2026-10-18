@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
 
 package org.allbinary.logic.communication.log.Log_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package LogFormatUtil_Package renames Standard.org.allbinary.logic.communication.log.LogFormatUtil_Package;
 
    type Log is tagged;
    type Log_Access is access all Log'Class;
    type Log_Access_Array is array (Natural range <>) of Log_Access;
    type Log_Access_Array_Access is access all Log_Access_Array;
+   type Log_Access_Array_Access_Array is array (Natural range <>) of Log_Access_Array_Access;
+   type Log_Access_Array_Access_Array_Access is access all Log_Access_Array_Access_Array;
 
    type Log is new Java_Object with record
       logFormatUtil : LogFormatUtil_Access;

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
+
 package body org.allbinary.media.image.ImageCreationUtil_Package is
 
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
    procedure Initialize_Fields (This : in out ImageCreationUtil'Class) is
    begin
       null;

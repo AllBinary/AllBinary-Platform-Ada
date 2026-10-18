@@ -29,6 +29,8 @@ package org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package is
    type ScrollSelectionFormNoneFactory_Access is access all ScrollSelectionFormNoneFactory'Class;
    type ScrollSelectionFormNoneFactory_Access_Array is array (Natural range <>) of ScrollSelectionFormNoneFactory_Access;
    type ScrollSelectionFormNoneFactory_Access_Array_Access is access all ScrollSelectionFormNoneFactory_Access_Array;
+   type ScrollSelectionFormNoneFactory_Access_Array_Access_Array is array (Natural range <>) of ScrollSelectionFormNoneFactory_Access_Array_Access;
+   type ScrollSelectionFormNoneFactory_Access_Array_Access_Array_Access is access all ScrollSelectionFormNoneFactory_Access_Array_Access_Array;
 
    type ScrollSelectionFormNoneFactory is new Java_Object with null record;
 

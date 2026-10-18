@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 
 package org.allbinary.math.AngleIncrementInfoFactory_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.math.AngleIncrementInfoFactory_Package is
    type AngleIncrementInfoFactory_Access is access all AngleIncrementInfoFactory'Class;
    type AngleIncrementInfoFactory_Access_Array is array (Natural range <>) of AngleIncrementInfoFactory_Access;
    type AngleIncrementInfoFactory_Access_Array_Access is access all AngleIncrementInfoFactory_Access_Array;
+   type AngleIncrementInfoFactory_Access_Array_Access_Array is array (Natural range <>) of AngleIncrementInfoFactory_Access_Array_Access;
+   type AngleIncrementInfoFactory_Access_Array_Access_Array_Access is access all AngleIncrementInfoFactory_Access_Array_Access_Array;
 
    type AngleIncrementInfoFactory is new Java_Object with record
       angleIncrementInfo : AngleIncrementInfo_Access_Array_Access;

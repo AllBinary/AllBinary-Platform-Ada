@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
-with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.LayerManagerNoDebug_Package;
 
 package org.allbinary.game.collision.layer.CollidableInterfaceLayerManager_Package is
 
    package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
-   package LayerManagerNoDebug_Package renames Standard.org.allbinary.layer.LayerManagerNoDebug_Package;
 
    type CollidableInterfaceLayerManager is tagged;
    type CollidableInterfaceLayerManager_Access is access all CollidableInterfaceLayerManager'Class;
    type CollidableInterfaceLayerManager_Access_Array is array (Natural range <>) of CollidableInterfaceLayerManager_Access;
    type CollidableInterfaceLayerManager_Access_Array_Access is access all CollidableInterfaceLayerManager_Access_Array;
+   type CollidableInterfaceLayerManager_Access_Array_Access_Array is array (Natural range <>) of CollidableInterfaceLayerManager_Access_Array_Access;
+   type CollidableInterfaceLayerManager_Access_Array_Access_Array_Access is access all CollidableInterfaceLayerManager_Access_Array_Access_Array;
 
    type CollidableInterfaceLayerManager is new LayerManager with null record;
 

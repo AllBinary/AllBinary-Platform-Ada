@@ -16,6 +16,8 @@ package org.allbinary.image.opengles.OpenGLStrings_Package is
    type OpenGLStrings_Access is access all OpenGLStrings'Class;
    type OpenGLStrings_Access_Array is array (Natural range <>) of OpenGLStrings_Access;
    type OpenGLStrings_Access_Array_Access is access all OpenGLStrings_Access_Array;
+   type OpenGLStrings_Access_Array_Access_Array is array (Natural range <>) of OpenGLStrings_Access_Array_Access;
+   type OpenGLStrings_Access_Array_Access_Array_Access is access all OpenGLStrings_Access_Array_Access_Array;
 
    type OpenGLStrings is new Java_Object with record
       GL_ERROR_LABEL : Unbounded_String;

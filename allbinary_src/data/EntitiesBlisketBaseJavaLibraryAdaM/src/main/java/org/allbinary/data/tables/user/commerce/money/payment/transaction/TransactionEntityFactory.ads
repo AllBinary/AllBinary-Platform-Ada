@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionEntity_Package; use org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionEntity_Package;
 
 package org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TransactionEntityFactory is tagged;
    type TransactionEntityFactory_Access is access all TransactionEntityFactory'Class;
    type TransactionEntityFactory_Access_Array is array (Natural range <>) of TransactionEntityFactory_Access;
    type TransactionEntityFactory_Access_Array_Access is access all TransactionEntityFactory_Access_Array;
+   type TransactionEntityFactory_Access_Array_Access_Array is array (Natural range <>) of TransactionEntityFactory_Access_Array_Access;
+   type TransactionEntityFactory_Access_Array_Access_Array_Access is access all TransactionEntityFactory_Access_Array_Access_Array;
 
    type TransactionEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -44,8 +44,10 @@ package org.allbinary.game.layer.NullVehicleLayer_Package is
    type NullVehicleLayer_Access is access all NullVehicleLayer'Class;
    type NullVehicleLayer_Access_Array is array (Natural range <>) of NullVehicleLayer_Access;
    type NullVehicleLayer_Access_Array_Access is access all NullVehicleLayer_Access_Array;
+   type NullVehicleLayer_Access_Array_Access_Array is array (Natural range <>) of NullVehicleLayer_Access_Array_Access;
+   type NullVehicleLayer_Access_Array_Access_Array_Access is access all NullVehicleLayer_Access_Array_Access_Array;
 
-   type NullVehicleLayer is new VehicleLayerInterface with null record;
+   type NullVehicleLayer is new Java_Object and VehicleLayerInterface with null record;
    NULL_VEHICLE_LAYER : NullVehicleLayer_Access;
 
    procedure Initialize (This : in out NullVehicleLayer'Class);

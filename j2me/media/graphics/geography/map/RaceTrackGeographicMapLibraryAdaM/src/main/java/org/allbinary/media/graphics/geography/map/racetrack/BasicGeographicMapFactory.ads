@@ -20,10 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package; use org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
@@ -32,10 +29,7 @@ with org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFac
 
 package org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapFactory_Package is
 
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCellPositionBaseFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
    package GeographicMapCellPositionFactoryInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
    package GeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 
@@ -43,6 +37,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapF
    type BasicGeographicMapFactory_Access is access all BasicGeographicMapFactory'Class;
    type BasicGeographicMapFactory_Access_Array is array (Natural range <>) of BasicGeographicMapFactory_Access;
    type BasicGeographicMapFactory_Access_Array_Access is access all BasicGeographicMapFactory_Access_Array;
+   type BasicGeographicMapFactory_Access_Array_Access_Array is array (Natural range <>) of BasicGeographicMapFactory_Access_Array_Access;
+   type BasicGeographicMapFactory_Access_Array_Access_Array_Access is access all BasicGeographicMapFactory_Access_Array_Access_Array;
 
    type BasicGeographicMapFactory is new Java_Object with null record;
 

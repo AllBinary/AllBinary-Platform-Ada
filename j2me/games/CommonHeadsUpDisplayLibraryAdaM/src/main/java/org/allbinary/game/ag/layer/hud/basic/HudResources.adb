@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.ag.layer.hud.basic.HudResources_Package is
 
    procedure Initialize_Fields (This : in out HudResources'Class) is

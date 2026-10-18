@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Package;
+
 package body org.allbinary.init.NoLicense_Package is
 
+   package Globals_Package renames Standard.org.allbinary.globals.Globals_Package;
    procedure Initialize_Fields (This : in out NoLicense'Class) is
    begin
       null;

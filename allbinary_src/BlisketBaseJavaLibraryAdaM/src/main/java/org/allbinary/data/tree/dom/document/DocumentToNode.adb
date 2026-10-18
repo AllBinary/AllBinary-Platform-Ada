@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+
 package body org.allbinary.data.tree.dom.document.DocumentToNode_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
    procedure Initialize_Fields (This : in out DocumentToNode'Class) is
    begin
       null;
@@ -57,9 +62,9 @@ package body org.allbinary.data.tree.dom.document.DocumentToNode_Package is
       resultString : Unbounded_String;
    begin
         startIndex := 0;
-        while ((Java_Assign (startIndex, (Index (documentString, Java_Image (start)) - 1)))) /= (-(1)) loop
+        while ((Java_Assign (startIndex, Java_Index_Of (documentString, Java_Image (start))))) /= (-(1)) loop
             if (startIndex) >= (0) then
-                endIndex := documentString.indexOf (end_Id, startIndex);
+                endIndex := Java_Index_Of (documentString, Java_Image (end_Id), startIndex);
                 if (endIndex) >= (0) then
                     startString := Unbounded_Slice (documentString, (0) + 1, startIndex);
                     resultString := Unbounded_Slice (documentString, ((endIndex) + (1)) + 1, Length (documentString));

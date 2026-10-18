@@ -29,6 +29,8 @@ package org.allbinary.graphics.CustomGPoint_Package is
    type CustomGPoint_Access is access all CustomGPoint'Class;
    type CustomGPoint_Access_Array is array (Natural range <>) of CustomGPoint_Access;
    type CustomGPoint_Access_Array_Access is access all CustomGPoint_Access_Array;
+   type CustomGPoint_Access_Array_Access_Array is array (Natural range <>) of CustomGPoint_Access_Array_Access;
+   type CustomGPoint_Access_Array_Access_Array_Access is access all CustomGPoint_Access_Array_Access_Array;
 
    type CustomGPoint is new GPoint with record
       cx : Integer;

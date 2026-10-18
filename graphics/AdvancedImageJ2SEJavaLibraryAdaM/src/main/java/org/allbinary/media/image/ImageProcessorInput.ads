@@ -21,15 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 
 package org.allbinary.media.image.ImageProcessorInput_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
 
    type ImageProcessorInput is tagged;
    type ImageProcessorInput_Access is access all ImageProcessorInput'Class;
    type ImageProcessorInput_Access_Array is array (Natural range <>) of ImageProcessorInput_Access;
    type ImageProcessorInput_Access_Array_Access is access all ImageProcessorInput_Access_Array;
+   type ImageProcessorInput_Access_Array_Access_Array is array (Natural range <>) of ImageProcessorInput_Access_Array_Access;
+   type ImageProcessorInput_Access_Array_Access_Array_Access is access all ImageProcessorInput_Access_Array_Access_Array;
 
    type ImageProcessorInput is new Java_Object with record
       bufferedImageArray : BufferedImage_Access_Array_Access;

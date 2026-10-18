@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package; use org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package;
+
 package body org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package is
 
    procedure Initialize_Fields (This : in out PointsLayerFactory'Class) is
@@ -38,7 +40,7 @@ package body org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Packag
    --  throws Exception
    function getInstance (This : in out PointsLayerFactory) return AllBinaryLayer_Access is
    begin
-        return PointsLayer_Package.Create (This.points);
+        return AllBinaryLayer_Access (PointsLayer_Package.Create (This.points));
    end getInstance;
 
 end org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package;

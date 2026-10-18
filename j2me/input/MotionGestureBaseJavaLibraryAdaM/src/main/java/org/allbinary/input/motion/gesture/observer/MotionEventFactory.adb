@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+
 package body org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package is
 
+   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
    procedure Initialize_Fields (This : in out MotionEventFactory'Class) is
    begin
       null;
@@ -46,9 +56,9 @@ package body org.allbinary.input.motion.gesture.observer.MotionEventFactory_Pack
         inputFactory := InputFactory_Package.getInstance;
         input := inputFactory.getInstanceById (Java_Post_Increment (MotionEventFactory_Package.index));
         if (input) = (inputFactory.NO_INPUT) then
-            return MotionGestureEvent_Package.Create (This.source, This.id, MotionGestureInput_Access (TouchMotionGestureFactory_Package.getInstance.NO_MOTION));
+            return AllBinaryEventObject_Access (MotionGestureEvent_Package.Create (This.source, This.id, MotionGestureInput_Access (TouchMotionGestureFactory_Package.getInstance.NO_MOTION)));
         else
-            return MotionGestureEvent_Package.Create (This.source, This.id, MotionGestureInput_Access (input));
+            return AllBinaryEventObject_Access (MotionGestureEvent_Package.Create (This.source, This.id, MotionGestureInput_Access (input)));
         end if;
    end getInstance;
 

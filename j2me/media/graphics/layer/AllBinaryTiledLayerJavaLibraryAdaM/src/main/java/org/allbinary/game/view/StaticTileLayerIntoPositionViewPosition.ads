@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
-with org.allbinary.layer.NullLayer_Package; use org.allbinary.layer.NullLayer_Package;
 with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 
 package org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package is
@@ -31,13 +30,14 @@ package org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package 
    package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
-   package NullLayer_Package renames Standard.org.allbinary.layer.NullLayer_Package;
    package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type StaticTileLayerIntoPositionViewPosition is tagged;
    type StaticTileLayerIntoPositionViewPosition_Access is access all StaticTileLayerIntoPositionViewPosition'Class;
    type StaticTileLayerIntoPositionViewPosition_Access_Array is array (Natural range <>) of StaticTileLayerIntoPositionViewPosition_Access;
    type StaticTileLayerIntoPositionViewPosition_Access_Array_Access is access all StaticTileLayerIntoPositionViewPosition_Access_Array;
+   type StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array is array (Natural range <>) of StaticTileLayerIntoPositionViewPosition_Access_Array_Access;
+   type StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Access is access all StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array;
 
    type StaticTileLayerIntoPositionViewPosition is new ViewPosition with null record;
    tiledLayer : Layer_Access;

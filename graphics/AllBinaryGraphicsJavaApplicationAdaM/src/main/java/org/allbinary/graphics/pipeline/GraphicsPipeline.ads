@@ -20,23 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
 
 package org.allbinary.graphics.pipeline.GraphicsPipeline_Package is
 
-   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type GraphicsPipeline is tagged;
    type GraphicsPipeline_Access is access all GraphicsPipeline'Class;
    type GraphicsPipeline_Access_Array is array (Natural range <>) of GraphicsPipeline_Access;
    type GraphicsPipeline_Access_Array_Access is access all GraphicsPipeline_Access_Array;
+   type GraphicsPipeline_Access_Array_Access_Array is array (Natural range <>) of GraphicsPipeline_Access_Array_Access;
+   type GraphicsPipeline_Access_Array_Access_Array_Access is access all GraphicsPipeline_Access_Array_Access_Array;
 
    type GraphicsPipeline is new BasicGraphicsPipeline with null record;
 

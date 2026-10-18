@@ -20,31 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
 with org.allbinary.animation.transition.shake.ShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;
-with org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package; use org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package;
-with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 with org.allbinary.game.tick.TickableInterface_Package; use org.allbinary.game.tick.TickableInterface_Package;
-with org.allbinary.media.AllBinaryNoVibration_Package; use org.allbinary.media.AllBinaryNoVibration_Package;
-with org.allbinary.media.AllBinaryVibration_Package; use org.allbinary.media.AllBinaryVibration_Package;
 with org.allbinary.media.AllBinaryVibrationME_Package; use org.allbinary.media.AllBinaryVibrationME_Package;
-with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
 
 package org.allbinary.game.layer.AdvancedRTSProperties_Package is
 
-   package NoShakeAnimationListener_Package renames Standard.org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
    package ShakeAnimationListener_Package renames Standard.org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;
-   package ShakeAnimationListenerFactory_Package renames Standard.org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package;
-   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
    package TickableInterface_Package renames Standard.org.allbinary.game.tick.TickableInterface_Package;
-   package AllBinaryNoVibration_Package renames Standard.org.allbinary.media.AllBinaryNoVibration_Package;
-   package AllBinaryVibration_Package renames Standard.org.allbinary.media.AllBinaryVibration_Package;
    package AllBinaryVibrationME_Package renames Standard.org.allbinary.media.AllBinaryVibrationME_Package;
 
    type AdvancedRTSProperties is tagged;
    type AdvancedRTSProperties_Access is access all AdvancedRTSProperties'Class;
    type AdvancedRTSProperties_Access_Array is array (Natural range <>) of AdvancedRTSProperties_Access;
    type AdvancedRTSProperties_Access_Array_Access is access all AdvancedRTSProperties_Access_Array;
+   type AdvancedRTSProperties_Access_Array_Access_Array is array (Natural range <>) of AdvancedRTSProperties_Access_Array_Access;
+   type AdvancedRTSProperties_Access_Array_Access_Array_Access is access all AdvancedRTSProperties_Access_Array_Access_Array;
 
    type AdvancedRTSProperties is new Java_Object with record
       shakeListener : ShakeAnimationListener_Access;

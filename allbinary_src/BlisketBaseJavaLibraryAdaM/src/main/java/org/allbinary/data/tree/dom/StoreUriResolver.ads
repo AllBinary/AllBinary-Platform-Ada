@@ -24,40 +24,24 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.xml.transform.TransformerException_Package; use javax.xml.transform.TransformerException_Package;
 --  with javax.xml.transform.URIResolver_Package; use javax.xml.transform.URIResolver_Package;
 --  with javax.xml.transform.stream.StreamSource_Package; use javax.xml.transform.stream.StreamSource_Package;
-with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
-with org.allbinary.logic.io.path.AbFilePath_Package; use org.allbinary.logic.io.path.AbFilePath_Package;
-with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package; use org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
 with org.allbinary.data.tree.dom.URIResolverStrings_Package; use org.allbinary.data.tree.dom.URIResolverStrings_Package;
 with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
 
 package org.allbinary.data.tree.dom.StoreUriResolver_Package is
 
-   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CryptFileReader_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
-   package AbFilePath_Package renames Standard.org.allbinary.logic.io.path.AbFilePath_Package;
-   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package TransformInfoHttpStoreInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfoTemplateData_Package renames Standard.org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
 
    type StoreUriResolver is tagged;
    type StoreUriResolver_Access is access all StoreUriResolver'Class;
    type StoreUriResolver_Access_Array is array (Natural range <>) of StoreUriResolver_Access;
    type StoreUriResolver_Access_Array_Access is access all StoreUriResolver_Access_Array;
+   type StoreUriResolver_Access_Array_Access_Array is array (Natural range <>) of StoreUriResolver_Access_Array_Access;
+   type StoreUriResolver_Access_Array_Access_Array_Access is access all StoreUriResolver_Access_Array_Access_Array;
 
-   type StoreUriResolver is new URIResolver with record
+   type StoreUriResolver is new Java_Object and URIResolver with record
       logUtil : LogUtil_Access;
       uriResolverStrings : URIResolverStrings_Access;
       basicURIResolver : BasicUriResolver_Access;

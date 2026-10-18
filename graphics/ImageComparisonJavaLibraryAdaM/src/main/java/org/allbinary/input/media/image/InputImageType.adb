@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+
 package body org.allbinary.input.media.image.InputImageType_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out InputImageType'Class) is
    begin
       null;
@@ -74,7 +79,7 @@ package body org.allbinary.input.media.image.InputImageType_Package is
 begin
    null;
    hashMap := StdUtil_Package.getInstance.createHashMap;
-   TYPE_VECTOR := BasicArrayListD_Package.Create;
+   TYPE_VECTOR := BasicArrayList_Access (BasicArrayListD_Package.Create);
    CAPTURE := InputImageType_Package.Create (To_Unbounded_String ("Capture"), 0);
    COMPARISON := InputImageType_Package.Create (To_Unbounded_String ("Comparison"), 1);
    MOTION := InputImageType_Package.Create (To_Unbounded_String ("Motion"), 2);

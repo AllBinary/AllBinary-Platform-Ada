@@ -28,6 +28,8 @@ package org.allbinary.input.automation.module.game.RestGameObjectInterface_Packa
    type RestGameObjectInterface_Access is access all RestGameObjectInterface'Class;
    type RestGameObjectInterface_Access_Array is array (Natural range <>) of RestGameObjectInterface_Access;
    type RestGameObjectInterface_Access_Array_Access is access all RestGameObjectInterface_Access_Array;
+   type RestGameObjectInterface_Access_Array_Access_Array is array (Natural range <>) of RestGameObjectInterface_Access_Array_Access;
+   type RestGameObjectInterface_Access_Array_Access_Array_Access is access all RestGameObjectInterface_Access_Array_Access_Array;
    function isRestNeeded (This : in out RestGameObjectInterface) return Boolean is abstract;
    function isAGoodTimeToRest (This : in out RestGameObjectInterface) return Boolean is abstract;
 

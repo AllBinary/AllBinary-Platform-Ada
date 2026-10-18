@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.PermissionItemsHelperFactory_Package; use admin.taghelpers.PermissionItemsHelperFactory_Package;
+with admin.taghelpers.PermissionItemsRequestHelperFactory_Package; use admin.taghelpers.PermissionItemsRequestHelperFactory_Package;
+
 package body admin.tags.PermissionItemsTag_Package is
 
+   package PermissionItemsHelperFactory_Package renames Standard.admin.taghelpers.PermissionItemsHelperFactory_Package;
+   package PermissionItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.PermissionItemsRequestHelperFactory_Package;
    procedure Initialize_Fields (This : in out PermissionItemsTag'Class) is
    begin
       null;

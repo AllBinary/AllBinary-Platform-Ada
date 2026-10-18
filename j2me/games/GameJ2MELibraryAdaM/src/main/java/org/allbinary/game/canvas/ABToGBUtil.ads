@@ -21,19 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
-with javax.microedition.lcdui.NullCanvas_Package; use javax.microedition.lcdui.NullCanvas_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 
 package org.allbinary.game.canvas.ABToGBUtil_Package is
 
    package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
-   package NullCanvas_Package renames Standard.javax.microedition.lcdui.NullCanvas_Package;
    package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 
    type ABToGBUtil is tagged;
    type ABToGBUtil_Access is access all ABToGBUtil'Class;
    type ABToGBUtil_Access_Array is array (Natural range <>) of ABToGBUtil_Access;
    type ABToGBUtil_Access_Array_Access is access all ABToGBUtil_Access_Array;
+   type ABToGBUtil_Access_Array_Access_Array is array (Natural range <>) of ABToGBUtil_Access_Array_Access;
+   type ABToGBUtil_Access_Array_Access_Array_Access is access all ABToGBUtil_Access_Array_Access_Array;
 
    type ABToGBUtil is new Java_Object with record
       abCanvas : Canvas_Access;

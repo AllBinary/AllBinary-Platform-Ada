@@ -29,6 +29,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographic
    type RaceTrackGeographicMapCellTypes_Access is access all RaceTrackGeographicMapCellTypes'Class;
    type RaceTrackGeographicMapCellTypes_Access_Array is array (Natural range <>) of RaceTrackGeographicMapCellTypes_Access;
    type RaceTrackGeographicMapCellTypes_Access_Array_Access is access all RaceTrackGeographicMapCellTypes_Access_Array;
+   type RaceTrackGeographicMapCellTypes_Access_Array_Access_Array is array (Natural range <>) of RaceTrackGeographicMapCellTypes_Access_Array_Access;
+   type RaceTrackGeographicMapCellTypes_Access_Array_Access_Array_Access is access all RaceTrackGeographicMapCellTypes_Access_Array_Access_Array;
 
    type RaceTrackGeographicMapCellTypes is new Java_Object with record
       BOTTOM_LEFT_TURN_ROAD_CELL_TYPE : RaceTrackGeographicMapCellType_Access;

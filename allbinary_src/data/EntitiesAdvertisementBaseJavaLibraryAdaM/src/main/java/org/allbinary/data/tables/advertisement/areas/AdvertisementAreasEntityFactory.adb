@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package;
+
 package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityFactory_Package is
 
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out AdvertisementAreasEntityFactory'Class) is
    begin
       null;

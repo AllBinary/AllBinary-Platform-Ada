@@ -28,6 +28,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    type MouseActionScriptInputData_Access is access all MouseActionScriptInputData'Class;
    type MouseActionScriptInputData_Access_Array is array (Natural range <>) of MouseActionScriptInputData_Access;
    type MouseActionScriptInputData_Access_Array_Access is access all MouseActionScriptInputData_Access_Array;
+   type MouseActionScriptInputData_Access_Array_Access_Array is array (Natural range <>) of MouseActionScriptInputData_Access_Array_Access;
+   type MouseActionScriptInputData_Access_Array_Access_Array_Access is access all MouseActionScriptInputData_Access_Array_Access_Array;
 
    type MouseActionScriptInputData is new Java_Object with null record;
    NAME : Unbounded_String;

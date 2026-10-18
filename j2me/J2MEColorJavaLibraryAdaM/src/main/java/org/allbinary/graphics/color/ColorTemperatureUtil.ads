@@ -30,6 +30,8 @@ package org.allbinary.graphics.color.ColorTemperatureUtil_Package is
    type ColorTemperatureUtil_Access is access all ColorTemperatureUtil'Class;
    type ColorTemperatureUtil_Access_Array is array (Natural range <>) of ColorTemperatureUtil_Access;
    type ColorTemperatureUtil_Access_Array_Access is access all ColorTemperatureUtil_Access_Array;
+   type ColorTemperatureUtil_Access_Array_Access_Array is array (Natural range <>) of ColorTemperatureUtil_Access_Array_Access;
+   type ColorTemperatureUtil_Access_Array_Access_Array_Access is access all ColorTemperatureUtil_Access_Array_Access_Array;
 
    type ColorTemperatureUtil is new Java_Object with record
       basicColorFactory : BasicColorFactory_Access;

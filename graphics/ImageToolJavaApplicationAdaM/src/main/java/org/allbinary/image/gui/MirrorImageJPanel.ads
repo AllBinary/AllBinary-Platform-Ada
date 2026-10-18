@@ -22,16 +22,13 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 --  with java.awt.image.RenderedImage_Package; use java.awt.image.RenderedImage_Package;
---  with java.io.File_Package; use java.io.File_Package;
 --  with javax.imageio.ImageIO_Package; use javax.imageio.ImageIO_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
 with org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package; use org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
 with org.allbinary.media.image.ImageStrings_Package; use org.allbinary.media.image.ImageStrings_Package;
-with org.allbinary.media.image.MirrorImageUtil_Package; use org.allbinary.media.image.MirrorImageUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
-with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 
 package org.allbinary.image.gui.MirrorImageJPanel_Package is
 
@@ -39,13 +36,14 @@ package org.allbinary.image.gui.MirrorImageJPanel_Package is
    package ImageProcessorInput_Package renames Standard.org.allbinary.media.image.ImageProcessorInput_Package;
    package ImageProcessorInputCompositeInterface_Package renames Standard.org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
    package ImageStrings_Package renames Standard.org.allbinary.media.image.ImageStrings_Package;
-   package MirrorImageUtil_Package renames Standard.org.allbinary.media.image.MirrorImageUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type MirrorImageJPanel is tagged;
    type MirrorImageJPanel_Access is access all MirrorImageJPanel'Class;
    type MirrorImageJPanel_Access_Array is array (Natural range <>) of MirrorImageJPanel_Access;
    type MirrorImageJPanel_Access_Array_Access is access all MirrorImageJPanel_Access_Array;
+   type MirrorImageJPanel_Access_Array_Access_Array is array (Natural range <>) of MirrorImageJPanel_Access_Array_Access;
+   type MirrorImageJPanel_Access_Array_Access_Array_Access is access all MirrorImageJPanel_Access_Array_Access_Array;
 
    type MirrorImageJPanel is new JPanel and ImageProcessorInputCompositeInterface with record
       logUtil : LogUtil_Access;

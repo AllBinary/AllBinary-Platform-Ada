@@ -30,6 +30,8 @@ package org.allbinary.graphics.opengles.OpenGLVersionValidator_Package is
    type OpenGLVersionValidator_Access is access all OpenGLVersionValidator'Class;
    type OpenGLVersionValidator_Access_Array is array (Natural range <>) of OpenGLVersionValidator_Access;
    type OpenGLVersionValidator_Access_Array_Access is access all OpenGLVersionValidator_Access_Array;
+   type OpenGLVersionValidator_Access_Array_Access_Array is array (Natural range <>) of OpenGLVersionValidator_Access_Array_Access;
+   type OpenGLVersionValidator_Access_Array_Access_Array_Access is access all OpenGLVersionValidator_Access_Array_Access_Array;
 
    type OpenGLVersionValidator is new Java_Object with record
       EGL_CONTEXT_CLIENT_VERSION_VALUE : Integer;

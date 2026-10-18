@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.app.Activity_Package; use android.app.Activity_Package;
-with org.allbinary.android.activity.MidletActivityBase_Package; use org.allbinary.android.activity.MidletActivityBase_Package;
 with org.allbinary.android.activity.SimpleProgressActivityInterface_Package; use org.allbinary.android.activity.SimpleProgressActivityInterface_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
@@ -29,7 +28,6 @@ with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; u
 package org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package is
 
    package Activity_Package renames Standard.android.app.Activity_Package;
-   package MidletActivityBase_Package renames Standard.org.allbinary.android.activity.MidletActivityBase_Package;
    package SimpleProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.SimpleProgressActivityInterface_Package;
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
 
@@ -37,6 +35,8 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Packa
    type ProgressRunnable_Access is access all ProgressRunnable'Class;
    type ProgressRunnable_Access_Array is array (Natural range <>) of ProgressRunnable_Access;
    type ProgressRunnable_Access_Array_Access is access all ProgressRunnable_Access_Array;
+   type ProgressRunnable_Access_Array_Access_Array is array (Natural range <>) of ProgressRunnable_Access_Array_Access;
+   type ProgressRunnable_Access_Array_Access_Array_Access is access all ProgressRunnable_Access_Array_Access_Array;
 
    type ProgressRunnable is new ARunnable with record
       midletActivity : SimpleProgressActivityInterface_Access;

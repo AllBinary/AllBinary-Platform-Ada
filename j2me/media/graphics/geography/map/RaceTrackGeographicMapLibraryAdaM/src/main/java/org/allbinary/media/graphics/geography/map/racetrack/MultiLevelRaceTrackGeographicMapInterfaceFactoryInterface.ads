@@ -29,6 +29,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.MultiLevelRaceTrack
    type MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access is access all MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface'Class;
    type MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access_Array is array (Natural range <>) of MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access;
    type MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access is access all MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access_Array;
+   type MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access;
+   type MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access_Array;
    function getFirstWaveWithTrack (This : in out MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface; track : Integer) return Integer is abstract;
    function getTotalTracks (This : in out MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface) return Integer is abstract;
    function getTotalLevels (This : in out MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface) return Integer is abstract;

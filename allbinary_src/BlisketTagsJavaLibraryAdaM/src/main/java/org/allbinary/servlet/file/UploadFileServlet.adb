@@ -13,8 +13,41 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with admin.taghelpers.AuthenticationHelper_Package; use admin.taghelpers.AuthenticationHelper_Package;
+with admin.taghelpers.AuthenticationHelperFactory_Package; use admin.taghelpers.AuthenticationHelperFactory_Package;
+with admin.taghelpers.AuthenticationHelperUtil_Package; use admin.taghelpers.AuthenticationHelperUtil_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.http.file.upload.FileUploadData_Package; use org.allbinary.logic.communication.http.file.upload.FileUploadData_Package;
+with org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package; use org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
+with org.allbinary.logic.communication.http.request.HttpRequestUtil_Package; use org.allbinary.logic.communication.http.request.HttpRequestUtil_Package;
+with org.allbinary.logic.communication.http.request.MultipartRequestParams_Package; use org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
+with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
+with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.servlet.BlisketServletUtil_Package; use org.allbinary.servlet.BlisketServletUtil_Package;
+with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
+
 package body org.allbinary.servlet.file.UploadFileServlet_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package AuthenticationHelper_Package renames Standard.admin.taghelpers.AuthenticationHelper_Package;
+   package AuthenticationHelperFactory_Package renames Standard.admin.taghelpers.AuthenticationHelperFactory_Package;
+   package AuthenticationHelperUtil_Package renames Standard.admin.taghelpers.AuthenticationHelperUtil_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package FileUploadData_Package renames Standard.org.allbinary.logic.communication.http.file.upload.FileUploadData_Package;
+   package HttpFileUploadUtil_Package renames Standard.org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
+   package HttpRequestUtil_Package renames Standard.org.allbinary.logic.communication.http.request.HttpRequestUtil_Package;
+   package MultipartRequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
+   package AbFileOutputStream_Package renames Standard.org.allbinary.logic.io.AbFileOutputStream_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BlisketServletUtil_Package renames Standard.org.allbinary.servlet.BlisketServletUtil_Package;
+   package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
    procedure Initialize_Fields (This : in out UploadFileServlet'Class) is
    begin
       null;
@@ -111,10 +144,10 @@ package body org.allbinary.servlet.file.UploadFileServlet_Package is
             fileItem := FileItem_Access (This.requestHashMap.get (FileUploadData_Package.getInstance.FILE_DATA));
             if ((fileItem) /= (null)) and then ((fileItem.getSize) > (1)) then
                 This.fileName := HttpRequestUtil_Package.getInstance.generateFileName (fileItem.getName);
-                if (filePath.endsWith (To_Unbounded_String ("/"))) or else (filePath.endsWith (To_Unbounded_String ("\"))) then
+                if (Java_Ends_With (filePath, To_Unbounded_String ("/"))) or else (Java_Ends_With (filePath, To_Unbounded_String ("\"))) then
                     filePath := filePath & This.fileName;
                 end if;
-                file := AbFile_Package.createAbFile (Java_Image (URLGLOBALS.getWebappPath) & filePath);
+                file := AbFile_Package.createAbFile (Java_Image (URLGLOBALS_Package.getWebappPath) & filePath);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (To_Unbounded_String ("Uploaded File: "));

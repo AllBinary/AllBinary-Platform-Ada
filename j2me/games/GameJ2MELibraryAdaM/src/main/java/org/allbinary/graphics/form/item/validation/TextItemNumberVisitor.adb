@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.TextNotificationUtil_Package; use org.allbinary.game.input.TextNotificationUtil_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_Package is
 
+   package TextNotificationUtil_Package renames Standard.org.allbinary.game.input.TextNotificationUtil_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out TextItemNumberVisitor'Class) is
    begin
       null;
@@ -68,6 +77,18 @@ package body org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_P
 
    procedure visit (This : in out TextItemNumberVisitor; anyType_Param : access Java_Object'Class) is
       Java_Result : constant Java_Object_Access := TextItemNumberVisitor'Class (This).visit (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end visit;
+
+   function visit (This : in out TextItemNumberVisitor; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return TextItemNumberVisitor'Class (This).visit (Java_Box (Value));
+   end visit;
+
+   procedure visit (This : in out TextItemNumberVisitor; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := TextItemNumberVisitor'Class (This).visit (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

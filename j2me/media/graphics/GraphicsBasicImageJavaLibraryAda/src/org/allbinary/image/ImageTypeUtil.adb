@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.image.BasicArrayListD_Package; use org.allbinary.image.BasicArrayListD_Package;
+
 package body org.allbinary.image.ImageTypeUtil_Package is
 
    procedure Initialize_Fields (This : in out ImageTypeUtil'Class) is
@@ -21,7 +23,7 @@ package body org.allbinary.image.ImageTypeUtil_Package is
       This.PNG := To_Unbounded_String ("png");
       This.JPG := To_Unbounded_String ("jpg");
       This.GIF := To_Unbounded_String ("gif");
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 

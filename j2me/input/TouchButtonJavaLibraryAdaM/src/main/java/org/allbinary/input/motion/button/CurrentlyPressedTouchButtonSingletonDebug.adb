@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package is
 
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out CurrentlyPressedTouchButtonSingletonDebug'Class) is
    begin
       null;
@@ -48,21 +57,21 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
         return CurrentlyPressedTouchButtonSingletonDebug_Package.instanceC;
    end getInstance;
 
-   procedure appendTouchButtonInput (This : in out CurrentlyPressedTouchButtonSingletonDebug; append_Field : Unbounded_String; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
+   procedure appendTouchButtonInput (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (touchButtonInput.toString);
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
-        stringBuffer.append (append_Field);
+        stringBuffer.append (append);
         This.append_Field := stringBuffer.toString;
         This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append_Field).toString;
    end appendTouchButtonInput;
 
-   procedure append (This : in out CurrentlyPressedTouchButtonSingletonDebug; append_Field : Unbounded_String) is
+   procedure append (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String) is
    begin
-        This.append_Field := StringMaker_Package.Create.append (This.append_Field).append (append_Field).toString;
+        This.append_Field := StringMaker_Package.Create.append (This.append_Field).append (append).toString;
         This.string_Id := StringMaker_Package.Create.append (This.listString).append (This.append_Field).toString;
    end append;
 

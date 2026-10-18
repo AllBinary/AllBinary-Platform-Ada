@@ -22,22 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
-with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
-with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
-   package CanvasImage_Package renames Standard.playn.core.CanvasImage_Package;
-   package CanvasSurface_Package renames Standard.playn.core.CanvasSurface_Package;
 
    type ImageModifierUtil is tagged;
    type ImageModifierUtil_Access is access all ImageModifierUtil'Class;
    type ImageModifierUtil_Access_Array is array (Natural range <>) of ImageModifierUtil_Access;
    type ImageModifierUtil_Access_Array_Access is access all ImageModifierUtil_Access_Array;
+   type ImageModifierUtil_Access_Array_Access_Array is array (Natural range <>) of ImageModifierUtil_Access_Array_Access;
+   type ImageModifierUtil_Access_Array_Access_Array_Access is access all ImageModifierUtil_Access_Array_Access_Array;
 
    type ImageModifierUtil is new Java_Object with null record;
    instance : ImageModifierUtil_Access;

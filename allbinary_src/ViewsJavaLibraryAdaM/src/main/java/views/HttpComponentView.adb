@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+with org.allbinary.logic.visual.transform.BasicTransformer_Package; use org.allbinary.logic.visual.transform.BasicTransformer_Package;
+with org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package; use org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+
 package body views.HttpComponentView_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package BasicTransformer_Package renames Standard.org.allbinary.logic.visual.transform.BasicTransformer_Package;
+   package TransformHttpRequestDocumentFactory_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
    procedure Initialize_Fields (This : in out HttpComponentView'Class) is
    begin
       null;
@@ -34,7 +49,7 @@ package body views.HttpComponentView_Package is
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, HttpComponentView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.domNodeInterfaceVector := BasicArrayListD_Package.Create;
+        This.domNodeInterfaceVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         HttpComponentView'Class (This).setTransformDocumentInterface (TransformHttpRequestDocumentFactory_Package.getInstance (HttpComponentView'Class (This).getPageContext, HttpComponentView'Class (This).getWeblisketSession));
    end Initialize;
 
@@ -64,7 +79,7 @@ package body views.HttpComponentView_Package is
    procedure addDomNodeInterface (This : in out HttpComponentView; domNodeInterface_Param : access DomNodeInterface_Package.DomNodeInterface'Class) is
       domNodeInterface : constant DomNodeInterface_Access := DomNodeInterface_Access (domNodeInterface_Param);
    begin
-        This.domNodeInterfaceVector.add (domNodeInterface);
+        This.domNodeInterfaceVector.add (Java_Object_Access (domNodeInterface));
    end addDomNodeInterface;
 
    --  throws Exception
@@ -116,7 +131,7 @@ package body views.HttpComponentView_Package is
       result : Unbounded_String;
    begin
         begin
-            HttpComponentView'Class (This).toXmlDoc;
+            declare Java_Result renames HttpComponentView'Class (This).toXmlDoc; pragma Unreferenced (Java_Result); begin null; end;
             success := XmlDocumentHelper_Package.toString (HttpComponentView'Class (This).getDoc);
             result := BasicTransformer_Package.Create (This.abeClientInformation, HttpComponentView'Class (This).getTransformInfoInterface).translate (success);
             return result;

@@ -24,9 +24,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.FileWriter_Package; use java.io.FileWriter_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.logic.io.file.AbFileNativeUtil_Package;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
@@ -34,9 +31,6 @@ package org.allbinary.logic.io.BufferedWriterUtil_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
-   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -44,6 +38,8 @@ package org.allbinary.logic.io.BufferedWriterUtil_Package is
    type BufferedWriterUtil_Access is access all BufferedWriterUtil'Class;
    type BufferedWriterUtil_Access_Array is array (Natural range <>) of BufferedWriterUtil_Access;
    type BufferedWriterUtil_Access_Array_Access is access all BufferedWriterUtil_Access_Array;
+   type BufferedWriterUtil_Access_Array_Access_Array is array (Natural range <>) of BufferedWriterUtil_Access_Array_Access;
+   type BufferedWriterUtil_Access_Array_Access_Array_Access is access all BufferedWriterUtil_Access_Array_Access_Array;
 
    type BufferedWriterUtil is new Java_Object with record
       logUtil : LogUtil_Access;

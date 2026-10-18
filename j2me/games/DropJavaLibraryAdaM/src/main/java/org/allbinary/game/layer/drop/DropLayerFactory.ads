@@ -22,20 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 
 package org.allbinary.game.layer.drop.DropLayerFactory_Package is
 
    package PickedUpLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type DropLayerFactory is tagged;
    type DropLayerFactory_Access is access all DropLayerFactory'Class;
    type DropLayerFactory_Access_Array is array (Natural range <>) of DropLayerFactory_Access;
    type DropLayerFactory_Access_Array_Access is access all DropLayerFactory_Access_Array;
+   type DropLayerFactory_Access_Array_Access_Array is array (Natural range <>) of DropLayerFactory_Access_Array_Access;
+   type DropLayerFactory_Access_Array_Access_Array_Access is access all DropLayerFactory_Access_Array_Access_Array;
 
    type DropLayerFactory is new Java_Object with record
       list : BasicArrayList_Access;

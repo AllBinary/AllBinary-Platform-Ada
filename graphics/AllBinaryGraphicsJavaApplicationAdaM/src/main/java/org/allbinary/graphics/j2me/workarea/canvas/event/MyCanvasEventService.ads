@@ -30,6 +30,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_P
    type MyCanvasEventService_Access is access all MyCanvasEventService'Class;
    type MyCanvasEventService_Access_Array is array (Natural range <>) of MyCanvasEventService_Access;
    type MyCanvasEventService_Access_Array_Access is access all MyCanvasEventService_Access_Array;
+   type MyCanvasEventService_Access_Array_Access_Array is array (Natural range <>) of MyCanvasEventService_Access_Array_Access;
+   type MyCanvasEventService_Access_Array_Access_Array_Access is access all MyCanvasEventService_Access_Array_Access_Array;
 
    type MyCanvasEventService is new Java_Object with null record;
    listenerList : EventListenerList_Access;

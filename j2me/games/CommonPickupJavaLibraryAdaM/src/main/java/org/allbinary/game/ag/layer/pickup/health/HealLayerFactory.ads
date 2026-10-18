@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
-with org.allbinary.game.ag.layer.pickup.health.HealLayer_Package; use org.allbinary.game.ag.layer.pickup.health.HealLayer_Package;
 
 package org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package is
 
@@ -33,8 +32,10 @@ package org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package is
    type HealLayerFactory_Access is access all HealLayerFactory'Class;
    type HealLayerFactory_Access_Array is array (Natural range <>) of HealLayerFactory_Access;
    type HealLayerFactory_Access_Array_Access is access all HealLayerFactory_Access_Array;
+   type HealLayerFactory_Access_Array_Access_Array is array (Natural range <>) of HealLayerFactory_Access_Array_Access;
+   type HealLayerFactory_Access_Array_Access_Array_Access is access all HealLayerFactory_Access_Array_Access_Array;
 
-   type HealLayerFactory is new AllBinaryLayerFactoryInterface with null record;
+   type HealLayerFactory is new Java_Object and AllBinaryLayerFactoryInterface with null record;
 
    procedure Initialize (This : in out HealLayerFactory'Class);
    function Create return HealLayerFactory_Access;

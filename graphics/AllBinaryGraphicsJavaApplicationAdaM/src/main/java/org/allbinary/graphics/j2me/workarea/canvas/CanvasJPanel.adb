@@ -13,8 +13,53 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.VectorExplosionGenerator_Package; use org.allbinary.animation.VectorExplosionGenerator_Package;
+with org.allbinary.animation.VectorMirrorGenerator_Package; use org.allbinary.animation.VectorMirrorGenerator_Package;
+with org.allbinary.animation.vector.VectorCenterGenerator_Package; use org.allbinary.animation.vector.VectorCenterGenerator_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.j2me.GraphicsException_Package; use org.allbinary.graphics.j2me.GraphicsException_Package;
+with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
+with org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
+with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+with org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package; use org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package;
+with org.allbinary.graphics.j2me.workarea.tools.Points_Package; use org.allbinary.graphics.j2me.workarea.tools.Points_Package;
+with org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package;
+with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
+with org.allbinary.graphics.pipeline.RandomRotationFactory_Package; use org.allbinary.graphics.pipeline.RandomRotationFactory_Package;
+with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
 
+   package VectorExplosionGenerator_Package renames Standard.org.allbinary.animation.VectorExplosionGenerator_Package;
+   package VectorMirrorGenerator_Package renames Standard.org.allbinary.animation.VectorMirrorGenerator_Package;
+   package VectorCenterGenerator_Package renames Standard.org.allbinary.animation.vector.VectorCenterGenerator_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package GraphicsException_Package renames Standard.org.allbinary.graphics.j2me.GraphicsException_Package;
+   package StatusFactory_Package renames Standard.org.allbinary.graphics.j2me.StatusFactory_Package;
+   package GraphicItemFactory_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
+   package LinesGraphicItem_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+   package MouseStrings_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package;
+   package Points_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.Points_Package;
+   package ToolFactory_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package;
+   package MyGraphicItemEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
+   package RandomRotationFactory_Package renames Standard.org.allbinary.graphics.pipeline.RandomRotationFactory_Package;
+   package LOGGING_Package renames Standard.org.allbinary.log.LOGGING_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out CanvasJPanel'Class) is
    begin
       null;
@@ -50,7 +95,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if LOGGING.contains (LOGGING.GRAPHICSCREATION) then
+            if LOGGING_Package.contains (LOGGING_Package.GRAPHICSCREATION) then
                 This.guiLog.put (To_Unbounded_String ("Constructor Error"), CanvasJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("contructor"), e);
             end if;
                 end;
@@ -99,7 +144,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if LOGGING.contains (LOGGING.GRAPHICSCREATION) then
+            if LOGGING_Package.contains (LOGGING_Package.GRAPHICSCREATION) then
                 This.guiLog.put (To_Unbounded_String ("Constructor Error"), CanvasJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("contructor"), e);
             end if;
                 end;
@@ -132,7 +177,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
 
    function getTreeNode (This : in out CanvasJPanel) return MutableTreeNode_Access is
    begin
-        return This.canvasTreeNode;
+        return MutableTreeNode_Access (This.canvasTreeNode);
    end getTreeNode;
 
    procedure initComponents (This : in out CanvasJPanel) is
@@ -227,7 +272,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
       index : Integer;
       size2 : Integer;
    begin
-        newPoints := BasicArrayListD_Package.Create;
+        newPoints := BasicArrayList_Access (BasicArrayListD_Package.Create);
         graphicItemArray := CanvasJPanel'Class (This).getGraphicItemHashMap.keySet.toArray;
         size := graphicItemArray'Length;
         for index in 0 .. (size) - 1 loop
@@ -242,7 +287,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
                         newGraphicItem.addPoint (pointOne);
                         newGraphicItem.addPoint (pointTwo);
                     end if;
-                    newPoints.add (newGraphicItem);
+                    newPoints.add (Java_Object_Access (newGraphicItem));
                 end loop;
             end if;
         end loop;

@@ -30,6 +30,8 @@ package org.allbinary.logic.visual.theme.ThemeInterface_Package is
    type ThemeInterface_Access is access all ThemeInterface'Class;
    type ThemeInterface_Access_Array is array (Natural range <>) of ThemeInterface_Access;
    type ThemeInterface_Access_Array_Access is access all ThemeInterface_Access_Array;
+   type ThemeInterface_Access_Array_Access_Array is array (Natural range <>) of ThemeInterface_Access_Array_Access;
+   type ThemeInterface_Access_Array_Access_Array_Access is access all ThemeInterface_Access_Array_Access_Array;
    function getName (This : in out ThemeInterface) return Unbounded_String is abstract;
    function getPath (This : in out ThemeInterface) return Unbounded_String is abstract;
    function getPreviewImageName (This : in out ThemeInterface) return Unbounded_String is abstract;

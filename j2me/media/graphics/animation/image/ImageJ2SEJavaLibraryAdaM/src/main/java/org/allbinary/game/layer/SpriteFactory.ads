@@ -35,8 +35,10 @@ package org.allbinary.game.layer.SpriteFactory_Package is
    type SpriteFactory_Access is access all SpriteFactory'Class;
    type SpriteFactory_Access_Array is array (Natural range <>) of SpriteFactory_Access;
    type SpriteFactory_Access_Array_Access is access all SpriteFactory_Access_Array;
+   type SpriteFactory_Access_Array_Access_Array is array (Natural range <>) of SpriteFactory_Access_Array_Access;
+   type SpriteFactory_Access_Array_Access_Array_Access is access all SpriteFactory_Access_Array_Access_Array;
 
-   type SpriteFactory is new SpriteFactoryInterface with record
+   type SpriteFactory is new Java_Object and SpriteFactoryInterface with record
       logUtil : LogUtil_Access;
    end record;
    instance : SpriteFactory_Access;

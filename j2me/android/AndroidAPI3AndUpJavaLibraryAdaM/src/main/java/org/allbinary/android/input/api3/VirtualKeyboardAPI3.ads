@@ -23,29 +23,24 @@ with AllBinary_Java; use AllBinary_Java;
 with android.app.Activity_Package; use android.app.Activity_Package;
 with org.allbinary.android.input.VirtualKeyboard_Package; use org.allbinary.android.input.VirtualKeyboard_Package;
 with org.allbinary.input.event.VirtualKeyboardEvent_Package; use org.allbinary.input.event.VirtualKeyboardEvent_Package;
-with org.allbinary.input.event.VirtualKeyboardEventHandler_Package; use org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
 with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package; use org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
-with org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Package; use org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Package;
-with org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package; use org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package is
 
    package Activity_Package renames Standard.android.app.Activity_Package;
    package VirtualKeyboard_Package renames Standard.org.allbinary.android.input.VirtualKeyboard_Package;
    package VirtualKeyboardEvent_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEvent_Package;
-   package VirtualKeyboardEventHandler_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
    package VirtualKeyboardEventListenerInterface_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type VirtualKeyboardAPI3 is tagged;
    type VirtualKeyboardAPI3_Access is access all VirtualKeyboardAPI3'Class;
    type VirtualKeyboardAPI3_Access_Array is array (Natural range <>) of VirtualKeyboardAPI3_Access;
    type VirtualKeyboardAPI3_Access_Array_Access is access all VirtualKeyboardAPI3_Access_Array;
+   type VirtualKeyboardAPI3_Access_Array_Access_Array is array (Natural range <>) of VirtualKeyboardAPI3_Access_Array_Access;
+   type VirtualKeyboardAPI3_Access_Array_Access_Array_Access is access all VirtualKeyboardAPI3_Access_Array_Access_Array;
 
    type VirtualKeyboardAPI3 is new VirtualKeyboard and VirtualKeyboardEventListenerInterface with record
       virtualKeyboard : Boolean;

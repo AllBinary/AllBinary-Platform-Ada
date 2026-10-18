@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.physics.friction.FrictionData_Package; use org.allbinary.game.physics.friction.FrictionData_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package is
 
-   package FrictionData_Package renames Standard.org.allbinary.game.physics.friction.FrictionData_Package;
 
    type RaceTrackFrictionProperties is tagged;
    type RaceTrackFrictionProperties_Access is access all RaceTrackFrictionProperties'Class;
    type RaceTrackFrictionProperties_Access_Array is array (Natural range <>) of RaceTrackFrictionProperties_Access;
    type RaceTrackFrictionProperties_Access_Array_Access is access all RaceTrackFrictionProperties_Access_Array;
+   type RaceTrackFrictionProperties_Access_Array_Access_Array is array (Natural range <>) of RaceTrackFrictionProperties_Access_Array_Access;
+   type RaceTrackFrictionProperties_Access_Array_Access_Array_Access is access all RaceTrackFrictionProperties_Access_Array_Access_Array;
 
    type RaceTrackFrictionProperties is new Java_Object with record
       ROAD_FRICTION_NOMINATOR : Integer;

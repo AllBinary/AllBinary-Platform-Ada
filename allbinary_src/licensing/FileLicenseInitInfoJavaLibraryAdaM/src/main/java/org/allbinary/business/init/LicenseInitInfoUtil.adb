@@ -13,8 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.io.AbDataInputStream_Package; use org.allbinary.logic.io.AbDataInputStream_Package;
+with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
+with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
+with org.allbinary.logic.io.DataOutputStreamFactory_Package; use org.allbinary.logic.io.DataOutputStreamFactory_Package;
+with org.allbinary.logic.io.FileStreamFactory_Package; use org.allbinary.logic.io.FileStreamFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package; use org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
+with org.allbinary.logic.system.security.crypt.WeakCrypt_Package; use org.allbinary.logic.system.security.crypt.WeakCrypt_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+
 package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
 
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package AbDataInputStream_Package renames Standard.org.allbinary.logic.io.AbDataInputStream_Package;
+   package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
+   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
+   package DataOutputStreamFactory_Package renames Standard.org.allbinary.logic.io.DataOutputStreamFactory_Package;
+   package FileStreamFactory_Package renames Standard.org.allbinary.logic.io.FileStreamFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package DatabaseEncoder_Package renames Standard.org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
+   package WeakCrypt_Package renames Standard.org.allbinary.logic.system.security.crypt.WeakCrypt_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out LicenseInitInfoUtil'Class) is
    begin
       null;
@@ -60,7 +85,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
       index : Integer;
    begin
         if (This.filePath) = (This.stringUtil.EMPTY_STRING) then
-            This.filePath := (URLGLOBALS.getMainPath) + (PATH_GLOBALS.getInstance.INIT_PATH);
+            This.filePath := (URLGLOBALS_Package.getMainPath) + (PATH_GLOBALS_Package.getInstance.INIT_PATH);
         end if;
         begin
             tsUtil := TsUtil_Package.getInstance;
@@ -108,7 +133,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
    begin
         METHOD_NAME := To_Unbounded_String ("readAgain");
         if (This.filePath) = (This.stringUtil.EMPTY_STRING) then
-            This.filePath := (URLGLOBALS.getMainPath) + (PATH_GLOBALS.getInstance.INIT_PATH);
+            This.filePath := (URLGLOBALS_Package.getMainPath) + (PATH_GLOBALS_Package.getInstance.INIT_PATH);
         end if;
         begin
             This.logUtil.putF (To_Unbounded_String ("LicenseInitInfo File: ") & This.INITFILENAME, LicenseInitInfoUtil_Access'(This'Unchecked_Access), METHOD_NAME);

@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+
 package body org.allbinary.logic.util.event.AllBinaryEventObject_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
    procedure Initialize_Fields (This : in out AllBinaryEventObject'Class) is
    begin
       null;
@@ -45,6 +56,11 @@ package body org.allbinary.logic.util.event.AllBinaryEventObject_Package is
       source : constant Java_Object_Access := Java_Object_Access (source_Param);
    begin
         This.source := source;
+   end setSource;
+
+   procedure setSource (This : in out AllBinaryEventObject; Value : Unbounded_String) is
+   begin
+      AllBinaryEventObject'Class (This).setSource (Java_Box (Value));
    end setSource;
 
 begin

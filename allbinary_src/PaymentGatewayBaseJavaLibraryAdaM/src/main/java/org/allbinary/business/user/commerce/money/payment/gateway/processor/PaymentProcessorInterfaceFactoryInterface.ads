@@ -33,6 +33,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.processor.Pay
    type PaymentProcessorInterfaceFactoryInterface_Access is access all PaymentProcessorInterfaceFactoryInterface'Class;
    type PaymentProcessorInterfaceFactoryInterface_Access_Array is array (Natural range <>) of PaymentProcessorInterfaceFactoryInterface_Access;
    type PaymentProcessorInterfaceFactoryInterface_Access_Array_Access is access all PaymentProcessorInterfaceFactoryInterface_Access_Array;
+   type PaymentProcessorInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentProcessorInterfaceFactoryInterface_Access_Array_Access;
+   type PaymentProcessorInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all PaymentProcessorInterfaceFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out PaymentProcessorInterfaceFactoryInterface; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; paymentTransactionInterface_Param : access PaymentTransactionInterface_Package.PaymentTransactionInterface'Class) return PaymentProcessorInterface_Access is abstract;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactoryInterface_Package;

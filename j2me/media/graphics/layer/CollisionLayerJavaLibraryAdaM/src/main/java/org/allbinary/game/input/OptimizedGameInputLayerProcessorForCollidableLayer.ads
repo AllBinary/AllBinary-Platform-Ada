@@ -20,15 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
-with org.allbinary.game.input.OptimizedGameInputLayerManager_Package; use org.allbinary.game.input.OptimizedGameInputLayerManager_Package;
 
 package org.allbinary.game.input.OptimizedGameInputLayerProcessorForCollidableLayer_Package is
 
-   package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package LayerProcessor_Package renames Standard.org.allbinary.layer.LayerProcessor_Package;
@@ -37,6 +34,8 @@ package org.allbinary.game.input.OptimizedGameInputLayerProcessorForCollidableLa
    type OptimizedGameInputLayerProcessorForCollidableLayer_Access is access all OptimizedGameInputLayerProcessorForCollidableLayer'Class;
    type OptimizedGameInputLayerProcessorForCollidableLayer_Access_Array is array (Natural range <>) of OptimizedGameInputLayerProcessorForCollidableLayer_Access;
    type OptimizedGameInputLayerProcessorForCollidableLayer_Access_Array_Access is access all OptimizedGameInputLayerProcessorForCollidableLayer_Access_Array;
+   type OptimizedGameInputLayerProcessorForCollidableLayer_Access_Array_Access_Array is array (Natural range <>) of OptimizedGameInputLayerProcessorForCollidableLayer_Access_Array_Access;
+   type OptimizedGameInputLayerProcessorForCollidableLayer_Access_Array_Access_Array_Access is access all OptimizedGameInputLayerProcessorForCollidableLayer_Access_Array_Access_Array;
 
    type OptimizedGameInputLayerProcessorForCollidableLayer is new LayerProcessor with null record;
 

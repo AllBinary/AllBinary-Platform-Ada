@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Package;
+
 package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    procedure Initialize_Fields (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory'Class) is
    begin
       null;
@@ -36,7 +42,7 @@ package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfa
 
    procedure clear (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory) is
    begin
-        This.list := BasicArrayListD_Package.Create;
+        This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end clear;
 
    function getInstance return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access is
@@ -59,7 +65,7 @@ package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfa
    procedure add (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; artificialIntelligenceInterfaceFactoryInterface_Param : access ArtificialIntelligenceInterfaceFactoryInterface_Package.ArtificialIntelligenceInterfaceFactoryInterface'Class) is
       artificialIntelligenceInterfaceFactoryInterface : constant ArtificialIntelligenceInterfaceFactoryInterface_Access := ArtificialIntelligenceInterfaceFactoryInterface_Access (artificialIntelligenceInterfaceFactoryInterface_Param);
    begin
-        This.list.add (artificialIntelligenceInterfaceFactoryInterface);
+        This.list.add (Java_Object_Access (artificialIntelligenceInterfaceFactoryInterface));
    end add;
 
    procedure getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is

@@ -30,8 +30,10 @@ package org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package is
    type NoCrypt_Access is access all NoCrypt'Class;
    type NoCrypt_Access_Array is array (Natural range <>) of NoCrypt_Access;
    type NoCrypt_Access_Array_Access is access all NoCrypt_Access_Array;
+   type NoCrypt_Access_Array_Access_Array is array (Natural range <>) of NoCrypt_Access_Array_Access;
+   type NoCrypt_Access_Array_Access_Array_Access is access all NoCrypt_Access_Array_Access_Array;
 
-   type NoCrypt is new CryptInterface with null record;
+   type NoCrypt is new Java_Object and CryptInterface with null record;
 
    procedure Initialize (This : in out NoCrypt'Class);
    function Create return NoCrypt_Access;

@@ -33,6 +33,8 @@ package org.allbinary.animation.image.AllBinaryPlatformImageRotationAnimationFac
    type AllBinaryPlatformImageRotationAnimationFactory_Access is access all AllBinaryPlatformImageRotationAnimationFactory'Class;
    type AllBinaryPlatformImageRotationAnimationFactory_Access_Array is array (Natural range <>) of AllBinaryPlatformImageRotationAnimationFactory_Access;
    type AllBinaryPlatformImageRotationAnimationFactory_Access_Array_Access is access all AllBinaryPlatformImageRotationAnimationFactory_Access_Array;
+   type AllBinaryPlatformImageRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of AllBinaryPlatformImageRotationAnimationFactory_Access_Array_Access;
+   type AllBinaryPlatformImageRotationAnimationFactory_Access_Array_Access_Array_Access is access all AllBinaryPlatformImageRotationAnimationFactory_Access_Array_Access_Array;
 
    type AllBinaryPlatformImageRotationAnimationFactory is new AllBinaryJ2SEImageRotationAnimationFactory with null record;
 

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with views.admin.payment.gateway.GatewayView_Package; use views.admin.payment.gateway.GatewayView_Package;
+
 package body views.admin.payment.gateway.GatewayValidationView_Package is
 
    procedure Initialize_Fields (This : in out GatewayValidationView'Class) is

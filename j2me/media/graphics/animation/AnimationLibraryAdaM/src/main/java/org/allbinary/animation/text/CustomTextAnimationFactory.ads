@@ -25,11 +25,8 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleProperties_Package;
-with org.allbinary.animation.text.CustomTextAnimation_Package; use org.allbinary.animation.text.CustomTextAnimation_Package;
-with org.allbinary.animation.text.AdjustCustomTextAnimation_Package; use org.allbinary.animation.text.AdjustCustomTextAnimation_Package;
 
 package org.allbinary.animation.text.CustomTextAnimationFactory_Package is
 
@@ -38,7 +35,6 @@ package org.allbinary.animation.text.CustomTextAnimationFactory_Package is
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
    package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
@@ -46,8 +42,10 @@ package org.allbinary.animation.text.CustomTextAnimationFactory_Package is
    type CustomTextAnimationFactory_Access is access all CustomTextAnimationFactory'Class;
    type CustomTextAnimationFactory_Access_Array is array (Natural range <>) of CustomTextAnimationFactory_Access;
    type CustomTextAnimationFactory_Access_Array_Access is access all CustomTextAnimationFactory_Access_Array;
+   type CustomTextAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of CustomTextAnimationFactory_Access_Array_Access;
+   type CustomTextAnimationFactory_Access_Array_Access_Array_Access is access all CustomTextAnimationFactory_Access_Array_Access_Array;
 
-   type CustomTextAnimationFactory is new AnimationInterfaceFactoryInterface with record
+   type CustomTextAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       logUtil : LogUtil_Access;
       animationBehaviorFactory : AnimationBehaviorFactory_Access;
       basicColor : BasicColor_Access;

@@ -34,6 +34,8 @@ package org.allbinary.image.PreResourceImageUtil_Package is
    type PreResourceImageUtil_Access is access all PreResourceImageUtil'Class;
    type PreResourceImageUtil_Access_Array is array (Natural range <>) of PreResourceImageUtil_Access;
    type PreResourceImageUtil_Access_Array_Access is access all PreResourceImageUtil_Access_Array;
+   type PreResourceImageUtil_Access_Array_Access_Array is array (Natural range <>) of PreResourceImageUtil_Access_Array_Access;
+   type PreResourceImageUtil_Access_Array_Access_Array_Access is access all PreResourceImageUtil_Access_Array_Access_Array;
 
    type PreResourceImageUtil is new Java_Object with null record;
    instance : PreResourceImageUtil_Access;

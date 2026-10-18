@@ -20,20 +20,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.visual.transform.StoreTransformer_Package; use org.allbinary.logic.visual.transform.StoreTransformer_Package;
-with org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_Package; use org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with views.HttpComponentView_Package; use views.HttpComponentView_Package;
 
 package views.business.context.modules.storefront.HttpStoreComponentView_Package is
 
-   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StoreTransformer_Package renames Standard.org.allbinary.logic.visual.transform.StoreTransformer_Package;
-   package TransformStoreDocumentFactory_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package HttpComponentView_Package renames Standard.views.HttpComponentView_Package;
@@ -42,6 +36,8 @@ package views.business.context.modules.storefront.HttpStoreComponentView_Package
    type HttpStoreComponentView_Access is access all HttpStoreComponentView'Class;
    type HttpStoreComponentView_Access_Array is array (Natural range <>) of HttpStoreComponentView_Access;
    type HttpStoreComponentView_Access_Array_Access is access all HttpStoreComponentView_Access_Array;
+   type HttpStoreComponentView_Access_Array_Access_Array is array (Natural range <>) of HttpStoreComponentView_Access_Array_Access;
+   type HttpStoreComponentView_Access_Array_Access_Array_Access is access all HttpStoreComponentView_Access_Array_Access_Array;
 
    type HttpStoreComponentView is new HttpComponentView with record
       logUtil : LogUtil_Access;

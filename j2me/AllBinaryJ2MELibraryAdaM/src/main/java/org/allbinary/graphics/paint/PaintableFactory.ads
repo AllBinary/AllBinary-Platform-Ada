@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 
 package org.allbinary.graphics.paint.PaintableFactory_Package is
@@ -30,6 +29,8 @@ package org.allbinary.graphics.paint.PaintableFactory_Package is
    type PaintableFactory_Access is access all PaintableFactory'Class;
    type PaintableFactory_Access_Array is array (Natural range <>) of PaintableFactory_Access;
    type PaintableFactory_Access_Array_Access is access all PaintableFactory_Access_Array;
+   type PaintableFactory_Access_Array_Access_Array is array (Natural range <>) of PaintableFactory_Access_Array_Access;
+   type PaintableFactory_Access_Array_Access_Array_Access is access all PaintableFactory_Access_Array_Access_Array;
 
    type PaintableFactory is new Java_Object with null record;
 

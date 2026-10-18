@@ -31,6 +31,8 @@ package org.allbinary.gui.swing.workers.JListSwingWorker_Package is
    type JListSwingWorker_Access is access all JListSwingWorker'Class;
    type JListSwingWorker_Access_Array is array (Natural range <>) of JListSwingWorker_Access;
    type JListSwingWorker_Access_Array_Access is access all JListSwingWorker_Access_Array;
+   type JListSwingWorker_Access_Array_Access_Array is array (Natural range <>) of JListSwingWorker_Access_Array_Access;
+   type JListSwingWorker_Access_Array_Access_Array_Access is access all JListSwingWorker_Access_Array_Access_Array;
 
    type JListSwingWorker is new SwingWorker with record
       jList : JList_Access;

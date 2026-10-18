@@ -28,6 +28,8 @@ package org.allbinary.game.state.GameState_Package is
    type GameState_Access is access all GameState'Class;
    type GameState_Access_Array is array (Natural range <>) of GameState_Access;
    type GameState_Access_Array_Access is access all GameState_Access_Array;
+   type GameState_Access_Array_Access_Array is array (Natural range <>) of GameState_Access_Array_Access;
+   type GameState_Access_Array_Access_Array_Access is access all GameState_Access_Array_Access_Array;
 
    type GameState is new Java_Object with record
       name : Unbounded_String;

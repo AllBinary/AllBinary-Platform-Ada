@@ -38,6 +38,8 @@ package org.allbinary.game.ag.ai.ArrayAI_Package is
    type ArrayAI_Access is access all ArrayAI'Class;
    type ArrayAI_Access_Array is array (Natural range <>) of ArrayAI_Access;
    type ArrayAI_Access_Array_Access is access all ArrayAI_Access_Array;
+   type ArrayAI_Access_Array_Access_Array is array (Natural range <>) of ArrayAI_Access_Array_Access;
+   type ArrayAI_Access_Array_Access_Array_Access is access all ArrayAI_Access_Array_Access_Array;
 
    type ArrayAI is new BasicAI with record
       artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access;

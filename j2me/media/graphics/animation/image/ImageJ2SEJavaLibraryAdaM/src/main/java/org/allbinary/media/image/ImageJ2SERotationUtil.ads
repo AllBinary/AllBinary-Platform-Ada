@@ -33,6 +33,8 @@ package org.allbinary.media.image.ImageJ2SERotationUtil_Package is
    type ImageJ2SERotationUtil_Access is access all ImageJ2SERotationUtil'Class;
    type ImageJ2SERotationUtil_Access_Array is array (Natural range <>) of ImageJ2SERotationUtil_Access;
    type ImageJ2SERotationUtil_Access_Array_Access is access all ImageJ2SERotationUtil_Access_Array;
+   type ImageJ2SERotationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageJ2SERotationUtil_Access_Array_Access;
+   type ImageJ2SERotationUtil_Access_Array_Access_Array_Access is access all ImageJ2SERotationUtil_Access_Array_Access_Array;
 
    type ImageJ2SERotationUtil is new Java_Object with record
       imageUtil : ImageUtil_Access;

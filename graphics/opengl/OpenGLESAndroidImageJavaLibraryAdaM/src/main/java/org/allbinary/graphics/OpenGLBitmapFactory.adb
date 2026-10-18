@@ -1,8 +1,13 @@
 --  Generated Code Do Not Modify
 
 
+with android.graphics.BitmapFactory_Package; use android.graphics.BitmapFactory_Package;
+with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
+
 package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
 
+   package BitmapFactory_Package renames Standard.android.graphics.BitmapFactory_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
    procedure Initialize_Fields (This : in out OpenGLBitmapFactory'Class) is
    begin
       null;
@@ -44,7 +49,7 @@ package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
    function createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image_Package.Image'Class) return PlatformBitmapBase_Access is
       image : constant Image_Access := Image_Access (image_Param);
    begin
-        return OpenGLBitmap_Package.Create ((AndroidImageInterface_Access (image)).getBitmap);
+        return PlatformBitmapBase_Access (OpenGLBitmap_Package.Create ((AndroidImageInterface_Access (image)).getBitmap));
    end createBitmap;
 
    procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config_Package.Config'Class) is
@@ -75,8 +80,13 @@ begin
 end org.allbinary.graphics.OpenGLBitmapFactory_Package;
 
 
+with android.graphics.BitmapFactory_Package; use android.graphics.BitmapFactory_Package;
+with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
+
 package body org.allbinary.graphics.Config_Package is
 
+   package BitmapFactory_Package renames Standard.android.graphics.BitmapFactory_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
    procedure Initialize_Fields (This : in out Config'Class) is
    begin
       null;

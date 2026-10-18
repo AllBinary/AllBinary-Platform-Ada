@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
@@ -31,7 +30,6 @@ with org.allbinary.logic.communication.sql.AbSqlTable_Package; use org.allbinary
 package org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
 
    package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
@@ -40,6 +38,8 @@ package org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
    type AbSqlTableUtil_Access is access all AbSqlTableUtil'Class;
    type AbSqlTableUtil_Access_Array is array (Natural range <>) of AbSqlTableUtil_Access;
    type AbSqlTableUtil_Access_Array_Access is access all AbSqlTableUtil_Access_Array;
+   type AbSqlTableUtil_Access_Array_Access_Array is array (Natural range <>) of AbSqlTableUtil_Access_Array_Access;
+   type AbSqlTableUtil_Access_Array_Access_Array_Access is access all AbSqlTableUtil_Access_Array_Access_Array;
 
    type AbSqlTableUtil is new Java_Object with record
       TABLE_LABEL : Unbounded_String;

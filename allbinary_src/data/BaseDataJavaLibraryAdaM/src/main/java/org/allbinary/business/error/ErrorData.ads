@@ -28,6 +28,8 @@ package org.allbinary.business.error.ErrorData_Package is
    type ErrorData_Access is access all ErrorData'Class;
    type ErrorData_Access_Array is array (Natural range <>) of ErrorData_Access;
    type ErrorData_Access_Array_Access is access all ErrorData_Access_Array;
+   type ErrorData_Access_Array_Access_Array is array (Natural range <>) of ErrorData_Access_Array_Access;
+   type ErrorData_Access_Array_Access_Array_Access is access all ErrorData_Access_Array_Access_Array;
 
    type ErrorData is new Java_Object with record
       NAME : Unbounded_String;

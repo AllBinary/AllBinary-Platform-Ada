@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.interfaces.HardwareCompon
    type HardwareComponentInterface_Access is access all HardwareComponentInterface'Class;
    type HardwareComponentInterface_Access_Array is array (Natural range <>) of HardwareComponentInterface_Access;
    type HardwareComponentInterface_Access_Array_Access is access all HardwareComponentInterface_Access_Array;
+   type HardwareComponentInterface_Access_Array_Access_Array is array (Natural range <>) of HardwareComponentInterface_Access_Array_Access;
+   type HardwareComponentInterface_Access_Array_Access_Array_Access is access all HardwareComponentInterface_Access_Array_Access_Array;
    function compareTo (This : in out HardwareComponentInterface; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) return Boolean is abstract;
    function toString (This : in out HardwareComponentInterface) return Unbounded_String is abstract;
 

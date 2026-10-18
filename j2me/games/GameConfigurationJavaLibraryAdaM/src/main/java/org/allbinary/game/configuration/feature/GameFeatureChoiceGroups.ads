@@ -20,13 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package is
 
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
@@ -34,6 +32,8 @@ package org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package
    type GameFeatureChoiceGroups_Access is access all GameFeatureChoiceGroups'Class;
    type GameFeatureChoiceGroups_Access_Array is array (Natural range <>) of GameFeatureChoiceGroups_Access;
    type GameFeatureChoiceGroups_Access_Array_Access is access all GameFeatureChoiceGroups_Access_Array;
+   type GameFeatureChoiceGroups_Access_Array_Access_Array is array (Natural range <>) of GameFeatureChoiceGroups_Access_Array_Access;
+   type GameFeatureChoiceGroups_Access_Array_Access_Array_Access is access all GameFeatureChoiceGroups_Access_Array_Access_Array;
 
    type GameFeatureChoiceGroups is new Java_Object with record
       hashtable : ABHashtable_Access;

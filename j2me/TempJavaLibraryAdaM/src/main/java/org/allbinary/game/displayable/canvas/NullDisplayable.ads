@@ -20,6 +20,8 @@ package org.allbinary.game.displayable.canvas.NullDisplayable_Package is
    type NullDisplayable_Access is access all NullDisplayable'Class;
    type NullDisplayable_Access_Array is array (Natural range <>) of NullDisplayable_Access;
    type NullDisplayable_Access_Array_Access is access all NullDisplayable_Access_Array;
+   type NullDisplayable_Access_Array_Access_Array is array (Natural range <>) of NullDisplayable_Access_Array_Access;
+   type NullDisplayable_Access_Array_Access_Array_Access is access all NullDisplayable_Access_Array_Access_Array;
 
    type NullDisplayable is new Canvas with null record;
    SINGLETON : NullDisplayable_Access;

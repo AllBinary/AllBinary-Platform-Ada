@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory_Package; use org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.logic.system.os.NoOperatingSystem_Package;
+with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
+with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
+
 package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
 
+   package AndroidOperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out OperatingSystemFactory'Class) is
    begin
       null;
@@ -53,11 +63,11 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
             osName := systemProperties.getName;
             if not (This.hasDetected) then
                 This.hasDetected := True;
-                if ((Index (osName, Java_Image (OperatingSystems_Package.getInstance.ANDROID)) - 1)) >= (0) then
+                if (Java_Index_Of (osName, Java_Image (OperatingSystems_Package.getInstance.ANDROID))) >= (0) then
                     This.logUtil.putF (To_Unbounded_String ("Found a Android OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
                     This.genericOperatingSystem := AndroidOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
                     This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Operating System Info: ")).append (This.genericOperatingSystem.toString).toString, OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
-                elsif ((Index (osName, Java_Image (OperatingSystems_Package.getInstance.HARMONY)) - 1)) >= (0) then
+                elsif (Java_Index_Of (osName, Java_Image (OperatingSystems_Package.getInstance.HARMONY))) >= (0) then
                     This.logUtil.putF (To_Unbounded_String ("Found a Harmony OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
                     This.genericOperatingSystem := AndroidOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
                     This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Operating System Info: ")).append (This.genericOperatingSystem.toString).toString, OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);

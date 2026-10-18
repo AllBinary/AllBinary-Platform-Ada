@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.osgi.framework.NullServiceReference_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out NullServiceReference'Class) is
    begin
       null;
@@ -59,6 +64,18 @@ package body org.osgi.framework.NullServiceReference_Package is
 
    procedure compareTo (This : in out NullServiceReference; o_Param : access Java_Object'Class) is
       Java_Result : constant Integer := NullServiceReference'Class (This).compareTo (o_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end compareTo;
+
+   function compareTo (This : in out NullServiceReference; Value : Unbounded_String) return Integer is
+   begin
+      return NullServiceReference'Class (This).compareTo (Java_Box (Value));
+   end compareTo;
+
+   procedure compareTo (This : in out NullServiceReference; Value : Unbounded_String) is
+      Java_Result : constant Integer := NullServiceReference'Class (This).compareTo (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

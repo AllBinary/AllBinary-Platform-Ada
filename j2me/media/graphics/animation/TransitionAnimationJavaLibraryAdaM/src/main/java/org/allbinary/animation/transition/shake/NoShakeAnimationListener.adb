@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package is
 
    procedure Initialize_Fields (This : in out NoShakeAnimationListener'Class) is
@@ -36,7 +37,7 @@ package body org.allbinary.animation.transition.shake.NoShakeAnimationListener_P
 
 begin
    null;
-   NO_SHAKE_ANIMATION_LISTENER := NoShakeAnimationListener_Package.Create;
+   NO_SHAKE_ANIMATION_LISTENER := ShakeAnimationListener_Access (NoShakeAnimationListener_Package.Create);
 
 end org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
 

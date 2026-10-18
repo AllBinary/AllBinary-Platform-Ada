@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.logic.math.permutations.ComparableObject_Package; use org.allbinary.logic.math.permutations.ComparableObject_Package;
+with org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package; use org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package;
+
 package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutationUtil_Package is
 
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    procedure Initialize_Fields (This : in out OrderedObjectArrayPermutationUtil'Class) is
    begin
       null;

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+
 package body org.allbinary.input.automation.module.DefaultListModelHelper_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out DefaultListModelHelper'Class) is
    begin
       null;
@@ -26,7 +31,7 @@ package body org.allbinary.input.automation.module.DefaultListModelHelper_Packag
    procedure Initialize (This : in out DefaultListModelHelper'Class) is
    begin
       Initialize_Fields (This);
-        This.vector := BasicArrayListD_Package.Create;
+        This.vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         This.defaultListModel := DefaultListModel_Package.Create;
    end Initialize;
 

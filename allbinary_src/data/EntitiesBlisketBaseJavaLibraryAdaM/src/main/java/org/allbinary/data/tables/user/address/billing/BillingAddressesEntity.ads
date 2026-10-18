@@ -30,6 +30,8 @@ package org.allbinary.data.tables.user.address.billing.BillingAddressesEntity_Pa
    type BillingAddressesEntity_Access is access all BillingAddressesEntity'Class;
    type BillingAddressesEntity_Access_Array is array (Natural range <>) of BillingAddressesEntity_Access;
    type BillingAddressesEntity_Access_Array_Access is access all BillingAddressesEntity_Access_Array;
+   type BillingAddressesEntity_Access_Array_Access_Array is array (Natural range <>) of BillingAddressesEntity_Access_Array_Access;
+   type BillingAddressesEntity_Access_Array_Access_Array_Access is access all BillingAddressesEntity_Access_Array_Access_Array;
 
    type BillingAddressesEntity is new StreetAddressesEntity with record
       TABLENAME : Unbounded_String;

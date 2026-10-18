@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
-with org.allbinary.ai.ArtificialIntelligenceLayerManager_Package; use org.allbinary.ai.ArtificialIntelligenceLayerManager_Package;
-with org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package; use org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package;
 
 package org.allbinary.ai.ArtificialIntelligenceLayerProcessor_Package is
 
@@ -36,6 +34,8 @@ package org.allbinary.ai.ArtificialIntelligenceLayerProcessor_Package is
    type ArtificialIntelligenceLayerProcessor_Access is access all ArtificialIntelligenceLayerProcessor'Class;
    type ArtificialIntelligenceLayerProcessor_Access_Array is array (Natural range <>) of ArtificialIntelligenceLayerProcessor_Access;
    type ArtificialIntelligenceLayerProcessor_Access_Array_Access is access all ArtificialIntelligenceLayerProcessor_Access_Array;
+   type ArtificialIntelligenceLayerProcessor_Access_Array_Access_Array is array (Natural range <>) of ArtificialIntelligenceLayerProcessor_Access_Array_Access;
+   type ArtificialIntelligenceLayerProcessor_Access_Array_Access_Array_Access is access all ArtificialIntelligenceLayerProcessor_Access_Array_Access_Array;
 
    type ArtificialIntelligenceLayerProcessor is new LayerProcessor with null record;
 

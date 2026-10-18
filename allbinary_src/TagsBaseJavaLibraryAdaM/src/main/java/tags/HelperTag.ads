@@ -33,6 +33,8 @@ package tags.HelperTag_Package is
    type HelperTag_Access is access all HelperTag'Class;
    type HelperTag_Access_Array is array (Natural range <>) of HelperTag_Access;
    type HelperTag_Access_Array_Access is access all HelperTag_Access_Array;
+   type HelperTag_Access_Array_Access_Array is array (Natural range <>) of HelperTag_Access_Array_Access;
+   type HelperTag_Access_Array_Access_Array_Access is access all HelperTag_Access_Array_Access_Array;
 
    type HelperTag is new PropertiesTag with record
       logUtil : LogUtil_Access;

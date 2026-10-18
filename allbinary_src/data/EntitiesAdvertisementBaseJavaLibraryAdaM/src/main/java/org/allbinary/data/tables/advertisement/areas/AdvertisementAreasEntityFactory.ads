@@ -20,20 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package;
 with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
 
 package org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityFactory_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AdvertisementAreasEntityFactory is tagged;
    type AdvertisementAreasEntityFactory_Access is access all AdvertisementAreasEntityFactory'Class;
    type AdvertisementAreasEntityFactory_Access_Array is array (Natural range <>) of AdvertisementAreasEntityFactory_Access;
    type AdvertisementAreasEntityFactory_Access_Array_Access is access all AdvertisementAreasEntityFactory_Access_Array;
+   type AdvertisementAreasEntityFactory_Access_Array_Access_Array is array (Natural range <>) of AdvertisementAreasEntityFactory_Access_Array_Access;
+   type AdvertisementAreasEntityFactory_Access_Array_Access_Array_Access is access all AdvertisementAreasEntityFactory_Access_Array_Access_Array;
 
    type AdvertisementAreasEntityFactory is new Java_Object with null record;
    CLASSNAME : Unbounded_String;

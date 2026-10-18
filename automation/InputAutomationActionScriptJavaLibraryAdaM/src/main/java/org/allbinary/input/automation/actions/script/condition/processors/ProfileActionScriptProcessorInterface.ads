@@ -35,6 +35,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.Profi
    type ProfileActionScriptProcessorInterface_Access is access all ProfileActionScriptProcessorInterface'Class;
    type ProfileActionScriptProcessorInterface_Access_Array is array (Natural range <>) of ProfileActionScriptProcessorInterface_Access;
    type ProfileActionScriptProcessorInterface_Access_Array_Access is access all ProfileActionScriptProcessorInterface_Access_Array;
+   type ProfileActionScriptProcessorInterface_Access_Array_Access_Array is array (Natural range <>) of ProfileActionScriptProcessorInterface_Access_Array_Access;
+   type ProfileActionScriptProcessorInterface_Access_Array_Access_Array_Access is access all ProfileActionScriptProcessorInterface_Access_Array_Access_Array;
 
 end org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
 

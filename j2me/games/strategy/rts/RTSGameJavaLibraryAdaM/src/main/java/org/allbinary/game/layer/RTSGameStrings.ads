@@ -28,6 +28,8 @@ package org.allbinary.game.layer.RTSGameStrings_Package is
    type RTSGameStrings_Access is access all RTSGameStrings'Class;
    type RTSGameStrings_Access_Array is array (Natural range <>) of RTSGameStrings_Access;
    type RTSGameStrings_Access_Array_Access is access all RTSGameStrings_Access_Array;
+   type RTSGameStrings_Access_Array_Access_Array is array (Natural range <>) of RTSGameStrings_Access_Array_Access;
+   type RTSGameStrings_Access_Array_Access_Array_Access is access all RTSGameStrings_Access_Array_Access_Array;
 
    type RTSGameStrings is new Java_Object with record
       DRAG_TO_SPOT : Unbounded_String;

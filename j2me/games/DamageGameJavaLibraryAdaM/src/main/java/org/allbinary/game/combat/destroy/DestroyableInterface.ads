@@ -30,6 +30,8 @@ package org.allbinary.game.combat.destroy.DestroyableInterface_Package is
    type DestroyableInterface_Access is access all DestroyableInterface'Class;
    type DestroyableInterface_Access_Array is array (Natural range <>) of DestroyableInterface_Access;
    type DestroyableInterface_Access_Array_Access is access all DestroyableInterface_Access_Array;
+   type DestroyableInterface_Access_Array_Access_Array is array (Natural range <>) of DestroyableInterface_Access_Array_Access;
+   type DestroyableInterface_Access_Array_Access_Array_Access is access all DestroyableInterface_Access_Array_Access_Array;
    function isDestroyed (This : in out DestroyableInterface) return Boolean is abstract;
 
 end org.allbinary.game.combat.destroy.DestroyableInterface_Package;

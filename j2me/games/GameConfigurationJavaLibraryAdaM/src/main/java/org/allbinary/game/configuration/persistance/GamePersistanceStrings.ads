@@ -28,6 +28,8 @@ package org.allbinary.game.configuration.persistance.GamePersistanceStrings_Pack
    type GamePersistanceStrings_Access is access all GamePersistanceStrings'Class;
    type GamePersistanceStrings_Access_Array is array (Natural range <>) of GamePersistanceStrings_Access;
    type GamePersistanceStrings_Access_Array_Access is access all GamePersistanceStrings_Access_Array;
+   type GamePersistanceStrings_Access_Array_Access_Array is array (Natural range <>) of GamePersistanceStrings_Access_Array_Access;
+   type GamePersistanceStrings_Access_Array_Access_Array_Access is access all GamePersistanceStrings_Access_Array_Access_Array;
 
    type GamePersistanceStrings is new Java_Object with record
       SAVED_GAME_RECORD_ID : Unbounded_String;

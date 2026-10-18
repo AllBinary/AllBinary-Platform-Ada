@@ -21,20 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.AllBinarySensorListener_Package; use org.allbinary.input.AllBinarySensorListener_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
 
 package org.allbinary.input.gyro.NoGyroSensor_Package is
 
    package AllBinarySensorListener_Package renames Standard.org.allbinary.input.AllBinarySensorListener_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package Orientation_Package renames Standard.org.allbinary.logic.math.Orientation_Package;
 
    type NoGyroSensor is tagged;
    type NoGyroSensor_Access is access all NoGyroSensor'Class;
    type NoGyroSensor_Access_Array is array (Natural range <>) of NoGyroSensor_Access;
    type NoGyroSensor_Access_Array_Access is access all NoGyroSensor_Access_Array;
+   type NoGyroSensor_Access_Array_Access_Array is array (Natural range <>) of NoGyroSensor_Access_Array_Access;
+   type NoGyroSensor_Access_Array_Access_Array_Access is access all NoGyroSensor_Access_Array_Access_Array;
 
    type NoGyroSensor is new AllBinaryOrientationSensor and AllBinarySensorListener with null record;
 

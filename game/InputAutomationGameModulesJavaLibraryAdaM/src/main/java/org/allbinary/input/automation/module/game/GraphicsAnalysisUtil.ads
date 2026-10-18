@@ -21,21 +21,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
-with org.allbinary.graphics.color.ColorCacheFactory_Package; use org.allbinary.graphics.color.ColorCacheFactory_Package;
-with org.allbinary.graphics.color.ColorCacheable_Package; use org.allbinary.graphics.color.ColorCacheable_Package;
-with org.allbinary.logic.util.cache.AutomaticCacheInterface_Package; use org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
-with org.allbinary.input.automation.module.game.Color_Package; use org.allbinary.input.automation.module.game.Color_Package;
 
 package org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package is
 
-   package ColorCacheFactory_Package renames Standard.org.allbinary.graphics.color.ColorCacheFactory_Package;
-   package ColorCacheable_Package renames Standard.org.allbinary.graphics.color.ColorCacheable_Package;
-   package AutomaticCacheInterface_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
 
    type GraphicsAnalysisUtil is tagged;
    type GraphicsAnalysisUtil_Access is access all GraphicsAnalysisUtil'Class;
    type GraphicsAnalysisUtil_Access_Array is array (Natural range <>) of GraphicsAnalysisUtil_Access;
    type GraphicsAnalysisUtil_Access_Array_Access is access all GraphicsAnalysisUtil_Access_Array;
+   type GraphicsAnalysisUtil_Access_Array_Access_Array is array (Natural range <>) of GraphicsAnalysisUtil_Access_Array_Access;
+   type GraphicsAnalysisUtil_Access_Array_Access_Array_Access is access all GraphicsAnalysisUtil_Access_Array_Access_Array;
 
    type GraphicsAnalysisUtil is new Java_Object with null record;
    MAX : Integer;

@@ -28,6 +28,8 @@ package org.allbinary.thread.NullThread_Package is
    type NullThread_Access is access all NullThread'Class;
    type NullThread_Access_Array is array (Natural range <>) of NullThread_Access;
    type NullThread_Access_Array_Access is access all NullThread_Access_Array;
+   type NullThread_Access_Array_Access_Array is array (Natural range <>) of NullThread_Access_Array_Access;
+   type NullThread_Access_Array_Access_Array_Access is access all NullThread_Access_Array_Access_Array;
 
    type NullThread is new Java_Object with null record;
    NULL_THREAD : Thread_Access;

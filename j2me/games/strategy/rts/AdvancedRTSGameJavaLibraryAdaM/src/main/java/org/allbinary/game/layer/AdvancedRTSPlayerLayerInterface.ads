@@ -34,6 +34,8 @@ package org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package is
    type AdvancedRTSPlayerLayerInterface_Access is access all AdvancedRTSPlayerLayerInterface'Class;
    type AdvancedRTSPlayerLayerInterface_Access_Array is array (Natural range <>) of AdvancedRTSPlayerLayerInterface_Access;
    type AdvancedRTSPlayerLayerInterface_Access_Array_Access is access all AdvancedRTSPlayerLayerInterface_Access_Array;
+   type AdvancedRTSPlayerLayerInterface_Access_Array_Access_Array is array (Natural range <>) of AdvancedRTSPlayerLayerInterface_Access_Array_Access;
+   type AdvancedRTSPlayerLayerInterface_Access_Array_Access_Array_Access is access all AdvancedRTSPlayerLayerInterface_Access_Array_Access_Array;
    function getAdvancedPlayerOwnedRTSLayers (This : in out AdvancedRTSPlayerLayerInterface) return AdvancedPlayerOwnedRTSLayers_Access is abstract;
    function isLocalPlayer (This : in out AdvancedRTSPlayerLayerInterface) return Boolean is abstract;
    function getGameType (This : in out AdvancedRTSPlayerLayerInterface) return GameType_Access is abstract;

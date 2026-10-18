@@ -29,6 +29,8 @@ package org.allbinary.animation.transition.shake.ShakeAnimationListener_Package 
    type ShakeAnimationListener_Access is access all ShakeAnimationListener'Class;
    type ShakeAnimationListener_Access_Array is array (Natural range <>) of ShakeAnimationListener_Access;
    type ShakeAnimationListener_Access_Array_Access is access all ShakeAnimationListener_Access_Array;
+   type ShakeAnimationListener_Access_Array_Access_Array is array (Natural range <>) of ShakeAnimationListener_Access_Array_Access;
+   type ShakeAnimationListener_Access_Array_Access_Array_Access is access all ShakeAnimationListener_Access_Array_Access_Array;
 
    type ShakeAnimationListener is new Java_Object with null record;
 

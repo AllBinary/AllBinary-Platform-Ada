@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
 
 package org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
 
@@ -35,6 +34,8 @@ package org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
    type RandomRotationFactory_Access is access all RandomRotationFactory'Class;
    type RandomRotationFactory_Access_Array is array (Natural range <>) of RandomRotationFactory_Access;
    type RandomRotationFactory_Access_Array_Access is access all RandomRotationFactory_Access_Array;
+   type RandomRotationFactory_Access_Array_Access_Array is array (Natural range <>) of RandomRotationFactory_Access_Array_Access;
+   type RandomRotationFactory_Access_Array_Access_Array_Access is access all RandomRotationFactory_Access_Array_Access_Array;
 
    type RandomRotationFactory is new Java_Object with record
       myRandomFactory : MyRandomFactory_Access;

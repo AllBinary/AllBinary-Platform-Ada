@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.AppletUtil_Package; use org.allbinary.AppletUtil_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.midlet.MidletExitProcessor_Package; use org.allbinary.midlet.MidletExitProcessor_Package;
+
 package body org.allbinary.midlet.MidletExitProcessorFactory_Package is
 
+   package AppletUtil_Package renames Standard.org.allbinary.AppletUtil_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    procedure Initialize_Fields (This : in out MidletExitProcessorFactory'Class) is
    begin
       null;
@@ -44,7 +50,7 @@ package body org.allbinary.midlet.MidletExitProcessorFactory_Package is
         if (AppletUtil_Package.isAppletLoader (midlet)) or else (J2MEUtil_Package.isJ2ME) then
             return Processor_Package.getInstance;
         else
-            return MidletExitProcessor_Package.Create (midlet);
+            return Processor_Access (MidletExitProcessor_Package.Create (midlet));
         end if;
    end getExitInstance;
 

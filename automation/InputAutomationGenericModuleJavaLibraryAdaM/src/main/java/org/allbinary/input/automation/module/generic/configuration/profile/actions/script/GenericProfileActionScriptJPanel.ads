@@ -25,18 +25,14 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.swing.tree.DefaultTreeModel_Package; use javax.swing.tree.DefaultTreeModel_Package;
 --  with javax.swing.tree.TreePath_Package; use javax.swing.tree.TreePath_Package;
 with org.allbinary.input.automation.actions.script.JTreeInterface_Package; use org.allbinary.input.automation.actions.script.JTreeInterface_Package;
-with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package; use org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JPanel_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package;
-with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JPopupMenu_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JPopupMenu_Package;
-with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JComponent_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.JComponent_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package is
 
    package JTreeInterface_Package renames Standard.org.allbinary.input.automation.actions.script.JTreeInterface_Package;
-   package CustomTreeNodeInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -44,6 +40,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    type GenericProfileActionScriptJPanel_Access is access all GenericProfileActionScriptJPanel'Class;
    type GenericProfileActionScriptJPanel_Access_Array is array (Natural range <>) of GenericProfileActionScriptJPanel_Access;
    type GenericProfileActionScriptJPanel_Access_Array_Access is access all GenericProfileActionScriptJPanel_Access_Array;
+   type GenericProfileActionScriptJPanel_Access_Array_Access_Array is array (Natural range <>) of GenericProfileActionScriptJPanel_Access_Array_Access;
+   type GenericProfileActionScriptJPanel_Access_Array_Access_Array_Access is access all GenericProfileActionScriptJPanel_Access_Array_Access_Array;
 
    type GenericProfileActionScriptJPanel is new JPanel and JTreeInterface with record
       logUtil : LogUtil_Access;

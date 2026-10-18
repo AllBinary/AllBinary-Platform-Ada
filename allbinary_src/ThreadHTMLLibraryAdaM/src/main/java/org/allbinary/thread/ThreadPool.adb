@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.thread.ThreadPool_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out ThreadPool'Class) is
    begin
       null;
@@ -24,7 +27,7 @@ package body org.allbinary.thread.ThreadPool_Package is
       This.threadPoolStrings := ThreadPoolStrings_Package.getInstance;
       This.threadObjectUtil := ThreadObjectUtil_Package.getInstance;
       This.isAlive := False;
-      This.taskQueue := BasicArrayListD_Package.Create;
+      This.taskQueue := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.numThreads := 0;
       This.runningTask := False;
       This.currentPriorityRunnable := This.threadObjectUtil.NULL_PRIORITY_RUNNABLE;
@@ -77,7 +80,7 @@ package body org.allbinary.thread.ThreadPool_Package is
    begin
         if not (This.isAlive) then
             This.isAlive := True;
-            This.taskQueue := BasicArrayListD_Package.Create;
+            This.taskQueue := BasicArrayList_Access (BasicArrayListD_Package.Create);
         end if;
    end init;
 
@@ -103,10 +106,10 @@ package body org.allbinary.thread.ThreadPool_Package is
                 end if;
             end loop;
             if (lowerPriorityRunnable) = (This.threadObjectUtil.NULL_PRIORITY_RUNNABLE) then
-                This.taskQueue.add (task_Id);
+                This.taskQueue.add (Java_Object_Access (task_Id));
             else
-                index := This.taskQueue.indexOf (lowerPriorityRunnable);
-                This.taskQueue.addAt (index, task_Id);
+                index := This.taskQueue.indexOf (Java_Object_Access (lowerPriorityRunnable));
+                This.taskQueue.addAt (index, Java_Object_Access (task_Id));
             end if;
         end if;
    end runTaskWithPriority;
@@ -118,7 +121,7 @@ package body org.allbinary.thread.ThreadPool_Package is
             ThreadPool'Class (This).init;
         end if;
         if (task_Id) /= (null) then
-            This.taskQueue.add (task_Id);
+            This.taskQueue.add (Java_Object_Access (task_Id));
         end if;
    end runTask;
 
@@ -126,7 +129,7 @@ package body org.allbinary.thread.ThreadPool_Package is
    function getTask (This : in out ThreadPool) return Runnable_Access is
    begin
         if This.taskQueue.isEmpty then
-            return This.NULL_RUNNABLE;
+            return Runnable_Access (This.NULL_RUNNABLE);
         end if;
         return Runnable_Access (This.taskQueue.removeAt (0));
    end getTask;

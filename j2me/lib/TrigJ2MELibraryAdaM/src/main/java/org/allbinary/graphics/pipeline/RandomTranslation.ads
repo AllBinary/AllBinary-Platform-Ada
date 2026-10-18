@@ -20,19 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.rand.MyRandomFactory_Package; use org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
 
 package org.allbinary.graphics.pipeline.RandomTranslation_Package is
 
-   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type RandomTranslation is tagged;
    type RandomTranslation_Access is access all RandomTranslation'Class;
    type RandomTranslation_Access_Array is array (Natural range <>) of RandomTranslation_Access;
    type RandomTranslation_Access_Array_Access is access all RandomTranslation_Access_Array;
+   type RandomTranslation_Access_Array_Access_Array is array (Natural range <>) of RandomTranslation_Access_Array_Access;
+   type RandomTranslation_Access_Array_Access_Array_Access is access all RandomTranslation_Access_Array_Access_Array;
 
    type RandomTranslation is new Java_Object with null record;
 

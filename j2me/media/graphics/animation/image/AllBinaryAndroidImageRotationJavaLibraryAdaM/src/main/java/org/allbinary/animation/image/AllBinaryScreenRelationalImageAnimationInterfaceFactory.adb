@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
+with org.allbinary.graphics.displayable.ScreenRelationalUtil_Package; use org.allbinary.graphics.displayable.ScreenRelationalUtil_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+with org.allbinary.media.image.ImageScaleUtil_Package; use org.allbinary.media.image.ImageScaleUtil_Package;
+with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
+with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.animation.image.ImageAnimation_Package;
+
 package body org.allbinary.animation.image.AllBinaryScreenRelationalImageAnimationInterfaceFactory_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package ScreenRelationalUtil_Package renames Standard.org.allbinary.graphics.displayable.ScreenRelationalUtil_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package ImageScaleUtil_Package renames Standard.org.allbinary.media.image.ImageScaleUtil_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
    procedure Initialize_Fields (This : in out AllBinaryScreenRelationalImageAnimationInterfaceFactory'Class) is
    begin
       null;
@@ -48,7 +62,7 @@ package body org.allbinary.animation.image.AllBinaryScreenRelationalImageAnimati
    --  throws Exception
    function getInstance (This : in out AllBinaryScreenRelationalImageAnimationInterfaceFactory; instanceId : Integer) return Animation_Access is
    begin
-        return ImageAnimation_Package.Create (This.lastImage, This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (ImageAnimation_Package.Create (This.lastImage, This.animationBehaviorFactory.getOrCreateInstance));
    end getInstance;
 
    procedure getInstance (This : in out AllBinaryScreenRelationalImageAnimationInterfaceFactory; instanceId : Integer) is

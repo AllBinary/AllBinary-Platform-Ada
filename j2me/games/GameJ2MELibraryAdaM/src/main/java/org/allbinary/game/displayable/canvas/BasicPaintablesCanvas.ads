@@ -24,7 +24,6 @@ with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lc
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 with org.allbinary.game.paint.ColorFillBasePaintable_Package; use org.allbinary.game.paint.ColorFillBasePaintable_Package;
-with org.allbinary.game.paint.ColorFillPaintableFactory_Package; use org.allbinary.game.paint.ColorFillPaintableFactory_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
 
@@ -34,13 +33,14 @@ package org.allbinary.game.displayable.canvas.BasicPaintablesCanvas_Package is
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
    package ColorFillBasePaintable_Package renames Standard.org.allbinary.game.paint.ColorFillBasePaintable_Package;
-   package ColorFillPaintableFactory_Package renames Standard.org.allbinary.game.paint.ColorFillPaintableFactory_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
    type BasicPaintablesCanvas is tagged;
    type BasicPaintablesCanvas_Access is access all BasicPaintablesCanvas'Class;
    type BasicPaintablesCanvas_Access_Array is array (Natural range <>) of BasicPaintablesCanvas_Access;
    type BasicPaintablesCanvas_Access_Array_Access is access all BasicPaintablesCanvas_Access_Array;
+   type BasicPaintablesCanvas_Access_Array_Access_Array is array (Natural range <>) of BasicPaintablesCanvas_Access_Array_Access;
+   type BasicPaintablesCanvas_Access_Array_Access_Array_Access is access all BasicPaintablesCanvas_Access_Array_Access_Array;
 
    type BasicPaintablesCanvas is new GameCommandCanvas with record
       paintableArray : Paintable_Access_Array_Access;

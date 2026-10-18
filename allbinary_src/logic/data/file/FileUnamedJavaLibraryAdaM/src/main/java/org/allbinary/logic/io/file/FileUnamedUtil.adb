@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.io.file.FileUnamedUtil_Package is
 
    procedure Initialize_Fields (This : in out FileUnamedUtil'Class) is
@@ -43,8 +44,8 @@ package body org.allbinary.logic.io.file.FileUnamedUtil_Package is
       simplifiedString : Unbounded_String;
    begin
         simplifiedString := Translate (string_Id, Ada.Strings.Maps.Constants.Lower_Case_Map);
-        simplifiedString := simplifiedString.replace (This.commonSeps.SPACE, This.commonSeps.UNDERSCORE);
-        simplifiedString := simplifiedString.replace (This.commonSeps.DASH, This.commonSeps.UNDERSCORE);
+        simplifiedString := Java_Replace (simplifiedString, Java_Image (This.commonSeps.SPACE), Java_Image (This.commonSeps.UNDERSCORE));
+        simplifiedString := Java_Replace (simplifiedString, Java_Image (This.commonSeps.DASH), Java_Image (This.commonSeps.UNDERSCORE));
         return simplifiedString;
    end process;
 

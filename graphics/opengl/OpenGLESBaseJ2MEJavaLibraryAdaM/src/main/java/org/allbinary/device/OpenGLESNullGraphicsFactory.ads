@@ -17,6 +17,8 @@ package org.allbinary.device.OpenGLESNullGraphicsFactory_Package is
    type OpenGLESNullGraphicsFactory_Access is access all OpenGLESNullGraphicsFactory'Class;
    type OpenGLESNullGraphicsFactory_Access_Array is array (Natural range <>) of OpenGLESNullGraphicsFactory_Access;
    type OpenGLESNullGraphicsFactory_Access_Array_Access is access all OpenGLESNullGraphicsFactory_Access_Array;
+   type OpenGLESNullGraphicsFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLESNullGraphicsFactory_Access_Array_Access;
+   type OpenGLESNullGraphicsFactory_Access_Array_Access_Array_Access is access all OpenGLESNullGraphicsFactory_Access_Array_Access_Array;
 
    type OpenGLESNullGraphicsFactory is new Java_Object with null record;
    instance : OpenGLESGraphics_Access;

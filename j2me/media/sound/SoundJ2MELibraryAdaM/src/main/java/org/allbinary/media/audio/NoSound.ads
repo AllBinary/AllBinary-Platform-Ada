@@ -20,18 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
-with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.NoPlayer_Package;
 
 package org.allbinary.media.audio.NoSound_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type NoSound is tagged;
    type NoSound_Access is access all NoSound'Class;
    type NoSound_Access_Array is array (Natural range <>) of NoSound_Access;
    type NoSound_Access_Array_Access is access all NoSound_Access_Array;
+   type NoSound_Access_Array_Access_Array is array (Natural range <>) of NoSound_Access_Array_Access;
+   type NoSound_Access_Array_Access_Array_Access is access all NoSound_Access_Array_Access_Array;
 
    type NoSound is new Sound with null record;
    instance : NoSound_Access;

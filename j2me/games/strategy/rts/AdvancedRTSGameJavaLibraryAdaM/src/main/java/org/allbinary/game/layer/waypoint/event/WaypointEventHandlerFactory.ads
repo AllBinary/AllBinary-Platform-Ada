@@ -31,6 +31,8 @@ package org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory_Pack
    type WaypointEventHandlerFactory_Access is access all WaypointEventHandlerFactory'Class;
    type WaypointEventHandlerFactory_Access_Array is array (Natural range <>) of WaypointEventHandlerFactory_Access;
    type WaypointEventHandlerFactory_Access_Array_Access is access all WaypointEventHandlerFactory_Access_Array;
+   type WaypointEventHandlerFactory_Access_Array_Access_Array is array (Natural range <>) of WaypointEventHandlerFactory_Access_Array_Access;
+   type WaypointEventHandlerFactory_Access_Array_Access_Array_Access is access all WaypointEventHandlerFactory_Access_Array_Access_Array;
 
    type WaypointEventHandlerFactory is new Java_Object with null record;
    eventHandlerArray : WaypointEventHandler_Access_Array_Access;

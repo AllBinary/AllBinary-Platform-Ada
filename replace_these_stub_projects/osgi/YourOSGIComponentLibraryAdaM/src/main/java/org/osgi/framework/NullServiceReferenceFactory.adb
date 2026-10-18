@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.osgi.framework.NullServiceReferenceFactory_Package is
 
    procedure Initialize_Fields (This : in out NullServiceReferenceFactory'Class) is

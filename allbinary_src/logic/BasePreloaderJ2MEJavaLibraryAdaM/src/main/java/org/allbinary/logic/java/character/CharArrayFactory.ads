@@ -28,6 +28,8 @@ package org.allbinary.logic.java.character_Id.CharArrayFactory_Package is
    type CharArrayFactory_Access is access all CharArrayFactory'Class;
    type CharArrayFactory_Access_Array is array (Natural range <>) of CharArrayFactory_Access;
    type CharArrayFactory_Access_Array_Access is access all CharArrayFactory_Access_Array;
+   type CharArrayFactory_Access_Array_Access_Array is array (Natural range <>) of CharArrayFactory_Access_Array_Access;
+   type CharArrayFactory_Access_Array_Access_Array_Access is access all CharArrayFactory_Access_Array_Access_Array;
 
    type CharArrayFactory is new Java_Object with record
       zeroCharArray : Character_Array_Access;

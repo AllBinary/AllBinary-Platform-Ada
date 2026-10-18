@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_Package; use org.allbinary.logic.communication.java.vm.stats.JvmStatisticsData_Package;
+
 package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out JvmStatisticsMapping'Class) is
    begin
       null;
@@ -60,7 +66,7 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMappin
    function toVector (This : in out JvmStatisticsMapping) return BasicArrayList_Access is
       vector : BasicArrayList_Access;
    begin
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         vector.add (JvmStatisticsMapping'Class (This).getFreeMemoryBytesString);
         vector.add (JvmStatisticsMapping'Class (This).getFreeMemoryKilobytesString);
         vector.add (JvmStatisticsMapping'Class (This).getFreeMemoryMegabytesString);

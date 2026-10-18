@@ -34,6 +34,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostIn
    type PathFindingNodeCostInfoFactory_Access is access all PathFindingNodeCostInfoFactory'Class;
    type PathFindingNodeCostInfoFactory_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoFactory_Access;
    type PathFindingNodeCostInfoFactory_Access_Array_Access is access all PathFindingNodeCostInfoFactory_Access_Array;
+   type PathFindingNodeCostInfoFactory_Access_Array_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoFactory_Access_Array_Access;
+   type PathFindingNodeCostInfoFactory_Access_Array_Access_Array_Access is access all PathFindingNodeCostInfoFactory_Access_Array_Access_Array;
 
    type PathFindingNodeCostInfoFactory is new PathFindingNodeCostInfoFactoryBase with record
       pathFindingNodeCostInfoAdjacencyList : PathFindingNodeCostInfo_Access_Array_Access_Array_Access;

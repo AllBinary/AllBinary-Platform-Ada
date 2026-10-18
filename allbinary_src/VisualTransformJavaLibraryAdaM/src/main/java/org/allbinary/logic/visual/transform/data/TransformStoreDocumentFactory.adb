@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package; use org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package;
+
 package body org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_Package is
 
    procedure Initialize_Fields (This : in out TransformStoreDocumentFactory'Class) is

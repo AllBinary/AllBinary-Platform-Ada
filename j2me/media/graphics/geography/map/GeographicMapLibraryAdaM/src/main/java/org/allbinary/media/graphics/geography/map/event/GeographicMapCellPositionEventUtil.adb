@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
+
 package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventUtil_Package is
 
+   package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
    procedure Initialize_Fields (This : in out GeographicMapCellPositionEventUtil'Class) is
    begin
       null;

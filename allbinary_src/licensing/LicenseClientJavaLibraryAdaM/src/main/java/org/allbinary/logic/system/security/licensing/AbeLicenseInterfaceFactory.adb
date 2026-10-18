@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package; use org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package;
+with org.allbinary.logic.system.security.licensing.AbeNoLicense_Package; use org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationData_Package;
+
 package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package AbeLicenseClient_Package renames Standard.org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package;
    procedure Initialize_Fields (This : in out AbeLicenseInterfaceFactory'Class) is
    begin
       null;

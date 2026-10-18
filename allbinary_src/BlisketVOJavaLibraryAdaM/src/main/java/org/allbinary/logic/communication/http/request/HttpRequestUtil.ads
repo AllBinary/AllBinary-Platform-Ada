@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 
 package org.allbinary.logic.communication.http.request.HttpRequestUtil_Package is
 
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
 
    type HttpRequestUtil is tagged;
    type HttpRequestUtil_Access is access all HttpRequestUtil'Class;
    type HttpRequestUtil_Access_Array is array (Natural range <>) of HttpRequestUtil_Access;
    type HttpRequestUtil_Access_Array_Access is access all HttpRequestUtil_Access_Array;
+   type HttpRequestUtil_Access_Array_Access_Array is array (Natural range <>) of HttpRequestUtil_Access_Array_Access;
+   type HttpRequestUtil_Access_Array_Access_Array_Access is access all HttpRequestUtil_Access_Array_Access_Array;
 
    type HttpRequestUtil is new Java_Object with null record;
    instance : HttpRequestUtil_Access;

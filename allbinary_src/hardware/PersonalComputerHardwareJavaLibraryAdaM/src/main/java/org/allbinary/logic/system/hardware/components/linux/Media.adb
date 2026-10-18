@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.system.hardware.components.linux.Media_Package is
 
    procedure Initialize_Fields (This : in out Media'Class) is

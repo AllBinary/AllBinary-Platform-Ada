@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.form.ItemIndexPaintable_Package is
 
    procedure Initialize_Fields (This : in out ItemIndexPaintable'Class) is

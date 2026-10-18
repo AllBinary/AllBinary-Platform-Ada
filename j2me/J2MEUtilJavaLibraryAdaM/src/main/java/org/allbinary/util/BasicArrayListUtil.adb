@@ -13,14 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_Package;
+with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsProperty_Package;
+with org.allbinary.util.ImmutableBasicArrayList_Package; use org.allbinary.util.ImmutableBasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.util.BasicArrayListUtil_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
    procedure Initialize_Fields (This : in out BasicArrayListUtil'Class) is
    begin
       null;
       This.NULL_ARRAY_OF_ARRAY := new BasicArrayList_Access_Array_Access_Array'(0 .. (0) - 1 => new BasicArrayList_Access_Array'(0 .. (0) - 1 => null));
       This.myRandomFactory := MyRandomFactory_Package.getInstance;
-      This.immutableInstance := ImmutableBasicArrayList_Package.Create (To_Unbounded_String ("Immutable"), 0);
+      This.immutableInstance := BasicArrayList_Access (ImmutableBasicArrayList_Package.Create (To_Unbounded_String ("Immutable"), 0));
    end Initialize_Fields;
 
    procedure Initialize (This : in out BasicArrayListUtil'Class) is
@@ -106,7 +121,7 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
       list : BasicArrayList_Access;
    begin
         commonPhoneStrings := CommonPhoneStrings_Package.getInstance;
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         list.add (commonPhoneStrings.ONE);
         list.add (commonPhoneStrings.TWO);
         list.add (commonPhoneStrings.THREE);

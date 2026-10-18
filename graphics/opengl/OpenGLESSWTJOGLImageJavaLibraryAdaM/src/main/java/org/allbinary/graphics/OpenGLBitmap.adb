@@ -1,8 +1,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.DisposalUtil_Package; use org.allbinary.DisposalUtil_Package;
+with org.microemu.device.swt.SwtImmutableImage_Package; use org.microemu.device.swt.SwtImmutableImage_Package;
+with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
+
 package body org.allbinary.graphics.OpenGLBitmap_Package is
 
+   package DisposalUtil_Package renames Standard.org.allbinary.DisposalUtil_Package;
+   package SwtImmutableImage_Package renames Standard.org.microemu.device.swt.SwtImmutableImage_Package;
+   package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
    procedure Initialize_Fields (This : in out OpenGLBitmap'Class) is
    begin
       null;

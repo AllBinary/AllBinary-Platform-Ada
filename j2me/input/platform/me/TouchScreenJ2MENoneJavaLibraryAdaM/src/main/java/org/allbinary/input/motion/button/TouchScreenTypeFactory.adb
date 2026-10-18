@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
+
 package body org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
 
    procedure Initialize_Fields (This : in out TouchScreenTypeFactory'Class) is

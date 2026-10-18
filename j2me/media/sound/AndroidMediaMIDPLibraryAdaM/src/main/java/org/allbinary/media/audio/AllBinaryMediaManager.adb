@@ -13,8 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.audio.Sounds_Package; use org.allbinary.media.audio.Sounds_Package;
+with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
+with org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package; use org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package;
+with org.allbinary.media.audio.PlayerComposite_Package; use org.allbinary.media.audio.PlayerComposite_Package;
+with org.allbinary.media.audio.MediaPlayerUtil_Package; use org.allbinary.media.audio.MediaPlayerUtil_Package;
+with org.allbinary.media.audio.NoPlayer_Package; use org.allbinary.media.audio.NoPlayer_Package;
+
 package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
 
+   package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out AllBinaryMediaManager'Class) is
    begin
       null;
@@ -115,7 +140,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
         logUtil := LogUtil_Package.getInstance;
         if Features_Package.getInstance.isFeature (GameFeatureFactory_Package.getInstance.SOUND) then
             begin
-                return AndroidMediaPlayerWrapper_Package.Create (resource);
+                return Player_Access (AndroidMediaPlayerWrapper_Package.Create (resource));
             exception
                 when Java_Occurrence : others =>
                     declare

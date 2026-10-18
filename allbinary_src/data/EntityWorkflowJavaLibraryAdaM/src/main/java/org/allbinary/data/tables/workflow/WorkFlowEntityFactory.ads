@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tables.workflow.WorkFlowEntity_Package; use org.allbinary.data.tables.workflow.WorkFlowEntity_Package;
 
 package org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type WorkFlowEntityFactory is tagged;
    type WorkFlowEntityFactory_Access is access all WorkFlowEntityFactory'Class;
    type WorkFlowEntityFactory_Access_Array is array (Natural range <>) of WorkFlowEntityFactory_Access;
    type WorkFlowEntityFactory_Access_Array_Access is access all WorkFlowEntityFactory_Access_Array;
+   type WorkFlowEntityFactory_Access_Array_Access_Array is array (Natural range <>) of WorkFlowEntityFactory_Access_Array_Access;
+   type WorkFlowEntityFactory_Access_Array_Access_Array_Access is access all WorkFlowEntityFactory_Access_Array_Access_Array;
 
    type WorkFlowEntityFactory is new Java_Object with record
       logUtil : LogUtil_Access;

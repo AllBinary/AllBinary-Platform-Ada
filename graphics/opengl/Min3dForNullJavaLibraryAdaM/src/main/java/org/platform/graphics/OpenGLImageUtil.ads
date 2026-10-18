@@ -18,6 +18,8 @@ package org.platform.graphics.OpenGLImageUtil_Package is
    type OpenGLImageUtil_Access is access all OpenGLImageUtil'Class;
    type OpenGLImageUtil_Access_Array is array (Natural range <>) of OpenGLImageUtil_Access;
    type OpenGLImageUtil_Access_Array_Access is access all OpenGLImageUtil_Access_Array;
+   type OpenGLImageUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLImageUtil_Access_Array_Access;
+   type OpenGLImageUtil_Access_Array_Access_Array_Access is access all OpenGLImageUtil_Access_Array_Access_Array;
 
    type OpenGLImageUtil is new OpenGLImageUtilBase with null record;
    instance : OpenGLImageUtil_Access;

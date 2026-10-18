@@ -35,6 +35,8 @@ package org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
    type OpenGLImageUtilBase_Access is access all OpenGLImageUtilBase'Class;
    type OpenGLImageUtilBase_Access_Array is array (Natural range <>) of OpenGLImageUtilBase_Access;
    type OpenGLImageUtilBase_Access_Array_Access is access all OpenGLImageUtilBase_Access_Array;
+   type OpenGLImageUtilBase_Access_Array_Access_Array is array (Natural range <>) of OpenGLImageUtilBase_Access_Array_Access;
+   type OpenGLImageUtilBase_Access_Array_Access_Array_Access is access all OpenGLImageUtilBase_Access_Array_Access_Array;
 
    type OpenGLImageUtilBase is new Java_Object with null record;
 

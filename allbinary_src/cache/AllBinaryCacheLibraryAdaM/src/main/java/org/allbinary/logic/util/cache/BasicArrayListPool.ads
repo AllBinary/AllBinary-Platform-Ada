@@ -24,7 +24,6 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.logic.util.cache.AbstractArrayListPool_Package; use org.allbinary.logic.util.cache.AbstractArrayListPool_Package;
 with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; use org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinary.logic.util.cache.CacheableInterface_Package;
-with org.allbinary.logic.util.cache.BasicArrayListCacheable_Package; use org.allbinary.logic.util.cache.BasicArrayListCacheable_Package;
 
 package org.allbinary.logic.util.cache.BasicArrayListPool_Package is
 
@@ -34,6 +33,8 @@ package org.allbinary.logic.util.cache.BasicArrayListPool_Package is
    type BasicArrayListPool_Access is access all BasicArrayListPool'Class;
    type BasicArrayListPool_Access_Array is array (Natural range <>) of BasicArrayListPool_Access;
    type BasicArrayListPool_Access_Array_Access is access all BasicArrayListPool_Access_Array;
+   type BasicArrayListPool_Access_Array_Access_Array is array (Natural range <>) of BasicArrayListPool_Access_Array_Access;
+   type BasicArrayListPool_Access_Array_Access_Array_Access is access all BasicArrayListPool_Access_Array_Access_Array;
 
    type BasicArrayListPool is new AbstractArrayListPool with null record;
 
@@ -44,6 +45,8 @@ package org.allbinary.logic.util.cache.BasicArrayListPool_Package is
    procedure remove (This : in out BasicArrayListPool; key_Param : access Java_Object'Class);
    procedure addAll (This : in out BasicArrayListPool; usedList_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure releaseUsedBackToPool (This : in out BasicArrayListPool; usedList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function remove (This : in out BasicArrayListPool; Value : Unbounded_String) return CacheableInterface_Access;
+   procedure remove (This : in out BasicArrayListPool; Value : Unbounded_String);
 
 end org.allbinary.logic.util.cache.BasicArrayListPool_Package;
 

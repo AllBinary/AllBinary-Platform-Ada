@@ -20,20 +20,14 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package; use org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.visual.transform.ContextTransformer_Package; use org.allbinary.logic.visual.transform.ContextTransformer_Package;
-with org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package; use org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with views.HttpComponentView_Package; use views.HttpComponentView_Package;
 
 package views.business.context.HttpContextView_Package is
 
-   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package ContextTransformer_Package renames Standard.org.allbinary.logic.visual.transform.ContextTransformer_Package;
-   package TransformHttpRequestDocumentFactory_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package HttpComponentView_Package renames Standard.views.HttpComponentView_Package;
@@ -42,6 +36,8 @@ package views.business.context.HttpContextView_Package is
    type HttpContextView_Access is access all HttpContextView'Class;
    type HttpContextView_Access_Array is array (Natural range <>) of HttpContextView_Access;
    type HttpContextView_Access_Array_Access is access all HttpContextView_Access_Array;
+   type HttpContextView_Access_Array_Access_Array is array (Natural range <>) of HttpContextView_Access_Array_Access;
+   type HttpContextView_Access_Array_Access_Array_Access is access all HttpContextView_Access_Array_Access_Array;
 
    type HttpContextView is new HttpComponentView with record
       logUtil : LogUtil_Access;

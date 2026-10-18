@@ -20,10 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package; use org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package;
-with org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package; use org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -31,10 +28,7 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package is
 
-   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package RealTimeStoreFrontStatistics_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package;
-   package RealTimeStoreFrontStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -44,6 +38,8 @@ package views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package 
    type StoreFrontStatisticsComponent_Access is access all StoreFrontStatisticsComponent'Class;
    type StoreFrontStatisticsComponent_Access_Array is array (Natural range <>) of StoreFrontStatisticsComponent_Access;
    type StoreFrontStatisticsComponent_Access_Array_Access is access all StoreFrontStatisticsComponent_Access_Array;
+   type StoreFrontStatisticsComponent_Access_Array_Access_Array is array (Natural range <>) of StoreFrontStatisticsComponent_Access_Array_Access;
+   type StoreFrontStatisticsComponent_Access_Array_Access_Array_Access is access all StoreFrontStatisticsComponent_Access_Array_Access_Array;
 
    type StoreFrontStatisticsComponent is new HttpStoreComponentView with record
       logUtil : LogUtil_Access;

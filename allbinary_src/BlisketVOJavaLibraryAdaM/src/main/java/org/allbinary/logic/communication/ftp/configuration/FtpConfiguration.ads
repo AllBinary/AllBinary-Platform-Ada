@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationInterface_Package;
-with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package; use org.allbinary.logic.communication.ftp.configuration.FtpConfigurationData_Package;
 
 package org.allbinary.logic.communication.ftp.configuration.FtpConfiguration_Package is
 
@@ -32,8 +31,10 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfiguration_Pac
    type FtpConfiguration_Access is access all FtpConfiguration'Class;
    type FtpConfiguration_Access_Array is array (Natural range <>) of FtpConfiguration_Access;
    type FtpConfiguration_Access_Array_Access is access all FtpConfiguration_Access_Array;
+   type FtpConfiguration_Access_Array_Access_Array is array (Natural range <>) of FtpConfiguration_Access_Array_Access;
+   type FtpConfiguration_Access_Array_Access_Array_Access is access all FtpConfiguration_Access_Array_Access_Array;
 
-   type FtpConfiguration is new FtpConfigurationInterface with record
+   type FtpConfiguration is new Java_Object and FtpConfigurationInterface with record
       ftpServer : Unbounded_String;
       ftpPath : Unbounded_String;
       ftpUserName : Unbounded_String;

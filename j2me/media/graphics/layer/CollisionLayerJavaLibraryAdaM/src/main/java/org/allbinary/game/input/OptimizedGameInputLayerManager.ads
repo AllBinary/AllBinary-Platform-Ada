@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
-with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.LayerManagerNoDebug_Package;
 
 package org.allbinary.game.input.OptimizedGameInputLayerManager_Package is
 
    package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
-   package LayerManagerNoDebug_Package renames Standard.org.allbinary.layer.LayerManagerNoDebug_Package;
 
    type OptimizedGameInputLayerManager is tagged;
    type OptimizedGameInputLayerManager_Access is access all OptimizedGameInputLayerManager'Class;
    type OptimizedGameInputLayerManager_Access_Array is array (Natural range <>) of OptimizedGameInputLayerManager_Access;
    type OptimizedGameInputLayerManager_Access_Array_Access is access all OptimizedGameInputLayerManager_Access_Array;
+   type OptimizedGameInputLayerManager_Access_Array_Access_Array is array (Natural range <>) of OptimizedGameInputLayerManager_Access_Array_Access;
+   type OptimizedGameInputLayerManager_Access_Array_Access_Array_Access is access all OptimizedGameInputLayerManager_Access_Array_Access_Array;
 
    type OptimizedGameInputLayerManager is new LayerManager with null record;
 

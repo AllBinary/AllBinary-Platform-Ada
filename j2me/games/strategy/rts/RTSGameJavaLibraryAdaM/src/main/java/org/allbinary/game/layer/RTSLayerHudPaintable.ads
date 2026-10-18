@@ -20,30 +20,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.game.part.weapon.BasicWeaponPart_Package;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.game.layer.SelectionHudPaintable_Package;
 with org.allbinary.game.layer.RTSLayer_Package; use org.allbinary.game.layer.RTSLayer_Package;
 
 package org.allbinary.game.layer.RTSLayerHudPaintable_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
    package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-   package BasicWeaponPart_Package renames Standard.org.allbinary.game.part.weapon.BasicWeaponPart_Package;
    package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 
    type RTSLayerHudPaintable is tagged;
    type RTSLayerHudPaintable_Access is access all RTSLayerHudPaintable'Class;
    type RTSLayerHudPaintable_Access_Array is array (Natural range <>) of RTSLayerHudPaintable_Access;
    type RTSLayerHudPaintable_Access_Array_Access is access all RTSLayerHudPaintable_Access_Array;
+   type RTSLayerHudPaintable_Access_Array_Access_Array is array (Natural range <>) of RTSLayerHudPaintable_Access_Array_Access;
+   type RTSLayerHudPaintable_Access_Array_Access_Array_Access is access all RTSLayerHudPaintable_Access_Array_Access_Array;
 
    type RTSLayerHudPaintable is new SelectionHudPaintable and UpdateMyFontInterface with record
       weaponProperties : Unbounded_String_Array_Access;

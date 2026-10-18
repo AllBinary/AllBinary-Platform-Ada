@@ -22,22 +22,14 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.media.image.comparison.ImageComparisonResult_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package ImageUtil_Package renames Standard.org.allbinary.media.image.ImageUtil_Package;
    package PixelDelta_Package renames Standard.org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -45,6 +37,8 @@ package org.allbinary.media.image.comparison.ImageComparisonResult_Package is
    type ImageComparisonResult_Access is access all ImageComparisonResult'Class;
    type ImageComparisonResult_Access_Array is array (Natural range <>) of ImageComparisonResult_Access;
    type ImageComparisonResult_Access_Array_Access is access all ImageComparisonResult_Access_Array;
+   type ImageComparisonResult_Access_Array_Access_Array is array (Natural range <>) of ImageComparisonResult_Access_Array_Access;
+   type ImageComparisonResult_Access_Array_Access_Array_Access is access all ImageComparisonResult_Access_Array_Access_Array;
 
    type ImageComparisonResult is new Java_Object with record
       logUtil : LogUtil_Access;

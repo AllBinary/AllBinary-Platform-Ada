@@ -22,19 +22,19 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
 
 package org.allbinary.input.motion.button.NoButtonsBuilder_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type NoButtonsBuilder is tagged;
    type NoButtonsBuilder_Access is access all NoButtonsBuilder'Class;
    type NoButtonsBuilder_Access_Array is array (Natural range <>) of NoButtonsBuilder_Access;
    type NoButtonsBuilder_Access_Array_Access is access all NoButtonsBuilder_Access_Array;
+   type NoButtonsBuilder_Access_Array_Access_Array is array (Natural range <>) of NoButtonsBuilder_Access_Array_Access;
+   type NoButtonsBuilder_Access_Array_Access_Array_Access is access all NoButtonsBuilder_Access_Array_Access_Array;
 
    type NoButtonsBuilder is new BaseTouchInput with record
       logUtil : LogUtil_Access;

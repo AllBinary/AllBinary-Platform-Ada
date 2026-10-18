@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package; use bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
+with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
+with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
+
 package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServiceVisitor_Package is
 
+   package InputAutomationRobotServiceInterface_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
+   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
+   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
    procedure Initialize_Fields (This : in out InputAutomationRobotOSGIServiceVisitor'Class) is
    begin
       null;
@@ -77,6 +84,18 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIS
 
    procedure visit (This : in out InputAutomationRobotOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface_Package.OSGIServiceInterface'Class) is
       Java_Result : constant Boolean := InputAutomationRobotOSGIServiceVisitor'Class (This).visit (osgiServiceInterface_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end visit;
+
+   function visit (This : in out InputAutomationRobotOSGIServiceVisitor; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return InputAutomationRobotOSGIServiceVisitor'Class (This).visit (Java_Box (Value));
+   end visit;
+
+   procedure visit (This : in out InputAutomationRobotOSGIServiceVisitor; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := InputAutomationRobotOSGIServiceVisitor'Class (This).visit (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

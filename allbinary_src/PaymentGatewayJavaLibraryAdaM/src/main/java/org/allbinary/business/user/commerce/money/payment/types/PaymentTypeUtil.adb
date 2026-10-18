@@ -13,8 +13,45 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewaysData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewaysData_Package;
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+
 package body org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package PaymentGatewaysData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewaysData_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package CryptFileReader_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TransformInfoObjectConfigData_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out PaymentTypeUtil'Class) is
    begin
       null;
@@ -23,7 +60,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
       
       This.SHIPPINGMETHODSFILENAME := To_Unbounded_String ("paymentGatewayTypes.xml");
       This.defaultName := Null_Unbounded_String;
-      This.paymentTypeVector := BasicArrayListD_Package.Create;
+      This.paymentTypeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -71,7 +108,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    procedure add (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType_Package.PaymentType'Class) is
       paymentType : constant PaymentType_Access := PaymentType_Access (paymentType_Param);
    begin
-        This.paymentTypeVector.add (paymentType);
+        This.paymentTypeVector.add (Java_Object_Access (paymentType));
    end add;
 
    --  throws Exception
@@ -107,8 +144,8 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
         end if;
         if StringValidationUtil_Package.getInstance.isEmpty (This.defaultName) then
             stringBuffer := StringMaker_Package.Create;
-            stringBuffer.append (URLGLOBALS.getMainPath);
-            stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH);
+            stringBuffer.append (URLGLOBALS_Package.getMainPath);
+            stringBuffer.append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH);
             stringBuffer.append (storeName);
             stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
             stringBuffer.append (This.PAYMENTGATEWAYFILEPATHSTRING);
@@ -146,7 +183,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    function isContain (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType_Package.PaymentType'Class) return Boolean is
       paymentType : constant PaymentType_Access := PaymentType_Access (paymentType_Param);
    begin
-        return This.paymentTypeVector.contains (paymentType);
+        return This.paymentTypeVector.contains (Java_Object_Access (paymentType));
    end isContain;
 
    function difference (This : in out PaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicArrayList_Access is
@@ -156,12 +193,12 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
       paymentType : PaymentType_Access;
       i : Integer;
    begin
-        diff := BasicArrayListD_Package.Create;
+        diff := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := This.paymentTypeVector.size;
         for i in 0 .. (size) - 1 loop
             paymentType := PaymentType_Access (This.paymentTypeVector.get (i));
-            if not (a_PaymentTypeVector.contains (paymentType)) then
-                diff.add (paymentType);
+            if not (a_PaymentTypeVector.contains (Java_Object_Access (paymentType))) then
+                diff.add (Java_Object_Access (paymentType));
             end if;
         end loop;
         return diff;

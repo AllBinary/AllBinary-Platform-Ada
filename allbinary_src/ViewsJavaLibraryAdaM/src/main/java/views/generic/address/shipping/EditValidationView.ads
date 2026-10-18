@@ -20,10 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.address.StreetAddressData_Package; use org.allbinary.business.user.address.StreetAddressData_Package;
-with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package; use org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
@@ -31,10 +28,7 @@ with views.generic_Id.address.shipping.ShippingAddressView_Package; use views.ge
 
 package views.generic_Id.address.shipping.EditValidationView_Package is
 
-   package StreetAddressData_Package renames Standard.org.allbinary.business.user.address.StreetAddressData_Package;
-   package ShippingAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -43,6 +37,8 @@ package views.generic_Id.address.shipping.EditValidationView_Package is
    type EditValidationView_Access is access all EditValidationView'Class;
    type EditValidationView_Access_Array is array (Natural range <>) of EditValidationView_Access;
    type EditValidationView_Access_Array_Access is access all EditValidationView_Access_Array;
+   type EditValidationView_Access_Array_Access_Array is array (Natural range <>) of EditValidationView_Access_Array_Access;
+   type EditValidationView_Access_Array_Access_Array_Access is access all EditValidationView_Access_Array_Access_Array;
 
    type EditValidationView is new ShippingAddressView and ValidationComponentInterface with record
       value : Unbounded_String;

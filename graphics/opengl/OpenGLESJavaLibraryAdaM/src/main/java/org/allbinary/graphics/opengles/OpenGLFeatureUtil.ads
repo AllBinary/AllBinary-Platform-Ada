@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.graphics.opengles.OpenGLConfiguration_Package; use org.allbinary.graphics.opengles.OpenGLConfiguration_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
 
 package org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package is
 
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
 
    type OpenGLFeatureUtil is tagged;
    type OpenGLFeatureUtil_Access is access all OpenGLFeatureUtil'Class;
    type OpenGLFeatureUtil_Access_Array is array (Natural range <>) of OpenGLFeatureUtil_Access;
    type OpenGLFeatureUtil_Access_Array_Access is access all OpenGLFeatureUtil_Access_Array;
+   type OpenGLFeatureUtil_Access_Array_Access_Array is array (Natural range <>) of OpenGLFeatureUtil_Access_Array_Access;
+   type OpenGLFeatureUtil_Access_Array_Access_Array_Access is access all OpenGLFeatureUtil_Access_Array_Access_Array;
 
    type OpenGLFeatureUtil is new Java_Object with record
       anyThreed : Boolean;

@@ -29,6 +29,8 @@ package org.allbinary.game.input.InputProcessorFactory_Package is
    type InputProcessorFactory_Access is access all InputProcessorFactory'Class;
    type InputProcessorFactory_Access_Array is array (Natural range <>) of InputProcessorFactory_Access;
    type InputProcessorFactory_Access_Array_Access is access all InputProcessorFactory_Access_Array;
+   type InputProcessorFactory_Access_Array_Access_Array is array (Natural range <>) of InputProcessorFactory_Access_Array_Access;
+   type InputProcessorFactory_Access_Array_Access_Array_Access is access all InputProcessorFactory_Access_Array_Access_Array;
 
    type InputProcessorFactory is new Java_Object with record
       inputProcessor : InputProcessor_Access;

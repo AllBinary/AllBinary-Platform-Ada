@@ -28,6 +28,8 @@ package org.allbinary.vector.VectorInterface_Package is
    type VectorInterface_Access is access all VectorInterface'Class;
    type VectorInterface_Access_Array is array (Natural range <>) of VectorInterface_Access;
    type VectorInterface_Access_Array_Access is access all VectorInterface_Access_Array;
+   type VectorInterface_Access_Array_Access_Array is array (Natural range <>) of VectorInterface_Access_Array_Access;
+   type VectorInterface_Access_Array_Access_Array_Access is access all VectorInterface_Access_Array_Access_Array;
    function getPoints (This : in out VectorInterface; frame : Integer) return Integer_Array_Access_Array_Access is abstract;
    procedure setPoints (This : in out VectorInterface; currentPoints : Integer_Array_Access_Array_Access_Array_Access) is abstract;
 

@@ -21,25 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
-with org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package;
-with org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.BuildingScrollTouchButtonsBuilder_Package;
-with org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package; use org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package;
 
 package org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type RTSTouchButtonsBuilder is tagged;
    type RTSTouchButtonsBuilder_Access is access all RTSTouchButtonsBuilder'Class;
    type RTSTouchButtonsBuilder_Access_Array is array (Natural range <>) of RTSTouchButtonsBuilder_Access;
    type RTSTouchButtonsBuilder_Access_Array_Access is access all RTSTouchButtonsBuilder_Access_Array;
+   type RTSTouchButtonsBuilder_Access_Array_Access_Array is array (Natural range <>) of RTSTouchButtonsBuilder_Access_Array_Access;
+   type RTSTouchButtonsBuilder_Access_Array_Access_Array_Access is access all RTSTouchButtonsBuilder_Access_Array_Access_Array;
 
    type RTSTouchButtonsBuilder is new BaseTouchInput with record
       logUtil : LogUtil_Access;

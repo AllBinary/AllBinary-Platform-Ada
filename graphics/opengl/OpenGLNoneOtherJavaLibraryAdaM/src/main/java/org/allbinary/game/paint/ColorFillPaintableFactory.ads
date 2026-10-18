@@ -21,22 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
-with org.allbinary.game.paint.ColorFillPaintable_Package; use org.allbinary.game.paint.ColorFillPaintable_Package;
-with org.allbinary.game.paint.OverScanColorFillPaintable_Package; use org.allbinary.game.paint.OverScanColorFillPaintable_Package;
 with org.allbinary.game.paint.ColorFillBasePaintable_Package; use org.allbinary.game.paint.ColorFillBasePaintable_Package;
 
 package org.allbinary.game.paint.ColorFillPaintableFactory_Package is
 
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
 
    type ColorFillPaintableFactory is tagged;
    type ColorFillPaintableFactory_Access is access all ColorFillPaintableFactory'Class;
    type ColorFillPaintableFactory_Access_Array is array (Natural range <>) of ColorFillPaintableFactory_Access;
    type ColorFillPaintableFactory_Access_Array_Access is access all ColorFillPaintableFactory_Access_Array;
+   type ColorFillPaintableFactory_Access_Array_Access_Array is array (Natural range <>) of ColorFillPaintableFactory_Access_Array_Access;
+   type ColorFillPaintableFactory_Access_Array_Access_Array_Access is access all ColorFillPaintableFactory_Access_Array_Access_Array;
 
    type ColorFillPaintableFactory is new Java_Object with null record;
    instance : ColorFillPaintableFactory_Access;

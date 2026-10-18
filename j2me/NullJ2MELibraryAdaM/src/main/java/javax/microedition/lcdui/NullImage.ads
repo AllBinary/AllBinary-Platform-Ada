@@ -29,6 +29,8 @@ package javax.microedition.lcdui.NullImage_Package is
    type NullImage_Access is access all NullImage'Class;
    type NullImage_Access_Array is array (Natural range <>) of NullImage_Access;
    type NullImage_Access_Array_Access is access all NullImage_Access_Array;
+   type NullImage_Access_Array_Access_Array is array (Natural range <>) of NullImage_Access_Array_Access;
+   type NullImage_Access_Array_Access_Array_Access is access all NullImage_Access_Array_Access_Array;
 
    type NullImage is new Java_Object with null record;
    NULL_IMAGE_ARRAY : Image_Access_Array_Access;

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
+with org.allbinary.logic.system.hardware.linux.LinuxHardware_Package; use org.allbinary.logic.system.hardware.linux.LinuxHardware_Package;
+with org.allbinary.logic.system.hardware.windows.WindowsHardware_Package; use org.allbinary.logic.system.hardware.windows.WindowsHardware_Package;
+
 package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
+   package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
+   package LinuxHardware_Package renames Standard.org.allbinary.logic.system.hardware.linux.LinuxHardware_Package;
+   package WindowsHardware_Package renames Standard.org.allbinary.logic.system.hardware.windows.WindowsHardware_Package;
    procedure Initialize_Fields (This : in out HardwareFactory'Class) is
    begin
       null;

@@ -32,6 +32,8 @@ package org.allbinary.opengles.GLUtil_Package is
    type GLUtil_Access is access all GLUtil'Class;
    type GLUtil_Access_Array is array (Natural range <>) of GLUtil_Access;
    type GLUtil_Access_Array_Access is access all GLUtil_Access_Array;
+   type GLUtil_Access_Array_Access_Array is array (Natural range <>) of GLUtil_Access_Array_Access;
+   type GLUtil_Access_Array_Access_Array_Access is access all GLUtil_Access_Array_Access_Array;
 
    type GLUtil is new Java_Object with record
       BYTES_PER_FLOAT : Integer;

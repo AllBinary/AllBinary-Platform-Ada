@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+
 package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ImageComparisonResult_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    procedure Initialize_Fields (This : in out ImageComparisonSearchWorker'Class) is
    begin
       null;
@@ -32,7 +43,7 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
    begin
       BasicEventHandler_Package.Initialize (This);
       Initialize_Fields (This);
-        This.imageComparisonInfoVector := BasicArrayListD_Package.Create;
+        This.imageComparisonInfoVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         This.imageSearchConstraintsInterface := imageSearchConstraintsInterface;
    end Initialize;
 
@@ -79,7 +90,7 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
             imageComparisonInfo := ImageComparisonResult_Access (This.imageComparisonInfoVector.get (0));
             This.logUtil.putF (imageComparisonInfo.toString, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             latestBufferedImage := imageComparisonInfo.getBufferedImages (1);
-            This.imageComparisonInfoVector.remove (imageComparisonInfo);
+            This.imageComparisonInfoVector.remove (Java_Object_Access (imageComparisonInfo));
             This.index := This.index + 1;
             This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             ImageComparisonSearchWorker'Class (This).setRunning (False);

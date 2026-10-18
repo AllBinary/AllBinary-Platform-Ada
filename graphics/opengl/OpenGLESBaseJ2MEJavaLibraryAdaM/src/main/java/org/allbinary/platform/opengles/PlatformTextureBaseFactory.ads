@@ -34,6 +34,8 @@ package org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package is
    type PlatformTextureBaseFactory_Access is access all PlatformTextureBaseFactory'Class;
    type PlatformTextureBaseFactory_Access_Array is array (Natural range <>) of PlatformTextureBaseFactory_Access;
    type PlatformTextureBaseFactory_Access_Array_Access is access all PlatformTextureBaseFactory_Access_Array;
+   type PlatformTextureBaseFactory_Access_Array_Access_Array is array (Natural range <>) of PlatformTextureBaseFactory_Access_Array_Access;
+   type PlatformTextureBaseFactory_Access_Array_Access_Array_Access is access all PlatformTextureBaseFactory_Access_Array_Access_Array;
 
    type PlatformTextureBaseFactory is new Java_Object with record
       commonStrings : CommonStrings_Access;

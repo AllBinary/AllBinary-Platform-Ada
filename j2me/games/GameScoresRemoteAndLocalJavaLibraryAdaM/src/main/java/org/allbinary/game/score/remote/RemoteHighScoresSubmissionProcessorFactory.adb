@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package; use org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package;
+
 package body org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFactory_Package is
 
    procedure Initialize_Fields (This : in out RemoteHighScoresSubmissionProcessorFactory'Class) is
@@ -40,7 +42,7 @@ package body org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor
 
 begin
    null;
-   SINGLETON := RemoteHighScoresSubmissionProcessor_Package.Create;
+   SINGLETON := RemoteHighScoresSubmissionProcessorInterface_Access (RemoteHighScoresSubmissionProcessor_Package.Create);
 
 end org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFactory_Package;
 

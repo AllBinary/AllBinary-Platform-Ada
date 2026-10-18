@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.font.FontDebugBase_Package is
 
    procedure Initialize_Fields (This : in out FontDebugBase'Class) is

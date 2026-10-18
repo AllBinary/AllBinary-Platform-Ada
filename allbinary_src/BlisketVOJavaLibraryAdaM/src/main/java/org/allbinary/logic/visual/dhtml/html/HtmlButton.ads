@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.html.HtmlButton_Package is
    type HtmlButton_Access is access all HtmlButton'Class;
    type HtmlButton_Access_Array is array (Natural range <>) of HtmlButton_Access;
    type HtmlButton_Access_Array_Access is access all HtmlButton_Access_Array;
+   type HtmlButton_Access_Array_Access_Array is array (Natural range <>) of HtmlButton_Access_Array_Access;
+   type HtmlButton_Access_Array_Access_Array_Access is access all HtmlButton_Access_Array_Access_Array;
 
    type HtmlButton is new Java_Object with null record;
 

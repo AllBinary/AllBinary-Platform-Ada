@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package;
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationView_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationView_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.business.context.configuration.ContextConfiguration_Package; use org.allbinary.business.context.configuration.ContextConfiguration_Package;
+with org.allbinary.business.context.configuration.ContextConfigurationData_Package; use org.allbinary.business.context.configuration.ContextConfigurationData_Package;
+
 package body org.allbinary.business.context.configuration.ContextConfigurationView_Package is
 
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package EmailServerConfigurationData_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationData_Package;
+   package EmailServerConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
+   package EmailServerConfigurationView_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationView_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out ContextConfigurationView'Class) is
    begin
       null;
@@ -30,7 +43,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationVi
    begin
       Initialize_Fields (This);
         childNodeList := node.getChildNodes;
-        This.contextConfigurationInterface := ContextConfiguration_Package.Create;
+        This.contextConfigurationInterface := ContextConfigurationInterface_Access (ContextConfiguration_Package.Create);
         emailConfigurationNode := DomSearchHelper_Package.getNode (EmailServerConfigurationData_Package.NAME, childNodeList);
         emailServerConfigurationView := EmailServerConfigurationView_Package.Create (emailConfigurationNode);
         This.contextConfigurationInterface.setEmailServerConfigurationInterface (EmailServerConfigurationInterface_Access (emailServerConfigurationView.getEmailConfigurationInterface));

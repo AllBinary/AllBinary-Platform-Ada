@@ -31,6 +31,8 @@ package org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent
    type MotionRectanglesResultsEvent_Access is access all MotionRectanglesResultsEvent'Class;
    type MotionRectanglesResultsEvent_Access_Array is array (Natural range <>) of MotionRectanglesResultsEvent_Access;
    type MotionRectanglesResultsEvent_Access_Array_Access is access all MotionRectanglesResultsEvent_Access_Array;
+   type MotionRectanglesResultsEvent_Access_Array_Access_Array is array (Natural range <>) of MotionRectanglesResultsEvent_Access_Array_Access;
+   type MotionRectanglesResultsEvent_Access_Array_Access_Array_Access is access all MotionRectanglesResultsEvent_Access_Array_Access_Array;
 
    type MotionRectanglesResultsEvent is new AllBinaryEventObject with record
       frame : Long_Long_Integer;

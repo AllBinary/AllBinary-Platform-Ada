@@ -37,6 +37,8 @@ package org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package is
    type WeaponLayerCircularPool_Access is access all WeaponLayerCircularPool'Class;
    type WeaponLayerCircularPool_Access_Array is array (Natural range <>) of WeaponLayerCircularPool_Access;
    type WeaponLayerCircularPool_Access_Array_Access is access all WeaponLayerCircularPool_Access_Array;
+   type WeaponLayerCircularPool_Access_Array_Access_Array is array (Natural range <>) of WeaponLayerCircularPool_Access_Array_Access;
+   type WeaponLayerCircularPool_Access_Array_Access_Array_Access is access all WeaponLayerCircularPool_Access_Array_Access_Array;
 
    type WeaponLayerCircularPool is new AllBinaryLayerCircularPool with null record;
 

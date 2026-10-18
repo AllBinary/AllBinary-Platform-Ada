@@ -21,8 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
-with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 
 package org.allbinary.game.input.J2MEKeyFactory_Package is
@@ -32,6 +30,8 @@ package org.allbinary.game.input.J2MEKeyFactory_Package is
    type J2MEKeyFactory_Access is access all J2MEKeyFactory'Class;
    type J2MEKeyFactory_Access_Array is array (Natural range <>) of J2MEKeyFactory_Access;
    type J2MEKeyFactory_Access_Array_Access is access all J2MEKeyFactory_Access_Array;
+   type J2MEKeyFactory_Access_Array_Access_Array is array (Natural range <>) of J2MEKeyFactory_Access_Array_Access;
+   type J2MEKeyFactory_Access_Array_Access_Array_Access is access all J2MEKeyFactory_Access_Array_Access_Array;
 
    type J2MEKeyFactory is new Java_Object with record
       gameKeyFactory : GameKeyFactory_Access;

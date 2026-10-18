@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.android.NullParcelable_Package; use org.allbinary.android.NullParcelable_Package;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
 with android.app.PendingIntent_Package; use android.app.PendingIntent_Package;
 with android.content.Context_Package; use android.content.Context_Package;
@@ -28,7 +27,6 @@ with android.os.Parcelable_Package; use android.os.Parcelable_Package;
 
 package org.allbinary.content.NotificationBuilder_Package is
 
-   package NullParcelable_Package renames Standard.org.allbinary.android.NullParcelable_Package;
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package PendingIntent_Package renames Standard.android.app.PendingIntent_Package;
    package Context_Package renames Standard.android.content.Context_Package;
@@ -38,6 +36,8 @@ package org.allbinary.content.NotificationBuilder_Package is
    type NotificationBuilder_Access is access all NotificationBuilder'Class;
    type NotificationBuilder_Access_Array is array (Natural range <>) of NotificationBuilder_Access;
    type NotificationBuilder_Access_Array_Access is access all NotificationBuilder_Access_Array;
+   type NotificationBuilder_Access_Array_Access_Array is array (Natural range <>) of NotificationBuilder_Access_Array_Access;
+   type NotificationBuilder_Access_Array_Access_Array_Access is access all NotificationBuilder_Access_Array_Access_Array;
 
    type NotificationBuilder is new Java_Object with null record;
    NULL_NOTIFICATION_BUILDER : NotificationBuilder_Access;

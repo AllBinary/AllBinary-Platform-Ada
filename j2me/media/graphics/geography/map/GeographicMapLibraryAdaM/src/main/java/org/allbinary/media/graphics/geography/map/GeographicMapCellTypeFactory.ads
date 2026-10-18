@@ -31,6 +31,8 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_
    type GeographicMapCellTypeFactory_Access is access all GeographicMapCellTypeFactory'Class;
    type GeographicMapCellTypeFactory_Access_Array is array (Natural range <>) of GeographicMapCellTypeFactory_Access;
    type GeographicMapCellTypeFactory_Access_Array_Access is access all GeographicMapCellTypeFactory_Access_Array;
+   type GeographicMapCellTypeFactory_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellTypeFactory_Access_Array_Access;
+   type GeographicMapCellTypeFactory_Access_Array_Access_Array_Access is access all GeographicMapCellTypeFactory_Access_Array_Access_Array;
 
    type GeographicMapCellTypeFactory is new Java_Object with record
       logUtil : LogUtil_Access;

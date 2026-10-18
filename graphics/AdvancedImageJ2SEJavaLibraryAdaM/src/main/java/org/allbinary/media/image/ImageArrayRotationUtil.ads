@@ -24,7 +24,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.media.image.ImageJ2SERotationUtil_Package; use org.allbinary.media.image.ImageJ2SERotationUtil_Package;
 with org.allbinary.media.image.ImageProcessorInput_Package; use org.allbinary.media.image.ImageProcessorInput_Package;
 with org.allbinary.media.image.ImageProcessedVisitor_Package; use org.allbinary.media.image.ImageProcessedVisitor_Package;
 
@@ -37,6 +36,8 @@ package org.allbinary.media.image.ImageArrayRotationUtil_Package is
    type ImageArrayRotationUtil_Access is access all ImageArrayRotationUtil'Class;
    type ImageArrayRotationUtil_Access_Array is array (Natural range <>) of ImageArrayRotationUtil_Access;
    type ImageArrayRotationUtil_Access_Array_Access is access all ImageArrayRotationUtil_Access_Array;
+   type ImageArrayRotationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageArrayRotationUtil_Access_Array_Access;
+   type ImageArrayRotationUtil_Access_Array_Access_Array_Access is access all ImageArrayRotationUtil_Access_Array_Access_Array;
 
    type ImageArrayRotationUtil is new Java_Object with record
       logUtil : LogUtil_Access;

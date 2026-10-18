@@ -13,8 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
+with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
+with org.allbinary.business.user.address.StreetAddressData_Package; use org.allbinary.business.user.address.StreetAddressData_Package;
+with org.allbinary.data.tables.TableDataFactory_Package; use org.allbinary.data.tables.TableDataFactory_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package StreetAddressData_Package renames Standard.org.allbinary.business.user.address.StreetAddressData_Package;
+   package TableDataFactory_Package renames Standard.org.allbinary.data.tables.TableDataFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out StreetAddressesEntity'Class) is
    begin
       null;
@@ -86,7 +109,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
       time : Unbounded_String;
    begin
         begin
-            values := BasicArrayListD_Package.Create;
+            values := BasicArrayList_Access (BasicArrayListD_Package.Create);
             values.add (index);
             values.add (This.userName);
             values.add (StringUtil_Package.getInstance.EMPTY_STRING);
@@ -158,7 +181,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
       index : Integer;
    begin
         begin
-            streetAddressVector := BasicArrayListD_Package.Create;
+            streetAddressVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             keyAndValue := StdUtil_Package.getInstance.createHashMap;
             keyAndValue.put (UserData_Package.USERNAME, Java_Box (This.userName));
             addressList := AbSqlBean (This).getRows (keyAndValue);
@@ -167,7 +190,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                 addressHashMap := HashMap_Access (addressList.get (index));
                 streetAddress := StreetAddress_Package.Create (addressHashMap);
                 if (streetAddress) /= (null) then
-                    streetAddressVector.add (streetAddress);
+                    streetAddressVector.add (Java_Object_Access (streetAddress));
                 end if;
             end loop;
             return streetAddressVector;

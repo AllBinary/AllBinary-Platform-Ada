@@ -13,8 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package; use org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.thread.NullThread_Package; use org.allbinary.thread.NullThread_Package;
+with org.allbinary.canvas.RunnableCanvasRefreshHelper_Package; use org.allbinary.canvas.RunnableCanvasRefreshHelper_Package;
+
 package body org.allbinary.canvas.RunnableCanvas_Package is
 
+   package NullWaitGameRunnable_Package renames Standard.org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package NullThread_Package renames Standard.org.allbinary.thread.NullThread_Package;
    procedure Initialize_Fields (This : in out RunnableCanvas'Class) is
    begin
       null;
@@ -49,7 +61,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
         MyCanvas_Package.Initialize (This, CommonStrings_Package.getInstance.UNKNOWN, childNameList);
         Initialize_Fields (This);
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("RunnableCanvas delay: ")).appendint (Integer (This.loopTimeHelper.delay_Id)).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-        This.runnableCanvasRefreshHelper := RunnableCanvasRefreshHelper_Package.Create (RunnableCanvas_Access'(This'Unchecked_Access));
+        This.runnableCanvasRefreshHelper := Processor_Access (RunnableCanvasRefreshHelper_Package.Create (RunnableCanvas_Access'(This'Unchecked_Access)));
         if (commandListener) /= (null) then
             RunnableCanvas'Class (This).initCommands (commandListener);
         elsif hasParam then
@@ -79,10 +91,10 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
         end if;
    end isMainCanvas;
 
-   procedure setThread (This : in out RunnableCanvas; thread_Case_Param : access Thread_Package.Thread'Class) is
-      thread_Case : constant Thread_Access := Thread_Access (thread_Case_Param);
+   procedure setThread (This : in out RunnableCanvas; thread_Param : access Thread_Package.Thread'Class) is
+      thread : constant Thread_Access := Thread_Access (thread_Param);
    begin
-        This.thread_Case := thread_Case;
+        This.thread_Case := thread;
    end setThread;
 
    procedure setRunning (This : in out RunnableCanvas; running : Boolean) is

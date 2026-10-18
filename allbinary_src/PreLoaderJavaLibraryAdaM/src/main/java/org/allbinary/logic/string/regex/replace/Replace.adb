@@ -13,15 +13,28 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+
 package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
 
+   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    procedure Initialize_Fields (This : in out Replace'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.j2seUtil := J2SEUtil_Package.getInstance;
       This.REPLACERS_U := To_Unbounded_String ("Replacers: ");
-      This.ALL_Id := To_Unbounded_String ("all");
+      This.ALL_Field_Id := To_Unbounded_String ("all");
       This.FOUND_KEY := To_Unbounded_String ("found key total: ");
       
    end Initialize_Fields;
@@ -69,10 +82,10 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
       return This;
    end Create;
 
-   function all_Case_Id (This : in out Replace; replace : Unbounded_String) return Unbounded_String is
+   function all_Id (This : in out Replace; replace : Unbounded_String) return Unbounded_String is
    begin
-        return Replace'Class (This).upTo (replace, Integer_Package.MIN_VALUE);
-   end all_Case_Id;
+        return Replace'Class (This).upTo (replace, Integer'First);
+   end all_Id;
 
    function upTo (This : in out Replace; replace_Param : Unbounded_String; total : Integer) return Unbounded_String is
       replace : Unbounded_String := replace_Param;
@@ -108,7 +121,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
             nextSecondKey := Null_Unbounded_String;
             begin2 := 0;
             while (index) < (Length (replace)) loop
-                begin_Id := replace.indexOf (keys (0), index);
+                begin_Id := Java_Index_Of (replace, Java_Image (keys (0)), index);
                 if (begin_Id) /= (-(1)) then
                     foundTotal := foundTotal + 1;
                     if ((foundTotal) rem (100)) = (0) then
@@ -124,7 +137,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
                     replace := newStringBuffer.toString;
                     if (keys'Length) > (1) then
                         nextSecondKey := keys (1);
-                        begin2 := replace.indexOf (nextSecondKey, index);
+                        begin2 := Java_Index_Of (replace, Java_Image (nextSecondKey), index);
                         if (begin2) /= (-(1)) then
                             end2 := (begin2) + (Length (nextSecondKey));
                             newStringBuffer.delete (0, newStringBuffer.length);
@@ -136,7 +149,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
                         end if;
                     end if;
                     totalNumberOfReplaces := totalNumberOfReplaces + 1;
-                    if ((total) /= (Integer_Package.MIN_VALUE)) and then ((totalNumberOfReplaces) >= (total)) then
+                    if ((total) /= (Integer'First)) and then ((totalNumberOfReplaces) >= (total)) then
                         exit;
                     end if;
                 else
@@ -146,7 +159,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
         end loop;
         if (totalNumberOfReplaces) > (0) then
             if LogConfigTypes_Package.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.REPLACE) then
-                This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), Replace_Access'(This'Unchecked_Access), This.ALL_Id);
+                This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), Replace_Access'(This'Unchecked_Access), This.ALL_Field_Id);
             end if;
         end if;
         return replace;
@@ -177,10 +190,10 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
             index := 0;
             while (index) < (Length (replace)) loop
                 newStringBuffer.delete (0, newStringBuffer.length);
-                begin_Id := replace.indexOf (key, index);
+                begin_Id := Java_Index_Of (replace, Java_Image (key), index);
                 if (begin_Id) /= (-(1)) then
                     Ada.Text_IO.Put_Line (Java_Image (This.FOUND_KEY));
-                    end_Id := (replace.indexOf (ASCII.LF, (begin_Id) + (Length (key)))) + (1);
+                    end_Id := (Java_Index_Of (replace, Java_Image (ASCII.LF), (begin_Id) + (Length (key)))) + (1);
                     if (end_Id) >= (0) then
                         newStringBuffer.append (Unbounded_Slice (replace, (0) + 1, begin_Id));
                         index := newStringBuffer.length;
@@ -194,7 +207,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
             end loop;
         end loop;
         if LogConfigTypes_Package.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.REPLACE) then
-            This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), Replace_Access'(This'Unchecked_Access), This.ALL_Id);
+            This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), Replace_Access'(This'Unchecked_Access), This.ALL_Field_Id);
         end if;
         return replace;
    end line;
@@ -210,14 +223,14 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
             stringUtil := StringUtil_Package.getInstance;
             appUrlGlobals := AppUrlGlobals_Package.Create;
             appUrlGlobals.setWebappPath (To_Unbounded_String ("G:/mnt/bc/mydev/work/allbinary_src/ToolsJavaLibrary/tools"));
-            URLGLOBALS.init (appUrlGlobals);
+            URLGLOBALS_Package.init (appUrlGlobals);
             testString := To_Unbounded_String ("""super gun"" big tank ""goodgunriflegun");
             replace := Replace_Package.Create (To_Unbounded_String ("gun"), To_Unbounded_String ("abcdefghijklmnopqrstuxwxyzabcdefghijklmnopqrstuxwxyz"));
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Old String: ") & testString));
-            testString := replace.all_Case_Id (testString);
+            testString := replace.all_Id (testString);
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("New String: ") & testString));
             replaceCat := Replace_Package.Create (To_Unbounded_String ("abcdefghijklmnopqrstuxwxyzabcdefghijklmnopqrstuxwxyz"), stringUtil.EMPTY_STRING);
-            testString := replaceCat.all_Case_Id (testString);
+            testString := replaceCat.all_Id (testString);
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("New String: ") & testString));
         exception
             when Java_Occurrence : others =>
@@ -229,12 +242,12 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
         end;
    end main;
 
-   procedure all_Case_Id (This : in out Replace; replace : Unbounded_String) is
-      Java_Result : constant Unbounded_String := Replace'Class (This).all_Case_Id (replace);
+   procedure all_Id (This : in out Replace; replace : Unbounded_String) is
+      Java_Result : constant Unbounded_String := Replace'Class (This).all_Id (replace);
       pragma Unreferenced (Java_Result);
    begin
       null;
-   end all_Case_Id;
+   end all_Id;
 
    procedure upTo (This : in out Replace; replace_Param : Unbounded_String; total : Integer) is
       Java_Result : constant Unbounded_String := Replace'Class (This).upTo (replace_Param, total);

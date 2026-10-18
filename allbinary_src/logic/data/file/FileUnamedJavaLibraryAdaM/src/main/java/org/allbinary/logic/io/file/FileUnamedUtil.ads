@@ -30,6 +30,8 @@ package org.allbinary.logic.io.file.FileUnamedUtil_Package is
    type FileUnamedUtil_Access is access all FileUnamedUtil'Class;
    type FileUnamedUtil_Access_Array is array (Natural range <>) of FileUnamedUtil_Access;
    type FileUnamedUtil_Access_Array_Access is access all FileUnamedUtil_Access_Array;
+   type FileUnamedUtil_Access_Array_Access_Array is array (Natural range <>) of FileUnamedUtil_Access_Array_Access;
+   type FileUnamedUtil_Access_Array_Access_Array_Access is access all FileUnamedUtil_Access_Array_Access_Array;
 
    type FileUnamedUtil is new Java_Object with record
       commonSeps : CommonSeps_Access;

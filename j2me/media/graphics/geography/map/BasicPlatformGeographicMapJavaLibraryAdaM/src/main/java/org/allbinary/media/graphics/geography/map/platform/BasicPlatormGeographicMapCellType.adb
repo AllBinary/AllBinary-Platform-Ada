@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
+
 package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package is
 
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
    procedure Initialize_Fields (This : in out BasicPlatormGeographicMapCellType'Class) is
    begin
       null;
@@ -26,7 +31,7 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
       types : BasicArrayList_Access;
       basicPlatormGeographicMapCellType : BasicPlatormGeographicMapCellType_Access;
    begin
-        types := BasicArrayListS_Package.Create (1);
+        types := BasicArrayList_Access (BasicArrayListS_Package.Create (1));
         types.add (SmallIntegerSingletonFactory_Package.getInstance.getAt (type_Id));
         basicPlatormGeographicMapCellType := BasicPlatormGeographicMapCellType_Package.Create (types);
         return basicPlatormGeographicMapCellType;

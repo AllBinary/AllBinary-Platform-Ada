@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.media.image.GraphicsEnvironment_Package; use org.allbinary.media.image.GraphicsEnvironment_Package;
+with org.allbinary.media.image.GraphicsDevice_Package; use org.allbinary.media.image.GraphicsDevice_Package;
+with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
+
 package body org.allbinary.media.image.ImageUnifierUtil_Package is
 
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    procedure Initialize_Fields (This : in out ImageUnifierUtil'Class) is
    begin
       null;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package is
 
    procedure Initialize_Fields (This : in out NullWaitGameRunnable'Class) is
@@ -41,7 +42,7 @@ package body org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package 
 
 begin
    null;
-   instance := NullWaitGameRunnable_Package.Create;
+   instance := GameRunnable_Access (NullWaitGameRunnable_Package.Create);
 
 end org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
 

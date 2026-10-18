@@ -30,6 +30,8 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBase
    type GeographicMapCellPositionBaseFactory_Access is access all GeographicMapCellPositionBaseFactory'Class;
    type GeographicMapCellPositionBaseFactory_Access_Array is array (Natural range <>) of GeographicMapCellPositionBaseFactory_Access;
    type GeographicMapCellPositionBaseFactory_Access_Array_Access is access all GeographicMapCellPositionBaseFactory_Access_Array;
+   type GeographicMapCellPositionBaseFactory_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionBaseFactory_Access_Array_Access;
+   type GeographicMapCellPositionBaseFactory_Access_Array_Access_Array_Access is access all GeographicMapCellPositionBaseFactory_Access_Array_Access_Array;
 
    type GeographicMapCellPositionBaseFactory is new Java_Object with null record;
 

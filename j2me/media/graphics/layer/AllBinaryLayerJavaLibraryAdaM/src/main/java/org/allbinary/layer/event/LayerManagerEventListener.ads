@@ -32,8 +32,10 @@ package org.allbinary.layer.event.LayerManagerEventListener_Package is
    type LayerManagerEventListener_Access is access all LayerManagerEventListener'Class;
    type LayerManagerEventListener_Access_Array is array (Natural range <>) of LayerManagerEventListener_Access;
    type LayerManagerEventListener_Access_Array_Access is access all LayerManagerEventListener_Access_Array;
+   type LayerManagerEventListener_Access_Array_Access_Array is array (Natural range <>) of LayerManagerEventListener_Access_Array_Access;
+   type LayerManagerEventListener_Access_Array_Access_Array_Access is access all LayerManagerEventListener_Access_Array_Access_Array;
 
-   type LayerManagerEventListener is new LayerManagerEventListenerInterface with null record;
+   type LayerManagerEventListener is new Java_Object and LayerManagerEventListenerInterface with null record;
 
    procedure Initialize (This : in out LayerManagerEventListener'Class);
    function Create return LayerManagerEventListener_Access;

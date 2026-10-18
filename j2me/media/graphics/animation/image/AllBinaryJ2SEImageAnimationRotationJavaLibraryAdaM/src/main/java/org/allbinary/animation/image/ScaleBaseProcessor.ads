@@ -30,6 +30,8 @@ package org.allbinary.animation.image.ScaleBaseProcessor_Package is
    type ScaleBaseProcessor_Access is access all ScaleBaseProcessor'Class;
    type ScaleBaseProcessor_Access_Array is array (Natural range <>) of ScaleBaseProcessor_Access;
    type ScaleBaseProcessor_Access_Array_Access is access all ScaleBaseProcessor_Access_Array;
+   type ScaleBaseProcessor_Access_Array_Access_Array is array (Natural range <>) of ScaleBaseProcessor_Access_Array_Access;
+   type ScaleBaseProcessor_Access_Array_Access_Array_Access is access all ScaleBaseProcessor_Access_Array_Access_Array;
 
    type ScaleBaseProcessor is new Java_Object with null record;
    instance : ScaleBaseProcessor_Access;

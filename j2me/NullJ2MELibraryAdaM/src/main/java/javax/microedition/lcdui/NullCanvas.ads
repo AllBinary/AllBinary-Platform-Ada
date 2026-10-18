@@ -22,6 +22,8 @@ package javax.microedition.lcdui.NullCanvas_Package is
    type NullCanvas_Access is access all NullCanvas'Class;
    type NullCanvas_Access_Array is array (Natural range <>) of NullCanvas_Access;
    type NullCanvas_Access_Array_Access is access all NullCanvas_Access_Array;
+   type NullCanvas_Access_Array_Access_Array is array (Natural range <>) of NullCanvas_Access_Array_Access;
+   type NullCanvas_Access_Array_Access_Array_Access is access all NullCanvas_Access_Array_Access_Array;
 
    type NullCanvas is new Canvas with null record;
    NULL_CANVAS : NullCanvas_Access;

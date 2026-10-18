@@ -28,6 +28,8 @@ package org.allbinary.business.forward.ForwardData_Package is
    type ForwardData_Access is access all ForwardData'Class;
    type ForwardData_Access_Array is array (Natural range <>) of ForwardData_Access;
    type ForwardData_Access_Array_Access is access all ForwardData_Access_Array;
+   type ForwardData_Access_Array_Access_Array is array (Natural range <>) of ForwardData_Access_Array_Access;
+   type ForwardData_Access_Array_Access_Array_Access is access all ForwardData_Access_Array_Access_Array;
 
    type ForwardData is new Java_Object with record
       PAGE : Unbounded_String;

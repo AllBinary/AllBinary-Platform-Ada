@@ -28,6 +28,8 @@ package org.allbinary.logic.util.event.EventStrings_Package is
    type EventStrings_Access is access all EventStrings'Class;
    type EventStrings_Access_Array is array (Natural range <>) of EventStrings_Access;
    type EventStrings_Access_Array_Access is access all EventStrings_Access_Array;
+   type EventStrings_Access_Array_Access_Array is array (Natural range <>) of EventStrings_Access_Array_Access;
+   type EventStrings_Access_Array_Access_Array_Access is access all EventStrings_Access_Array_Access_Array;
 
    type EventStrings is new Java_Object with record
       PERFORMANCE_MESSAGE : Unbounded_String;

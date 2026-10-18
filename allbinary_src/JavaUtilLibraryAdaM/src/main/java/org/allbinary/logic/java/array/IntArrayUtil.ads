@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
 package org.allbinary.logic.java.array_Id.IntArrayUtil_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type IntArrayUtil is tagged;
    type IntArrayUtil_Access is access all IntArrayUtil'Class;
    type IntArrayUtil_Access_Array is array (Natural range <>) of IntArrayUtil_Access;
    type IntArrayUtil_Access_Array_Access is access all IntArrayUtil_Access_Array;
+   type IntArrayUtil_Access_Array_Access_Array is array (Natural range <>) of IntArrayUtil_Access_Array_Access;
+   type IntArrayUtil_Access_Array_Access_Array_Access is access all IntArrayUtil_Access_Array_Access_Array;
 
    type IntArrayUtil is new Java_Object with null record;
 

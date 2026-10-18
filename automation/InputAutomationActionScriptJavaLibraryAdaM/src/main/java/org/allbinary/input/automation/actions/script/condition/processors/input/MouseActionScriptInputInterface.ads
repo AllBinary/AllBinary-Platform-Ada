@@ -30,6 +30,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    type MouseActionScriptInputInterface_Access is access all MouseActionScriptInputInterface'Class;
    type MouseActionScriptInputInterface_Access_Array is array (Natural range <>) of MouseActionScriptInputInterface_Access;
    type MouseActionScriptInputInterface_Access_Array_Access is access all MouseActionScriptInputInterface_Access_Array;
+   type MouseActionScriptInputInterface_Access_Array_Access_Array is array (Natural range <>) of MouseActionScriptInputInterface_Access_Array_Access;
+   type MouseActionScriptInputInterface_Access_Array_Access_Array_Access is access all MouseActionScriptInputInterface_Access_Array_Access_Array;
    procedure setPoint (This : in out MouseActionScriptInputInterface; point_Param : access Point_Package.Point'Class) is abstract;
    function getPoint (This : in out MouseActionScriptInputInterface) return Point_Access is abstract;
    function getButtonClicks (This : in out MouseActionScriptInputInterface) return Integer is abstract;

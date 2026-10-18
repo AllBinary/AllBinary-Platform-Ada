@@ -13,8 +13,49 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
+with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
+with org.allbinary.image.PreResourceImageUtil_Package; use org.allbinary.image.PreResourceImageUtil_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package; use org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
+with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
+with org.allbinary.media.image.ImageScaleUtil_Package; use org.allbinary.media.image.ImageScaleUtil_Package;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.animation.image.ImageAnimation_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
+with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package; use org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
+
 package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package PreResourceImageUtil_Package renames Standard.org.allbinary.image.PreResourceImageUtil_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package ExceptionUtil_Package renames Standard.org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package DisplayChangeEventHandler_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
+   package ImageScaleUtil_Package renames Standard.org.allbinary.media.image.ImageScaleUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package ImageAnimation_Package renames Standard.org.allbinary.animation.image.ImageAnimation_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package NullRunnable_Package renames Standard.org.allbinary.thread.NullRunnable_Package;
    procedure Initialize_Fields (This : in out AndroidBasicTitleProgressBar'Class) is
    begin
       null;
@@ -77,10 +118,10 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
         begin
             if (This.midletActivity) /= (activity) then
                 This.midletActivity := activity;
-                This.showTitleProgressBarRunnable := ShowTitleProgressBarRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
-                This.dismissTitleProgressBarRunnable := DismissTitleProgressBarRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
-                This.titleProgressDialogSetProgressRunnable := TitleProgressBarSetProgressRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
-                This.titleProgressDialogPortionSetProgressRunnable := TitleProgressBarPortionSetProgressRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
+                This.showTitleProgressBarRunnable := ARunnable_Access (ShowTitleProgressBarRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access)));
+                This.dismissTitleProgressBarRunnable := ARunnable_Access (DismissTitleProgressBarRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access)));
+                This.titleProgressDialogSetProgressRunnable := ARunnable_Access (TitleProgressBarSetProgressRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access)));
+                This.titleProgressDialogPortionSetProgressRunnable := ARunnable_Access (TitleProgressBarPortionSetProgressRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access)));
                 AndroidBasicTitleProgressBar'Class (This).loadProgressImages;
             end if;
             AndroidBasicTitleProgressBar'Class (This).updateCurrent;
@@ -112,7 +153,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 if (currentImage) = (null) then
                     This.animation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
                 else
-                    This.animation := ImageAnimation_Package.Create (currentImage, AnimationBehavior_Package.getInstance);
+                    This.animation := Animation_Access (ImageAnimation_Package.Create (currentImage, AnimationBehavior_Package.getInstance));
                 end if;
             end if;
         exception
@@ -290,15 +331,15 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
       nextIndex : Integer;
    begin
         image_Case := This.image_Case;
-        if (image_Case) /= (NullImage_Package.NULL_IMAGE) then
+        if (image) /= (NullImage_Package.NULL_IMAGE) then
             if Features_Package.getInstance.isFeature (MainFeatureFactory_Package.getInstance.FULL_SCREEN) then
                 if (This.IMAGE (index)) = (NullImage_Package.NULL_IMAGE) then
-                    This.IMAGE (index) := ImageScaleUtil_Package.getInstance.createImage2 (ImageCacheFactory_Package.getInstance, image_Case, Float (lastWidth), Float (image_Case.getWidth), (Float (lastHeight)) - (20.0), Float (image_Case.getHeight), False);
+                    This.IMAGE (index) := ImageScaleUtil_Package.getInstance.createImage2 (ImageCacheFactory_Package.getInstance, image, Float (lastWidth), Float (image.getWidth), (Float (lastHeight)) - (20.0), Float (image.getHeight), False);
                 end if;
             else
                 nextIndex := (index) + (1);
                 if (This.IMAGE (nextIndex)) = (NullImage_Package.NULL_IMAGE) then
-                    This.IMAGE (nextIndex) := ImageScaleUtil_Package.getInstance.createImage2 (ImageCacheFactory_Package.getInstance, image_Case, Float (lastWidth), Float (image_Case.getWidth), (Float (lastHeight)) - (28.0), Float (image_Case.getHeight), False);
+                    This.IMAGE (nextIndex) := ImageScaleUtil_Package.getInstance.createImage2 (ImageCacheFactory_Package.getInstance, image, Float (lastWidth), Float (image.getWidth), (Float (lastHeight)) - (28.0), Float (image.getHeight), False);
                 end if;
             end if;
         end if;
@@ -348,11 +389,11 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    begin
         image_Case := NullImage_Package.NULL_IMAGE;
         if Features_Package.getInstance.isFeature (MainFeatureFactory_Package.getInstance.FULL_SCREEN) then
-            image_Case := This.IMAGE (index);
+            image := This.IMAGE (index);
         else
-            image_Case := This.IMAGE ((index) + (1));
+            image := This.IMAGE ((index) + (1));
         end if;
-        return image_Case;
+        return image;
    end getImage;
 
    procedure paint2 (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics_Package.Graphics'Class) is

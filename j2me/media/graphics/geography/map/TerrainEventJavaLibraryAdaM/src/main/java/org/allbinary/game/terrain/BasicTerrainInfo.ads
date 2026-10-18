@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 
 package org.allbinary.game.terrain.BasicTerrainInfo_Package is
 
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
 
    type BasicTerrainInfo is tagged;
    type BasicTerrainInfo_Access is access all BasicTerrainInfo'Class;
    type BasicTerrainInfo_Access_Array is array (Natural range <>) of BasicTerrainInfo_Access;
    type BasicTerrainInfo_Access_Array_Access is access all BasicTerrainInfo_Access_Array;
+   type BasicTerrainInfo_Access_Array_Access_Array is array (Natural range <>) of BasicTerrainInfo_Access_Array_Access;
+   type BasicTerrainInfo_Access_Array_Access_Array_Access is access all BasicTerrainInfo_Access_Array_Access_Array;
 
    type BasicTerrainInfo is new Java_Object with record
       angle : Angle_Access;

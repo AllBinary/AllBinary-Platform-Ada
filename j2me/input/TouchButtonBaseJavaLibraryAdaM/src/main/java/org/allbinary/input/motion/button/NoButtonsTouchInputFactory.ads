@@ -29,6 +29,8 @@ package org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package is
    type NoButtonsTouchInputFactory_Access is access all NoButtonsTouchInputFactory'Class;
    type NoButtonsTouchInputFactory_Access_Array is array (Natural range <>) of NoButtonsTouchInputFactory_Access;
    type NoButtonsTouchInputFactory_Access_Array_Access is access all NoButtonsTouchInputFactory_Access_Array;
+   type NoButtonsTouchInputFactory_Access_Array_Access_Array is array (Natural range <>) of NoButtonsTouchInputFactory_Access_Array_Access;
+   type NoButtonsTouchInputFactory_Access_Array_Access_Array_Access is access all NoButtonsTouchInputFactory_Access_Array_Access_Array;
 
    type NoButtonsTouchInputFactory is new Java_Object with null record;
    instance : BaseTouchInput_Access;

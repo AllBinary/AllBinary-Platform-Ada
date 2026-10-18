@@ -22,8 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.media.audio.BaseSoundsFactory_Package; use org.allbinary.media.audio.BaseSoundsFactory_Package;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
-with org.allbinary.media.audio.SelectSound_Package; use org.allbinary.media.audio.SelectSound_Package;
-with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
 
 package org.allbinary.media.audio.EarlySoundsFactory_Package is
 
@@ -32,6 +30,8 @@ package org.allbinary.media.audio.EarlySoundsFactory_Package is
    type EarlySoundsFactory_Access is access all EarlySoundsFactory'Class;
    type EarlySoundsFactory_Access_Array is array (Natural range <>) of EarlySoundsFactory_Access;
    type EarlySoundsFactory_Access_Array_Access is access all EarlySoundsFactory_Access_Array;
+   type EarlySoundsFactory_Access_Array_Access_Array is array (Natural range <>) of EarlySoundsFactory_Access_Array_Access;
+   type EarlySoundsFactory_Access_Array_Access_Array_Access is access all EarlySoundsFactory_Access_Array_Access_Array;
 
    type EarlySoundsFactory is new BaseSoundsFactory with null record;
    instance : EarlySoundsFactory_Access;

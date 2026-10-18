@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.pickup.PickupLayer_Package; use org.allbinary.game.layer.pickup.PickupLayer_Package;
+
 package body org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package is
 
    procedure Initialize_Fields (This : in out PickupLayerCircularStaticPool'Class) is
@@ -48,7 +50,7 @@ package body org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Packa
         pickupLayer := PickupLayer_Access (PickupLayerCircularStaticPool'Class (This).getNextInstance);
         pickupLayer.initXYZ (x, y, z);
         pickupLayer.init (pickedUpLayerInterfaceFactoryInterface, pickedUpLayerInterfaceFactoryInterface.getAnimationInterface);
-        return pickupLayer;
+        return PickedUpLayerInterface_Access (pickupLayer);
    end getInstanceXYZ;
 
    procedure getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface_Package.PickedUpLayerInterfaceFactoryInterface'Class; x : Integer; y : Integer; z : Integer) is

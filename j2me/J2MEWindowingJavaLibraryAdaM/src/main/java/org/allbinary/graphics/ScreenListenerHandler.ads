@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.ScreenEmptyListener_Package; use org.allbinary.graphics.ScreenEmptyListener_Package;
 with org.allbinary.graphics.ScreenListenerInterface_Package; use org.allbinary.graphics.ScreenListenerInterface_Package;
 
 package org.allbinary.graphics.ScreenListenerHandler_Package is
@@ -30,6 +29,8 @@ package org.allbinary.graphics.ScreenListenerHandler_Package is
    type ScreenListenerHandler_Access is access all ScreenListenerHandler'Class;
    type ScreenListenerHandler_Access_Array is array (Natural range <>) of ScreenListenerHandler_Access;
    type ScreenListenerHandler_Access_Array_Access is access all ScreenListenerHandler_Access_Array;
+   type ScreenListenerHandler_Access_Array_Access_Array is array (Natural range <>) of ScreenListenerHandler_Access_Array_Access;
+   type ScreenListenerHandler_Access_Array_Access_Array_Access is access all ScreenListenerHandler_Access_Array_Access_Array;
 
    type ScreenListenerHandler is new Java_Object with record
       screenListenerInterface : ScreenListenerInterface_Access;

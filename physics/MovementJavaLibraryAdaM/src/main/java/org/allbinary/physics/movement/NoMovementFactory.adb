@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.physics.movement.NoMovementFactory_Package is
 
    procedure Initialize_Fields (This : in out NoMovementFactory'Class) is

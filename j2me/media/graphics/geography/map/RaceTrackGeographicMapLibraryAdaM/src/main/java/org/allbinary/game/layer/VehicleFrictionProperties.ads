@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.physics.FrictionProperties_Package; use org.allbinary.game.physics.FrictionProperties_Package;
-with org.allbinary.game.physics.friction.FrictionData_Package; use org.allbinary.game.physics.friction.FrictionData_Package;
 
 package org.allbinary.game.layer.VehicleFrictionProperties_Package is
 
    package FrictionProperties_Package renames Standard.org.allbinary.game.physics.FrictionProperties_Package;
-   package FrictionData_Package renames Standard.org.allbinary.game.physics.friction.FrictionData_Package;
 
    type VehicleFrictionProperties is tagged;
    type VehicleFrictionProperties_Access is access all VehicleFrictionProperties'Class;
    type VehicleFrictionProperties_Access_Array is array (Natural range <>) of VehicleFrictionProperties_Access;
    type VehicleFrictionProperties_Access_Array_Access is access all VehicleFrictionProperties_Access_Array;
+   type VehicleFrictionProperties_Access_Array_Access_Array is array (Natural range <>) of VehicleFrictionProperties_Access_Array_Access;
+   type VehicleFrictionProperties_Access_Array_Access_Array_Access is access all VehicleFrictionProperties_Access_Array_Access_Array;
 
    type VehicleFrictionProperties is new FrictionProperties with record
       TIRE_FRICTION_NOMINATOR : Integer;

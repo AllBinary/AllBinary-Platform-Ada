@@ -31,8 +31,10 @@ package bundle.input.automation.robot.InputAutomationRobotService_Package is
    type InputAutomationRobotService_Access is access all InputAutomationRobotService'Class;
    type InputAutomationRobotService_Access_Array is array (Natural range <>) of InputAutomationRobotService_Access;
    type InputAutomationRobotService_Access_Array_Access is access all InputAutomationRobotService_Access_Array;
+   type InputAutomationRobotService_Access_Array_Access_Array is array (Natural range <>) of InputAutomationRobotService_Access_Array_Access;
+   type InputAutomationRobotService_Access_Array_Access_Array_Access is access all InputAutomationRobotService_Access_Array_Access_Array;
 
-   type InputAutomationRobotService is new InputAutomationRobotServiceInterface with record
+   type InputAutomationRobotService is new Java_Object and InputAutomationRobotServiceInterface with record
       inputRobotInterfaceArray : InputRobotInterface_Access_Array_Access;
    end record;
 

@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.midlet.MIDlet_Package; use javax.microedition.midlet.MIDlet_Package;
-with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllBinaryMidlet_Package;
 
 package org.allbinary.midlet.MidletFactoryInterface_Package is
 
@@ -31,6 +30,8 @@ package org.allbinary.midlet.MidletFactoryInterface_Package is
    type MidletFactoryInterface_Access is access all MidletFactoryInterface'Class;
    type MidletFactoryInterface_Access_Array is array (Natural range <>) of MidletFactoryInterface_Access;
    type MidletFactoryInterface_Access_Array_Access is access all MidletFactoryInterface_Access_Array;
+   type MidletFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of MidletFactoryInterface_Access_Array_Access;
+   type MidletFactoryInterface_Access_Array_Access_Array_Access is access all MidletFactoryInterface_Access_Array_Access_Array;
 
    type MidletFactoryInterface is new Java_Object with null record;
 

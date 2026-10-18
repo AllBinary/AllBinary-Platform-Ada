@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
-with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package; use org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;
 
@@ -32,13 +31,14 @@ package org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package i
    package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
    package BasicVelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
    package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
-   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type DelayedConstantVelocityMovement is tagged;
    type DelayedConstantVelocityMovement_Access is access all DelayedConstantVelocityMovement'Class;
    type DelayedConstantVelocityMovement_Access_Array is array (Natural range <>) of DelayedConstantVelocityMovement_Access;
    type DelayedConstantVelocityMovement_Access_Array_Access is access all DelayedConstantVelocityMovement_Access_Array;
+   type DelayedConstantVelocityMovement_Access_Array_Access_Array is array (Natural range <>) of DelayedConstantVelocityMovement_Access_Array_Access;
+   type DelayedConstantVelocityMovement_Access_Array_Access_Array_Access is access all DelayedConstantVelocityMovement_Access_Array_Access_Array;
 
    type DelayedConstantVelocityMovement is new BasicConstantVelocityMovement with record
       timeDelayHelper : TimeDelayHelper_Access;

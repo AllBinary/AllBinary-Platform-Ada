@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package is
    type CssElementData_Access is access all CssElementData'Class;
    type CssElementData_Access_Array is array (Natural range <>) of CssElementData_Access;
    type CssElementData_Access_Array_Access is access all CssElementData_Access_Array;
+   type CssElementData_Access_Array_Access_Array is array (Natural range <>) of CssElementData_Access_Array_Access;
+   type CssElementData_Access_Array_Access_Array_Access is access all CssElementData_Access_Array_Access_Array;
 
    type CssElementData is new Java_Object with record
       NAME : Unbounded_String;

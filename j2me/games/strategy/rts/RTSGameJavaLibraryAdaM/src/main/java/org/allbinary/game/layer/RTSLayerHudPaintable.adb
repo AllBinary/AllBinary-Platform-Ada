@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
+with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.game.part.weapon.BasicWeaponPart_Package;
+
 package body org.allbinary.game.layer.RTSLayerHudPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package BasicWeaponPart_Package renames Standard.org.allbinary.game.part.weapon.BasicWeaponPart_Package;
    procedure Initialize_Fields (This : in out RTSLayerHudPaintable'Class) is
    begin
       null;
@@ -84,7 +93,7 @@ package body org.allbinary.game.layer.RTSLayerHudPaintable_Package is
    procedure setRtsLayer (This : in out RTSLayerHudPaintable; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
       rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
-        This.rtsLayer := rtsLayer;
+        This.rtsLayer := CollidableDestroyableDamageableLayer_Access (rtsLayer);
    end setRtsLayer;
 
    function getRtsLayer (This : in out RTSLayerHudPaintable) return CollidableDestroyableDamageableLayer_Access is

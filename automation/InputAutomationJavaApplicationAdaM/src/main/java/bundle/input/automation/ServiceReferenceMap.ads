@@ -24,20 +24,20 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.Map_Package; use java.util.Map_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.osgi.framework.ServiceReference_Package; use org.osgi.framework.ServiceReference_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 
 package bundle.input.automation.ServiceReferenceMap_Package is
 
    package Map_Package renames Standard.java.util.Map_Package;
    package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type ServiceReferenceMap is tagged;
    type ServiceReferenceMap_Access is access all ServiceReferenceMap'Class;
    type ServiceReferenceMap_Access_Array is array (Natural range <>) of ServiceReferenceMap_Access;
    type ServiceReferenceMap_Access_Array_Access is access all ServiceReferenceMap_Access_Array;
+   type ServiceReferenceMap_Access_Array_Access_Array is array (Natural range <>) of ServiceReferenceMap_Access_Array_Access;
+   type ServiceReferenceMap_Access_Array_Access_Array_Access is access all ServiceReferenceMap_Access_Array_Access_Array;
 
-   type ServiceReferenceMap is new Map with record
+   type ServiceReferenceMap is new Java_Object and Map with record
       serviceReference : ServiceReference_Access;
    end record;
 
@@ -62,6 +62,14 @@ package bundle.input.automation.ServiceReferenceMap_Package is
    function entrySet (This : in out ServiceReferenceMap) return Set_Access;
    function toString (map_Param : access Map_Package.Map'Class) return Unbounded_String;
    procedure toString (map_Param : access Map_Package.Map'Class);
+   function containsKey (This : in out ServiceReferenceMap; Value : Unbounded_String) return Boolean;
+   procedure containsKey (This : in out ServiceReferenceMap; Value : Unbounded_String);
+   function containsValue (This : in out ServiceReferenceMap; Value : Unbounded_String) return Boolean;
+   procedure containsValue (This : in out ServiceReferenceMap; Value : Unbounded_String);
+   function get (This : in out ServiceReferenceMap; Value : Unbounded_String) return Java_Object_Access;
+   procedure get (This : in out ServiceReferenceMap; Value : Unbounded_String);
+   function remove (This : in out ServiceReferenceMap; Value : Unbounded_String) return Java_Object_Access;
+   procedure remove (This : in out ServiceReferenceMap; Value : Unbounded_String);
 
 end bundle.input.automation.ServiceReferenceMap_Package;
 

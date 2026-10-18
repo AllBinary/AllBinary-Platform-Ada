@@ -20,32 +20,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
 with org.allbinary.game.graphics.hud.BasicHud_Package; use org.allbinary.game.graphics.hud.BasicHud_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
-with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
-with org.allbinary.logic.math.PrimitiveLongSingleton_Package; use org.allbinary.logic.math.PrimitiveLongSingleton_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic.math.PrimitiveLongUtil_Package;
 
 package org.allbinary.game.layer.hud.basic.VelocityWidget_Package is
 
-   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
    package BasicHud_Package renames Standard.org.allbinary.game.graphics.hud.BasicHud_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
-   package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
-   package PrimitiveLongSingleton_Package renames Standard.org.allbinary.logic.math.PrimitiveLongSingleton_Package;
    package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
 
    type VelocityWidget is tagged;
    type VelocityWidget_Access is access all VelocityWidget'Class;
    type VelocityWidget_Access_Array is array (Natural range <>) of VelocityWidget_Access;
    type VelocityWidget_Access_Array_Access is access all VelocityWidget_Access_Array;
+   type VelocityWidget_Access_Array_Access_Array is array (Natural range <>) of VelocityWidget_Access_Array_Access;
+   type VelocityWidget_Access_Array_Access_Array_Access is access all VelocityWidget_Access_Array_Access_Array;
 
    type VelocityWidget is new BasicHud with record
       KILOMETERS_PER_HOUR_STR : Character_Array_Access;

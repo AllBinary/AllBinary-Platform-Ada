@@ -21,30 +21,21 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
-with org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package; use org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package; use org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package;
 
 package org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package Tokenizer_Package renames Standard.org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
-   package HtmlNameMathData_Package renames Standard.org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type NameSpaceRequestParam is tagged;
    type NameSpaceRequestParam_Access is access all NameSpaceRequestParam'Class;
    type NameSpaceRequestParam_Access_Array is array (Natural range <>) of NameSpaceRequestParam_Access;
    type NameSpaceRequestParam_Access_Array_Access is access all NameSpaceRequestParam_Access_Array;
+   type NameSpaceRequestParam_Access_Array_Access_Array is array (Natural range <>) of NameSpaceRequestParam_Access_Array_Access;
+   type NameSpaceRequestParam_Access_Array_Access_Array_Access is access all NameSpaceRequestParam_Access_Array_Access_Array;
 
    type NameSpaceRequestParam is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.collision.CollisionTypeFactory_Package; use org.allbinary.game.collision.CollisionTypeFactory_Package;
+
 package body org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package is
 
    procedure Initialize_Fields (This : in out CollidableAlwaysPickupNeverCollideBehavior'Class) is

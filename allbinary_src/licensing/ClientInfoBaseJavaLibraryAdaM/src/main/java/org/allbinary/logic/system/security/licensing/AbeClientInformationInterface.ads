@@ -34,6 +34,8 @@ package org.allbinary.logic.system.security.licensing.AbeClientInformationInterf
    type AbeClientInformationInterface_Access is access all AbeClientInformationInterface'Class;
    type AbeClientInformationInterface_Access_Array is array (Natural range <>) of AbeClientInformationInterface_Access;
    type AbeClientInformationInterface_Access_Array_Access is access all AbeClientInformationInterface_Access_Array;
+   type AbeClientInformationInterface_Access_Array_Access_Array is array (Natural range <>) of AbeClientInformationInterface_Access_Array_Access;
+   type AbeClientInformationInterface_Access_Array_Access_Array_Access is access all AbeClientInformationInterface_Access_Array_Access_Array;
    procedure init (This : in out AbeClientInformationInterface) is abstract;
    function getOperatingSystemInterface (This : in out AbeClientInformationInterface) return GenericOperatingSystem_Access is abstract;
    function getName (This : in out AbeClientInformationInterface) return Unbounded_String is abstract;

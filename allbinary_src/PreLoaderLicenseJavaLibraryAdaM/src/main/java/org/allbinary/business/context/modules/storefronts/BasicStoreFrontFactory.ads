@@ -21,19 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.business.context.modules.storefronts.BasicStoreFrontsEntity_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFrontsEntity_Package;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package;
 
 package org.allbinary.business.context.modules.storefronts.BasicStoreFrontFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BasicStoreFrontFactory is tagged;
    type BasicStoreFrontFactory_Access is access all BasicStoreFrontFactory'Class;
    type BasicStoreFrontFactory_Access_Array is array (Natural range <>) of BasicStoreFrontFactory_Access;
    type BasicStoreFrontFactory_Access_Array_Access is access all BasicStoreFrontFactory_Access_Array;
+   type BasicStoreFrontFactory_Access_Array_Access_Array is array (Natural range <>) of BasicStoreFrontFactory_Access_Array_Access;
+   type BasicStoreFrontFactory_Access_Array_Access_Array_Access is access all BasicStoreFrontFactory_Access_Array_Access_Array;
 
    type BasicStoreFrontFactory is new Java_Object with record
       logUtil : LogUtil_Access;

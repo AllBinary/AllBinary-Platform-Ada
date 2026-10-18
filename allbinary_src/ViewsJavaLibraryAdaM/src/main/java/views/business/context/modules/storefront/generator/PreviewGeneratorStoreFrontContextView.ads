@@ -21,26 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfosData_Package; use org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with views.business.context.modules.storefront.generator.GeneratorStoreFrontContextView_Package; use views.business.context.modules.storefront.generator.GeneratorStoreFrontContextView_Package;
 
 package views.business.context.modules.storefront.generator.PreviewGeneratorStoreFrontContextView_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type PreviewGeneratorStoreFrontContextView is tagged;
    type PreviewGeneratorStoreFrontContextView_Access is access all PreviewGeneratorStoreFrontContextView'Class;
    type PreviewGeneratorStoreFrontContextView_Access_Array is array (Natural range <>) of PreviewGeneratorStoreFrontContextView_Access;
    type PreviewGeneratorStoreFrontContextView_Access_Array_Access is access all PreviewGeneratorStoreFrontContextView_Access_Array;
+   type PreviewGeneratorStoreFrontContextView_Access_Array_Access_Array is array (Natural range <>) of PreviewGeneratorStoreFrontContextView_Access_Array_Access;
+   type PreviewGeneratorStoreFrontContextView_Access_Array_Access_Array_Access is access all PreviewGeneratorStoreFrontContextView_Access_Array_Access_Array;
 
    type PreviewGeneratorStoreFrontContextView is new GeneratorStoreFrontContextView with record
       logUtil : LogUtil_Access;

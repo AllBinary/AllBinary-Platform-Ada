@@ -28,6 +28,8 @@ package org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Pa
    type BasicTouchButtonCellPositionFactory_Access is access all BasicTouchButtonCellPositionFactory'Class;
    type BasicTouchButtonCellPositionFactory_Access_Array is array (Natural range <>) of BasicTouchButtonCellPositionFactory_Access;
    type BasicTouchButtonCellPositionFactory_Access_Array_Access is access all BasicTouchButtonCellPositionFactory_Access_Array;
+   type BasicTouchButtonCellPositionFactory_Access_Array_Access_Array is array (Natural range <>) of BasicTouchButtonCellPositionFactory_Access_Array_Access;
+   type BasicTouchButtonCellPositionFactory_Access_Array_Access_Array_Access is access all BasicTouchButtonCellPositionFactory_Access_Array_Access_Array;
 
    type BasicTouchButtonCellPositionFactory is new Java_Object with null record;
 

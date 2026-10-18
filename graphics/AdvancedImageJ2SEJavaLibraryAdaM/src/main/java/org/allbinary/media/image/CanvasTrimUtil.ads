@@ -36,6 +36,8 @@ package org.allbinary.media.image.CanvasTrimUtil_Package is
    type CanvasTrimUtil_Access is access all CanvasTrimUtil'Class;
    type CanvasTrimUtil_Access_Array is array (Natural range <>) of CanvasTrimUtil_Access;
    type CanvasTrimUtil_Access_Array_Access is access all CanvasTrimUtil_Access_Array;
+   type CanvasTrimUtil_Access_Array_Access_Array is array (Natural range <>) of CanvasTrimUtil_Access_Array_Access;
+   type CanvasTrimUtil_Access_Array_Access_Array_Access is access all CanvasTrimUtil_Access_Array_Access_Array;
 
    type CanvasTrimUtil is new Java_Object with record
       logUtil : LogUtil_Access;

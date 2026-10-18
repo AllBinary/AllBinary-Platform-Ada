@@ -32,6 +32,8 @@ package org.allbinary.media.image.ImageModifierUtil_Package is
    type ImageModifierUtil_Access is access all ImageModifierUtil'Class;
    type ImageModifierUtil_Access_Array is array (Natural range <>) of ImageModifierUtil_Access;
    type ImageModifierUtil_Access_Array_Access is access all ImageModifierUtil_Access_Array;
+   type ImageModifierUtil_Access_Array_Access_Array is array (Natural range <>) of ImageModifierUtil_Access_Array_Access;
+   type ImageModifierUtil_Access_Array_Access_Array_Access is access all ImageModifierUtil_Access_Array_Access_Array;
 
    type ImageModifierUtil is new Java_Object with null record;
    instance : ImageModifierUtil_Access;

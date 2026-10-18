@@ -28,6 +28,8 @@ package org.allbinary.ag.game.vector.HealthVectorData_Package is
    type HealthVectorData_Access is access all HealthVectorData'Class;
    type HealthVectorData_Access_Array is array (Natural range <>) of HealthVectorData_Access;
    type HealthVectorData_Access_Array_Access is access all HealthVectorData_Access_Array;
+   type HealthVectorData_Access_Array_Access_Array is array (Natural range <>) of HealthVectorData_Access_Array_Access;
+   type HealthVectorData_Access_Array_Access_Array_Access is access all HealthVectorData_Access_Array_Access_Array;
 
    type HealthVectorData is new Java_Object with null record;
    points : Integer_Array_Access_Array_Access_Array_Access;

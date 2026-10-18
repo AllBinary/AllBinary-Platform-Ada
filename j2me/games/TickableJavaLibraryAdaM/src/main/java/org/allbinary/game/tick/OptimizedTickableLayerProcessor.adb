@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
+with org.allbinary.game.tick.OptimizedTickableLayerManager_Package; use org.allbinary.game.tick.OptimizedTickableLayerManager_Package;
+
 package body org.allbinary.game.tick.OptimizedTickableLayerProcessor_Package is
 
+   package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
    procedure Initialize_Fields (This : in out OptimizedTickableLayerProcessor'Class) is
    begin
       null;

@@ -29,6 +29,8 @@ package org.allbinary.game.midlet.DemoSetup_Package is
    type DemoSetup_Access is access all DemoSetup'Class;
    type DemoSetup_Access_Array is array (Natural range <>) of DemoSetup_Access;
    type DemoSetup_Access_Array_Access is access all DemoSetup_Access_Array;
+   type DemoSetup_Access_Array_Access_Array is array (Natural range <>) of DemoSetup_Access_Array_Access;
+   type DemoSetup_Access_Array_Access_Array_Access is access all DemoSetup_Access_Array_Access_Array;
 
    type DemoSetup is new Java_Object with null record;
 

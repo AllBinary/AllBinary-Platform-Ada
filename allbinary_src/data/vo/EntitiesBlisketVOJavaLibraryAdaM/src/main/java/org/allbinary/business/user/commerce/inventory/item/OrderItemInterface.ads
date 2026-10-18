@@ -31,6 +31,8 @@ package org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_P
    type OrderItemInterface_Access is access all OrderItemInterface'Class;
    type OrderItemInterface_Access_Array is array (Natural range <>) of OrderItemInterface_Access;
    type OrderItemInterface_Access_Array_Access is access all OrderItemInterface_Access_Array;
+   type OrderItemInterface_Access_Array_Access_Array is array (Natural range <>) of OrderItemInterface_Access_Array_Access;
+   type OrderItemInterface_Access_Array_Access_Array_Access is access all OrderItemInterface_Access_Array_Access_Array;
    procedure setGroup (This : in out OrderItemInterface; value : Unbounded_String) is abstract;
    procedure setTax (This : in out OrderItemInterface; value : Unbounded_String) is abstract;
    procedure setShippingType (This : in out OrderItemInterface; value : Unbounded_String) is abstract;

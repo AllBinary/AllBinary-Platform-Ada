@@ -1,6 +1,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.PathParser_Package; use org.allbinary.animation.PathParser_Package;
+with org.allbinary.animation.FixedPoint_Package; use org.allbinary.animation.FixedPoint_Package;
+
 package body org.allbinary.animation.PolygonRasterizer_Package is
 
    procedure Initialize_Fields (This : in out PolygonRasterizer'Class) is

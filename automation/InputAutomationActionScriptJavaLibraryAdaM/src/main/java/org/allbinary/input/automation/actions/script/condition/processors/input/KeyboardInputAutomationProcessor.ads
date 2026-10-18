@@ -20,25 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputInterface_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputInterface_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardInputAutomationProcessor_Package is
 
-   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type KeyboardInputAutomationProcessor is tagged;
    type KeyboardInputAutomationProcessor_Access is access all KeyboardInputAutomationProcessor'Class;
    type KeyboardInputAutomationProcessor_Access_Array is array (Natural range <>) of KeyboardInputAutomationProcessor_Access;
    type KeyboardInputAutomationProcessor_Access_Array_Access is access all KeyboardInputAutomationProcessor_Access_Array;
+   type KeyboardInputAutomationProcessor_Access_Array_Access_Array is array (Natural range <>) of KeyboardInputAutomationProcessor_Access_Array_Access;
+   type KeyboardInputAutomationProcessor_Access_Array_Access_Array_Access is access all KeyboardInputAutomationProcessor_Access_Array_Access_Array;
 
    type KeyboardInputAutomationProcessor is new Java_Object with null record;
 

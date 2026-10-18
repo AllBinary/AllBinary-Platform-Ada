@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
 
@@ -30,7 +29,6 @@ package org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityIn
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package AdvertisementAreaInterface_Package renames Standard.org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
@@ -38,6 +36,8 @@ package org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityIn
    type AdvertisementAreasEntityInterface_Access is access all AdvertisementAreasEntityInterface'Class;
    type AdvertisementAreasEntityInterface_Access_Array is array (Natural range <>) of AdvertisementAreasEntityInterface_Access;
    type AdvertisementAreasEntityInterface_Access_Array_Access is access all AdvertisementAreasEntityInterface_Access_Array;
+   type AdvertisementAreasEntityInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementAreasEntityInterface_Access_Array_Access;
+   type AdvertisementAreasEntityInterface_Access_Array_Access_Array_Access is access all AdvertisementAreasEntityInterface_Access_Array_Access_Array;
    function get (This : in out AdvertisementAreasEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
    function get (This : in out AdvertisementAreasEntityInterface; storeName : Unbounded_String; advertisementAreaName : Unbounded_String) return AdvertisementAreaInterface_Access is abstract;
    procedure delete (This : in out AdvertisementAreasEntityInterface; value : Unbounded_String) is abstract;

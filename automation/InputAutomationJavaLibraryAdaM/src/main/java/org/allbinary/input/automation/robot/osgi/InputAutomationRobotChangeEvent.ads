@@ -29,6 +29,8 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEven
    type InputAutomationRobotChangeEvent_Access is access all InputAutomationRobotChangeEvent'Class;
    type InputAutomationRobotChangeEvent_Access_Array is array (Natural range <>) of InputAutomationRobotChangeEvent_Access;
    type InputAutomationRobotChangeEvent_Access_Array_Access is access all InputAutomationRobotChangeEvent_Access_Array;
+   type InputAutomationRobotChangeEvent_Access_Array_Access_Array is array (Natural range <>) of InputAutomationRobotChangeEvent_Access_Array_Access;
+   type InputAutomationRobotChangeEvent_Access_Array_Access_Array_Access is access all InputAutomationRobotChangeEvent_Access_Array_Access_Array;
 
    type InputAutomationRobotChangeEvent is new Java_Object with record
       inputAutomationRobotInterfaceWrapper : InputAutomationRobotInterfaceWrapper_Access;

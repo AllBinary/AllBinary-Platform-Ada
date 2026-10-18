@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package; use org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package;
+with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package;
+
 package body org.allbinary.game.behavior.topview.PlayerTopViewCharacterBehavior_Package is
 
+   package TrackingEventCircularStaticPool_Package renames Standard.org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package;
+   package TrackingEventHandler_Package renames Standard.org.allbinary.game.tracking.TrackingEventHandler_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package BasicGeographicMapUtil_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package;
    procedure Initialize_Fields (This : in out PlayerTopViewCharacterBehavior'Class) is
    begin
       null;

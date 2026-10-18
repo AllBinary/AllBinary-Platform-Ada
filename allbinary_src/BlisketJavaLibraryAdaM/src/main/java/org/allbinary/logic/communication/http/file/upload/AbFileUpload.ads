@@ -25,21 +25,19 @@ with AllBinary_Java; use AllBinary_Java;
 with org.apache.commons.fileupload.FileItemFactory_Package; use org.apache.commons.fileupload.FileItemFactory_Package;
 with org.apache.commons.fileupload.FileItemIterator_Package; use org.apache.commons.fileupload.FileItemIterator_Package;
 with org.apache.commons.fileupload.FileUpload_Package; use org.apache.commons.fileupload.FileUpload_Package;
-with org.apache.commons.fileupload.FileUploadException_Package; use org.apache.commons.fileupload.FileUploadException_Package;
-with org.apache.commons.fileupload.servlet.ServletRequestContext_Package; use org.apache.commons.fileupload.servlet.ServletRequestContext_Package;
 
 package org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package is
 
    package FileItemFactory_Package renames Standard.org.apache.commons.fileupload.FileItemFactory_Package;
    package FileItemIterator_Package renames Standard.org.apache.commons.fileupload.FileItemIterator_Package;
    package FileUpload_Package renames Standard.org.apache.commons.fileupload.FileUpload_Package;
-   package FileUploadException_Package renames Standard.org.apache.commons.fileupload.FileUploadException_Package;
-   package ServletRequestContext_Package renames Standard.org.apache.commons.fileupload.servlet.ServletRequestContext_Package;
 
    type AbFileUpload is tagged;
    type AbFileUpload_Access is access all AbFileUpload'Class;
    type AbFileUpload_Access_Array is array (Natural range <>) of AbFileUpload_Access;
    type AbFileUpload_Access_Array_Access is access all AbFileUpload_Access_Array;
+   type AbFileUpload_Access_Array_Access_Array is array (Natural range <>) of AbFileUpload_Access_Array_Access;
+   type AbFileUpload_Access_Array_Access_Array_Access is access all AbFileUpload_Access_Array_Access_Array;
 
    type AbFileUpload is new FileUpload with null record;
 

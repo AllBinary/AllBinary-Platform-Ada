@@ -28,6 +28,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    type GenericProfileActionScriptInputData_Access is access all GenericProfileActionScriptInputData'Class;
    type GenericProfileActionScriptInputData_Access_Array is array (Natural range <>) of GenericProfileActionScriptInputData_Access;
    type GenericProfileActionScriptInputData_Access_Array_Access is access all GenericProfileActionScriptInputData_Access_Array;
+   type GenericProfileActionScriptInputData_Access_Array_Access_Array is array (Natural range <>) of GenericProfileActionScriptInputData_Access_Array_Access;
+   type GenericProfileActionScriptInputData_Access_Array_Access_Array_Access is access all GenericProfileActionScriptInputData_Access_Array_Access_Array;
 
    type GenericProfileActionScriptInputData is new Java_Object with null record;
    NAME : Unbounded_String;

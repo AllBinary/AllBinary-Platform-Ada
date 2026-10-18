@@ -32,6 +32,8 @@ package org.allbinary.media.audio.MediaPlayerUtil_Package is
    type MediaPlayerUtil_Access is access all MediaPlayerUtil'Class;
    type MediaPlayerUtil_Access_Array is array (Natural range <>) of MediaPlayerUtil_Access;
    type MediaPlayerUtil_Access_Array_Access is access all MediaPlayerUtil_Access_Array;
+   type MediaPlayerUtil_Access_Array_Access_Array is array (Natural range <>) of MediaPlayerUtil_Access_Array_Access;
+   type MediaPlayerUtil_Access_Array_Access_Array_Access is access all MediaPlayerUtil_Access_Array_Access_Array;
 
    type MediaPlayerUtil is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -13,12 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.graphics.draw.KeyValueDrawString_Package is
 
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out KeyValueDrawString'Class) is
    begin
       null;
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (KeyValueDrawString_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (KeyValueDrawString_Access'(This'Unchecked_Access)));
       
       
       This.valueX := 0;
@@ -26,17 +31,17 @@ package body org.allbinary.graphics.draw.KeyValueDrawString_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out KeyValueDrawString'Class; label_Case : Unbounded_String; x : Integer) is
+   procedure Initialize (This : in out KeyValueDrawString'Class; label : Unbounded_String; x : Integer) is
    begin
       Initialize_Fields (This);
-        This.LABEL := label_Case;
+        This.LABEL := label;
         This.labelX := x;
    end Initialize;
 
-   function Create (label_Case : Unbounded_String; x : Integer) return KeyValueDrawString_Access is
+   function Create (label : Unbounded_String; x : Integer) return KeyValueDrawString_Access is
       This : constant KeyValueDrawString_Access := new KeyValueDrawString;
    begin
-      KeyValueDrawString_Package.Initialize (This.all, label_Case, x);
+      KeyValueDrawString_Package.Initialize (This.all, label, x);
       return This;
    end Create;
 

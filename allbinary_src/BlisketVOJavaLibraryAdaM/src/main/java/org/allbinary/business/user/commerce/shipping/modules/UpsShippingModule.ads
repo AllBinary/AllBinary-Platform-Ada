@@ -33,8 +33,10 @@ package org.allbinary.business.user.commerce.shipping.modules.UpsShippingModule_
    type UpsShippingModule_Access is access all UpsShippingModule'Class;
    type UpsShippingModule_Access_Array is array (Natural range <>) of UpsShippingModule_Access;
    type UpsShippingModule_Access_Array_Access is access all UpsShippingModule_Access_Array;
+   type UpsShippingModule_Access_Array_Access_Array is array (Natural range <>) of UpsShippingModule_Access_Array_Access;
+   type UpsShippingModule_Access_Array_Access_Array_Access is access all UpsShippingModule_Access_Array_Access_Array;
 
-   type UpsShippingModule is new ShippingInterface with record
+   type UpsShippingModule is new Java_Object and ShippingInterface with record
       name : Unbounded_String;
       description : Unbounded_String;
    end record;

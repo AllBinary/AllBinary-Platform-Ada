@@ -20,16 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
+with java.io.File_Package; use java.io.File_Package;
 --  with javax.swing.filechooser.FileFilter_Package; use javax.swing.filechooser.FileFilter_Package;
 
 package org.allbinary.media.image.filter.ImageFileFilter_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
 
    type ImageFileFilter is tagged;
    type ImageFileFilter_Access is access all ImageFileFilter'Class;
    type ImageFileFilter_Access_Array is array (Natural range <>) of ImageFileFilter_Access;
    type ImageFileFilter_Access_Array_Access is access all ImageFileFilter_Access_Array;
+   type ImageFileFilter_Access_Array_Access_Array is array (Natural range <>) of ImageFileFilter_Access_Array_Access;
+   type ImageFileFilter_Access_Array_Access_Array_Access is access all ImageFileFilter_Access_Array_Access_Array;
 
    type ImageFileFilter is new FileFilter with null record;
 

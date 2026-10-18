@@ -20,39 +20,35 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.layer.LayerManagerLoggingBase_Package; use org.allbinary.layer.LayerManagerLoggingBase_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
 
 package org.allbinary.layer.LayerManagerLogging_Package is
 
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type LayerManagerLogging is tagged;
    type LayerManagerLogging_Access is access all LayerManagerLogging'Class;
    type LayerManagerLogging_Access_Array is array (Natural range <>) of LayerManagerLogging_Access;
    type LayerManagerLogging_Access_Array_Access is access all LayerManagerLogging_Access_Array;
+   type LayerManagerLogging_Access_Array_Access_Array is array (Natural range <>) of LayerManagerLogging_Access_Array_Access;
+   type LayerManagerLogging_Access_Array_Access_Array_Access is access all LayerManagerLogging_Access_Array_Access_Array;
 
    type LayerManagerLogging is new LayerManagerLoggingBase with record
       logUtil : LogUtil_Access;
       stringBuilder : StringMaker_Access;
-      APPEND : Unbounded_String;
+      APPEND_Field : Unbounded_String;
       APPEND_U : Unbounded_String;
       U_AT_U : Unbounded_String;
       ATTEMPT_REMOVE_U : Unbounded_String;
       REMOVE_U : Unbounded_String;
-      REMOVE : Unbounded_String;
+      REMOVE_Field : Unbounded_String;
       DID_NOT_REMOVE : Unbounded_String;
-      CLEAR : Unbounded_String;
+      CLEAR_Field : Unbounded_String;
    end record;
    instance : LayerManagerLogging_Access;
    removeFailed : Boolean;
@@ -60,12 +56,12 @@ package org.allbinary.layer.LayerManagerLogging_Package is
    procedure Initialize (This : in out LayerManagerLogging'Class);
    function Create return LayerManagerLogging_Access;
    function getInstance return LayerManagerLogging_Access;
-   procedure append_Case (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   procedure append (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
    procedure appendAt (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer);
-   procedure remove_Case (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   procedure remove (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
    procedure removeResult (This : in out LayerManagerLogging; layerManager_Param : access LayerManager_Package.LayerManager'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; result : Boolean);
    procedure log (This : in out LayerManagerLogging; layerManager_Param : access LayerManager_Package.LayerManager'Class);
-   procedure clear_Case (This : in out LayerManagerLogging);
+   procedure clear (This : in out LayerManagerLogging);
 
 end org.allbinary.layer.LayerManagerLogging_Package;
 

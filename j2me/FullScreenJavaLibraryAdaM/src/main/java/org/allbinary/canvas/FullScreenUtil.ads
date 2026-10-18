@@ -21,22 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with org.allbinary.canvas.RunnableCanvas_Package; use org.allbinary.canvas.RunnableCanvas_Package;
 
 package org.allbinary.canvas.FullScreenUtil_Package is
 
    package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
 
    type FullScreenUtil is tagged;
    type FullScreenUtil_Access is access all FullScreenUtil'Class;
    type FullScreenUtil_Access_Array is array (Natural range <>) of FullScreenUtil_Access;
    type FullScreenUtil_Access_Array_Access is access all FullScreenUtil_Access_Array;
+   type FullScreenUtil_Access_Array_Access_Array is array (Natural range <>) of FullScreenUtil_Access_Array_Access;
+   type FullScreenUtil_Access_Array_Access_Array_Access is access all FullScreenUtil_Access_Array_Access_Array;
 
    type FullScreenUtil is new Java_Object with null record;
    instance : FullScreenUtil_Access;

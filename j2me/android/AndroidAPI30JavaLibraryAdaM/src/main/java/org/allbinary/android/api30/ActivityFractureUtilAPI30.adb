@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with android.view.Window_Package; use android.view.Window_Package;
+with androidx.core.view.WindowCompat_Package; use androidx.core.view.WindowCompat_Package;
+with androidx.core.view.WindowInsetsCompat_Package; use androidx.core.view.WindowInsetsCompat_Package;
+with androidx.core.view.WindowInsetsControllerCompat_Package; use androidx.core.view.WindowInsetsControllerCompat_Package;
+
 package body org.allbinary.android.api30.ActivityFractureUtilAPI30_Package is
 
+   package Window_Package renames Standard.android.view.Window_Package;
+   package WindowCompat_Package renames Standard.androidx.core.view.WindowCompat_Package;
+   package WindowInsetsCompat_Package renames Standard.androidx.core.view.WindowInsetsCompat_Package;
+   package WindowInsetsControllerCompat_Package renames Standard.androidx.core.view.WindowInsetsControllerCompat_Package;
    procedure Initialize_Fields (This : in out ActivityFractureUtilAPI30'Class) is
    begin
       null;

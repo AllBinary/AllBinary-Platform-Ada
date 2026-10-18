@@ -20,19 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.game.displayable.canvas.Runnable_Package; use org.allbinary.game.displayable.canvas.Runnable_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.displayable.canvas.GameRunnable_Package is
 
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
    type GameRunnable is tagged;
    type GameRunnable_Access is access all GameRunnable'Class;
    type GameRunnable_Access_Array is array (Natural range <>) of GameRunnable_Access;
    type GameRunnable_Access_Array_Access is access all GameRunnable_Access_Array;
+   type GameRunnable_Access_Array_Access_Array is array (Natural range <>) of GameRunnable_Access_Array_Access;
+   type GameRunnable_Access_Array_Access_Array_Access is access all GameRunnable_Access_Array_Access_Array;
 
-   type GameRunnable is new Runnable with record
+   type GameRunnable is new Java_Object and Runnable with record
       WAIT : Integer;
       FAST : Integer;
       waitInMillis : Long_Long_Integer;

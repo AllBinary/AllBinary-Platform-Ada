@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.configuration.InGameOptionsForm_Package; use org.allbinary.game.configuration.InGameOptionsForm_Package;
+
 package body org.allbinary.game.configuration.InGameOptionsFormFactory_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out InGameOptionsFormFactory'Class) is
    begin
       null;
@@ -53,7 +59,7 @@ package body org.allbinary.game.configuration.InGameOptionsFormFactory_Package i
         begin
             if (This.SINGLETON) = (CommandForm_Package.getNullCommandForm) then
                 initInterface.init;
-                This.SINGLETON := InGameOptionsForm_Package.Create (commandListener, title, backgrounBasicColor, foregroundBasicColor);
+                This.SINGLETON := CommandForm_Access (InGameOptionsForm_Package.Create (commandListener, title, backgrounBasicColor, foregroundBasicColor));
             end if;
         exception
             when Java_Occurrence : others =>

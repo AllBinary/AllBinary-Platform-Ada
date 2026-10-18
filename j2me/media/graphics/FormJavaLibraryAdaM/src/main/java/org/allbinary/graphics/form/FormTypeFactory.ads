@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
 
 package org.allbinary.graphics.form.FormTypeFactory_Package is
 
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type FormTypeFactory is tagged;
    type FormTypeFactory_Access is access all FormTypeFactory'Class;
    type FormTypeFactory_Access_Array is array (Natural range <>) of FormTypeFactory_Access;
    type FormTypeFactory_Access_Array_Access is access all FormTypeFactory_Access_Array;
+   type FormTypeFactory_Access_Array_Access_Array is array (Natural range <>) of FormTypeFactory_Access_Array_Access;
+   type FormTypeFactory_Access_Array_Access_Array_Access is access all FormTypeFactory_Access_Array_Access_Array;
 
    type FormTypeFactory is new Java_Object with record
       UNK : Unbounded_String;

@@ -22,12 +22,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
-with javax.microedition.khronos.opengles.GL11_Package; use javax.microedition.khronos.opengles.GL11_Package;
-with javax.microedition.khronos.opengles.GL11Ext_Package; use javax.microedition.khronos.opengles.GL11Ext_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
-with org.allbinary.graphics.opengles.OpenGLLogUtil_Package; use org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
@@ -37,12 +33,8 @@ package org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
 
    package GL_Package renames Standard.javax.microedition.khronos.opengles.GL_Package;
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
-   package GL11_Package renames Standard.javax.microedition.khronos.opengles.GL11_Package;
-   package GL11Ext_Package renames Standard.javax.microedition.khronos.opengles.GL11Ext_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package DisplayChangeEvent_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
-   package OpenGLLogUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
    package PlatformTextureBaseFactory_Package renames Standard.org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
@@ -51,6 +43,8 @@ package org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
    type OpenGLESGL11ExtImage_Access is access all OpenGLESGL11ExtImage'Class;
    type OpenGLESGL11ExtImage_Access_Array is array (Natural range <>) of OpenGLESGL11ExtImage_Access;
    type OpenGLESGL11ExtImage_Access_Array_Access is access all OpenGLESGL11ExtImage_Access_Array;
+   type OpenGLESGL11ExtImage_Access_Array_Access_Array is array (Natural range <>) of OpenGLESGL11ExtImage_Access_Array_Access;
+   type OpenGLESGL11ExtImage_Access_Array_Access_Array_Access is access all OpenGLESGL11ExtImage_Access_Array_Access_Array;
 
    type OpenGLESGL11ExtImage is new OpenGLESImage with record
       logUtil : LogUtil_Access;

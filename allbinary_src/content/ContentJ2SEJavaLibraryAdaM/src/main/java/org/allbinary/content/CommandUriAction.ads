@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
@@ -30,7 +29,6 @@ with org.allbinary.content.Intent_Package; use org.allbinary.content.Intent_Pack
 package org.allbinary.content.CommandUriAction_Package is
 
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
@@ -39,6 +37,8 @@ package org.allbinary.content.CommandUriAction_Package is
    type CommandUriAction_Access is access all CommandUriAction'Class;
    type CommandUriAction_Access_Array is array (Natural range <>) of CommandUriAction_Access;
    type CommandUriAction_Access_Array_Access is access all CommandUriAction_Access_Array;
+   type CommandUriAction_Access_Array_Access_Array is array (Natural range <>) of CommandUriAction_Access_Array_Access;
+   type CommandUriAction_Access_Array_Access_Array_Access is access all CommandUriAction_Access_Array_Access_Array;
 
    type CommandUriAction is new Java_Object with record
       logUtil : LogUtil_Access;

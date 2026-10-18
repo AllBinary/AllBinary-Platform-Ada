@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body javax.microedition.lcdui.NullCanvas_Package is
 
    procedure Initialize_Fields (This : in out NullCanvas'Class) is

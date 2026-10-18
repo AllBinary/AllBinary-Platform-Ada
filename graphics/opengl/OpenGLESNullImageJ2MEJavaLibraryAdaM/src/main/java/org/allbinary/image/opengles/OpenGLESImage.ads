@@ -23,13 +23,11 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.khronos.opengles.GL_Package; use javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package; use org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package; use org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.image.opengles.OpenGLESImageProperties_Package; use org.allbinary.image.opengles.OpenGLESImageProperties_Package;
 
@@ -38,20 +36,20 @@ package org.allbinary.image.opengles.OpenGLESImage_Package is
    package GL_Package renames Standard.javax.microedition.khronos.opengles.GL_Package;
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
    package PlatformBitmapBase_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBase_Package;
    package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
    package PlatformTextureBaseFactory_Package renames Standard.org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type OpenGLESImage is tagged;
    type OpenGLESImage_Access is access all OpenGLESImage'Class;
    type OpenGLESImage_Access_Array is array (Natural range <>) of OpenGLESImage_Access;
    type OpenGLESImage_Access_Array_Access is access all OpenGLESImage_Access_Array;
+   type OpenGLESImage_Access_Array_Access_Array is array (Natural range <>) of OpenGLESImage_Access_Array_Access;
+   type OpenGLESImage_Access_Array_Access_Array_Access is access all OpenGLESImage_Access_Array_Access_Array;
 
-   type OpenGLESImage is new OpenGLSurfaceChangedInterface with record
+   type OpenGLESImage is new Java_Object and OpenGLSurfaceChangedInterface with record
       commonStrings : CommonStrings_Access;
       textureFactory : PlatformTextureBaseFactory_Access;
       openGLBitmap : PlatformBitmapBase_Access;

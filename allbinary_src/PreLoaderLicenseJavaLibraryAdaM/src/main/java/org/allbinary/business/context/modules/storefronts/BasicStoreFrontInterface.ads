@@ -30,6 +30,8 @@ package org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterf
    type BasicStoreFrontInterface_Access is access all BasicStoreFrontInterface'Class;
    type BasicStoreFrontInterface_Access_Array is array (Natural range <>) of BasicStoreFrontInterface_Access;
    type BasicStoreFrontInterface_Access_Array_Access is access all BasicStoreFrontInterface_Access_Array;
+   type BasicStoreFrontInterface_Access_Array_Access_Array is array (Natural range <>) of BasicStoreFrontInterface_Access_Array_Access;
+   type BasicStoreFrontInterface_Access_Array_Access_Array_Access is access all BasicStoreFrontInterface_Access_Array_Access_Array;
    function getTestHtmlPath (This : in out BasicStoreFrontInterface) return Unbounded_String is abstract;
    function getCurrentHostName (This : in out BasicStoreFrontInterface) return Unbounded_String is abstract;
    function getCurrentHostNamePath (This : in out BasicStoreFrontInterface) return Unbounded_String is abstract;

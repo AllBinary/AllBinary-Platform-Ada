@@ -25,7 +25,6 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
-with views.admin.payment.gateways.SelectExistingView_Package; use views.admin.payment.gateways.SelectExistingView_Package;
 
 package views.admin.payment.gateways.SelectExistingValidationView_Package is
 
@@ -39,6 +38,8 @@ package views.admin.payment.gateways.SelectExistingValidationView_Package is
    type SelectExistingValidationView_Access is access all SelectExistingValidationView'Class;
    type SelectExistingValidationView_Access_Array is array (Natural range <>) of SelectExistingValidationView_Access;
    type SelectExistingValidationView_Access_Array_Access is access all SelectExistingValidationView_Access_Array;
+   type SelectExistingValidationView_Access_Array_Access_Array is array (Natural range <>) of SelectExistingValidationView_Access_Array_Access;
+   type SelectExistingValidationView_Access_Array_Access_Array_Access is access all SelectExistingValidationView_Access_Array_Access_Array;
 
    type SelectExistingValidationView is new HttpStoreComponentView and ValidationComponentInterface with null record;
 

@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.automation.PointFactory_Package; use org.allbinary.input.automation.PointFactory_Package;
+
 package body org.allbinary.input.automation.robot.NullInputRobot_Package is
 
+   package PointFactory_Package renames Standard.org.allbinary.input.automation.PointFactory_Package;
    procedure Initialize_Fields (This : in out NullInputRobot'Class) is
    begin
       null;

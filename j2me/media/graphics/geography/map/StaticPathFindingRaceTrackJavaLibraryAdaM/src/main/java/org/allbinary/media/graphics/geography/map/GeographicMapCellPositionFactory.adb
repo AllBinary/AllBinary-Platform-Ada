@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory_Package is
 
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out GeographicMapCellPositionFactory'Class) is
    begin
       null;
@@ -47,7 +56,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
         geographicMapCellPositionFactoryCanBeNull := GeographicMapCellPositionFactory_Package.hashtable.get (allBinaryTiledLayer.getDataId);
         if (geographicMapCellPositionFactoryCanBeNull) = (null) then
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Creating GeographicMapCellPositionFactory for TileLayer: ")).appendint (Integer (allBinaryTiledLayer.getDataId.intValue)).toString, GeographicMapCellPositionFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
-            geographicMapCellPositionFactoryCanBeNull := BasicGeographicMapCellPositionFactory_Package.Create (geographicMapInterface);
+            geographicMapCellPositionFactoryCanBeNull := Java_Object_Access (BasicGeographicMapCellPositionFactory_Package.Create (geographicMapInterface));
             GeographicMapCellPositionFactory_Package.hashtable.put (allBinaryTiledLayer.getDataId, geographicMapCellPositionFactoryCanBeNull);
             return BasicGeographicMapCellPositionFactory_Access (geographicMapCellPositionFactoryCanBeNull);
         else

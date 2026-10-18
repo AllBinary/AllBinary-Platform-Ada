@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package; use org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package;
+
 package body org.allbinary.game.ag.ai.tactical.HorizontalManeuverAIFactory_Package is
 
    procedure Initialize_Fields (This : in out HorizontalManeuverAIFactory'Class) is
@@ -38,7 +40,7 @@ package body org.allbinary.game.ag.ai.tactical.HorizontalManeuverAIFactory_Packa
       ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
       gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
    begin
-        return HorizontalManeuverAI_Package.Create (ownerLayerInterface, gameInput);
+        return ArtificialIntelligenceInterface_Access (HorizontalManeuverAI_Package.Create (ownerLayerInterface, gameInput));
    end getInstance;
 
    procedure getInstance (This : in out HorizontalManeuverAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is

@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with bundle.input.automation.module.InputAutomationModuleService_Package; use bundle.input.automation.module.InputAutomationModuleService_Package;
+with org.allbinary.input.automation.InputAutomationJFrame_Package; use org.allbinary.input.automation.InputAutomationJFrame_Package;
+with org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
+with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+
 package body org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package is
 
+   package InputAutomationModuleService_Package renames Standard.bundle.input.automation.module.InputAutomationModuleService_Package;
+   package InputAutomationJFrame_Package renames Standard.org.allbinary.input.automation.InputAutomationJFrame_Package;
+   package InputAutomationConfigurationUtil_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
+   package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
    procedure Initialize_Fields (This : in out InputAutomationModuleOSGIServiceVisitor'Class) is
    begin
       null;
@@ -75,6 +84,18 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleOSG
 
    procedure visit (This : in out InputAutomationModuleOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface_Package.OSGIServiceInterface'Class) is
       Java_Result : constant Boolean := InputAutomationModuleOSGIServiceVisitor'Class (This).visit (osgiServiceInterface_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end visit;
+
+   function visit (This : in out InputAutomationModuleOSGIServiceVisitor; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return InputAutomationModuleOSGIServiceVisitor'Class (This).visit (Java_Box (Value));
+   end visit;
+
+   procedure visit (This : in out InputAutomationModuleOSGIServiceVisitor; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := InputAutomationModuleOSGIServiceVisitor'Class (This).visit (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -29,6 +29,8 @@ package org.allbinary.business.user.commerce.money.payment.types.TenderTypeFacto
    type TenderTypeFactory_Access is access all TenderTypeFactory'Class;
    type TenderTypeFactory_Access_Array is array (Natural range <>) of TenderTypeFactory_Access;
    type TenderTypeFactory_Access_Array_Access is access all TenderTypeFactory_Access_Array;
+   type TenderTypeFactory_Access_Array_Access_Array is array (Natural range <>) of TenderTypeFactory_Access_Array_Access;
+   type TenderTypeFactory_Access_Array_Access_Array_Access is access all TenderTypeFactory_Access_Array_Access_Array;
 
    type TenderTypeFactory is new Java_Object with record
       CREDITCARD : TenderType_Access;

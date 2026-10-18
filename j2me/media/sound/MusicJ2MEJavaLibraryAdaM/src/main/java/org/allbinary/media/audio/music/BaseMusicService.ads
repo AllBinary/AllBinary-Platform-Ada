@@ -28,6 +28,8 @@ package org.allbinary.media.audio.music.BaseMusicService_Package is
    type BaseMusicService_Access is access all BaseMusicService'Class;
    type BaseMusicService_Access_Array is array (Natural range <>) of BaseMusicService_Access;
    type BaseMusicService_Access_Array_Access is access all BaseMusicService_Access_Array;
+   type BaseMusicService_Access_Array_Access_Array is array (Natural range <>) of BaseMusicService_Access_Array_Access;
+   type BaseMusicService_Access_Array_Access_Array_Access is access all BaseMusicService_Access_Array_Access_Array;
 
    type BaseMusicService is new Java_Object with null record;
 

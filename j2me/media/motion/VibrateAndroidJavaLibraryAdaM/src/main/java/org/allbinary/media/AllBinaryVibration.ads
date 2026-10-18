@@ -20,24 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with android.content.Context_Package; use android.content.Context_Package;
 with android.os.Vibrator_Package; use android.os.Vibrator_Package;
-with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
-with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 with org.allbinary.media.AllBinaryVibrationME_Package; use org.allbinary.media.AllBinaryVibrationME_Package;
-with org.allbinary.media.AllBinaryNoVibration_Package; use org.allbinary.media.AllBinaryNoVibration_Package;
 
 package org.allbinary.media.AllBinaryVibration_Package is
 
-   package Context_Package renames Standard.android.content.Context_Package;
    package Vibrator_Package renames Standard.android.os.Vibrator_Package;
-   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
-   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
 
    type AllBinaryVibration is tagged;
    type AllBinaryVibration_Access is access all AllBinaryVibration'Class;
    type AllBinaryVibration_Access_Array is array (Natural range <>) of AllBinaryVibration_Access;
    type AllBinaryVibration_Access_Array_Access is access all AllBinaryVibration_Access_Array;
+   type AllBinaryVibration_Access_Array_Access_Array is array (Natural range <>) of AllBinaryVibration_Access_Array_Access;
+   type AllBinaryVibration_Access_Array_Access_Array_Access is access all AllBinaryVibration_Access_Array_Access_Array;
 
    type AllBinaryVibration is new AllBinaryVibrationME with record
       vibrator : Vibrator_Access;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.opengles.vbo.TextureAttributePointerVBOOpenGLProcessor_Package is
 
    procedure Initialize_Fields (This : in out TextureAttributePointerVBOOpenGLProcessor'Class) is

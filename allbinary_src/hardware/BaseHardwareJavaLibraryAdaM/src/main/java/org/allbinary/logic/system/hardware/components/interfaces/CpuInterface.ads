@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_P
    type CpuInterface_Access is access all CpuInterface'Class;
    type CpuInterface_Access_Array is array (Natural range <>) of CpuInterface_Access;
    type CpuInterface_Access_Array_Access is access all CpuInterface_Access_Array;
+   type CpuInterface_Access_Array_Access_Array is array (Natural range <>) of CpuInterface_Access_Array_Access;
+   type CpuInterface_Access_Array_Access_Array_Access is access all CpuInterface_Access_Array_Access_Array;
    function getProcessor (This : in out CpuInterface) return Unbounded_String is abstract;
    function getVendorId (This : in out CpuInterface) return Unbounded_String is abstract;
    function getCpuFamily (This : in out CpuInterface) return Unbounded_String is abstract;

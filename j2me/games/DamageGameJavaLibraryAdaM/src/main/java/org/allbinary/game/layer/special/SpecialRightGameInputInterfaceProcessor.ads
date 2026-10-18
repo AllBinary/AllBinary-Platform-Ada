@@ -34,6 +34,8 @@ package org.allbinary.game.layer.special.SpecialRightGameInputInterfaceProcessor
    type SpecialRightGameInputInterfaceProcessor_Access is access all SpecialRightGameInputInterfaceProcessor'Class;
    type SpecialRightGameInputInterfaceProcessor_Access_Array is array (Natural range <>) of SpecialRightGameInputInterfaceProcessor_Access;
    type SpecialRightGameInputInterfaceProcessor_Access_Array_Access is access all SpecialRightGameInputInterfaceProcessor_Access_Array;
+   type SpecialRightGameInputInterfaceProcessor_Access_Array_Access_Array is array (Natural range <>) of SpecialRightGameInputInterfaceProcessor_Access_Array_Access;
+   type SpecialRightGameInputInterfaceProcessor_Access_Array_Access_Array_Access is access all SpecialRightGameInputInterfaceProcessor_Access_Array_Access_Array;
 
    type SpecialRightGameInputInterfaceProcessor is new SpecialGameInputInterfaceProcessor with null record;
 

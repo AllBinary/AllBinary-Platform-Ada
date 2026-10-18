@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package; use org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package;
+with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package; use org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
+with org.microemu.app.ui.swt.SwtDeviceComponent_Package; use org.microemu.app.ui.swt.SwtDeviceComponent_Package;
+with org.microemu.device.swt.PostLoadSwtImmutableImageProcessor_Package; use org.microemu.device.swt.PostLoadSwtImmutableImageProcessor_Package;
+with org.microemu.device.swt.PostLoadSwtMutableImageProcessor_Package; use org.microemu.device.swt.PostLoadSwtMutableImageProcessor_Package;
+with org.microemu.device.swt.SwtImmutableImage_Package; use org.microemu.device.swt.SwtImmutableImage_Package;
+with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
+
 package body org.allbinary.media.image.ImageCopyUtil_Package is
 
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package OpenGLESDeviceImageTranslate_Package renames Standard.org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package;
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
+   package OpenGLESImageProperties_Package renames Standard.org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+   package ImageData_Package renames Standard.org.eclipse.swt.graphics.ImageData_Package;
+   package SwtDeviceComponent_Package renames Standard.org.microemu.app.ui.swt.SwtDeviceComponent_Package;
+   package PostLoadSwtImmutableImageProcessor_Package renames Standard.org.microemu.device.swt.PostLoadSwtImmutableImageProcessor_Package;
+   package PostLoadSwtMutableImageProcessor_Package renames Standard.org.microemu.device.swt.PostLoadSwtMutableImageProcessor_Package;
+   package SwtImmutableImage_Package renames Standard.org.microemu.device.swt.SwtImmutableImage_Package;
+   package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
    procedure Initialize_Fields (This : in out ImageCopyUtil'Class) is
    begin
       null;
@@ -87,10 +108,10 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
         image := null;
         if originalImage2.isMutable then
             originalMutableImage := SwtMutableImage_Access (originalImage2);
-            image := SwtMutableImage_Package.Create (SwtDeviceComponent_Package.createImage (originalMutableImage.image.getImageData));
+            image := Image_Access (SwtMutableImage_Package.Create (SwtDeviceComponent_Package.createImage (originalMutableImage.image.getImageData)));
         else
             originalImmutableImage := SwtImmutableImage_Access (originalImage2);
-            image := SwtMutableImage_Package.Create (SwtDeviceComponent_Package.createImage (originalImmutableImage.image.getImageData));
+            image := Image_Access (SwtMutableImage_Package.Create (SwtDeviceComponent_Package.createImage (originalImmutableImage.image.getImageData)));
         end if;
         image := This.openGLUtil.addImage (image);
         return image;
@@ -127,9 +148,9 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
             if (originalMutableImage.getImage) /= (null) then
                 imageData2 := originalMutableImage.image.getImageData;
                 imageData := imageData2.scaledTo (width, height);
-                image := SwtMutableImage_Package.Create (SwtDeviceComponent_Package.createImage (imageData));
+                image := Image_Access (SwtMutableImage_Package.Create (SwtDeviceComponent_Package.createImage (imageData)));
             else
-                image := SwtMutableImage_Package.Create (originalMutableImage.getName, PostLoadSwtMutableImageProcessor_Package.Create (originalMutableImage));
+                image := Image_Access (SwtMutableImage_Package.Create (originalMutableImage.getName, PostLoadSwtMutableImageProcessor_Package.Create (originalMutableImage)));
             end if;
         else
             originalImmutableImage := SwtImmutableImage_Access (originalImage2);
@@ -137,13 +158,13 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                 imageData2 := originalImmutableImage.image.getImageData;
                 if ((width) > (0)) and then ((height) > (0)) then
                     imageData := imageData2.scaledTo (width, height);
-                    image := SwtImmutableImage_Package.Create (originalImage.getName, SwtDeviceComponent_Package.createImage (imageData));
+                    image := Image_Access (SwtImmutableImage_Package.Create (originalImage.getName, SwtDeviceComponent_Package.createImage (imageData)));
                 else
                     This.logUtil.putF (This.UNABLE, ImageCopyUtil_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
-                    image := SwtImmutableImage_Package.Create (originalImmutableImage.getName, PostLoadSwtImmutableImageProcessor_Package.Create (originalImmutableImage));
+                    image := Image_Access (SwtImmutableImage_Package.Create (originalImmutableImage.getName, PostLoadSwtImmutableImageProcessor_Package.Create (originalImmutableImage)));
                 end if;
             else
-                image := SwtImmutableImage_Package.Create (originalImmutableImage.getName, PostLoadSwtImmutableImageProcessor_Package.Create (originalImmutableImage));
+                image := Image_Access (SwtImmutableImage_Package.Create (originalImmutableImage.getName, PostLoadSwtImmutableImageProcessor_Package.Create (originalImmutableImage)));
             end if;
         end if;
         image := This.openGLUtil.addImage (image);
@@ -189,7 +210,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                     openGLESImageProperties.scaleX2 := (openGLESImageProperties.scaleX2) + ((1.0) / (Float (openGLWidth)));
                     openGLESImageProperties.scaleY2 := (openGLESImageProperties.scaleY2) + ((1.0) / (Float (openGLHeight)));
                 end if;
-                image := openGLESImage;
+                image := Image_Access (openGLESImage);
             else
                 image := originalImage;
                 openGLESImage := OpenGLESImage_Access (This.openGLUtil.addImage (image));
@@ -220,7 +241,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                         openGLESImageProperties.scaleY := 1.0;
                     end if;
                 end if;
-                image := openGLESImage;
+                image := Image_Access (openGLESImage);
             end if;
         else
             if (originalImage2.isMutable) and then (mutable) then
@@ -228,18 +249,18 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                 if (originalMutableImage.getImage) /= (null) then
                     imageData2 := originalMutableImage.image.getImageData;
                     imageData := imageData2.scaledTo (width, height);
-                    image := SwtMutableImage_Package.Create (SwtDeviceComponent_Package.createImage (imageData));
+                    image := Image_Access (SwtMutableImage_Package.Create (SwtDeviceComponent_Package.createImage (imageData)));
                 else
-                    image := SwtMutableImage_Package.Create (originalMutableImage.getName, PostLoadSwtMutableImageProcessor_Package.Create (originalMutableImage));
+                    image := Image_Access (SwtMutableImage_Package.Create (originalMutableImage.getName, PostLoadSwtMutableImageProcessor_Package.Create (originalMutableImage)));
                 end if;
             else
                 originalImmutableImage := SwtImmutableImage_Access (originalImage2);
                 if (originalImmutableImage.getImage) /= (null) then
                     imageData2 := originalImmutableImage.image.getImageData;
                     imageData := imageData2.scaledTo (width, height);
-                    image := SwtImmutableImage_Package.Create (originalImage.getName, SwtDeviceComponent_Package.createImage (imageData));
+                    image := Image_Access (SwtImmutableImage_Package.Create (originalImage.getName, SwtDeviceComponent_Package.createImage (imageData)));
                 else
-                    image := SwtImmutableImage_Package.Create (originalImmutableImage.getName, PostLoadSwtImmutableImageProcessor_Package.Create (originalImmutableImage));
+                    image := Image_Access (SwtImmutableImage_Package.Create (originalImmutableImage.getName, PostLoadSwtImmutableImageProcessor_Package.Create (originalImmutableImage)));
                 end if;
             end if;
             image := This.openGLUtil.addImage (image);

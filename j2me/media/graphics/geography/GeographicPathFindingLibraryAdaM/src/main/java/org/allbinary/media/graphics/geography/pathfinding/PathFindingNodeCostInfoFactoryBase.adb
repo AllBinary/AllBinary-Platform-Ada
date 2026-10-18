@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryBase_Package is
 
    procedure Initialize_Fields (This : in out PathFindingNodeCostInfoFactoryBase'Class) is

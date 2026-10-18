@@ -31,6 +31,8 @@ package org.allbinary.input.motion.OnlyTouchButtonRecognizer_Package is
    type OnlyTouchButtonRecognizer_Access is access all OnlyTouchButtonRecognizer'Class;
    type OnlyTouchButtonRecognizer_Access_Array is array (Natural range <>) of OnlyTouchButtonRecognizer_Access;
    type OnlyTouchButtonRecognizer_Access_Array_Access is access all OnlyTouchButtonRecognizer_Access_Array;
+   type OnlyTouchButtonRecognizer_Access_Array_Access_Array is array (Natural range <>) of OnlyTouchButtonRecognizer_Access_Array_Access;
+   type OnlyTouchButtonRecognizer_Access_Array_Access_Array_Access is access all OnlyTouchButtonRecognizer_Access_Array_Access_Array;
 
    type OnlyTouchButtonRecognizer is new MotionRecognizer with record
       touchButtonRecognizer : TouchButtonRecognizer_Access;

@@ -21,26 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputInterface_Package; use org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
 
 package org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
 
    package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CompleteMotionGestureInputEvent is tagged;
    type CompleteMotionGestureInputEvent_Access is access all CompleteMotionGestureInputEvent'Class;
    type CompleteMotionGestureInputEvent_Access_Array is array (Natural range <>) of CompleteMotionGestureInputEvent_Access;
    type CompleteMotionGestureInputEvent_Access_Array_Access is access all CompleteMotionGestureInputEvent_Access_Array;
+   type CompleteMotionGestureInputEvent_Access_Array_Access_Array is array (Natural range <>) of CompleteMotionGestureInputEvent_Access_Array_Access;
+   type CompleteMotionGestureInputEvent_Access_Array_Access_Array_Access is access all CompleteMotionGestureInputEvent_Access_Array_Access_Array;
 
    type CompleteMotionGestureInputEvent is new AllBinaryEventObject and CompleteMotionGestureInputInterface with record
       logUtil : LogUtil_Access;

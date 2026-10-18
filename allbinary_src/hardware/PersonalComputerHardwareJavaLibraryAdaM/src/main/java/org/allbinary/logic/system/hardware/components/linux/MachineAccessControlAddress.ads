@@ -20,13 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
 with org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package;
 
 package org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
    package MachineAccessControlAddressInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package;
 
@@ -34,8 +32,10 @@ package org.allbinary.logic.system.hardware.components.linux.MachineAccessContro
    type MachineAccessControlAddress_Access is access all MachineAccessControlAddress'Class;
    type MachineAccessControlAddress_Access_Array is array (Natural range <>) of MachineAccessControlAddress_Access;
    type MachineAccessControlAddress_Access_Array_Access is access all MachineAccessControlAddress_Access_Array;
+   type MachineAccessControlAddress_Access_Array_Access_Array is array (Natural range <>) of MachineAccessControlAddress_Access_Array_Access;
+   type MachineAccessControlAddress_Access_Array_Access_Array_Access is access all MachineAccessControlAddress_Access_Array_Access_Array;
 
-   type MachineAccessControlAddress is new HardwareComponentInterface and MachineAccessControlAddressInterface with null record;
+   type MachineAccessControlAddress is new Java_Object and HardwareComponentInterface and MachineAccessControlAddressInterface with null record;
 
    procedure Initialize (This : in out MachineAccessControlAddress'Class);
    function Create return MachineAccessControlAddress_Access;

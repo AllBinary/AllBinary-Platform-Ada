@@ -13,8 +13,29 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
+with org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.graphics.threed.SWTJOGLProcessor_Package; use org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
 
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package DisplayChangeEventHandler_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
+   package LastDisplayChangeEventHandler_Package renames Standard.org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package SWTJOGLProcessor_Package renames Standard.org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out DisplayInfoSingleton'Class) is
    begin
       null;
@@ -51,7 +72,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
       This.FIRE_METHOD_NAME := To_Unbounded_String ("fire");
       This.REASON := To_Unbounded_String ("reason: ");
       This.UPDATE_FROM_ORIENTATION_CHANGE := To_Unbounded_String ("Updating from Orientation Change ");
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.DISPLAY_INFO := To_Unbounded_String ("Display Info: ");
       This.FULL := To_Unbounded_String ("full");
       This.LAST := To_Unbounded_String ("last");
@@ -114,14 +135,14 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         This.scaleLargestTo := Float (scaleLargestTo);
    end setScaleLargestTo;
 
-   procedure setLastSize (This : in out DisplayInfoSingleton; aLastWidth : Integer; aLastHeight : Integer; reason_Case : Unbounded_String) is
+   procedure setLastSize (This : in out DisplayInfoSingleton; aLastWidth : Integer; aLastHeight : Integer; reason : Unbounded_String) is
    begin
         if ((This.full_Case (This.WIDTH)) /= (aLastWidth)) or else ((This.full_Case (This.HEIGHT)) /= (aLastHeight)) then
-            DisplayInfoSingleton'Class (This).setLastSizeForce (aLastWidth, aLastHeight, reason_Case);
+            DisplayInfoSingleton'Class (This).setLastSizeForce (aLastWidth, aLastHeight, reason);
         end if;
    end setLastSize;
 
-   procedure setLastSizeForce (This : in out DisplayInfoSingleton; aLastWidth_Param : Integer; aLastHeight_Param : Integer; reason_Case : Unbounded_String) is
+   procedure setLastSizeForce (This : in out DisplayInfoSingleton; aLastWidth_Param : Integer; aLastHeight_Param : Integer; reason : Unbounded_String) is
       aLastWidth : Integer := aLastWidth_Param;
       aLastHeight : Integer := aLastHeight_Param;
       stringMaker : StringMaker_Access;
@@ -130,7 +151,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
       operatingSystemInterface : GenericOperatingSystem_Access;
    begin
         stringMaker := StringMaker_Package.Create;
-        This.logUtil.putF (stringMaker.append (CommonLabels_Package.getInstance.START_LABEL).append (reason_Case).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.SET_LAST_SIZE_METHOD_NAME);
+        This.logUtil.putF (stringMaker.append (CommonLabels_Package.getInstance.START_LABEL).append (reason).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.SET_LAST_SIZE_METHOD_NAME);
         aFullWidth := aLastWidth;
         aFullHeight := aLastHeight;
         stringMaker.delete (0, stringMaker.length);
@@ -199,14 +220,14 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         return DisplayInfoSingleton'Class (This).isPortraitWH (This.last_Case (This.WIDTH), This.last_Case (This.HEIGHT));
    end isPortrait;
 
-   procedure add (This : in out DisplayInfoSingleton; reason_Case : Unbounded_String) is
+   procedure add (This : in out DisplayInfoSingleton; reason : Unbounded_String) is
       stringMaker : StringMaker_Access;
    begin
         stringMaker := StringMaker_Package.Create;
-        This.logUtil.putF (stringMaker.append (This.REASON).append (reason_Case).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME);
+        This.logUtil.putF (stringMaker.append (This.REASON).append (reason).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME);
         stringMaker.delete (0, stringMaker.length);
         This.logUtil.putF (DisplayInfoSingleton'Class (This).toStringAppend (stringMaker), DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME);
-        This.list.add (reason_Case);
+        This.list.add (reason);
    end add;
 
    procedure process (This : in out DisplayInfoSingleton) is
@@ -245,7 +266,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         end;
    end processForced;
 
-   procedure update (This : in out DisplayInfoSingleton; displayable_Param : access Displayable_Package.Displayable'Class; reason_Case : Unbounded_String) is
+   procedure update (This : in out DisplayInfoSingleton; displayable_Param : access Displayable_Package.Displayable'Class; reason : Unbounded_String) is
       displayable : constant Displayable_Access := Displayable_Access (displayable_Param);
       aLastWidth : Integer;
       aLastHeight : Integer;
@@ -261,7 +282,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         aFullWidth := aLastWidth;
         aFullHeight := aLastHeight;
         stringMaker := StringMaker_Package.Create;
-        This.logUtil.putF (stringMaker.append (CommonLabels_Package.getInstance.START_LABEL).append (reason_Case).append (This.LAST_WIDTH).appendint (aLastWidth).append (This.LAST_HEIGHT).appendint (aLastHeight).append (This.commonSeps.SPACE).append (DisplayInfoSingleton'Class (This).toString).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
+        This.logUtil.putF (stringMaker.append (CommonLabels_Package.getInstance.START_LABEL).append (reason).append (This.LAST_WIDTH).appendint (aLastWidth).append (This.LAST_HEIGHT).appendint (aLastHeight).append (This.commonSeps.SPACE).append (DisplayInfoSingleton'Class (This).toString).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
         if ((aLastWidth) > (0)) and then ((aLastHeight) > (0)) then
             features := Features_Package.getInstance;
             openGLFeatureFactory := OpenGLFeatureFactory_Package.getInstance;
@@ -409,11 +430,11 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         return This.last_Case (This.HEIGHT);
    end getRawLastHeight;
 
-   procedure setCustom (This : in out DisplayInfoSingleton; width_Case : Integer; height_Case : Integer) is
+   procedure setCustom (This : in out DisplayInfoSingleton; width : Integer; height : Integer) is
    begin
-        This.last_Case (This.CUSTOM_WIDTH) := width_Case;
+        This.last_Case (This.CUSTOM_WIDTH) := width;
         This.lastHalf (This.CUSTOM_WIDTH) := (Java_Shift_Right_Arithmetic (This.last_Case (This.CUSTOM_WIDTH), 1));
-        This.last_Case (This.CUSTOM_HEIGHT) := height_Case;
+        This.last_Case (This.CUSTOM_HEIGHT) := height;
         This.lastHalf (This.CUSTOM_HEIGHT) := (Java_Shift_Right_Arithmetic (This.last_Case (This.CUSTOM_HEIGHT), 1));
    end setCustom;
 
@@ -425,7 +446,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
 
    function getScalableListener (This : in out DisplayInfoSingleton) return ScalableListener_Access is
    begin
-        return This.scalableListener;
+        return ScalableListener_Access (This.scalableListener);
    end getScalableListener;
 
    function getRatio (This : in out DisplayInfoSingleton) return Float is

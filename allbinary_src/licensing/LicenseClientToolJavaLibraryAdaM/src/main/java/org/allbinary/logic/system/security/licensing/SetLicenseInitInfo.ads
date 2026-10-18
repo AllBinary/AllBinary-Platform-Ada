@@ -23,28 +23,21 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
 --  with java.io.InputStreamReader_Package; use java.io.InputStreamReader_Package;
 with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
-with org.allbinary.business.init.LicenseInitInfoUtil_Package; use org.allbinary.business.init.LicenseInitInfoUtil_Package;
-with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io.file.FileFactory_Package;
-with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
---  with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileReader_Package; use java.io.FileReader_Package;
 --  with java.io.LineNumberReader_Package; use java.io.LineNumberReader_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.logic.system.security.licensing.BasicArrayListD_Package; use org.allbinary.logic.system.security.licensing.BasicArrayListD_Package;
-with org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package; use org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package;
 
 package org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Package is
 
    package LicenseInitInfo_Package renames Standard.org.allbinary.business.init.LicenseInitInfo_Package;
-   package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
-   package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
-   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type SetLicenseInitInfo is tagged;
    type SetLicenseInitInfo_Access is access all SetLicenseInitInfo'Class;
    type SetLicenseInitInfo_Access_Array is array (Natural range <>) of SetLicenseInitInfo_Access;
    type SetLicenseInitInfo_Access_Array_Access is access all SetLicenseInitInfo_Access_Array;
+   type SetLicenseInitInfo_Access_Array_Access_Array is array (Natural range <>) of SetLicenseInitInfo_Access_Array_Access;
+   type SetLicenseInitInfo_Access_Array_Access_Array_Access is access all SetLicenseInitInfo_Access_Array_Access_Array;
 
    type SetLicenseInitInfo is new Java_Object with record
       vector : BasicArrayList_Access;

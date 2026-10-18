@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.group.GroupData_Package is
 
    procedure Initialize_Fields (This : in out GroupData'Class) is

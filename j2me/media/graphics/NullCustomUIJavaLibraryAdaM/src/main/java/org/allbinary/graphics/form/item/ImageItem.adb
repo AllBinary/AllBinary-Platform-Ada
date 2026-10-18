@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.form.item.ImageItem_Package is
 
    procedure Initialize_Fields (This : in out ImageItem'Class) is

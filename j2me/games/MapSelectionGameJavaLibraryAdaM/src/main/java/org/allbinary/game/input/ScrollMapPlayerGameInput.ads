@@ -20,50 +20,26 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
-with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
-with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
-with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.event.ScrollMapEvent_Package; use org.allbinary.layer.event.ScrollMapEvent_Package;
-with org.allbinary.layer.event.ScrollMapEventHandler_Package; use org.allbinary.layer.event.ScrollMapEventHandler_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game.input.GameInputProcessor_Package;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
-with org.allbinary.game.input.ScrollMapUpGameInputProcessor_Package; use org.allbinary.game.input.ScrollMapUpGameInputProcessor_Package;
-with org.allbinary.game.input.ScrollMapDownGameInputProcessor_Package; use org.allbinary.game.input.ScrollMapDownGameInputProcessor_Package;
-with org.allbinary.game.input.ScrollMapRightGameInputProcessor_Package; use org.allbinary.game.input.ScrollMapRightGameInputProcessor_Package;
-with org.allbinary.game.input.ScrollMapLeftGameInputProcessor_Package; use org.allbinary.game.input.ScrollMapLeftGameInputProcessor_Package;
-with org.allbinary.game.input.GameInputProcessorUtil_Package; use org.allbinary.game.input.GameInputProcessorUtil_Package;
 
 package org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
-   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
-   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
-   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package ScrollMapEvent_Package renames Standard.org.allbinary.layer.event.ScrollMapEvent_Package;
-   package ScrollMapEventHandler_Package renames Standard.org.allbinary.layer.event.ScrollMapEventHandler_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type ScrollMapPlayerGameInput is tagged;
    type ScrollMapPlayerGameInput_Access is access all ScrollMapPlayerGameInput'Class;
    type ScrollMapPlayerGameInput_Access_Array is array (Natural range <>) of ScrollMapPlayerGameInput_Access;
    type ScrollMapPlayerGameInput_Access_Array_Access is access all ScrollMapPlayerGameInput_Access_Array;
+   type ScrollMapPlayerGameInput_Access_Array_Access_Array is array (Natural range <>) of ScrollMapPlayerGameInput_Access_Array_Access;
+   type ScrollMapPlayerGameInput_Access_Array_Access_Array_Access is access all ScrollMapPlayerGameInput_Access_Array_Access_Array;
 
    type ScrollMapPlayerGameInput is new PlayerGameInput with record
       inputProcessorArray : GameInputProcessor_Access_Array_Access;

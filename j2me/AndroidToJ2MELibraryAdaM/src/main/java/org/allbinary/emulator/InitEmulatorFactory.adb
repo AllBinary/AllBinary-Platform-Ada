@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.emulator.InitEmulatorFactory_Package is
 
    procedure Initialize_Fields (This : in out InitEmulatorFactory'Class) is

@@ -21,27 +21,23 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.InputOutputTypeData_Package; use org.allbinary.logic.io.InputOutputTypeData_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package;
-with org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package;
-with org.allbinary.logic.visual.transform.info.objectConfig.generator.BasicGenerator_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.BasicGenerator_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGenerator_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGenerator_Package;
 
 package org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TransformInfoObjectConfigGeneratorFactory is tagged;
    type TransformInfoObjectConfigGeneratorFactory_Access is access all TransformInfoObjectConfigGeneratorFactory'Class;
    type TransformInfoObjectConfigGeneratorFactory_Access_Array is array (Natural range <>) of TransformInfoObjectConfigGeneratorFactory_Access;
    type TransformInfoObjectConfigGeneratorFactory_Access_Array_Access is access all TransformInfoObjectConfigGeneratorFactory_Access_Array;
+   type TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array is array (Natural range <>) of TransformInfoObjectConfigGeneratorFactory_Access_Array_Access;
+   type TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Access is access all TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array;
 
-   type TransformInfoObjectConfigGeneratorFactory is new TransformInfoObjectConfigGeneratorFactoryInterface with record
+   type TransformInfoObjectConfigGeneratorFactory is new Java_Object and TransformInfoObjectConfigGeneratorFactoryInterface with record
       logUtil : LogUtil_Access;
    end record;
    instance : TransformInfoObjectConfigGeneratorFactory_Access;

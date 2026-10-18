@@ -20,28 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.score.HighScoresInterface_Package; use org.allbinary.game.score.HighScoresInterface_Package;
 with org.allbinary.game.score.HighScore_Package; use org.allbinary.game.score.HighScore_Package;
 
 package org.allbinary.game.score.HighScores_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type HighScores is tagged;
    type HighScores_Access is access all HighScores'Class;
    type HighScores_Access_Array is array (Natural range <>) of HighScores_Access;
    type HighScores_Access_Array_Access is access all HighScores_Access_Array;
+   type HighScores_Access_Array_Access_Array is array (Natural range <>) of HighScores_Access_Array_Access;
+   type HighScores_Access_Array_Access_Array_Access is access all HighScores_Access_Array_Access_Array;
 
-   type HighScores is new HighScoresInterface with record
+   type HighScores is new Java_Object and HighScoresInterface with record
       orderedHighScoresList : BasicArrayList_Access;
       name : Unbounded_String;
       heading : Unbounded_String;

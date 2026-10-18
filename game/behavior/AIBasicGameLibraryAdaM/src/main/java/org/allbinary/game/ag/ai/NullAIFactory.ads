@@ -39,8 +39,10 @@ package org.allbinary.game.ag.ai.NullAIFactory_Package is
    type NullAIFactory_Access is access all NullAIFactory'Class;
    type NullAIFactory_Access_Array is array (Natural range <>) of NullAIFactory_Access;
    type NullAIFactory_Access_Array_Access is access all NullAIFactory_Access_Array;
+   type NullAIFactory_Access_Array_Access_Array is array (Natural range <>) of NullAIFactory_Access_Array_Access;
+   type NullAIFactory_Access_Array_Access_Array_Access is access all NullAIFactory_Access_Array_Access_Array;
 
-   type NullAIFactory is new ArtificialIntelligenceInterfaceFactoryInterface with null record;
+   type NullAIFactory is new Java_Object and ArtificialIntelligenceInterfaceFactoryInterface with null record;
    NULL_AI : NullAI_Access;
 
    procedure Initialize (This : in out NullAIFactory'Class);

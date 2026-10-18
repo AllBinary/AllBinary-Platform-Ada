@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.io.file.FileData_Package; use org.allbinary.logic.io.file.FileData_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.io.path.PathUtil_Package; use org.allbinary.logic.io.path.PathUtil_Package;
+
 package body org.allbinary.data.tree.dom.FileTableMapping_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package FileData_Package renames Standard.org.allbinary.logic.io.file.FileData_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package PathUtil_Package renames Standard.org.allbinary.logic.io.path.PathUtil_Package;
    procedure Initialize_Fields (This : in out FileTableMapping'Class) is
    begin
       null;
@@ -46,7 +57,7 @@ package body org.allbinary.data.tree.dom.FileTableMapping_Package is
    function toVector (This : in out FileTableMapping) return BasicArrayList_Access is
       filePropertyVector : BasicArrayList_Access;
    begin
-        filePropertyVector := BasicArrayListD_Package.Create;
+        filePropertyVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         filePropertyVector.add (This.file.getAbsolutePath);
         filePropertyVector.add (This.file.getCanonicalPath);
         filePropertyVector.add (This.file.getName);

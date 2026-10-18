@@ -29,6 +29,8 @@ package org.allbinary.input.motion.button.TouchButtonTurnLeftResource_Package is
    type TouchButtonTurnLeftResource_Access is access all TouchButtonTurnLeftResource'Class;
    type TouchButtonTurnLeftResource_Access_Array is array (Natural range <>) of TouchButtonTurnLeftResource_Access;
    type TouchButtonTurnLeftResource_Access_Array_Access is access all TouchButtonTurnLeftResource_Access_Array;
+   type TouchButtonTurnLeftResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonTurnLeftResource_Access_Array_Access;
+   type TouchButtonTurnLeftResource_Access_Array_Access_Array_Access is access all TouchButtonTurnLeftResource_Access_Array_Access_Array;
 
    type TouchButtonTurnLeftResource is new TouchButtonResource with null record;
    instance : TouchButtonResource_Access;

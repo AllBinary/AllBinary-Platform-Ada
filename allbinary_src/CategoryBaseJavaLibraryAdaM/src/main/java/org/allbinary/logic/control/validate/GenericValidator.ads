@@ -33,6 +33,8 @@ package org.allbinary.logic.control.validate.GenericValidator_Package is
    type GenericValidator_Access is access all GenericValidator'Class;
    type GenericValidator_Access_Array is array (Natural range <>) of GenericValidator_Access;
    type GenericValidator_Access_Array_Access is access all GenericValidator_Access_Array;
+   type GenericValidator_Access_Array_Access_Array is array (Natural range <>) of GenericValidator_Access_Array_Access;
+   type GenericValidator_Access_Array_Access_Array_Access is access all GenericValidator_Access_Array_Access_Array;
 
    type GenericValidator is new ValidatorBase with null record;
 

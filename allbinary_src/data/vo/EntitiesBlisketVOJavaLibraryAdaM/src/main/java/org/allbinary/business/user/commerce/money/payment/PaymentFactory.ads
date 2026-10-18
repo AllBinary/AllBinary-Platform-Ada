@@ -21,19 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.ServletRequest_Package; use javax.servlet.ServletRequest_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package; use org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
 
 package org.allbinary.business.user.commerce.money.payment.PaymentFactory_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PaymentFactory is tagged;
    type PaymentFactory_Access is access all PaymentFactory'Class;
    type PaymentFactory_Access_Array is array (Natural range <>) of PaymentFactory_Access;
    type PaymentFactory_Access_Array_Access is access all PaymentFactory_Access_Array;
+   type PaymentFactory_Access_Array_Access_Array is array (Natural range <>) of PaymentFactory_Access_Array_Access;
+   type PaymentFactory_Access_Array_Access_Array_Access is access all PaymentFactory_Access_Array_Access_Array;
 
    type PaymentFactory is new Java_Object with null record;
 

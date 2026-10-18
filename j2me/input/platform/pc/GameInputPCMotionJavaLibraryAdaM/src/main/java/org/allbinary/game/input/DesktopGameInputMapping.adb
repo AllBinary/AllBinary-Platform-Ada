@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.DesktopDefaultGameInputMapping_Package; use org.allbinary.game.input.DesktopDefaultGameInputMapping_Package;
+
 package body org.allbinary.game.input.DesktopGameInputMapping_Package is
 
    procedure Initialize_Fields (This : in out DesktopGameInputMapping'Class) is

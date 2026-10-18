@@ -13,8 +13,43 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
+with org.allbinary.business.user.modules.configuration.UserConfigurationDomDocumentMapping_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationDomDocumentMapping_Package;
+with org.allbinary.business.user.modules.configuration.UserConfigurationInterfaceFactory_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationInterfaceFactory_Package;
+with org.allbinary.business.user.role.UserRoleB_Package; use org.allbinary.business.user.role.UserRoleB_Package;
+with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
+with org.allbinary.business.user.username.UserName_Package; use org.allbinary.business.user.username.UserName_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
 package body org.allbinary.business.user.modules.User_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package UserConfigurationDomDocumentMapping_Package renames Standard.org.allbinary.business.user.modules.configuration.UserConfigurationDomDocumentMapping_Package;
+   package UserConfigurationInterfaceFactory_Package renames Standard.org.allbinary.business.user.modules.configuration.UserConfigurationInterfaceFactory_Package;
+   package UserRoleB_Package renames Standard.org.allbinary.business.user.role.UserRoleB_Package;
+   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
+   package UserName_Package renames Standard.org.allbinary.business.user.username.UserName_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package WeblisketSessionData_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out User'Class) is
    begin
       null;
@@ -154,7 +189,7 @@ package body org.allbinary.business.user.modules.User_Package is
             if not (stringValidationUtil.isValidRequired (This.lastName, 1, UserData_Package.MAXLEN)) then
                 valid := False;
             end if;
-            if (not (stringValidationUtil.isValidRequired (This.mainEmail, 1, UserData_Package.MAXLEN))) or else (((Index (This.mainEmail, Java_Image (To_Unbounded_String ("@"))) - 1)) = (-(1))) then
+            if (not (stringValidationUtil.isValidRequired (This.mainEmail, 1, UserData_Package.MAXLEN))) or else ((Java_Index_Of (This.mainEmail, Java_Image (To_Unbounded_String ("@")))) = (-(1))) then
                 valid := False;
             end if;
             return valid;
@@ -187,7 +222,7 @@ package body org.allbinary.business.user.modules.User_Package is
             if not (stringValidationUtil.isValidRequired (This.lastName, 1, UserData_Package.MAXLEN)) then
                 stringBuffer.append (To_Unbounded_String ("Please enter a valid Last Name.<br />"));
             end if;
-            if (not (stringValidationUtil.isValidRequired (This.mainEmail, 1, UserData_Package.MAXLEN))) or else (((Index (This.mainEmail, Java_Image (To_Unbounded_String ("@"))) - 1)) = (-(1))) then
+            if (not (stringValidationUtil.isValidRequired (This.mainEmail, 1, UserData_Package.MAXLEN))) or else ((Java_Index_Of (This.mainEmail, Java_Image (To_Unbounded_String ("@")))) = (-(1))) then
                 stringBuffer.append (To_Unbounded_String ("Please enter a valid email address.<br />"));
             end if;
             return stringBuffer.toString;
@@ -320,9 +355,9 @@ package body org.allbinary.business.user.modules.User_Package is
         User'Class (This).setEnable (To_Unbounded_String ("No"));
    end disable;
 
-   procedure setEnable (This : in out User; enable_Field : Unbounded_String) is
+   procedure setEnable (This : in out User; enable : Unbounded_String) is
    begin
-        This.enable_Field := enable_Field;
+        This.enable_Field := enable;
    end setEnable;
 
    function getUserName (This : in out User) return Unbounded_String is
@@ -437,7 +472,7 @@ package body org.allbinary.business.user.modules.User_Package is
       calendar : Calendar_Access;
       time : Unbounded_String;
    begin
-        values := BasicArrayListD_Package.Create;
+        values := BasicArrayList_Access (BasicArrayListD_Package.Create);
         values.add (This.userName);
         values.add (This.prefixName);
         values.add (This.firstName);

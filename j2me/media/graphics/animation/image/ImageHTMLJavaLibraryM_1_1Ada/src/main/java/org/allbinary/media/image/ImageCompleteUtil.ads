@@ -21,26 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
-with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn.PlaynImage_Package;
 
 package org.allbinary.media.image.ImageCompleteUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
-   package PlaynImage_Package renames Standard.org.microemu.device.playn.PlaynImage_Package;
 
    type ImageCompleteUtil is tagged;
    type ImageCompleteUtil_Access is access all ImageCompleteUtil'Class;
    type ImageCompleteUtil_Access_Array is array (Natural range <>) of ImageCompleteUtil_Access;
    type ImageCompleteUtil_Access_Array_Access is access all ImageCompleteUtil_Access_Array;
+   type ImageCompleteUtil_Access_Array_Access_Array is array (Natural range <>) of ImageCompleteUtil_Access_Array_Access;
+   type ImageCompleteUtil_Access_Array_Access_Array_Access is access all ImageCompleteUtil_Access_Array_Access_Array;
 
    type ImageCompleteUtil is new Java_Object with record
-      ISREADY : Unbounded_String;
+      ISREADY_Field : Unbounded_String;
       COMPLETE : Unbounded_String;
    end record;
    instance : ImageCompleteUtil_Access;
@@ -49,8 +45,8 @@ package org.allbinary.media.image.ImageCompleteUtil_Package is
    function Create return ImageCompleteUtil_Access;
    function getInstance return ImageCompleteUtil_Access;
    procedure waitForImage (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String);
-   function isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class) return Boolean;
-   procedure isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class);
+   function isReady (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class) return Boolean;
+   procedure isReady (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class);
    procedure handleTimeout (This : in out ImageCompleteUtil; name : Unbounded_String);
    procedure waitForAll (This : in out ImageCompleteUtil);
 

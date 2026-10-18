@@ -20,28 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Sound_Package;
-with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
 
 package org.allbinary.media.audio.PlayerQueue_Package is
 
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type PlayerQueue is tagged;
    type PlayerQueue_Access is access all PlayerQueue'Class;
    type PlayerQueue_Access_Array is array (Natural range <>) of PlayerQueue_Access;
    type PlayerQueue_Access_Array_Access is access all PlayerQueue_Access_Array;
+   type PlayerQueue_Access_Array_Access_Array is array (Natural range <>) of PlayerQueue_Access_Array_Access;
+   type PlayerQueue_Access_Array_Access_Array_Access is access all PlayerQueue_Access_Array_Access_Array;
 
    type PlayerQueue is new Java_Object with record
       commonStrings : CommonStrings_Access;

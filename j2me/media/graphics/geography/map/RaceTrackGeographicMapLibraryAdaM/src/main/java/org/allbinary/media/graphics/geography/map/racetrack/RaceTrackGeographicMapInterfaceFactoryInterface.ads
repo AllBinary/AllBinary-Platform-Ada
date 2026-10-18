@@ -29,6 +29,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographic
    type RaceTrackGeographicMapInterfaceFactoryInterface_Access is access all RaceTrackGeographicMapInterfaceFactoryInterface'Class;
    type RaceTrackGeographicMapInterfaceFactoryInterface_Access_Array is array (Natural range <>) of RaceTrackGeographicMapInterfaceFactoryInterface_Access;
    type RaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access is access all RaceTrackGeographicMapInterfaceFactoryInterface_Access_Array;
+   type RaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of RaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access;
+   type RaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all RaceTrackGeographicMapInterfaceFactoryInterface_Access_Array_Access_Array;
    function getLevelInstance (This : in out RaceTrackGeographicMapInterfaceFactoryInterface; id : Integer) return RaceTrackGeographicMap_Access is abstract;
    function getTrackInstance (This : in out RaceTrackGeographicMapInterfaceFactoryInterface; id : Integer) return RaceTrackGeographicMap_Access is abstract;
 

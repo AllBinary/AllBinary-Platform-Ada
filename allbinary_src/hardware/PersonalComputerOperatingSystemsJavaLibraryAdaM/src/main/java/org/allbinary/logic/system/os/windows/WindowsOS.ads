@@ -30,6 +30,8 @@ package org.allbinary.logic.system.os.windows.WindowsOS_Package is
    type WindowsOS_Access is access all WindowsOS'Class;
    type WindowsOS_Access_Array is array (Natural range <>) of WindowsOS_Access;
    type WindowsOS_Access_Array_Access is access all WindowsOS_Access_Array;
+   type WindowsOS_Access_Array_Access_Array is array (Natural range <>) of WindowsOS_Access_Array_Access;
+   type WindowsOS_Access_Array_Access_Array_Access is access all WindowsOS_Access_Array_Access_Array;
 
    type WindowsOS is new GenericOperatingSystem with null record;
 

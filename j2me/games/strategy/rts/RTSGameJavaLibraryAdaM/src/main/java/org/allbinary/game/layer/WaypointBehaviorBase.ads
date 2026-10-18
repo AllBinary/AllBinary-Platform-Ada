@@ -23,12 +23,10 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 with org.allbinary.game.layer.waypoint.WaypointBase_Package; use org.allbinary.game.layer.waypoint.WaypointBase_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.tick.TickableInterface_Package; use org.allbinary.game.tick.TickableInterface_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
 
 package org.allbinary.game.layer.WaypointBehaviorBase_Package is
@@ -36,19 +34,19 @@ package org.allbinary.game.layer.WaypointBehaviorBase_Package is
    package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
    package WaypointBase_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointBase_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package TickableInterface_Package renames Standard.org.allbinary.game.tick.TickableInterface_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package GeographicMapCellHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
    package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
 
    type WaypointBehaviorBase is tagged;
    type WaypointBehaviorBase_Access is access all WaypointBehaviorBase'Class;
    type WaypointBehaviorBase_Access_Array is array (Natural range <>) of WaypointBehaviorBase_Access;
    type WaypointBehaviorBase_Access_Array_Access is access all WaypointBehaviorBase_Access_Array;
+   type WaypointBehaviorBase_Access_Array_Access_Array is array (Natural range <>) of WaypointBehaviorBase_Access_Array_Access;
+   type WaypointBehaviorBase_Access_Array_Access_Array_Access is access all WaypointBehaviorBase_Access_Array_Access_Array;
 
-   type WaypointBehaviorBase is new TickableInterface with record
+   type WaypointBehaviorBase is new Java_Object and TickableInterface with record
       ownedWaypointList : BasicArrayList_Access;
       waypointOverridesAttacking : Boolean;
       waypoint : WaypointBase_Access;

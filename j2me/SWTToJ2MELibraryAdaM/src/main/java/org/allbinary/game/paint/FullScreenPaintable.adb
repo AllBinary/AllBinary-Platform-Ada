@@ -13,13 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+
 package body org.allbinary.game.paint.FullScreenPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out FullScreenPaintable'Class) is
    begin
       null;
       This.displayInfo := DisplayInfoSingleton_Package.getInstance;
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (FullScreenPaintable_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (FullScreenPaintable_Access'(This'Unchecked_Access)));
       This.FULLSCREEN_TEXT := To_Unbounded_String ("F11 - Toggle Fullscreen");
       This.anchor := Anchor_Package.TOP_LEFT;
       This.Y := 0;

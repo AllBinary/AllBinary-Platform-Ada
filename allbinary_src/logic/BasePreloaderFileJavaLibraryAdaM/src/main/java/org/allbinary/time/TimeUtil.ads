@@ -30,6 +30,8 @@ package org.allbinary.time.TimeUtil_Package is
    type TimeUtil_Access is access all TimeUtil'Class;
    type TimeUtil_Access_Array is array (Natural range <>) of TimeUtil_Access;
    type TimeUtil_Access_Array_Access is access all TimeUtil_Access_Array;
+   type TimeUtil_Access_Array_Access_Array is array (Natural range <>) of TimeUtil_Access_Array_Access;
+   type TimeUtil_Access_Array_Access_Array_Access is access all TimeUtil_Access_Array_Access_Array;
 
    type TimeUtil is new Java_Object with null record;
    instance : TimeUtil_Access;

@@ -30,6 +30,8 @@ package org.allbinary.animation.AnimationListener_Package is
    type AnimationListener_Access is access all AnimationListener'Class;
    type AnimationListener_Access_Array is array (Natural range <>) of AnimationListener_Access;
    type AnimationListener_Access_Array_Access is access all AnimationListener_Access_Array;
+   type AnimationListener_Access_Array_Access_Array is array (Natural range <>) of AnimationListener_Access_Array_Access;
+   type AnimationListener_Access_Array_Access_Array_Access is access all AnimationListener_Access_Array_Access_Array;
    procedure onEnd (This : in out AnimationListener) is abstract;
 
 end org.allbinary.animation.AnimationListener_Package;

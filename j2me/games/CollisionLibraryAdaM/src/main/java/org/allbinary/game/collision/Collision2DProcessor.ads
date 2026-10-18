@@ -19,6 +19,8 @@ package org.allbinary.game.collision.Collision2DProcessor_Package is
    type Collision2DProcessor_Access is access all Collision2DProcessor'Class;
    type Collision2DProcessor_Access_Array is array (Natural range <>) of Collision2DProcessor_Access;
    type Collision2DProcessor_Access_Array_Access is access all Collision2DProcessor_Access_Array;
+   type Collision2DProcessor_Access_Array_Access_Array is array (Natural range <>) of Collision2DProcessor_Access_Array_Access;
+   type Collision2DProcessor_Access_Array_Access_Array_Access is access all Collision2DProcessor_Access_Array_Access_Array;
 
    type Collision2DProcessor is new CollisionProcessor with null record;
 

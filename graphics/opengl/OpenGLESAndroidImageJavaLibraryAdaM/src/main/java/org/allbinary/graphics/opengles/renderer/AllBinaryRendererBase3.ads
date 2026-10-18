@@ -22,22 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
-with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package is
 
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
-   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AllBinaryRendererBase3 is tagged;
    type AllBinaryRendererBase3_Access is access all AllBinaryRendererBase3'Class;
    type AllBinaryRendererBase3_Access_Array is array (Natural range <>) of AllBinaryRendererBase3_Access;
    type AllBinaryRendererBase3_Access_Array_Access is access all AllBinaryRendererBase3_Access_Array;
+   type AllBinaryRendererBase3_Access_Array_Access_Array is array (Natural range <>) of AllBinaryRendererBase3_Access_Array_Access;
+   type AllBinaryRendererBase3_Access_Array_Access_Array_Access is access all AllBinaryRendererBase3_Access_Array_Access_Array;
 
    type AllBinaryRendererBase3 is new Java_Object with record
       list : BasicArrayList_Access;

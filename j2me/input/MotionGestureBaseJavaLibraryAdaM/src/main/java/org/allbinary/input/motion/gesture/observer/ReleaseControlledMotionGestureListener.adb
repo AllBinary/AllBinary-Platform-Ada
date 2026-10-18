@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotionGestureListener_Package is
 
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out ReleaseControlledMotionGestureListener'Class) is
    begin
       null;
@@ -22,7 +33,7 @@ package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotion
       This.commonStrings := CommonStrings_Package.getInstance;
       This.currentMotionGesture := TouchMotionGestureFactory_Package.getInstance.NO_MOTION;
       This.isMouseGestureOccurring := False;
-      This.motionGestureCollection := BasicArrayListD_Package.Create;
+      This.motionGestureCollection := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
    end Initialize_Fields;
 

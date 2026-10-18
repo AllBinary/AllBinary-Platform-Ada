@@ -8,17 +8,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.Calendar_Package; use java.util.Calendar_Package;
 --  with java.util.TimeZone_Package; use java.util.TimeZone_Package;
 
 package org.allbinary.time.TimeTypeUtil_Package is
 
-   package Calendar_Package renames Standard.java.util.Calendar_Package;
 
    type TimeTypeUtil is tagged;
    type TimeTypeUtil_Access is access all TimeTypeUtil'Class;
    type TimeTypeUtil_Access_Array is array (Natural range <>) of TimeTypeUtil_Access;
    type TimeTypeUtil_Access_Array_Access is access all TimeTypeUtil_Access_Array;
+   type TimeTypeUtil_Access_Array_Access_Array is array (Natural range <>) of TimeTypeUtil_Access_Array_Access;
+   type TimeTypeUtil_Access_Array_Access_Array_Access is access all TimeTypeUtil_Access_Array_Access_Array;
 
    type TimeTypeUtil is new Java_Object with record
       NIGHT : Unbounded_String;

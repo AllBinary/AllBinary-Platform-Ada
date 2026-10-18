@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.communication.smtp.queue.FileEmailQueue_Package is
 
    procedure Initialize_Fields (This : in out FileEmailQueue'Class) is

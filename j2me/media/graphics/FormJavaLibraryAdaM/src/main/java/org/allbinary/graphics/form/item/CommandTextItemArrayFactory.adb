@@ -13,12 +13,28 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.ImageItem_Package; use javax.microedition.lcdui.ImageItem_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.form.ScreenInfo_Package; use org.allbinary.graphics.form.ScreenInfo_Package;
+with org.allbinary.logic.VectorUtil_Package; use org.allbinary.logic.VectorUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.graphics.form.item.CommandTextItem_Package; use org.allbinary.graphics.form.item.CommandTextItem_Package;
+
 package body org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package ImageItem_Package renames Standard.javax.microedition.lcdui.ImageItem_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package ScreenInfo_Package renames Standard.org.allbinary.graphics.form.ScreenInfo_Package;
+   package VectorUtil_Package renames Standard.org.allbinary.logic.VectorUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out CommandTextItemArrayFactory'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
    end Initialize_Fields;
 
@@ -70,7 +86,7 @@ package body org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Packag
                 aBoolean := Boolean (This.visitorInterface.visit (command));
                 if aBoolean then
                     textItem := CommandTextItem_Package.Create (command, ImageItem_Package.LAYOUT_DEFAULT, StringUtil_Package.getInstance.EMPTY_STRING, backgroundBasicColor, foregroundBasicColor);
-                    This.list.add (textItem);
+                    This.list.add (Java_Object_Access (textItem));
                 end if;
             end if;
         end loop;

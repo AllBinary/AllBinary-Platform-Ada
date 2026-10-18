@@ -21,22 +21,15 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-with org.allbinary.animation.NullIndexedAnimationFactory_Package; use org.allbinary.animation.NullIndexedAnimationFactory_Package;
-with org.allbinary.game.combat.damage.ExplosionResources_Package; use org.allbinary.game.combat.damage.ExplosionResources_Package;
 with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.physics.movement.Movement_Package; use org.allbinary.physics.movement.Movement_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game.layer.weapon.WeaponLayer_Package;
-with org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package; use org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package;
 
 package org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package is
 
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package NullIndexedAnimationFactory_Package renames Standard.org.allbinary.animation.NullIndexedAnimationFactory_Package;
-   package ExplosionResources_Package renames Standard.org.allbinary.game.combat.damage.ExplosionResources_Package;
    package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package Movement_Package renames Standard.org.allbinary.physics.movement.Movement_Package;
@@ -46,6 +39,8 @@ package org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package is
    type SimpleWeaponLayer_Access is access all SimpleWeaponLayer'Class;
    type SimpleWeaponLayer_Access_Array is array (Natural range <>) of SimpleWeaponLayer_Access;
    type SimpleWeaponLayer_Access_Array_Access is access all SimpleWeaponLayer_Access_Array;
+   type SimpleWeaponLayer_Access_Array_Access_Array is array (Natural range <>) of SimpleWeaponLayer_Access_Array_Access;
+   type SimpleWeaponLayer_Access_Array_Access_Array_Access is access all SimpleWeaponLayer_Access_Array_Access_Array;
 
    type SimpleWeaponLayer is new WeaponLayer with null record;
 

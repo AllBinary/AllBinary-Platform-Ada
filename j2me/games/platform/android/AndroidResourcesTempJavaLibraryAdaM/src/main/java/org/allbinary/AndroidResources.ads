@@ -18,6 +18,8 @@ package org.allbinary.AndroidResources_Package is
    type AndroidResources_Access is access all AndroidResources'Class;
    type AndroidResources_Access_Array is array (Natural range <>) of AndroidResources_Access;
    type AndroidResources_Access_Array_Access is access all AndroidResources_Access_Array;
+   type AndroidResources_Access_Array_Access_Array is array (Natural range <>) of AndroidResources_Access_Array_Access;
+   type AndroidResources_Access_Array_Access_Array_Access is access all AndroidResources_Access_Array_Access_Array;
 
    type AndroidResources is new Java_Object with record
       drawable : drawable_Access;

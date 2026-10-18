@@ -25,7 +25,6 @@ with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Packa
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.ag.ai.UpDownVectorAI_Package; use org.allbinary.game.ag.ai.UpDownVectorAI_Package;
 
 package org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package is
 
@@ -39,8 +38,10 @@ package org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package is
    type UpDownVectorAIFactory_Access is access all UpDownVectorAIFactory'Class;
    type UpDownVectorAIFactory_Access_Array is array (Natural range <>) of UpDownVectorAIFactory_Access;
    type UpDownVectorAIFactory_Access_Array_Access is access all UpDownVectorAIFactory_Access_Array;
+   type UpDownVectorAIFactory_Access_Array_Access_Array is array (Natural range <>) of UpDownVectorAIFactory_Access_Array_Access;
+   type UpDownVectorAIFactory_Access_Array_Access_Array_Access is access all UpDownVectorAIFactory_Access_Array_Access_Array;
 
-   type UpDownVectorAIFactory is new ArtificialIntelligenceInterfaceFactoryInterface with null record;
+   type UpDownVectorAIFactory is new Java_Object and ArtificialIntelligenceInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out UpDownVectorAIFactory'Class);
    function Create return UpDownVectorAIFactory_Access;

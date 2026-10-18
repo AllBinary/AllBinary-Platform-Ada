@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with taghelpers.transform.info.TransformInfoHelperFactory_Package; use taghelpers.transform.info.TransformInfoHelperFactory_Package;
+
 package body tags.transform.info.TransformInfoTableTag_Package is
 
+   package TransformInfoHelperFactory_Package renames Standard.taghelpers.transform.info.TransformInfoHelperFactory_Package;
    procedure Initialize_Fields (This : in out TransformInfoTableTag'Class) is
    begin
       null;

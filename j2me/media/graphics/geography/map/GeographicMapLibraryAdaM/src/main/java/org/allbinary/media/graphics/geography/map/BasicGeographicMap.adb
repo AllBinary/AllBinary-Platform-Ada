@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+
 package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package is
 
    procedure Initialize_Fields (This : in out BasicGeographicMap'Class) is

@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
-with org.allbinary.thread.NullABRunnable_Package; use org.allbinary.thread.NullABRunnable_Package;
 with org.allbinary.game.midlet.SpecialDemoGameMidlet_Package; use org.allbinary.game.midlet.SpecialDemoGameMidlet_Package;
 
 package org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package is
 
    package ABRunnable_Package renames Standard.org.allbinary.thread.ABRunnable_Package;
-   package NullABRunnable_Package renames Standard.org.allbinary.thread.NullABRunnable_Package;
 
    type LicenseCheckRunnableFactory is tagged;
    type LicenseCheckRunnableFactory_Access is access all LicenseCheckRunnableFactory'Class;
    type LicenseCheckRunnableFactory_Access_Array is array (Natural range <>) of LicenseCheckRunnableFactory_Access;
    type LicenseCheckRunnableFactory_Access_Array_Access is access all LicenseCheckRunnableFactory_Access_Array;
+   type LicenseCheckRunnableFactory_Access_Array_Access_Array is array (Natural range <>) of LicenseCheckRunnableFactory_Access_Array_Access;
+   type LicenseCheckRunnableFactory_Access_Array_Access_Array_Access is access all LicenseCheckRunnableFactory_Access_Array_Access_Array;
 
    type LicenseCheckRunnableFactory is new Java_Object with null record;
 

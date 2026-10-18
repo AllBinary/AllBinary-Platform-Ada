@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.logic.system.security.licensing.LockableFeatureFactory_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type LockableFeatureFactory is tagged;
    type LockableFeatureFactory_Access is access all LockableFeatureFactory'Class;
    type LockableFeatureFactory_Access_Array is array (Natural range <>) of LockableFeatureFactory_Access;
    type LockableFeatureFactory_Access_Array_Access is access all LockableFeatureFactory_Access_Array;
+   type LockableFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of LockableFeatureFactory_Access_Array_Access;
+   type LockableFeatureFactory_Access_Array_Access_Array_Access is access all LockableFeatureFactory_Access_Array_Access_Array;
 
    type LockableFeatureFactory is new Java_Object with record
       list : BasicArrayList_Access;

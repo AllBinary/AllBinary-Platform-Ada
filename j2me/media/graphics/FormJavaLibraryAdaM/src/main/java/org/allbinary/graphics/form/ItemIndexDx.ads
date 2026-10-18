@@ -30,6 +30,8 @@ package org.allbinary.graphics.form.ItemIndexDx_Package is
    type ItemIndexDx_Access is access all ItemIndexDx'Class;
    type ItemIndexDx_Access_Array is array (Natural range <>) of ItemIndexDx_Access;
    type ItemIndexDx_Access_Array_Access is access all ItemIndexDx_Access_Array;
+   type ItemIndexDx_Access_Array_Access_Array is array (Natural range <>) of ItemIndexDx_Access_Array_Access;
+   type ItemIndexDx_Access_Array_Access_Array_Access is access all ItemIndexDx_Access_Array_Access_Array;
 
    type ItemIndexDx is new Java_Object with null record;
    instance : ItemIndexDx_Access;

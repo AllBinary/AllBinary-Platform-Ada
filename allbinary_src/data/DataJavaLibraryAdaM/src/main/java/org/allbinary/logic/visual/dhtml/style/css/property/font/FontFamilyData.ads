@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_
    type FontFamilyData_Access is access all FontFamilyData'Class;
    type FontFamilyData_Access_Array is array (Natural range <>) of FontFamilyData_Access;
    type FontFamilyData_Access_Array_Access is access all FontFamilyData_Access_Array;
+   type FontFamilyData_Access_Array_Access_Array is array (Natural range <>) of FontFamilyData_Access_Array_Access;
+   type FontFamilyData_Access_Array_Access_Array_Access is access all FontFamilyData_Access_Array_Access_Array;
 
    type FontFamilyData is new Java_Object with record
       NAME : Unbounded_String;

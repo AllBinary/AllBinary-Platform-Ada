@@ -31,8 +31,10 @@ package org.allbinary.logic.util.visitor.Visitor_Package is
    type Visitor_Access is access all Visitor'Class;
    type Visitor_Access_Array is array (Natural range <>) of Visitor_Access;
    type Visitor_Access_Array_Access is access all Visitor_Access_Array;
+   type Visitor_Access_Array_Access_Array is array (Natural range <>) of Visitor_Access_Array_Access;
+   type Visitor_Access_Array_Access_Array_Access is access all Visitor_Access_Array_Access_Array;
 
-   type Visitor is new VisitorInterface with record
+   type Visitor is new Java_Object and VisitorInterface with record
       nullUtil : NullUtil_Access;
    end record;
    instance : Visitor_Access;
@@ -42,6 +44,8 @@ package org.allbinary.logic.util.visitor.Visitor_Package is
    function visit (This : in out Visitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
    procedure visit (This : in out Visitor; anyType_Param : access Java_Object'Class);
    function getInstance return Visitor_Access;
+   function visit (This : in out Visitor; Value : Unbounded_String) return Java_Object_Access;
+   procedure visit (This : in out Visitor; Value : Unbounded_String);
 
 end org.allbinary.logic.util.visitor.Visitor_Package;
 

@@ -31,6 +31,8 @@ package org.allbinary.graphics.paint.StringLocationPaintable_Package is
    type StringLocationPaintable_Access is access all StringLocationPaintable'Class;
    type StringLocationPaintable_Access_Array is array (Natural range <>) of StringLocationPaintable_Access;
    type StringLocationPaintable_Access_Array_Access is access all StringLocationPaintable_Access_Array;
+   type StringLocationPaintable_Access_Array_Access_Array is array (Natural range <>) of StringLocationPaintable_Access_Array_Access;
+   type StringLocationPaintable_Access_Array_Access_Array_Access is access all StringLocationPaintable_Access_Array_Access_Array;
 
    type StringLocationPaintable is new LocationPaintable with record
       value : Unbounded_String;

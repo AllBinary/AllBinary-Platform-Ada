@@ -31,6 +31,8 @@ package org.allbinary.logic.system.security.licensing.StoreAppClientInformation_
    type StoreAppClientInformation_Access is access all StoreAppClientInformation'Class;
    type StoreAppClientInformation_Access_Array is array (Natural range <>) of StoreAppClientInformation_Access;
    type StoreAppClientInformation_Access_Array_Access is access all StoreAppClientInformation_Access_Array;
+   type StoreAppClientInformation_Access_Array_Access_Array is array (Natural range <>) of StoreAppClientInformation_Access_Array_Access;
+   type StoreAppClientInformation_Access_Array_Access_Array_Access is access all StoreAppClientInformation_Access_Array_Access_Array;
 
    type StoreAppClientInformation is new AbeClientInformation and LongArrayIdentifierInterface with record
       longArrayIdentifier : Long_Long_Integer_Array_Access;

@@ -30,6 +30,8 @@ package org.allbinary.animation.AnimationEventHandler_Package is
    type AnimationEventHandler_Access is access all AnimationEventHandler'Class;
    type AnimationEventHandler_Access_Array is array (Natural range <>) of AnimationEventHandler_Access;
    type AnimationEventHandler_Access_Array_Access is access all AnimationEventHandler_Access_Array;
+   type AnimationEventHandler_Access_Array_Access_Array is array (Natural range <>) of AnimationEventHandler_Access_Array_Access;
+   type AnimationEventHandler_Access_Array_Access_Array_Access is access all AnimationEventHandler_Access_Array_Access_Array;
 
    type AnimationEventHandler is new BasicEventHandler with null record;
    eventHandler : AnimationEventHandler_Access;

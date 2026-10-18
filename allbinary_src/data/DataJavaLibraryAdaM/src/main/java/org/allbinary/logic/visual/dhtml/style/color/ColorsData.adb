@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.visual.dhtml.style.color.ColorsData_Package is
 
    procedure Initialize_Fields (This : in out ColorsData'Class) is

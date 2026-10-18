@@ -22,30 +22,19 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
-with org.allbinary.graphics.color.ColorCacheFactory_Package; use org.allbinary.graphics.color.ColorCacheFactory_Package;
-with org.allbinary.graphics.color.ColorCacheable_Package; use org.allbinary.graphics.color.ColorCacheable_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.util.cache.AutomaticCacheInterface_Package; use org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
-with org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package; use org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package;
 with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package; use org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
-with org.allbinary.media.image.comparison.Color_Package; use org.allbinary.media.image.comparison.Color_Package;
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 
 package org.allbinary.media.image.comparison.ImageComparator_Package is
 
    package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
-   package ColorCacheFactory_Package renames Standard.org.allbinary.graphics.color.ColorCacheFactory_Package;
-   package ColorCacheable_Package renames Standard.org.allbinary.graphics.color.ColorCacheable_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package AutomaticCacheInterface_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
-   package PixelDeltaFactory_Package renames Standard.org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package;
 
    type ImageComparator is tagged;
    type ImageComparator_Access is access all ImageComparator'Class;
    type ImageComparator_Access_Array is array (Natural range <>) of ImageComparator_Access;
    type ImageComparator_Access_Array_Access is access all ImageComparator_Access_Array;
+   type ImageComparator_Access_Array_Access_Array is array (Natural range <>) of ImageComparator_Access_Array_Access;
+   type ImageComparator_Access_Array_Access_Array_Access is access all ImageComparator_Access_Array_Access_Array;
 
    type ImageComparator is new Java_Object with record
       imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access;

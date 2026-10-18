@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out AbSqlColumn'Class) is
    begin
       null;
@@ -99,7 +104,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
       rset : ResultSet_Access;
       field : Unbounded_String;
    begin
-        column := BasicArrayListD_Package.Create;
+        column := BasicArrayList_Access (BasicArrayListD_Package.Create);
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (This.sqlStrings.SELECT_Id);
         stringBuffer.append (columnName);
@@ -152,7 +157,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
         stringBuffer.append (value);
         stringBuffer.append (This.sqlStrings.CLOSE_QUOTE);
         sqlStatement := stringBuffer.toString;
-        column := BasicArrayListD_Package.Create;
+        column := BasicArrayList_Access (BasicArrayListD_Package.Create);
         rset := null;
         field := Null_Unbounded_String;
         begin

@@ -21,28 +21,14 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
-with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
-with org.allbinary.graphics.j2me.workarea.tools.Points_Package; use org.allbinary.graphics.j2me.workarea.tools.Points_Package;
-with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package org.allbinary.animation.vector.VectorCenterGenerator_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package GraphicItemInterface_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
-   package LinesGraphicItem_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
-   package Points_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.Points_Package;
-   package BasicGraphicsPipeline_Package renames Standard.org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
@@ -50,6 +36,8 @@ package org.allbinary.animation.vector.VectorCenterGenerator_Package is
    type VectorCenterGenerator_Access is access all VectorCenterGenerator'Class;
    type VectorCenterGenerator_Access_Array is array (Natural range <>) of VectorCenterGenerator_Access;
    type VectorCenterGenerator_Access_Array_Access is access all VectorCenterGenerator_Access_Array;
+   type VectorCenterGenerator_Access_Array_Access_Array is array (Natural range <>) of VectorCenterGenerator_Access_Array_Access;
+   type VectorCenterGenerator_Access_Array_Access_Array_Access is access all VectorCenterGenerator_Access_Array_Access_Array;
 
    type VectorCenterGenerator is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -23,23 +23,21 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapEventHandler_Package is
 
    package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type GeographicMapEventHandler is tagged;
    type GeographicMapEventHandler_Access is access all GeographicMapEventHandler'Class;
    type GeographicMapEventHandler_Access_Array is array (Natural range <>) of GeographicMapEventHandler_Access;
    type GeographicMapEventHandler_Access_Array_Access is access all GeographicMapEventHandler_Access_Array;
+   type GeographicMapEventHandler_Access_Array_Access_Array is array (Natural range <>) of GeographicMapEventHandler_Access_Array_Access;
+   type GeographicMapEventHandler_Access_Array_Access_Array_Access is access all GeographicMapEventHandler_Access_Array_Access_Array;
 
    type GeographicMapEventHandler is new BasicEventHandler with record
       list : BasicArrayList_Access;

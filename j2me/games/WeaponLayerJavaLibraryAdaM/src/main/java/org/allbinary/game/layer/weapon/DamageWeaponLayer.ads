@@ -26,7 +26,6 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.physics.movement.Movement_Package; use org.allbinary.physics.movement.Movement_Package;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game.layer.weapon.WeaponLayer_Package;
-with org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Package; use org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Package;
 
 package org.allbinary.game.layer.weapon.DamageWeaponLayer_Package is
 
@@ -40,6 +39,8 @@ package org.allbinary.game.layer.weapon.DamageWeaponLayer_Package is
    type DamageWeaponLayer_Access is access all DamageWeaponLayer'Class;
    type DamageWeaponLayer_Access_Array is array (Natural range <>) of DamageWeaponLayer_Access;
    type DamageWeaponLayer_Access_Array_Access is access all DamageWeaponLayer_Access_Array;
+   type DamageWeaponLayer_Access_Array_Access_Array is array (Natural range <>) of DamageWeaponLayer_Access_Array_Access;
+   type DamageWeaponLayer_Access_Array_Access_Array_Access is access all DamageWeaponLayer_Access_Array_Access_Array;
 
    type DamageWeaponLayer is new WeaponLayer with null record;
 

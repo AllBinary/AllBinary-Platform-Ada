@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package; use org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
+with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logic.math.ScaleFactorFactory_Package;
+
 package body org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package is
 
+   package AnalogControllerConfigurationEventHandler_Package renames Standard.org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
+   package ScaleFactorFactory_Package renames Standard.org.allbinary.logic.math.ScaleFactorFactory_Package;
    procedure Initialize_Fields (This : in out AnalogControllerConfigurationFactory'Class) is
    begin
       null;

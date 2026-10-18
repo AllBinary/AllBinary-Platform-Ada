@@ -30,13 +30,17 @@ package org.allbinary.ai.ArtificialIntelligenceFactory_Package is
    type ArtificialIntelligenceFactory_Access is access all ArtificialIntelligenceFactory'Class;
    type ArtificialIntelligenceFactory_Access_Array is array (Natural range <>) of ArtificialIntelligenceFactory_Access;
    type ArtificialIntelligenceFactory_Access_Array_Access is access all ArtificialIntelligenceFactory_Access_Array;
+   type ArtificialIntelligenceFactory_Access_Array_Access_Array is array (Natural range <>) of ArtificialIntelligenceFactory_Access_Array_Access;
+   type ArtificialIntelligenceFactory_Access_Array_Access_Array_Access is access all ArtificialIntelligenceFactory_Access_Array_Access_Array;
 
-   type ArtificialIntelligenceFactory is new ArtificialIntelligenceFactoryInterface with null record;
+   type ArtificialIntelligenceFactory is new Java_Object and ArtificialIntelligenceFactoryInterface with null record;
 
    procedure Initialize (This : in out ArtificialIntelligenceFactory'Class);
    function Create return ArtificialIntelligenceFactory_Access;
    function getInstance (This : in out ArtificialIntelligenceFactory; anyType_Param : access Java_Object'Class) return ArtificialIntelligence_Access;
    procedure getInstance (This : in out ArtificialIntelligenceFactory; anyType_Param : access Java_Object'Class);
+   function getInstance (This : in out ArtificialIntelligenceFactory; Value : Unbounded_String) return ArtificialIntelligence_Access;
+   procedure getInstance (This : in out ArtificialIntelligenceFactory; Value : Unbounded_String);
 
 end org.allbinary.ai.ArtificialIntelligenceFactory_Package;
 

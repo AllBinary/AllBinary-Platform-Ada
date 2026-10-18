@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.util.cache.ImageCacheable_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out ImageCacheable'Class) is
    begin
       null;
@@ -38,7 +41,7 @@ package body org.allbinary.logic.util.cache.ImageCacheable_Package is
 
    function getKey (This : in out ImageCacheable) return Java_Object_Access is
    begin
-        return This.name;
+        return Java_Box (This.name);
    end getKey;
 
    function toString (This : in out ImageCacheable) return Unbounded_String is

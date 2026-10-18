@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.view.View_Package; use android.view.View_Package;
 with org.allbinary.android.activity.KeyInputViewCompositeInterface_Package; use org.allbinary.android.activity.KeyInputViewCompositeInterface_Package;
+with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.activity.NullKeyInputViewComposite_Package is
 
@@ -31,8 +32,10 @@ package org.allbinary.android.activity.NullKeyInputViewComposite_Package is
    type NullKeyInputViewComposite_Access is access all NullKeyInputViewComposite'Class;
    type NullKeyInputViewComposite_Access_Array is array (Natural range <>) of NullKeyInputViewComposite_Access;
    type NullKeyInputViewComposite_Access_Array_Access is access all NullKeyInputViewComposite_Access_Array;
+   type NullKeyInputViewComposite_Access_Array_Access_Array is array (Natural range <>) of NullKeyInputViewComposite_Access_Array_Access;
+   type NullKeyInputViewComposite_Access_Array_Access_Array_Access is access all NullKeyInputViewComposite_Access_Array_Access_Array;
 
-   type NullKeyInputViewComposite is new KeyInputViewCompositeInterface with null record;
+   type NullKeyInputViewComposite is new Java_Object and KeyInputViewCompositeInterface with null record;
    NULL_KEY_INPUT_VIEW_COMPOSITE : NullKeyInputViewComposite_Access;
 
    procedure Initialize (This : in out NullKeyInputViewComposite'Class);

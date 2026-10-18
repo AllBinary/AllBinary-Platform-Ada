@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.layer.RTSScrollSelectionFormFactory_Package; use org.allbinary.game.layer.RTSScrollSelectionFormFactory_Package;
+
 package body org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package is
 
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out AdvancedRTSLayerFormFactory'Class) is
    begin
       null;

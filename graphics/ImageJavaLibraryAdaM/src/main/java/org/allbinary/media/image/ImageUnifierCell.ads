@@ -28,6 +28,8 @@ package org.allbinary.media.image.ImageUnifierCell_Package is
    type ImageUnifierCell_Access is access all ImageUnifierCell'Class;
    type ImageUnifierCell_Access_Array is array (Natural range <>) of ImageUnifierCell_Access;
    type ImageUnifierCell_Access_Array_Access is access all ImageUnifierCell_Access_Array;
+   type ImageUnifierCell_Access_Array_Access_Array is array (Natural range <>) of ImageUnifierCell_Access_Array_Access;
+   type ImageUnifierCell_Access_Array_Access_Array_Access is access all ImageUnifierCell_Access_Array_Access_Array;
 
    type ImageUnifierCell is new Java_Object with record
       width : Integer;

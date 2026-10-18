@@ -30,6 +30,8 @@ package org.allbinary.game.configuration.feature.GameFeatureFactory_Package is
    type GameFeatureFactory_Access is access all GameFeatureFactory'Class;
    type GameFeatureFactory_Access_Array is array (Natural range <>) of GameFeatureFactory_Access;
    type GameFeatureFactory_Access_Array_Access is access all GameFeatureFactory_Access_Array;
+   type GameFeatureFactory_Access_Array_Access_Array is array (Natural range <>) of GameFeatureFactory_Access_Array_Access;
+   type GameFeatureFactory_Access_Array_Access_Array_Access is access all GameFeatureFactory_Access_Array_Access_Array;
 
    type GameFeatureFactory is new Java_Object with record
       SOUND : GameFeature_Access;

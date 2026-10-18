@@ -18,6 +18,8 @@ package org.platform.OpenGLResources_Package is
    type OpenGLResources_Access is access all OpenGLResources'Class;
    type OpenGLResources_Access_Array is array (Natural range <>) of OpenGLResources_Access;
    type OpenGLResources_Access_Array_Access is access all OpenGLResources_Access_Array;
+   type OpenGLResources_Access_Array_Access_Array is array (Natural range <>) of OpenGLResources_Access_Array_Access;
+   type OpenGLResources_Access_Array_Access_Array_Access is access all OpenGLResources_Access_Array_Access_Array;
 
    type OpenGLResources is new Java_Object with null record;
    instance : OpenGLResources_Access;

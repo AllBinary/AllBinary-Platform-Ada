@@ -22,37 +22,26 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
-with org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package; use org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.thread.NullThread_Package; use org.allbinary.thread.NullThread_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.ThreadObjectUtil_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
-with org.allbinary.canvas.RunnableCanvasRefreshHelper_Package; use org.allbinary.canvas.RunnableCanvasRefreshHelper_Package;
 
 package org.allbinary.canvas.RunnableCanvas_Package is
 
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
-   package NullWaitGameRunnable_Package renames Standard.org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
    package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
    package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package NullThread_Package renames Standard.org.allbinary.thread.NullThread_Package;
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
    package ThreadObjectUtil_Package renames Standard.org.allbinary.thread.ThreadObjectUtil_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
@@ -62,6 +51,8 @@ package org.allbinary.canvas.RunnableCanvas_Package is
    type RunnableCanvas_Access is access all RunnableCanvas'Class;
    type RunnableCanvas_Access_Array is array (Natural range <>) of RunnableCanvas_Access;
    type RunnableCanvas_Access_Array_Access is access all RunnableCanvas_Access_Array;
+   type RunnableCanvas_Access_Array_Access_Array is array (Natural range <>) of RunnableCanvas_Access_Array_Access;
+   type RunnableCanvas_Access_Array_Access_Array_Access is access all RunnableCanvas_Access_Array_Access_Array;
 
    type RunnableCanvas is new MyCanvas and RunnableInterface with record
       nullUtil : NullUtil_Access;
@@ -91,7 +82,7 @@ package org.allbinary.canvas.RunnableCanvas_Package is
    function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; childNameList_Param : access BasicArrayList_Package.BasicArrayList'Class; hasParam : Boolean) return RunnableCanvas_Access;
    procedure initCommands (This : in out RunnableCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class);
    function isMainCanvas (This : in out RunnableCanvas) return Boolean;
-   procedure setThread (This : in out RunnableCanvas; thread_Case_Param : access Thread_Package.Thread'Class);
+   procedure setThread (This : in out RunnableCanvas; thread_Param : access Thread_Package.Thread'Class);
    procedure setRunning (This : in out RunnableCanvas; running : Boolean);
    function isRunning (This : in out RunnableCanvas) return Boolean;
    function getLoopTimeHelperP (This : in out RunnableCanvas) return TimeDelayHelper_Access;

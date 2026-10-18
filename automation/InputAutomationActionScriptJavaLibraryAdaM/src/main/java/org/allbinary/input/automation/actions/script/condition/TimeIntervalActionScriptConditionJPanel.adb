@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionJPanel_Package is
 
    procedure Initialize_Fields (This : in out TimeIntervalActionScriptConditionJPanel'Class) is
@@ -108,7 +109,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         This.jLabel2.setText (To_Unbounded_String ("Time (ms):"));
         timeIntervalActionJDialogLayout := GroupLayout_Package.Create (This.timeIntervalActionJDialog.getContentPane);
         This.timeIntervalActionJDialog.getContentPane.setLayout (timeIntervalActionJDialogLayout);
-        timeIntervalActionJDialogLayout.setHorizontalGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (timeIntervalActionJDialogLayout.createSequentialGroup.addGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, timeIntervalActionJDialogLayout.createSequentialGroup.addGap (82, 82, 82).addComponent (This.okJButton)).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, timeIntervalActionJDialogLayout.createSequentialGroup.addGap (32, 32, 32).addGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (timeIntervalActionJDialogLayout.createSequentialGroup.addComponent (This.jLabel2).addGap (16, 16, 16).addComponent (This.timeIntervalJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 85, Short_Package.MAX_VALUE)).addComponent (This.titleJLabel)))).addContainerGap (36, Short_Package.MAX_VALUE)));
+        timeIntervalActionJDialogLayout.setHorizontalGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (timeIntervalActionJDialogLayout.createSequentialGroup.addGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, timeIntervalActionJDialogLayout.createSequentialGroup.addGap (82, 82, 82).addComponent (This.okJButton)).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, timeIntervalActionJDialogLayout.createSequentialGroup.addGap (32, 32, 32).addGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (timeIntervalActionJDialogLayout.createSequentialGroup.addComponent (This.jLabel2).addGap (16, 16, 16).addComponent (This.timeIntervalJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 85, Short_Integer'Last)).addComponent (This.titleJLabel)))).addContainerGap (36, Short_Integer'Last)));
         timeIntervalActionJDialogLayout.setVerticalGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (timeIntervalActionJDialogLayout.createSequentialGroup.addContainerGap.addComponent (This.titleJLabel).addGap (20, 20, 20).addGroup (timeIntervalActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel2).addComponent (This.timeIntervalJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addGap (15, 15, 15).addComponent (This.okJButton).addContainerGap));
         TimeIntervalActionScriptConditionJPanel'Class (This).setMinimumSize (Dimension_Package.Create (100, 0));
         This.timeIntervalActionJButton.setText (To_Unbounded_String ("Edit"));
@@ -123,7 +124,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         This.jLabel1.setText (To_Unbounded_String ("Time Interval:"));
         layout := GroupLayout_Package.Create (TimeIntervalActionScriptConditionJPanel_Access'(This'Unchecked_Access));
         TimeIntervalActionScriptConditionJPanel'Class (This).setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.timeIntervalActionJButton)));
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Integer'Last).addComponent (This.timeIntervalActionJButton)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.timeIntervalActionJButton)));
    end initComponents;
 

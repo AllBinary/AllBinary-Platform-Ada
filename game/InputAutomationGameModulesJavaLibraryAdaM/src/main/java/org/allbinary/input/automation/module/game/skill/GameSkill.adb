@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.input.automation.module.game.skill.GameSkill_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out GameSkill'Class) is
    begin
       null;
@@ -35,7 +44,7 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
         GameSkill'Class (This).setGameSkillType (gameSkillType);
         GameSkill'Class (This).setExtra (extra);
         GameSkill'Class (This).setTime (time);
-        This.vector := BasicArrayListD_Package.Create;
+        This.vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         GameSkill_Package.hashMap.put (Java_Box (StringMaker_Package.Create.append (GameSkill'Class (This).getGameSkillType.getName).append (CommonSeps_Package.getInstance.SPACE).append (extra).toString), GameSkill_Access'(This'Unchecked_Access));
    end Initialize;
 
@@ -80,7 +89,7 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
    procedure addProperty (This : in out GameSkill; gameSkillPropertyInterface_Param : access GameSkillPropertyInterface_Package.GameSkillPropertyInterface'Class) is
       gameSkillPropertyInterface : constant GameSkillPropertyInterface_Access := GameSkillPropertyInterface_Access (gameSkillPropertyInterface_Param);
    begin
-        This.vector.add (gameSkillPropertyInterface);
+        This.vector.add (Java_Object_Access (gameSkillPropertyInterface));
    end addProperty;
 
    function getProperties (This : in out GameSkill) return BasicArrayList_Access is

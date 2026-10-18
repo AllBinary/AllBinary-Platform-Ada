@@ -21,20 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
 
 package org.allbinary.graphics.CellPositionFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CellPositionFactory is tagged;
    type CellPositionFactory_Access is access all CellPositionFactory'Class;
    type CellPositionFactory_Access_Array is array (Natural range <>) of CellPositionFactory_Access;
    type CellPositionFactory_Access_Array_Access is access all CellPositionFactory_Access_Array;
+   type CellPositionFactory_Access_Array_Access_Array is array (Natural range <>) of CellPositionFactory_Access_Array_Access;
+   type CellPositionFactory_Access_Array_Access_Array_Access is access all CellPositionFactory_Access_Array_Access_Array;
 
    type CellPositionFactory is new Java_Object with record
       logUtil : LogUtil_Access;

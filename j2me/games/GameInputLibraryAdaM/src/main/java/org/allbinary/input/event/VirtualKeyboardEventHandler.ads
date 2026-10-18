@@ -20,16 +20,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.input.event.VirtualKeyboardEvent_Package; use org.allbinary.input.event.VirtualKeyboardEvent_Package;
-with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package; use org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
 
 package org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
 
-   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
@@ -38,6 +35,8 @@ package org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
    type VirtualKeyboardEventHandler_Access is access all VirtualKeyboardEventHandler'Class;
    type VirtualKeyboardEventHandler_Access_Array is array (Natural range <>) of VirtualKeyboardEventHandler_Access;
    type VirtualKeyboardEventHandler_Access_Array_Access is access all VirtualKeyboardEventHandler_Access_Array;
+   type VirtualKeyboardEventHandler_Access_Array_Access_Array is array (Natural range <>) of VirtualKeyboardEventHandler_Access_Array_Access;
+   type VirtualKeyboardEventHandler_Access_Array_Access_Array_Access is access all VirtualKeyboardEventHandler_Access_Array_Access_Array;
 
    type VirtualKeyboardEventHandler is new BasicEventHandler with record
       SHOW_EVENT : VirtualKeyboardEvent_Access;

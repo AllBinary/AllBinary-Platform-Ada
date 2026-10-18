@@ -22,29 +22,21 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.visual.media.MediaData_Package; use org.allbinary.logic.visual.media.MediaData_Package;
-with org.allbinary.logic.visual.media.MediaIOUtil_Package; use org.allbinary.logic.visual.media.MediaIOUtil_Package;
-with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.logic.visual.media.MediaTypeData_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package MediaData_Package renames Standard.org.allbinary.logic.visual.media.MediaData_Package;
-   package MediaIOUtil_Package renames Standard.org.allbinary.logic.visual.media.MediaIOUtil_Package;
-   package MediaTypeData_Package renames Standard.org.allbinary.logic.visual.media.MediaTypeData_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type UploadMediaSingleton is tagged;
    type UploadMediaSingleton_Access is access all UploadMediaSingleton'Class;
    type UploadMediaSingleton_Access_Array is array (Natural range <>) of UploadMediaSingleton_Access;
    type UploadMediaSingleton_Access_Array_Access is access all UploadMediaSingleton_Access_Array;
+   type UploadMediaSingleton_Access_Array_Access_Array is array (Natural range <>) of UploadMediaSingleton_Access_Array_Access;
+   type UploadMediaSingleton_Access_Array_Access_Array_Access is access all UploadMediaSingleton_Access_Array_Access_Array;
 
    type UploadMediaSingleton is new Java_Object with record
       logUtil : LogUtil_Access;

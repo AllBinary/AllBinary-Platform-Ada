@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.bounds.event.BoundsChangeEventListener_Package; use org.allbinary.bounds.event.BoundsChangeEventListener_Package;
-with org.allbinary.bounds.event.BoundsChangeEvent_Package; use org.allbinary.bounds.event.BoundsChangeEvent_Package;
 
 package org.allbinary.bounds.event.BoundsChangeEventHandler_Package is
 
@@ -36,6 +34,8 @@ package org.allbinary.bounds.event.BoundsChangeEventHandler_Package is
    type BoundsChangeEventHandler_Access is access all BoundsChangeEventHandler'Class;
    type BoundsChangeEventHandler_Access_Array is array (Natural range <>) of BoundsChangeEventHandler_Access;
    type BoundsChangeEventHandler_Access_Array_Access is access all BoundsChangeEventHandler_Access_Array;
+   type BoundsChangeEventHandler_Access_Array_Access_Array is array (Natural range <>) of BoundsChangeEventHandler_Access_Array_Access;
+   type BoundsChangeEventHandler_Access_Array_Access_Array_Access is access all BoundsChangeEventHandler_Access_Array_Access_Array;
 
    type BoundsChangeEventHandler is new BasicEventHandler with null record;
    SINGLETON : BasicEventHandler_Access;

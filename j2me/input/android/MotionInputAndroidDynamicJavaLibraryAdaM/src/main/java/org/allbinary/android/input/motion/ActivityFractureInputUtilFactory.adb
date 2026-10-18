@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
+with org.allbinary.android.api1.ActivityFractureUtilAPI1_Package; use org.allbinary.android.api1.ActivityFractureUtilAPI1_Package;
+with org.allbinary.android.api16.ActivityFractureUtilAPI16_Package; use org.allbinary.android.api16.ActivityFractureUtilAPI16_Package;
+with org.allbinary.android.api19.ActivityFractureUtilAPI19_Package; use org.allbinary.android.api19.ActivityFractureUtilAPI19_Package;
+with org.allbinary.android.api5.ActivityFractureUtilAPI5_Package; use org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
+
 package body org.allbinary.android.input.motion.ActivityFractureInputUtilFactory_Package is
 
+   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
+   package ActivityFractureUtilAPI1_Package renames Standard.org.allbinary.android.api1.ActivityFractureUtilAPI1_Package;
+   package ActivityFractureUtilAPI16_Package renames Standard.org.allbinary.android.api16.ActivityFractureUtilAPI16_Package;
+   package ActivityFractureUtilAPI19_Package renames Standard.org.allbinary.android.api19.ActivityFractureUtilAPI19_Package;
+   package ActivityFractureUtilAPI5_Package renames Standard.org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
    procedure Initialize_Fields (This : in out ActivityFractureInputUtilFactory'Class) is
    begin
       null;

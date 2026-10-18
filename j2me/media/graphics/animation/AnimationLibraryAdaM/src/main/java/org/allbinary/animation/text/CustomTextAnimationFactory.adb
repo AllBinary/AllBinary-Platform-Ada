@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.animation.text.CustomTextAnimation_Package; use org.allbinary.animation.text.CustomTextAnimation_Package;
+with org.allbinary.animation.text.AdjustCustomTextAnimation_Package; use org.allbinary.animation.text.AdjustCustomTextAnimation_Package;
+
 package body org.allbinary.animation.text.CustomTextAnimationFactory_Package is
 
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    procedure Initialize_Fields (This : in out CustomTextAnimationFactory'Class) is
    begin
       null;
@@ -65,12 +70,12 @@ package body org.allbinary.animation.text.CustomTextAnimationFactory_Package is
    begin
         customTextAnimation := null;
         if ((This.dx) /= (0)) or else ((This.dy) /= (0)) then
-            customTextAnimation := AdjustCustomTextAnimation_Package.Create (This.text, This.scaleProperties.scaleHeight, This.dx, This.dy, This.animationBehaviorFactory.getOrCreateInstance);
+            customTextAnimation := CustomTextAnimation_Access (AdjustCustomTextAnimation_Package.Create (This.text, This.scaleProperties.scaleHeight, This.dx, This.dy, This.animationBehaviorFactory.getOrCreateInstance));
         else
             customTextAnimation := CustomTextAnimation_Package.Create (This.text, This.scaleProperties.scaleHeight, This.animationBehaviorFactory.getOrCreateInstance);
         end if;
         customTextAnimation.setBasicColorP (This.basicColor);
-        return customTextAnimation;
+        return Animation_Access (customTextAnimation);
    end getInstance;
 
    procedure setInitialScale (This : in out CustomTextAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is

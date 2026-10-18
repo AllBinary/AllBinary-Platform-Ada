@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.debug.NoDebug_Package is
 
    procedure Initialize_Fields (This : in out NoDebug'Class) is
@@ -65,7 +66,7 @@ package body org.allbinary.debug.NoDebug_Package is
 
 begin
    null;
-   SINGLETON := NoDebug_Package.Create;
+   SINGLETON := DebugInterface_Access (NoDebug_Package.Create);
 
 end org.allbinary.debug.NoDebug_Package;
 

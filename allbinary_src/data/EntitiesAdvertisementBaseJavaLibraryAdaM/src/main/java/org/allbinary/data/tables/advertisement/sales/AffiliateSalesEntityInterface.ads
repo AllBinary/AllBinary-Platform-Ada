@@ -22,20 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
 
 package org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
    type AffiliateSalesEntityInterface is interface and BasicDataTableInterface;
    type AffiliateSalesEntityInterface_Access is access all AffiliateSalesEntityInterface'Class;
    type AffiliateSalesEntityInterface_Access_Array is array (Natural range <>) of AffiliateSalesEntityInterface_Access;
    type AffiliateSalesEntityInterface_Access_Array_Access is access all AffiliateSalesEntityInterface_Access_Array;
+   type AffiliateSalesEntityInterface_Access_Array_Access_Array is array (Natural range <>) of AffiliateSalesEntityInterface_Access_Array_Access;
+   type AffiliateSalesEntityInterface_Access_Array_Access_Array_Access is access all AffiliateSalesEntityInterface_Access_Array_Access_Array;
    procedure delete (This : in out AffiliateSalesEntityInterface; value : Unbounded_String) is abstract;
    procedure insert (This : in out AffiliateSalesEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
    procedure update (This : in out AffiliateSalesEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;

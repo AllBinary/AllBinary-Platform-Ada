@@ -28,6 +28,8 @@ package org.allbinary.time.GameTickTimeDelayHelper_Package is
    type GameTickTimeDelayHelper_Access is access all GameTickTimeDelayHelper'Class;
    type GameTickTimeDelayHelper_Access_Array is array (Natural range <>) of GameTickTimeDelayHelper_Access;
    type GameTickTimeDelayHelper_Access_Array_Access is access all GameTickTimeDelayHelper_Access_Array;
+   type GameTickTimeDelayHelper_Access_Array_Access_Array is array (Natural range <>) of GameTickTimeDelayHelper_Access_Array_Access;
+   type GameTickTimeDelayHelper_Access_Array_Access_Array_Access is access all GameTickTimeDelayHelper_Access_Array_Access_Array;
 
    type GameTickTimeDelayHelper is new Java_Object with record
       timeDelta : Long_Long_Integer;

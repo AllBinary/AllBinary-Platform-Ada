@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.globals.AppUrlGlobals_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out AppUrlGlobals'Class) is
    begin
       null;
@@ -48,7 +51,7 @@ package body org.allbinary.globals.AppUrlGlobals_Package is
    procedure setWebappPath (This : in out AppUrlGlobals; path : Unbounded_String) is
    begin
         This.path := path;
-        if not (((This.path.endsWith (To_Unbounded_String ("\"))) or else (This.path.endsWith (To_Unbounded_String ("/"))))) then
+        if not (((Java_Ends_With (This.path, To_Unbounded_String ("\"))) or else (Java_Ends_With (This.path, To_Unbounded_String ("/"))))) then
             This.path := This.path & To_Unbounded_String ("\");
         end if;
    end setWebappPath;

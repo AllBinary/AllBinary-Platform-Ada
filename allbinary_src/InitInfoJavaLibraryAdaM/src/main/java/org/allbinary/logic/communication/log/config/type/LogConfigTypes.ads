@@ -20,31 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
-with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.communication.log.config.LoggingInitInfo_Package; use org.allbinary.logic.communication.log.config.LoggingInitInfo_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeData_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeData_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package;
 
 package org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package is
 
-   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
-   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package LoggingInitInfo_Package renames Standard.org.allbinary.logic.communication.log.config.LoggingInitInfo_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type LogConfigTypes is tagged;
    type LogConfigTypes_Access is access all LogConfigTypes'Class;
    type LogConfigTypes_Access_Array is array (Natural range <>) of LogConfigTypes_Access;
    type LogConfigTypes_Access_Array_Access is access all LogConfigTypes_Access_Array;
+   type LogConfigTypes_Access_Array_Access_Array is array (Natural range <>) of LogConfigTypes_Access_Array_Access;
+   type LogConfigTypes_Access_Array_Access_Array_Access is access all LogConfigTypes_Access_Array_Access_Array;
 
    type LogConfigTypes is new Java_Object with null record;
    JSP_ERROR_NO_FUNCTION : Unbounded_String;

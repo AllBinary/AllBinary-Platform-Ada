@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
+
 package body org.allbinary.layer.AllBinaryLayerFactory_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
    procedure Initialize_Fields (This : in out AllBinaryLayerFactory'Class) is
    begin
       null;

@@ -24,14 +24,9 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationInterface_Package; use org.allbinary.animation.AnimationInterface_Package;
 with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.CellPosition_Package;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
-with org.allbinary.graphics.RectangleFactory_Package; use org.allbinary.graphics.RectangleFactory_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.motion.button.TouchButtonInput_Package; use org.allbinary.input.motion.button.TouchButtonInput_Package;
 
@@ -41,20 +36,17 @@ package org.allbinary.input.motion.button.TouchButton_Package is
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationInterface_Package renames Standard.org.allbinary.animation.AnimationInterface_Package;
    package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
-   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
-   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TouchButton is tagged;
    type TouchButton_Access is access all TouchButton'Class;
    type TouchButton_Access_Array is array (Natural range <>) of TouchButton_Access;
    type TouchButton_Access_Array_Access is access all TouchButton_Access_Array;
+   type TouchButton_Access_Array_Access_Array is array (Natural range <>) of TouchButton_Access_Array_Access;
+   type TouchButton_Access_Array_Access_Array_Access is access all TouchButton_Access_Array_Access_Array;
 
    type TouchButton is new Paintable with record
       logUtil : LogUtil_Access;

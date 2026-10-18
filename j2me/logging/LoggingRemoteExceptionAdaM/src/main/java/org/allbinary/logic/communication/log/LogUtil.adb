@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.apache.xmlrpc.XmlRpcException_Package; use org.apache.xmlrpc.XmlRpcException_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.canvas.SpecialMessageUtil_Package; use org.allbinary.canvas.SpecialMessageUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package; use org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package;
+
 package body org.allbinary.logic.communication.log.LogUtil_Package is
 
+   package XmlRpcException_Package renames Standard.org.apache.xmlrpc.XmlRpcException_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package SpecialMessageUtil_Package renames Standard.org.allbinary.canvas.SpecialMessageUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    procedure Initialize_Fields (This : in out LogUtil'Class) is
    begin
       null;
@@ -76,7 +89,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
       className : Unbounded_String;
-      message_Case : Unbounded_String;
+      message : Unbounded_String;
       hashtable : ABHashtable_Access;
    begin
         if (exception_Id) /= (null) then
@@ -92,7 +105,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
                 if ((anyType) /= (null)) and then ((To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag))) /= (Null_Unbounded_String)) then
                     className := Java_New_String (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag)));
                 end if;
-                message_Case := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
+                message := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
                 begin
                     Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Eeeek")));
                     if (This.abeClientInformation) = (null) then
@@ -100,7 +113,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
                     end if;
                     hashtable := This.abeClientInformation.toHashtable;
                     This.stringBuffer.delete (0, This.stringBuffer.length);
-                    This.stringBuffer.append (message_Case);
+                    This.stringBuffer.append (message);
                     This.stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
                     This.stringBuffer.append (SpecialMessageUtil_Package.getInstance.get);
                     hashtable.put (This.MESSAGE, This.stringBuffer.toString);

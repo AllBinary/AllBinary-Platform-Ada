@@ -13,8 +13,47 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.DynamicObjectData_Package; use org.allbinary.business.DynamicObjectData_Package;
+with org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package; use org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package;
+with org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package; use org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package;
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.crypt.file.CryptFileReader_Package; use org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.system.loader.AbeFactory_Package; use org.allbinary.logic.system.loader.AbeFactory_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.business.user.commerce.shipping.ShippingMethodsData_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodsData_Package;
+with org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package; use org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
+
 package body org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DynamicObjectData_Package renames Standard.org.allbinary.business.DynamicObjectData_Package;
+   package BasicWeightShippingModuleView_Package renames Standard.org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package;
+   package NoShippingModuleView_Package renames Standard.org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package CryptFileReader_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AbeFactory_Package renames Standard.org.allbinary.logic.system.loader.AbeFactory_Package;
+   package TransformInfoObjectConfigData_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out ShippingMethodsFactory'Class) is
    begin
       null;
@@ -60,15 +99,15 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethodsFactor
       Initialize_Fields (This);
         stringBuffer := StringMaker_Package.Create;
         sep := AbPathData_Package.getInstance.SEPARATOR;
-        stringBuffer.append (URLGLOBALS.getMainPath);
-        stringBuffer.append (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH);
+        stringBuffer.append (URLGLOBALS_Package.getMainPath);
+        stringBuffer.append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH);
         stringBuffer.append (storeFrontInterface.getName);
         stringBuffer.append (sep);
         stringBuffer.append (ShippingMethodsFactory_Package.SHIPPINGMETHODSFILEPATHSTRING);
         abPath := AbPath_Access (AbPath_Package.Create (stringBuffer.toString, SHIPPINGMETHODSFILENAME));
         data := CryptFileReader_Package.Create (TransformInfoObjectConfigData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoObjectConfigData_Package.getInstance.ENCRYPTED_EXTENSION).get (abPath);
         This.document := DomDocumentHelper_Package.create (data);
-        This.shippingVector := BasicArrayListD_Package.Create;
+        This.shippingVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         nodeList := This.document.getElementsByTagName (ShippingMethodsData_Package.NAME);
         for index in 0 .. (nodeList.getLength) - 1 loop
             node := nodeList.item (index);
@@ -77,7 +116,7 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethodsFactor
             classNameNode := DomSearchHelper_Package.getNode (DynamicObjectData_Package.NAME, shippingMethodNameNode.getChildNodes);
             shippingMethodClassName := DomNodeHelper_Package.getTextNodeValue (classNameNode);
             shippingMethodInterface := ShippingInterface_Access (AbeFactory_Package.getInstance.getInstance (abeClientInformation, shippingMethodClassName));
-            This.shippingVector.add (shippingMethodInterface);
+            This.shippingVector.add (Java_Object_Access (shippingMethodInterface));
             defaultShippingMethodNameNode := DomSearchHelper_Package.getNode (ShippingMethodData_Package.DEFAULT, shippingMethodNameNode.getChildNodes);
             defaultShippingMethodNameNodeValue := DomNodeHelper_Package.getTextNodeValue (defaultShippingMethodNameNode);
             if ((defaultShippingMethodNameNodeValue) /= (Null_Unbounded_String)) and then ((Java_Compare_To (defaultShippingMethodNameNodeValue, ShippingMethodData_Package.DEFAULT)) = (0)) then
@@ -85,9 +124,9 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethodsFactor
             end if;
         end loop;
         if (This.shippingVector.size) < (1) then
-            This.defaultShippingMethodInterface := BasicWeightShippingModuleView_Package.Create;
-            This.shippingVector.add (This.defaultShippingMethodInterface);
-            This.shippingVector.add (NoShippingModuleView_Package.Create);
+            This.defaultShippingMethodInterface := ShippingInterface_Access (BasicWeightShippingModuleView_Package.Create);
+            This.shippingVector.add (Java_Object_Access (This.defaultShippingMethodInterface));
+            This.shippingVector.add (Java_Object_Access (NoShippingModuleView_Package.Create));
         end if;
    end Initialize;
 

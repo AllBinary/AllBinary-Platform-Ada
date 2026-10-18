@@ -28,6 +28,8 @@ package org.allbinary.logic.io.InputOutputTypeData_Package is
    type InputOutputTypeData_Access is access all InputOutputTypeData'Class;
    type InputOutputTypeData_Access_Array is array (Natural range <>) of InputOutputTypeData_Access;
    type InputOutputTypeData_Access_Array_Access is access all InputOutputTypeData_Access_Array;
+   type InputOutputTypeData_Access_Array_Access_Array is array (Natural range <>) of InputOutputTypeData_Access_Array_Access;
+   type InputOutputTypeData_Access_Array_Access_Array_Access is access all InputOutputTypeData_Access_Array_Access_Array;
 
    type InputOutputTypeData is new Java_Object with record
       NAME : Unbounded_String;

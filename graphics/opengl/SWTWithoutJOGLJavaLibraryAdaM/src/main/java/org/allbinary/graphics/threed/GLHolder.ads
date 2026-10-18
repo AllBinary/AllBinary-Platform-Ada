@@ -28,6 +28,8 @@ package org.allbinary.graphics.threed.GLHolder_Package is
    type GLHolder_Access is access all GLHolder'Class;
    type GLHolder_Access_Array is array (Natural range <>) of GLHolder_Access;
    type GLHolder_Access_Array_Access is access all GLHolder_Access_Array;
+   type GLHolder_Access_Array_Access_Array is array (Natural range <>) of GLHolder_Access_Array_Access;
+   type GLHolder_Access_Array_Access_Array_Access is access all GLHolder_Access_Array_Access_Array;
 
    type GLHolder is new Java_Object with record
       isCreated : Boolean;
@@ -38,6 +40,8 @@ package org.allbinary.graphics.threed.GLHolder_Package is
    procedure runOnSurfaceCreated (This : in out GLHolder; renderer_Param : access Java_Object'Class);
    procedure runOnSurfaceChanged (This : in out GLHolder; renderer_Param : access Java_Object'Class; width : Integer; height : Integer);
    procedure run (This : in out GLHolder; renderer_Param : access Java_Object'Class);
+   procedure runOnSurfaceCreated (This : in out GLHolder; Value : Unbounded_String);
+   procedure run (This : in out GLHolder; Value : Unbounded_String);
 
 end org.allbinary.graphics.threed.GLHolder_Package;
 

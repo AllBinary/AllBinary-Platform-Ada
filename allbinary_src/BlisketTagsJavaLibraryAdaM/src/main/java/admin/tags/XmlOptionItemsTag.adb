@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.XmlOptionItemsHelperFactory_Package; use admin.taghelpers.XmlOptionItemsHelperFactory_Package;
+with admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package; use admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package;
+
 package body admin.tags.XmlOptionItemsTag_Package is
 
+   package XmlOptionItemsHelperFactory_Package renames Standard.admin.taghelpers.XmlOptionItemsHelperFactory_Package;
+   package XmlOptionItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package;
    procedure Initialize_Fields (This : in out XmlOptionItemsTag'Class) is
    begin
       null;

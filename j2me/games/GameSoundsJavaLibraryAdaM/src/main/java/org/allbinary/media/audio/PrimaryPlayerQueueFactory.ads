@@ -29,6 +29,8 @@ package org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package is
    type PrimaryPlayerQueueFactory_Access is access all PrimaryPlayerQueueFactory'Class;
    type PrimaryPlayerQueueFactory_Access_Array is array (Natural range <>) of PrimaryPlayerQueueFactory_Access;
    type PrimaryPlayerQueueFactory_Access_Array_Access is access all PrimaryPlayerQueueFactory_Access_Array;
+   type PrimaryPlayerQueueFactory_Access_Array_Access_Array is array (Natural range <>) of PrimaryPlayerQueueFactory_Access_Array_Access;
+   type PrimaryPlayerQueueFactory_Access_Array_Access_Array_Access is access all PrimaryPlayerQueueFactory_Access_Array_Access_Array;
 
    type PrimaryPlayerQueueFactory is new Java_Object with null record;
    SINGLETON : PlayerQueue_Access;

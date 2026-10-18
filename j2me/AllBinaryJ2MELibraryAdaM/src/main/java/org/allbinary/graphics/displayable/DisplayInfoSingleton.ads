@@ -21,51 +21,33 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
-with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
-with org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
-with org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-with org.allbinary.graphics.threed.SWTJOGLProcessor_Package; use org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package; use org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.graphics.displayable.ScalableListener_Package; use org.allbinary.graphics.displayable.ScalableListener_Package;
 
 package org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
 
    package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
-   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
    package DisplayChangeEvent_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
-   package DisplayChangeEventHandler_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
-   package LastDisplayChangeEventHandler_Package renames Standard.org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_Package;
-   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package SWTJOGLProcessor_Package renames Standard.org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type DisplayInfoSingleton is tagged;
    type DisplayInfoSingleton_Access is access all DisplayInfoSingleton'Class;
    type DisplayInfoSingleton_Access_Array is array (Natural range <>) of DisplayInfoSingleton_Access;
    type DisplayInfoSingleton_Access_Array_Access is access all DisplayInfoSingleton_Access_Array;
+   type DisplayInfoSingleton_Access_Array_Access_Array is array (Natural range <>) of DisplayInfoSingleton_Access_Array_Access;
+   type DisplayInfoSingleton_Access_Array_Access_Array_Access is access all DisplayInfoSingleton_Access_Array_Access_Array;
 
    type DisplayInfoSingleton is new Java_Object with record
       logUtil : LogUtil_Access;
@@ -117,15 +99,15 @@ package org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
    function getFull (This : in out DisplayInfoSingleton) return Integer_Array_Access;
    function getScaleLargestTo (This : in out DisplayInfoSingleton) return Float;
    procedure setScaleLargestTo (This : in out DisplayInfoSingleton; scaleLargestTo : Integer);
-   procedure setLastSize (This : in out DisplayInfoSingleton; aLastWidth : Integer; aLastHeight : Integer; reason_Case : Unbounded_String);
-   procedure setLastSizeForce (This : in out DisplayInfoSingleton; aLastWidth_Param : Integer; aLastHeight_Param : Integer; reason_Case : Unbounded_String);
+   procedure setLastSize (This : in out DisplayInfoSingleton; aLastWidth : Integer; aLastHeight : Integer; reason : Unbounded_String);
+   procedure setLastSizeForce (This : in out DisplayInfoSingleton; aLastWidth_Param : Integer; aLastHeight_Param : Integer; reason : Unbounded_String);
    function isPortraitWH (This : in out DisplayInfoSingleton; lastWidth : Integer; lastHeight : Integer) return Boolean;
    procedure isPortraitWH (This : in out DisplayInfoSingleton; lastWidth : Integer; lastHeight : Integer);
    function isPortrait (This : in out DisplayInfoSingleton) return Boolean;
-   procedure add (This : in out DisplayInfoSingleton; reason_Case : Unbounded_String);
+   procedure add (This : in out DisplayInfoSingleton; reason : Unbounded_String);
    procedure process (This : in out DisplayInfoSingleton);
    procedure processForced (This : in out DisplayInfoSingleton);
-   procedure update (This : in out DisplayInfoSingleton; displayable_Param : access Displayable_Package.Displayable'Class; reason_Case : Unbounded_String);
+   procedure update (This : in out DisplayInfoSingleton; displayable_Param : access Displayable_Package.Displayable'Class; reason : Unbounded_String);
    function toString (This : in out DisplayInfoSingleton) return Unbounded_String;
    function toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker_Package.StringMaker'Class) return Unbounded_String;
    procedure toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker_Package.StringMaker'Class);
@@ -139,7 +121,7 @@ package org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
    function getCustomLastHeight (This : in out DisplayInfoSingleton) return Integer;
    function getRawLastWidth (This : in out DisplayInfoSingleton) return Integer;
    function getRawLastHeight (This : in out DisplayInfoSingleton) return Integer;
-   procedure setCustom (This : in out DisplayInfoSingleton; width_Case : Integer; height_Case : Integer);
+   procedure setCustom (This : in out DisplayInfoSingleton; width : Integer; height : Integer);
    procedure setScalableListener (This : in out DisplayInfoSingleton; scalableListener_Param : access BaseScalable_Package.BaseScalable'Class);
    function getScalableListener (This : in out DisplayInfoSingleton) return ScalableListener_Access;
    function getRatio (This : in out DisplayInfoSingleton) return Float;

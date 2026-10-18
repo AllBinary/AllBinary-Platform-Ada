@@ -13,8 +13,35 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
+with org.allbinary.animation.vector.RectangleFilledAnimation_Package; use org.allbinary.animation.vector.RectangleFilledAnimation_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.layer.SWTUtil_Package; use org.allbinary.game.layer.SWTUtil_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+with org.allbinary.graphics.threed.SWTJOGLProcessor_Package; use org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
+
 package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package RectangleFilledAnimation_Package renames Standard.org.allbinary.animation.vector.RectangleFilledAnimation_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package SWTUtil_Package renames Standard.org.allbinary.game.layer.SWTUtil_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+   package SWTJOGLProcessor_Package renames Standard.org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
    procedure Initialize_Fields (This : in out BasicPopupMenuPaintable'Class) is
    begin
       null;
@@ -22,7 +49,7 @@ package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Packa
       This.drawStringUtil := DrawVerticalStringUtil_Package.getInstance;
       
       
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (BasicPopupMenuPaintable_Access'(This'Unchecked_Access));
+      This.myFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (BasicPopupMenuPaintable_Access'(This'Unchecked_Access)));
       
       This.BORDER := 0;
       This.heightOffset := 0;
@@ -44,7 +71,7 @@ package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Packa
         if (J2MEUtil_Package.isJ2ME) or else (J2MEUtil_Package.isHTML) then
             This.animationInterface := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
         else
-            This.animationInterface := RectangleFilledAnimation_Package.Create (This.rectangle.getWidth, This.rectangle.getHeight, BasicColorFactory_Package.getInstance.TRANSPARENT_GREY);
+            This.animationInterface := Animation_Access (RectangleFilledAnimation_Package.Create (This.rectangle.getWidth, This.rectangle.getHeight, BasicColorFactory_Package.getInstance.TRANSPARENT_GREY));
         end if;
         BasicPopupMenuPaintable'Class (This).init (rectangle);
    end Initialize;

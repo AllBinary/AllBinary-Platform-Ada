@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewaysData_Package is
 
    procedure Initialize_Fields (This : in out PaymentGatewaysData'Class) is

@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.DisposalUtil_Package; use org.allbinary.DisposalUtil_Package;
+with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
+with org.allbinary.animation.image.ScaleProcessor_Package; use org.allbinary.animation.image.ScaleProcessor_Package;
+with org.allbinary.animation.image.SetColorProcessor_Package; use org.allbinary.animation.image.SetColorProcessor_Package;
+with org.allbinary.animation.image.ChangeColorProcessor_Package; use org.allbinary.animation.image.ChangeColorProcessor_Package;
+with org.allbinary.animation.image.AlphaProcessor_Package; use org.allbinary.animation.image.AlphaProcessor_Package;
+
 package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package DisposalUtil_Package renames Standard.org.allbinary.DisposalUtil_Package;
+   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
    procedure Initialize_Fields (This : in out AllBinaryJ2SEImageRotationAnimation'Class) is
    begin
       null;

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.opengles.OpenGLLogUtil_Package; use org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+
 package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
 
+   package OpenGLLogUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    procedure Initialize_Fields (This : in out OpenGLESGL11VBOImage'Class) is
    begin
       null;
@@ -65,8 +70,8 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
    begin
         gl10 := GL10_Access (gl);
         if OpenGLESImage (This).initTexture (gl10) then
-            This.textureFactory.load (gl10, GL10.GL_TEXTURE_2D, 0, OpenGLESGL11VBOImage_Access'(This'Unchecked_Access), 0, True);
-            gl10.glDisable (GL10.GL_TEXTURE_2D);
+            This.textureFactory.load (gl10, GL10_Package.GL_TEXTURE_2D, 0, OpenGLESGL11VBOImage_Access'(This'Unchecked_Access), 0, True);
+            gl10.glDisable (GL10_Package.GL_TEXTURE_2D);
             OpenGLLogUtil_Package.getInstance.logError (gl10, OpenGLESGL11VBOImage_Access'(This'Unchecked_Access));
         end if;
    end set;
@@ -91,17 +96,17 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
         This.regionTextureRectangleFloatArray (6) := This.regionTextureRectangleFloatArray (2);
         This.regionTextureRectangleFloatArray (7) := This.regionTextureRectangleFloatArray (5);
         This.glUtil.position (This.regionRectangleVertexFloatBuffer, 0);
-        gl.glVertexPointer (3, GL10.GL_FLOAT, 0, This.regionRectangleVertexFloatBuffer);
-        gl.glEnableClientState (GL10.GL_VERTEX_ARRAY);
-        gl.glEnable (GL10.GL_TEXTURE_2D);
-        gl.glBindTexture (GL10.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
-        gl.glEnableClientState (GL10.GL_TEXTURE_COORD_ARRAY);
+        gl.glVertexPointer (3, GL10_Package.GL_FLOAT, 0, This.regionRectangleVertexFloatBuffer);
+        gl.glEnableClientState (GL10_Package.GL_VERTEX_ARRAY);
+        gl.glEnable (GL10_Package.GL_TEXTURE_2D);
+        gl.glBindTexture (GL10_Package.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
+        gl.glEnableClientState (GL10_Package.GL_TEXTURE_COORD_ARRAY);
         This.glUtil.position (This.regionTextureVertexFloatBuffer, 0);
-        gl.glTexCoordPointer (2, GL10.GL_FLOAT, 0, This.regionTextureVertexFloatBuffer);
-        gl.glDrawArrays (GL10.GL_TRIANGLE_STRIP, 0, 4);
-        gl.glDisableClientState (GL10.GL_VERTEX_ARRAY);
-        gl.glDisableClientState (GL10.GL_TEXTURE_COORD_ARRAY);
-        gl.glDisable (GL10.GL_TEXTURE_2D);
+        gl.glTexCoordPointer (2, GL10_Package.GL_FLOAT, 0, This.regionTextureVertexFloatBuffer);
+        gl.glDrawArrays (GL10_Package.GL_TRIANGLE_STRIP, 0, 4);
+        gl.glDisableClientState (GL10_Package.GL_VERTEX_ARRAY);
+        gl.glDisableClientState (GL10_Package.GL_TEXTURE_COORD_ARRAY);
+        gl.glDisable (GL10_Package.GL_TEXTURE_2D);
    end drawRegion;
 
    procedure draw (This : in out OpenGLESGL11VBOImage; gl_Param : access GL10_Package.GL10'Class; x : Integer; y : Integer; z : Integer) is
@@ -116,17 +121,17 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
         This.regionRectangleFloatArray (9) := This.regionRectangleFloatArray (3);
         This.regionRectangleFloatArray (10) := This.regionRectangleFloatArray (7);
         This.glUtil.position (This.regionRectangleVertexFloatBuffer, 0);
-        gl.glVertexPointer (3, GL10.GL_FLOAT, 0, This.regionRectangleVertexFloatBuffer);
-        gl.glEnableClientState (GL10.GL_VERTEX_ARRAY);
-        gl.glEnable (GL10.GL_TEXTURE_2D);
-        gl.glBindTexture (GL10.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
-        gl.glEnableClientState (GL10.GL_TEXTURE_COORD_ARRAY);
+        gl.glVertexPointer (3, GL10_Package.GL_FLOAT, 0, This.regionRectangleVertexFloatBuffer);
+        gl.glEnableClientState (GL10_Package.GL_VERTEX_ARRAY);
+        gl.glEnable (GL10_Package.GL_TEXTURE_2D);
+        gl.glBindTexture (GL10_Package.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
+        gl.glEnableClientState (GL10_Package.GL_TEXTURE_COORD_ARRAY);
         This.glUtil.position (This.textureVertexFloatBuffer, 0);
-        gl.glTexCoordPointer (2, GL10.GL_FLOAT, 0, This.textureVertexFloatBuffer);
-        gl.glDrawArrays (GL10.GL_TRIANGLE_STRIP, 0, 4);
-        gl.glDisableClientState (GL10.GL_VERTEX_ARRAY);
-        gl.glDisableClientState (GL10.GL_TEXTURE_COORD_ARRAY);
-        gl.glDisable (GL10.GL_TEXTURE_2D);
+        gl.glTexCoordPointer (2, GL10_Package.GL_FLOAT, 0, This.textureVertexFloatBuffer);
+        gl.glDrawArrays (GL10_Package.GL_TRIANGLE_STRIP, 0, 4);
+        gl.glDisableClientState (GL10_Package.GL_VERTEX_ARRAY);
+        gl.glDisableClientState (GL10_Package.GL_TEXTURE_COORD_ARRAY);
+        gl.glDisable (GL10_Package.GL_TEXTURE_2D);
    end draw;
 
 end org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package;

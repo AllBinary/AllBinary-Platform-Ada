@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
+
 package body org.allbinary.globals.URLGLOBALS_Package is
 
    procedure Initialize_Fields (This : in out URLGLOBALS'Class) is
@@ -36,28 +38,28 @@ package body org.allbinary.globals.URLGLOBALS_Package is
    procedure init (urlGlobalsInterface_Param : access UrlGlobalsInterface_Package.UrlGlobalsInterface'Class) is
       urlGlobalsInterface : constant UrlGlobalsInterface_Access := UrlGlobalsInterface_Access (urlGlobalsInterface_Param);
    begin
-        URLGLOBALS.urlGlobalsInterface := urlGlobalsInterface;
+        URLGLOBALS_Package.urlGlobalsInterface := urlGlobalsInterface;
    end init;
 
    function isTestingMode return Boolean is
    begin
-        return URLGLOBALS.urlGlobalsInterface.isTestingMode;
+        return URLGLOBALS_Package.urlGlobalsInterface.isTestingMode;
    end isTestingMode;
 
    function getWebappPath return Unbounded_String is
    begin
-        return URLGLOBALS.urlGlobalsInterface.getWebappPath;
+        return URLGLOBALS_Package.urlGlobalsInterface.getWebappPath;
    end getWebappPath;
 
    function getTestHtmlPath return Unbounded_String is
    begin
-        return URLGLOBALS.urlGlobalsInterface.getTestHtmlPath;
+        return URLGLOBALS_Package.urlGlobalsInterface.getTestHtmlPath;
    end getTestHtmlPath;
 
    --  throws Exception
    function getMainPath return Unbounded_String is
    begin
-        return URLGLOBALS.urlGlobalsInterface.getMainPath;
+        return URLGLOBALS_Package.urlGlobalsInterface.getMainPath;
    end getMainPath;
 
 begin

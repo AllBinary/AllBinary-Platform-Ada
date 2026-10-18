@@ -30,6 +30,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorB
    type CustomMapGeneratorBaseFactory_Access is access all CustomMapGeneratorBaseFactory'Class;
    type CustomMapGeneratorBaseFactory_Access_Array is array (Natural range <>) of CustomMapGeneratorBaseFactory_Access;
    type CustomMapGeneratorBaseFactory_Access_Array_Access is access all CustomMapGeneratorBaseFactory_Access_Array;
+   type CustomMapGeneratorBaseFactory_Access_Array_Access_Array is array (Natural range <>) of CustomMapGeneratorBaseFactory_Access_Array_Access;
+   type CustomMapGeneratorBaseFactory_Access_Array_Access_Array_Access is access all CustomMapGeneratorBaseFactory_Access_Array_Access_Array;
 
    type CustomMapGeneratorBaseFactory is new Java_Object with null record;
    instance : CustomMapGeneratorBaseFactory_Access;

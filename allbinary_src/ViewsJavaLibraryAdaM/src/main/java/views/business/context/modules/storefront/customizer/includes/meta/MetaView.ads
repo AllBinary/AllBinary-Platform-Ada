@@ -42,6 +42,8 @@ package views.business.context.modules.storefront.customizer.includes.meta.MetaV
    type MetaView_Access is access all MetaView'Class;
    type MetaView_Access_Array is array (Natural range <>) of MetaView_Access;
    type MetaView_Access_Array_Access is access all MetaView_Access_Array;
+   type MetaView_Access_Array_Access_Array is array (Natural range <>) of MetaView_Access_Array_Access;
+   type MetaView_Access_Array_Access_Array_Access is access all MetaView_Access_Array_Access_Array;
 
    type MetaView is new HttpStoreComponentView and DomNodeInterface with record
       logUtil : LogUtil_Access;

@@ -20,20 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package; use org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package;
 with org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntityInterface_Package; use org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntityInterface_Package;
 
 package org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntityFactory_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AdvertisementCampaignInternalEntityFactory is tagged;
    type AdvertisementCampaignInternalEntityFactory_Access is access all AdvertisementCampaignInternalEntityFactory'Class;
    type AdvertisementCampaignInternalEntityFactory_Access_Array is array (Natural range <>) of AdvertisementCampaignInternalEntityFactory_Access;
    type AdvertisementCampaignInternalEntityFactory_Access_Array_Access is access all AdvertisementCampaignInternalEntityFactory_Access_Array;
+   type AdvertisementCampaignInternalEntityFactory_Access_Array_Access_Array is array (Natural range <>) of AdvertisementCampaignInternalEntityFactory_Access_Array_Access;
+   type AdvertisementCampaignInternalEntityFactory_Access_Array_Access_Array_Access is access all AdvertisementCampaignInternalEntityFactory_Access_Array_Access_Array;
 
    type AdvertisementCampaignInternalEntityFactory is new Java_Object with null record;
    CLASSNAME : Unbounded_String;

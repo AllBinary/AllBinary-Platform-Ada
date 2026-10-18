@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.CategoryHelperFactory_Package; use admin.taghelpers.CategoryHelperFactory_Package;
+with admin.taghelpers.CategoryRequestHelperFactory_Package; use admin.taghelpers.CategoryRequestHelperFactory_Package;
+with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+
 package body admin.tags.CategoryTag_Package is
 
+   package CategoryHelperFactory_Package renames Standard.admin.taghelpers.CategoryHelperFactory_Package;
+   package CategoryRequestHelperFactory_Package renames Standard.admin.taghelpers.CategoryRequestHelperFactory_Package;
+   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
    procedure Initialize_Fields (This : in out CategoryTag'Class) is
    begin
       null;

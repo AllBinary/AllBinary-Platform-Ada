@@ -20,22 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
 with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
-with org.allbinary.input.gyro.OrientationMotionGestureFactory_Package; use org.allbinary.input.gyro.OrientationMotionGestureFactory_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 
 package org.allbinary.input.motion.gyro.action.RollRightOrientationInputToGameKeyEventAction_Package is
 
-   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
    package GameKeyCompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
-   package OrientationMotionGestureFactory_Package renames Standard.org.allbinary.input.gyro.OrientationMotionGestureFactory_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type RollRightOrientationInputToGameKeyEventAction is tagged;
    type RollRightOrientationInputToGameKeyEventAction_Access is access all RollRightOrientationInputToGameKeyEventAction'Class;
    type RollRightOrientationInputToGameKeyEventAction_Access_Array is array (Natural range <>) of RollRightOrientationInputToGameKeyEventAction_Access;
    type RollRightOrientationInputToGameKeyEventAction_Access_Array_Access is access all RollRightOrientationInputToGameKeyEventAction_Access_Array;
+   type RollRightOrientationInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of RollRightOrientationInputToGameKeyEventAction_Access_Array_Access;
+   type RollRightOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all RollRightOrientationInputToGameKeyEventAction_Access_Array_Access_Array;
 
    type RollRightOrientationInputToGameKeyEventAction is new GameKeyCompleteMotionGestureInputEvent with null record;
    instance : Java_Object_Access;

@@ -23,34 +23,20 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
-with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
-with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-with org.allbinary.graphics.opengles.OpenGLUtil_Package; use org.allbinary.graphics.opengles.OpenGLUtil_Package;
-with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
-with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.allbinary.animation.image.BaseImageAnimationFactory_Package;
-with org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Package;
-with org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimation_Package; use org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimation_Package;
 
 package org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFactory_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
-   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package OpenGLUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLUtil_Package;
-   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
-   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
 
    type AllBinaryJ2SEImageRotationAnimationFactory is tagged;
    type AllBinaryJ2SEImageRotationAnimationFactory_Access is access all AllBinaryJ2SEImageRotationAnimationFactory'Class;
    type AllBinaryJ2SEImageRotationAnimationFactory_Access_Array is array (Natural range <>) of AllBinaryJ2SEImageRotationAnimationFactory_Access;
    type AllBinaryJ2SEImageRotationAnimationFactory_Access_Array_Access is access all AllBinaryJ2SEImageRotationAnimationFactory_Access_Array;
+   type AllBinaryJ2SEImageRotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of AllBinaryJ2SEImageRotationAnimationFactory_Access_Array_Access;
+   type AllBinaryJ2SEImageRotationAnimationFactory_Access_Array_Access_Array_Access is access all AllBinaryJ2SEImageRotationAnimationFactory_Access_Array_Access_Array;
 
    type AllBinaryJ2SEImageRotationAnimationFactory is new BaseImageAnimationFactory with record
       angleIncrementP : Short_Integer;

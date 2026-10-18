@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.game.GameMode_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type GameMode is tagged;
    type GameMode_Access is access all GameMode'Class;
    type GameMode_Access_Array is array (Natural range <>) of GameMode_Access;
    type GameMode_Access_Array_Access is access all GameMode_Access_Array;
+   type GameMode_Access_Array_Access_Array is array (Natural range <>) of GameMode_Access_Array_Access;
+   type GameMode_Access_Array_Access_Array_Access is access all GameMode_Access_Array_Access_Array;
 
    type GameMode is new Java_Object with record
       name : Unbounded_String;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.layer.geological.resources.GeologicalResource_Package is
 
    procedure Initialize_Fields (This : in out GeologicalResource'Class) is
@@ -45,7 +46,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResource_Pa
    procedure add (This : in out GeologicalResource; value : Integer) is
       max : Integer;
    begin
-        max := Integer_Package.MAX_VALUE;
+        max := Integer'Last;
         if ((GeologicalResource'Class (This).getTotal) + (value)) > (max) then
             GeologicalResource'Class (This).setTotal (max);
         else

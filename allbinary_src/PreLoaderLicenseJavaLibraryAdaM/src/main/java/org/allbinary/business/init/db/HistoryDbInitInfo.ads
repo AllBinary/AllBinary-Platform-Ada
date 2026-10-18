@@ -29,6 +29,8 @@ package org.allbinary.business.init.db.HistoryDbInitInfo_Package is
    type HistoryDbInitInfo_Access is access all HistoryDbInitInfo'Class;
    type HistoryDbInitInfo_Access_Array is array (Natural range <>) of HistoryDbInitInfo_Access;
    type HistoryDbInitInfo_Access_Array_Access is access all HistoryDbInitInfo_Access_Array;
+   type HistoryDbInitInfo_Access_Array_Access_Array is array (Natural range <>) of HistoryDbInitInfo_Access_Array_Access;
+   type HistoryDbInitInfo_Access_Array_Access_Array_Access is access all HistoryDbInitInfo_Access_Array_Access_Array;
 
    type HistoryDbInitInfo is new DbInitInfo with null record;
    INITFILE : Unbounded_String;

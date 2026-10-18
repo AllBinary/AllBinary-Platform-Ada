@@ -21,19 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.logic.visual.media.MediaTypeData_Package;
-with org.allbinary.logic.visual.media.MediaDataFactory_Package; use org.allbinary.logic.visual.media.MediaDataFactory_Package;
 
 package org.allbinary.logic.visual.media.MediaData_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type MediaData is tagged;
    type MediaData_Access is access all MediaData'Class;
    type MediaData_Access_Array is array (Natural range <>) of MediaData_Access;
    type MediaData_Access_Array_Access is access all MediaData_Access_Array;
+   type MediaData_Access_Array_Access_Array is array (Natural range <>) of MediaData_Access_Array_Access;
+   type MediaData_Access_Array_Access_Array_Access is access all MediaData_Access_Array_Access_Array;
 
    type MediaData is new Java_Object with record
       name : Unbounded_String;

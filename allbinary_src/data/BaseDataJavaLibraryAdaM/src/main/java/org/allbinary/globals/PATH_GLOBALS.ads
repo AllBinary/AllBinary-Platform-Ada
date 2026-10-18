@@ -20,20 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.globals.PATH_GLOBALS_Package is
 
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PATH_GLOBALS is tagged;
    type PATH_GLOBALS_Access is access all PATH_GLOBALS'Class;
    type PATH_GLOBALS_Access_Array is array (Natural range <>) of PATH_GLOBALS_Access;
    type PATH_GLOBALS_Access_Array_Access is access all PATH_GLOBALS_Access_Array;
+   type PATH_GLOBALS_Access_Array_Access_Array is array (Natural range <>) of PATH_GLOBALS_Access_Array_Access;
+   type PATH_GLOBALS_Access_Array_Access_Array_Access is access all PATH_GLOBALS_Access_Array_Access_Array;
 
    type PATH_GLOBALS is new Java_Object with record
       DATA_PATH : Unbounded_String;

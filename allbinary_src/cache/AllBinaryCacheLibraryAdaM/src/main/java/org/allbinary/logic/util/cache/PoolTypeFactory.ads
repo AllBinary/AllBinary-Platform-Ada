@@ -9,7 +9,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.cache.PoolType_Package; use org.allbinary.logic.util.cache.PoolType_Package;
-with org.allbinary.logic.util.cache.CacheTypeFactory_Package; use org.allbinary.logic.util.cache.CacheTypeFactory_Package;
 
 package org.allbinary.logic.util.cache.PoolTypeFactory_Package is
 
@@ -18,6 +17,8 @@ package org.allbinary.logic.util.cache.PoolTypeFactory_Package is
    type PoolTypeFactory_Access is access all PoolTypeFactory'Class;
    type PoolTypeFactory_Access_Array is array (Natural range <>) of PoolTypeFactory_Access;
    type PoolTypeFactory_Access_Array_Access is access all PoolTypeFactory_Access_Array;
+   type PoolTypeFactory_Access_Array_Access_Array is array (Natural range <>) of PoolTypeFactory_Access_Array_Access;
+   type PoolTypeFactory_Access_Array_Access_Array_Access is access all PoolTypeFactory_Access_Array_Access_Array;
 
    type PoolTypeFactory is new Java_Object with record
       VECTOR_POOL : PoolType_Access;

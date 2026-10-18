@@ -18,6 +18,8 @@ package org.allbinary.animation.NullIndexedAnimation_Package is
    type NullIndexedAnimation_Access is access all NullIndexedAnimation'Class;
    type NullIndexedAnimation_Access_Array is array (Natural range <>) of NullIndexedAnimation_Access;
    type NullIndexedAnimation_Access_Array_Access is access all NullIndexedAnimation_Access_Array;
+   type NullIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of NullIndexedAnimation_Access_Array_Access;
+   type NullIndexedAnimation_Access_Array_Access_Array_Access is access all NullIndexedAnimation_Access_Array_Access_Array;
 
    type NullIndexedAnimation is new IndexedAnimation with null record;
 

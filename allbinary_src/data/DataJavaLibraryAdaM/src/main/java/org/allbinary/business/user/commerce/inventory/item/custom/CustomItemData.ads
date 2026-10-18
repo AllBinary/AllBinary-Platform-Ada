@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.item.custom.CustomItemDat
    type CustomItemData_Access is access all CustomItemData'Class;
    type CustomItemData_Access_Array is array (Natural range <>) of CustomItemData_Access;
    type CustomItemData_Access_Array_Access is access all CustomItemData_Access_Array;
+   type CustomItemData_Access_Array_Access_Array is array (Natural range <>) of CustomItemData_Access_Array_Access;
+   type CustomItemData_Access_Array_Access_Array_Access is access all CustomItemData_Access_Array_Access_Array;
 
    type CustomItemData is new Java_Object with null record;
    PACKAGE_Id : Unbounded_String;

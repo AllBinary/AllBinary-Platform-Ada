@@ -33,8 +33,10 @@ package org.allbinary.input.automation.module.MotionRectangleConstraints_Package
    type MotionRectangleConstraints_Access is access all MotionRectangleConstraints'Class;
    type MotionRectangleConstraints_Access_Array is array (Natural range <>) of MotionRectangleConstraints_Access;
    type MotionRectangleConstraints_Access_Array_Access is access all MotionRectangleConstraints_Access_Array;
+   type MotionRectangleConstraints_Access_Array_Access_Array is array (Natural range <>) of MotionRectangleConstraints_Access_Array_Access;
+   type MotionRectangleConstraints_Access_Array_Access_Array_Access is access all MotionRectangleConstraints_Access_Array_Access_Array;
 
-   type MotionRectangleConstraints is new MotionRectangleConstraintsInterface with record
+   type MotionRectangleConstraints is new Java_Object and MotionRectangleConstraintsInterface with record
       minDimension : Dimension_Access;
       maxDimension : Dimension_Access;
       maxMotionRectangles : Integer;

@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.CustomGPoint_Package;
 with org.allbinary.graphics.GPointCircularPool_Package; use org.allbinary.graphics.GPointCircularPool_Package;
 with org.allbinary.input.motion.button.TouchButtonRecognizer_Package; use org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
 with org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package; use org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
@@ -29,7 +28,6 @@ with org.allbinary.input.motion.MotionRecognizer_Package; use org.allbinary.inpu
 
 package org.allbinary.input.motion.AllMotionRecognizer_Package is
 
-   package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
    package GPointCircularPool_Package renames Standard.org.allbinary.graphics.GPointCircularPool_Package;
    package TouchButtonRecognizer_Package renames Standard.org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
    package MotionGestureRecognizer_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
@@ -39,6 +37,8 @@ package org.allbinary.input.motion.AllMotionRecognizer_Package is
    type AllMotionRecognizer_Access is access all AllMotionRecognizer'Class;
    type AllMotionRecognizer_Access_Array is array (Natural range <>) of AllMotionRecognizer_Access;
    type AllMotionRecognizer_Access_Array_Access is access all AllMotionRecognizer_Access_Array;
+   type AllMotionRecognizer_Access_Array_Access_Array is array (Natural range <>) of AllMotionRecognizer_Access_Array_Access;
+   type AllMotionRecognizer_Access_Array_Access_Array_Access is access all AllMotionRecognizer_Access_Array_Access_Array;
 
    type AllMotionRecognizer is new MotionRecognizer with record
       logUtil : LogUtil_Access;

@@ -22,24 +22,22 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with android.view.MotionEvent_Package; use android.view.MotionEvent_Package;
 with org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package; use org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package;
-with org.allbinary.input.motion.AllMotionRecognizer_Package; use org.allbinary.input.motion.AllMotionRecognizer_Package;
 with org.allbinary.input.motion.MotionRecognizer_Package; use org.allbinary.input.motion.MotionRecognizer_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 
 package org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package is
 
    package MotionEvent_Package renames Standard.android.view.MotionEvent_Package;
    package BaseGameInputMotionEventProcessor_Package renames Standard.org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package;
-   package AllMotionRecognizer_Package renames Standard.org.allbinary.input.motion.AllMotionRecognizer_Package;
    package MotionRecognizer_Package renames Standard.org.allbinary.input.motion.MotionRecognizer_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type GameInputMotionEventProcessorAPI1 is tagged;
    type GameInputMotionEventProcessorAPI1_Access is access all GameInputMotionEventProcessorAPI1'Class;
    type GameInputMotionEventProcessorAPI1_Access_Array is array (Natural range <>) of GameInputMotionEventProcessorAPI1_Access;
    type GameInputMotionEventProcessorAPI1_Access_Array_Access is access all GameInputMotionEventProcessorAPI1_Access_Array;
+   type GameInputMotionEventProcessorAPI1_Access_Array_Access_Array is array (Natural range <>) of GameInputMotionEventProcessorAPI1_Access_Array_Access;
+   type GameInputMotionEventProcessorAPI1_Access_Array_Access_Array_Access is access all GameInputMotionEventProcessorAPI1_Access_Array_Access_Array;
 
    type GameInputMotionEventProcessorAPI1 is new BaseGameInputMotionEventProcessor with record
       logUtil : LogUtil_Access;

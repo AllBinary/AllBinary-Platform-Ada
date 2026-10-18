@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type TransactionResultInterface is interface;
    type TransactionResultInterface_Access is access all TransactionResultInterface'Class;
    type TransactionResultInterface_Access_Array is array (Natural range <>) of TransactionResultInterface_Access;
    type TransactionResultInterface_Access_Array_Access is access all TransactionResultInterface_Access_Array;
+   type TransactionResultInterface_Access_Array_Access_Array is array (Natural range <>) of TransactionResultInterface_Access_Array_Access;
+   type TransactionResultInterface_Access_Array_Access_Array_Access is access all TransactionResultInterface_Access_Array_Access_Array;
    function toString (This : in out TransactionResultInterface) return Unbounded_String is abstract;
    function getValues (This : in out TransactionResultInterface) return BasicArrayList_Access is abstract;
    function getResult (This : in out TransactionResultInterface) return Unbounded_String is abstract;

@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.communication.log.config.LogConfig_Package; use org.allbinary.logic.communication.log.config.LogConfig_Package;
+
 package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out LoggingInitInfo'Class) is
    begin
       null;
@@ -117,7 +121,7 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
       index : Integer;
    begin
         LoggingInitInfo_Package.updateIfNeeded;
-        allLogTypeVector := BasicArrayListD_Package.Create;
+        allLogTypeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := LoggingInitInfo_Package.logConfigInfoList.size;
         for index in 0 .. (size) - 1 loop
             logConfigInfo := LogConfig_Access (LoggingInitInfo_Package.logConfigInfoList.objectArray (index));

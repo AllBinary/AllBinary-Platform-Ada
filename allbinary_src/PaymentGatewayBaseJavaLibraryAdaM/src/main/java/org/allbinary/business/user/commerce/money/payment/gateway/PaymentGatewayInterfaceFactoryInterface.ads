@@ -31,6 +31,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    type PaymentGatewayInterfaceFactoryInterface_Access is access all PaymentGatewayInterfaceFactoryInterface'Class;
    type PaymentGatewayInterfaceFactoryInterface_Access_Array is array (Natural range <>) of PaymentGatewayInterfaceFactoryInterface_Access;
    type PaymentGatewayInterfaceFactoryInterface_Access_Array_Access is access all PaymentGatewayInterfaceFactoryInterface_Access_Array;
+   type PaymentGatewayInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayInterfaceFactoryInterface_Access_Array_Access;
+   type PaymentGatewayInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all PaymentGatewayInterfaceFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out PaymentGatewayInterfaceFactoryInterface; hashMap_Param : access HashMap_Package.HashMap'Class) return PaymentGatewayInterface_Access is abstract;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactoryInterface_Package;

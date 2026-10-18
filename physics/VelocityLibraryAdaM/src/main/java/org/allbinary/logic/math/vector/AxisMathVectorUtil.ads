@@ -30,6 +30,8 @@ package org.allbinary.logic.math.vector.AxisMathVectorUtil_Package is
    type AxisMathVectorUtil_Access is access all AxisMathVectorUtil'Class;
    type AxisMathVectorUtil_Access_Array is array (Natural range <>) of AxisMathVectorUtil_Access;
    type AxisMathVectorUtil_Access_Array_Access is access all AxisMathVectorUtil_Access_Array;
+   type AxisMathVectorUtil_Access_Array_Access_Array is array (Natural range <>) of AxisMathVectorUtil_Access_Array_Access;
+   type AxisMathVectorUtil_Access_Array_Access_Array_Access is access all AxisMathVectorUtil_Access_Array_Access_Array;
 
    type AxisMathVectorUtil is new Java_Object with record
       noDecimalTrigTable : NoDecimalTrigTable_Access;

@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.io.file.AbFile_Package is
 
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out AbFile'Class) is
    begin
       null;
@@ -427,6 +432,18 @@ package body org.allbinary.logic.io.file.AbFile_Package is
 
    procedure equals (This : in out AbFile; obj_Param : access Java_Object'Class) is
       Java_Result : constant Boolean := AbFile'Class (This).equals (obj_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end equals;
+
+   function equals (This : in out AbFile; Value : Unbounded_String) return Boolean is
+   begin
+      return AbFile'Class (This).equals (Java_Box (Value));
+   end equals;
+
+   procedure equals (This : in out AbFile; Value : Unbounded_String) is
+      Java_Result : constant Boolean := AbFile'Class (This).equals (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

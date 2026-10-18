@@ -21,28 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
-with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.data.resource.ClassLoader_Package; use org.allbinary.data.resource.ClassLoader_Package;
 
 package org.allbinary.data.resource.ResourceUtil_Package is
 
-   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
    package InputStream_Package renames Standard.java.io.InputStream_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ResourceUtil is tagged;
    type ResourceUtil_Access is access all ResourceUtil'Class;
    type ResourceUtil_Access_Array is array (Natural range <>) of ResourceUtil_Access;
    type ResourceUtil_Access_Array_Access is access all ResourceUtil_Access_Array;
+   type ResourceUtil_Access_Array_Access_Array is array (Natural range <>) of ResourceUtil_Access_Array_Access;
+   type ResourceUtil_Access_Array_Access_Array_Access is access all ResourceUtil_Access_Array_Access_Array;
 
    type ResourceUtil is new Java_Object with record
       logUtil : LogUtil_Access;

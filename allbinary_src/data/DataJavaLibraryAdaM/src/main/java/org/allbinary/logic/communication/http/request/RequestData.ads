@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.http.request.RequestData_Package is
    type RequestData_Access is access all RequestData'Class;
    type RequestData_Access_Array is array (Natural range <>) of RequestData_Access;
    type RequestData_Access_Array_Access is access all RequestData_Access_Array;
+   type RequestData_Access_Array_Access_Array is array (Natural range <>) of RequestData_Access_Array_Access;
+   type RequestData_Access_Array_Access_Array_Access is access all RequestData_Access_Array_Access_Array;
 
    type RequestData is new Java_Object with null record;
    REQUEST : Unbounded_String;

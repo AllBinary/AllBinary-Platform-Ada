@@ -20,21 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.util.Enumeration_Package; use java.util.Enumeration_Package;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package org.allbinary.util.HashtableUtil_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type HashtableUtil is tagged;
    type HashtableUtil_Access is access all HashtableUtil'Class;
    type HashtableUtil_Access_Array is array (Natural range <>) of HashtableUtil_Access;
    type HashtableUtil_Access_Array_Access is access all HashtableUtil_Access_Array;
+   type HashtableUtil_Access_Array_Access_Array is array (Natural range <>) of HashtableUtil_Access_Array_Access;
+   type HashtableUtil_Access_Array_Access_Array_Access is access all HashtableUtil_Access_Array_Access_Array;
 
    type HashtableUtil is new Java_Object with record
       enumerationUtil : EnumerationUtil_Access;

@@ -20,18 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 
 package org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type SmallBasicColorCacheFactory is tagged;
    type SmallBasicColorCacheFactory_Access is access all SmallBasicColorCacheFactory'Class;
    type SmallBasicColorCacheFactory_Access_Array is array (Natural range <>) of SmallBasicColorCacheFactory_Access;
    type SmallBasicColorCacheFactory_Access_Array_Access is access all SmallBasicColorCacheFactory_Access_Array;
+   type SmallBasicColorCacheFactory_Access_Array_Access_Array is array (Natural range <>) of SmallBasicColorCacheFactory_Access_Array_Access;
+   type SmallBasicColorCacheFactory_Access_Array_Access_Array_Access is access all SmallBasicColorCacheFactory_Access_Array_Access_Array;
 
    type SmallBasicColorCacheFactory is new Java_Object with record
       SIZE : Integer;

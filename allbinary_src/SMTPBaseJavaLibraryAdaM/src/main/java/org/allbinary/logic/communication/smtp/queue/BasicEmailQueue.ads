@@ -36,6 +36,8 @@ package org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package is
    type BasicEmailQueue_Access is access all BasicEmailQueue'Class;
    type BasicEmailQueue_Access_Array is array (Natural range <>) of BasicEmailQueue_Access;
    type BasicEmailQueue_Access_Array_Access is access all BasicEmailQueue_Access_Array;
+   type BasicEmailQueue_Access_Array_Access_Array is array (Natural range <>) of BasicEmailQueue_Access_Array_Access;
+   type BasicEmailQueue_Access_Array_Access_Array_Access is access all BasicEmailQueue_Access_Array_Access_Array;
 
    type BasicEmailQueue is new BasicQueue and EmailQueueInterface with record
       logUtil : LogUtil_Access;

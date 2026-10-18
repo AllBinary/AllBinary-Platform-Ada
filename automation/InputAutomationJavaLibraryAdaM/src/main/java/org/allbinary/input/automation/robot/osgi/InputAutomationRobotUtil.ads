@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.allbinary.input.automation.robot.InputRobotInterface_Package;
-with org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package;
 with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package; use org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
 
 package org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package is
@@ -32,6 +31,8 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Packa
    type InputAutomationRobotUtil_Access is access all InputAutomationRobotUtil'Class;
    type InputAutomationRobotUtil_Access_Array is array (Natural range <>) of InputAutomationRobotUtil_Access;
    type InputAutomationRobotUtil_Access_Array_Access is access all InputAutomationRobotUtil_Access_Array;
+   type InputAutomationRobotUtil_Access_Array_Access_Array is array (Natural range <>) of InputAutomationRobotUtil_Access_Array_Access;
+   type InputAutomationRobotUtil_Access_Array_Access_Array_Access is access all InputAutomationRobotUtil_Access_Array_Access_Array;
 
    type InputAutomationRobotUtil is new Java_Object with null record;
 

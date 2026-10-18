@@ -29,6 +29,8 @@ package org.allbinary.business.init.db.UserDbInitInfo_Package is
    type UserDbInitInfo_Access is access all UserDbInitInfo'Class;
    type UserDbInitInfo_Access_Array is array (Natural range <>) of UserDbInitInfo_Access;
    type UserDbInitInfo_Access_Array_Access is access all UserDbInitInfo_Access_Array;
+   type UserDbInitInfo_Access_Array_Access_Array is array (Natural range <>) of UserDbInitInfo_Access_Array_Access;
+   type UserDbInitInfo_Access_Array_Access_Array_Access is access all UserDbInitInfo_Access_Array_Access_Array;
 
    type UserDbInitInfo is new DbInitInfo with null record;
    INITFILE : Unbounded_String;

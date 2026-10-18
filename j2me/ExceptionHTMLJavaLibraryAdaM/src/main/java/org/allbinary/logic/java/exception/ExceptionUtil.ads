@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
 
-   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ExceptionUtil is tagged;
    type ExceptionUtil_Access is access all ExceptionUtil'Class;
    type ExceptionUtil_Access_Array is array (Natural range <>) of ExceptionUtil_Access;
    type ExceptionUtil_Access_Array_Access is access all ExceptionUtil_Access_Array;
+   type ExceptionUtil_Access_Array_Access_Array is array (Natural range <>) of ExceptionUtil_Access_Array_Access;
+   type ExceptionUtil_Access_Array_Access_Array_Access is access all ExceptionUtil_Access_Array_Access_Array;
 
    type ExceptionUtil is new Java_Object with record
       NONE : Unbounded_String;

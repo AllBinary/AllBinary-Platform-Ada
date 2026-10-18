@@ -28,6 +28,8 @@ package org.allbinary.data.tree.dom.DomData_Package is
    type DomData_Access is access all DomData'Class;
    type DomData_Access_Array is array (Natural range <>) of DomData_Access;
    type DomData_Access_Array_Access is access all DomData_Access_Array;
+   type DomData_Access_Array_Access_Array is array (Natural range <>) of DomData_Access_Array_Access;
+   type DomData_Access_Array_Access_Array_Access is access all DomData_Access_Array_Access_Array;
 
    type DomData is new Java_Object with null record;
    ID : Unbounded_String;

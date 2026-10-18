@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
@@ -32,13 +31,14 @@ package org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package i
 
    package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type SimpleGeographicMap is tagged;
    type SimpleGeographicMap_Access is access all SimpleGeographicMap'Class;
    type SimpleGeographicMap_Access_Array is array (Natural range <>) of SimpleGeographicMap_Access;
    type SimpleGeographicMap_Access_Array_Access is access all SimpleGeographicMap_Access_Array;
+   type SimpleGeographicMap_Access_Array_Access_Array is array (Natural range <>) of SimpleGeographicMap_Access_Array_Access;
+   type SimpleGeographicMap_Access_Array_Access_Array_Access is access all SimpleGeographicMap_Access_Array_Access_Array;
 
    type SimpleGeographicMap is new Java_Object with record
       commonStrings : CommonStrings_Access;

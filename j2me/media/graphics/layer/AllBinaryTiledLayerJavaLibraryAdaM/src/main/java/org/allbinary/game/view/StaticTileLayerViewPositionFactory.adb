@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package; use org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package;
+
 package body org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package is
 
    procedure Initialize_Fields (This : in out StaticTileLayerViewPositionFactory'Class) is
@@ -36,7 +38,7 @@ package body org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package 
    --  throws Exception
    function getInstance (This : in out StaticTileLayerViewPositionFactory) return ViewPositionBase_Access is
    begin
-        return StaticTileLayerIntoPositionViewPosition_Package.Create;
+        return ViewPositionBase_Access (StaticTileLayerIntoPositionViewPosition_Package.Create);
    end getInstance;
 
 end org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package;

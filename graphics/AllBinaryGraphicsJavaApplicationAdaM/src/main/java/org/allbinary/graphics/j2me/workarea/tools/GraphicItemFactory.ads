@@ -21,29 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;
-with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
-with org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_Package;
-with org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Package;
-with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package LOGGING_Package renames Standard.org.allbinary.log.LOGGING_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type GraphicItemFactory is tagged;
    type GraphicItemFactory_Access is access all GraphicItemFactory'Class;
    type GraphicItemFactory_Access_Array is array (Natural range <>) of GraphicItemFactory_Access;
    type GraphicItemFactory_Access_Array_Access is access all GraphicItemFactory_Access_Array;
+   type GraphicItemFactory_Access_Array_Access_Array is array (Natural range <>) of GraphicItemFactory_Access_Array_Access;
+   type GraphicItemFactory_Access_Array_Access_Array_Access is access all GraphicItemFactory_Access_Array_Access_Array;
 
    type GraphicItemFactory is new Java_Object with record
       graphicItems : HashMap_Access;

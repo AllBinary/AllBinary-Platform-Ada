@@ -21,20 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.util.Arrays_Package; use java.util.Arrays_Package;
-with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
-with org.allbinary.logic.math.permutations.ComparableObject_Package; use org.allbinary.logic.math.permutations.ComparableObject_Package;
-with org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package; use org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package;
 
 package org.allbinary.logic.math.permutations.OrderedObjectArrayPermutationUtil_Package is
 
-   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
 
    type OrderedObjectArrayPermutationUtil is tagged;
    type OrderedObjectArrayPermutationUtil_Access is access all OrderedObjectArrayPermutationUtil'Class;
    type OrderedObjectArrayPermutationUtil_Access_Array is array (Natural range <>) of OrderedObjectArrayPermutationUtil_Access;
    type OrderedObjectArrayPermutationUtil_Access_Array_Access is access all OrderedObjectArrayPermutationUtil_Access_Array;
+   type OrderedObjectArrayPermutationUtil_Access_Array_Access_Array is array (Natural range <>) of OrderedObjectArrayPermutationUtil_Access_Array_Access;
+   type OrderedObjectArrayPermutationUtil_Access_Array_Access_Array_Access is access all OrderedObjectArrayPermutationUtil_Access_Array_Access_Array;
 
    type OrderedObjectArrayPermutationUtil is new Java_Object with record
       TOTAL_ITERATIONS_TABLE : Unbounded_String;

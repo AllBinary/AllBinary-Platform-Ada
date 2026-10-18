@@ -29,6 +29,8 @@ package org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package is
    type ThrustAIVisitorFactory_Access is access all ThrustAIVisitorFactory'Class;
    type ThrustAIVisitorFactory_Access_Array is array (Natural range <>) of ThrustAIVisitorFactory_Access;
    type ThrustAIVisitorFactory_Access_Array_Access is access all ThrustAIVisitorFactory_Access_Array;
+   type ThrustAIVisitorFactory_Access_Array_Access_Array is array (Natural range <>) of ThrustAIVisitorFactory_Access_Array_Access;
+   type ThrustAIVisitorFactory_Access_Array_Access_Array_Access is access all ThrustAIVisitorFactory_Access_Array_Access_Array;
 
    type ThrustAIVisitorFactory is new Java_Object with null record;
    instance : ThrustAIVisitor_Access;

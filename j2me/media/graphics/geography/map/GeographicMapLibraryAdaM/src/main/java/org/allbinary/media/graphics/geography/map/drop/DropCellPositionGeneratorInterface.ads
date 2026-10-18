@@ -36,6 +36,8 @@ package org.allbinary.media.graphics.geography.map.drop.DropCellPositionGenerato
    type DropCellPositionGeneratorInterface_Access is access all DropCellPositionGeneratorInterface'Class;
    type DropCellPositionGeneratorInterface_Access_Array is array (Natural range <>) of DropCellPositionGeneratorInterface_Access;
    type DropCellPositionGeneratorInterface_Access_Array_Access is access all DropCellPositionGeneratorInterface_Access_Array;
+   type DropCellPositionGeneratorInterface_Access_Array_Access_Array is array (Natural range <>) of DropCellPositionGeneratorInterface_Access_Array_Access;
+   type DropCellPositionGeneratorInterface_Access_Array_Access_Array_Access is access all DropCellPositionGeneratorInterface_Access_Array_Access_Array;
    function getName (This : in out DropCellPositionGeneratorInterface) return Unbounded_String is abstract;
    procedure update (This : in out DropCellPositionGeneratorInterface; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is abstract;
    procedure processTick (This : in out DropCellPositionGeneratorInterface; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is abstract;

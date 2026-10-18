@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package;
@@ -31,7 +30,6 @@ package org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package 
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -39,6 +37,8 @@ package org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package 
    type CssElementValidation_Access is access all CssElementValidation'Class;
    type CssElementValidation_Access_Array is array (Natural range <>) of CssElementValidation_Access;
    type CssElementValidation_Access_Array_Access is access all CssElementValidation_Access_Array;
+   type CssElementValidation_Access_Array_Access_Array is array (Natural range <>) of CssElementValidation_Access_Array_Access;
+   type CssElementValidation_Access_Array_Access_Array_Access is access all CssElementValidation_Access_Array_Access_Array;
 
    type CssElementValidation is new CssElementView and ValidationInterface with record
       logUtil : LogUtil_Access;

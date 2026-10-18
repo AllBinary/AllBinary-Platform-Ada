@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUser_Package; use org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUser_Package;
+
 package body org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUserFactory_Package is
 
    procedure Initialize_Fields (This : in out WizardWebStoreAdminUserFactory'Class) is
@@ -37,14 +39,14 @@ package body org.allbinary.business.user.modules.admin.store.web.wizard.WizardWe
    --  throws Exception
    function getInstance (This : in out WizardWebStoreAdminUserFactory) return UserInterface_Access is
    begin
-        return WizardWebStoreAdminUser_Package.Create;
+        return UserInterface_Access (WizardWebStoreAdminUser_Package.Create);
    end getInstance;
 
    --  throws Exception
    function getInstance (This : in out WizardWebStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access is
       hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
-        return WizardWebStoreAdminUser_Package.Create (hashMap);
+        return UserInterface_Access (WizardWebStoreAdminUser_Package.Create (hashMap));
    end getInstance;
 
    procedure getInstance (This : in out WizardWebStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) is

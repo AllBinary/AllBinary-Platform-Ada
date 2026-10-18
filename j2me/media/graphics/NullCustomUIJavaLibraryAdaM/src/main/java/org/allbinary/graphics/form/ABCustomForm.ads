@@ -12,7 +12,6 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.form.CustomScreen_Package; use org.allbinary.graphics.form.CustomScreen_Package;
 
@@ -22,13 +21,14 @@ package org.allbinary.graphics.form.ABCustomForm_Package is
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ABCustomForm is tagged;
    type ABCustomForm_Access is access all ABCustomForm'Class;
    type ABCustomForm_Access_Array is array (Natural range <>) of ABCustomForm_Access;
    type ABCustomForm_Access_Array_Access is access all ABCustomForm_Access_Array;
+   type ABCustomForm_Access_Array_Access_Array is array (Natural range <>) of ABCustomForm_Access_Array_Access;
+   type ABCustomForm_Access_Array_Access_Array_Access is access all ABCustomForm_Access_Array_Access_Array;
 
    type ABCustomForm is new CustomScreen with record
       logUtil : LogUtil_Access;

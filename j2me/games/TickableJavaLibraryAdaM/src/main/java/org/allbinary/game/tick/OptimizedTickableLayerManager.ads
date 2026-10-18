@@ -21,17 +21,17 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
-with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.LayerManagerNoDebug_Package;
 
 package org.allbinary.game.tick.OptimizedTickableLayerManager_Package is
 
    package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
-   package LayerManagerNoDebug_Package renames Standard.org.allbinary.layer.LayerManagerNoDebug_Package;
 
    type OptimizedTickableLayerManager is tagged;
    type OptimizedTickableLayerManager_Access is access all OptimizedTickableLayerManager'Class;
    type OptimizedTickableLayerManager_Access_Array is array (Natural range <>) of OptimizedTickableLayerManager_Access;
    type OptimizedTickableLayerManager_Access_Array_Access is access all OptimizedTickableLayerManager_Access_Array;
+   type OptimizedTickableLayerManager_Access_Array_Access_Array is array (Natural range <>) of OptimizedTickableLayerManager_Access_Array_Access;
+   type OptimizedTickableLayerManager_Access_Array_Access_Array_Access is access all OptimizedTickableLayerManager_Access_Array_Access_Array;
 
    type OptimizedTickableLayerManager is new LayerManager with null record;
 

@@ -21,20 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
-with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.allbinary.game.physics.velocity.VelocityProperties_Package;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package; use org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;
 
 package org.allbinary.physics.movement.XYOscillateVelocityMovement_Package is
 
    package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
-   package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
    package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type XYOscillateVelocityMovement is tagged;
    type XYOscillateVelocityMovement_Access is access all XYOscillateVelocityMovement'Class;
    type XYOscillateVelocityMovement_Access_Array is array (Natural range <>) of XYOscillateVelocityMovement_Access;
    type XYOscillateVelocityMovement_Access_Array_Access is access all XYOscillateVelocityMovement_Access_Array;
+   type XYOscillateVelocityMovement_Access_Array_Access_Array is array (Natural range <>) of XYOscillateVelocityMovement_Access_Array_Access;
+   type XYOscillateVelocityMovement_Access_Array_Access_Array_Access is access all XYOscillateVelocityMovement_Access_Array_Access_Array;
 
    type XYOscillateVelocityMovement is new BasicConstantVelocityMovement with record
       oscillateMin : Integer;

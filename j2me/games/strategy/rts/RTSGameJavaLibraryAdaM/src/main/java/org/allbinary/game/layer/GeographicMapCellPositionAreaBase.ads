@@ -35,8 +35,10 @@ package org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package is
    type GeographicMapCellPositionAreaBase_Access is access all GeographicMapCellPositionAreaBase'Class;
    type GeographicMapCellPositionAreaBase_Access_Array is array (Natural range <>) of GeographicMapCellPositionAreaBase_Access;
    type GeographicMapCellPositionAreaBase_Access_Array_Access is access all GeographicMapCellPositionAreaBase_Access_Array;
+   type GeographicMapCellPositionAreaBase_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionAreaBase_Access_Array_Access;
+   type GeographicMapCellPositionAreaBase_Access_Array_Access_Array_Access is access all GeographicMapCellPositionAreaBase_Access_Array_Access_Array;
 
-   type GeographicMapCellPositionAreaBase is new GeographicMapCellPositionAreaInterface with null record;
+   type GeographicMapCellPositionAreaBase is new Java_Object and GeographicMapCellPositionAreaInterface with null record;
    NULL_GEOGRPAHIC_MAP_POSITION_AREA_BASE : GeographicMapCellPositionAreaBase_Access;
 
    procedure Initialize (This : in out GeographicMapCellPositionAreaBase'Class);

@@ -28,6 +28,8 @@ package org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
    type TrueTypeFontUtilBase_Access is access all TrueTypeFontUtilBase'Class;
    type TrueTypeFontUtilBase_Access_Array is array (Natural range <>) of TrueTypeFontUtilBase_Access;
    type TrueTypeFontUtilBase_Access_Array_Access is access all TrueTypeFontUtilBase_Access_Array;
+   type TrueTypeFontUtilBase_Access_Array_Access_Array is array (Natural range <>) of TrueTypeFontUtilBase_Access_Array_Access;
+   type TrueTypeFontUtilBase_Access_Array_Access_Array_Access is access all TrueTypeFontUtilBase_Access_Array_Access_Array;
 
    type TrueTypeFontUtilBase is new Java_Object with null record;
 

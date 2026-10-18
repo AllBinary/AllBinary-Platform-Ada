@@ -34,6 +34,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Pac
    type TransformInfoHttpInterface_Access is access all TransformInfoHttpInterface'Class;
    type TransformInfoHttpInterface_Access_Array is array (Natural range <>) of TransformInfoHttpInterface_Access;
    type TransformInfoHttpInterface_Access_Array_Access is access all TransformInfoHttpInterface_Access_Array;
+   type TransformInfoHttpInterface_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHttpInterface_Access_Array_Access;
+   type TransformInfoHttpInterface_Access_Array_Access_Array_Access is access all TransformInfoHttpInterface_Access_Array_Access_Array;
    function getWeblisketSession (This : in out TransformInfoHttpInterface) return WeblisketSessionInterface_Access is abstract;
    function getPageContext (This : in out TransformInfoHttpInterface) return PageContext_Access is abstract;
    function getPropertiesHashMap (This : in out TransformInfoHttpInterface) return HashMap_Access is abstract;

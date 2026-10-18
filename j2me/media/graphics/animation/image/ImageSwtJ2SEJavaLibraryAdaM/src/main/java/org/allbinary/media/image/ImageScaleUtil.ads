@@ -41,6 +41,8 @@ package org.allbinary.media.image.ImageScaleUtil_Package is
    type ImageScaleUtil_Access is access all ImageScaleUtil'Class;
    type ImageScaleUtil_Access_Array is array (Natural range <>) of ImageScaleUtil_Access;
    type ImageScaleUtil_Access_Array_Access is access all ImageScaleUtil_Access_Array;
+   type ImageScaleUtil_Access_Array_Access_Array is array (Natural range <>) of ImageScaleUtil_Access_Array_Access;
+   type ImageScaleUtil_Access_Array_Access_Array_Access is access all ImageScaleUtil_Access_Array_Access_Array;
 
    type ImageScaleUtil is new Java_Object with record
       logUtil : LogUtil_Access;

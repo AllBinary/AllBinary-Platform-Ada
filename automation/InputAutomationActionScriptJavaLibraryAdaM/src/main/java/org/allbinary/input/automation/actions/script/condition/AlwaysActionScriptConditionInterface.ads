@@ -28,6 +28,8 @@ package org.allbinary.input.automation.actions.script.condition.AlwaysActionScri
    type AlwaysActionScriptConditionInterface_Access is access all AlwaysActionScriptConditionInterface'Class;
    type AlwaysActionScriptConditionInterface_Access_Array is array (Natural range <>) of AlwaysActionScriptConditionInterface_Access;
    type AlwaysActionScriptConditionInterface_Access_Array_Access is access all AlwaysActionScriptConditionInterface_Access_Array;
+   type AlwaysActionScriptConditionInterface_Access_Array_Access_Array is array (Natural range <>) of AlwaysActionScriptConditionInterface_Access_Array_Access;
+   type AlwaysActionScriptConditionInterface_Access_Array_Access_Array_Access is access all AlwaysActionScriptConditionInterface_Access_Array_Access_Array;
    procedure setIsOn (This : in out AlwaysActionScriptConditionInterface; isOn : Boolean) is abstract;
    function isIsOn (This : in out AlwaysActionScriptConditionInterface) return Boolean is abstract;
    procedure log (This : in out AlwaysActionScriptConditionInterface) is abstract;

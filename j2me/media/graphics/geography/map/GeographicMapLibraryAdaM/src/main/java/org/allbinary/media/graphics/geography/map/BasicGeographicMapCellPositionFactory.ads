@@ -22,8 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
@@ -33,13 +31,13 @@ package org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositio
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type BasicGeographicMapCellPositionFactory is tagged;
    type BasicGeographicMapCellPositionFactory_Access is access all BasicGeographicMapCellPositionFactory'Class;
    type BasicGeographicMapCellPositionFactory_Access_Array is array (Natural range <>) of BasicGeographicMapCellPositionFactory_Access;
    type BasicGeographicMapCellPositionFactory_Access_Array_Access is access all BasicGeographicMapCellPositionFactory_Access_Array;
+   type BasicGeographicMapCellPositionFactory_Access_Array_Access_Array is array (Natural range <>) of BasicGeographicMapCellPositionFactory_Access_Array_Access;
+   type BasicGeographicMapCellPositionFactory_Access_Array_Access_Array_Access is access all BasicGeographicMapCellPositionFactory_Access_Array_Access_Array;
 
    type BasicGeographicMapCellPositionFactory is new Java_Object with record
       logUtil : LogUtil_Access;

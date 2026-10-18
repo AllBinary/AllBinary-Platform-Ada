@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.http.request.session.WeblisketSession_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+
 package body org.allbinary.business.context.AbContext_Package is
 
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
    procedure Initialize_Fields (This : in out AbContext'Class) is
    begin
       null;
@@ -46,7 +49,7 @@ package body org.allbinary.business.context.AbContext_Package is
 
    function getWeblisketSession (This : in out AbContext) return WeblisketSessionInterface_Access is
    begin
-        return WeblisketSession_Package.Create (This.propertiesHashMap, This.pageContext);
+        return WeblisketSessionInterface_Access (WeblisketSession_Package.Create (This.propertiesHashMap, This.pageContext));
    end getWeblisketSession;
 
    function getPageContext (This : in out AbContext) return PageContext_Access is

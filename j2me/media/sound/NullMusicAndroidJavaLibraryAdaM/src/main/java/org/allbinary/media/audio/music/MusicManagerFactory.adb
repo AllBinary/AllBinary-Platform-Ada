@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.audio.music.MusicService_Package; use org.allbinary.media.audio.music.MusicService_Package;
+
 package body org.allbinary.media.audio.music.MusicManagerFactory_Package is
 
    procedure Initialize_Fields (This : in out MusicManagerFactory'Class) is

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.math.J2SEMath_Package is
 
    procedure Initialize_Fields (This : in out J2SEMath'Class) is

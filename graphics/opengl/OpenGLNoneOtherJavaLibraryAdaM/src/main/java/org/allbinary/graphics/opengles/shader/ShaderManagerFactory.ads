@@ -29,6 +29,8 @@ package org.allbinary.graphics.opengles.shader.ShaderManagerFactory_Package is
    type ShaderManagerFactory_Access is access all ShaderManagerFactory'Class;
    type ShaderManagerFactory_Access_Array is array (Natural range <>) of ShaderManagerFactory_Access;
    type ShaderManagerFactory_Access_Array_Access is access all ShaderManagerFactory_Access_Array;
+   type ShaderManagerFactory_Access_Array_Access_Array is array (Natural range <>) of ShaderManagerFactory_Access_Array_Access;
+   type ShaderManagerFactory_Access_Array_Access_Array_Access is access all ShaderManagerFactory_Access_Array_Access_Array;
 
    type ShaderManagerFactory is new Java_Object with null record;
    instance : ShaderManagerFactory_Access;

@@ -29,6 +29,8 @@ package org.allbinary.business.init.db.InventoryDbInitInfo_Package is
    type InventoryDbInitInfo_Access is access all InventoryDbInitInfo'Class;
    type InventoryDbInitInfo_Access_Array is array (Natural range <>) of InventoryDbInitInfo_Access;
    type InventoryDbInitInfo_Access_Array_Access is access all InventoryDbInitInfo_Access_Array;
+   type InventoryDbInitInfo_Access_Array_Access_Array is array (Natural range <>) of InventoryDbInitInfo_Access_Array_Access;
+   type InventoryDbInitInfo_Access_Array_Access_Array_Access is access all InventoryDbInitInfo_Access_Array_Access_Array;
 
    type InventoryDbInitInfo is new DbInitInfo with null record;
    INITFILE : Unbounded_String;

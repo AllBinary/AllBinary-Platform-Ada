@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSGIServiceInterface_Package;
+
 package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package OSGIServiceInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceInterface_Package;
    procedure Initialize_Fields (This : in out OSGIServiceUtil'Class) is
    begin
       null;
@@ -49,7 +56,7 @@ package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
       osgiServiceInterface : OSGIServiceInterface_Access;
       index : Integer;
    begin
-        vector := BasicArrayListD_Package.Create;
+        vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         if (serviceReferences) /= (null) then
             size := serviceReferences'Length;
             This.logUtil.putF (To_Unbounded_String ("Service References: ") & Java_Image (size), OSGIServiceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getServicesObjectVector"));
@@ -60,7 +67,7 @@ package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
                     if (osgiServiceInterface) = (null) then
                         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Service For Reference")));
                     end if;
-                    vector.add (osgiServiceInterface);
+                    vector.add (Java_Object_Access (osgiServiceInterface));
                 end if;
             end loop;
         end if;

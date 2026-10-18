@@ -23,18 +23,18 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.business.user.commerce.money.Money_Package; use org.allbinary.business.user.commerce.money.Money_Package;
-with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.allbinary.business.user.commerce.money.MoneyException_Package;
 
 package org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
-   package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
 
    type BasketInterface is interface;
    type BasketInterface_Access is access all BasketInterface'Class;
    type BasketInterface_Access_Array is array (Natural range <>) of BasketInterface_Access;
    type BasketInterface_Access_Array_Access is access all BasketInterface_Access_Array;
+   type BasketInterface_Access_Array_Access_Array is array (Natural range <>) of BasketInterface_Access_Array_Access;
+   type BasketInterface_Access_Array_Access_Array_Access is access all BasketInterface_Access_Array_Access_Array;
    procedure addItem (This : in out BasketInterface; id : Unbounded_String; num : Unbounded_String) is abstract;
    procedure removeItem (This : in out BasketInterface; id : Unbounded_String) is abstract;
    procedure adjustItem (This : in out BasketInterface; id : Unbounded_String; num : Unbounded_String) is abstract;

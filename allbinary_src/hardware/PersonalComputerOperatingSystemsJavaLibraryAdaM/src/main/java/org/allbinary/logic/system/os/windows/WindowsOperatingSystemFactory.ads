@@ -21,30 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-with org.allbinary.logic.system.os.NoOperatingSystem_Package; use org.allbinary.logic.system.os.NoOperatingSystem_Package;
-with org.allbinary.logic.system.os.OperatingSystems_Package; use org.allbinary.logic.system.os.OperatingSystems_Package;
-with org.allbinary.logic.system.os.SystemProperties_Package; use org.allbinary.logic.system.os.SystemProperties_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.system.os.windows.WindowsOS_Package; use org.allbinary.logic.system.os.windows.WindowsOS_Package;
 
 package org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-   package NoOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.NoOperatingSystem_Package;
-   package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
-   package SystemProperties_Package renames Standard.org.allbinary.logic.system.os.SystemProperties_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type WindowsOperatingSystemFactory is tagged;
    type WindowsOperatingSystemFactory_Access is access all WindowsOperatingSystemFactory'Class;
    type WindowsOperatingSystemFactory_Access_Array is array (Natural range <>) of WindowsOperatingSystemFactory_Access;
    type WindowsOperatingSystemFactory_Access_Array_Access is access all WindowsOperatingSystemFactory_Access_Array;
+   type WindowsOperatingSystemFactory_Access_Array_Access_Array is array (Natural range <>) of WindowsOperatingSystemFactory_Access_Array_Access;
+   type WindowsOperatingSystemFactory_Access_Array_Access_Array_Access is access all WindowsOperatingSystemFactory_Access_Array_Access_Array;
 
    type WindowsOperatingSystemFactory is new Java_Object with record
       logUtil : LogUtil_Access;

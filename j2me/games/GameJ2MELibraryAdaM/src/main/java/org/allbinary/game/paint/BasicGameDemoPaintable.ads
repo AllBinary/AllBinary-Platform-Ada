@@ -21,14 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.StatePaintable_Package; use org.allbinary.graphics.paint.StatePaintable_Package;
 
 package org.allbinary.game.paint.BasicGameDemoPaintable_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
    package StatePaintable_Package renames Standard.org.allbinary.graphics.paint.StatePaintable_Package;
 
@@ -36,6 +34,8 @@ package org.allbinary.game.paint.BasicGameDemoPaintable_Package is
    type BasicGameDemoPaintable_Access is access all BasicGameDemoPaintable'Class;
    type BasicGameDemoPaintable_Access_Array is array (Natural range <>) of BasicGameDemoPaintable_Access;
    type BasicGameDemoPaintable_Access_Array_Access is access all BasicGameDemoPaintable_Access_Array;
+   type BasicGameDemoPaintable_Access_Array_Access_Array is array (Natural range <>) of BasicGameDemoPaintable_Access_Array_Access;
+   type BasicGameDemoPaintable_Access_Array_Access_Array_Access is access all BasicGameDemoPaintable_Access_Array_Access_Array;
 
    type BasicGameDemoPaintable is new StatePaintable with record
       mainDemoStatePaintable : Paintable_Access;

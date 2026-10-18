@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFactory_Package is
 
    procedure Initialize_Fields (This : in out TouchButtonsPaintableCompositeFactory'Class) is

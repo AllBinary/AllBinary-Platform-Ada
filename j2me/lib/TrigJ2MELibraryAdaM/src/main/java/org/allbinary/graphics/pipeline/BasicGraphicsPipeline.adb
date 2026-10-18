@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
 
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out BasicGraphicsPipeline'Class) is
    begin
       null;
@@ -56,7 +63,7 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
       secondPoint : GPoint_Access;
       index : Integer;
    begin
-        newBasicArrayList := BasicArrayListD_Package.Create;
+        newBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := This.pointBasicArrayList.size;
         pointFactory := PointFactory_Package.getInstance;
         secondPoint := null;
@@ -65,7 +72,7 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
             if (secondPoint.getX) /= (1000) then
                 newBasicArrayList.add (pointFactory.createXY ((secondPoint.getX) + (x), (secondPoint.getY) + (y)));
             else
-                newBasicArrayList.add (secondPoint);
+                newBasicArrayList.add (Java_Object_Access (secondPoint));
             end if;
         end loop;
         This.pointBasicArrayList := newBasicArrayList;
@@ -92,7 +99,7 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
       cos : Long_Long_Integer;
       index : Integer;
    begin
-        newBasicArrayList := BasicArrayListD_Package.Create;
+        newBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         secondPoint := null;
         y := 0;
         secondX := 0;
@@ -111,9 +118,9 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
                 secondX := (((secondPoint.getX) * (cos))) - (y);
                 secondY := (((secondPoint.getX) * (sin))) + (((secondPoint.getY) * (cos)));
                 point := pointFactory.createXY ((Integer (secondX)) / (10000), (Integer (secondY)) / (10000));
-                newBasicArrayList.add (point);
+                newBasicArrayList.add (Java_Object_Access (point));
             else
-                newBasicArrayList.add (secondPoint);
+                newBasicArrayList.add (Java_Object_Access (secondPoint));
             end if;
         end loop;
         This.pointBasicArrayList := newBasicArrayList;
@@ -132,7 +139,7 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
    begin
         pointFactory := PointFactory_Package.getInstance;
         halfWidth := (Java_Shift_Right_Arithmetic (width, 1));
-        newBasicArrayList := BasicArrayListD_Package.Create;
+        newBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         secondPoint := null;
         newX := 0;
         point := null;
@@ -147,9 +154,9 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
                     newX := (halfWidth) + (((halfWidth) - (secondPoint.getX)));
                 end if;
                 point := pointFactory.createXY (newX, secondPoint.getY);
-                newBasicArrayList.add (point);
+                newBasicArrayList.add (Java_Object_Access (point));
             else
-                newBasicArrayList.add (secondPoint);
+                newBasicArrayList.add (Java_Object_Access (secondPoint));
             end if;
         end loop;
         This.pointBasicArrayList := newBasicArrayList;

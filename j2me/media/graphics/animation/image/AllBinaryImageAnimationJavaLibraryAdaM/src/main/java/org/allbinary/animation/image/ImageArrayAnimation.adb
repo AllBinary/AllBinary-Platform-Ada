@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.math.PrimitiveIntUtil_Package;
+
 package body org.allbinary.animation.image.ImageArrayAnimation_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
    procedure Initialize_Fields (This : in out ImageArrayAnimation'Class) is
    begin
       null;
@@ -48,12 +55,12 @@ package body org.allbinary.animation.image.ImageArrayAnimation_Package is
 
    procedure nextFrame (This : in out ImageArrayAnimation) is
    begin
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
    end nextFrame;
 
    procedure previousFrame (This : in out ImageArrayAnimation) is
    begin
-        This.circularIndexUtil.previous;
+        declare Java_Result renames This.circularIndexUtil.previous; pragma Unreferenced (Java_Result); begin null; end;
    end previousFrame;
 
    procedure setFrame (This : in out ImageArrayAnimation; index : Integer) is

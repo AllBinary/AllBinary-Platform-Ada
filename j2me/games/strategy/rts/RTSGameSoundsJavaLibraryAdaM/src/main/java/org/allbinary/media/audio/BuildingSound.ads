@@ -31,6 +31,8 @@ package org.allbinary.media.audio.BuildingSound_Package is
    type BuildingSound_Access is access all BuildingSound'Class;
    type BuildingSound_Access_Array is array (Natural range <>) of BuildingSound_Access;
    type BuildingSound_Access_Array_Access is access all BuildingSound_Access_Array;
+   type BuildingSound_Access_Array_Access_Array is array (Natural range <>) of BuildingSound_Access_Array_Access;
+   type BuildingSound_Access_Array_Access_Array_Access is access all BuildingSound_Access_Array_Access_Array;
 
    type BuildingSound is new CompositeSound with null record;
    soundInterface : Sound_Access;

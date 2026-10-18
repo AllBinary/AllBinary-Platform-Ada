@@ -28,6 +28,8 @@ package org.allbinary.thread.ThreadPoolStrings_Package is
    type ThreadPoolStrings_Access is access all ThreadPoolStrings'Class;
    type ThreadPoolStrings_Access_Array is array (Natural range <>) of ThreadPoolStrings_Access;
    type ThreadPoolStrings_Access_Array_Access is access all ThreadPoolStrings_Access_Array;
+   type ThreadPoolStrings_Access_Array_Access_Array is array (Natural range <>) of ThreadPoolStrings_Access_Array_Access;
+   type ThreadPoolStrings_Access_Array_Access_Array_Access is access all ThreadPoolStrings_Access_Array_Access_Array;
 
    type ThreadPoolStrings is new Java_Object with record
       ADD_TASK : Unbounded_String;

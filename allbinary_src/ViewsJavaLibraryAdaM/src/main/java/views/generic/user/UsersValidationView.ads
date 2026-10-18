@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.tables.user.UserEntityFactory_Package; use org.allbinary.data.tables.user.UserEntityFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -30,7 +29,6 @@ with views.generic_Id.user.UsersView_Package; use views.generic_Id.user.UsersVie
 
 package views.generic_Id.user.UsersValidationView_Package is
 
-   package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -41,6 +39,8 @@ package views.generic_Id.user.UsersValidationView_Package is
    type UsersValidationView_Access is access all UsersValidationView'Class;
    type UsersValidationView_Access_Array is array (Natural range <>) of UsersValidationView_Access;
    type UsersValidationView_Access_Array_Access is access all UsersValidationView_Access_Array;
+   type UsersValidationView_Access_Array_Access_Array is array (Natural range <>) of UsersValidationView_Access_Array_Access;
+   type UsersValidationView_Access_Array_Access_Array_Access is access all UsersValidationView_Access_Array_Access_Array;
 
    type UsersValidationView is new UsersView and ValidationComponentInterface with record
       logUtil : LogUtil_Access;

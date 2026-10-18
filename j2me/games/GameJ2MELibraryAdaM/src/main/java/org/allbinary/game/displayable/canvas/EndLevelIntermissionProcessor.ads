@@ -31,6 +31,8 @@ package org.allbinary.game.displayable.canvas.EndLevelIntermissionProcessor_Pack
    type EndLevelIntermissionProcessor_Access is access all EndLevelIntermissionProcessor'Class;
    type EndLevelIntermissionProcessor_Access_Array is array (Natural range <>) of EndLevelIntermissionProcessor_Access;
    type EndLevelIntermissionProcessor_Access_Array_Access is access all EndLevelIntermissionProcessor_Access_Array;
+   type EndLevelIntermissionProcessor_Access_Array_Access_Array is array (Natural range <>) of EndLevelIntermissionProcessor_Access_Array_Access;
+   type EndLevelIntermissionProcessor_Access_Array_Access_Array_Access is access all EndLevelIntermissionProcessor_Access_Array_Access_Array;
 
    type EndLevelIntermissionProcessor is new Processor with record
       gameCanvas : AllBinaryGameCanvas_Access;

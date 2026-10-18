@@ -22,31 +22,29 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 with org.allbinary.game.combat.weapon.WeaponProperties_Package; use org.allbinary.game.combat.weapon.WeaponProperties_Package;
-with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game.layer.weapon.WeaponLayer_Package;
 with org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package; use org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
 with org.allbinary.game.score.ScoreableInterface_Package; use org.allbinary.game.score.ScoreableInterface_Package;
 with org.allbinary.graphics.RelativeRelationship_Package; use org.allbinary.graphics.RelativeRelationship_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
-with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
 with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.game.part.weapon.BasicWeaponPart_Package;
 
 package org.allbinary.game.part.weapon.ArcedMultiBeamWeaponPart_Package is
 
    package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
    package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
-   package WeaponLayer_Package renames Standard.org.allbinary.game.layer.weapon.WeaponLayer_Package;
    package WeaponLayerCircularPool_Package renames Standard.org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
    package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
    package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
-   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
 
    type ArcedMultiBeamWeaponPart is tagged;
    type ArcedMultiBeamWeaponPart_Access is access all ArcedMultiBeamWeaponPart'Class;
    type ArcedMultiBeamWeaponPart_Access_Array is array (Natural range <>) of ArcedMultiBeamWeaponPart_Access;
    type ArcedMultiBeamWeaponPart_Access_Array_Access is access all ArcedMultiBeamWeaponPart_Access_Array;
+   type ArcedMultiBeamWeaponPart_Access_Array_Access_Array is array (Natural range <>) of ArcedMultiBeamWeaponPart_Access_Array_Access;
+   type ArcedMultiBeamWeaponPart_Access_Array_Access_Array_Access is access all ArcedMultiBeamWeaponPart_Access_Array_Access_Array;
 
    type ArcedMultiBeamWeaponPart is new BasicWeaponPart with record
       weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access;

@@ -30,6 +30,8 @@ package org.allbinary.logic.util.cache.PoolInterface_Package is
    type PoolInterface_Access is access all PoolInterface'Class;
    type PoolInterface_Access_Array is array (Natural range <>) of PoolInterface_Access;
    type PoolInterface_Access_Array_Access is access all PoolInterface_Access_Array;
+   type PoolInterface_Access_Array_Access_Array is array (Natural range <>) of PoolInterface_Access_Array_Access;
+   type PoolInterface_Access_Array_Access_Array_Access is access all PoolInterface_Access_Array_Access_Array;
    function remove (This : in out PoolInterface; key_Param : access Java_Object'Class) return CacheableInterface_Access is abstract;
 
 end org.allbinary.logic.util.cache.PoolInterface_Package;

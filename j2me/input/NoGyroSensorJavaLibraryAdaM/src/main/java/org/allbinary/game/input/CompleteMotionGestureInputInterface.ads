@@ -30,6 +30,8 @@ package org.allbinary.game.input.CompleteMotionGestureInputInterface_Package is
    type CompleteMotionGestureInputInterface_Access is access all CompleteMotionGestureInputInterface'Class;
    type CompleteMotionGestureInputInterface_Access_Array is array (Natural range <>) of CompleteMotionGestureInputInterface_Access;
    type CompleteMotionGestureInputInterface_Access_Array_Access is access all CompleteMotionGestureInputInterface_Access_Array;
+   type CompleteMotionGestureInputInterface_Access_Array_Access_Array is array (Natural range <>) of CompleteMotionGestureInputInterface_Access_Array_Access;
+   type CompleteMotionGestureInputInterface_Access_Array_Access_Array_Access is access all CompleteMotionGestureInputInterface_Access_Array_Access_Array;
 
 end org.allbinary.game.input.CompleteMotionGestureInputInterface_Package;
 

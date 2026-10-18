@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package; use org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
-with org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package; use org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package;
 with org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package; use org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package;
 
 package org.allbinary.game.input.SelectAdvancedRTSLayerVisitorFactory_Package is
@@ -33,8 +32,10 @@ package org.allbinary.game.input.SelectAdvancedRTSLayerVisitorFactory_Package is
    type SelectAdvancedRTSLayerVisitorFactory_Access is access all SelectAdvancedRTSLayerVisitorFactory'Class;
    type SelectAdvancedRTSLayerVisitorFactory_Access_Array is array (Natural range <>) of SelectAdvancedRTSLayerVisitorFactory_Access;
    type SelectAdvancedRTSLayerVisitorFactory_Access_Array_Access is access all SelectAdvancedRTSLayerVisitorFactory_Access_Array;
+   type SelectAdvancedRTSLayerVisitorFactory_Access_Array_Access_Array is array (Natural range <>) of SelectAdvancedRTSLayerVisitorFactory_Access_Array_Access;
+   type SelectAdvancedRTSLayerVisitorFactory_Access_Array_Access_Array_Access is access all SelectAdvancedRTSLayerVisitorFactory_Access_Array_Access_Array;
 
-   type SelectAdvancedRTSLayerVisitorFactory is new SelectRTSLayerVisitorFactoryInterface with null record;
+   type SelectAdvancedRTSLayerVisitorFactory is new Java_Object and SelectRTSLayerVisitorFactoryInterface with null record;
    instance : SelectAdvancedRTSLayerVisitorFactory_Access;
 
    procedure Initialize (This : in out SelectAdvancedRTSLayerVisitorFactory'Class);

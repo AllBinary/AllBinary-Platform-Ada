@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.bounds.event.BoundsChangeEventListener_Package; use org.allbinary.bounds.event.BoundsChangeEventListener_Package;
+with org.allbinary.bounds.event.BoundsChangeEvent_Package; use org.allbinary.bounds.event.BoundsChangeEvent_Package;
+
 package body org.allbinary.bounds.event.BoundsChangeEventHandler_Package is
 
    procedure Initialize_Fields (This : in out BoundsChangeEventHandler'Class) is
@@ -52,7 +55,7 @@ package body org.allbinary.bounds.event.BoundsChangeEventHandler_Package is
 
 begin
    null;
-   SINGLETON := BoundsChangeEventHandler_Package.Create;
+   SINGLETON := BasicEventHandler_Access (BoundsChangeEventHandler_Package.Create);
 
 end org.allbinary.bounds.event.BoundsChangeEventHandler_Package;
 

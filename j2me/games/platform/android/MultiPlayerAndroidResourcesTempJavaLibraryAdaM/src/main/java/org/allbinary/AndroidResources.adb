@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.AndroidResources_Package is
 
    procedure Initialize_Fields (This : in out AndroidResources'Class) is

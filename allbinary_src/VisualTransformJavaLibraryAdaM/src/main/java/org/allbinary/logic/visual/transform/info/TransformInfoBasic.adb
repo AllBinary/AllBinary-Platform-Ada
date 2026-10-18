@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out TransformInfoBasic'Class) is
    begin
       null;
@@ -196,6 +199,11 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Packag
    begin
         return null;
    end toHashMap;
+
+   procedure setObject (This : in out TransformInfoBasic; Value : Unbounded_String) is
+   begin
+      TransformInfoBasic'Class (This).setObject (Java_Box (Value));
+   end setObject;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package;
 

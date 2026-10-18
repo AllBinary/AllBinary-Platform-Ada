@@ -29,6 +29,8 @@ package org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
    type OpenGLESGraphicsCompositeFactory_Access is access all OpenGLESGraphicsCompositeFactory'Class;
    type OpenGLESGraphicsCompositeFactory_Access_Array is array (Natural range <>) of OpenGLESGraphicsCompositeFactory_Access;
    type OpenGLESGraphicsCompositeFactory_Access_Array_Access is access all OpenGLESGraphicsCompositeFactory_Access_Array;
+   type OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLESGraphicsCompositeFactory_Access_Array_Access;
+   type OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access is access all OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array;
 
    type OpenGLESGraphicsCompositeFactory is new Java_Object with record
       openGLESGraphicsFactory : OpenGLESGraphicsFactory_Access;

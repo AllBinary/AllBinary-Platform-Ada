@@ -21,27 +21,23 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
 with org.allbinary.layer.NamedInterface_Package; use org.allbinary.layer.NamedInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.game.layer.AllBinaryTiledLayer_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
    package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
    package NamedInterface_Package renames Standard.org.allbinary.layer.NamedInterface_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AllBinaryTiledLayer is tagged;
    type AllBinaryTiledLayer_Access is access all AllBinaryTiledLayer'Class;
    type AllBinaryTiledLayer_Access_Array is array (Natural range <>) of AllBinaryTiledLayer_Access;
    type AllBinaryTiledLayer_Access_Array_Access is access all AllBinaryTiledLayer_Access_Array;
+   type AllBinaryTiledLayer_Access_Array_Access_Array is array (Natural range <>) of AllBinaryTiledLayer_Access_Array_Access;
+   type AllBinaryTiledLayer_Access_Array_Access_Array_Access is access all AllBinaryTiledLayer_Access_Array_Access_Array;
 
    type AllBinaryTiledLayer is new Layer and NamedInterface and PaintableInterface with record
       cellWidth : Integer;

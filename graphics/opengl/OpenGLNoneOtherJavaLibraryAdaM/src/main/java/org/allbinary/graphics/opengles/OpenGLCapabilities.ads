@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 
 package org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type OpenGLCapabilities is tagged;
    type OpenGLCapabilities_Access is access all OpenGLCapabilities'Class;
    type OpenGLCapabilities_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access;
    type OpenGLCapabilities_Access_Array_Access is access all OpenGLCapabilities_Access_Array;
+   type OpenGLCapabilities_Access_Array_Access_Array is array (Natural range <>) of OpenGLCapabilities_Access_Array_Access;
+   type OpenGLCapabilities_Access_Array_Access_Array_Access is access all OpenGLCapabilities_Access_Array_Access_Array;
 
    type OpenGLCapabilities is new Java_Object with record
       VERSION_1_0 : Unbounded_String;
@@ -55,6 +55,7 @@ package org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    function isVertexBufferObjectSupport (This : in out OpenGLCapabilities) return Boolean;
    function isTextureSizeValid (This : in out OpenGLCapabilities; widthAndHeight : Integer) return Boolean;
    procedure isTextureSizeValid (This : in out OpenGLCapabilities; widthAndHeight : Integer);
+   procedure initCapabilities (This : in out OpenGLCapabilities; Value : Unbounded_String);
 
 end org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
 

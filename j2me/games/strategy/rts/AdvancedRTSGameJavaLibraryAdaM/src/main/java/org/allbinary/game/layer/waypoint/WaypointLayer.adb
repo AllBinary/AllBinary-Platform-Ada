@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.health.Health_Package; use org.allbinary.game.health.Health_Package;
+with org.allbinary.game.input.form.NullRTSFormInputFactory_Package; use org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
+with org.allbinary.game.layer.AdvancedRTSProperties_Package; use org.allbinary.game.layer.AdvancedRTSProperties_Package;
+with org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package; use org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
+with org.allbinary.media.audio.AttackSound_Package; use org.allbinary.media.audio.AttackSound_Package;
+with org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package; use org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package;
+with org.allbinary.game.layer.waypoint.Waypoint_Package; use org.allbinary.game.layer.waypoint.Waypoint_Package;
+with org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package; use org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package;
+
 package body org.allbinary.game.layer.waypoint.WaypointLayer_Package is
 
+   package Health_Package renames Standard.org.allbinary.game.health.Health_Package;
+   package NullRTSFormInputFactory_Package renames Standard.org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
+   package AdvancedRTSProperties_Package renames Standard.org.allbinary.game.layer.AdvancedRTSProperties_Package;
+   package TileLayerPositionIntoViewPosition_Package renames Standard.org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
+   package AttackSound_Package renames Standard.org.allbinary.media.audio.AttackSound_Package;
    procedure Initialize_Fields (This : in out WaypointLayer'Class) is
    begin
       null;

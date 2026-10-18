@@ -30,6 +30,8 @@ package org.allbinary.logic.visual.transform.info.CustomTransformInfo_Package is
    type CustomTransformInfo_Access is access all CustomTransformInfo'Class;
    type CustomTransformInfo_Access_Array is array (Natural range <>) of CustomTransformInfo_Access;
    type CustomTransformInfo_Access_Array_Access is access all CustomTransformInfo_Access_Array;
+   type CustomTransformInfo_Access_Array_Access_Array is array (Natural range <>) of CustomTransformInfo_Access_Array_Access;
+   type CustomTransformInfo_Access_Array_Access_Array_Access is access all CustomTransformInfo_Access_Array_Access_Array;
 
    type CustomTransformInfo is new TransformInfo and TransformInfoInterface with null record;
 

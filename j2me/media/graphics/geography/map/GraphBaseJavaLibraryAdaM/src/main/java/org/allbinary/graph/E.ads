@@ -16,6 +16,8 @@ package org.allbinary.graph.E_Package is
    type E_Access is access all E'Class;
    type E_Access_Array is array (Natural range <>) of E_Access;
    type E_Access_Array_Access is access all E_Access_Array;
+   type E_Access_Array_Access_Array is array (Natural range <>) of E_Access_Array_Access;
+   type E_Access_Array_Access_Array_Access is access all E_Access_Array_Access_Array;
 
    type E is new Java_Object with null record;
    e : E_Access;

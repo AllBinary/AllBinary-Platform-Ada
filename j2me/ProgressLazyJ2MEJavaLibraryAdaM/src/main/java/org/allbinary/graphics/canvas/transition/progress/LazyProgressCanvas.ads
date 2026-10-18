@@ -20,23 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
-with org.allbinary.image.ImageCacheFactory_Package; use org.allbinary.image.ImageCacheFactory_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package is
 
-   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
-   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
 
    type LazyProgressCanvas is tagged;
    type LazyProgressCanvas_Access is access all LazyProgressCanvas'Class;
    type LazyProgressCanvas_Access_Array is array (Natural range <>) of LazyProgressCanvas_Access;
    type LazyProgressCanvas_Access_Array_Access is access all LazyProgressCanvas_Access_Array;
+   type LazyProgressCanvas_Access_Array_Access_Array is array (Natural range <>) of LazyProgressCanvas_Access_Array_Access;
+   type LazyProgressCanvas_Access_Array_Access_Array_Access is access all LazyProgressCanvas_Access_Array_Access_Array;
 
    type LazyProgressCanvas is new ProgressCanvas with null record;
 

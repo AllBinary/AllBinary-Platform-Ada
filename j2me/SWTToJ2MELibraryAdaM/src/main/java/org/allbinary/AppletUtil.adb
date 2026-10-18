@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.AppletUtil_Package is
 
    procedure Initialize_Fields (This : in out AppletUtil'Class) is
@@ -47,6 +48,18 @@ package body org.allbinary.AppletUtil_Package is
 
    procedure isAppletLoader (anyType_Param : access Java_Object'Class) is
       Java_Result : constant Boolean := isAppletLoader (anyType_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isAppletLoader;
+
+   function isAppletLoader (Value : Unbounded_String) return Boolean is
+   begin
+      return isAppletLoader (Java_Box (Value));
+   end isAppletLoader;
+
+   procedure isAppletLoader (Value : Unbounded_String) is
+      Java_Result : constant Boolean := isAppletLoader (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

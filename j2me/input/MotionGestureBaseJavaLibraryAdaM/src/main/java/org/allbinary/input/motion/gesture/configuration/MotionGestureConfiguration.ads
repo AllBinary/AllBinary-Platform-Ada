@@ -22,26 +22,20 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package; use org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
-with org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActionAssociation_Package; use org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActionAssociation_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package is
 
    package CompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
-   package MotionGestureToMotionGestureActionAssociation_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActionAssociation_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type MotionGestureConfiguration is tagged;
    type MotionGestureConfiguration_Access is access all MotionGestureConfiguration'Class;
    type MotionGestureConfiguration_Access_Array is array (Natural range <>) of MotionGestureConfiguration_Access;
    type MotionGestureConfiguration_Access_Array_Access is access all MotionGestureConfiguration_Access_Array;
+   type MotionGestureConfiguration_Access_Array_Access_Array is array (Natural range <>) of MotionGestureConfiguration_Access_Array_Access;
+   type MotionGestureConfiguration_Access_Array_Access_Array_Access is access all MotionGestureConfiguration_Access_Array_Access_Array;
 
    type MotionGestureConfiguration is new Java_Object with record
       diagonalMotionGestureAllowed : Boolean;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+
 package body org.allbinary.animation.IndexedAnimationBehaviorFactory_Package is
 
    procedure Initialize_Fields (This : in out IndexedAnimationBehaviorFactory'Class) is
@@ -40,7 +42,7 @@ package body org.allbinary.animation.IndexedAnimationBehaviorFactory_Package is
 
    function getOrCreateInstance (This : in out IndexedAnimationBehaviorFactory) return AnimationBehavior_Access is
    begin
-        return IndexedAnimationBehavior_Package.Create (This.loopTotal, This.frameDelayTime);
+        return AnimationBehavior_Access (IndexedAnimationBehavior_Package.Create (This.loopTotal, This.frameDelayTime));
    end getOrCreateInstance;
 
 end org.allbinary.animation.IndexedAnimationBehaviorFactory_Package;

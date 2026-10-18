@@ -13,8 +13,30 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.io.file.directory.SubDirectory_Package; use org.allbinary.logic.io.file.directory.SubDirectory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package; use org.allbinary.logic.system.hardware.components.linux.CpuInfo_Package;
+
 package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
+   package SubDirectory_Package renames Standard.org.allbinary.logic.io.file.directory.SubDirectory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    procedure Initialize_Fields (This : in out Cpu'Class) is
    begin
       null;
@@ -100,33 +122,33 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
             if (lineNumberReader) /= (null) then
                 nextLine := lineNumberReader.readLine;
                 while ((lineNumberReader) /= (null)) and then ((nextLine) /= (Null_Unbounded_String)) loop
-                    index := (Index (nextLine, Java_Image (':')) - 1);
+                    index := Java_Index_Of (nextLine, Java_Image (':'));
                     if (index) >= (0) then
                         key := Unbounded_Slice (nextLine, (0) + 1, index);
                         valueIndex := (index) + (1);
                         value := Unbounded_Slice (nextLine, (valueIndex) + 1, Length (nextLine));
-                        if ((Index (key, Java_Image (CpuInfo_Package.PROCESSOR.toString)) - 1)) >= (0) then
+                        if (Java_Index_Of (key, Java_Image (CpuInfo_Package.PROCESSOR.toString))) >= (0) then
                             This.cpuHashMap.put (CpuInfo_Package.PROCESSOR, Java_Box (value));
                         end if;
-                        if ((Index (key, Java_Image (CpuInfo_Package.VENDORID.toString)) - 1)) >= (0) then
+                        if (Java_Index_Of (key, Java_Image (CpuInfo_Package.VENDORID.toString))) >= (0) then
                             This.cpuHashMap.put (CpuInfo_Package.VENDORID, Java_Box (value));
                         end if;
-                        if ((Index (key, Java_Image (CpuInfo_Package.CPUFAMILY.toString)) - 1)) >= (0) then
+                        if (Java_Index_Of (key, Java_Image (CpuInfo_Package.CPUFAMILY.toString))) >= (0) then
                             This.cpuHashMap.put (CpuInfo_Package.CPUFAMILY, Java_Box (value));
                         end if;
-                        if ((Index (key, Java_Image (CpuInfo_Package.MODEL.toString)) - 1)) >= (0) then
+                        if (Java_Index_Of (key, Java_Image (CpuInfo_Package.MODEL.toString))) >= (0) then
                             This.cpuHashMap.put (CpuInfo_Package.MODEL, Java_Box (value));
                         end if;
-                        if ((Index (key, Java_Image (CpuInfo_Package.MODELNAME.toString)) - 1)) >= (0) then
+                        if (Java_Index_Of (key, Java_Image (CpuInfo_Package.MODELNAME.toString))) >= (0) then
                             This.cpuHashMap.put (CpuInfo_Package.MODELNAME, Java_Box (value));
                         end if;
-                        if ((Index (key, Java_Image (CpuInfo_Package.STEPPING.toString)) - 1)) >= (0) then
+                        if (Java_Index_Of (key, Java_Image (CpuInfo_Package.STEPPING.toString))) >= (0) then
                             This.cpuHashMap.put (CpuInfo_Package.STEPPING, Java_Box (value));
                         end if;
-                        if ((Index (key, Java_Image (CpuInfo_Package.CPUMHZ.toString)) - 1)) >= (0) then
+                        if (Java_Index_Of (key, Java_Image (CpuInfo_Package.CPUMHZ.toString))) >= (0) then
                             This.cpuHashMap.put (CpuInfo_Package.CPUMHZ, Java_Box (value));
                         end if;
-                        if ((Index (key, Java_Image (CpuInfo_Package.CACHESIZE.toString)) - 1)) >= (0) then
+                        if (Java_Index_Of (key, Java_Image (CpuInfo_Package.CACHESIZE.toString))) >= (0) then
                             This.cpuHashMap.put (CpuInfo_Package.CACHESIZE, Java_Box (value));
                         end if;
                     end if;

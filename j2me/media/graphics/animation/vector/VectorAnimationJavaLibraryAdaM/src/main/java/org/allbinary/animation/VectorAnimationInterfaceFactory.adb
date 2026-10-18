@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animation.VectorAnimation_Package;
+
 package body org.allbinary.animation.VectorAnimationInterfaceFactory_Package is
 
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    procedure Initialize_Fields (This : in out VectorAnimationInterfaceFactory'Class) is
    begin
       null;
@@ -44,7 +48,7 @@ package body org.allbinary.animation.VectorAnimationInterfaceFactory_Package is
    --  throws Exception
    function getInstance (This : in out VectorAnimationInterfaceFactory; instanceId : Integer) return Animation_Access is
    begin
-        return VectorAnimation_Package.Create (This.currentPoints, VectorAnimationInterfaceFactory'Class (This).getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (VectorAnimation_Package.Create (This.currentPoints, VectorAnimationInterfaceFactory'Class (This).getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance));
    end getInstance;
 
    procedure setBasicColorP (This : in out VectorAnimationInterfaceFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class) is

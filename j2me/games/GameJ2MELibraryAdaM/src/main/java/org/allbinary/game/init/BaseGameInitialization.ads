@@ -21,52 +21,24 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
-with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
-with org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package; use org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
-with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
-with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
-with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
-with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbinary.game.input.event.GameKeyEventFactory_Package;
-with org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package; use org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package;
 with org.allbinary.game.resource.ResourceInitialization_Package; use org.allbinary.game.resource.ResourceInitialization_Package;
-with org.allbinary.game.resource.ResourceLoadingLevelFactory_Package; use org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
-with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary.image.GameFeatureImageCacheFactory_Package;
-with org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGestureInput_Package; use org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGestureInput_Package;
-with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-with org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package; use org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.game.init.GameInitializationInterface_Package; use org.allbinary.game.init.GameInitializationInterface_Package;
 
 package org.allbinary.game.init.BaseGameInitialization_Package is
 
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package ChangedGameFeatureListener_Package renames Standard.org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
-   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
-   package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
-   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
-   package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
-   package FeaturedResourceRelativeRelationshipFactory_Package renames Standard.org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package;
    package ResourceInitialization_Package renames Standard.org.allbinary.game.resource.ResourceInitialization_Package;
-   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
-   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
-   package CompleteMotionGestureInputToGameMotionGestureInput_Package renames Standard.org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGestureInput_Package;
-   package BasicTouchInputFactory_Package renames Standard.org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-   package CancelTouchButtonInputFactory_Package renames Standard.org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type BaseGameInitialization is tagged;
    type BaseGameInitialization_Access is access all BaseGameInitialization'Class;
    type BaseGameInitialization_Access_Array is array (Natural range <>) of BaseGameInitialization_Access;
    type BaseGameInitialization_Access_Array_Access is access all BaseGameInitialization_Access_Array;
+   type BaseGameInitialization_Access_Array_Access_Array is array (Natural range <>) of BaseGameInitialization_Access_Array_Access;
+   type BaseGameInitialization_Access_Array_Access_Array_Access is access all BaseGameInitialization_Access_Array_Access_Array;
 
-   type BaseGameInitialization is new GameInitializationInterface with record
+   type BaseGameInitialization is new Java_Object and GameInitializationInterface with record
       resourceInitializationArray : ResourceInitialization_Access_Array_Access;
       portion : Integer;
       initialized : Boolean;

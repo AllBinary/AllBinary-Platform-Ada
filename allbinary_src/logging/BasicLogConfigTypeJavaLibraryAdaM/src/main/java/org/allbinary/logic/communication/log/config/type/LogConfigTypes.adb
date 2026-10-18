@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out LogConfigTypes'Class) is
    begin
       null;
@@ -36,7 +39,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
 
 begin
    null;
-   LOGGING := BasicArrayListD_Package.Create;
+   LOGGING := BasicArrayList_Access (BasicArrayListD_Package.Create);
 
 end org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 

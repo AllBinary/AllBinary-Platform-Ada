@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with android.os.Build_Package; use android.os.Build_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body org.allbinary.logic.system.os.android.AndroidSystemProperties_Package is
 
+   package Build_Package renames Standard.android.os.Build_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out AndroidSystemProperties'Class) is
    begin
       null;

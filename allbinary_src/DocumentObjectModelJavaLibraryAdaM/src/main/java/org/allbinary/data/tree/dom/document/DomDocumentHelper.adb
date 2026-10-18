@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
 
    procedure Initialize_Fields (This : in out DomDocumentHelper'Class) is

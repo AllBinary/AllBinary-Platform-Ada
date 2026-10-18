@@ -21,20 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
 
 package tags.generic_Id.address.shipping.TaxAddressTag_Package is
 
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type TaxAddressTag is tagged;
    type TaxAddressTag_Access is access all TaxAddressTag'Class;
    type TaxAddressTag_Access_Array is array (Natural range <>) of TaxAddressTag_Access;
    type TaxAddressTag_Access_Array_Access is access all TaxAddressTag_Access_Array;
+   type TaxAddressTag_Access_Array_Access_Array is array (Natural range <>) of TaxAddressTag_Access_Array_Access;
+   type TaxAddressTag_Access_Array_Access_Array_Access is access all TaxAddressTag_Access_Array_Access_Array;
 
    type TaxAddressTag is new StoreValidationTransformTag with null record;
 

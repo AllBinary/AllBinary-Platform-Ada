@@ -31,6 +31,8 @@ package org.allbinary.graphics.color.BasicColorSetUtil_Package is
    type BasicColorSetUtil_Access is access all BasicColorSetUtil'Class;
    type BasicColorSetUtil_Access_Array is array (Natural range <>) of BasicColorSetUtil_Access;
    type BasicColorSetUtil_Access_Array_Access is access all BasicColorSetUtil_Access_Array;
+   type BasicColorSetUtil_Access_Array_Access_Array is array (Natural range <>) of BasicColorSetUtil_Access_Array_Access;
+   type BasicColorSetUtil_Access_Array_Access_Array_Access is access all BasicColorSetUtil_Access_Array_Access_Array;
 
    type BasicColorSetUtil is new Java_Object with null record;
    instance : BasicColorSetUtil_Access;

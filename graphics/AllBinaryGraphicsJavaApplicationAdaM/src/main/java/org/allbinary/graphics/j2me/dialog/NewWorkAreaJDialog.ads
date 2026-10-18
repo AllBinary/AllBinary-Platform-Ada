@@ -22,28 +22,21 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
 --  with java.awt.event.ActionListener_Package; use java.awt.event.ActionListener_Package;
-with org.allbinary.graphics.j2me.GraphicsException_Package; use org.allbinary.graphics.j2me.GraphicsException_Package;
 with org.allbinary.graphics.j2me.MyFrame_Package; use org.allbinary.graphics.j2me.MyFrame_Package;
-with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
-with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
 with org.allbinary.graphics.j2me.dialog.JDialog_Package; use org.allbinary.graphics.j2me.dialog.JDialog_Package;
 with org.allbinary.graphics.j2me.dialog.Dimension_Package; use org.allbinary.graphics.j2me.dialog.Dimension_Package;
 with org.allbinary.graphics.j2me.dialog.JTextField_Package; use org.allbinary.graphics.j2me.dialog.JTextField_Package;
-with org.allbinary.graphics.j2me.dialog.JButton_Package; use org.allbinary.graphics.j2me.dialog.JButton_Package;
-with org.allbinary.graphics.j2me.dialog.GridLayout_Package; use org.allbinary.graphics.j2me.dialog.GridLayout_Package;
-with org.allbinary.graphics.j2me.dialog.JLabel_Package; use org.allbinary.graphics.j2me.dialog.JLabel_Package;
 
 package org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
 
-   package GraphicsException_Package renames Standard.org.allbinary.graphics.j2me.GraphicsException_Package;
    package MyFrame_Package renames Standard.org.allbinary.graphics.j2me.MyFrame_Package;
-   package WorkAreaJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
-   package WorkAreaJPanelInterface_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
 
    type NewWorkAreaJDialog is tagged;
    type NewWorkAreaJDialog_Access is access all NewWorkAreaJDialog'Class;
    type NewWorkAreaJDialog_Access_Array is array (Natural range <>) of NewWorkAreaJDialog_Access;
    type NewWorkAreaJDialog_Access_Array_Access is access all NewWorkAreaJDialog_Access_Array;
+   type NewWorkAreaJDialog_Access_Array_Access_Array is array (Natural range <>) of NewWorkAreaJDialog_Access_Array_Access;
+   type NewWorkAreaJDialog_Access_Array_Access_Array_Access is access all NewWorkAreaJDialog_Access_Array_Access_Array;
 
    type NewWorkAreaJDialog is new JDialog with record
       parent : MyFrame_Access;

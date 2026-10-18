@@ -20,25 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package; use org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
-with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 
 package org.allbinary.game.input.MotionJ2MEDefaultGameInputMapping_Package is
 
-   package GamePersistanceStrings_Package renames Standard.org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
-   package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
    package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-   package BasicTouchInputFactory_Package renames Standard.org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 
    type MotionJ2MEDefaultGameInputMapping is tagged;
    type MotionJ2MEDefaultGameInputMapping_Access is access all MotionJ2MEDefaultGameInputMapping'Class;
    type MotionJ2MEDefaultGameInputMapping_Access_Array is array (Natural range <>) of MotionJ2MEDefaultGameInputMapping_Access;
    type MotionJ2MEDefaultGameInputMapping_Access_Array_Access is access all MotionJ2MEDefaultGameInputMapping_Access_Array;
+   type MotionJ2MEDefaultGameInputMapping_Access_Array_Access_Array is array (Natural range <>) of MotionJ2MEDefaultGameInputMapping_Access_Array_Access;
+   type MotionJ2MEDefaultGameInputMapping_Access_Array_Access_Array_Access is access all MotionJ2MEDefaultGameInputMapping_Access_Array_Access_Array;
 
    type MotionJ2MEDefaultGameInputMapping is new PersistentInputMapping with null record;
 

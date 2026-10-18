@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.quoterequest.QuoteRequest_Package; use org.allbinary.business.user.quoterequest.QuoteRequest_Package;
 with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinary.data.tables.BasicDataTableInterface_Package;
 
@@ -30,7 +29,6 @@ package org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityInterface_
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package QuoteRequest_Package renames Standard.org.allbinary.business.user.quoterequest.QuoteRequest_Package;
    package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
@@ -38,6 +36,8 @@ package org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityInterface_
    type QuoteRequestEntityInterface_Access is access all QuoteRequestEntityInterface'Class;
    type QuoteRequestEntityInterface_Access_Array is array (Natural range <>) of QuoteRequestEntityInterface_Access;
    type QuoteRequestEntityInterface_Access_Array_Access is access all QuoteRequestEntityInterface_Access_Array;
+   type QuoteRequestEntityInterface_Access_Array_Access_Array is array (Natural range <>) of QuoteRequestEntityInterface_Access_Array_Access;
+   type QuoteRequestEntityInterface_Access_Array_Access_Array_Access is access all QuoteRequestEntityInterface_Access_Array_Access_Array;
    function get (This : in out QuoteRequestEntityInterface; userName : Unbounded_String; id : Integer) return QuoteRequest_Access is abstract;
    function getIds (This : in out QuoteRequestEntityInterface; userName : Unbounded_String) return BasicArrayList_Access is abstract;
    procedure deleteWhere (This : in out QuoteRequestEntityInterface; key : Unbounded_String; value : Unbounded_String) is abstract;

@@ -30,6 +30,8 @@ package org.allbinary.DisposalUtil_Package is
    type DisposalUtil_Access is access all DisposalUtil'Class;
    type DisposalUtil_Access_Array is array (Natural range <>) of DisposalUtil_Access;
    type DisposalUtil_Access_Array_Access is access all DisposalUtil_Access_Array;
+   type DisposalUtil_Access_Array_Access_Array is array (Natural range <>) of DisposalUtil_Access_Array_Access;
+   type DisposalUtil_Access_Array_Access_Array_Access is access all DisposalUtil_Access_Array_Access_Array;
 
    type DisposalUtil is new Java_Object with null record;
    instance : DisposalUtil_Access;

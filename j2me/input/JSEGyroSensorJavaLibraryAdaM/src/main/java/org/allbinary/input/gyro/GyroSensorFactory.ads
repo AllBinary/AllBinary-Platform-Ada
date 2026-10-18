@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
-with org.allbinary.input.gyro.NoGyroSensor_Package; use org.allbinary.input.gyro.NoGyroSensor_Package;
 
 package org.allbinary.input.gyro.GyroSensorFactory_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.input.gyro.GyroSensorFactory_Package is
    type GyroSensorFactory_Access is access all GyroSensorFactory'Class;
    type GyroSensorFactory_Access_Array is array (Natural range <>) of GyroSensorFactory_Access;
    type GyroSensorFactory_Access_Array_Access is access all GyroSensorFactory_Access_Array;
+   type GyroSensorFactory_Access_Array_Access_Array is array (Natural range <>) of GyroSensorFactory_Access_Array_Access;
+   type GyroSensorFactory_Access_Array_Access_Array_Access is access all GyroSensorFactory_Access_Array_Access_Array;
 
    type GyroSensorFactory is new Java_Object with null record;
    allBinaryGyroSensor : AllBinaryOrientationSensor_Access;

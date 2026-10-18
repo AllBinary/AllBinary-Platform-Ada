@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.category.store.theme.ThemeComparator_Package is
 
    procedure Initialize_Fields (This : in out ThemeComparator'Class) is

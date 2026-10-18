@@ -21,28 +21,26 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
 with org.allbinary.business.time.created.TimeCreated_Package; use org.allbinary.business.time.created.TimeCreated_Package;
 with org.allbinary.business.time.modified.TimeLastModified_Package; use org.allbinary.business.time.modified.TimeLastModified_Package;
-with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
 with org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package; use org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
 
 package org.allbinary.business.user.modules.configuration.UserConfiguration_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
    package TimeCreated_Package renames Standard.org.allbinary.business.time.created.TimeCreated_Package;
    package TimeLastModified_Package renames Standard.org.allbinary.business.time.modified.TimeLastModified_Package;
-   package UserEmailConfiguration_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
    package UserEmailConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
 
    type UserConfiguration is tagged;
    type UserConfiguration_Access is access all UserConfiguration'Class;
    type UserConfiguration_Access_Array is array (Natural range <>) of UserConfiguration_Access;
    type UserConfiguration_Access_Array_Access is access all UserConfiguration_Access_Array;
+   type UserConfiguration_Access_Array_Access_Array is array (Natural range <>) of UserConfiguration_Access_Array_Access;
+   type UserConfiguration_Access_Array_Access_Array_Access is access all UserConfiguration_Access_Array_Access_Array;
 
-   type UserConfiguration is new UserConfigurationInterface with record
+   type UserConfiguration is new Java_Object and UserConfigurationInterface with record
       userEmailConfigurationInterface : UserEmailConfigurationInterface_Access;
       timeCreated : TimeCreated_Access;
       timeLastModified : TimeLastModified_Access;

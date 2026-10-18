@@ -12,6 +12,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.media.audio.DowngradeSound_Package is
 
    procedure Initialize_Fields (This : in out DowngradeSound'Class) is
@@ -39,7 +40,7 @@ package body org.allbinary.media.audio.DowngradeSound_Package is
 
 begin
    null;
-   soundInterface := DowngradeSound_Package.Create;
+   soundInterface := Sound_Access (DowngradeSound_Package.Create);
 
 end org.allbinary.media.audio.DowngradeSound_Package;
 

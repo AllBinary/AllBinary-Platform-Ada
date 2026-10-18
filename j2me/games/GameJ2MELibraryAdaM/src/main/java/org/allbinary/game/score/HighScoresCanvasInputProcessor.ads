@@ -24,8 +24,6 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.score.displayable.HighScoresCanvas_Package; use org.allbinary.game.score.displayable.HighScoresCanvas_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
 
@@ -33,13 +31,13 @@ package org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
    package PlayerGameInput_Package renames Standard.org.allbinary.game.input.PlayerGameInput_Package;
    package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
    package HighScoresCanvas_Package renames Standard.org.allbinary.game.score.displayable.HighScoresCanvas_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type HighScoresCanvasInputProcessor is tagged;
    type HighScoresCanvasInputProcessor_Access is access all HighScoresCanvasInputProcessor'Class;
    type HighScoresCanvasInputProcessor_Access_Array is array (Natural range <>) of HighScoresCanvasInputProcessor_Access;
    type HighScoresCanvasInputProcessor_Access_Array_Access is access all HighScoresCanvasInputProcessor_Access_Array;
+   type HighScoresCanvasInputProcessor_Access_Array_Access_Array is array (Natural range <>) of HighScoresCanvasInputProcessor_Access_Array_Access;
+   type HighScoresCanvasInputProcessor_Access_Array_Access_Array_Access is access all HighScoresCanvasInputProcessor_Access_Array_Access_Array;
 
    type HighScoresCanvasInputProcessor is new PlayerGameInput with record
       highScoresCanvas : HighScoresCanvas_Access;

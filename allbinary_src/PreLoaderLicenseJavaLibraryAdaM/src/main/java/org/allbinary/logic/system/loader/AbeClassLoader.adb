@@ -13,8 +13,22 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.log.LogBuffer_Package; use org.allbinary.logic.communication.log.LogBuffer_Package;
+with org.allbinary.logic.communication.log.LogFactory_Package; use org.allbinary.logic.communication.log.LogFactory_Package;
+with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.system.loader.NoClassDefFoundError_Package; use org.allbinary.logic.system.loader.NoClassDefFoundError_Package;
+
 package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogBuffer_Package renames Standard.org.allbinary.logic.communication.log.LogBuffer_Package;
+   package LogFactory_Package renames Standard.org.allbinary.logic.communication.log.LogFactory_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out AbeClassLoader'Class) is
    begin
       null;
@@ -117,7 +131,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
         in_Id := null;
         cname := StringUtil_Package.getInstance.EMPTY_STRING;
         begin
-            cname := Java_Image (AbeClassLoader_Package.PATH) & name.replace ('.', AbPathData_Package.getInstance.SEPARATORCHAR) & This.ENCRYPTED_EXTENSION;
+            cname := Java_Image (AbeClassLoader_Package.PATH) & Java_Replace (name, Java_Image ('.'), Java_Image (AbPathData_Package.getInstance.SEPARATORCHAR)) & This.ENCRYPTED_EXTENSION;
             in_Id := FileInputStream_Package.Create (cname);
             decrypted := This.abCryptUtil.decrypt (in_Id, This.key);
             return decrypted;

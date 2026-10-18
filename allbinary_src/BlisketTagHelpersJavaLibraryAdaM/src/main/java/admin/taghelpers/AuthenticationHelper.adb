@@ -13,8 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.user.UserInterface_Package; use org.allbinary.business.user.UserInterface_Package;
+with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.business.user.role.BasicUserRole_Package;
+with org.allbinary.business.user.role.UserRoleFactory_Package; use org.allbinary.business.user.role.UserRoleFactory_Package;
+with org.allbinary.data.tables.user.UserEntityFactory_Package; use org.allbinary.data.tables.user.UserEntityFactory_Package;
+with org.allbinary.data.tables.user.UserEntityInterface_Package; use org.allbinary.data.tables.user.UserEntityInterface_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.logic.java.bool.BooleanUtil_Package; use org.allbinary.logic.java.bool.BooleanUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
 package body admin.taghelpers.AuthenticationHelper_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
+   package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
+   package UserRoleFactory_Package renames Standard.org.allbinary.business.user.role.UserRoleFactory_Package;
+   package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
+   package UserEntityInterface_Package renames Standard.org.allbinary.data.tables.user.UserEntityInterface_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package BooleanUtil_Package renames Standard.org.allbinary.logic.java.bool.BooleanUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    procedure Initialize_Fields (This : in out AuthenticationHelper'Class) is
    begin
       null;
@@ -286,7 +311,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                 login := Null_Unbounded_String;
                 userEntityInterface := UserEntityFactory_Package.getInstance;
                 login := userEntityInterface.login (userName, password);
-                if (Java_Compare_To (login, GLOBALS2.LOGINSUCCESS)) = (0) then
+                if (Java_Compare_To (login, GLOBALS2_Package.LOGINSUCCESS)) = (0) then
                     userInterface := userEntityInterface.getUser (userName);
                     if userInterface.isSessionValid.booleanValue then
                         This.weblisketSession.setAttempts (0);
@@ -315,7 +340,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
    begin
         begin
             if BooleanUtil_Package.getInstance.getFromString (This.timeout) then
-                AuthenticationHelper'Class (This).invalidateSession;
+                declare Java_Result renames AuthenticationHelper'Class (This).invalidateSession; pragma Unreferenced (Java_Result); begin null; end;
                 return True;
             end if;
             begin

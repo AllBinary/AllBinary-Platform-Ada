@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
-with org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package; use org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
 
 package org.allbinary.game.layer.pickup.RaceTrackPickupLayerFactory_Package is
 
@@ -33,8 +32,10 @@ package org.allbinary.game.layer.pickup.RaceTrackPickupLayerFactory_Package is
    type RaceTrackPickupLayerFactory_Access is access all RaceTrackPickupLayerFactory'Class;
    type RaceTrackPickupLayerFactory_Access_Array is array (Natural range <>) of RaceTrackPickupLayerFactory_Access;
    type RaceTrackPickupLayerFactory_Access_Array_Access is access all RaceTrackPickupLayerFactory_Access_Array;
+   type RaceTrackPickupLayerFactory_Access_Array_Access_Array is array (Natural range <>) of RaceTrackPickupLayerFactory_Access_Array_Access;
+   type RaceTrackPickupLayerFactory_Access_Array_Access_Array_Access is access all RaceTrackPickupLayerFactory_Access_Array_Access_Array;
 
-   type RaceTrackPickupLayerFactory is new AllBinaryLayerFactoryInterface with null record;
+   type RaceTrackPickupLayerFactory is new Java_Object and AllBinaryLayerFactoryInterface with null record;
 
    procedure Initialize (This : in out RaceTrackPickupLayerFactory'Class);
    function Create return RaceTrackPickupLayerFactory_Access;

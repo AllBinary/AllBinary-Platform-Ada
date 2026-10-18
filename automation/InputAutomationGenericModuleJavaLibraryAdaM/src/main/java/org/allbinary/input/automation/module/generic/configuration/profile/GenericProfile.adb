@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerData_Package;
+with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileData_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileData_Package;
+
 package body org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
    procedure Initialize_Fields (This : in out GenericProfile'Class) is
    begin
       null;
@@ -34,7 +47,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
       Initialize_Fields (This);
         GenericProfile'Class (This).setName (DomNodeHelper_Package.getTextNodeValue (node));
-        This.vector := BasicArrayListD_Package.Create;
+        This.vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         nodeList := node.getChildNodes;
         This.logUtil.putF (To_Unbounded_String ("Name: ") & GenericProfile'Class (This).getName & To_Unbounded_String (" Child Nodes: ") & Java_Image (nodeList.getLength), GenericProfile_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
         for index in 0 .. (nodeList.getLength) - 1 loop
@@ -42,7 +55,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             if (profileNode.getNodeName.compareTo (GenericProfileDataWorkerData_Package.NAME)) = (0) then
                 genericProfileDataWorkerType := GenericProfileDataWorkerType_Package.getInstance (profileNode);
                 This.logUtil.putF (To_Unbounded_String ("Adding GenericProfileDataWorkerType: ") & genericProfileDataWorkerType.toString, GenericProfile_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
-                This.vector.add (genericProfileDataWorkerType);
+                This.vector.add (Java_Object_Access (genericProfileDataWorkerType));
             end if;
         end loop;
    end Initialize;
@@ -58,7 +71,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
       Initialize_Fields (This);
         GenericProfile'Class (This).setName (name);
-        This.vector := BasicArrayListD_Package.Create;
+        This.vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create (name : Unbounded_String) return GenericProfile_Access is
@@ -76,15 +89,15 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    procedure add (This : in out GenericProfile; genericProfileDataWorkerType_Param : access GenericProfileDataWorkerType_Package.GenericProfileDataWorkerType'Class) is
       genericProfileDataWorkerType : constant GenericProfileDataWorkerType_Access := GenericProfileDataWorkerType_Access (genericProfileDataWorkerType_Param);
    begin
-        if not (This.vector.contains (genericProfileDataWorkerType)) then
-            This.vector.add (genericProfileDataWorkerType);
+        if not (This.vector.contains (Java_Object_Access (genericProfileDataWorkerType))) then
+            This.vector.add (Java_Object_Access (genericProfileDataWorkerType));
         end if;
    end add;
 
    procedure remove (This : in out GenericProfile; genericProfileDataWorkerType_Param : access GenericProfileDataWorkerType_Package.GenericProfileDataWorkerType'Class) is
       genericProfileDataWorkerType : constant GenericProfileDataWorkerType_Access := GenericProfileDataWorkerType_Access (genericProfileDataWorkerType_Param);
    begin
-        This.vector.remove (genericProfileDataWorkerType);
+        This.vector.remove (Java_Object_Access (genericProfileDataWorkerType));
    end remove;
 
    --  throws Exception

@@ -20,10 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
-with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
-with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityFactory_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityFactory_Package;
-with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -33,10 +29,6 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.generic_Id.advertisement.area.AdvertisementAreaView_Package is
 
-   package AdvertisementAreaData_Package renames Standard.org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
-   package AdvertisementAreaInterface_Package renames Standard.org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
-   package AdvertisementAreasEntityFactory_Package renames Standard.org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityFactory_Package;
-   package AdvertisementAreasEntityInterface_Package renames Standard.org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -48,6 +40,8 @@ package views.generic_Id.advertisement.area.AdvertisementAreaView_Package is
    type AdvertisementAreaView_Access is access all AdvertisementAreaView'Class;
    type AdvertisementAreaView_Access_Array is array (Natural range <>) of AdvertisementAreaView_Access;
    type AdvertisementAreaView_Access_Array_Access is access all AdvertisementAreaView_Access_Array;
+   type AdvertisementAreaView_Access_Array_Access_Array is array (Natural range <>) of AdvertisementAreaView_Access_Array_Access;
+   type AdvertisementAreaView_Access_Array_Access_Array_Access is access all AdvertisementAreaView_Access_Array_Access_Array;
 
    type AdvertisementAreaView is new HttpStoreComponentView and DomNodeInterface with record
       logUtil : LogUtil_Access;

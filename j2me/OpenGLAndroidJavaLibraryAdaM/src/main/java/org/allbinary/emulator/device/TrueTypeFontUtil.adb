@@ -13,8 +13,33 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with android.graphics.Bitmap_Package; use android.graphics.Bitmap_Package;
+with android.graphics.Canvas_Package; use android.graphics.Canvas_Package;
+with android.graphics.Paint_Package; use android.graphics.Paint_Package;
+with android.graphics.Rect_Package; use android.graphics.Rect_Package;
+with android.graphics.Typeface_Package; use android.graphics.Typeface_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package; use org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu.android.device.AndroidImageInterface_Package;
+with org.microemu.android.device.AndroidImmutableImage_Package; use org.microemu.android.device.AndroidImmutableImage_Package;
+
 package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
+   package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
+   package Canvas_Package renames Standard.android.graphics.Canvas_Package;
+   package Paint_Package renames Standard.android.graphics.Paint_Package;
+   package Rect_Package renames Standard.android.graphics.Rect_Package;
+   package Typeface_Package renames Standard.android.graphics.Typeface_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
+   package AndroidImmutableImage_Package renames Standard.org.microemu.android.device.AndroidImmutableImage_Package;
    procedure Initialize_Fields (This : in out TrueTypeFontUtil'Class) is
    begin
       null;
@@ -149,9 +174,9 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
             canvas.save;
             image := AndroidImmutableImage_Package.create (bitmap);
             This.fontImage := OpenGLESImage_Access (This.preResourceImageUtil.encapsulate (image));
-            return This.fontImage;
+            return Image_Access (This.fontImage);
         else
-            return This.fontImage;
+            return Image_Access (This.fontImage);
         end if;
    end getFontBitmapGL;
 

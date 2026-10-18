@@ -13,13 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
+with org.allbinary.business.init.LicenseInitInfoUtil_Package; use org.allbinary.business.init.LicenseInitInfoUtil_Package;
+with org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package; use org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package;
+with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
+with org.allbinary.logic.system.security.licensing.BasicArrayListD_Package; use org.allbinary.logic.system.security.licensing.BasicArrayListD_Package;
+with org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package; use org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterfaceFactory_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; use org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
+
 package body org.allbinary.logic.system.security.licensing.LicenseClientAndServerTest_Package is
 
+   package File_Package renames Standard.java.io.File_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LicenseInitInfo_Package renames Standard.org.allbinary.business.init.LicenseInitInfo_Package;
+   package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
+   package XmlRpcAbeLicenseRetrievalClient_Package renames Standard.org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package;
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
    procedure Initialize_Fields (This : in out LicenseClientAndServerTest'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.vector := BasicArrayListD_Package.Create;
+      This.vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -31,7 +49,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
       line : Unbounded_String;
    begin
       Initialize_Fields (This);
-        LicenseInitInfoUtil_Package.getInstance.setFilePath ((PrintLicenseInitInfo_Package.PATH) + (PATH_GLOBALS.getInstance.INIT_PATH));
+        LicenseInitInfoUtil_Package.getInstance.setFilePath ((PrintLicenseInitInfo_Package.PATH) + (PATH_GLOBALS_Package.getInstance.INIT_PATH));
         for index in 1 .. (options'Length) - 1 loop
             This.vector.add (options (index));
         end loop;
@@ -74,7 +92,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
    begin
         stringBuffer := StringMaker_Package.Create;
         begin
-            list := BasicArrayListD_Package.Create;
+            list := BasicArrayList_Access (BasicArrayListD_Package.Create);
             TESTING := To_Unbounded_String ("Testing with new licence:<br/>");
             PROCESSING := To_Unbounded_String ("Processing: <br/>");
             END_Id := To_Unbounded_String ("<br/>End<br/>");

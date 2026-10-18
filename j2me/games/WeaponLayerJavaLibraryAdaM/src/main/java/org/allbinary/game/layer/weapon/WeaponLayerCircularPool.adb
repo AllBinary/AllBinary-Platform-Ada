@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package is
 
    procedure Initialize_Fields (This : in out WeaponLayerCircularPool'Class) is

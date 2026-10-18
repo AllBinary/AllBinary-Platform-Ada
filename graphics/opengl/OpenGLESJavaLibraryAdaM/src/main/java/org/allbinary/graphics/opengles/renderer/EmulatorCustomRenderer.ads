@@ -22,25 +22,23 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.khronos.egl.EGLConfig_Package; use javax.microedition.khronos.egl.EGLConfig_Package;
 with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
-with org.allbinary.emulator.InitEmulatorFactory_Package; use org.allbinary.emulator.InitEmulatorFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.graphics.opengles.renderer.RendererStrings_Package; use org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
 
 package org.allbinary.graphics.opengles.renderer.EmulatorCustomRenderer_Package is
 
    package EGLConfig_Package renames Standard.javax.microedition.khronos.egl.EGLConfig_Package;
    package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
-   package InitEmulatorFactory_Package renames Standard.org.allbinary.emulator.InitEmulatorFactory_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
 
    type EmulatorCustomRenderer is tagged;
    type EmulatorCustomRenderer_Access is access all EmulatorCustomRenderer'Class;
    type EmulatorCustomRenderer_Access_Array is array (Natural range <>) of EmulatorCustomRenderer_Access;
    type EmulatorCustomRenderer_Access_Array_Access is access all EmulatorCustomRenderer_Access_Array;
+   type EmulatorCustomRenderer_Access_Array_Access_Array is array (Natural range <>) of EmulatorCustomRenderer_Access_Array_Access;
+   type EmulatorCustomRenderer_Access_Array_Access_Array_Access is access all EmulatorCustomRenderer_Access_Array_Access_Array;
 
    type EmulatorCustomRenderer is new Java_Object with record
       logUtil : LogUtil_Access;

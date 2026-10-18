@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package; use org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package;
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+
 package body org.allbinary.game.input.mapping.MotionInputMappingEventListener_Package is
 
+   package GameKeyCompleteMotionGestureInputEventFactory_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package;
+   package BasicTouchInputFactory_Package renames Standard.org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    procedure Initialize_Fields (This : in out MotionInputMappingEventListener'Class) is
    begin
       null;

@@ -29,6 +29,8 @@ package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayerInterface_Packa
    type MultiPlayerGameLayerInterface_Access is access all MultiPlayerGameLayerInterface'Class;
    type MultiPlayerGameLayerInterface_Access_Array is array (Natural range <>) of MultiPlayerGameLayerInterface_Access;
    type MultiPlayerGameLayerInterface_Access_Array_Access is access all MultiPlayerGameLayerInterface_Access_Array;
+   type MultiPlayerGameLayerInterface_Access_Array_Access_Array is array (Natural range <>) of MultiPlayerGameLayerInterface_Access_Array_Access;
+   type MultiPlayerGameLayerInterface_Access_Array_Access_Array_Access is access all MultiPlayerGameLayerInterface_Access_Array_Access_Array;
    function getMultiplayerBehavior (This : in out MultiPlayerGameLayerInterface) return MultiplayerBehavior_Access is abstract;
 
 end org.allbinary.game.multiplayer.layer.MultiPlayerGameLayerInterface_Package;

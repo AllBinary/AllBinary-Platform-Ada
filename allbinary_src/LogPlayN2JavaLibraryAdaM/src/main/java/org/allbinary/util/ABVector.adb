@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+
 package body org.allbinary.util.ABVector_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    procedure Initialize_Fields (This : in out ABVector'Class) is
    begin
       null;
@@ -251,6 +254,78 @@ package body org.allbinary.util.ABVector_Package is
 
    procedure equals (This : in out ABVector; obj_Param : access Java_Object'Class) is
       Java_Result : constant Boolean := ABVector'Class (This).equals (obj_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end equals;
+
+   function contains (This : in out ABVector; Value : Unbounded_String) return Boolean is
+   begin
+      return ABVector'Class (This).contains (Java_Box (Value));
+   end contains;
+
+   procedure contains (This : in out ABVector; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ABVector'Class (This).contains (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end contains;
+
+   function indexOf (This : in out ABVector; Value : Unbounded_String) return Integer is
+   begin
+      return ABVector'Class (This).indexOf (Java_Box (Value));
+   end indexOf;
+
+   procedure indexOf (This : in out ABVector; Value : Unbounded_String) is
+      Java_Result : constant Integer := ABVector'Class (This).indexOf (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end indexOf;
+
+   function lastIndexOf (This : in out ABVector; Value : Unbounded_String) return Integer is
+   begin
+      return ABVector'Class (This).lastIndexOf (Java_Box (Value));
+   end lastIndexOf;
+
+   procedure lastIndexOf (This : in out ABVector; Value : Unbounded_String) is
+      Java_Result : constant Integer := ABVector'Class (This).lastIndexOf (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end lastIndexOf;
+
+   function removeElement (This : in out ABVector; Value : Unbounded_String) return Boolean is
+   begin
+      return ABVector'Class (This).removeElement (Java_Box (Value));
+   end removeElement;
+
+   procedure removeElement (This : in out ABVector; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ABVector'Class (This).removeElement (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end removeElement;
+
+   function remove (This : in out ABVector; Value : Unbounded_String) return Boolean is
+   begin
+      return ABVector'Class (This).remove (Java_Box (Value));
+   end remove;
+
+   procedure remove (This : in out ABVector; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ABVector'Class (This).remove (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end remove;
+
+   function equals (This : in out ABVector; Value : Unbounded_String) return Boolean is
+   begin
+      return ABVector'Class (This).equals (Java_Box (Value));
+   end equals;
+
+   procedure equals (This : in out ABVector; Value : Unbounded_String) is
+      Java_Result : constant Boolean := ABVector'Class (This).equals (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

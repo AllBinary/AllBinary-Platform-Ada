@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package; use org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package;
+
 package body org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package is
 
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    procedure Initialize_Fields (This : in out ScreenRepaintProcessorFactory'Class) is
    begin
       null;
@@ -43,7 +47,7 @@ package body org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFac
       displayable : constant Displayable_Access := Displayable_Access (displayable_Param);
    begin
         if not (J2MEUtil_Package.isJ2ME) then
-            return ScreenRepaintProcessor_Package.Create (displayable);
+            return Processor_Access (ScreenRepaintProcessor_Package.Create (displayable));
         else
             return Processor_Package.getInstance;
         end if;

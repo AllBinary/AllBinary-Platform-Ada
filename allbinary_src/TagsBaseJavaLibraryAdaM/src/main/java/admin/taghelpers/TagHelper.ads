@@ -31,8 +31,10 @@ package admin.taghelpers.TagHelper_Package is
    type TagHelper_Access is access all TagHelper'Class;
    type TagHelper_Access_Array is array (Natural range <>) of TagHelper_Access;
    type TagHelper_Access_Array_Access is access all TagHelper_Access_Array;
+   type TagHelper_Access_Array_Access_Array is array (Natural range <>) of TagHelper_Access_Array_Access;
+   type TagHelper_Access_Array_Access_Array_Access is access all TagHelper_Access_Array_Access_Array;
 
-   type TagHelper is new TagHelperInterface with record
+   type TagHelper is new Java_Object and TagHelperInterface with record
       commonStrings : CommonStrings_Access;
    end record;
 

@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+
 package body org.allbinary.logic.io.file.FileLockUtil_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
    procedure Initialize_Fields (This : in out FileLockUtil'Class) is
    begin
       null;
@@ -49,14 +56,14 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
       fileLock : FileLock_Access;
       index : Integer;
    begin
-        fileLockVector := BasicArrayListD_Package.Create;
+        fileLockVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             file := AbFile_Access (vector.get (index));
             fileLock := FileLockUtil'Class (This).getLock (file);
             if (fileLock) /= (null) then
                 This.logUtil.putF (To_Unbounded_String ("File Lock Obtained: ") & Java_Image (file.getAbsolutePath), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getAll"));
-                fileLockVector.add (fileLock);
+                fileLockVector.add (Java_Object_Access (fileLock));
             elsif isReturnOnFailure then
                 This.logUtil.putF (To_Unbounded_String ("Total Locks Obtained: ") & Java_Image (fileLockVector.size), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getAll"));
                 return fileLockVector;
@@ -80,7 +87,7 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
    begin
         fileLockVector := FileLockUtil'Class (This).getAll (vector, True);
         if (vector.size) /= (fileLockVector.size) then
-            return BasicArrayListD_Package.Create;
+            return BasicArrayList_Access (BasicArrayListD_Package.Create);
         else
             return fileLockVector;
         end if;

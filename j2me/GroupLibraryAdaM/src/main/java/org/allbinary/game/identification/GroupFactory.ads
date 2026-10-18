@@ -21,24 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.identification.Group_Package; use org.allbinary.game.identification.Group_Package;
 
 package org.allbinary.game.identification.GroupFactory_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type GroupFactory is tagged;
    type GroupFactory_Access is access all GroupFactory'Class;
    type GroupFactory_Access_Array is array (Natural range <>) of GroupFactory_Access;
    type GroupFactory_Access_Array_Access is access all GroupFactory_Access_Array;
+   type GroupFactory_Access_Array_Access_Array is array (Natural range <>) of GroupFactory_Access_Array_Access;
+   type GroupFactory_Access_Array_Access_Array_Access is access all GroupFactory_Access_Array_Access_Array;
 
    type GroupFactory is new Java_Object with record
       logUtil : LogUtil_Access;

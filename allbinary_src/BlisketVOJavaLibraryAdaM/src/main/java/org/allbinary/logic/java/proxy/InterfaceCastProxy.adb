@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
 
    procedure Initialize_Fields (This : in out InterfaceCastProxy'Class) is
@@ -70,6 +71,18 @@ package body org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
    begin
       null;
    end invoke;
+
+   function newInstance (Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return newInstance (Java_Box (Value));
+   end newInstance;
+
+   procedure newInstance (Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := newInstance (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end newInstance;
 
 end org.allbinary.logic.java.proxy.InterfaceCastProxy_Package;
 

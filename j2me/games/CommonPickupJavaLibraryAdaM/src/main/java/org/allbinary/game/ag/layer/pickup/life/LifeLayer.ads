@@ -23,27 +23,21 @@ with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.game.ag.life.Life_Package; use org.allbinary.game.ag.life.Life_Package;
 with org.allbinary.game.ag.life.LifeVisitorInterface_Package; use org.allbinary.game.ag.life.LifeVisitorInterface_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
-with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPosition_Package;
 
 package org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package is
 
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package Life_Package renames Standard.org.allbinary.game.ag.life.Life_Package;
    package LifeVisitorInterface_Package renames Standard.org.allbinary.game.ag.life.LifeVisitorInterface_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type LifeLayer is tagged;
    type LifeLayer_Access is access all LifeLayer'Class;
    type LifeLayer_Access_Array is array (Natural range <>) of LifeLayer_Access;
    type LifeLayer_Access_Array_Access is access all LifeLayer_Access_Array;
+   type LifeLayer_Access_Array_Access_Array is array (Natural range <>) of LifeLayer_Access_Array_Access;
+   type LifeLayer_Access_Array_Access_Array_Access is access all LifeLayer_Access_Array_Access_Array;
 
    type LifeLayer is new AllBinaryLayer and LifeVisitorInterface with null record;
 

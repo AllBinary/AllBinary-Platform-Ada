@@ -28,6 +28,8 @@ package org.allbinary.input.gyro.OrientationData_Package is
    type OrientationData_Access is access all OrientationData'Class;
    type OrientationData_Access_Array is array (Natural range <>) of OrientationData_Access;
    type OrientationData_Access_Array_Access is access all OrientationData_Access_Array;
+   type OrientationData_Access_Array_Access_Array is array (Natural range <>) of OrientationData_Access_Array_Access;
+   type OrientationData_Access_Array_Access_Array_Access is access all OrientationData_Access_Array_Access_Array;
 
    type OrientationData is new Java_Object with record
       ORIENTATION_SENSOR_INPUT : Unbounded_String;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.score.HighScoresHelperBase_Package; use org.allbinary.game.score.HighScoresHelperBase_Package;
+
 package body org.allbinary.game.score.NoHighScoresFactory_Package is
 
    procedure Initialize_Fields (This : in out NoHighScoresFactory'Class) is
@@ -52,7 +54,7 @@ package body org.allbinary.game.score.NoHighScoresFactory_Package is
 
    function createHighScoresHelper (This : in out NoHighScoresFactory) return HighScoresHelperBaseInterface_Access is
    begin
-        return HighScoresHelperBase_Package.Create;
+        return HighScoresHelperBaseInterface_Access (HighScoresHelperBase_Package.Create);
    end createHighScoresHelper;
 
 begin

@@ -20,28 +20,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
 package views.generic_Id.inventory.InventoryColumnUtil_Package is
 
-   package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
    package InventoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type InventoryColumnUtil is tagged;
    type InventoryColumnUtil_Access is access all InventoryColumnUtil'Class;
    type InventoryColumnUtil_Access_Array is array (Natural range <>) of InventoryColumnUtil_Access;
    type InventoryColumnUtil_Access_Array_Access is access all InventoryColumnUtil_Access_Array;
+   type InventoryColumnUtil_Access_Array_Access_Array is array (Natural range <>) of InventoryColumnUtil_Access_Array_Access;
+   type InventoryColumnUtil_Access_Array_Access_Array_Access is access all InventoryColumnUtil_Access_Array_Access_Array;
 
    type InventoryColumnUtil is new Java_Object with record
       logUtil : LogUtil_Access;

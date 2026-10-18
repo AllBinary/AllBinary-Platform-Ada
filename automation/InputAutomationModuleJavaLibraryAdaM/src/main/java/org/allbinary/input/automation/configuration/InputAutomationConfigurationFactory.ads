@@ -20,30 +20,27 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.File_Package; use java.io.File_Package;
 --  with java.io.FileInputStream_Package; use java.io.FileInputStream_Package;
 --  with java.util.List_Package; use java.util.List_Package;
 --  with javax.xml.bind.JAXBContext_Package; use javax.xml.bind.JAXBContext_Package;
 --  with javax.xml.bind.JAXBElement_Package; use javax.xml.bind.JAXBElement_Package;
 --  with javax.xml.bind.Unmarshaller_Package; use javax.xml.bind.Unmarshaller_Package;
 --  with javax.xml.transform.stream.StreamSource_Package; use javax.xml.transform.stream.StreamSource_Package;
-with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package; use org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;
 
 package org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package is
 
-   package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InputAutomationConfigurationFactory is tagged;
    type InputAutomationConfigurationFactory_Access is access all InputAutomationConfigurationFactory'Class;
    type InputAutomationConfigurationFactory_Access_Array is array (Natural range <>) of InputAutomationConfigurationFactory_Access;
    type InputAutomationConfigurationFactory_Access_Array_Access is access all InputAutomationConfigurationFactory_Access_Array;
+   type InputAutomationConfigurationFactory_Access_Array_Access_Array is array (Natural range <>) of InputAutomationConfigurationFactory_Access_Array_Access;
+   type InputAutomationConfigurationFactory_Access_Array_Access_Array_Access is access all InputAutomationConfigurationFactory_Access_Array_Access_Array;
 
    type InputAutomationConfigurationFactory is new Java_Object with record
       logUtil : LogUtil_Access;

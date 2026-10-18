@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.inventory.order.OrderData_Package i
    type OrderData_Access is access all OrderData'Class;
    type OrderData_Access_Array is array (Natural range <>) of OrderData_Access;
    type OrderData_Access_Array_Access is access all OrderData_Access_Array;
+   type OrderData_Access_Array_Access_Array is array (Natural range <>) of OrderData_Access_Array_Access;
+   type OrderData_Access_Array_Access_Array_Access is access all OrderData_Access_Array_Access_Array;
 
    type OrderData is new Java_Object with null record;
    ORDERS : Unbounded_String;

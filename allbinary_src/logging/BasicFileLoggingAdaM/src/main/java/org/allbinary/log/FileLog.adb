@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.log.FileLog_Package is
 
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package LogFormatUtil_Package renames Standard.org.allbinary.logic.communication.log.LogFormatUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out FileLog'Class) is
    begin
       null;
@@ -237,7 +244,7 @@ begin
    logPath := To_Unbounded_String ("g:\log\");
    extension := Java_New_String (To_Unbounded_String ("dat"));
    fileName := Java_New_String (To_Unbounded_String ("log.") & Java_Image (FileLog_Package.extension));
-   backupFileName := FileLog_Package.fileName.concat (To_Unbounded_String (".bak"));
+   backupFileName := (FileLog_Package.fileName & To_Unbounded_String (".bak"));
    ORG_ALLBINARY := To_Unbounded_String ("org.allbinary: ");
    firstTime := True;
    logFile := File_Package.Create (FileLog_Package.logPath, FileLog_Package.fileName);

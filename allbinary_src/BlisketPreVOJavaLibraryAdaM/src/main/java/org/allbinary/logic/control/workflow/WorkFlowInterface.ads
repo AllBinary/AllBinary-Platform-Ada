@@ -28,6 +28,8 @@ package org.allbinary.logic.control.workflow.WorkFlowInterface_Package is
    type WorkFlowInterface_Access is access all WorkFlowInterface'Class;
    type WorkFlowInterface_Access_Array is array (Natural range <>) of WorkFlowInterface_Access;
    type WorkFlowInterface_Access_Array_Access is access all WorkFlowInterface_Access_Array;
+   type WorkFlowInterface_Access_Array_Access_Array is array (Natural range <>) of WorkFlowInterface_Access_Array_Access;
+   type WorkFlowInterface_Access_Array_Access_Array_Access is access all WorkFlowInterface_Access_Array_Access_Array;
    function getName (This : in out WorkFlowInterface) return Unbounded_String is abstract;
    function process (This : in out WorkFlowInterface) return Integer is abstract;
 

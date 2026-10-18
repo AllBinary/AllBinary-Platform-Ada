@@ -35,8 +35,10 @@ package org.allbinary.logic.control.validate.Validation_Package is
    type Validation_Access is access all Validation'Class;
    type Validation_Access_Array is array (Natural range <>) of Validation_Access;
    type Validation_Access_Array_Access is access all Validation_Access_Array;
+   type Validation_Access_Array_Access_Array is array (Natural range <>) of Validation_Access_Array_Access;
+   type Validation_Access_Array_Access_Array_Access is access all Validation_Access_Array_Access_Array;
 
-   type Validation is new ValidationInterface with record
+   type Validation is new Java_Object and ValidationInterface with record
       commonStrings : CommonStrings_Access;
    end record;
 

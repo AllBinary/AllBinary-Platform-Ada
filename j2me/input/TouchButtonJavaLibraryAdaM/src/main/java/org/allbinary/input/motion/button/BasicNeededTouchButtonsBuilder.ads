@@ -20,32 +20,21 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
-with org.allbinary.animation.NullAnimationFactory_Package; use org.allbinary.animation.NullAnimationFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
-with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
-with org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package; use org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package;
-with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
-with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
-with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
 
 package org.allbinary.input.motion.button.BasicNeededTouchButtonsBuilder_Package is
 
-   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
-   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type BasicNeededTouchButtonsBuilder is tagged;
    type BasicNeededTouchButtonsBuilder_Access is access all BasicNeededTouchButtonsBuilder'Class;
    type BasicNeededTouchButtonsBuilder_Access_Array is array (Natural range <>) of BasicNeededTouchButtonsBuilder_Access;
    type BasicNeededTouchButtonsBuilder_Access_Array_Access is access all BasicNeededTouchButtonsBuilder_Access_Array;
+   type BasicNeededTouchButtonsBuilder_Access_Array_Access_Array is array (Natural range <>) of BasicNeededTouchButtonsBuilder_Access_Array_Access;
+   type BasicNeededTouchButtonsBuilder_Access_Array_Access_Array_Access is access all BasicNeededTouchButtonsBuilder_Access_Array_Access_Array;
 
    type BasicNeededTouchButtonsBuilder is new BaseTouchInput with record
       logUtil : LogUtil_Access;

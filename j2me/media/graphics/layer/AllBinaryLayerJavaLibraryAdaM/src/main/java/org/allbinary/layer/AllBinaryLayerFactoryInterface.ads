@@ -29,6 +29,8 @@ package org.allbinary.layer.AllBinaryLayerFactoryInterface_Package is
    type AllBinaryLayerFactoryInterface_Access is access all AllBinaryLayerFactoryInterface'Class;
    type AllBinaryLayerFactoryInterface_Access_Array is array (Natural range <>) of AllBinaryLayerFactoryInterface_Access;
    type AllBinaryLayerFactoryInterface_Access_Array_Access is access all AllBinaryLayerFactoryInterface_Access_Array;
+   type AllBinaryLayerFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of AllBinaryLayerFactoryInterface_Access_Array_Access;
+   type AllBinaryLayerFactoryInterface_Access_Array_Access_Array_Access is access all AllBinaryLayerFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out AllBinaryLayerFactoryInterface) return AllBinaryLayer_Access is abstract;
 
 end org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;

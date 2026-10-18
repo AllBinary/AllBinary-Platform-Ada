@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
-with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 
 package org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package is
 
@@ -36,6 +34,8 @@ package org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Packa
    type DisplayChangeEventHandler_Access is access all DisplayChangeEventHandler'Class;
    type DisplayChangeEventHandler_Access_Array is array (Natural range <>) of DisplayChangeEventHandler_Access;
    type DisplayChangeEventHandler_Access_Array_Access is access all DisplayChangeEventHandler_Access_Array;
+   type DisplayChangeEventHandler_Access_Array_Access_Array is array (Natural range <>) of DisplayChangeEventHandler_Access_Array_Access;
+   type DisplayChangeEventHandler_Access_Array_Access_Array_Access is access all DisplayChangeEventHandler_Access_Array_Access_Array;
 
    type DisplayChangeEventHandler is new BasicEventHandler with null record;
    SINGLETON : DisplayChangeEventHandler_Access;

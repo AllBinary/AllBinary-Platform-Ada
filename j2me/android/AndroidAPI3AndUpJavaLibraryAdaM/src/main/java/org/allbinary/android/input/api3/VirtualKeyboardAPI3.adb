@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.event.VirtualKeyboardEventHandler_Package; use org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Package; use org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Package;
+with org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package; use org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package;
+
 package body org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package is
 
+   package VirtualKeyboardEventHandler_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    procedure Initialize_Fields (This : in out VirtualKeyboardAPI3'Class) is
    begin
       null;
@@ -32,8 +41,8 @@ package body org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package is
         VirtualKeyboard_Package.Initialize (This);
         Initialize_Fields (This);
         This.activity := activity;
-        This.showVirtualKeyboardRunnable := ShowVirtualKeyboardRunnable_Package.Create (This.activity);
-        This.hideVirtualKeyboardRunnable := HideVirtualKeyboardRunnable_Package.Create (This.activity);
+        This.showVirtualKeyboardRunnable := Runnable_Access (ShowVirtualKeyboardRunnable_Package.Create (This.activity));
+        This.hideVirtualKeyboardRunnable := Runnable_Access (HideVirtualKeyboardRunnable_Package.Create (This.activity));
         virtualKeyboardEventHandler := VirtualKeyboardEventHandler_Package.getInstance;
         virtualKeyboardEventHandler.removeAllListeners;
         virtualKeyboardEventHandler.addListenerInterface (VirtualKeyboardAPI3_Access'(This'Unchecked_Access));
@@ -90,7 +99,7 @@ package body org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package is
 
 begin
    null;
-   MAX_API := Integer_Package.MAX_VALUE;
+   MAX_API := Integer'Last;
    MIN_API := 3;
 
 end org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package;

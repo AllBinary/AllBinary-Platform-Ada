@@ -34,6 +34,8 @@ package org.allbinary.input.automation.actions.script.condition.TimeIntervalActi
    type TimeIntervalActionScriptConditionJPanel_Access is access all TimeIntervalActionScriptConditionJPanel'Class;
    type TimeIntervalActionScriptConditionJPanel_Access_Array is array (Natural range <>) of TimeIntervalActionScriptConditionJPanel_Access;
    type TimeIntervalActionScriptConditionJPanel_Access_Array_Access is access all TimeIntervalActionScriptConditionJPanel_Access_Array;
+   type TimeIntervalActionScriptConditionJPanel_Access_Array_Access_Array is array (Natural range <>) of TimeIntervalActionScriptConditionJPanel_Access_Array_Access;
+   type TimeIntervalActionScriptConditionJPanel_Access_Array_Access_Array_Access is access all TimeIntervalActionScriptConditionJPanel_Access_Array_Access_Array;
 
    type TimeIntervalActionScriptConditionJPanel is new JPanel with record
       logUtil : LogUtil_Access;

@@ -13,8 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.dom.DomHelper_Package; use org.allbinary.dom.DomHelper_Package;
+with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+with org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package; use org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
+with org.allbinary.log.LOGGING_Package; use org.allbinary.log.LOGGING_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.allbinary.graphics.j2me.workarea.Component_Package; use org.allbinary.graphics.j2me.workarea.Component_Package;
+with org.allbinary.graphics.j2me.workarea.GridLayout_Package; use org.allbinary.graphics.j2me.workarea.GridLayout_Package;
+with org.allbinary.graphics.j2me.workarea.GridBagLayout_Package; use org.allbinary.graphics.j2me.workarea.GridBagLayout_Package;
+with org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package; use org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package;
+
 package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
+   package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
+   package StatusFactory_Package renames Standard.org.allbinary.graphics.j2me.StatusFactory_Package;
+   package CanvasDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+   package MyCanvasEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+   package ToolJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
+   package LOGGING_Package renames Standard.org.allbinary.log.LOGGING_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
    procedure Initialize_Fields (This : in out WorkAreaJPanel'Class) is
    begin
       null;
@@ -93,7 +116,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if LOGGING.contains (LOGGING.LOADINGERROR) then
+            if LOGGING_Package.contains (LOGGING_Package.LOADINGERROR) then
                 This.logUtil.put (To_Unbounded_String ("Constructor Error"), WorkAreaJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("WorkAreaJPanel"), e);
             end if;
             Java_Throw (e);

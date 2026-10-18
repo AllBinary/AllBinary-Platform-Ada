@@ -21,20 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-with org.allbinary.game.tracking.TrackingEventHandler_Package; use org.allbinary.game.tracking.TrackingEventHandler_Package;
 
 package org.allbinary.game.tracking.TrackingEvent_Package is
 
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type TrackingEvent is tagged;
    type TrackingEvent_Access is access all TrackingEvent'Class;
    type TrackingEvent_Access_Array is array (Natural range <>) of TrackingEvent_Access;
    type TrackingEvent_Access_Array_Access is access all TrackingEvent_Access_Array;
+   type TrackingEvent_Access_Array_Access_Array is array (Natural range <>) of TrackingEvent_Access_Array_Access;
+   type TrackingEvent_Access_Array_Access_Array_Access is access all TrackingEvent_Access_Array_Access_Array;
 
    type TrackingEvent is new AllBinaryEventObject with record
       layerInterface : AllBinaryLayer_Access;
@@ -47,6 +46,7 @@ package org.allbinary.game.tracking.TrackingEvent_Package is
    procedure setLayerInterface (This : in out TrackingEvent; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
    procedure setLayerInterfaceForCircularStaticPool (This : in out TrackingEvent; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
    function toString (This : in out TrackingEvent) return Unbounded_String;
+   procedure init (This : in out TrackingEvent; Value : Unbounded_String);
 
 end org.allbinary.game.tracking.TrackingEvent_Package;
 

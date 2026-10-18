@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.dom.DomHelper_Package is
 
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out DomHelper'Class) is
    begin
       null;
@@ -161,13 +166,13 @@ package body org.allbinary.dom.DomHelper_Package is
       node : Node_Access;
       index : Integer;
    begin
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         childNodeList := DomHelper'Class (This).getChildNodeList (nodeName, nodeList);
         numberOfChildren := childNodeList.getLength;
         for index in 0 .. (numberOfChildren) - 1 loop
             node := childNodeList.item (index);
             if (node.getNodeType) /= (Node_Package.TEXT_NODE) then
-                list.add (node);
+                list.add (Java_Object_Access (node));
             end if;
         end loop;
         return list;
@@ -181,12 +186,12 @@ package body org.allbinary.dom.DomHelper_Package is
       node : Node_Access;
       index : Integer;
    begin
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         numberOfChildren := nodeList.getLength;
         for index in 0 .. (numberOfChildren) - 1 loop
             node := nodeList.item (index);
             if (node.getNodeType) /= (Node_Package.TEXT_NODE) then
-                list.add (node);
+                list.add (Java_Object_Access (node));
             end if;
         end loop;
         return list;

@@ -23,30 +23,19 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.business.category.CategoryFactoryInterface_Package; use org.allbinary.business.category.CategoryFactoryInterface_Package;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
-with org.allbinary.business.category.CategoryUtil_Package; use org.allbinary.business.category.CategoryUtil_Package;
-with org.allbinary.business.category.properties.CategoryPropertiesFactory_Package; use org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
-with org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package; use org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
-with org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryPropertiesFactory_Package; use org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryPropertiesFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.business.category.store.theme.StoreThemeCategory_Package; use org.allbinary.business.category.store.theme.StoreThemeCategory_Package;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package CategoryFactoryInterface_Package renames Standard.org.allbinary.business.category.CategoryFactoryInterface_Package;
    package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
-   package CategoryUtil_Package renames Standard.org.allbinary.business.category.CategoryUtil_Package;
-   package CategoryPropertiesFactory_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
-   package CategoryPropertiesFactoryInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
-   package RootStoreThemeCategoryPropertiesFactory_Package renames Standard.org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryPropertiesFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
@@ -55,8 +44,10 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Pa
    type StoreThemeCategoryFactory_Access is access all StoreThemeCategoryFactory'Class;
    type StoreThemeCategoryFactory_Access_Array is array (Natural range <>) of StoreThemeCategoryFactory_Access;
    type StoreThemeCategoryFactory_Access_Array_Access is access all StoreThemeCategoryFactory_Access_Array;
+   type StoreThemeCategoryFactory_Access_Array_Access_Array is array (Natural range <>) of StoreThemeCategoryFactory_Access_Array_Access;
+   type StoreThemeCategoryFactory_Access_Array_Access_Array_Access is access all StoreThemeCategoryFactory_Access_Array_Access_Array;
 
-   type StoreThemeCategoryFactory is new CategoryFactoryInterface with record
+   type StoreThemeCategoryFactory is new Java_Object and CategoryFactoryInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       transformInfoInterface : TransformInfoInterface_Access;

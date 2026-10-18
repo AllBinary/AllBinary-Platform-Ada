@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 
 package org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type PickedUpLayerTypeFactory is tagged;
    type PickedUpLayerTypeFactory_Access is access all PickedUpLayerTypeFactory'Class;
    type PickedUpLayerTypeFactory_Access_Array is array (Natural range <>) of PickedUpLayerTypeFactory_Access;
    type PickedUpLayerTypeFactory_Access_Array_Access is access all PickedUpLayerTypeFactory_Access_Array;
+   type PickedUpLayerTypeFactory_Access_Array_Access_Array is array (Natural range <>) of PickedUpLayerTypeFactory_Access_Array_Access;
+   type PickedUpLayerTypeFactory_Access_Array_Access_Array_Access is access all PickedUpLayerTypeFactory_Access_Array_Access_Array;
 
    type PickedUpLayerTypeFactory is new Java_Object with record
       NONE : PickedUpLayerType_Access;

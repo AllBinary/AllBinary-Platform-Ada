@@ -22,18 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type LogConfigType is tagged;
    type LogConfigType_Access is access all LogConfigType'Class;
    type LogConfigType_Access_Array is array (Natural range <>) of LogConfigType_Access;
    type LogConfigType_Access_Array_Access is access all LogConfigType_Access_Array;
+   type LogConfigType_Access_Array_Access_Array is array (Natural range <>) of LogConfigType_Access_Array_Access;
+   type LogConfigType_Access_Array_Access_Array_Access is access all LogConfigType_Access_Array_Access_Array;
 
    type LogConfigType is new Java_Object with record
       logUtil : LogUtil_Access;

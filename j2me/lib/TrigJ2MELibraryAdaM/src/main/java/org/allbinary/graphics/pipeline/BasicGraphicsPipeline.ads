@@ -20,26 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 with org.allbinary.math.NoDecimalTrigTable_Package; use org.allbinary.math.NoDecimalTrigTable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
 
-   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
    package NoDecimalTrigTable_Package renames Standard.org.allbinary.math.NoDecimalTrigTable_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicGraphicsPipeline is tagged;
    type BasicGraphicsPipeline_Access is access all BasicGraphicsPipeline'Class;
    type BasicGraphicsPipeline_Access_Array is array (Natural range <>) of BasicGraphicsPipeline_Access;
    type BasicGraphicsPipeline_Access_Array_Access is access all BasicGraphicsPipeline_Access_Array;
+   type BasicGraphicsPipeline_Access_Array_Access_Array is array (Natural range <>) of BasicGraphicsPipeline_Access_Array_Access;
+   type BasicGraphicsPipeline_Access_Array_Access_Array_Access is access all BasicGraphicsPipeline_Access_Array_Access_Array;
 
    type BasicGraphicsPipeline is new Java_Object with record
       pointBasicArrayList : BasicArrayList_Access;

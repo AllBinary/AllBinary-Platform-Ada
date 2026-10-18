@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package is
 
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 
    type RaceTrackGeographicMapCellType is tagged;
    type RaceTrackGeographicMapCellType_Access is access all RaceTrackGeographicMapCellType'Class;
    type RaceTrackGeographicMapCellType_Access_Array is array (Natural range <>) of RaceTrackGeographicMapCellType_Access;
    type RaceTrackGeographicMapCellType_Access_Array_Access is access all RaceTrackGeographicMapCellType_Access_Array;
+   type RaceTrackGeographicMapCellType_Access_Array_Access_Array is array (Natural range <>) of RaceTrackGeographicMapCellType_Access_Array_Access;
+   type RaceTrackGeographicMapCellType_Access_Array_Access_Array_Access is access all RaceTrackGeographicMapCellType_Access_Array_Access_Array;
 
    type RaceTrackGeographicMapCellType is new GeographicMapCellType with record
       name : Unbounded_String;

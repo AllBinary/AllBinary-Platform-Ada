@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary.input.motion.button.BaseTouchInput_Package;
 
 package org.allbinary.input.motion.button.TouchButtonsListBuilder_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type TouchButtonsListBuilder is tagged;
    type TouchButtonsListBuilder_Access is access all TouchButtonsListBuilder'Class;
    type TouchButtonsListBuilder_Access_Array is array (Natural range <>) of TouchButtonsListBuilder_Access;
    type TouchButtonsListBuilder_Access_Array_Access is access all TouchButtonsListBuilder_Access_Array;
+   type TouchButtonsListBuilder_Access_Array_Access_Array is array (Natural range <>) of TouchButtonsListBuilder_Access_Array_Access;
+   type TouchButtonsListBuilder_Access_Array_Access_Array_Access is access all TouchButtonsListBuilder_Access_Array_Access_Array;
 
    type TouchButtonsListBuilder is new BaseTouchInput with record
       baseTouchInputList : BasicArrayList_Access;

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.ag.ai.sequence.ComboSequenceAI_Package is
 
    procedure Initialize_Fields (This : in out ComboSequenceAI'Class) is

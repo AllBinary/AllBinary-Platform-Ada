@@ -20,20 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package;
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package;
 
 package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventUtil_Package is
 
-   package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
    package GeographicMapCellPositionTracking_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
 
    type GeographicMapCellPositionEventUtil is tagged;
    type GeographicMapCellPositionEventUtil_Access is access all GeographicMapCellPositionEventUtil'Class;
    type GeographicMapCellPositionEventUtil_Access_Array is array (Natural range <>) of GeographicMapCellPositionEventUtil_Access;
    type GeographicMapCellPositionEventUtil_Access_Array_Access is access all GeographicMapCellPositionEventUtil_Access_Array;
+   type GeographicMapCellPositionEventUtil_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionEventUtil_Access_Array_Access;
+   type GeographicMapCellPositionEventUtil_Access_Array_Access_Array_Access is access all GeographicMapCellPositionEventUtil_Access_Array_Access_Array;
 
    type GeographicMapCellPositionEventUtil is new Java_Object with record
       geographicMapCellPositionEvent : GeographicMapCellPositionEvent_Access;

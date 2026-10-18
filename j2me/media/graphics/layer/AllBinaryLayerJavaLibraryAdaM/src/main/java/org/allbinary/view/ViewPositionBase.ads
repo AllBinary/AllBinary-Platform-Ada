@@ -30,6 +30,8 @@ package org.allbinary.view.ViewPositionBase_Package is
    type ViewPositionBase_Access is access all ViewPositionBase'Class;
    type ViewPositionBase_Access_Array is array (Natural range <>) of ViewPositionBase_Access;
    type ViewPositionBase_Access_Array_Access is access all ViewPositionBase_Access_Array;
+   type ViewPositionBase_Access_Array_Access_Array is array (Natural range <>) of ViewPositionBase_Access_Array_Access;
+   type ViewPositionBase_Access_Array_Access_Array_Access is access all ViewPositionBase_Access_Array_Access_Array;
 
    type ViewPositionBase is new GPoint with null record;
    NULL_VIEW_POSITION : ViewPositionBase_Access;
@@ -40,6 +42,7 @@ package org.allbinary.view.ViewPositionBase_Package is
    function getY2 (This : in out ViewPositionBase) return Integer;
    function getZ2 (This : in out ViewPositionBase) return Integer;
    procedure setAllbinaryLayer (This : in out ViewPositionBase; allbinaryLayer_Param : access Java_Object'Class);
+   procedure setAllbinaryLayer (This : in out ViewPositionBase; Value : Unbounded_String);
 
 end org.allbinary.view.ViewPositionBase_Package;
 

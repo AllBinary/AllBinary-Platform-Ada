@@ -21,25 +21,21 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
-with org.allbinary.game.score.LastFetchHighScoresFactory_Package; use org.allbinary.game.score.LastFetchHighScoresFactory_Package;
 with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
-with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
 
 package org.allbinary.game.score.HighScoresHelperBase_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type HighScoresHelperBase is tagged;
    type HighScoresHelperBase_Access is access all HighScoresHelperBase'Class;
    type HighScoresHelperBase_Access_Array is array (Natural range <>) of HighScoresHelperBase_Access;
    type HighScoresHelperBase_Access_Array_Access is access all HighScoresHelperBase_Access_Array;
+   type HighScoresHelperBase_Access_Array_Access_Array is array (Natural range <>) of HighScoresHelperBase_Access_Array_Access;
+   type HighScoresHelperBase_Access_Array_Access_Array_Access is access all HighScoresHelperBase_Access_Array_Access_Array;
 
-   type HighScoresHelperBase is new HighScoresHelperBaseInterface with record
+   type HighScoresHelperBase is new Java_Object and HighScoresHelperBaseInterface with record
       logUtil : LogUtil_Access;
       highScoresArrayP : HighScores_Access_Array_Access;
    end record;

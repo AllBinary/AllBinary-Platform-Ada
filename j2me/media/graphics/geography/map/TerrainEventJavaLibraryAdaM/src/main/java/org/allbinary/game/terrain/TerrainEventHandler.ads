@@ -20,33 +20,27 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
-with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.terrain.TerrainEventListener_Package; use org.allbinary.game.terrain.TerrainEventListener_Package;
-with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.terrain.TerrainEvent_Package;
-with org.allbinary.game.terrain.TerrainEventListenerInterface_Package; use org.allbinary.game.terrain.TerrainEventListenerInterface_Package;
 
 package org.allbinary.game.terrain.TerrainEventHandler_Package is
 
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
    package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
-   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type TerrainEventHandler is tagged;
    type TerrainEventHandler_Access is access all TerrainEventHandler'Class;
    type TerrainEventHandler_Access_Array is array (Natural range <>) of TerrainEventHandler_Access;
    type TerrainEventHandler_Access_Array_Access is access all TerrainEventHandler_Access_Array;
+   type TerrainEventHandler_Access_Array_Access_Array is array (Natural range <>) of TerrainEventHandler_Access_Array_Access;
+   type TerrainEventHandler_Access_Array_Access_Array_Access is access all TerrainEventHandler_Access_Array_Access_Array;
 
    type TerrainEventHandler is new BasicEventHandler with record
       list : BasicArrayList_Access;
@@ -63,6 +57,8 @@ package org.allbinary.game.terrain.TerrainEventHandler_Package is
    procedure removeListener (This : in out TerrainEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
    procedure fireEvent (This : in out TerrainEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
    procedure process (This : in out TerrainEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
+   function getInstance (Value : Unbounded_String) return TerrainEventHandler_Access;
+   procedure getInstance (Value : Unbounded_String);
 
 end org.allbinary.game.terrain.TerrainEventHandler_Package;
 

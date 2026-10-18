@@ -29,6 +29,8 @@ package org.allbinary.game.configuration.feature.TouchFeature_Package is
    type TouchFeature_Access is access all TouchFeature'Class;
    type TouchFeature_Access_Array is array (Natural range <>) of TouchFeature_Access;
    type TouchFeature_Access_Array_Access is access all TouchFeature_Access_Array;
+   type TouchFeature_Access_Array_Access_Array is array (Natural range <>) of TouchFeature_Access_Array_Access;
+   type TouchFeature_Access_Array_Access_Array_Access is access all TouchFeature_Access_Array_Access_Array;
 
    type TouchFeature is new Feature with null record;
 

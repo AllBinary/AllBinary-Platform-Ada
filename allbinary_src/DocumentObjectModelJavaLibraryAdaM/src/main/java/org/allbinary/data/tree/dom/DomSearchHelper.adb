@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
 package body org.allbinary.data.tree.dom.DomSearchHelper_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out DomSearchHelper'Class) is
    begin
       null;
@@ -92,12 +95,12 @@ package body org.allbinary.data.tree.dom.DomSearchHelper_Package is
       node : Node_Access;
       index : Integer;
    begin
-        nodeVector := BasicArrayListD_Package.Create;
+        nodeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         numberOfNodes := nodeList.getLength;
         for index in 0 .. (numberOfNodes) - 1 loop
             node := nodeList.item (index);
             if (node.getNodeName.compareTo (nodeName)) = (0) then
-                nodeVector.add (node);
+                nodeVector.add (Java_Object_Access (node));
             end if;
         end loop;
         return nodeVector;

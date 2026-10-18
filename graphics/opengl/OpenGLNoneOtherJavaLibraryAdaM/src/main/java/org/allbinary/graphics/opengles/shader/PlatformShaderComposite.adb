@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package; use org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
+
 package body org.allbinary.graphics.opengles.shader.PlatformShaderComposite_Package is
 
+   package NullOpenGLProcessorFactory_Package renames Standard.org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
    procedure Initialize_Fields (This : in out PlatformShaderComposite'Class) is
    begin
       null;

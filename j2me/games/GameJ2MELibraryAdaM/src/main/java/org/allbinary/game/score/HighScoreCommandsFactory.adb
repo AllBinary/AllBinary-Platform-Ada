@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with org.allbinary.game.score.HighScoreCommands_Package; use org.allbinary.game.score.HighScoreCommands_Package;
+
 package body org.allbinary.game.score.HighScoreCommandsFactory_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    procedure Initialize_Fields (This : in out HighScoreCommandsFactory'Class) is
    begin
       null;

@@ -21,20 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with javax.microedition.lcdui.Displayable_Package; use javax.microedition.lcdui.Displayable_Package;
-with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
-with org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package; use org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package;
 
 package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package is
 
    package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
-   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
 
    type ScreenRepaintProcessorFactory is tagged;
    type ScreenRepaintProcessorFactory_Access is access all ScreenRepaintProcessorFactory'Class;
    type ScreenRepaintProcessorFactory_Access_Array is array (Natural range <>) of ScreenRepaintProcessorFactory_Access;
    type ScreenRepaintProcessorFactory_Access_Array_Access is access all ScreenRepaintProcessorFactory_Access_Array;
+   type ScreenRepaintProcessorFactory_Access_Array_Access_Array is array (Natural range <>) of ScreenRepaintProcessorFactory_Access_Array_Access;
+   type ScreenRepaintProcessorFactory_Access_Array_Access_Array_Access is access all ScreenRepaintProcessorFactory_Access_Array_Access_Array;
 
    type ScreenRepaintProcessorFactory is new Java_Object with null record;
    instance : ScreenRepaintProcessorFactory_Access;

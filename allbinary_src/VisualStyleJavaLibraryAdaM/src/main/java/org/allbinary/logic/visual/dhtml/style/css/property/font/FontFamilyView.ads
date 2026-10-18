@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyData_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package is
 
@@ -33,6 +32,8 @@ package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_
    type FontFamilyView_Access is access all FontFamilyView'Class;
    type FontFamilyView_Access_Array is array (Natural range <>) of FontFamilyView_Access;
    type FontFamilyView_Access_Array_Access is access all FontFamilyView_Access_Array;
+   type FontFamilyView_Access_Array_Access_Array is array (Natural range <>) of FontFamilyView_Access_Array_Access;
+   type FontFamilyView_Access_Array_Access_Array_Access is access all FontFamilyView_Access_Array_Access_Array;
 
    type FontFamilyView is new CssPropertyView with null record;
 

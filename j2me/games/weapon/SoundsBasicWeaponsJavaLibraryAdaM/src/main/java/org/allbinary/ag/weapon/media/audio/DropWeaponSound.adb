@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package is
 
    procedure Initialize_Fields (This : in out DropWeaponSound'Class) is
@@ -40,7 +41,7 @@ package body org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package is
 
 begin
    null;
-   soundInterface := DropWeaponSound_Package.Create;
+   soundInterface := Sound_Access (DropWeaponSound_Package.Create);
 
 end org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package;
 

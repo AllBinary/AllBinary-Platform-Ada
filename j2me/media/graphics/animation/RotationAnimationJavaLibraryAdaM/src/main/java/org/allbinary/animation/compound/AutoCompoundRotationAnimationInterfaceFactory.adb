@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package; use org.allbinary.animation.compound.AutoCompoundRotationAnimation_Package;
+
 package body org.allbinary.animation.compound.AutoCompoundRotationAnimationInterfaceFactory_Package is
 
+   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
    procedure Initialize_Fields (This : in out AutoCompoundRotationAnimationInterfaceFactory'Class) is
    begin
       null;
@@ -41,7 +45,7 @@ package body org.allbinary.animation.compound.AutoCompoundRotationAnimationInter
 
    function createAnimation (This : in out AutoCompoundRotationAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access) return Animation_Access is
    begin
-        return AutoCompoundRotationAnimation_Package.Create (RotationAnimation_Access_Array_Access (animationInterfaceArray), This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (AutoCompoundRotationAnimation_Package.Create (RotationAnimation_Access_Array_Access (animationInterfaceArray), This.animationBehaviorFactory.getOrCreateInstance));
    end createAnimation;
 
    procedure createArray (This : in out AutoCompoundRotationAnimationInterfaceFactory; size : Integer) is

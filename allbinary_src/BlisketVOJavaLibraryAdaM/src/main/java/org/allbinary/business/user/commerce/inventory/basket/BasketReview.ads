@@ -23,21 +23,14 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.util.HashSet_Package; use java.util.HashSet_Package;
 --  with java.util.Set_Package; use java.util.Set_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.user.commerce.inventory.item.Item_Package; use org.allbinary.business.user.commerce.inventory.item.Item_Package;
-with org.allbinary.business.user.commerce.inventory.item.ItemView_Package; use org.allbinary.business.user.commerce.inventory.item.ItemView_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.business.user.commerce.inventory.basket.BasketData_Package; use org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
 
 package org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package Item_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.Item_Package;
-   package ItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemView_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
@@ -45,6 +38,8 @@ package org.allbinary.business.user.commerce.inventory.basket.BasketReview_Packa
    type BasketReview_Access is access all BasketReview'Class;
    type BasketReview_Access_Array is array (Natural range <>) of BasketReview_Access;
    type BasketReview_Access_Array_Access is access all BasketReview_Access_Array;
+   type BasketReview_Access_Array_Access_Array is array (Natural range <>) of BasketReview_Access_Array_Access;
+   type BasketReview_Access_Array_Access_Array_Access is access all BasketReview_Access_Array_Access_Array;
 
    type BasketReview is new Java_Object with record
       items : BasicArrayList_Access;

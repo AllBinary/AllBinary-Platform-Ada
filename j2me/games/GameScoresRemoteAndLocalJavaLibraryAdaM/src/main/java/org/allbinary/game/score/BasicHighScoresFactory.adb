@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with org.allbinary.game.BasicHighScoresGameInfoFactory_Package; use org.allbinary.game.BasicHighScoresGameInfoFactory_Package;
+with org.allbinary.game.GameType_Package; use org.allbinary.game.GameType_Package;
+with org.allbinary.game.GameTypeFactory_Package; use org.allbinary.game.GameTypeFactory_Package;
+with org.allbinary.game.score.remote.RemoteHighScores_Package; use org.allbinary.game.score.remote.RemoteHighScores_Package;
+with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.thread.SecondaryThreadPool_Package; use org.allbinary.thread.SecondaryThreadPool_Package;
+with org.allbinary.game.score.RecordStoreHighScores_Package; use org.allbinary.game.score.RecordStoreHighScores_Package;
+with org.allbinary.game.score.ScoreComparator_Package; use org.allbinary.game.score.ScoreComparator_Package;
+with org.allbinary.game.score.LastFetchHighScoresFactory_Package; use org.allbinary.game.score.LastFetchHighScoresFactory_Package;
+with org.allbinary.game.score.HighScoresHelper2_Package; use org.allbinary.game.score.HighScoresHelper2_Package;
+
 package body org.allbinary.game.score.BasicHighScoresFactory_Package is
 
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package BasicHighScoresGameInfoFactory_Package renames Standard.org.allbinary.game.BasicHighScoresGameInfoFactory_Package;
+   package GameType_Package renames Standard.org.allbinary.game.GameType_Package;
+   package GameTypeFactory_Package renames Standard.org.allbinary.game.GameTypeFactory_Package;
+   package RemoteHighScores_Package renames Standard.org.allbinary.game.score.remote.RemoteHighScores_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package SecondaryThreadPool_Package renames Standard.org.allbinary.thread.SecondaryThreadPool_Package;
    procedure Initialize_Fields (This : in out BasicHighScoresFactory'Class) is
    begin
       null;
@@ -97,7 +116,7 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
 
    function createHighScoresHelper (This : in out BasicHighScoresFactory) return HighScoresHelperBaseInterface_Access is
    begin
-        return HighScoresHelper2_Package.Create;
+        return HighScoresHelperBaseInterface_Access (HighScoresHelper2_Package.Create);
    end createHighScoresHelper;
 
    function loaded (index2 : Integer) return Boolean is

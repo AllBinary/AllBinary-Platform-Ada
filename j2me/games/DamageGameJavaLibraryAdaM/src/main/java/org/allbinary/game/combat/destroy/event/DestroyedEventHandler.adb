@@ -13,12 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEvent_Package; use org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+with org.allbinary.game.combat.destroy.event.DestroyedEventListenerInterface_Package; use org.allbinary.game.combat.destroy.event.DestroyedEventListenerInterface_Package;
+
 package body org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package is
 
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out DestroyedEventHandler'Class) is
    begin
       null;
-      This.list := BasicArrayListD_Package.Create;
+      This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
 
 
@@ -44,8 +51,8 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Packa
    procedure addListener (This : in out DestroyedEventHandler; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is
       collidableDestroyableDamageableLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
-        if not (This.list.contains (collidableDestroyableDamageableLayer)) then
-            This.list.add (collidableDestroyableDamageableLayer);
+        if not (This.list.contains (Java_Object_Access (collidableDestroyableDamageableLayer))) then
+            This.list.add (Java_Object_Access (collidableDestroyableDamageableLayer));
         end if;
    end addListener;
 
@@ -58,7 +65,7 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Packa
    procedure removeListener (This : in out DestroyedEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.list.remove (eventListenerInterface);
+        This.list.remove (Java_Object_Access (eventListenerInterface));
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 

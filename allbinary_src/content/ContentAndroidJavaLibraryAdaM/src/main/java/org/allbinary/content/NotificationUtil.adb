@@ -13,8 +13,25 @@
 --  Generated Code Do Not Modify
 
 
+with android.app.Notification_Package; use android.app.Notification_Package;
+with android.app.PendingIntent_Package; use android.app.PendingIntent_Package;
+with android.content.Context_Package; use android.content.Context_Package;
+with android.content.Intent_Package; use android.content.Intent_Package;
+with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android.AndroidInfoFactory_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.content.NotificationBuilderAPI23_Package; use org.allbinary.content.NotificationBuilderAPI23_Package;
+with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.CommandUriAction_Package;
+
 package body org.allbinary.content.NotificationUtil_Package is
 
+   package Notification_Package renames Standard.android.app.Notification_Package;
+   package PendingIntent_Package renames Standard.android.app.PendingIntent_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package Intent_Package renames Standard.android.content.Intent_Package;
+   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out NotificationUtil'Class) is
    begin
       null;
@@ -35,7 +52,7 @@ package body org.allbinary.content.NotificationUtil_Package is
       Initialize_Fields (This);
         SDK_VERSION := AndroidInfoFactory_Package.getInstance.getVersion;
         if (SDK_VERSION) > (22) then
-            This.notificationBuilder := NotificationBuilderAPI23_Package.Create;
+            This.notificationBuilder := NotificationBuilder_Access (NotificationBuilderAPI23_Package.Create);
         else
             This.notificationBuilder := NotificationBuilder_Package.NULL_NOTIFICATION_BUILDER;
         end if;

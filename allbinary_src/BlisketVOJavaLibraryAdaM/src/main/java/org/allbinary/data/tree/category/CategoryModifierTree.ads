@@ -24,8 +24,6 @@ with org.allbinary.business.category.CategoryFactoryInterface_Package; use org.a
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.io.file.directory.Directory_Package; use org.allbinary.logic.io.file.directory.Directory_Package;
-with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.data.tree.category.CategoryPrivateTree_Package; use org.allbinary.data.tree.category.CategoryPrivateTree_Package;
 with org.allbinary.data.tree.category.CategoryModifierTreeInterface_Package; use org.allbinary.data.tree.category.CategoryModifierTreeInterface_Package;
@@ -36,14 +34,14 @@ package org.allbinary.data.tree.category.CategoryModifierTree_Package is
    package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package Directory_Package renames Standard.org.allbinary.logic.io.file.directory.Directory_Package;
-   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CategoryModifierTree is tagged;
    type CategoryModifierTree_Access is access all CategoryModifierTree'Class;
    type CategoryModifierTree_Access_Array is array (Natural range <>) of CategoryModifierTree_Access;
    type CategoryModifierTree_Access_Array_Access is access all CategoryModifierTree_Access_Array;
+   type CategoryModifierTree_Access_Array_Access_Array is array (Natural range <>) of CategoryModifierTree_Access_Array_Access;
+   type CategoryModifierTree_Access_Array_Access_Array_Access is access all CategoryModifierTree_Access_Array_Access_Array;
 
    type CategoryModifierTree is new CategoryPrivateTree and CategoryModifierTreeInterface with record
       logUtil : LogUtil_Access;

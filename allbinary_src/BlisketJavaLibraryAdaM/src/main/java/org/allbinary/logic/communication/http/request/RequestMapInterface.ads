@@ -30,6 +30,8 @@ package org.allbinary.logic.communication.http.request.RequestMapInterface_Packa
    type RequestMapInterface_Access is access all RequestMapInterface'Class;
    type RequestMapInterface_Access_Array is array (Natural range <>) of RequestMapInterface_Access;
    type RequestMapInterface_Access_Array_Access is access all RequestMapInterface_Access_Array;
+   type RequestMapInterface_Access_Array_Access_Array is array (Natural range <>) of RequestMapInterface_Access_Array_Access;
+   type RequestMapInterface_Access_Array_Access_Array_Access is access all RequestMapInterface_Access_Array_Access_Array;
    function getRequestHashMap (This : in out RequestMapInterface) return HashMap_Access is abstract;
 
 end org.allbinary.logic.communication.http.request.RequestMapInterface_Package;

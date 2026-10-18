@@ -20,29 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
-with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
-with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
-with org.allbinary.logic.java.bool.BooleanUtil_Package; use org.allbinary.logic.java.bool.BooleanUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.logic.communication.log.config.LogConfigData_Package; use org.allbinary.logic.communication.log.config.LogConfigData_Package;
 
 package org.allbinary.logic.communication.log.config.LogConfig_Package is
 
-   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
-   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
-   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package BooleanUtil_Package renames Standard.org.allbinary.logic.java.bool.BooleanUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type LogConfig is tagged;
    type LogConfig_Access is access all LogConfig'Class;
    type LogConfig_Access_Array is array (Natural range <>) of LogConfig_Access;
    type LogConfig_Access_Array_Access is access all LogConfig_Access_Array;
+   type LogConfig_Access_Array_Access_Array is array (Natural range <>) of LogConfig_Access_Array_Access;
+   type LogConfig_Access_Array_Access_Array_Access is access all LogConfig_Access_Array_Access_Array;
 
    type LogConfig is new Java_Object with record
       isEnabled_Field : Boolean;

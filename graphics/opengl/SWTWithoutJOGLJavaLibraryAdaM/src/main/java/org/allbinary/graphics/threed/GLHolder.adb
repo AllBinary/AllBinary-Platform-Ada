@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.threed.GLHolder_Package is
 
    procedure Initialize_Fields (This : in out GLHolder'Class) is
@@ -51,6 +52,16 @@ package body org.allbinary.graphics.threed.GLHolder_Package is
       renderer : constant Java_Object_Access := Java_Object_Access (renderer_Param);
    begin
         null;
+   end run;
+
+   procedure runOnSurfaceCreated (This : in out GLHolder; Value : Unbounded_String) is
+   begin
+      GLHolder'Class (This).runOnSurfaceCreated (Java_Box (Value));
+   end runOnSurfaceCreated;
+
+   procedure run (This : in out GLHolder; Value : Unbounded_String) is
+   begin
+      GLHolder'Class (This).run (Java_Box (Value));
    end run;
 
 end org.allbinary.graphics.threed.GLHolder_Package;

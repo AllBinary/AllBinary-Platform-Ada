@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+
 package body org.allbinary.logic.io.path.PathUtil_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    procedure Initialize_Fields (This : in out PathUtil'Class) is
    begin
       null;
@@ -139,8 +144,8 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
         if stringValidationUtil.isEmpty (path) then
             return This.abPathData.SEPARATOR;
         end if;
-        if ((Index (path, Java_Image (To_Unbounded_String ("\"))) - 1)) >= (0) then
-            path := path.replace ('\', This.abPathData.SEPARATORCHAR);
+        if (Java_Index_Of (path, Java_Image (To_Unbounded_String ("\")))) >= (0) then
+            path := Java_Replace (path, Java_Image ('\'), Java_Image (This.abPathData.SEPARATORCHAR));
         end if;
         return path;
    end adjust;
@@ -150,9 +155,9 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
       endIndex : Integer;
       pathWithoutName : Unbounded_String;
    begin
-        endIndex := path.lastIndexOf (This.abPathData.SEPARATOR);
+        endIndex := Java_Last_Index_Of (path, Java_Image (This.abPathData.SEPARATOR));
         if (endIndex) < (0) then
-            endIndex := path.lastIndexOf (This.filePathData.SEPARATORCHAR);
+            endIndex := Java_Last_Index_Of (path, Java_Image (This.filePathData.SEPARATORCHAR));
         end if;
         if (endIndex) < (0) then
             return AbPath_Package.createAbPath;

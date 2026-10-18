@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.control.sort.StringComparator_Package is
 
    procedure Initialize_Fields (This : in out StringComparator'Class) is

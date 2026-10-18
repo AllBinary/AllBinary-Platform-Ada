@@ -13,8 +13,24 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package; use org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+with org.allbinary.game.layer.NullPathFindingLayer_Package; use org.allbinary.game.layer.NullPathFindingLayer_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.layer.building.BuildingLayer_Package; use org.allbinary.game.layer.building.BuildingLayer_Package;
+
 package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package NumberStringHudFactory_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicHudFactory_Package renames Standard.org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+   package NullPathFindingLayer_Package renames Standard.org.allbinary.game.layer.NullPathFindingLayer_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
    procedure Initialize_Fields (This : in out BuildingInfoHudPaintable'Class) is
    begin
       null;
@@ -68,20 +84,20 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
             y := This.y;
             firstIndex := index;
             --  Java nested class ProductivityNumberStringHud: move it to its own package
-            productivityHud := ProductivityNumberStringHud_Package.Create;
+            productivityHud := NumberStringHud_Access (ProductivityNumberStringHud_Package.Create);
             index := index + 1;
             secondIndex := index;
             --  Java nested class EfficiencyNumberStringHud: move it to its own package
-            efficiencyHud := EfficiencyNumberStringHud_Package.Create;
+            efficiencyHud := NumberStringHud_Access (EfficiencyNumberStringHud_Package.Create);
             index := index + 1;
             HEALTH := This.HEALTH;
             thirdIndex := index;
             --  Java nested class HealthNumberStringHud: move it to its own package
             totalLength := (Length (HEALTH)) + (1);
-            healthHud := HealthNumberStringHud_Package.Create;
+            healthHud := NumberStringHud_Access (HealthNumberStringHud_Package.Create);
             fourthIndex := index;
             --  Java nested class MaxHealthNumberStringHud: move it to its own package
-            maxHealthHud := MaxHealthNumberStringHud_Package.Create;
+            maxHealthHud := NumberStringHud_Access (MaxHealthNumberStringHud_Package.Create);
         exception
             when Java_Occurrence : others =>
                 declare

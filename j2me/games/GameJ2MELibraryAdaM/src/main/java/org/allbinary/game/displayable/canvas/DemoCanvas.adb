@@ -13,8 +13,145 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Command_Package; use javax.microedition.lcdui.Command_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.animation.IndexedAnimationBehavior_Package; use org.allbinary.animation.IndexedAnimationBehavior_Package;
+with org.allbinary.canvas.CustomGameMenuUtil_Package; use org.allbinary.canvas.CustomGameMenuUtil_Package;
+with org.allbinary.canvas.GameStatisticsFactory_Package; use org.allbinary.canvas.GameStatisticsFactory_Package;
+with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
+with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Package;
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+with org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package; use org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package; use org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+with org.allbinary.game.init.GameInitializationUtil_Package; use org.allbinary.game.init.GameInitializationUtil_Package;
+with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.PlatformInputMappingFactory_Package; use org.allbinary.game.input.PlatformInputMappingFactory_Package;
+with org.allbinary.game.input.event.DownGameKeyEventHandler_Package; use org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEventHandler_Package; use org.allbinary.game.input.event.GameKeyEventHandler_Package;
+with org.allbinary.game.input.event.UpGameKeyEventHandler_Package; use org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+with org.allbinary.game.layer.SWTUtil_Package; use org.allbinary.game.layer.SWTUtil_Package;
+with org.allbinary.game.midlet.DemoGameMidlet_Package; use org.allbinary.game.midlet.DemoGameMidlet_Package;
+with org.allbinary.game.score.HighScoreCommands_Package; use org.allbinary.game.score.HighScoreCommands_Package;
+with org.allbinary.game.score.HighScores_Package; use org.allbinary.game.score.HighScores_Package;
+with org.allbinary.game.score.HighScoresHelper_Package; use org.allbinary.game.score.HighScoresHelper_Package;
+with org.allbinary.game.score.NullHighScoresSingletonFactory_Package; use org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
+with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.ResizableListenerHandler_Package; use org.allbinary.graphics.ResizableListenerHandler_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package; use org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
+with org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Package; use org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Package;
+with org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Package; use org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Package;
+with org.allbinary.graphics.form.FormType_Package; use org.allbinary.graphics.form.FormType_Package;
+with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
+with org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package; use org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package;
+with org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package; use org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
+with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
+with org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package; use org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package; use org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLThreadUtil_Package; use org.allbinary.graphics.opengles.OpenGLThreadUtil_Package;
+with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graphics.paint.NullPaintable_Package;
+with org.allbinary.graphics.paint.StatePaintableFactory_Package; use org.allbinary.graphics.paint.StatePaintableFactory_Package;
+with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package; use org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+with org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package; use org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package;
+with org.allbinary.logic.system.security.licensing.LockableFeature_Package; use org.allbinary.logic.system.security.licensing.LockableFeature_Package;
+with org.allbinary.logic.system.security.licensing.LockableFeatureFactory_Package; use org.allbinary.logic.system.security.licensing.LockableFeatureFactory_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.media.audio.AllBinaryMediaManager_Package; use org.allbinary.media.audio.AllBinaryMediaManager_Package;
+with org.allbinary.media.audio.EarlySoundsFactory_Package; use org.allbinary.media.audio.EarlySoundsFactory_Package;
+with org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package; use org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
+with org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package; use org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.thread.NullThread_Package; use org.allbinary.thread.NullThread_Package;
+with org.allbinary.thread.ThreadUtil_Package; use org.allbinary.thread.ThreadUtil_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.displayable.canvas.NullGameCanvas_Package; use org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
+with org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package; use org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
+with org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package; use org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package;
+with org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package; use org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package;
+with org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package; use org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package;
+with org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package; use org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package;
+with org.allbinary.game.displayable.canvas.DemoGameRunnable_Package; use org.allbinary.game.displayable.canvas.DemoGameRunnable_Package;
+
 package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
 
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package IndexedAnimationBehavior_Package renames Standard.org.allbinary.animation.IndexedAnimationBehavior_Package;
+   package CustomGameMenuUtil_Package renames Standard.org.allbinary.canvas.CustomGameMenuUtil_Package;
+   package GameStatisticsFactory_Package renames Standard.org.allbinary.canvas.GameStatisticsFactory_Package;
+   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package ChangedGameFeatureListener_Package renames Standard.org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+   package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+   package GameInitializationUtil_Package renames Standard.org.allbinary.game.init.GameInitializationUtil_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package DownGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.GameKeyEventHandler_Package;
+   package UpGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+   package SWTUtil_Package renames Standard.org.allbinary.game.layer.SWTUtil_Package;
+   package DemoGameMidlet_Package renames Standard.org.allbinary.game.midlet.DemoGameMidlet_Package;
+   package HighScoreCommands_Package renames Standard.org.allbinary.game.score.HighScoreCommands_Package;
+   package HighScores_Package renames Standard.org.allbinary.game.score.HighScores_Package;
+   package HighScoresHelper_Package renames Standard.org.allbinary.game.score.HighScoresHelper_Package;
+   package NullHighScoresSingletonFactory_Package renames Standard.org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package ResizableListenerHandler_Package renames Standard.org.allbinary.graphics.ResizableListenerHandler_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package DisplayChangeEventHandler_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
+   package FullScreenPaintableFactory_Package renames Standard.org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Package;
+   package CommandCurrentSelectionFormFactory_Package renames Standard.org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Package;
+   package FormType_Package renames Standard.org.allbinary.graphics.form.FormType_Package;
+   package FormTypeFactory_Package renames Standard.org.allbinary.graphics.form.FormTypeFactory_Package;
+   package ScrollSelectionFormNoneFactory_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionFormNoneFactory_Package;
+   package CommandTextItemArrayFactory_Package renames Standard.org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package CurrentDisplayableFactory_Package renames Standard.org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+   package OpenGLThreadUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLThreadUtil_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package StatePaintableFactory_Package renames Standard.org.allbinary.graphics.paint.StatePaintableFactory_Package;
+   package BasicMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+   package InApplicationPurchaseFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package;
+   package LockableFeature_Package renames Standard.org.allbinary.logic.system.security.licensing.LockableFeature_Package;
+   package LockableFeatureFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.LockableFeatureFactory_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package AllBinaryMediaManager_Package renames Standard.org.allbinary.media.audio.AllBinaryMediaManager_Package;
+   package EarlySoundsFactory_Package renames Standard.org.allbinary.media.audio.EarlySoundsFactory_Package;
+   package PrimaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
+   package SecondaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package NullThread_Package renames Standard.org.allbinary.thread.NullThread_Package;
+   package ThreadUtil_Package renames Standard.org.allbinary.thread.ThreadUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    procedure Initialize_Fields (This : in out DemoCanvas'Class) is
    begin
       null;
@@ -31,7 +168,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       This.paintedSpecialAnimationInterface := SpecialAnimation_Package.getInstance;
       This.fullScreenUtil := FullScreenUtil_Package.getInstance;
       This.gameCanvas := NullGameCanvas_Package.getInstance;
-      This.highScoresHelper := HighScoresHelper_Package.Create;
+      This.highScoresHelper := HighScoresHelperBase_Access (HighScoresHelper_Package.Create);
       This.realHighScoresPaintable := HighScoresPaintable_Package.Create;
       This.highScoresPaintable := NullPaintable_Package.getInstance;
       This.state := 0;
@@ -141,7 +278,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
             commandArray := new Java_Object_Access_Array'(gameCommandsFactory.START_COMMAND, HighScoreCommands_Package.getInstance.DISPLAY, GameInputMappingCanvas_Package.DISPLAY, gameCommandsFactory.DISPLAY_ABOUT);
             return commandArray;
         else
-            commandList := BasicArrayListD_Package.Create;
+            commandList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             commandList.add (gameCommandsFactory.START_COMMAND);
             inApplicationPurchaseFactory := InApplicationPurchaseFactory_Package.getInstance;
             if inApplicationPurchaseFactory.isEnabled then
@@ -836,7 +973,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
 
    function getOverlayPaintable (This : in out DemoCanvas) return Paintable_Access is
    begin
-        return This.overlayPaintable;
+        return Paintable_Access (This.overlayPaintable);
    end getOverlayPaintable;
 
    procedure setBasicGameDemoPaintable (This : in out DemoCanvas; basicGameDemoPaintable_Param : access StatePaintable_Package.StatePaintable'Class) is

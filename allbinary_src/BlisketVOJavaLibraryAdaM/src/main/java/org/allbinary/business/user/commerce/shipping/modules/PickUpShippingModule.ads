@@ -35,8 +35,10 @@ package org.allbinary.business.user.commerce.shipping.modules.PickUpShippingModu
    type PickUpShippingModule_Access is access all PickUpShippingModule'Class;
    type PickUpShippingModule_Access_Array is array (Natural range <>) of PickUpShippingModule_Access;
    type PickUpShippingModule_Access_Array_Access is access all PickUpShippingModule_Access_Array;
+   type PickUpShippingModule_Access_Array_Access_Array is array (Natural range <>) of PickUpShippingModule_Access_Array_Access;
+   type PickUpShippingModule_Access_Array_Access_Array_Access is access all PickUpShippingModule_Access_Array_Access_Array;
 
-   type PickUpShippingModule is new ShippingInterface with record
+   type PickUpShippingModule is new Java_Object and ShippingInterface with record
       commonStrings : CommonStrings_Access;
       name : Unbounded_String;
       description : Unbounded_String;

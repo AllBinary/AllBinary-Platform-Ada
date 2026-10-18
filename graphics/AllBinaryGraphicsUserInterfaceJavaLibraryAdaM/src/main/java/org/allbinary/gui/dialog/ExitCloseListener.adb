@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.gui.dialog.ExitCloseListener_Package is
 
    procedure Initialize_Fields (This : in out ExitCloseListener'Class) is

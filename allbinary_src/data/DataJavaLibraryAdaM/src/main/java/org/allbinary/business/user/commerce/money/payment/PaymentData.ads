@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.PaymentData_Package i
    type PaymentData_Access is access all PaymentData'Class;
    type PaymentData_Access_Array is array (Natural range <>) of PaymentData_Access;
    type PaymentData_Access_Array_Access is access all PaymentData_Access_Array;
+   type PaymentData_Access_Array_Access_Array is array (Natural range <>) of PaymentData_Access_Array_Access;
+   type PaymentData_Access_Array_Access_Array_Access is access all PaymentData_Access_Array_Access_Array;
 
    type PaymentData is new Java_Object with null record;
    MIN : Integer;

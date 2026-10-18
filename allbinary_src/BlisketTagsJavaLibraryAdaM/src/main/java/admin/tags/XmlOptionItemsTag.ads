@@ -20,19 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with admin.taghelpers.XmlOptionItemsHelperFactory_Package; use admin.taghelpers.XmlOptionItemsHelperFactory_Package;
-with admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package; use admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package;
 with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.XmlOptionItemsTag_Package is
 
-   package XmlOptionItemsHelperFactory_Package renames Standard.admin.taghelpers.XmlOptionItemsHelperFactory_Package;
-   package XmlOptionItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package;
 
    type XmlOptionItemsTag is tagged;
    type XmlOptionItemsTag_Access is access all XmlOptionItemsTag'Class;
    type XmlOptionItemsTag_Access_Array is array (Natural range <>) of XmlOptionItemsTag_Access;
    type XmlOptionItemsTag_Access_Array_Access is access all XmlOptionItemsTag_Access_Array;
+   type XmlOptionItemsTag_Access_Array_Access_Array is array (Natural range <>) of XmlOptionItemsTag_Access_Array_Access;
+   type XmlOptionItemsTag_Access_Array_Access_Array_Access is access all XmlOptionItemsTag_Access_Array_Access_Array;
 
    type XmlOptionItemsTag is new TableTag with null record;
 

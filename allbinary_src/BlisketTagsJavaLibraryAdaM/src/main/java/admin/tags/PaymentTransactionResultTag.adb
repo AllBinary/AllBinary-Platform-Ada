@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.PaymentTransactionResultHelperFactory_Package; use admin.taghelpers.PaymentTransactionResultHelperFactory_Package;
+
 package body admin.tags.PaymentTransactionResultTag_Package is
 
+   package PaymentTransactionResultHelperFactory_Package renames Standard.admin.taghelpers.PaymentTransactionResultHelperFactory_Package;
    procedure Initialize_Fields (This : in out PaymentTransactionResultTag'Class) is
    begin
       null;

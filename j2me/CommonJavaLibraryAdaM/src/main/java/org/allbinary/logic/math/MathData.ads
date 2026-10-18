@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.logic.math.MathData_Package is
 
-   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type MathData is tagged;
    type MathData_Access is access all MathData'Class;
    type MathData_Access_Array is array (Natural range <>) of MathData_Access;
    type MathData_Access_Array_Access is access all MathData_Access_Array;
+   type MathData_Access_Array_Access_Array is array (Natural range <>) of MathData_Access_Array_Access;
+   type MathData_Access_Array_Access_Array_Access is access all MathData_Access_Array_Access_Array;
 
    type MathData is new Java_Object with record
       EQUALS : Unbounded_String;

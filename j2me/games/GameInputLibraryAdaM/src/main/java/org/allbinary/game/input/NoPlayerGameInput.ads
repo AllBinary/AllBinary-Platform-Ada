@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
 
 package org.allbinary.game.input.NoPlayerGameInput_Package is
 
    package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type NoPlayerGameInput is tagged;
    type NoPlayerGameInput_Access is access all NoPlayerGameInput'Class;
    type NoPlayerGameInput_Access_Array is array (Natural range <>) of NoPlayerGameInput_Access;
    type NoPlayerGameInput_Access_Array_Access is access all NoPlayerGameInput_Access_Array;
+   type NoPlayerGameInput_Access_Array_Access_Array is array (Natural range <>) of NoPlayerGameInput_Access_Array_Access;
+   type NoPlayerGameInput_Access_Array_Access_Array_Access is access all NoPlayerGameInput_Access_Array_Access_Array;
 
    type NoPlayerGameInput is new PlayerGameInput with null record;
    SINGLETON : NoPlayerGameInput_Access;

@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package; use org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package;
+
 package body org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package is
 
    procedure Initialize_Fields (This : in out PathGenerator'Class) is

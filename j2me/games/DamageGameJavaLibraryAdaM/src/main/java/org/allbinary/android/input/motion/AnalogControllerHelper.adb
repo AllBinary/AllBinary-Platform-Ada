@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package; use org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package;
+
 package body org.allbinary.android.input.motion.AnalogControllerHelper_Package is
 
    procedure Initialize_Fields (This : in out AnalogControllerHelper'Class) is

@@ -28,6 +28,8 @@ package org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
    type ExceptionUtil_Access is access all ExceptionUtil'Class;
    type ExceptionUtil_Access_Array is array (Natural range <>) of ExceptionUtil_Access;
    type ExceptionUtil_Access_Array_Access is access all ExceptionUtil_Access_Array;
+   type ExceptionUtil_Access_Array_Access_Array is array (Natural range <>) of ExceptionUtil_Access_Array_Access;
+   type ExceptionUtil_Access_Array_Access_Array_Access is access all ExceptionUtil_Access_Array_Access_Array;
 
    type ExceptionUtil is new Java_Object with record
       PRETEND_EXCEPTION : Java_Throwable;

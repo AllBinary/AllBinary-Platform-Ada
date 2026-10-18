@@ -31,6 +31,8 @@ package org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_
    type WeaponLayerArrayLayerCircularStaticPool_Access is access all WeaponLayerArrayLayerCircularStaticPool'Class;
    type WeaponLayerArrayLayerCircularStaticPool_Access_Array is array (Natural range <>) of WeaponLayerArrayLayerCircularStaticPool_Access;
    type WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access is access all WeaponLayerArrayLayerCircularStaticPool_Access_Array;
+   type WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access;
+   type WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Access is access all WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array;
 
    type WeaponLayerArrayLayerCircularStaticPool is new Java_Object with record
       MAX : Integer;

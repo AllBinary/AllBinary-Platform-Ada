@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package; use org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package;
+
 package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorFactory_Package is
 
    procedure Initialize_Fields (This : in out CustomMapGeneratorFactory'Class) is
@@ -38,7 +40,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
    function create (This : in out CustomMapGeneratorFactory; raceTrackGeographicMap_Param : access RaceTrackGeographicMap_Package.RaceTrackGeographicMap'Class) return CustomMapGeneratorBase_Access is
       raceTrackGeographicMap : constant RaceTrackGeographicMap_Access := RaceTrackGeographicMap_Access (raceTrackGeographicMap_Param);
    begin
-        return CustomMapGenerator_Package.Create (raceTrackGeographicMap);
+        return CustomMapGeneratorBase_Access (CustomMapGenerator_Package.Create (raceTrackGeographicMap));
    end create;
 
    procedure create (This : in out CustomMapGeneratorFactory; raceTrackGeographicMap_Param : access RaceTrackGeographicMap_Package.RaceTrackGeographicMap'Class) is

@@ -16,6 +16,8 @@ package org.allbinary.graph.V_Package is
    type V_Access is access all V'Class;
    type V_Access_Array is array (Natural range <>) of V_Access;
    type V_Access_Array_Access is access all V_Access_Array;
+   type V_Access_Array_Access_Array is array (Natural range <>) of V_Access_Array_Access;
+   type V_Access_Array_Access_Array_Access is access all V_Access_Array_Access_Array;
 
    type V is new Java_Object with null record;
 

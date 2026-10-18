@@ -27,8 +27,6 @@ with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game
 with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbinary.game.input.event.GameKeyEventFactory_Package;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.input.motion.gesture.MotionGestureInput_Package; use org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package; use org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package;
 
 package org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package is
 
@@ -39,12 +37,13 @@ package org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInput
    package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
    package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
    package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type GameKeyCompleteMotionGestureInputEvent is tagged;
    type GameKeyCompleteMotionGestureInputEvent_Access is access all GameKeyCompleteMotionGestureInputEvent'Class;
    type GameKeyCompleteMotionGestureInputEvent_Access_Array is array (Natural range <>) of GameKeyCompleteMotionGestureInputEvent_Access;
    type GameKeyCompleteMotionGestureInputEvent_Access_Array_Access is access all GameKeyCompleteMotionGestureInputEvent_Access_Array;
+   type GameKeyCompleteMotionGestureInputEvent_Access_Array_Access_Array is array (Natural range <>) of GameKeyCompleteMotionGestureInputEvent_Access_Array_Access;
+   type GameKeyCompleteMotionGestureInputEvent_Access_Array_Access_Array_Access is access all GameKeyCompleteMotionGestureInputEvent_Access_Array_Access_Array;
 
    type GameKeyCompleteMotionGestureInputEvent is new CompleteMotionGestureInputEvent and GameKeyEventSourceInterface with record
       gameKeyEventFactory : GameKeyEventFactory_Access;

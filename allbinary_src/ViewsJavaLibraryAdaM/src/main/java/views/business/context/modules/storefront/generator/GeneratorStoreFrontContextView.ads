@@ -21,25 +21,21 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
-with org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_Package; use org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfosData_Package; use org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
 package views.business.context.modules.storefront.generator.GeneratorStoreFrontContextView_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
-   package TransformsGeneratorUtil_Package renames Standard.org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
    package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type GeneratorStoreFrontContextView is tagged;
    type GeneratorStoreFrontContextView_Access is access all GeneratorStoreFrontContextView'Class;
    type GeneratorStoreFrontContextView_Access_Array is array (Natural range <>) of GeneratorStoreFrontContextView_Access;
    type GeneratorStoreFrontContextView_Access_Array_Access is access all GeneratorStoreFrontContextView_Access_Array;
+   type GeneratorStoreFrontContextView_Access_Array_Access_Array is array (Natural range <>) of GeneratorStoreFrontContextView_Access_Array_Access;
+   type GeneratorStoreFrontContextView_Access_Array_Access_Array_Access is access all GeneratorStoreFrontContextView_Access_Array_Access_Array;
 
    type GeneratorStoreFrontContextView is new HttpStoreComponentView with record
       logUtil : LogUtil_Access;

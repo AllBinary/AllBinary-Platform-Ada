@@ -20,30 +20,22 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 with org.allbinary.graphics.pipeline.RandomRotationFactory_Package; use org.allbinary.graphics.pipeline.RandomRotationFactory_Package;
-with org.allbinary.graphics.pipeline.RandomTranslation_Package; use org.allbinary.graphics.pipeline.RandomTranslation_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.animation.VectorExplosionType_Package; use org.allbinary.animation.VectorExplosionType_Package;
 with org.allbinary.animation.VectorAnimationUtil_Package; use org.allbinary.animation.VectorAnimationUtil_Package;
 
 package org.allbinary.animation.VectorExplosionGenerator_Package is
 
-   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package RandomRotationFactory_Package renames Standard.org.allbinary.graphics.pipeline.RandomRotationFactory_Package;
-   package RandomTranslation_Package renames Standard.org.allbinary.graphics.pipeline.RandomTranslation_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
 
    type VectorExplosionGenerator is tagged;
    type VectorExplosionGenerator_Access is access all VectorExplosionGenerator'Class;
    type VectorExplosionGenerator_Access_Array is array (Natural range <>) of VectorExplosionGenerator_Access;
    type VectorExplosionGenerator_Access_Array_Access is access all VectorExplosionGenerator_Access_Array;
+   type VectorExplosionGenerator_Access_Array_Access_Array is array (Natural range <>) of VectorExplosionGenerator_Access_Array_Access;
+   type VectorExplosionGenerator_Access_Array_Access_Array_Access is access all VectorExplosionGenerator_Access_Array_Access_Array;
 
    type VectorExplosionGenerator is new Java_Object with record
       RANDOM : VectorExplosionType_Access;

@@ -29,6 +29,8 @@ package org.allbinary.game.midlet.LicensedDemoSetupFactory_Package is
    type LicensedDemoSetupFactory_Access is access all LicensedDemoSetupFactory'Class;
    type LicensedDemoSetupFactory_Access_Array is array (Natural range <>) of LicensedDemoSetupFactory_Access;
    type LicensedDemoSetupFactory_Access_Array_Access is access all LicensedDemoSetupFactory_Access_Array;
+   type LicensedDemoSetupFactory_Access_Array_Access_Array is array (Natural range <>) of LicensedDemoSetupFactory_Access_Array_Access;
+   type LicensedDemoSetupFactory_Access_Array_Access_Array_Access is access all LicensedDemoSetupFactory_Access_Array_Access_Array;
 
    type LicensedDemoSetupFactory is new Java_Object with null record;
 

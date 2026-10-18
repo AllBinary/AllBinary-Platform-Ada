@@ -29,6 +29,8 @@ package org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Pack
    type CollidableBaseBehaviorFactoryInterface_Access is access all CollidableBaseBehaviorFactoryInterface'Class;
    type CollidableBaseBehaviorFactoryInterface_Access_Array is array (Natural range <>) of CollidableBaseBehaviorFactoryInterface_Access;
    type CollidableBaseBehaviorFactoryInterface_Access_Array_Access is access all CollidableBaseBehaviorFactoryInterface_Access_Array;
+   type CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of CollidableBaseBehaviorFactoryInterface_Access_Array_Access;
+   type CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array_Access is access all CollidableBaseBehaviorFactoryInterface_Access_Array_Access_Array;
    function createBehavior (This : in out CollidableBaseBehaviorFactoryInterface) return CollidableBaseBehavior_Access is abstract;
 
 end org.allbinary.game.collision.CollidableBaseBehaviorFactoryInterface_Package;

@@ -21,20 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
-with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package; use org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;
 
 package org.allbinary.physics.movement.NoBasicConstantVelocityMovement_Package is
 
    package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
-   package BasicVelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type NoBasicConstantVelocityMovement is tagged;
    type NoBasicConstantVelocityMovement_Access is access all NoBasicConstantVelocityMovement'Class;
    type NoBasicConstantVelocityMovement_Access_Array is array (Natural range <>) of NoBasicConstantVelocityMovement_Access;
    type NoBasicConstantVelocityMovement_Access_Array_Access is access all NoBasicConstantVelocityMovement_Access_Array;
+   type NoBasicConstantVelocityMovement_Access_Array_Access_Array is array (Natural range <>) of NoBasicConstantVelocityMovement_Access_Array_Access;
+   type NoBasicConstantVelocityMovement_Access_Array_Access_Array_Access is access all NoBasicConstantVelocityMovement_Access_Array_Access_Array;
 
    type NoBasicConstantVelocityMovement is new BasicConstantVelocityMovement with null record;
 

@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package; use org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package;
-with org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package; use org.allbinary.logic.visual.dhtml.html.input.HtmlInputData_Package;
 
 package org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlSubmitInput_Package is
    type HtmlSubmitInput_Access is access all HtmlSubmitInput'Class;
    type HtmlSubmitInput_Access_Array is array (Natural range <>) of HtmlSubmitInput_Access;
    type HtmlSubmitInput_Access_Array_Access is access all HtmlSubmitInput_Access_Array;
+   type HtmlSubmitInput_Access_Array_Access_Array is array (Natural range <>) of HtmlSubmitInput_Access_Array_Access;
+   type HtmlSubmitInput_Access_Array_Access_Array_Access is access all HtmlSubmitInput_Access_Array_Access_Array;
 
    type HtmlSubmitInput is new HtmlValueInput with null record;
 

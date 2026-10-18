@@ -13,6 +13,9 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.animation.TimedVectorAnimation_Package; use org.allbinary.animation.TimedVectorAnimation_Package;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+
 package body org.allbinary.animation.TimedVectorAnimationFactory_Package is
 
    procedure Initialize_Fields (This : in out TimedVectorAnimationFactory'Class) is
@@ -36,7 +39,7 @@ package body org.allbinary.animation.TimedVectorAnimationFactory_Package is
    function getInstance (This : in out TimedVectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class) return VectorAnimation_Access is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
-        return TimedVectorAnimation_Package.Create (points, basicColor, AnimationBehavior_Package.getInstance);
+        return VectorAnimation_Access (TimedVectorAnimation_Package.Create (points, basicColor, AnimationBehavior_Package.getInstance));
    end getInstance;
 
    procedure getInstance (This : in out TimedVectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class) is

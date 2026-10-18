@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.view.NullEmulatorView_Package is
 
    procedure Initialize_Fields (This : in out NullEmulatorView'Class) is
@@ -50,6 +51,11 @@ package body org.allbinary.view.NullEmulatorView_Package is
    begin
         null;
    end onSetDisplayable;
+
+   procedure onEmulatorInitComplete (This : in out NullEmulatorView; Value : Unbounded_String) is
+   begin
+      NullEmulatorView'Class (This).onEmulatorInitComplete (Java_Box (Value));
+   end onEmulatorInitComplete;
 
 begin
    null;

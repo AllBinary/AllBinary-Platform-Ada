@@ -21,9 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
-with org.allbinary.logic.io.AbFileOutputStream_Package; use org.allbinary.logic.io.AbFileOutputStream_Package;
 with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
-with org.allbinary.logic.io.FileStreamFactory_Package; use org.allbinary.logic.io.FileStreamFactory_Package;
 
 package org.allbinary.logic.io.DataOutputStreamFactory_Package is
 
@@ -33,6 +31,8 @@ package org.allbinary.logic.io.DataOutputStreamFactory_Package is
    type DataOutputStreamFactory_Access is access all DataOutputStreamFactory'Class;
    type DataOutputStreamFactory_Access_Array is array (Natural range <>) of DataOutputStreamFactory_Access;
    type DataOutputStreamFactory_Access_Array_Access is access all DataOutputStreamFactory_Access_Array;
+   type DataOutputStreamFactory_Access_Array_Access_Array is array (Natural range <>) of DataOutputStreamFactory_Access_Array_Access;
+   type DataOutputStreamFactory_Access_Array_Access_Array_Access is access all DataOutputStreamFactory_Access_Array_Access_Array;
 
    type DataOutputStreamFactory is new Java_Object with null record;
    instance : DataOutputStreamFactory_Access;

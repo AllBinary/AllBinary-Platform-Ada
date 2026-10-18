@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package is
@@ -34,8 +33,10 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_
    type TransformInfoHttpStoreFactory_Access is access all TransformInfoHttpStoreFactory'Class;
    type TransformInfoHttpStoreFactory_Access_Array is array (Natural range <>) of TransformInfoHttpStoreFactory_Access;
    type TransformInfoHttpStoreFactory_Access_Array_Access is access all TransformInfoHttpStoreFactory_Access_Array;
+   type TransformInfoHttpStoreFactory_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHttpStoreFactory_Access_Array_Access;
+   type TransformInfoHttpStoreFactory_Access_Array_Access_Array_Access is access all TransformInfoHttpStoreFactory_Access_Array_Access_Array;
 
-   type TransformInfoHttpStoreFactory is new TransformInfoFactoryInterface with null record;
+   type TransformInfoHttpStoreFactory is new Java_Object and TransformInfoFactoryInterface with null record;
    instance : TransformInfoHttpStoreFactory_Access;
 
    procedure Initialize (This : in out TransformInfoHttpStoreFactory'Class);

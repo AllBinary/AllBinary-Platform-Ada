@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.system.os.OperatingSystemInterface_Package; use org.allbinary.logic.system.os.OperatingSystemInterface_Package;
-with org.allbinary.logic.system.hardware.NoHardware_Package; use org.allbinary.logic.system.hardware.NoHardware_Package;
 with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allbinary.logic.system.hardware.HardwareInterface_Package;
 
 package org.allbinary.logic.system.hardware.HardwareFactory_Package is
@@ -32,6 +31,8 @@ package org.allbinary.logic.system.hardware.HardwareFactory_Package is
    type HardwareFactory_Access is access all HardwareFactory'Class;
    type HardwareFactory_Access_Array is array (Natural range <>) of HardwareFactory_Access;
    type HardwareFactory_Access_Array_Access is access all HardwareFactory_Access_Array;
+   type HardwareFactory_Access_Array_Access_Array is array (Natural range <>) of HardwareFactory_Access_Array_Access;
+   type HardwareFactory_Access_Array_Access_Array_Access is access all HardwareFactory_Access_Array_Access_Array;
 
    type HardwareFactory is new Java_Object with record
       SINGLETON : HardwareInterface_Access;

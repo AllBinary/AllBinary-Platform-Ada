@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
+with org.allbinary.data.tree.dom.StoreUriResolver_Package; use org.allbinary.data.tree.dom.StoreUriResolver_Package;
+with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+with views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package; use views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package;
+
 package body views.compound.CompoundTransform_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package BasicUriResolver_Package renames Standard.org.allbinary.data.tree.dom.BasicUriResolver_Package;
+   package StoreUriResolver_Package renames Standard.org.allbinary.data.tree.dom.StoreUriResolver_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package CompoundContextTransformInfoObjectConfig_Package renames Standard.views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package;
    procedure Initialize_Fields (This : in out CompoundTransform'Class) is
    begin
       null;

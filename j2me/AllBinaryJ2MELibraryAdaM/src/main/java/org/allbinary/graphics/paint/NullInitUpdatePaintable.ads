@@ -29,6 +29,8 @@ package org.allbinary.graphics.paint.NullInitUpdatePaintable_Package is
    type NullInitUpdatePaintable_Access is access all NullInitUpdatePaintable'Class;
    type NullInitUpdatePaintable_Access_Array is array (Natural range <>) of NullInitUpdatePaintable_Access;
    type NullInitUpdatePaintable_Access_Array_Access is access all NullInitUpdatePaintable_Access_Array;
+   type NullInitUpdatePaintable_Access_Array_Access_Array is array (Natural range <>) of NullInitUpdatePaintable_Access_Array_Access;
+   type NullInitUpdatePaintable_Access_Array_Access_Array_Access is access all NullInitUpdatePaintable_Access_Array_Access_Array;
 
    type NullInitUpdatePaintable is new InitUpdatePaintable with null record;
    SINGLETON : NullInitUpdatePaintable_Access;

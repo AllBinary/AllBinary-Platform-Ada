@@ -21,25 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.io.LineReader_Package; use org.allbinary.logic.io.LineReader_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package; use org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
 
 package org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package LineReader_Package renames Standard.org.allbinary.logic.io.LineReader_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package HtmlTag_Package renames Standard.org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
 
    type HtmlSelect is tagged;
    type HtmlSelect_Access is access all HtmlSelect'Class;
    type HtmlSelect_Access_Array is array (Natural range <>) of HtmlSelect_Access;
    type HtmlSelect_Access_Array_Access is access all HtmlSelect_Access_Array;
+   type HtmlSelect_Access_Array_Access_Array is array (Natural range <>) of HtmlSelect_Access_Array_Access;
+   type HtmlSelect_Access_Array_Access_Array_Access is access all HtmlSelect_Access_Array_Access_Array;
 
    type HtmlSelect is new HtmlTag with record
       END_Id : Unbounded_String;
@@ -60,8 +54,8 @@ package org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package is
       isMultipleSelect : Boolean;
    end record;
 
-   procedure Initialize (This : in out HtmlSelect'Class; before : Unbounded_String; size_Case : Unbounded_String; name_Case : Unbounded_String; after : Unbounded_String);
-   function Create (before : Unbounded_String; size_Case : Unbounded_String; name_Case : Unbounded_String; after : Unbounded_String) return HtmlSelect_Access;
+   procedure Initialize (This : in out HtmlSelect'Class; before : Unbounded_String; size : Unbounded_String; name : Unbounded_String; after : Unbounded_String);
+   function Create (before : Unbounded_String; size : Unbounded_String; name : Unbounded_String; after : Unbounded_String) return HtmlSelect_Access;
    procedure addOption (This : in out HtmlSelect; key : Unbounded_String);
    procedure addOptions (This : in out HtmlSelect; fileName : Unbounded_String);
    procedure setSelected (This : in out HtmlSelect; selected : Unbounded_String);

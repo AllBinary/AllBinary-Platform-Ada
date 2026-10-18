@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package; use org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Package;
+
 package body org.allbinary.input.motion.button.TouchButtonsBuilderFactory_Package is
 
    procedure Initialize_Fields (This : in out TouchButtonsBuilderFactory'Class) is

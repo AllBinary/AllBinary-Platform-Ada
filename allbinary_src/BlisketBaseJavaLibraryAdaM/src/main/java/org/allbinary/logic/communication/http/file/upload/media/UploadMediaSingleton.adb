@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.visual.media.MediaData_Package; use org.allbinary.logic.visual.media.MediaData_Package;
+with org.allbinary.logic.visual.media.MediaIOUtil_Package; use org.allbinary.logic.visual.media.MediaIOUtil_Package;
+with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.logic.visual.media.MediaTypeData_Package;
+
 package body org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package is
 
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package MediaData_Package renames Standard.org.allbinary.logic.visual.media.MediaData_Package;
+   package MediaIOUtil_Package renames Standard.org.allbinary.logic.visual.media.MediaIOUtil_Package;
+   package MediaTypeData_Package renames Standard.org.allbinary.logic.visual.media.MediaTypeData_Package;
    procedure Initialize_Fields (This : in out UploadMediaSingleton'Class) is
    begin
       null;

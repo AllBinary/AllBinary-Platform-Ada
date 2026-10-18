@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.ShippingHelperFactory_Package; use admin.taghelpers.ShippingHelperFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+
 package body admin.tags.ShippingTag_Package is
 
+   package ShippingHelperFactory_Package renames Standard.admin.taghelpers.ShippingHelperFactory_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    procedure Initialize_Fields (This : in out ShippingTag'Class) is
    begin
       null;
@@ -81,7 +92,7 @@ package body admin.tags.ShippingTag_Package is
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
                 This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
                 if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.SETSHIPPINGTYPE)) = (0) then
-                    ShippingTag'Class (This).setShippingType;
+                    declare Java_Result renames ShippingTag'Class (This).setShippingType; pragma Unreferenced (Java_Result); begin null; end;
                 end if;
             end if;
             return SKIP_BODY;

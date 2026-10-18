@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
+
 package body org.allbinary.math.AngleIncrementInfoFactory_Package is
 
    procedure Initialize_Fields (This : in out AngleIncrementInfoFactory'Class) is

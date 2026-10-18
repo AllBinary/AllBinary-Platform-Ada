@@ -21,25 +21,23 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package; use org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
 with org.allbinary.animation.VectorExplosionGenerator_Package; use org.allbinary.animation.VectorExplosionGenerator_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
-with org.allbinary.animation.VectorAnimationInterface_Package; use org.allbinary.animation.VectorAnimationInterface_Package;
-with org.allbinary.animation.VectorRotationAnimation_Package; use org.allbinary.animation.VectorRotationAnimation_Package;
 with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
 
 package org.allbinary.animation.VectorExplosionAnimationFactory_Package is
 
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
 
    type VectorExplosionAnimationFactory is tagged;
    type VectorExplosionAnimationFactory_Access is access all VectorExplosionAnimationFactory'Class;
    type VectorExplosionAnimationFactory_Access_Array is array (Natural range <>) of VectorExplosionAnimationFactory_Access;
    type VectorExplosionAnimationFactory_Access_Array_Access is access all VectorExplosionAnimationFactory_Access_Array;
+   type VectorExplosionAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of VectorExplosionAnimationFactory_Access_Array_Access;
+   type VectorExplosionAnimationFactory_Access_Array_Access_Array_Access is access all VectorExplosionAnimationFactory_Access_Array_Access_Array;
 
-   type VectorExplosionAnimationFactory is new ProceduralAnimationInterfaceFactoryInterface with record
+   type VectorExplosionAnimationFactory is new Java_Object and ProceduralAnimationInterfaceFactoryInterface with record
       vectorExplosionGenerator : VectorExplosionGenerator_Access;
       basicColor : BasicColor_Access;
       animationBehaviorFactory : AnimationBehaviorFactory_Access;

@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.graphics.form.item.ABCustomItem_Package;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.form.FormTypeFactory_Package; use org.allbinary.graphics.form.FormTypeFactory_Package;
 with org.allbinary.graphics.form.ItemPaintableFactory_Package; use org.allbinary.graphics.form.ItemPaintableFactory_Package;
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
@@ -32,7 +31,6 @@ package org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package
    package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
    package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package FormTypeFactory_Package renames Standard.org.allbinary.graphics.form.FormTypeFactory_Package;
    package ItemPaintableFactory_Package renames Standard.org.allbinary.graphics.form.ItemPaintableFactory_Package;
    package ScrollCurrentSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
@@ -40,6 +38,8 @@ package org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package
    type PreGameScrollSelectionForm_Access is access all PreGameScrollSelectionForm'Class;
    type PreGameScrollSelectionForm_Access_Array is array (Natural range <>) of PreGameScrollSelectionForm_Access;
    type PreGameScrollSelectionForm_Access_Array_Access is access all PreGameScrollSelectionForm_Access_Array;
+   type PreGameScrollSelectionForm_Access_Array_Access_Array is array (Natural range <>) of PreGameScrollSelectionForm_Access_Array_Access;
+   type PreGameScrollSelectionForm_Access_Array_Access_Array_Access is access all PreGameScrollSelectionForm_Access_Array_Access_Array;
 
    type PreGameScrollSelectionForm is new ScrollCurrentSelectionForm with null record;
 

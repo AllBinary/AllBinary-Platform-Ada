@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package org.allbinary.animation.VectorAnimationUtil_Package is
 
-   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type VectorAnimationUtil is tagged;
    type VectorAnimationUtil_Access is access all VectorAnimationUtil'Class;
    type VectorAnimationUtil_Access_Array is array (Natural range <>) of VectorAnimationUtil_Access;
    type VectorAnimationUtil_Access_Array_Access is access all VectorAnimationUtil_Access_Array;
+   type VectorAnimationUtil_Access_Array_Access_Array is array (Natural range <>) of VectorAnimationUtil_Access_Array_Access;
+   type VectorAnimationUtil_Access_Array_Access_Array_Access is access all VectorAnimationUtil_Access_Array_Access_Array;
 
    type VectorAnimationUtil is new Java_Object with null record;
    instance : VectorAnimationUtil_Access;

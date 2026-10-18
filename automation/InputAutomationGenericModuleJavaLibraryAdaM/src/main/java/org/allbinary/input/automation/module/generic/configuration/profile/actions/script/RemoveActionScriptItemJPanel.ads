@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package; use org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
-with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.Panel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.Panel_Package;
@@ -29,7 +28,6 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.acti
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.RemoveActionScriptItemJPanel_Package is
 
    package ProfileActionScriptConditionInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
-   package GenericProfileAction_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
    package GenericProfileActionJPanel_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
@@ -37,6 +35,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    type RemoveActionScriptItemJPanel_Access is access all RemoveActionScriptItemJPanel'Class;
    type RemoveActionScriptItemJPanel_Access_Array is array (Natural range <>) of RemoveActionScriptItemJPanel_Access;
    type RemoveActionScriptItemJPanel_Access_Array_Access is access all RemoveActionScriptItemJPanel_Access_Array;
+   type RemoveActionScriptItemJPanel_Access_Array_Access_Array is array (Natural range <>) of RemoveActionScriptItemJPanel_Access_Array_Access;
+   type RemoveActionScriptItemJPanel_Access_Array_Access_Array_Access is access all RemoveActionScriptItemJPanel_Access_Array_Access_Array;
 
    type RemoveActionScriptItemJPanel is new Panel with record
       logUtil : LogUtil_Access;

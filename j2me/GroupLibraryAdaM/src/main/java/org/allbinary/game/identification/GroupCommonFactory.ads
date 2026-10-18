@@ -20,18 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
 package org.allbinary.game.identification.GroupCommonFactory_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type GroupCommonFactory is tagged;
    type GroupCommonFactory_Access is access all GroupCommonFactory'Class;
    type GroupCommonFactory_Access_Array is array (Natural range <>) of GroupCommonFactory_Access;
    type GroupCommonFactory_Access_Array_Access is access all GroupCommonFactory_Access_Array;
+   type GroupCommonFactory_Access_Array_Access_Array is array (Natural range <>) of GroupCommonFactory_Access_Array_Access;
+   type GroupCommonFactory_Access_Array_Access_Array_Access is access all GroupCommonFactory_Access_Array_Access_Array;
 
    type GroupCommonFactory is new Java_Object with record
       ID : Integer;

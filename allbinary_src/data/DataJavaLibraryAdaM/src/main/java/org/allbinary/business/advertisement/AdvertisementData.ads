@@ -28,6 +28,8 @@ package org.allbinary.business.advertisement.AdvertisementData_Package is
    type AdvertisementData_Access is access all AdvertisementData'Class;
    type AdvertisementData_Access_Array is array (Natural range <>) of AdvertisementData_Access;
    type AdvertisementData_Access_Array_Access is access all AdvertisementData_Access_Array;
+   type AdvertisementData_Access_Array_Access_Array is array (Natural range <>) of AdvertisementData_Access_Array_Access;
+   type AdvertisementData_Access_Array_Access_Array_Access is access all AdvertisementData_Access_Array_Access_Array;
 
    type AdvertisementData is new Java_Object with record
       NAME : Unbounded_String;

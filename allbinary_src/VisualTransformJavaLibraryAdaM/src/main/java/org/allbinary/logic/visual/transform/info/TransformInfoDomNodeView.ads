@@ -21,26 +21,23 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.w3c.dom.Attr_Package; use org.w3c.dom.Attr_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.w3c.dom.NamedNodeMap_Package; use org.w3c.dom.NamedNodeMap_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package; use org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_Package is
 
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package Attr_Package renames Standard.org.w3c.dom.Attr_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
-   package NamedNodeMap_Package renames Standard.org.w3c.dom.NamedNodeMap_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type TransformInfoDomNodeView is tagged;
    type TransformInfoDomNodeView_Access is access all TransformInfoDomNodeView'Class;
    type TransformInfoDomNodeView_Access_Array is array (Natural range <>) of TransformInfoDomNodeView_Access;
    type TransformInfoDomNodeView_Access_Array_Access is access all TransformInfoDomNodeView_Access_Array;
+   type TransformInfoDomNodeView_Access_Array_Access_Array is array (Natural range <>) of TransformInfoDomNodeView_Access_Array_Access;
+   type TransformInfoDomNodeView_Access_Array_Access_Array_Access is access all TransformInfoDomNodeView_Access_Array_Access_Array;
 
    type TransformInfoDomNodeView is new TransformInfoDomNode and DomNodeInterface with null record;
 

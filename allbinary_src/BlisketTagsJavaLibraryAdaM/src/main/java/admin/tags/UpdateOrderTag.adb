@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.UpdateOrderHelperFactory_Package; use admin.taghelpers.UpdateOrderHelperFactory_Package;
+
 package body admin.tags.UpdateOrderTag_Package is
 
+   package UpdateOrderHelperFactory_Package renames Standard.admin.taghelpers.UpdateOrderHelperFactory_Package;
    procedure Initialize_Fields (This : in out UpdateOrderTag'Class) is
    begin
       null;

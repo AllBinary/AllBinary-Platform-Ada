@@ -13,8 +13,19 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.data.tree.dom.document.DomDocumentHelper_Package; use org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package;
+
 package body org.allbinary.business.advertisement.area.AdvertisementArea_Package is
 
+   package AdvertisementCampaignData_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
    procedure Initialize_Fields (This : in out AdvertisementArea'Class) is
    begin
       null;
@@ -37,7 +48,7 @@ package body org.allbinary.business.advertisement.area.AdvertisementArea_Package
         This.description := Java_Unbox (hashMap.get (AdvertisementAreaData_Package.getInstance.DESCRIPTION));
         constraintsDomString := Java_Unbox (hashMap.get (AdvertisementAreaData_Package.getInstance.CONSTRAINTS));
         document := DomDocumentHelper_Package.create (constraintsDomString);
-        This.advertisementAreaConstraintsInterface := AdvertisementAreaConstraints_Package.Create (document);
+        This.advertisementAreaConstraintsInterface := AdvertisementAreaConstraintsInterface_Access (AdvertisementAreaConstraints_Package.Create (document));
         This.campaign := Java_Unbox (hashMap.get (AdvertisementCampaignData_Package.getInstance.NAME));
    end Initialize;
 

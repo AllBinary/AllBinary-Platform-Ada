@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.graphics.form.ItemIndexDx_Package is
 
    procedure Initialize_Fields (This : in out ItemIndexDx'Class) is

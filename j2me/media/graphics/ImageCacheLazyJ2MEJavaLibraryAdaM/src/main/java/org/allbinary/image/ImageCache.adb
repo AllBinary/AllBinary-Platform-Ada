@@ -13,28 +13,58 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.canvas.ABToGBUtil_Package; use org.allbinary.game.canvas.ABToGBUtil_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.gd.resource.GDLazyResources_Package; use org.allbinary.game.gd.resource.GDLazyResources_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
+with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package; use org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+
 package body org.allbinary.image.ImageCache_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ABToGBUtil_Package renames Standard.org.allbinary.game.canvas.ABToGBUtil_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package GDLazyResources_Package renames Standard.org.allbinary.game.gd.resource.GDLazyResources_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
+   package ConcurrentImageLoadingProcessor_Package renames Standard.org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    procedure Initialize_Fields (This : in out ImageCache'Class) is
    begin
       null;
       This.tsUtil := TsUtil_Package.getInstance;
-      This.concurrentImageLoadingProcessor := ConcurrentImageLoadingProcessor_Package.Create (ImageCache_Access'(This'Unchecked_Access));
+      This.concurrentImageLoadingProcessor := BaseImageLoadingProcessor_Access (ConcurrentImageLoadingProcessor_Package.Create (ImageCache_Access'(This'Unchecked_Access)));
       This.commonStrings := CommonStrings_Package.getInstance;
       This.commonSeps := CommonSeps_Package.getInstance;
       This.resourceUtil := ResourceUtil_Package.getInstance;
       This.gameGlobalsFactory := GameGlobalsFactory_Package.getInstance;
       This.gdResources := GDResources_Package.getInstance;
-      This.loadNowList := BasicArrayListD_Package.Create;
-      This.loadSoonList := BasicArrayListD_Package.Create;
-      This.loadList := BasicArrayListD_Package.Create;
-      This.loadAfterList := BasicArrayListD_Package.Create;
+      This.loadNowList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.loadSoonList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.loadList := BasicArrayList_Access (BasicArrayListD_Package.Create);
+      This.loadAfterList := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.lock := SynchObject_Package.Create;
       This.firstTime := True;
       This.totalLoaded := 0;
       This.progressEnded_Field := False;
       This.hasAnyLazyAnimationFactories := False;
-      This.processor := FirstProcessor_Package.Create;
+      This.processor := Processor_Access (FirstProcessor_Package.Create);
       This.endProcessor := Processor_Package.getInstance;
       This.LOAD_IMAGE_FOR_ANIMATION := To_Unbounded_String ("Load Image Animation");
    end Initialize_Fields;
@@ -62,10 +92,10 @@ package body org.allbinary.image.ImageCache_Package is
         isHTML := J2MEUtil_Package.isHTML;
         if isHTML then
             This.processor := Processor_Package.getInstance;
-            This.endProcessor := HTMLEndProcessor_Package.Create;
+            This.endProcessor := Processor_Access (HTMLEndProcessor_Package.Create);
         else
-            This.processor := NotHTMLProcessor_Package.Create;
-            This.endProcessor := NotHTMLEndProcessor_Package.Create;
+            This.processor := Processor_Access (NotHTMLProcessor_Package.Create);
+            This.endProcessor := Processor_Access (NotHTMLEndProcessor_Package.Create);
             begin
                 ImageCache'Class (This).runTask;
             exception
@@ -125,13 +155,13 @@ package body org.allbinary.image.ImageCache_Package is
                     else
                         lazyImageRotationAnimation := LazyImageRotationAnimation_Access (This.loadAfterList.get (0));
                         if ImageCache'Class (This).loadImageForLazyAnimation (lazyImageRotationAnimation) then
-                            This.loadAfterList.remove (lazyImageRotationAnimation);
+                            This.loadAfterList.remove (Java_Object_Access (lazyImageRotationAnimation));
                         end if;
                     end if;
                 else
                     lazyImageRotationAnimation := LazyImageRotationAnimation_Access (This.loadSoonList.get (0));
                     if ImageCache'Class (This).loadImageForLazyAnimation (lazyImageRotationAnimation) then
-                        This.loadSoonList.remove (lazyImageRotationAnimation);
+                        This.loadSoonList.remove (Java_Object_Access (lazyImageRotationAnimation));
                     end if;
                 end if;
                 return;
@@ -140,7 +170,7 @@ package body org.allbinary.image.ImageCache_Package is
         end;
         if ImageCache'Class (This).loadImageForLazyAnimation (lazyImageRotationAnimation) then
             begin  --  synchronized
-                This.loadNowList.remove (lazyImageRotationAnimation);
+                This.loadNowList.remove (Java_Object_Access (lazyImageRotationAnimation));
             end;
             if (lazyImageRotationAnimation.layoutIndex) /= (0) then
                 list := ImageCache'Class (This).getAssociated (lazyImageRotationAnimation);
@@ -378,7 +408,7 @@ package body org.allbinary.image.ImageCache_Package is
         height := gdLazyResources.imageResourceHeightArray (index);
         image := ImageCache'Class (This).createImageLater (key, width, height);
         begin  --  synchronized
-            This.loadList.add (image);
+            This.loadList.add (Java_Object_Access (image));
         end;
         return image;
    end createImageFromInputStream;
@@ -397,14 +427,14 @@ package body org.allbinary.image.ImageCache_Package is
       index : Integer;
       size2 : Integer;
    begin
-        list := BasicArrayListD_Package.Create;
+        list := BasicArrayList_Access (BasicArrayListD_Package.Create);
         begin  --  synchronized
             lazyImageRotationAnimation2 := null;
             size := This.loadAfterList.size;
             for index in 0 .. (size) - 1 loop
                 lazyImageRotationAnimation2 := LazyImageRotationAnimation_Access (This.loadAfterList.get (index));
                 if (lazyImageRotationAnimation2.instanceId) = (lazyImageRotationAnimation.instanceId) then
-                    list.add (lazyImageRotationAnimation2);
+                    list.add (Java_Object_Access (lazyImageRotationAnimation2));
                 end if;
             end loop;
             size2 := list.size;
@@ -419,7 +449,7 @@ package body org.allbinary.image.ImageCache_Package is
       lazyImageRotationAnimation : constant LazyImageRotationAnimation_Access := LazyImageRotationAnimation_Access (lazyImageRotationAnimation_Param);
    begin
         begin  --  synchronized
-            This.loadAfterList.add (lazyImageRotationAnimation);
+            This.loadAfterList.add (Java_Object_Access (lazyImageRotationAnimation));
         end;
    end add;
 
@@ -427,12 +457,12 @@ package body org.allbinary.image.ImageCache_Package is
    procedure insertFirst (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation_Package.LazyImageRotationAnimation'Class) is
       lazyImageRotationAnimation : constant LazyImageRotationAnimation_Access := LazyImageRotationAnimation_Access (lazyImageRotationAnimation_Param);
    begin
-        if This.loadNowList.contains (lazyImageRotationAnimation) then
+        if This.loadNowList.contains (Java_Object_Access (lazyImageRotationAnimation)) then
             null;
         else
             begin  --  synchronized
-                This.loadNowList.add (lazyImageRotationAnimation);
-                This.loadAfterList.remove (lazyImageRotationAnimation);
+                This.loadNowList.add (Java_Object_Access (lazyImageRotationAnimation));
+                This.loadAfterList.remove (Java_Object_Access (lazyImageRotationAnimation));
             end;
         end if;
         ImageCache'Class (This).runTask;
@@ -524,6 +554,35 @@ package body org.allbinary.image.ImageCache_Package is
       null;
    end getAssociated;
 
+   procedure addListener (This : in out ImageCache; Value : Unbounded_String) is
+   begin
+      ImageCache'Class (This).addListener (Java_Box (Value));
+   end addListener;
+
+   function getWithKey (This : in out ImageCache; Value : Unbounded_String) return Image_Access is
+   begin
+      return ImageCache'Class (This).getWithKey (Java_Box (Value));
+   end getWithKey;
+
+   procedure getWithKey (This : in out ImageCache; Value : Unbounded_String) is
+      Java_Result : constant Image_Access := ImageCache'Class (This).getWithKey (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getWithKey;
+
+   function getIndex (This : in out ImageCache; Value : Unbounded_String) return Integer is
+   begin
+      return ImageCache'Class (This).getIndex (Java_Box (Value));
+   end getIndex;
+
+   procedure getIndex (This : in out ImageCache; Value : Unbounded_String) is
+      Java_Result : constant Integer := ImageCache'Class (This).getIndex (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getIndex;
+
 begin
    null;
    NULL_IMAGE_CACHE := ImageCache_Package.Create;
@@ -531,8 +590,38 @@ begin
 end org.allbinary.image.ImageCache_Package;
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.canvas.ABToGBUtil_Package; use org.allbinary.game.canvas.ABToGBUtil_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.gd.resource.GDLazyResources_Package; use org.allbinary.game.gd.resource.GDLazyResources_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
+with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package; use org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+
 package body org.allbinary.image.NotHTMLProcessor_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ABToGBUtil_Package renames Standard.org.allbinary.game.canvas.ABToGBUtil_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package GDLazyResources_Package renames Standard.org.allbinary.game.gd.resource.GDLazyResources_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
+   package ConcurrentImageLoadingProcessor_Package renames Standard.org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    procedure Initialize_Fields (This : in out NotHTMLProcessor'Class) is
    begin
       null;
@@ -560,8 +649,38 @@ package body org.allbinary.image.NotHTMLProcessor_Package is
 end org.allbinary.image.NotHTMLProcessor_Package;
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.canvas.ABToGBUtil_Package; use org.allbinary.game.canvas.ABToGBUtil_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.gd.resource.GDLazyResources_Package; use org.allbinary.game.gd.resource.GDLazyResources_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
+with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package; use org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+
 package body org.allbinary.image.NotHTMLEndProcessor_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ABToGBUtil_Package renames Standard.org.allbinary.game.canvas.ABToGBUtil_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package GDLazyResources_Package renames Standard.org.allbinary.game.gd.resource.GDLazyResources_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
+   package ConcurrentImageLoadingProcessor_Package renames Standard.org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    procedure Initialize_Fields (This : in out NotHTMLEndProcessor'Class) is
    begin
       null;
@@ -591,8 +710,38 @@ package body org.allbinary.image.NotHTMLEndProcessor_Package is
 end org.allbinary.image.NotHTMLEndProcessor_Package;
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.canvas.ABToGBUtil_Package; use org.allbinary.game.canvas.ABToGBUtil_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.gd.resource.GDLazyResources_Package; use org.allbinary.game.gd.resource.GDLazyResources_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
+with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package; use org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+
 package body org.allbinary.image.HTMLEndProcessor_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ABToGBUtil_Package renames Standard.org.allbinary.game.canvas.ABToGBUtil_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package GDLazyResources_Package renames Standard.org.allbinary.game.gd.resource.GDLazyResources_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
+   package ConcurrentImageLoadingProcessor_Package renames Standard.org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    procedure Initialize_Fields (This : in out HTMLEndProcessor'Class) is
    begin
       null;
@@ -623,15 +772,45 @@ package body org.allbinary.image.HTMLEndProcessor_Package is
             elsif (This.totalLoaded) > ((size) / (12)) then
                 progressCanvas := ProgressCanvasFactory_Package.getInstance;
                 progressCanvas.endIfPaintedSinceStart;
-                This.endProcessor := NotHTMLEndProcessor_Package.Create;
+                This.endProcessor := Processor_Access (NotHTMLEndProcessor_Package.Create);
             end if;
    end process;
 
 end org.allbinary.image.HTMLEndProcessor_Package;
 
 
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.game.canvas.ABToGBUtil_Package; use org.allbinary.game.canvas.ABToGBUtil_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with org.allbinary.game.gd.resource.GDLazyResources_Package; use org.allbinary.game.gd.resource.GDLazyResources_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+with org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
+with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package; use org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.image.ImageFactory_Package; use org.allbinary.image.ImageFactory_Package;
+
 package body org.allbinary.image.FirstProcessor_Package is
 
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ABToGBUtil_Package renames Standard.org.allbinary.game.canvas.ABToGBUtil_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package GDLazyResources_Package renames Standard.org.allbinary.game.gd.resource.GDLazyResources_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
+   package ConcurrentImageLoadingProcessor_Package renames Standard.org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    procedure Initialize_Fields (This : in out FirstProcessor'Class) is
    begin
       null;

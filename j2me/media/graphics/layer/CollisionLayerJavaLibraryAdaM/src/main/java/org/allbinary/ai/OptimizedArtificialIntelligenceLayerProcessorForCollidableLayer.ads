@@ -20,15 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.CollidableCompositeLayer_Package; use org.allbinary.game.layer.CollidableCompositeLayer_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerProcessor_Package;
-with org.allbinary.ai.OptimizedArtificialIntelligenceLayerManager_Package; use org.allbinary.ai.OptimizedArtificialIntelligenceLayerManager_Package;
 
 package org.allbinary.ai.OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Package is
 
-   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package LayerProcessor_Package renames Standard.org.allbinary.layer.LayerProcessor_Package;
@@ -37,6 +34,8 @@ package org.allbinary.ai.OptimizedArtificialIntelligenceLayerProcessorForCollida
    type OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access is access all OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer'Class;
    type OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access_Array is array (Natural range <>) of OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access;
    type OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access_Array_Access is access all OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access_Array;
+   type OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access_Array_Access_Array is array (Natural range <>) of OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access_Array_Access;
+   type OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access_Array_Access_Array_Access is access all OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access_Array_Access_Array;
 
    type OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer is new LayerProcessor with null record;
 

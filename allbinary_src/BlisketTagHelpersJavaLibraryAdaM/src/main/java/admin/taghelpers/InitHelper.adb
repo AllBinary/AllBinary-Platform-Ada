@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.init.InitInfoEntity_Package; use org.allbinary.business.init.InitInfoEntity_Package;
+
 package body admin.taghelpers.InitHelper_Package is
 
+   package InitInfoEntity_Package renames Standard.org.allbinary.business.init.InitInfoEntity_Package;
    procedure Initialize_Fields (This : in out InitHelper'Class) is
    begin
       null;

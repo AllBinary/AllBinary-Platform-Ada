@@ -29,8 +29,10 @@ package org.allbinary.business.advertisement.search.category.BasicAdvertisementC
    type BasicAdvertisementCategory_Access is access all BasicAdvertisementCategory'Class;
    type BasicAdvertisementCategory_Access_Array is array (Natural range <>) of BasicAdvertisementCategory_Access;
    type BasicAdvertisementCategory_Access_Array_Access is access all BasicAdvertisementCategory_Access_Array;
+   type BasicAdvertisementCategory_Access_Array_Access_Array is array (Natural range <>) of BasicAdvertisementCategory_Access_Array_Access;
+   type BasicAdvertisementCategory_Access_Array_Access_Array_Access is access all BasicAdvertisementCategory_Access_Array_Access_Array;
 
-   type BasicAdvertisementCategory is new AdvertisementCategoryInterface with record
+   type BasicAdvertisementCategory is new Java_Object and AdvertisementCategoryInterface with record
       categoryId : Unbounded_String;
    end record;
 

@@ -21,34 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
-with org.apache.xmlrpc.XmlRpcClient_Package; use org.apache.xmlrpc.XmlRpcClient_Package;
-with org.apache.xmlrpc.XmlRpcException_Package; use org.apache.xmlrpc.XmlRpcException_Package;
-with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package; use org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package; use org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 
 package org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package is
 
-   package XmlRpcClient_Package renames Standard.org.apache.xmlrpc.XmlRpcClient_Package;
-   package XmlRpcException_Package renames Standard.org.apache.xmlrpc.XmlRpcException_Package;
-   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package XmlRpcAbeClient_Package renames Standard.org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
    package NoCrypt_Package renames Standard.org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type XmlRpcRemoteLogClient is tagged;
    type XmlRpcRemoteLogClient_Access is access all XmlRpcRemoteLogClient'Class;
    type XmlRpcRemoteLogClient_Access_Array is array (Natural range <>) of XmlRpcRemoteLogClient_Access;
    type XmlRpcRemoteLogClient_Access_Array_Access is access all XmlRpcRemoteLogClient_Access_Array;
+   type XmlRpcRemoteLogClient_Access_Array_Access_Array is array (Natural range <>) of XmlRpcRemoteLogClient_Access_Array_Access;
+   type XmlRpcRemoteLogClient_Access_Array_Access_Array_Access is access all XmlRpcRemoteLogClient_Access_Array_Access_Array;
 
    type XmlRpcRemoteLogClient is new XmlRpcAbeClient with record
       noCrypt : NoCrypt_Access;
@@ -58,6 +46,8 @@ package org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package is
    function Create (clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return XmlRpcRemoteLogClient_Access;
    function get (This : in out XmlRpcRemoteLogClient; anyType_Param : access Java_Object'Class) return Java_Object_Access;
    procedure get (This : in out XmlRpcRemoteLogClient; anyType_Param : access Java_Object'Class);
+   function get (This : in out XmlRpcRemoteLogClient; Value : Unbounded_String) return Java_Object_Access;
+   procedure get (This : in out XmlRpcRemoteLogClient; Value : Unbounded_String);
 
 end org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package;
 

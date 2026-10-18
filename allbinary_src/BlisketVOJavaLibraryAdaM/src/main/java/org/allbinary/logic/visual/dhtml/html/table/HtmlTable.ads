@@ -21,26 +21,20 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package; use org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
-with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package; use org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package;
 
 package org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package HtmlTag_Package renames Standard.org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
-   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
 
    type HtmlTable is tagged;
    type HtmlTable_Access is access all HtmlTable'Class;
    type HtmlTable_Access_Array is array (Natural range <>) of HtmlTable_Access;
    type HtmlTable_Access_Array_Access is access all HtmlTable_Access_Array;
+   type HtmlTable_Access_Array_Access_Array is array (Natural range <>) of HtmlTable_Access_Array_Access;
+   type HtmlTable_Access_Array_Access_Array_Access is access all HtmlTable_Access_Array_Access_Array;
 
    type HtmlTable is new HtmlTag with record
       END_Id : Unbounded_String;
@@ -71,8 +65,8 @@ package org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
       htmlRowsVector : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out HtmlTable'Class; before : Unbounded_String; cellpadding_Case : Unbounded_String; cellspacing_Case : Unbounded_String; after : Unbounded_String);
-   function Create (before : Unbounded_String; cellpadding_Case : Unbounded_String; cellspacing_Case : Unbounded_String; after : Unbounded_String) return HtmlTable_Access;
+   procedure Initialize (This : in out HtmlTable'Class; before : Unbounded_String; cellpadding : Unbounded_String; cellspacing : Unbounded_String; after : Unbounded_String);
+   function Create (before : Unbounded_String; cellpadding : Unbounded_String; cellspacing : Unbounded_String; after : Unbounded_String) return HtmlTable_Access;
    procedure addRow (This : in out HtmlTable; htmlRow_Param : access HtmlRow_Package.HtmlRow'Class);
    function toString (This : in out HtmlTable) return Unbounded_String;
 

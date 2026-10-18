@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
 
 package org.allbinary.graphics.RectangleFactory_Package is
 
@@ -30,6 +29,8 @@ package org.allbinary.graphics.RectangleFactory_Package is
    type RectangleFactory_Access is access all RectangleFactory'Class;
    type RectangleFactory_Access_Array is array (Natural range <>) of RectangleFactory_Access;
    type RectangleFactory_Access_Array_Access is access all RectangleFactory_Access_Array;
+   type RectangleFactory_Access_Array_Access_Array is array (Natural range <>) of RectangleFactory_Access_Array_Access;
+   type RectangleFactory_Access_Array_Access_Array_Access is access all RectangleFactory_Access_Array_Access_Array;
 
    type RectangleFactory is new Java_Object with null record;
    SINGLETON : Rectangle_Access;

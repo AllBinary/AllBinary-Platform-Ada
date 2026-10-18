@@ -13,8 +13,18 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.content.Context_Package; use org.allbinary.content.Context_Package;
+with org.allbinary.content.CommandUriAction_Package; use org.allbinary.content.CommandUriAction_Package;
+with org.allbinary.content.Intent_Package; use org.allbinary.content.Intent_Package;
+with org.allbinary.content.Notification_Package; use org.allbinary.content.Notification_Package;
+with org.allbinary.content.PendingIntent_Package; use org.allbinary.content.PendingIntent_Package;
+
 package body org.allbinary.content.NotificationUtil_Package is
 
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    procedure Initialize_Fields (This : in out NotificationUtil'Class) is
    begin
       null;

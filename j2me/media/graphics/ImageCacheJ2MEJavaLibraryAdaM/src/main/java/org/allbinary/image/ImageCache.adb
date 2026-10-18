@@ -13,8 +13,27 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+with org.allbinary.J2MEUtil_Package; use org.allbinary.J2MEUtil_Package;
+with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
+with org.allbinary.game.gd.resource.GDResources_Package; use org.allbinary.game.gd.resource.GDResources_Package;
+with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
+
 package body org.allbinary.image.ImageCache_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package NullImage_Package renames Standard.javax.microedition.lcdui.NullImage_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package GDResources_Package renames Standard.org.allbinary.game.gd.resource.GDResources_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
    procedure Initialize_Fields (This : in out ImageCache'Class) is
    begin
       null;
@@ -168,6 +187,35 @@ package body org.allbinary.image.ImageCache_Package is
 
    procedure getWithKey (This : in out ImageCache; key_Param : access Java_Object'Class) is
       Java_Result : constant Image_Access := ImageCache'Class (This).getWithKey (key_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getWithKey;
+
+   procedure addListener (This : in out ImageCache; Value : Unbounded_String) is
+   begin
+      ImageCache'Class (This).addListener (Java_Box (Value));
+   end addListener;
+
+   function getIndex (This : in out ImageCache; Value : Unbounded_String) return Integer is
+   begin
+      return ImageCache'Class (This).getIndex (Java_Box (Value));
+   end getIndex;
+
+   procedure getIndex (This : in out ImageCache; Value : Unbounded_String) is
+      Java_Result : constant Integer := ImageCache'Class (This).getIndex (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getIndex;
+
+   function getWithKey (This : in out ImageCache; Value : Unbounded_String) return Image_Access is
+   begin
+      return ImageCache'Class (This).getWithKey (Java_Box (Value));
+   end getWithKey;
+
+   procedure getWithKey (This : in out ImageCache; Value : Unbounded_String) is
+      Java_Result : constant Image_Access := ImageCache'Class (This).getWithKey (Java_Box (Value));
       pragma Unreferenced (Java_Result);
    begin
       null;

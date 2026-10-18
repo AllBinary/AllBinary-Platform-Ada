@@ -28,6 +28,8 @@ package org.allbinary.logic.system.hardware.HardwareFactoryInterface_Package is
    type HardwareFactoryInterface_Access is access all HardwareFactoryInterface'Class;
    type HardwareFactoryInterface_Access_Array is array (Natural range <>) of HardwareFactoryInterface_Access;
    type HardwareFactoryInterface_Access_Array_Access is access all HardwareFactoryInterface_Access_Array;
+   type HardwareFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of HardwareFactoryInterface_Access_Array_Access;
+   type HardwareFactoryInterface_Access_Array_Access_Array_Access is access all HardwareFactoryInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.system.hardware.HardwareFactoryInterface_Package;
 

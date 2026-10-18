@@ -20,17 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
 
 package org.allbinary.logic.math.Orientation_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type Orientation is tagged;
    type Orientation_Access is access all Orientation'Class;
    type Orientation_Access_Array is array (Natural range <>) of Orientation_Access;
    type Orientation_Access_Array_Access is access all Orientation_Access_Array;
+   type Orientation_Access_Array_Access_Array is array (Natural range <>) of Orientation_Access_Array_Access;
+   type Orientation_Access_Array_Access_Array_Access is access all Orientation_Access_Array_Access_Array;
 
    type Orientation is new Java_Object with record
       yaw : BasicDecimal_Access;

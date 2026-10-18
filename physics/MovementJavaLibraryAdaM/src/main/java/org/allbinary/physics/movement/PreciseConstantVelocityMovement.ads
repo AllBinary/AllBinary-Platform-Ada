@@ -11,8 +11,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game.layer.AllBinaryGameLayer_Package;
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
 with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math.BasicDecimal_Package;
-with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.MathUtil_Package;
-with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logic.math.ScaleFactorFactory_Package;
 with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package; use org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;
 
 package org.allbinary.physics.movement.PreciseConstantVelocityMovement_Package is
@@ -20,13 +18,13 @@ package org.allbinary.physics.movement.PreciseConstantVelocityMovement_Package i
    package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
    package BasicVelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
    package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
-   package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
-   package ScaleFactorFactory_Package renames Standard.org.allbinary.logic.math.ScaleFactorFactory_Package;
 
    type PreciseConstantVelocityMovement is tagged;
    type PreciseConstantVelocityMovement_Access is access all PreciseConstantVelocityMovement'Class;
    type PreciseConstantVelocityMovement_Access_Array is array (Natural range <>) of PreciseConstantVelocityMovement_Access;
    type PreciseConstantVelocityMovement_Access_Array_Access is access all PreciseConstantVelocityMovement_Access_Array;
+   type PreciseConstantVelocityMovement_Access_Array_Access_Array is array (Natural range <>) of PreciseConstantVelocityMovement_Access_Array_Access;
+   type PreciseConstantVelocityMovement_Access_Array_Access_Array_Access is access all PreciseConstantVelocityMovement_Access_Array_Access_Array;
 
    type PreciseConstantVelocityMovement is new BasicConstantVelocityMovement with record
       accumulatedX : Integer;

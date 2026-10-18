@@ -8,7 +8,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.animation.FixedPoint_Package; use org.allbinary.animation.FixedPoint_Package;
 
 package org.allbinary.animation.PGUtil_Package is
 
@@ -17,6 +16,8 @@ package org.allbinary.animation.PGUtil_Package is
    type PGUtil_Access is access all PGUtil'Class;
    type PGUtil_Access_Array is array (Natural range <>) of PGUtil_Access;
    type PGUtil_Access_Array_Access is access all PGUtil_Access_Array;
+   type PGUtil_Access_Array_Access_Array is array (Natural range <>) of PGUtil_Access_Array_Access;
+   type PGUtil_Access_Array_Access_Array_Access is access all PGUtil_Access_Array_Access_Array;
 
    type PGUtil is new Java_Object with null record;
    instance : PGUtil_Access;

@@ -20,20 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package; use org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_Package;
 with org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package; use org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package;
 
 package org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityFactory_Package is
 
-   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AffiliateSalesEntityFactory is tagged;
    type AffiliateSalesEntityFactory_Access is access all AffiliateSalesEntityFactory'Class;
    type AffiliateSalesEntityFactory_Access_Array is array (Natural range <>) of AffiliateSalesEntityFactory_Access;
    type AffiliateSalesEntityFactory_Access_Array_Access is access all AffiliateSalesEntityFactory_Access_Array;
+   type AffiliateSalesEntityFactory_Access_Array_Access_Array is array (Natural range <>) of AffiliateSalesEntityFactory_Access_Array_Access;
+   type AffiliateSalesEntityFactory_Access_Array_Access_Array_Access is access all AffiliateSalesEntityFactory_Access_Array_Access_Array;
 
    type AffiliateSalesEntityFactory is new Java_Object with null record;
    CLASSNAME : Unbounded_String;

@@ -24,18 +24,8 @@ with java.io.InputStream_Package; use java.io.InputStream_Package;
 with android.app.Activity_Package; use android.app.Activity_Package;
 with android.content.Context_Package; use android.content.Context_Package;
 with android.content.res.Resources_Package; use android.content.res.Resources_Package;
-with org.allbinary.debug.DebugFactory_Package; use org.allbinary.debug.DebugFactory_Package;
-with org.allbinary.debug.NoDebug_Package; use org.allbinary.debug.NoDebug_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableUtil_Package;
 
 package org.allbinary.data.resource.ResourceUtil_Package is
 
@@ -43,23 +33,15 @@ package org.allbinary.data.resource.ResourceUtil_Package is
    package Activity_Package renames Standard.android.app.Activity_Package;
    package Context_Package renames Standard.android.content.Context_Package;
    package Resources_Package renames Standard.android.content.res.Resources_Package;
-   package DebugFactory_Package renames Standard.org.allbinary.debug.DebugFactory_Package;
-   package NoDebug_Package renames Standard.org.allbinary.debug.NoDebug_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
-   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
 
    type ResourceUtil is tagged;
    type ResourceUtil_Access is access all ResourceUtil'Class;
    type ResourceUtil_Access_Array is array (Natural range <>) of ResourceUtil_Access;
    type ResourceUtil_Access_Array_Access is access all ResourceUtil_Access_Array;
+   type ResourceUtil_Access_Array_Access_Array is array (Natural range <>) of ResourceUtil_Access_Array_Access;
+   type ResourceUtil_Access_Array_Access_Array_Access is access all ResourceUtil_Access_Array_Access_Array;
 
    type ResourceUtil is new Java_Object with record
       logUtil : LogUtil_Access;

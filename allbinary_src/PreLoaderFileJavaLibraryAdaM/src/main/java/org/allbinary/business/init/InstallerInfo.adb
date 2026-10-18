@@ -13,8 +13,31 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.io.AbDataInputStream_Package; use org.allbinary.logic.io.AbDataInputStream_Package;
+with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
+with org.allbinary.logic.io.AbFileLocalInputStream_Package; use org.allbinary.logic.io.AbFileLocalInputStream_Package;
+with org.allbinary.logic.io.DataOutputStreamFactory_Package; use org.allbinary.logic.io.DataOutputStreamFactory_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package; use org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
+with org.allbinary.logic.system.security.crypt.WeakCrypt_Package; use org.allbinary.logic.system.security.crypt.WeakCrypt_Package;
+
 package body org.allbinary.business.init.InstallerInfo_Package is
 
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package AbDataInputStream_Package renames Standard.org.allbinary.logic.io.AbDataInputStream_Package;
+   package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
+   package AbFileLocalInputStream_Package renames Standard.org.allbinary.logic.io.AbFileLocalInputStream_Package;
+   package DataOutputStreamFactory_Package renames Standard.org.allbinary.logic.io.DataOutputStreamFactory_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package DatabaseEncoder_Package renames Standard.org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
+   package WeakCrypt_Package renames Standard.org.allbinary.logic.system.security.crypt.WeakCrypt_Package;
    procedure Initialize_Fields (This : in out InstallerInfo'Class) is
    begin
       null;
@@ -43,7 +66,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
       cryptedUserName : Short_Short_Integer_Array_Access;
       cryptedPassword : Short_Short_Integer_Array_Access;
    begin
-        FILEABPATH := AbPath_Package.Create ((URLGLOBALS.getMainPath) + (InstallerInfo_Package.PACKAGE_Id), InstallerInfo_Package.INITFILENAME);
+        FILEABPATH := AbPath_Package.Create ((URLGLOBALS_Package.getMainPath) + (InstallerInfo_Package.PACKAGE_Id), InstallerInfo_Package.INITFILENAME);
         begin
             newFile := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
             newFile.createNewFile;
@@ -75,7 +98,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
       decryptedUserName : Unbounded_String;
       decryptedPassword : Unbounded_String;
    begin
-        FILEABPATH := AbPath_Package.Create ((URLGLOBALS.getMainPath) + (InstallerInfo_Package.PACKAGE_Id), InstallerInfo_Package.INITFILENAME);
+        FILEABPATH := AbPath_Package.Create ((URLGLOBALS_Package.getMainPath) + (InstallerInfo_Package.PACKAGE_Id), InstallerInfo_Package.INITFILENAME);
         begin
             file := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
             if file.isFile then
@@ -166,7 +189,7 @@ begin
    null;
    instance := InstallerInfo_Package.Create;
    INITFILENAME := To_Unbounded_String ("installerdata.dat");
-   PACKAGE_Id := PATH_GLOBALS.getInstance.INIT_PATH;
+   PACKAGE_Id := PATH_GLOBALS_Package.getInstance.INIT_PATH;
    userName := StringUtil_Package.getInstance.EMPTY_STRING;
    password := StringUtil_Package.getInstance.EMPTY_STRING;
    hasRead := False;

@@ -20,17 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.health.HealthInterface_Package; use org.allbinary.game.health.HealthInterface_Package;
-with org.allbinary.game.health.HealthInterfaceCompositeInterface_Package; use org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.layer.AllBinaryLayerCircularPool_Package;
 with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
-with org.allbinary.game.ag.layer.pickup.health.HealLayer_Package; use org.allbinary.game.ag.layer.pickup.health.HealLayer_Package;
 
 package org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPool_Package is
 
-   package HealthInterface_Package renames Standard.org.allbinary.game.health.HealthInterface_Package;
-   package HealthInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerCircularPool_Package renames Standard.org.allbinary.layer.AllBinaryLayerCircularPool_Package;
    package AllBinaryLayerFactoryInterface_Package renames Standard.org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
@@ -39,6 +34,8 @@ package org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPool_Pa
    type HealLayerCircularStaticPool_Access is access all HealLayerCircularStaticPool'Class;
    type HealLayerCircularStaticPool_Access_Array is array (Natural range <>) of HealLayerCircularStaticPool_Access;
    type HealLayerCircularStaticPool_Access_Array_Access is access all HealLayerCircularStaticPool_Access_Array;
+   type HealLayerCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of HealLayerCircularStaticPool_Access_Array_Access;
+   type HealLayerCircularStaticPool_Access_Array_Access_Array_Access is access all HealLayerCircularStaticPool_Access_Array_Access_Array;
 
    type HealLayerCircularStaticPool is new AllBinaryLayerCircularPool with null record;
 

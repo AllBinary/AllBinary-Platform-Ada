@@ -20,35 +20,27 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
-with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package; use org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactory_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.vector.VectorInfo_Package; use org.allbinary.vector.VectorInfo_Package;
 with org.allbinary.animation.VectorAnimationUtil_Package; use org.allbinary.animation.VectorAnimationUtil_Package;
 
 package org.allbinary.animation.VectorRotationGenerator_Package is
 
-   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
-   package BasicGraphicsPipeline_Package renames Standard.org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
    package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
    package VectorInfo_Package renames Standard.org.allbinary.vector.VectorInfo_Package;
 
    type VectorRotationGenerator is tagged;
    type VectorRotationGenerator_Access is access all VectorRotationGenerator'Class;
    type VectorRotationGenerator_Access_Array is array (Natural range <>) of VectorRotationGenerator_Access;
    type VectorRotationGenerator_Access_Array_Access is access all VectorRotationGenerator_Access_Array;
+   type VectorRotationGenerator_Access_Array_Access_Array is array (Natural range <>) of VectorRotationGenerator_Access_Array_Access;
+   type VectorRotationGenerator_Access_Array_Access_Array_Access is access all VectorRotationGenerator_Access_Array_Access_Array;
 
    type VectorRotationGenerator is new Java_Object with record
       logUtil : LogUtil_Access;

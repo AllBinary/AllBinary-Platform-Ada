@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.physics.friction.FrictionData_Package; use org.allbinary.game.physics.friction.FrictionData_Package;
+
 package body org.allbinary.game.layer.VehicleFrictionProperties_Package is
 
+   package FrictionData_Package renames Standard.org.allbinary.game.physics.friction.FrictionData_Package;
    procedure Initialize_Fields (This : in out VehicleFrictionProperties'Class) is
    begin
       null;

@@ -28,6 +28,8 @@ package org.allbinary.media.AllBinaryVibrationME_Package is
    type AllBinaryVibrationME_Access is access all AllBinaryVibrationME'Class;
    type AllBinaryVibrationME_Access_Array is array (Natural range <>) of AllBinaryVibrationME_Access;
    type AllBinaryVibrationME_Access_Array_Access is access all AllBinaryVibrationME_Access_Array;
+   type AllBinaryVibrationME_Access_Array_Access_Array is array (Natural range <>) of AllBinaryVibrationME_Access_Array_Access;
+   type AllBinaryVibrationME_Access_Array_Access_Array_Access is access all AllBinaryVibrationME_Access_Array_Access_Array;
 
    type AllBinaryVibrationME is new Java_Object with null record;
 

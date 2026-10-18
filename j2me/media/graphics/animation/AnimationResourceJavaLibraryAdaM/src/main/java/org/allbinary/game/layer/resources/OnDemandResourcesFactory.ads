@@ -29,6 +29,8 @@ package org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package is
    type OnDemandResourcesFactory_Access is access all OnDemandResourcesFactory'Class;
    type OnDemandResourcesFactory_Access_Array is array (Natural range <>) of OnDemandResourcesFactory_Access;
    type OnDemandResourcesFactory_Access_Array_Access is access all OnDemandResourcesFactory_Access_Array;
+   type OnDemandResourcesFactory_Access_Array_Access_Array is array (Natural range <>) of OnDemandResourcesFactory_Access_Array_Access;
+   type OnDemandResourcesFactory_Access_Array_Access_Array_Access is access all OnDemandResourcesFactory_Access_Array_Access_Array;
 
    type OnDemandResourcesFactory is new Java_Object with null record;
 

@@ -34,6 +34,8 @@ package org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBoo
    type DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access is access all DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class;
    type DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access_Array is array (Natural range <>) of DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access;
    type DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access_Array_Access is access all DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access_Array;
+   type DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access_Array_Access_Array is array (Natural range <>) of DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access_Array_Access;
+   type DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access_Array_Access_Array_Access is access all DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access_Array_Access_Array;
 
    type DirectoryOrIncludeFileExtensionBooleanFileVisitor is new IncludeFileExtensionsBooleanFileVisitor with record
       includesString : Unbounded_String;

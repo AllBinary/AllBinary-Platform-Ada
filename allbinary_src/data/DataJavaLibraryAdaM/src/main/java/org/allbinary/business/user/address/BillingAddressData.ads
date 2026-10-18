@@ -28,6 +28,8 @@ package org.allbinary.business.user.address.BillingAddressData_Package is
    type BillingAddressData_Access is access all BillingAddressData'Class;
    type BillingAddressData_Access_Array is array (Natural range <>) of BillingAddressData_Access;
    type BillingAddressData_Access_Array_Access is access all BillingAddressData_Access_Array;
+   type BillingAddressData_Access_Array_Access_Array is array (Natural range <>) of BillingAddressData_Access_Array_Access;
+   type BillingAddressData_Access_Array_Access_Array_Access is access all BillingAddressData_Access_Array_Access_Array;
 
    type BillingAddressData is new Java_Object with null record;
    MAX : Integer;

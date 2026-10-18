@@ -13,8 +13,26 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.game.score.RemoteErrorHighScoresSingletonFactory_Package; use org.allbinary.game.score.RemoteErrorHighScoresSingletonFactory_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.score.remote.RemoteHighScoresProcessorFactory_Package; use org.allbinary.game.score.remote.RemoteHighScoresProcessorFactory_Package;
+with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFactory_Package; use org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorFactory_Package;
+with org.allbinary.game.score.remote.RemoteHighScoresData_Package; use org.allbinary.game.score.remote.RemoteHighScoresData_Package;
+
 package body org.allbinary.game.score.remote.RemoteHighScores_Package is
 
+   package Enumeration_Package renames Standard.java.util.Enumeration_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package RemoteErrorHighScoresSingletonFactory_Package renames Standard.org.allbinary.game.score.RemoteErrorHighScoresSingletonFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    procedure Initialize_Fields (This : in out RemoteHighScores'Class) is
    begin
       null;
@@ -27,7 +45,7 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; ascending_Case : Boolean; preload : Boolean) is
+   procedure Initialize (This : in out RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; ascending : Boolean; preload : Boolean) is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       softwareInformation : constant SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
       gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
@@ -36,16 +54,16 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
         Initialize_Fields (This);
         This.abeClientInformation := abeClientInformation;
         This.softwareInformation := softwareInformation;
-        RemoteHighScores'Class (This).setAscending (ascending_Case);
+        RemoteHighScores'Class (This).setAscending (ascending);
         if preload then
             RemoteHighScoresProcessorFactory_Package.getInstance.process (RemoteHighScores_Access'(This'Unchecked_Access), This.abeClientInformation, gameInfo);
         end if;
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; ascending_Case : Boolean; preload : Boolean) return RemoteHighScores_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; ascending : Boolean; preload : Boolean) return RemoteHighScores_Access is
       This : constant RemoteHighScores_Access := new RemoteHighScores;
    begin
-      RemoteHighScores_Package.Initialize (This.all, abeClientInformation_Param, softwareInformation_Param, gameInfo_Param, heading, columnTwoHeading, ascending_Case, preload);
+      RemoteHighScores_Package.Initialize (This.all, abeClientInformation_Param, softwareInformation_Param, gameInfo_Param, heading, columnTwoHeading, ascending, preload);
       return This;
    end Create;
 
@@ -69,7 +87,7 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
         begin
             highScores := HighScores_Access (RemoteHighScores_Package.hashTable.get (gameInfo));
             if (highScores) = (null) then
-                highScores := RemoteHighScores_Package.Create (abeClientInformation, softwareInformation, gameInfo, heading, columnTwoHeading, isAscending, preload);
+                highScores := HighScores_Access (RemoteHighScores_Package.Create (abeClientInformation, softwareInformation, gameInfo, heading, columnTwoHeading, isAscending, preload));
                 RemoteHighScores_Package.hashTable.put (gameInfo, highScores);
             end if;
             return highScores;
@@ -116,7 +134,7 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
                 score := Java_Unbox (highScoreVector.get (1));
                 longScore := Long_Long_Integer'Value (To_String (score));
                 highScore := HighScore_Package.Create (-(1), displayName, null, longScore);
-                RemoteHighScores'Class (This).getList.add (highScore);
+                RemoteHighScores'Class (This).getList.add (Java_Object_Access (highScore));
             end loop;
         else
             NEXT_ELEMENT := StringMaker_Package.Create.append (CommonLabels_Package.getInstance.NEXT).append (To_Unbounded_String ("Element: ")).toString;
@@ -130,9 +148,9 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
         end if;
    end update;
 
-   procedure setAscending (This : in out RemoteHighScores; ascending_Case : Boolean) is
+   procedure setAscending (This : in out RemoteHighScores; ascending : Boolean) is
    begin
-        This.ascending_Case := ascending_Case;
+        This.ascending_Case := ascending;
    end setAscending;
 
    function getAscending (This : in out RemoteHighScores) return Boolean is

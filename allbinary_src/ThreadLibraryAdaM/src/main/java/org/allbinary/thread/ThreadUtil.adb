@@ -13,13 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.thread.ThreadUtil_Package is
 
    procedure Initialize_Fields (This : in out ThreadUtil'Class) is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.JOIN := To_Unbounded_String ("join");
+      This.JOIN_Field := To_Unbounded_String ("join");
    end Initialize_Fields;
 
    procedure Initialize (This : in out ThreadUtil'Class) is
@@ -51,14 +52,14 @@ package body org.allbinary.thread.ThreadUtil_Package is
    end isRunning;
 
    --  throws Exception
-   procedure join_Case (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class) is
+   procedure join (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class) is
       thread : constant Thread_Access := Thread_Access (thread_Param);
    begin
         if ThreadUtil_Package.getInstance.isRunning (thread) then
-            This.logUtil.putF (To_Unbounded_String ("Waiting for Thread To Join/End"), ThreadUtil_Access'(This'Unchecked_Access), This.JOIN);
-            thread.join_Case;
+            This.logUtil.putF (To_Unbounded_String ("Waiting for Thread To Join/End"), ThreadUtil_Access'(This'Unchecked_Access), This.JOIN_Field);
+            thread.join;
         end if;
-   end join_Case;
+   end join;
 
    procedure isRunning (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class) is
       Java_Result : constant Boolean := ThreadUtil'Class (This).isRunning (thread_Param);

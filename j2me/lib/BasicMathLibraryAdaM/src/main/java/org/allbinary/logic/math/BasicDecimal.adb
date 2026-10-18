@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logic.math.ScaleFactorFactory_Package;
+
 package body org.allbinary.logic.math.BasicDecimal_Package is
 
    procedure Initialize_Fields (This : in out BasicDecimal'Class) is

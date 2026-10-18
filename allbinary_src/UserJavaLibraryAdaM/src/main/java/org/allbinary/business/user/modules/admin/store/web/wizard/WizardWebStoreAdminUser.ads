@@ -34,6 +34,8 @@ package org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStor
    type WizardWebStoreAdminUser_Access is access all WizardWebStoreAdminUser'Class;
    type WizardWebStoreAdminUser_Access_Array is array (Natural range <>) of WizardWebStoreAdminUser_Access;
    type WizardWebStoreAdminUser_Access_Array_Access is access all WizardWebStoreAdminUser_Access_Array;
+   type WizardWebStoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of WizardWebStoreAdminUser_Access_Array_Access;
+   type WizardWebStoreAdminUser_Access_Array_Access_Array_Access is access all WizardWebStoreAdminUser_Access_Array_Access_Array;
 
    type WizardWebStoreAdminUser is new User with null record;
 

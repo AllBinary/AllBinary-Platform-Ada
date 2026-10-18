@@ -31,6 +31,8 @@ package org.allbinary.graphics.form.item.validation.PasswordValidator_Package is
    type PasswordValidator_Access is access all PasswordValidator'Class;
    type PasswordValidator_Access_Array is array (Natural range <>) of PasswordValidator_Access;
    type PasswordValidator_Access_Array_Access is access all PasswordValidator_Access_Array;
+   type PasswordValidator_Access_Array_Access_Array is array (Natural range <>) of PasswordValidator_Access_Array_Access;
+   type PasswordValidator_Access_Array_Access_Array_Access is access all PasswordValidator_Access_Array_Access_Array;
 
    type PasswordValidator is new TextFieldItemValidator with null record;
 

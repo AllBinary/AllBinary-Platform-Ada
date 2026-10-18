@@ -28,6 +28,8 @@ package org.allbinary.layer.NamedInterface_Package is
    type NamedInterface_Access is access all NamedInterface'Class;
    type NamedInterface_Access_Array is array (Natural range <>) of NamedInterface_Access;
    type NamedInterface_Access_Array_Access is access all NamedInterface_Access_Array;
+   type NamedInterface_Access_Array_Access_Array is array (Natural range <>) of NamedInterface_Access_Array_Access;
+   type NamedInterface_Access_Array_Access_Array_Access is access all NamedInterface_Access_Array_Access_Array;
    function getName (This : in out NamedInterface) return Unbounded_String is abstract;
 
 end org.allbinary.layer.NamedInterface_Package;

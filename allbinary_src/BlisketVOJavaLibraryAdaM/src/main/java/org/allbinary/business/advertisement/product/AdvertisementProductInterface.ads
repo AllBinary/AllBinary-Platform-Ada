@@ -30,6 +30,8 @@ package org.allbinary.business.advertisement.product.AdvertisementProductInterfa
    type AdvertisementProductInterface_Access is access all AdvertisementProductInterface'Class;
    type AdvertisementProductInterface_Access_Array is array (Natural range <>) of AdvertisementProductInterface_Access;
    type AdvertisementProductInterface_Access_Array_Access is access all AdvertisementProductInterface_Access_Array;
+   type AdvertisementProductInterface_Access_Array_Access_Array is array (Natural range <>) of AdvertisementProductInterface_Access_Array_Access;
+   type AdvertisementProductInterface_Access_Array_Access_Array_Access is access all AdvertisementProductInterface_Access_Array_Access_Array;
    function getType (This : in out AdvertisementProductInterface) return Unbounded_String is abstract;
    function getLink (This : in out AdvertisementProductInterface) return Unbounded_String is abstract;
    function getNumber (This : in out AdvertisementProductInterface) return Integer is abstract;

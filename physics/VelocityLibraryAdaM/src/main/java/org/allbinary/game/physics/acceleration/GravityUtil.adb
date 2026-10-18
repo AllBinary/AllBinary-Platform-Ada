@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.physics.acceleration.GravityUtil_Package is
 
    procedure Initialize_Fields (This : in out GravityUtil'Class) is

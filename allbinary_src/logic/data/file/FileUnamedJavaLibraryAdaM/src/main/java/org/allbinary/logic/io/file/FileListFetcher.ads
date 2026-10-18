@@ -20,29 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package; use org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package;
-with org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package; use org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package;
-with org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package; use org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package;
 with org.allbinary.logic.io.file.directory.SubDirectory_Package; use org.allbinary.logic.io.file.directory.SubDirectory_Package;
-with org.allbinary.logic.io.file.filter.VisitorFileFilter_Package; use org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 
 package org.allbinary.logic.io.file.FileListFetcher_Package is
 
-   package DirectoryBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package;
-   package DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package;
-   package DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package;
    package SubDirectory_Package renames Standard.org.allbinary.logic.io.file.directory.SubDirectory_Package;
-   package VisitorFileFilter_Package renames Standard.org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type FileListFetcher is tagged;
    type FileListFetcher_Access is access all FileListFetcher'Class;
    type FileListFetcher_Access_Array is array (Natural range <>) of FileListFetcher_Access;
    type FileListFetcher_Access_Array_Access is access all FileListFetcher_Access_Array;
+   type FileListFetcher_Access_Array_Access_Array is array (Natural range <>) of FileListFetcher_Access_Array_Access;
+   type FileListFetcher_Access_Array_Access_Array_Access is access all FileListFetcher_Access_Array_Access_Array;
 
    type FileListFetcher is new Java_Object with record
       subDirectory : SubDirectory_Access;

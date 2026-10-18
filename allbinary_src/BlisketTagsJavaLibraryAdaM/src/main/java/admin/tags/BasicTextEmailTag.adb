@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with admin.taghelpers.BasicTextEmailHelperFactory_Package; use admin.taghelpers.BasicTextEmailHelperFactory_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+
 package body admin.tags.BasicTextEmailTag_Package is
 
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package BasicTextEmailHelperFactory_Package renames Standard.admin.taghelpers.BasicTextEmailHelperFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    procedure Initialize_Fields (This : in out BasicTextEmailTag'Class) is
    begin
       null;

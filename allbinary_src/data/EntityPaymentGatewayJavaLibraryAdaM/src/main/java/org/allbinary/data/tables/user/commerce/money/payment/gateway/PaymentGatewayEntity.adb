@@ -13,8 +13,41 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Calendar_Package; use java.util.Calendar_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.business.init.db.UserDbInitInfo_Package;
+with org.allbinary.business.user.UserData_Package; use org.allbinary.business.user.UserData_Package;
+with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayEncryptedMapping_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayEncryptedMapping_Package;
+with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactory_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactory_Package;
+with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package; use org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
+with org.allbinary.data.generator.PaymentGatewayIdGenerator_Package; use org.allbinary.data.generator.PaymentGatewayIdGenerator_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+
 package body org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package is
 
+   package Calendar_Package renames Standard.java.util.Calendar_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package PaymentData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
+   package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
+   package PaymentGatewayEncryptedMapping_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayEncryptedMapping_Package;
+   package PaymentGatewayInterfaceFactory_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactory_Package;
+   package BasicPaymentTypeUtil_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
+   package PaymentGatewayIdGenerator_Package renames Standard.org.allbinary.data.generator.PaymentGatewayIdGenerator_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package SuperCrypt_Package renames Standard.org.allbinary.logic.control.crypt.SuperCrypt_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    procedure Initialize_Fields (This : in out PaymentGatewayEntity'Class) is
    begin
       null;
@@ -50,7 +83,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.START, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
-            vector := BasicArrayListD_Package.Create;
+            vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             vector.add (PaymentGatewayIdGenerator_Package.Create.getNext);
             vector.addAllList (PaymentGatewayEncryptedMapping_Package.Create (paymentGatewayInterface).toVector);
             calendar := Calendar_Package.getInstance;
@@ -185,22 +218,22 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
       i : Integer;
    begin
         begin
-            paymentGatewayNameVector := BasicArrayListD_Package.Create;
+            paymentGatewayNameVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             paymentGatewayNameVector := AbSqlBean (This).getColumnWhere (PaymentGatewayData_Package.NAME.toString, StoreFrontData_Package.getInstance.NAME.toString, storeName);
             if (paymentGatewayNameVector) /= (null) then
-                paymentGatewayVector := BasicArrayListD_Package.Create;
+                paymentGatewayVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
                 size := paymentGatewayNameVector.size;
                 for i in 0 .. (size) - 1 loop
                     paymentTypeString := Java_Unbox (paymentGatewayNameVector.get (i));
                     paymentType := BasicPaymentTypeUtil_Package.getInstance.get (paymentTypeString);
-                    paymentGatewayVector.add (paymentType);
+                    paymentGatewayVector.add (Java_Object_Access (paymentType));
                 end loop;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("findPaymentTypeVectorByStore()"));
                 end if;
                 return paymentGatewayVector;
             else
-                return BasicArrayListD_Package.Create;
+                return BasicArrayList_Access (BasicArrayListD_Package.Create);
             end if;
         exception
             when Java_Occurrence : others =>

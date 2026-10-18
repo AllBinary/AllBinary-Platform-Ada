@@ -34,6 +34,8 @@ package org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrder
    type AdjustOrderStoreAdminUser_Access is access all AdjustOrderStoreAdminUser'Class;
    type AdjustOrderStoreAdminUser_Access_Array is array (Natural range <>) of AdjustOrderStoreAdminUser_Access;
    type AdjustOrderStoreAdminUser_Access_Array_Access is access all AdjustOrderStoreAdminUser_Access_Array;
+   type AdjustOrderStoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of AdjustOrderStoreAdminUser_Access_Array_Access;
+   type AdjustOrderStoreAdminUser_Access_Array_Access_Array_Access is access all AdjustOrderStoreAdminUser_Access_Array_Access_Array;
 
    type AdjustOrderStoreAdminUser is new User with null record;
 

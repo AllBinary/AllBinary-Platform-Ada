@@ -37,6 +37,8 @@ package org.allbinary.emulator.device.TrueTypeFontUtil_Package is
    type TrueTypeFontUtil_Access is access all TrueTypeFontUtil'Class;
    type TrueTypeFontUtil_Access_Array is array (Natural range <>) of TrueTypeFontUtil_Access;
    type TrueTypeFontUtil_Access_Array_Access is access all TrueTypeFontUtil_Access_Array;
+   type TrueTypeFontUtil_Access_Array_Access_Array is array (Natural range <>) of TrueTypeFontUtil_Access_Array_Access;
+   type TrueTypeFontUtil_Access_Array_Access_Array_Access is access all TrueTypeFontUtil_Access_Array_Access_Array;
 
    type TrueTypeFontUtil is new TrueTypeFontUtilBase with record
       fontImage : OpenGLESImage_Access;

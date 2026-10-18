@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.canvas.RunnableCanvasRefreshHelper_Package is
 
    procedure Initialize_Fields (This : in out RunnableCanvasRefreshHelper'Class) is

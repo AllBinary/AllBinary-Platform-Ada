@@ -32,6 +32,8 @@ package org.allbinary.logic.communication.sql.AbDatabaseManagement_Package is
    type AbDatabaseManagement_Access is access all AbDatabaseManagement'Class;
    type AbDatabaseManagement_Access_Array is array (Natural range <>) of AbDatabaseManagement_Access;
    type AbDatabaseManagement_Access_Array_Access is access all AbDatabaseManagement_Access_Array;
+   type AbDatabaseManagement_Access_Array_Access_Array is array (Natural range <>) of AbDatabaseManagement_Access_Array_Access;
+   type AbDatabaseManagement_Access_Array_Access_Array_Access is access all AbDatabaseManagement_Access_Array_Access_Array;
 
    type AbDatabaseManagement is new AbSqlBean with record
       logUtil : LogUtil_Access;

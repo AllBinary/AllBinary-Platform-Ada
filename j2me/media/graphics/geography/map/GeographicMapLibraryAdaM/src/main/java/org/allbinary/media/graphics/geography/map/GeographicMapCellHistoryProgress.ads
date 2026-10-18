@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgressBase_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgressBase_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellHistoryProgress_Package is
 
-   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type GeographicMapCellHistoryProgress is tagged;
    type GeographicMapCellHistoryProgress_Access is access all GeographicMapCellHistoryProgress'Class;
    type GeographicMapCellHistoryProgress_Access_Array is array (Natural range <>) of GeographicMapCellHistoryProgress_Access;
    type GeographicMapCellHistoryProgress_Access_Array_Access is access all GeographicMapCellHistoryProgress_Access_Array;
+   type GeographicMapCellHistoryProgress_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellHistoryProgress_Access_Array_Access;
+   type GeographicMapCellHistoryProgress_Access_Array_Access_Array_Access is access all GeographicMapCellHistoryProgress_Access_Array_Access_Array;
 
    type GeographicMapCellHistoryProgress is new GeographicMapCellHistoryProgressBase with record
       totalVisitedArray : Integer_Array_Access;

@@ -28,6 +28,8 @@ package org.allbinary.AvianUtil_Package is
    type AvianUtil_Access is access all AvianUtil'Class;
    type AvianUtil_Access_Array is array (Natural range <>) of AvianUtil_Access;
    type AvianUtil_Access_Array_Access is access all AvianUtil_Access_Array;
+   type AvianUtil_Access_Array_Access_Array is array (Natural range <>) of AvianUtil_Access_Array_Access;
+   type AvianUtil_Access_Array_Access_Array_Access is access all AvianUtil_Access_Array_Access_Array;
 
    type AvianUtil is new Java_Object with null record;
 

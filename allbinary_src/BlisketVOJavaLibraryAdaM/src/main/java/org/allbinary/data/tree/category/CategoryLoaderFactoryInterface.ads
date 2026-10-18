@@ -28,6 +28,8 @@ package org.allbinary.data.tree.category.CategoryLoaderFactoryInterface_Package 
    type CategoryLoaderFactoryInterface_Access is access all CategoryLoaderFactoryInterface'Class;
    type CategoryLoaderFactoryInterface_Access_Array is array (Natural range <>) of CategoryLoaderFactoryInterface_Access;
    type CategoryLoaderFactoryInterface_Access_Array_Access is access all CategoryLoaderFactoryInterface_Access_Array;
+   type CategoryLoaderFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of CategoryLoaderFactoryInterface_Access_Array_Access;
+   type CategoryLoaderFactoryInterface_Access_Array_Access_Array_Access is access all CategoryLoaderFactoryInterface_Access_Array_Access_Array;
 
 end org.allbinary.data.tree.category.CategoryLoaderFactoryInterface_Package;
 

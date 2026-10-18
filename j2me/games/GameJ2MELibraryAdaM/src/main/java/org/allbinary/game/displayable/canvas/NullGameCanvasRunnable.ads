@@ -25,8 +25,6 @@ with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Gra
 with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
 with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package; use org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
 
@@ -37,16 +35,16 @@ package org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package is
    package Item_Package renames Standard.javax.microedition.lcdui.Item_Package;
    package GameState_Package renames Standard.org.allbinary.game.state.GameState_Package;
    package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type NullGameCanvasRunnable is tagged;
    type NullGameCanvasRunnable_Access is access all NullGameCanvasRunnable'Class;
    type NullGameCanvasRunnable_Access_Array is array (Natural range <>) of NullGameCanvasRunnable_Access;
    type NullGameCanvasRunnable_Access_Array_Access is access all NullGameCanvasRunnable_Access_Array;
+   type NullGameCanvasRunnable_Access_Array_Access_Array is array (Natural range <>) of NullGameCanvasRunnable_Access_Array_Access;
+   type NullGameCanvasRunnable_Access_Array_Access_Array_Access is access all NullGameCanvasRunnable_Access_Array_Access_Array;
 
-   type NullGameCanvasRunnable is new GameCanvasRunnableInterface with record
+   type NullGameCanvasRunnable is new Java_Object and GameCanvasRunnableInterface with record
       gameStateFactory : GameStateFactory_Access;
    end record;
    NULL_GAME_CANVAS_RUNNABLE : NullGameCanvasRunnable_Access;

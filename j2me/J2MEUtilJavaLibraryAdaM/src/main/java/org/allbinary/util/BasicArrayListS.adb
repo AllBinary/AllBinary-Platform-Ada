@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsConstructor_Package;
+
 package body org.allbinary.util.BasicArrayListS_Package is
 
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
    procedure Initialize_Fields (This : in out BasicArrayListS'Class) is
    begin
       null;

@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.path.AbPathData_Package;
 
 package org.allbinary.logic.communication.log.LogData_Package is
 
-   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
 
    type LogData is tagged;
    type LogData_Access is access all LogData'Class;
    type LogData_Access_Array is array (Natural range <>) of LogData_Access;
    type LogData_Access_Array_Access is access all LogData_Access_Array;
+   type LogData_Access_Array_Access_Array is array (Natural range <>) of LogData_Access_Array_Access;
+   type LogData_Access_Array_Access_Array_Access is access all LogData_Access_Array_Access_Array;
 
    type LogData is new Java_Object with record
       MAX : Long_Long_Integer;

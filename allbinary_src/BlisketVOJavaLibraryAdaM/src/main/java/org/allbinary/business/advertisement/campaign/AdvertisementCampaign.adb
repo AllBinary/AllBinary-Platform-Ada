@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.business.DynamicObjectData_Package; use org.allbinary.business.DynamicObjectData_Package;
+with org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package; use org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
+
 package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package is
 
+   package DynamicObjectData_Package renames Standard.org.allbinary.business.DynamicObjectData_Package;
    procedure Initialize_Fields (This : in out AdvertisementCampaign'Class) is
    begin
       null;

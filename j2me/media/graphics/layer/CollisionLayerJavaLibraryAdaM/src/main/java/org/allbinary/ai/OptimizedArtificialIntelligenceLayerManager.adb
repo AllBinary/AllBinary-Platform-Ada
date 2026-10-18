@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.LayerManagerNoDebug_Package;
+
 package body org.allbinary.ai.OptimizedArtificialIntelligenceLayerManager_Package is
 
+   package LayerManagerNoDebug_Package renames Standard.org.allbinary.layer.LayerManagerNoDebug_Package;
    procedure Initialize_Fields (This : in out OptimizedArtificialIntelligenceLayerManager'Class) is
    begin
       null;

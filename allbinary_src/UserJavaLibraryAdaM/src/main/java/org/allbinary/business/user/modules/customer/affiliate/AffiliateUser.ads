@@ -36,6 +36,8 @@ package org.allbinary.business.user.modules.customer.affiliate.AffiliateUser_Pac
    type AffiliateUser_Access is access all AffiliateUser'Class;
    type AffiliateUser_Access_Array is array (Natural range <>) of AffiliateUser_Access;
    type AffiliateUser_Access_Array_Access is access all AffiliateUser_Access_Array;
+   type AffiliateUser_Access_Array_Access_Array is array (Natural range <>) of AffiliateUser_Access_Array_Access;
+   type AffiliateUser_Access_Array_Access_Array_Access is access all AffiliateUser_Access_Array_Access_Array;
 
    type AffiliateUser is new User with record
       affiliateSales : AffiliateSales_Access;

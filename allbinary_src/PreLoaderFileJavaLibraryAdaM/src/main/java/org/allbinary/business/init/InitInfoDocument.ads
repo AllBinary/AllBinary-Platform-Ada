@@ -30,6 +30,8 @@ package org.allbinary.business.init.InitInfoDocument_Package is
    type InitInfoDocument_Access is access all InitInfoDocument'Class;
    type InitInfoDocument_Access_Array is array (Natural range <>) of InitInfoDocument_Access;
    type InitInfoDocument_Access_Array_Access is access all InitInfoDocument_Access_Array;
+   type InitInfoDocument_Access_Array_Access_Array is array (Natural range <>) of InitInfoDocument_Access_Array_Access;
+   type InitInfoDocument_Access_Array_Access_Array_Access is access all InitInfoDocument_Access_Array_Access_Array;
 
    type InitInfoDocument is new Java_Object with record
       initInfoDocument : Document_Access;

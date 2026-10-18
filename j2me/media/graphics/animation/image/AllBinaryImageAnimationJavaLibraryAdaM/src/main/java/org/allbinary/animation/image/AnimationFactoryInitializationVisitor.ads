@@ -20,22 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.math.PositionStrings_Package; use org.allbinary.math.PositionStrings_Package;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
-with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 
 package org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package is
 
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type AnimationFactoryInitializationVisitor is tagged;
    type AnimationFactoryInitializationVisitor_Access is access all AnimationFactoryInitializationVisitor'Class;
    type AnimationFactoryInitializationVisitor_Access_Array is array (Natural range <>) of AnimationFactoryInitializationVisitor_Access;
    type AnimationFactoryInitializationVisitor_Access_Array_Access is access all AnimationFactoryInitializationVisitor_Access_Array;
+   type AnimationFactoryInitializationVisitor_Access_Array_Access_Array is array (Natural range <>) of AnimationFactoryInitializationVisitor_Access_Array_Access;
+   type AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access is access all AnimationFactoryInitializationVisitor_Access_Array_Access_Array;
 
    type AnimationFactoryInitializationVisitor is new Java_Object with record
       width : Integer;

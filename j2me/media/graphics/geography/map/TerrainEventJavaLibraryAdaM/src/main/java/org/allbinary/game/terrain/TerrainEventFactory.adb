@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.terrain.TerrainEvent_Package; use org.allbinary.game.terrain.TerrainEvent_Package;
+
 package body org.allbinary.game.terrain.TerrainEventFactory_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out TerrainEventFactory'Class) is
    begin
       null;
@@ -36,7 +40,7 @@ package body org.allbinary.game.terrain.TerrainEventFactory_Package is
 
    function getInstance (This : in out TerrainEventFactory) return AllBinaryEventObject_Access is
    begin
-        return TerrainEvent_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT);
+        return AllBinaryEventObject_Access (TerrainEvent_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT));
    end getInstance;
 
 end org.allbinary.game.terrain.TerrainEventFactory_Package;

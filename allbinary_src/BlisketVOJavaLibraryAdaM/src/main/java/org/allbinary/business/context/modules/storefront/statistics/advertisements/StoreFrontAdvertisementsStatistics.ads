@@ -22,25 +22,23 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package; use org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package;
 
 package org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type StoreFrontAdvertisementsStatistics is tagged;
    type StoreFrontAdvertisementsStatistics_Access is access all StoreFrontAdvertisementsStatistics'Class;
    type StoreFrontAdvertisementsStatistics_Access_Array is array (Natural range <>) of StoreFrontAdvertisementsStatistics_Access;
    type StoreFrontAdvertisementsStatistics_Access_Array_Access is access all StoreFrontAdvertisementsStatistics_Access_Array;
+   type StoreFrontAdvertisementsStatistics_Access_Array_Access_Array is array (Natural range <>) of StoreFrontAdvertisementsStatistics_Access_Array_Access;
+   type StoreFrontAdvertisementsStatistics_Access_Array_Access_Array_Access is access all StoreFrontAdvertisementsStatistics_Access_Array_Access_Array;
 
-   type StoreFrontAdvertisementsStatistics is new StoreFrontAdvertisementsStatisticsInterface with null record;
+   type StoreFrontAdvertisementsStatistics is new Java_Object and StoreFrontAdvertisementsStatisticsInterface with null record;
 
    procedure Initialize (This : in out StoreFrontAdvertisementsStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class);
    function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return StoreFrontAdvertisementsStatistics_Access;

@@ -13,8 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with org.w3c.dom.Attr_Package; use org.w3c.dom.Attr_Package;
+with org.w3c.dom.NamedNodeMap_Package; use org.w3c.dom.NamedNodeMap_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+
 package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_Package is
 
+   package Attr_Package renames Standard.org.w3c.dom.Attr_Package;
+   package NamedNodeMap_Package renames Standard.org.w3c.dom.NamedNodeMap_Package;
    procedure Initialize_Fields (This : in out TransformInfoDomNodeView'Class) is
    begin
       null;

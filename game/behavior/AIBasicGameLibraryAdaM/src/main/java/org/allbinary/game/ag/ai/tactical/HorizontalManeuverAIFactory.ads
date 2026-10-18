@@ -25,7 +25,6 @@ with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Packa
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package; use org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package;
 
 package org.allbinary.game.ag.ai.tactical.HorizontalManeuverAIFactory_Package is
 
@@ -39,8 +38,10 @@ package org.allbinary.game.ag.ai.tactical.HorizontalManeuverAIFactory_Package is
    type HorizontalManeuverAIFactory_Access is access all HorizontalManeuverAIFactory'Class;
    type HorizontalManeuverAIFactory_Access_Array is array (Natural range <>) of HorizontalManeuverAIFactory_Access;
    type HorizontalManeuverAIFactory_Access_Array_Access is access all HorizontalManeuverAIFactory_Access_Array;
+   type HorizontalManeuverAIFactory_Access_Array_Access_Array is array (Natural range <>) of HorizontalManeuverAIFactory_Access_Array_Access;
+   type HorizontalManeuverAIFactory_Access_Array_Access_Array_Access is access all HorizontalManeuverAIFactory_Access_Array_Access_Array;
 
-   type HorizontalManeuverAIFactory is new ArtificialIntelligenceInterfaceFactoryInterface with null record;
+   type HorizontalManeuverAIFactory is new Java_Object and ArtificialIntelligenceInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out HorizontalManeuverAIFactory'Class);
    function Create return HorizontalManeuverAIFactory_Access;

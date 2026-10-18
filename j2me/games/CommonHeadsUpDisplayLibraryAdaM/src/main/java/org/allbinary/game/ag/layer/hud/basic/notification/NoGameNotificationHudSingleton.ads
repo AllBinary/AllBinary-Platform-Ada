@@ -20,23 +20,19 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.graphics.hud.BasicHudFactory_Package; use org.allbinary.game.graphics.hud.BasicHudFactory_Package;
-with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package; use org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
 
 package org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificationHudSingleton_Package is
 
-   package BasicHudFactory_Package renames Standard.org.allbinary.game.graphics.hud.BasicHudFactory_Package;
-   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type NoGameNotificationHudSingleton is tagged;
    type NoGameNotificationHudSingleton_Access is access all NoGameNotificationHudSingleton'Class;
    type NoGameNotificationHudSingleton_Access_Array is array (Natural range <>) of NoGameNotificationHudSingleton_Access;
    type NoGameNotificationHudSingleton_Access_Array_Access is access all NoGameNotificationHudSingleton_Access_Array;
+   type NoGameNotificationHudSingleton_Access_Array_Access_Array is array (Natural range <>) of NoGameNotificationHudSingleton_Access_Array_Access;
+   type NoGameNotificationHudSingleton_Access_Array_Access_Array_Access is access all NoGameNotificationHudSingleton_Access_Array_Access_Array;
 
    type NoGameNotificationHudSingleton is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -32,6 +32,8 @@ package org.allbinary.game.combat.CombatBaseBehavior_Package is
    type CombatBaseBehavior_Access is access all CombatBaseBehavior'Class;
    type CombatBaseBehavior_Access_Array is array (Natural range <>) of CombatBaseBehavior_Access;
    type CombatBaseBehavior_Access_Array_Access is access all CombatBaseBehavior_Access_Array;
+   type CombatBaseBehavior_Access_Array_Access_Array is array (Natural range <>) of CombatBaseBehavior_Access_Array_Access;
+   type CombatBaseBehavior_Access_Array_Access_Array_Access is access all CombatBaseBehavior_Access_Array_Access_Array;
 
    type CombatBaseBehavior is new Java_Object with record
       damageableBaseBehavior : DamageableBaseBehavior_Access;

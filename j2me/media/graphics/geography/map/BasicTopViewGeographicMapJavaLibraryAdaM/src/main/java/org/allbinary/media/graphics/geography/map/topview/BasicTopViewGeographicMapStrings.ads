@@ -28,6 +28,8 @@ package org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographi
    type BasicTopViewGeographicMapStrings_Access is access all BasicTopViewGeographicMapStrings'Class;
    type BasicTopViewGeographicMapStrings_Access_Array is array (Natural range <>) of BasicTopViewGeographicMapStrings_Access;
    type BasicTopViewGeographicMapStrings_Access_Array_Access is access all BasicTopViewGeographicMapStrings_Access_Array;
+   type BasicTopViewGeographicMapStrings_Access_Array_Access_Array is array (Natural range <>) of BasicTopViewGeographicMapStrings_Access_Array_Access;
+   type BasicTopViewGeographicMapStrings_Access_Array_Access_Array_Access is access all BasicTopViewGeographicMapStrings_Access_Array_Access_Array;
 
    type BasicTopViewGeographicMapStrings is new Java_Object with record
       DEFAULT : Unbounded_String;

@@ -32,6 +32,8 @@ package org.allbinary.input.accelerometer.NoAccelerometerSensor_Package is
    type NoAccelerometerSensor_Access is access all NoAccelerometerSensor'Class;
    type NoAccelerometerSensor_Access_Array is array (Natural range <>) of NoAccelerometerSensor_Access;
    type NoAccelerometerSensor_Access_Array_Access is access all NoAccelerometerSensor_Access_Array;
+   type NoAccelerometerSensor_Access_Array_Access_Array is array (Natural range <>) of NoAccelerometerSensor_Access_Array_Access;
+   type NoAccelerometerSensor_Access_Array_Access_Array_Access is access all NoAccelerometerSensor_Access_Array_Access_Array;
 
    type NoAccelerometerSensor is new AllBinaryOrientationSensor with null record;
 

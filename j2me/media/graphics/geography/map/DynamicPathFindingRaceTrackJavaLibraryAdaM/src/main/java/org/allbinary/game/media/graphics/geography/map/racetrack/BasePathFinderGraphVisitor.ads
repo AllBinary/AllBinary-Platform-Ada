@@ -22,26 +22,24 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.jgrapht.GraphPath_Package; use org.jgrapht.GraphPath_Package;
 with org.jgrapht.graph.SimpleWeightedGraph_Package; use org.jgrapht.graph.SimpleWeightedGraph_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
-with org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 
 package org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package is
 
    package GraphPath_Package renames Standard.org.jgrapht.GraphPath_Package;
    package SimpleWeightedGraph_Package renames Standard.org.jgrapht.graph.SimpleWeightedGraph_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
    package PathFinderGraphVisitorBase_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
-   package PathFindingNode_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type BasePathFinderGraphVisitor is tagged;
    type BasePathFinderGraphVisitor_Access is access all BasePathFinderGraphVisitor'Class;
    type BasePathFinderGraphVisitor_Access_Array is array (Natural range <>) of BasePathFinderGraphVisitor_Access;
    type BasePathFinderGraphVisitor_Access_Array_Access is access all BasePathFinderGraphVisitor_Access_Array;
+   type BasePathFinderGraphVisitor_Access_Array_Access_Array is array (Natural range <>) of BasePathFinderGraphVisitor_Access_Array_Access;
+   type BasePathFinderGraphVisitor_Access_Array_Access_Array_Access is access all BasePathFinderGraphVisitor_Access_Array_Access_Array;
 
    type BasePathFinderGraphVisitor is new PathFinderGraphVisitorBase with record
       geographicMapInterface : BasicGeographicMap_Access;

@@ -23,7 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.osgi.framework.Bundle_Package; use org.osgi.framework.Bundle_Package;
 with org.osgi.framework.ServiceFactory_Package; use org.osgi.framework.ServiceFactory_Package;
 with org.osgi.framework.ServiceRegistration_Package; use org.osgi.framework.ServiceRegistration_Package;
-with org.allbinary.input.automation.InputAutomationJFrame_Package; use org.allbinary.input.automation.InputAutomationJFrame_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
@@ -32,7 +31,6 @@ package org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Packag
    package Bundle_Package renames Standard.org.osgi.framework.Bundle_Package;
    package ServiceFactory_Package renames Standard.org.osgi.framework.ServiceFactory_Package;
    package ServiceRegistration_Package renames Standard.org.osgi.framework.ServiceRegistration_Package;
-   package InputAutomationJFrame_Package renames Standard.org.allbinary.input.automation.InputAutomationJFrame_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -40,8 +38,10 @@ package org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Packag
    type InputAutomationServiceFactory_Access is access all InputAutomationServiceFactory'Class;
    type InputAutomationServiceFactory_Access_Array is array (Natural range <>) of InputAutomationServiceFactory_Access;
    type InputAutomationServiceFactory_Access_Array_Access is access all InputAutomationServiceFactory_Access_Array;
+   type InputAutomationServiceFactory_Access_Array_Access_Array is array (Natural range <>) of InputAutomationServiceFactory_Access_Array_Access;
+   type InputAutomationServiceFactory_Access_Array_Access_Array_Access is access all InputAutomationServiceFactory_Access_Array_Access_Array;
 
-   type InputAutomationServiceFactory is new ServiceFactory with record
+   type InputAutomationServiceFactory is new Java_Object and ServiceFactory with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;

@@ -13,13 +13,20 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+
 package body org.allbinary.graphics.paint.SimpleTextPaintable_Package is
 
+   package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
    procedure Initialize_Fields (This : in out SimpleTextPaintable'Class) is
    begin
       null;
       This.displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
-      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (SimpleTextPaintable_Access'(This'Unchecked_Access));
+      This.updateMyFontProcessor := MyFontProcessor_Access (UpdateMyFontProcessor_Package.Create (SimpleTextPaintable_Access'(This'Unchecked_Access)));
       This.myFontProcessor := This.updateMyFontProcessor;
       
       

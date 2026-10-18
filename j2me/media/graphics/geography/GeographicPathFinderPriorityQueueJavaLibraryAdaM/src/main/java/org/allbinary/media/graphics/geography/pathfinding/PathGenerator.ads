@@ -25,7 +25,6 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package; use org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package;
 with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package; use org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
-with org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package; use org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package;
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; use org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
 
 package org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package is
@@ -38,8 +37,10 @@ package org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package
    type PathGenerator_Access is access all PathGenerator'Class;
    type PathGenerator_Access_Array is array (Natural range <>) of PathGenerator_Access;
    type PathGenerator_Access_Array_Access is access all PathGenerator_Access_Array;
+   type PathGenerator_Access_Array_Access_Array is array (Natural range <>) of PathGenerator_Access_Array_Access;
+   type PathGenerator_Access_Array_Access_Array_Access is access all PathGenerator_Access_Array_Access_Array;
 
-   type PathGenerator is new PathGeneratorInterface with null record;
+   type PathGenerator is new Java_Object and PathGeneratorInterface with null record;
    SINGLETON : PathGenerator_Access;
 
    procedure Initialize (This : in out PathGenerator'Class);

@@ -13,13 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.util.cache.CachePolicyFactory_Package is
 
    procedure Initialize_Fields (This : in out CachePolicyFactory'Class) is
    begin
       null;
       This.NAME := To_Unbounded_String ("lru");
-      This.MAX_TIME_THOUSAND_MAX := CachePolicy_Package.Create (This.NAME, Long_Package.MAX_VALUE, 1000);
+      This.MAX_TIME_THOUSAND_MAX := CachePolicy_Package.Create (This.NAME, Long_Long_Integer'Last, 1000);
       This.THIRTY_MINUTES_TEN_THOUSAND_MAX := CachePolicy_Package.Create (This.NAME, ((1000) * (60)) * (30), 10000);
       This.THIRTY_MINUTES_FIFTY_THOUSAND_MAX := CachePolicy_Package.Create (This.NAME, ((1000) * (60)) * (30), 100000);
       This.ONE_MINUTE_FIVE_MAX := CachePolicy_Package.Create (This.NAME, ((1000) * (60)) * (1), 5);

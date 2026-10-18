@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.physics.friction.FrictionData_Package; use org.allbinary.game.physics.friction.FrictionData_Package;
+with org.allbinary.game.physics.velocity.DragVelocityBehavior_Package; use org.allbinary.game.physics.velocity.DragVelocityBehavior_Package;
+
 package body org.allbinary.game.physics.FrictionProperties_Package is
 
+   package FrictionData_Package renames Standard.org.allbinary.game.physics.friction.FrictionData_Package;
+   package DragVelocityBehavior_Package renames Standard.org.allbinary.game.physics.velocity.DragVelocityBehavior_Package;
    procedure Initialize_Fields (This : in out FrictionProperties'Class) is
    begin
       null;

@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.global
    type GlobalsData_Access is access all GlobalsData'Class;
    type GlobalsData_Access_Array is array (Natural range <>) of GlobalsData_Access;
    type GlobalsData_Access_Array_Access is access all GlobalsData_Access_Array;
+   type GlobalsData_Access_Array_Access_Array is array (Natural range <>) of GlobalsData_Access_Array_Access;
+   type GlobalsData_Access_Array_Access_Array_Access is access all GlobalsData_Access_Array_Access_Array;
 
    type GlobalsData is new Java_Object with null record;
    NAME : Unbounded_String;

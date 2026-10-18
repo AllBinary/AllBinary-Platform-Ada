@@ -13,8 +13,37 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with org.allbinary.globals.AppUrlGlobals_Package; use org.allbinary.globals.AppUrlGlobals_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.gui.dialog.BasicTextJDialog_Package; use org.allbinary.gui.dialog.BasicTextJDialog_Package;
+with org.allbinary.gui.swing.workers.JListSwingWorker_Package; use org.allbinary.gui.swing.workers.JListSwingWorker_Package;
+with org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package; use org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;
+with org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package; use org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package;
+with org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package; use org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+with org.allbinary.input.automation.osgi.DesktopBundle_Package; use org.allbinary.input.automation.osgi.DesktopBundle_Package;
+with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.allbinary.input.automation.robot.InputRobotFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.java.help.JavaHelpUtil_Package; use org.allbinary.logic.java.help.JavaHelpUtil_Package;
+with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
+with org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package; use org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
+
 package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package BasicTextJDialog_Package renames Standard.org.allbinary.gui.dialog.BasicTextJDialog_Package;
+   package JListSwingWorker_Package renames Standard.org.allbinary.gui.swing.workers.JListSwingWorker_Package;
+   package InputAutomationConfiguration_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;
+   package InputAutomationConfigurationFactory_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package;
+   package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+   package DesktopBundle_Package renames Standard.org.allbinary.input.automation.osgi.DesktopBundle_Package;
+   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package JavaHelpUtil_Package renames Standard.org.allbinary.logic.java.help.JavaHelpUtil_Package;
+   package WebappClassLoaderInfo_Package renames Standard.org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
+   package InputAutomationClientInformationFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
    procedure Initialize_Fields (This : in out InputAutomationJFrame'Class) is
    begin
       null;
@@ -132,8 +161,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.noModuleSelectedJLabel.setText (To_Unbounded_String ("Please Select A Module"));
         noModuleSelectedJDialogLayout := GroupLayout_Package.Create (This.noModuleSelectedJDialog.getContentPane);
         This.noModuleSelectedJDialog.getContentPane.setLayout (noModuleSelectedJDialogLayout);
-        noModuleSelectedJDialogLayout.setHorizontalGroup (noModuleSelectedJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (noModuleSelectedJDialogLayout.createSequentialGroup.addContainerGap.addComponent (This.noModuleSelectedJLabel).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
-        noModuleSelectedJDialogLayout.setVerticalGroup (noModuleSelectedJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.noModuleSelectedJLabel, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 48, Short_Package.MAX_VALUE));
+        noModuleSelectedJDialogLayout.setHorizontalGroup (noModuleSelectedJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (noModuleSelectedJDialogLayout.createSequentialGroup.addContainerGap.addComponent (This.noModuleSelectedJLabel).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)));
+        noModuleSelectedJDialogLayout.setVerticalGroup (noModuleSelectedJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.noModuleSelectedJLabel, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 48, Short_Integer'Last));
         InputAutomationJFrame'Class (This).setDefaultCloseOperation (javax_Package.swing.WindowConstants.EXIT_ON_CLOSE);
         InputAutomationJFrame'Class (This).setMinimumSize (Dimension_Package.Create (325, 215));
         InputAutomationJFrame'Class (This).setResizable (False);
@@ -178,13 +207,13 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.jScrollPane1.setViewportView (This.inputAutomationModuleJList);
         inputAutomationModuleJPanelLayout := GroupLayout_Package.Create (This.inputAutomationModuleJPanel);
         This.inputAutomationModuleJPanel.setLayout (inputAutomationModuleJPanelLayout);
-        inputAutomationModuleJPanelLayout.setHorizontalGroup (inputAutomationModuleJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (inputAutomationModuleJPanelLayout.createSequentialGroup.addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 199, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap (367, Short_Package.MAX_VALUE)));
-        inputAutomationModuleJPanelLayout.setVerticalGroup (inputAutomationModuleJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (inputAutomationModuleJPanelLayout.createSequentialGroup.addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 330, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
+        inputAutomationModuleJPanelLayout.setHorizontalGroup (inputAutomationModuleJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (inputAutomationModuleJPanelLayout.createSequentialGroup.addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 199, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap (367, Short_Integer'Last)));
+        inputAutomationModuleJPanelLayout.setVerticalGroup (inputAutomationModuleJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (inputAutomationModuleJPanelLayout.createSequentialGroup.addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 330, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)));
         This.gameRobotJTabbedPane.addTab (To_Unbounded_String ("Modules"), This.inputAutomationModuleJPanel);
         automationModuleConfigurationJPanelLayout := GroupLayout_Package.Create (This.automationModuleConfigurationJPanel);
         This.automationModuleConfigurationJPanel.setLayout (automationModuleConfigurationJPanelLayout);
-        automationModuleConfigurationJPanelLayout.setHorizontalGroup (automationModuleConfigurationJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 566, Short_Package.MAX_VALUE));
-        automationModuleConfigurationJPanelLayout.setVerticalGroup (automationModuleConfigurationJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 334, Short_Package.MAX_VALUE));
+        automationModuleConfigurationJPanelLayout.setHorizontalGroup (automationModuleConfigurationJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 566, Short_Integer'Last));
+        automationModuleConfigurationJPanelLayout.setVerticalGroup (automationModuleConfigurationJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 334, Short_Integer'Last));
         This.gameRobotJTabbedPane.addTab (To_Unbounded_String ("Configuration"), This.automationModuleConfigurationJPanel);
         This.processingJMenu.setText (To_Unbounded_String ("Processing"));
         This.processingJMenu.setToolTipText (To_Unbounded_String ("Set module processing state"));
@@ -286,8 +315,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         InputAutomationJFrame'Class (This).setJMenuBar (This.mainJMenuBar);
         layout := GroupLayout_Package.Create (InputAutomationJFrame'Class (This).getContentPane);
         InputAutomationJFrame'Class (This).getContentPane.setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.gameRobotJTabbedPane, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 571, Short_Package.MAX_VALUE));
-        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.gameRobotJTabbedPane, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 359, Short_Package.MAX_VALUE));
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.gameRobotJTabbedPane, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 571, Short_Integer'Last));
+        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.gameRobotJTabbedPane, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 359, Short_Integer'Last));
         InputAutomationJFrame'Class (This).pack;
    end initComponents;
 
@@ -325,7 +354,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
       evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       textJDialog : JDialog_Access;
    begin
-        textJDialog := BasicTextJDialog_Package.Create (To_Unbounded_String ("Copyright (c) 2002-2007 AllBinary"));
+        textJDialog := JDialog_Access (BasicTextJDialog_Package.Create (To_Unbounded_String ("Copyright (c) 2002-2007 AllBinary")));
         textJDialog.setVisible (True);
         textJDialog.setLocationRelativeTo (InputAutomationJFrame_Access'(This'Unchecked_Access));
    end aboutJMenuItemActionPerformed;
@@ -403,8 +432,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                 This.inputAutomationModuleInterface := This.inputAutomationModuleFactory.getInstance (gameAutomationRobotModuleNameString);
                 InputAutomationJFrame'Class (This).getAutomationModuleConfigurationJPanel.removeAll;
                 layout := GroupLayout_Access (InputAutomationJFrame'Class (This).getAutomationModuleConfigurationJPanel.getLayout);
-                layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Package.MAX_VALUE).addComponent (This.inputAutomationModuleInterface.getConfigurationJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
-                layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 256, Short_Package.MAX_VALUE).addComponent (This.inputAutomationModuleInterface.getConfigurationJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
+                layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Integer'Last).addComponent (This.inputAutomationModuleInterface.getConfigurationJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
+                layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 256, Short_Integer'Last).addComponent (This.inputAutomationModuleInterface.getConfigurationJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
                 This.gameRobotJTabbedPane.setEnabledAt (1, True);
                 This.logUtil.putF (To_Unbounded_String ("Setting Module: ") & gameAutomationRobotModuleNameString & To_Unbounded_String (" and Configuration JPanel"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("gameAutomationRobotModuleJListValueChanged"));
             else
@@ -480,7 +509,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         LogConfigTypeFactory_Package.getInstance;
         appUrlGlobals := AppUrlGlobals_Package.Create;
         appUrlGlobals.setWebappPath (To_Unbounded_String ("G:/mnt/bc/mydev/work_automation/automation/run/"));
-        URLGLOBALS.init (appUrlGlobals);
+        URLGLOBALS_Package.init (appUrlGlobals);
         WebappClassLoaderInfo_Package.setLoader (appUrlGlobals.all'Tag.getClassLoader);
         java_Package.awt.EventQueue.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
 --              

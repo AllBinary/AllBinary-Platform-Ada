@@ -28,6 +28,8 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.Lo
    type LogoData_Access is access all LogoData'Class;
    type LogoData_Access_Array is array (Natural range <>) of LogoData_Access;
    type LogoData_Access_Array_Access is access all LogoData_Access_Array;
+   type LogoData_Access_Array_Access_Array is array (Natural range <>) of LogoData_Access_Array_Access;
+   type LogoData_Access_Array_Access_Array_Access is access all LogoData_Access_Array_Access_Array;
 
    type LogoData is new Java_Object with record
       NAME : Unbounded_String;

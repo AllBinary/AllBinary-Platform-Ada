@@ -29,6 +29,8 @@ package org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package is
    type ArtificialIntelligenceCompositeInterface_Access is access all ArtificialIntelligenceCompositeInterface'Class;
    type ArtificialIntelligenceCompositeInterface_Access_Array is array (Natural range <>) of ArtificialIntelligenceCompositeInterface_Access;
    type ArtificialIntelligenceCompositeInterface_Access_Array_Access is access all ArtificialIntelligenceCompositeInterface_Access_Array;
+   type ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of ArtificialIntelligenceCompositeInterface_Access_Array_Access;
+   type ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array_Access is access all ArtificialIntelligenceCompositeInterface_Access_Array_Access_Array;
    function getArtificialIntelligenceInterface (This : in out ArtificialIntelligenceCompositeInterface) return ArtificialIntelligenceInterface_Access is abstract;
 
 end org.allbinary.ai.ArtificialIntelligenceCompositeInterface_Package;

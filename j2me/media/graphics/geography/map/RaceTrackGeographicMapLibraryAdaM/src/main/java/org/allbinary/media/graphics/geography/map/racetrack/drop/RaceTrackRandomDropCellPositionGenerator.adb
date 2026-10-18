@@ -13,8 +13,23 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.game.layer.drop.DropLayerFactory_Package; use org.allbinary.game.layer.drop.DropLayerFactory_Package;
+with org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package; use org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package;
+with org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package; use org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
+with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+
 package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackRandomDropCellPositionGenerator_Package is
 
+   package PickedUpLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package DropLayerFactory_Package renames Standard.org.allbinary.game.layer.drop.DropLayerFactory_Package;
+   package PickupLayerCircularStaticPool_Package renames Standard.org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package;
+   package RaceTrackPickupLayer_Package renames Standard.org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
    procedure Initialize_Fields (This : in out RaceTrackRandomDropCellPositionGenerator'Class) is
    begin
       null;

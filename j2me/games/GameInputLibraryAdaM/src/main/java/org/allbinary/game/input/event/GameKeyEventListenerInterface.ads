@@ -31,6 +31,8 @@ package org.allbinary.game.input.event.GameKeyEventListenerInterface_Package is
    type GameKeyEventListenerInterface_Access is access all GameKeyEventListenerInterface'Class;
    type GameKeyEventListenerInterface_Access_Array is array (Natural range <>) of GameKeyEventListenerInterface_Access;
    type GameKeyEventListenerInterface_Access_Array_Access is access all GameKeyEventListenerInterface_Access_Array;
+   type GameKeyEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of GameKeyEventListenerInterface_Access_Array_Access;
+   type GameKeyEventListenerInterface_Access_Array_Access_Array_Access is access all GameKeyEventListenerInterface_Access_Array_Access_Array;
 
 end org.allbinary.game.input.event.GameKeyEventListenerInterface_Package;
 

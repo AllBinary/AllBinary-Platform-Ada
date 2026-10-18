@@ -20,15 +20,12 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.j2me.StatusFactory_Package; use org.allbinary.graphics.j2me.StatusFactory_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;
-with org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package; use org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package is
 
-   package StatusFactory_Package renames Standard.org.allbinary.graphics.j2me.StatusFactory_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -36,6 +33,8 @@ package org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package is
    type ToolFactory_Access is access all ToolFactory'Class;
    type ToolFactory_Access_Array is array (Natural range <>) of ToolFactory_Access;
    type ToolFactory_Access_Array_Access is access all ToolFactory_Access_Array;
+   type ToolFactory_Access_Array_Access_Array is array (Natural range <>) of ToolFactory_Access_Array_Access;
+   type ToolFactory_Access_Array_Access_Array_Access is access all ToolFactory_Access_Array_Access_Array;
 
    type ToolFactory is new Java_Object with record
       logUtil : LogUtil_Access;

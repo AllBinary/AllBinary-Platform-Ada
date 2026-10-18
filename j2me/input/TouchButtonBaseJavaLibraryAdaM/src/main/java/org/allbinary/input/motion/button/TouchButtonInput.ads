@@ -20,32 +20,28 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.input.GameKey_Package; use org.allbinary.game.input.GameKey_Package;
 with org.allbinary.game.input.GameKeyEventSourceInterface_Package; use org.allbinary.game.input.GameKeyEventSourceInterface_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
-with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input.InputFactory_Package;
 with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
 with org.allbinary.game.input.event.GameKeyEventFactory_Package; use org.allbinary.game.input.event.GameKeyEventFactory_Package;
 with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package; use org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 
 package org.allbinary.input.motion.button.TouchButtonInput_Package is
 
-   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
    package GameKeyEventSourceInterface_Package renames Standard.org.allbinary.game.input.GameKeyEventSourceInterface_Package;
    package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
-   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
    package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
    package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
    package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TouchButtonInput is tagged;
    type TouchButtonInput_Access is access all TouchButtonInput'Class;
    type TouchButtonInput_Access_Array is array (Natural range <>) of TouchButtonInput_Access;
    type TouchButtonInput_Access_Array_Access is access all TouchButtonInput_Access_Array;
+   type TouchButtonInput_Access_Array_Access_Array is array (Natural range <>) of TouchButtonInput_Access_Array_Access;
+   type TouchButtonInput_Access_Array_Access_Array_Access is access all TouchButtonInput_Access_Array_Access_Array;
 
    type TouchButtonInput is new Input and GameKeyEventSourceInterface with record
       logUtil : LogUtil_Access;

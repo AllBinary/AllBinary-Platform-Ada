@@ -33,6 +33,8 @@ package org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderB
    type GeographicPathFinderBase_Access is access all GeographicPathFinderBase'Class;
    type GeographicPathFinderBase_Access_Array is array (Natural range <>) of GeographicPathFinderBase_Access;
    type GeographicPathFinderBase_Access_Array_Access is access all GeographicPathFinderBase_Access_Array;
+   type GeographicPathFinderBase_Access_Array_Access_Array is array (Natural range <>) of GeographicPathFinderBase_Access_Array_Access;
+   type GeographicPathFinderBase_Access_Array_Access_Array_Access is access all GeographicPathFinderBase_Access_Array_Access_Array;
 
    type GeographicPathFinderBase is new Java_Object with record
       commonStrings : CommonStrings_Access;

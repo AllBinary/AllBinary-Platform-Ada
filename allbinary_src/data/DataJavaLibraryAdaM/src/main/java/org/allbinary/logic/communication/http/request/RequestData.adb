@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.logic.communication.http.request.RequestData_Package is
 
    procedure Initialize_Fields (This : in out RequestData'Class) is

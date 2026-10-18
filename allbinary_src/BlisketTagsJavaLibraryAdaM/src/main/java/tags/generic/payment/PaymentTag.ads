@@ -21,22 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
 
 package tags.generic_Id.payment.PaymentTag_Package is
 
-   package PaymentData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type PaymentTag is tagged;
    type PaymentTag_Access is access all PaymentTag'Class;
    type PaymentTag_Access_Array is array (Natural range <>) of PaymentTag_Access;
    type PaymentTag_Access_Array_Access is access all PaymentTag_Access_Array;
+   type PaymentTag_Access_Array_Access_Array is array (Natural range <>) of PaymentTag_Access_Array_Access;
+   type PaymentTag_Access_Array_Access_Array_Access is access all PaymentTag_Access_Array_Access_Array;
 
    type PaymentTag is new StoreValidationTransformTag with null record;
 

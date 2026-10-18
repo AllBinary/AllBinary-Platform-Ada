@@ -13,6 +13,10 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.layer.SingleLayerLayerManager_Package; use org.allbinary.layer.SingleLayerLayerManager_Package;
+with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerManager_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+
 package body org.allbinary.layer.SingleLayerLayerProcessor_Package is
 
    procedure Initialize_Fields (This : in out SingleLayerLayerProcessor'Class) is

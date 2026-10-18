@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with javax.microedition.khronos.opengles.GL11_Package; use javax.microedition.khronos.opengles.GL11_Package;
+with javax.microedition.khronos.opengles.GL11Ext_Package; use javax.microedition.khronos.opengles.GL11Ext_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.opengles.OpenGLLogUtil_Package; use org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+
 package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
 
+   package GL11_Package renames Standard.javax.microedition.khronos.opengles.GL11_Package;
+   package GL11Ext_Package renames Standard.javax.microedition.khronos.opengles.GL11Ext_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package OpenGLLogUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
    procedure Initialize_Fields (This : in out OpenGLESGL11ExtImage'Class) is
    begin
       null;
@@ -65,9 +74,9 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
         OpenGLESGL11ExtImage'Class (This).onDisplayChangeEvent (null);
         gl11 := GL11_Access (gl);
         if OpenGLESImage (This).initTexture (gl11) then
-            This.textureFactory.load (gl11, GL10.GL_TEXTURE_2D, 0, OpenGLESGL11ExtImage_Access'(This'Unchecked_Access), 0, True);
-            gl11.glTexParameteriv (GL10.GL_TEXTURE_2D, GL11Ext_Package.GL_TEXTURE_CROP_RECT_OES, This.rectangle, 0);
-            gl11.glDisable (GL10.GL_TEXTURE_2D);
+            This.textureFactory.load (gl11, GL10_Package.GL_TEXTURE_2D, 0, OpenGLESGL11ExtImage_Access'(This'Unchecked_Access), 0, True);
+            gl11.glTexParameteriv (GL10_Package.GL_TEXTURE_2D, GL11Ext_Package.GL_TEXTURE_CROP_RECT_OES, This.rectangle, 0);
+            gl11.glDisable (GL10_Package.GL_TEXTURE_2D);
             OpenGLLogUtil_Package.getInstance.logError (gl11, OpenGLESGL11ExtImage_Access'(This'Unchecked_Access));
         end if;
    end set;
@@ -75,10 +84,10 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
    procedure draw (This : in out OpenGLESGL11ExtImage; gl_Param : access GL10_Package.GL10'Class; x : Integer; y : Integer; z : Integer) is
       gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
-        gl.glEnable (GL10.GL_TEXTURE_2D);
-        gl.glBindTexture (GL10.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
+        gl.glEnable (GL10_Package.GL_TEXTURE_2D);
+        gl.glBindTexture (GL10_Package.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);
         (GL11Ext_Access (gl)).glDrawTexfOES (x, (This.a) - (y), z, OpenGLESGL11ExtImage'Class (This).getWidth, OpenGLESGL11ExtImage'Class (This).getHeight);
-        gl.glDisable (GL10.GL_TEXTURE_2D);
+        gl.glDisable (GL10_Package.GL_TEXTURE_2D);
    end draw;
 
 end org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package;

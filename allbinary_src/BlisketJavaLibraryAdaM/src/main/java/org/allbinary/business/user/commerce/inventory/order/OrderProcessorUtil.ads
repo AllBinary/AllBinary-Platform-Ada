@@ -20,21 +20,17 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.data.generator.OrderIdGenerator_Package; use org.allbinary.data.generator.OrderIdGenerator_Package;
-with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
-with org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
 with org.allbinary.business.user.commerce.inventory.order.Order_Package; use org.allbinary.business.user.commerce.inventory.order.Order_Package;
 
 package org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package is
 
-   package OrderIdGenerator_Package renames Standard.org.allbinary.data.generator.OrderIdGenerator_Package;
-   package OrderHistoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
-   package OrderItemsEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
 
    type OrderProcessorUtil is tagged;
    type OrderProcessorUtil_Access is access all OrderProcessorUtil'Class;
    type OrderProcessorUtil_Access_Array is array (Natural range <>) of OrderProcessorUtil_Access;
    type OrderProcessorUtil_Access_Array_Access is access all OrderProcessorUtil_Access_Array;
+   type OrderProcessorUtil_Access_Array_Access_Array is array (Natural range <>) of OrderProcessorUtil_Access_Array_Access;
+   type OrderProcessorUtil_Access_Array_Access_Array_Access is access all OrderProcessorUtil_Access_Array_Access_Array;
 
    type OrderProcessorUtil is new Java_Object with record
       ORDER_PROCESSED : Unbounded_String;

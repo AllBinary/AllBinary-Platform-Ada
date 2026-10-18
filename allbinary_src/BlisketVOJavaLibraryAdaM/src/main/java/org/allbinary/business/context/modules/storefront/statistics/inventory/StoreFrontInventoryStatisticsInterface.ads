@@ -32,6 +32,8 @@ package org.allbinary.business.context.modules.storefront.statistics.inventory.S
    type StoreFrontInventoryStatisticsInterface_Access is access all StoreFrontInventoryStatisticsInterface'Class;
    type StoreFrontInventoryStatisticsInterface_Access_Array is array (Natural range <>) of StoreFrontInventoryStatisticsInterface_Access;
    type StoreFrontInventoryStatisticsInterface_Access_Array_Access is access all StoreFrontInventoryStatisticsInterface_Access_Array;
+   type StoreFrontInventoryStatisticsInterface_Access_Array_Access_Array is array (Natural range <>) of StoreFrontInventoryStatisticsInterface_Access_Array_Access;
+   type StoreFrontInventoryStatisticsInterface_Access_Array_Access_Array_Access is access all StoreFrontInventoryStatisticsInterface_Access_Array_Access_Array;
    function getNumber (This : in out StoreFrontInventoryStatisticsInterface) return Long_Long_Integer is abstract;
    function getTotal (This : in out StoreFrontInventoryStatisticsInterface) return Money_Access is abstract;
 

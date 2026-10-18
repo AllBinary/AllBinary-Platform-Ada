@@ -20,6 +20,8 @@ package org.allbinary.graphics.opengles.OpenGLProcessor_Package is
    type OpenGLProcessor_Access is access all OpenGLProcessor'Class;
    type OpenGLProcessor_Access_Array is array (Natural range <>) of OpenGLProcessor_Access;
    type OpenGLProcessor_Access_Array_Access is access all OpenGLProcessor_Access_Array;
+   type OpenGLProcessor_Access_Array_Access_Array is array (Natural range <>) of OpenGLProcessor_Access_Array_Access;
+   type OpenGLProcessor_Access_Array_Access_Array_Access is access all OpenGLProcessor_Access_Array_Access_Array;
 
    type OpenGLProcessor is new Java_Object with record
       commonStrings : CommonStrings_Access;

@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.tax.components.TaxData_Packag
    type TaxData_Access is access all TaxData'Class;
    type TaxData_Access_Array is array (Natural range <>) of TaxData_Access;
    type TaxData_Access_Array_Access is access all TaxData_Access_Array;
+   type TaxData_Access_Array_Access_Array is array (Natural range <>) of TaxData_Access_Array_Access;
+   type TaxData_Access_Array_Access_Array_Access is access all TaxData_Access_Array_Access_Array;
 
    type TaxData is new Java_Object with null record;
    NAME : Unbounded_String;

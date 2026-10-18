@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.game.tracking.TrackingEventListenerInterface_Package; use org.allbinary.game.tracking.TrackingEventListenerInterface_Package;
-with org.allbinary.game.tracking.TrackingEvent_Package; use org.allbinary.game.tracking.TrackingEvent_Package;
 
 package org.allbinary.game.tracking.TrackingEventHandler_Package is
 
@@ -36,6 +34,8 @@ package org.allbinary.game.tracking.TrackingEventHandler_Package is
    type TrackingEventHandler_Access is access all TrackingEventHandler'Class;
    type TrackingEventHandler_Access_Array is array (Natural range <>) of TrackingEventHandler_Access;
    type TrackingEventHandler_Access_Array_Access is access all TrackingEventHandler_Access_Array;
+   type TrackingEventHandler_Access_Array_Access_Array is array (Natural range <>) of TrackingEventHandler_Access_Array_Access;
+   type TrackingEventHandler_Access_Array_Access_Array_Access is access all TrackingEventHandler_Access_Array_Access_Array;
 
    type TrackingEventHandler is new BasicEventHandler with null record;
    instance : TrackingEventHandler_Access;

@@ -22,18 +22,18 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.net.URL_Package; use java.net.URL_Package;
 --  with javax.help.HelpSet_Package; use javax.help.HelpSet_Package;
-with org.allbinary.logic.java.help.JavaHelpUtil_Package; use org.allbinary.logic.java.help.JavaHelpUtil_Package;
 with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package; use org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 with org.allbinary.input.automation.module.JPanel_Package; use org.allbinary.input.automation.module.JPanel_Package;
 
 package org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package is
 
-   package JavaHelpUtil_Package renames Standard.org.allbinary.logic.java.help.JavaHelpUtil_Package;
 
    type AbstractInputAutomationFactory is tagged;
    type AbstractInputAutomationFactory_Access is access all AbstractInputAutomationFactory'Class;
    type AbstractInputAutomationFactory_Access_Array is array (Natural range <>) of AbstractInputAutomationFactory_Access;
    type AbstractInputAutomationFactory_Access_Array_Access is access all AbstractInputAutomationFactory_Access_Array;
+   type AbstractInputAutomationFactory_Access_Array_Access_Array is array (Natural range <>) of AbstractInputAutomationFactory_Access_Array_Access;
+   type AbstractInputAutomationFactory_Access_Array_Access_Array_Access is access all AbstractInputAutomationFactory_Access_Array_Access_Array;
 
    type AbstractInputAutomationFactory is new InputAutomationModuleFactoryInterface with record
       name : Unbounded_String;

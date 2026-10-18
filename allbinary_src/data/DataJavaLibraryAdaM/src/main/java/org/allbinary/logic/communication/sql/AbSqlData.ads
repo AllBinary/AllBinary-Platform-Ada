@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.sql.AbSqlData_Package is
    type AbSqlData_Access is access all AbSqlData'Class;
    type AbSqlData_Access_Array is array (Natural range <>) of AbSqlData_Access;
    type AbSqlData_Access_Array_Access is access all AbSqlData_Access_Array;
+   type AbSqlData_Access_Array_Access_Array is array (Natural range <>) of AbSqlData_Access_Array_Access;
+   type AbSqlData_Access_Array_Access_Array_Access is access all AbSqlData_Access_Array_Access_Array;
 
    type AbSqlData is new Java_Object with null record;
    ANYSINGLECHARACTERMATCH : Unbounded_String;

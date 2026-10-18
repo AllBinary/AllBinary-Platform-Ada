@@ -37,6 +37,8 @@ package org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimatio
    type AllBinaryAdjustedJ2SEImageRotationAnimation_Access is access all AllBinaryAdjustedJ2SEImageRotationAnimation'Class;
    type AllBinaryAdjustedJ2SEImageRotationAnimation_Access_Array is array (Natural range <>) of AllBinaryAdjustedJ2SEImageRotationAnimation_Access;
    type AllBinaryAdjustedJ2SEImageRotationAnimation_Access_Array_Access is access all AllBinaryAdjustedJ2SEImageRotationAnimation_Access_Array;
+   type AllBinaryAdjustedJ2SEImageRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of AllBinaryAdjustedJ2SEImageRotationAnimation_Access_Array_Access;
+   type AllBinaryAdjustedJ2SEImageRotationAnimation_Access_Array_Access_Array_Access is access all AllBinaryAdjustedJ2SEImageRotationAnimation_Access_Array_Access_Array;
 
    type AllBinaryAdjustedJ2SEImageRotationAnimation is new AllBinaryJ2SEImageRotationAnimation with record
       dx : Integer;

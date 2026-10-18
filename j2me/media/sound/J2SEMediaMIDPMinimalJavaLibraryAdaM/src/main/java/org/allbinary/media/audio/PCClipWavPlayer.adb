@@ -13,8 +13,26 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+with javax.microedition.media.MediaException_Package; use javax.microedition.media.MediaException_Package;
+with javax.microedition.media.PlayerListener_Package; use javax.microedition.media.PlayerListener_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.MusicThreadPool_Package; use org.allbinary.thread.MusicThreadPool_Package;
+with org.allbinary.media.audio.NullAudioFormat_Package; use org.allbinary.media.audio.NullAudioFormat_Package;
+with org.allbinary.media.audio.NullClip_Package; use org.allbinary.media.audio.NullClip_Package;
+with org.allbinary.media.audio.NullControl_Package; use org.allbinary.media.audio.NullControl_Package;
+
 package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package MediaException_Package renames Standard.javax.microedition.media.MediaException_Package;
+   package PlayerListener_Package renames Standard.javax.microedition.media.PlayerListener_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package MusicThreadPool_Package renames Standard.org.allbinary.thread.MusicThreadPool_Package;
    procedure Initialize_Fields (This : in out PCClipWavPlayer'Class) is
    begin
       null;
@@ -32,7 +50,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
       BasicPlayer_Package.Initialize (This);
       Initialize_Fields (This);
         audioInputStream := AudioInputStream_Package.Create (ByteArrayInputStream_Package.Create (NullUtil_Package.getInstance.NULL_BYTE_ARRAY), NullAudioFormat_Package.NULL_AUDIO_FORMAT, 0);
-        clip := NullClip_Package.Create;
+        clip := Clip_Access (NullClip_Package.Create);
         begin
             audioInputStream := AudioSystem_Package.getAudioInputStream (inputStream);
             clip := PCClipWavPlayer'Class (This).create (audioInputStream);
@@ -163,7 +181,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 
    function getControl (This : in out PCClipWavPlayer; controlType : Unbounded_String) return Control_Access is
    begin
-        return NullControl_Package.Create;
+        return Control_Access (NullControl_Package.Create);
    end getControl;
 
    function getControls (This : in out PCClipWavPlayer) return Control_Access_Array_Access is

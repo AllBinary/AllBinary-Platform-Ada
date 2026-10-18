@@ -13,8 +13,37 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.util.HashMap_Package; use java.util.HashMap_Package;
+with admin.taghelpers.AuthenticationHelper_Package; use admin.taghelpers.AuthenticationHelper_Package;
+with admin.taghelpers.AuthenticationHelperFactory_Package; use admin.taghelpers.AuthenticationHelperFactory_Package;
+with admin.taghelpers.AuthenticationHelperUtil_Package; use admin.taghelpers.AuthenticationHelperUtil_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.io.CloudStreamUtil_Package; use org.allbinary.logic.io.CloudStreamUtil_Package;
+with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
+with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.servlet.BlisketServletUtil_Package; use org.allbinary.servlet.BlisketServletUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+
 package body org.allbinary.servlet.file.DownloadFileServlet_Package is
 
+   package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package HashMap_Package renames Standard.java.util.HashMap_Package;
+   package AuthenticationHelper_Package renames Standard.admin.taghelpers.AuthenticationHelper_Package;
+   package AuthenticationHelperFactory_Package renames Standard.admin.taghelpers.AuthenticationHelperFactory_Package;
+   package AuthenticationHelperUtil_Package renames Standard.admin.taghelpers.AuthenticationHelperUtil_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package CloudStreamUtil_Package renames Standard.org.allbinary.logic.io.CloudStreamUtil_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BlisketServletUtil_Package renames Standard.org.allbinary.servlet.BlisketServletUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    procedure Initialize_Fields (This : in out DownloadFileServlet'Class) is
    begin
       null;
@@ -60,14 +89,14 @@ package body org.allbinary.servlet.file.DownloadFileServlet_Package is
                 response.sendError (HttpServletResponse_Package.SC_NOT_FOUND);
                 return;
             end if;
-            beginIndex := (Index (requestPath, Java_Image (This.DOWNLOAD)) - 1);
+            beginIndex := Java_Index_Of (requestPath, Java_Image (This.DOWNLOAD));
             filePath := StringUtil_Package.getInstance.EMPTY_STRING;
             if (beginIndex) >= (0) then
                 filePath := Unbounded_Slice (requestPath, ((beginIndex) + (Length (This.DOWNLOAD))) + 1, Length (requestPath));
             else
                 response.sendError (HttpServletResponse_Package.SC_NOT_FOUND);
             end if;
-            file := AbFile_Package.createAbFile (Java_Image (URLGLOBALS.getWebappPath) & filePath);
+            file := AbFile_Package.createAbFile (Java_Image (URLGLOBALS_Package.getWebappPath) & filePath);
             if not (file.exists) then
                 response.sendError (HttpServletResponse_Package.SC_NOT_FOUND);
                 return;

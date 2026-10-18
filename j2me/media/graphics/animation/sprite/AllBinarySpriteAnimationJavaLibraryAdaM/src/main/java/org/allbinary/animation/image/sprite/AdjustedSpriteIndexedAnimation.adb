@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.graphics.color.BasicColorUtil_Package; use org.allbinary.graphics.color.BasicColorUtil_Package;
+
 package body org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package is
 
+   package BasicColorUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorUtil_Package;
    procedure Initialize_Fields (This : in out AdjustedSpriteIndexedAnimation'Class) is
    begin
       null;

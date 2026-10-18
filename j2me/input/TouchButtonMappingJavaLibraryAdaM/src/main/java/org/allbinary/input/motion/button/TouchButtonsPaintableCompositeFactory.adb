@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package; use org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package;
+
 package body org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFactory_Package is
 
    procedure Initialize_Fields (This : in out TouchButtonsPaintableCompositeFactory'Class) is
@@ -37,7 +39,7 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFac
       inputMappingInterface : constant InputMappingInterface_Access := InputMappingInterface_Access (inputMappingInterface_Param);
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
-        return TouchButtonsPaintableComposite_Package.Create (inputMappingInterface, basicColor);
+        return ProcessPaintable_Access (TouchButtonsPaintableComposite_Package.Create (inputMappingInterface, basicColor));
    end getInstance;
 
    procedure getInstance (inputMappingInterface_Param : access InputMappingInterface_Package.InputMappingInterface'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) is

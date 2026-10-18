@@ -29,6 +29,8 @@ package org.allbinary.business.user.commerce.money.payment.types.CreditCardTypeF
    type CreditCardTypeFactory_Access is access all CreditCardTypeFactory'Class;
    type CreditCardTypeFactory_Access_Array is array (Natural range <>) of CreditCardTypeFactory_Access;
    type CreditCardTypeFactory_Access_Array_Access is access all CreditCardTypeFactory_Access_Array;
+   type CreditCardTypeFactory_Access_Array_Access_Array is array (Natural range <>) of CreditCardTypeFactory_Access_Array_Access;
+   type CreditCardTypeFactory_Access_Array_Access_Array_Access is access all CreditCardTypeFactory_Access_Array_Access_Array;
 
    type CreditCardTypeFactory is new Java_Object with record
       VISA : CreditCardType_Access;

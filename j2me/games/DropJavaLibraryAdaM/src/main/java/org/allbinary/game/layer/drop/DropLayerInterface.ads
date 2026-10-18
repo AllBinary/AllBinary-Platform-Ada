@@ -32,6 +32,8 @@ package org.allbinary.game.layer.drop.DropLayerInterface_Package is
    type DropLayerInterface_Access is access all DropLayerInterface'Class;
    type DropLayerInterface_Access_Array is array (Natural range <>) of DropLayerInterface_Access;
    type DropLayerInterface_Access_Array_Access is access all DropLayerInterface_Access_Array;
+   type DropLayerInterface_Access_Array_Access_Array is array (Natural range <>) of DropLayerInterface_Access_Array_Access;
+   type DropLayerInterface_Access_Array_Access_Array_Access is access all DropLayerInterface_Access_Array_Access_Array;
    function getDroppedLayer (This : in out DropLayerInterface) return PickedUpLayerInterface_Access is abstract;
 
 end org.allbinary.game.layer.drop.DropLayerInterface_Package;

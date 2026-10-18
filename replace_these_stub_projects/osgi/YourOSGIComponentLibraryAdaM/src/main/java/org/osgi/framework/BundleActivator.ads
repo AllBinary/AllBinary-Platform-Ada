@@ -16,6 +16,8 @@ package org.osgi.framework.BundleActivator_Package is
    type BundleActivator_Access is access all BundleActivator'Class;
    type BundleActivator_Access_Array is array (Natural range <>) of BundleActivator_Access;
    type BundleActivator_Access_Array_Access is access all BundleActivator_Access_Array;
+   type BundleActivator_Access_Array_Access_Array is array (Natural range <>) of BundleActivator_Access_Array_Access;
+   type BundleActivator_Access_Array_Access_Array_Access is access all BundleActivator_Access_Array_Access_Array;
 
 end org.osgi.framework.BundleActivator_Package;
 

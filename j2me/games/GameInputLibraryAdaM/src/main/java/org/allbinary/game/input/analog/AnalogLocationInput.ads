@@ -18,6 +18,8 @@ package org.allbinary.game.input.analog.AnalogLocationInput_Package is
    type AnalogLocationInput_Access is access all AnalogLocationInput'Class;
    type AnalogLocationInput_Access_Array is array (Natural range <>) of AnalogLocationInput_Access;
    type AnalogLocationInput_Access_Array_Access is access all AnalogLocationInput_Access_Array;
+   type AnalogLocationInput_Access_Array_Access_Array is array (Natural range <>) of AnalogLocationInput_Access_Array_Access;
+   type AnalogLocationInput_Access_Array_Access_Array_Access is access all AnalogLocationInput_Access_Array_Access_Array;
 
    type AnalogLocationInput is new Java_Object with record
       playerId : Integer;

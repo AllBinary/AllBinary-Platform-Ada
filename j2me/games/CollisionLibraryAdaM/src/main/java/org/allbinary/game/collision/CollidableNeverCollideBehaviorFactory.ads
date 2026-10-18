@@ -31,6 +31,8 @@ package org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Packa
    type CollidableNeverCollideBehaviorFactory_Access is access all CollidableNeverCollideBehaviorFactory'Class;
    type CollidableNeverCollideBehaviorFactory_Access_Array is array (Natural range <>) of CollidableNeverCollideBehaviorFactory_Access;
    type CollidableNeverCollideBehaviorFactory_Access_Array_Access is access all CollidableNeverCollideBehaviorFactory_Access_Array;
+   type CollidableNeverCollideBehaviorFactory_Access_Array_Access_Array is array (Natural range <>) of CollidableNeverCollideBehaviorFactory_Access_Array_Access;
+   type CollidableNeverCollideBehaviorFactory_Access_Array_Access_Array_Access is access all CollidableNeverCollideBehaviorFactory_Access_Array_Access_Array;
 
    type CollidableNeverCollideBehaviorFactory is new CollidableBaseBehaviorFactory with record
       instance : CollidableNeverCollideBehavior_Access;

@@ -28,6 +28,8 @@ package org.allbinary.logic.communication.log.config.LogConfigsData_Package is
    type LogConfigsData_Access is access all LogConfigsData'Class;
    type LogConfigsData_Access_Array is array (Natural range <>) of LogConfigsData_Access;
    type LogConfigsData_Access_Array_Access is access all LogConfigsData_Access_Array;
+   type LogConfigsData_Access_Array_Access_Array is array (Natural range <>) of LogConfigsData_Access_Array_Access;
+   type LogConfigsData_Access_Array_Access_Array_Access is access all LogConfigsData_Access_Array_Access_Array;
 
    type LogConfigsData is new Java_Object with record
       NAME : Unbounded_String;

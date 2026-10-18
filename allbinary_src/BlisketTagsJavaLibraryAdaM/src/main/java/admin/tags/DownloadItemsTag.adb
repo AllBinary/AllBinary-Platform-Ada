@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.DownloadItemsHelperFactory_Package; use admin.taghelpers.DownloadItemsHelperFactory_Package;
+with admin.taghelpers.DownloadItemsRequestHelperFactory_Package; use admin.taghelpers.DownloadItemsRequestHelperFactory_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with admin.tags.ParentInventoryTagHelper_Package; use admin.tags.ParentInventoryTagHelper_Package;
+with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
+
 package body admin.tags.DownloadItemsTag_Package is
 
+   package DownloadItemsHelperFactory_Package renames Standard.admin.taghelpers.DownloadItemsHelperFactory_Package;
+   package DownloadItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.DownloadItemsRequestHelperFactory_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    procedure Initialize_Fields (This : in out DownloadItemsTag'Class) is
    begin
       null;

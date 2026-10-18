@@ -20,38 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
-with java.io.InputStream_Package; use java.io.InputStream_Package;
-with java.io.OutputStream_Package; use java.io.OutputStream_Package;
-with org.allbinary.logic.io.AbDataOutputStream_Package; use org.allbinary.logic.io.AbDataOutputStream_Package;
-with org.allbinary.logic.io.FileStreamFactory_Package; use org.allbinary.logic.io.FileStreamFactory_Package;
-with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
-with org.allbinary.logic.io.file.FileFactory_Package; use org.allbinary.logic.io.file.FileFactory_Package;
-with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 
 package org.allbinary.logic.system.security.licensing.registration.RegistrationConfiguration_Package is
 
-   package DataInputStream_Package renames Standard.java.io.DataInputStream_Package;
-   package InputStream_Package renames Standard.java.io.InputStream_Package;
-   package OutputStream_Package renames Standard.java.io.OutputStream_Package;
-   package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
-   package FileStreamFactory_Package renames Standard.org.allbinary.logic.io.FileStreamFactory_Package;
-   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
-   package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
-   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
 
    type RegistrationConfiguration is tagged;
    type RegistrationConfiguration_Access is access all RegistrationConfiguration'Class;
    type RegistrationConfiguration_Access_Array is array (Natural range <>) of RegistrationConfiguration_Access;
    type RegistrationConfiguration_Access_Array_Access is access all RegistrationConfiguration_Access_Array;
+   type RegistrationConfiguration_Access_Array_Access_Array is array (Natural range <>) of RegistrationConfiguration_Access_Array_Access;
+   type RegistrationConfiguration_Access_Array_Access_Array_Access is access all RegistrationConfiguration_Access_Array_Access_Array;
 
    type RegistrationConfiguration is new Java_Object with record
       logUtil : LogUtil_Access;

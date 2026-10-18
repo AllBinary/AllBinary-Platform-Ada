@@ -23,8 +23,6 @@ with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-with org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package; use org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
-with org.allbinary.game.configuration.event.GameFeatureEvent_Package; use org.allbinary.game.configuration.event.GameFeatureEvent_Package;
 
 package org.allbinary.game.configuration.event.GameFeatureEventHandler_Package is
 
@@ -36,6 +34,8 @@ package org.allbinary.game.configuration.event.GameFeatureEventHandler_Package i
    type GameFeatureEventHandler_Access is access all GameFeatureEventHandler'Class;
    type GameFeatureEventHandler_Access_Array is array (Natural range <>) of GameFeatureEventHandler_Access;
    type GameFeatureEventHandler_Access_Array_Access is access all GameFeatureEventHandler_Access_Array;
+   type GameFeatureEventHandler_Access_Array_Access_Array is array (Natural range <>) of GameFeatureEventHandler_Access_Array_Access;
+   type GameFeatureEventHandler_Access_Array_Access_Array_Access is access all GameFeatureEventHandler_Access_Array_Access_Array;
 
    type GameFeatureEventHandler is new BasicEventHandler with null record;
    gameKeyEventHandler : GameFeatureEventHandler_Access;

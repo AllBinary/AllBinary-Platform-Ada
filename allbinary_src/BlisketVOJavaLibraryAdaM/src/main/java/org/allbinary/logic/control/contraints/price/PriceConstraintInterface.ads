@@ -30,6 +30,8 @@ package org.allbinary.logic.control.contraints.price.PriceConstraintInterface_Pa
    type PriceConstraintInterface_Access is access all PriceConstraintInterface'Class;
    type PriceConstraintInterface_Access_Array is array (Natural range <>) of PriceConstraintInterface_Access;
    type PriceConstraintInterface_Access_Array_Access is access all PriceConstraintInterface_Access_Array;
+   type PriceConstraintInterface_Access_Array_Access_Array is array (Natural range <>) of PriceConstraintInterface_Access_Array_Access;
+   type PriceConstraintInterface_Access_Array_Access_Array_Access is access all PriceConstraintInterface_Access_Array_Access_Array;
 
 end org.allbinary.logic.control.contraints.price.PriceConstraintInterface_Package;
 

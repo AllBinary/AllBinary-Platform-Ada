@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.J2SEUtil_Package is
 
    procedure Initialize_Fields (This : in out J2SEUtil'Class) is

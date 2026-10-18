@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.UserHelperFactory_Package; use admin.taghelpers.UserHelperFactory_Package;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+
 package body admin.tags.UserTag_Package is
 
+   package UserHelperFactory_Package renames Standard.admin.taghelpers.UserHelperFactory_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    procedure Initialize_Fields (This : in out UserTag'Class) is
    begin
       null;

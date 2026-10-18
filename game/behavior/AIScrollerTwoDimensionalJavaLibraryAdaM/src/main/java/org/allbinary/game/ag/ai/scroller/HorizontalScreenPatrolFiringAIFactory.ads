@@ -25,7 +25,6 @@ with org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Packa
 with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package; use org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package;
 
 package org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolFiringAIFactory_Package is
 
@@ -39,8 +38,10 @@ package org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolFiringAIFactory_
    type HorizontalScreenPatrolFiringAIFactory_Access is access all HorizontalScreenPatrolFiringAIFactory'Class;
    type HorizontalScreenPatrolFiringAIFactory_Access_Array is array (Natural range <>) of HorizontalScreenPatrolFiringAIFactory_Access;
    type HorizontalScreenPatrolFiringAIFactory_Access_Array_Access is access all HorizontalScreenPatrolFiringAIFactory_Access_Array;
+   type HorizontalScreenPatrolFiringAIFactory_Access_Array_Access_Array is array (Natural range <>) of HorizontalScreenPatrolFiringAIFactory_Access_Array_Access;
+   type HorizontalScreenPatrolFiringAIFactory_Access_Array_Access_Array_Access is access all HorizontalScreenPatrolFiringAIFactory_Access_Array_Access_Array;
 
-   type HorizontalScreenPatrolFiringAIFactory is new ArtificialIntelligenceInterfaceFactoryInterface with null record;
+   type HorizontalScreenPatrolFiringAIFactory is new Java_Object and ArtificialIntelligenceInterfaceFactoryInterface with null record;
 
    procedure Initialize (This : in out HorizontalScreenPatrolFiringAIFactory'Class);
    function Create return HorizontalScreenPatrolFiringAIFactory_Access;

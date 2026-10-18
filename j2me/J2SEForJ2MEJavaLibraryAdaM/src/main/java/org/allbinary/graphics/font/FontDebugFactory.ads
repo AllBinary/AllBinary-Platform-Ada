@@ -32,6 +32,8 @@ package org.allbinary.graphics.font.FontDebugFactory_Package is
    type FontDebugFactory_Access is access all FontDebugFactory'Class;
    type FontDebugFactory_Access_Array is array (Natural range <>) of FontDebugFactory_Access;
    type FontDebugFactory_Access_Array_Access is access all FontDebugFactory_Access_Array;
+   type FontDebugFactory_Access_Array_Access_Array is array (Natural range <>) of FontDebugFactory_Access_Array_Access;
+   type FontDebugFactory_Access_Array_Access_Array_Access is access all FontDebugFactory_Access_Array_Access_Array;
 
    type FontDebugFactory is new Java_Object with null record;
    instance : FontDebugFactory_Access;

@@ -22,7 +22,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
-with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package;
 with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.business.context.configuration.ContextConfigurationInterface_Package; use org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
@@ -31,7 +30,6 @@ package org.allbinary.business.context.configuration.ContextConfiguration_Packag
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
-   package EmailServerConfiguration_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package;
    package EmailServerConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
@@ -39,8 +37,10 @@ package org.allbinary.business.context.configuration.ContextConfiguration_Packag
    type ContextConfiguration_Access is access all ContextConfiguration'Class;
    type ContextConfiguration_Access_Array is array (Natural range <>) of ContextConfiguration_Access;
    type ContextConfiguration_Access_Array_Access is access all ContextConfiguration_Access_Array;
+   type ContextConfiguration_Access_Array_Access_Array is array (Natural range <>) of ContextConfiguration_Access_Array_Access;
+   type ContextConfiguration_Access_Array_Access_Array_Access is access all ContextConfiguration_Access_Array_Access_Array;
 
-   type ContextConfiguration is new ContextConfigurationInterface with record
+   type ContextConfiguration is new Java_Object and ContextConfigurationInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       emailServerConfigurationInterface : EmailServerConfigurationInterface_Access;

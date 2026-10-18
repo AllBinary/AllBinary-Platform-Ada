@@ -28,6 +28,8 @@ package org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Pack
    type MinMaxIntConstraintInterface_Access is access all MinMaxIntConstraintInterface'Class;
    type MinMaxIntConstraintInterface_Access_Array is array (Natural range <>) of MinMaxIntConstraintInterface_Access;
    type MinMaxIntConstraintInterface_Access_Array_Access is access all MinMaxIntConstraintInterface_Access_Array;
+   type MinMaxIntConstraintInterface_Access_Array_Access_Array is array (Natural range <>) of MinMaxIntConstraintInterface_Access_Array_Access;
+   type MinMaxIntConstraintInterface_Access_Array_Access_Array_Access is access all MinMaxIntConstraintInterface_Access_Array_Access_Array;
    function getMax (This : in out MinMaxIntConstraintInterface) return Integer is abstract;
    function getMin (This : in out MinMaxIntConstraintInterface) return Integer is abstract;
    procedure setMax (This : in out MinMaxIntConstraintInterface; max : Integer) is abstract;

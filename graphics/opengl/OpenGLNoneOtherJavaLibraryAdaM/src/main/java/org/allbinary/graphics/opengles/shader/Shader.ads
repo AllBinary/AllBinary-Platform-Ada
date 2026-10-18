@@ -20,20 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
 
 package org.allbinary.graphics.opengles.shader.Shader_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type Shader is tagged;
    type Shader_Access is access all Shader'Class;
    type Shader_Access_Array is array (Natural range <>) of Shader_Access;
    type Shader_Access_Array_Access is access all Shader_Access_Array;
+   type Shader_Access_Array_Access_Array is array (Natural range <>) of Shader_Access_Array_Access;
+   type Shader_Access_Array_Access_Array_Access is access all Shader_Access_Array_Access_Array;
 
    type Shader is new Java_Object with record
       shaderName : Unbounded_String;

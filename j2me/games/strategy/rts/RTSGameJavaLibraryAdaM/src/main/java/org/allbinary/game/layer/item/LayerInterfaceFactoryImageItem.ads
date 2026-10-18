@@ -40,6 +40,8 @@ package org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package is
    type LayerInterfaceFactoryImageItem_Access is access all LayerInterfaceFactoryImageItem'Class;
    type LayerInterfaceFactoryImageItem_Access_Array is array (Natural range <>) of LayerInterfaceFactoryImageItem_Access;
    type LayerInterfaceFactoryImageItem_Access_Array_Access is access all LayerInterfaceFactoryImageItem_Access_Array;
+   type LayerInterfaceFactoryImageItem_Access_Array_Access_Array is array (Natural range <>) of LayerInterfaceFactoryImageItem_Access_Array_Access;
+   type LayerInterfaceFactoryImageItem_Access_Array_Access_Array_Access is access all LayerInterfaceFactoryImageItem_Access_Array_Access_Array;
 
    type LayerInterfaceFactoryImageItem is new ABCustomImageItem with record
       animationArray : Animation_Access_Array_Access;

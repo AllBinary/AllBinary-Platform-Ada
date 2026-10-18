@@ -30,6 +30,8 @@ package org.allbinary.logic.communication.log.LogUtil_Package is
    type LogUtil_Access is access all LogUtil'Class;
    type LogUtil_Access_Array is array (Natural range <>) of LogUtil_Access;
    type LogUtil_Access_Array_Access is access all LogUtil_Access_Array;
+   type LogUtil_Access_Array_Access_Array is array (Natural range <>) of LogUtil_Access_Array_Access;
+   type LogUtil_Access_Array_Access_Array_Access is access all LogUtil_Access_Array_Access_Array;
 
    type LogUtil is new Java_Object with record
       logFormatUtil : LogFormatUtil_Access;

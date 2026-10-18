@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+with taghelpers.StoreTagWorkFlowHelperFactory_Package; use taghelpers.StoreTagWorkFlowHelperFactory_Package;
+
 package body tags.StoreWorkFlowTag_Package is
 
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package StoreTagWorkFlowHelperFactory_Package renames Standard.taghelpers.StoreTagWorkFlowHelperFactory_Package;
    procedure Initialize_Fields (This : in out StoreWorkFlowTag'Class) is
    begin
       null;

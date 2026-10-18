@@ -21,18 +21,18 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with javax.servlet.jsp.JspTagException_Package; use javax.servlet.jsp.JspTagException_Package;
-with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
 
 package tags.admin.customizers.ViewCustomizersTag_Package is
 
-   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type ViewCustomizersTag is tagged;
    type ViewCustomizersTag_Access is access all ViewCustomizersTag'Class;
    type ViewCustomizersTag_Access_Array is array (Natural range <>) of ViewCustomizersTag_Access;
    type ViewCustomizersTag_Access_Array_Access is access all ViewCustomizersTag_Access_Array;
+   type ViewCustomizersTag_Access_Array_Access_Array is array (Natural range <>) of ViewCustomizersTag_Access_Array_Access;
+   type ViewCustomizersTag_Access_Array_Access_Array_Access is access all ViewCustomizersTag_Access_Array_Access_Array;
 
    type ViewCustomizersTag is new StoreValidationTransformTag with null record;
 

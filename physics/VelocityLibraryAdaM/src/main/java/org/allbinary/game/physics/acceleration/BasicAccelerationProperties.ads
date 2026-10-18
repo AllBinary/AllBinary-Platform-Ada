@@ -28,6 +28,8 @@ package org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Pack
    type BasicAccelerationProperties_Access is access all BasicAccelerationProperties'Class;
    type BasicAccelerationProperties_Access_Array is array (Natural range <>) of BasicAccelerationProperties_Access;
    type BasicAccelerationProperties_Access_Array_Access is access all BasicAccelerationProperties_Access_Array;
+   type BasicAccelerationProperties_Access_Array_Access_Array is array (Natural range <>) of BasicAccelerationProperties_Access_Array_Access;
+   type BasicAccelerationProperties_Access_Array_Access_Array_Access is access all BasicAccelerationProperties_Access_Array_Access_Array;
 
    type BasicAccelerationProperties is new Java_Object with record
       forward : Integer;

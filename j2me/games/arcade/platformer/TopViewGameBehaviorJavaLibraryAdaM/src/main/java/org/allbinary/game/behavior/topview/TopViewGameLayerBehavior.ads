@@ -35,6 +35,8 @@ package org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package is
    type TopViewGameLayerBehavior_Access is access all TopViewGameLayerBehavior'Class;
    type TopViewGameLayerBehavior_Access_Array is array (Natural range <>) of TopViewGameLayerBehavior_Access;
    type TopViewGameLayerBehavior_Access_Array_Access is access all TopViewGameLayerBehavior_Access_Array;
+   type TopViewGameLayerBehavior_Access_Array_Access_Array is array (Natural range <>) of TopViewGameLayerBehavior_Access_Array_Access;
+   type TopViewGameLayerBehavior_Access_Array_Access_Array_Access is access all TopViewGameLayerBehavior_Access_Array_Access_Array;
 
    type TopViewGameLayerBehavior is new GameLayerBehavior with record
       maxGravityActionIndex : Integer;

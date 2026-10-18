@@ -21,10 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.business.user.UserDomNode_Package; use org.allbinary.business.user.UserDomNode_Package;
-with org.allbinary.business.user.UsersData_Package; use org.allbinary.business.user.UsersData_Package;
-with org.allbinary.business.user.modules.User_Package; use org.allbinary.business.user.modules.User_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -35,10 +31,6 @@ with views.business.context.HttpContextView_Package; use views.business.context.
 package views.admin.user.UsersView_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package UserDomNode_Package renames Standard.org.allbinary.business.user.UserDomNode_Package;
-   package UsersData_Package renames Standard.org.allbinary.business.user.UsersData_Package;
-   package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
@@ -50,6 +42,8 @@ package views.admin.user.UsersView_Package is
    type UsersView_Access is access all UsersView'Class;
    type UsersView_Access_Array is array (Natural range <>) of UsersView_Access;
    type UsersView_Access_Array_Access is access all UsersView_Access_Array;
+   type UsersView_Access_Array_Access_Array is array (Natural range <>) of UsersView_Access_Array_Access;
+   type UsersView_Access_Array_Access_Array_Access is access all UsersView_Access_Array_Access_Array;
 
    type UsersView is new HttpContextView and DomNodeInterface with record
       logUtil : LogUtil_Access;

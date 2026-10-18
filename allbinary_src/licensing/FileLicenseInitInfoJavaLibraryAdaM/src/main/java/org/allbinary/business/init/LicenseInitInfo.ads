@@ -20,24 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.debug.DebugFactory_Package; use org.allbinary.debug.DebugFactory_Package;
-with org.allbinary.debug.NoDebug_Package; use org.allbinary.debug.NoDebug_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 
 package org.allbinary.business.init.LicenseInitInfo_Package is
 
-   package DebugFactory_Package renames Standard.org.allbinary.debug.DebugFactory_Package;
-   package NoDebug_Package renames Standard.org.allbinary.debug.NoDebug_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type LicenseInitInfo is tagged;
    type LicenseInitInfo_Access is access all LicenseInitInfo'Class;
    type LicenseInitInfo_Access_Array is array (Natural range <>) of LicenseInitInfo_Access;
    type LicenseInitInfo_Access_Array_Access is access all LicenseInitInfo_Access_Array;
+   type LicenseInitInfo_Access_Array_Access_Array is array (Natural range <>) of LicenseInitInfo_Access_Array_Access;
+   type LicenseInitInfo_Access_Array_Access_Array_Access is access all LicenseInitInfo_Access_Array_Access_Array;
 
    type LicenseInitInfo is new Java_Object with record
       id : Unbounded_String;

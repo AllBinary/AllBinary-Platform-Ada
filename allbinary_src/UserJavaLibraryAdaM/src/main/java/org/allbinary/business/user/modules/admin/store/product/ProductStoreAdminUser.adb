@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package is
 
    procedure Initialize_Fields (This : in out ProductStoreAdminUser'Class) is

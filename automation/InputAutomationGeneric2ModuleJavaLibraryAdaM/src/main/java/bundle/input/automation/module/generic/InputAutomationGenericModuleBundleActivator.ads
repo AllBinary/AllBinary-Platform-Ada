@@ -20,18 +20,18 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package; use org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package;
 with org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package; use org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package;
 
 package bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package is
 
-   package InputAutomationGenericModuleServiceFactory_Package renames Standard.org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package;
    package InputAutomationModuleBundleActivator_Package renames Standard.org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package;
 
    type InputAutomationGenericModuleBundleActivator is tagged;
    type InputAutomationGenericModuleBundleActivator_Access is access all InputAutomationGenericModuleBundleActivator'Class;
    type InputAutomationGenericModuleBundleActivator_Access_Array is array (Natural range <>) of InputAutomationGenericModuleBundleActivator_Access;
    type InputAutomationGenericModuleBundleActivator_Access_Array_Access is access all InputAutomationGenericModuleBundleActivator_Access_Array;
+   type InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array is array (Natural range <>) of InputAutomationGenericModuleBundleActivator_Access_Array_Access;
+   type InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array_Access is access all InputAutomationGenericModuleBundleActivator_Access_Array_Access_Array;
 
    type InputAutomationGenericModuleBundleActivator is new InputAutomationModuleBundleActivator with null record;
 

@@ -38,6 +38,8 @@ package org.allbinary.game.part.weapon.BasicWeaponPartCircularPool_Package is
    type BasicWeaponPartCircularPool_Access is access all BasicWeaponPartCircularPool'Class;
    type BasicWeaponPartCircularPool_Access_Array is array (Natural range <>) of BasicWeaponPartCircularPool_Access;
    type BasicWeaponPartCircularPool_Access_Array_Access is access all BasicWeaponPartCircularPool_Access_Array;
+   type BasicWeaponPartCircularPool_Access_Array_Access_Array is array (Natural range <>) of BasicWeaponPartCircularPool_Access_Array_Access;
+   type BasicWeaponPartCircularPool_Access_Array_Access_Array_Access is access all BasicWeaponPartCircularPool_Access_Array_Access_Array;
 
    type BasicWeaponPartCircularPool is new Java_Object with record
       basicWeaponPart : BasicWeaponPart_Access;

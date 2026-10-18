@@ -21,24 +21,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
-with org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package; use org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package;
 with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
-with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
-with org.allbinary.logic.communication.smtp.EmailData_Package; use org.allbinary.logic.communication.smtp.EmailData_Package;
-with org.allbinary.logic.communication.smtp.Email_Package; use org.allbinary.logic.communication.smtp.Email_Package;
 
 package org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
 
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
-   package BasicErrorNodeUtil_Package renames Standard.org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package;
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
@@ -48,8 +40,10 @@ package org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
    type EmailsNotUsed_Access is access all EmailsNotUsed'Class;
    type EmailsNotUsed_Access_Array is array (Natural range <>) of EmailsNotUsed_Access;
    type EmailsNotUsed_Access_Array_Access is access all EmailsNotUsed_Access_Array;
+   type EmailsNotUsed_Access_Array_Access_Array is array (Natural range <>) of EmailsNotUsed_Access_Array_Access;
+   type EmailsNotUsed_Access_Array_Access_Array_Access is access all EmailsNotUsed_Access_Array_Access_Array;
 
-   type EmailsNotUsed is new DomNodeInterface with record
+   type EmailsNotUsed is new Java_Object and DomNodeInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       emailInfoVector : BasicArrayList_Access;

@@ -28,6 +28,8 @@ package org.allbinary.logic.math.J2SEMath_Package is
    type J2SEMath_Access is access all J2SEMath'Class;
    type J2SEMath_Access_Array is array (Natural range <>) of J2SEMath_Access;
    type J2SEMath_Access_Array_Access is access all J2SEMath_Access_Array;
+   type J2SEMath_Access_Array_Access_Array is array (Natural range <>) of J2SEMath_Access_Array_Access;
+   type J2SEMath_Access_Array_Access_Array_Access is access all J2SEMath_Access_Array_Access_Array;
 
    type J2SEMath is new Java_Object with null record;
    instance : J2SEMath_Access;

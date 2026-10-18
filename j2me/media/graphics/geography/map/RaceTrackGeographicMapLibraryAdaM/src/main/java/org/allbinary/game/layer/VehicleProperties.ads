@@ -31,6 +31,8 @@ package org.allbinary.game.layer.VehicleProperties_Package is
    type VehicleProperties_Access is access all VehicleProperties'Class;
    type VehicleProperties_Access_Array is array (Natural range <>) of VehicleProperties_Access;
    type VehicleProperties_Access_Array_Access is access all VehicleProperties_Access_Array;
+   type VehicleProperties_Access_Array_Access_Array is array (Natural range <>) of VehicleProperties_Access_Array_Access;
+   type VehicleProperties_Access_Array_Access_Array_Access is access all VehicleProperties_Access_Array_Access_Array;
 
    type VehicleProperties is new Java_Object with record
       velocityProperties : VelocityProperties_Access;

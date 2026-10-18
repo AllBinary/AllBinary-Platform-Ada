@@ -28,6 +28,8 @@ package org.allbinary.business.user.commerce.money.payment.PaymentInterface_Pack
    type PaymentInterface_Access is access all PaymentInterface'Class;
    type PaymentInterface_Access_Array is array (Natural range <>) of PaymentInterface_Access;
    type PaymentInterface_Access_Array_Access is access all PaymentInterface_Access_Array;
+   type PaymentInterface_Access_Array_Access_Array is array (Natural range <>) of PaymentInterface_Access_Array_Access;
+   type PaymentInterface_Access_Array_Access_Array_Access is access all PaymentInterface_Access_Array_Access_Array;
    procedure setName (This : in out PaymentInterface; value : Unbounded_String) is abstract;
    procedure setType (This : in out PaymentInterface; value : Unbounded_String) is abstract;
    procedure setExpiration (This : in out PaymentInterface; value : Unbounded_String) is abstract;

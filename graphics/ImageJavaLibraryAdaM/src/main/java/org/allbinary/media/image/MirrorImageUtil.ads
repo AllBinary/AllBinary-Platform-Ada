@@ -25,7 +25,6 @@ with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.image.BufferedImage_Package; use java.awt.image.BufferedImage_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
-with org.allbinary.media.image.Graphics2D_Package; use org.allbinary.media.image.Graphics2D_Package;
 
 package org.allbinary.media.image.MirrorImageUtil_Package is
 
@@ -35,6 +34,8 @@ package org.allbinary.media.image.MirrorImageUtil_Package is
    type MirrorImageUtil_Access is access all MirrorImageUtil'Class;
    type MirrorImageUtil_Access_Array is array (Natural range <>) of MirrorImageUtil_Access;
    type MirrorImageUtil_Access_Array_Access is access all MirrorImageUtil_Access_Array;
+   type MirrorImageUtil_Access_Array_Access_Array is array (Natural range <>) of MirrorImageUtil_Access_Array_Access;
+   type MirrorImageUtil_Access_Array_Access_Array_Access is access all MirrorImageUtil_Access_Array_Access_Array;
 
    type MirrorImageUtil is new Java_Object with record
       logUtil : LogUtil_Access;

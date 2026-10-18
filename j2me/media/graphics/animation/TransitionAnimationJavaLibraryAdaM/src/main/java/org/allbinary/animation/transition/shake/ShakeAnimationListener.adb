@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.animation.transition.shake.ShakeAnimationListener_Package is
 
    procedure Initialize_Fields (This : in out ShakeAnimationListener'Class) is

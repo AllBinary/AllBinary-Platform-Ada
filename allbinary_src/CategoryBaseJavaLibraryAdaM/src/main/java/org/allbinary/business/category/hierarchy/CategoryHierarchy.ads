@@ -21,24 +21,22 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
-with org.allbinary.business.category.CategoryData_Package; use org.allbinary.business.category.CategoryData_Package;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package; use org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
 
 package org.allbinary.business.category.hierarchy.CategoryHierarchy_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
-   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
    package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type CategoryHierarchy is tagged;
    type CategoryHierarchy_Access is access all CategoryHierarchy'Class;
    type CategoryHierarchy_Access_Array is array (Natural range <>) of CategoryHierarchy_Access;
    type CategoryHierarchy_Access_Array_Access is access all CategoryHierarchy_Access_Array;
+   type CategoryHierarchy_Access_Array_Access_Array is array (Natural range <>) of CategoryHierarchy_Access_Array_Access;
+   type CategoryHierarchy_Access_Array_Access_Array_Access is access all CategoryHierarchy_Access_Array_Access_Array;
 
-   type CategoryHierarchy is new CategoryHierarchyInterface with record
+   type CategoryHierarchy is new Java_Object and CategoryHierarchyInterface with record
       rootCategoryInterface : CategoryInterface_Access;
       parentCategoryInterface : CategoryInterface_Access;
       level : Integer;

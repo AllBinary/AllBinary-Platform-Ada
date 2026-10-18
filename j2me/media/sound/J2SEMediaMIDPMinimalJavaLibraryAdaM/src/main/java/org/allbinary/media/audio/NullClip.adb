@@ -13,6 +13,8 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.media.audio.NullAudioFormat_Package; use org.allbinary.media.audio.NullAudioFormat_Package;
+
 package body org.allbinary.media.audio.NullClip_Package is
 
    procedure Initialize_Fields (This : in out NullClip'Class) is

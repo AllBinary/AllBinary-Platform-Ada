@@ -17,6 +17,8 @@ package org.allbinary.graphics.form.CustomScreen_Package is
    type CustomScreen_Access is access all CustomScreen'Class;
    type CustomScreen_Access_Array is array (Natural range <>) of CustomScreen_Access;
    type CustomScreen_Access_Array_Access is access all CustomScreen_Access_Array;
+   type CustomScreen_Access_Array_Access_Array is array (Natural range <>) of CustomScreen_Access_Array_Access;
+   type CustomScreen_Access_Array_Access_Array_Access is access all CustomScreen_Access_Array_Access_Array;
 
    type CustomScreen is new CustomDisplayable with null record;
 

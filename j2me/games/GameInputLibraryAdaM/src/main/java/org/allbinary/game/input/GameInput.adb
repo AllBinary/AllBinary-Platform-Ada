@@ -13,8 +13,13 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+
 package body org.allbinary.game.input.GameInput_Package is
 
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
    procedure Initialize_Fields (This : in out GameInput'Class) is
    begin
       null;
@@ -46,11 +51,11 @@ package body org.allbinary.game.input.GameInput_Package is
    procedure add (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
-        if (This.isRemoveDuplicateKeyPresses) and then (This.gameKeyEventList.contains (gameKeyEvent)) then
+        if (This.isRemoveDuplicateKeyPresses) and then (This.gameKeyEventList.contains (Java_Object_Access (gameKeyEvent))) then
             return;
         end if;
         if (gameKeyEvent) /= (null) then
-            This.gameKeyEventList.add (gameKeyEvent);
+            This.gameKeyEventList.add (Java_Object_Access (gameKeyEvent));
         else
             This.logUtil.putF (To_Unbounded_String ("Danger Passed Null GameKeyEvent"), GameInput_Access'(This'Unchecked_Access), This.commonStrings.ADD);
         end if;
@@ -59,13 +64,13 @@ package body org.allbinary.game.input.GameInput_Package is
    procedure addForRemoval (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
-        This.removalGameKeyEventList.add (gameKeyEvent);
+        This.removalGameKeyEventList.add (Java_Object_Access (gameKeyEvent));
    end addForRemoval;
 
    function isForRemoval (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) return Boolean is
       gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
-        return This.removalGameKeyEventList.contains (gameKeyEvent);
+        return This.removalGameKeyEventList.contains (Java_Object_Access (gameKeyEvent));
    end isForRemoval;
 
    procedure clear (This : in out GameInput) is

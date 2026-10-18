@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.image.opengles.OpenGLStrings_Package is
 
    procedure Initialize_Fields (This : in out OpenGLStrings'Class) is

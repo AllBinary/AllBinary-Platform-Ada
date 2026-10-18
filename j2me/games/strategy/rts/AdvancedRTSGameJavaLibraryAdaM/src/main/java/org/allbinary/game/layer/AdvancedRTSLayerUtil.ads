@@ -19,16 +19,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.game.layer.waypoint.WorkWaypoint_Package; use org.allbinary.game.layer.waypoint.WorkWaypoint_Package;
-with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package; use org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
-with org.allbinary.game.layer.RTSLayerUtil_Package; use org.allbinary.game.layer.RTSLayerUtil_Package;
 
 package org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
 
-   package WorkWaypoint_Package renames Standard.org.allbinary.game.layer.waypoint.WorkWaypoint_Package;
-   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
    package BaseRaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
@@ -36,6 +31,8 @@ package org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
    type AdvancedRTSLayerUtil_Access is access all AdvancedRTSLayerUtil'Class;
    type AdvancedRTSLayerUtil_Access_Array is array (Natural range <>) of AdvancedRTSLayerUtil_Access;
    type AdvancedRTSLayerUtil_Access_Array_Access is access all AdvancedRTSLayerUtil_Access_Array;
+   type AdvancedRTSLayerUtil_Access_Array_Access_Array is array (Natural range <>) of AdvancedRTSLayerUtil_Access_Array_Access;
+   type AdvancedRTSLayerUtil_Access_Array_Access_Array_Access is access all AdvancedRTSLayerUtil_Access_Array_Access_Array;
 
    type AdvancedRTSLayerUtil is new Java_Object with null record;
    instance : AdvancedRTSLayerUtil_Access;

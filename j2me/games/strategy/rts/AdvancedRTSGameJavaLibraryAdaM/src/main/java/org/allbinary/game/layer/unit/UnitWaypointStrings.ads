@@ -20,16 +20,16 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 
 package org.allbinary.game.layer.unit.UnitWaypointStrings_Package is
 
-   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type UnitWaypointStrings is tagged;
    type UnitWaypointStrings_Access is access all UnitWaypointStrings'Class;
    type UnitWaypointStrings_Access_Array is array (Natural range <>) of UnitWaypointStrings_Access;
    type UnitWaypointStrings_Access_Array_Access is access all UnitWaypointStrings_Access_Array;
+   type UnitWaypointStrings_Access_Array_Access_Array is array (Natural range <>) of UnitWaypointStrings_Access_Array_Access;
+   type UnitWaypointStrings_Access_Array_Access_Array_Access is access all UnitWaypointStrings_Access_Array_Access_Array;
 
    type UnitWaypointStrings is new Java_Object with record
       WANDERING : Unbounded_String;

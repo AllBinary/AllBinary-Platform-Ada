@@ -13,8 +13,15 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.smtp.event.EmailEvent_Package; use org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
+
 package body org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package EmailEvent_Package renames Standard.org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
    procedure Initialize_Fields (This : in out UserEmailEventHandler'Class) is
    begin
       null;
@@ -27,7 +34,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.UserEmailEvent
    procedure Initialize (This : in out UserEmailEventHandler'Class) is
    begin
       Initialize_Fields (This);
-        This.emailVector := BasicArrayListD_Package.Create;
+        This.emailVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create return UserEmailEventHandler_Access is
@@ -63,13 +70,13 @@ package body org.allbinary.logic.communication.smtp.event.handler.UserEmailEvent
    procedure addListener (This : in out UserEmailEventHandler; emailEventListenerInterface_Param : access UserEmailEventListenerInterface_Package.UserEmailEventListenerInterface'Class) is
       emailEventListenerInterface : constant UserEmailEventListenerInterface_Access := UserEmailEventListenerInterface_Access (emailEventListenerInterface_Param);
    begin
-        This.emailVector.add (emailEventListenerInterface);
+        This.emailVector.add (Java_Object_Access (emailEventListenerInterface));
    end addListener;
 
    procedure removeListener (This : in out UserEmailEventHandler; emailEventListenerInterface_Param : access UserEmailEventListenerInterface_Package.UserEmailEventListenerInterface'Class) is
       emailEventListenerInterface : constant UserEmailEventListenerInterface_Access := UserEmailEventListenerInterface_Access (emailEventListenerInterface_Param);
    begin
-        This.emailVector.remove (emailEventListenerInterface);
+        This.emailVector.remove (Java_Object_Access (emailEventListenerInterface));
    end removeListener;
 
    --  throws Exception

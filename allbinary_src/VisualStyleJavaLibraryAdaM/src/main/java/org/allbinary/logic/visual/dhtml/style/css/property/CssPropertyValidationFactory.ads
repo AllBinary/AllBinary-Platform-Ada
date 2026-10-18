@@ -21,19 +21,19 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.allbinary.logic.control.validate.ValidationInterface_Package;
-with org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyValidation_Package; use org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyValidation_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidationFactory_Package is
 
    package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package FontFamilyValidation_Package renames Standard.org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyValidation_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type CssPropertyValidationFactory is tagged;
    type CssPropertyValidationFactory_Access is access all CssPropertyValidationFactory'Class;
    type CssPropertyValidationFactory_Access_Array is array (Natural range <>) of CssPropertyValidationFactory_Access;
    type CssPropertyValidationFactory_Access_Array_Access is access all CssPropertyValidationFactory_Access_Array;
+   type CssPropertyValidationFactory_Access_Array_Access_Array is array (Natural range <>) of CssPropertyValidationFactory_Access_Array_Access;
+   type CssPropertyValidationFactory_Access_Array_Access_Array_Access is access all CssPropertyValidationFactory_Access_Array_Access_Array;
 
    type CssPropertyValidationFactory is new Java_Object with null record;
 

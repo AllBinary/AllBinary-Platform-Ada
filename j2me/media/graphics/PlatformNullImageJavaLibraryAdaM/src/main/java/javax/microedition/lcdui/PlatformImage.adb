@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with javax.microedition.lcdui.NullImage_Package; use javax.microedition.lcdui.NullImage_Package;
+
 package body javax.microedition.lcdui.PlatformImage_Package is
 
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
    procedure Initialize_Fields (This : in out PlatformImage'Class) is
    begin
       null;
@@ -152,6 +156,18 @@ package body javax.microedition.lcdui.PlatformImage_Package is
    begin
       null;
    end getData;
+
+   function getImage (This : in out PlatformImage; Value : Unbounded_String) return Java_Object_Access is
+   begin
+      return PlatformImage'Class (This).getImage (Java_Box (Value));
+   end getImage;
+
+   procedure getImage (This : in out PlatformImage; Value : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := PlatformImage'Class (This).getImage (Java_Box (Value));
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getImage;
 
 end javax.microedition.lcdui.PlatformImage_Package;
 

@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with android.app.ActivityManager_Package; use android.app.ActivityManager_Package;
+with android.app.ActivityManager.RunningServiceInfo_Package; use android.app.ActivityManager.RunningServiceInfo_Package;
+with android.content.ComponentName_Package; use android.content.ComponentName_Package;
+with android.content.Context_Package; use android.content.Context_Package;
+
 package body org.allbinary.android.AndroidServicesUtil_Package is
 
+   package ActivityManager_Package renames Standard.android.app.ActivityManager_Package;
+   package RunningServiceInfo_Package renames Standard.android.app.ActivityManager.RunningServiceInfo_Package;
+   package ComponentName_Package renames Standard.android.content.ComponentName_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
    procedure Initialize_Fields (This : in out AndroidServicesUtil'Class) is
    begin
       null;
@@ -62,7 +71,7 @@ package body org.allbinary.android.AndroidServicesUtil_Package is
             runningServiceInfo := runningServicesList.get (index);
             serviceComponent := runningServiceInfo.service;
             serviceName := serviceComponent.toString;
-            if ((Index (serviceName, Java_Image (name)) - 1)) >= (0) then
+            if (Java_Index_Of (serviceName, Java_Image (name))) >= (0) then
                 return True;
             end if;
         end loop;

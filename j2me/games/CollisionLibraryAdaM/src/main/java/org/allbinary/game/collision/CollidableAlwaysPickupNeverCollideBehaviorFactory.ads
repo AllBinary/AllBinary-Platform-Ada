@@ -31,6 +31,8 @@ package org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehaviorF
    type CollidableAlwaysPickupNeverCollideBehaviorFactory_Access is access all CollidableAlwaysPickupNeverCollideBehaviorFactory'Class;
    type CollidableAlwaysPickupNeverCollideBehaviorFactory_Access_Array is array (Natural range <>) of CollidableAlwaysPickupNeverCollideBehaviorFactory_Access;
    type CollidableAlwaysPickupNeverCollideBehaviorFactory_Access_Array_Access is access all CollidableAlwaysPickupNeverCollideBehaviorFactory_Access_Array;
+   type CollidableAlwaysPickupNeverCollideBehaviorFactory_Access_Array_Access_Array is array (Natural range <>) of CollidableAlwaysPickupNeverCollideBehaviorFactory_Access_Array_Access;
+   type CollidableAlwaysPickupNeverCollideBehaviorFactory_Access_Array_Access_Array_Access is access all CollidableAlwaysPickupNeverCollideBehaviorFactory_Access_Array_Access_Array;
 
    type CollidableAlwaysPickupNeverCollideBehaviorFactory is new CollidableBaseBehaviorFactory with record
       instance : CollidableAlwaysPickupNeverCollideBehavior_Access;

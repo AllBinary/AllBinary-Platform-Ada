@@ -28,6 +28,8 @@ package org.allbinary.graphics.opengles.shader.ModelViewProjection_Package is
    type ModelViewProjection_Access is access all ModelViewProjection'Class;
    type ModelViewProjection_Access_Array is array (Natural range <>) of ModelViewProjection_Access;
    type ModelViewProjection_Access_Array_Access is access all ModelViewProjection_Access_Array;
+   type ModelViewProjection_Access_Array_Access_Array is array (Natural range <>) of ModelViewProjection_Access_Array_Access;
+   type ModelViewProjection_Access_Array_Access_Array_Access is access all ModelViewProjection_Access_Array_Access_Array;
 
    type ModelViewProjection is new Java_Object with null record;
    instance : ModelViewProjection_Access;

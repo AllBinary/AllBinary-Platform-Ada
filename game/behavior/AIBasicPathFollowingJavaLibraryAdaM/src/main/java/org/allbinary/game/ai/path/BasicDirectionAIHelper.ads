@@ -20,24 +20,20 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.direction.Direction_Package; use org.allbinary.direction.Direction_Package;
-with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.direction.DirectionFactory_Package;
-with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Package;
 
 package org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
 
-   package Canvas_Package renames Standard.javax.microedition.lcdui.Canvas_Package;
    package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
-   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
-   package AngleIncrementInfo_Package renames Standard.org.allbinary.math.AngleIncrementInfo_Package;
    package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type BasicDirectionAIHelper is tagged;
    type BasicDirectionAIHelper_Access is access all BasicDirectionAIHelper'Class;
    type BasicDirectionAIHelper_Access_Array is array (Natural range <>) of BasicDirectionAIHelper_Access;
    type BasicDirectionAIHelper_Access_Array_Access is access all BasicDirectionAIHelper_Access_Array;
+   type BasicDirectionAIHelper_Access_Array_Access_Array is array (Natural range <>) of BasicDirectionAIHelper_Access_Array_Access;
+   type BasicDirectionAIHelper_Access_Array_Access_Array_Access is access all BasicDirectionAIHelper_Access_Array_Access_Array;
 
    type BasicDirectionAIHelper is new Java_Object with record
       name : Unbounded_String;

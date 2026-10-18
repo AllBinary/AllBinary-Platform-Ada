@@ -23,38 +23,24 @@ with AllBinary_Java; use AllBinary_Java;
 --  with javax.swing.tree.DefaultMutableTreeNode_Package; use javax.swing.tree.DefaultMutableTreeNode_Package;
 --  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
 --  with javax.swing.tree.TreePath_Package; use javax.swing.tree.TreePath_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
-with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
-with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
-with org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package; use org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
-with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.graphics.j2me.workarea.JPanel_Package; use org.allbinary.graphics.j2me.workarea.JPanel_Package;
 with org.allbinary.graphics.j2me.workarea.JTree_Package; use org.allbinary.graphics.j2me.workarea.JTree_Package;
 
 package org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 
-   package CanvasTreeLabel_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
-   package MyCanvasEvent_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
-   package MyCanvasEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
-   package MyCanvasEventSource_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
-   package MyGraphicItemEvent_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
-   package MyGraphicItemEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
-   package MyGraphicItemEventSource_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type WorkAreaJTreeJPanel is tagged;
    type WorkAreaJTreeJPanel_Access is access all WorkAreaJTreeJPanel'Class;
    type WorkAreaJTreeJPanel_Access_Array is array (Natural range <>) of WorkAreaJTreeJPanel_Access;
    type WorkAreaJTreeJPanel_Access_Array_Access is access all WorkAreaJTreeJPanel_Access_Array;
+   type WorkAreaJTreeJPanel_Access_Array_Access_Array is array (Natural range <>) of WorkAreaJTreeJPanel_Access_Array_Access;
+   type WorkAreaJTreeJPanel_Access_Array_Access_Array_Access is access all WorkAreaJTreeJPanel_Access_Array_Access_Array;
 
    type WorkAreaJTreeJPanel is new JPanel with record
       logUtil : LogUtil_Access;

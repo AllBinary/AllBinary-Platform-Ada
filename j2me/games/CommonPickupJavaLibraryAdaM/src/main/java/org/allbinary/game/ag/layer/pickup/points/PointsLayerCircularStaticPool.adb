@@ -13,8 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.game.score.ScoreableInterface_Package; use org.allbinary.game.score.ScoreableInterface_Package;
+with org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package; use org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package;
+
 package body org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStaticPool_Package is
 
+   package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
    procedure Initialize_Fields (This : in out PointsLayerCircularStaticPool'Class) is
    begin
       null;

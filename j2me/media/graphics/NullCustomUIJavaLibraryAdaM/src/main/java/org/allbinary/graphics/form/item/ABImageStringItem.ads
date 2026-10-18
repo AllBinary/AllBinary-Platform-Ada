@@ -16,6 +16,8 @@ package org.allbinary.graphics.form.item.ABImageStringItem_Package is
    type ABImageStringItem_Access is access all ABImageStringItem'Class;
    type ABImageStringItem_Access_Array is array (Natural range <>) of ABImageStringItem_Access;
    type ABImageStringItem_Access_Array_Access is access all ABImageStringItem_Access_Array;
+   type ABImageStringItem_Access_Array_Access_Array is array (Natural range <>) of ABImageStringItem_Access_Array_Access;
+   type ABImageStringItem_Access_Array_Access_Array_Access is access all ABImageStringItem_Access_Array_Access_Array;
 
    type ABImageStringItem is new Java_Object with null record;
 

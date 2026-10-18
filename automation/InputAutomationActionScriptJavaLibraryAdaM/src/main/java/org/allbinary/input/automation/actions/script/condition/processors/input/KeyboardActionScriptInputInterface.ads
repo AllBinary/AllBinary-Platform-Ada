@@ -29,6 +29,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    type KeyboardActionScriptInputInterface_Access is access all KeyboardActionScriptInputInterface'Class;
    type KeyboardActionScriptInputInterface_Access_Array is array (Natural range <>) of KeyboardActionScriptInputInterface_Access;
    type KeyboardActionScriptInputInterface_Access_Array_Access is access all KeyboardActionScriptInputInterface_Access_Array;
+   type KeyboardActionScriptInputInterface_Access_Array_Access_Array is array (Natural range <>) of KeyboardActionScriptInputInterface_Access_Array_Access;
+   type KeyboardActionScriptInputInterface_Access_Array_Access_Array_Access is access all KeyboardActionScriptInputInterface_Access_Array_Access_Array;
    function getDelayBetweenKeys (This : in out KeyboardActionScriptInputInterface) return Integer is abstract;
    function getKeyArray (This : in out KeyboardActionScriptInputInterface) return Integer_Array_Access is abstract;
    function isPress (This : in out KeyboardActionScriptInputInterface) return Boolean is abstract;

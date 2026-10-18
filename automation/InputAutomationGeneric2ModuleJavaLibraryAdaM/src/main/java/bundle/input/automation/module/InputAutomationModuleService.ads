@@ -31,8 +31,10 @@ package bundle.input.automation.module.InputAutomationModuleService_Package is
    type InputAutomationModuleService_Access is access all InputAutomationModuleService'Class;
    type InputAutomationModuleService_Access_Array is array (Natural range <>) of InputAutomationModuleService_Access;
    type InputAutomationModuleService_Access_Array_Access is access all InputAutomationModuleService_Access_Array;
+   type InputAutomationModuleService_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModuleService_Access_Array_Access;
+   type InputAutomationModuleService_Access_Array_Access_Array_Access is access all InputAutomationModuleService_Access_Array_Access_Array;
 
-   type InputAutomationModuleService is new InputAutomationModuleServiceInterface with record
+   type InputAutomationModuleService is new Java_Object and InputAutomationModuleServiceInterface with record
       inputAutomationModuleInterfaceArray : InputAutomationModuleFactoryInterface_Access_Array_Access;
    end record;
 

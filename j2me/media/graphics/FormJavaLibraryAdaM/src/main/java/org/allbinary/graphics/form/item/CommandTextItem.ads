@@ -33,6 +33,8 @@ package org.allbinary.graphics.form.item.CommandTextItem_Package is
    type CommandTextItem_Access is access all CommandTextItem'Class;
    type CommandTextItem_Access_Array is array (Natural range <>) of CommandTextItem_Access;
    type CommandTextItem_Access_Array_Access is access all CommandTextItem_Access_Array;
+   type CommandTextItem_Access_Array_Access_Array is array (Natural range <>) of CommandTextItem_Access_Array_Access;
+   type CommandTextItem_Access_Array_Access_Array_Access is access all CommandTextItem_Access_Array_Access_Array;
 
    type CommandTextItem is new ABTextItem with record
       command : Command_Access;

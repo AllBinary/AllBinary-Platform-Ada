@@ -13,8 +13,21 @@
 --  Generated Code Do Not Modify
 
 
+with java.util.Enumeration_Package; use java.util.Enumeration_Package;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.LayerInterfaceFactory_Package; use org.allbinary.layer.LayerInterfaceFactory_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.layer.LayerPlacementType_Package; use org.allbinary.game.layer.LayerPlacementType_Package;
+with org.allbinary.game.layer.LayerPlacementTypeFactory_Package; use org.allbinary.game.layer.LayerPlacementTypeFactory_Package;
+
 package body org.allbinary.game.layer.LayerPlacer_Package is
 
+   package Enumeration_Package renames Standard.java.util.Enumeration_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package LayerInterfaceFactory_Package renames Standard.org.allbinary.layer.LayerInterfaceFactory_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
    procedure Initialize_Fields (This : in out LayerPlacer'Class) is
    begin
       null;

@@ -31,6 +31,8 @@ package org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryI
    type GraphicsItemInterfaceFactoryInterface_Access is access all GraphicsItemInterfaceFactoryInterface'Class;
    type GraphicsItemInterfaceFactoryInterface_Access_Array is array (Natural range <>) of GraphicsItemInterfaceFactoryInterface_Access;
    type GraphicsItemInterfaceFactoryInterface_Access_Array_Access is access all GraphicsItemInterfaceFactoryInterface_Access_Array;
+   type GraphicsItemInterfaceFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of GraphicsItemInterfaceFactoryInterface_Access_Array_Access;
+   type GraphicsItemInterfaceFactoryInterface_Access_Array_Access_Array_Access is access all GraphicsItemInterfaceFactoryInterface_Access_Array_Access_Array;
    function getInstance (This : in out GraphicsItemInterfaceFactoryInterface; canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) return GraphicItemInterface_Access is abstract;
 
 end org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package;

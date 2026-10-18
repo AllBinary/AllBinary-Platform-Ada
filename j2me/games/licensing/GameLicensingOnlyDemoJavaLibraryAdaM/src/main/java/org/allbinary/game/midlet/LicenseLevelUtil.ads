@@ -28,6 +28,8 @@ package org.allbinary.game.midlet.LicenseLevelUtil_Package is
    type LicenseLevelUtil_Access is access all LicenseLevelUtil'Class;
    type LicenseLevelUtil_Access_Array is array (Natural range <>) of LicenseLevelUtil_Access;
    type LicenseLevelUtil_Access_Array_Access is access all LicenseLevelUtil_Access_Array;
+   type LicenseLevelUtil_Access_Array_Access_Array is array (Natural range <>) of LicenseLevelUtil_Access_Array_Access;
+   type LicenseLevelUtil_Access_Array_Access_Array_Access is access all LicenseLevelUtil_Access_Array_Access_Array;
 
    type LicenseLevelUtil is new Java_Object with null record;
    instance : LicenseLevelUtil_Access;

@@ -1,6 +1,7 @@
 --  Generated Code Do Not Modify
 
 
+
 package body org.allbinary.game.collision.CollisionProcessor_Package is
 
    procedure Initialize_Fields (This : in out CollisionProcessor'Class) is

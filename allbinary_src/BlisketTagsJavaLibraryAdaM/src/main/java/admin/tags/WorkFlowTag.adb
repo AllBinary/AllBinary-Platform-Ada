@@ -13,8 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with admin.taghelpers.WorkFlowHelperFactory_Package; use admin.taghelpers.WorkFlowHelperFactory_Package;
+
 package body admin.tags.WorkFlowTag_Package is
 
+   package WorkFlowHelperFactory_Package renames Standard.admin.taghelpers.WorkFlowHelperFactory_Package;
    procedure Initialize_Fields (This : in out WorkFlowTag'Class) is
    begin
       null;

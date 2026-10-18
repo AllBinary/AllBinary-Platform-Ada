@@ -32,8 +32,10 @@ package org.allbinary.logic.system.hardware.components.linux.Usb_Package is
    type Usb_Access is access all Usb'Class;
    type Usb_Access_Array is array (Natural range <>) of Usb_Access;
    type Usb_Access_Array_Access is access all Usb_Access_Array;
+   type Usb_Access_Array_Access_Array is array (Natural range <>) of Usb_Access_Array_Access;
+   type Usb_Access_Array_Access_Array_Access is access all Usb_Access_Array_Access_Array;
 
-   type Usb is new HardwareComponentInterface and UsbInterface with record
+   type Usb is new Java_Object and HardwareComponentInterface and UsbInterface with record
       data : Unbounded_String;
    end record;
 

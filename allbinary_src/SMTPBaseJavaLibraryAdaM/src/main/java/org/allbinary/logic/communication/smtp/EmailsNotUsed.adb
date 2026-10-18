@@ -13,8 +13,17 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package; use org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.smtp.EmailData_Package; use org.allbinary.logic.communication.smtp.EmailData_Package;
+with org.allbinary.logic.communication.smtp.Email_Package; use org.allbinary.logic.communication.smtp.Email_Package;
+
 package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
 
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicErrorNodeUtil_Package renames Standard.org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    procedure Initialize_Fields (This : in out EmailsNotUsed'Class) is
    begin
       null;
@@ -27,7 +36,7 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
    procedure Initialize (This : in out EmailsNotUsed'Class) is
    begin
       Initialize_Fields (This);
-        This.emailInfoVector := BasicArrayListD_Package.Create;
+        This.emailInfoVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize;
 
    function Create return EmailsNotUsed_Access is

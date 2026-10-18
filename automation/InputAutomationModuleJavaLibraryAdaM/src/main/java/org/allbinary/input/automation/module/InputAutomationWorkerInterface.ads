@@ -28,6 +28,8 @@ package org.allbinary.input.automation.module.InputAutomationWorkerInterface_Pac
    type InputAutomationWorkerInterface_Access is access all InputAutomationWorkerInterface'Class;
    type InputAutomationWorkerInterface_Access_Array is array (Natural range <>) of InputAutomationWorkerInterface_Access;
    type InputAutomationWorkerInterface_Access_Array_Access is access all InputAutomationWorkerInterface_Access_Array;
+   type InputAutomationWorkerInterface_Access_Array_Access_Array is array (Natural range <>) of InputAutomationWorkerInterface_Access_Array_Access;
+   type InputAutomationWorkerInterface_Access_Array_Access_Array_Access is access all InputAutomationWorkerInterface_Access_Array_Access_Array;
 
 end org.allbinary.input.automation.module.InputAutomationWorkerInterface_Package;
 
