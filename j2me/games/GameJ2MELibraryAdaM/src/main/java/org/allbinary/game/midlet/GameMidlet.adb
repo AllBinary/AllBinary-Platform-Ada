@@ -684,7 +684,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         GameEventHandlerUtil_Package.removeAllListeners;
         gameCanvasRunnableInterface := This.allbinaryGameCanvasRunnableInterface;
         if (gameCanvasRunnableInterface) /= (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE) then
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Set Running False: ")).append (gameCanvasRunnableInterface.toString).toString, GameMidlet_Access'(This'Unchecked_Access), This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Set Running False: ")).append (Java_Object'Class (gameCanvasRunnableInterface.all).toString).toString, GameMidlet_Access'(This'Unchecked_Access), This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
             gameCanvasRunnableInterface.setRunning (False);
         else
             This.logUtil.putF (To_Unbounded_String ("StopGame - Could Not Stop"), GameMidlet_Access'(This'Unchecked_Access), This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);

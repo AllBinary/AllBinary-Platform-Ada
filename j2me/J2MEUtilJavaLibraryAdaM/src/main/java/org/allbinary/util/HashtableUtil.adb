@@ -76,7 +76,7 @@ package body org.allbinary.util.HashtableUtil_Package is
         index := 0;
         enumeration := hashtable.keys;
         while This.enumerationUtil.hasMoreElements (enumeration) loop
-            objectArray (Java_Post_Increment (index)) := This.enumerationUtil.nextElement (enumeration);
+            objectArray (Java_Post_Increment (index)) := Java_Object_Access (This.enumerationUtil.nextElement (enumeration));
         end loop;
         return objectArray;
    end getKeysAsArray;

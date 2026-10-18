@@ -14,10 +14,12 @@
 
 
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.PrintStream_Package; use java.io.PrintStream_Package;
 
 package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
 
    package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package PrintStream_Package renames Standard.java.io.PrintStream_Package;
    procedure Initialize_Fields (This : in out ExceptionUtil'Class) is
    begin
       null;
@@ -52,7 +54,7 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
         if (e) /= (null) then
             byteArrayOutputStream := ByteArrayOutputStream_Package.Create;
             printStream := PrintStream_Package.Create (byteArrayOutputStream);
-            e.printStackTrace (printStream);
+            Java_Print_Stack_Trace (e, printStream);
             output := byteArrayOutputStream.toString;
             if (output) /= (Null_Unbounded_String) then
                 return Java_New_String (output);

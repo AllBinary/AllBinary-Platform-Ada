@@ -61,7 +61,7 @@ package body org.allbinary.logic.util.cache.BaseCircularPool_Package is
         This.circularIndexUtil.setIndex (0);
         size := This.circularIndexUtil.getSize;
         for index in 0 .. (size) - 1 loop
-            This.OBJECT_ARRAY (index) := allBinaryObjectFactoryInterface.getInstance;
+            This.OBJECT_ARRAY (index) := Java_Object_Access (allBinaryObjectFactoryInterface.getInstance);
         end loop;
    end init;
 

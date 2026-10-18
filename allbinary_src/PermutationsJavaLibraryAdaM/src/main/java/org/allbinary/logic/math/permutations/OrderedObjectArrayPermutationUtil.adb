@@ -76,8 +76,8 @@ package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutation
       temp : Java_Object_Access;
    begin
         temp := data (a);
-        data (a) := data (b);
-        data (b) := temp;
+        data (a) := Java_Object_Access (data (b));
+        data (b) := Java_Object_Access (temp);
    end swap;
 
    function factorial (This : in out OrderedObjectArrayPermutationUtil; dataLength : Integer) return Long_Long_Integer is
@@ -118,7 +118,7 @@ package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutation
         TOTAL := 7;
         data := new Java_Object_Access_Array'(0 .. (TOTAL) - 1 => null);
         for i in 0 .. (TOTAL) - 1 loop
-            data (i) := ComparableObject_Package.Create;
+            data (i) := Java_Object_Access (ComparableObject_Package.Create);
         end loop;
         Arrays_Package.sort (data);
         permutationVisitor := ObjectPermutationVisitor_Package.Create (data);

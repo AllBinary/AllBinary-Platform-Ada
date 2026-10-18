@@ -20,7 +20,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.PrintStream_Package; use java.io.PrintStream_Package;
 
 package org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
 

@@ -76,7 +76,7 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
         osBuffer := StringMaker_Package.Create;
         osBuffer.append (To_Unbounded_String ("Hardware Info: " & ASCII.LF & ""));
         if (systemHardwareFactory_Var.hardwareInterface) /= (null) then
-            osBuffer.append (systemHardwareFactory_Var.hardwareInterface.toString);
+            osBuffer.append (Java_Object'Class (systemHardwareFactory_Var.hardwareInterface.all).toString);
         else
             osBuffer.append (StringUtil_Package.getInstance.NULL_STRING);
         end if;

@@ -63,7 +63,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    begin
         logUtil := LogUtil_Package.getInstance;
         commonStrings := CommonStrings_Package.getInstance;
-        logUtil.putF (To_Unbounded_String ("Start - Processing at: ") & imageActionScriptOutputInterface.toString, To_Unbounded_String ("ImageActionScriptOutputProcessor"), commonStrings.PROCESS);
+        logUtil.putF (To_Unbounded_String ("Start - Processing at: ") & Java_Object'Class (imageActionScriptOutputInterface.all).toString, To_Unbounded_String ("ImageActionScriptOutputProcessor"), commonStrings.PROCESS);
         imageTypes := imageActionScriptOutputInterface.getImageTypes;
         vector := imageTypes.getVector;
         size := vector.size;

@@ -170,7 +170,7 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
             stringBuffer := StringMaker_Package.Create;
             for index in 0 .. (size) - 1 loop
                 featureInterface := FeatureResourceAnimationInterfaceFactoryInterface_Access (list.objectArray (index));
-                stringBuffer.append (featureInterface.toString);
+                stringBuffer.append (Java_Object'Class (featureInterface.all).toString);
                 stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
             end loop;
             result := stringBuffer.toString;

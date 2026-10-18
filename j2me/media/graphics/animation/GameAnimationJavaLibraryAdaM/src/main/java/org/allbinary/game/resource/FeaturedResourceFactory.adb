@@ -78,7 +78,7 @@ package body org.allbinary.game.resource.FeaturedResourceFactory_Package is
             featureInterface := GameFeatureControlledInterface_Access (This.list.objectArray (index));
             isLoadingLevel := featureInterface.isLoadingLevel (level);
             isFeature := featureInterface.isFeature;
-            This.logUtil.putF (StringMaker_Package.Create.append (This.GAME_FEATURE_CONTROLLED).append (featureInterface.toString).append (This.IS_LOADING_LEVEL_LABEL).append (ResourceLoadingLevelFactory_Package.getInstance.getLevelString (level)).append (CommonSeps_Package.getInstance.COLON_SEP).appendboolean (isLoadingLevel).append (This.IS_FEATURE).appendboolean (isFeature).toString, FeaturedResourceFactory_Access'(This'Unchecked_Access), This.commonStrings.INIT);
+            This.logUtil.putF (StringMaker_Package.Create.append (This.GAME_FEATURE_CONTROLLED).append (Java_Object'Class (featureInterface.all).toString).append (This.IS_LOADING_LEVEL_LABEL).append (ResourceLoadingLevelFactory_Package.getInstance.getLevelString (level)).append (CommonSeps_Package.getInstance.COLON_SEP).appendboolean (isLoadingLevel).append (This.IS_FEATURE).appendboolean (isFeature).toString, FeaturedResourceFactory_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             if (isLoadingLevel) and then (isFeature) then
                 featureInterface.init (level);
             end if;

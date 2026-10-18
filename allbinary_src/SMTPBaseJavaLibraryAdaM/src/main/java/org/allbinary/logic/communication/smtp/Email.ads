@@ -21,7 +21,6 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
---  with java.io.PrintStream_Package; use java.io.PrintStream_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 --  with java.util.Properties_Package; use java.util.Properties_Package;
 --  with javax.mail.Address_Package; use javax.mail.Address_Package;

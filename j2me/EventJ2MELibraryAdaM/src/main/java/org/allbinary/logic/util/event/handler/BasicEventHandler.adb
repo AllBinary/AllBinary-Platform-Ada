@@ -163,7 +163,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
             begin
                 eventListenerInterface := EventListenerInterface_Access (This.eventListenerInterfaceList.get (index));
                 stringBuffer.append (This.eventStrings.LISTENER_LABEL);
-                stringBuffer.append (eventListenerInterface.toString);
+                stringBuffer.append (Java_Object'Class (eventListenerInterface.all).toString);
             exception
                 when Java_Occurrence : others =>
                     declare

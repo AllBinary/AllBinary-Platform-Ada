@@ -58,7 +58,7 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
       index : Integer;
    begin
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & colorRangeInterface.toString, ImageAnalysis_Access'(This'Unchecked_Access), commonStrings.PROCESS);
+        This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & Java_Object'Class (colorRangeInterface.all).toString, ImageAnalysis_Access'(This'Unchecked_Access), commonStrings.PROCESS);
         imageAnalysisResultsArray := new ImageAnalysisResults_Access_Array'(0 .. (bufferedImageArray'Length) - 1 => null);
         for index in 0 .. (bufferedImageArray'Length) - 1 loop
             imageAnalysisResultsArray (index) := ImageAnalysis_Package.process (bufferedImageArray (index), colorRangeInterface);

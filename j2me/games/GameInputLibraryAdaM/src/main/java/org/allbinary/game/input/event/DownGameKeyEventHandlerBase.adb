@@ -123,7 +123,7 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandlerBase_Package 
             begin
                 eventListenerInterface := EventListenerInterface_Access (This.list.get (index));
                 stringBuffer.append (DownGameKeyEventHandlerBase_Package.LISTENER_LABEL);
-                stringBuffer.append (eventListenerInterface.toString);
+                stringBuffer.append (Java_Object'Class (eventListenerInterface.all).toString);
             exception
                 when Java_Occurrence : others =>
                     declare

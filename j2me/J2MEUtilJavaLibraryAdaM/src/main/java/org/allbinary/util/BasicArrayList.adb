@@ -55,7 +55,7 @@ package body org.allbinary.util.BasicArrayList_Package is
         end if;
         BasicArrayList'Class (This).ensureCapacity ((This.currentIndex) + (1));
         Java_Array_Copy (This.objectArray, index, This.objectArray, (index) + (1), (This.currentIndex) - (index));
-        This.objectArray (index) := element;
+        This.objectArray (index) := Java_Object_Access (element);
         This.currentIndex := This.currentIndex + 1;
    end addAt;
 
@@ -63,7 +63,7 @@ package body org.allbinary.util.BasicArrayList_Package is
       anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         BasicArrayList'Class (This).ensureCapacity ((This.currentIndex) + (1));
-        This.objectArray (Java_Post_Increment (This.currentIndex)) := anyType;
+        This.objectArray (Java_Post_Increment (This.currentIndex)) := Java_Object_Access (anyType);
         return True;
    end add;
 
@@ -146,7 +146,7 @@ package body org.allbinary.util.BasicArrayList_Package is
         BasicArrayList'Class (This).ensureCapacity ((This.currentIndex) + (list.currentIndex));
         listSize := list.currentIndex;
         for index in 0 .. (listSize) - 1 loop
-            This.objectArray (Java_Post_Increment (This.currentIndex)) := list.objectArray (index);
+            This.objectArray (Java_Post_Increment (This.currentIndex)) := Java_Object_Access (list.objectArray (index));
         end loop;
         return True;
    end addAll2;
@@ -260,7 +260,7 @@ package body org.allbinary.util.BasicArrayList_Package is
             Java_Throw (Java_New_Exception ("IndexOutOfBoundsException", stringBuffer.toString));
         end if;
         oldValue := This.objectArray (index);
-        This.objectArray (index) := element;
+        This.objectArray (index) := Java_Object_Access (element);
         return oldValue;
    end set;
 

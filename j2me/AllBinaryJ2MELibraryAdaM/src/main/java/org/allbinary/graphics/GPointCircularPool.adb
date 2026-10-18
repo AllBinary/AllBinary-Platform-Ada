@@ -33,7 +33,7 @@ package body org.allbinary.graphics.GPointCircularPool_Package is
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (size);
         This.OBJECT_ARRAY := new Java_Object_Access_Array'(0 .. (size) - 1 => null);
         for index in reverse 0 .. (size) - (1) loop
-            This.OBJECT_ARRAY (index) := CustomGPoint_Package.getInstance3 (0, 0);
+            This.OBJECT_ARRAY (index) := Java_Object_Access (CustomGPoint_Package.getInstance3 (0, 0));
         end loop;
    end Initialize;
 

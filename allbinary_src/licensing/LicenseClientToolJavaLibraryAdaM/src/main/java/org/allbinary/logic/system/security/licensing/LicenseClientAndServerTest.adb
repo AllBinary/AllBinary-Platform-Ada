@@ -110,7 +110,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
                     abeLicenseInterface := AbeLicenseInterface_Access (xmlRpcAbeLicenseClient.get (null));
                     if (abeLicenseInterface) /= (null) then
                         stringBuffer.append (PROCESSING);
-                        stringBuffer.append (abeLicenseInterface.toString);
+                        stringBuffer.append (Java_Object'Class (abeLicenseInterface.all).toString);
                     end if;
                     stringBuffer.append (END_Id);
                     This.logUtil.putF (RESULT & stringBuffer.toString, LicenseClientAndServerTest_Access'(This'Unchecked_Access), To_Unbounded_String ("test"));

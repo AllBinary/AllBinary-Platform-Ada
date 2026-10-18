@@ -47,7 +47,7 @@ package body org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package i
         This.circularIndexUtil.setIndex (0);
         size := This.circularIndexUtil.getSize;
         for index in 0 .. (size) - 1 loop
-            This.OBJECT_ARRAY (index) := allBinaryEventObjectFactoryInterface.getInstance;
+            This.OBJECT_ARRAY (index) := Java_Object_Access (allBinaryEventObjectFactoryInterface.getInstance);
         end loop;
    end initAllBinaryEventCircularPool;
 

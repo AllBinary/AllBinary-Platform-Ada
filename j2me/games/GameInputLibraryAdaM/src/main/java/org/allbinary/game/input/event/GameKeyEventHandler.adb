@@ -54,7 +54,7 @@ package body org.allbinary.game.input.event.GameKeyEventHandler_Package is
    procedure addListenerForPlayer (This : in out GameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class; playerInputId : Integer) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.logUtil.putF (eventListenerInterface.toString, GameKeyEventHandler_Access'(This'Unchecked_Access), This.commonStrings.ADD_LISTENER);
+        This.logUtil.putF (Java_Object'Class (eventListenerInterface.all).toString, GameKeyEventHandler_Access'(This'Unchecked_Access), This.commonStrings.ADD_LISTENER);
         This.pressGameKeyEventHandler.addListenerSingleThreaded (eventListenerInterface);
         This.upGameKeyEventHandler.getInstanceForPlayer (playerInputId).addListenerSingleThreaded (eventListenerInterface);
         This.downGameKeyEventHandler.getInstanceForPlayer (playerInputId).addListenerSingleThreaded (eventListenerInterface);
@@ -63,7 +63,7 @@ package body org.allbinary.game.input.event.GameKeyEventHandler_Package is
    procedure addListener (This : in out GameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.logUtil.putF (eventListenerInterface.toString, GameKeyEventHandler_Access'(This'Unchecked_Access), This.commonStrings.ADD_LISTENER);
+        This.logUtil.putF (Java_Object'Class (eventListenerInterface.all).toString, GameKeyEventHandler_Access'(This'Unchecked_Access), This.commonStrings.ADD_LISTENER);
         This.pressGameKeyEventHandler.addListenerSingleThreaded (eventListenerInterface);
         This.upGameKeyEventHandler.addListenerSingleThreaded (eventListenerInterface);
         This.downGameKeyEventHandler.addListenerSingleThreaded (eventListenerInterface);
@@ -72,7 +72,7 @@ package body org.allbinary.game.input.event.GameKeyEventHandler_Package is
    procedure removeListener (This : in out GameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
       eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.logUtil.putF (eventListenerInterface.toString, GameKeyEventHandler_Access'(This'Unchecked_Access), This.commonStrings.REMOVE_LISTENER);
+        This.logUtil.putF (Java_Object'Class (eventListenerInterface.all).toString, GameKeyEventHandler_Access'(This'Unchecked_Access), This.commonStrings.REMOVE_LISTENER);
         This.pressGameKeyEventHandler.removeListenerSingleThreaded (eventListenerInterface);
         This.upGameKeyEventHandler.removeListenerSingleThreaded (eventListenerInterface);
         This.downGameKeyEventHandler.removeListenerSingleThreaded (eventListenerInterface);

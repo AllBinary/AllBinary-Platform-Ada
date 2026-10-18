@@ -92,7 +92,7 @@ package body org.allbinary.thread.ThreadFactoryUtil_Package is
                 primaryThreadPool.runTask (runnable);
             end if;
         end if;
-        thread := Thread_Package.Create (runnable, runnable.toString);
+        thread := Thread_Package.Create (runnable, Java_Object'Class (runnable.all).toString);
         This.logUtil.putF (thread.toString, ThreadFactoryUtil_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         return thread;
    end getInstanceType;

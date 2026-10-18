@@ -115,7 +115,7 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
         size := This.componentInterfaceVector.size;
         for index in 0 .. (size) - 1 loop
             componentInterface := HardwareComponentInterface_Access (This.componentInterfaceVector.get (index));
-            stringBuilder.append (componentInterface.toString);
+            stringBuilder.append (Java_Object'Class (componentInterface.all).toString);
             stringBuilder.append (CommonSeps_Package.getInstance.NEW_LINE);
         end loop;
         return stringBuilder.toString;

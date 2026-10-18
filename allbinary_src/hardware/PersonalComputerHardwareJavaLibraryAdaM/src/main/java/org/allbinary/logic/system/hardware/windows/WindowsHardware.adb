@@ -172,7 +172,7 @@ package body org.allbinary.logic.system.hardware.windows.WindowsHardware_Package
         size := This.componentInterfaceVector.size;
         for index in 0 .. (size) - 1 loop
             componentInterface := HardwareComponentInterface_Access (This.componentInterfaceVector.get (index));
-            hardwareBuffer.append (componentInterface.toString);
+            hardwareBuffer.append (Java_Object'Class (componentInterface.all).toString);
             hardwareBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         end loop;
         return hardwareBuffer.toString;

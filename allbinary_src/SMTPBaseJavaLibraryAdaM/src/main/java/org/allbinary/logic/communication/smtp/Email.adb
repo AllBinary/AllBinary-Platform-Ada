@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.io.PrintStream_Package; use java.io.PrintStream_Package;
 with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
@@ -21,6 +22,7 @@ with org.allbinary.logic.communication.smtp.EmailData_Package; use org.allbinary
 
 package body org.allbinary.logic.communication.smtp.Email_Package is
 
+   package PrintStream_Package renames Standard.java.io.PrintStream_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;

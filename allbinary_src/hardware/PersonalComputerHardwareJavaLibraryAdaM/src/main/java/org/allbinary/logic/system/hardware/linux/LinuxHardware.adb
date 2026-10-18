@@ -274,7 +274,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
             hardwareBuffer.append (To_Unbounded_String ("Component "));
             hardwareBuffer.appendint (index);
             hardwareBuffer.append (To_Unbounded_String (": " & ASCII.LF & ""));
-            hardwareBuffer.append (componentInterface.toString);
+            hardwareBuffer.append (Java_Object'Class (componentInterface.all).toString);
             hardwareBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         end loop;
         return hardwareBuffer.toString;

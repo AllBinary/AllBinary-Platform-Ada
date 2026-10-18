@@ -58,7 +58,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         logUtil := LogUtil_Package.getInstance;
         commonStrings := CommonStrings_Package.getInstance;
-        logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & keyActionScriptInputInterface.toString, To_Unbounded_String ("KeyInputAutomationProcessor"), commonStrings.PROCESS);
+        logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & Java_Object'Class (keyActionScriptInputInterface.all).toString, To_Unbounded_String ("KeyInputAutomationProcessor"), commonStrings.PROCESS);
         inputRobotInterface := keyActionScriptInputInterface.getInputRobotInterface;
         integer_Id := keyActionScriptInputInterface.getKeyArray;
         if (keyActionScriptInputInterface.getDelayBetweenKeys) = (0) then

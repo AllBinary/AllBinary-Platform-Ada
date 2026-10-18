@@ -132,7 +132,7 @@ package body org.allbinary.game.input.event.UpKeyEventHandlerBase_Package is
             begin
                 eventListenerInterface := EventListenerInterface_Access (This.list.get (index));
                 stringBuffer.append (UpKeyEventHandlerBase_Package.LISTENER_LABEL);
-                stringBuffer.append (eventListenerInterface.toString);
+                stringBuffer.append (Java_Object'Class (eventListenerInterface.all).toString);
             exception
                 when Java_Occurrence : others =>
                     declare
