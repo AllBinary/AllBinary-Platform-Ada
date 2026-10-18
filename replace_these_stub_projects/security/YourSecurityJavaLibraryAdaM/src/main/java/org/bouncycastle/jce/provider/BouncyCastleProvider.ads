@@ -20,7 +20,7 @@ package org.bouncycastle.jce.provider.BouncyCastleProvider_Package is
    type BouncyCastleProvider_Access_Array_Access_Array is array (Natural range <>) of BouncyCastleProvider_Access_Array_Access;
    type BouncyCastleProvider_Access_Array_Access_Array_Access is access all BouncyCastleProvider_Access_Array_Access_Array;
 
-   type BouncyCastleProvider is new Provider with null record;
+   type BouncyCastleProvider is new Java_Object with null record;
    info : Unbounded_String;
    PROVIDER_NAME : Unbounded_String;
 

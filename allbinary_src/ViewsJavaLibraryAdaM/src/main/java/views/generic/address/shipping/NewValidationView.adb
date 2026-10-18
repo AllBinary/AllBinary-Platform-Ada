@@ -60,7 +60,7 @@ package body views.generic_Id.address.shipping.NewValidationView_Package is
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out NewValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := NewValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := NewValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

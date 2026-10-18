@@ -40,7 +40,7 @@ package body org.allbinary.game.configuration.persistance.NullRecordFilter_Packa
    end matches;
 
    procedure matches (This : in out NullRecordFilter; candidate : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Boolean := NullRecordFilter'Class (This).matches (candidate);
+      Java_Result : constant Boolean := NullRecordFilter'Class (This).matches (candidate => candidate);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -113,14 +113,14 @@ package body org.allbinary.logic.io.SmallDelete_Package is
    end deleteBetween;
 
    procedure deleteAtStart (This : in out SmallDelete; start : Unbounded_String; end_Id : Unbounded_String) is
-      Java_Result : constant Boolean := SmallDelete'Class (This).deleteAtStart (start, end_Id);
+      Java_Result : constant Boolean := SmallDelete'Class (This).deleteAtStart (start => start, end_Id => end_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end deleteAtStart;
 
    procedure deleteBetween (This : in out SmallDelete; start : Unbounded_String; end_Id : Unbounded_String; newText : Unbounded_String) is
-      Java_Result : constant Boolean := SmallDelete'Class (This).deleteBetween (start, end_Id, newText);
+      Java_Result : constant Boolean := SmallDelete'Class (This).deleteBetween (start => start, end_Id => end_Id, newText => newText);
       pragma Unreferenced (Java_Result);
    begin
       null;

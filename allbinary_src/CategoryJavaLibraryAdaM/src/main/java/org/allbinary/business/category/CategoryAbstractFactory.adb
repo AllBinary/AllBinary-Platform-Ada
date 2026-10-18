@@ -182,49 +182,49 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
    end getInstance;
 
    procedure getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getRootInstance (categoryAbPath_Param);
+      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getRootInstance (categoryAbPath_Param => categoryAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRootInstance;
 
    procedure getRootInstanceFromNode (This : in out CategoryAbstractFactory; node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getRootInstanceFromNode (node_Param);
+      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getRootInstanceFromNode (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRootInstanceFromNode;
 
    procedure getInstance (This : in out CategoryAbstractFactory; categoryName : Unbounded_String) is
-      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (categoryName);
+      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (categoryName => categoryName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryName : Unbounded_String) is
-      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, categoryName);
+      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (rootCategoryInterface_Param => rootCategoryInterface_Param, parentCategoryInterface_Param => parentCategoryInterface_Param, categoryName => categoryName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out CategoryAbstractFactory; node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (node_Param);
+      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, node_Param);
+      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (rootCategoryInterface_Param => rootCategoryInterface_Param, parentCategoryInterface_Param => parentCategoryInterface_Param, node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, categoryPropertiesHashMap_Param);
+      Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (rootCategoryInterface_Param => rootCategoryInterface_Param, parentCategoryInterface_Param => parentCategoryInterface_Param, categoryPropertiesHashMap_Param => categoryPropertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

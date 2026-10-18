@@ -409,14 +409,14 @@ package body admin.taghelpers.AuthenticationHelper_Package is
    end getRole;
 
    procedure isAuthenticationSessionValid (This : in out AuthenticationHelper; roles_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Boolean := AuthenticationHelper'Class (This).isAuthenticationSessionValid (roles_Param);
+      Java_Result : constant Boolean := AuthenticationHelper'Class (This).isAuthenticationSessionValid (roles_Param => roles_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isAuthenticationSessionValid;
 
    procedure processIfNewLogin (This : in out AuthenticationHelper; userName : Unbounded_String; password : Unbounded_String) is
-      Java_Result : constant Boolean := AuthenticationHelper'Class (This).processIfNewLogin (userName, password);
+      Java_Result : constant Boolean := AuthenticationHelper'Class (This).processIfNewLogin (userName => userName, password => password);
       pragma Unreferenced (Java_Result);
    begin
       null;

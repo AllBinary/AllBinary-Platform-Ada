@@ -42,7 +42,7 @@ package body org.allbinary.util.ABCharacter_Package is
    end toString;
 
    procedure toString (ch : Character) is
-      Java_Result : constant Unbounded_String := toString (ch);
+      Java_Result : constant Unbounded_String := toString (ch => ch);
       pragma Unreferenced (Java_Result);
    begin
       null;

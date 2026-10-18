@@ -71,7 +71,7 @@ package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Pac
    end setInitialScale;
 
    procedure getInstance (This : in out VectorRotationAnimationInterfaceFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := VectorRotationAnimationInterfaceFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := VectorRotationAnimationInterfaceFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

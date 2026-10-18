@@ -84,21 +84,21 @@ package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
    end visit;
 
    procedure visit (This : in out BooleanFileVisitor; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := BooleanFileVisitor'Class (This).visit (anyType_Param);
+      Java_Result : constant Java_Object_Access := BooleanFileVisitor'Class (This).visit (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
    procedure visit (This : in out BooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant Boolean := BooleanFileVisitor'Class (This).visit (file_Param);
+      Java_Result : constant Boolean := BooleanFileVisitor'Class (This).visit (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
    procedure visit (This : in out BooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String) is
-      Java_Result : constant Boolean := BooleanFileVisitor'Class (This).visit (file_Param, fileNameString);
+      Java_Result : constant Boolean := BooleanFileVisitor'Class (This).visit (file_Param => file_Param, fileNameString => fileNameString);
       pragma Unreferenced (Java_Result);
    begin
       null;

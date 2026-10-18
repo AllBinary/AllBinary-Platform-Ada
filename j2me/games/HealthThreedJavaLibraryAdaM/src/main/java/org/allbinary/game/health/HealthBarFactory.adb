@@ -57,7 +57,7 @@ package body org.allbinary.game.health.HealthBarFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out HealthBarFactory; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer) is
-      Java_Result : constant HealthBar_Access := HealthBarFactory'Class (This).getInstance (layerInterface_Param, healthInterface_Param, location, direction);
+      Java_Result : constant HealthBar_Access := HealthBarFactory'Class (This).getInstance (layerInterface_Param => layerInterface_Param, healthInterface_Param => healthInterface_Param, location => location, direction => direction);
       pragma Unreferenced (Java_Result);
    begin
       null;

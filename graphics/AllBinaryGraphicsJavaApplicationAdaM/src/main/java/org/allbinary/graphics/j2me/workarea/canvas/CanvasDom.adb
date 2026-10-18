@@ -289,7 +289,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
    end getGrid;
 
    procedure getPointNode (This : in out CanvasDom; point_Param : access GPoint_Package.GPoint'Class; pointName : Unbounded_String) is
-      Java_Result : constant Node_Access := CanvasDom'Class (This).getPointNode (point_Param, pointName);
+      Java_Result : constant Node_Access := CanvasDom'Class (This).getPointNode (point_Param => point_Param, pointName => pointName);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -66,7 +66,7 @@ package body org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package is
    end processScore;
 
    procedure createBasicProjectileWeaponPart (animationInterface_Param : access Animation_Package.Animation'Class; weaponLayerCircularStaticPool_Param : access WeaponLayerCircularPool_Package.WeaponLayerCircularPool'Class) is
-      Java_Result : constant BasicProjectileWeaponPart_Access := createBasicProjectileWeaponPart (animationInterface_Param, weaponLayerCircularStaticPool_Param);
+      Java_Result : constant BasicProjectileWeaponPart_Access := createBasicProjectileWeaponPart (animationInterface_Param => animationInterface_Param, weaponLayerCircularStaticPool_Param => weaponLayerCircularStaticPool_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

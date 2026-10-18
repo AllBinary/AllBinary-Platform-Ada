@@ -54,7 +54,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.UpsShippingMo
    end getName;
 
    procedure getCost (This : in out UpsShippingModule; order_Param : access OrderInterface_Package.OrderInterface'Class) is
-      Java_Result : constant Money_Access := UpsShippingModule'Class (This).getCost (order_Param);
+      Java_Result : constant Money_Access := UpsShippingModule'Class (This).getCost (order_Param => order_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -34,7 +34,7 @@ package org.allbinary.game.health.Health_Package is
    type Health_Access_Array_Access_Array_Access is access all Health_Access_Array_Access_Array;
 
    type Health is new Java_Object and HealthInterface with record
-      health : Integer;
+      health_Var : Integer;
       maxHealth : Integer;
       healthListenerInterface : HealthListenerInterface_Access;
    end record;
@@ -52,7 +52,7 @@ package org.allbinary.game.health.Health_Package is
    function isAlive (This : in out Health) return Boolean;
    function getMaxHealth (This : in out Health) return Integer;
    procedure setMaxHealth (This : in out Health; maxHealth : Integer);
-   procedure setHealth (This : in out Health; health : Integer);
+   procedure setHealth (This : in out Health; health_Var : Integer);
    function getHealth (This : in out Health) return Integer;
    procedure addListener (This : in out Health; healthGraphic_Param : access HealthListenerInterface_Package.HealthListenerInterface'Class);
    function toString (This : in out Health) return Unbounded_String;

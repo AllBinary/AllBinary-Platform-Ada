@@ -68,7 +68,7 @@ package body org.allbinary.logic.system.security.AbCryptUtil_Package is
    end decrypt;
 
    procedure decrypt (This : in out AbCryptUtil; inputStream_Param : access InputStream_Package.InputStream'Class; key : Unbounded_String) is
-      Java_Result : constant Short_Short_Integer_Array_Access := AbCryptUtil'Class (This).decrypt (inputStream_Param, key);
+      Java_Result : constant Short_Short_Integer_Array_Access := AbCryptUtil'Class (This).decrypt (inputStream_Param => inputStream_Param, key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;

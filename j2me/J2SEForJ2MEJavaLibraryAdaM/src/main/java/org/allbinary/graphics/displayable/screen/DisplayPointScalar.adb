@@ -57,21 +57,21 @@ package body org.allbinary.graphics.displayable.screen.DisplayPointScalar_Packag
    end process;
 
    procedure processX (This : in out DisplayPointScalar; value : Integer) is
-      Java_Result : constant Integer := DisplayPointScalar'Class (This).processX (value);
+      Java_Result : constant Integer := DisplayPointScalar'Class (This).processX (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end processX;
 
    procedure processY (This : in out DisplayPointScalar; value : Integer) is
-      Java_Result : constant Integer := DisplayPointScalar'Class (This).processY (value);
+      Java_Result : constant Integer := DisplayPointScalar'Class (This).processY (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end processY;
 
    procedure process (This : in out DisplayPointScalar; point_Param : access GPoint_Package.GPoint'Class) is
-      Java_Result : constant GPoint_Access := DisplayPointScalar'Class (This).process (point_Param);
+      Java_Result : constant GPoint_Access := DisplayPointScalar'Class (This).process (point_Param => point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

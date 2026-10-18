@@ -38,7 +38,7 @@ package org.allbinary.logic.io.file.filter.VisitorFileFilter_Package is
    type VisitorFileFilter_Access_Array_Access_Array is array (Natural range <>) of VisitorFileFilter_Access_Array_Access;
    type VisitorFileFilter_Access_Array_Access_Array_Access is access all VisitorFileFilter_Access_Array_Access_Array;
 
-   type VisitorFileFilter is new Java_Object and FileFilter with record
+   type VisitorFileFilter is new Java_Object with record
       booleanVisitorInterface : VisitorInterface_Access;
    end record;
 

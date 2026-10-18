@@ -67,7 +67,7 @@ package org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
       actionBasicColor : BasicColor_Access_Array_Access;
       inputBasicColorArray : BasicColor_Access_Array_Access_Array_Access;
       selectedBasicColor : BasicColor_Access;
-      updateMyFontProperties : UpdateMyFontProperties_Access;
+      updateMyFontProperties_Var : UpdateMyFontProperties_Access;
    end record;
    AND_Id : Unbounded_String;
    SEP : Unbounded_String;

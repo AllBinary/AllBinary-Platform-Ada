@@ -84,14 +84,14 @@ package body org.allbinary.game.input.event.UpKeyEventHandler_Package is
    end removeListener;
 
    procedure getInstanceForDevice (This : in out UpKeyEventHandler; deviceId : Integer) is
-      Java_Result : constant UpKeyEventHandlerBase_Access := UpKeyEventHandler'Class (This).getInstanceForDevice (deviceId);
+      Java_Result : constant UpKeyEventHandlerBase_Access := UpKeyEventHandler'Class (This).getInstanceForDevice (deviceId => deviceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceForDevice;
 
    procedure getInstanceForPlayer (This : in out UpKeyEventHandler; playerInputId : Integer) is
-      Java_Result : constant UpKeyEventHandlerBase_Access := UpKeyEventHandler'Class (This).getInstanceForPlayer (playerInputId);
+      Java_Result : constant UpKeyEventHandlerBase_Access := UpKeyEventHandler'Class (This).getInstanceForPlayer (playerInputId => playerInputId);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -87,7 +87,7 @@ package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
    end generateBufferedImageChacheables;
 
    procedure generateBufferedImageChacheables (imageComparisonInfo_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class) is
-      Java_Result : constant BufferedImageCacheable_Access_Array_Access := generateBufferedImageChacheables (imageComparisonInfo_Param);
+      Java_Result : constant BufferedImageCacheable_Access_Array_Access := generateBufferedImageChacheables (imageComparisonInfo_Param => imageComparisonInfo_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

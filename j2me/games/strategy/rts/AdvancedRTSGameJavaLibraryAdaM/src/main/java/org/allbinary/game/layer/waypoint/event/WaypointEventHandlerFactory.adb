@@ -49,7 +49,7 @@ package body org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory
    end removeAll;
 
    procedure getInstance (groupInterface_Param : access Group_Package.Group'Class) is
-      Java_Result : constant WaypointEventHandler_Access := getInstance (groupInterface_Param);
+      Java_Result : constant WaypointEventHandler_Access := getInstance (groupInterface_Param => groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -152,42 +152,42 @@ package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
    end createSpriteImage;
 
    procedure getRotatedImage (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image_Package.Image'Class; totalAngle : Integer) is
-      Java_Result : constant Image_Access := ImageSwtRotationUtil'Class (This).getRotatedImage (bufferedImage_Param, totalAngle);
+      Java_Result : constant Image_Access := ImageSwtRotationUtil'Class (This).getRotatedImage (bufferedImage_Param => bufferedImage_Param, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRotatedImage;
 
    procedure getRotatedImage2 (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image_Package.Image'Class; newBufferedImage_Param : access Image_Package.Image'Class; gc_Param : access GC_Package.GC'Class; angle : Float) is
-      Java_Result : constant Image_Access := ImageSwtRotationUtil'Class (This).getRotatedImage2 (bufferedImage_Param, newBufferedImage_Param, gc_Param, angle);
+      Java_Result : constant Image_Access := ImageSwtRotationUtil'Class (This).getRotatedImage2 (bufferedImage_Param => bufferedImage_Param, newBufferedImage_Param => newBufferedImage_Param, gc_Param => gc_Param, angle => angle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRotatedImage2;
 
    procedure rotateImage (This : in out ImageSwtRotationUtil; originalSwtImage_Param : access Image_Package.Image'Class; newSwtImage_Param : access Image_Package.Image'Class; gc_Param : access GC_Package.GC'Class; totalAngle : Integer) is
-      Java_Result : constant Image_Access := ImageSwtRotationUtil'Class (This).rotateImage (originalSwtImage_Param, newSwtImage_Param, gc_Param, totalAngle);
+      Java_Result : constant Image_Access := ImageSwtRotationUtil'Class (This).rotateImage (originalSwtImage_Param => originalSwtImage_Param, newSwtImage_Param => newSwtImage_Param, gc_Param => gc_Param, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end rotateImage;
 
    procedure getRotatedImageSWT (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image_Package.Image'Class; newSwtImage_Param : access Image_Package.Image'Class; gc_Param : access GC_Package.GC'Class; totalAngle : Integer) is
-      Java_Result : constant Image_Access := ImageSwtRotationUtil'Class (This).getRotatedImageSWT (bufferedImage_Param, newSwtImage_Param, gc_Param, totalAngle);
+      Java_Result : constant Image_Access := ImageSwtRotationUtil'Class (This).getRotatedImageSWT (bufferedImage_Param => bufferedImage_Param, newSwtImage_Param => newSwtImage_Param, gc_Param => gc_Param, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRotatedImageSWT;
 
    procedure getRotatedImages (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image_Package.Image'Class; numberOfFrames : Integer; totalAngle : Integer) is
-      Java_Result : constant Image_Access_Array_Access := ImageSwtRotationUtil'Class (This).getRotatedImages (bufferedImage_Param, numberOfFrames, totalAngle);
+      Java_Result : constant Image_Access_Array_Access := ImageSwtRotationUtil'Class (This).getRotatedImages (bufferedImage_Param => bufferedImage_Param, numberOfFrames => numberOfFrames, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRotatedImages;
 
    procedure createSpriteImage (This : in out ImageSwtRotationUtil; bufferedImageArray : Image_Access_Array_Access) is
-      Java_Result : constant Image_Access := ImageSwtRotationUtil'Class (This).createSpriteImage (bufferedImageArray);
+      Java_Result : constant Image_Access := ImageSwtRotationUtil'Class (This).createSpriteImage (bufferedImageArray => bufferedImageArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

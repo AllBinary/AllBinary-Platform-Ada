@@ -89,7 +89,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out EditGlobalsValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := EditGlobalsValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := EditGlobalsValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

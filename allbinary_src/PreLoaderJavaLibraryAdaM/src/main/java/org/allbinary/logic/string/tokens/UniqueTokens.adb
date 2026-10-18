@@ -152,21 +152,21 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
    end isSpecialCharacter;
 
    procedure getWhithoutDashesAndSkipNumberOnlyTokens (This : in out UniqueTokens; stringVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant HashSet_Access := UniqueTokens'Class (This).getWhithoutDashesAndSkipNumberOnlyTokens (stringVector_Param);
+      Java_Result : constant HashSet_Access := UniqueTokens'Class (This).getWhithoutDashesAndSkipNumberOnlyTokens (stringVector_Param => stringVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWhithoutDashesAndSkipNumberOnlyTokens;
 
    procedure numberOnly (This : in out UniqueTokens; subCleaningString : Unbounded_String) is
-      Java_Result : constant Boolean := UniqueTokens'Class (This).numberOnly (subCleaningString);
+      Java_Result : constant Boolean := UniqueTokens'Class (This).numberOnly (subCleaningString => subCleaningString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end numberOnly;
 
    procedure isSpecialCharacter (This : in out UniqueTokens; subCleaningString : Unbounded_String) is
-      Java_Result : constant Boolean := UniqueTokens'Class (This).isSpecialCharacter (subCleaningString);
+      Java_Result : constant Boolean := UniqueTokens'Class (This).isSpecialCharacter (subCleaningString => subCleaningString);
       pragma Unreferenced (Java_Result);
    begin
       null;

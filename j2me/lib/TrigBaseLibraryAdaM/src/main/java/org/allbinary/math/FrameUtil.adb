@@ -80,21 +80,21 @@ package body org.allbinary.math.FrameUtil_Package is
    end adjustAngleToFrameAngle;
 
    procedure getFrameForAngle (This : in out FrameUtil; angle : Short_Integer; angleIncrement : Integer) is
-      Java_Result : constant Integer := FrameUtil'Class (This).getFrameForAngle (angle, angleIncrement);
+      Java_Result : constant Integer := FrameUtil'Class (This).getFrameForAngle (angle => angle, angleIncrement => angleIncrement);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFrameForAngle;
 
    procedure getFrameAngle (This : in out FrameUtil; frame : Integer; angleIncrement : Integer) is
-      Java_Result : constant Integer := FrameUtil'Class (This).getFrameAngle (frame, angleIncrement);
+      Java_Result : constant Integer := FrameUtil'Class (This).getFrameAngle (frame => frame, angleIncrement => angleIncrement);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFrameAngle;
 
    procedure adjustAngleToFrameAngle (This : in out FrameUtil; currentAngle_Param : Integer) is
-      Java_Result : constant Integer := FrameUtil'Class (This).adjustAngleToFrameAngle (currentAngle_Param);
+      Java_Result : constant Integer := FrameUtil'Class (This).adjustAngleToFrameAngle (currentAngle_Param => currentAngle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

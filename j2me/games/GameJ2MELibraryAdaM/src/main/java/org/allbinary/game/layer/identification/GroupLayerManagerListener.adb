@@ -270,56 +270,56 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
    end log;
 
    procedure getGroupSizeFromInterface (This : in out GroupLayerManagerListener; groupInterfaceCompositeInterface_Param : access GroupInterfaceCompositeInterface_Package.GroupInterfaceCompositeInterface'Class) is
-      Java_Result : constant Integer := GroupLayerManagerListener'Class (This).getGroupSizeFromInterface (groupInterfaceCompositeInterface_Param);
+      Java_Result : constant Integer := GroupLayerManagerListener'Class (This).getGroupSizeFromInterface (groupInterfaceCompositeInterface_Param => groupInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGroupSizeFromInterface;
 
    procedure getGroupSize (This : in out GroupLayerManagerListener; groupInterface_Param : access Group_Package.Group'Class) is
-      Java_Result : constant Integer := GroupLayerManagerListener'Class (This).getGroupSize (groupInterface_Param);
+      Java_Result : constant Integer := GroupLayerManagerListener'Class (This).getGroupSize (groupInterface_Param => groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGroupSize;
 
    procedure getList (This : in out GroupLayerManagerListener; groupInterface_Param : access Group_Package.Group'Class) is
-      Java_Result : constant BasicArrayList_Access := GroupLayerManagerListener'Class (This).getList (groupInterface_Param);
+      Java_Result : constant BasicArrayList_Access := GroupLayerManagerListener'Class (This).getList (groupInterface_Param => groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getList;
 
    procedure getListById (This : in out GroupLayerManagerListener; groupId : Integer) is
-      Java_Result : constant BasicArrayList_Access := GroupLayerManagerListener'Class (This).getListById (groupId);
+      Java_Result : constant BasicArrayList_Access := GroupLayerManagerListener'Class (This).getListById (groupId => groupId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getListById;
 
    procedure getGroupSizeById (This : in out GroupLayerManagerListener; groupId : Integer) is
-      Java_Result : constant Integer := GroupLayerManagerListener'Class (This).getGroupSizeById (groupId);
+      Java_Result : constant Integer := GroupLayerManagerListener'Class (This).getGroupSizeById (groupId => groupId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGroupSizeById;
 
    procedure areAllOtherGroupsEmpty (This : in out GroupLayerManagerListener; groupInterface_Param : access Group_Package.Group'Class) is
-      Java_Result : constant Boolean := GroupLayerManagerListener'Class (This).areAllOtherGroupsEmpty (groupInterface_Param);
+      Java_Result : constant Boolean := GroupLayerManagerListener'Class (This).areAllOtherGroupsEmpty (groupInterface_Param => groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end areAllOtherGroupsEmpty;
 
    procedure isIdInList (This : in out GroupLayerManagerListener; id : Integer; excludeGroupList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Boolean := GroupLayerManagerListener'Class (This).isIdInList (id, excludeGroupList_Param);
+      Java_Result : constant Boolean := GroupLayerManagerListener'Class (This).isIdInList (id => id, excludeGroupList_Param => excludeGroupList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isIdInList;
 
    procedure areAllOtherGroupsLessThan (This : in out GroupLayerManagerListener; excludeGroupList_Param : access BasicArrayList_Package.BasicArrayList'Class; maxSize : Integer) is
-      Java_Result : constant Boolean := GroupLayerManagerListener'Class (This).areAllOtherGroupsLessThan (excludeGroupList_Param, maxSize);
+      Java_Result : constant Boolean := GroupLayerManagerListener'Class (This).areAllOtherGroupsLessThan (excludeGroupList_Param => excludeGroupList_Param, maxSize => maxSize);
       pragma Unreferenced (Java_Result);
    begin
       null;

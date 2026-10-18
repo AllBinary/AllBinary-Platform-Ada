@@ -77,7 +77,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.OverrideStor
    end generate;
 
    procedure generate (This : in out OverrideStoreTransformInfoObjectConfig; objectConfigDocument_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Document_Access := OverrideStoreTransformInfoObjectConfig'Class (This).generate (objectConfigDocument_Param);
+      Java_Result : constant Document_Access := OverrideStoreTransformInfoObjectConfig'Class (This).generate (objectConfigDocument_Param => objectConfigDocument_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

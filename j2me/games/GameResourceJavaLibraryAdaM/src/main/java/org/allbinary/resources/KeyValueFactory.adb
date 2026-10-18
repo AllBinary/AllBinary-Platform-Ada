@@ -53,7 +53,7 @@ package body org.allbinary.resources.KeyValueFactory_Package is
    end get;
 
    procedure get (This : in out KeyValueFactory; key : Unbounded_String) is
-      Java_Result : constant Unbounded_String := KeyValueFactory'Class (This).get (key);
+      Java_Result : constant Unbounded_String := KeyValueFactory'Class (This).get (key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;

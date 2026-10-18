@@ -257,14 +257,14 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    end run;
 
    procedure isInstalled (This : in out InputAutomationNewBundleRunnable; symbolicName : Unbounded_String) is
-      Java_Result : constant Boolean := InputAutomationNewBundleRunnable'Class (This).isInstalled (symbolicName);
+      Java_Result : constant Boolean := InputAutomationNewBundleRunnable'Class (This).isInstalled (symbolicName => symbolicName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isInstalled;
 
    procedure install (This : in out InputAutomationNewBundleRunnable; url_Param : access URL_Package.URL'Class) is
-      Java_Result : constant Bundle_Access := InputAutomationNewBundleRunnable'Class (This).install (url_Param);
+      Java_Result : constant Bundle_Access := InputAutomationNewBundleRunnable'Class (This).install (url_Param => url_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

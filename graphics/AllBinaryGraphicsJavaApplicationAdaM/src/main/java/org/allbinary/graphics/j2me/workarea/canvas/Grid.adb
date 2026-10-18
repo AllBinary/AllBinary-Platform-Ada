@@ -40,20 +40,20 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out Grid'Class; grid_Param : access Grid_Package.Grid'Class) is
-      grid : constant Grid_Access := Grid_Access (grid_Param);
+   procedure Initialize (This : in out Grid'Class; grid_Var_Param : access Grid_Package.Grid'Class) is
+      grid_Var : constant Grid_Access := Grid_Access (grid_Var_Param);
    begin
       Initialize_Fields (This);
-        This.grid := grid.grid;
-        Grid'Class (This).showGrid (grid.isGridOn);
-        This.isGridPossible_Field := grid.isGridPossible;
-        Grid'Class (This).setZoom (grid.getZoom);
+        This.grid_Var := grid_Var.grid_Var;
+        Grid'Class (This).showGrid (grid_Var.isGridOn);
+        This.isGridPossible_Field := grid_Var.isGridPossible;
+        Grid'Class (This).setZoom (grid_Var.getZoom);
    end Initialize;
 
-   function Create (grid_Param : access Grid_Package.Grid'Class) return Grid_Access is
+   function Create (grid_Var_Param : access Grid_Package.Grid'Class) return Grid_Access is
       This : constant Grid_Access := new Grid;
    begin
-      Grid_Package.Initialize (This.all, grid_Param);
+      Grid_Package.Initialize (This.all, grid_Var_Param);
       return This;
    end Create;
 
@@ -69,7 +69,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
 
    function getGrid (This : in out Grid) return GPoint_Access is
    begin
-        return This.grid;
+        return This.grid_Var;
    end getGrid;
 
    function getZoom (This : in out Grid) return Integer is

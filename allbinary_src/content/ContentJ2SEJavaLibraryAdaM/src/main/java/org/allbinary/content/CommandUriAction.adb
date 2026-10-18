@@ -74,7 +74,7 @@ package body org.allbinary.content.CommandUriAction_Package is
    end getIntent;
 
    procedure getIntent (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class) is
-      Java_Result : constant Intent_Access := CommandUriAction'Class (This).getIntent (command_Param);
+      Java_Result : constant Intent_Access := CommandUriAction'Class (This).getIntent (command_Param => command_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

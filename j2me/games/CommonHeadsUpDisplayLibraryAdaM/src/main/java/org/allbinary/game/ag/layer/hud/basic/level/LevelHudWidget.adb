@@ -121,7 +121,7 @@ package body org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package 
    end paintThreed;
 
    procedure createHud (maxlevel : Integer; location : Integer; direction : Integer) is
-      Java_Result : constant LevelHudWidget_Access := createHud (maxlevel, location, direction);
+      Java_Result : constant LevelHudWidget_Access := createHud (maxlevel => maxlevel, location => location, direction => direction);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -108,7 +108,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemView_P
    end view;
 
    procedure toXmlNode (This : in out BasicItemView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := BasicItemView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := BasicItemView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

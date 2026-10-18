@@ -232,21 +232,21 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
    end dropTable;
 
    procedure getItems (This : in out InventoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
-      Java_Result : constant BasicArrayList_Access := InventoryEntity'Class (This).getItems (storeFrontInterface_Param);
+      Java_Result : constant BasicArrayList_Access := InventoryEntity'Class (This).getItems (storeFrontInterface_Param => storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getItems;
 
    procedure getItem (This : in out InventoryEntity; id : Unbounded_String) is
-      Java_Result : constant ItemInterface_Access := InventoryEntity'Class (This).getItem (id);
+      Java_Result : constant ItemInterface_Access := InventoryEntity'Class (This).getItem (id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getItem;
 
    procedure getWeight (This : in out InventoryEntity; id : Unbounded_String) is
-      Java_Result : constant Unbounded_String := InventoryEntity'Class (This).getWeight (id);
+      Java_Result : constant Unbounded_String := InventoryEntity'Class (This).getWeight (id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -189,21 +189,21 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
    end getColumnWhere;
 
    procedure getLargestIntegerInColumnWhere (This : in out AbSqlColumn; columnName : Unbounded_String; key : Unbounded_String; value : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbSqlColumn'Class (This).getLargestIntegerInColumnWhere (columnName, key, value);
+      Java_Result : constant Unbounded_String := AbSqlColumn'Class (This).getLargestIntegerInColumnWhere (columnName => columnName, key => key, value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLargestIntegerInColumnWhere;
 
    procedure getColumn (This : in out AbSqlColumn; columnName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := AbSqlColumn'Class (This).getColumn (columnName);
+      Java_Result : constant BasicArrayList_Access := AbSqlColumn'Class (This).getColumn (columnName => columnName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getColumn;
 
    procedure getColumnWhere (This : in out AbSqlColumn; columnName : Unbounded_String; key : Unbounded_String; value : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := AbSqlColumn'Class (This).getColumnWhere (columnName, key, value);
+      Java_Result : constant BasicArrayList_Access := AbSqlColumn'Class (This).getColumnWhere (columnName => columnName, key => key, value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;

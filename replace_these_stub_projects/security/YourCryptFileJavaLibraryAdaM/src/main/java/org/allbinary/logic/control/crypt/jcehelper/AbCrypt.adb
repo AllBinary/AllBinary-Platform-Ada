@@ -51,21 +51,21 @@ package body org.allbinary.logic.control.crypt.jcehelper.AbCrypt_Package is
    end mutilate;
 
    procedure encrypt (This : in out AbCrypt; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := AbCrypt'Class (This).encrypt (array_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := AbCrypt'Class (This).encrypt (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end encrypt;
 
    procedure decrypt (This : in out AbCrypt; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := AbCrypt'Class (This).decrypt (array_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := AbCrypt'Class (This).decrypt (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end decrypt;
 
    procedure mutilate (This : in out AbCrypt; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := AbCrypt'Class (This).mutilate (array_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := AbCrypt'Class (This).mutilate (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

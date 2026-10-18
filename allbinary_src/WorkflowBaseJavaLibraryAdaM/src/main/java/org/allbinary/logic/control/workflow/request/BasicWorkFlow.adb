@@ -264,14 +264,14 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
    end toValidationInfoNode;
 
    procedure toXmlNode (This : in out BasicWorkFlow; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
    procedure toValidationInfoNode (This : in out BasicWorkFlow; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

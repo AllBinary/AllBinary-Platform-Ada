@@ -191,28 +191,28 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
    end generate;
 
    procedure generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocument_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Document_Access := GenericStoreTransformInfoObjectConfig'Class (This).generate (objectConfigDocument_Param);
+      Java_Result : constant Document_Access := GenericStoreTransformInfoObjectConfig'Class (This).generate (objectConfigDocument_Param => objectConfigDocument_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end generate;
 
    procedure createReplaceHashMap (This : in out GenericStoreTransformInfoObjectConfig; transformInfoHttpStoreInterface_Param : access TransformInfoHttp_Package.TransformInfoHttp'Class; objectConfigDocumentString : Unbounded_String) is
-      Java_Result : constant HashMap_Access := GenericStoreTransformInfoObjectConfig'Class (This).createReplaceHashMap (transformInfoHttpStoreInterface_Param, objectConfigDocumentString);
+      Java_Result : constant HashMap_Access := GenericStoreTransformInfoObjectConfig'Class (This).createReplaceHashMap (transformInfoHttpStoreInterface_Param => transformInfoHttpStoreInterface_Param, objectConfigDocumentString => objectConfigDocumentString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createReplaceHashMap;
 
    procedure createHashMap (This : in out GenericStoreTransformInfoObjectConfig; transformInfoHttpStoreInterface_Param : access TransformInfoHttp_Package.TransformInfoHttp'Class; objectConfigDocumentString : Unbounded_String) is
-      Java_Result : constant HashMap_Access := GenericStoreTransformInfoObjectConfig'Class (This).createHashMap (transformInfoHttpStoreInterface_Param, objectConfigDocumentString);
+      Java_Result : constant HashMap_Access := GenericStoreTransformInfoObjectConfig'Class (This).createHashMap (transformInfoHttpStoreInterface_Param => transformInfoHttpStoreInterface_Param, objectConfigDocumentString => objectConfigDocumentString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createHashMap;
 
    procedure generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocumentString : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant Document_Access := GenericStoreTransformInfoObjectConfig'Class (This).generate (objectConfigDocumentString, hashMap_Param);
+      Java_Result : constant Document_Access := GenericStoreTransformInfoObjectConfig'Class (This).generate (objectConfigDocumentString => objectConfigDocumentString, hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

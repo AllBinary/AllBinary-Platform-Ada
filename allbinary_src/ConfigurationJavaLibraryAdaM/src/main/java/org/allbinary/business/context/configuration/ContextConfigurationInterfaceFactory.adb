@@ -79,14 +79,14 @@ package body org.allbinary.business.context.configuration.ContextConfigurationIn
    end getInstance;
 
    procedure getInstance (This : in out ContextConfigurationInterfaceFactory; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant ContextConfigurationInterface_Access := ContextConfigurationInterfaceFactory'Class (This).getInstance (document_Param);
+      Java_Result : constant ContextConfigurationInterface_Access := ContextConfigurationInterfaceFactory'Class (This).getInstance (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out ContextConfigurationInterfaceFactory; contextName : Unbounded_String) is
-      Java_Result : constant ContextConfigurationInterface_Access := ContextConfigurationInterfaceFactory'Class (This).getInstance (contextName);
+      Java_Result : constant ContextConfigurationInterface_Access := ContextConfigurationInterfaceFactory'Class (This).getInstance (contextName => contextName);
       pragma Unreferenced (Java_Result);
    begin
       null;

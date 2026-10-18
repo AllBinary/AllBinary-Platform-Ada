@@ -66,7 +66,7 @@ package body org.allbinary.animation.image.ImageArrayAnimationFactory_Package is
    end setInitialScale;
 
    procedure getInstance (This : in out ImageArrayAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := ImageArrayAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := ImageArrayAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

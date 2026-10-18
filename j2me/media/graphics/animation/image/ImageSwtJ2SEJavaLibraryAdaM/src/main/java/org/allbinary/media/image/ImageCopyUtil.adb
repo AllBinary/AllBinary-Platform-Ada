@@ -344,35 +344,35 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    end createImageScale;
 
    procedure createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) is
-      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageForRotation (originalImage_Param);
+      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageForRotation (originalImage_Param => originalImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageForRotation;
 
    procedure createImage (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) is
-      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImage (originalImage_Param);
+      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImage (originalImage_Param => originalImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage;
 
    procedure createImageWH (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class; width : Integer; height : Integer; mutable : Boolean) is
-      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageWH (originalImage_Param, width, height, mutable);
+      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageWH (originalImage_Param => originalImage_Param, width => width, height => height, mutable => mutable);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageWH;
 
    procedure createImage2 (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class; width : Integer; height : Integer; mutable : Boolean) is
-      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImage2 (originalImage_Param, width, height, mutable);
+      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImage2 (originalImage_Param => originalImage_Param, width => width, height => height, mutable => mutable);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage2;
 
    procedure createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class; canvasScale : Float; resize : Boolean) is
-      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageScale (originalImage_Param, canvasScale, resize);
+      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageScale (originalImage_Param => originalImage_Param, canvasScale => canvasScale, resize => resize);
       pragma Unreferenced (Java_Result);
    begin
       null;

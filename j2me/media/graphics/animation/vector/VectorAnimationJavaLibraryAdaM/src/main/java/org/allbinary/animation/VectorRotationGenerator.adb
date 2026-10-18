@@ -114,21 +114,21 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
    end getListAtAngle;
 
    procedure getInstance (This : in out VectorRotationGenerator; vectorRotationInfo_Param : access VectorInfo_Package.VectorInfo'Class) is
-      Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorRotationGenerator'Class (This).getInstance (vectorRotationInfo_Param);
+      Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorRotationGenerator'Class (This).getInstance (vectorRotationInfo_Param => vectorRotationInfo_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstanceFrames (This : in out VectorRotationGenerator; width : Integer; height : Integer; points : Integer_Array_Access_Array_Access; frames : Integer) is
-      Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorRotationGenerator'Class (This).getInstanceFrames (width, height, points, frames);
+      Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorRotationGenerator'Class (This).getInstanceFrames (width => width, height => height, points => points, frames => frames);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceFrames;
 
    procedure getListAtAngle (This : in out VectorRotationGenerator; width : Integer; height : Integer; pointBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; angle_Param : access Angle_Package.Angle'Class) is
-      Java_Result : constant BasicArrayList_Access := VectorRotationGenerator'Class (This).getListAtAngle (width, height, pointBasicArrayList_Param, angle_Param);
+      Java_Result : constant BasicArrayList_Access := VectorRotationGenerator'Class (This).getListAtAngle (width => width, height => height, pointBasicArrayList_Param => pointBasicArrayList_Param, angle_Param => angle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

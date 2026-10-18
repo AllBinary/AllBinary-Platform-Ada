@@ -48,7 +48,7 @@ package body taghelpers.StoreTagWorkFlowHelperFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out StoreTagWorkFlowHelperFactory; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
-      Java_Result : constant Java_Object_Access := StoreTagWorkFlowHelperFactory'Class (This).getInstance (propertiesHashMap_Param, pageContext_Param);
+      Java_Result : constant Java_Object_Access := StoreTagWorkFlowHelperFactory'Class (This).getInstance (propertiesHashMap_Param => propertiesHashMap_Param, pageContext_Param => pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

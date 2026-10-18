@@ -70,35 +70,35 @@ package body org.allbinary.graphics.displayable.ScreenRelationalUtil_Package is
    end getScaledHeightAdd;
 
    procedure getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant Float := ScreenRelationalUtil'Class (This).getScaleImage (image_Param);
+      Java_Result : constant Float := ScreenRelationalUtil'Class (This).getScaleImage (image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getScaleImage;
 
    procedure getScaleWH (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer) is
-      Java_Result : constant Float := ScreenRelationalUtil'Class (This).getScaleWH (aWidth, aHeight);
+      Java_Result : constant Float := ScreenRelationalUtil'Class (This).getScaleWH (aWidth => aWidth, aHeight => aHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getScaleWH;
 
    procedure getScaleWHA (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer; add : Integer) is
-      Java_Result : constant Float := ScreenRelationalUtil'Class (This).getScaleWHA (aWidth, aHeight, add);
+      Java_Result : constant Float := ScreenRelationalUtil'Class (This).getScaleWHA (aWidth => aWidth, aHeight => aHeight, add => add);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getScaleWHA;
 
    procedure getScaledHeight (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer) is
-      Java_Result : constant Integer := ScreenRelationalUtil'Class (This).getScaledHeight (aWidth, aHeight);
+      Java_Result : constant Integer := ScreenRelationalUtil'Class (This).getScaledHeight (aWidth => aWidth, aHeight => aHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getScaledHeight;
 
    procedure getScaledHeightAdd (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer; add : Integer) is
-      Java_Result : constant Integer := ScreenRelationalUtil'Class (This).getScaledHeightAdd (aWidth, aHeight, add);
+      Java_Result : constant Integer := ScreenRelationalUtil'Class (This).getScaledHeightAdd (aWidth => aWidth, aHeight => aHeight, add => add);
       pragma Unreferenced (Java_Result);
    begin
       null;

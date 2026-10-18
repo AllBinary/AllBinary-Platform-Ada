@@ -97,7 +97,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
    end dropTable;
 
    procedure createTable (This : in out AbSqlTable; data : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbSqlTable'Class (This).createTable (data);
+      Java_Result : constant Unbounded_String := AbSqlTable'Class (This).createTable (data => data);
       pragma Unreferenced (Java_Result);
    begin
       null;

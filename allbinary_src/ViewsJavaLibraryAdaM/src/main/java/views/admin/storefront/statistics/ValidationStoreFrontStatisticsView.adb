@@ -91,7 +91,7 @@ package body views.admin.storefront.statistics.ValidationStoreFrontStatisticsVie
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out ValidationStoreFrontStatisticsView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := ValidationStoreFrontStatisticsView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := ValidationStoreFrontStatisticsView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -71,7 +71,7 @@ package body views.generic_Id.inventory.InventoryColumnUtil_Package is
    end getColumnWhereLike;
 
    procedure getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity_Param : access InventoryEntity_Package.InventoryEntity'Class; category : Unbounded_String; column : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := InventoryColumnUtil'Class (This).getColumnWhereLike (inventoryEntity_Param, category, column);
+      Java_Result : constant BasicArrayList_Access := InventoryColumnUtil'Class (This).getColumnWhereLike (inventoryEntity_Param => inventoryEntity_Param, category => category, column => column);
       pragma Unreferenced (Java_Result);
    begin
       null;

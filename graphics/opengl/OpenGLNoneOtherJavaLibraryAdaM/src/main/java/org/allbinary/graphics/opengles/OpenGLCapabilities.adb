@@ -80,7 +80,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    end isTextureSizeValid;
 
    procedure isTextureSizeValid (This : in out OpenGLCapabilities; widthAndHeight : Integer) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isTextureSizeValid (widthAndHeight);
+      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isTextureSizeValid (widthAndHeight => widthAndHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;

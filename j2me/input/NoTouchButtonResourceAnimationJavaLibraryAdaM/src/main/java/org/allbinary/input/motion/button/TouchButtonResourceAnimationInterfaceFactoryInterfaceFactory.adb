@@ -86,7 +86,7 @@ package body org.allbinary.input.motion.button.TouchButtonResourceAnimationInter
    end isFeature;
 
    procedure isLoadingLevel (This : in out TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory; level : Integer) is
-      Java_Result : constant Boolean := TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).isLoadingLevel (level);
+      Java_Result : constant Boolean := TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).isLoadingLevel (level => level);
       pragma Unreferenced (Java_Result);
    begin
       null;

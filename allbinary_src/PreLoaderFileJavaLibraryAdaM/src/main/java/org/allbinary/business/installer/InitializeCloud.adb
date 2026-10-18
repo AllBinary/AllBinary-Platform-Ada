@@ -122,7 +122,7 @@ package body org.allbinary.business.installer.InitializeCloud_Package is
    end initialize;
 
    procedure initialize (This : in out InitializeCloud; cloud : Unbounded_String; overwriteNewer : Boolean; overwriteAll : Boolean; current : Integer; total : Integer) is
-      Java_Result : constant Boolean := InitializeCloud'Class (This).initialize (cloud, overwriteNewer, overwriteAll, current, total);
+      Java_Result : constant Boolean := InitializeCloud'Class (This).initialize (cloud => cloud, overwriteNewer => overwriteNewer, overwriteAll => overwriteAll, current => current, total => total);
       pragma Unreferenced (Java_Result);
    begin
       null;

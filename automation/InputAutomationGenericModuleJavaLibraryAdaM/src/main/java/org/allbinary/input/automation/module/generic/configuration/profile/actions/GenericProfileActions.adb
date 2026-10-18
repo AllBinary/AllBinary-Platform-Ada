@@ -287,21 +287,21 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end setName;
 
    procedure getFile (This : in out GenericProfileActions; name : Unbounded_String) is
-      Java_Result : constant File_Access := GenericProfileActions'Class (This).getFile (name);
+      Java_Result : constant File_Access := GenericProfileActions'Class (This).getFile (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFile;
 
    procedure getAction (This : in out GenericProfileActions; string_Id : Unbounded_String) is
-      Java_Result : constant GenericProfileAction_Access := GenericProfileActions'Class (This).getAction (string_Id);
+      Java_Result : constant GenericProfileAction_Access := GenericProfileActions'Class (This).getAction (string_Id => string_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAction;
 
    procedure toXmlNode (This : in out GenericProfileActions; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := GenericProfileActions'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := GenericProfileActions'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -66,8 +66,8 @@ package org.allbinary.business.user.commerce.inventory.order.OrderHistory_Packag
 
    procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class);
    function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class) return OrderHistory_Access;
-   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class);
-   function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) return OrderHistory_Access;
+   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Var_Param : access OrderHistory_Package.OrderHistory'Class);
+   function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Var_Param : access OrderHistory_Package.OrderHistory'Class) return OrderHistory_Access;
    procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistoryHashMap_Param : access HashMap_Package.HashMap'Class);
    function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistoryHashMap_Param : access HashMap_Package.HashMap'Class) return OrderHistory_Access;
    procedure setUserName (This : in out OrderHistory; value : Unbounded_String);

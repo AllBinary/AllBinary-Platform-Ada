@@ -254,21 +254,21 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
    end drop;
 
    procedure getLastId (This : in out PaymentEntity; userName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := PaymentEntity'Class (This).getLastId (userName);
+      Java_Result : constant Unbounded_String := PaymentEntity'Class (This).getLastId (userName => userName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLastId;
 
    procedure get (This : in out PaymentEntity; userName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := PaymentEntity'Class (This).get (userName);
+      Java_Result : constant BasicArrayList_Access := PaymentEntity'Class (This).get (userName => userName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getDefault (This : in out PaymentEntity; userName : Unbounded_String) is
-      Java_Result : constant PaymentInterface_Access := PaymentEntity'Class (This).getDefault (userName);
+      Java_Result : constant PaymentInterface_Access := PaymentEntity'Class (This).getDefault (userName => userName);
       pragma Unreferenced (Java_Result);
    begin
       null;

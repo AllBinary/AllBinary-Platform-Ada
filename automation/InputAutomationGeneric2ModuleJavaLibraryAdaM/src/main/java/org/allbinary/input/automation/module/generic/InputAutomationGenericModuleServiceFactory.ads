@@ -38,7 +38,7 @@ package org.allbinary.input.automation.module.generic_Id.InputAutomationGenericM
    type InputAutomationGenericModuleServiceFactory is new InputAutomationModuleServiceFactory with record
       logUtil : LogUtil_Access;
    end record;
-   inputAutomationGenericModuleServiceFactory : InputAutomationGenericModuleServiceFactory_Access;
+   inputAutomationGenericModuleServiceFactory_Var : InputAutomationGenericModuleServiceFactory_Access;
 
    procedure Initialize (This : in out InputAutomationGenericModuleServiceFactory'Class);
    function Create return InputAutomationGenericModuleServiceFactory_Access;

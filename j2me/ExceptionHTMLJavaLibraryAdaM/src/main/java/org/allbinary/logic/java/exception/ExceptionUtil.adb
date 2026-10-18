@@ -51,7 +51,7 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
    end getStackTrace;
 
    procedure getStackTrace (This : in out ExceptionUtil; e_Param : access Java_Throwable_Object'Class) is
-      Java_Result : constant Unbounded_String := ExceptionUtil'Class (This).getStackTrace (e_Param);
+      Java_Result : constant Unbounded_String := ExceptionUtil'Class (This).getStackTrace (e_Param => e_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

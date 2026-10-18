@@ -51,7 +51,7 @@ package body org.allbinary.game.input.GameKeyUtil_Package is
    end getInstance;
 
    procedure isDirectionKey (This : in out GameKeyUtil; key : Integer) is
-      Java_Result : constant Boolean := GameKeyUtil'Class (This).isDirectionKey (key);
+      Java_Result : constant Boolean := GameKeyUtil'Class (This).isDirectionKey (key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;

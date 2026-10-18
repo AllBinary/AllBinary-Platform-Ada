@@ -73,14 +73,14 @@ package body org.allbinary.image.AnimationFrameToImageUtil_Package is
    end getInstanceWH;
 
    procedure getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation_Package.Animation'Class) is
-      Java_Result : constant Image_Access := AnimationFrameToImageUtil'Class (This).getInstanceTranslate (width, height, animationInterface_Param);
+      Java_Result : constant Image_Access := AnimationFrameToImageUtil'Class (This).getInstanceTranslate (width => width, height => height, animationInterface_Param => animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceTranslate;
 
    procedure getInstanceWH (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation_Package.Animation'Class) is
-      Java_Result : constant Image_Access := AnimationFrameToImageUtil'Class (This).getInstanceWH (width, height, animationInterface_Param);
+      Java_Result : constant Image_Access := AnimationFrameToImageUtil'Class (This).getInstanceWH (width => width, height => height, animationInterface_Param => animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

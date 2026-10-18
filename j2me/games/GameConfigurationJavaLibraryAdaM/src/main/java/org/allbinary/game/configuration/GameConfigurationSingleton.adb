@@ -69,7 +69,7 @@ package body org.allbinary.game.configuration.GameConfigurationSingleton_Package
    end getHashtable;
 
    procedure getInstanceByName (This : in out GameConfigurationSingleton; name : Unbounded_String) is
-      Java_Result : constant GameConfiguration_Access := GameConfigurationSingleton'Class (This).getInstanceByName (name);
+      Java_Result : constant GameConfiguration_Access := GameConfigurationSingleton'Class (This).getInstanceByName (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

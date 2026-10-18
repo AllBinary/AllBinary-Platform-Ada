@@ -109,14 +109,14 @@ package body org.allbinary.animation.VectorMirrorGenerator_Package is
    end getInstance;
 
    procedure getInstance (This : in out VectorMirrorGenerator; points : Integer_Array_Access_Array_Access_Array_Access; width : Integer) is
-      Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorMirrorGenerator'Class (This).getInstance (points, width);
+      Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorMirrorGenerator'Class (This).getInstance (points => points, width => width);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out VectorMirrorGenerator; pointBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; width : Integer) is
-      Java_Result : constant BasicArrayList_Access := VectorMirrorGenerator'Class (This).getInstance (pointBasicArrayList_Param, width);
+      Java_Result : constant BasicArrayList_Access := VectorMirrorGenerator'Class (This).getInstance (pointBasicArrayList_Param => pointBasicArrayList_Param, width => width);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -218,24 +218,24 @@ package body org.allbinary.game.layer.FirstRunnable_Package is
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out FirstRunnable'Class; multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) is
-      multipassWaypointPathRunnable : constant MultipassWaypointPathRunnable_Access := MultipassWaypointPathRunnable_Access (multipassWaypointPathRunnable_Param);
+   procedure Initialize (This : in out FirstRunnable'Class; multipassWaypointPathRunnable_Var_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) is
+      multipassWaypointPathRunnable_Var : constant MultipassWaypointPathRunnable_Access := MultipassWaypointPathRunnable_Access (multipassWaypointPathRunnable_Var_Param);
    begin
       ARunnable_Package.Initialize (This);
       Initialize_Fields (This);
-            This.multipassWaypointPathRunnable := multipassWaypointPathRunnable;
+            This.multipassWaypointPathRunnable_Var := multipassWaypointPathRunnable_Var;
    end Initialize;
 
-   function Create (multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) return FirstRunnable_Access is
+   function Create (multipassWaypointPathRunnable_Var_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) return FirstRunnable_Access is
       This : constant FirstRunnable_Access := new FirstRunnable;
    begin
-      FirstRunnable_Package.Initialize (This.all, multipassWaypointPathRunnable_Param);
+      FirstRunnable_Package.Initialize (This.all, multipassWaypointPathRunnable_Var_Param);
       return This;
    end Create;
     
    procedure run (This : in out FirstRunnable) is
    begin
-            This.multipassWaypointPathRunnable.processFirstRunnable;
+            This.multipassWaypointPathRunnable_Var.processFirstRunnable;
    end run;
 
 end org.allbinary.game.layer.FirstRunnable_Package;
@@ -260,24 +260,24 @@ package body org.allbinary.game.layer.SecondRunnable_Package is
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out SecondRunnable'Class; multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) is
-      multipassWaypointPathRunnable : constant MultipassWaypointPathRunnable_Access := MultipassWaypointPathRunnable_Access (multipassWaypointPathRunnable_Param);
+   procedure Initialize (This : in out SecondRunnable'Class; multipassWaypointPathRunnable_Var_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) is
+      multipassWaypointPathRunnable_Var : constant MultipassWaypointPathRunnable_Access := MultipassWaypointPathRunnable_Access (multipassWaypointPathRunnable_Var_Param);
    begin
       ARunnable_Package.Initialize (This);
       Initialize_Fields (This);
-            This.multipassWaypointPathRunnable := multipassWaypointPathRunnable;
+            This.multipassWaypointPathRunnable_Var := multipassWaypointPathRunnable_Var;
    end Initialize;
 
-   function Create (multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) return SecondRunnable_Access is
+   function Create (multipassWaypointPathRunnable_Var_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) return SecondRunnable_Access is
       This : constant SecondRunnable_Access := new SecondRunnable;
    begin
-      SecondRunnable_Package.Initialize (This.all, multipassWaypointPathRunnable_Param);
+      SecondRunnable_Package.Initialize (This.all, multipassWaypointPathRunnable_Var_Param);
       return This;
    end Create;
     
    procedure run (This : in out SecondRunnable) is
    begin
-            This.multipassWaypointPathRunnable.processSecondRunnable;
+            This.multipassWaypointPathRunnable_Var.processSecondRunnable;
    end run;
 
 end org.allbinary.game.layer.SecondRunnable_Package;
@@ -302,24 +302,24 @@ package body org.allbinary.game.layer.EndRunnable_Package is
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out EndRunnable'Class; multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) is
-      multipassWaypointPathRunnable : constant MultipassWaypointPathRunnable_Access := MultipassWaypointPathRunnable_Access (multipassWaypointPathRunnable_Param);
+   procedure Initialize (This : in out EndRunnable'Class; multipassWaypointPathRunnable_Var_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) is
+      multipassWaypointPathRunnable_Var : constant MultipassWaypointPathRunnable_Access := MultipassWaypointPathRunnable_Access (multipassWaypointPathRunnable_Var_Param);
    begin
       ARunnable_Package.Initialize (This);
       Initialize_Fields (This);
-            This.multipassWaypointPathRunnable := multipassWaypointPathRunnable;
+            This.multipassWaypointPathRunnable_Var := multipassWaypointPathRunnable_Var;
    end Initialize;
 
-   function Create (multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) return EndRunnable_Access is
+   function Create (multipassWaypointPathRunnable_Var_Param : access MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class) return EndRunnable_Access is
       This : constant EndRunnable_Access := new EndRunnable;
    begin
-      EndRunnable_Package.Initialize (This.all, multipassWaypointPathRunnable_Param);
+      EndRunnable_Package.Initialize (This.all, multipassWaypointPathRunnable_Var_Param);
       return This;
    end Create;
     
    procedure run (This : in out EndRunnable) is
    begin
-            This.multipassWaypointPathRunnable.processEndRunnable;
+            This.multipassWaypointPathRunnable_Var.processEndRunnable;
    end run;
 
 end org.allbinary.game.layer.EndRunnable_Package;

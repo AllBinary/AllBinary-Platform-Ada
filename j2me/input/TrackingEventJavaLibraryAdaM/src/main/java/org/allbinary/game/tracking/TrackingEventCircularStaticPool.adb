@@ -57,7 +57,7 @@ package body org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package
    end getNextInstance;
 
    procedure getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant TrackingEvent_Access := TrackingEventCircularStaticPool'Class (This).getNextInstance (layerInterface_Param);
+      Java_Result : constant TrackingEvent_Access := TrackingEventCircularStaticPool'Class (This).getNextInstance (layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

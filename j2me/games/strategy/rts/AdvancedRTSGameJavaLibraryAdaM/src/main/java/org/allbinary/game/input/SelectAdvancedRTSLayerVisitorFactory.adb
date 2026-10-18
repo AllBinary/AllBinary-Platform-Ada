@@ -48,7 +48,7 @@ package body org.allbinary.game.input.SelectAdvancedRTSLayerVisitorFactory_Packa
    end create;
 
    procedure create (This : in out SelectAdvancedRTSLayerVisitorFactory; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) is
-      Java_Result : constant Visitor_Access := SelectAdvancedRTSLayerVisitorFactory'Class (This).create (selectedRTSLayersPlayerGameInput_Param);
+      Java_Result : constant Visitor_Access := SelectAdvancedRTSLayerVisitorFactory'Class (This).create (selectedRTSLayersPlayerGameInput_Param => selectedRTSLayersPlayerGameInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

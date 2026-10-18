@@ -148,77 +148,77 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
    end toString;
 
    procedure append (This : in out StringMaker; string_Id : Unbounded_String) is
-      Java_Result : constant StringMaker_Access := StringMaker'Class (This).append (string_Id);
+      Java_Result : constant StringMaker_Access := StringMaker'Class (This).append (string_Id => string_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end append;
 
    procedure appendchar (This : in out StringMaker; c : Character) is
-      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendchar (c);
+      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendchar (c => c);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end appendchar;
 
    procedure appendCharArray (This : in out StringMaker; charArray : Character_Array_Access; start : Integer; end_Id : Integer) is
-      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendCharArray (charArray, start, end_Id);
+      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendCharArray (charArray => charArray, start => start, end_Id => end_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end appendCharArray;
 
    procedure appendbyte (This : in out StringMaker; b : Short_Short_Integer) is
-      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendbyte (b);
+      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendbyte (b => b);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end appendbyte;
 
    procedure appendshort (This : in out StringMaker; b : Short_Integer) is
-      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendshort (b);
+      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendshort (b => b);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end appendshort;
 
    procedure appendint (This : in out StringMaker; i : Integer) is
-      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendint (i);
+      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendint (i => i);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end appendint;
 
    procedure appendlong (This : in out StringMaker; l : Long_Long_Integer) is
-      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendlong (l);
+      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendlong (l => l);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end appendlong;
 
    procedure appendfloat (This : in out StringMaker; f : Float) is
-      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendfloat (f);
+      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendfloat (f => f);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end appendfloat;
 
    procedure appendboolean (This : in out StringMaker; bool : Boolean) is
-      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendboolean (bool);
+      Java_Result : constant StringMaker_Access := StringMaker'Class (This).appendboolean (bool => bool);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end appendboolean;
 
    procedure min (This : in out StringMaker; value : Integer; value2 : Integer) is
-      Java_Result : constant Integer := StringMaker'Class (This).min (value, value2);
+      Java_Result : constant Integer := StringMaker'Class (This).min (value => value, value2 => value2);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end min;
 
    procedure delete (This : in out StringMaker; start : Integer; end_Id : Integer) is
-      Java_Result : constant StringMaker_Access := StringMaker'Class (This).delete (start, end_Id);
+      Java_Result : constant StringMaker_Access := StringMaker'Class (This).delete (start => start, end_Id => end_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

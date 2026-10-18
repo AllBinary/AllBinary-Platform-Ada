@@ -68,7 +68,7 @@ package body org.allbinary.animation.image.ImageRotationAnimationFactory_Package
    end getAngleIncrementP;
 
    procedure getInstance (This : in out ImageRotationAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := ImageRotationAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := ImageRotationAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

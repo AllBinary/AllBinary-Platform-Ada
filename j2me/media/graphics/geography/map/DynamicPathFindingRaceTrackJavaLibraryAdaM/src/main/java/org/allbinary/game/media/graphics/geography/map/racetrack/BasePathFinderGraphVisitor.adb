@@ -100,14 +100,14 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
    end getInvalidReason;
 
    procedure isValid (This : in out BasePathFinderGraphVisitor; graphPath_Param : access GraphPath_Package.GraphPath'Class) is
-      Java_Result : constant Boolean := BasePathFinderGraphVisitor'Class (This).isValid (graphPath_Param);
+      Java_Result : constant Boolean := BasePathFinderGraphVisitor'Class (This).isValid (graphPath_Param => graphPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isValid;
 
    procedure getInvalidReason (This : in out BasePathFinderGraphVisitor; graphPath_Param : access GraphPath_Package.GraphPath'Class) is
-      Java_Result : constant Unbounded_String := BasePathFinderGraphVisitor'Class (This).getInvalidReason (graphPath_Param);
+      Java_Result : constant Unbounded_String := BasePathFinderGraphVisitor'Class (This).getInvalidReason (graphPath_Param => graphPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

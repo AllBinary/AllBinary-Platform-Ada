@@ -117,42 +117,42 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
    end toString;
 
    procedure containsKey (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := ServiceReferenceMap'Class (This).containsKey (key_Param);
+      Java_Result : constant Boolean := ServiceReferenceMap'Class (This).containsKey (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsKey;
 
    procedure containsValue (This : in out ServiceReferenceMap; value_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := ServiceReferenceMap'Class (This).containsValue (value_Param);
+      Java_Result : constant Boolean := ServiceReferenceMap'Class (This).containsValue (value_Param => value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsValue;
 
    procedure get (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).get (key_Param);
+      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).get (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure put (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).put (key_Param, value_Param);
+      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).put (key_Param => key_Param, value_Param => value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
 
    procedure remove (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).remove (key_Param);
+      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).remove (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end remove;
 
    procedure toString (map_Param : access Map_Package.Map'Class) is
-      Java_Result : constant Unbounded_String := toString (map_Param);
+      Java_Result : constant Unbounded_String := toString (map_Param => map_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

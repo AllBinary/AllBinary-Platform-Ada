@@ -60,7 +60,7 @@ package body org.allbinary.media.audio.NoPlayer_Package is
    end getControls;
 
    procedure getControl (This : in out NoPlayer; controlType : Unbounded_String) is
-      Java_Result : constant Control_Access := NoPlayer'Class (This).getControl (controlType);
+      Java_Result : constant Control_Access := NoPlayer'Class (This).getControl (controlType => controlType);
       pragma Unreferenced (Java_Result);
    begin
       null;

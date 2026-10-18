@@ -122,14 +122,14 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.g
    end toXmlNode;
 
    procedure toValidationInfoNode (This : in out GlobalsValidation; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := GlobalsValidation'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := GlobalsValidation'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
    procedure toXmlNode (This : in out GlobalsValidation; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := GlobalsValidation'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := GlobalsValidation'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

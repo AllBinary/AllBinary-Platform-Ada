@@ -100,7 +100,7 @@ package body views.generic_Id.inventory.InventorySearchProductUtil_Package is
    end getProduct;
 
    procedure getProduct (This : in out InventorySearchProductUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class; product : Unbounded_String) is
-      Java_Result : constant Unbounded_String := InventorySearchProductUtil'Class (This).getProduct (abeClientInformation_Param, searchRequest_Param, product);
+      Java_Result : constant Unbounded_String := InventorySearchProductUtil'Class (This).getProduct (abeClientInformation_Param => abeClientInformation_Param, searchRequest_Param => searchRequest_Param, product => product);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -87,7 +87,7 @@ package body views.generic_Id.address.shipping.TaxValidationView_Package is
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out TaxValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := TaxValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := TaxValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

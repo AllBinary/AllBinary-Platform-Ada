@@ -39,7 +39,7 @@ package org.allbinary.data.tree.dom.ContextUriResolver_Package is
    type ContextUriResolver_Access_Array_Access_Array is array (Natural range <>) of ContextUriResolver_Access_Array_Access;
    type ContextUriResolver_Access_Array_Access_Array_Access is access all ContextUriResolver_Access_Array_Access_Array;
 
-   type ContextUriResolver is new Java_Object and URIResolver with record
+   type ContextUriResolver is new Java_Object with record
       logUtil : LogUtil_Access;
       uriResolverStrings : URIResolverStrings_Access;
       basicURIResolver : BasicUriResolver_Access;

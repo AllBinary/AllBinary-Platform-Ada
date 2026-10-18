@@ -149,35 +149,35 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
    end log;
 
    procedure isColorAllowed (This : in out ImageComparatorConstraints; frame : Integer; point_Param : access GPoint_Package.GPoint'Class; color_Param : access Color_Package.Color'Class) is
-      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isColorAllowed (frame, point_Param, color_Param);
+      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isColorAllowed (frame => frame, point_Param => point_Param, color_Param => color_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isColorAllowed;
 
    procedure isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
-      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isCollisionWithAvoidRectangles (rectangle_Param);
+      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isCollisionWithAvoidRectangles (rectangle_Param => rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollisionWithAvoidRectangles;
 
    procedure isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; point_Param : access GPoint_Package.GPoint'Class) is
-      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isCollisionWithAvoidRectangles (point_Param);
+      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isCollisionWithAvoidRectangles (point_Param => point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollisionWithAvoidRectangles;
 
    procedure isFrameAllowed (This : in out ImageComparatorConstraints; frame : Integer) is
-      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isFrameAllowed (frame);
+      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isFrameAllowed (frame => frame);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isFrameAllowed;
 
    procedure isImageValid (This : in out ImageComparatorConstraints; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
-      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isImageValid (bufferedImage_Param);
+      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isImageValid (bufferedImage_Param => bufferedImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

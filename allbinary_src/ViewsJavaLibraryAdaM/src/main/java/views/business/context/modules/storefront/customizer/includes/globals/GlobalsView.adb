@@ -83,7 +83,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    end view;
 
    procedure toXmlNode (This : in out GlobalsView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := GlobalsView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := GlobalsView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

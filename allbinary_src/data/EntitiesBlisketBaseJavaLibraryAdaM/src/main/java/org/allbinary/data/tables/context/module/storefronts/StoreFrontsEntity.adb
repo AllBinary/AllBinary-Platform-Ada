@@ -197,7 +197,7 @@ package body org.allbinary.data.tables.context.module.storefronts.StoreFrontsEnt
    end dropTable;
 
    procedure getStoreFrontInterface (This : in out StoreFrontsEntity; name : Unbounded_String) is
-      Java_Result : constant StoreFront_Access := StoreFrontsEntity'Class (This).getStoreFrontInterface (name);
+      Java_Result : constant StoreFront_Access := StoreFrontsEntity'Class (This).getStoreFrontInterface (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

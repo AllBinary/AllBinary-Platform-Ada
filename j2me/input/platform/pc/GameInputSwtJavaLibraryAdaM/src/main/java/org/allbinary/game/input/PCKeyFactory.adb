@@ -198,56 +198,56 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
    end isEnter;
 
    procedure isSubmission (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isSubmission (input_Param);
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isSubmission (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isSubmission;
 
    procedure isDelete (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isDelete (input_Param);
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isDelete (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
    procedure isBackSpace (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isBackSpace (input_Param);
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isBackSpace (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isBackSpace;
 
    procedure isUp (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isUp (input_Param);
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isUp (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isUp;
 
    procedure isDown (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isDown (input_Param);
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isDown (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDown;
 
    procedure isLeft (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isLeft (input_Param);
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isLeft (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isLeft;
 
    procedure isRight (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isRight (input_Param);
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isRight (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isRight;
 
    procedure isEnter (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isEnter (input_Param);
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isEnter (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

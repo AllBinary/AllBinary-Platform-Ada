@@ -373,7 +373,7 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
    end toString;
 
    procedure getDamage (This : in out CollidableDestroyableDamageableLayer; damageType : Integer) is
-      Java_Result : constant Integer := CollidableDestroyableDamageableLayer'Class (This).getDamage (damageType);
+      Java_Result : constant Integer := CollidableDestroyableDamageableLayer'Class (This).getDamage (damageType => damageType);
       pragma Unreferenced (Java_Result);
    begin
       null;

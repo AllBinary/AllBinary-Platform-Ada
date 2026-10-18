@@ -40,14 +40,14 @@ package body org.allbinary.logic.visual.media.ImageIOUtil_Package is
    end write;
 
    procedure read (file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant BufferedImage_Access := read (file_Param);
+      Java_Result : constant BufferedImage_Access := read (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end read;
 
    procedure write (renderedImage_Param : access RenderedImage_Package.RenderedImage'Class; name : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant Boolean := write (renderedImage_Param, name, file_Param);
+      Java_Result : constant Boolean := write (renderedImage_Param => renderedImage_Param, name => name, file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

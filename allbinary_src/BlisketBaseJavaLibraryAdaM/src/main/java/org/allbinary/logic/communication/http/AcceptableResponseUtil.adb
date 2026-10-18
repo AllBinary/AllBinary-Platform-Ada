@@ -70,14 +70,14 @@ package body org.allbinary.logic.communication.http.AcceptableResponseUtil_Packa
    end size;
 
    procedure get (This : in out AcceptableResponseUtil; index : Integer) is
-      Java_Result : constant Unbounded_String := AcceptableResponseUtil'Class (This).get (index);
+      Java_Result : constant Unbounded_String := AcceptableResponseUtil'Class (This).get (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getTagName (This : in out AcceptableResponseUtil; index : Integer) is
-      Java_Result : constant Unbounded_String := AcceptableResponseUtil'Class (This).getTagName (index);
+      Java_Result : constant Unbounded_String := AcceptableResponseUtil'Class (This).getTagName (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

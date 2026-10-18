@@ -78,7 +78,7 @@ package body org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
    end paintThreed;
 
    procedure createHealthIncludingLifeBar (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; life_Param : access Life_Package.Life'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer) is
-      Java_Result : constant HealthIncludingLifeBar_Access := createHealthIncludingLifeBar (layerInterface_Param, life_Param, healthInterface_Param, location, direction);
+      Java_Result : constant HealthIncludingLifeBar_Access := createHealthIncludingLifeBar (layerInterface_Param => layerInterface_Param, life_Param => life_Param, healthInterface_Param => healthInterface_Param, location => location, direction => direction);
       pragma Unreferenced (Java_Result);
    begin
       null;

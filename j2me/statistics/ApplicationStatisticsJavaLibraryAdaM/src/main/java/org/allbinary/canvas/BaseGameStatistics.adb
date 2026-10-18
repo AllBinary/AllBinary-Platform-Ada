@@ -200,7 +200,7 @@ package body org.allbinary.canvas.BaseGameStatistics_Package is
    end toString;
 
    procedure toStringAt (This : in out BaseGameStatistics; totalTime : Long_Long_Integer) is
-      Java_Result : constant Unbounded_String := BaseGameStatistics'Class (This).toStringAt (totalTime);
+      Java_Result : constant Unbounded_String := BaseGameStatistics'Class (This).toStringAt (totalTime => totalTime);
       pragma Unreferenced (Java_Result);
    begin
       null;

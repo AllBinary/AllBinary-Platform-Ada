@@ -56,7 +56,7 @@ package org.allbinary.animation.IndexedAnimation_Package is
    function isLastFrame (This : in out IndexedAnimation) return Boolean;
    procedure setSequence (This : in out IndexedAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out IndexedAnimation) return Integer_Array_Access;
-   procedure setState (This : in out IndexedAnimation; indexedAnimation_Param : access IndexedAnimation_Package.IndexedAnimation'Class);
+   procedure setState (This : in out IndexedAnimation; indexedAnimation_Var_Param : access IndexedAnimation_Package.IndexedAnimation'Class);
    function getWidth (This : in out IndexedAnimation) return Integer;
    function getHeight (This : in out IndexedAnimation) return Integer;
 

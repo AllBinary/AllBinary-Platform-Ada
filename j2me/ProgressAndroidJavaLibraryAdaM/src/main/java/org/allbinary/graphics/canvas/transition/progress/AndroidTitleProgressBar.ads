@@ -40,8 +40,8 @@ package org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBa
    type AndroidTitleProgressBar_Access_Array_Access_Array_Access is access all AndroidTitleProgressBar_Access_Array_Access_Array;
 
    type AndroidTitleProgressBar is new ProgressCanvas with record
-      showTitleProgressBarRunnable : ShowTitleProgressBarRunnable_Access;
-      dismissTitleProgressBarRunnable : DismissTitleProgressBarRunnable_Access;
+      showTitleProgressBarRunnable_Var : ShowTitleProgressBarRunnable_Access;
+      dismissTitleProgressBarRunnable_Var : DismissTitleProgressBarRunnable_Access;
       progressDialogPortionSetProgressRunnable : TitleProgressBarPortionSetProgressRunnable_Access;
       progressDialogSetProgressRunnable : TitleProgressBarSetProgressRunnable_Access;
       progressActivity : ProgressActivityInterface_Access;
@@ -90,11 +90,11 @@ package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetPro
    type TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access is access all TitleProgressBarSetProgressRunnable_Access_Array_Access_Array;
 
    type TitleProgressBarSetProgressRunnable is new Java_Object and Runnable with record
-      androidTitleProgressBar : AndroidTitleProgressBar_Access;
+      androidTitleProgressBar_Var : AndroidTitleProgressBar_Access;
    end record;
 
-   procedure Initialize (This : in out TitleProgressBarSetProgressRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class);
-   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return TitleProgressBarSetProgressRunnable_Access;
+   procedure Initialize (This : in out TitleProgressBarSetProgressRunnable'Class; androidTitleProgressBar_Var_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class);
+   function Create (androidTitleProgressBar_Var_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return TitleProgressBarSetProgressRunnable_Access;
    procedure run (This : in out TitleProgressBarSetProgressRunnable);
 
 end org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
@@ -127,11 +127,11 @@ package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortio
    type TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access is access all TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array;
 
    type TitleProgressBarPortionSetProgressRunnable is new Java_Object and Runnable with record
-      androidTitleProgressBar : AndroidTitleProgressBar_Access;
+      androidTitleProgressBar_Var : AndroidTitleProgressBar_Access;
    end record;
 
-   procedure Initialize (This : in out TitleProgressBarPortionSetProgressRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class);
-   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return TitleProgressBarPortionSetProgressRunnable_Access;
+   procedure Initialize (This : in out TitleProgressBarPortionSetProgressRunnable'Class; androidTitleProgressBar_Var_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class);
+   function Create (androidTitleProgressBar_Var_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return TitleProgressBarPortionSetProgressRunnable_Access;
    procedure run (This : in out TitleProgressBarPortionSetProgressRunnable);
 
 end org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
@@ -164,11 +164,11 @@ package org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRu
    type ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access is access all ShowTitleProgressBarRunnable_Access_Array_Access_Array;
 
    type ShowTitleProgressBarRunnable is new Java_Object and Runnable with record
-      androidTitleProgressBar : AndroidTitleProgressBar_Access;
+      androidTitleProgressBar_Var : AndroidTitleProgressBar_Access;
    end record;
 
-   procedure Initialize (This : in out ShowTitleProgressBarRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class);
-   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return ShowTitleProgressBarRunnable_Access;
+   procedure Initialize (This : in out ShowTitleProgressBarRunnable'Class; androidTitleProgressBar_Var_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class);
+   function Create (androidTitleProgressBar_Var_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return ShowTitleProgressBarRunnable_Access;
    procedure run (This : in out ShowTitleProgressBarRunnable);
 
 end org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
@@ -201,11 +201,11 @@ package org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBa
    type DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access is access all DismissTitleProgressBarRunnable_Access_Array_Access_Array;
 
    type DismissTitleProgressBarRunnable is new Java_Object and Runnable with record
-      androidTitleProgressBar : AndroidTitleProgressBar_Access;
+      androidTitleProgressBar_Var : AndroidTitleProgressBar_Access;
    end record;
 
-   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class);
-   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return DismissTitleProgressBarRunnable_Access;
+   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; androidTitleProgressBar_Var_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class);
+   function Create (androidTitleProgressBar_Var_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return DismissTitleProgressBarRunnable_Access;
    procedure run (This : in out DismissTitleProgressBarRunnable);
 
 end org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;

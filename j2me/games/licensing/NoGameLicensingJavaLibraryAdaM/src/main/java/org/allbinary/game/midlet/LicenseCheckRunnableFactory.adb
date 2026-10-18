@@ -43,7 +43,7 @@ package body org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out LicenseCheckRunnableFactory; specialDemoGameMidlet_Param : access SpecialDemoGameMidlet_Package.SpecialDemoGameMidlet'Class) is
-      Java_Result : constant ABRunnable_Access := LicenseCheckRunnableFactory'Class (This).getInstance (specialDemoGameMidlet_Param);
+      Java_Result : constant ABRunnable_Access := LicenseCheckRunnableFactory'Class (This).getInstance (specialDemoGameMidlet_Param => specialDemoGameMidlet_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -77,28 +77,28 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
    end add;
 
    procedure removeAt (This : in out CurrentlyPressedTouchButtonSingleton; index : Integer) is
-      Java_Result : constant TouchButtonInput_Access := CurrentlyPressedTouchButtonSingleton'Class (This).removeAt (index);
+      Java_Result : constant TouchButtonInput_Access := CurrentlyPressedTouchButtonSingleton'Class (This).removeAt (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end removeAt;
 
    procedure remove (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
-      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingleton'Class (This).remove (touchButtonInput_Param);
+      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingleton'Class (This).remove (touchButtonInput_Param => touchButtonInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end remove;
 
    procedure get (This : in out CurrentlyPressedTouchButtonSingleton; index : Integer) is
-      Java_Result : constant TouchButtonInput_Access := CurrentlyPressedTouchButtonSingleton'Class (This).get (index);
+      Java_Result : constant TouchButtonInput_Access := CurrentlyPressedTouchButtonSingleton'Class (This).get (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure contains (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
-      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingleton'Class (This).contains (touchButtonInput_Param);
+      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingleton'Class (This).contains (touchButtonInput_Param => touchButtonInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

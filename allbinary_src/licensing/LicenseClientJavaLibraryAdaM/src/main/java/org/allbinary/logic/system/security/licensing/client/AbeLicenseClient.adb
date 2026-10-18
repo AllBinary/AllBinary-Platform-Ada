@@ -96,7 +96,7 @@ package body org.allbinary.logic.system.security.licensing.client.AbeLicenseClie
    end get;
 
    procedure get (This : in out AbeLicenseClient; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
-      Java_Result : constant AbeLicenseInterface_Access := AbeLicenseClient'Class (This).get (abeClientInformation_Param);
+      Java_Result : constant AbeLicenseInterface_Access := AbeLicenseClient'Class (This).get (abeClientInformation_Param => abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

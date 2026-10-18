@@ -80,7 +80,7 @@ package body org.allbinary.android.AndroidServicesUtil_Package is
    end isServiceRunning;
 
    procedure isServiceRunning (This : in out AndroidServicesUtil; name : Unbounded_String) is
-      Java_Result : constant Boolean := AndroidServicesUtil'Class (This).isServiceRunning (name);
+      Java_Result : constant Boolean := AndroidServicesUtil'Class (This).isServiceRunning (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

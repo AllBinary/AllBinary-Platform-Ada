@@ -97,49 +97,49 @@ package body org.allbinary.logic.math.MathUtil_Package is
    end max;
 
    procedure getTotalDigits (This : in out MathUtil; digits_Id_Param : Integer) is
-      Java_Result : constant Integer := MathUtil'Class (This).getTotalDigits (digits_Id_Param);
+      Java_Result : constant Integer := MathUtil'Class (This).getTotalDigits (digits_Id_Param => digits_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTotalDigits;
 
    procedure sqrt (This : in out MathUtil; value : Integer) is
-      Java_Result : constant Integer := MathUtil'Class (This).sqrt (value);
+      Java_Result : constant Integer := MathUtil'Class (This).sqrt (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end sqrt;
 
    procedure sqrtd (This : in out MathUtil; x : Integer) is
-      Java_Result : constant Long_Float := MathUtil'Class (This).sqrtd (x);
+      Java_Result : constant Long_Float := MathUtil'Class (This).sqrtd (x => x);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end sqrtd;
 
    procedure abs_Id (This : in out MathUtil; value : Integer) is
-      Java_Result : constant Integer := MathUtil'Class (This).abs_Id (value);
+      Java_Result : constant Integer := MathUtil'Class (This).abs_Id (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end abs_Id;
 
    procedure abslong (This : in out MathUtil; value : Long_Long_Integer) is
-      Java_Result : constant Long_Long_Integer := MathUtil'Class (This).abslong (value);
+      Java_Result : constant Long_Long_Integer := MathUtil'Class (This).abslong (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end abslong;
 
    procedure min (This : in out MathUtil; value : Integer; value2 : Integer) is
-      Java_Result : constant Integer := MathUtil'Class (This).min (value, value2);
+      Java_Result : constant Integer := MathUtil'Class (This).min (value => value, value2 => value2);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end min;
 
    procedure max (This : in out MathUtil; value : Integer; value2 : Integer) is
-      Java_Result : constant Integer := MathUtil'Class (This).max (value, value2);
+      Java_Result : constant Integer := MathUtil'Class (This).max (value => value, value2 => value2);
       pragma Unreferenced (Java_Result);
    begin
       null;

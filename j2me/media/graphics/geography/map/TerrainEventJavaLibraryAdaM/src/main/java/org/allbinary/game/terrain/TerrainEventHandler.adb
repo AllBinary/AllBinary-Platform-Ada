@@ -117,7 +117,7 @@ package body org.allbinary.game.terrain.TerrainEventHandler_Package is
    end process;
 
    procedure getInstance (anyType_Param : access Java_Object'Class) is
-      Java_Result : constant TerrainEventHandler_Access := getInstance (anyType_Param);
+      Java_Result : constant TerrainEventHandler_Access := getInstance (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

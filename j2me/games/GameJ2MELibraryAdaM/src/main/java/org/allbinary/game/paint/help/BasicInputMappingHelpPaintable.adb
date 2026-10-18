@@ -117,7 +117,7 @@ package body org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Packag
    end get;
 
    procedure get (This : in out BasicInputMappingHelpPaintable; keyList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Unbounded_String := BasicInputMappingHelpPaintable'Class (This).get (keyList_Param);
+      Java_Result : constant Unbounded_String := BasicInputMappingHelpPaintable'Class (This).get (keyList_Param => keyList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

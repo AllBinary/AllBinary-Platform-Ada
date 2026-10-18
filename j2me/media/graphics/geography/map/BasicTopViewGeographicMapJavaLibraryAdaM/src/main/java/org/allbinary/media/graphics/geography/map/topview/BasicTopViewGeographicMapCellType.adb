@@ -117,21 +117,21 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
    end toString;
 
    procedure createType (name : Unbounded_String; type_Id : Integer; cost : Integer) is
-      Java_Result : constant BasicTopViewGeographicMapCellType_Access := createType (name, type_Id, cost);
+      Java_Result : constant BasicTopViewGeographicMapCellType_Access := createType (name => name, type_Id => type_Id, cost => cost);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createType;
 
    procedure isType (This : in out BasicTopViewGeographicMapCellType; type_Id_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) is
-      Java_Result : constant Boolean := BasicTopViewGeographicMapCellType'Class (This).isType (type_Id_Param);
+      Java_Result : constant Boolean := BasicTopViewGeographicMapCellType'Class (This).isType (type_Id_Param => type_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isType;
 
    procedure hasType (This : in out BasicTopViewGeographicMapCellType; type_Id : Integer) is
-      Java_Result : constant Boolean := BasicTopViewGeographicMapCellType'Class (This).hasType (type_Id);
+      Java_Result : constant Boolean := BasicTopViewGeographicMapCellType'Class (This).hasType (type_Id => type_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

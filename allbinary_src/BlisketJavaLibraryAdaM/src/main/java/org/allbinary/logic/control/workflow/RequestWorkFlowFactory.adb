@@ -79,14 +79,14 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
    end getInstance;
 
    procedure getInstance (request_Param : access ServletRequest_Package.ServletRequest'Class; response_Param : access ServletResponse_Package.ServletResponse'Class; servletConfig_Param : access ServletConfig_Package.ServletConfig'Class; servletContext_Param : access ServletContext_Package.ServletContext'Class) is
-      Java_Result : constant WorkFlowInterface_Access := getInstance (request_Param, response_Param, servletConfig_Param, servletContext_Param);
+      Java_Result : constant WorkFlowInterface_Access := getInstance (request_Param => request_Param, response_Param => response_Param, servletConfig_Param => servletConfig_Param, servletContext_Param => servletContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
-      Java_Result : constant WorkFlowInterface_Access := getInstance (hashMap_Param, pageContext_Param);
+      Java_Result : constant WorkFlowInterface_Access := getInstance (hashMap_Param => hashMap_Param, pageContext_Param => pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

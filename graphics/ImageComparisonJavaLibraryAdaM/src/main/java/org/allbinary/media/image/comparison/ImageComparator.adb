@@ -120,14 +120,14 @@ package body org.allbinary.media.image.comparison.ImageComparator_Package is
    end compare;
 
    procedure compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) is
-      Java_Result : constant ImageComparisonResult_Access := ImageComparator'Class (This).compare (bufferedImage1_Param, bufferedImage2_Param, frameOne, frameTwo, tolerance);
+      Java_Result : constant ImageComparisonResult_Access := ImageComparator'Class (This).compare (bufferedImage1_Param => bufferedImage1_Param, bufferedImage2_Param => bufferedImage2_Param, frameOne => frameOne, frameTwo => frameTwo, tolerance => tolerance);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compare;
 
    procedure compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer; name : Unbounded_String) is
-      Java_Result : constant ImageComparisonResult_Access := ImageComparator'Class (This).compare (bufferedImage1_Param, bufferedImage2_Param, frameOne, frameTwo, tolerance, name);
+      Java_Result : constant ImageComparisonResult_Access := ImageComparator'Class (This).compare (bufferedImage1_Param => bufferedImage1_Param, bufferedImage2_Param => bufferedImage2_Param, frameOne => frameOne, frameTwo => frameTwo, tolerance => tolerance, name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

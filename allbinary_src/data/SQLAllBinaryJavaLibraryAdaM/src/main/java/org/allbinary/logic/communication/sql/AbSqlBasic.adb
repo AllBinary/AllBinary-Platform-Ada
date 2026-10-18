@@ -194,14 +194,14 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
    end setDatabaseConnectionInfoInterface;
 
    procedure executeSQLStatement (This : in out AbSqlBasic; statement : Unbounded_String) is
-      Java_Result : constant ResultSet_Access := AbSqlBasic'Class (This).executeSQLStatement (statement);
+      Java_Result : constant ResultSet_Access := AbSqlBasic'Class (This).executeSQLStatement (statement => statement);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end executeSQLStatement;
 
    procedure create (This : in out AbSqlBasic; databaseName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbSqlBasic'Class (This).create (databaseName);
+      Java_Result : constant Unbounded_String := AbSqlBasic'Class (This).create (databaseName => databaseName);
       pragma Unreferenced (Java_Result);
    begin
       null;

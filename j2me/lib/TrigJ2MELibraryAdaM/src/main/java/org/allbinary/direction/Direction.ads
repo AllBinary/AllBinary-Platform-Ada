@@ -41,8 +41,8 @@ package org.allbinary.direction.Direction_Package is
 
    procedure Initialize (This : in out Direction'Class; name : Unbounded_String; otherName : Unbounded_String; value : Integer; frameFactor : Integer);
    function Create (name : Unbounded_String; otherName : Unbounded_String; value : Integer; frameFactor : Integer) return Direction_Access;
-   function getInstance (direction : Integer) return Direction_Access;
-   procedure getInstance (direction : Integer);
+   function getInstance (direction_Var : Integer) return Direction_Access;
+   procedure getInstance (direction_Var : Integer);
    function getValue (This : in out Direction) return Integer;
    function getFrameFactor (This : in out Direction) return Integer;
    function getOtherName (This : in out Direction) return Unbounded_String;

@@ -41,7 +41,7 @@ package body org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package i
    end createBitmap;
 
    procedure createBitmap (This : in out PlatformBitmapBaseFactory; image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant PlatformBitmapBase_Access := PlatformBitmapBaseFactory'Class (This).createBitmap (image_Param);
+      Java_Result : constant PlatformBitmapBase_Access := PlatformBitmapBaseFactory'Class (This).createBitmap (image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

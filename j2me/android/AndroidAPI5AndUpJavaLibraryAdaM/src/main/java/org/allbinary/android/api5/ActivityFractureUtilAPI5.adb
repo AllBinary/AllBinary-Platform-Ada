@@ -92,28 +92,28 @@ package body org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
    end isFeature;
 
    procedure isTouch (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity_Package.Activity'Class) is
-      Java_Result : constant Boolean := ActivityFractureUtilAPI5'Class (This).isTouch (activity_Param);
+      Java_Result : constant Boolean := ActivityFractureUtilAPI5'Class (This).isTouch (activity_Param => activity_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTouch;
 
    procedure isMultiTouch (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity_Package.Activity'Class) is
-      Java_Result : constant Boolean := ActivityFractureUtilAPI5'Class (This).isMultiTouch (activity_Param);
+      Java_Result : constant Boolean := ActivityFractureUtilAPI5'Class (This).isMultiTouch (activity_Param => activity_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isMultiTouch;
 
    procedure isMultiTouchDistinct (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity_Package.Activity'Class) is
-      Java_Result : constant Boolean := ActivityFractureUtilAPI5'Class (This).isMultiTouchDistinct (activity_Param);
+      Java_Result : constant Boolean := ActivityFractureUtilAPI5'Class (This).isMultiTouchDistinct (activity_Param => activity_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isMultiTouchDistinct;
 
    procedure isFeature (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity_Package.Activity'Class; property : Unbounded_String) is
-      Java_Result : constant Boolean := ActivityFractureUtilAPI5'Class (This).isFeature (activity_Param, property);
+      Java_Result : constant Boolean := ActivityFractureUtilAPI5'Class (This).isFeature (activity_Param => activity_Param, property => property);
       pragma Unreferenced (Java_Result);
    begin
       null;

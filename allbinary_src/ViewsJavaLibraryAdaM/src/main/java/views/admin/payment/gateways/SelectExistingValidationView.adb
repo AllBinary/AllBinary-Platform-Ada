@@ -77,14 +77,14 @@ package body views.admin.payment.gateways.SelectExistingValidationView_Package i
    end view;
 
    procedure toValidationInfoNode (This : in out SelectExistingValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := SelectExistingValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := SelectExistingValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
    procedure toXmlNode (This : in out SelectExistingValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := SelectExistingValidationView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := SelectExistingValidationView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

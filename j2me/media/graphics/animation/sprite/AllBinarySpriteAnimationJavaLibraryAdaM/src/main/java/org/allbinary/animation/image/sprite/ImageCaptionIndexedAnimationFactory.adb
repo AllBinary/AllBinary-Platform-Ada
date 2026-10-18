@@ -107,7 +107,7 @@ package body org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFa
    end setInitialScale;
 
    procedure getInstance (This : in out ImageCaptionIndexedAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := ImageCaptionIndexedAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := ImageCaptionIndexedAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

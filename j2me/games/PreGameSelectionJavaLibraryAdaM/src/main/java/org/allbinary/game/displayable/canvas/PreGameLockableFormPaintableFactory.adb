@@ -48,7 +48,7 @@ package body org.allbinary.game.displayable.canvas.PreGameLockableFormPaintableF
    end getInstanceItemPaintable;
 
    procedure getInstanceItemPaintable (This : in out PreGameLockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class) is
-      Java_Result : constant ItemPaintable_Access := PreGameLockableFormPaintableFactory'Class (This).getInstanceItemPaintable (paintableForm_Param);
+      Java_Result : constant ItemPaintable_Access := PreGameLockableFormPaintableFactory'Class (This).getInstanceItemPaintable (paintableForm_Param => paintableForm_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

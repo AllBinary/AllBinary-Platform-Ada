@@ -309,7 +309,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
    end duplicate;
 
    procedure toDom (This : in out SelectionTool; canvasDom_Param : access CanvasDom_Package.CanvasDom'Class) is
-      Java_Result : constant Node_Access := SelectionTool'Class (This).toDom (canvasDom_Param);
+      Java_Result : constant Node_Access := SelectionTool'Class (This).toDom (canvasDom_Param => canvasDom_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

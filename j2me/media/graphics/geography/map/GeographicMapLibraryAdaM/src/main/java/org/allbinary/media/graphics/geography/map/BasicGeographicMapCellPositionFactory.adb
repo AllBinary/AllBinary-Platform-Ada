@@ -145,21 +145,21 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
    end getRows;
 
    procedure getAt (This : in out BasicGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMapCellPositionFactory'Class (This).getAt (i_column, i_row);
+      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMapCellPositionFactory'Class (This).getAt (i_column => i_column, i_row => i_row);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAt;
 
    procedure getInstance (This : in out BasicGeographicMapCellPositionFactory; anotherMapGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMapCellPositionFactory'Class (This).getInstance (anotherMapGeographicMapCellPosition_Param);
+      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMapCellPositionFactory'Class (This).getInstance (anotherMapGeographicMapCellPosition_Param => anotherMapGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure createInstance (This : in out BasicGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer; width : Integer; height : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMapCellPositionFactory'Class (This).createInstance (i_column, i_row, width, height);
+      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMapCellPositionFactory'Class (This).createInstance (i_column => i_column, i_row => i_row, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;

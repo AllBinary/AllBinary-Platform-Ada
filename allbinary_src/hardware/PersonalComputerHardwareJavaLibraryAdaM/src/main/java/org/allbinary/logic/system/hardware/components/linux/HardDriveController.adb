@@ -48,7 +48,7 @@ package body org.allbinary.logic.system.hardware.components.linux.HardDriveContr
    end toString;
 
    procedure compareTo (This : in out HardDriveController; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) is
-      Java_Result : constant Boolean := HardDriveController'Class (This).compareTo (componentInterface_Param);
+      Java_Result : constant Boolean := HardDriveController'Class (This).compareTo (componentInterface_Param => componentInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

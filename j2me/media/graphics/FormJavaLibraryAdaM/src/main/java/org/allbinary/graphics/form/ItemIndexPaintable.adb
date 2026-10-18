@@ -48,7 +48,7 @@ package body org.allbinary.graphics.form.ItemIndexPaintable_Package is
    end paint;
 
    procedure paint (This : in out ItemIndexPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ItemIndexPaintable'Class (This).paint (graphics_Param, index, item_Param, dx, dy);
+      Java_Result : constant Integer := ItemIndexPaintable'Class (This).paint (graphics_Param => graphics_Param, index => index, item_Param => item_Param, dx => dx, dy => dy);
       pragma Unreferenced (Java_Result);
    begin
       null;

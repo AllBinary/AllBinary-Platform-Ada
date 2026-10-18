@@ -151,28 +151,28 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
    end fudge;
 
    procedure isEqual (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer) is
-      Java_Result : constant Boolean := ImagesRatioUtil'Class (This).isEqual (bufferedImageArray, totalImages);
+      Java_Result : constant Boolean := ImagesRatioUtil'Class (This).isEqual (bufferedImageArray => bufferedImageArray, totalImages => totalImages);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isEqual;
 
    procedure getAverage (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer) is
-      Java_Result : constant Long_Float := ImagesRatioUtil'Class (This).getAverage (bufferedImageArray, totalImages);
+      Java_Result : constant Long_Float := ImagesRatioUtil'Class (This).getAverage (bufferedImageArray => bufferedImageArray, totalImages => totalImages);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAverage;
 
    procedure fudge (This : in out ImagesRatioUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; ratio : Long_Float) is
-      Java_Result : constant BufferedImage_Access := ImagesRatioUtil'Class (This).fudge (bufferedImage_Param, ratio);
+      Java_Result : constant BufferedImage_Access := ImagesRatioUtil'Class (This).fudge (bufferedImage_Param => bufferedImage_Param, ratio => ratio);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end fudge;
 
    procedure fudge (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer; ratio : Long_Float) is
-      Java_Result : constant BufferedImage_Access_Array_Access := ImagesRatioUtil'Class (This).fudge (bufferedImageArray, totalImages, ratio);
+      Java_Result : constant BufferedImage_Access_Array_Access := ImagesRatioUtil'Class (This).fudge (bufferedImageArray => bufferedImageArray, totalImages => totalImages, ratio => ratio);
       pragma Unreferenced (Java_Result);
    begin
       null;

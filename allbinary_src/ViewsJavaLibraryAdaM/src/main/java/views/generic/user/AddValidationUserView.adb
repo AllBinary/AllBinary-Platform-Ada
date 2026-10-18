@@ -117,7 +117,7 @@ package body views.generic_Id.user.AddValidationUserView_Package is
    end view;
 
    procedure toValidationInfoNode (This : in out AddValidationUserView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := AddValidationUserView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := AddValidationUserView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

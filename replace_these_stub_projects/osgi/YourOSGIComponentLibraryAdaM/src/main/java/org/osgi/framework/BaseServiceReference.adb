@@ -54,14 +54,14 @@ package body org.osgi.framework.BaseServiceReference_Package is
    end compareTo;
 
    procedure getProperty (This : in out BaseServiceReference; key : Unbounded_String) is
-      Java_Result : constant Java_Object_Access := BaseServiceReference'Class (This).getProperty (key);
+      Java_Result : constant Java_Object_Access := BaseServiceReference'Class (This).getProperty (key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getProperty;
 
    procedure compareTo (This : in out BaseServiceReference; o_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := BaseServiceReference'Class (This).compareTo (o_Param);
+      Java_Result : constant Integer := BaseServiceReference'Class (This).compareTo (o_Param => o_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

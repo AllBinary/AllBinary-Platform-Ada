@@ -152,14 +152,14 @@ package body org.allbinary.media.audio.BasicPlayer_Package is
    end setVolume;
 
    procedure getControl (This : in out BasicPlayer; controlType : Unbounded_String) is
-      Java_Result : constant Control_Access := BasicPlayer'Class (This).getControl (controlType);
+      Java_Result : constant Control_Access := BasicPlayer'Class (This).getControl (controlType => controlType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getControl;
 
    procedure setMediaTime (This : in out BasicPlayer; now : Long_Long_Integer) is
-      Java_Result : constant Long_Long_Integer := BasicPlayer'Class (This).setMediaTime (now);
+      Java_Result : constant Long_Long_Integer := BasicPlayer'Class (This).setMediaTime (now => now);
       pragma Unreferenced (Java_Result);
    begin
       null;

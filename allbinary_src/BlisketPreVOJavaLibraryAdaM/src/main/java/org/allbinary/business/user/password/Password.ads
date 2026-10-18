@@ -39,11 +39,11 @@ package org.allbinary.business.user.password.Password_Package is
 
    type Password is new Java_Object with record
       logUtil : LogUtil_Access;
-      password : Unbounded_String;
+      password_Var : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out Password'Class; password : Unbounded_String);
-   function Create (password : Unbounded_String) return Password_Access;
+   procedure Initialize (This : in out Password'Class; password_Var : Unbounded_String);
+   function Create (password_Var : Unbounded_String) return Password_Access;
    procedure set (This : in out Password; value : Unbounded_String);
    function get (This : in out Password) return Unbounded_String;
    function isValid (This : in out Password) return Boolean;

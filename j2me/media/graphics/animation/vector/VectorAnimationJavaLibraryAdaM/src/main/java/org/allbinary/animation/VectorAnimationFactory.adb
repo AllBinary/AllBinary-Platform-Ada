@@ -42,7 +42,7 @@ package body org.allbinary.animation.VectorAnimationFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out VectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant VectorAnimation_Access := VectorAnimationFactory'Class (This).getInstance (points, basicColor_Param);
+      Java_Result : constant VectorAnimation_Access := VectorAnimationFactory'Class (This).getInstance (points => points, basicColor_Param => basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -189,14 +189,14 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
    end getPlayerP;
 
    procedure setMediaTime (This : in out PlayerComposite; now : Long_Long_Integer) is
-      Java_Result : constant Long_Long_Integer := PlayerComposite'Class (This).setMediaTime (now);
+      Java_Result : constant Long_Long_Integer := PlayerComposite'Class (This).setMediaTime (now => now);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end setMediaTime;
 
    procedure getControl (This : in out PlayerComposite; controlType : Unbounded_String) is
-      Java_Result : constant Control_Access := PlayerComposite'Class (This).getControl (controlType);
+      Java_Result : constant Control_Access := PlayerComposite'Class (This).getControl (controlType => controlType);
       pragma Unreferenced (Java_Result);
    begin
       null;

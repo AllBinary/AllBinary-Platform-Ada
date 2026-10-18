@@ -73,14 +73,14 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation
    end setInitialScale;
 
    procedure getInstance (This : in out SimultaneousCompoundIndexAnimationInterfaceFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := SimultaneousCompoundIndexAnimationInterfaceFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := SimultaneousCompoundIndexAnimationInterfaceFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getOrCreate (This : in out SimultaneousCompoundIndexAnimationInterfaceFactory; animationInterfaceArray : IndexedAnimation_Access_Array_Access) is
-      Java_Result : constant Animation_Access := SimultaneousCompoundIndexAnimationInterfaceFactory'Class (This).getOrCreate (animationInterfaceArray);
+      Java_Result : constant Animation_Access := SimultaneousCompoundIndexAnimationInterfaceFactory'Class (This).getOrCreate (animationInterfaceArray => animationInterfaceArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

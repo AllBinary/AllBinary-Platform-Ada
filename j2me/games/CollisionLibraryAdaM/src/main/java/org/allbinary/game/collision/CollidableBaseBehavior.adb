@@ -109,28 +109,28 @@ package body org.allbinary.game.collision.CollidableBaseBehavior_Package is
    end getCollisionTypeWith;
 
    procedure isCollidable (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
-      Java_Result : constant Boolean := CollidableBaseBehavior'Class (This).isCollidable (ownerLayer_Param);
+      Java_Result : constant Boolean := CollidableBaseBehavior'Class (This).isCollidable (ownerLayer_Param => ownerLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollidable;
 
    procedure isCollision (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
-      Java_Result : constant Boolean := CollidableBaseBehavior'Class (This).isCollision (ownerLayer_Param, collisionLayer_Param);
+      Java_Result : constant Boolean := CollidableBaseBehavior'Class (This).isCollision (ownerLayer_Param => ownerLayer_Param, collisionLayer_Param => collisionLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
    procedure isCollisionInterface (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
-      Java_Result : constant Boolean := CollidableBaseBehavior'Class (This).isCollisionInterface (ownerLayer_Param, collidableInterfaceCompositeInterface_Param);
+      Java_Result : constant Boolean := CollidableBaseBehavior'Class (This).isCollisionInterface (ownerLayer_Param => ownerLayer_Param, collidableInterfaceCompositeInterface_Param => collidableInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollisionInterface;
 
    procedure getCollisionTypeWith (This : in out CollidableBaseBehavior; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant CollisionType_Access := CollidableBaseBehavior'Class (This).getCollisionTypeWith (layerInterface_Param);
+      Java_Result : constant CollisionType_Access := CollidableBaseBehavior'Class (This).getCollisionTypeWith (layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

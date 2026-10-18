@@ -101,28 +101,28 @@ package body org.allbinary.data.tree.dom.DomNodeHelper_Package is
    end getTextNodesValue;
 
    procedure getFirstChildElement (parentNode_Param : access Node_Package.Node'Class) is
-      Java_Result : constant Node_Access := getFirstChildElement (parentNode_Param);
+      Java_Result : constant Node_Access := getFirstChildElement (parentNode_Param => parentNode_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFirstChildElement;
 
    procedure getTextNodeValue (node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant Unbounded_String := getTextNodeValue (node_Param);
+      Java_Result : constant Unbounded_String := getTextNodeValue (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTextNodeValue;
 
    procedure getTextNodeValue (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant Unbounded_String := getTextNodeValue (nodeName, nodeList_Param);
+      Java_Result : constant Unbounded_String := getTextNodeValue (nodeName => nodeName, nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTextNodeValue;
 
    procedure getTextNodesValue (node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant Unbounded_String := getTextNodesValue (node_Param);
+      Java_Result : constant Unbounded_String := getTextNodesValue (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

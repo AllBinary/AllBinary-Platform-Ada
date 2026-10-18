@@ -59,7 +59,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackStart
    end get;
 
    procedure get (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; index : Integer) is
-      Java_Result : constant GPoint_Access := get (geographicMapInterface_Param, pathFindingInfo_Param, index);
+      Java_Result : constant GPoint_Access := get (geographicMapInterface_Param => geographicMapInterface_Param, pathFindingInfo_Param => pathFindingInfo_Param, index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

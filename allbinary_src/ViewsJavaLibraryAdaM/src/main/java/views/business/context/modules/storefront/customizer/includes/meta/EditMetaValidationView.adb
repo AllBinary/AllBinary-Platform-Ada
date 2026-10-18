@@ -89,7 +89,7 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out EditMetaValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := EditMetaValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := EditMetaValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

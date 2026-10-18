@@ -109,49 +109,49 @@ package body javax.microedition.lcdui.PlatformImage_Package is
    end getData;
 
    procedure getImage (This : in out PlatformImage; graphicsSurface2_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := PlatformImage'Class (This).getImage (graphicsSurface2_Param);
+      Java_Result : constant Java_Object_Access := PlatformImage'Class (This).getImage (graphicsSurface2_Param => graphicsSurface2_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getImage;
 
    procedure getSurfaceWidth (This : in out PlatformImage; graphicsSurface2_Param : access Java_Object'Class; width : Integer) is
-      Java_Result : constant Integer := PlatformImage'Class (This).getSurfaceWidth (graphicsSurface2_Param, width);
+      Java_Result : constant Integer := PlatformImage'Class (This).getSurfaceWidth (graphicsSurface2_Param => graphicsSurface2_Param, width => width);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSurfaceWidth;
 
    procedure getSurfaceHeight (This : in out PlatformImage; graphicsSurface2_Param : access Java_Object'Class; height : Integer) is
-      Java_Result : constant Integer := PlatformImage'Class (This).getSurfaceHeight (graphicsSurface2_Param, height);
+      Java_Result : constant Integer := PlatformImage'Class (This).getSurfaceHeight (graphicsSurface2_Param => graphicsSurface2_Param, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSurfaceHeight;
 
    procedure getWidth (This : in out PlatformImage; image_Param : access Image_Package.Image'Class; width : Integer) is
-      Java_Result : constant Integer := PlatformImage'Class (This).getWidth (image_Param, width);
+      Java_Result : constant Integer := PlatformImage'Class (This).getWidth (image_Param => image_Param, width => width);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWidth;
 
    procedure getHeight (This : in out PlatformImage; image_Param : access Image_Package.Image'Class; height : Integer) is
-      Java_Result : constant Integer := PlatformImage'Class (This).getHeight (image_Param, height);
+      Java_Result : constant Integer := PlatformImage'Class (This).getHeight (image_Param => image_Param, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getHeight;
 
    procedure getGraphics (This : in out PlatformImage; graphicsSurface_Param : access Java_Object'Class; width : Integer; height : Integer; image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant Graphics_Access := PlatformImage'Class (This).getGraphics (graphicsSurface_Param, width, height, image_Param);
+      Java_Result : constant Graphics_Access := PlatformImage'Class (This).getGraphics (graphicsSurface_Param => graphicsSurface_Param, width => width, height => height, image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGraphics;
 
    procedure getData (This : in out PlatformImage; image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant Integer_Array_Access := PlatformImage'Class (This).getData (image_Param);
+      Java_Result : constant Integer_Array_Access := PlatformImage'Class (This).getData (image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

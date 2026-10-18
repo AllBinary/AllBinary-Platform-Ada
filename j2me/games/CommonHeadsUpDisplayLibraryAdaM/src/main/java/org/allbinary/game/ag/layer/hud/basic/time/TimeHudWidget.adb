@@ -94,7 +94,7 @@ package body org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
    end paint;
 
    procedure getInstance (location : Integer; direction : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; timer_Param : access Timer_Package.Timer'Class) is
-      Java_Result : constant TimeHudWidget_Access := getInstance (location, direction, basicColor_Param, timer_Param);
+      Java_Result : constant TimeHudWidget_Access := getInstance (location => location, direction => direction, basicColor_Param => basicColor_Param, timer_Param => timer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

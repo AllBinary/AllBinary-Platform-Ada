@@ -43,7 +43,7 @@ package body org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Pac
    end getInstance;
 
    procedure getInstance (This : in out NumberLayersSequenceAIFactory; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is
-      Java_Result : constant ArtificialIntelligenceInterface_Access := NumberLayersSequenceAIFactory'Class (This).getInstance (numberOfEnemiesLeft, artificialIntelligenceInterface, ownerLayerInterface_Param, gameInput_Param);
+      Java_Result : constant ArtificialIntelligenceInterface_Access := NumberLayersSequenceAIFactory'Class (This).getInstance (numberOfEnemiesLeft => numberOfEnemiesLeft, artificialIntelligenceInterface => artificialIntelligenceInterface, ownerLayerInterface_Param => ownerLayerInterface_Param, gameInput_Param => gameInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

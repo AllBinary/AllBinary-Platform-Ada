@@ -45,7 +45,7 @@ package body org.allbinary.game.midlet.LicenseLevelUtil_Package is
    end getMaxLevel;
 
    procedure getMaxLevel (This : in out LicenseLevelUtil; maxLevel : Integer; demoLevel : Integer) is
-      Java_Result : constant Integer := LicenseLevelUtil'Class (This).getMaxLevel (maxLevel, demoLevel);
+      Java_Result : constant Integer := LicenseLevelUtil'Class (This).getMaxLevel (maxLevel => maxLevel, demoLevel => demoLevel);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -65,14 +65,14 @@ package body org.allbinary.game.score.HighScoreCommandsBaseFactory_Package is
    end getIndex;
 
    procedure isHighScoreCommand (This : in out HighScoreCommandsBaseFactory; command_Param : access Command_Package.Command'Class) is
-      Java_Result : constant Boolean := HighScoreCommandsBaseFactory'Class (This).isHighScoreCommand (command_Param);
+      Java_Result : constant Boolean := HighScoreCommandsBaseFactory'Class (This).isHighScoreCommand (command_Param => command_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isHighScoreCommand;
 
    procedure getIndex (This : in out HighScoreCommandsBaseFactory; command_Param : access Command_Package.Command'Class) is
-      Java_Result : constant Integer := HighScoreCommandsBaseFactory'Class (This).getIndex (command_Param);
+      Java_Result : constant Integer := HighScoreCommandsBaseFactory'Class (This).getIndex (command_Param => command_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

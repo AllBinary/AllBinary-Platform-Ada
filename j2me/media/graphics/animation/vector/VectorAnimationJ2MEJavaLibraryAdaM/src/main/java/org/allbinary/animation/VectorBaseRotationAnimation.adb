@@ -140,7 +140,7 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
    end setPoints;
 
    procedure getPoints (This : in out VectorBaseRotationAnimation; frame : Integer) is
-      Java_Result : constant Integer_Array_Access_Array_Access := VectorBaseRotationAnimation'Class (This).getPoints (frame);
+      Java_Result : constant Integer_Array_Access_Array_Access := VectorBaseRotationAnimation'Class (This).getPoints (frame => frame);
       pragma Unreferenced (Java_Result);
    begin
       null;

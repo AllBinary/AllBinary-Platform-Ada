@@ -55,7 +55,7 @@ package body org.allbinary.game.input.analog.AnalogLocationInputFactory_Package 
    end getList;
 
    procedure getInstanceForPlayer (This : in out AnalogLocationInputFactory; playerInputId : Integer) is
-      Java_Result : constant AnalogLocationInput_Access := AnalogLocationInputFactory'Class (This).getInstanceForPlayer (playerInputId);
+      Java_Result : constant AnalogLocationInput_Access := AnalogLocationInputFactory'Class (This).getInstanceForPlayer (playerInputId => playerInputId);
       pragma Unreferenced (Java_Result);
    begin
       null;

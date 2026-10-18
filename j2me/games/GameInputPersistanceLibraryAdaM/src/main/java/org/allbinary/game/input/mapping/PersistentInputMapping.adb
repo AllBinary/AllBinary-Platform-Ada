@@ -194,14 +194,14 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
    end isSystemInput;
 
    procedure isDelete (This : in out PersistentInputMapping; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isDelete (input_Param);
+      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isDelete (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
    procedure isSystemInput (This : in out PersistentInputMapping; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isSystemInput (input_Param);
+      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isSystemInput (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

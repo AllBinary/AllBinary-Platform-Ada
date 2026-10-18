@@ -163,7 +163,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
    end getSubTotal;
 
    procedure getNumberOf (This : in out Basket; product : Unbounded_String) is
-      Java_Result : constant Integer := Basket'Class (This).getNumberOf (product);
+      Java_Result : constant Integer := Basket'Class (This).getNumberOf (product => product);
       pragma Unreferenced (Java_Result);
    begin
       null;

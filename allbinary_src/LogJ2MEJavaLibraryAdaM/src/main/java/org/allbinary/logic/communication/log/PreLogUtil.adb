@@ -84,7 +84,7 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
    end getClassName;
 
    procedure getClassName (anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Unbounded_String := getClassName (anyType_Param);
+      Java_Result : constant Unbounded_String := getClassName (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

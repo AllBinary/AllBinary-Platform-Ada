@@ -349,7 +349,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
    end onDestroyed;
 
    procedure buildingChase (This : in out AdvancedRTSGameLayer; allbinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := AdvancedRTSGameLayer'Class (This).buildingChase (allbinaryLayer_Param, cellPosition_Param);
+      Java_Result : constant Boolean := AdvancedRTSGameLayer'Class (This).buildingChase (allbinaryLayer_Param => allbinaryLayer_Param, cellPosition_Param => cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

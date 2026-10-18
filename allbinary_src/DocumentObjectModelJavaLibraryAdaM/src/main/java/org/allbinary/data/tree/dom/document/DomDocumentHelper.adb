@@ -110,14 +110,14 @@ package body org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
    end create;
 
    procedure create (inputStream_Param : access InputStream_Package.InputStream'Class) is
-      Java_Result : constant Document_Access := create (inputStream_Param);
+      Java_Result : constant Document_Access := create (inputStream_Param => inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end create;
 
    procedure create (xmlString : Unbounded_String) is
-      Java_Result : constant Document_Access := create (xmlString);
+      Java_Result : constant Document_Access := create (xmlString => xmlString);
       pragma Unreferenced (Java_Result);
    begin
       null;

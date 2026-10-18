@@ -174,7 +174,7 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
    end set;
 
    procedure addImage (This : in out OpenGLUtil; image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant Image_Access := OpenGLUtil'Class (This).addImage (image_Param);
+      Java_Result : constant Image_Access := OpenGLUtil'Class (This).addImage (image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

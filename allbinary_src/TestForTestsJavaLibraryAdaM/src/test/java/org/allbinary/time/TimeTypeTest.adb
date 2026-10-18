@@ -137,7 +137,7 @@ package body org.allbinary.time.TimeTypeTest_Package is
    end getInstance_returns_same_singleton;
 
    procedure millisForHourLocal (hour : Integer) is
-      Java_Result : constant Long_Long_Integer := millisForHourLocal (hour);
+      Java_Result : constant Long_Long_Integer := millisForHourLocal (hour => hour);
       pragma Unreferenced (Java_Result);
    begin
       null;

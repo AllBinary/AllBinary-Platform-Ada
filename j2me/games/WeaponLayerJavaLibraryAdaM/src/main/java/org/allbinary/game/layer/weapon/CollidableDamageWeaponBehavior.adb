@@ -116,21 +116,21 @@ package body org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Pack
    end setCollided;
 
    procedure isCollision (This : in out CollidableDamageWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
-      Java_Result : constant Boolean := CollidableDamageWeaponBehavior'Class (This).isCollision (ownerLayer_Param, collisionLayer_Param);
+      Java_Result : constant Boolean := CollidableDamageWeaponBehavior'Class (This).isCollision (ownerLayer_Param => ownerLayer_Param, collisionLayer_Param => collisionLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
    procedure isCollisionInterface (This : in out CollidableDamageWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
-      Java_Result : constant Boolean := CollidableDamageWeaponBehavior'Class (This).isCollisionInterface (ownerLayer_Param, collidableInterfaceCompositeInterface_Param);
+      Java_Result : constant Boolean := CollidableDamageWeaponBehavior'Class (This).isCollisionInterface (ownerLayer_Param => ownerLayer_Param, collidableInterfaceCompositeInterface_Param => collidableInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollisionInterface;
 
    procedure getCollisionTypeWith (This : in out CollidableDamageWeaponBehavior; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant CollisionType_Access := CollidableDamageWeaponBehavior'Class (This).getCollisionTypeWith (layerInterface_Param);
+      Java_Result : constant CollisionType_Access := CollidableDamageWeaponBehavior'Class (This).getCollisionTypeWith (layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

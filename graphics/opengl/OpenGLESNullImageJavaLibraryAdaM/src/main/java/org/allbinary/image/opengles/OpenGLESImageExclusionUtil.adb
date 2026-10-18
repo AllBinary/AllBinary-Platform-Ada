@@ -49,7 +49,7 @@ package body org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
    end isCustomScaling;
 
    procedure isCustomScaling (This : in out OpenGLESImageExclusionUtil; image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant Boolean := OpenGLESImageExclusionUtil'Class (This).isCustomScaling (image_Param);
+      Java_Result : constant Boolean := OpenGLESImageExclusionUtil'Class (This).isCustomScaling (image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

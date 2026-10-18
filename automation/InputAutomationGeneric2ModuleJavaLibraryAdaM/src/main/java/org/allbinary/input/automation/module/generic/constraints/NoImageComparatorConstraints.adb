@@ -49,14 +49,14 @@ package body org.allbinary.input.automation.module.generic_Id.constraints.NoImag
    end isImageValid;
 
    procedure isColorAllowed (This : in out NoImageComparatorConstraints; frame : Integer; point_Param : access GPoint_Package.GPoint'Class; color_Param : access Color_Package.Color'Class) is
-      Java_Result : constant Boolean := NoImageComparatorConstraints'Class (This).isColorAllowed (frame, point_Param, color_Param);
+      Java_Result : constant Boolean := NoImageComparatorConstraints'Class (This).isColorAllowed (frame => frame, point_Param => point_Param, color_Param => color_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isColorAllowed;
 
    procedure isImageValid (This : in out NoImageComparatorConstraints; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
-      Java_Result : constant Boolean := NoImageComparatorConstraints'Class (This).isImageValid (bufferedImage_Param);
+      Java_Result : constant Boolean := NoImageComparatorConstraints'Class (This).isImageValid (bufferedImage_Param => bufferedImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

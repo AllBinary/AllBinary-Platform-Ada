@@ -89,14 +89,14 @@ package body org.allbinary.game.input.event.GameKeyEventFactory_Package is
    end getInstanceForInput;
 
    procedure getInstanceForKey (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface_Package.GameKeyEventSourceInterface'Class; key : Integer) is
-      Java_Result : constant GameKeyEvent_Access := GameKeyEventFactory'Class (This).getInstanceForKey (anyType_Param, key);
+      Java_Result : constant GameKeyEvent_Access := GameKeyEventFactory'Class (This).getInstanceForKey (anyType_Param => anyType_Param, key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceForKey;
 
    procedure getInstanceForInput (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface_Package.GameKeyEventSourceInterface'Class; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant GameKeyEvent_Access := GameKeyEventFactory'Class (This).getInstanceForInput (anyType_Param, input_Param);
+      Java_Result : constant GameKeyEvent_Access := GameKeyEventFactory'Class (This).getInstanceForInput (anyType_Param => anyType_Param, input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

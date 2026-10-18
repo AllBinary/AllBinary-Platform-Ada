@@ -64,7 +64,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       This.waitingOnTargetPath := False;
       This.waitingOnWaypointPath := False;
       This.targetWithoutCachedPathLayerInterface := CollidableDestroyableDamageableLayer_Package.getNullInstance;
-      This.buildingSteeringVisitor := BuildingSteeringVisitor_Package.Create;
+      This.buildingSteeringVisitor_Var := BuildingSteeringVisitor_Package.Create;
    end Initialize_Fields;
 
 
@@ -539,12 +539,12 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       allbinaryLayer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (allbinaryLayer_Param);
       cellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
    begin
-        if not (This.buildingSteeringVisitor.getList.contains (Java_Object_Access (allbinaryLayer))) then
-            This.buildingSteeringVisitor.getList.add (Java_Object_Access (allbinaryLayer));
-            This.buildingSteeringVisitor.getPositionList.add (Java_Object_Access (cellPosition));
+        if not (This.buildingSteeringVisitor_Var.getList.contains (Java_Object_Access (allbinaryLayer))) then
+            This.buildingSteeringVisitor_Var.getList.add (Java_Object_Access (allbinaryLayer));
+            This.buildingSteeringVisitor_Var.getPositionList.add (Java_Object_Access (cellPosition));
         end if;
-        if not (UnitWaypointBehavior2'Class (This).getSteeringVisitorList.contains (Java_Object_Access (This.buildingSteeringVisitor))) then
-            UnitWaypointBehavior2'Class (This).getSteeringVisitorList.add (Java_Object_Access (This.buildingSteeringVisitor));
+        if not (UnitWaypointBehavior2'Class (This).getSteeringVisitorList.contains (Java_Object_Access (This.buildingSteeringVisitor_Var))) then
+            UnitWaypointBehavior2'Class (This).getSteeringVisitorList.add (Java_Object_Access (This.buildingSteeringVisitor_Var));
         end if;
    end addBuildingChase;
 
@@ -557,28 +557,28 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    end buildingChase;
 
    procedure visitIfAtMidPoint (This : in out UnitWaypointBehavior2; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).visitIfAtMidPoint (geographicMapCellPosition_Param);
+      Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).visitIfAtMidPoint (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visitIfAtMidPoint;
 
    procedure isCloseRange (This : in out UnitWaypointBehavior2; layerInterface_Param : access AdvancedRTSGameLayer_Package.AdvancedRTSGameLayer'Class; targetDistance : Integer) is
-      Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).isCloseRange (layerInterface_Param, targetDistance);
+      Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).isCloseRange (layerInterface_Param => layerInterface_Param, targetDistance => targetDistance);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCloseRange;
 
    procedure isInSensorRange (This : in out UnitWaypointBehavior2; layerInterface_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; targetDistance : Integer) is
-      Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).isInSensorRange (layerInterface_Param, targetDistance);
+      Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).isInSensorRange (layerInterface_Param => layerInterface_Param, targetDistance => targetDistance);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isInSensorRange;
 
    procedure buildingChase (This : in out UnitWaypointBehavior2; allbinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).buildingChase (allbinaryLayer_Param, cellPosition_Param);
+      Java_Result : constant Boolean := UnitWaypointBehavior2'Class (This).buildingChase (allbinaryLayer_Param => allbinaryLayer_Param, cellPosition_Param => cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -686,7 +686,7 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
    end getPositionList;
 
    procedure visit (This : in out BuildingSteeringVisitor; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := BuildingSteeringVisitor'Class (This).visit (anyType_Param);
+      Java_Result : constant Java_Object_Access := BuildingSteeringVisitor'Class (This).visit (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

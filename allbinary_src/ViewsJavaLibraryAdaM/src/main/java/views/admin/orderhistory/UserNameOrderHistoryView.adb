@@ -175,14 +175,14 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
    end validationInfo;
 
    procedure toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
    procedure toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

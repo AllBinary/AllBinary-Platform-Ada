@@ -118,14 +118,14 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
    end getRootInstanceFromNode;
 
    procedure getRootInstance (This : in out StoreCategoryFactory; categoryPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant CategoryInterface_Access := StoreCategoryFactory'Class (This).getRootInstance (categoryPath_Param);
+      Java_Result : constant CategoryInterface_Access := StoreCategoryFactory'Class (This).getRootInstance (categoryPath_Param => categoryPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRootInstance;
 
    procedure getRootInstanceFromNode (This : in out StoreCategoryFactory; node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant CategoryInterface_Access := StoreCategoryFactory'Class (This).getRootInstanceFromNode (node_Param);
+      Java_Result : constant CategoryInterface_Access := StoreCategoryFactory'Class (This).getRootInstanceFromNode (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

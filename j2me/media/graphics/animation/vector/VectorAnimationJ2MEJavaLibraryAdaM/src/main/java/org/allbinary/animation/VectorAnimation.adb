@@ -218,14 +218,14 @@ package body org.allbinary.animation.VectorAnimation_Package is
    end setPoints;
 
    procedure createVectorAnimation (currentPoints2 : Integer_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
-      Java_Result : constant VectorAnimation_Access := createVectorAnimation (currentPoints2, basicColor_Param, animationBehavior_Param);
+      Java_Result : constant VectorAnimation_Access := createVectorAnimation (currentPoints2 => currentPoints2, basicColor_Param => basicColor_Param, animationBehavior_Param => animationBehavior_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createVectorAnimation;
 
    procedure getPoints (This : in out VectorAnimation; frame : Integer) is
-      Java_Result : constant Integer_Array_Access_Array_Access := VectorAnimation'Class (This).getPoints (frame);
+      Java_Result : constant Integer_Array_Access_Array_Access := VectorAnimation'Class (This).getPoints (frame => frame);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -40,7 +40,7 @@ package org.allbinary.servlet.CloudImageServlet_Package is
    type CloudImageServlet_Access_Array_Access_Array is array (Natural range <>) of CloudImageServlet_Access_Array_Access;
    type CloudImageServlet_Access_Array_Access_Array_Access is access all CloudImageServlet_Access_Array_Access_Array;
 
-   type CloudImageServlet is new HttpServlet with record
+   type CloudImageServlet is new Java_Object with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;

@@ -44,7 +44,7 @@ package org.allbinary.business.user.commerce.inventory.order.Order_Package is
    type Order_Access_Array_Access_Array is array (Natural range <>) of Order_Access_Array_Access;
    type Order_Access_Array_Access_Array_Access is access all Order_Access_Array_Access_Array;
 
-   type Order is new Java_Object and OrderInterface and Serializable with record
+   type Order is new Java_Object and OrderInterface with record
       basket : BasketInterface_Access;
       paymentMethod : Unbounded_String;
       shippingType : Unbounded_String;

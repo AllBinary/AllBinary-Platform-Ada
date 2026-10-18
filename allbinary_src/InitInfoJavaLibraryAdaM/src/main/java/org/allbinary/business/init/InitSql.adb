@@ -393,28 +393,28 @@ package body org.allbinary.business.init.InitSql_Package is
    end getDatabaseConnectionInfoInterface;
 
    procedure createTable (This : in out InitSql; tableData : Unbounded_String) is
-      Java_Result : constant Boolean := InitSql'Class (This).createTable (tableData);
+      Java_Result : constant Boolean := InitSql'Class (This).createTable (tableData => tableData);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createTable;
 
    procedure getRow (This : in out InitSql; keysAndValues_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant HashMap_Access := InitSql'Class (This).getRow (keysAndValues_Param);
+      Java_Result : constant HashMap_Access := InitSql'Class (This).getRow (keysAndValues_Param => keysAndValues_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRow;
 
    procedure getValue (This : in out InitSql; value : Unbounded_String) is
-      Java_Result : constant Unbounded_String := InitSql'Class (This).getValue (value);
+      Java_Result : constant Unbounded_String := InitSql'Class (This).getValue (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getValue;
 
    procedure executeSQLStatement (This : in out InitSql; statement : Unbounded_String) is
-      Java_Result : constant ResultSet_Access := InitSql'Class (This).executeSQLStatement (statement);
+      Java_Result : constant ResultSet_Access := InitSql'Class (This).executeSQLStatement (statement => statement);
       pragma Unreferenced (Java_Result);
    begin
       null;

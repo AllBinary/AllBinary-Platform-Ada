@@ -78,14 +78,14 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableBeh
    end collideInterface;
 
    procedure isCollision (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
-      Java_Result : constant Boolean := CollidableDestroyableDamageableBehavior'Class (This).isCollision (ownerLayer_Param, collisionLayer_Param);
+      Java_Result : constant Boolean := CollidableDestroyableDamageableBehavior'Class (This).isCollision (ownerLayer_Param => ownerLayer_Param, collisionLayer_Param => collisionLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
    procedure isCollisionInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
-      Java_Result : constant Boolean := CollidableDestroyableDamageableBehavior'Class (This).isCollisionInterface (ownerLayer_Param, collidableInterfaceCompositeInterface_Param);
+      Java_Result : constant Boolean := CollidableDestroyableDamageableBehavior'Class (This).isCollisionInterface (ownerLayer_Param => ownerLayer_Param, collidableInterfaceCompositeInterface_Param => collidableInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

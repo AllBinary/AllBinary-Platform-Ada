@@ -63,7 +63,7 @@ package body org.allbinary.business.user.CreateUserFactory_Package is
    end getInstance;
 
    procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant UserInterface_Access := getInstance (hashMap_Param);
+      Java_Result : constant UserInterface_Access := getInstance (hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

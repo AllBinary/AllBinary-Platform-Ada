@@ -59,14 +59,14 @@ package body org.allbinary.game.layer.GameLayerUtil_Package is
    end isInside;
 
    procedure isOnScreen (layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant Boolean := isOnScreen (layer_Param);
+      Java_Result : constant Boolean := isOnScreen (layer_Param => layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isOnScreen;
 
    procedure isInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; rect2X1 : Integer; rect2Y1 : Integer; rect2X2 : Integer; rect2Y2 : Integer) is
-      Java_Result : constant Boolean := isInside (rectX1, rectY1, rectX2, rectY2, rect2X1, rect2Y1, rect2X2, rect2Y2);
+      Java_Result : constant Boolean := isInside (rectX1 => rectX1, rectY1 => rectY1, rectX2 => rectX2, rectY2 => rectY2, rect2X1 => rect2X1, rect2Y1 => rect2Y1, rect2X2 => rect2X2, rect2Y2 => rect2Y2);
       pragma Unreferenced (Java_Result);
    begin
       null;

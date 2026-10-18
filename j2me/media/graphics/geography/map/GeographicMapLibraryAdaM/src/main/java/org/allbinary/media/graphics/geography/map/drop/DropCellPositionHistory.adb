@@ -139,28 +139,28 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
    end getLayerInterface;
 
    procedure isCellPositionWithDrop (This : in out DropCellPositionHistory; cellPosition_Param : access CellPosition_Package.CellPosition'Class) is
-      Java_Result : constant Boolean := DropCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition_Param);
+      Java_Result : constant Boolean := DropCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition_Param => cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCellPositionWithDrop;
 
    procedure anyCellPositionWithDrop (This : in out DropCellPositionHistory; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Boolean := DropCellPositionHistory'Class (This).anyCellPositionWithDrop (list_Param);
+      Java_Result : constant Boolean := DropCellPositionHistory'Class (This).anyCellPositionWithDrop (list_Param => list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end anyCellPositionWithDrop;
 
    procedure getCellPositionWithDrop (This : in out DropCellPositionHistory; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant CellPosition_Access := DropCellPositionHistory'Class (This).getCellPositionWithDrop (list_Param);
+      Java_Result : constant CellPosition_Access := DropCellPositionHistory'Class (This).getCellPositionWithDrop (list_Param => list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionWithDrop;
 
    procedure getLayerInterface (This : in out DropCellPositionHistory; cellPosition_Param : access CellPosition_Package.CellPosition'Class) is
-      Java_Result : constant AllBinaryLayer_Access := DropCellPositionHistory'Class (This).getLayerInterface (cellPosition_Param);
+      Java_Result : constant AllBinaryLayer_Access := DropCellPositionHistory'Class (This).getLayerInterface (cellPosition_Param => cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

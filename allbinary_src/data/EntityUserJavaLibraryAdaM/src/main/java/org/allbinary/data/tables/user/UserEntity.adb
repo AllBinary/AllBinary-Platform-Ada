@@ -296,35 +296,35 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    end createTable;
 
    procedure getStoreManagers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
-      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getStoreManagers (storeFrontInterface_Param);
+      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getStoreManagers (storeFrontInterface_Param => storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getStoreManagers;
 
    procedure getUsersWithRole (This : in out UserEntity; userRole_Param : access UserRole_Package.UserRole'Class) is
-      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getUsersWithRole (userRole_Param);
+      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getUsersWithRole (userRole_Param => userRole_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getUsersWithRole;
 
    procedure getUsers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
-      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getUsers (storeFrontInterface_Param);
+      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getUsers (storeFrontInterface_Param => storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getUsers;
 
    procedure getUser (This : in out UserEntity; userName : Unbounded_String) is
-      Java_Result : constant UserInterface_Access := UserEntity'Class (This).getUser (userName);
+      Java_Result : constant UserInterface_Access := UserEntity'Class (This).getUser (userName => userName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getUser;
 
    procedure login (This : in out UserEntity; userName : Unbounded_String; password : Unbounded_String) is
-      Java_Result : constant Unbounded_String := UserEntity'Class (This).login (userName, password);
+      Java_Result : constant Unbounded_String := UserEntity'Class (This).login (userName => userName, password => password);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -205,28 +205,28 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    end difference;
 
    procedure get (This : in out PaymentTypeUtil; paymentTypeString : Unbounded_String) is
-      Java_Result : constant PaymentType_Access := PaymentTypeUtil'Class (This).get (paymentTypeString);
+      Java_Result : constant PaymentType_Access := PaymentTypeUtil'Class (This).get (paymentTypeString => paymentTypeString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getDefault (This : in out PaymentTypeUtil; storeName : Unbounded_String) is
-      Java_Result : constant PaymentType_Access := PaymentTypeUtil'Class (This).getDefault (storeName);
+      Java_Result : constant PaymentType_Access := PaymentTypeUtil'Class (This).getDefault (storeName => storeName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDefault;
 
    procedure isContain (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType_Package.PaymentType'Class) is
-      Java_Result : constant Boolean := PaymentTypeUtil'Class (This).isContain (paymentType_Param);
+      Java_Result : constant Boolean := PaymentTypeUtil'Class (This).isContain (paymentType_Param => paymentType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isContain;
 
    procedure difference (This : in out PaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := PaymentTypeUtil'Class (This).difference (a_PaymentTypeVector_Param);
+      Java_Result : constant BasicArrayList_Access := PaymentTypeUtil'Class (This).difference (a_PaymentTypeVector_Param => a_PaymentTypeVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

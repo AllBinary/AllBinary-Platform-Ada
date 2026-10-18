@@ -437,14 +437,14 @@ package body org.allbinary.business.installer.Initializer_Package is
    end set;
 
    procedure isJdbcDriverValid (This : in out Initializer; jdbcDriverClassPathString : Unbounded_String) is
-      Java_Result : constant Boolean := Initializer'Class (This).isJdbcDriverValid (jdbcDriverClassPathString);
+      Java_Result : constant Boolean := Initializer'Class (This).isJdbcDriverValid (jdbcDriverClassPathString => jdbcDriverClassPathString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isJdbcDriverValid;
 
    procedure getJdbcDriverValidationInfo (This : in out Initializer; jdbcDriver : Unbounded_String) is
-      Java_Result : constant Unbounded_String := Initializer'Class (This).getJdbcDriverValidationInfo (jdbcDriver);
+      Java_Result : constant Unbounded_String := Initializer'Class (This).getJdbcDriverValidationInfo (jdbcDriver => jdbcDriver);
       pragma Unreferenced (Java_Result);
    begin
       null;

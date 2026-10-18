@@ -109,7 +109,7 @@ package body org.allbinary.logic.system.security.licensing.ThirdPartyInApplicati
    end requestProducts;
 
    procedure isPurchased (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature_Package.LockableFeature'Class) is
-      Java_Result : constant Boolean := ThirdPartyInApplicationPurchase'Class (This).isPurchased (lockableFeature_Param);
+      Java_Result : constant Boolean := ThirdPartyInApplicationPurchase'Class (This).isPurchased (lockableFeature_Param => lockableFeature_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

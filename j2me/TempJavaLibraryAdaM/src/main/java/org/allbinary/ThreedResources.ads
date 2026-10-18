@@ -32,7 +32,7 @@ package org.allbinary.ThreedResources_Package is
    type ThreedResources_Access_Array_Access_Array_Access is access all ThreedResources_Access_Array_Access_Array;
 
    type ThreedResources is new Java_Object with null record;
-   threedResources : ThreedResources_Access;
+   threedResources_Var : ThreedResources_Access;
 
    procedure Initialize (This : in out ThreedResources'Class);
    function Create return ThreedResources_Access;

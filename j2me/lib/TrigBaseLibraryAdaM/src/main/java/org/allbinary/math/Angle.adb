@@ -29,16 +29,16 @@ package body org.allbinary.math.Angle_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Angle'Class; angle : Short_Integer) is
+   procedure Initialize (This : in out Angle'Class; angle_Var : Short_Integer) is
    begin
       Initialize_Fields (This);
-        This.value := angle;
+        This.value := angle_Var;
    end Initialize;
 
-   function Create (angle : Short_Integer) return Angle_Access is
+   function Create (angle_Var : Short_Integer) return Angle_Access is
       This : constant Angle_Access := new Angle;
    begin
-      Angle_Package.Initialize (This.all, angle);
+      Angle_Package.Initialize (This.all, angle_Var);
       return This;
    end Create;
 

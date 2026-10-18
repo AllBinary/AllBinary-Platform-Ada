@@ -98,7 +98,7 @@ package body org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package 
    end save;
 
    procedure createDocument (xmlFile_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant Document_Access := createDocument (xmlFile_Param);
+      Java_Result : constant Document_Access := createDocument (xmlFile_Param => xmlFile_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -48,7 +48,7 @@ package body org.allbinary.logic.control.validate.GenericValidator_Package is
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out GenericValidator; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := GenericValidator'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := GenericValidator'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

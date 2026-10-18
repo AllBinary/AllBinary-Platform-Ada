@@ -207,91 +207,91 @@ package body org.allbinary.util.ArrayUtil_Package is
    end toStringFromByteArray;
 
    procedure copyOf (This : in out ArrayUtil; original : Java_Object_Access_Array_Access; newLength : Integer) is
-      Java_Result : constant Java_Object_Access_Array_Access := ArrayUtil'Class (This).copyOf (original, newLength);
+      Java_Result : constant Java_Object_Access_Array_Access := ArrayUtil'Class (This).copyOf (original => original, newLength => newLength);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyOf;
 
    procedure copyOfType (This : in out ArrayUtil; original : Java_Object_Access_Array_Access; newLength : Integer; newType : Ada.Tags.Tag) is
-      Java_Result : constant Java_Object_Access_Array_Access := ArrayUtil'Class (This).copyOfType (original, newLength, newType);
+      Java_Result : constant Java_Object_Access_Array_Access := ArrayUtil'Class (This).copyOfType (original => original, newLength => newLength, newType => newType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyOfType;
 
    procedure copyOfbyte (This : in out ArrayUtil; original : Short_Short_Integer_Array_Access; newLength : Integer) is
-      Java_Result : constant Short_Short_Integer_Array_Access := ArrayUtil'Class (This).copyOfbyte (original, newLength);
+      Java_Result : constant Short_Short_Integer_Array_Access := ArrayUtil'Class (This).copyOfbyte (original => original, newLength => newLength);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyOfbyte;
 
    procedure copyOfshort (This : in out ArrayUtil; original : Short_Integer_Array_Access; newLength : Integer) is
-      Java_Result : constant Short_Integer_Array_Access := ArrayUtil'Class (This).copyOfshort (original, newLength);
+      Java_Result : constant Short_Integer_Array_Access := ArrayUtil'Class (This).copyOfshort (original => original, newLength => newLength);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyOfshort;
 
    procedure copyOfint (This : in out ArrayUtil; original : Integer_Array_Access; newLength : Integer) is
-      Java_Result : constant Integer_Array_Access := ArrayUtil'Class (This).copyOfint (original, newLength);
+      Java_Result : constant Integer_Array_Access := ArrayUtil'Class (This).copyOfint (original => original, newLength => newLength);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyOfint;
 
    procedure copyOflong (This : in out ArrayUtil; original : Long_Long_Integer_Array_Access; newLength : Integer) is
-      Java_Result : constant Long_Long_Integer_Array_Access := ArrayUtil'Class (This).copyOflong (original, newLength);
+      Java_Result : constant Long_Long_Integer_Array_Access := ArrayUtil'Class (This).copyOflong (original => original, newLength => newLength);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyOflong;
 
    procedure copyOfchar (This : in out ArrayUtil; original : Character_Array_Access; newLength : Integer) is
-      Java_Result : constant Character_Array_Access := ArrayUtil'Class (This).copyOfchar (original, newLength);
+      Java_Result : constant Character_Array_Access := ArrayUtil'Class (This).copyOfchar (original => original, newLength => newLength);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyOfchar;
 
    procedure copyOffloat (This : in out ArrayUtil; original : Float_Array_Access; newLength : Integer) is
-      Java_Result : constant Float_Array_Access := ArrayUtil'Class (This).copyOffloat (original, newLength);
+      Java_Result : constant Float_Array_Access := ArrayUtil'Class (This).copyOffloat (original => original, newLength => newLength);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyOffloat;
 
    procedure copyOfdouble (This : in out ArrayUtil; original : Long_Float_Array_Access; newLength : Integer) is
-      Java_Result : constant Long_Float_Array_Access := ArrayUtil'Class (This).copyOfdouble (original, newLength);
+      Java_Result : constant Long_Float_Array_Access := ArrayUtil'Class (This).copyOfdouble (original => original, newLength => newLength);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyOfdouble;
 
    procedure copyOfboolean (This : in out ArrayUtil; original : Boolean_Array_Access; newLength : Integer) is
-      Java_Result : constant Boolean_Array_Access := ArrayUtil'Class (This).copyOfboolean (original, newLength);
+      Java_Result : constant Boolean_Array_Access := ArrayUtil'Class (This).copyOfboolean (original => original, newLength => newLength);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyOfboolean;
 
    procedure toStringFromTwoDimensionaArray (This : in out ArrayUtil; twoDimensionalIntArray : Integer_Array_Access_Array_Access) is
-      Java_Result : constant Unbounded_String := ArrayUtil'Class (This).toStringFromTwoDimensionaArray (twoDimensionalIntArray);
+      Java_Result : constant Unbounded_String := ArrayUtil'Class (This).toStringFromTwoDimensionaArray (twoDimensionalIntArray => twoDimensionalIntArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toStringFromTwoDimensionaArray;
 
    procedure toStringFromObjectArray (This : in out ArrayUtil; objectArray : Java_Object_Access_Array_Access) is
-      Java_Result : constant Unbounded_String := ArrayUtil'Class (This).toStringFromObjectArray (objectArray);
+      Java_Result : constant Unbounded_String := ArrayUtil'Class (This).toStringFromObjectArray (objectArray => objectArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toStringFromObjectArray;
 
    procedure toStringFromByteArray (This : in out ArrayUtil; byteArray : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Unbounded_String := ArrayUtil'Class (This).toStringFromByteArray (byteArray);
+      Java_Result : constant Unbounded_String := ArrayUtil'Class (This).toStringFromByteArray (byteArray => byteArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

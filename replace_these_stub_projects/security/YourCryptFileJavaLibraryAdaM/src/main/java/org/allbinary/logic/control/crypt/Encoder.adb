@@ -34,14 +34,14 @@ package body org.allbinary.logic.control.crypt.Encoder_Package is
    end decode;
 
    procedure encode (value : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Unbounded_String := encode (value);
+      Java_Result : constant Unbounded_String := encode (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end encode;
 
    procedure decode (value : Unbounded_String) is
-      Java_Result : constant Short_Short_Integer_Array_Access := decode (value);
+      Java_Result : constant Short_Short_Integer_Array_Access := decode (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -70,7 +70,7 @@ package body views.ValidationOnlyTempUtil_Package is
    end view;
 
    procedure view (This : in out ValidationOnlyTempUtil; validationComponentInterface_Param : access ValidationComponentInterface_Package.ValidationComponentInterface'Class) is
-      Java_Result : constant Unbounded_String := ValidationOnlyTempUtil'Class (This).view (validationComponentInterface_Param);
+      Java_Result : constant Unbounded_String := ValidationOnlyTempUtil'Class (This).view (validationComponentInterface_Param => validationComponentInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -209,14 +209,14 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.tit
    end toXmlNode;
 
    procedure toValidationInfoNode (This : in out TitleBodyValidation; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := TitleBodyValidation'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := TitleBodyValidation'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
    procedure toXmlNode (This : in out TitleBodyValidation; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := TitleBodyValidation'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := TitleBodyValidation'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

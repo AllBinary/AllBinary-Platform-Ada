@@ -36,7 +36,7 @@ package org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package is
    type AllBinaryCollisionManager_Access_Array_Access_Array_Access is access all AllBinaryCollisionManager_Access_Array_Access_Array;
 
    type AllBinaryCollisionManager is new Java_Object with null record;
-   allBinaryCollisionManager : AllBinaryCollisionManager_Access;
+   allBinaryCollisionManager_Var : AllBinaryCollisionManager_Access;
 
    procedure Initialize (This : in out AllBinaryCollisionManager'Class);
    function Create return AllBinaryCollisionManager_Access;

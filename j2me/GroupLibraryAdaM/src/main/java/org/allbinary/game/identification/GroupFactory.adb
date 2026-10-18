@@ -92,7 +92,7 @@ package body org.allbinary.game.identification.GroupFactory_Package is
    end init;
 
    procedure getNextGroupByName (This : in out GroupFactory; name : Unbounded_String) is
-      Java_Result : constant Group_Access := GroupFactory'Class (This).getNextGroupByName (name);
+      Java_Result : constant Group_Access := GroupFactory'Class (This).getNextGroupByName (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

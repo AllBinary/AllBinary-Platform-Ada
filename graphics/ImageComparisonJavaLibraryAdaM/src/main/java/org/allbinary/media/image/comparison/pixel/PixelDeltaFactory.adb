@@ -93,7 +93,7 @@ package body org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Packag
    end getInstance;
 
    procedure getInstance (x : Integer; y : Integer; rgb1 : Integer; rgb2 : Integer) is
-      Java_Result : constant PixelDelta_Access := getInstance (x, y, rgb1, rgb2);
+      Java_Result : constant PixelDelta_Access := getInstance (x => x, y => y, rgb1 => rgb1, rgb2 => rgb2);
       pragma Unreferenced (Java_Result);
    begin
       null;

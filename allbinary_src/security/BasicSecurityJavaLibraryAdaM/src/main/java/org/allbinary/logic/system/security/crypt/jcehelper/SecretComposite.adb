@@ -75,21 +75,21 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite
    end mutilate;
 
    procedure encrypt (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := SecretComposite'Class (This).encrypt (array_Id_Param);
+      Java_Result : constant Short_Short_Integer_Array_Access := SecretComposite'Class (This).encrypt (array_Id_Param => array_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end encrypt;
 
    procedure decrypt (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := SecretComposite'Class (This).decrypt (array_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := SecretComposite'Class (This).decrypt (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end decrypt;
 
    procedure mutilate (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := SecretComposite'Class (This).mutilate (array_Id_Param);
+      Java_Result : constant Short_Short_Integer_Array_Access := SecretComposite'Class (This).mutilate (array_Id_Param => array_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

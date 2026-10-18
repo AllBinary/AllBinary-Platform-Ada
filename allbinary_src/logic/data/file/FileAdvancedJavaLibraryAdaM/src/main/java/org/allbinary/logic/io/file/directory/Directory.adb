@@ -61,13 +61,13 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
         Directory'Class (This).remove (existingDirectoryAbPath.toFileSystemString);
    end remove;
 
-   function create (This : in out Directory; directory : Unbounded_String) return Boolean is
+   function create (This : in out Directory; directory_Var : Unbounded_String) return Boolean is
       directoryFile : AbFile_Access;
    begin
         begin
-            directoryFile := FileFactory_Package.getInstance.getInstance (directory);
+            directoryFile := FileFactory_Package.getInstance.getInstance (directory_Var);
             if not (directoryFile.isDirectory) then
-                PreLogUtil_Package.put (To_Unbounded_String ("Creating Directories: ") & directory, Directory_Access'(This'Unchecked_Access), To_Unbounded_String ("create"));
+                PreLogUtil_Package.put (To_Unbounded_String ("Creating Directories: ") & directory_Var, Directory_Access'(This'Unchecked_Access), To_Unbounded_String ("create"));
                 if not (directoryFile.mkdirs) then
                     return False;
                 end if;
@@ -78,7 +78,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (To_Unbounded_String ("Error Creating Directories: ") & directory, Directory_Access'(This'Unchecked_Access), To_Unbounded_String ("create"), e);
+            PreLogUtil_Package.putOE (To_Unbounded_String ("Error Creating Directories: ") & directory_Var, Directory_Access'(This'Unchecked_Access), To_Unbounded_String ("create"), e);
             return False;
                 end;
         end;
@@ -252,70 +252,70 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
    end search;
 
    procedure create (This : in out Directory; directoryAbPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant Boolean := Directory'Class (This).create (directoryAbPath_Param);
+      Java_Result : constant Boolean := Directory'Class (This).create (directoryAbPath_Param => directoryAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end create;
 
-   procedure create (This : in out Directory; directory : Unbounded_String) is
-      Java_Result : constant Boolean := Directory'Class (This).create (directory);
+   procedure create (This : in out Directory; directory_Var : Unbounded_String) is
+      Java_Result : constant Boolean := Directory'Class (This).create (directory_Var => directory_Var);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end create;
 
    procedure search (This : in out Directory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (fileFilter_Param, file_Param);
+      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (fileFilter_Param => fileFilter_Param, file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
    procedure search (This : in out Directory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) is
-      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (fileFilter_Param, file_Param, isRecursiveSearch);
+      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (fileFilter_Param => fileFilter_Param, file_Param => file_Param, isRecursiveSearch => isRecursiveSearch);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
    procedure search (This : in out Directory; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (file_Param);
+      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
    procedure search (This : in out Directory; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) is
-      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (file_Param, isRecursiveSearch);
+      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (file_Param => file_Param, isRecursiveSearch => isRecursiveSearch);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
    procedure search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (searchValue, file_Param);
+      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (searchValue => searchValue, file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
    procedure search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) is
-      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (searchValue, file_Param, isRecursiveSearch);
+      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (searchValue => searchValue, file_Param => file_Param, isRecursiveSearch => isRecursiveSearch);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
    procedure search (This : in out Directory; level : Integer; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (level, file_Param);
+      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (level => level, file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
    procedure search (This : in out Directory; level : Integer; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) is
-      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (level, file_Param, isRecursiveSearch);
+      Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (level => level, file_Param => file_Param, isRecursiveSearch => isRecursiveSearch);
       pragma Unreferenced (Java_Result);
    begin
       null;

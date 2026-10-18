@@ -62,7 +62,7 @@ package body org.allbinary.thread.ThreadUtil_Package is
    end join;
 
    procedure isRunning (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class) is
-      Java_Result : constant Boolean := ThreadUtil'Class (This).isRunning (thread_Param);
+      Java_Result : constant Boolean := ThreadUtil'Class (This).isRunning (thread_Param => thread_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -179,7 +179,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
    end isValid;
 
    procedure isValid (This : in out InstallerInfo; userName : Unbounded_String; password : Unbounded_String) is
-      Java_Result : constant Boolean := InstallerInfo'Class (This).isValid (userName, password);
+      Java_Result : constant Boolean := InstallerInfo'Class (This).isValid (userName => userName, password => password);
       pragma Unreferenced (Java_Result);
    begin
       null;

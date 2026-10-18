@@ -85,7 +85,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
    end reset;
 
    procedure getImageArray (This : in out ImageModifierUtil; originalImageArray : Image_Access_Array_Access) is
-      Java_Result : constant Image_Access_Array_Access := ImageModifierUtil'Class (This).getImageArray (originalImageArray);
+      Java_Result : constant Image_Access_Array_Access := ImageModifierUtil'Class (This).getImageArray (originalImageArray => originalImageArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

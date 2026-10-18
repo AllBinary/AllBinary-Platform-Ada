@@ -23,29 +23,29 @@ package body org.allbinary.business.time.Time_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Time'Class; time : Unbounded_String) is
+   procedure Initialize (This : in out Time'Class; time_Var : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.timeLong := time;
+        This.timeLong := time_Var;
    end Initialize;
 
-   function Create (time : Unbounded_String) return Time_Access is
+   function Create (time_Var : Unbounded_String) return Time_Access is
       This : constant Time_Access := new Time;
    begin
-      Time_Package.Initialize (This.all, time);
+      Time_Package.Initialize (This.all, time_Var);
       return This;
    end Create;
 
-   procedure Initialize (This : in out Time'Class; time : Long_Long_Integer) is
+   procedure Initialize (This : in out Time'Class; time_Var : Long_Long_Integer) is
    begin
       Initialize_Fields (This);
-        This.timeLong := time;
+        This.timeLong := time_Var;
    end Initialize;
 
-   function Create (time : Long_Long_Integer) return Time_Access is
+   function Create (time_Var : Long_Long_Integer) return Time_Access is
       This : constant Time_Access := new Time;
    begin
-      Time_Package.Initialize (This.all, time);
+      Time_Package.Initialize (This.all, time_Var);
       return This;
    end Create;
 

@@ -42,7 +42,7 @@ package org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Pa
    type ProfileActionScriptItem_Access_Array_Access_Array is array (Natural range <>) of ProfileActionScriptItem_Access_Array_Access;
    type ProfileActionScriptItem_Access_Array_Access_Array_Access is access all ProfileActionScriptItem_Access_Array_Access_Array;
 
-   type ProfileActionScriptItem is new DefaultMutableTreeNode and ProfileActionScriptItemInterface and ActionListener with record
+   type ProfileActionScriptItem is new Java_Object and ProfileActionScriptItemInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       jPopupMenu : JPopupMenu_Access;

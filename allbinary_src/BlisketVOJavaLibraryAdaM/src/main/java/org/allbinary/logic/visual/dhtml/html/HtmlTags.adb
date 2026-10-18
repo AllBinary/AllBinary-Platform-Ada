@@ -57,7 +57,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlTags_Package is
    end size;
 
    procedure get (This : in out HtmlTags; index : Integer) is
-      Java_Result : constant HtmlTag_Access := HtmlTags'Class (This).get (index);
+      Java_Result : constant HtmlTag_Access := HtmlTags'Class (This).get (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -76,21 +76,21 @@ package body org.allbinary.math.LayerDistanceUtil_Package is
    end getDistanceAt;
 
    procedure getDistance (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant Integer := LayerDistanceUtil'Class (This).getDistance (layerInterface_Param, layerInterface2_Param);
+      Java_Result : constant Integer := LayerDistanceUtil'Class (This).getDistance (layerInterface_Param => layerInterface_Param, layerInterface2_Param => layerInterface2_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDistance;
 
    procedure getDistance3D (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant Integer := LayerDistanceUtil'Class (This).getDistance3D (layerInterface_Param, layerInterface2_Param);
+      Java_Result : constant Integer := LayerDistanceUtil'Class (This).getDistance3D (layerInterface_Param => layerInterface_Param, layerInterface2_Param => layerInterface2_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDistance3D;
 
    procedure getDistanceAt (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; point_Param : access GPoint_Package.GPoint'Class) is
-      Java_Result : constant Integer := LayerDistanceUtil'Class (This).getDistanceAt (layerInterface_Param, point_Param);
+      Java_Result : constant Integer := LayerDistanceUtil'Class (This).getDistanceAt (layerInterface_Param => layerInterface_Param, point_Param => point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

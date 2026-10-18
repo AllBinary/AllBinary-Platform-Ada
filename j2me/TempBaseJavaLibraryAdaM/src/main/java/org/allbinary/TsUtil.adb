@@ -60,14 +60,14 @@ package body org.allbinary.TsUtil_Package is
    end compareTo;
 
    procedure hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := TsUtil'Class (This).hashCode (anyType_Param);
+      Java_Result : constant Integer := TsUtil'Class (This).hashCode (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end hashCode;
 
    procedure compareTo (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String) is
-      Java_Result : constant Integer := TsUtil'Class (This).compareTo (a, b);
+      Java_Result : constant Integer := TsUtil'Class (This).compareTo (a => a, b => b);
       pragma Unreferenced (Java_Result);
    begin
       null;

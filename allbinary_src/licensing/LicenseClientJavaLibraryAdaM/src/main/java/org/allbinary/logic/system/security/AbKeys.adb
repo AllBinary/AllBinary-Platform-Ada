@@ -66,7 +66,7 @@ package body org.allbinary.logic.system.security.AbKeys_Package is
    end getKey;
 
    procedure getKey (This : in out AbKeys; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; keyName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbKeys'Class (This).getKey (abeClientInformation_Param, keyName);
+      Java_Result : constant Unbounded_String := AbKeys'Class (This).getKey (abeClientInformation_Param => abeClientInformation_Param, keyName => keyName);
       pragma Unreferenced (Java_Result);
    begin
       null;

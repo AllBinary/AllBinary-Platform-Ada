@@ -66,14 +66,14 @@ package body org.allbinary.animation.image.ImageAnimationFactory_Package is
    end getInstance;
 
    procedure createFactory (image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant ImageAnimationFactory_Access := createFactory (image_Param);
+      Java_Result : constant ImageAnimationFactory_Access := createFactory (image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactory;
 
    procedure getInstance (This : in out ImageAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := ImageAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := ImageAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

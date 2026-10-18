@@ -67,7 +67,7 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
    end search;
 
    procedure search (This : in out AdvertisementCampaign; advertisementSearchInterface_Param : access AdvertisementSearchInterface_Package.AdvertisementSearchInterface'Class) is
-      Java_Result : constant AdvertisementsInterface_Access := AdvertisementCampaign'Class (This).search (advertisementSearchInterface_Param);
+      Java_Result : constant AdvertisementsInterface_Access := AdvertisementCampaign'Class (This).search (advertisementSearchInterface_Param => advertisementSearchInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

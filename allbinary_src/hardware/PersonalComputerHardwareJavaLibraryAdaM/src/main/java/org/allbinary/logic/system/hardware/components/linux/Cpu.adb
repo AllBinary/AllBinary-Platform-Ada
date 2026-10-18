@@ -243,14 +243,14 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    end toString;
 
    procedure compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface_Package.CpuInterface'Class) is
-      Java_Result : constant Boolean := Cpu'Class (This).compareTo (cpuInterface_Param);
+      Java_Result : constant Boolean := Cpu'Class (This).compareTo (cpuInterface_Param => cpuInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
    procedure compareTo (This : in out Cpu; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) is
-      Java_Result : constant Boolean := Cpu'Class (This).compareTo (componentInterface_Param);
+      Java_Result : constant Boolean := Cpu'Class (This).compareTo (componentInterface_Param => componentInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

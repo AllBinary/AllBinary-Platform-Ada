@@ -213,35 +213,35 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    end getLengthNode;
 
    procedure getParamsNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := SearchParams'Class (This).getParamsNode (document_Param);
+      Java_Result : constant Node_Access := SearchParams'Class (This).getParamsNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getParamsNode;
 
    procedure getFieldsNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := SearchParams'Class (This).getFieldsNode (document_Param);
+      Java_Result : constant Node_Access := SearchParams'Class (This).getFieldsNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFieldsNode;
 
    procedure getOrderNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := SearchParams'Class (This).getOrderNode (document_Param);
+      Java_Result : constant Node_Access := SearchParams'Class (This).getOrderNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getOrderNode;
 
    procedure getSortByNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := SearchParams'Class (This).getSortByNode (document_Param);
+      Java_Result : constant Node_Access := SearchParams'Class (This).getSortByNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSortByNode;
 
    procedure getLengthNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := SearchParams'Class (This).getLengthNode (document_Param);
+      Java_Result : constant Node_Access := SearchParams'Class (This).getLengthNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

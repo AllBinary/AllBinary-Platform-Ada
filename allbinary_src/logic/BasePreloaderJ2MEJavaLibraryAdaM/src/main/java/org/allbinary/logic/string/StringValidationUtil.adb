@@ -131,56 +131,56 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
    end isEmpty;
 
    procedure containsSpaces (This : in out StringValidationUtil; value : Unbounded_String) is
-      Java_Result : constant Boolean := StringValidationUtil'Class (This).containsSpaces (value);
+      Java_Result : constant Boolean := StringValidationUtil'Class (This).containsSpaces (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsSpaces;
 
    procedure isNumber (This : in out StringValidationUtil; value : Unbounded_String) is
-      Java_Result : constant Boolean := StringValidationUtil'Class (This).isNumber (value);
+      Java_Result : constant Boolean := StringValidationUtil'Class (This).isNumber (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isNumber;
 
    procedure isNumberFromChar (This : in out StringValidationUtil; digit : Character) is
-      Java_Result : constant Boolean := StringValidationUtil'Class (This).isNumberFromChar (digit);
+      Java_Result : constant Boolean := StringValidationUtil'Class (This).isNumberFromChar (digit => digit);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isNumberFromChar;
 
    procedure isValidRequired (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) is
-      Java_Result : constant Boolean := StringValidationUtil'Class (This).isValidRequired (value, min, max);
+      Java_Result : constant Boolean := StringValidationUtil'Class (This).isValidRequired (value => value, min => min, max => max);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isValidRequired;
 
    procedure isValidRequiredNumber (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) is
-      Java_Result : constant Boolean := StringValidationUtil'Class (This).isValidRequiredNumber (value, min, max);
+      Java_Result : constant Boolean := StringValidationUtil'Class (This).isValidRequiredNumber (value => value, min => min, max => max);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isValidRequiredNumber;
 
    procedure isValidNotRequired (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) is
-      Java_Result : constant Boolean := StringValidationUtil'Class (This).isValidNotRequired (value, min, max);
+      Java_Result : constant Boolean := StringValidationUtil'Class (This).isValidNotRequired (value => value, min => min, max => max);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isValidNotRequired;
 
    procedure isValidNotRequiredNumber (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) is
-      Java_Result : constant Boolean := StringValidationUtil'Class (This).isValidNotRequiredNumber (value, min, max);
+      Java_Result : constant Boolean := StringValidationUtil'Class (This).isValidNotRequiredNumber (value => value, min => min, max => max);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isValidNotRequiredNumber;
 
    procedure isEmpty (This : in out StringValidationUtil; string_Id : Unbounded_String) is
-      Java_Result : constant Boolean := StringValidationUtil'Class (This).isEmpty (string_Id);
+      Java_Result : constant Boolean := StringValidationUtil'Class (This).isEmpty (string_Id => string_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -112,7 +112,7 @@ package body org.allbinary.animation.image.ImageArrayAnimation_Package is
    end paintXY;
 
    procedure getImage (This : in out ImageArrayAnimation; index : Integer) is
-      Java_Result : constant Image_Access := ImageArrayAnimation'Class (This).getImage (index);
+      Java_Result : constant Image_Access := ImageArrayAnimation'Class (This).getImage (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -56,21 +56,21 @@ package body org.allbinary.logic.math.vector.AxisMathVectorUtil_Package is
    end calculateZ;
 
    procedure calculateX (This : in out AxisMathVectorUtil; magnitude : Long_Long_Integer; angle : Integer) is
-      Java_Result : constant Long_Long_Integer := AxisMathVectorUtil'Class (This).calculateX (magnitude, angle);
+      Java_Result : constant Long_Long_Integer := AxisMathVectorUtil'Class (This).calculateX (magnitude => magnitude, angle => angle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end calculateX;
 
    procedure calculateY (This : in out AxisMathVectorUtil; magnitude : Long_Long_Integer; angle : Integer) is
-      Java_Result : constant Long_Long_Integer := AxisMathVectorUtil'Class (This).calculateY (magnitude, angle);
+      Java_Result : constant Long_Long_Integer := AxisMathVectorUtil'Class (This).calculateY (magnitude => magnitude, angle => angle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end calculateY;
 
    procedure calculateZ (This : in out AxisMathVectorUtil; magnitude : Long_Long_Integer; otherAngle : Integer) is
-      Java_Result : constant Long_Long_Integer := AxisMathVectorUtil'Class (This).calculateZ (magnitude, otherAngle);
+      Java_Result : constant Long_Long_Integer := AxisMathVectorUtil'Class (This).calculateZ (magnitude => magnitude, otherAngle => otherAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -67,7 +67,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleSer
    end setInputAutomationModuleInterfaceArray;
 
    procedure getService (This : in out InputAutomationModuleServiceFactory; bundle_Param : access Bundle_Package.Bundle'Class; registration_Param : access ServiceRegistration_Package.ServiceRegistration'Class) is
-      Java_Result : constant Java_Object_Access := InputAutomationModuleServiceFactory'Class (This).getService (bundle_Param, registration_Param);
+      Java_Result : constant Java_Object_Access := InputAutomationModuleServiceFactory'Class (This).getService (bundle_Param => bundle_Param, registration_Param => registration_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

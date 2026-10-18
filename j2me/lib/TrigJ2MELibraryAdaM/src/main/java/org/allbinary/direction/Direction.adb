@@ -45,9 +45,9 @@ package body org.allbinary.direction.Direction_Package is
       return This;
    end Create;
 
-   function getInstance (direction : Integer) return Direction_Access is
+   function getInstance (direction_Var : Integer) return Direction_Access is
    begin
-        return Direction_Package.directionArray (direction);
+        return Direction_Package.directionArray (direction_Var);
    end getInstance;
 
    function getValue (This : in out Direction) return Integer is
@@ -83,8 +83,8 @@ package body org.allbinary.direction.Direction_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure getInstance (direction : Integer) is
-      Java_Result : constant Direction_Access := getInstance (direction);
+   procedure getInstance (direction_Var : Integer) is
+      Java_Result : constant Direction_Access := getInstance (direction_Var => direction_Var);
       pragma Unreferenced (Java_Result);
    begin
       null;

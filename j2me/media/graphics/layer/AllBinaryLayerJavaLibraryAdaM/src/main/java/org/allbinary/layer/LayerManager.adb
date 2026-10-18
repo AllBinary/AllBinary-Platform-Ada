@@ -149,14 +149,14 @@ package body org.allbinary.layer.LayerManager_Package is
    end paint;
 
    procedure contains (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant Boolean := LayerManager'Class (This).contains (layerInterface_Param);
+      Java_Result : constant Boolean := LayerManager'Class (This).contains (layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end contains;
 
    procedure getLayerAt (This : in out LayerManager; index : Integer) is
-      Java_Result : constant Layer_Access := LayerManager'Class (This).getLayerAt (index);
+      Java_Result : constant Layer_Access := LayerManager'Class (This).getLayerAt (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

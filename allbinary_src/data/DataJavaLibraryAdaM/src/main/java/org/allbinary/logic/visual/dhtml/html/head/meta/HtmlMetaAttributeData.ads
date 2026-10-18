@@ -38,8 +38,8 @@ package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Pa
 
    procedure Initialize (This : in out HtmlMetaAttributeData'Class; id : Integer; value : Unbounded_String);
    function Create (id : Integer; value : Unbounded_String) return HtmlMetaAttributeData_Access;
-   function equals (This : in out HtmlMetaAttributeData; htmlMetaAttributeData_Param : access HtmlMetaAttributeData_Package.HtmlMetaAttributeData'Class) return Boolean;
-   procedure equals (This : in out HtmlMetaAttributeData; htmlMetaAttributeData_Param : access HtmlMetaAttributeData_Package.HtmlMetaAttributeData'Class);
+   function equals (This : in out HtmlMetaAttributeData; htmlMetaAttributeData_Var_Param : access HtmlMetaAttributeData_Package.HtmlMetaAttributeData'Class) return Boolean;
+   procedure equals (This : in out HtmlMetaAttributeData; htmlMetaAttributeData_Var_Param : access HtmlMetaAttributeData_Package.HtmlMetaAttributeData'Class);
    function toString (This : in out HtmlMetaAttributeData) return Unbounded_String;
 
 end org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package;

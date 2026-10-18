@@ -79,7 +79,7 @@ package body org.allbinary.game.layer.hud.basic.PositionWidget_Package is
    end toString;
 
    procedure toString (position : Integer) is
-      Java_Result : constant Unbounded_String := toString (position);
+      Java_Result : constant Unbounded_String := toString (position => position);
       pragma Unreferenced (Java_Result);
    begin
       null;

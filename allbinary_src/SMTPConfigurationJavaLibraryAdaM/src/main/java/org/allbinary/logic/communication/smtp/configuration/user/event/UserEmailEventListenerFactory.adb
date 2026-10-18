@@ -53,7 +53,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    end getInstance;
 
    procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface_Package.UserEmailEventConfigurationInterface'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class) is
-      Java_Result : constant UserEmailEventListenerInterface_Access := getInstance (abeClientInformation_Param, userEmailEventConfigurationInterface_Param, userInterface_Param);
+      Java_Result : constant UserEmailEventListenerInterface_Access := getInstance (abeClientInformation_Param => abeClientInformation_Param, userEmailEventConfigurationInterface_Param => userEmailEventConfigurationInterface_Param, userInterface_Param => userInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -52,7 +52,7 @@ package body org.allbinary.animation.image.LeftToRightImageAnimationFactory_Pack
    end getInstance;
 
    procedure getInstance (This : in out LeftToRightImageAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := LeftToRightImageAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := LeftToRightImageAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

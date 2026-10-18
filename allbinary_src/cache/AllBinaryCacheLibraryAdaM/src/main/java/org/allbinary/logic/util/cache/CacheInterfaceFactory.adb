@@ -45,7 +45,7 @@ package body org.allbinary.logic.util.cache.CacheInterfaceFactory_Package is
    end getInstance;
 
    procedure getInstance (cacheType_Param : access CacheType_Package.CacheType'Class; cachePolicy_Param : access CachePolicy_Package.CachePolicy'Class) is
-      Java_Result : constant CacheInterface_Access := getInstance (cacheType_Param, cachePolicy_Param);
+      Java_Result : constant CacheInterface_Access := getInstance (cacheType_Param => cacheType_Param, cachePolicy_Param => cachePolicy_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

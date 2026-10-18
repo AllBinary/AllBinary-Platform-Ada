@@ -140,21 +140,21 @@ package body org.allbinary.media.image.comparison.motion.AllMotionRectangles_Pac
    end isPixelDeltaLikelyPartOfMotionRectangle;
 
    procedure addPixelDeltaToExistingMotionRectangle (This : in out AllMotionRectangles; pixelDelta_Param : access PixelDelta_Package.PixelDelta'Class) is
-      Java_Result : constant Boolean := AllMotionRectangles'Class (This).addPixelDeltaToExistingMotionRectangle (pixelDelta_Param);
+      Java_Result : constant Boolean := AllMotionRectangles'Class (This).addPixelDeltaToExistingMotionRectangle (pixelDelta_Param => pixelDelta_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addPixelDeltaToExistingMotionRectangle;
 
    procedure shouldPixelDeltaPartOfMotionRectangle (This : in out AllMotionRectangles; motionRectangle_Param : access MotionRectangle_Package.MotionRectangle'Class; pixelDelta_Param : access PixelDelta_Package.PixelDelta'Class) is
-      Java_Result : constant Boolean := AllMotionRectangles'Class (This).shouldPixelDeltaPartOfMotionRectangle (motionRectangle_Param, pixelDelta_Param);
+      Java_Result : constant Boolean := AllMotionRectangles'Class (This).shouldPixelDeltaPartOfMotionRectangle (motionRectangle_Param => motionRectangle_Param, pixelDelta_Param => pixelDelta_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end shouldPixelDeltaPartOfMotionRectangle;
 
    procedure isPixelDeltaLikelyPartOfMotionRectangle (This : in out AllMotionRectangles; motionRectangle_Param : access MotionRectangle_Package.MotionRectangle'Class; pixelDelta_Param : access PixelDelta_Package.PixelDelta'Class) is
-      Java_Result : constant Boolean := AllMotionRectangles'Class (This).isPixelDeltaLikelyPartOfMotionRectangle (motionRectangle_Param, pixelDelta_Param);
+      Java_Result : constant Boolean := AllMotionRectangles'Class (This).isPixelDeltaLikelyPartOfMotionRectangle (motionRectangle_Param => motionRectangle_Param, pixelDelta_Param => pixelDelta_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

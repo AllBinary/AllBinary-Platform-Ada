@@ -88,7 +88,7 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
    end toString;
 
    procedure getKey (point_Param : access GPoint_Package.GPoint'Class; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class) is
-      Java_Result : constant Java_Object_Access := getKey (point_Param, colorDelta_Param);
+      Java_Result : constant Java_Object_Access := getKey (point_Param => point_Param, colorDelta_Param => colorDelta_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -59,14 +59,14 @@ package body org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
    end getNextRandomAngle;
 
    procedure getInstanceList (This : in out RandomRotationFactory; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; howMuch : Integer) is
-      Java_Result : constant BasicArrayList_Access := RandomRotationFactory'Class (This).getInstanceList (vector_Param, howMuch);
+      Java_Result : constant BasicArrayList_Access := RandomRotationFactory'Class (This).getInstanceList (vector_Param => vector_Param, howMuch => howMuch);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceList;
 
    procedure getNextRandomAngle (This : in out RandomRotationFactory; howMuch : Integer) is
-      Java_Result : constant Integer := RandomRotationFactory'Class (This).getNextRandomAngle (howMuch);
+      Java_Result : constant Integer := RandomRotationFactory'Class (This).getNextRandomAngle (howMuch => howMuch);
       pragma Unreferenced (Java_Result);
    begin
       null;

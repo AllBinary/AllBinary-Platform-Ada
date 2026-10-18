@@ -54,7 +54,7 @@ package body org.allbinary.game.part.weapon.BasicWeaponPartCircularPool_Package 
    end getInstance;
 
    procedure getInstance (This : in out BasicWeaponPartCircularPool; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface_Package.ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship_Package.RelativeRelationship'Class) is
-      Java_Result : constant BasicWeaponPart_Access := BasicWeaponPartCircularPool'Class (This).getInstance (sourceLayerInterface_Param, weaponProperties_Param, scoreableInterface_Param, relativeRelationship_Param);
+      Java_Result : constant BasicWeaponPart_Access := BasicWeaponPartCircularPool'Class (This).getInstance (sourceLayerInterface_Param => sourceLayerInterface_Param, weaponProperties_Param => weaponProperties_Param, scoreableInterface_Param => scoreableInterface_Param, relativeRelationship_Param => relativeRelationship_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -57,7 +57,7 @@ package body org.allbinary.game.layer.resources.OnDemandResources_Package is
    end initAt;
 
    procedure initAt (This : in out OnDemandResources; imageCache_Param : access ImageCache_Package.ImageCache'Class; resourceAnimationInterfaceFactoryInterfaceFactory_Param : access BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package.BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class; portion : Integer; loadingString : Unbounded_String; index : Integer) is
-      Java_Result : constant Integer := OnDemandResources'Class (This).initAt (imageCache_Param, resourceAnimationInterfaceFactoryInterfaceFactory_Param, portion, loadingString, index);
+      Java_Result : constant Integer := OnDemandResources'Class (This).initAt (imageCache_Param => imageCache_Param, resourceAnimationInterfaceFactoryInterfaceFactory_Param => resourceAnimationInterfaceFactoryInterfaceFactory_Param, portion => portion, loadingString => loadingString, index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

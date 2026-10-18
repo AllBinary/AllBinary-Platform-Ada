@@ -76,21 +76,21 @@ package body org.allbinary.data.tree.dom.document.DocumentToNode_Package is
    end remove;
 
    procedure convertDocumentToNodeString (documentString_Param : Unbounded_String) is
-      Java_Result : constant Unbounded_String := convertDocumentToNodeString (documentString_Param);
+      Java_Result : constant Unbounded_String := convertDocumentToNodeString (documentString_Param => documentString_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end convertDocumentToNodeString;
 
    procedure removeXmlDefinitionFromDocumentString (documentString : Unbounded_String) is
-      Java_Result : constant Unbounded_String := removeXmlDefinitionFromDocumentString (documentString);
+      Java_Result : constant Unbounded_String := removeXmlDefinitionFromDocumentString (documentString => documentString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end removeXmlDefinitionFromDocumentString;
 
    procedure remove (documentString : Unbounded_String; start : Unbounded_String; end_Id : Unbounded_String) is
-      Java_Result : constant Unbounded_String := remove (documentString, start, end_Id);
+      Java_Result : constant Unbounded_String := remove (documentString => documentString, start => start, end_Id => end_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

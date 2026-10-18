@@ -49,7 +49,7 @@ package body org.allbinary.business.advertisement.GameAdStateFactory_Package is
    end isEnabled;
 
    procedure getInstanceForApp (This : in out GameAdStateFactory; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class) is
-      Java_Result : constant GameAdStateBase_Access := GameAdStateFactory'Class (This).getInstanceForApp (softwareInformation_Param);
+      Java_Result : constant GameAdStateBase_Access := GameAdStateFactory'Class (This).getInstanceForApp (softwareInformation_Param => softwareInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

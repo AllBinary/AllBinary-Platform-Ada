@@ -63,21 +63,21 @@ package body org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Packag
    end setInitialScale;
 
    procedure getInstanceByLocation (This : in out HealthBarAnimationInterfaceFactory; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer) is
-      Java_Result : constant HealthBarAnimation_Access := HealthBarAnimationInterfaceFactory'Class (This).getInstanceByLocation (layerInterface_Param, location);
+      Java_Result : constant HealthBarAnimation_Access := HealthBarAnimationInterfaceFactory'Class (This).getInstanceByLocation (layerInterface_Param => layerInterface_Param, location => location);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceByLocation;
 
    procedure getInstance (This : in out HealthBarAnimationInterfaceFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := HealthBarAnimationInterfaceFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := HealthBarAnimationInterfaceFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstanceAnimation (This : in out HealthBarAnimationInterfaceFactory; animationInterface_Param : access Animation_Package.Animation'Class) is
-      Java_Result : constant Animation_Access := HealthBarAnimationInterfaceFactory'Class (This).getInstanceAnimation (animationInterface_Param);
+      Java_Result : constant Animation_Access := HealthBarAnimationInterfaceFactory'Class (This).getInstanceAnimation (animationInterface_Param => animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

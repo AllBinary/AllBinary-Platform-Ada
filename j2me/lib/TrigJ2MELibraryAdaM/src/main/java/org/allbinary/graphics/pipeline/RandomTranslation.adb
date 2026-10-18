@@ -55,7 +55,7 @@ package body org.allbinary.graphics.pipeline.RandomTranslation_Package is
    end getInstance;
 
    procedure getInstance (vector_Param : access BasicArrayList_Package.BasicArrayList'Class; howMuch : Integer) is
-      Java_Result : constant BasicArrayList_Access := getInstance (vector_Param, howMuch);
+      Java_Result : constant BasicArrayList_Access := getInstance (vector_Param => vector_Param, howMuch => howMuch);
       pragma Unreferenced (Java_Result);
    begin
       null;

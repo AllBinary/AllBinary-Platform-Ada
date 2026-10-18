@@ -45,14 +45,14 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package
    end decrypt;
 
    procedure encrypt (This : in out NoCrypt; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := NoCrypt'Class (This).encrypt (array_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := NoCrypt'Class (This).encrypt (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end encrypt;
 
    procedure decrypt (This : in out NoCrypt; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := NoCrypt'Class (This).decrypt (array_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := NoCrypt'Class (This).decrypt (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

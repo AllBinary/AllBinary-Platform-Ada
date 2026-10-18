@@ -65,14 +65,14 @@ package body org.allbinary.logic.io.DataOutputStreamFactory_Package is
    end getInstance;
 
    procedure getInstanceForAbFile (This : in out DataOutputStreamFactory; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant AbDataOutputStream_Access := DataOutputStreamFactory'Class (This).getInstanceForAbFile (file_Param);
+      Java_Result : constant AbDataOutputStream_Access := DataOutputStreamFactory'Class (This).getInstanceForAbFile (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceForAbFile;
 
    procedure getInstance (This : in out DataOutputStreamFactory; filePath : Unbounded_String; fileName : Unbounded_String) is
-      Java_Result : constant AbDataOutputStream_Access := DataOutputStreamFactory'Class (This).getInstance (filePath, fileName);
+      Java_Result : constant AbDataOutputStream_Access := DataOutputStreamFactory'Class (This).getInstance (filePath => filePath, fileName => fileName);
       pragma Unreferenced (Java_Result);
    begin
       null;

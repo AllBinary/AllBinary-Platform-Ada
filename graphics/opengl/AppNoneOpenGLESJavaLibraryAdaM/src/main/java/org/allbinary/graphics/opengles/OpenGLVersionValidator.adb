@@ -58,7 +58,7 @@ package body org.allbinary.graphics.opengles.OpenGLVersionValidator_Package is
    end setShaderComposite;
 
    procedure isAvailable (This : in out OpenGLVersionValidator; glVersionRequired : Unbounded_String) is
-      Java_Result : constant Boolean := OpenGLVersionValidator'Class (This).isAvailable (glVersionRequired);
+      Java_Result : constant Boolean := OpenGLVersionValidator'Class (This).isAvailable (glVersionRequired => glVersionRequired);
       pragma Unreferenced (Java_Result);
    begin
       null;

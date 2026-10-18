@@ -80,7 +80,7 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethods_Packa
    end getDefault;
 
    procedure getShippingInterface (This : in out ShippingMethods; name : Unbounded_String) is
-      Java_Result : constant ShippingInterface_Access := ShippingMethods'Class (This).getShippingInterface (name);
+      Java_Result : constant ShippingInterface_Access := ShippingMethods'Class (This).getShippingInterface (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

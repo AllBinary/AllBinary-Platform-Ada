@@ -104,11 +104,11 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
    end show;
 
    procedure main (args : Unbounded_String_Array_Access) is
-      javaHelpUtil : JavaHelpUtil_Access;
+      javaHelpUtil_Var : JavaHelpUtil_Access;
    begin
         begin
-            javaHelpUtil := JavaHelpUtil_Package.getInstance;
-            javaHelpUtil.show (javaHelpUtil.getHelpSet (To_Unbounded_String ("G:/mnt/bc/mydev/working/automation/InputAutomationJavaApplication/AllBinaryInputAutomationHelp/AllBinaryInputAutomation.hs")));
+            javaHelpUtil_Var := JavaHelpUtil_Package.getInstance;
+            javaHelpUtil_Var.show (javaHelpUtil_Var.getHelpSet (To_Unbounded_String ("G:/mnt/bc/mydev/working/automation/InputAutomationJavaApplication/AllBinaryInputAutomationHelp/AllBinaryInputAutomation.hs")));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -120,14 +120,14 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
    end main;
 
    procedure getHelpSet (This : in out JavaHelpUtil; filePath : Unbounded_String) is
-      Java_Result : constant HelpSet_Access := JavaHelpUtil'Class (This).getHelpSet (filePath);
+      Java_Result : constant HelpSet_Access := JavaHelpUtil'Class (This).getHelpSet (filePath => filePath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getHelpSet;
 
    procedure getHelpSet (This : in out JavaHelpUtil; url_Param : access URL_Package.URL'Class) is
-      Java_Result : constant HelpSet_Access := JavaHelpUtil'Class (This).getHelpSet (url_Param);
+      Java_Result : constant HelpSet_Access := JavaHelpUtil'Class (This).getHelpSet (url_Param => url_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

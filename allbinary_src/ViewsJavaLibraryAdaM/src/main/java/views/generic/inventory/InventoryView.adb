@@ -126,7 +126,7 @@ package body views.generic_Id.inventory.InventoryView_Package is
    end view;
 
    procedure toXmlNode (This : in out InventoryView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := InventoryView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := InventoryView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -53,7 +53,7 @@ package body org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package is
    end getInstance;
 
    procedure getInstance (extension : Unbounded_String) is
-      Java_Result : constant FileFilter_Access := getInstance (extension);
+      Java_Result : constant FileFilter_Access := getInstance (extension => extension);
       pragma Unreferenced (Java_Result);
    begin
       null;

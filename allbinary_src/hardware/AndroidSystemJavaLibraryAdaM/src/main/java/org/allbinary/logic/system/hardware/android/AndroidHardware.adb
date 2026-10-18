@@ -134,28 +134,28 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
    end difference;
 
    procedure get (This : in out AndroidHardware; filePath : Unbounded_String) is
-      Java_Result : constant LineNumberReader_Access := AndroidHardware'Class (This).get (filePath);
+      Java_Result : constant LineNumberReader_Access := AndroidHardware'Class (This).get (filePath => filePath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getComponent (This : in out AndroidHardware; index : Integer) is
-      Java_Result : constant HardwareComponentInterface_Access := AndroidHardware'Class (This).getComponent (index);
+      Java_Result : constant HardwareComponentInterface_Access := AndroidHardware'Class (This).getComponent (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getComponent;
 
    procedure compareTo (This : in out AndroidHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) is
-      Java_Result : constant Boolean := AndroidHardware'Class (This).compareTo (hardwareInterface_Param);
+      Java_Result : constant Boolean := AndroidHardware'Class (This).compareTo (hardwareInterface_Param => hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
    procedure difference (This : in out AndroidHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) is
-      Java_Result : constant ABHashtable_Access := AndroidHardware'Class (This).difference (hardwareInterface_Param);
+      Java_Result : constant ABHashtable_Access := AndroidHardware'Class (This).difference (hardwareInterface_Param => hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

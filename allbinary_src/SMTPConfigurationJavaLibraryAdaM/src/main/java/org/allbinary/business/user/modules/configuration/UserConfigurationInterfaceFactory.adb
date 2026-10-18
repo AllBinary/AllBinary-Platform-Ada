@@ -83,14 +83,14 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    end getInstance;
 
    procedure getInstance (document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant UserConfigurationInterface_Access := getInstance (document_Param);
+      Java_Result : constant UserConfigurationInterface_Access := getInstance (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (userRole_Param : access UserRole_Package.UserRole'Class) is
-      Java_Result : constant UserConfigurationInterface_Access := getInstance (userRole_Param);
+      Java_Result : constant UserConfigurationInterface_Access := getInstance (userRole_Param => userRole_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

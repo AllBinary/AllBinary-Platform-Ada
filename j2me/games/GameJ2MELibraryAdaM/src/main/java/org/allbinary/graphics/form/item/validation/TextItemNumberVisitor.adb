@@ -76,7 +76,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_P
    end visit;
 
    procedure visit (This : in out TextItemNumberVisitor; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := TextItemNumberVisitor'Class (This).visit (anyType_Param);
+      Java_Result : constant Java_Object_Access := TextItemNumberVisitor'Class (This).visit (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -62,14 +62,14 @@ package body org.allbinary.animation.NullSpecialAnimationFactory_Package is
    end setInitialScale;
 
    procedure getInstance (This : in out NullSpecialAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := NullSpecialAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := NullSpecialAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstanceAnimation (This : in out NullSpecialAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) is
-      Java_Result : constant Animation_Access := NullSpecialAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param);
+      Java_Result : constant Animation_Access := NullSpecialAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param => animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

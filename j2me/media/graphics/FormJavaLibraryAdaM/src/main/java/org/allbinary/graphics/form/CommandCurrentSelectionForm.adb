@@ -252,21 +252,21 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
    end paintUnselectedItem;
 
    procedure append (This : in out CommandCurrentSelectionForm; item_Param : access ABCustomItem_Package.ABCustomItem'Class) is
-      Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).append (item_Param);
+      Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).append (item_Param => item_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end append;
 
    procedure paintItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; x : Integer; y : Integer) is
-      Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).paintItem (graphics_Param, index, item_Param, x, y);
+      Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).paintItem (graphics_Param => graphics_Param, index => index, item_Param => item_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end paintItem;
 
    procedure paintUnselectedItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; x : Integer; y : Integer) is
-      Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).paintUnselectedItem (graphics_Param, index, item_Param, x, y);
+      Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).paintUnselectedItem (graphics_Param => graphics_Param, index => index, item_Param => item_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

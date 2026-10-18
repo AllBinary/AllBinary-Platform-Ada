@@ -129,7 +129,7 @@ package body views.admin.user.EditValidationUserView_Package is
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out EditValidationUserView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := EditValidationUserView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := EditValidationUserView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

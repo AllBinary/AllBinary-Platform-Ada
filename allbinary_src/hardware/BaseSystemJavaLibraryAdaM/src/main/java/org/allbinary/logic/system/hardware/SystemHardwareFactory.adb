@@ -69,14 +69,14 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
    end getInstance;
 
    function static_toString return Unbounded_String is
-      systemHardwareFactory : SystemHardwareFactory_Access;
+      systemHardwareFactory_Var : SystemHardwareFactory_Access;
       osBuffer : StringMaker_Access;
    begin
-        systemHardwareFactory := SystemHardwareFactory_Package.getInstance;
+        systemHardwareFactory_Var := SystemHardwareFactory_Package.getInstance;
         osBuffer := StringMaker_Package.Create;
         osBuffer.append (To_Unbounded_String ("Hardware Info: " & ASCII.LF & ""));
-        if (systemHardwareFactory.hardwareInterface) /= (null) then
-            osBuffer.append (systemHardwareFactory.hardwareInterface.toString);
+        if (systemHardwareFactory_Var.hardwareInterface) /= (null) then
+            osBuffer.append (systemHardwareFactory_Var.hardwareInterface.toString);
         else
             osBuffer.append (StringUtil_Package.getInstance.NULL_STRING);
         end if;
@@ -84,7 +84,7 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
    end static_toString;
 
    procedure getInstance (This : in out SystemHardwareFactory; operatingSystemInterface_Param : access GenericOperatingSystem_Package.GenericOperatingSystem'Class) is
-      Java_Result : constant HardwareInterface_Access := SystemHardwareFactory'Class (This).getInstance (operatingSystemInterface_Param);
+      Java_Result : constant HardwareInterface_Access := SystemHardwareFactory'Class (This).getInstance (operatingSystemInterface_Param => operatingSystemInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

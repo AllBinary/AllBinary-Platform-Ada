@@ -44,8 +44,8 @@ package org.allbinary.business.category.CategoryInterface_Package is
    type CategoryInterface_Access_Array_Access_Array_Access is access all CategoryInterface_Access_Array_Access_Array;
    function getChildNodes (This : in out CategoryInterface) return BasicArrayList_Access is abstract;
    function addChildProperty (This : in out CategoryInterface; categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) return Boolean is abstract;
-   function addChild (This : in out CategoryInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return Boolean is abstract;
-   function removeChild (This : in out CategoryInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return Boolean is abstract;
+   function addChild (This : in out CategoryInterface; categoryInterface_Var_Param : access CategoryInterface_Package.CategoryInterface'Class) return Boolean is abstract;
+   function removeChild (This : in out CategoryInterface; categoryInterface_Var_Param : access CategoryInterface_Package.CategoryInterface'Class) return Boolean is abstract;
    function isLeaf (This : in out CategoryInterface) return Boolean is abstract;
    function getProperties (This : in out CategoryInterface) return CategoryPropertiesInterface_Access is abstract;
    procedure setProperties (This : in out CategoryInterface; categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) is abstract;

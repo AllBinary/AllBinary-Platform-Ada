@@ -105,21 +105,21 @@ package body org.allbinary.game.score.ScoreComparator_Package is
    end getLowTooHigh;
 
    procedure compare (This : in out ScoreComparator; recordOne : Short_Short_Integer_Array_Access; recordTwo : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Integer := ScoreComparator'Class (This).compare (recordOne, recordTwo);
+      Java_Result : constant Integer := ScoreComparator'Class (This).compare (recordOne => recordOne, recordTwo => recordTwo);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compare;
 
    procedure getHighTooLow (This : in out ScoreComparator; scoreOne : Long_Long_Integer; scoreTwo : Long_Long_Integer) is
-      Java_Result : constant Integer := ScoreComparator'Class (This).getHighTooLow (scoreOne, scoreTwo);
+      Java_Result : constant Integer := ScoreComparator'Class (This).getHighTooLow (scoreOne => scoreOne, scoreTwo => scoreTwo);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getHighTooLow;
 
    procedure getLowTooHigh (This : in out ScoreComparator; scoreOne : Long_Long_Integer; scoreTwo : Long_Long_Integer) is
-      Java_Result : constant Integer := ScoreComparator'Class (This).getLowTooHigh (scoreOne, scoreTwo);
+      Java_Result : constant Integer := ScoreComparator'Class (This).getLowTooHigh (scoreOne => scoreOne, scoreTwo => scoreTwo);
       pragma Unreferenced (Java_Result);
    begin
       null;

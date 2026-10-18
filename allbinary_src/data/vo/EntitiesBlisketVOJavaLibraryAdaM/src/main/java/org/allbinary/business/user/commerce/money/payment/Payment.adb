@@ -50,39 +50,39 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Payment'Class; payment_Param : access HashMap_Package.HashMap'Class) is
-      payment : constant HashMap_Access := HashMap_Access (payment_Param);
+   procedure Initialize (This : in out Payment'Class; payment_Var_Param : access HashMap_Package.HashMap'Class) is
+      payment_Var : constant HashMap_Access := HashMap_Access (payment_Var_Param);
       def : Unbounded_String;
    begin
       Initialize_Fields (This);
-        This.name := Java_Unbox (payment.get (PaymentData_Package.NAME));
-        This.type_Id := Java_Unbox (payment.get (PaymentData_Package.TYPE_Id));
-        This.expiration := Java_Unbox (payment.get (PaymentData_Package.EXPIRATION));
-        This.encryption := Java_Unbox (payment.get (EntryData_Package.getInstance.ENCRYPTION));
-        This.number := Java_Unbox (SuperCrypt_Package.Create (This.encryption.intValue).decrypt (Java_Unbox (payment.get (PaymentData_Package.NUMBER))));
-        This.id := Java_Unbox (payment.get (PaymentData_Package.ID));
-        def := Java_Unbox (payment.get (EntryData_Package.getInstance.DEFAULT));
+        This.name := Java_Unbox (payment_Var.get (PaymentData_Package.NAME));
+        This.type_Id := Java_Unbox (payment_Var.get (PaymentData_Package.TYPE_Id));
+        This.expiration := Java_Unbox (payment_Var.get (PaymentData_Package.EXPIRATION));
+        This.encryption := Java_Unbox (payment_Var.get (EntryData_Package.getInstance.ENCRYPTION));
+        This.number := Java_Unbox (SuperCrypt_Package.Create (This.encryption.intValue).decrypt (Java_Unbox (payment_Var.get (PaymentData_Package.NUMBER))));
+        This.id := Java_Unbox (payment_Var.get (PaymentData_Package.ID));
+        def := Java_Unbox (payment_Var.get (EntryData_Package.getInstance.DEFAULT));
         if ((def) /= (Null_Unbounded_String)) and then ((Java_Compare_To (def, EntryData_Package.getInstance.DEFAULT)) = (0)) then
             This.isDefault_Field := True;
         else
             This.isDefault_Field := False;
         end if;
-        This.tenderType := Java_Unbox (payment.get (PaymentData_Package.TENDERTYPE));
-        This.transactionType := Java_Unbox (payment.get (PaymentData_Package.TRANSACTIONTYPE));
-        This.aba := Java_Unbox (payment.get (PaymentData_Package.ABA));
-        This.account := Java_Unbox (payment.get (PaymentData_Package.ACCOUNT));
-        This.accountType := Java_Unbox (payment.get (PaymentData_Package.ACCOUNTTYPE));
-        This.authorizationCode := Java_Unbox (payment.get (PaymentData_Package.AUTHORIZATIONCODE));
-        This.checkNumber := Java_Unbox (payment.get (PaymentData_Package.CHECKNUMBER));
-        This.checkType := Java_Unbox (payment.get (PaymentData_Package.CHECKTYPE));
-        This.driversLicense := Java_Unbox (payment.get (PaymentData_Package.DRIVERSLICENSE));
-        This.magneticInkCheckReader := Java_Unbox (payment.get (PaymentData_Package.MAGNETICINKCHECKREADER));
+        This.tenderType := Java_Unbox (payment_Var.get (PaymentData_Package.TENDERTYPE));
+        This.transactionType := Java_Unbox (payment_Var.get (PaymentData_Package.TRANSACTIONTYPE));
+        This.aba := Java_Unbox (payment_Var.get (PaymentData_Package.ABA));
+        This.account := Java_Unbox (payment_Var.get (PaymentData_Package.ACCOUNT));
+        This.accountType := Java_Unbox (payment_Var.get (PaymentData_Package.ACCOUNTTYPE));
+        This.authorizationCode := Java_Unbox (payment_Var.get (PaymentData_Package.AUTHORIZATIONCODE));
+        This.checkNumber := Java_Unbox (payment_Var.get (PaymentData_Package.CHECKNUMBER));
+        This.checkType := Java_Unbox (payment_Var.get (PaymentData_Package.CHECKTYPE));
+        This.driversLicense := Java_Unbox (payment_Var.get (PaymentData_Package.DRIVERSLICENSE));
+        This.magneticInkCheckReader := Java_Unbox (payment_Var.get (PaymentData_Package.MAGNETICINKCHECKREADER));
    end Initialize;
 
-   function Create (payment_Param : access HashMap_Package.HashMap'Class) return Payment_Access is
+   function Create (payment_Var_Param : access HashMap_Package.HashMap'Class) return Payment_Access is
       This : constant Payment_Access := new Payment;
    begin
-      Payment_Package.Initialize (This.all, payment_Param);
+      Payment_Package.Initialize (This.all, payment_Var_Param);
       return This;
    end Create;
 
@@ -144,7 +144,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         if ((This.number) = (Null_Unbounded_String)) or else ((Java_Compare_To (This.number, stringUtil.EMPTY_STRING)) = (0)) then
             return aFalse;
         end if;
-        if (Length (This.number)) > (org_Package.allbinary.business.user.commerce.money.payment.types.CreditCardType.MAXLEN) then
+        if (Length (This.number)) > (org_Package.allbinary.business.user.commerce.money.payment_Var.types.CreditCardType.MAXLEN) then
             return aFalse;
         end if;
         return True;
@@ -341,7 +341,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
       node : Node_Access;
    begin
         hashMap := Payment'Class (This).toHashMap;
-        node := ModDomHelper_Package.createNameValueNodes (document, PaymentData_Package.PAYMENT, hashMap);
+        node := ModDomHelper_Package.createNameValueNodes (document, PaymentData_Package.PAYMENT_Var, hashMap);
         return node;
    end toXmlNode;
 
@@ -372,14 +372,14 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
    end validationInfo;
 
    procedure toXmlNode (This : in out Payment; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := Payment'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := Payment'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
    procedure toValidationInfoNode (This : in out Payment; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := Payment'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := Payment'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -204,21 +204,21 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
    end getAnimatedTile;
 
    procedure getCell (This : in out AllBinaryTiledLayer; col : Integer; row : Integer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getCell (col, row);
+      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getCell (col => col, row => row);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCell;
 
    procedure isOnTileLayer (This : in out AllBinaryTiledLayer; column : Integer; row : Integer) is
-      Java_Result : constant Boolean := AllBinaryTiledLayer'Class (This).isOnTileLayer (column, row);
+      Java_Result : constant Boolean := AllBinaryTiledLayer'Class (This).isOnTileLayer (column => column, row => row);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isOnTileLayer;
 
    procedure getAnimatedTile (This : in out AllBinaryTiledLayer; animationTileIndex : Integer) is
-      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getAnimatedTile (animationTileIndex);
+      Java_Result : constant Integer := AllBinaryTiledLayer'Class (This).getAnimatedTile (animationTileIndex => animationTileIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;

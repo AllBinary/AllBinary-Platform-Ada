@@ -231,7 +231,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemValida
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out BasicItemValidation; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := BasicItemValidation'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := BasicItemValidation'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

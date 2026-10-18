@@ -46,7 +46,7 @@ package body org.allbinary.view.CenterStaticViewPositionFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out CenterStaticViewPositionFactory; z : Integer) is
-      Java_Result : constant ViewPositionBase_Access := CenterStaticViewPositionFactory'Class (This).getInstance (z);
+      Java_Result : constant ViewPositionBase_Access := CenterStaticViewPositionFactory'Class (This).getInstance (z => z);
       pragma Unreferenced (Java_Result);
    begin
       null;

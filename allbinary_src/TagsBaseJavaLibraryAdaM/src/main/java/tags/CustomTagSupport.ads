@@ -35,7 +35,7 @@ package tags.CustomTagSupport_Package is
    type CustomTagSupport_Access_Array_Access_Array is array (Natural range <>) of CustomTagSupport_Access_Array_Access;
    type CustomTagSupport_Access_Array_Access_Array_Access is access all CustomTagSupport_Access_Array_Access_Array;
 
-   type CustomTagSupport is new TagSupport with record
+   type CustomTagSupport is new Java_Object with record
       commonStrings : CommonStrings_Access;
       tagStrings : TagStrings_Access;
    end record;

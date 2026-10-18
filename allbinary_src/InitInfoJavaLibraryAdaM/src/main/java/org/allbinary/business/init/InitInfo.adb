@@ -249,21 +249,21 @@ package body org.allbinary.business.init.InitInfo_Package is
    end toHashMap;
 
    procedure isMainPathValid (This : in out InitInfo; abPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant Boolean := InitInfo'Class (This).isMainPathValid (abPath_Param);
+      Java_Result : constant Boolean := InitInfo'Class (This).isMainPathValid (abPath_Param => abPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isMainPathValid;
 
    procedure isTestHtmlPathValid (This : in out InitInfo; abPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant Boolean := InitInfo'Class (This).isTestHtmlPathValid (abPath_Param);
+      Java_Result : constant Boolean := InitInfo'Class (This).isTestHtmlPathValid (abPath_Param => abPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTestHtmlPathValid;
 
    procedure isTestingValid (This : in out InitInfo; testing : Unbounded_String) is
-      Java_Result : constant Boolean := InitInfo'Class (This).isTestingValid (testing);
+      Java_Result : constant Boolean := InitInfo'Class (This).isTestingValid (testing => testing);
       pragma Unreferenced (Java_Result);
    begin
       null;

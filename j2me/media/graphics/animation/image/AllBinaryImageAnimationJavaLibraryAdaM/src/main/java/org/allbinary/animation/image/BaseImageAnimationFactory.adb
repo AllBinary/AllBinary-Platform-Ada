@@ -123,14 +123,14 @@ package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
    end toString;
 
    procedure createFactoryBase (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant BaseImageAnimationFactory_Access := createFactoryBase (image_Param, sequenceArray, width, height, animationBehaviorFactory_Param);
+      Java_Result : constant BaseImageAnimationFactory_Access := createFactoryBase (image_Param => image_Param, sequenceArray => sequenceArray, width => width, height => height, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryBase;
 
    procedure getInstance (This : in out BaseImageAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := BaseImageAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := BaseImageAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

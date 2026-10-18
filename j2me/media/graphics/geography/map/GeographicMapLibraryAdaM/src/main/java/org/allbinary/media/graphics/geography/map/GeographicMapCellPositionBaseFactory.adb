@@ -42,7 +42,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    end getInstance;
 
    procedure getInstance (This : in out GeographicMapCellPositionBaseFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is
-      Java_Result : constant BasicGeographicMapCellPositionFactory_Access := GeographicMapCellPositionBaseFactory'Class (This).getInstance (geographicMapInterface_Param);
+      Java_Result : constant BasicGeographicMapCellPositionFactory_Access := GeographicMapCellPositionBaseFactory'Class (This).getInstance (geographicMapInterface_Param => geographicMapInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

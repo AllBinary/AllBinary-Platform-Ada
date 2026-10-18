@@ -167,7 +167,7 @@ package body views.generic_Id.basket.BasketView_Package is
    end view;
 
    procedure toXmlNode (This : in out BasketView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := BasketView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := BasketView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

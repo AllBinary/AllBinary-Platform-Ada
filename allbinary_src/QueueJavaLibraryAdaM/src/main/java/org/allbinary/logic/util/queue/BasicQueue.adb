@@ -61,7 +61,7 @@ package body org.allbinary.logic.util.queue.BasicQueue_Package is
    end removeLast;
 
    procedure offer (This : in out BasicQueue; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := BasicQueue'Class (This).offer (anyType_Param);
+      Java_Result : constant Boolean := BasicQueue'Class (This).offer (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

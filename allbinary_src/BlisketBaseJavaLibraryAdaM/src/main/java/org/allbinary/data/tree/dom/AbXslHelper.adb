@@ -76,21 +76,21 @@ package body org.allbinary.data.tree.dom.AbXslHelper_Package is
    end translate;
 
    procedure translate (This : in out AbXslHelper; xslFile_Param : access AbFile_Package.AbFile'Class; xmlFile_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant Unbounded_String := AbXslHelper'Class (This).translate (xslFile_Param, xmlFile_Param);
+      Java_Result : constant Unbounded_String := AbXslHelper'Class (This).translate (xslFile_Param => xslFile_Param, xmlFile_Param => xmlFile_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end translate;
 
    procedure translate (This : in out AbXslHelper; xslPath_Param : access AbPath_Package.AbPath'Class; xmlPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant Unbounded_String := AbXslHelper'Class (This).translate (xslPath_Param, xmlPath_Param);
+      Java_Result : constant Unbounded_String := AbXslHelper'Class (This).translate (xslPath_Param => xslPath_Param, xmlPath_Param => xmlPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end translate;
 
    procedure translate (This : in out AbXslHelper; xsltFilePath : Unbounded_String; xmlFilePath : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbXslHelper'Class (This).translate (xsltFilePath, xmlFilePath);
+      Java_Result : constant Unbounded_String := AbXslHelper'Class (This).translate (xsltFilePath => xsltFilePath, xmlFilePath => xmlFilePath);
       pragma Unreferenced (Java_Result);
    begin
       null;

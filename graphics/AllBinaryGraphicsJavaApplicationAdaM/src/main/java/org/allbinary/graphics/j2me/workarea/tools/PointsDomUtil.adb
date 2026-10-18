@@ -128,14 +128,14 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
    end getPointNode;
 
    procedure toDom (This : in out PointsDomUtil; canvasDom_Param : access CanvasDom_Package.CanvasDom'Class; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Node_Access := PointsDomUtil'Class (This).toDom (canvasDom_Param, pointVector_Param);
+      Java_Result : constant Node_Access := PointsDomUtil'Class (This).toDom (canvasDom_Param => canvasDom_Param, pointVector_Param => pointVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toDom;
 
    procedure getPointNode (This : in out PointsDomUtil; point_Param : access GPoint_Package.GPoint'Class; pointName : Unbounded_String) is
-      Java_Result : constant Node_Access := PointsDomUtil'Class (This).getPointNode (point_Param, pointName);
+      Java_Result : constant Node_Access := PointsDomUtil'Class (This).getPointNode (point_Param => point_Param, pointName => pointName);
       pragma Unreferenced (Java_Result);
    begin
       null;

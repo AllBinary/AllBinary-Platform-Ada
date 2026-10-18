@@ -86,14 +86,14 @@ package body org.allbinary.graphics.CellPosition_Package is
    end getId;
 
    procedure toStringCellPosition (basicGeographicMapCellPosition_Param : access CellPosition_Package.CellPosition'Class) is
-      Java_Result : constant Unbounded_String := toStringCellPosition (basicGeographicMapCellPosition_Param);
+      Java_Result : constant Unbounded_String := toStringCellPosition (basicGeographicMapCellPosition_Param => basicGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toStringCellPosition;
 
    procedure toStringColRow (i_column : Integer; i_row : Integer) is
-      Java_Result : constant Unbounded_String := toStringColRow (i_column, i_row);
+      Java_Result : constant Unbounded_String := toStringColRow (i_column => i_column, i_row => i_row);
       pragma Unreferenced (Java_Result);
    begin
       null;

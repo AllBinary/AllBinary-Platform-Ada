@@ -60,7 +60,7 @@ package body org.allbinary.image.PreResourceImageUtil_Package is
    end update;
 
    procedure encapsulate (This : in out PreResourceImageUtil; image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant Image_Access := PreResourceImageUtil'Class (This).encapsulate (image_Param);
+      Java_Result : constant Image_Access := PreResourceImageUtil'Class (This).encapsulate (image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

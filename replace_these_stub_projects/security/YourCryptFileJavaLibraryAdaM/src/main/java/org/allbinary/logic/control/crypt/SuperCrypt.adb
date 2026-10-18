@@ -34,14 +34,14 @@ package body org.allbinary.logic.control.crypt.SuperCrypt_Package is
    end decrypt;
 
    procedure encrypt (This : in out SuperCrypt; value : Unbounded_String) is
-      Java_Result : constant Unbounded_String := SuperCrypt'Class (This).encrypt (value);
+      Java_Result : constant Unbounded_String := SuperCrypt'Class (This).encrypt (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end encrypt;
 
    procedure decrypt (This : in out SuperCrypt; value : Unbounded_String) is
-      Java_Result : constant Unbounded_String := SuperCrypt'Class (This).decrypt (value);
+      Java_Result : constant Unbounded_String := SuperCrypt'Class (This).decrypt (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;

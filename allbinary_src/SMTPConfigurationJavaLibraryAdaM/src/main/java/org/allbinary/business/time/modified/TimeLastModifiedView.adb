@@ -76,7 +76,7 @@ package body org.allbinary.business.time.modified.TimeLastModifiedView_Package i
    end setTimeLastModified;
 
    procedure toXmlNode (This : in out TimeLastModifiedView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := TimeLastModifiedView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := TimeLastModifiedView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

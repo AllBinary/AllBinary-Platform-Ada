@@ -169,35 +169,35 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
    end export;
 
    procedure translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class; streamResult_Param : access StreamResult_Package.StreamResult'Class) is
-      Java_Result : constant OutputStream_Access := XslHelper'Class (This).translate (xsltStreamSource_Param, xmlStreamSource_Param, streamResult_Param);
+      Java_Result : constant OutputStream_Access := XslHelper'Class (This).translate (xsltStreamSource_Param => xsltStreamSource_Param, xmlStreamSource_Param => xmlStreamSource_Param, streamResult_Param => streamResult_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end translate;
 
    procedure translate (This : in out XslHelper; resolver_Param : access URIResolver_Package.URIResolver'Class; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class; streamResult_Param : access StreamResult_Package.StreamResult'Class) is
-      Java_Result : constant OutputStream_Access := XslHelper'Class (This).translate (resolver_Param, xsltStreamSource_Param, xmlStreamSource_Param, streamResult_Param);
+      Java_Result : constant OutputStream_Access := XslHelper'Class (This).translate (resolver_Param => resolver_Param, xsltStreamSource_Param => xsltStreamSource_Param, xmlStreamSource_Param => xmlStreamSource_Param, streamResult_Param => streamResult_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end translate;
 
    procedure translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlDocument_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Unbounded_String := XslHelper'Class (This).translate (xsltStreamSource_Param, xmlDocument_Param);
+      Java_Result : constant Unbounded_String := XslHelper'Class (This).translate (xsltStreamSource_Param => xsltStreamSource_Param, xmlDocument_Param => xmlDocument_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end translate;
 
    procedure translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class) is
-      Java_Result : constant Unbounded_String := XslHelper'Class (This).translate (xsltStreamSource_Param, xmlStreamSource_Param);
+      Java_Result : constant Unbounded_String := XslHelper'Class (This).translate (xsltStreamSource_Param => xsltStreamSource_Param, xmlStreamSource_Param => xmlStreamSource_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end translate;
 
    procedure translate (This : in out XslHelper; resolver_Param : access URIResolver_Package.URIResolver'Class; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class) is
-      Java_Result : constant Unbounded_String := XslHelper'Class (This).translate (resolver_Param, xsltStreamSource_Param, xmlStreamSource_Param);
+      Java_Result : constant Unbounded_String := XslHelper'Class (This).translate (resolver_Param => resolver_Param, xsltStreamSource_Param => xsltStreamSource_Param, xmlStreamSource_Param => xmlStreamSource_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

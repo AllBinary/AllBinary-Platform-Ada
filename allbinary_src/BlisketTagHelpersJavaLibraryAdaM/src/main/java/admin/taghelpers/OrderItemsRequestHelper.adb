@@ -114,7 +114,7 @@ package body admin.taghelpers.OrderItemsRequestHelper_Package is
    end setOrderStatus;
 
    procedure setOrderStatus (This : in out OrderItemsRequestHelper; newStatus_Param : Unbounded_String) is
-      Java_Result : constant Unbounded_String := OrderItemsRequestHelper'Class (This).setOrderStatus (newStatus_Param);
+      Java_Result : constant Unbounded_String := OrderItemsRequestHelper'Class (This).setOrderStatus (newStatus_Param => newStatus_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

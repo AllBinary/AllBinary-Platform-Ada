@@ -1058,35 +1058,35 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    end setContextConfigurationInterface;
 
    procedure isColumn (This : in out StoreFront; columnName : Unbounded_String) is
-      Java_Result : constant Boolean := StoreFront'Class (This).isColumn (columnName);
+      Java_Result : constant Boolean := StoreFront'Class (This).isColumn (columnName => columnName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isColumn;
 
    procedure createPath (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant AbPath_Access := StoreFront'Class (This).createPath (key, hashMap_Param);
+      Java_Result : constant AbPath_Access := StoreFront'Class (This).createPath (key => key, hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPath;
 
    procedure createPath (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant AbPath_Access := StoreFront'Class (This).createPath (append, key, hashMap_Param);
+      Java_Result : constant AbPath_Access := StoreFront'Class (This).createPath (append => append, key => key, hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPath;
 
    procedure get (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant Unbounded_String := StoreFront'Class (This).get (key, hashMap_Param);
+      Java_Result : constant Unbounded_String := StoreFront'Class (This).get (key => key, hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure create (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant Unbounded_String := StoreFront'Class (This).create (append, key, hashMap_Param);
+      Java_Result : constant Unbounded_String := StoreFront'Class (This).create (append => append, key => key, hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

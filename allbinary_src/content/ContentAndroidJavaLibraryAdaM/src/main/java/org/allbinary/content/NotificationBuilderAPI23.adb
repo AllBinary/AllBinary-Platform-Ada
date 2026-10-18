@@ -50,7 +50,7 @@ package body org.allbinary.content.NotificationBuilderAPI23_Package is
    end build;
 
    procedure build (This : in out NotificationBuilderAPI23; context_Param : access Context_Package.Context'Class; command_Param : access Command_Package.Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent_Package.PendingIntent'Class) is
-      Java_Result : constant Parcelable_Access := NotificationBuilderAPI23'Class (This).build (context_Param, command_Param, message, integer_Id, pendingIntent_Param);
+      Java_Result : constant Parcelable_Access := NotificationBuilderAPI23'Class (This).build (context_Param => context_Param, command_Param => command_Param, message => message, integer_Id => integer_Id, pendingIntent_Param => pendingIntent_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

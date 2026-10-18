@@ -129,98 +129,98 @@ package body org.allbinary.logic.system.hardware.windows.WindowsHardware_Package
    end difference;
 
    procedure getMultimedia (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant MediaInterface_Access := WindowsHardware'Class (This).getMultimedia (index);
+      Java_Result : constant MediaInterface_Access := WindowsHardware'Class (This).getMultimedia (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getMultimedia;
 
    procedure getBridge (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant BridgeInterface_Access := WindowsHardware'Class (This).getBridge (index);
+      Java_Result : constant BridgeInterface_Access := WindowsHardware'Class (This).getBridge (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getBridge;
 
    procedure getCpu (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant CpuInterface_Access := WindowsHardware'Class (This).getCpu (index);
+      Java_Result : constant CpuInterface_Access := WindowsHardware'Class (This).getCpu (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCpu;
 
    procedure getEthernet (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant EthernetInterface_Access := WindowsHardware'Class (This).getEthernet (index);
+      Java_Result : constant EthernetInterface_Access := WindowsHardware'Class (This).getEthernet (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getEthernet;
 
    procedure getFireWire (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant FireWireInterface_Access := WindowsHardware'Class (This).getFireWire (index);
+      Java_Result : constant FireWireInterface_Access := WindowsHardware'Class (This).getFireWire (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFireWire;
 
    procedure getHardDriveController (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant HardDriveControllerInterface_Access := WindowsHardware'Class (This).getHardDriveController (index);
+      Java_Result : constant HardDriveControllerInterface_Access := WindowsHardware'Class (This).getHardDriveController (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getHardDriveController;
 
    procedure getHardDrive (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant HardDriveInterface_Access := WindowsHardware'Class (This).getHardDrive (index);
+      Java_Result : constant HardDriveInterface_Access := WindowsHardware'Class (This).getHardDrive (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getHardDrive;
 
    procedure getMachineAccessControlAddress (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant MachineAccessControlAddressInterface_Access := WindowsHardware'Class (This).getMachineAccessControlAddress (index);
+      Java_Result : constant MachineAccessControlAddressInterface_Access := WindowsHardware'Class (This).getMachineAccessControlAddress (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getMachineAccessControlAddress;
 
    procedure getMonitor (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant MonitorInterface_Access := WindowsHardware'Class (This).getMonitor (index);
+      Java_Result : constant MonitorInterface_Access := WindowsHardware'Class (This).getMonitor (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getMonitor;
 
    procedure getUsb (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant UsbInterface_Access := WindowsHardware'Class (This).getUsb (index);
+      Java_Result : constant UsbInterface_Access := WindowsHardware'Class (This).getUsb (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getUsb;
 
    procedure getVideo (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant VideoInterface_Access := WindowsHardware'Class (This).getVideo (index);
+      Java_Result : constant VideoInterface_Access := WindowsHardware'Class (This).getVideo (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getVideo;
 
    procedure getComponent (This : in out WindowsHardware; index : Integer) is
-      Java_Result : constant HardwareComponentInterface_Access := WindowsHardware'Class (This).getComponent (index);
+      Java_Result : constant HardwareComponentInterface_Access := WindowsHardware'Class (This).getComponent (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getComponent;
 
    procedure compareTo (This : in out WindowsHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) is
-      Java_Result : constant Boolean := WindowsHardware'Class (This).compareTo (hardwareInterface_Param);
+      Java_Result : constant Boolean := WindowsHardware'Class (This).compareTo (hardwareInterface_Param => hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
    procedure difference (This : in out WindowsHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) is
-      Java_Result : constant ABHashtable_Access := WindowsHardware'Class (This).difference (hardwareInterface_Param);
+      Java_Result : constant ABHashtable_Access := WindowsHardware'Class (This).difference (hardwareInterface_Param => hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

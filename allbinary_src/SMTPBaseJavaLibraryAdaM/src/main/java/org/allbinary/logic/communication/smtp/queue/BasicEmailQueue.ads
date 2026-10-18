@@ -43,7 +43,7 @@ package org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package is
       logUtil : LogUtil_Access;
    end record;
    instance : BasicEmailQueue_Access;
-   basicEmailQueue : BasicEmailQueue_Access;
+   basicEmailQueue_Var : BasicEmailQueue_Access;
 
    procedure Initialize (This : in out BasicEmailQueue'Class);
    function Create return BasicEmailQueue_Access;

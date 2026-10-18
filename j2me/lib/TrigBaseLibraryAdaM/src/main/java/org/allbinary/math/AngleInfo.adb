@@ -91,7 +91,7 @@ package body org.allbinary.math.AngleInfo_Package is
    end toString;
 
    procedure getInstance (angleIncrement : Short_Integer) is
-      Java_Result : constant AngleInfo_Access := getInstance (angleIncrement);
+      Java_Result : constant AngleInfo_Access := getInstance (angleIncrement => angleIncrement);
       pragma Unreferenced (Java_Result);
    begin
       null;

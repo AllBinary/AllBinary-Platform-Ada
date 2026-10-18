@@ -52,7 +52,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BasicGeographi
    end getInstance;
 
    procedure getInstance (This : in out BasicGeographicMapFactory; raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class; tiledLayerFactoryInterface_Param : access AllBinaryTiledLayerFactoryInterface_Package.AllBinaryTiledLayerFactoryInterface'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface_Package.GeographicMapCellPositionFactoryInterface'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory_Package.GeographicMapCellTypeFactory'Class) is
-      Java_Result : constant BasicGeographicMap_Access := BasicGeographicMapFactory'Class (This).getInstance (raceTrackInfo_Param, raceTrackData_Param, tiledLayerFactoryInterface_Param, geographicMapCellPositionFactoryInterface_Param, geographicMapCellTypeFactory_Param);
+      Java_Result : constant BasicGeographicMap_Access := BasicGeographicMapFactory'Class (This).getInstance (raceTrackInfo_Param => raceTrackInfo_Param, raceTrackData_Param => raceTrackData_Param, tiledLayerFactoryInterface_Param => tiledLayerFactoryInterface_Param, geographicMapCellPositionFactoryInterface_Param => geographicMapCellPositionFactoryInterface_Param, geographicMapCellTypeFactory_Param => geographicMapCellTypeFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

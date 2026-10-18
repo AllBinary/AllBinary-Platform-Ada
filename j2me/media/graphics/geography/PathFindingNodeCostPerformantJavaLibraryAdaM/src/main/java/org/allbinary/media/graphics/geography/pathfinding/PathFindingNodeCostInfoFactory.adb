@@ -67,7 +67,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
    end getTotalCost;
 
    procedure getTotalCost (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Long_Long_Integer := PathFindingNodeCostInfoFactory'Class (This).getTotalCost (geographicMapInterface_Param, comingFromGeographicMapCellPosition_Param, geographicMapCellPosition_Param);
+      Java_Result : constant Long_Long_Integer := PathFindingNodeCostInfoFactory'Class (This).getTotalCost (geographicMapInterface_Param => geographicMapInterface_Param, comingFromGeographicMapCellPosition_Param => comingFromGeographicMapCellPosition_Param, geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

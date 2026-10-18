@@ -34,7 +34,7 @@ package org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
    type Grid_Access_Array_Access_Array_Access is access all Grid_Access_Array_Access_Array;
 
    type Grid is new Java_Object with record
-      grid : GPoint_Access;
+      grid_Var : GPoint_Access;
       isGridOn_Field : Boolean;
       isGridPossible_Field : Boolean;
       zoom : Integer;
@@ -43,8 +43,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
 
    procedure Initialize (This : in out Grid'Class);
    function Create return Grid_Access;
-   procedure Initialize (This : in out Grid'Class; grid_Param : access Grid_Package.Grid'Class);
-   function Create (grid_Param : access Grid_Package.Grid'Class) return Grid_Access;
+   procedure Initialize (This : in out Grid'Class; grid_Var_Param : access Grid_Package.Grid'Class);
+   function Create (grid_Var_Param : access Grid_Package.Grid'Class) return Grid_Access;
    function isGridOn (This : in out Grid) return Boolean;
    function isGridPossible (This : in out Grid) return Boolean;
    function getGrid (This : in out Grid) return GPoint_Access;

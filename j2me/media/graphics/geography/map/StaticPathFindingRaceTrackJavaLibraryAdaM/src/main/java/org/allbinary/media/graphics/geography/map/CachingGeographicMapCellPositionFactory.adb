@@ -58,7 +58,7 @@ package body org.allbinary.media.graphics.geography.map.CachingGeographicMapCell
    end createInstance;
 
    procedure createInstance (This : in out CachingGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer; width : Integer; height : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := CachingGeographicMapCellPositionFactory'Class (This).createInstance (i_column, i_row, width, height);
+      Java_Result : constant GeographicMapCellPosition_Access := CachingGeographicMapCellPositionFactory'Class (This).createInstance (i_column => i_column, i_row => i_row, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;

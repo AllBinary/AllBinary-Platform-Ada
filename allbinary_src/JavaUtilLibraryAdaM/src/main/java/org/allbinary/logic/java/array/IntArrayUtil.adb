@@ -104,21 +104,21 @@ package body org.allbinary.logic.java.array_Id.IntArrayUtil_Package is
    end toString;
 
    procedure toString (array_Id : Integer_Array_Access) is
-      Java_Result : constant Unbounded_String := toString (array_Id);
+      Java_Result : constant Unbounded_String := toString (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toString;
 
    procedure toString (array_Id : Integer_Array_Access_Array_Access) is
-      Java_Result : constant Unbounded_String := toString (array_Id);
+      Java_Result : constant Unbounded_String := toString (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toString;
 
    procedure toString (array_Id : Integer_Array_Access_Array_Access_Array_Access) is
-      Java_Result : constant Unbounded_String := toString (array_Id);
+      Java_Result : constant Unbounded_String := toString (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

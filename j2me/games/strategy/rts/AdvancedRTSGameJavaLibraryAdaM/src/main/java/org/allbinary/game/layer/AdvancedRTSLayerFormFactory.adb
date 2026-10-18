@@ -67,7 +67,7 @@ package body org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out AdvancedRTSLayerFormFactory; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
-      Java_Result : constant ScrollSelectionForm_Access := AdvancedRTSLayerFormFactory'Class (This).getInstance (rtsLayer_Param);
+      Java_Result : constant ScrollSelectionForm_Access := AdvancedRTSLayerFormFactory'Class (This).getInstance (rtsLayer_Param => rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

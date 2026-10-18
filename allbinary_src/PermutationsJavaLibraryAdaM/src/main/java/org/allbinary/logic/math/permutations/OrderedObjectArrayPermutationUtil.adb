@@ -129,7 +129,7 @@ package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutation
    end main;
 
    procedure factorial (This : in out OrderedObjectArrayPermutationUtil; dataLength : Integer) is
-      Java_Result : constant Long_Long_Integer := OrderedObjectArrayPermutationUtil'Class (This).factorial (dataLength);
+      Java_Result : constant Long_Long_Integer := OrderedObjectArrayPermutationUtil'Class (This).factorial (dataLength => dataLength);
       pragma Unreferenced (Java_Result);
    begin
       null;

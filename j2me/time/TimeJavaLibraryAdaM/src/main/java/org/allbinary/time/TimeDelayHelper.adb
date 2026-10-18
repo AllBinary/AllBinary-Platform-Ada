@@ -186,56 +186,56 @@ package body org.allbinary.time.TimeDelayHelper_Package is
    end toString;
 
    procedure isTimeSinceTNT (This : in out TimeDelayHelper; delay_Id : Integer) is
-      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isTimeSinceTNT (delay_Id);
+      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isTimeSinceTNT (delay_Id => delay_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTimeSinceTNT;
 
    procedure isTime (This : in out TimeDelayHelper; currentTime : Long_Long_Integer) is
-      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isTime (currentTime);
+      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isTime (currentTime => currentTime);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTime;
 
    procedure isTimeWithoutReset (This : in out TimeDelayHelper; currentTime : Long_Long_Integer) is
-      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isTimeWithoutReset (currentTime);
+      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isTimeWithoutReset (currentTime => currentTime);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTimeWithoutReset;
 
    procedure isTimeSince (This : in out TimeDelayHelper; delay_Id : Integer; currentTime : Long_Long_Integer) is
-      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isTimeSince (delay_Id, currentTime);
+      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isTimeSince (delay_Id => delay_Id, currentTime => currentTime);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTimeSince;
 
    procedure getElapsed (This : in out TimeDelayHelper; currentTime : Long_Long_Integer) is
-      Java_Result : constant Long_Long_Integer := TimeDelayHelper'Class (This).getElapsed (currentTime);
+      Java_Result : constant Long_Long_Integer := TimeDelayHelper'Class (This).getElapsed (currentTime => currentTime);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getElapsed;
 
    procedure isElapsed (This : in out TimeDelayHelper; currentTime : Long_Long_Integer; time : Long_Long_Integer) is
-      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isElapsed (currentTime, time);
+      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isElapsed (currentTime => currentTime, time => time);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isElapsed;
 
    procedure isElapsedTNT (This : in out TimeDelayHelper; time : Long_Long_Integer) is
-      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isElapsedTNT (time);
+      Java_Result : constant Boolean := TimeDelayHelper'Class (This).isElapsedTNT (time => time);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isElapsedTNT;
 
    procedure toStringAt (This : in out TimeDelayHelper; currentTime : Long_Long_Integer) is
-      Java_Result : constant Unbounded_String := TimeDelayHelper'Class (This).toStringAt (currentTime);
+      Java_Result : constant Unbounded_String := TimeDelayHelper'Class (This).toStringAt (currentTime => currentTime);
       pragma Unreferenced (Java_Result);
    begin
       null;

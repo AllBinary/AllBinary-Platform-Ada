@@ -71,21 +71,21 @@ package body org.allbinary.util.ABStack_Package is
    end removeElement;
 
    procedure push (This : in out ABStack; item_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := ABStack'Class (This).push (item_Param);
+      Java_Result : constant Java_Object_Access := ABStack'Class (This).push (item_Param => item_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end push;
 
    procedure search (This : in out ABStack; obj_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := ABStack'Class (This).search (obj_Param);
+      Java_Result : constant Integer := ABStack'Class (This).search (obj_Param => obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
    procedure removeElement (This : in out ABStack; obj_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := ABStack'Class (This).removeElement (obj_Param);
+      Java_Result : constant Boolean := ABStack'Class (This).removeElement (obj_Param => obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -327,7 +327,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
    end drop;
 
    procedure get (This : in out StreetAddressesEntity; index : Integer) is
-      Java_Result : constant StreetAddress_Access := StreetAddressesEntity'Class (This).get (index);
+      Java_Result : constant StreetAddress_Access := StreetAddressesEntity'Class (This).get (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

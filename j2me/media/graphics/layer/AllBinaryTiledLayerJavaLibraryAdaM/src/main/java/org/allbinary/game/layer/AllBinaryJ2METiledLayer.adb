@@ -163,14 +163,14 @@ package body org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
    end getAnimatedTile;
 
    procedure getCell (This : in out AllBinaryJ2METiledLayer; col : Integer; row : Integer) is
-      Java_Result : constant Integer := AllBinaryJ2METiledLayer'Class (This).getCell (col, row);
+      Java_Result : constant Integer := AllBinaryJ2METiledLayer'Class (This).getCell (col => col, row => row);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCell;
 
    procedure getAnimatedTile (This : in out AllBinaryJ2METiledLayer; animationTileIndex : Integer) is
-      Java_Result : constant Integer := AllBinaryJ2METiledLayer'Class (This).getAnimatedTile (animationTileIndex);
+      Java_Result : constant Integer := AllBinaryJ2METiledLayer'Class (This).getAnimatedTile (animationTileIndex => animationTileIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -48,7 +48,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_
    end getChangeEvent;
 
    procedure getChangeEvent (inputRobotInterface_Param : access InputRobotInterface_Package.InputRobotInterface'Class) is
-      Java_Result : constant InputAutomationRobotChangeEvent_Access := getChangeEvent (inputRobotInterface_Param);
+      Java_Result : constant InputAutomationRobotChangeEvent_Access := getChangeEvent (inputRobotInterface_Param => inputRobotInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

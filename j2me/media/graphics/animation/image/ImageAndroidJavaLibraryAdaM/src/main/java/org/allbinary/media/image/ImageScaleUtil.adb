@@ -156,28 +156,28 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
    end scale;
 
    procedure createImage2 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) is
-      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage2 (imageCache_Param, originalImage_Param, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached);
+      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage2 (imageCache_Param => imageCache_Param, originalImage_Param => originalImage_Param, scaleNominatorX => scaleNominatorX, scaleDenominatorX => scaleDenominatorX, scaleNominatorY => scaleNominatorY, scaleDenominatorY => scaleDenominatorY, cached => cached);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage2;
 
    procedure createImage3 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) is
-      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage3 (imageCache_Param, originalImage_Param, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, mutable);
+      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage3 (imageCache_Param => imageCache_Param, originalImage_Param => originalImage_Param, scaleNominatorX => scaleNominatorX, scaleDenominatorX => scaleDenominatorX, scaleNominatorY => scaleNominatorY, scaleDenominatorY => scaleDenominatorY, cached => cached, mutable => mutable);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage3;
 
    procedure createImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleX : Float; scaleY : Float; cached : Boolean) is
-      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage (imageCache_Param, originalImage_Param, scaleX, scaleY, cached);
+      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage (imageCache_Param => imageCache_Param, originalImage_Param => originalImage_Param, scaleX => scaleX, scaleY => scaleY, cached => cached);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage;
 
    procedure getScaledImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleX : Float; scaleY : Float; width : Integer; height : Integer; cached : Boolean) is
-      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).getScaledImage (imageCache_Param, originalImage_Param, scaleX, scaleY, width, height, cached);
+      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).getScaledImage (imageCache_Param => imageCache_Param, originalImage_Param => originalImage_Param, scaleX => scaleX, scaleY => scaleY, width => width, height => height, cached => cached);
       pragma Unreferenced (Java_Result);
    begin
       null;

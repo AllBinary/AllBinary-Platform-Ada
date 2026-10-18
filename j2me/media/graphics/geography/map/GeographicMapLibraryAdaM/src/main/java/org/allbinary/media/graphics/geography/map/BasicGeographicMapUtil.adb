@@ -153,35 +153,35 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_P
    end setPosition;
 
    procedure getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Integer := BasicGeographicMapUtil'Class (This).getBorderingRow (direction, oldGeographicMapCellPosition_Param);
+      Java_Result : constant Integer := BasicGeographicMapUtil'Class (This).getBorderingRow (direction => direction, oldGeographicMapCellPosition_Param => oldGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getBorderingRow;
 
    procedure getBorderingColumn (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Integer := BasicGeographicMapUtil'Class (This).getBorderingColumn (direction, oldGeographicMapCellPosition_Param);
+      Java_Result : constant Integer := BasicGeographicMapUtil'Class (This).getBorderingColumn (direction => direction, oldGeographicMapCellPosition_Param => oldGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getBorderingColumn;
 
    procedure isSameCellPosition (This : in out BasicGeographicMapUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := BasicGeographicMapUtil'Class (This).isSameCellPosition (fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param);
+      Java_Result : constant Boolean := BasicGeographicMapUtil'Class (This).isSameCellPosition (fromGeographicMapCellPosition_Param => fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param => toGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isSameCellPosition;
 
    procedure createAllBinaryTiledLayerArray (This : in out BasicGeographicMapUtil; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access) is
-      Java_Result : constant Layer_Access_Array_Access := BasicGeographicMapUtil'Class (This).createAllBinaryTiledLayerArray (geographicMapInterfaceArray);
+      Java_Result : constant Layer_Access_Array_Access := BasicGeographicMapUtil'Class (This).createAllBinaryTiledLayerArray (geographicMapInterfaceArray => geographicMapInterfaceArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createAllBinaryTiledLayerArray;
 
    procedure getAllBinaryTiledLayerArray (This : in out BasicGeographicMapUtil; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; tiledLayerArray : Layer_Access_Array_Access; startIndex : Integer) is
-      Java_Result : constant Layer_Access_Array_Access := BasicGeographicMapUtil'Class (This).getAllBinaryTiledLayerArray (geographicMapInterfaceArray, tiledLayerArray, startIndex);
+      Java_Result : constant Layer_Access_Array_Access := BasicGeographicMapUtil'Class (This).getAllBinaryTiledLayerArray (geographicMapInterfaceArray => geographicMapInterfaceArray, tiledLayerArray => tiledLayerArray, startIndex => startIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;

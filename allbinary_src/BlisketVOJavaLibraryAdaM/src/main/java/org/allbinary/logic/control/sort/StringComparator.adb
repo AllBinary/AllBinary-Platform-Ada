@@ -47,7 +47,7 @@ package body org.allbinary.logic.control.sort.StringComparator_Package is
    end compare;
 
    procedure compare (This : in out StringComparator; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := StringComparator'Class (This).compare (anyType_Param, object2_Param);
+      Java_Result : constant Integer := StringComparator'Class (This).compare (anyType_Param => anyType_Param, object2_Param => object2_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -76,7 +76,7 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out HardwareFactory; os_Param : access GenericOperatingSystem_Package.GenericOperatingSystem'Class) is
-      Java_Result : constant HardwareInterface_Access := HardwareFactory'Class (This).getInstance (os_Param);
+      Java_Result : constant HardwareInterface_Access := HardwareFactory'Class (This).getInstance (os_Param => os_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

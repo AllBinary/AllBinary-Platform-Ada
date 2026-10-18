@@ -51,7 +51,7 @@ package body org.allbinary.logic.string_Id.StringValidationJSEUtil_Package is
    end isBlank;
 
    procedure isBlank (string_Id : Unbounded_String) is
-      Java_Result : constant Boolean := isBlank (string_Id);
+      Java_Result : constant Boolean := isBlank (string_Id => string_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

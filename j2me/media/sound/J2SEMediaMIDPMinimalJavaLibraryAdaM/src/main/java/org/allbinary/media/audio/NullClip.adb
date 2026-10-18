@@ -195,14 +195,14 @@ package body org.allbinary.media.audio.NullClip_Package is
    end removeLineListener;
 
    procedure isControlSupported (This : in out NullClip; control_Param : access Type_Package.Type'Class) is
-      Java_Result : constant Boolean := NullClip'Class (This).isControlSupported (control_Param);
+      Java_Result : constant Boolean := NullClip'Class (This).isControlSupported (control_Param => control_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isControlSupported;
 
    procedure getControl (This : in out NullClip; control_Param : access Type_Package.Type'Class) is
-      Java_Result : constant Control_Access := NullClip'Class (This).getControl (control_Param);
+      Java_Result : constant Control_Access := NullClip'Class (This).getControl (control_Param => control_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -59,14 +59,14 @@ package body org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
    end invoke;
 
    procedure newInstance (anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := newInstance (anyType_Param);
+      Java_Result : constant Java_Object_Access := newInstance (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end newInstance;
 
    procedure invoke (This : in out InterfaceCastProxy; proxyObject_Param : access Java_Object'Class; proxyMethod_Param : access Method_Package.Method'Class; proxyArgs : Java_Object_Access_Array_Access) is
-      Java_Result : constant Java_Object_Access := InterfaceCastProxy'Class (This).invoke (proxyObject_Param, proxyMethod_Param, proxyArgs);
+      Java_Result : constant Java_Object_Access := InterfaceCastProxy'Class (This).invoke (proxyObject_Param => proxyObject_Param, proxyMethod_Param => proxyMethod_Param, proxyArgs => proxyArgs);
       pragma Unreferenced (Java_Result);
    begin
       null;

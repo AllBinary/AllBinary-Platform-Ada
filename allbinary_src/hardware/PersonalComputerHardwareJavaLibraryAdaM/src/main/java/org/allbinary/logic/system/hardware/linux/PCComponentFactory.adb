@@ -125,14 +125,14 @@ package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Packag
    end getComponentType;
 
    procedure getInstance (This : in out PCComponentFactory; component : Unbounded_String; componentData : Unbounded_String) is
-      Java_Result : constant HardwareComponentInterface_Access := PCComponentFactory'Class (This).getInstance (component, componentData);
+      Java_Result : constant HardwareComponentInterface_Access := PCComponentFactory'Class (This).getInstance (component => component, componentData => componentData);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getComponentType (This : in out PCComponentFactory; component : Unbounded_String) is
-      Java_Result : constant Unbounded_String := PCComponentFactory'Class (This).getComponentType (component);
+      Java_Result : constant Unbounded_String := PCComponentFactory'Class (This).getComponentType (component => component);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -328,35 +328,35 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
    end restoreTable;
 
    procedure getOutputStream (This : in out AbSqlTableUtil; backupPath : Unbounded_String; tableName : Unbounded_String) is
-      Java_Result : constant OutputStream_Access := AbSqlTableUtil'Class (This).getOutputStream (backupPath, tableName);
+      Java_Result : constant OutputStream_Access := AbSqlTableUtil'Class (This).getOutputStream (backupPath => backupPath, tableName => tableName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getOutputStream;
 
    procedure backupFile (This : in out AbSqlTableUtil; path_Param : access AbPath_Package.AbPath'Class; backupPath : Unbounded_String; tableName : Unbounded_String) is
-      Java_Result : constant Boolean := AbSqlTableUtil'Class (This).backupFile (path_Param, backupPath, tableName);
+      Java_Result : constant Boolean := AbSqlTableUtil'Class (This).backupFile (path_Param => path_Param, backupPath => backupPath, tableName => tableName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end backupFile;
 
    procedure convertNewLines (This : in out AbSqlTableUtil; value : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).convertNewLines (value);
+      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).convertNewLines (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end convertNewLines;
 
    procedure backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class) is
-      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).backupTable (abSqlTable_Param);
+      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).backupTable (abSqlTable_Param => abSqlTable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end backupTable;
 
    procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class; portion_Param : access Portion_Package.Portion'Class) is
-      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).restoreTable (abSqlTable_Param, portion_Param);
+      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).restoreTable (abSqlTable_Param => abSqlTable_Param, portion_Param => portion_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -148,11 +148,11 @@ package org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_Packa
    type ScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Access is access all ScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array;
 
    type ScrollSelectionFormHorizontalPaintable is new ItemIndexPaintable with record
-      scrollSelectionForm : ScrollSelectionForm_Access;
+      scrollSelectionForm_Var : ScrollSelectionForm_Access;
    end record;
 
-   procedure Initialize (This : in out ScrollSelectionFormHorizontalPaintable'Class; scrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class);
-   function Create (scrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) return ScrollSelectionFormHorizontalPaintable_Access;
+   procedure Initialize (This : in out ScrollSelectionFormHorizontalPaintable'Class; scrollSelectionForm_Var_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class);
+   function Create (scrollSelectionForm_Var_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) return ScrollSelectionFormHorizontalPaintable_Access;
    function paint (This : in out ScrollSelectionFormHorizontalPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer;
    procedure paint (This : in out ScrollSelectionFormHorizontalPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer);
 
@@ -196,11 +196,11 @@ package org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Package
    type ScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Access is access all ScrollSelectionFormVerticalPaintable_Access_Array_Access_Array;
 
    type ScrollSelectionFormVerticalPaintable is new ItemIndexPaintable with record
-      scrollSelectionForm : ScrollSelectionForm_Access;
+      scrollSelectionForm_Var : ScrollSelectionForm_Access;
    end record;
 
-   procedure Initialize (This : in out ScrollSelectionFormVerticalPaintable'Class; scrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class);
-   function Create (scrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) return ScrollSelectionFormVerticalPaintable_Access;
+   procedure Initialize (This : in out ScrollSelectionFormVerticalPaintable'Class; scrollSelectionForm_Var_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class);
+   function Create (scrollSelectionForm_Var_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) return ScrollSelectionFormVerticalPaintable_Access;
    function paint (This : in out ScrollSelectionFormVerticalPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer;
    procedure paint (This : in out ScrollSelectionFormVerticalPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer);
 
@@ -244,11 +244,11 @@ package org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPaintable_P
    type ScrollSelectionFormTempHorizontalPaintable_Access_Array_Access_Array_Access is access all ScrollSelectionFormTempHorizontalPaintable_Access_Array_Access_Array;
 
    type ScrollSelectionFormTempHorizontalPaintable is new ItemIndexPaintable with record
-      scrollSelectionForm : ScrollSelectionForm_Access;
+      scrollSelectionForm_Var : ScrollSelectionForm_Access;
    end record;
 
-   procedure Initialize (This : in out ScrollSelectionFormTempHorizontalPaintable'Class; scrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class);
-   function Create (scrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) return ScrollSelectionFormTempHorizontalPaintable_Access;
+   procedure Initialize (This : in out ScrollSelectionFormTempHorizontalPaintable'Class; scrollSelectionForm_Var_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class);
+   function Create (scrollSelectionForm_Var_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) return ScrollSelectionFormTempHorizontalPaintable_Access;
    function paint (This : in out ScrollSelectionFormTempHorizontalPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer;
    procedure paint (This : in out ScrollSelectionFormTempHorizontalPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer);
 
@@ -292,7 +292,7 @@ package org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package is
    type ScrollSelectionFormHorizontalDx_Access_Array_Access_Array_Access is access all ScrollSelectionFormHorizontalDx_Access_Array_Access_Array;
 
    type ScrollSelectionFormHorizontalDx is new ItemIndexDx with record
-      scrollSelectionForm : ScrollSelectionForm_Access;
+      scrollSelectionForm_Var : ScrollSelectionForm_Access;
    end record;
 
    procedure Initialize (This : in out ScrollSelectionFormHorizontalDx'Class; multipleScrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class);
@@ -340,7 +340,7 @@ package org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package is
    type ScrollSelectionFormVericalDx_Access_Array_Access_Array_Access is access all ScrollSelectionFormVericalDx_Access_Array_Access_Array;
 
    type ScrollSelectionFormVericalDx is new ItemIndexDx with record
-      scrollSelectionForm : ScrollSelectionForm_Access;
+      scrollSelectionForm_Var : ScrollSelectionForm_Access;
    end record;
 
    procedure Initialize (This : in out ScrollSelectionFormVericalDx'Class; multipleScrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class);
@@ -388,7 +388,7 @@ package org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Package 
    type ScrollSelectionFormTempHorizontalDx_Access_Array_Access_Array_Access is access all ScrollSelectionFormTempHorizontalDx_Access_Array_Access_Array;
 
    type ScrollSelectionFormTempHorizontalDx is new ItemIndexDx with record
-      scrollSelectionForm : ScrollSelectionForm_Access;
+      scrollSelectionForm_Var : ScrollSelectionForm_Access;
    end record;
 
    procedure Initialize (This : in out ScrollSelectionFormTempHorizontalDx'Class; multipleScrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class);

@@ -52,7 +52,7 @@ package org.allbinary.input.automation.robot.InputRobotFactory_Package is
       hashtable : ABHashtable_Access;
       helpSetListenerInterface : HelpSetListener_Access;
    end record;
-   inputRobotFactory : InputRobotFactory_Access;
+   inputRobotFactory_Var : InputRobotFactory_Access;
 
    procedure Initialize (This : in out InputRobotFactory'Class);
    function Create return InputRobotFactory_Access;

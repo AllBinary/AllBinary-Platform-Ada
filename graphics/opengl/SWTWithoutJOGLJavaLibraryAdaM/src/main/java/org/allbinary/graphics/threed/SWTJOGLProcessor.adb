@@ -157,28 +157,28 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
    end substringWidth;
 
    procedure charWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; ch : Character) is
-      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).charWidth (font_Param, ch);
+      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).charWidth (font_Param => font_Param, ch => ch);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end charWidth;
 
    procedure charsWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; ch : Character_Array_Access; offset : Integer; length : Integer) is
-      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).charsWidth (font_Param, ch, offset, length);
+      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).charsWidth (font_Param => font_Param, ch => ch, offset => offset, length => length);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end charsWidth;
 
    procedure stringWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; str : Unbounded_String) is
-      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).stringWidth (font_Param, str);
+      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).stringWidth (font_Param => font_Param, str => str);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end stringWidth;
 
    procedure substringWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; str : Unbounded_String; offset : Integer; len : Integer) is
-      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).substringWidth (font_Param, str, offset, len);
+      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).substringWidth (font_Param => font_Param, str => str, offset => offset, len => len);
       pragma Unreferenced (Java_Result);
    begin
       null;

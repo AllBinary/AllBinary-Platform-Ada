@@ -49,14 +49,14 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretCompo
    end decrypt;
 
    procedure encrypt (This : in out BaseSecretComposite; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := BaseSecretComposite'Class (This).encrypt (array_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := BaseSecretComposite'Class (This).encrypt (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end encrypt;
 
    procedure decrypt (This : in out BaseSecretComposite; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := BaseSecretComposite'Class (This).decrypt (array_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := BaseSecretComposite'Class (This).decrypt (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

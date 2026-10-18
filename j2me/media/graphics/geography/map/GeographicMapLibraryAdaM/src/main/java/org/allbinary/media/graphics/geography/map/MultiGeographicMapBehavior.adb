@@ -52,7 +52,7 @@ package body org.allbinary.media.graphics.geography.map.MultiGeographicMapBehavi
    end getCellTypeAt;
 
    procedure getCellTypeAt (This : in out MultiGeographicMapBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant GeographicMapCellType_Access_Array_Access := MultiGeographicMapBehavior'Class (This).getCellTypeAt (geographicMapInterfaceArray, geographicMapCellTypeArray, geographicMapCellPosition_Param);
+      Java_Result : constant GeographicMapCellType_Access_Array_Access := MultiGeographicMapBehavior'Class (This).getCellTypeAt (geographicMapInterfaceArray => geographicMapInterfaceArray, geographicMapCellTypeArray => geographicMapCellTypeArray, geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

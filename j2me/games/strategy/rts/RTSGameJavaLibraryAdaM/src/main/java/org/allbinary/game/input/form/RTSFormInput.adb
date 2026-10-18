@@ -241,28 +241,28 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
    end getHashtable;
 
    procedure processSticky (This : in out RTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; point_Param : access GPoint_Package.GPoint'Class) is
-      Java_Result : constant Boolean := RTSFormInput'Class (This).processSticky (associatedRtsLayer_Param, rtsPlayerLayerInterface_Param, layerManager_Param, point_Param);
+      Java_Result : constant Boolean := RTSFormInput'Class (This).processSticky (associatedRtsLayer_Param => associatedRtsLayer_Param, rtsPlayerLayerInterface_Param => rtsPlayerLayerInterface_Param, layerManager_Param => layerManager_Param, point_Param => point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end processSticky;
 
    procedure getItemAt (This : in out RTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; point_Param : access GPoint_Package.GPoint'Class) is
-      Java_Result : constant ABCustomItem_Access := RTSFormInput'Class (This).getItemAt (rtsPlayerLayerInterface_Param, point_Param);
+      Java_Result : constant ABCustomItem_Access := RTSFormInput'Class (This).getItemAt (rtsPlayerLayerInterface_Param => rtsPlayerLayerInterface_Param, point_Param => point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getItemAt;
 
    procedure getIndexAt (This : in out RTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; point_Param : access GPoint_Package.GPoint'Class) is
-      Java_Result : constant Integer := RTSFormInput'Class (This).getIndexAt (rtsPlayerLayerInterface_Param, point_Param);
+      Java_Result : constant Integer := RTSFormInput'Class (This).getIndexAt (rtsPlayerLayerInterface_Param => rtsPlayerLayerInterface_Param, point_Param => point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getIndexAt;
 
    procedure getInstance (This : in out RTSFormInput; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; aItem_Param : access ABCustomItem_Package.ABCustomItem'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant CollidableDestroyableDamageableLayer_Access := RTSFormInput'Class (This).getInstance (layerManager_Param, aItem_Param, geographicMapCellPosition_Param);
+      Java_Result : constant CollidableDestroyableDamageableLayer_Access := RTSFormInput'Class (This).getInstance (layerManager_Param => layerManager_Param, aItem_Param => aItem_Param, geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

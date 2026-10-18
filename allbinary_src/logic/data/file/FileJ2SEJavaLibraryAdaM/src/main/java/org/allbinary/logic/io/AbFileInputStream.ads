@@ -37,7 +37,7 @@ package org.allbinary.logic.io.AbFileInputStream_Package is
    type AbFileInputStream_Access_Array_Access_Array is array (Natural range <>) of AbFileInputStream_Access_Array_Access;
    type AbFileInputStream_Access_Array_Access_Array_Access is access all AbFileInputStream_Access_Array_Access_Array;
 
-   type AbFileInputStream is new FileInputStream with null record;
+   type AbFileInputStream is new Java_Object with null record;
 
    procedure Initialize (This : in out AbFileInputStream'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return AbFileInputStream_Access;

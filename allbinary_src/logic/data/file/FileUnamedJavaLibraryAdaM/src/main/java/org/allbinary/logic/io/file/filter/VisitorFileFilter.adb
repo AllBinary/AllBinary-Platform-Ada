@@ -58,14 +58,14 @@ package body org.allbinary.logic.io.file.filter.VisitorFileFilter_Package is
    end accept_Id;
 
    procedure accept_Id (This : in out VisitorFileFilter; file_Param : access File_Package.File'Class) is
-      Java_Result : constant Boolean := VisitorFileFilter'Class (This).accept_Id (file_Param);
+      Java_Result : constant Boolean := VisitorFileFilter'Class (This).accept_Id (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end accept_Id;
 
    procedure accept_Id (This : in out VisitorFileFilter; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant Boolean := VisitorFileFilter'Class (This).accept_Id (file_Param);
+      Java_Result : constant Boolean := VisitorFileFilter'Class (This).accept_Id (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -92,14 +92,14 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    end getCurrentGeographicMapCellPosition;
 
    procedure getCurrentOverCellType (This : in out GeographicMapCellPositionTracking; geographicMap_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is
-      Java_Result : constant GeographicMapCellType_Access := GeographicMapCellPositionTracking'Class (This).getCurrentOverCellType (geographicMap_Param);
+      Java_Result : constant GeographicMapCellType_Access := GeographicMapCellPositionTracking'Class (This).getCurrentOverCellType (geographicMap_Param => geographicMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCurrentOverCellType;
 
    procedure updateStart (This : in out GeographicMapCellPositionTracking; gameCanvasInterface_Param : access AllBinaryGameCanvasInterface_Package.AllBinaryGameCanvasInterface'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant Boolean := GeographicMapCellPositionTracking'Class (This).updateStart (gameCanvasInterface_Param, layer_Param);
+      Java_Result : constant Boolean := GeographicMapCellPositionTracking'Class (This).updateStart (gameCanvasInterface_Param => gameCanvasInterface_Param, layer_Param => layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

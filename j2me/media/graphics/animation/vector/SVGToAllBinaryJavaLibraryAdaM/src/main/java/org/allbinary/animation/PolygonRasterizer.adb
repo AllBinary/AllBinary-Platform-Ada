@@ -153,7 +153,7 @@ package body org.allbinary.animation.PolygonRasterizer_Package is
    end main;
 
    procedure getPixelBuffer (This : in out PolygonRasterizer; svgPath : Unbounded_String; pathX : Integer_Array_Access; pathY : Integer_Array_Access; pixelBuffer : Integer_Array_Access; width : Integer; height : Integer) is
-      Java_Result : constant Integer_Array_Access := PolygonRasterizer'Class (This).getPixelBuffer (svgPath, pathX, pathY, pixelBuffer, width, height);
+      Java_Result : constant Integer_Array_Access := PolygonRasterizer'Class (This).getPixelBuffer (svgPath => svgPath, pathX => pathX, pathY => pathY, pixelBuffer => pixelBuffer, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;

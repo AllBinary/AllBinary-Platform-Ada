@@ -54,7 +54,7 @@ package body org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package 
    end remove;
 
    procedure remove (This : in out BasicArrayListResetablePool; key_Param : access Java_Object'Class) is
-      Java_Result : constant CacheableInterface_Access := BasicArrayListResetablePool'Class (This).remove (key_Param);
+      Java_Result : constant CacheableInterface_Access := BasicArrayListResetablePool'Class (This).remove (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

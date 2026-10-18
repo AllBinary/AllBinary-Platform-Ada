@@ -48,7 +48,7 @@ package org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
       downGameKeyEventHandler : DownGameKeyEventHandler_Access;
       lastPressedTouchButtonInput : TouchButtonInput_Access;
       currentlyPressedTouchButtonSingleton : CurrentlyPressedTouchButtonSingleton_Access;
-      releaseHelper : ReleaseHelper_Access;
+      releaseHelper_Var : ReleaseHelper_Access;
    end record;
 
    procedure Initialize (This : in out TouchButtonRecognizer'Class);
@@ -91,11 +91,11 @@ package org.allbinary.input.motion.button.ReleaseHelper_Package is
    type ReleaseHelper_Access_Array_Access_Array_Access is access all ReleaseHelper_Access_Array_Access_Array;
 
    type ReleaseHelper is new Java_Object with record
-      touchButtonRecognizer : TouchButtonRecognizer_Access;
+      touchButtonRecognizer_Var : TouchButtonRecognizer_Access;
    end record;
 
-   procedure Initialize (This : in out ReleaseHelper'Class; touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class);
-   function Create (touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) return ReleaseHelper_Access;
+   procedure Initialize (This : in out ReleaseHelper'Class; touchButtonRecognizer_Var_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class);
+   function Create (touchButtonRecognizer_Var_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) return ReleaseHelper_Access;
    procedure release (This : in out ReleaseHelper; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; deviceId : Integer);
 
 end org.allbinary.input.motion.button.ReleaseHelper_Package;
@@ -131,8 +131,8 @@ package org.allbinary.input.motion.button.MultitouchReleaseHelper_Package is
 
    type MultitouchReleaseHelper is new ReleaseHelper with null record;
 
-   procedure Initialize (This : in out MultitouchReleaseHelper'Class; touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class);
-   function Create (touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) return MultitouchReleaseHelper_Access;
+   procedure Initialize (This : in out MultitouchReleaseHelper'Class; touchButtonRecognizer_Var_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class);
+   function Create (touchButtonRecognizer_Var_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) return MultitouchReleaseHelper_Access;
    procedure release (This : in out MultitouchReleaseHelper; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; deviceId : Integer);
 
 end org.allbinary.input.motion.button.MultitouchReleaseHelper_Package;

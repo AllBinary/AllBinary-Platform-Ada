@@ -88,14 +88,14 @@ package body org.allbinary.logic.java.anyType.clazz.ClassUtil_Package is
    end viewAll;
 
    procedure viewAll (anyType_Param : access Java_Object'Class; lineBreak : Unbounded_String) is
-      Java_Result : constant Unbounded_String := viewAll (anyType_Param, lineBreak);
+      Java_Result : constant Unbounded_String := viewAll (anyType_Param => anyType_Param, lineBreak => lineBreak);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end viewAll;
 
    procedure viewAll (myClass : Ada.Tags.Tag; lineBreak : Unbounded_String) is
-      Java_Result : constant Unbounded_String := viewAll (myClass, lineBreak);
+      Java_Result : constant Unbounded_String := viewAll (myClass => myClass, lineBreak => lineBreak);
       pragma Unreferenced (Java_Result);
    begin
       null;

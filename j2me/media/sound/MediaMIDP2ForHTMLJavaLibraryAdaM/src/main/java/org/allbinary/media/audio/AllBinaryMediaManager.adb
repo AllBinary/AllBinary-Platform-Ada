@@ -113,7 +113,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    end playTone;
 
    procedure createPlayer (resource : Unbounded_String) is
-      Java_Result : constant Player_Access := createPlayer (resource);
+      Java_Result : constant Player_Access := createPlayer (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;

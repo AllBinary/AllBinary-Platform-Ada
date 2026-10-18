@@ -162,7 +162,7 @@ package body org.allbinary.media.audio.MediaPlayerOnErrorListener_Package is
    end onError;
 
    procedure onError (This : in out MediaPlayerOnErrorListener; mp_Param : access MediaPlayer_Package.MediaPlayer'Class; what : Integer; extra : Integer) is
-      Java_Result : constant Boolean := MediaPlayerOnErrorListener'Class (This).onError (mp_Param, what, extra);
+      Java_Result : constant Boolean := MediaPlayerOnErrorListener'Class (This).onError (mp_Param => mp_Param, what => what, extra => extra);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -224,18 +224,18 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListen
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out AndroidMediaPlayerOnBufferingUpdateListener'Class; androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) is
-      androidMediaPlayerWrapperListener : constant AndroidMediaPlayerWrapperListener_Access := AndroidMediaPlayerWrapperListener_Access (androidMediaPlayerWrapperListener_Param);
+   procedure Initialize (This : in out AndroidMediaPlayerOnBufferingUpdateListener'Class; androidMediaPlayerWrapperListener_Var_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) is
+      androidMediaPlayerWrapperListener_Var : constant AndroidMediaPlayerWrapperListener_Access := AndroidMediaPlayerWrapperListener_Access (androidMediaPlayerWrapperListener_Var_Param);
    begin
       MediaPlayerOnBufferingUpdateListener_Package.Initialize (This);
       Initialize_Fields (This);
-            This.androidMediaPlayerWrapperListener := androidMediaPlayerWrapperListener;
+            This.androidMediaPlayerWrapperListener_Var := androidMediaPlayerWrapperListener_Var;
    end Initialize;
 
-   function Create (androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnBufferingUpdateListener_Access is
+   function Create (androidMediaPlayerWrapperListener_Var_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnBufferingUpdateListener_Access is
       This : constant AndroidMediaPlayerOnBufferingUpdateListener_Access := new AndroidMediaPlayerOnBufferingUpdateListener;
    begin
-      AndroidMediaPlayerOnBufferingUpdateListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener_Param);
+      AndroidMediaPlayerOnBufferingUpdateListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener_Var_Param);
       return This;
    end Create;
     
@@ -245,7 +245,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListen
    begin
             logUtil := LogUtil_Package.getInstance;
             logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Update buffer: ")).appendint (i).append (To_Unbounded_String ("%")).toString, AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access), This.ON_BUFFERING_UPDATE);
-            This.androidMediaPlayerWrapperListener.androidMediaPlayerWrapper.update (PlayerListener_Package.DEVICE_UNAVAILABLE);
+            This.androidMediaPlayerWrapperListener_Var.androidMediaPlayerWrapper.update (PlayerListener_Package.DEVICE_UNAVAILABLE);
    end onBufferingUpdate;
 
 end org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package;
@@ -268,18 +268,18 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Pack
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out AndroidMediaPlayerOnPreparedListener'Class; androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) is
-      androidMediaPlayerWrapperListener : constant AndroidMediaPlayerWrapperListener_Access := AndroidMediaPlayerWrapperListener_Access (androidMediaPlayerWrapperListener_Param);
+   procedure Initialize (This : in out AndroidMediaPlayerOnPreparedListener'Class; androidMediaPlayerWrapperListener_Var_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) is
+      androidMediaPlayerWrapperListener_Var : constant AndroidMediaPlayerWrapperListener_Access := AndroidMediaPlayerWrapperListener_Access (androidMediaPlayerWrapperListener_Var_Param);
    begin
       MediaPlayerOnPreparedListener_Package.Initialize (This);
       Initialize_Fields (This);
-            This.androidMediaPlayerWrapperListener := androidMediaPlayerWrapperListener;
+            This.androidMediaPlayerWrapperListener_Var := androidMediaPlayerWrapperListener_Var;
    end Initialize;
 
-   function Create (androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnPreparedListener_Access is
+   function Create (androidMediaPlayerWrapperListener_Var_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnPreparedListener_Access is
       This : constant AndroidMediaPlayerOnPreparedListener_Access := new AndroidMediaPlayerOnPreparedListener;
    begin
-      AndroidMediaPlayerOnPreparedListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener_Param);
+      AndroidMediaPlayerOnPreparedListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener_Var_Param);
       return This;
    end Create;
     
@@ -291,7 +291,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Pack
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
             logUtil.putF (commonStrings.START, AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access), This.ON_PREPARE);
-            This.androidMediaPlayerWrapperListener.androidMediaPlayerWrapper.update (PlayerListener_Package.DEVICE_AVAILABLE);
+            This.androidMediaPlayerWrapperListener_Var.androidMediaPlayerWrapper.update (PlayerListener_Package.DEVICE_AVAILABLE);
    end onPrepared;
 
 end org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package;
@@ -314,18 +314,18 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out AndroidMediaPlayerOnErrorListener'Class; androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) is
-      androidMediaPlayerWrapperListener : constant AndroidMediaPlayerWrapperListener_Access := AndroidMediaPlayerWrapperListener_Access (androidMediaPlayerWrapperListener_Param);
+   procedure Initialize (This : in out AndroidMediaPlayerOnErrorListener'Class; androidMediaPlayerWrapperListener_Var_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) is
+      androidMediaPlayerWrapperListener_Var : constant AndroidMediaPlayerWrapperListener_Access := AndroidMediaPlayerWrapperListener_Access (androidMediaPlayerWrapperListener_Var_Param);
    begin
       MediaPlayerOnErrorListener_Package.Initialize (This);
       Initialize_Fields (This);
-            This.androidMediaPlayerWrapperListener := androidMediaPlayerWrapperListener;
+            This.androidMediaPlayerWrapperListener_Var := androidMediaPlayerWrapperListener_Var;
    end Initialize;
 
-   function Create (androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnErrorListener_Access is
+   function Create (androidMediaPlayerWrapperListener_Var_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnErrorListener_Access is
       This : constant AndroidMediaPlayerOnErrorListener_Access := new AndroidMediaPlayerOnErrorListener;
    begin
-      AndroidMediaPlayerOnErrorListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener_Param);
+      AndroidMediaPlayerOnErrorListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener_Var_Param);
       return This;
    end Create;
     
@@ -335,12 +335,12 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package
    begin
             logUtil := LogUtil_Package.getInstance;
             logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (To_Unbounded_String ("What: ")).appendint (what).append (To_Unbounded_String (" Extra: ")).appendint (extra).toString, AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access), This.ON_ERROR);
-            This.androidMediaPlayerWrapperListener.androidMediaPlayerWrapper.update (PlayerListener_Package.ERROR);
+            This.androidMediaPlayerWrapperListener_Var.androidMediaPlayerWrapper.update (PlayerListener_Package.ERROR);
             return True;
    end onError;
 
    procedure onError (This : in out AndroidMediaPlayerOnErrorListener; mp_Param : access MediaPlayer_Package.MediaPlayer'Class; what : Integer; extra : Integer) is
-      Java_Result : constant Boolean := AndroidMediaPlayerOnErrorListener'Class (This).onError (mp_Param, what, extra);
+      Java_Result : constant Boolean := AndroidMediaPlayerOnErrorListener'Class (This).onError (mp_Param => mp_Param, what => what, extra => extra);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -366,18 +366,18 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Pa
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out AndroidMediaPlayerOnCompletionListener'Class; androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) is
-      androidMediaPlayerWrapperListener : constant AndroidMediaPlayerWrapperListener_Access := AndroidMediaPlayerWrapperListener_Access (androidMediaPlayerWrapperListener_Param);
+   procedure Initialize (This : in out AndroidMediaPlayerOnCompletionListener'Class; androidMediaPlayerWrapperListener_Var_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) is
+      androidMediaPlayerWrapperListener_Var : constant AndroidMediaPlayerWrapperListener_Access := AndroidMediaPlayerWrapperListener_Access (androidMediaPlayerWrapperListener_Var_Param);
    begin
       MediaPlayerOnCompletionListener_Package.Initialize (This);
       Initialize_Fields (This);
-            This.androidMediaPlayerWrapperListener := androidMediaPlayerWrapperListener;
+            This.androidMediaPlayerWrapperListener_Var := androidMediaPlayerWrapperListener_Var;
    end Initialize;
 
-   function Create (androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnCompletionListener_Access is
+   function Create (androidMediaPlayerWrapperListener_Var_Param : access AndroidMediaPlayerWrapperListener_Package.AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnCompletionListener_Access is
       This : constant AndroidMediaPlayerOnCompletionListener_Access := new AndroidMediaPlayerOnCompletionListener;
    begin
-      AndroidMediaPlayerOnCompletionListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener_Param);
+      AndroidMediaPlayerOnCompletionListener_Package.Initialize (This.all, androidMediaPlayerWrapperListener_Var_Param);
       return This;
    end Create;
     
@@ -389,7 +389,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Pa
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
             logUtil.putF (commonStrings.START, AndroidMediaPlayerWrapperListener_Access'(This'Unchecked_Access), This.ON_COMPLETE);
-            This.androidMediaPlayerWrapperListener.androidMediaPlayerWrapper.update (PlayerListener_Package.END_OF_MEDIA);
+            This.androidMediaPlayerWrapperListener_Var.androidMediaPlayerWrapper.update (PlayerListener_Package.END_OF_MEDIA);
    end onCompletion;
 
 end org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Package;

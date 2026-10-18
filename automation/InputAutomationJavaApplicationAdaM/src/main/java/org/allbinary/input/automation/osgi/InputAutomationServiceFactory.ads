@@ -45,7 +45,7 @@ package org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Packag
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;
-   inputAutomationServiceFactory : InputAutomationServiceFactory_Access;
+   inputAutomationServiceFactory_Var : InputAutomationServiceFactory_Access;
 
    procedure Initialize (This : in out InputAutomationServiceFactory'Class);
    function Create return InputAutomationServiceFactory_Access;

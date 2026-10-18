@@ -49,7 +49,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.SimplePat
    end getInstance;
 
    procedure getInstance (This : in out SimplePathFinderGraphVisitorFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is
-      Java_Result : constant PathFinderGraphVisitorBase_Access := SimplePathFinderGraphVisitorFactory'Class (This).getInstance (geographicMapInterface_Param);
+      Java_Result : constant PathFinderGraphVisitorBase_Access := SimplePathFinderGraphVisitorFactory'Class (This).getInstance (geographicMapInterface_Param => geographicMapInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

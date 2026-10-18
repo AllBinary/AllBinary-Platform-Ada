@@ -81,7 +81,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory
    end getOrCreate;
 
    procedure getOrCreate (This : in out PathCacheFactory; pathIdInteger : Integer) is
-      Java_Result : constant BasicArrayList_Access := PathCacheFactory'Class (This).getOrCreate (pathIdInteger);
+      Java_Result : constant BasicArrayList_Access := PathCacheFactory'Class (This).getOrCreate (pathIdInteger => pathIdInteger);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -71,21 +71,21 @@ package body org.allbinary.time.TimeTypeUtil_Package is
    end getNightOrDay;
 
    procedure getHourOfDay (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer) is
-      Java_Result : constant Integer := TimeTypeUtil'Class (This).getHourOfDay (timeInMillis);
+      Java_Result : constant Integer := TimeTypeUtil'Class (This).getHourOfDay (timeInMillis => timeInMillis);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getHourOfDay;
 
    procedure isNight (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer) is
-      Java_Result : constant Boolean := TimeTypeUtil'Class (This).isNight (timeInMillis);
+      Java_Result : constant Boolean := TimeTypeUtil'Class (This).isNight (timeInMillis => timeInMillis);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isNight;
 
    procedure getNightOrDay (This : in out TimeTypeUtil; timeInMillis : Long_Long_Integer) is
-      Java_Result : constant Unbounded_String := TimeTypeUtil'Class (This).getNightOrDay (timeInMillis);
+      Java_Result : constant Unbounded_String := TimeTypeUtil'Class (This).getNightOrDay (timeInMillis => timeInMillis);
       pragma Unreferenced (Java_Result);
    begin
       null;

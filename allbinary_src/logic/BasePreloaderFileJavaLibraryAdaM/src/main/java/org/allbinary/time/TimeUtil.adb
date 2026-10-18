@@ -100,7 +100,7 @@ package body org.allbinary.time.TimeUtil_Package is
    end getTotalTime;
 
    procedure getTotalTime (This : in out TimeUtil; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String; minuteString : Unbounded_String; secondString : Unbounded_String) is
-      Java_Result : constant Long_Long_Integer := TimeUtil'Class (This).getTotalTime (yearString, monthString, dayString, hourString, minuteString, secondString);
+      Java_Result : constant Long_Long_Integer := TimeUtil'Class (This).getTotalTime (yearString => yearString, monthString => monthString, dayString => dayString, hourString => hourString, minuteString => minuteString, secondString => secondString);
       pragma Unreferenced (Java_Result);
    begin
       null;

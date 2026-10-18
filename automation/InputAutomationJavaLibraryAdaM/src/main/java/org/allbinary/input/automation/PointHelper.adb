@@ -47,7 +47,7 @@ package body org.allbinary.input.automation.PointHelper_Package is
    end getCenterPoint;
 
    procedure getCenterPoint (rectangle_Param : access Rectangle_Package.Rectangle'Class) is
-      Java_Result : constant Point_Access := getCenterPoint (rectangle_Param);
+      Java_Result : constant Point_Access := getCenterPoint (rectangle_Param => rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

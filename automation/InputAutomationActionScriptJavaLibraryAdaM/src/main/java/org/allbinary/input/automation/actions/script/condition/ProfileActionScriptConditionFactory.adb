@@ -60,7 +60,7 @@ package body org.allbinary.input.automation.actions.script.condition.ProfileActi
    end getInstance;
 
    procedure getInstance (node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant ProfileActionScriptConditionInterface_Access := getInstance (node_Param);
+      Java_Result : constant ProfileActionScriptConditionInterface_Access := getInstance (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

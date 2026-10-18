@@ -75,21 +75,21 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
    end getO;
 
    procedure get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
-      Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).get (className, functionName, specialMessage, exception_Id_Param);
+      Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).get (className => className, functionName => functionName, specialMessage => specialMessage, exception_Id_Param => exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getS (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String) is
-      Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).getS (className, functionName, specialMessage);
+      Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).getS (className => className, functionName => functionName, specialMessage => specialMessage);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getS;
 
    procedure getO (This : in out LogFormatUtil; exception_Id_Param : access Java_Object'Class) is
-      Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).getO (exception_Id_Param);
+      Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).getO (exception_Id_Param => exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -49,14 +49,14 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimati
    end createAnimation;
 
    procedure createArray (This : in out SimultaneousCompoundIndexedAnimationInterfaceFactory; size : Integer) is
-      Java_Result : constant Animation_Access_Array_Access := SimultaneousCompoundIndexedAnimationInterfaceFactory'Class (This).createArray (size);
+      Java_Result : constant Animation_Access_Array_Access := SimultaneousCompoundIndexedAnimationInterfaceFactory'Class (This).createArray (size => size);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createArray;
 
    procedure createAnimation (This : in out SimultaneousCompoundIndexedAnimationInterfaceFactory; animationArray : Animation_Access_Array_Access) is
-      Java_Result : constant Animation_Access := SimultaneousCompoundIndexedAnimationInterfaceFactory'Class (This).createAnimation (animationArray);
+      Java_Result : constant Animation_Access := SimultaneousCompoundIndexedAnimationInterfaceFactory'Class (This).createAnimation (animationArray => animationArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

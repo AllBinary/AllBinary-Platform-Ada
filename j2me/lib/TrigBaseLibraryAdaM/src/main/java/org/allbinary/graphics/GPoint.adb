@@ -112,14 +112,14 @@ package body org.allbinary.graphics.GPoint_Package is
    end toStringStatic;
 
    procedure getInstance (point_Param : access GPoint_Package.GPoint'Class) is
-      Java_Result : constant GPoint_Access := getInstance (point_Param);
+      Java_Result : constant GPoint_Access := getInstance (point_Param => point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure toStringStatic (x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant Unbounded_String := toStringStatic (x, y, z);
+      Java_Result : constant Unbounded_String := toStringStatic (x => x, y => y, z => z);
       pragma Unreferenced (Java_Result);
    begin
       null;

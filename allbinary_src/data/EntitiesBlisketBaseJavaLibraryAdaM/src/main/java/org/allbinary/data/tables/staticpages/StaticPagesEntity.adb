@@ -116,7 +116,7 @@ package body org.allbinary.data.tables.staticpages.StaticPagesEntity_Package is
    end createTable;
 
    procedure getFile (This : in out StaticPagesEntity; store : Unbounded_String; keywords : Unbounded_String) is
-      Java_Result : constant Unbounded_String := StaticPagesEntity'Class (This).getFile (store, keywords);
+      Java_Result : constant Unbounded_String := StaticPagesEntity'Class (This).getFile (store => store, keywords => keywords);
       pragma Unreferenced (Java_Result);
    begin
       null;

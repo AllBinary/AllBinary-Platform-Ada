@@ -303,7 +303,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
    end set;
 
    procedure getDamage (This : in out WeaponLayer; damageType : Integer) is
-      Java_Result : constant Integer := WeaponLayer'Class (This).getDamage (damageType);
+      Java_Result : constant Integer := WeaponLayer'Class (This).getDamage (damageType => damageType);
       pragma Unreferenced (Java_Result);
    begin
       null;

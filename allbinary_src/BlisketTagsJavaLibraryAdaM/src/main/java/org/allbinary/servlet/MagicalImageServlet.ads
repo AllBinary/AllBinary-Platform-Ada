@@ -40,7 +40,7 @@ package org.allbinary.servlet.MagicalImageServlet_Package is
    type MagicalImageServlet_Access_Array_Access_Array is array (Natural range <>) of MagicalImageServlet_Access_Array_Access;
    type MagicalImageServlet_Access_Array_Access_Array_Access is access all MagicalImageServlet_Access_Array_Access_Array;
 
-   type MagicalImageServlet is new HttpServlet with record
+   type MagicalImageServlet is new Java_Object with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;

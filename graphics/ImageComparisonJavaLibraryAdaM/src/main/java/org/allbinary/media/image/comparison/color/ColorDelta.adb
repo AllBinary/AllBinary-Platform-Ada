@@ -82,7 +82,7 @@ package body org.allbinary.media.image.comparison.color.ColorDelta_Package is
    end toString;
 
    procedure getKey (rgb1 : Integer; rgb2 : Integer) is
-      Java_Result : constant Java_Object_Access := getKey (rgb1, rgb2);
+      Java_Result : constant Java_Object_Access := getKey (rgb1 => rgb1, rgb2 => rgb2);
       pragma Unreferenced (Java_Result);
    begin
       null;

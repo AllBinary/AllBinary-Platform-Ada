@@ -98,21 +98,21 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
    end difference;
 
    procedure get (This : in out BasicPaymentTypeUtil; paymentTypeString : Unbounded_String) is
-      Java_Result : constant BasicPaymentType_Access := BasicPaymentTypeUtil'Class (This).get (paymentTypeString);
+      Java_Result : constant BasicPaymentType_Access := BasicPaymentTypeUtil'Class (This).get (paymentTypeString => paymentTypeString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure isContain (This : in out BasicPaymentTypeUtil; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) is
-      Java_Result : constant Boolean := BasicPaymentTypeUtil'Class (This).isContain (paymentType_Param);
+      Java_Result : constant Boolean := BasicPaymentTypeUtil'Class (This).isContain (paymentType_Param => paymentType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isContain;
 
    procedure difference (This : in out BasicPaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := BasicPaymentTypeUtil'Class (This).difference (a_PaymentTypeVector_Param);
+      Java_Result : constant BasicArrayList_Access := BasicPaymentTypeUtil'Class (This).difference (a_PaymentTypeVector_Param => a_PaymentTypeVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

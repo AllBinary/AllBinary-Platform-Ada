@@ -55,21 +55,21 @@ package body org.allbinary.time.NoTimeDelayHelper_Package is
    end isTimeSince;
 
    procedure isTimeSinceTNT (This : in out NoTimeDelayHelper; delay_Id : Integer) is
-      Java_Result : constant Boolean := NoTimeDelayHelper'Class (This).isTimeSinceTNT (delay_Id);
+      Java_Result : constant Boolean := NoTimeDelayHelper'Class (This).isTimeSinceTNT (delay_Id => delay_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTimeSinceTNT;
 
    procedure isTime (This : in out NoTimeDelayHelper; currentTime : Long_Long_Integer) is
-      Java_Result : constant Boolean := NoTimeDelayHelper'Class (This).isTime (currentTime);
+      Java_Result : constant Boolean := NoTimeDelayHelper'Class (This).isTime (currentTime => currentTime);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTime;
 
    procedure isTimeSince (This : in out NoTimeDelayHelper; delay_Id : Integer; currentTime : Long_Long_Integer) is
-      Java_Result : constant Boolean := NoTimeDelayHelper'Class (This).isTimeSince (delay_Id, currentTime);
+      Java_Result : constant Boolean := NoTimeDelayHelper'Class (This).isTimeSince (delay_Id => delay_Id, currentTime => currentTime);
       pragma Unreferenced (Java_Result);
    begin
       null;

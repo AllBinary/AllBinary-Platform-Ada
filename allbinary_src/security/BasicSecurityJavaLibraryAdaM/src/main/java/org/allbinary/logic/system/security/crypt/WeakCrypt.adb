@@ -92,14 +92,14 @@ package body org.allbinary.logic.system.security.crypt.WeakCrypt_Package is
    end decrypt;
 
    procedure encrypt (This : in out WeakCrypt; value : Unbounded_String) is
-      Java_Result : constant Unbounded_String := WeakCrypt'Class (This).encrypt (value);
+      Java_Result : constant Unbounded_String := WeakCrypt'Class (This).encrypt (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end encrypt;
 
    procedure decrypt (This : in out WeakCrypt; value : Unbounded_String) is
-      Java_Result : constant Unbounded_String := WeakCrypt'Class (This).decrypt (value);
+      Java_Result : constant Unbounded_String := WeakCrypt'Class (This).decrypt (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -63,7 +63,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    end toXmlNode;
 
    procedure toXmlNode (This : in out BasicProfileActionScriptOutputNode; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := BasicProfileActionScriptOutputNode'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := BasicProfileActionScriptOutputNode'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

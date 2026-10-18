@@ -54,35 +54,35 @@ package body org.allbinary.animation.FixedPoint_Package is
    end toInt;
 
    procedure toFixed (This : in out FixedPoint; val : Long_Float) is
-      Java_Result : constant Integer := FixedPoint'Class (This).toFixed (val);
+      Java_Result : constant Integer := FixedPoint'Class (This).toFixed (val => val);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toFixed;
 
    procedure toFixed (This : in out FixedPoint; val : Float) is
-      Java_Result : constant Integer := FixedPoint'Class (This).toFixed (val);
+      Java_Result : constant Integer := FixedPoint'Class (This).toFixed (val => val);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toFixed;
 
    procedure mul (This : in out FixedPoint; a : Integer; b : Integer) is
-      Java_Result : constant Integer := FixedPoint'Class (This).mul (a, b);
+      Java_Result : constant Integer := FixedPoint'Class (This).mul (a => a, b => b);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end mul;
 
    procedure div (This : in out FixedPoint; a : Integer; b : Integer) is
-      Java_Result : constant Integer := FixedPoint'Class (This).div (a, b);
+      Java_Result : constant Integer := FixedPoint'Class (This).div (a => a, b => b);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end div;
 
    procedure toInt (This : in out FixedPoint; fixed : Integer) is
-      Java_Result : constant Integer := FixedPoint'Class (This).toInt (fixed);
+      Java_Result : constant Integer := FixedPoint'Class (This).toInt (fixed => fixed);
       pragma Unreferenced (Java_Result);
    begin
       null;

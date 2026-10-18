@@ -57,7 +57,7 @@ package body org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package i
    end getNext;
 
    procedure getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo_Param : access BasicTerrainInfo_Package.BasicTerrainInfo'Class) is
-      Java_Result : constant TerrainEvent_Access := TerrainEventCircularStaticPool'Class (This).getNext (basicTerrainInfo_Param);
+      Java_Result : constant TerrainEvent_Access := TerrainEventCircularStaticPool'Class (This).getNext (basicTerrainInfo_Param => basicTerrainInfo_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

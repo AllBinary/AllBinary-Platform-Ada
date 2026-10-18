@@ -64,7 +64,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistoryFa
    end getInstance;
 
    procedure getInstance (id : Unbounded_String) is
-      Java_Result : constant OrderHistory_Access := getInstance (id);
+      Java_Result : constant OrderHistory_Access := getInstance (id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -45,7 +45,7 @@ package body org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out UpDownVectorAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is
-      Java_Result : constant ArtificialIntelligenceInterface_Access := UpDownVectorAIFactory'Class (This).getInstance (hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
+      Java_Result : constant ArtificialIntelligenceInterface_Access := UpDownVectorAIFactory'Class (This).getInstance (hashtable_Param => hashtable_Param, ownerLayerInterface_Param => ownerLayerInterface_Param, gameInput_Param => gameInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

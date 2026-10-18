@@ -54,7 +54,7 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    type WorkAreaJPanel_Access_Array_Access_Array is array (Natural range <>) of WorkAreaJPanel_Access_Array_Access;
    type WorkAreaJPanel_Access_Array_Access_Array_Access is access all WorkAreaJPanel_Access_Array_Access_Array;
 
-   type WorkAreaJPanel is new JPanel and WorkAreaJPanelInterface and MyCanvasEventListener and EventListener and Runnable with record
+   type WorkAreaJPanel is new JPanel and WorkAreaJPanelInterface and MyCanvasEventListener and Runnable with record
       logUtil : LogUtil_Access;
       canvasJPanelList : LinkedList_Access;
       canvasHolderJPanel : JPanel_Access;

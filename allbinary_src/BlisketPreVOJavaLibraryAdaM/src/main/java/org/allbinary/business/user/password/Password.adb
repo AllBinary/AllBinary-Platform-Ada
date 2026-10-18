@@ -42,27 +42,27 @@ package body org.allbinary.business.user.password.Password_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Password'Class; password : Unbounded_String) is
+   procedure Initialize (This : in out Password'Class; password_Var : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.password := password;
+        This.password_Var := password_Var;
    end Initialize;
 
-   function Create (password : Unbounded_String) return Password_Access is
+   function Create (password_Var : Unbounded_String) return Password_Access is
       This : constant Password_Access := new Password;
    begin
-      Password_Package.Initialize (This.all, password);
+      Password_Package.Initialize (This.all, password_Var);
       return This;
    end Create;
 
    procedure set (This : in out Password; value : Unbounded_String) is
    begin
-        This.password := value;
+        This.password_Var := value;
    end set;
 
    function get (This : in out Password) return Unbounded_String is
    begin
-        return This.password;
+        return This.password_Var;
    end get;
 
    function isValid (This : in out Password) return Boolean is
@@ -73,9 +73,9 @@ package body org.allbinary.business.user.password.Password_Package is
         begin
             valid := True;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VALIDATION) then
-                This.logUtil.putF (To_Unbounded_String ("Password: ") & This.password, Password_Access'(This'Unchecked_Access), commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("Password: ") & This.password_Var, Password_Access'(This'Unchecked_Access), commonStrings.IS_VALID);
             end if;
-            if not (StringValidationUtil_Package.getInstance.isValidRequired (This.password, 6, UserData_Package.MAXLEN)) then
+            if not (StringValidationUtil_Package.getInstance.isValidRequired (This.password_Var, 6, UserData_Package.MAXLEN)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VALIDATION) then
                     This.logUtil.putF (To_Unbounded_String ("Password is invalid"), Password_Access'(This'Unchecked_Access), commonStrings.IS_VALID);
                 end if;
@@ -98,7 +98,7 @@ package body org.allbinary.business.user.password.Password_Package is
    function getValidationInfo (This : in out Password) return Unbounded_String is
       stringUtil : StringUtil_Access;
    begin
-        if not (StringValidationUtil_Package.getInstance.isValidRequired (This.password, 6, UserData_Package.MAXLEN)) then
+        if not (StringValidationUtil_Package.getInstance.isValidRequired (This.password_Var, 6, UserData_Package.MAXLEN)) then
             return To_Unbounded_String ("Please enter a Password with more than 6 characters.<br />");
         end if;
         stringUtil := StringUtil_Package.getInstance;
@@ -109,12 +109,12 @@ package body org.allbinary.business.user.password.Password_Package is
       random : Integer;
       vector : BasicArrayList_Access;
    begin
-        This.password := StringUtil_Package.getInstance.getNonNull (This.password);
+        This.password_Var := StringUtil_Package.getInstance.getNonNull (This.password_Var);
         random := Random_Package.Create.nextInt (SuperCrypt_Package.KEYMAX);
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         vector.add (random.toString);
         vector.add (secret);
-        vector.add (SuperCrypt_Package.Create (random).encrypt (This.password));
+        vector.add (SuperCrypt_Package.Create (random).encrypt (This.password_Var));
         return vector;
    end toVector;
 
@@ -122,24 +122,24 @@ package body org.allbinary.business.user.password.Password_Package is
       values : HashMap_Access;
       random : Integer;
    begin
-        This.password := StringUtil_Package.getInstance.getNonNull (This.password);
+        This.password_Var := StringUtil_Package.getInstance.getNonNull (This.password_Var);
         values := StdUtil_Package.getInstance.createHashMap;
         random := Random_Package.Create.nextInt (SuperCrypt_Package.KEYMAX);
         values.put (EntryData_Package.getInstance.ENCRYPTION, Java_Box (random.toString));
         values.put (UserData_Package.SECRET, Java_Box (secret));
-        values.put (UserData_Package.PASSWORD, SuperCrypt_Package.Create (random).encrypt (This.password));
+        values.put (UserData_Package.PASSWORD_Var, SuperCrypt_Package.Create (random).encrypt (This.password_Var));
         return values;
    end toHashMap;
 
    procedure toVector (This : in out Password; secret : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := Password'Class (This).toVector (secret);
+      Java_Result : constant BasicArrayList_Access := Password'Class (This).toVector (secret => secret);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toVector;
 
    procedure toHashMap (This : in out Password; secret : Unbounded_String) is
-      Java_Result : constant HashMap_Access := Password'Class (This).toHashMap (secret);
+      Java_Result : constant HashMap_Access := Password'Class (This).toHashMap (secret => secret);
       pragma Unreferenced (Java_Result);
    begin
       null;

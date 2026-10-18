@@ -94,7 +94,7 @@ package body org.allbinary.business.init.LicenseInitInfo_Package is
    end setServerList;
 
    procedure getServer (This : in out LicenseInitInfo; index : Integer) is
-      Java_Result : constant Unbounded_String := LicenseInitInfo'Class (This).getServer (index);
+      Java_Result : constant Unbounded_String := LicenseInitInfo'Class (This).getServer (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -63,7 +63,7 @@ package body org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Pack
    end print;
 
    procedure visit (This : in out ObjectPermutationVisitor; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := ObjectPermutationVisitor'Class (This).visit (anyType_Param);
+      Java_Result : constant Java_Object_Access := ObjectPermutationVisitor'Class (This).visit (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

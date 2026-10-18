@@ -173,7 +173,7 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
    end getScaledFactorValue;
 
    procedure createBigDecimal (bigDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class) is
-      Java_Result : constant BasicDecimal_Access := createBigDecimal (bigDecimal_Param);
+      Java_Result : constant BasicDecimal_Access := createBigDecimal (bigDecimal_Param => bigDecimal_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -125,7 +125,7 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    end dropTable;
 
    procedure get (This : in out IdGeneratorEntity; name : Unbounded_String) is
-      Java_Result : constant Long_Long_Integer := IdGeneratorEntity'Class (This).get (name);
+      Java_Result : constant Long_Long_Integer := IdGeneratorEntity'Class (This).get (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

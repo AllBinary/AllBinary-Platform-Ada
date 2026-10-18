@@ -79,16 +79,16 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    end Create;
 
    function valueOf (anyType : Java_Object_Access_Array_Access) return ImageTypes_Access is
-      imageTypes : ImageTypes_Access;
+      imageTypes_Var : ImageTypes_Access;
       imageType : InputImageType_Access;
       index : Integer;
    begin
-        imageTypes := ImageTypes_Package.Create;
+        imageTypes_Var := ImageTypes_Package.Create;
         for index in 0 .. (anyType'Length) - 1 loop
             imageType := InputImageType_Package.getInstance (Java_Unbox (anyType (index)));
-            imageTypes.getVector.add (imageType);
+            imageTypes_Var.getVector.add (imageType);
         end loop;
-        return imageTypes;
+        return imageTypes_Var;
    end valueOf;
 
    function getVector (This : in out ImageTypes) return BasicArrayList_Access is
@@ -133,14 +133,14 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    end toString;
 
    procedure valueOf (anyType : Java_Object_Access_Array_Access) is
-      Java_Result : constant ImageTypes_Access := valueOf (anyType);
+      Java_Result : constant ImageTypes_Access := valueOf (anyType => anyType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end valueOf;
 
    procedure toXmlNode (This : in out ImageTypes; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := ImageTypes'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := ImageTypes'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

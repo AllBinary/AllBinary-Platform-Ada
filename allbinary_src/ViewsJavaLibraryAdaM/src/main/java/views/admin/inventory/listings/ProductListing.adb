@@ -326,14 +326,14 @@ package body views.admin.inventory.listings.ProductListing_Package is
    end generateAll;
 
    procedure getHashSet (This : in out ProductListing; storeFront_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
-      Java_Result : constant HashSet_Access := ProductListing'Class (This).getHashSet (storeFront_Param);
+      Java_Result : constant HashSet_Access := ProductListing'Class (This).getHashSet (storeFront_Param => storeFront_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getHashSet;
 
    procedure generateAll (This : in out ProductListing; storeName_Param : Unbounded_String) is
-      Java_Result : constant Unbounded_String := ProductListing'Class (This).generateAll (storeName_Param);
+      Java_Result : constant Unbounded_String := ProductListing'Class (This).generateAll (storeName_Param => storeName_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -219,7 +219,7 @@ package body views.business.context.modules.storefront.customizer.template.Inser
    end view;
 
    procedure toValidationInfoNode (This : in out InsertCustomizerValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := InsertCustomizerValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := InsertCustomizerValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

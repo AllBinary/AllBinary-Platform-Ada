@@ -110,14 +110,14 @@ package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensi
    end main;
 
    procedure visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant Boolean := DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class (This).visit (file_Param);
+      Java_Result : constant Boolean := DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class (This).visit (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
    procedure visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String) is
-      Java_Result : constant Boolean := DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class (This).visit (file_Param, fileNameString);
+      Java_Result : constant Boolean := DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class (This).visit (file_Param => file_Param, fileNameString => fileNameString);
       pragma Unreferenced (Java_Result);
    begin
       null;

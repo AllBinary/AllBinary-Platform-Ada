@@ -250,63 +250,63 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
    end getGeographicMapCellTypeFactory;
 
    procedure getCellPosition (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPosition (direction, oldGeographicMapCellPosition_Param);
+      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPosition (direction => direction, oldGeographicMapCellPosition_Param => oldGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPosition;
 
    procedure getCellPositionNoThrow (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPositionNoThrow (direction, oldGeographicMapCellPosition_Param);
+      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPositionNoThrow (direction => direction, oldGeographicMapCellPosition_Param => oldGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionNoThrow;
 
    procedure isOfFourDirections (This : in out BasicGeographicMap; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; newGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := BasicGeographicMap'Class (This).isOfFourDirections (oldGeographicMapCellPosition_Param, newGeographicMapCellPosition_Param);
+      Java_Result : constant Boolean := BasicGeographicMap'Class (This).isOfFourDirections (oldGeographicMapCellPosition_Param => oldGeographicMapCellPosition_Param, newGeographicMapCellPosition_Param => newGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isOfFourDirections;
 
    procedure getCellPositionAtXY (This : in out BasicGeographicMap; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPositionAtXY (x, y);
+      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPositionAtXY (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionAtXY;
 
    procedure getCellPositionAtXYNoThrow (This : in out BasicGeographicMap; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPositionAtXYNoThrow (x, y);
+      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPositionAtXYNoThrow (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionAtXYNoThrow;
 
    procedure isOnMap (This : in out BasicGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := BasicGeographicMap'Class (This).isOnMap (geographicMapCellPosition_Param);
+      Java_Result : constant Boolean := BasicGeographicMap'Class (This).isOnMap (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isOnMap;
 
    procedure getCellPositionAtNoThrow (This : in out BasicGeographicMap; x : Integer; y : Integer; x2 : Integer; y2 : Integer; geographicMapCellPositionList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := BasicGeographicMap'Class (This).getCellPositionAtNoThrow (x, y, x2, y2, geographicMapCellPositionList_Param);
+      Java_Result : constant BasicArrayList_Access := BasicGeographicMap'Class (This).getCellPositionAtNoThrow (x => x, y => y, x2 => x2, y2 => y2, geographicMapCellPositionList_Param => geographicMapCellPositionList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionAtNoThrow;
 
    procedure getCellPositionsAt (This : in out BasicGeographicMap; layer_Param : access Layer_Package.Layer'Class; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) is
-      Java_Result : constant Boolean := BasicGeographicMap'Class (This).getCellPositionsAt (layer_Param, currentCellPositionArray, cellPositionArray);
+      Java_Result : constant Boolean := BasicGeographicMap'Class (This).getCellPositionsAt (layer_Param => layer_Param, currentCellPositionArray => currentCellPositionArray, cellPositionArray => cellPositionArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionsAt;
 
    procedure getCellTypeAtXY (This : in out BasicGeographicMap; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellType_Access := BasicGeographicMap'Class (This).getCellTypeAtXY (x, y);
+      Java_Result : constant GeographicMapCellType_Access := BasicGeographicMap'Class (This).getCellTypeAtXY (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

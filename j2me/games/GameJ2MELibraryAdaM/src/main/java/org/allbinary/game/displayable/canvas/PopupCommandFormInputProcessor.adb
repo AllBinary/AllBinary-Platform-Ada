@@ -52,7 +52,7 @@ package body org.allbinary.game.displayable.canvas.PopupCommandFormInputProcesso
    end processMotionInput;
 
    procedure processInput (This : in out PopupCommandFormInputProcessor; key : Integer) is
-      Java_Result : constant Integer := PopupCommandFormInputProcessor'Class (This).processInput (key);
+      Java_Result : constant Integer := PopupCommandFormInputProcessor'Class (This).processInput (key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;

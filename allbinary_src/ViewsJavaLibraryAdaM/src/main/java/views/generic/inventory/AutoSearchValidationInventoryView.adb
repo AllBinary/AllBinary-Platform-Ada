@@ -57,7 +57,7 @@ package body views.generic_Id.inventory.AutoSearchValidationInventoryView_Packag
    end validationInfo;
 
    procedure toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := AutoSearchValidationInventoryView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := AutoSearchValidationInventoryView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

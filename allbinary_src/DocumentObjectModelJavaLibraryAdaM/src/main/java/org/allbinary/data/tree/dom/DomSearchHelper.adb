@@ -107,35 +107,35 @@ package body org.allbinary.data.tree.dom.DomSearchHelper_Package is
    end getAllNodesNoThrow;
 
    procedure getNodeNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant Node_Access := getNodeNoThrow (nodeName, nodeList_Param);
+      Java_Result : constant Node_Access := getNodeNoThrow (nodeName => nodeName, nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNodeNoThrow;
 
    procedure getNode (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant Node_Access := getNode (nodeName, nodeList_Param);
+      Java_Result : constant Node_Access := getNode (nodeName => nodeName, nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNode;
 
    procedure getChildNodeList (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant NodeList_Access := getChildNodeList (nodeName, nodeList_Param);
+      Java_Result : constant NodeList_Access := getChildNodeList (nodeName => nodeName, nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getChildNodeList;
 
    procedure getAllNodes (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant BasicArrayList_Access := getAllNodes (nodeName, nodeList_Param);
+      Java_Result : constant BasicArrayList_Access := getAllNodes (nodeName => nodeName, nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAllNodes;
 
    procedure getAllNodesNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant BasicArrayList_Access := getAllNodesNoThrow (nodeName, nodeList_Param);
+      Java_Result : constant BasicArrayList_Access := getAllNodesNoThrow (nodeName => nodeName, nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

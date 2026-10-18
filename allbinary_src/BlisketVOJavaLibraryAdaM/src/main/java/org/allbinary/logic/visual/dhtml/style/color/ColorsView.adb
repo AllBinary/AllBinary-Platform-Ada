@@ -161,14 +161,14 @@ package body org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package is
    end toXmlNode;
 
    procedure getColorNode (This : in out ColorsView; document_Param : access Document_Package.Document'Class; redIndex : Integer; greenIndex : Integer; blueIndex : Integer) is
-      Java_Result : constant Node_Access := ColorsView'Class (This).getColorNode (document_Param, redIndex, greenIndex, blueIndex);
+      Java_Result : constant Node_Access := ColorsView'Class (This).getColorNode (document_Param => document_Param, redIndex => redIndex, greenIndex => greenIndex, blueIndex => blueIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getColorNode;
 
    procedure toXmlNode (This : in out ColorsView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := ColorsView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := ColorsView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

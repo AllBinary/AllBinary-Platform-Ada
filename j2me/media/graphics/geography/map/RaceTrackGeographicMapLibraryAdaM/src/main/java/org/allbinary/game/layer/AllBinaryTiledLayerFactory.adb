@@ -72,14 +72,14 @@ package body org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
    end getMiniInstance;
 
    procedure getInstance (This : in out AllBinaryTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is
-      Java_Result : constant AllBinaryTiledLayer_Access := AllBinaryTiledLayerFactory'Class (This).getInstance (raceTrackInfo_Param, raceTrackData_Param);
+      Java_Result : constant AllBinaryTiledLayer_Access := AllBinaryTiledLayerFactory'Class (This).getInstance (raceTrackInfo_Param => raceTrackInfo_Param, raceTrackData_Param => raceTrackData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getMiniInstance (This : in out AllBinaryTiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is
-      Java_Result : constant AllBinaryTiledLayer_Access := AllBinaryTiledLayerFactory'Class (This).getMiniInstance (raceTrackData_Param);
+      Java_Result : constant AllBinaryTiledLayer_Access := AllBinaryTiledLayerFactory'Class (This).getMiniInstance (raceTrackData_Param => raceTrackData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

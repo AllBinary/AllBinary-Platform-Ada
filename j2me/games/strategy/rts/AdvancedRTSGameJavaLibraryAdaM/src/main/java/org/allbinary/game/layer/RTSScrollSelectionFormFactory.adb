@@ -69,7 +69,7 @@ package body org.allbinary.game.layer.RTSScrollSelectionFormFactory_Package is
    end getInstance;
 
    procedure getInstance (formLabel : Unbounded_String; items : ABCustomItem_Access_Array_Access) is
-      Java_Result : constant ScrollSelectionForm_Access := getInstance (formLabel, items);
+      Java_Result : constant ScrollSelectionForm_Access := getInstance (formLabel => formLabel, items => items);
       pragma Unreferenced (Java_Result);
    begin
       null;

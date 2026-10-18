@@ -41,7 +41,7 @@ package body org.allbinary.game.collision.layer.AllBinaryCollisionManager_Packag
 
    function getInstance return AllBinaryCollisionManager_Access is
    begin
-        return AllBinaryCollisionManager_Package.allBinaryCollisionManager;
+        return AllBinaryCollisionManager_Package.allBinaryCollisionManager_Var;
    end getInstance;
 
    --  throws Exception
@@ -79,7 +79,7 @@ package body org.allbinary.game.collision.layer.AllBinaryCollisionManager_Packag
 
 begin
    null;
-   allBinaryCollisionManager := AllBinaryCollisionManager_Package.Create;
+   allBinaryCollisionManager_Var := AllBinaryCollisionManager_Package.Create;
 
 end org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package;
 

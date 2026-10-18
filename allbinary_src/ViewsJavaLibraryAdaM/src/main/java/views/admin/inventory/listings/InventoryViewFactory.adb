@@ -67,7 +67,7 @@ package body views.admin.inventory.listings.InventoryViewFactory_Package is
    end getInstance;
 
    procedure getInstance (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) is
-      Java_Result : constant InventoryViewSearchInterface_Access := getInstance (searchRequest_Param);
+      Java_Result : constant InventoryViewSearchInterface_Access := getInstance (searchRequest_Param => searchRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

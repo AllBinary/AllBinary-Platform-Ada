@@ -117,14 +117,14 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Pack
    end setBackgroundBasicColor;
 
    procedure getCellTypeAt (This : in out SimpleGeographicMap; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant GeographicMapCellType_Access := SimpleGeographicMap'Class (This).getCellTypeAt (cellPosition_Param);
+      Java_Result : constant GeographicMapCellType_Access := SimpleGeographicMap'Class (This).getCellTypeAt (cellPosition_Param => cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellTypeAt;
 
    procedure getCellTypeFromMapCellTypeInt (This : in out SimpleGeographicMap; cellTypeId : Integer) is
-      Java_Result : constant Integer := SimpleGeographicMap'Class (This).getCellTypeFromMapCellTypeInt (cellTypeId);
+      Java_Result : constant Integer := SimpleGeographicMap'Class (This).getCellTypeFromMapCellTypeInt (cellTypeId => cellTypeId);
       pragma Unreferenced (Java_Result);
    begin
       null;

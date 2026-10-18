@@ -119,26 +119,26 @@ package body org.allbinary.math.AngleFactory_Package is
 
    procedure main (args : Unbounded_String_Array_Access) is
       stringMaker : StringMaker_Access;
-      angleFactory : AngleFactory_Access;
+      angleFactory_Var : AngleFactory_Access;
       index : Integer;
    begin
         stringMaker := StringMaker_Package.Create;
-        angleFactory := AngleFactory_Package.getInstance;
+        angleFactory_Var := AngleFactory_Package.getInstance;
         for index in 0 .. (360) - 1 loop
-            stringMaker.appendint (index).append (CommonSeps_Package.getInstance.FORWARD_SLASH).appendshort (Short_Integer (angleFactory.getClosestDirection (index).getValue)).append (CommonSeps_Package.getInstance.NEW_LINE);
+            stringMaker.appendint (index).append (CommonSeps_Package.getInstance.FORWARD_SLASH).appendshort (Short_Integer (angleFactory_Var.getClosestDirection (index).getValue)).append (CommonSeps_Package.getInstance.NEW_LINE);
         end loop;
         LogUtil_Package.getInstance.putF (stringMaker.toString, To_Unbounded_String ("main"), To_Unbounded_String ("main"));
    end main;
 
    procedure getAt (This : in out AngleFactory; index : Integer) is
-      Java_Result : constant Angle_Access := AngleFactory'Class (This).getAt (index);
+      Java_Result : constant Angle_Access := AngleFactory'Class (This).getAt (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAt;
 
    procedure getClosestDirection (This : in out AngleFactory; angle : Integer) is
-      Java_Result : constant Angle_Access := AngleFactory'Class (This).getClosestDirection (angle);
+      Java_Result : constant Angle_Access := AngleFactory'Class (This).getClosestDirection (angle => angle);
       pragma Unreferenced (Java_Result);
    begin
       null;

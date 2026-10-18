@@ -42,7 +42,7 @@ package body org.allbinary.game.layer.pickup.IconLayerFactory_Package is
    end getInstance;
 
    procedure getInstance (animationInterface_Param : access Animation_Package.Animation'Class; width : Integer; height : Integer) is
-      Java_Result : constant IconLayer_Access := getInstance (animationInterface_Param, width, height);
+      Java_Result : constant IconLayer_Access := getInstance (animationInterface_Param => animationInterface_Param, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -143,21 +143,21 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
    end addDb;
 
    procedure addDbUser (This : in out AbDatabaseManagement; hostName : Unbounded_String; db : Unbounded_String; userName : Unbounded_String; password : Unbounded_String) is
-      Java_Result : constant Boolean := AbDatabaseManagement'Class (This).addDbUser (hostName, db, userName, password);
+      Java_Result : constant Boolean := AbDatabaseManagement'Class (This).addDbUser (hostName => hostName, db => db, userName => userName, password => password);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addDbUser;
 
    procedure addDbUser (This : in out AbDatabaseManagement; db : Unbounded_String; userName : Unbounded_String; password : Unbounded_String) is
-      Java_Result : constant Boolean := AbDatabaseManagement'Class (This).addDbUser (db, userName, password);
+      Java_Result : constant Boolean := AbDatabaseManagement'Class (This).addDbUser (db => db, userName => userName, password => password);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addDbUser;
 
    procedure addDb (This : in out AbDatabaseManagement; db : Unbounded_String) is
-      Java_Result : constant Boolean := AbDatabaseManagement'Class (This).addDb (db);
+      Java_Result : constant Boolean := AbDatabaseManagement'Class (This).addDb (db => db);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -35,7 +35,7 @@ package org.allbinary.logic.communication.smtp.event.EmailEvent_Package is
    type EmailEvent_Access_Array_Access_Array is array (Natural range <>) of EmailEvent_Access_Array_Access;
    type EmailEvent_Access_Array_Access_Array_Access is access all EmailEvent_Access_Array_Access_Array;
 
-   type EmailEvent is new EventObject with record
+   type EmailEvent is new Java_Object with record
       emailInfo : EmailInfo_Access;
       userEmailEventNameData : UserEmailEventNameData_Access;
       attempts : Integer;

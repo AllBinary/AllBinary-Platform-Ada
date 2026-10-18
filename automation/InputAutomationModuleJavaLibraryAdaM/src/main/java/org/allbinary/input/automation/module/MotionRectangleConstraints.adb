@@ -121,28 +121,28 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
    end setMinArea;
 
    procedure isTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
-      Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isTooSmall (rectangle_Param);
+      Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isTooSmall (rectangle_Param => rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTooSmall;
 
    procedure isAreaTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
-      Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isAreaTooSmall (rectangle_Param);
+      Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isAreaTooSmall (rectangle_Param => rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isAreaTooSmall;
 
    procedure isTooBig (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
-      Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isTooBig (rectangle_Param);
+      Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isTooBig (rectangle_Param => rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTooBig;
 
    procedure isValid (This : in out MotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
-      Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isValid (frame, bufferedImage_Param, rectangle_Param);
+      Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isValid (frame => frame, bufferedImage_Param => bufferedImage_Param, rectangle_Param => rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

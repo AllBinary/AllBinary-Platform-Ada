@@ -77,7 +77,7 @@ package body views.business.context.modules.storefront.generator.GeneratorStoreF
    end view;
 
    procedure view (This : in out GeneratorStoreFrontContextView; group : Unbounded_String) is
-      Java_Result : constant Unbounded_String := GeneratorStoreFrontContextView'Class (This).view (group);
+      Java_Result : constant Unbounded_String := GeneratorStoreFrontContextView'Class (This).view (group => group);
       pragma Unreferenced (Java_Result);
    begin
       null;

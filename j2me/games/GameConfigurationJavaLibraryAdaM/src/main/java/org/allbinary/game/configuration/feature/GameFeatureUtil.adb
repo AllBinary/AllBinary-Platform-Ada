@@ -244,7 +244,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    end updateExclusiveList;
 
    procedure isExclusive (This : in out GameFeatureUtil; itemLabel : Unbounded_String) is
-      Java_Result : constant Boolean := GameFeatureUtil'Class (This).isExclusive (itemLabel);
+      Java_Result : constant Boolean := GameFeatureUtil'Class (This).isExclusive (itemLabel => itemLabel);
       pragma Unreferenced (Java_Result);
    begin
       null;

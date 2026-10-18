@@ -50,7 +50,7 @@ package body org.allbinary.math.DistanceUtil_Package is
    end getDistance;
 
    procedure getDistance (This : in out DistanceUtil; x1 : Integer; y1 : Integer; x2 : Integer; y2 : Integer) is
-      Java_Result : constant Integer := DistanceUtil'Class (This).getDistance (x1, y1, x2, y2);
+      Java_Result : constant Integer := DistanceUtil'Class (This).getDistance (x1 => x1, y1 => y1, x2 => x2, y2 => y2);
       pragma Unreferenced (Java_Result);
    begin
       null;

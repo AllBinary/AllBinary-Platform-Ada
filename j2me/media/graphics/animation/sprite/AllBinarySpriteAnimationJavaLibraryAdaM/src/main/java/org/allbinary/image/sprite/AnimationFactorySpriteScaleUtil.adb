@@ -108,7 +108,7 @@ package body org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package 
    end createImage;
 
    procedure createImage (This : in out AnimationFactorySpriteScaleUtil; image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) is
-      Java_Result : constant Sprite_Access := AnimationFactorySpriteScaleUtil'Class (This).createImage (image_Param, width, height, scaleWidth, scaleHeight);
+      Java_Result : constant Sprite_Access := AnimationFactorySpriteScaleUtil'Class (This).createImage (image_Param => image_Param, width => width, height => height, scaleWidth => scaleWidth, scaleHeight => scaleHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;

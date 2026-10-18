@@ -215,14 +215,14 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
    end nextSong;
 
    procedure isCommand (This : in out MyCanvas; command_Param : access Command_Package.Command'Class) is
-      Java_Result : constant Boolean := MyCanvas'Class (This).isCommand (command_Param);
+      Java_Result : constant Boolean := MyCanvas'Class (This).isCommand (command_Param => command_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCommand;
 
    procedure hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas_Package.MyCanvas'Class) is
-      Java_Result : constant Boolean := MyCanvas'Class (This).hasChild (displayable_Param);
+      Java_Result : constant Boolean := MyCanvas'Class (This).hasChild (displayable_Param => displayable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -112,14 +112,14 @@ package body org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Pack
    end getInstance;
 
    procedure getInstance (This : in out StylesValidationFactory; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant BasicArrayList_Access := StylesValidationFactory'Class (This).getInstance (document_Param);
+      Java_Result : constant BasicArrayList_Access := StylesValidationFactory'Class (This).getInstance (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant BasicArrayList_Access := getInstance (hashMap_Param);
+      Java_Result : constant BasicArrayList_Access := getInstance (hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

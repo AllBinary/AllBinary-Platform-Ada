@@ -125,21 +125,21 @@ package body org.allbinary.game.input.LocalPlayerInputIdFactory_Package is
    end getPlayersInPlay;
 
    procedure getDeviceId (This : in out LocalPlayerInputIdFactory; playerInputId : Integer) is
-      Java_Result : constant Integer := LocalPlayerInputIdFactory'Class (This).getDeviceId (playerInputId);
+      Java_Result : constant Integer := LocalPlayerInputIdFactory'Class (This).getDeviceId (playerInputId => playerInputId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDeviceId;
 
    procedure getPlayerForDevice (This : in out LocalPlayerInputIdFactory; deviceId : Integer) is
-      Java_Result : constant Integer := LocalPlayerInputIdFactory'Class (This).getPlayerForDevice (deviceId);
+      Java_Result : constant Integer := LocalPlayerInputIdFactory'Class (This).getPlayerForDevice (deviceId => deviceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPlayerForDevice;
 
    procedure isPlayerInPlay (This : in out LocalPlayerInputIdFactory; playerInputId : Integer) is
-      Java_Result : constant Boolean := LocalPlayerInputIdFactory'Class (This).isPlayerInPlay (playerInputId);
+      Java_Result : constant Boolean := LocalPlayerInputIdFactory'Class (This).isPlayerInPlay (playerInputId => playerInputId);
       pragma Unreferenced (Java_Result);
    begin
       null;

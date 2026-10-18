@@ -174,14 +174,14 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    end getRemoteMethod;
 
    procedure get (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := XmlRpcAbeClient'Class (This).get (anyType_Param);
+      Java_Result : constant Java_Object_Access := XmlRpcAbeClient'Class (This).get (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure tryAnother (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := XmlRpcAbeClient'Class (This).tryAnother (anyType_Param);
+      Java_Result : constant Java_Object_Access := XmlRpcAbeClient'Class (This).tryAnother (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

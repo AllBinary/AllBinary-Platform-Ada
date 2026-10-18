@@ -366,14 +366,14 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
    end dropTable;
 
    procedure getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) is
-      Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayEntity'Class (This).getPaymentGatewayInterface (storeName, paymentType_Param);
+      Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayEntity'Class (This).getPaymentGatewayInterface (storeName => storeName, paymentType_Param => paymentType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPaymentGatewayInterface;
 
    procedure findPaymentTypeVectorByStore (This : in out PaymentGatewayEntity; storeName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := PaymentGatewayEntity'Class (This).findPaymentTypeVectorByStore (storeName);
+      Java_Result : constant BasicArrayList_Access := PaymentGatewayEntity'Class (This).findPaymentTypeVectorByStore (storeName => storeName);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -48,7 +48,7 @@ package body org.allbinary.logic.math.permutations.ComparableObject_Package is
    end compareTo;
 
    procedure compareTo (This : in out ComparableObject; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := ComparableObject'Class (This).compareTo (anyType_Param);
+      Java_Result : constant Integer := ComparableObject'Class (This).compareTo (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

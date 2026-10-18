@@ -80,7 +80,7 @@ package body org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActi
    end isMotionGestureArrayEquals;
 
    procedure isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Boolean := MotionGestureToMotionGestureActionAssociation'Class (This).isMotionGestureArrayEquals (aList_Param);
+      Java_Result : constant Boolean := MotionGestureToMotionGestureActionAssociation'Class (This).isMotionGestureArrayEquals (aList_Param => aList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

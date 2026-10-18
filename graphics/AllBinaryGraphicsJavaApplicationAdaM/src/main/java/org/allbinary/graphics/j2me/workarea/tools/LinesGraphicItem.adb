@@ -263,12 +263,12 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
 
    --  throws Exception
    function duplicate (This : in out LinesGraphicItem) return GraphicItemInterface_Access is
-      linesGraphicItem : LinesGraphicItem_Access;
+      linesGraphicItem_Var : LinesGraphicItem_Access;
    begin
-        linesGraphicItem := LinesGraphicItem_Package.Create;
-        linesGraphicItem.duplicatePoints (This.points.getPoints);
-        linesGraphicItem.deactivate;
-        return GraphicItemInterface_Access (linesGraphicItem);
+        linesGraphicItem_Var := LinesGraphicItem_Package.Create;
+        linesGraphicItem_Var.duplicatePoints (This.points.getPoints);
+        linesGraphicItem_Var.deactivate;
+        return GraphicItemInterface_Access (linesGraphicItem_Var);
    end duplicate;
 
    function getAngle (This : in out LinesGraphicItem) return Long_Float is
@@ -473,7 +473,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
    end keyTyped;
 
    procedure toDom (This : in out LinesGraphicItem; canvasDom_Param : access CanvasDom_Package.CanvasDom'Class) is
-      Java_Result : constant Node_Access := LinesGraphicItem'Class (This).toDom (canvasDom_Param);
+      Java_Result : constant Node_Access := LinesGraphicItem'Class (This).toDom (canvasDom_Param => canvasDom_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

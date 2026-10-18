@@ -55,7 +55,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Pa
    end getInstance;
 
    procedure getInstance (This : in out LicenseTypeFactory; name : Unbounded_String) is
-      Java_Result : constant LicenseType_Access := LicenseTypeFactory'Class (This).getInstance (name);
+      Java_Result : constant LicenseType_Access := LicenseTypeFactory'Class (This).getInstance (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -129,7 +129,7 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
    end isReady;
 
    procedure createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) is
-      Java_Result : constant GameCanvasRunnableInterface_Access := DemoGameMidlet'Class (This).createGameCanvasRunnable (allBinaryGameLayerManager_Param);
+      Java_Result : constant GameCanvasRunnableInterface_Access := DemoGameMidlet'Class (This).createGameCanvasRunnable (allBinaryGameLayerManager_Param => allBinaryGameLayerManager_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

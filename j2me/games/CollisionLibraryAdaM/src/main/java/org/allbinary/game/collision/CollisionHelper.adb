@@ -55,7 +55,7 @@ package body org.allbinary.game.collision.CollisionHelper_Package is
    end setOwnerLayerInterface;
 
    procedure isCollidable (This : in out CollisionHelper; layerInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
-      Java_Result : constant Boolean := CollisionHelper'Class (This).isCollidable (layerInterface_Param);
+      Java_Result : constant Boolean := CollisionHelper'Class (This).isCollidable (layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

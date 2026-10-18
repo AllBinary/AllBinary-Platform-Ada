@@ -79,14 +79,14 @@ package body org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Pac
    end getInstance;
 
    procedure mirrorVerticle (This : in out MirrorMotionGestureEventUtil; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class; halfWidth : Integer) is
-      Java_Result : constant MotionGestureEvent_Access := MirrorMotionGestureEventUtil'Class (This).mirrorVerticle (motionGestureEvent_Param, halfWidth);
+      Java_Result : constant MotionGestureEvent_Access := MirrorMotionGestureEventUtil'Class (This).mirrorVerticle (motionGestureEvent_Param => motionGestureEvent_Param, halfWidth => halfWidth);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end mirrorVerticle;
 
    procedure getNewX (This : in out MirrorMotionGestureEventUtil; x : Integer; halfWidth : Integer) is
-      Java_Result : constant Integer := MirrorMotionGestureEventUtil'Class (This).getNewX (x, halfWidth);
+      Java_Result : constant Integer := MirrorMotionGestureEventUtil'Class (This).getNewX (x => x, halfWidth => halfWidth);
       pragma Unreferenced (Java_Result);
    begin
       null;

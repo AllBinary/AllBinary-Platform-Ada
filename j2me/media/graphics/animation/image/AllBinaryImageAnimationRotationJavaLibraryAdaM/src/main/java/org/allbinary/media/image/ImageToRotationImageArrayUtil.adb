@@ -60,7 +60,7 @@ package body org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
    end generate;
 
    procedure generate (This : in out ImageToRotationImageArrayUtil; image_Param : access Image_Package.Image'Class; angleIncrement : Integer; totalAngle : Integer) is
-      Java_Result : constant Image_Access_Array_Access := ImageToRotationImageArrayUtil'Class (This).generate (image_Param, angleIncrement, totalAngle);
+      Java_Result : constant Image_Access_Array_Access := ImageToRotationImageArrayUtil'Class (This).generate (image_Param => image_Param, angleIncrement => angleIncrement, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;

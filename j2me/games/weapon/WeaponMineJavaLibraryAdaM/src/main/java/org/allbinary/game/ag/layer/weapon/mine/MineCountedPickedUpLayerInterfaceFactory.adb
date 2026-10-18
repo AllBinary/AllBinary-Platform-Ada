@@ -78,7 +78,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInt
    end getNextInstance;
 
    procedure getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant AllBinaryLayer_Access := MineCountedPickedUpLayerInterfaceFactory'Class (This).getNextInstance (hashtable_Param, x, y, z);
+      Java_Result : constant AllBinaryLayer_Access := MineCountedPickedUpLayerInterfaceFactory'Class (This).getNextInstance (hashtable_Param => hashtable_Param, x => x, y => y, z => z);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -191,21 +191,21 @@ package body org.allbinary.animation.PathParser_Package is
    end isCommand;
 
    procedure tokenize (d : Unbounded_String) is
-      Java_Result : constant Unbounded_String_Array_Access := tokenize (d);
+      Java_Result : constant Unbounded_String_Array_Access := tokenize (d => d);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end tokenize;
 
    procedure parsePath (d : Unbounded_String; outX : Integer_Array_Access; outY : Integer_Array_Access; maxPoints : Integer) is
-      Java_Result : constant Integer := parsePath (d, outX, outY, maxPoints);
+      Java_Result : constant Integer := parsePath (d => d, outX => outX, outY => outY, maxPoints => maxPoints);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end parsePath;
 
    procedure isCommand (tok : Unbounded_String) is
-      Java_Result : constant Boolean := isCommand (tok);
+      Java_Result : constant Boolean := isCommand (tok => tok);
       pragma Unreferenced (Java_Result);
    begin
       null;

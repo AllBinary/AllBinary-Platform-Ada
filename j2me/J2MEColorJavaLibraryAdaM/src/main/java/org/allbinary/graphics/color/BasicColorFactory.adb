@@ -100,28 +100,28 @@ package body org.allbinary.graphics.color.BasicColorFactory_Package is
    end createInstanceARGB;
 
    procedure createInstance (This : in out BasicColorFactory; value : Integer) is
-      Java_Result : constant BasicColor_Access := BasicColorFactory'Class (This).createInstance (value);
+      Java_Result : constant BasicColor_Access := BasicColorFactory'Class (This).createInstance (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createInstance;
 
    procedure createInstanceA (This : in out BasicColorFactory; alphaValue : Integer; value : Integer) is
-      Java_Result : constant BasicColor_Access := BasicColorFactory'Class (This).createInstanceA (alphaValue, value);
+      Java_Result : constant BasicColor_Access := BasicColorFactory'Class (This).createInstanceA (alphaValue => alphaValue, value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createInstanceA;
 
    procedure createInstanceAN (This : in out BasicColorFactory; alphaValue : Integer; value : Integer; name : Unbounded_String) is
-      Java_Result : constant BasicColor_Access := BasicColorFactory'Class (This).createInstanceAN (alphaValue, value, name);
+      Java_Result : constant BasicColor_Access := BasicColorFactory'Class (This).createInstanceAN (alphaValue => alphaValue, value => value, name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createInstanceAN;
 
    procedure createInstanceARGB (This : in out BasicColorFactory; alphaValue : Integer; r : Integer; g : Integer; b : Integer; name : Unbounded_String) is
-      Java_Result : constant BasicColor_Access := BasicColorFactory'Class (This).createInstanceARGB (alphaValue, r, g, b, name);
+      Java_Result : constant BasicColor_Access := BasicColorFactory'Class (This).createInstanceARGB (alphaValue => alphaValue, r => r, g => g, b => b, name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

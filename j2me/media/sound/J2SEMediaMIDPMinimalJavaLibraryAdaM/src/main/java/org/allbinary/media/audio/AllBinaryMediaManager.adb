@@ -147,14 +147,14 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    end isInitialized;
 
    procedure createPlayer (resource : Unbounded_String) is
-      Java_Result : constant Player_Access := createPlayer (resource);
+      Java_Result : constant Player_Access := createPlayer (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPlayer;
 
    procedure createPlayerFromInputStream (stream_Param : access InputStream_Package.InputStream'Class; type_Id : Unbounded_String) is
-      Java_Result : constant Player_Access := createPlayerFromInputStream (stream_Param, type_Id);
+      Java_Result : constant Player_Access := createPlayerFromInputStream (stream_Param => stream_Param, type_Id => type_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

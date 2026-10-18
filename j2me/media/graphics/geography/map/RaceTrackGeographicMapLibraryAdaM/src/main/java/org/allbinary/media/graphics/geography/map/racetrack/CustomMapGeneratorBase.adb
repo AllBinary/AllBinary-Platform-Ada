@@ -54,7 +54,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
    end getCustomType;
 
    procedure getCustomType (This : in out CustomMapGeneratorBase; column : Integer; row : Integer; currentType : Integer) is
-      Java_Result : constant Integer := CustomMapGeneratorBase'Class (This).getCustomType (column, row, currentType);
+      Java_Result : constant Integer := CustomMapGeneratorBase'Class (This).getCustomType (column => column, row => row, currentType => currentType);
       pragma Unreferenced (Java_Result);
    begin
       null;

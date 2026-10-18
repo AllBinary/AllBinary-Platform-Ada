@@ -178,7 +178,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
    end dropTable;
 
    procedure getTransactionResultInterface (This : in out TransactionResultEntity; orderNumber : Unbounded_String) is
-      Java_Result : constant TransactionResultInterface_Access := TransactionResultEntity'Class (This).getTransactionResultInterface (orderNumber);
+      Java_Result : constant TransactionResultInterface_Access := TransactionResultEntity'Class (This).getTransactionResultInterface (orderNumber => orderNumber);
       pragma Unreferenced (Java_Result);
    begin
       null;

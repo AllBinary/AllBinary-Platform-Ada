@@ -49,14 +49,14 @@ package body org.allbinary.animation.compound.AutoCompoundRotationAnimationInter
    end createAnimation;
 
    procedure createArray (This : in out AutoCompoundRotationAnimationInterfaceFactory; size : Integer) is
-      Java_Result : constant Animation_Access_Array_Access := AutoCompoundRotationAnimationInterfaceFactory'Class (This).createArray (size);
+      Java_Result : constant Animation_Access_Array_Access := AutoCompoundRotationAnimationInterfaceFactory'Class (This).createArray (size => size);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createArray;
 
    procedure createAnimation (This : in out AutoCompoundRotationAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access) is
-      Java_Result : constant Animation_Access := AutoCompoundRotationAnimationInterfaceFactory'Class (This).createAnimation (animationInterfaceArray);
+      Java_Result : constant Animation_Access := AutoCompoundRotationAnimationInterfaceFactory'Class (This).createAnimation (animationInterfaceArray => animationInterfaceArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

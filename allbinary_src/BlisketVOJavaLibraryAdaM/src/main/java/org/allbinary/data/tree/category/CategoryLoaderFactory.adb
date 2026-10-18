@@ -63,7 +63,7 @@ package body org.allbinary.data.tree.category.CategoryLoaderFactory_Package is
    end getInstance;
 
    procedure getInstance (categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) is
-      Java_Result : constant CategoryLoaderInterface_Access := getInstance (categoryFactoryInterface_Param);
+      Java_Result : constant CategoryLoaderInterface_Access := getInstance (categoryFactoryInterface_Param => categoryFactoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

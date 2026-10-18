@@ -65,14 +65,14 @@ package body org.allbinary.math.RectangleCollisionUtil_Package is
    end isInside;
 
    procedure isCollision (This : in out RectangleCollisionUtil; rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; rect2X1 : Integer; rect2Y1 : Integer; rect2X2 : Integer; rect2Y2 : Integer) is
-      Java_Result : constant Boolean := RectangleCollisionUtil'Class (This).isCollision (rectX1, rectY1, rectX2, rectY2, rect2X1, rect2Y1, rect2X2, rect2Y2);
+      Java_Result : constant Boolean := RectangleCollisionUtil'Class (This).isCollision (rectX1 => rectX1, rectY1 => rectY1, rectX2 => rectX2, rectY2 => rectY2, rect2X1 => rect2X1, rect2Y1 => rect2Y1, rect2X2 => rect2X2, rect2Y2 => rect2Y2);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
    procedure isInside (This : in out RectangleCollisionUtil; rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; x : Integer; y : Integer) is
-      Java_Result : constant Boolean := RectangleCollisionUtil'Class (This).isInside (rectX1, rectY1, rectX2, rectY2, x, y);
+      Java_Result : constant Boolean := RectangleCollisionUtil'Class (This).isInside (rectX1 => rectX1, rectY1 => rectY1, rectX2 => rectX2, rectY2 => rectY2, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

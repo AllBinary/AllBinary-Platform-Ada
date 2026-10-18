@@ -171,7 +171,7 @@ package body org.allbinary.game.physics.velocity.VelocityProperties_Package is
    end addVelocityi;
 
    procedure isOverXYMaxVelocity (This : in out VelocityProperties; maxVelocity : Integer) is
-      Java_Result : constant Boolean := VelocityProperties'Class (This).isOverXYMaxVelocity (maxVelocity);
+      Java_Result : constant Boolean := VelocityProperties'Class (This).isOverXYMaxVelocity (maxVelocity => maxVelocity);
       pragma Unreferenced (Java_Result);
    begin
       null;

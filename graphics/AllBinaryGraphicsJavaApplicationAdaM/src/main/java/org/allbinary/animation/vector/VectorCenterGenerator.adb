@@ -188,7 +188,7 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
    end setHeight;
 
    procedure translate (list_Param : access BasicArrayList_Package.BasicArrayList'Class; x : Integer; y : Integer) is
-      Java_Result : constant BasicArrayList_Access := translate (list_Param, x, y);
+      Java_Result : constant BasicArrayList_Access := translate (list_Param => list_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

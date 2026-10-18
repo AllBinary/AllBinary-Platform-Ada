@@ -88,7 +88,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
    end isValid;
 
    procedure isValid (This : in out RaceTrackGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := RaceTrackGeographicMap'Class (This).isValid (geographicMapCellPosition_Param);
+      Java_Result : constant Boolean := RaceTrackGeographicMap'Class (This).isValid (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

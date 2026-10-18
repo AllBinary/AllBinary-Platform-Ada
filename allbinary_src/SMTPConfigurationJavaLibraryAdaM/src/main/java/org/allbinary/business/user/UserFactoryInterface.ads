@@ -28,7 +28,7 @@ package org.allbinary.business.user.UserFactoryInterface_Package is
 
    package HashMap_Package renames Standard.java.util.HashMap_Package;
 
-   type UserFactoryInterface is interface and Serializable;
+   type UserFactoryInterface is interface;
    type UserFactoryInterface_Access is access all UserFactoryInterface'Class;
    type UserFactoryInterface_Access_Array is array (Natural range <>) of UserFactoryInterface_Access;
    type UserFactoryInterface_Access_Array_Access is access all UserFactoryInterface_Access_Array;

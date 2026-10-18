@@ -55,7 +55,7 @@ package body org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite
    end setInitialScale;
 
    procedure getInstance (This : in out AnimationInterfaceFactoryInterfaceComposite; instanceId : Integer) is
-      Java_Result : constant Animation_Access := AnimationInterfaceFactoryInterfaceComposite'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := AnimationInterfaceFactoryInterfaceComposite'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -243,14 +243,14 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
    end save;
 
    procedure getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
-      Java_Result : constant Unbounded_String := HighScoreNamePersistanceSingleton'Class (This).getRecordId (abeClientInformation_Param);
+      Java_Result : constant Unbounded_String := HighScoreNamePersistanceSingleton'Class (This).getRecordId (abeClientInformation_Param => abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRecordId;
 
    procedure load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class) is
-      Java_Result : constant Unbounded_String := HighScoreNamePersistanceSingleton'Class (This).load (abeClientInformation_Param, gameInfo_Param);
+      Java_Result : constant Unbounded_String := HighScoreNamePersistanceSingleton'Class (This).load (abeClientInformation_Param => abeClientInformation_Param, gameInfo_Param => gameInfo_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

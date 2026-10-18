@@ -68,7 +68,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
    end getInstance;
 
    procedure getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
-      Java_Result : constant TransformInfoObjectConfigGenerator_Access := TransformInfoObjectConfigGeneratorFactory'Class (This).getInstance (transformInfoInterface_Param);
+      Java_Result : constant TransformInfoObjectConfigGenerator_Access := TransformInfoObjectConfigGeneratorFactory'Class (This).getInstance (transformInfoInterface_Param => transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

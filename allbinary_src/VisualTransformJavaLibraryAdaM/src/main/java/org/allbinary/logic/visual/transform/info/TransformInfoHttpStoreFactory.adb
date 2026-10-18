@@ -51,7 +51,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFac
    end getInstance;
 
    procedure getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
-      Java_Result : constant TransformInfoInterface_Access := TransformInfoHttpStoreFactory'Class (This).getInstance (databaseHashMap_Param, propertiesHashMap_Param, pageContext_Param);
+      Java_Result : constant TransformInfoInterface_Access := TransformInfoHttpStoreFactory'Class (This).getInstance (databaseHashMap_Param => databaseHashMap_Param, propertiesHashMap_Param => propertiesHashMap_Param, pageContext_Param => pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

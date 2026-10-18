@@ -89,7 +89,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
    end toXmlNode;
 
    procedure toXmlNode (This : in out EmailServerConfigurationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := EmailServerConfigurationView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := EmailServerConfigurationView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

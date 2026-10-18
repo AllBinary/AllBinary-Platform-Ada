@@ -43,7 +43,7 @@ package body org.allbinary.graphics.color.ColorCacheableFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out ColorCacheableFactory; key_Param : access Java_Object'Class) is
-      Java_Result : constant CacheableInterface_Access := ColorCacheableFactory'Class (This).getInstance (key_Param);
+      Java_Result : constant CacheableInterface_Access := ColorCacheableFactory'Class (This).getInstance (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

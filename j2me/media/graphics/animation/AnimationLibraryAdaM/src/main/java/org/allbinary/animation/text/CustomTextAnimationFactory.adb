@@ -37,12 +37,12 @@ package body org.allbinary.animation.text.CustomTextAnimationFactory_Package is
 
    function createDXY (text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return CustomTextAnimationFactory_Access is
       animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
-      customTextAnimationFactory : CustomTextAnimationFactory_Access;
+      customTextAnimationFactory_Var : CustomTextAnimationFactory_Access;
    begin
-        customTextAnimationFactory := CustomTextAnimationFactory_Package.Create (text, fontSize, animationBehaviorFactory);
-        customTextAnimationFactory.dx := dx;
-        customTextAnimationFactory.dy := dy;
-        return customTextAnimationFactory;
+        customTextAnimationFactory_Var := CustomTextAnimationFactory_Package.Create (text, fontSize, animationBehaviorFactory);
+        customTextAnimationFactory_Var.dx := dx;
+        customTextAnimationFactory_Var.dy := dy;
+        return customTextAnimationFactory_Var;
    end createDXY;
 
    procedure Initialize (This : in out CustomTextAnimationFactory'Class; text : Unbounded_String; fontSize : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
@@ -95,14 +95,14 @@ package body org.allbinary.animation.text.CustomTextAnimationFactory_Package is
    end getHeight;
 
    procedure createDXY (text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant CustomTextAnimationFactory_Access := createDXY (text, fontSize, dx, dy, animationBehaviorFactory_Param);
+      Java_Result : constant CustomTextAnimationFactory_Access := createDXY (text => text, fontSize => fontSize, dx => dx, dy => dy, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createDXY;
 
    procedure getInstance (This : in out CustomTextAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := CustomTextAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := CustomTextAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

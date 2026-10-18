@@ -87,7 +87,7 @@ package body views.admin.customizers.CustomizersValidationView_Package is
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out CustomizersValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := CustomizersValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := CustomizersValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

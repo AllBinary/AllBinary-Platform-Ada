@@ -106,7 +106,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    end waitForAll;
 
    procedure isReady (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class) is
-      Java_Result : constant Boolean := ImageCompleteUtil'Class (This).isReady (image_Param, name, timeDelayHelper_Param);
+      Java_Result : constant Boolean := ImageCompleteUtil'Class (This).isReady (image_Param => image_Param, name => name, timeDelayHelper_Param => timeDelayHelper_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

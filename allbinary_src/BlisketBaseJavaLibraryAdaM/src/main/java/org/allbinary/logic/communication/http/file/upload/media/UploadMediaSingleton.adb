@@ -144,49 +144,49 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
    end isMedia;
 
    procedure isReaderSupported (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String) is
-      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isReaderSupported (mediaFileType);
+      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isReaderSupported (mediaFileType => mediaFileType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isReaderSupported;
 
    procedure isWriterSupported (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String) is
-      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isWriterSupported (mediaFileType);
+      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isWriterSupported (mediaFileType => mediaFileType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isWriterSupported;
 
    procedure isSupported (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String) is
-      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isSupported (mediaFileType);
+      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isSupported (mediaFileType => mediaFileType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isSupported;
 
    procedure isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String) is
-      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isMedia (mediaFileType, aMediaType);
+      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isMedia (mediaFileType => mediaFileType, aMediaType => aMediaType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isMedia;
 
    procedure isReaderMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String) is
-      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isReaderMedia (mediaFileType, aMediaType);
+      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isReaderMedia (mediaFileType => mediaFileType, aMediaType => aMediaType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isReaderMedia;
 
    procedure isWriterMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String) is
-      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isWriterMedia (mediaFileType, aMediaType);
+      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isWriterMedia (mediaFileType => mediaFileType, aMediaType => aMediaType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isWriterMedia;
 
    procedure isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isMedia (mediaFileType, aMediaType, hashMap_Param);
+      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isMedia (mediaFileType => mediaFileType, aMediaType => aMediaType, hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -38,7 +38,7 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
       This.downGameKeyEventHandler := DownGameKeyEventHandler_Package.getInstance;
       This.lastPressedTouchButtonInput := BasicTouchInputFactory_Package.getInstance.NONE;
       This.currentlyPressedTouchButtonSingleton := CurrentlyPressedTouchButtonSingleton_Package.getInstance;
-      This.releaseHelper := null;
+      This.releaseHelper_Var := null;
    end Initialize_Fields;
 
 
@@ -46,9 +46,9 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
    begin
       Initialize_Fields (This);
         if TouchScreenFactory_Package.getInstance.isMultiTouch then
-            This.releaseHelper := ReleaseHelper_Access (MultitouchReleaseHelper_Package.Create (TouchButtonRecognizer_Access'(This'Unchecked_Access)));
+            This.releaseHelper_Var := ReleaseHelper_Access (MultitouchReleaseHelper_Package.Create (TouchButtonRecognizer_Access'(This'Unchecked_Access)));
         else
-            This.releaseHelper := ReleaseHelper_Package.Create (TouchButtonRecognizer_Access'(This'Unchecked_Access));
+            This.releaseHelper_Var := ReleaseHelper_Package.Create (TouchButtonRecognizer_Access'(This'Unchecked_Access));
         end if;
    end Initialize;
 
@@ -64,7 +64,7 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
       touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
       gameKeyEvent : GameKeyEvent_Access;
    begin
-        This.releaseHelper.release (touchButtonInput, deviceId);
+        This.releaseHelper_Var.release (touchButtonInput, deviceId);
         gameKeyEvent := touchButtonInput.getGameKeyEvent;
         This.upGameKeyEventHandler.fireEvent (gameKeyEvent);
         This.upGameKeyEventHandler.getInstanceForDevice (deviceId).fireEvent (gameKeyEvent);
@@ -127,7 +127,7 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
             if This.rectangleCollisionUtil.isInside (point.getX, point.getY, rectangle.getMaxX, rectangle.getMaxY, x, y) then
                 touchButtonInput := touchButton.getTouchButtonInput;
                 if not (This.currentlyPressedTouchButtonSingleton.contains (touchButtonInput)) then
-                    This.releaseHelper.release (touchButtonInput, deviceId);
+                    This.releaseHelper_Var.release (touchButtonInput, deviceId);
                     This.lastPressedTouchButtonInput := touchButtonInput;
                     This.currentlyPressedTouchButtonSingleton.add (touchButtonInput);
                     gameKeyEvent := touchButtonInput.getGameKeyEvent;
@@ -141,14 +141,14 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
    end pressTouchButtonInput;
 
    procedure releaseTouchButtonInput (This : in out TouchButtonRecognizer; x : Integer; y : Integer; deviceId : Integer) is
-      Java_Result : constant Boolean := TouchButtonRecognizer'Class (This).releaseTouchButtonInput (x, y, deviceId);
+      Java_Result : constant Boolean := TouchButtonRecognizer'Class (This).releaseTouchButtonInput (x => x, y => y, deviceId => deviceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end releaseTouchButtonInput;
 
    procedure pressTouchButtonInput (This : in out TouchButtonRecognizer; x : Integer; y : Integer; deviceId : Integer) is
-      Java_Result : constant Boolean := TouchButtonRecognizer'Class (This).pressTouchButtonInput (x, y, deviceId);
+      Java_Result : constant Boolean := TouchButtonRecognizer'Class (This).pressTouchButtonInput (x => x, y => y, deviceId => deviceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -180,17 +180,17 @@ package body org.allbinary.input.motion.button.ReleaseHelper_Package is
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ReleaseHelper'Class; touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) is
-      touchButtonRecognizer : constant TouchButtonRecognizer_Access := TouchButtonRecognizer_Access (touchButtonRecognizer_Param);
+   procedure Initialize (This : in out ReleaseHelper'Class; touchButtonRecognizer_Var_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) is
+      touchButtonRecognizer_Var : constant TouchButtonRecognizer_Access := TouchButtonRecognizer_Access (touchButtonRecognizer_Var_Param);
    begin
       Initialize_Fields (This);
-            This.touchButtonRecognizer := touchButtonRecognizer;
+            This.touchButtonRecognizer_Var := touchButtonRecognizer_Var;
    end Initialize;
 
-   function Create (touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) return ReleaseHelper_Access is
+   function Create (touchButtonRecognizer_Var_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) return ReleaseHelper_Access is
       This : constant ReleaseHelper_Access := new ReleaseHelper;
    begin
-      ReleaseHelper_Package.Initialize (This.all, touchButtonRecognizer_Param);
+      ReleaseHelper_Package.Initialize (This.all, touchButtonRecognizer_Var_Param);
       return This;
    end Create;
     
@@ -203,12 +203,12 @@ package body org.allbinary.input.motion.button.ReleaseHelper_Package is
    begin
             nextTouchButtonInput := null;
             gameKeyEvent := null;
-            for index in reverse 0 .. (This.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.size) - (1) loop
-                nextTouchButtonInput := This.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.get (index);
+            for index in reverse 0 .. (This.touchButtonRecognizer_Var.currentlyPressedTouchButtonSingleton.size) - (1) loop
+                nextTouchButtonInput := This.touchButtonRecognizer_Var.currentlyPressedTouchButtonSingleton.get (index);
                 gameKeyEvent := nextTouchButtonInput.getGameKeyEvent;
-                This.touchButtonRecognizer.upGameKeyEventHandler.fireEvent (gameKeyEvent);
-                This.touchButtonRecognizer.upGameKeyEventHandler.getInstanceForDevice (deviceId).fireEvent (gameKeyEvent);
-                This.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.removeAt (index);
+                This.touchButtonRecognizer_Var.upGameKeyEventHandler.fireEvent (gameKeyEvent);
+                This.touchButtonRecognizer_Var.upGameKeyEventHandler.getInstanceForDevice (deviceId).fireEvent (gameKeyEvent);
+                This.touchButtonRecognizer_Var.currentlyPressedTouchButtonSingleton.removeAt (index);
             end loop;
    end release;
 
@@ -237,16 +237,16 @@ package body org.allbinary.input.motion.button.MultitouchReleaseHelper_Package i
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out MultitouchReleaseHelper'Class; touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) is
-      touchButtonRecognizer : constant TouchButtonRecognizer_Access := TouchButtonRecognizer_Access (touchButtonRecognizer_Param);
+   procedure Initialize (This : in out MultitouchReleaseHelper'Class; touchButtonRecognizer_Var_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) is
+      touchButtonRecognizer_Var : constant TouchButtonRecognizer_Access := TouchButtonRecognizer_Access (touchButtonRecognizer_Var_Param);
    begin
             null;
    end Initialize;
 
-   function Create (touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) return MultitouchReleaseHelper_Access is
+   function Create (touchButtonRecognizer_Var_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) return MultitouchReleaseHelper_Access is
       This : constant MultitouchReleaseHelper_Access := new MultitouchReleaseHelper;
    begin
-      MultitouchReleaseHelper_Package.Initialize (This.all, touchButtonRecognizer_Param);
+      MultitouchReleaseHelper_Package.Initialize (This.all, touchButtonRecognizer_Var_Param);
       return This;
    end Create;
     
@@ -261,13 +261,13 @@ package body org.allbinary.input.motion.button.MultitouchReleaseHelper_Package i
             cancelTouchButtonInput := CancelTouchButtonInputFactory_Package.getInstance.getCancel (touchButtonInput);
             nextTouchButtonInput := null;
             gameKeyEvent := null;
-            for index in reverse 0 .. (This.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.size) - (1) loop
-                nextTouchButtonInput := This.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.get (index);
+            for index in reverse 0 .. (This.touchButtonRecognizer_Var.currentlyPressedTouchButtonSingleton.size) - (1) loop
+                nextTouchButtonInput := This.touchButtonRecognizer_Var.currentlyPressedTouchButtonSingleton.get (index);
                 if (cancelTouchButtonInput) = (nextTouchButtonInput) then
                     gameKeyEvent := nextTouchButtonInput.getGameKeyEvent;
-                    This.touchButtonRecognizer.upGameKeyEventHandler.fireEvent (gameKeyEvent);
-                    This.touchButtonRecognizer.upGameKeyEventHandler.getInstanceForDevice (deviceId).fireEvent (gameKeyEvent);
-                    This.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.removeAt (index);
+                    This.touchButtonRecognizer_Var.upGameKeyEventHandler.fireEvent (gameKeyEvent);
+                    This.touchButtonRecognizer_Var.upGameKeyEventHandler.getInstanceForDevice (deviceId).fireEvent (gameKeyEvent);
+                    This.touchButtonRecognizer_Var.currentlyPressedTouchButtonSingleton.removeAt (index);
                 end if;
             end loop;
    end release;

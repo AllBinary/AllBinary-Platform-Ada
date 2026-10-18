@@ -46,7 +46,7 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
       blankGenericProfileActionJPanel : JPanel_Access;
       deleteActionJButton : JButton_Access;
       genericProfileActionsJList : JList_Access;
-      genericProfileActionsJPanel : JPanel_Access;
+      genericProfileActionsJPanel_Var : JPanel_Access;
       genericProfileActionsJScrollPane : JScrollPane_Access;
       newActionJButton : JButton_Access;
       newProfileActionJDialog : JDialog_Access;

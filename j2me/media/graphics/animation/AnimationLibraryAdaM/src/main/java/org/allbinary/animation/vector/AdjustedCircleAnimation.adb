@@ -28,20 +28,20 @@ package body org.allbinary.animation.vector.AdjustedCircleAnimation_Package is
 
    function createAnimation (width : Integer; height : Integer; xAdjustment : Integer; yAdjustment : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return AdjustedCircleAnimation_Access is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
-      adjustedCircleAnimation : AdjustedCircleAnimation_Access;
+      adjustedCircleAnimation_Var : AdjustedCircleAnimation_Access;
    begin
-        adjustedCircleAnimation := AdjustedCircleAnimation_Package.Create (width, height, basicColor);
-        adjustedCircleAnimation.initXY (xAdjustment, yAdjustment);
-        return adjustedCircleAnimation;
+        adjustedCircleAnimation_Var := AdjustedCircleAnimation_Package.Create (width, height, basicColor);
+        adjustedCircleAnimation_Var.initXY (xAdjustment, yAdjustment);
+        return adjustedCircleAnimation_Var;
    end createAnimation;
 
    function createW (width : Integer; height : Integer; innerWidth : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return AdjustedCircleAnimation_Access is
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
-      adjustedCircleAnimation : AdjustedCircleAnimation_Access;
+      adjustedCircleAnimation_Var : AdjustedCircleAnimation_Access;
    begin
-        adjustedCircleAnimation := AdjustedCircleAnimation_Package.Create (width, height, basicColor);
-        adjustedCircleAnimation.init (innerWidth);
-        return adjustedCircleAnimation;
+        adjustedCircleAnimation_Var := AdjustedCircleAnimation_Package.Create (width, height, basicColor);
+        adjustedCircleAnimation_Var.init (innerWidth);
+        return adjustedCircleAnimation_Var;
    end createW;
 
    procedure Initialize (This : in out AdjustedCircleAnimation'Class; width : Integer; height : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
@@ -85,14 +85,14 @@ package body org.allbinary.animation.vector.AdjustedCircleAnimation_Package is
    end paintXY;
 
    procedure createAnimation (width : Integer; height : Integer; xAdjustment : Integer; yAdjustment : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant AdjustedCircleAnimation_Access := createAnimation (width, height, xAdjustment, yAdjustment, basicColor_Param);
+      Java_Result : constant AdjustedCircleAnimation_Access := createAnimation (width => width, height => height, xAdjustment => xAdjustment, yAdjustment => yAdjustment, basicColor_Param => basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createAnimation;
 
    procedure createW (width : Integer; height : Integer; innerWidth : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant AdjustedCircleAnimation_Access := createW (width, height, innerWidth, basicColor_Param);
+      Java_Result : constant AdjustedCircleAnimation_Access := createW (width => width, height => height, innerWidth => innerWidth, basicColor_Param => basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -121,28 +121,28 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    end getSupportedProtocols;
 
    procedure createPlayerFromInputStream (stream_Param : access InputStream_Package.InputStream'Class; type_Id : Unbounded_String) is
-      Java_Result : constant Player_Access := createPlayerFromInputStream (stream_Param, type_Id);
+      Java_Result : constant Player_Access := createPlayerFromInputStream (stream_Param => stream_Param, type_Id => type_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPlayerFromInputStream;
 
    procedure createPlayer (locator : Unbounded_String) is
-      Java_Result : constant Player_Access := createPlayer (locator);
+      Java_Result : constant Player_Access := createPlayer (locator => locator);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPlayer;
 
    procedure getSupportedContentTypes (protocol : Unbounded_String) is
-      Java_Result : constant Unbounded_String_Array_Access := getSupportedContentTypes (protocol);
+      Java_Result : constant Unbounded_String_Array_Access := getSupportedContentTypes (protocol => protocol);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSupportedContentTypes;
 
    procedure getSupportedProtocols (content_type : Unbounded_String) is
-      Java_Result : constant Unbounded_String_Array_Access := getSupportedProtocols (content_type);
+      Java_Result : constant Unbounded_String_Array_Access := getSupportedProtocols (content_type => content_type);
       pragma Unreferenced (Java_Result);
    begin
       null;

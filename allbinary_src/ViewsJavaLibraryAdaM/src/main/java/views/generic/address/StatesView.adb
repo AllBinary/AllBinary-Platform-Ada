@@ -77,7 +77,7 @@ package body views.generic_Id.address.StatesView_Package is
    end toXmlNode;
 
    procedure toXmlNode (This : in out StatesView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := StatesView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := StatesView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

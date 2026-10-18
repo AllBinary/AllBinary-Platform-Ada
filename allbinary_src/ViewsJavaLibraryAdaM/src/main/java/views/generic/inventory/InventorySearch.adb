@@ -153,7 +153,7 @@ package body views.generic_Id.inventory.InventorySearch_Package is
    end getProduct;
 
    procedure getProduct (This : in out InventorySearch; product : Unbounded_String) is
-      Java_Result : constant Unbounded_String := InventorySearch'Class (This).getProduct (product);
+      Java_Result : constant Unbounded_String := InventorySearch'Class (This).getProduct (product => product);
       pragma Unreferenced (Java_Result);
    begin
       null;

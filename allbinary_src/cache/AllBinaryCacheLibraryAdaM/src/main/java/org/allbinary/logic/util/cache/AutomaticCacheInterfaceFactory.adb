@@ -46,7 +46,7 @@ package body org.allbinary.logic.util.cache.AutomaticCacheInterfaceFactory_Packa
    end getInstance;
 
    procedure getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class; cacheType_Param : access CacheType_Package.CacheType'Class; cachePolicy_Param : access CachePolicy_Package.CachePolicy'Class) is
-      Java_Result : constant AutomaticCacheInterface_Access := getInstance (cacheableInterfaceFactoryInterface_Param, cacheType_Param, cachePolicy_Param);
+      Java_Result : constant AutomaticCacheInterface_Access := getInstance (cacheableInterfaceFactoryInterface_Param => cacheableInterfaceFactoryInterface_Param, cacheType_Param => cacheType_Param, cachePolicy_Param => cachePolicy_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

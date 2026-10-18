@@ -128,7 +128,7 @@ package body org.allbinary.game.input.GameInput_Package is
    end getGameKeyEventList;
 
    procedure isForRemoval (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
-      Java_Result : constant Boolean := GameInput'Class (This).isForRemoval (gameKeyEvent_Param);
+      Java_Result : constant Boolean := GameInput'Class (This).isForRemoval (gameKeyEvent_Param => gameKeyEvent_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

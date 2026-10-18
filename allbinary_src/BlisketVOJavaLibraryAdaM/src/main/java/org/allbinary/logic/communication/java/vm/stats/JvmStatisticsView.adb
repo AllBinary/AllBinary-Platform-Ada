@@ -51,7 +51,7 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsView_P
    end toXmlNode;
 
    procedure toXmlNode (This : in out JvmStatisticsView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := JvmStatisticsView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := JvmStatisticsView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

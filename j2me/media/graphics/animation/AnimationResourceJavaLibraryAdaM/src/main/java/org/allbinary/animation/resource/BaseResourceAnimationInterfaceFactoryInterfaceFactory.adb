@@ -177,28 +177,28 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    end isInitialized;
 
    procedure getBasicAnimationInterfaceFactoryInstance (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) is
-      Java_Result : constant BasicAnimationInterfaceFactoryInterface_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).getBasicAnimationInterfaceFactoryInstance (resource);
+      Java_Result : constant BasicAnimationInterfaceFactoryInterface_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).getBasicAnimationInterfaceFactoryInstance (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getBasicAnimationInterfaceFactoryInstance;
 
    procedure getRectangle (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) is
-      Java_Result : constant Rectangle_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangle (resource);
+      Java_Result : constant Rectangle_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangle (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRectangle;
 
    procedure getRectangleArrayOfArrays (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) is
-      Java_Result : constant Rectangle_Access_Array_Access_Array_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangleArrayOfArrays (resource);
+      Java_Result : constant Rectangle_Access_Array_Access_Array_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangleArrayOfArrays (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRectangleArrayOfArrays;
 
    procedure isLoadingLevel (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; level : Integer) is
-      Java_Result : constant Boolean := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).isLoadingLevel (level);
+      Java_Result : constant Boolean := BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class (This).isLoadingLevel (level => level);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -65,14 +65,14 @@ package body org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Packag
    end collideInterface;
 
    procedure isCollision (This : in out CollidableWaypointBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
-      Java_Result : constant Boolean := CollidableWaypointBehavior'Class (This).isCollision (ownerLayer_Param, collisionLayer_Param);
+      Java_Result : constant Boolean := CollidableWaypointBehavior'Class (This).isCollision (ownerLayer_Param => ownerLayer_Param, collisionLayer_Param => collisionLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
    procedure isCollisionInterface (This : in out CollidableWaypointBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
-      Java_Result : constant Boolean := CollidableWaypointBehavior'Class (This).isCollisionInterface (ownerLayer_Param, collidableInterface_Param);
+      Java_Result : constant Boolean := CollidableWaypointBehavior'Class (This).isCollisionInterface (ownerLayer_Param => ownerLayer_Param, collidableInterface_Param => collidableInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

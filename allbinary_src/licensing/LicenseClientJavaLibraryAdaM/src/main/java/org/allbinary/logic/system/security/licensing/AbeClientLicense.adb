@@ -166,14 +166,14 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
    end getLicenseType;
 
    procedure hasRequiredKeys (resultHashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
-      Java_Result : constant Boolean := hasRequiredKeys (resultHashtable_Param);
+      Java_Result : constant Boolean := hasRequiredKeys (resultHashtable_Param => resultHashtable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end hasRequiredKeys;
 
    procedure getKey (This : in out AbeClientLicense; keyName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbeClientLicense'Class (This).getKey (keyName);
+      Java_Result : constant Unbounded_String := AbeClientLicense'Class (This).getKey (keyName => keyName);
       pragma Unreferenced (Java_Result);
    begin
       null;

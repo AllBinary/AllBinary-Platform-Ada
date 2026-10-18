@@ -79,10 +79,10 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
         return This.sessionInactivityTimeout;
    end getSessionInactivityTimeout;
 
-   function equals (This : in out BasicUserRole; basicUserRole_Param : access BasicUserRole_Package.BasicUserRole'Class) return Boolean is
-      basicUserRole : constant BasicUserRole_Access := BasicUserRole_Access (basicUserRole_Param);
+   function equals (This : in out BasicUserRole; basicUserRole_Var_Param : access BasicUserRole_Package.BasicUserRole'Class) return Boolean is
+      basicUserRole_Var : constant BasicUserRole_Access := BasicUserRole_Access (basicUserRole_Var_Param);
    begin
-        if (BasicUserRole'Class (This).getRoleId) = (basicUserRole.getRoleId) then
+        if (BasicUserRole'Class (This).getRoleId) = (basicUserRole_Var.getRoleId) then
             return True;
         end if;
         return False;
@@ -116,15 +116,15 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
         return BasicUserRole_Package.roleVector;
    end getAll;
 
-   procedure equals (This : in out BasicUserRole; basicUserRole_Param : access BasicUserRole_Package.BasicUserRole'Class) is
-      Java_Result : constant Boolean := BasicUserRole'Class (This).equals (basicUserRole_Param);
+   procedure equals (This : in out BasicUserRole; basicUserRole_Var_Param : access BasicUserRole_Package.BasicUserRole'Class) is
+      Java_Result : constant Boolean := BasicUserRole'Class (This).equals (basicUserRole_Var_Param => basicUserRole_Var_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end equals;
 
    procedure getRole (role : Unbounded_String) is
-      Java_Result : constant BasicUserRole_Access := getRole (role);
+      Java_Result : constant BasicUserRole_Access := getRole (role => role);
       pragma Unreferenced (Java_Result);
    begin
       null;

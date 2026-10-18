@@ -55,14 +55,14 @@ package body org.allbinary.input.motion.gesture.observer.MotionEventCircularPool
    end getInstance;
 
    procedure createPool (id : Integer) is
-      Java_Result : constant MotionEventCircularPool_Access := createPool (id);
+      Java_Result : constant MotionEventCircularPool_Access := createPool (id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPool;
 
    procedure getInstance (This : in out MotionEventCircularPool; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class) is
-      Java_Result : constant MotionGestureEvent_Access := MotionEventCircularPool'Class (This).getInstance (motionGestureInput_Param);
+      Java_Result : constant MotionGestureEvent_Access := MotionEventCircularPool'Class (This).getInstance (motionGestureInput_Param => motionGestureInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

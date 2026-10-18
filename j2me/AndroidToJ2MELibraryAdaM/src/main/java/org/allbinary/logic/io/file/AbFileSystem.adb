@@ -129,42 +129,42 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
    end close;
 
    procedure isDirectoryOrFile (This : in out AbFileSystem; path : Unbounded_String) is
-      Java_Result : constant Boolean := AbFileSystem'Class (This).isDirectoryOrFile (path);
+      Java_Result : constant Boolean := AbFileSystem'Class (This).isDirectoryOrFile (path => path);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDirectoryOrFile;
 
    procedure isDirectory (This : in out AbFileSystem; path : Unbounded_String) is
-      Java_Result : constant Boolean := AbFileSystem'Class (This).isDirectory (path);
+      Java_Result : constant Boolean := AbFileSystem'Class (This).isDirectory (path => path);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDirectory;
 
    procedure getFilesAsStringArrayForPath (This : in out AbFileSystem; currentDirPath : Unbounded_String) is
-      Java_Result : constant Unbounded_String_Array_Access := AbFileSystem'Class (This).getFilesAsStringArrayForPath (currentDirPath);
+      Java_Result : constant Unbounded_String_Array_Access := AbFileSystem'Class (This).getFilesAsStringArrayForPath (currentDirPath => currentDirPath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFilesAsStringArrayForPath;
 
    procedure readAsString (This : in out AbFileSystem; fileName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbFileSystem'Class (This).readAsString (fileName);
+      Java_Result : constant Unbounded_String := AbFileSystem'Class (This).readAsString (fileName => fileName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end readAsString;
 
    procedure readAsString (This : in out AbFileSystem; fileName : Unbounded_String; bytes : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Unbounded_String := AbFileSystem'Class (This).readAsString (fileName, bytes);
+      Java_Result : constant Unbounded_String := AbFileSystem'Class (This).readAsString (fileName => fileName, bytes => bytes);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end readAsString;
 
    procedure close (This : in out AbFileSystem; closeable_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := AbFileSystem'Class (This).close (closeable_Param);
+      Java_Result : constant Boolean := AbFileSystem'Class (This).close (closeable_Param => closeable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

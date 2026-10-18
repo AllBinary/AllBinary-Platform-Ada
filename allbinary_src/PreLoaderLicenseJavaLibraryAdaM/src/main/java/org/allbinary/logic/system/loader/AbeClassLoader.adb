@@ -207,35 +207,35 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
    end oldLoadClass;
 
    procedure findLoadedClass1 (This : in out AbeClassLoader; name : Unbounded_String) is
-      Java_Result : constant Ada.Tags.Tag := AbeClassLoader'Class (This).findLoadedClass1 (name);
+      Java_Result : constant Ada.Tags.Tag := AbeClassLoader'Class (This).findLoadedClass1 (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end findLoadedClass1;
 
    procedure loadClass (This : in out AbeClassLoader; name : Unbounded_String) is
-      Java_Result : constant Ada.Tags.Tag := AbeClassLoader'Class (This).loadClass (name);
+      Java_Result : constant Ada.Tags.Tag := AbeClassLoader'Class (This).loadClass (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end loadClass;
 
    procedure loadClass (This : in out AbeClassLoader; name : Unbounded_String; resolve : Boolean) is
-      Java_Result : constant Ada.Tags.Tag := AbeClassLoader'Class (This).loadClass (name, resolve);
+      Java_Result : constant Ada.Tags.Tag := AbeClassLoader'Class (This).loadClass (name => name, resolve => resolve);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end loadClass;
 
    procedure loadClassBytesFromFile (This : in out AbeClassLoader; name : Unbounded_String) is
-      Java_Result : constant Short_Short_Integer_Array_Access := AbeClassLoader'Class (This).loadClassBytesFromFile (name);
+      Java_Result : constant Short_Short_Integer_Array_Access := AbeClassLoader'Class (This).loadClassBytesFromFile (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end loadClassBytesFromFile;
 
    procedure oldLoadClass (This : in out AbeClassLoader; name : Unbounded_String; resolve : Boolean) is
-      Java_Result : constant Ada.Tags.Tag := AbeClassLoader'Class (This).oldLoadClass (name, resolve);
+      Java_Result : constant Ada.Tags.Tag := AbeClassLoader'Class (This).oldLoadClass (name => name, resolve => resolve);
       pragma Unreferenced (Java_Result);
    begin
       null;

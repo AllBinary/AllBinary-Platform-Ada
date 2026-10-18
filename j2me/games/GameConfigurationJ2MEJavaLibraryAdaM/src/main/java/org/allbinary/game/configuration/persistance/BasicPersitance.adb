@@ -123,7 +123,7 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
    end clear;
 
    procedure getRecordId (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
-      Java_Result : constant Unbounded_String := BasicPersitance'Class (This).getRecordId (abeClientInformation_Param);
+      Java_Result : constant Unbounded_String := BasicPersitance'Class (This).getRecordId (abeClientInformation_Param => abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

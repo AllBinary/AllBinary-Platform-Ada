@@ -64,7 +64,7 @@ package body org.allbinary.game.configuration.feature.Feature_Package is
    end getName;
 
    procedure getInstance (name : Unbounded_String) is
-      Java_Result : constant Feature_Access := getInstance (name);
+      Java_Result : constant Feature_Access := getInstance (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

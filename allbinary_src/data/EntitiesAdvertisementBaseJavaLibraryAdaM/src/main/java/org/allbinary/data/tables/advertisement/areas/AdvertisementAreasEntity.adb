@@ -146,14 +146,14 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
    end dropTable;
 
    procedure get (This : in out AdvertisementAreasEntity; storeName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := AdvertisementAreasEntity'Class (This).get (storeName);
+      Java_Result : constant BasicArrayList_Access := AdvertisementAreasEntity'Class (This).get (storeName => storeName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure get (This : in out AdvertisementAreasEntity; storeName : Unbounded_String; advertisementAreaName : Unbounded_String) is
-      Java_Result : constant AdvertisementAreaInterface_Access := AdvertisementAreasEntity'Class (This).get (storeName, advertisementAreaName);
+      Java_Result : constant AdvertisementAreaInterface_Access := AdvertisementAreasEntity'Class (This).get (storeName => storeName, advertisementAreaName => advertisementAreaName);
       pragma Unreferenced (Java_Result);
    begin
       null;

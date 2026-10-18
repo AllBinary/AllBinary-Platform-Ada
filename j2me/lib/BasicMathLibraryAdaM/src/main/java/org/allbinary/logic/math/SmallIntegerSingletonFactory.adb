@@ -161,28 +161,28 @@ package body org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
    end getString;
 
    procedure getAt (This : in out SmallIntegerSingletonFactory; index : Integer) is
-      Java_Result : constant Integer := SmallIntegerSingletonFactory'Class (This).getAt (index);
+      Java_Result : constant Integer := SmallIntegerSingletonFactory'Class (This).getAt (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAt;
 
    procedure getAtNoThrow (This : in out SmallIntegerSingletonFactory; index : Integer) is
-      Java_Result : constant Integer := SmallIntegerSingletonFactory'Class (This).getAtNoThrow (index);
+      Java_Result : constant Integer := SmallIntegerSingletonFactory'Class (This).getAtNoThrow (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAtNoThrow;
 
    procedure createInstance (This : in out SmallIntegerSingletonFactory; index : Integer) is
-      Java_Result : constant Integer := SmallIntegerSingletonFactory'Class (This).createInstance (index);
+      Java_Result : constant Integer := SmallIntegerSingletonFactory'Class (This).createInstance (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createInstance;
 
    procedure getString (This : in out SmallIntegerSingletonFactory; index : Integer) is
-      Java_Result : constant Unbounded_String := SmallIntegerSingletonFactory'Class (This).getString (index);
+      Java_Result : constant Unbounded_String := SmallIntegerSingletonFactory'Class (This).getString (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

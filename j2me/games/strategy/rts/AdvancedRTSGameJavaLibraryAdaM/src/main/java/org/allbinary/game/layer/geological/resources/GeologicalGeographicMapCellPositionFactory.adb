@@ -54,7 +54,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalGeographicM
    end getInstance;
 
    procedure getInstance (This : in out GeologicalGeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeologicalGeographicMapCellPositionFactory'Class (This).getInstance (geographicMapInterface_Param, i_column, i_row, columns, rows, width, height);
+      Java_Result : constant GeographicMapCellPosition_Access := GeologicalGeographicMapCellPositionFactory'Class (This).getInstance (geographicMapInterface_Param => geographicMapInterface_Param, i_column => i_column, i_row => i_row, columns => columns, rows => rows, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;

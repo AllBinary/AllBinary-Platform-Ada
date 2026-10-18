@@ -38,7 +38,7 @@ package org.allbinary.logic.system.security.licensing.AbeNoLicense_Package is
    type AbeNoLicense is new Java_Object and AbeLicenseInterface with record
       serverVector : BasicArrayList_Access;
    end record;
-   abeNoLicense : AbeNoLicense_Access;
+   abeNoLicense_Var : AbeNoLicense_Access;
 
    procedure Initialize (This : in out AbeNoLicense'Class);
    function Create return AbeNoLicense_Access;

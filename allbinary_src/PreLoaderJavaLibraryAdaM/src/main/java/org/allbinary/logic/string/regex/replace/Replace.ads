@@ -52,12 +52,12 @@ package org.allbinary.logic.string_Id.regex.replace.Replace_Package is
    function Create (keys : Unbounded_String_Array_Access; values : Unbounded_String_Array_Access) return Replace_Access;
    procedure Initialize (This : in out Replace'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return Replace_Access;
-   function all_Id (This : in out Replace; replace : Unbounded_String) return Unbounded_String;
-   procedure all_Id (This : in out Replace; replace : Unbounded_String);
-   function upTo (This : in out Replace; replace_Param : Unbounded_String; total : Integer) return Unbounded_String;
-   procedure upTo (This : in out Replace; replace_Param : Unbounded_String; total : Integer);
-   function line (This : in out Replace; replace_Param : Unbounded_String) return Unbounded_String;
-   procedure line (This : in out Replace; replace_Param : Unbounded_String);
+   function all_Id (This : in out Replace; replace_Var : Unbounded_String) return Unbounded_String;
+   procedure all_Id (This : in out Replace; replace_Var : Unbounded_String);
+   function upTo (This : in out Replace; replace_Var_Param : Unbounded_String; total : Integer) return Unbounded_String;
+   procedure upTo (This : in out Replace; replace_Var_Param : Unbounded_String; total : Integer);
+   function line (This : in out Replace; replace_Var_Param : Unbounded_String) return Unbounded_String;
+   procedure line (This : in out Replace; replace_Var_Param : Unbounded_String);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.logic.string_Id.regex.replace.Replace_Package;

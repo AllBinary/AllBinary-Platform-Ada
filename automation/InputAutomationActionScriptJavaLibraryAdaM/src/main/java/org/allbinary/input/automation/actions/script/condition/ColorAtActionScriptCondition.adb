@@ -212,14 +212,14 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    end setColorRangeInterface;
 
    procedure toXmlNode (This : in out ColorAtActionScriptCondition; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := ColorAtActionScriptCondition'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := ColorAtActionScriptCondition'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
    procedure shouldProcess (This : in out ColorAtActionScriptCondition; frame : Long_Long_Integer) is
-      Java_Result : constant Boolean := ColorAtActionScriptCondition'Class (This).shouldProcess (frame);
+      Java_Result : constant Boolean := ColorAtActionScriptCondition'Class (This).shouldProcess (frame => frame);
       pragma Unreferenced (Java_Result);
    begin
       null;

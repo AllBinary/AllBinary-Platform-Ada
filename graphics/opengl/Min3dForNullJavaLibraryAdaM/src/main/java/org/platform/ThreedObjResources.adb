@@ -53,7 +53,7 @@ package body org.platform.ThreedObjResources_Package is
    end get;
 
    procedure get (This : in out ThreedObjResources; resourceName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := ThreedObjResources'Class (This).get (resourceName);
+      Java_Result : constant Unbounded_String := ThreedObjResources'Class (This).get (resourceName => resourceName);
       pragma Unreferenced (Java_Result);
    begin
       null;

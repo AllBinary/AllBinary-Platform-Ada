@@ -58,7 +58,7 @@ package body org.allbinary.game.resource.ResourceLoadingLevelFactory_Package is
    end getLevelString;
 
    procedure getLevelString (This : in out ResourceLoadingLevelFactory; level : Integer) is
-      Java_Result : constant Unbounded_String := ResourceLoadingLevelFactory'Class (This).getLevelString (level);
+      Java_Result : constant Unbounded_String := ResourceLoadingLevelFactory'Class (This).getLevelString (level => level);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -61,7 +61,7 @@ package body org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Packag
    end getAnimationFactory;
 
    procedure getAnimationFactory (This : in out DecalAnimationInterfaceFactory; basicGameResources_Param : access BasicGameResources_Package.BasicGameResources'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant AnimationInterfaceFactoryInterface_Access := DecalAnimationInterfaceFactory'Class (This).getAnimationFactory (basicGameResources_Param, basicColor_Param);
+      Java_Result : constant AnimationInterfaceFactoryInterface_Access := DecalAnimationInterfaceFactory'Class (This).getAnimationFactory (basicGameResources_Param => basicGameResources_Param, basicColor_Param => basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

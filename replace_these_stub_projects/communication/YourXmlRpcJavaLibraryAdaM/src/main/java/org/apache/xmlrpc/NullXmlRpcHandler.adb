@@ -46,7 +46,7 @@ package body org.apache.xmlrpc.NullXmlRpcHandler_Package is
    end execute;
 
    procedure execute (This : in out NullXmlRpcHandler; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Java_Object_Access := NullXmlRpcHandler'Class (This).execute (method, params_Param);
+      Java_Result : constant Java_Object_Access := NullXmlRpcHandler'Class (This).execute (method => method, params_Param => params_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

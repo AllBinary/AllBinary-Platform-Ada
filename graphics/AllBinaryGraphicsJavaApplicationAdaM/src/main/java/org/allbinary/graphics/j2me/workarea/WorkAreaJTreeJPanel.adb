@@ -423,14 +423,14 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
    end workAreaPropertiesJPanelMousePressed;
 
    procedure getNode (This : in out WorkAreaJTreeJPanel; treePathArray : TreePath_Access_Array_Access) is
-      Java_Result : constant BasicArrayList_Access := WorkAreaJTreeJPanel'Class (This).getNode (treePathArray);
+      Java_Result : constant BasicArrayList_Access := WorkAreaJTreeJPanel'Class (This).getNode (treePathArray => treePathArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNode;
 
    procedure getNode (This : in out WorkAreaJTreeJPanel; treePath_Param : access TreePath_Package.TreePath'Class) is
-      Java_Result : constant DefaultMutableTreeNode_Access := WorkAreaJTreeJPanel'Class (This).getNode (treePath_Param);
+      Java_Result : constant DefaultMutableTreeNode_Access := WorkAreaJTreeJPanel'Class (This).getNode (treePath_Param => treePath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

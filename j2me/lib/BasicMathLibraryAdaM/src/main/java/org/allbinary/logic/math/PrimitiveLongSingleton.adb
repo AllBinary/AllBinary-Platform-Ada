@@ -61,7 +61,7 @@ package body org.allbinary.logic.math.PrimitiveLongSingleton_Package is
    end getNumberFromChar;
 
    procedure getNumberFromChar (This : in out PrimitiveLongSingleton; numberAsChar : Character) is
-      Java_Result : constant Short_Short_Integer := PrimitiveLongSingleton'Class (This).getNumberFromChar (numberAsChar);
+      Java_Result : constant Short_Short_Integer := PrimitiveLongSingleton'Class (This).getNumberFromChar (numberAsChar => numberAsChar);
       pragma Unreferenced (Java_Result);
    begin
       null;

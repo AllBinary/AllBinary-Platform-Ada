@@ -116,7 +116,7 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
    end getImageBufferPropertyHashMap;
 
    procedure getImageBufferPropertyHashMap (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
-      Java_Result : constant HashMap_Access := getImageBufferPropertyHashMap (bufferedImage_Param);
+      Java_Result : constant HashMap_Access := getImageBufferPropertyHashMap (bufferedImage_Param => bufferedImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

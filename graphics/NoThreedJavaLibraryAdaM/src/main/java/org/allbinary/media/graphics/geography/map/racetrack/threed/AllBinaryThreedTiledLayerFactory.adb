@@ -49,7 +49,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.threed.AllBina
    end getInstance;
 
    procedure getInstance (This : in out AllBinaryThreedTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is
-      Java_Result : constant AllBinaryTiledLayer_Access := AllBinaryThreedTiledLayerFactory'Class (This).getInstance (raceTrackInfo_Param, raceTrackData_Param);
+      Java_Result : constant AllBinaryTiledLayer_Access := AllBinaryThreedTiledLayerFactory'Class (This).getInstance (raceTrackInfo_Param => raceTrackInfo_Param, raceTrackData_Param => raceTrackData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

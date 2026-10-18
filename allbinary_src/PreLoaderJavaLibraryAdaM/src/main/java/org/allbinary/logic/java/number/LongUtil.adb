@@ -59,7 +59,7 @@ package body org.allbinary.logic.java.number.LongUtil_Package is
    end fillIn;
 
    procedure fillIn (end_Id : Unbounded_String) is
-      Java_Result : constant Unbounded_String := fillIn (end_Id);
+      Java_Result : constant Unbounded_String := fillIn (end_Id => end_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

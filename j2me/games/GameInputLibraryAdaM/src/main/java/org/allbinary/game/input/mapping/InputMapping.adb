@@ -149,14 +149,14 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
    end getHashtable;
 
    procedure isMapped (This : in out InputMapping; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := InputMapping'Class (This).isMapped (input_Param);
+      Java_Result : constant Boolean := InputMapping'Class (This).isMapped (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isMapped;
 
    procedure getMappedInput (This : in out InputMapping; id_Param : access Input_Package.Input'Class) is
-      Java_Result : constant BasicArrayList_Access := InputMapping'Class (This).getMappedInput (id_Param);
+      Java_Result : constant BasicArrayList_Access := InputMapping'Class (This).getMappedInput (id_Param => id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

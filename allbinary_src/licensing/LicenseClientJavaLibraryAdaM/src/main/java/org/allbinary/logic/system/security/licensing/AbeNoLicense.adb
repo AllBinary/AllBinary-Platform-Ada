@@ -43,7 +43,7 @@ package body org.allbinary.logic.system.security.licensing.AbeNoLicense_Package 
 
    function getInstance return AbeNoLicense_Access is
    begin
-        return AbeNoLicense_Package.abeNoLicense;
+        return AbeNoLicense_Package.abeNoLicense_Var;
    end getInstance;
 
    function hasKey (This : in out AbeNoLicense) return Boolean is
@@ -82,7 +82,7 @@ package body org.allbinary.logic.system.security.licensing.AbeNoLicense_Package 
    end getLicenseType;
 
    procedure getKey (This : in out AbeNoLicense; keyName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbeNoLicense'Class (This).getKey (keyName);
+      Java_Result : constant Unbounded_String := AbeNoLicense'Class (This).getKey (keyName => keyName);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -90,7 +90,7 @@ package body org.allbinary.logic.system.security.licensing.AbeNoLicense_Package 
 
 begin
    null;
-   abeNoLicense := AbeNoLicense_Package.Create;
+   abeNoLicense_Var := AbeNoLicense_Package.Create;
 
 end org.allbinary.logic.system.security.licensing.AbeNoLicense_Package;
 

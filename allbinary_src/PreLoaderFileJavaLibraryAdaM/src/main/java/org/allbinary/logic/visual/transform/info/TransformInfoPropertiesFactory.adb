@@ -100,7 +100,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFa
    end getInstance;
 
    procedure getInstance (This : in out TransformInfoPropertiesFactory; node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant TransformInfoProperties_Access := TransformInfoPropertiesFactory'Class (This).getInstance (node_Param);
+      Java_Result : constant TransformInfoProperties_Access := TransformInfoPropertiesFactory'Class (This).getInstance (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

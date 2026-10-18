@@ -151,11 +151,11 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Pack
    type ProgressPaintable_Access_Array_Access_Array_Access is access all ProgressPaintable_Access_Array_Access_Array;
 
    type ProgressPaintable is new Paintable with record
-      progressCanvas : ProgressCanvas_Access;
+      progressCanvas_Var : ProgressCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out ProgressPaintable'Class; progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class);
-   function Create (progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class) return ProgressPaintable_Access;
+   procedure Initialize (This : in out ProgressPaintable'Class; progressCanvas_Var_Param : access ProgressCanvas_Package.ProgressCanvas'Class);
+   function Create (progressCanvas_Var_Param : access ProgressCanvas_Package.ProgressCanvas'Class) return ProgressPaintable_Access;
    procedure paint (This : in out ProgressPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package;

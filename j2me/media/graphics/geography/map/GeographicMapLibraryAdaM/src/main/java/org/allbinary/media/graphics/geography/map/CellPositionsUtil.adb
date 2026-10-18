@@ -128,21 +128,21 @@ package body org.allbinary.media.graphics.geography.map.CellPositionsUtil_Packag
    end getAllSurroundingAt;
 
    procedure getAll (This : in out CellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; topRightGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; columns : Integer; rows : Integer; reusableList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := CellPositionsUtil'Class (This).getAll (geographicMapInterface_Param, topRightGeographicMapCellPosition_Param, columns, rows, reusableList_Param);
+      Java_Result : constant BasicArrayList_Access := CellPositionsUtil'Class (This).getAll (geographicMapInterface_Param => geographicMapInterface_Param, topRightGeographicMapCellPosition_Param => topRightGeographicMapCellPosition_Param, columns => columns, rows => rows, reusableList_Param => reusableList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
    procedure getAllSurrounding (This : in out CellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; occupyList_Param : access BasicArrayList_Package.BasicArrayList'Class; reusableList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := CellPositionsUtil'Class (This).getAllSurrounding (geographicMapInterface_Param, occupyList_Param, reusableList_Param);
+      Java_Result : constant BasicArrayList_Access := CellPositionsUtil'Class (This).getAllSurrounding (geographicMapInterface_Param => geographicMapInterface_Param, occupyList_Param => occupyList_Param, reusableList_Param => reusableList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAllSurrounding;
 
    procedure getAllSurroundingAt (This : in out CellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; layerGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; reusableSurroundingList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := CellPositionsUtil'Class (This).getAllSurroundingAt (geographicMapInterface_Param, layerGeographicMapCellPosition_Param, reusableSurroundingList_Param);
+      Java_Result : constant BasicArrayList_Access := CellPositionsUtil'Class (This).getAllSurroundingAt (geographicMapInterface_Param => geographicMapInterface_Param, layerGeographicMapCellPosition_Param => layerGeographicMapCellPosition_Param, reusableSurroundingList_Param => reusableSurroundingList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

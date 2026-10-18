@@ -236,35 +236,35 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
    end getViewDataForComponentsInObjectConfig;
 
    procedure getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
-      Java_Result : constant TransformInfoInterface_Access := CustomizerUtil'Class (This).getTransformInfoInterfaceToCustomize (customizerTransformInfoInterface_Param, transformInfoInterface_Param);
+      Java_Result : constant TransformInfoInterface_Access := CustomizerUtil'Class (This).getTransformInfoInterfaceToCustomize (customizerTransformInfoInterface_Param => customizerTransformInfoInterface_Param, transformInfoInterface_Param => transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTransformInfoInterfaceToCustomize;
 
    procedure getTransformInfoObjectConfigComponentNodesToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
-      Java_Result : constant BasicArrayList_Access := CustomizerUtil'Class (This).getTransformInfoObjectConfigComponentNodesToCustomize (customizerTransformInfoInterface_Param, transformInfoInterface_Param);
+      Java_Result : constant BasicArrayList_Access := CustomizerUtil'Class (This).getTransformInfoObjectConfigComponentNodesToCustomize (customizerTransformInfoInterface_Param => customizerTransformInfoInterface_Param, transformInfoInterface_Param => transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTransformInfoObjectConfigComponentNodesToCustomize;
 
    procedure getTransformInfoObjectConfigComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
-      Java_Result : constant BasicArrayList_Access := CustomizerUtil'Class (This).getTransformInfoObjectConfigComponentNodes (transformInfoInterface_Param);
+      Java_Result : constant BasicArrayList_Access := CustomizerUtil'Class (This).getTransformInfoObjectConfigComponentNodes (transformInfoInterface_Param => transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTransformInfoObjectConfigComponentNodes;
 
    procedure getTransformInfoObjectConfigGroupComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
-      Java_Result : constant BasicArrayList_Access := CustomizerUtil'Class (This).getTransformInfoObjectConfigGroupComponentNodes (transformInfoInterface_Param);
+      Java_Result : constant BasicArrayList_Access := CustomizerUtil'Class (This).getTransformInfoObjectConfigGroupComponentNodes (transformInfoInterface_Param => transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTransformInfoObjectConfigGroupComponentNodes;
 
    procedure getViewDataForComponentsInObjectConfig (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
-      Java_Result : constant Document_Access := CustomizerUtil'Class (This).getViewDataForComponentsInObjectConfig (transformInfoInterface_Param);
+      Java_Result : constant Document_Access := CustomizerUtil'Class (This).getViewDataForComponentsInObjectConfig (transformInfoInterface_Param => transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

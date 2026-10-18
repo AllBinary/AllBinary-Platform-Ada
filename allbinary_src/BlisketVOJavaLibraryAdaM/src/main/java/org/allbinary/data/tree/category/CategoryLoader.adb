@@ -256,49 +256,49 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
    end addProperties;
 
    procedure getDoc (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
-      Java_Result : constant Document_Access := CategoryLoader'Class (This).getDoc (categoryInterface_Param);
+      Java_Result : constant Document_Access := CategoryLoader'Class (This).getDoc (categoryInterface_Param => categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDoc;
 
    procedure get (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).get (categoryInterface_Param);
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).get (categoryInterface_Param => categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure get (This : in out CategoryLoader; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).get (document_Param);
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).get (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getAll (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (categoryInterface_Param);
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (categoryInterface_Param => categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
    procedure getAll (This : in out CategoryLoader; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (document_Param);
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
    procedure getAll (This : in out CategoryLoader; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryNodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (parentCategoryInterface_Param, categoryNodeList_Param);
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (parentCategoryInterface_Param => parentCategoryInterface_Param, categoryNodeList_Param => categoryNodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
    procedure addProperties (This : in out CategoryLoader; loadedCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryNodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).addProperties (loadedCategoryInterface_Param, categoryNodeList_Param);
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).addProperties (loadedCategoryInterface_Param => loadedCategoryInterface_Param, categoryNodeList_Param => categoryNodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

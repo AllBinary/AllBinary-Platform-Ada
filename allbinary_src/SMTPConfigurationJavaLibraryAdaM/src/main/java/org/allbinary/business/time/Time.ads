@@ -35,10 +35,10 @@ package org.allbinary.business.time.Time_Package is
       timeLong : Long_Long_Integer;
    end record;
 
-   procedure Initialize (This : in out Time'Class; time : Unbounded_String);
-   function Create (time : Unbounded_String) return Time_Access;
-   procedure Initialize (This : in out Time'Class; time : Long_Long_Integer);
-   function Create (time : Long_Long_Integer) return Time_Access;
+   procedure Initialize (This : in out Time'Class; time_Var : Unbounded_String);
+   function Create (time_Var : Unbounded_String) return Time_Access;
+   procedure Initialize (This : in out Time'Class; time_Var : Long_Long_Integer);
+   function Create (time_Var : Long_Long_Integer) return Time_Access;
    function getLong (This : in out Time) return Long_Long_Integer;
    function getlong (This : in out Time) return Long_Long_Integer;
    function toString (This : in out Time) return Unbounded_String;

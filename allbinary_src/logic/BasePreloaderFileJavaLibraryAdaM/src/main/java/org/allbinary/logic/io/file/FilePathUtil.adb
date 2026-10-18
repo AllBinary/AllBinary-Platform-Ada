@@ -57,7 +57,7 @@ package body org.allbinary.logic.io.file.FilePathUtil_Package is
    end adjust;
 
    procedure adjust (path_Param : Unbounded_String) is
-      Java_Result : constant Unbounded_String := adjust (path_Param);
+      Java_Result : constant Unbounded_String := adjust (path_Param => path_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

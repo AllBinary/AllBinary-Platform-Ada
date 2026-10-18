@@ -55,7 +55,7 @@ package body org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Packag
    end ungetService;
 
    procedure getService (This : in out CryptServiceFactory; bundle_Param : access Bundle_Package.Bundle'Class; registration_Param : access ServiceRegistration_Package.ServiceRegistration'Class) is
-      Java_Result : constant Java_Object_Access := CryptServiceFactory'Class (This).getService (bundle_Param, registration_Param);
+      Java_Result : constant Java_Object_Access := CryptServiceFactory'Class (This).getService (bundle_Param => bundle_Param, registration_Param => registration_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

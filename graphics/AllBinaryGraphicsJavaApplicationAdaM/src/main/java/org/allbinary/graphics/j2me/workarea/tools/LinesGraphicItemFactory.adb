@@ -42,7 +42,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_
    end getInstance;
 
    procedure getInstance (This : in out LinesGraphicItemFactory; canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) is
-      Java_Result : constant GraphicItemInterface_Access := LinesGraphicItemFactory'Class (This).getInstance (canvasJPanel_Param);
+      Java_Result : constant GraphicItemInterface_Access := LinesGraphicItemFactory'Class (This).getInstance (canvasJPanel_Param => canvasJPanel_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

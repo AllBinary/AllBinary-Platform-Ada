@@ -33,7 +33,7 @@ package org.allbinary.media.audio.NullJ2SEControl_Package is
    type NullJ2SEControl_Access_Array_Access_Array is array (Natural range <>) of NullJ2SEControl_Access_Array_Access;
    type NullJ2SEControl_Access_Array_Access_Array_Access is access all NullJ2SEControl_Access_Array_Access_Array;
 
-   type NullJ2SEControl is new Control with null record;
+   type NullJ2SEControl is new Java_Object with null record;
 
    procedure Initialize (This : in out NullJ2SEControl'Class; type_Id_Param : access Type_Package.Type'Class);
    function Create (type_Id_Param : access Type_Package.Type'Class) return NullJ2SEControl_Access;

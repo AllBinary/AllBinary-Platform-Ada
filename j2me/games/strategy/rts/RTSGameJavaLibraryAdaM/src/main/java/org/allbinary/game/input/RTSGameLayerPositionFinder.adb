@@ -49,7 +49,7 @@ package body org.allbinary.game.input.RTSGameLayerPositionFinder_Package is
    end getLayerInterface;
 
    procedure getLayerInterface (This : in out RTSGameLayerPositionFinder; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant AllBinaryLayer_Access := RTSGameLayerPositionFinder'Class (This).getLayerInterface (geographicMapCellPosition_Param);
+      Java_Result : constant AllBinaryLayer_Access := RTSGameLayerPositionFinder'Class (This).getLayerInterface (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

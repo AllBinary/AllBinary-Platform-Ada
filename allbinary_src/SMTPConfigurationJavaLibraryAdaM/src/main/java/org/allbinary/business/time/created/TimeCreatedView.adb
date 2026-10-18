@@ -76,7 +76,7 @@ package body org.allbinary.business.time.created.TimeCreatedView_Package is
    end setTimeCreated;
 
    procedure toXmlNode (This : in out TimeCreatedView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := TimeCreatedView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := TimeCreatedView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

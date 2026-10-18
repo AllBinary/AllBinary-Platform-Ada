@@ -66,7 +66,7 @@ package body org.allbinary.animation.image.AllBinaryScreenRelationalImageAnimati
    end getInstance;
 
    procedure getInstance (This : in out AllBinaryScreenRelationalImageAnimationInterfaceFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := AllBinaryScreenRelationalImageAnimationInterfaceFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := AllBinaryScreenRelationalImageAnimationInterfaceFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

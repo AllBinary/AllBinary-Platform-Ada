@@ -60,14 +60,14 @@ package body org.allbinary.graphics.opengles.shader.ShaderManager_Package is
    end loadShader;
 
    procedure load (This : in out ShaderManager; gl_Param : access GL10_Package.GL10'Class; resource : Unbounded_String; shaderAsStringArray : Unbounded_String_Array_Access; shaderType : Integer) is
-      Java_Result : constant Integer := ShaderManager'Class (This).load (gl_Param, resource, shaderAsStringArray, shaderType);
+      Java_Result : constant Integer := ShaderManager'Class (This).load (gl_Param => gl_Param, resource => resource, shaderAsStringArray => shaderAsStringArray, shaderType => shaderType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end load;
 
    procedure loadShader (This : in out ShaderManager; gl_Param : access GL10_Package.GL10'Class; resource : Unbounded_String; stringList_Param : access BasicArrayList_Package.BasicArrayList'Class; shaderType : Integer) is
-      Java_Result : constant Integer := ShaderManager'Class (This).loadShader (gl_Param, resource, stringList_Param, shaderType);
+      Java_Result : constant Integer := ShaderManager'Class (This).loadShader (gl_Param => gl_Param, resource => resource, stringList_Param => stringList_Param, shaderType => shaderType);
       pragma Unreferenced (Java_Result);
    begin
       null;

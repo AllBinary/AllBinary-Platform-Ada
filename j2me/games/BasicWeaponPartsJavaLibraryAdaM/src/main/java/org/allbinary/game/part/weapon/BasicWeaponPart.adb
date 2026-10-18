@@ -140,7 +140,7 @@ package body org.allbinary.game.part.weapon.BasicWeaponPart_Package is
    end setWeaponProperties;
 
    procedure createBasicWeaponPart (animationInterface_Param : access Animation_Package.Animation'Class) is
-      Java_Result : constant BasicWeaponPart_Access := createBasicWeaponPart (animationInterface_Param);
+      Java_Result : constant BasicWeaponPart_Access := createBasicWeaponPart (animationInterface_Param => animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

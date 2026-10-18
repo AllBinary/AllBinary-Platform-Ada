@@ -302,21 +302,21 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end toString;
 
    procedure getText (integerArray : Integer_Array_Access) is
-      Java_Result : constant Unbounded_String := getText (integerArray);
+      Java_Result : constant Unbounded_String := getText (integerArray => integerArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getText;
 
    procedure integerArrayValue (This : in out KeyboardActionScriptInput; text : Unbounded_String) is
-      Java_Result : constant Integer_Array_Access := KeyboardActionScriptInput'Class (This).integerArrayValue (text);
+      Java_Result : constant Integer_Array_Access := KeyboardActionScriptInput'Class (This).integerArrayValue (text => text);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end integerArrayValue;
 
    procedure toXmlNode (This : in out KeyboardActionScriptInput; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := KeyboardActionScriptInput'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := KeyboardActionScriptInput'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

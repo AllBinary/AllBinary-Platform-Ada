@@ -51,7 +51,7 @@ package body org.allbinary.persistance.PlatformRecordIdUtil_Package is
    end getRecordId;
 
    procedure getRecordId (This : in out PlatformRecordIdUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; baseRecordId : Unbounded_String) is
-      Java_Result : constant Unbounded_String := PlatformRecordIdUtil'Class (This).getRecordId (abeClientInformation_Param, baseRecordId);
+      Java_Result : constant Unbounded_String := PlatformRecordIdUtil'Class (This).getRecordId (abeClientInformation_Param => abeClientInformation_Param, baseRecordId => baseRecordId);
       pragma Unreferenced (Java_Result);
    begin
       null;

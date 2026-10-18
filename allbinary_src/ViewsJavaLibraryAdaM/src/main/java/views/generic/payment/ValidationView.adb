@@ -59,7 +59,7 @@ package body views.generic_Id.payment.ValidationView_Package is
    end validationInfo;
 
    procedure toValidationInfoNode (This : in out ValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := ValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := ValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

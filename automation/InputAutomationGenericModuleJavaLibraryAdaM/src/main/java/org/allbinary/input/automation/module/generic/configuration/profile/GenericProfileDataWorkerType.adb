@@ -80,14 +80,14 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end getInstance;
 
    procedure toXmlNode (This : in out GenericProfileDataWorkerType; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := GenericProfileDataWorkerType'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := GenericProfileDataWorkerType'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
    procedure getInstance (node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant GenericProfileDataWorkerType_Access := getInstance (node_Param);
+      Java_Result : constant GenericProfileDataWorkerType_Access := getInstance (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

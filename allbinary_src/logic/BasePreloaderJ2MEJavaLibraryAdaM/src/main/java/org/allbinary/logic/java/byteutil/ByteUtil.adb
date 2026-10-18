@@ -146,35 +146,35 @@ package body org.allbinary.logic.java.byteutil.ByteUtil_Package is
    end compareWithStats;
 
    procedure xor_Id (This : in out ByteUtil; array_Id : Short_Short_Integer_Array_Access; mask : Short_Short_Integer) is
-      Java_Result : constant Short_Short_Integer_Array_Access := ByteUtil'Class (This).xor_Id (array_Id, mask);
+      Java_Result : constant Short_Short_Integer_Array_Access := ByteUtil'Class (This).xor_Id (array_Id => array_Id, mask => mask);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end xor_Id;
 
    procedure not_Id (This : in out ByteUtil; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := ByteUtil'Class (This).not_Id (array_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := ByteUtil'Class (This).not_Id (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end not_Id;
 
    procedure xorByte (This : in out ByteUtil; array_Id : Short_Short_Integer_Array_Access; index : Integer) is
-      Java_Result : constant Short_Short_Integer_Array_Access := ByteUtil'Class (This).xorByte (array_Id, index);
+      Java_Result : constant Short_Short_Integer_Array_Access := ByteUtil'Class (This).xorByte (array_Id => array_Id, index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end xorByte;
 
    procedure compare (This : in out ByteUtil; newByteArray : Short_Short_Integer_Array_Access; oldByteArray : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Boolean := ByteUtil'Class (This).compare (newByteArray, oldByteArray);
+      Java_Result : constant Boolean := ByteUtil'Class (This).compare (newByteArray => newByteArray, oldByteArray => oldByteArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compare;
 
    procedure compareWithStats (This : in out ByteUtil; newByteArray : Short_Short_Integer_Array_Access; newSize : Integer; oldByteArray : Short_Short_Integer_Array_Access; stats : Integer_Array_Access) is
-      Java_Result : constant Boolean := ByteUtil'Class (This).compareWithStats (newByteArray, newSize, oldByteArray, stats);
+      Java_Result : constant Boolean := ByteUtil'Class (This).compareWithStats (newByteArray => newByteArray, newSize => newSize, oldByteArray => oldByteArray, stats => stats);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -135,63 +135,63 @@ package body org.allbinary.TsUtil_Package is
    end gc;
 
    procedure hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := TsUtil'Class (This).hashCode (anyType_Param);
+      Java_Result : constant Integer := TsUtil'Class (This).hashCode (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end hashCode;
 
    procedure getRecord (This : in out TsUtil; anyType_Param : access Java_Object'Class; recordId : Integer) is
-      Java_Result : constant Short_Short_Integer_Array_Access := TsUtil'Class (This).getRecord (anyType_Param, recordId);
+      Java_Result : constant Short_Short_Integer_Array_Access := TsUtil'Class (This).getRecord (anyType_Param => anyType_Param, recordId => recordId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRecord;
 
    procedure compareTo (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String) is
-      Java_Result : constant Integer := TsUtil'Class (This).compareTo (a, b);
+      Java_Result : constant Integer := TsUtil'Class (This).compareTo (a => a, b => b);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
    procedure equalIgnoreCase (This : in out TsUtil; a : Unbounded_String; b : Unbounded_String) is
-      Java_Result : constant Boolean := TsUtil'Class (This).equalIgnoreCase (a, b);
+      Java_Result : constant Boolean := TsUtil'Class (This).equalIgnoreCase (a => a, b => b);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end equalIgnoreCase;
 
    procedure equalsNotstring (This : in out TsUtil; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := TsUtil'Class (This).equalsNotstring (anyType_Param, object2_Param);
+      Java_Result : constant Boolean := TsUtil'Class (This).equalsNotstring (anyType_Param => anyType_Param, object2_Param => object2_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end equalsNotstring;
 
    procedure toNumberFromChar (This : in out TsUtil; value : Character) is
-      Java_Result : constant Integer := TsUtil'Class (This).toNumberFromChar (value);
+      Java_Result : constant Integer := TsUtil'Class (This).toNumberFromChar (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toNumberFromChar;
 
    procedure toNumber (This : in out TsUtil; value : Integer) is
-      Java_Result : constant Integer := TsUtil'Class (This).toNumber (value);
+      Java_Result : constant Integer := TsUtil'Class (This).toNumber (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toNumber;
 
    procedure getByteArray (This : in out TsUtil; string_Id : Unbounded_String) is
-      Java_Result : constant Short_Short_Integer_Array_Access := TsUtil'Class (This).getByteArray (string_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := TsUtil'Class (This).getByteArray (string_Id => string_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getByteArray;
 
    procedure isItemListener (This : in out TsUtil; owner_Param : access Displayable_Package.Displayable'Class) is
-      Java_Result : constant Boolean := TsUtil'Class (This).isItemListener (owner_Param);
+      Java_Result : constant Boolean := TsUtil'Class (This).isItemListener (owner_Param => owner_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

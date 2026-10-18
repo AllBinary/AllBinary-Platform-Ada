@@ -492,63 +492,63 @@ package body org.allbinary.image.ImageCache_Package is
    end isLazy;
 
    procedure loadImageForLazyAnimation (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation_Package.LazyImageRotationAnimation'Class) is
-      Java_Result : constant Boolean := ImageCache'Class (This).loadImageForLazyAnimation (lazyImageRotationAnimation_Param);
+      Java_Result : constant Boolean := ImageCache'Class (This).loadImageForLazyAnimation (lazyImageRotationAnimation_Param => lazyImageRotationAnimation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end loadImageForLazyAnimation;
 
    procedure loadImage (This : in out ImageCache; image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant Boolean := ImageCache'Class (This).loadImage (image_Param);
+      Java_Result : constant Boolean := ImageCache'Class (This).loadImage (image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end loadImage;
 
    procedure creatImage (This : in out ImageCache; key : Unbounded_String) is
-      Java_Result : constant Image_Access := ImageCache'Class (This).creatImage (key);
+      Java_Result : constant Image_Access := ImageCache'Class (This).creatImage (key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end creatImage;
 
    procedure get (This : in out ImageCache; caller : Unbounded_String; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := ImageCache'Class (This).get (caller, width, height);
+      Java_Result : constant Image_Access := ImageCache'Class (This).get (caller => caller, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getWithKey (This : in out ImageCache; key_Param : access Java_Object'Class) is
-      Java_Result : constant Image_Access := ImageCache'Class (This).getWithKey (key_Param);
+      Java_Result : constant Image_Access := ImageCache'Class (This).getWithKey (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWithKey;
 
    procedure getIndex (This : in out ImageCache; key_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := ImageCache'Class (This).getIndex (key_Param);
+      Java_Result : constant Integer := ImageCache'Class (This).getIndex (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getIndex;
 
    procedure createImageFromInputStream (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) is
-      Java_Result : constant Image_Access := ImageCache'Class (This).createImageFromInputStream (key_Param, inputStream_Param);
+      Java_Result : constant Image_Access := ImageCache'Class (This).createImageFromInputStream (key_Param => key_Param, inputStream_Param => inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageFromInputStream;
 
    procedure createImageLater (This : in out ImageCache; key : Unbounded_String; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := ImageCache'Class (This).createImageLater (key, width, height);
+      Java_Result : constant Image_Access := ImageCache'Class (This).createImageLater (key => key, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageLater;
 
    procedure getAssociated (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation_Package.LazyImageRotationAnimation'Class) is
-      Java_Result : constant BasicArrayList_Access := ImageCache'Class (This).getAssociated (lazyImageRotationAnimation_Param);
+      Java_Result : constant BasicArrayList_Access := ImageCache'Class (This).getAssociated (lazyImageRotationAnimation_Param => lazyImageRotationAnimation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -48,7 +48,7 @@ package body org.allbinary.input.automation.module.generic_Id.constraints.NoMoti
    end isValid;
 
    procedure isValid (This : in out NoMotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
-      Java_Result : constant Boolean := NoMotionRectangleConstraints'Class (This).isValid (frame, bufferedImage_Param, rectangle_Param);
+      Java_Result : constant Boolean := NoMotionRectangleConstraints'Class (This).isValid (frame => frame, bufferedImage_Param => bufferedImage_Param, rectangle_Param => rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

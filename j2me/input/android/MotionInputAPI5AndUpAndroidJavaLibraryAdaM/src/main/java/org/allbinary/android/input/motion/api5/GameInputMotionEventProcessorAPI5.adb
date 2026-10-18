@@ -140,7 +140,7 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
    end process;
 
    procedure isValid (This : in out GameInputMotionEventProcessorAPI5; pointerId : Integer) is
-      Java_Result : constant Boolean := GameInputMotionEventProcessorAPI5'Class (This).isValid (pointerId);
+      Java_Result : constant Boolean := GameInputMotionEventProcessorAPI5'Class (This).isValid (pointerId => pointerId);
       pragma Unreferenced (Java_Result);
    begin
       null;

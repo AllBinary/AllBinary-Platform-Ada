@@ -32,7 +32,7 @@ package org.allbinary.logic.control.sort.StringComparator_Package is
    type StringComparator_Access_Array_Access_Array is array (Natural range <>) of StringComparator_Access_Array_Access;
    type StringComparator_Access_Array_Access_Array_Access is access all StringComparator_Access_Array_Access_Array;
 
-   type StringComparator is new Java_Object and Comparator with null record;
+   type StringComparator is new Java_Object with null record;
 
    procedure Initialize (This : in out StringComparator'Class);
    function Create return StringComparator_Access;

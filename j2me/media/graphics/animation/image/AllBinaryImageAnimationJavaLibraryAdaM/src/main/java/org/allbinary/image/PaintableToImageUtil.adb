@@ -50,7 +50,7 @@ package body org.allbinary.image.PaintableToImageUtil_Package is
    end getImage;
 
    procedure getImage (paintableInterface_Param : access PaintableInterface_Package.PaintableInterface'Class; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := getImage (paintableInterface_Param, width, height);
+      Java_Result : constant Image_Access := getImage (paintableInterface_Param => paintableInterface_Param, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;

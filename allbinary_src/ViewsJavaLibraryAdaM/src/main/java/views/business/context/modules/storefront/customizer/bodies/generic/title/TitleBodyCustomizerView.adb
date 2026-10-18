@@ -94,7 +94,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    end view;
 
    procedure toXmlNode (This : in out TitleBodyCustomizerView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := TitleBodyCustomizerView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := TitleBodyCustomizerView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

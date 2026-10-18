@@ -551,7 +551,7 @@ package body org.allbinary.opengles.JOGL10_Package is
    end glPolygonMode;
 
    procedure glGetString (This : in out JOGL10; name : Integer) is
-      Java_Result : constant Unbounded_String := JOGL10'Class (This).glGetString (name);
+      Java_Result : constant Unbounded_String := JOGL10'Class (This).glGetString (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

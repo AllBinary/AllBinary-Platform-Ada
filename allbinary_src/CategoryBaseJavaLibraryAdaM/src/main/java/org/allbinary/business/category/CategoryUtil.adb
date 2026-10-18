@@ -78,14 +78,14 @@ package body org.allbinary.business.category.CategoryUtil_Package is
    end getNameFromNode;
 
    procedure getPathLevel (categoryPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant Integer := getPathLevel (categoryPath_Param);
+      Java_Result : constant Integer := getPathLevel (categoryPath_Param => categoryPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathLevel;
 
    procedure getNameFromNode (node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant Unbounded_String := getNameFromNode (node_Param);
+      Java_Result : constant Unbounded_String := getNameFromNode (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

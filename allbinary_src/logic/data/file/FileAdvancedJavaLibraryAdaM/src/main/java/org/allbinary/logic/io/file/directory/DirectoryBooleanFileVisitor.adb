@@ -51,14 +51,14 @@ package body org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_P
    end visit;
 
    procedure visit (This : in out DirectoryBooleanFileVisitor; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := DirectoryBooleanFileVisitor'Class (This).visit (anyType_Param);
+      Java_Result : constant Java_Object_Access := DirectoryBooleanFileVisitor'Class (This).visit (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
    procedure visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant Boolean := DirectoryBooleanFileVisitor'Class (This).visit (file_Param);
+      Java_Result : constant Boolean := DirectoryBooleanFileVisitor'Class (This).visit (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

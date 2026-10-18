@@ -58,14 +58,14 @@ package body org.allbinary.graphics.font.MyFontProcessor_Package is
    end process;
 
    procedure defaultCharWidth (font_Param : access Font_Package.Font'Class) is
-      Java_Result : constant Integer := defaultCharWidth (font_Param);
+      Java_Result : constant Integer := defaultCharWidth (font_Param => font_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end defaultCharWidth;
 
    procedure defaultStringWidth (font_Param : access Font_Package.Font'Class; size : Integer) is
-      Java_Result : constant Integer := defaultStringWidth (font_Param, size);
+      Java_Result : constant Integer := defaultStringWidth (font_Param => font_Param, size => size);
       pragma Unreferenced (Java_Result);
    begin
       null;

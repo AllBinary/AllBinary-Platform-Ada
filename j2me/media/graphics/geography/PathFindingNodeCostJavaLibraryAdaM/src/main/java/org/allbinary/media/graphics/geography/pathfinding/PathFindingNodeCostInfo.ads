@@ -47,8 +47,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostIn
    procedure setCalculatedTotalCost (This : in out PathFindingNodeCostInfo);
    procedure setCostFromStart (This : in out PathFindingNodeCostInfo; cost : Long_Long_Integer);
    procedure addCostFromStart (This : in out PathFindingNodeCostInfo; cost : Long_Long_Integer);
-   function compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) return Integer;
-   procedure compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class);
+   function compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo_Var_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) return Integer;
+   procedure compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo_Var_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class);
    function toString (This : in out PathFindingNodeCostInfo) return Unbounded_String;
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;

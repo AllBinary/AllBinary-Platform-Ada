@@ -44,7 +44,7 @@ package body org.allbinary.logic.util.cache.NoCacheableFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out NoCacheableFactory; key_Param : access Java_Object'Class) is
-      Java_Result : constant CacheableInterface_Access := NoCacheableFactory'Class (This).getInstance (key_Param);
+      Java_Result : constant CacheableInterface_Access := NoCacheableFactory'Class (This).getInstance (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

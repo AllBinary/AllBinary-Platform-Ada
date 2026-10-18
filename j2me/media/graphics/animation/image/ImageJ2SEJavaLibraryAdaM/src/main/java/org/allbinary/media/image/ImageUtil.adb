@@ -264,77 +264,77 @@ package body org.allbinary.media.image.ImageUtil_Package is
    end toString;
 
    procedure create (This : in out ImageUtil; width : Integer; height : Integer) is
-      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).create (width, height);
+      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).create (width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end create;
 
    procedure createBufferedImageForResize (This : in out ImageUtil; bufferedImageArray : BufferedImage_Access_Array_Access; percent : Integer; scale : Boolean) is
-      Java_Result : constant BufferedImage_Access_Array_Access := ImageUtil'Class (This).createBufferedImageForResize (bufferedImageArray, percent, scale);
+      Java_Result : constant BufferedImage_Access_Array_Access := ImageUtil'Class (This).createBufferedImageForResize (bufferedImageArray => bufferedImageArray, percent => percent, scale => scale);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBufferedImageForResize;
 
    procedure createBufferedImage2 (This : in out ImageUtil; bufferedImageArray : BufferedImage_Access_Array_Access; percent : Float; scale : Boolean) is
-      Java_Result : constant BufferedImage_Access_Array_Access := ImageUtil'Class (This).createBufferedImage2 (bufferedImageArray, percent, scale);
+      Java_Result : constant BufferedImage_Access_Array_Access := ImageUtil'Class (This).createBufferedImage2 (bufferedImageArray => bufferedImageArray, percent => percent, scale => scale);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBufferedImage2;
 
    procedure createBufferedImage3 (This : in out ImageUtil; bufferedImageArray : BufferedImage_Access_Array_Access; width : Integer; height : Integer; scale : Boolean) is
-      Java_Result : constant BufferedImage_Access_Array_Access := ImageUtil'Class (This).createBufferedImage3 (bufferedImageArray, width, height, scale);
+      Java_Result : constant BufferedImage_Access_Array_Access := ImageUtil'Class (This).createBufferedImage3 (bufferedImageArray => bufferedImageArray, width => width, height => height, scale => scale);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBufferedImage3;
 
    procedure createBufferedImageForSave (This : in out ImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; newWidth : Integer; newHeight : Integer) is
-      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).createBufferedImageForSave (bufferedImage_Param, newWidth, newHeight);
+      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).createBufferedImageForSave (bufferedImage_Param => bufferedImage_Param, newWidth => newWidth, newHeight => newHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBufferedImageForSave;
 
    procedure createBufferedImage (This : in out ImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; newWidth : Integer; newHeight : Integer; scale : Boolean) is
-      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).createBufferedImage (bufferedImage_Param, newWidth, newHeight, scale);
+      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).createBufferedImage (bufferedImage_Param => bufferedImage_Param, newWidth => newWidth, newHeight => newHeight, scale => scale);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBufferedImage;
 
    procedure createBufferedImageAllowTranslate (This : in out ImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean) is
-      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).createBufferedImageAllowTranslate (bufferedImage_Param, newWidth, newHeight, scale, allowTranslate);
+      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).createBufferedImageAllowTranslate (bufferedImage_Param => bufferedImage_Param, newWidth => newWidth, newHeight => newHeight, scale => scale, allowTranslate => allowTranslate);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBufferedImageAllowTranslate;
 
    procedure createBufferedImageWithLargerCanvas (This : in out ImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; newWidth : Integer; newHeight : Integer) is
-      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).createBufferedImageWithLargerCanvas (bufferedImage_Param, newWidth, newHeight);
+      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).createBufferedImageWithLargerCanvas (bufferedImage_Param => bufferedImage_Param, newWidth => newWidth, newHeight => newHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBufferedImageWithLargerCanvas;
 
    procedure convertToBufferedImage (This : in out ImageUtil; toolkitImage_Param : access Image_Package.Image'Class) is
-      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).convertToBufferedImage (toolkitImage_Param);
+      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).convertToBufferedImage (toolkitImage_Param => toolkitImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end convertToBufferedImage;
 
    procedure getBufferedImage (This : in out ImageUtil; image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).getBufferedImage (image_Param);
+      Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).getBufferedImage (image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getBufferedImage;
 
    procedure toString (This : in out ImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
-      Java_Result : constant Unbounded_String := ImageUtil'Class (This).toString (bufferedImage_Param);
+      Java_Result : constant Unbounded_String := ImageUtil'Class (This).toString (bufferedImage_Param => bufferedImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

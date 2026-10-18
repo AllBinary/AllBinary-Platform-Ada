@@ -78,14 +78,14 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
    end isScreenChangeCanvas;
 
    procedure isScreenChange (This : in out FullScreenUtil; isFullScreen : Boolean) is
-      Java_Result : constant Boolean := FullScreenUtil'Class (This).isScreenChange (isFullScreen);
+      Java_Result : constant Boolean := FullScreenUtil'Class (This).isScreenChange (isFullScreen => isFullScreen);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isScreenChange;
 
    procedure isScreenChangeCanvas (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas_Package.Canvas'Class) is
-      Java_Result : constant Boolean := FullScreenUtil'Class (This).isScreenChangeCanvas (fullScreenInterface_Param);
+      Java_Result : constant Boolean := FullScreenUtil'Class (This).isScreenChangeCanvas (fullScreenInterface_Param => fullScreenInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

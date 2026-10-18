@@ -55,14 +55,14 @@ package body org.allbinary.media.graphics.geography.pathfinding.GeographicPathFi
    end searchTotalPathN;
 
    procedure searchTotalPath (This : in out GeographicPathFinderBase; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; totalPaths : Integer) is
-      Java_Result : constant BasicArrayList_Access := GeographicPathFinderBase'Class (This).searchTotalPath (startPathFindingNodeList_Param, endPathFindingNodeList_Param, totalPaths);
+      Java_Result : constant BasicArrayList_Access := GeographicPathFinderBase'Class (This).searchTotalPath (startPathFindingNodeList_Param => startPathFindingNodeList_Param, endPathFindingNodeList_Param => endPathFindingNodeList_Param, totalPaths => totalPaths);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end searchTotalPath;
 
    procedure searchTotalPathN (This : in out GeographicPathFinderBase; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; totalPaths : Integer; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
-      Java_Result : constant BasicArrayList_Access := GeographicPathFinderBase'Class (This).searchTotalPathN (startPathFindingNodeList_Param, endPathFindingNodeList_Param, totalPaths, multipassState_Param);
+      Java_Result : constant BasicArrayList_Access := GeographicPathFinderBase'Class (This).searchTotalPathN (startPathFindingNodeList_Param => startPathFindingNodeList_Param, endPathFindingNodeList_Param => endPathFindingNodeList_Param, totalPaths => totalPaths, multipassState_Param => multipassState_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

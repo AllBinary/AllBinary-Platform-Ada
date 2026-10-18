@@ -45,7 +45,7 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
    end getInstance;
 
    procedure getInstance (pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class) is
-      Java_Result : constant TransformDocumentInterface_Access := getInstance (pageContext_Param, weblisketSession_Param);
+      Java_Result : constant TransformDocumentInterface_Access := getInstance (pageContext_Param => pageContext_Param, weblisketSession_Param => weblisketSession_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

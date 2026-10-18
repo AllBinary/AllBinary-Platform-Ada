@@ -59,7 +59,7 @@ package body org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_P
    end removeAll;
 
    procedure getInstance (groupInterface_Param : access Group_Package.Group'Class) is
-      Java_Result : constant CapitalEventHandler_Access := getInstance (groupInterface_Param);
+      Java_Result : constant CapitalEventHandler_Access := getInstance (groupInterface_Param => groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

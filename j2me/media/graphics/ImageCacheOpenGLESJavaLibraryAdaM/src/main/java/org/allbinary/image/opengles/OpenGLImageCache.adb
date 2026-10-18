@@ -145,14 +145,14 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
    end init;
 
    procedure createImage (This : in out OpenGLImageCache; caller : Unbounded_String; width_Param : Integer; height_Param : Integer) is
-      Java_Result : constant Image_Access := OpenGLImageCache'Class (This).createImage (caller, width_Param, height_Param);
+      Java_Result : constant Image_Access := OpenGLImageCache'Class (This).createImage (caller => caller, width_Param => width_Param, height_Param => height_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage;
 
    procedure createImageFromInputStream (This : in out OpenGLImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) is
-      Java_Result : constant Image_Access := OpenGLImageCache'Class (This).createImageFromInputStream (key_Param, inputStream_Param);
+      Java_Result : constant Image_Access := OpenGLImageCache'Class (This).createImageFromInputStream (key_Param => key_Param, inputStream_Param => inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -314,42 +314,42 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
    end main;
 
    procedure load (This : in out SVGAsJSONSimpleLoader; svgAsJson : Unbounded_String) is
-      Java_Result : constant Integer_Array_Access_Array_Access := SVGAsJSONSimpleLoader'Class (This).load (svgAsJson);
+      Java_Result : constant Integer_Array_Access_Array_Access := SVGAsJSONSimpleLoader'Class (This).load (svgAsJson => svgAsJson);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end load;
 
    procedure readInt (This : in out SVGAsJSONSimpleLoader; anyType_Param : access JSONObject_Package.JSONObject'Class; key : Unbounded_String) is
-      Java_Result : constant Integer := SVGAsJSONSimpleLoader'Class (This).readInt (anyType_Param, key);
+      Java_Result : constant Integer := SVGAsJSONSimpleLoader'Class (This).readInt (anyType_Param => anyType_Param, key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end readInt;
 
    procedure readInt (This : in out SVGAsJSONSimpleLoader; anyType_Param : access JSONObject_Package.JSONObject'Class; key : Unbounded_String; defaultValue : Integer) is
-      Java_Result : constant Integer := SVGAsJSONSimpleLoader'Class (This).readInt (anyType_Param, key, defaultValue);
+      Java_Result : constant Integer := SVGAsJSONSimpleLoader'Class (This).readInt (anyType_Param => anyType_Param, key => key, defaultValue => defaultValue);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end readInt;
 
    procedure toInt (This : in out SVGAsJSONSimpleLoader; value_Param : access Java_Object'Class; key : Unbounded_String) is
-      Java_Result : constant Integer := SVGAsJSONSimpleLoader'Class (This).toInt (value_Param, key);
+      Java_Result : constant Integer := SVGAsJSONSimpleLoader'Class (This).toInt (value_Param => value_Param, key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toInt;
 
    procedure asObject (This : in out SVGAsJSONSimpleLoader; value_Param : access Java_Object'Class; name : Unbounded_String) is
-      Java_Result : constant JSONObject_Access := SVGAsJSONSimpleLoader'Class (This).asObject (value_Param, name);
+      Java_Result : constant JSONObject_Access := SVGAsJSONSimpleLoader'Class (This).asObject (value_Param => value_Param, name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end asObject;
 
    procedure toPoints (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Integer_Array_Access_Array_Access := SVGAsJSONSimpleLoader'Class (This).toPoints (pointVector_Param);
+      Java_Result : constant Integer_Array_Access_Array_Access := SVGAsJSONSimpleLoader'Class (This).toPoints (pointVector_Param => pointVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

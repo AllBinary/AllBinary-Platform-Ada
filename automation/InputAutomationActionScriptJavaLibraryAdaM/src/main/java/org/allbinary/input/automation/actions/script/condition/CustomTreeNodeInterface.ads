@@ -26,7 +26,7 @@ with org.allbinary.input.automation.actions.script.condition.JPopupMenu_Package;
 package org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package is
 
 
-   type CustomTreeNodeInterface is interface and MutableTreeNode;
+   type CustomTreeNodeInterface is interface;
    type CustomTreeNodeInterface_Access is access all CustomTreeNodeInterface'Class;
    type CustomTreeNodeInterface_Access_Array is array (Natural range <>) of CustomTreeNodeInterface_Access;
    type CustomTreeNodeInterface_Access_Array_Access is access all CustomTreeNodeInterface_Access_Array;

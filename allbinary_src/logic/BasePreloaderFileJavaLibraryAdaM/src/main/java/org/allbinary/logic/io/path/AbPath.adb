@@ -184,14 +184,14 @@ package body org.allbinary.logic.io.path.AbPath_Package is
    end setPath;
 
    procedure getSchema (This : in out AbPath; aPath : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPath'Class (This).getSchema (aPath);
+      Java_Result : constant Unbounded_String := AbPath'Class (This).getSchema (aPath => aPath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSchema;
 
    procedure getPathFromPath (This : in out AbPath; aPath : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPath'Class (This).getPathFromPath (aPath);
+      Java_Result : constant Unbounded_String := AbPath'Class (This).getPathFromPath (aPath => aPath);
       pragma Unreferenced (Java_Result);
    begin
       null;

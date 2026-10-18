@@ -145,7 +145,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
    end toXmlNode;
 
    procedure toXmlNode (This : in out CssPropertyValues; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := CssPropertyValues'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := CssPropertyValues'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

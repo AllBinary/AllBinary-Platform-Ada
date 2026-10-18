@@ -109,28 +109,28 @@ package body org.allbinary.graphics.opengles.OpenGLESStrings_Package is
    end stringWidth;
 
    procedure charWidth (This : in out OpenGLESStrings; ch : Character) is
-      Java_Result : constant Integer := OpenGLESStrings'Class (This).charWidth (ch);
+      Java_Result : constant Integer := OpenGLESStrings'Class (This).charWidth (ch => ch);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end charWidth;
 
    procedure charsWidth (This : in out OpenGLESStrings; ch : Character_Array_Access; offset : Integer; length : Integer) is
-      Java_Result : constant Integer := OpenGLESStrings'Class (This).charsWidth (ch, offset, length);
+      Java_Result : constant Integer := OpenGLESStrings'Class (This).charsWidth (ch => ch, offset => offset, length => length);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end charsWidth;
 
    procedure stringWidth (This : in out OpenGLESStrings; string_Id : Unbounded_String) is
-      Java_Result : constant Integer := OpenGLESStrings'Class (This).stringWidth (string_Id);
+      Java_Result : constant Integer := OpenGLESStrings'Class (This).stringWidth (string_Id => string_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end stringWidth;
 
    procedure stringWidth (This : in out OpenGLESStrings; string_Id : Unbounded_String; offset : Integer; len : Integer) is
-      Java_Result : constant Integer := OpenGLESStrings'Class (This).stringWidth (string_Id, offset, len);
+      Java_Result : constant Integer := OpenGLESStrings'Class (This).stringWidth (string_Id => string_Id, offset => offset, len => len);
       pragma Unreferenced (Java_Result);
    begin
       null;

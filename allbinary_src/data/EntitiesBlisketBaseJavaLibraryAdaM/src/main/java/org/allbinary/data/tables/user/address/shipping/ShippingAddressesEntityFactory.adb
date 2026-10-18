@@ -64,7 +64,7 @@ package body org.allbinary.data.tables.user.address.shipping.ShippingAddressesEn
    end getInstance;
 
    procedure getInstance (This : in out ShippingAddressesEntityFactory; userName : Unbounded_String) is
-      Java_Result : constant StreetAddressesEntity_Access := ShippingAddressesEntityFactory'Class (This).getInstance (userName);
+      Java_Result : constant StreetAddressesEntity_Access := ShippingAddressesEntityFactory'Class (This).getInstance (userName => userName);
       pragma Unreferenced (Java_Result);
    begin
       null;

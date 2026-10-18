@@ -168,7 +168,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
    end setHeaders;
 
    procedure getString (This : in out AbFileItem; encoding : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbFileItem'Class (This).getString (encoding);
+      Java_Result : constant Unbounded_String := AbFileItem'Class (This).getString (encoding => encoding);
       pragma Unreferenced (Java_Result);
    begin
       null;

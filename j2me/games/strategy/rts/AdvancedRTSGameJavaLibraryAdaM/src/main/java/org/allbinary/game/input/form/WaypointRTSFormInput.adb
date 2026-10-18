@@ -304,7 +304,7 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
    end addWayPoint;
 
    procedure attemptBuild (This : in out WaypointRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer_Package.RTSLayer'Class; itemIndex : Integer) is
-      Java_Result : constant Boolean := WaypointRTSFormInput'Class (This).attemptBuild (rtsPlayerLayerInterface_Param, layerManager_Param, layerInterface_Param, itemIndex);
+      Java_Result : constant Boolean := WaypointRTSFormInput'Class (This).attemptBuild (rtsPlayerLayerInterface_Param => rtsPlayerLayerInterface_Param, layerManager_Param => layerManager_Param, layerInterface_Param => layerInterface_Param, itemIndex => itemIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;

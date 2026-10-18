@@ -27,7 +27,7 @@ package org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInt
 
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
 
-   type ProfileActionScriptNodeInterface is interface and DomNodeInterface and MutableTreeNode;
+   type ProfileActionScriptNodeInterface is interface and DomNodeInterface;
    type ProfileActionScriptNodeInterface_Access is access all ProfileActionScriptNodeInterface'Class;
    type ProfileActionScriptNodeInterface_Access_Array is array (Natural range <>) of ProfileActionScriptNodeInterface_Access;
    type ProfileActionScriptNodeInterface_Access_Array_Access is access all ProfileActionScriptNodeInterface_Access_Array;

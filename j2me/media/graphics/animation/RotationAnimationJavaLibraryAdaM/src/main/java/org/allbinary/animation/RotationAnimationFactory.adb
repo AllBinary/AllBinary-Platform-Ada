@@ -73,14 +73,14 @@ package body org.allbinary.animation.RotationAnimationFactory_Package is
    end setInitialScale;
 
    procedure getInstance (This : in out RotationAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := RotationAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := RotationAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstanceAnimation (This : in out RotationAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) is
-      Java_Result : constant Animation_Access := RotationAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param);
+      Java_Result : constant Animation_Access := RotationAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param => animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

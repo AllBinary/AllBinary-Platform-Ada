@@ -64,7 +64,7 @@ package body org.allbinary.logic.math.Orientation_Package is
    end toString;
 
    procedure getInstance (yaw : Integer; pitch : Integer; roll : Integer) is
-      Java_Result : constant Orientation_Access := getInstance (yaw, pitch, roll);
+      Java_Result : constant Orientation_Access := getInstance (yaw => yaw, pitch => pitch, roll => roll);
       pragma Unreferenced (Java_Result);
    begin
       null;

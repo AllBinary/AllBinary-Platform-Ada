@@ -129,28 +129,28 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
    end createRotatedImage;
 
    procedure rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; totalAngle : Integer) is
-      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImage (originalImage_Param, image_Param, totalAngle);
+      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImage (originalImage_Param => originalImage_Param, image_Param => image_Param, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end rotateImage;
 
    procedure rotateImageCanvasSurfaceClear (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; canvasSurface_Param : access CanvasSurface_Package.CanvasSurface'Class; totalAngle : Integer) is
-      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImageCanvasSurfaceClear (originalImage_Param, image_Param, canvasSurface_Param, totalAngle);
+      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImageCanvasSurfaceClear (originalImage_Param => originalImage_Param, image_Param => image_Param, canvasSurface_Param => canvasSurface_Param, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end rotateImageCanvasSurfaceClear;
 
    procedure rotateImageCanvasSurface (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; canvasSurface_Param : access CanvasSurface_Package.CanvasSurface'Class; totalAngle : Integer) is
-      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImageCanvasSurface (originalImage_Param, image_Param, canvasSurface_Param, totalAngle);
+      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImageCanvasSurface (originalImage_Param => originalImage_Param, image_Param => image_Param, canvasSurface_Param => canvasSurface_Param, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end rotateImageCanvasSurface;
 
    procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; rotationInDegrees : Integer) is
-      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage_Param, rotationInDegrees);
+      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage_Param => originalImage_Param, rotationInDegrees => rotationInDegrees);
       pragma Unreferenced (Java_Result);
    begin
       null;

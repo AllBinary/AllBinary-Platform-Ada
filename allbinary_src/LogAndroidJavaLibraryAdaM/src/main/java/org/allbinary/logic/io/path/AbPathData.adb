@@ -128,35 +128,35 @@ package body org.allbinary.logic.io.path.AbPathData_Package is
    end removeNameFromPath;
 
    procedure getExtensionIndex (This : in out AbPathData; filePath : Unbounded_String) is
-      Java_Result : constant Integer := AbPathData'Class (This).getExtensionIndex (filePath);
+      Java_Result : constant Integer := AbPathData'Class (This).getExtensionIndex (filePath => filePath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getExtensionIndex;
 
    procedure getExtensionWithDot (This : in out AbPathData; filePath : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathData'Class (This).getExtensionWithDot (filePath);
+      Java_Result : constant Unbounded_String := AbPathData'Class (This).getExtensionWithDot (filePath => filePath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getExtensionWithDot;
 
    procedure getExtension (This : in out AbPathData; filePath : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathData'Class (This).getExtension (filePath);
+      Java_Result : constant Unbounded_String := AbPathData'Class (This).getExtension (filePath => filePath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getExtension;
 
    procedure getNameFromPath (This : in out AbPathData; path : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathData'Class (This).getNameFromPath (path);
+      Java_Result : constant Unbounded_String := AbPathData'Class (This).getNameFromPath (path => path);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNameFromPath;
 
    procedure removeNameFromPath (This : in out AbPathData; path : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathData'Class (This).removeNameFromPath (path);
+      Java_Result : constant Unbounded_String := AbPathData'Class (This).removeNameFromPath (path => path);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -67,7 +67,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFrontFactory
    end getInstance;
 
    procedure getInstance (storeName : Unbounded_String) is
-      Java_Result : constant StoreFront_Access := getInstance (storeName);
+      Java_Result : constant StoreFront_Access := getInstance (storeName => storeName);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -121,7 +121,7 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
    end toString;
 
    procedure getInstance (gameSkillType_Param : access GameSkillType_Package.GameSkillType'Class; extra : Unbounded_String) is
-      Java_Result : constant GameSkill_Access := getInstance (gameSkillType_Param, extra);
+      Java_Result : constant GameSkill_Access := getInstance (gameSkillType_Param => gameSkillType_Param, extra => extra);
       pragma Unreferenced (Java_Result);
    begin
       null;

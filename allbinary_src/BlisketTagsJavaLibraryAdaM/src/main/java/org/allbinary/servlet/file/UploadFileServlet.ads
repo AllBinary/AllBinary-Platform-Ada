@@ -42,7 +42,7 @@ package org.allbinary.servlet.file.UploadFileServlet_Package is
    type UploadFileServlet_Access_Array_Access_Array is array (Natural range <>) of UploadFileServlet_Access_Array_Access;
    type UploadFileServlet_Access_Array_Access_Array_Access is access all UploadFileServlet_Access_Array_Access_Array;
 
-   type UploadFileServlet is new HttpServlet with record
+   type UploadFileServlet is new Java_Object with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       requestHashMap : HashMap_Access;

@@ -69,14 +69,14 @@ package body org.allbinary.direction.DirectionUtil_Package is
    end getFrameAngle;
 
    procedure getAngle (This : in out DirectionUtil; direction_Param : access Direction_Package.Direction'Class) is
-      Java_Result : constant Angle_Access := DirectionUtil'Class (This).getAngle (direction_Param);
+      Java_Result : constant Angle_Access := DirectionUtil'Class (This).getAngle (direction_Param => direction_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAngle;
 
    procedure getFrameAngle (This : in out DirectionUtil; direction_Param : access Direction_Package.Direction'Class) is
-      Java_Result : constant Angle_Access := DirectionUtil'Class (This).getFrameAngle (direction_Param);
+      Java_Result : constant Angle_Access := DirectionUtil'Class (This).getFrameAngle (direction_Param => direction_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

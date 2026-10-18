@@ -34,17 +34,17 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Money'Class; money_Param : access Money_Package.Money'Class) is
-      money : constant Money_Access := Money_Access (money_Param);
+   procedure Initialize (This : in out Money'Class; money_Var_Param : access Money_Package.Money'Class) is
+      money_Var : constant Money_Access := Money_Access (money_Var_Param);
    begin
       Initialize_Fields (This);
-        This.units := money.getUnits;
+        This.units := money_Var.getUnits;
    end Initialize;
 
-   function Create (money_Param : access Money_Package.Money'Class) return Money_Access is
+   function Create (money_Var_Param : access Money_Package.Money'Class) return Money_Access is
       This : constant Money_Access := new Money;
    begin
-      Money_Package.Initialize (This.all, money_Param);
+      Money_Package.Initialize (This.all, money_Var_Param);
       return This;
    end Create;
 
@@ -183,14 +183,14 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
    end toString;
 
    procedure convertUnitsTo (This : in out Money; currency : Unbounded_String) is
-      Java_Result : constant Unbounded_String := Money'Class (This).convertUnitsTo (currency);
+      Java_Result : constant Unbounded_String := Money'Class (This).convertUnitsTo (currency => currency);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end convertUnitsTo;
 
    procedure convertUsdToUnits (This : in out Money; usDollarStr : Unbounded_String) is
-      Java_Result : constant Long_Long_Integer := Money'Class (This).convertUsdToUnits (usDollarStr);
+      Java_Result : constant Long_Long_Integer := Money'Class (This).convertUsdToUnits (usDollarStr => usDollarStr);
       pragma Unreferenced (Java_Result);
    begin
       null;

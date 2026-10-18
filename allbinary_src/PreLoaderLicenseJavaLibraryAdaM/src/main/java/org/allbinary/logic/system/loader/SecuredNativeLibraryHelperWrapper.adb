@@ -50,7 +50,7 @@ package body org.allbinary.logic.system.loader.SecuredNativeLibraryHelperWrapper
    end unlock;
 
    procedure unlock (This : in out SecuredNativeLibraryHelperWrapper; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
-      Java_Result : constant Boolean := SecuredNativeLibraryHelperWrapper'Class (This).unlock (abeClientInformation_Param);
+      Java_Result : constant Boolean := SecuredNativeLibraryHelperWrapper'Class (This).unlock (abeClientInformation_Param => abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

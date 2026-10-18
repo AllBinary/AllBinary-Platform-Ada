@@ -73,14 +73,14 @@ package body org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsU
    end getAll;
 
    procedure getAllXY (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer; reusableList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := LayerCoveringCellPositionsUtil'Class (This).getAllXY (geographicMapInterface_Param, layerInterface_Param, x, y, reusableList_Param);
+      Java_Result : constant BasicArrayList_Access := LayerCoveringCellPositionsUtil'Class (This).getAllXY (geographicMapInterface_Param => geographicMapInterface_Param, layerInterface_Param => layerInterface_Param, x => x, y => y, reusableList_Param => reusableList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAllXY;
 
    procedure getAll (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; topLeftGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; reusableList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := LayerCoveringCellPositionsUtil'Class (This).getAll (geographicMapInterface_Param, topLeftGeographicMapCellPosition_Param, layerInterface_Param, reusableList_Param);
+      Java_Result : constant BasicArrayList_Access := LayerCoveringCellPositionsUtil'Class (This).getAll (geographicMapInterface_Param => geographicMapInterface_Param, topLeftGeographicMapCellPosition_Param => topLeftGeographicMapCellPosition_Param, layerInterface_Param => layerInterface_Param, reusableList_Param => reusableList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -142,14 +142,14 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
    end decrypt;
 
    procedure encrypt (This : in out AbBasicCrypt; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := AbBasicCrypt'Class (This).encrypt (array_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := AbBasicCrypt'Class (This).encrypt (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end encrypt;
 
    procedure decrypt (This : in out AbBasicCrypt; array_Id : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := AbBasicCrypt'Class (This).decrypt (array_Id);
+      Java_Result : constant Short_Short_Integer_Array_Access := AbBasicCrypt'Class (This).decrypt (array_Id => array_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

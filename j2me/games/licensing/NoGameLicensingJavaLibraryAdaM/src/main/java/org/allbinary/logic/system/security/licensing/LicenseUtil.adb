@@ -61,7 +61,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseUtil_Package i
    end shouldWait;
 
    procedure shouldWait (This : in out LicenseUtil; commandListener_Param : access CommandListener_Package.CommandListener'Class) is
-      Java_Result : constant Boolean := LicenseUtil'Class (This).shouldWait (commandListener_Param);
+      Java_Result : constant Boolean := LicenseUtil'Class (This).shouldWait (commandListener_Param => commandListener_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

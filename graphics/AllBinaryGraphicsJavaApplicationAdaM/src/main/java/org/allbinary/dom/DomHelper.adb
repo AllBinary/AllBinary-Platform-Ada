@@ -234,49 +234,49 @@ package body org.allbinary.dom.DomHelper_Package is
    end searchNodeList;
 
    procedure createDocument (This : in out DomHelper; xmlFile_Param : access File_Package.File'Class) is
-      Java_Result : constant Document_Access := DomHelper'Class (This).createDocument (xmlFile_Param);
+      Java_Result : constant Document_Access := DomHelper'Class (This).createDocument (xmlFile_Param => xmlFile_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createDocument;
 
    procedure toString (This : in out DomHelper; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Unbounded_String := DomHelper'Class (This).toString (document_Param);
+      Java_Result : constant Unbounded_String := DomHelper'Class (This).toString (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toString;
 
    procedure getChildNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant NodeList_Access := DomHelper'Class (This).getChildNodeList (nodeName, nodeList_Param);
+      Java_Result : constant NodeList_Access := DomHelper'Class (This).getChildNodeList (nodeName => nodeName, nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getChildNodeList;
 
    procedure getChildrenWithoutTextNodes (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant BasicArrayList_Access := DomHelper'Class (This).getChildrenWithoutTextNodes (nodeName, nodeList_Param);
+      Java_Result : constant BasicArrayList_Access := DomHelper'Class (This).getChildrenWithoutTextNodes (nodeName => nodeName, nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getChildrenWithoutTextNodes;
 
    procedure getWithoutTextNodes (This : in out DomHelper; nodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant BasicArrayList_Access := DomHelper'Class (This).getWithoutTextNodes (nodeList_Param);
+      Java_Result : constant BasicArrayList_Access := DomHelper'Class (This).getWithoutTextNodes (nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWithoutTextNodes;
 
    procedure searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant Node_Access := DomHelper'Class (This).searchNodeList (nodeName, nodeList_Param);
+      Java_Result : constant Node_Access := DomHelper'Class (This).searchNodeList (nodeName => nodeName, nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end searchNodeList;
 
    procedure searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Node_Access := DomHelper'Class (This).searchNodeList (nodeName, nodeList_Param);
+      Java_Result : constant Node_Access := DomHelper'Class (This).searchNodeList (nodeName => nodeName, nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

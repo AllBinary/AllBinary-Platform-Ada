@@ -106,14 +106,14 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
    end main;
 
    procedure findAll (This : in out WeblisketFinder; path : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := WeblisketFinder'Class (This).findAll (path);
+      Java_Result : constant BasicArrayList_Access := WeblisketFinder'Class (This).findAll (path => path);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end findAll;
 
    procedure getInstallationPath (This : in out WeblisketFinder; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant Unbounded_String := WeblisketFinder'Class (This).getInstallationPath (file_Param);
+      Java_Result : constant Unbounded_String := WeblisketFinder'Class (This).getInstallationPath (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

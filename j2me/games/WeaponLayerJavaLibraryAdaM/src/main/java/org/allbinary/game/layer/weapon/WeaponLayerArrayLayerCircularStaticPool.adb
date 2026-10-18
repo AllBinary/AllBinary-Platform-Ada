@@ -71,7 +71,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStatic
    end getInstanceArray;
 
    procedure getInstanceArray (This : in out WeaponLayerArrayLayerCircularStaticPool; size : Integer) is
-      Java_Result : constant WeaponLayer_Access_Array_Access := WeaponLayerArrayLayerCircularStaticPool'Class (This).getInstanceArray (size);
+      Java_Result : constant WeaponLayer_Access_Array_Access := WeaponLayerArrayLayerCircularStaticPool'Class (This).getInstanceArray (size => size);
       pragma Unreferenced (Java_Result);
    begin
       null;

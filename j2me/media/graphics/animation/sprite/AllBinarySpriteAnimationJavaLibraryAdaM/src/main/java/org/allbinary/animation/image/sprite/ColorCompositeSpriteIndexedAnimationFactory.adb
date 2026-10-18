@@ -61,14 +61,14 @@ package body org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAni
    end getInstanceAnimation;
 
    procedure getInstance (This : in out ColorCompositeSpriteIndexedAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := ColorCompositeSpriteIndexedAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := ColorCompositeSpriteIndexedAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstanceAnimation (This : in out ColorCompositeSpriteIndexedAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) is
-      Java_Result : constant Animation_Access := ColorCompositeSpriteIndexedAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param);
+      Java_Result : constant Animation_Access := ColorCompositeSpriteIndexedAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param => animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

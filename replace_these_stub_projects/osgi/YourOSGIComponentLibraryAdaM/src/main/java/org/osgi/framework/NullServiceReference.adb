@@ -56,14 +56,14 @@ package body org.osgi.framework.NullServiceReference_Package is
    end compareTo;
 
    procedure getProperty (This : in out NullServiceReference; key : Unbounded_String) is
-      Java_Result : constant Java_Object_Access := NullServiceReference'Class (This).getProperty (key);
+      Java_Result : constant Java_Object_Access := NullServiceReference'Class (This).getProperty (key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getProperty;
 
    procedure compareTo (This : in out NullServiceReference; o_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := NullServiceReference'Class (This).compareTo (o_Param);
+      Java_Result : constant Integer := NullServiceReference'Class (This).compareTo (o_Param => o_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

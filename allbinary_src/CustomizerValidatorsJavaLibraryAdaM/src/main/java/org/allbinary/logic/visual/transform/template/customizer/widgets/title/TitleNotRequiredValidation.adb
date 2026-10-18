@@ -135,7 +135,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out TitleNotRequiredValidation; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := TitleNotRequiredValidation'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := TitleNotRequiredValidation'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

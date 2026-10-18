@@ -475,14 +475,14 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
    end getyOffset;
 
    procedure isPortraitWH (This : in out DisplayInfoSingleton; lastWidth : Integer; lastHeight : Integer) is
-      Java_Result : constant Boolean := DisplayInfoSingleton'Class (This).isPortraitWH (lastWidth, lastHeight);
+      Java_Result : constant Boolean := DisplayInfoSingleton'Class (This).isPortraitWH (lastWidth => lastWidth, lastHeight => lastHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isPortraitWH;
 
    procedure toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker_Package.StringMaker'Class) is
-      Java_Result : constant Unbounded_String := DisplayInfoSingleton'Class (This).toStringAppend (stringBuffer_Param);
+      Java_Result : constant Unbounded_String := DisplayInfoSingleton'Class (This).toStringAppend (stringBuffer_Param => stringBuffer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

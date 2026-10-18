@@ -112,14 +112,14 @@ package body org.allbinary.util.CircularIndexUtil_Package is
    end toString;
 
    procedure createInstance (max : Integer) is
-      Java_Result : constant CircularIndexUtil_Access := createInstance (max);
+      Java_Result : constant CircularIndexUtil_Access := createInstance (max => max);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createInstance;
 
    procedure createInstanceAt (index : Integer; max : Integer) is
-      Java_Result : constant CircularIndexUtil_Access := createInstanceAt (index, max);
+      Java_Result : constant CircularIndexUtil_Access := createInstanceAt (index => index, max => max);
       pragma Unreferenced (Java_Result);
    begin
       null;

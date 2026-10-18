@@ -104,28 +104,28 @@ package body org.allbinary.game.layer.TiledLayerUtil_Package is
    end keepOnMapY;
 
    procedure keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; width : Integer; mapBorderBufferWidth : Integer) is
-      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnBorderdMapX (terrainTiledLayer_Param, x, width, mapBorderBufferWidth);
+      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnBorderdMapX (terrainTiledLayer_Param => terrainTiledLayer_Param, x => x, width => width, mapBorderBufferWidth => mapBorderBufferWidth);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end keepOnBorderdMapX;
 
    procedure keepOnBorderdMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; y : Integer; height : Integer; mapBorderBufferHeight : Integer) is
-      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnBorderdMapY (terrainTiledLayer_Param, y, height, mapBorderBufferHeight);
+      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnBorderdMapY (terrainTiledLayer_Param => terrainTiledLayer_Param, y => y, height => height, mapBorderBufferHeight => mapBorderBufferHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end keepOnBorderdMapY;
 
    procedure keepOnMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; width : Integer) is
-      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnMapX (terrainTiledLayer_Param, x, width);
+      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnMapX (terrainTiledLayer_Param => terrainTiledLayer_Param, x => x, width => width);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end keepOnMapX;
 
    procedure keepOnMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; y : Integer; height : Integer) is
-      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnMapY (terrainTiledLayer_Param, y, height);
+      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnMapY (terrainTiledLayer_Param => terrainTiledLayer_Param, y => y, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;

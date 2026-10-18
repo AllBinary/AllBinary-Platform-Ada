@@ -65,7 +65,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFronts
    end getStoreFrontInterface;
 
    procedure getStoreFrontInterface (This : in out BasicStoreFrontsEntity; name : Unbounded_String) is
-      Java_Result : constant BasicStoreFrontInterface_Access := BasicStoreFrontsEntity'Class (This).getStoreFrontInterface (name);
+      Java_Result : constant BasicStoreFrontInterface_Access := BasicStoreFrontsEntity'Class (This).getStoreFrontInterface (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

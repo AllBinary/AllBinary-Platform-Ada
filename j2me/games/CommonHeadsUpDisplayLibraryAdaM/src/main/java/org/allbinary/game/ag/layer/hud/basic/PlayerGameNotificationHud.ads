@@ -63,8 +63,8 @@ package org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package 
       circularIndexUtil : CircularIndexUtil_Access;
       gameNotification : GameNotification_Access;
       permanentGameNotification : GameNotification_Access;
-      setAndRemoveProcessor : Processor_Access;
-      nextUnremoveableProcessor : Processor_Access;
+      setAndRemoveProcessor_Var : Processor_Access;
+      nextUnremoveableProcessor_Var : Processor_Access;
       processor : Processor_Access;
       PERMANENT_GAME_NOTIFICATION : Unbounded_String;
       lastString : Unbounded_String;

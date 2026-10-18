@@ -49,7 +49,7 @@ package body org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Packa
    end getName;
 
    procedure getName (anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Unbounded_String := getName (anyType_Param);
+      Java_Result : constant Unbounded_String := getName (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

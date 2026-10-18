@@ -49,7 +49,7 @@ package body org.platform.opengl.OpenGLGLUUtils_Package is
    end texImage2D;
 
    procedure makeByteBuffer (This : in out OpenGLGLUUtils; bmp_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; flip : Boolean) is
-      Java_Result : constant ByteBuffer_Access := OpenGLGLUUtils'Class (This).makeByteBuffer (bmp_Param, flip);
+      Java_Result : constant ByteBuffer_Access := OpenGLGLUUtils'Class (This).makeByteBuffer (bmp_Param => bmp_Param, flip => flip);
       pragma Unreferenced (Java_Result);
    begin
       null;

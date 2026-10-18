@@ -179,35 +179,35 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
    end createPointsBasicArrayList;
 
    procedure createList (This : in out VectorExplosionGenerator; list_Param : access BasicArrayList_Package.BasicArrayList'Class; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) is
-      Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).createList (list_Param, howMuch, type_Id_Param);
+      Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).createList (list_Param => list_Param, howMuch => howMuch, type_Id_Param => type_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createList;
 
    procedure getInstance (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) is
-      Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorExplosionGenerator'Class (This).getInstance (points, howMuch, type_Id_Param);
+      Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorExplosionGenerator'Class (This).getInstance (points => points, howMuch => howMuch, type_Id_Param => type_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstanceStartFrame (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class; startFrame : Boolean) is
-      Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).getInstanceStartFrame (points, howMuch, type_Id_Param, startFrame);
+      Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).getInstanceStartFrame (points => points, howMuch => howMuch, type_Id_Param => type_Id_Param, startFrame => startFrame);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceStartFrame;
 
    procedure createListFromPoints (This : in out VectorExplosionGenerator; tempBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) is
-      Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).createListFromPoints (tempBasicArrayList_Param, points, howMuch, type_Id_Param);
+      Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).createListFromPoints (tempBasicArrayList_Param => tempBasicArrayList_Param, points => points, howMuch => howMuch, type_Id_Param => type_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createListFromPoints;
 
    procedure createPointsBasicArrayList (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access) is
-      Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).createPointsBasicArrayList (points);
+      Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).createPointsBasicArrayList (points => points);
       pragma Unreferenced (Java_Result);
    begin
       null;

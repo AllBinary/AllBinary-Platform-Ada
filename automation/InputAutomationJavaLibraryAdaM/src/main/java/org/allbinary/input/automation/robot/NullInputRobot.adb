@@ -130,14 +130,14 @@ package body org.allbinary.input.automation.robot.NullInputRobot_Package is
    end waitForIdle;
 
    procedure createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle_Package.Rectangle'Class) is
-      Java_Result : constant BufferedImage_Access := NullInputRobot'Class (This).createScreenCapture (screenRect_Param);
+      Java_Result : constant BufferedImage_Access := NullInputRobot'Class (This).createScreenCapture (screenRect_Param => screenRect_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createScreenCapture;
 
    procedure getPixelColor (This : in out NullInputRobot; x : Integer; y : Integer) is
-      Java_Result : constant Color_Access := NullInputRobot'Class (This).getPixelColor (x, y);
+      Java_Result : constant Color_Access := NullInputRobot'Class (This).getPixelColor (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

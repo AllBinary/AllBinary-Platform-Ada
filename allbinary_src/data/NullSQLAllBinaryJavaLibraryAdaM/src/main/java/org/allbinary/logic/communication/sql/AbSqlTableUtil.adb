@@ -69,14 +69,14 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
    end restoreTable;
 
    procedure backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class) is
-      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).backupTable (abSqlTable_Param);
+      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).backupTable (abSqlTable_Param => abSqlTable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end backupTable;
 
    procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class; portion_Param : access Portion_Package.Portion'Class) is
-      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).restoreTable (abSqlTable_Param, portion_Param);
+      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).restoreTable (abSqlTable_Param => abSqlTable_Param, portion_Param => portion_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

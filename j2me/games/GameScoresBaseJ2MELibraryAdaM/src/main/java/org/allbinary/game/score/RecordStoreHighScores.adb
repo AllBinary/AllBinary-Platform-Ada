@@ -359,21 +359,21 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
    end toString;
 
    procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoreName : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator_Package.RecordComparator'Class) is
-      Java_Result : constant HighScores_Access := getInstance (abeClientInformation_Param, gameInfo_Param, highScoreName, heading, columnTwoHeading, recordComparatorInterface_Param);
+      Java_Result : constant HighScores_Access := getInstance (abeClientInformation_Param => abeClientInformation_Param, gameInfo_Param => gameInfo_Param, highScoreName => highScoreName, heading => heading, columnTwoHeading => columnTwoHeading, recordComparatorInterface_Param => recordComparatorInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getRecordId (This : in out RecordStoreHighScores; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
-      Java_Result : constant Unbounded_String := RecordStoreHighScores'Class (This).getRecordId (abeClientInformation_Param);
+      Java_Result : constant Unbounded_String := RecordStoreHighScores'Class (This).getRecordId (abeClientInformation_Param => abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRecordId;
 
    procedure isBestScore (This : in out RecordStoreHighScores; newHighScore_Param : access HighScore_Package.HighScore'Class) is
-      Java_Result : constant Boolean := RecordStoreHighScores'Class (This).isBestScore (newHighScore_Param);
+      Java_Result : constant Boolean := RecordStoreHighScores'Class (This).isBestScore (newHighScore_Param => newHighScore_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

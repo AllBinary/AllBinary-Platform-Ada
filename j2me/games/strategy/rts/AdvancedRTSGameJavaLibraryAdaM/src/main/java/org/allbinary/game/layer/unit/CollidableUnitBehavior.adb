@@ -48,7 +48,7 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    begin
       null;
       This.layerPartialCellPositionsUtil := LayerPartialCellPositionsUtil_Package.getInstance;
-      This.simpleSteeringVisitor := SimpleSteeringVisitor_Package.Create;
+      This.simpleSteeringVisitor_Var := SimpleSteeringVisitor_Package.Create;
    end Initialize_Fields;
 
 
@@ -112,13 +112,13 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    begin
         rtsLayer := AdvancedRTSGameLayer_Access (collidableInterfaceCompositeInterface);
         if (rtsLayer.getType) = (UnitLayer_Package.getStaticType) then
-            if not (This.simpleSteeringVisitor.getList.contains (Java_Object_Access (collidableInterfaceCompositeInterface))) then
-                This.simpleSteeringVisitor.getList.add (Java_Object_Access (collidableInterfaceCompositeInterface));
+            if not (This.simpleSteeringVisitor_Var.getList.contains (Java_Object_Access (collidableInterfaceCompositeInterface))) then
+                This.simpleSteeringVisitor_Var.getList.add (Java_Object_Access (collidableInterfaceCompositeInterface));
             end if;
             ownerUnitLayer := UnitLayer_Access (ownerLayer);
             list := ownerUnitLayer.getUnitWaypointBehavior.getSteeringVisitorList;
-            if not (list.contains (Java_Object_Access (This.simpleSteeringVisitor))) then
-                list.add (Java_Object_Access (This.simpleSteeringVisitor));
+            if not (list.contains (Java_Object_Access (This.simpleSteeringVisitor_Var))) then
+                list.add (Java_Object_Access (This.simpleSteeringVisitor_Var));
             end if;
         end if;
    end chase;
@@ -188,7 +188,7 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    end collideUnit;
 
    procedure steer (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
-      Java_Result : constant Boolean := CollidableUnitBehavior'Class (This).steer (ownerLayer_Param, collidableInterfaceCompositeInterface_Param);
+      Java_Result : constant Boolean := CollidableUnitBehavior'Class (This).steer (ownerLayer_Param => ownerLayer_Param, collidableInterfaceCompositeInterface_Param => collidableInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -281,7 +281,7 @@ package body org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
    end visit;
 
    procedure visit (This : in out SimpleSteeringVisitor; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := SimpleSteeringVisitor'Class (This).visit (anyType_Param);
+      Java_Result : constant Java_Object_Access := SimpleSteeringVisitor'Class (This).visit (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

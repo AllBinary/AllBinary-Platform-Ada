@@ -374,14 +374,14 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    end setTrackingWaypoint;
 
    procedure insertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is
-      Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).insertWaypoint (index, rtsLayer_Param);
+      Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).insertWaypoint (index => index, rtsLayer_Param => rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end insertWaypoint;
 
    procedure canInsertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is
-      Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).canInsertWaypoint (index, rtsLayer_Param);
+      Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).canInsertWaypoint (index => index, rtsLayer_Param => rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -215,49 +215,49 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
    end getDirectories;
 
    procedure getFiles (This : in out FileListFetcher; path : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getFiles (path);
+      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getFiles (path => path);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFiles;
 
    procedure getFiles (This : in out FileListFetcher; path : Unbounded_String; includeExtensions : Unbounded_String_Array_Access) is
-      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getFiles (path, includeExtensions);
+      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getFiles (path => path, includeExtensions => includeExtensions);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFiles;
 
    procedure getFiles (This : in out FileListFetcher; path : Unbounded_String; includeExtension : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getFiles (path, includeExtension);
+      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getFiles (path => path, includeExtension => includeExtension);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFiles;
 
    procedure getFiles (This : in out FileListFetcher; path : Unbounded_String; pathIncludes : Unbounded_String; includeExtension : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getFiles (path, pathIncludes, includeExtension);
+      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getFiles (path => path, pathIncludes => pathIncludes, includeExtension => includeExtension);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFiles;
 
    procedure getTrackedFiles (This : in out FileListFetcher; path : Unbounded_String; includeExtensions : Unbounded_String_Array_Access) is
-      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getTrackedFiles (path, includeExtensions);
+      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getTrackedFiles (path => path, includeExtensions => includeExtensions);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTrackedFiles;
 
    procedure getTrackedFiles (This : in out FileListFetcher; path : Unbounded_String; includeExtension : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getTrackedFiles (path, includeExtension);
+      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getTrackedFiles (path => path, includeExtension => includeExtension);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTrackedFiles;
 
    procedure getDirectories (This : in out FileListFetcher; path : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getDirectories (path);
+      Java_Result : constant BasicArrayList_Access := FileListFetcher'Class (This).getDirectories (path => path);
       pragma Unreferenced (Java_Result);
    begin
       null;

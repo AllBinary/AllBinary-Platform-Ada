@@ -1026,14 +1026,14 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    end getType;
 
    procedure createGameLayerManager (This : in out DemoCanvas; randomValue : Integer) is
-      Java_Result : constant AllBinaryGameLayerManager_Access := DemoCanvas'Class (This).createGameLayerManager (randomValue);
+      Java_Result : constant AllBinaryGameLayerManager_Access := DemoCanvas'Class (This).createGameLayerManager (randomValue => randomValue);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createGameLayerManager;
 
    procedure createRunnable (This : in out DemoCanvas; randomLevel : Integer) is
-      Java_Result : constant GameCanvasRunnableInterface_Access := DemoCanvas'Class (This).createRunnable (randomLevel);
+      Java_Result : constant GameCanvasRunnableInterface_Access := DemoCanvas'Class (This).createRunnable (randomLevel => randomLevel);
       pragma Unreferenced (Java_Result);
    begin
       null;

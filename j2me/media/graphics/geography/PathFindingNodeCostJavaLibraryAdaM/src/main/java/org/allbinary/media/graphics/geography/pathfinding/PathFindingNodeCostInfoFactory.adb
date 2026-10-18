@@ -81,21 +81,21 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
    end getTotalCost;
 
    procedure getInstance (This : in out PathFindingNodeCostInfoFactory; goingToGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; costFromStart : Long_Long_Integer; costToEnd : Long_Long_Integer) is
-      Java_Result : constant PathFindingNodeCostInfo_Access := PathFindingNodeCostInfoFactory'Class (This).getInstance (goingToGeographicMapCellPosition_Param, geographicMapCellPosition_Param, costFromStart, costToEnd);
+      Java_Result : constant PathFindingNodeCostInfo_Access := PathFindingNodeCostInfoFactory'Class (This).getInstance (goingToGeographicMapCellPosition_Param => goingToGeographicMapCellPosition_Param, geographicMapCellPosition_Param => geographicMapCellPosition_Param, costFromStart => costFromStart, costToEnd => costToEnd);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out PathFindingNodeCostInfoFactory; goingToFromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant PathFindingNodeCostInfo_Access := PathFindingNodeCostInfoFactory'Class (This).getInstance (goingToFromGeographicMapCellPosition_Param, geographicMapCellPosition_Param);
+      Java_Result : constant PathFindingNodeCostInfo_Access := PathFindingNodeCostInfoFactory'Class (This).getInstance (goingToFromGeographicMapCellPosition_Param => goingToFromGeographicMapCellPosition_Param, geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getTotalCost (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Long_Long_Integer := PathFindingNodeCostInfoFactory'Class (This).getTotalCost (geographicMapInterface_Param, comingFromGeographicMapCellPosition_Param, geographicMapCellPosition_Param);
+      Java_Result : constant Long_Long_Integer := PathFindingNodeCostInfoFactory'Class (This).getTotalCost (geographicMapInterface_Param => geographicMapInterface_Param, comingFromGeographicMapCellPosition_Param => comingFromGeographicMapCellPosition_Param, geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

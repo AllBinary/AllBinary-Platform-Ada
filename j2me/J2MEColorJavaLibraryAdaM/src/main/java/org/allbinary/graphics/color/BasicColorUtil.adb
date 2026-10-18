@@ -74,28 +74,28 @@ package body org.allbinary.graphics.color.BasicColorUtil_Package is
    end invert;
 
    procedure getRGB (This : in out BasicColorUtil; red : Integer; green : Integer; blue : Integer) is
-      Java_Result : constant Integer := BasicColorUtil'Class (This).getRGB (red, green, blue);
+      Java_Result : constant Integer := BasicColorUtil'Class (This).getRGB (red => red, green => green, blue => blue);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRGB;
 
    procedure getARGB (This : in out BasicColorUtil; alphaValue : Integer; r : Integer; g : Integer; b : Integer) is
-      Java_Result : constant Integer := BasicColorUtil'Class (This).getARGB (alphaValue, r, g, b);
+      Java_Result : constant Integer := BasicColorUtil'Class (This).getARGB (alphaValue => alphaValue, r => r, g => g, b => b);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getARGB;
 
    procedure get (This : in out BasicColorUtil; alphaValue : Integer; color : Integer) is
-      Java_Result : constant Integer := BasicColorUtil'Class (This).get (alphaValue, color);
+      Java_Result : constant Integer := BasicColorUtil'Class (This).get (alphaValue => alphaValue, color => color);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure invert (This : in out BasicColorUtil; color : Integer) is
-      Java_Result : constant Integer := BasicColorUtil'Class (This).invert (color);
+      Java_Result : constant Integer := BasicColorUtil'Class (This).invert (color => color);
       pragma Unreferenced (Java_Result);
    begin
       null;

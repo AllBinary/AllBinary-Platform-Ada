@@ -155,21 +155,21 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
    end validationInfo;
 
    procedure getWebAppPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface_Param : access CategoryHierarchyInterface_Package.CategoryHierarchyInterface'Class) is
-      Java_Result : constant Unbounded_String := RootCategoryPropertiesAbstract'Class (This).getWebAppPath (categoryHierarchyInterface_Param);
+      Java_Result : constant Unbounded_String := RootCategoryPropertiesAbstract'Class (This).getWebAppPath (categoryHierarchyInterface_Param => categoryHierarchyInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWebAppPath;
 
    procedure getPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface_Param : access CategoryHierarchyInterface_Package.CategoryHierarchyInterface'Class) is
-      Java_Result : constant AbPath_Access := RootCategoryPropertiesAbstract'Class (This).getPath (categoryHierarchyInterface_Param);
+      Java_Result : constant AbPath_Access := RootCategoryPropertiesAbstract'Class (This).getPath (categoryHierarchyInterface_Param => categoryHierarchyInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPath;
 
    procedure toValidationInfoNode (This : in out RootCategoryPropertiesAbstract; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := RootCategoryPropertiesAbstract'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := RootCategoryPropertiesAbstract'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

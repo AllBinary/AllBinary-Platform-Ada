@@ -54,7 +54,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
    end toXmlNode;
 
    procedure toXmlNode (This : in out StoreFrontUsersStatisticsView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := StoreFrontUsersStatisticsView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := StoreFrontUsersStatisticsView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

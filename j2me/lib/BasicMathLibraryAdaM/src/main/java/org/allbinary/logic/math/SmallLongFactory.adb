@@ -101,14 +101,14 @@ package body org.allbinary.logic.math.SmallLongFactory_Package is
    end getString;
 
    procedure getInstanceNoThrow (This : in out SmallLongFactory; index : Long_Long_Integer) is
-      Java_Result : constant Long_Long_Integer := SmallLongFactory'Class (This).getInstanceNoThrow (index);
+      Java_Result : constant Long_Long_Integer := SmallLongFactory'Class (This).getInstanceNoThrow (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceNoThrow;
 
    procedure getString (This : in out SmallLongFactory; index : Integer) is
-      Java_Result : constant Unbounded_String := SmallLongFactory'Class (This).getString (index);
+      Java_Result : constant Unbounded_String := SmallLongFactory'Class (This).getString (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

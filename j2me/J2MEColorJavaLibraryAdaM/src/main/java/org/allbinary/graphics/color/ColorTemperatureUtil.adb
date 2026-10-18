@@ -63,7 +63,7 @@ package body org.allbinary.graphics.color.ColorTemperatureUtil_Package is
    end getBasicColor;
 
    procedure getBasicColor (This : in out ColorTemperatureUtil; thirdTemp : Integer) is
-      Java_Result : constant BasicColor_Access := ColorTemperatureUtil'Class (This).getBasicColor (thirdTemp);
+      Java_Result : constant BasicColor_Access := ColorTemperatureUtil'Class (This).getBasicColor (thirdTemp => thirdTemp);
       pragma Unreferenced (Java_Result);
    begin
       null;

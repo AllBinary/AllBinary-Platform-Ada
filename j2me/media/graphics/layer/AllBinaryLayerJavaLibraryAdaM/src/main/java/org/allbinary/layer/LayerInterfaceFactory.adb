@@ -79,7 +79,7 @@ package body org.allbinary.layer.LayerInterfaceFactory_Package is
    end add;
 
    procedure getNexInstance (This : in out LayerInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant AllBinaryLayer_Access := LayerInterfaceFactory'Class (This).getNexInstance (hashtable_Param, x, y, z);
+      Java_Result : constant AllBinaryLayer_Access := LayerInterfaceFactory'Class (This).getNexInstance (hashtable_Param => hashtable_Param, x => x, y => y, z => z);
       pragma Unreferenced (Java_Result);
    begin
       null;

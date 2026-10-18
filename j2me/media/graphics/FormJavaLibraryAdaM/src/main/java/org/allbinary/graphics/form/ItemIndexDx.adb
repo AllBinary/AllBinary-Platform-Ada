@@ -47,7 +47,7 @@ package body org.allbinary.graphics.form.ItemIndexDx_Package is
    end getDx;
 
    procedure getDx (This : in out ItemIndexDx; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ItemIndexDx'Class (This).getDx (index, item_Param, dx, dy);
+      Java_Result : constant Integer := ItemIndexDx'Class (This).getDx (index => index, item_Param => item_Param, dx => dx, dy => dy);
       pragma Unreferenced (Java_Result);
    begin
       null;

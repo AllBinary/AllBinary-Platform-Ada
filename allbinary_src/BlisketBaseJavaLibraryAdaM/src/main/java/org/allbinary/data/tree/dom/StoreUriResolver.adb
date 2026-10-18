@@ -112,7 +112,7 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
    end toString;
 
    procedure resolve (This : in out StoreUriResolver; href : Unbounded_String; base : Unbounded_String) is
-      Java_Result : constant Source_Access := StoreUriResolver'Class (This).resolve (href, base);
+      Java_Result : constant Source_Access := StoreUriResolver'Class (This).resolve (href => href, base => base);
       pragma Unreferenced (Java_Result);
    begin
       null;

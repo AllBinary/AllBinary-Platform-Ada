@@ -111,21 +111,21 @@ package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
    end indexOf;
 
    procedure createFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources_Package.FlagGameResources'Class; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) is
-      Java_Result : constant ABCustomItem_Access := UnitItemArrayFactory'Class (This).createFlagItem (flagResources_Param, layerInterfaceFactoryInterface_Param);
+      Java_Result : constant ABCustomItem_Access := UnitItemArrayFactory'Class (This).createFlagItem (flagResources_Param => flagResources_Param, layerInterfaceFactoryInterface_Param => layerInterfaceFactoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFlagItem;
 
    procedure createNamedFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources_Package.FlagGameResources'Class; name : Unbounded_String; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) is
-      Java_Result : constant ABCustomItem_Access := UnitItemArrayFactory'Class (This).createNamedFlagItem (flagResources_Param, name, layerInterfaceFactoryInterface_Param);
+      Java_Result : constant ABCustomItem_Access := UnitItemArrayFactory'Class (This).createNamedFlagItem (flagResources_Param => flagResources_Param, name => name, layerInterfaceFactoryInterface_Param => layerInterfaceFactoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createNamedFlagItem;
 
    procedure indexOf (This : in out UnitItemArrayFactory; basicGameResources_Param : access BasicGameResources_Package.BasicGameResources'Class) is
-      Java_Result : constant Integer := UnitItemArrayFactory'Class (This).indexOf (basicGameResources_Param);
+      Java_Result : constant Integer := UnitItemArrayFactory'Class (This).indexOf (basicGameResources_Param => basicGameResources_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

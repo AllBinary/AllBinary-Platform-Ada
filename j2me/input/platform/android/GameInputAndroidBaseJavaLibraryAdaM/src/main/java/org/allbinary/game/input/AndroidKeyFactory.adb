@@ -231,56 +231,56 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
    end isEnter;
 
    procedure isSubmission (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isSubmission (input_Param);
+      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isSubmission (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isSubmission;
 
    procedure isDelete (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isDelete (input_Param);
+      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isDelete (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
    procedure isBackSpace (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isBackSpace (input_Param);
+      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isBackSpace (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isBackSpace;
 
    procedure isLeft (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isLeft (input_Param);
+      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isLeft (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isLeft;
 
    procedure isRight (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isRight (input_Param);
+      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isRight (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isRight;
 
    procedure isUp (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isUp (input_Param);
+      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isUp (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isUp;
 
    procedure isDown (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isDown (input_Param);
+      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isDown (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDown;
 
    procedure isEnter (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isEnter (input_Param);
+      Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isEnter (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -36,10 +36,10 @@ package body org.allbinary.business.user.commerce.money.payment.types.TenderType
       return This;
    end Create;
 
-   function isEqual (This : in out TenderType; tenderType_Param : access TenderType_Package.TenderType'Class) return Boolean is
-      tenderType : constant TenderType_Access := TenderType_Access (tenderType_Param);
+   function isEqual (This : in out TenderType; tenderType_Var_Param : access TenderType_Package.TenderType'Class) return Boolean is
+      tenderType_Var : constant TenderType_Access := TenderType_Access (tenderType_Var_Param);
    begin
-        if (Java_Compare_To (TenderType'Class (This).toString, tenderType.toString)) = (0) then
+        if (Java_Compare_To (TenderType'Class (This).toString, tenderType_Var.toString)) = (0) then
             return True;
         else
             return False;
@@ -51,8 +51,8 @@ package body org.allbinary.business.user.commerce.money.payment.types.TenderType
         return This.name;
    end toString;
 
-   procedure isEqual (This : in out TenderType; tenderType_Param : access TenderType_Package.TenderType'Class) is
-      Java_Result : constant Boolean := TenderType'Class (This).isEqual (tenderType_Param);
+   procedure isEqual (This : in out TenderType; tenderType_Var_Param : access TenderType_Package.TenderType'Class) is
+      Java_Result : constant Boolean := TenderType'Class (This).isEqual (tenderType_Var_Param => tenderType_Var_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -63,21 +63,21 @@ package body org.allbinary.collision.RectangleCollisionUtil_Package is
    end isCollision;
 
    procedure isCollision (rectangle_Param : access Rectangle_Package.Rectangle'Class; point_Param : access GPoint_Package.GPoint'Class) is
-      Java_Result : constant Boolean := isCollision (rectangle_Param, point_Param);
+      Java_Result : constant Boolean := isCollision (rectangle_Param => rectangle_Param, point_Param => point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
    procedure isCollision (rectangle1_Param : access Rectangle_Package.Rectangle'Class; rectangle2_Param : access Rectangle_Package.Rectangle'Class) is
-      Java_Result : constant Boolean := isCollision (rectangle1_Param, rectangle2_Param);
+      Java_Result : constant Boolean := isCollision (rectangle1_Param => rectangle1_Param, rectangle2_Param => rectangle2_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
    procedure isCollision (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; rect2X1 : Integer; rect2Y1 : Integer; rect2X2 : Integer; rect2Y2 : Integer) is
-      Java_Result : constant Boolean := isCollision (rectX1, rectY1, rectX2, rectY2, rect2X1, rect2Y1, rect2X2, rect2Y2);
+      Java_Result : constant Boolean := isCollision (rectX1 => rectX1, rectY1 => rectY1, rectX2 => rectX2, rectY2 => rectY2, rect2X1 => rect2X1, rect2Y1 => rect2Y1, rect2X2 => rect2X2, rect2Y2 => rect2Y2);
       pragma Unreferenced (Java_Result);
    begin
       null;

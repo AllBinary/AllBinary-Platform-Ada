@@ -232,14 +232,14 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
    end update;
 
    procedure create (This : in out PCClipWavPlayer; audioInputStream_Param : access AudioInputStream_Package.AudioInputStream'Class) is
-      Java_Result : constant Clip_Access := PCClipWavPlayer'Class (This).create (audioInputStream_Param);
+      Java_Result : constant Clip_Access := PCClipWavPlayer'Class (This).create (audioInputStream_Param => audioInputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end create;
 
    procedure getControl (This : in out PCClipWavPlayer; controlType : Unbounded_String) is
-      Java_Result : constant Control_Access := PCClipWavPlayer'Class (This).getControl (controlType);
+      Java_Result : constant Control_Access := PCClipWavPlayer'Class (This).getControl (controlType => controlType);
       pragma Unreferenced (Java_Result);
    begin
       null;

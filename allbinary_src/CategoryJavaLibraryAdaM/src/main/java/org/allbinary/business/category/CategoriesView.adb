@@ -60,7 +60,7 @@ package body org.allbinary.business.category.CategoriesView_Package is
    end toXmlNode;
 
    procedure toXmlNode (This : in out CategoriesView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := CategoriesView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := CategoriesView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

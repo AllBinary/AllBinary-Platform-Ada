@@ -384,14 +384,14 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
    end dropTable;
 
    procedure isEverythingShipped (This : in out OrderItemsEntity; orderId : Unbounded_String) is
-      Java_Result : constant Boolean := OrderItemsEntity'Class (This).isEverythingShipped (orderId);
+      Java_Result : constant Boolean := OrderItemsEntity'Class (This).isEverythingShipped (orderId => orderId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isEverythingShipped;
 
    procedure getBasketReview (This : in out OrderItemsEntity; orderId : Unbounded_String) is
-      Java_Result : constant BasketReview_Access := OrderItemsEntity'Class (This).getBasketReview (orderId);
+      Java_Result : constant BasketReview_Access := OrderItemsEntity'Class (This).getBasketReview (orderId => orderId);
       pragma Unreferenced (Java_Result);
    begin
       null;

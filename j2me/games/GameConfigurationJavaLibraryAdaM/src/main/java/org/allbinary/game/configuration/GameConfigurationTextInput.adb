@@ -46,11 +46,11 @@ package body org.allbinary.game.configuration.GameConfigurationTextInput_Package
    procedure update (textField_Param : access TextField_Package.TextField'Class) is
       textField : constant TextField_Access := TextField_Access (textField_Param);
       anyType : Java_Object_Access;
-      gameConfigurationTextInput : GameConfigurationTextInput_Access;
+      gameConfigurationTextInput_Var : GameConfigurationTextInput_Access;
    begin
         anyType := Java_Object_Access (textField.getLabel);
-        gameConfigurationTextInput := GameConfigurationTextInput_Access (GameConfigurationTextInput_Package.hashtable.get (anyType));
-        gameConfigurationTextInput.setText (textField.getString);
+        gameConfigurationTextInput_Var := GameConfigurationTextInput_Access (GameConfigurationTextInput_Package.hashtable.get (anyType));
+        gameConfigurationTextInput_Var.setText (textField.getString);
    end update;
 
    procedure setText (This : in out GameConfigurationTextInput; text : Unbounded_String) is

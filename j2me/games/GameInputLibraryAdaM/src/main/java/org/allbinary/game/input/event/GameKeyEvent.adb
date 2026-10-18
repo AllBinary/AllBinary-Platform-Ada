@@ -112,7 +112,7 @@ package body org.allbinary.game.input.event.GameKeyEvent_Package is
    end getSourceId;
 
    procedure createEvent (anyType_Param : access Java_Object'Class; sourceId : Integer; key : Integer) is
-      Java_Result : constant GameKeyEvent_Access := createEvent (anyType_Param, sourceId, key);
+      Java_Result : constant GameKeyEvent_Access := createEvent (anyType_Param => anyType_Param, sourceId => sourceId, key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;

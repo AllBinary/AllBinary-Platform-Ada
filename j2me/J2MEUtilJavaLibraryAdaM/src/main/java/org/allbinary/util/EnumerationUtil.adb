@@ -69,21 +69,21 @@ package body org.allbinary.util.EnumerationUtil_Package is
    end getAsArray;
 
    procedure hasMoreElements (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) is
-      Java_Result : constant Boolean := EnumerationUtil'Class (This).hasMoreElements (enumeration_Param);
+      Java_Result : constant Boolean := EnumerationUtil'Class (This).hasMoreElements (enumeration_Param => enumeration_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end hasMoreElements;
 
    procedure nextElement (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) is
-      Java_Result : constant Java_Object_Access := EnumerationUtil'Class (This).nextElement (enumeration_Param);
+      Java_Result : constant Java_Object_Access := EnumerationUtil'Class (This).nextElement (enumeration_Param => enumeration_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end nextElement;
 
    procedure getAsArray (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) is
-      Java_Result : constant Java_Object_Access_Array_Access := EnumerationUtil'Class (This).getAsArray (enumeration_Param);
+      Java_Result : constant Java_Object_Access_Array_Access := EnumerationUtil'Class (This).getAsArray (enumeration_Param => enumeration_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

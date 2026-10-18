@@ -185,49 +185,49 @@ package body org.allbinary.image.ImageCacheBase_Package is
    end initProgress;
 
    procedure getImage (This : in out ImageCacheBase; resourceId_Param : access Java_Object'Class) is
-      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getImage (resourceId_Param);
+      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getImage (resourceId_Param => resourceId_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getImage;
 
    procedure getIndexWH (This : in out ImageCacheBase; width : Integer; height : Integer) is
-      Java_Result : constant Integer := ImageCacheBase'Class (This).getIndexWH (width, height);
+      Java_Result : constant Integer := ImageCacheBase'Class (This).getIndexWH (width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getIndexWH;
 
    procedure getFromAvailable (This : in out ImageCacheBase; foundIndex : Integer; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getFromAvailable (foundIndex, width, height);
+      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getFromAvailable (foundIndex => foundIndex, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFromAvailable;
 
    procedure get (This : in out ImageCacheBase; caller : Unbounded_String; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := ImageCacheBase'Class (This).get (caller, width, height);
+      Java_Result : constant Image_Access := ImageCacheBase'Class (This).get (caller => caller, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getWithKey (This : in out ImageCacheBase; key_Param : access Java_Object'Class) is
-      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getWithKey (key_Param);
+      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getWithKey (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWithKey;
 
    procedure createImage (This : in out ImageCacheBase; caller : Unbounded_String; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := ImageCacheBase'Class (This).createImage (caller, width, height);
+      Java_Result : constant Image_Access := ImageCacheBase'Class (This).createImage (caller => caller, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage;
 
    procedure createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) is
-      Java_Result : constant Image_Access := ImageCacheBase'Class (This).createImageFromInputStream (key_Param, inputStream_Param);
+      Java_Result : constant Image_Access := ImageCacheBase'Class (This).createImageFromInputStream (key_Param => key_Param, inputStream_Param => inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

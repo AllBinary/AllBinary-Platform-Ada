@@ -47,7 +47,7 @@ package body org.allbinary.business.category.store.theme.ThemeComparator_Package
    end compare;
 
    procedure compare (This : in out ThemeComparator; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := ThemeComparator'Class (This).compare (anyType_Param, object2_Param);
+      Java_Result : constant Integer := ThemeComparator'Class (This).compare (anyType_Param => anyType_Param, object2_Param => object2_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

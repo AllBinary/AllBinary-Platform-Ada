@@ -145,21 +145,21 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
    end getClass;
 
    procedure getInstance (This : in out AbeFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; className : Unbounded_String) is
-      Java_Result : constant Java_Object_Access := AbeFactory'Class (This).getInstance (abeClientInformation_Param, className);
+      Java_Result : constant Java_Object_Access := AbeFactory'Class (This).getInstance (abeClientInformation_Param => abeClientInformation_Param, className => className);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out AbeFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; className : Unbounded_String; classes : Ada_Tags_Tag_Array_Access; params : Java_Object_Access_Array_Access) is
-      Java_Result : constant Java_Object_Access := AbeFactory'Class (This).getInstance (abeClientInformation_Param, className, classes, params);
+      Java_Result : constant Java_Object_Access := AbeFactory'Class (This).getInstance (abeClientInformation_Param => abeClientInformation_Param, className => className, classes => classes, params => params);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getClass (This : in out AbeFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; className : Unbounded_String) is
-      Java_Result : constant Ada.Tags.Tag := AbeFactory'Class (This).getClass (abeClientInformation_Param, className);
+      Java_Result : constant Ada.Tags.Tag := AbeFactory'Class (This).getClass (abeClientInformation_Param => abeClientInformation_Param, className => className);
       pragma Unreferenced (Java_Result);
    begin
       null;

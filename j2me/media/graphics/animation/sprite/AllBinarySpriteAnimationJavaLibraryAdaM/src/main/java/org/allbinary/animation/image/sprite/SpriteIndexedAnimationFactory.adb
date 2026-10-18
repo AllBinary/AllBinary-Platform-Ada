@@ -46,11 +46,11 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_
    function createCWH (image_Param : access Image_Package.Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return SpriteIndexedAnimationFactory_Access is
       image : constant Image_Access := Image_Access (image_Param);
       animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
-      spriteIndexedAnimationFactory : SpriteIndexedAnimationFactory_Access;
+      spriteIndexedAnimationFactory_Var : SpriteIndexedAnimationFactory_Access;
    begin
-        spriteIndexedAnimationFactory := SpriteIndexedAnimationFactory_Package.Create (image, basicColorArray, PrimitiveIntUtil_Package.getArrayInstance, width, height, 0, 0, animationBehaviorFactory);
-        spriteIndexedAnimationFactory.initHWH;
-        return spriteIndexedAnimationFactory;
+        spriteIndexedAnimationFactory_Var := SpriteIndexedAnimationFactory_Package.Create (image, basicColorArray, PrimitiveIntUtil_Package.getArrayInstance, width, height, 0, 0, animationBehaviorFactory);
+        spriteIndexedAnimationFactory_Var.initHWH;
+        return spriteIndexedAnimationFactory_Var;
    end createCWH;
 
    --  throws Exception
@@ -106,35 +106,35 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_
    end getInstanceAnimation;
 
    procedure createCWHDXY (image_Param : access Image_Package.Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant SpriteIndexedAnimationFactory_Access := createCWHDXY (image_Param, basicColorArray, width, height, dx, dy, animationBehaviorFactory_Param);
+      Java_Result : constant SpriteIndexedAnimationFactory_Access := createCWHDXY (image_Param => image_Param, basicColorArray => basicColorArray, width => width, height => height, dx => dx, dy => dy, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createCWHDXY;
 
    procedure createCWH (image_Param : access Image_Package.Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant SpriteIndexedAnimationFactory_Access := createCWH (image_Param, basicColorArray, width, height, animationBehaviorFactory_Param);
+      Java_Result : constant SpriteIndexedAnimationFactory_Access := createCWH (image_Param => image_Param, basicColorArray => basicColorArray, width => width, height => height, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createCWH;
 
    procedure createWH (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant SpriteIndexedAnimationFactory_Access := createWH (image_Param, width, height, animationBehaviorFactory_Param);
+      Java_Result : constant SpriteIndexedAnimationFactory_Access := createWH (image_Param => image_Param, width => width, height => height, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createWH;
 
    procedure getInstance (This : in out SpriteIndexedAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := SpriteIndexedAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := SpriteIndexedAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstanceAnimation (This : in out SpriteIndexedAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) is
-      Java_Result : constant Animation_Access := SpriteIndexedAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param);
+      Java_Result : constant Animation_Access := SpriteIndexedAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param => animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

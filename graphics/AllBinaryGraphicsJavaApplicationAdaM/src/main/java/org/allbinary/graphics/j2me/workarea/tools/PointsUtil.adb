@@ -52,7 +52,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package is
    end doTransforms;
 
    procedure doTransforms (This : in out PointsUtil; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; angle : Long_Float; fulcrumPoint_Param : access GPoint_Package.GPoint'Class) is
-      Java_Result : constant BasicArrayList_Access := PointsUtil'Class (This).doTransforms (pointVector_Param, angle, fulcrumPoint_Param);
+      Java_Result : constant BasicArrayList_Access := PointsUtil'Class (This).doTransforms (pointVector_Param => pointVector_Param, angle => angle, fulcrumPoint_Param => fulcrumPoint_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

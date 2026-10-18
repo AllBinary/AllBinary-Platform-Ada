@@ -679,7 +679,7 @@ package body org.allbinary.device.NullGL10_Package is
    end glViewport;
 
    procedure glGetString (This : in out NullGL10; name : Integer) is
-      Java_Result : constant Unbounded_String := NullGL10'Class (This).glGetString (name);
+      Java_Result : constant Unbounded_String := NullGL10'Class (This).glGetString (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -47,7 +47,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderInitializer_Package is
    end init;
 
    procedure init (This : in out ShaderInitializer; gl_Param : access GL10_Package.GL10'Class; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access) is
-      Java_Result : constant Integer := ShaderInitializer'Class (This).init (gl_Param, shader, attributeArray);
+      Java_Result : constant Integer := ShaderInitializer'Class (This).init (gl_Param => gl_Param, shader => shader, attributeArray => attributeArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

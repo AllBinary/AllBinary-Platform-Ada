@@ -59,14 +59,14 @@ package body org.allbinary.media.image.ImageCreationUtil_Package is
    end createImage;
 
    procedure createImageWH (This : in out ImageCreationUtil; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := ImageCreationUtil'Class (This).createImageWH (width, height);
+      Java_Result : constant Image_Access := ImageCreationUtil'Class (This).createImageWH (width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageWH;
 
    procedure createImage (This : in out ImageCreationUtil; width : Integer; height : Integer; maxScaleX : Float; maxScaleY : Float) is
-      Java_Result : constant Image_Access := ImageCreationUtil'Class (This).createImage (width, height, maxScaleX, maxScaleY);
+      Java_Result : constant Image_Access := ImageCreationUtil'Class (This).createImage (width => width, height => height, maxScaleX => maxScaleX, maxScaleY => maxScaleY);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -76,14 +76,14 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIS
    end visit;
 
    procedure visit (This : in out InputAutomationRobotOSGIServiceVisitor; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := InputAutomationRobotOSGIServiceVisitor'Class (This).visit (anyType_Param);
+      Java_Result : constant Java_Object_Access := InputAutomationRobotOSGIServiceVisitor'Class (This).visit (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
    procedure visit (This : in out InputAutomationRobotOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface_Package.OSGIServiceInterface'Class) is
-      Java_Result : constant Boolean := InputAutomationRobotOSGIServiceVisitor'Class (This).visit (osgiServiceInterface_Param);
+      Java_Result : constant Boolean := InputAutomationRobotOSGIServiceVisitor'Class (This).visit (osgiServiceInterface_Param => osgiServiceInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -123,14 +123,14 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
    end getKey;
 
    procedure getNewTotal (This : in out StoreFrontUsersStatistics; userRole_Param : access UserRole_Package.UserRole'Class) is
-      Java_Result : constant Long_Long_Integer := StoreFrontUsersStatistics'Class (This).getNewTotal (userRole_Param);
+      Java_Result : constant Long_Long_Integer := StoreFrontUsersStatistics'Class (This).getNewTotal (userRole_Param => userRole_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNewTotal;
 
    procedure getNumberOfUsersByRole (This : in out StoreFrontUsersStatistics; role : Unbounded_String) is
-      Java_Result : constant Long_Long_Integer := StoreFrontUsersStatistics'Class (This).getNumberOfUsersByRole (role);
+      Java_Result : constant Long_Long_Integer := StoreFrontUsersStatistics'Class (This).getNumberOfUsersByRole (role => role);
       pragma Unreferenced (Java_Result);
    begin
       null;

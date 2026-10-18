@@ -70,21 +70,21 @@ package body org.allbinary.logic.communication.log.LogFactory_Package is
    end getInstanceF;
 
    procedure getInstanceNoF (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; exception_Id_Param : access Java_Object'Class) is
-      Java_Result : constant Log_Access := getInstanceNoF (specialMessage, anyType_Param, exception_Id_Param);
+      Java_Result : constant Log_Access := getInstanceNoF (specialMessage => specialMessage, anyType_Param => anyType_Param, exception_Id_Param => exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceNoF;
 
    procedure getInstance (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
-      Java_Result : constant Log_Access := getInstance (specialMessage, anyType_Param, functionName, exception_Id_Param);
+      Java_Result : constant Log_Access := getInstance (specialMessage => specialMessage, anyType_Param => anyType_Param, functionName => functionName, exception_Id_Param => exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstanceF (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) is
-      Java_Result : constant Log_Access := getInstanceF (specialMessage, anyType_Param, functionName);
+      Java_Result : constant Log_Access := getInstanceF (specialMessage => specialMessage, anyType_Param => anyType_Param, functionName => functionName);
       pragma Unreferenced (Java_Result);
    begin
       null;

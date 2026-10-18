@@ -161,14 +161,14 @@ package body org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Pack
    end update;
 
    procedure get (This : in out QuoteRequestEntity; userName : Unbounded_String; id : Integer) is
-      Java_Result : constant QuoteRequest_Access := QuoteRequestEntity'Class (This).get (userName, id);
+      Java_Result : constant QuoteRequest_Access := QuoteRequestEntity'Class (This).get (userName => userName, id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getIds (This : in out QuoteRequestEntity; userName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := QuoteRequestEntity'Class (This).getIds (userName);
+      Java_Result : constant BasicArrayList_Access := QuoteRequestEntity'Class (This).getIds (userName => userName);
       pragma Unreferenced (Java_Result);
    begin
       null;

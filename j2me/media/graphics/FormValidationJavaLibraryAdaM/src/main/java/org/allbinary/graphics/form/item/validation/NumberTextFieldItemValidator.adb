@@ -140,14 +140,14 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
    end toList;
 
    procedure isNumberValid (This : in out NumberTextFieldItemValidator; value : Integer) is
-      Java_Result : constant Boolean := NumberTextFieldItemValidator'Class (This).isNumberValid (value);
+      Java_Result : constant Boolean := NumberTextFieldItemValidator'Class (This).isNumberValid (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isNumberValid;
 
    procedure toNumberVector (This : in out NumberTextFieldItemValidator; value : Integer) is
-      Java_Result : constant BasicArrayList_Access := NumberTextFieldItemValidator'Class (This).toNumberVector (value);
+      Java_Result : constant BasicArrayList_Access := NumberTextFieldItemValidator'Class (This).toNumberVector (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;

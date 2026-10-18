@@ -84,21 +84,21 @@ package body org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_
    end setInitialScale;
 
    procedure getInstance (This : in out CompoundAnimationInterfaceFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := CompoundAnimationInterfaceFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := CompoundAnimationInterfaceFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure createArray (This : in out CompoundAnimationInterfaceFactory; size : Integer) is
-      Java_Result : constant Animation_Access_Array_Access := CompoundAnimationInterfaceFactory'Class (This).createArray (size);
+      Java_Result : constant Animation_Access_Array_Access := CompoundAnimationInterfaceFactory'Class (This).createArray (size => size);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createArray;
 
    procedure createAnimation (This : in out CompoundAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access) is
-      Java_Result : constant Animation_Access := CompoundAnimationInterfaceFactory'Class (This).createAnimation (animationInterfaceArray);
+      Java_Result : constant Animation_Access := CompoundAnimationInterfaceFactory'Class (This).createAnimation (animationInterfaceArray => animationInterfaceArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

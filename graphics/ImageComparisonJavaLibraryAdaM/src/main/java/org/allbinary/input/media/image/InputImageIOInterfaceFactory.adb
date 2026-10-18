@@ -57,7 +57,7 @@ package body org.allbinary.input.media.image.InputImageIOInterfaceFactory_Packag
    end getInstance;
 
    procedure getInstance (imageType_Param : access InputImageType_Package.InputImageType'Class) is
-      Java_Result : constant ImageIOInterface_Access := getInstance (imageType_Param);
+      Java_Result : constant ImageIOInterface_Access := getInstance (imageType_Param => imageType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

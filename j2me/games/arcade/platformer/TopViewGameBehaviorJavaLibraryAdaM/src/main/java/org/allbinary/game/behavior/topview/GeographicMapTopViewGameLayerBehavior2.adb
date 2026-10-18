@@ -287,63 +287,63 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    end right;
 
    procedure getPositionTopLeft (This : in out GeographicMapTopViewGameLayerBehavior2; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getPositionTopLeft (geographicMapInterfaceArray, layer_Param, x, y);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getPositionTopLeft (geographicMapInterfaceArray => geographicMapInterfaceArray, layer_Param => layer_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPositionTopLeft;
 
    procedure getPositionTopRight (This : in out GeographicMapTopViewGameLayerBehavior2; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getPositionTopRight (geographicMapInterfaceArray, layer_Param, x, y);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getPositionTopRight (geographicMapInterfaceArray => geographicMapInterfaceArray, layer_Param => layer_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPositionTopRight;
 
    procedure getPositionBottomLeft (This : in out GeographicMapTopViewGameLayerBehavior2; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getPositionBottomLeft (geographicMapInterfaceArray, layer_Param, x, y);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getPositionBottomLeft (geographicMapInterfaceArray => geographicMapInterfaceArray, layer_Param => layer_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPositionBottomLeft;
 
    procedure getPositionBottomRight (This : in out GeographicMapTopViewGameLayerBehavior2; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getPositionBottomRight (geographicMapInterfaceArray, layer_Param, x, y);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getPositionBottomRight (geographicMapInterfaceArray => geographicMapInterfaceArray, layer_Param => layer_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPositionBottomRight;
 
    procedure getLeftPosition (This : in out GeographicMapTopViewGameLayerBehavior2; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getLeftPosition (geographicMapInterfaceArray, layer_Param);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getLeftPosition (geographicMapInterfaceArray => geographicMapInterfaceArray, layer_Param => layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLeftPosition;
 
    procedure getRightPosition (This : in out GeographicMapTopViewGameLayerBehavior2; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getRightPosition (geographicMapInterfaceArray, layer_Param);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getRightPosition (geographicMapInterfaceArray => geographicMapInterfaceArray, layer_Param => layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRightPosition;
 
    procedure getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (This : in out GeographicMapTopViewGameLayerBehavior2; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (geographicMapInterfaceArray, geographicMapCellTypeArray, velocityProperties_Param, layer_Param, x, y);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (geographicMapInterfaceArray => geographicMapInterfaceArray, geographicMapCellTypeArray => geographicMapCellTypeArray, velocityProperties_Param => velocityProperties_Param, layer_Param => layer_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation;
 
    procedure getGeographicMapCellPositionIfNotSolidBlockOrOffMap (This : in out GeographicMapTopViewGameLayerBehavior2; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMap (geographicMapInterfaceArray, geographicMapCellTypeArray, geographicMapCellPosition_Param, velocityProperties_Param, layer_Param);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior2'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMap (geographicMapInterfaceArray => geographicMapInterfaceArray, geographicMapCellTypeArray => geographicMapCellTypeArray, geographicMapCellPosition_Param => geographicMapCellPosition_Param, velocityProperties_Param => velocityProperties_Param, layer_Param => layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGeographicMapCellPositionIfNotSolidBlockOrOffMap;
 
    procedure move (This : in out GeographicMapTopViewGameLayerBehavior2; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
-      Java_Result : constant Boolean := GeographicMapTopViewGameLayerBehavior2'Class (This).move (geographicMapInterfaceArray, geographicMapCellTypeArray, velocityProperties_Param, layer_Param, x, y);
+      Java_Result : constant Boolean := GeographicMapTopViewGameLayerBehavior2'Class (This).move (geographicMapInterfaceArray => geographicMapInterfaceArray, geographicMapCellTypeArray => geographicMapCellTypeArray, velocityProperties_Param => velocityProperties_Param, layer_Param => layer_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

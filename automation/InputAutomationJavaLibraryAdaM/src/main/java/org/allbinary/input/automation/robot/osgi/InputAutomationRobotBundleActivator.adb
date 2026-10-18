@@ -168,7 +168,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
    end setInputRobotInterface;
 
    procedure getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class) is
-      Java_Result : constant InputAutomationRobotChangeListener_Access := InputAutomationRobotBundleActivator'Class (This).getInputAutomationRobotChangeListener (context_Param);
+      Java_Result : constant InputAutomationRobotChangeListener_Access := InputAutomationRobotBundleActivator'Class (This).getInputAutomationRobotChangeListener (context_Param => context_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

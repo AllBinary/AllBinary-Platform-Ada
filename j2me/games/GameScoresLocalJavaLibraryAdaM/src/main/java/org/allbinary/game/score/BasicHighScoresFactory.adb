@@ -75,7 +75,7 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
    end loaded;
 
    procedure loaded (index2 : Integer) is
-      Java_Result : constant Boolean := loaded (index2);
+      Java_Result : constant Boolean := loaded (index2 => index2);
       pragma Unreferenced (Java_Result);
    begin
       null;

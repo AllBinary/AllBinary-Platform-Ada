@@ -84,14 +84,14 @@ package body org.allbinary.business.user.NewUserFactory_Package is
    end getInstance;
 
    procedure getInstance (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
-      Java_Result : constant UserInterface_Access := getInstance (transformInfoInterface_Param);
+      Java_Result : constant UserInterface_Access := getInstance (transformInfoInterface_Param => transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant UserInterface_Access := getInstance (httpServletRequest_Param, propertiesHashMap_Param);
+      Java_Result : constant UserInterface_Access := getInstance (httpServletRequest_Param => httpServletRequest_Param, propertiesHashMap_Param => propertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

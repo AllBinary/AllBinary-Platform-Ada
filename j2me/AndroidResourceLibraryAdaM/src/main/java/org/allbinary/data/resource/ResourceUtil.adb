@@ -152,21 +152,21 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    end getResourceAsStream;
 
    procedure getResourceId (This : in out ResourceUtil; resource : Unbounded_String) is
-      Java_Result : constant Integer := ResourceUtil'Class (This).getResourceId (resource);
+      Java_Result : constant Integer := ResourceUtil'Class (This).getResourceId (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getResourceId;
 
    procedure containsDuplicate (This : in out ResourceUtil; resource : Unbounded_String; value : Integer) is
-      Java_Result : constant Boolean := ResourceUtil'Class (This).containsDuplicate (resource, value);
+      Java_Result : constant Boolean := ResourceUtil'Class (This).containsDuplicate (resource => resource, value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsDuplicate;
 
    procedure getResourceAsStream (This : in out ResourceUtil; resource : Unbounded_String) is
-      Java_Result : constant InputStream_Access := ResourceUtil'Class (This).getResourceAsStream (resource);
+      Java_Result : constant InputStream_Access := ResourceUtil'Class (This).getResourceAsStream (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;

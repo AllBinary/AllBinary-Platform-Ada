@@ -31,7 +31,7 @@ package body org.allbinary.log.LOGGING_Package is
    begin
       Initialize_Fields (This);
         This.name := value;
-        LOGGING_Package.logging.add (value);
+        LOGGING_Package.logging_Var.add (value);
    end Initialize;
 
    function Create (value : Unbounded_String) return LOGGING_Access is
@@ -44,7 +44,7 @@ package body org.allbinary.log.LOGGING_Package is
    function contains (logType_Param : access LOGGING_Package.LOGGING'Class) return Boolean is
       logType : constant LOGGING_Access := LOGGING_Access (logType_Param);
    begin
-        return LOGGING_Package.logging.contains (logType.toString);
+        return LOGGING_Package.logging_Var.contains (logType.toString);
    end contains;
 
    function toString (This : in out LOGGING) return Unbounded_String is
@@ -53,7 +53,7 @@ package body org.allbinary.log.LOGGING_Package is
    end toString;
 
    procedure contains (logType_Param : access LOGGING_Package.LOGGING'Class) is
-      Java_Result : constant Boolean := contains (logType_Param);
+      Java_Result : constant Boolean := contains (logType_Param => logType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -61,7 +61,7 @@ package body org.allbinary.log.LOGGING_Package is
 
 begin
    null;
-   logging := BasicArrayList_Access (BasicArrayListD_Package.Create);
+   logging_Var := BasicArrayList_Access (BasicArrayListD_Package.Create);
    GRAPHICSPAINT := LOGGING_Package.Create (To_Unbounded_String ("Graphics Paint"));
    GRAPHICSCREATION := LOGGING_Package.Create (To_Unbounded_String ("Graphics Creation"));
    GRAPHICSDELETION := LOGGING_Package.Create (To_Unbounded_String ("Graphics Deletion"));

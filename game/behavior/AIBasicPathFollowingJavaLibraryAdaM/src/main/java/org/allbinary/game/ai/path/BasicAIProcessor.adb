@@ -145,14 +145,14 @@ package body org.allbinary.game.ai.path.BasicAIProcessor_Package is
    end setGeographicMapCellHistory;
 
    procedure goTowardNextChosenOnPathPosition (This : in out BasicAIProcessor; currentGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Integer := BasicAIProcessor'Class (This).goTowardNextChosenOnPathPosition (currentGeographicMapCellPosition_Param);
+      Java_Result : constant Integer := BasicAIProcessor'Class (This).goTowardNextChosenOnPathPosition (currentGeographicMapCellPosition_Param => currentGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end goTowardNextChosenOnPathPosition;
 
    procedure processAI (This : in out BasicAIProcessor; myManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; currentGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Integer := BasicAIProcessor'Class (This).processAI (myManager_Param, currentGeographicMapCellPosition_Param);
+      Java_Result : constant Integer := BasicAIProcessor'Class (This).processAI (myManager_Param => myManager_Param, currentGeographicMapCellPosition_Param => currentGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

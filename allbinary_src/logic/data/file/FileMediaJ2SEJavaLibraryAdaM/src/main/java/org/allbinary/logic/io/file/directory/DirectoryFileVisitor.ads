@@ -36,7 +36,7 @@ package org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package is
    type DirectoryFileVisitor_Access_Array_Access_Array is array (Natural range <>) of DirectoryFileVisitor_Access_Array_Access;
    type DirectoryFileVisitor_Access_Array_Access_Array_Access is access all DirectoryFileVisitor_Access_Array_Access_Array;
 
-   type DirectoryFileVisitor is new Java_Object and VisitorInterface and FileFilter with null record;
+   type DirectoryFileVisitor is new Java_Object and VisitorInterface with null record;
 
    procedure Initialize (This : in out DirectoryFileVisitor'Class);
    function Create return DirectoryFileVisitor_Access;

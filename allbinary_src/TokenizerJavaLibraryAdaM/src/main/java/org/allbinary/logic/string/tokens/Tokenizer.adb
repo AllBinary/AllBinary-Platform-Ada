@@ -127,21 +127,21 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
    end getTokens;
 
    procedure getInsideSep (This : in out Tokenizer; string_Id : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := Tokenizer'Class (This).getInsideSep (string_Id);
+      Java_Result : constant BasicArrayList_Access := Tokenizer'Class (This).getInsideSep (string_Id => string_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInsideSep;
 
    procedure getTokensFromString (This : in out Tokenizer; string_Id : Unbounded_String; tokenVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := Tokenizer'Class (This).getTokensFromString (string_Id, tokenVector_Param);
+      Java_Result : constant BasicArrayList_Access := Tokenizer'Class (This).getTokensFromString (string_Id => string_Id, tokenVector_Param => tokenVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTokensFromString;
 
    procedure getTokens (This : in out Tokenizer; stringVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant ABHashtable_Access := Tokenizer'Class (This).getTokens (stringVector_Param);
+      Java_Result : constant ABHashtable_Access := Tokenizer'Class (This).getTokens (stringVector_Param => stringVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -111,7 +111,7 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
    end translate;
 
    procedure translate (This : in out AbTransformer; xmlDocumentStr : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbTransformer'Class (This).translate (xmlDocumentStr);
+      Java_Result : constant Unbounded_String := AbTransformer'Class (This).translate (xmlDocumentStr => xmlDocumentStr);
       pragma Unreferenced (Java_Result);
    begin
       null;

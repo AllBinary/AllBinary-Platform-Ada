@@ -346,35 +346,35 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    end init;
 
    procedure getAfterIfNotLast (This : in out GeographicMapCellHistory; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellHistory'Class (This).getAfterIfNotLast (geographicMapCellPosition_Param);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellHistory'Class (This).getAfterIfNotLast (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAfterIfNotLast;
 
    procedure getInPathButNotTracked (This : in out GeographicMapCellHistory; pathList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := GeographicMapCellHistory'Class (This).getInPathButNotTracked (pathList_Param);
+      Java_Result : constant BasicArrayList_Access := GeographicMapCellHistory'Class (This).getInPathButNotTracked (pathList_Param => pathList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInPathButNotTracked;
 
    procedure isVisited (This : in out GeographicMapCellHistory; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).isVisited (geographicMapCellPosition_Param);
+      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).isVisited (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isVisited;
 
    procedure visit (This : in out GeographicMapCellHistory; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).visit (geographicMapCellPosition_Param);
+      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).visit (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
    procedure isPortionVisited (This : in out GeographicMapCellHistory; basicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class) is
-      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).isPortionVisited (basicDecimal_Param);
+      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).isPortionVisited (basicDecimal_Param => basicDecimal_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

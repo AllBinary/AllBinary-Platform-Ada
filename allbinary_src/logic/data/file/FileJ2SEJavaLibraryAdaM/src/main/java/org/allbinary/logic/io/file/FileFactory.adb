@@ -65,21 +65,21 @@ package body org.allbinary.logic.io.file.FileFactory_Package is
    end isFile;
 
    procedure getInstance (This : in out FileFactory; filePath : Unbounded_String) is
-      Java_Result : constant AbFile_Access := FileFactory'Class (This).getInstance (filePath);
+      Java_Result : constant AbFile_Access := FileFactory'Class (This).getInstance (filePath => filePath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out FileFactory; file_Param : access AbFile_Package.AbFile'Class; childFilePath : Unbounded_String) is
-      Java_Result : constant AbFile_Access := FileFactory'Class (This).getInstance (file_Param, childFilePath);
+      Java_Result : constant AbFile_Access := FileFactory'Class (This).getInstance (file_Param => file_Param, childFilePath => childFilePath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure isFile (This : in out FileFactory; path : Unbounded_String) is
-      Java_Result : constant Boolean := FileFactory'Class (This).isFile (path);
+      Java_Result : constant Boolean := FileFactory'Class (This).isFile (path => path);
       pragma Unreferenced (Java_Result);
    begin
       null;

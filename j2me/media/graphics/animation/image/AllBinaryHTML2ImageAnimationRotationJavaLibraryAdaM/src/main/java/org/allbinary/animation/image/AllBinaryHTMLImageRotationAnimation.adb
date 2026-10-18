@@ -156,7 +156,7 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
    end paintXY;
 
    procedure getCanvasSurface (This : in out AllBinaryHTMLImageRotationAnimation; image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant Canvas_Access := AllBinaryHTMLImageRotationAnimation'Class (This).getCanvasSurface (image_Param);
+      Java_Result : constant Canvas_Access := AllBinaryHTMLImageRotationAnimation'Class (This).getCanvasSurface (image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

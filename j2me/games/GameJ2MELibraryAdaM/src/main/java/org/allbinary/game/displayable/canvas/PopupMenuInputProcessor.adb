@@ -163,7 +163,7 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
    end processMotionInput;
 
    procedure processInput (This : in out PopupMenuInputProcessor; key : Integer) is
-      Java_Result : constant Integer := PopupMenuInputProcessor'Class (This).processInput (key);
+      Java_Result : constant Integer := PopupMenuInputProcessor'Class (This).processInput (key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;

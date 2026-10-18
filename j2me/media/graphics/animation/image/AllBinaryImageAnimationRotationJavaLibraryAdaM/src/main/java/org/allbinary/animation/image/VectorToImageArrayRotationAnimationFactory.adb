@@ -89,7 +89,7 @@ package body org.allbinary.animation.image.VectorToImageArrayRotationAnimationFa
    end setInitialScale;
 
    procedure getInstance (This : in out VectorToImageArrayRotationAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := VectorToImageArrayRotationAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := VectorToImageArrayRotationAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

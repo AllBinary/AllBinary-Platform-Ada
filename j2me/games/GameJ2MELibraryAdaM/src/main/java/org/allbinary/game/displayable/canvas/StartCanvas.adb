@@ -815,14 +815,14 @@ package body org.allbinary.game.displayable.canvas.StartCanvas_Package is
    end getGameInitializationInterfaceFactoryInterface;
 
    procedure createGameLayerManager (This : in out StartCanvas; randomValue : Integer) is
-      Java_Result : constant AllBinaryGameLayerManager_Access := StartCanvas'Class (This).createGameLayerManager (randomValue);
+      Java_Result : constant AllBinaryGameLayerManager_Access := StartCanvas'Class (This).createGameLayerManager (randomValue => randomValue);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createGameLayerManager;
 
    procedure createRunnable (This : in out StartCanvas; randomLevel : Integer) is
-      Java_Result : constant GameCanvasRunnableInterface_Access := StartCanvas'Class (This).createRunnable (randomLevel);
+      Java_Result : constant GameCanvasRunnableInterface_Access := StartCanvas'Class (This).createRunnable (randomLevel => randomLevel);
       pragma Unreferenced (Java_Result);
    begin
       null;

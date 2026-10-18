@@ -52,7 +52,7 @@ package body org.allbinary.logic.system.PlatformAssetManager_Package is
    end getResourceAsStream;
 
    procedure getResourceAsStream (This : in out PlatformAssetManager; resource : Unbounded_String) is
-      Java_Result : constant InputStream_Access := PlatformAssetManager'Class (This).getResourceAsStream (resource);
+      Java_Result : constant InputStream_Access := PlatformAssetManager'Class (This).getResourceAsStream (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;

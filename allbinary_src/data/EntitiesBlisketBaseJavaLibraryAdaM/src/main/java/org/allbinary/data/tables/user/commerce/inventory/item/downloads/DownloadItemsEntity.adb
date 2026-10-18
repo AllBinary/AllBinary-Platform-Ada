@@ -165,14 +165,14 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
    end dropTable;
 
    procedure getForItem (This : in out DownloadItemsEntity; id : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := DownloadItemsEntity'Class (This).getForItem (id);
+      Java_Result : constant BasicArrayList_Access := DownloadItemsEntity'Class (This).getForItem (id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getForItem;
 
    procedure getForItem (This : in out DownloadItemsEntity; id : Unbounded_String; downloadItemId : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := DownloadItemsEntity'Class (This).getForItem (id, downloadItemId);
+      Java_Result : constant BasicArrayList_Access := DownloadItemsEntity'Class (This).getForItem (id => id, downloadItemId => downloadItemId);
       pragma Unreferenced (Java_Result);
    begin
       null;

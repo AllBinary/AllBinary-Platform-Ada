@@ -65,14 +65,14 @@ package body org.allbinary.graphics.PointFactory_Package is
    end createXYZ;
 
    procedure createXY (This : in out PointFactory; x : Integer; y : Integer) is
-      Java_Result : constant GPoint_Access := PointFactory'Class (This).createXY (x, y);
+      Java_Result : constant GPoint_Access := PointFactory'Class (This).createXY (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createXY;
 
    procedure createXYZ (This : in out PointFactory; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant GPoint_Access := PointFactory'Class (This).createXYZ (x, y, z);
+      Java_Result : constant GPoint_Access := PointFactory'Class (This).createXYZ (x => x, y => y, z => z);
       pragma Unreferenced (Java_Result);
    begin
       null;

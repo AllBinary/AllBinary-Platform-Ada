@@ -63,7 +63,7 @@ package body org.allbinary.game.input.J2MEGameKey_Package is
    end getString;
 
    procedure getString (keyCode : Integer) is
-      Java_Result : constant Unbounded_String := getString (keyCode);
+      Java_Result : constant Unbounded_String := getString (keyCode => keyCode);
       pragma Unreferenced (Java_Result);
    begin
       null;

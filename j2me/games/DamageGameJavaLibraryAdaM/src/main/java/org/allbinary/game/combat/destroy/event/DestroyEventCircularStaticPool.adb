@@ -59,7 +59,7 @@ package body org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticP
    end getInstanceForLayer;
 
    procedure getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant DestroyedEvent_Access := DestroyEventCircularStaticPool'Class (This).getInstanceForLayer (layerInterface_Param);
+      Java_Result : constant DestroyedEvent_Access := DestroyEventCircularStaticPool'Class (This).getInstanceForLayer (layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

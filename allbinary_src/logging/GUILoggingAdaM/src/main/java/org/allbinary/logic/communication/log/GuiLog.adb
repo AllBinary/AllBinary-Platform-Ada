@@ -123,28 +123,28 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
    end put;
 
    procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, anyType_Param, functionName);
+      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage => specialMessage, anyType_Param => anyType_Param, functionName => functionName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
 
    procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) is
-      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, anyType_Param, functionName, exception_Id_Param);
+      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage => specialMessage, anyType_Param => anyType_Param, functionName => functionName, exception_Id_Param => exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
 
    procedure put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, className, functionName);
+      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage => specialMessage, className => className, functionName => functionName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
 
    procedure put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) is
-      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, className, functionName, exception_Id_Param);
+      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage => specialMessage, className => className, functionName => functionName, exception_Id_Param => exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

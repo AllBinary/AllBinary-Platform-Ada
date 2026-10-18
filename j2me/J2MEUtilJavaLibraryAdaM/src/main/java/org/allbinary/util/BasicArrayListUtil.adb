@@ -136,21 +136,21 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
    end main;
 
    procedure getRandom (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Java_Object_Access := BasicArrayListUtil'Class (This).getRandom (list_Param);
+      Java_Result : constant Java_Object_Access := BasicArrayListUtil'Class (This).getRandom (list_Param => list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRandom;
 
    procedure getRandomIndex (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Integer := BasicArrayListUtil'Class (This).getRandomIndex (list_Param);
+      Java_Result : constant Integer := BasicArrayListUtil'Class (This).getRandomIndex (list_Param => list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRandomIndex;
 
    procedure log (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Unbounded_String := BasicArrayListUtil'Class (This).log (list_Param);
+      Java_Result : constant Unbounded_String := BasicArrayListUtil'Class (This).log (list_Param => list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

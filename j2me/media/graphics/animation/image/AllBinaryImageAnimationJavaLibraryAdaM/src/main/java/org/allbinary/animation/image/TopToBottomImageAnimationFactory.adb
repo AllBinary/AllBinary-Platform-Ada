@@ -46,7 +46,7 @@ package body org.allbinary.animation.image.TopToBottomImageAnimationFactory_Pack
    end getInstance;
 
    procedure getInstance (This : in out TopToBottomImageAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := TopToBottomImageAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := TopToBottomImageAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

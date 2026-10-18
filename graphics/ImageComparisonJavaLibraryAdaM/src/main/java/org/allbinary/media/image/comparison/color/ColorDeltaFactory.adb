@@ -81,7 +81,7 @@ package body org.allbinary.media.image.comparison.color.ColorDeltaFactory_Packag
    end getInstance;
 
    procedure getInstance (rgb1 : Integer; rgb2 : Integer) is
-      Java_Result : constant ColorDelta_Access := getInstance (rgb1, rgb2);
+      Java_Result : constant ColorDelta_Access := getInstance (rgb1 => rgb1, rgb2 => rgb2);
       pragma Unreferenced (Java_Result);
    begin
       null;

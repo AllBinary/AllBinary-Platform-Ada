@@ -99,7 +99,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    end setUserEmailEventConfigurationInterface;
 
    procedure toXmlNode (This : in out UserEmailEventConfigurationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := UserEmailEventConfigurationView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := UserEmailEventConfigurationView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

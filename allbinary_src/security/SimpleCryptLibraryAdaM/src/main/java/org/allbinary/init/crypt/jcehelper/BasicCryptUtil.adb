@@ -73,7 +73,7 @@ package body org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
    end getDecryptedInputStream;
 
    procedure getDecryptedInputStream (This : in out BasicCryptUtil; inputStream_Param : access InputStream_Package.InputStream'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) is
-      Java_Result : constant InputStream_Access := BasicCryptUtil'Class (This).getDecryptedInputStream (inputStream_Param, cryptInterface_Param);
+      Java_Result : constant InputStream_Access := BasicCryptUtil'Class (This).getDecryptedInputStream (inputStream_Param => inputStream_Param, cryptInterface_Param => cryptInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

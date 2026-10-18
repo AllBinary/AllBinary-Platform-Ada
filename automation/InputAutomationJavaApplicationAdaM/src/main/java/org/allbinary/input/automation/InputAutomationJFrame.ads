@@ -63,7 +63,7 @@ package org.allbinary.input.automation.InputAutomationJFrame_Package is
    type InputAutomationJFrame_Access_Array_Access_Array is array (Natural range <>) of InputAutomationJFrame_Access_Array_Access;
    type InputAutomationJFrame_Access_Array_Access_Array_Access is access all InputAutomationJFrame_Access_Array_Access_Array;
 
-   type InputAutomationJFrame is new JFrame and InputAutomationConfigurationModuleChangeListener and InputAutomationRobotChangeListener and HelpSetListener with record
+   type InputAutomationJFrame is new JFrame and InputAutomationConfigurationModuleChangeListener and InputAutomationRobotChangeListener with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       inputAutomationModuleConfigurations : InputAutomationModuleConfigurations_Access;

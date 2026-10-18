@@ -84,14 +84,14 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandler_Package is
    end removeListener;
 
    procedure getInstanceForDevice (This : in out DownGameKeyEventHandler; deviceId : Integer) is
-      Java_Result : constant DownGameKeyEventHandlerBase_Access := DownGameKeyEventHandler'Class (This).getInstanceForDevice (deviceId);
+      Java_Result : constant DownGameKeyEventHandlerBase_Access := DownGameKeyEventHandler'Class (This).getInstanceForDevice (deviceId => deviceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceForDevice;
 
    procedure getInstanceForPlayer (This : in out DownGameKeyEventHandler; playerInputId : Integer) is
-      Java_Result : constant DownGameKeyEventHandlerBase_Access := DownGameKeyEventHandler'Class (This).getInstanceForPlayer (playerInputId);
+      Java_Result : constant DownGameKeyEventHandlerBase_Access := DownGameKeyEventHandler'Class (This).getInstanceForPlayer (playerInputId => playerInputId);
       pragma Unreferenced (Java_Result);
    begin
       null;

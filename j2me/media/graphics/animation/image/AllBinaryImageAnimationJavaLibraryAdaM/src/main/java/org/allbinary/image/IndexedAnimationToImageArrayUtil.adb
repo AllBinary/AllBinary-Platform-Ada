@@ -52,7 +52,7 @@ package body org.allbinary.image.IndexedAnimationToImageArrayUtil_Package is
    end getInstance;
 
    procedure getInstance (width : Integer; height : Integer; sequentialAnimationInterface_Param : access IndexedAnimation_Package.IndexedAnimation'Class) is
-      Java_Result : constant Image_Access_Array_Access := getInstance (width, height, sequentialAnimationInterface_Param);
+      Java_Result : constant Image_Access_Array_Access := getInstance (width => width, height => height, sequentialAnimationInterface_Param => sequentialAnimationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

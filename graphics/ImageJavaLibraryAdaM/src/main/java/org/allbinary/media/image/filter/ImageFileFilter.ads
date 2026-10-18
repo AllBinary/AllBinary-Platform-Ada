@@ -34,7 +34,7 @@ package org.allbinary.media.image.filter.ImageFileFilter_Package is
    type ImageFileFilter_Access_Array_Access_Array is array (Natural range <>) of ImageFileFilter_Access_Array_Access;
    type ImageFileFilter_Access_Array_Access_Array_Access is access all ImageFileFilter_Access_Array_Access_Array;
 
-   type ImageFileFilter is new FileFilter with null record;
+   type ImageFileFilter is new Java_Object with null record;
 
    procedure Initialize (This : in out ImageFileFilter'Class);
    function Create return ImageFileFilter_Access;

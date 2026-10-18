@@ -124,21 +124,21 @@ package body org.allbinary.logic.io.SmallInsert_Package is
    end atEnd;
 
    procedure atBeginning (This : in out SmallInsert; text : Unbounded_String) is
-      Java_Result : constant Boolean := SmallInsert'Class (This).atBeginning (text);
+      Java_Result : constant Boolean := SmallInsert'Class (This).atBeginning (text => text);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end atBeginning;
 
    procedure after (This : in out SmallInsert; text : Unbounded_String; after : Unbounded_String) is
-      Java_Result : constant Boolean := SmallInsert'Class (This).after (text, after);
+      Java_Result : constant Boolean := SmallInsert'Class (This).after (text => text, after => after);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end after;
 
    procedure atEnd (This : in out SmallInsert; text : Unbounded_String) is
-      Java_Result : constant Boolean := SmallInsert'Class (This).atEnd (text);
+      Java_Result : constant Boolean := SmallInsert'Class (This).atEnd (text => text);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -81,7 +81,7 @@ package body org.allbinary.game.input.InputFactory_Package is
    end getInstanceById;
 
    procedure getInstanceById (This : in out InputFactory; id_Param : Integer) is
-      Java_Result : constant Input_Access := InputFactory'Class (This).getInstanceById (id_Param);
+      Java_Result : constant Input_Access := InputFactory'Class (This).getInstanceById (id_Param => id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -48,7 +48,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoInterfaceVie
    end toXmlNode;
 
    procedure toXmlNode (This : in out TransformInfoInterfaceView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := TransformInfoInterfaceView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := TransformInfoInterfaceView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -56,13 +56,13 @@ package body org.allbinary.logic.communication.smtp.event.UserEmailEventNameData
 
    --  throws Exception
    function getInstance (userEmailEventNameString : Unbounded_String) return UserEmailEventNameData_Access is
-      userEmailEventNameData : UserEmailEventNameData_Access;
+      userEmailEventNameData_Var : UserEmailEventNameData_Access;
    begin
-        userEmailEventNameData := UserEmailEventNameData_Access (UserEmailEventNameData_Package.userNameEvenNameHashMap.get (Java_Box (userEmailEventNameString)));
-        if (userEmailEventNameData) = (null) then
+        userEmailEventNameData_Var := UserEmailEventNameData_Access (UserEmailEventNameData_Package.userNameEvenNameHashMap.get (Java_Box (userEmailEventNameString)));
+        if (userEmailEventNameData_Var) = (null) then
             Java_Throw (Java_New_Exception ("Exception"));
         else
-            return userEmailEventNameData;
+            return userEmailEventNameData_Var;
         end if;
    end getInstance;
 
@@ -72,14 +72,14 @@ package body org.allbinary.logic.communication.smtp.event.UserEmailEventNameData
    end toString;
 
    procedure isEvent (This : in out UserEmailEventNameData; userEmailEventNameString : Unbounded_String) is
-      Java_Result : constant Boolean := UserEmailEventNameData'Class (This).isEvent (userEmailEventNameString);
+      Java_Result : constant Boolean := UserEmailEventNameData'Class (This).isEvent (userEmailEventNameString => userEmailEventNameString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isEvent;
 
    procedure getInstance (userEmailEventNameString : Unbounded_String) is
-      Java_Result : constant UserEmailEventNameData_Access := getInstance (userEmailEventNameString);
+      Java_Result : constant UserEmailEventNameData_Access := getInstance (userEmailEventNameString => userEmailEventNameString);
       pragma Unreferenced (Java_Result);
    begin
       null;

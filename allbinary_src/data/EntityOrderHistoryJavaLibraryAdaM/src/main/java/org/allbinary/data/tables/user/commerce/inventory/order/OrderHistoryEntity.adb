@@ -524,35 +524,35 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    end update;
 
    procedure getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
-      Java_Result : constant BasicArrayList_Access := OrderHistoryEntity'Class (This).getStoreOrders (storeFrontInterface_Param);
+      Java_Result : constant BasicArrayList_Access := OrderHistoryEntity'Class (This).getStoreOrders (storeFrontInterface_Param => storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getStoreOrders;
 
    procedure getOrders (This : in out OrderHistoryEntity; userName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := OrderHistoryEntity'Class (This).getOrders (userName);
+      Java_Result : constant BasicArrayList_Access := OrderHistoryEntity'Class (This).getOrders (userName => userName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getOrders;
 
    procedure getOrders (This : in out OrderHistoryEntity; status : Unbounded_String; fromDate : Unbounded_String; toDate : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := OrderHistoryEntity'Class (This).getOrders (status, fromDate, toDate);
+      Java_Result : constant BasicArrayList_Access := OrderHistoryEntity'Class (This).getOrders (status => status, fromDate => fromDate, toDate => toDate);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getOrders;
 
    procedure getOrders (This : in out OrderHistoryEntity; fromDate : Unbounded_String; toDate : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := OrderHistoryEntity'Class (This).getOrders (fromDate, toDate);
+      Java_Result : constant BasicArrayList_Access := OrderHistoryEntity'Class (This).getOrders (fromDate => fromDate, toDate => toDate);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getOrders;
 
    procedure getOrder (This : in out OrderHistoryEntity; id : Unbounded_String) is
-      Java_Result : constant OrderHistory_Access := OrderHistoryEntity'Class (This).getOrder (id);
+      Java_Result : constant OrderHistory_Access := OrderHistoryEntity'Class (This).getOrder (id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;

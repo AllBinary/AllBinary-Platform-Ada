@@ -218,21 +218,21 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
    end visit;
 
    procedure getPathFindingInfo (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant PathFindingInfo_Access := MultipassNoCacheWaypoint'Class (This).getPathFindingInfo (geographicMapCellPosition_Param);
+      Java_Result : constant PathFindingInfo_Access := MultipassNoCacheWaypoint'Class (This).getPathFindingInfo (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathFindingInfo;
 
    procedure getPathsList (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
-      Java_Result : constant BasicArrayList_Access := MultipassNoCacheWaypoint'Class (This).getPathsList (geographicMapCellPosition_Param, pathFindingInfo_Param, multipassState_Param);
+      Java_Result : constant BasicArrayList_Access := MultipassNoCacheWaypoint'Class (This).getPathsList (geographicMapCellPosition_Param => geographicMapCellPosition_Param, pathFindingInfo_Param => pathFindingInfo_Param, multipassState_Param => multipassState_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathsList;
 
    procedure getEndGeographicMapCellPosition (This : in out MultipassNoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant GeographicMapCellPosition_Access := MultipassNoCacheWaypoint'Class (This).getEndGeographicMapCellPosition (startGeographicMapCellPosition_Param);
+      Java_Result : constant GeographicMapCellPosition_Access := MultipassNoCacheWaypoint'Class (This).getEndGeographicMapCellPosition (startGeographicMapCellPosition_Param => startGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

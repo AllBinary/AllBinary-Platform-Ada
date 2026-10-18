@@ -64,7 +64,7 @@ package body org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
    end visit;
 
    procedure visit (This : in out LimitCommandsVisitor; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := LimitCommandsVisitor'Class (This).visit (anyType_Param);
+      Java_Result : constant Java_Object_Access := LimitCommandsVisitor'Class (This).visit (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

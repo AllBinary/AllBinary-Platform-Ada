@@ -144,14 +144,14 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
    end onStartCommandIntent;
 
    procedure onBind (This : in out BaseMusicService; intent_Param : access Intent_Package.Intent'Class) is
-      Java_Result : constant IBinder_Access := BaseMusicService'Class (This).onBind (intent_Param);
+      Java_Result : constant IBinder_Access := BaseMusicService'Class (This).onBind (intent_Param => intent_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end onBind;
 
    procedure onStartCommand (This : in out BaseMusicService; intent_Param : access Intent_Package.Intent'Class; flags : Integer; startId : Integer) is
-      Java_Result : constant Integer := BaseMusicService'Class (This).onStartCommand (intent_Param, flags, startId);
+      Java_Result : constant Integer := BaseMusicService'Class (This).onStartCommand (intent_Param => intent_Param, flags => flags, startId => startId);
       pragma Unreferenced (Java_Result);
    begin
       null;

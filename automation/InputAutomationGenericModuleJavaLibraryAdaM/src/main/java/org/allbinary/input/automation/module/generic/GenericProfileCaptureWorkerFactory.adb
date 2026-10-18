@@ -68,7 +68,7 @@ package body org.allbinary.input.automation.module.generic_Id.GenericProfileCapt
    end getInstance;
 
    procedure getInstance (genericProfile_Param : access GenericProfile_Package.GenericProfile'Class) is
-      Java_Result : constant CaptureWorkerInterface_Access := getInstance (genericProfile_Param);
+      Java_Result : constant CaptureWorkerInterface_Access := getInstance (genericProfile_Param => genericProfile_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

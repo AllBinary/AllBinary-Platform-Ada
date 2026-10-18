@@ -34,7 +34,7 @@ package org.allbinary.business.init.InitInfoDocument_Package is
    type InitInfoDocument_Access_Array_Access_Array_Access is access all InitInfoDocument_Access_Array_Access_Array;
 
    type InitInfoDocument is new Java_Object with record
-      initInfoDocument : Document_Access;
+      initInfoDocument_Var : Document_Access;
    end record;
 
    procedure Initialize (This : in out InitInfoDocument'Class);

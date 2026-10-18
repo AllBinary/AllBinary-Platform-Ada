@@ -133,7 +133,7 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
    end getName;
 
    procedure getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature_Param : access GraphicsFeature_Package.GraphicsFeature'Class) is
-      Java_Result : constant Unbounded_String := GameGraphicsResourceUtil'Class (This).getStringForFeature (graphicsFeature_Param);
+      Java_Result : constant Unbounded_String := GameGraphicsResourceUtil'Class (This).getStringForFeature (graphicsFeature_Param => graphicsFeature_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

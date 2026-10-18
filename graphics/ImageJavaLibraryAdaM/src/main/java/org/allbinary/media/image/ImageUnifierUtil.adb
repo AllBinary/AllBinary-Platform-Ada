@@ -90,7 +90,7 @@ package body org.allbinary.media.image.ImageUnifierUtil_Package is
    end getImage;
 
    procedure getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties_Param : access ImageUnifierProperties_Package.ImageUnifierProperties'Class) is
-      Java_Result : constant BufferedImage_Access := ImageUnifierUtil'Class (This).getImage (bufferedImageArray, imageUnifierProperties_Param);
+      Java_Result : constant BufferedImage_Access := ImageUnifierUtil'Class (This).getImage (bufferedImageArray => bufferedImageArray, imageUnifierProperties_Param => imageUnifierProperties_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

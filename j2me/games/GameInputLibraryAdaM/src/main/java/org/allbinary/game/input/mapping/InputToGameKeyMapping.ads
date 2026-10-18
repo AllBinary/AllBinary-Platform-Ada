@@ -55,7 +55,7 @@ package org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    function getNullInstance return InputToGameKeyMapping_Access;
    procedure clear (This : in out InputToGameKeyMapping);
    procedure removeAll (This : in out InputToGameKeyMapping);
-   procedure addMapping (This : in out InputToGameKeyMapping; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class);
+   procedure addMapping (This : in out InputToGameKeyMapping; inputToGameKeyMapping_Var_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class);
    procedure addAll (This : in out InputToGameKeyMapping; input_Param : access Input_Package.Input'Class; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure add (This : in out InputToGameKeyMapping; input_Param : access Input_Package.Input'Class; mappedToInput_Param : access Input_Package.Input'Class);
    procedure remove (This : in out InputToGameKeyMapping; input_Param : access Input_Package.Input'Class; mappedToInput_Param : access Input_Package.Input'Class);

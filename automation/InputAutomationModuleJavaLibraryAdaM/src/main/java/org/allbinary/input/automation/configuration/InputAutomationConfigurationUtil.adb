@@ -49,7 +49,7 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
    end getChangeEvent;
 
    procedure getChangeEvent (inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface_Package.InputAutomationModuleFactoryInterface'Class) is
-      Java_Result : constant InputAutomationConfigurationModuleChangeEvent_Access := getChangeEvent (inputAutomationModuleInterface_Param);
+      Java_Result : constant InputAutomationConfigurationModuleChangeEvent_Access := getChangeEvent (inputAutomationModuleInterface_Param => inputAutomationModuleInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

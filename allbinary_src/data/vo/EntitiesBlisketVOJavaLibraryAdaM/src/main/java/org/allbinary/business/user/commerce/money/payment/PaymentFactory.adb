@@ -62,7 +62,7 @@ package body org.allbinary.business.user.commerce.money.payment.PaymentFactory_P
    end getInstance;
 
    procedure getInstance (request_Param : access ServletRequest_Package.ServletRequest'Class) is
-      Java_Result : constant PaymentInterface_Access := getInstance (request_Param);
+      Java_Result : constant PaymentInterface_Access := getInstance (request_Param => request_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

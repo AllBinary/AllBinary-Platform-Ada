@@ -82,7 +82,7 @@ package body org.allbinary.logic.communication.smtp.BasicEmail_Package is
    end toXmlDoc;
 
    procedure toXmlNode (This : in out BasicEmail; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := BasicEmail'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := BasicEmail'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

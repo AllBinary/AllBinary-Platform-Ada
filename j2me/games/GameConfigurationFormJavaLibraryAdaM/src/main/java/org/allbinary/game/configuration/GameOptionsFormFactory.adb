@@ -65,7 +65,7 @@ package body org.allbinary.game.configuration.GameOptionsFormFactory_Package is
    end init;
 
    procedure init (This : in out GameOptionsFormFactory; commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant CommandForm_Access := GameOptionsFormFactory'Class (This).init (commandListener_Param, title, backgrounBasicColor_Param, foregroundBasicColor_Param);
+      Java_Result : constant CommandForm_Access := GameOptionsFormFactory'Class (This).init (commandListener_Param => commandListener_Param, title => title, backgrounBasicColor_Param => backgrounBasicColor_Param, foregroundBasicColor_Param => foregroundBasicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

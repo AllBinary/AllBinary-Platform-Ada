@@ -92,14 +92,14 @@ package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Pac
    end isInitialized;
 
    procedure getResourceRelativeRelationshipList (This : in out ResourceRelativeRelationshipFactory; resource : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := ResourceRelativeRelationshipFactory'Class (This).getResourceRelativeRelationshipList (resource);
+      Java_Result : constant BasicArrayList_Access := ResourceRelativeRelationshipFactory'Class (This).getResourceRelativeRelationshipList (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getResourceRelativeRelationshipList;
 
    procedure isLoadingLevel (This : in out ResourceRelativeRelationshipFactory; level : Integer) is
-      Java_Result : constant Boolean := ResourceRelativeRelationshipFactory'Class (This).isLoadingLevel (level);
+      Java_Result : constant Boolean := ResourceRelativeRelationshipFactory'Class (This).isLoadingLevel (level => level);
       pragma Unreferenced (Java_Result);
    begin
       null;

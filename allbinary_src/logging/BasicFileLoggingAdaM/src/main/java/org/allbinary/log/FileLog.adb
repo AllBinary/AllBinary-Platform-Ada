@@ -210,28 +210,28 @@ package body org.allbinary.log.FileLog_Package is
    end getFilePath;
 
    procedure put (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := put (specialMessage, anyType_Param, functionName);
+      Java_Result : constant Unbounded_String := put (specialMessage => specialMessage, anyType_Param => anyType_Param, functionName => functionName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
 
    procedure put (specialMessage_Param : Unbounded_String; anyType_Param : access Java_Object'Class; functionName_Param : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) is
-      Java_Result : constant Unbounded_String := put (specialMessage_Param, anyType_Param, functionName_Param, exception_Id_Param);
+      Java_Result : constant Unbounded_String := put (specialMessage_Param => specialMessage_Param, anyType_Param => anyType_Param, functionName_Param => functionName_Param, exception_Id_Param => exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
 
    procedure put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := put (specialMessage, className, functionName);
+      Java_Result : constant Unbounded_String := put (specialMessage => specialMessage, className => className, functionName => functionName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
 
    procedure put (specialMessage_Param : Unbounded_String; className : Unbounded_String; functionName_Param : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) is
-      Java_Result : constant Unbounded_String := put (specialMessage_Param, className, functionName_Param, exception_Id_Param);
+      Java_Result : constant Unbounded_String := put (specialMessage_Param => specialMessage_Param, className => className, functionName_Param => functionName_Param, exception_Id_Param => exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

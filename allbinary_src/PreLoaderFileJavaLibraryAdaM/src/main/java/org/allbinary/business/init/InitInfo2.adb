@@ -53,14 +53,14 @@ package body org.allbinary.business.init.InitInfo2_Package is
    end isMainPathValid;
 
    procedure isTestHtmlPathValid (This : in out InitInfo2; value_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant Boolean := InitInfo2'Class (This).isTestHtmlPathValid (value_Param);
+      Java_Result : constant Boolean := InitInfo2'Class (This).isTestHtmlPathValid (value_Param => value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTestHtmlPathValid;
 
    procedure isMainPathValid (This : in out InitInfo2; value_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant Boolean := InitInfo2'Class (This).isMainPathValid (value_Param);
+      Java_Result : constant Boolean := InitInfo2'Class (This).isMainPathValid (value_Param => value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

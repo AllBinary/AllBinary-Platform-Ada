@@ -143,7 +143,7 @@ package body views.admin.storefront.AddValidationStoreFrontView_Package is
    end view;
 
    procedure toValidationInfoNode (This : in out AddValidationStoreFrontView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := AddValidationStoreFrontView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := AddValidationStoreFrontView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

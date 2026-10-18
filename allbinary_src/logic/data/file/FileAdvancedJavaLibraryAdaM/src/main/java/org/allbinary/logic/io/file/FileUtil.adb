@@ -659,42 +659,42 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end loadFileAsList;
 
    procedure fixPath (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; path_Param : access AbPath_Package.AbPath'Class; realPath_Param : access AbPath_Package.AbPath'Class; cloud : Unbounded_String) is
-      Java_Result : constant AbPath_Access := FileUtil'Class (This).fixPath (file_Param, path_Param, realPath_Param, cloud);
+      Java_Result : constant AbPath_Access := FileUtil'Class (This).fixPath (file_Param => file_Param, path_Param => path_Param, realPath_Param => realPath_Param, cloud => cloud);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end fixPath;
 
    procedure copyPrepare (This : in out FileUtil; fromFile_Param : access AbFile_Package.AbFile'Class; toFile_Param : access AbFile_Package.AbFile'Class; overwriteNewer : Boolean; overwriteAll : Boolean) is
-      Java_Result : constant Boolean := FileUtil'Class (This).copyPrepare (fromFile_Param, toFile_Param, overwriteNewer, overwriteAll);
+      Java_Result : constant Boolean := FileUtil'Class (This).copyPrepare (fromFile_Param => fromFile_Param, toFile_Param => toFile_Param, overwriteNewer => overwriteNewer, overwriteAll => overwriteAll);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyPrepare;
 
    procedure getNewDirectory (fromFile_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant Unbounded_String := getNewDirectory (fromFile_Param);
+      Java_Result : constant Unbounded_String := getNewDirectory (fromFile_Param => fromFile_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNewDirectory;
 
    procedure copy (This : in out FileUtil; fromAbPath_Param : access AbPath_Package.AbPath'Class; to_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant Boolean := FileUtil'Class (This).copy (fromAbPath_Param, to_Param);
+      Java_Result : constant Boolean := FileUtil'Class (This).copy (fromAbPath_Param => fromAbPath_Param, to_Param => to_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copy;
 
    procedure shouldSkip (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; skipFiles : Unbounded_String_Array_Access) is
-      Java_Result : constant Boolean := FileUtil'Class (This).shouldSkip (file_Param, skipFiles);
+      Java_Result : constant Boolean := FileUtil'Class (This).shouldSkip (file_Param => file_Param, skipFiles => skipFiles);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end shouldSkip;
 
    procedure loadFileAsList (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) is
-      Java_Result : constant BasicArrayList_Access := FileUtil'Class (This).loadFileAsList (file_Param, max, byteArray1);
+      Java_Result : constant BasicArrayList_Access := FileUtil'Class (This).loadFileAsList (file_Param => file_Param, max => max, byteArray1 => byteArray1);
       pragma Unreferenced (Java_Result);
    begin
       null;

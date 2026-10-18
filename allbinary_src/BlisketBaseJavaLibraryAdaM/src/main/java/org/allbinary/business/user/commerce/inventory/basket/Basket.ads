@@ -38,7 +38,7 @@ package org.allbinary.business.user.commerce.inventory.basket.Basket_Package is
    type Basket_Access_Array_Access_Array is array (Natural range <>) of Basket_Access_Array_Access;
    type Basket_Access_Array_Access_Array_Access is access all Basket_Access_Array_Access_Array;
 
-   type Basket is new Java_Object and BasketInterface and Serializable with record
+   type Basket is new Java_Object and BasketInterface with record
       items : HashMap_Access;
    end record;
 

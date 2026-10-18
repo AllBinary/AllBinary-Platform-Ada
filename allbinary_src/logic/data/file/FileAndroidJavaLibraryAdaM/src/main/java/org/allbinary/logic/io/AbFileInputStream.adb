@@ -96,21 +96,21 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
    end skip;
 
    procedure read (This : in out AbFileInputStream; b : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Integer := AbFileInputStream'Class (This).read (b);
+      Java_Result : constant Integer := AbFileInputStream'Class (This).read (b => b);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end read;
 
    procedure read (This : in out AbFileInputStream; buffer : Short_Short_Integer_Array_Access; offset : Integer; count : Integer) is
-      Java_Result : constant Integer := AbFileInputStream'Class (This).read (buffer, offset, count);
+      Java_Result : constant Integer := AbFileInputStream'Class (This).read (buffer => buffer, offset => offset, count => count);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end read;
 
    procedure skip (This : in out AbFileInputStream; n : Long_Long_Integer) is
-      Java_Result : constant Long_Long_Integer := AbFileInputStream'Class (This).skip (n);
+      Java_Result : constant Long_Long_Integer := AbFileInputStream'Class (This).skip (n => n);
       pragma Unreferenced (Java_Result);
    begin
       null;

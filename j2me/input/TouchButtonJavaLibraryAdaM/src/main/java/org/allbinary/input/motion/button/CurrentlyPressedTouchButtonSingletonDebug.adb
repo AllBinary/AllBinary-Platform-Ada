@@ -149,14 +149,14 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
    end toString;
 
    procedure removeAt (This : in out CurrentlyPressedTouchButtonSingletonDebug; index : Integer) is
-      Java_Result : constant TouchButtonInput_Access := CurrentlyPressedTouchButtonSingletonDebug'Class (This).removeAt (index);
+      Java_Result : constant TouchButtonInput_Access := CurrentlyPressedTouchButtonSingletonDebug'Class (This).removeAt (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end removeAt;
 
    procedure remove (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
-      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingletonDebug'Class (This).remove (touchButtonInput_Param);
+      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingletonDebug'Class (This).remove (touchButtonInput_Param => touchButtonInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

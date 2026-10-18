@@ -292,14 +292,14 @@ package body org.allbinary.game.graphics.hud.BasicHud_Package is
    end paintString;
 
    procedure getHudGraphicsPositionWH (This : in out BasicHud; width : Integer; height : Integer; maxWidth : Integer; maxHeight : Integer) is
-      Java_Result : constant HudGraphicsPosition_Access := BasicHud'Class (This).getHudGraphicsPositionWH (width, height, maxWidth, maxHeight);
+      Java_Result : constant HudGraphicsPosition_Access := BasicHud'Class (This).getHudGraphicsPositionWH (width => width, height => height, maxWidth => maxWidth, maxHeight => maxHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getHudGraphicsPositionWH;
 
    procedure getPoint (This : in out BasicHud; x : Integer; y : Integer) is
-      Java_Result : constant GPoint_Access := BasicHud'Class (This).getPoint (x, y);
+      Java_Result : constant GPoint_Access := BasicHud'Class (This).getPoint (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

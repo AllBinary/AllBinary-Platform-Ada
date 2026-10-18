@@ -40,7 +40,7 @@ package body org.allbinary.game.configuration.persistance.NullRecordComparator_P
    end compare;
 
    procedure compare (This : in out NullRecordComparator; rec1 : Short_Short_Integer_Array_Access; rec2 : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Integer := NullRecordComparator'Class (This).compare (rec1, rec2);
+      Java_Result : constant Integer := NullRecordComparator'Class (This).compare (rec1 => rec1, rec2 => rec2);
       pragma Unreferenced (Java_Result);
    begin
       null;

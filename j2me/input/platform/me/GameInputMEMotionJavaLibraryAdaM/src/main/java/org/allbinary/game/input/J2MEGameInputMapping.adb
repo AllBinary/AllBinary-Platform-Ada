@@ -68,14 +68,14 @@ package body org.allbinary.game.input.J2MEGameInputMapping_Package is
    end isSystemInput;
 
    procedure isDelete (This : in out J2MEGameInputMapping; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := J2MEGameInputMapping'Class (This).isDelete (input_Param);
+      Java_Result : constant Boolean := J2MEGameInputMapping'Class (This).isDelete (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
    procedure isSystemInput (This : in out J2MEGameInputMapping; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := J2MEGameInputMapping'Class (This).isSystemInput (input_Param);
+      Java_Result : constant Boolean := J2MEGameInputMapping'Class (This).isSystemInput (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

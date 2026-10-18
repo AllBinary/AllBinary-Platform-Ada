@@ -1782,14 +1782,14 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    end getType;
 
    procedure endProgress (This : in out AllBinaryGameCanvas; isProgress : Boolean) is
-      Java_Result : constant Integer := AllBinaryGameCanvas'Class (This).endProgress (isProgress);
+      Java_Result : constant Integer := AllBinaryGameCanvas'Class (This).endProgress (isProgress => isProgress);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end endProgress;
 
    procedure createHighScore (This : in out AllBinaryGameCanvas; score : Long_Long_Integer) is
-      Java_Result : constant HighScore_Access := AllBinaryGameCanvas'Class (This).createHighScore (score);
+      Java_Result : constant HighScore_Access := AllBinaryGameCanvas'Class (This).createHighScore (score => score);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -95,14 +95,14 @@ package body org.allbinary.business.user.commerce.shipping.modules.NoShippingMod
    end view;
 
    procedure toValidationInfoNode (This : in out NoShippingModuleView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := NoShippingModuleView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := NoShippingModuleView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
    procedure toXmlNode (This : in out NoShippingModuleView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := NoShippingModuleView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := NoShippingModuleView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

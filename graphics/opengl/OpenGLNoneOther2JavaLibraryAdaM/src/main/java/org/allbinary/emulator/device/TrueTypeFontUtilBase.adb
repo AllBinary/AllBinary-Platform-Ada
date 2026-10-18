@@ -46,14 +46,14 @@ package body org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
    end getCellSize;
 
    procedure getAsTextureSize (This : in out TrueTypeFontUtilBase; textureSize : Integer) is
-      Java_Result : constant Integer := TrueTypeFontUtilBase'Class (This).getAsTextureSize (textureSize);
+      Java_Result : constant Integer := TrueTypeFontUtilBase'Class (This).getAsTextureSize (textureSize => textureSize);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAsTextureSize;
 
    procedure getCellSize (This : in out TrueTypeFontUtilBase; cellSize : Integer) is
-      Java_Result : constant Integer := TrueTypeFontUtilBase'Class (This).getCellSize (cellSize);
+      Java_Result : constant Integer := TrueTypeFontUtilBase'Class (This).getCellSize (cellSize => cellSize);
       pragma Unreferenced (Java_Result);
    begin
       null;

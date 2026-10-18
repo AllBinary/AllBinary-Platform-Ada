@@ -74,14 +74,14 @@ package body org.allbinary.logic.io.file.FileWrapperUtil_Package is
    end wrapFile;
 
    procedure wrapFiles (files : Java_Object_Access_Array_Access) is
-      Java_Result : constant AbFile_Access_Array_Access := wrapFiles (files);
+      Java_Result : constant AbFile_Access_Array_Access := wrapFiles (files => files);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end wrapFiles;
 
    procedure wrapFile (file_Param : access File_Package.File'Class) is
-      Java_Result : constant AbFile_Access := wrapFile (file_Param);
+      Java_Result : constant AbFile_Access := wrapFile (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

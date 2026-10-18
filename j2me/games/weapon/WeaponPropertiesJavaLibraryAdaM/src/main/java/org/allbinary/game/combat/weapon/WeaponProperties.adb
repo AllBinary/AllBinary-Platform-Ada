@@ -135,7 +135,7 @@ package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
    end toString;
 
    procedure getDamageI (This : in out WeaponProperties; range_Id : Integer) is
-      Java_Result : constant Integer := WeaponProperties'Class (This).getDamageI (range_Id);
+      Java_Result : constant Integer := WeaponProperties'Class (This).getDamageI (range_Id => range_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -127,7 +127,7 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
    end toString;
 
    procedure initTexture (This : in out OpenGLESImage; gl_Param : access GL10_Package.GL10'Class) is
-      Java_Result : constant Boolean := OpenGLESImage'Class (This).initTexture (gl_Param);
+      Java_Result : constant Boolean := OpenGLESImage'Class (This).initTexture (gl_Param => gl_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

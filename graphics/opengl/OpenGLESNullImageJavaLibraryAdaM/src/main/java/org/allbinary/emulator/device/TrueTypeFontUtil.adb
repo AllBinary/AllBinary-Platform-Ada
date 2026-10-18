@@ -80,35 +80,35 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
    end getFontWidths;
 
    procedure getAsTextureSize (This : in out TrueTypeFontUtil; textureSize : Integer) is
-      Java_Result : constant Integer := TrueTypeFontUtil'Class (This).getAsTextureSize (textureSize);
+      Java_Result : constant Integer := TrueTypeFontUtil'Class (This).getAsTextureSize (textureSize => textureSize);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAsTextureSize;
 
    procedure getCellSize (This : in out TrueTypeFontUtil; cellSize : Integer) is
-      Java_Result : constant Integer := TrueTypeFontUtil'Class (This).getCellSize (cellSize);
+      Java_Result : constant Integer := TrueTypeFontUtil'Class (This).getCellSize (cellSize => cellSize);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellSize;
 
    procedure getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmap (filename, fontSize, cellSize, basicColor_Param);
+      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmap (filename => filename, fontSize => fontSize, cellSize => cellSize, basicColor_Param => basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFontBitmap;
 
    procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10_Package.GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmapGL (gl_Param, filename, cellSize, basicColor_Param);
+      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmapGL (gl_Param => gl_Param, filename => filename, cellSize => cellSize, basicColor_Param => basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFontBitmapGL;
 
    procedure getFontWidths (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer) is
-      Java_Result : constant Integer_Array_Access := TrueTypeFontUtil'Class (This).getFontWidths (filename, fontSize);
+      Java_Result : constant Integer_Array_Access := TrueTypeFontUtil'Class (This).getFontWidths (filename => filename, fontSize => fontSize);
       pragma Unreferenced (Java_Result);
    begin
       null;

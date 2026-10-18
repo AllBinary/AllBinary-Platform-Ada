@@ -110,7 +110,7 @@ package body org.allbinary.game.paint.AboutPaintable_Package is
    end paint;
 
    procedure getInstance (info : Unbounded_String_Array_Access; developers : Unbounded_String_Array_Access) is
-      Java_Result : constant AboutPaintable_Access := getInstance (info, developers);
+      Java_Result : constant AboutPaintable_Access := getInstance (info => info, developers => developers);
       pragma Unreferenced (Java_Result);
    begin
       null;

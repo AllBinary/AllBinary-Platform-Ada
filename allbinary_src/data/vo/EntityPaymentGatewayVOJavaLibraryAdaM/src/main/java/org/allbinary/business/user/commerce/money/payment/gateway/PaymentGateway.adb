@@ -686,14 +686,14 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end getKey;
 
    procedure toHashMap (This : in out PaymentGateway; isEncrypted : Boolean) is
-      Java_Result : constant HashMap_Access := PaymentGateway'Class (This).toHashMap (isEncrypted);
+      Java_Result : constant HashMap_Access := PaymentGateway'Class (This).toHashMap (isEncrypted => isEncrypted);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toHashMap;
 
    procedure toVector (This : in out PaymentGateway; isEncrypted : Boolean) is
-      Java_Result : constant BasicArrayList_Access := PaymentGateway'Class (This).toVector (isEncrypted);
+      Java_Result : constant BasicArrayList_Access := PaymentGateway'Class (This).toVector (isEncrypted => isEncrypted);
       pragma Unreferenced (Java_Result);
    begin
       null;

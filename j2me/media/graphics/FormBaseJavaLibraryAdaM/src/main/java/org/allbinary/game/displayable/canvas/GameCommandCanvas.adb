@@ -345,7 +345,7 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
    end getMenuInputProcessor;
 
    procedure createRectangle (This : in out GameCommandCanvas; size : Integer) is
-      Java_Result : constant Rectangle_Access := GameCommandCanvas'Class (This).createRectangle (size);
+      Java_Result : constant Rectangle_Access := GameCommandCanvas'Class (This).createRectangle (size => size);
       pragma Unreferenced (Java_Result);
    begin
       null;

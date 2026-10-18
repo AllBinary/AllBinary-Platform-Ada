@@ -119,7 +119,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
    end generate;
 
    procedure generate (This : in out NoTemplateTransformInfoObjectConfig; objectConfigDocument_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Document_Access := NoTemplateTransformInfoObjectConfig'Class (This).generate (objectConfigDocument_Param);
+      Java_Result : constant Document_Access := NoTemplateTransformInfoObjectConfig'Class (This).generate (objectConfigDocument_Param => objectConfigDocument_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

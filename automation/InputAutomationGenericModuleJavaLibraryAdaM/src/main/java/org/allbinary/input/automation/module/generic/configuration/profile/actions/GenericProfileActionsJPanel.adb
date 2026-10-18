@@ -29,7 +29,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       This.blankGenericProfileActionJPanel := null;
       This.deleteActionJButton := null;
       This.genericProfileActionsJList := null;
-      This.genericProfileActionsJPanel := null;
+      This.genericProfileActionsJPanel_Var := null;
       This.genericProfileActionsJScrollPane := null;
       This.newActionJButton := null;
       This.newProfileActionJDialog := null;
@@ -64,7 +64,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.newProfileActionJLabel := JLabel_Package.Create;
         This.okNewProfileActionJButton := JButton_Package.Create;
         This.newProfileActionJTextField := JTextField_Package.Create;
-        This.genericProfileActionsJPanel := JPanel_Package.Create;
+        This.genericProfileActionsJPanel_Var := JPanel_Package.Create;
         This.genericProfileActionsJScrollPane := JScrollPane_Package.Create;
         This.genericProfileActionsJList := JList_Package.Create;
         This.newActionJButton := JButton_Package.Create;
@@ -87,7 +87,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.newProfileActionJDialog.getContentPane.setLayout (newProfileActionJDialogLayout);
         newProfileActionJDialogLayout.setHorizontalGroup (newProfileActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (newProfileActionJDialogLayout.createSequentialGroup.addGroup (newProfileActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (newProfileActionJDialogLayout.createSequentialGroup.addGap (93, 93, 93).addComponent (This.okNewProfileActionJButton)).addGroup (newProfileActionJDialogLayout.createSequentialGroup.addGap (75, 75, 75).addComponent (This.newProfileActionJLabel)).addGroup (newProfileActionJDialogLayout.createSequentialGroup.addGap (29, 29, 29).addComponent (This.newProfileActionJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 178, javax_Package.swing.GroupLayout.PREFERRED_SIZE))).addContainerGap (34, Short_Integer'Last)));
         newProfileActionJDialogLayout.setVerticalGroup (newProfileActionJDialogLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, newProfileActionJDialogLayout.createSequentialGroup.addContainerGap.addComponent (This.newProfileActionJLabel).addGap (21, 21, 21).addComponent (This.newProfileActionJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short_Integer'Last).addComponent (This.okNewProfileActionJButton).addContainerGap));
-        This.genericProfileActionsJPanel.setPreferredSize (Dimension_Package.Create (10000, 10000));
+        This.genericProfileActionsJPanel_Var.setPreferredSize (Dimension_Package.Create (10000, 10000));
         This.genericProfileActionsJList.addListSelectionListener (ListSelectionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure valueChanged (This : in out ; evt_Param : access ListSelectionEvent_Package.ListSelectionEvent'Class) is
@@ -129,14 +129,14 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.blankGenericProfileActionJPanel.setLayout (blankGenericProfileActionJPanelLayout);
         blankGenericProfileActionJPanelLayout.setHorizontalGroup (blankGenericProfileActionJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 500, Short_Integer'Last));
         blankGenericProfileActionJPanelLayout.setVerticalGroup (blankGenericProfileActionJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 296, Short_Integer'Last));
-        genericProfileActionsJPanelLayout := GroupLayout_Package.Create (This.genericProfileActionsJPanel);
-        This.genericProfileActionsJPanel.setLayout (genericProfileActionsJPanelLayout);
+        genericProfileActionsJPanelLayout := GroupLayout_Package.Create (This.genericProfileActionsJPanel_Var);
+        This.genericProfileActionsJPanel_Var.setLayout (genericProfileActionsJPanelLayout);
         genericProfileActionsJPanelLayout.setHorizontalGroup (genericProfileActionsJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (genericProfileActionsJPanelLayout.createSequentialGroup.addComponent (This.genericProfileActionsJScrollPane, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 95, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.blankGenericProfileActionJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)).addGroup (genericProfileActionsJPanelLayout.createSequentialGroup.addComponent (This.newActionJButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.deleteActionJButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.saveJButton).addContainerGap));
         genericProfileActionsJPanelLayout.setVerticalGroup (genericProfileActionsJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (genericProfileActionsJPanelLayout.createSequentialGroup.addGroup (genericProfileActionsJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.newActionJButton).addComponent (This.deleteActionJButton).addComponent (This.saveJButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (genericProfileActionsJPanelLayout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, False).addComponent (This.blankGenericProfileActionJPanel, 0, 296, Short_Integer'Last).addComponent (This.genericProfileActionsJScrollPane, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 296, Short_Integer'Last)).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)));
         layout := GroupLayout_Package.Create (GenericProfileActionsJPanel_Access'(This'Unchecked_Access));
         GenericProfileActionsJPanel'Class (This).setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.genericProfileActionsJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 596, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)));
-        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.genericProfileActionsJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 336, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.genericProfileActionsJPanel_Var, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 596, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)));
+        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.genericProfileActionsJPanel_Var, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 336, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
    end initComponents;
 
    procedure setModel (This : in out GenericProfileActionsJPanel) is

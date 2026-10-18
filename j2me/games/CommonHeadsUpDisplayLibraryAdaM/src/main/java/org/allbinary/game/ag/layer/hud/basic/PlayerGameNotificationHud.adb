@@ -44,8 +44,8 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
       
       This.gameNotification := GameNotification_Package.Create;
       This.permanentGameNotification := GameNotification_Package.Create;
-      This.setAndRemoveProcessor := Processor_Access (SetAndRemoveProcessor_Package.Create (PlayerGameNotificationHud_Access'(This'Unchecked_Access)));
-      This.nextUnremoveableProcessor := Processor_Access (NextUnremoveableProcessor_Package.Create (PlayerGameNotificationHud_Access'(This'Unchecked_Access)));
+      This.setAndRemoveProcessor_Var := Processor_Access (SetAndRemoveProcessor_Package.Create (PlayerGameNotificationHud_Access'(This'Unchecked_Access)));
+      This.nextUnremoveableProcessor_Var := Processor_Access (NextUnremoveableProcessor_Package.Create (PlayerGameNotificationHud_Access'(This'Unchecked_Access)));
       This.processor := Processor_Package.getInstance;
       This.PERMANENT_GAME_NOTIFICATION := To_Unbounded_String ("Permanent Game Notification: ");
       This.lastString := StringUtil_Package.getInstance.EMPTY_STRING;
@@ -146,7 +146,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
    procedure setAndRemove (This : in out PlayerGameNotificationHud) is
    begin
         This.string_Id := Java_Unbox (This.gameNotification.stringList.removeAt (0));
-        This.processor := This.setAndRemoveProcessor;
+        This.processor := This.setAndRemoveProcessor_Var;
    end setAndRemove;
 
    --  throws Exception
@@ -172,7 +172,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
    begin
         index := This.circularIndexUtil.getIndex;
         This.string_Id := Java_Unbox (This.permanentGameNotification.stringList.objectArray (index));
-        This.processor := This.nextUnremoveableProcessor;
+        This.processor := This.nextUnremoveableProcessor_Var;
    end setNextUnremoveable;
 
    --  throws Exception
@@ -204,7 +204,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
    end paint;
 
    procedure getPoint (This : in out PlayerGameNotificationHud; x : Integer; y : Integer) is
-      Java_Result : constant GPoint_Access := PlayerGameNotificationHud'Class (This).getPoint (x, y);
+      Java_Result : constant GPoint_Access := PlayerGameNotificationHud'Class (This).getPoint (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

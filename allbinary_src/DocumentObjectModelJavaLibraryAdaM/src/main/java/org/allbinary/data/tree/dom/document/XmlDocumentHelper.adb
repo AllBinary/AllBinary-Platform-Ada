@@ -118,14 +118,14 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    end toString;
 
    procedure format (This : in out XmlDocumentHelper; xmlString : Unbounded_String) is
-      Java_Result : constant Unbounded_String := XmlDocumentHelper'Class (This).format (xmlString);
+      Java_Result : constant Unbounded_String := XmlDocumentHelper'Class (This).format (xmlString => xmlString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end format;
 
    procedure toString (document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Unbounded_String := toString (document_Param);
+      Java_Result : constant Unbounded_String := toString (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

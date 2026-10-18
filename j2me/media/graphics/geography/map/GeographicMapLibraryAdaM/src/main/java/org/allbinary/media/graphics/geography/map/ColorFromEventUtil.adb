@@ -63,7 +63,7 @@ package body org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Packa
    end getForegroundColor;
 
    procedure getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) is
-      Java_Result : constant BasicColor_Access := ColorFromEventUtil'Class (This).getForegroundColor (gameCanvasInterface_Param);
+      Java_Result : constant BasicColor_Access := ColorFromEventUtil'Class (This).getForegroundColor (gameCanvasInterface_Param => gameCanvasInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -55,7 +55,7 @@ package body org.allbinary.midlet.MidletExitProcessorFactory_Package is
    end getExitInstance;
 
    procedure getExitInstance (This : in out MidletExitProcessorFactory; midlet_Param : access MIDlet_Package.MIDlet'Class) is
-      Java_Result : constant Processor_Access := MidletExitProcessorFactory'Class (This).getExitInstance (midlet_Param);
+      Java_Result : constant Processor_Access := MidletExitProcessorFactory'Class (This).getExitInstance (midlet_Param => midlet_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

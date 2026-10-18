@@ -61,8 +61,8 @@ package org.allbinary.business.user.commerce.money.payment.Payment_Package is
       isDefault_Field : Boolean;
    end record;
 
-   procedure Initialize (This : in out Payment'Class; payment_Param : access HashMap_Package.HashMap'Class);
-   function Create (payment_Param : access HashMap_Package.HashMap'Class) return Payment_Access;
+   procedure Initialize (This : in out Payment'Class; payment_Var_Param : access HashMap_Package.HashMap'Class);
+   function Create (payment_Var_Param : access HashMap_Package.HashMap'Class) return Payment_Access;
    procedure Initialize (This : in out Payment'Class; request_Param : access ServletRequest_Package.ServletRequest'Class);
    function Create (request_Param : access ServletRequest_Package.ServletRequest'Class) return Payment_Access;
    procedure Initialize (This : in out Payment'Class);

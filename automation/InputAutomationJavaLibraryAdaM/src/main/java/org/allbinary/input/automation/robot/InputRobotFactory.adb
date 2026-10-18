@@ -38,7 +38,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
    --  throws Exception
    function getInstance return InputRobotFactory_Access is
    begin
-        return InputRobotFactory_Package.inputRobotFactory;
+        return InputRobotFactory_Package.inputRobotFactory_Var;
    end getInstance;
 
    procedure Initialize (This : in out InputRobotFactory'Class) is
@@ -187,7 +187,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
    end get;
 
    procedure get (This : in out InputRobotFactory; name : Unbounded_String) is
-      Java_Result : constant InputRobotInterface_Access := InputRobotFactory'Class (This).get (name);
+      Java_Result : constant InputRobotInterface_Access := InputRobotFactory'Class (This).get (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -195,7 +195,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
 
 begin
    null;
-   inputRobotFactory := InputRobotFactory_Package.Create;
+   inputRobotFactory_Var := InputRobotFactory_Package.Create;
 
 end org.allbinary.input.automation.robot.InputRobotFactory_Package;
 

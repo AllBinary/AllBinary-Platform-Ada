@@ -60,7 +60,7 @@ package body org.allbinary.logic.java.anyType.MethodUtil_Package is
    end viewAll;
 
    procedure viewAll (myClass : Ada.Tags.Tag; lineBreak : Unbounded_String) is
-      Java_Result : constant Unbounded_String := viewAll (myClass, lineBreak);
+      Java_Result : constant Unbounded_String := viewAll (myClass => myClass, lineBreak => lineBreak);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -256,7 +256,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
    end setVariable;
 
    procedure getVariable (This : in out RuntimeEnvironmentVariables; var : Unbounded_String) is
-      Java_Result : constant Unbounded_String := RuntimeEnvironmentVariables'Class (This).getVariable (var);
+      Java_Result : constant Unbounded_String := RuntimeEnvironmentVariables'Class (This).getVariable (var => var);
       pragma Unreferenced (Java_Result);
    begin
       null;

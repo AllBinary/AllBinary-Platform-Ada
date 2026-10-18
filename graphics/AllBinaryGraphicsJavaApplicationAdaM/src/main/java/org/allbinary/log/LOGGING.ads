@@ -36,7 +36,7 @@ package org.allbinary.log.LOGGING_Package is
    type LOGGING is new Java_Object with record
       name : Unbounded_String;
    end record;
-   logging : BasicArrayList_Access;
+   logging_Var : BasicArrayList_Access;
    GRAPHICSPAINT : LOGGING_Access;
    GRAPHICSCREATION : LOGGING_Access;
    GRAPHICSDELETION : LOGGING_Access;

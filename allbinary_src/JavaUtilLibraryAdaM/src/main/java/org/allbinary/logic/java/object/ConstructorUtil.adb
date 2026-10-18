@@ -80,14 +80,14 @@ package body org.allbinary.logic.java.anyType.ConstructorUtil_Package is
    end view;
 
    procedure viewAll (myClass : Ada.Tags.Tag; lineBreak : Unbounded_String) is
-      Java_Result : constant Unbounded_String := viewAll (myClass, lineBreak);
+      Java_Result : constant Unbounded_String := viewAll (myClass => myClass, lineBreak => lineBreak);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end viewAll;
 
    procedure view (constructor_Param : access Constructor_Package.Constructor'Class; lineBreak : Unbounded_String) is
-      Java_Result : constant Unbounded_String := view (constructor_Param, lineBreak);
+      Java_Result : constant Unbounded_String := view (constructor_Param => constructor_Param, lineBreak => lineBreak);
       pragma Unreferenced (Java_Result);
    begin
       null;

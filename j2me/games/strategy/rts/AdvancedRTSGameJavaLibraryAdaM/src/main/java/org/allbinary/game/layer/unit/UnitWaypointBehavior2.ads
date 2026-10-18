@@ -78,7 +78,7 @@ package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
       waitingOnTargetPath : Boolean;
       waitingOnWaypointPath : Boolean;
       targetWithoutCachedPathLayerInterface : CollidableDestroyableDamageableLayer_Access;
-      buildingSteeringVisitor : BuildingSteeringVisitor_Access;
+      buildingSteeringVisitor_Var : BuildingSteeringVisitor_Access;
    end record;
    runningWaypointPathList : BasicArrayList_Access;
    TARGET_DISTANCE : Unbounded_String;

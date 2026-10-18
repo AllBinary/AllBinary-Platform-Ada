@@ -251,7 +251,7 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
         keySet := hashMap.keySet;
         keyArray := keySet.toArray;
         size := keyArray'Length;
-        node := document.createElement (OrderData_Package.ORDER);
+        node := document.createElement (OrderData_Package.ORDER_Var);
         for i in 0 .. (size) - 1 loop
             name := Java_Unbox (keyArray (i));
             value := Java_Unbox (hashMap.get (Java_Box (name)));
@@ -262,28 +262,28 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
    end toXmlNode;
 
    procedure reviewOrder (This : in out Order; paymentMethod : Unbounded_String) is
-      Java_Result : constant Unbounded_String := Order'Class (This).reviewOrder (paymentMethod);
+      Java_Result : constant Unbounded_String := Order'Class (This).reviewOrder (paymentMethod => paymentMethod);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end reviewOrder;
 
    procedure viewOrder (This : in out Order; paymentMethod : Unbounded_String) is
-      Java_Result : constant Unbounded_String := Order'Class (This).viewOrder (paymentMethod);
+      Java_Result : constant Unbounded_String := Order'Class (This).viewOrder (paymentMethod => paymentMethod);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end viewOrder;
 
    procedure emailOrder (This : in out Order; userName : Unbounded_String; paymentMethod : Unbounded_String; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
-      Java_Result : constant Unbounded_String := Order'Class (This).emailOrder (userName, paymentMethod, storeFrontInterface_Param);
+      Java_Result : constant Unbounded_String := Order'Class (This).emailOrder (userName => userName, paymentMethod => paymentMethod, storeFrontInterface_Param => storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end emailOrder;
 
    procedure toXmlNode (This : in out Order; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := Order'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := Order'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

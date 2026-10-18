@@ -77,14 +77,14 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFac
    end isPath;
 
    procedure get (This : in out GeographicMapCellTypeFactory; type_Id : Integer) is
-      Java_Result : constant GeographicMapCellType_Access := GeographicMapCellTypeFactory'Class (This).get (type_Id);
+      Java_Result : constant GeographicMapCellType_Access := GeographicMapCellTypeFactory'Class (This).get (type_Id => type_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure isPath (This : in out GeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) is
-      Java_Result : constant Boolean := GeographicMapCellTypeFactory'Class (This).isPath (cellType_Param);
+      Java_Result : constant Boolean := GeographicMapCellTypeFactory'Class (This).isPath (cellType_Param => cellType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

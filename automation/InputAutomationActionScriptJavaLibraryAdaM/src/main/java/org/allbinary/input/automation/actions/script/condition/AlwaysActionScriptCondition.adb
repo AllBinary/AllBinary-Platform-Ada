@@ -139,14 +139,14 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    end log;
 
    procedure toXmlNode (This : in out AlwaysActionScriptCondition; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := AlwaysActionScriptCondition'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := AlwaysActionScriptCondition'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
    procedure shouldProcess (This : in out AlwaysActionScriptCondition; frame : Long_Long_Integer) is
-      Java_Result : constant Boolean := AlwaysActionScriptCondition'Class (This).shouldProcess (frame);
+      Java_Result : constant Boolean := AlwaysActionScriptCondition'Class (This).shouldProcess (frame => frame);
       pragma Unreferenced (Java_Result);
    begin
       null;

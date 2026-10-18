@@ -38,7 +38,7 @@ package body org.allbinary.business.category.Category_Package is
       This.childCategoryVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.typeVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
       This.PROPERTIES := 1;
-      This.CATEGORY := 0;
+      This.CATEGORY_Var := 0;
    end Initialize_Fields;
 
 
@@ -46,7 +46,7 @@ package body org.allbinary.business.category.Category_Package is
       categoryPropertiesFactoryInterface : constant CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
    begin
       Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY_Var) then
             This.logUtil.putF (This.commonStrings.CONSTRUCTOR, Category_Access'(This'Unchecked_Access), To_Unbounded_String ("Category(CategoryPropertiesFactoryInterface)"));
         end if;
         This.categoryPropertiesInterface := categoryPropertiesFactoryInterface.getInstance;
@@ -148,14 +148,14 @@ package body org.allbinary.business.category.Category_Package is
       childCategoryHierarchyInterface : CategoryHierarchyInterface_Access;
    begin
         Category'Class (This).removeDuplicateChild (categoryInterface);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY_Var) then
             This.logUtil.putF (To_Unbounded_String ("adding"), Category_Access'(This'Unchecked_Access), To_Unbounded_String ("addChild"));
         end if;
         childCategoryHierarchyInterface := categoryInterface.getHierarchy;
         childCategoryHierarchyInterface.setParent (Category_Access'(This'Unchecked_Access));
         childCategoryHierarchyInterface.setRoot (Category'Class (This).getHierarchy.getRoot);
         categoryInterface.setHierarchy (childCategoryHierarchyInterface);
-        This.typeVector.add (This.CATEGORY);
+        This.typeVector.add (This.CATEGORY_Var);
         return This.childCategoryVector.add (Java_Object_Access (categoryInterface));
    end addChild;
 
@@ -177,7 +177,7 @@ package body org.allbinary.business.category.Category_Package is
         bool_return := False;
         size := This.childCategoryVector.size;
         for index in 0 .. (size) - 1 loop
-            if (This.CATEGORY) = (This.typeVector.get (index)) then
+            if (This.CATEGORY_Var) = (This.typeVector.get (index)) then
                 anyType := This.childCategoryVector.get (index);
                 currentCategoryInterface := CategoryInterface_Access (anyType);
                 if (currentCategoryInterface.getProperties.getValue.compareTo (categoryInterface.getProperties.getValue)) = (0) then
@@ -228,7 +228,7 @@ package body org.allbinary.business.category.Category_Package is
                     bool_return := True;
                     exit;
                 end if;
-            elsif (This.CATEGORY) = (This.typeVector.get (index)) then
+            elsif (This.CATEGORY_Var) = (This.typeVector.get (index)) then
                 existingCategoryInterface := CategoryInterface_Access (anyType);
                 categoryPropertiesInterface := existingCategoryInterface.getProperties;
                 if (categoryInterface.getProperties.getValue.compareTo (categoryPropertiesInterface.getValue)) = (0) then
@@ -296,7 +296,7 @@ package body org.allbinary.business.category.Category_Package is
                 if not (categoryPropertiesInterface.isValid.booleanValue) then
                     return False;
                 end if;
-            elsif (This.CATEGORY) = (This.typeVector.get (index)) then
+            elsif (This.CATEGORY_Var) = (This.typeVector.get (index)) then
                 categoryInterface := CategoryInterface_Access (anyType);
                 if not (categoryInterface.isValid.booleanValue) then
                     return False;
@@ -346,7 +346,7 @@ package body org.allbinary.business.category.Category_Package is
    procedure log (This : in out Category) is
       stringBuffer : StringMaker_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY_Var) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("Category Name: "));
             stringBuffer.append (This.categoryPropertiesInterface.getValue);
@@ -359,35 +359,35 @@ package body org.allbinary.business.category.Category_Package is
    end log;
 
    procedure addChildProperty (This : in out Category; categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) is
-      Java_Result : constant Boolean := Category'Class (This).addChildProperty (categoryPropertiesInterface_Param);
+      Java_Result : constant Boolean := Category'Class (This).addChildProperty (categoryPropertiesInterface_Param => categoryPropertiesInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addChildProperty;
 
    procedure addChild (This : in out Category; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
-      Java_Result : constant Boolean := Category'Class (This).addChild (categoryInterface_Param);
+      Java_Result : constant Boolean := Category'Class (This).addChild (categoryInterface_Param => categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addChild;
 
    procedure removeChild (This : in out Category; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
-      Java_Result : constant Boolean := Category'Class (This).removeChild (categoryInterface_Param);
+      Java_Result : constant Boolean := Category'Class (This).removeChild (categoryInterface_Param => categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end removeChild;
 
    procedure removeDuplicateChild (This : in out Category; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
-      Java_Result : constant Boolean := Category'Class (This).removeDuplicateChild (categoryInterface_Param);
+      Java_Result : constant Boolean := Category'Class (This).removeDuplicateChild (categoryInterface_Param => categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end removeDuplicateChild;
 
    procedure toValidationInfoNode (This : in out Category; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := Category'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := Category'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

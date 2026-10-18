@@ -90,14 +90,14 @@ package body org.allbinary.game.layer.TileLayerItem_Package is
    end paintUnselected;
 
    procedure getPrefContentHeight (This : in out TileLayerItem; width : Integer) is
-      Java_Result : constant Integer := TileLayerItem'Class (This).getPrefContentHeight (width);
+      Java_Result : constant Integer := TileLayerItem'Class (This).getPrefContentHeight (width => width);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPrefContentHeight;
 
    procedure getPrefContentWidth (This : in out TileLayerItem; height : Integer) is
-      Java_Result : constant Integer := TileLayerItem'Class (This).getPrefContentWidth (height);
+      Java_Result : constant Integer := TileLayerItem'Class (This).getPrefContentWidth (height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;

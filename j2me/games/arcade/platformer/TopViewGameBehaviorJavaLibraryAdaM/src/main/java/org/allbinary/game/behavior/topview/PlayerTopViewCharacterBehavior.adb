@@ -74,7 +74,7 @@ package body org.allbinary.game.behavior.topview.PlayerTopViewCharacterBehavior_
    end isTiledLayerMoveable;
 
    procedure isTiledLayerMoveable (This : in out PlayerTopViewCharacterBehavior; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; y : Integer) is
-      Java_Result : constant Boolean := PlayerTopViewCharacterBehavior'Class (This).isTiledLayerMoveable (terrainTiledLayer_Param, x, y);
+      Java_Result : constant Boolean := PlayerTopViewCharacterBehavior'Class (This).isTiledLayerMoveable (terrainTiledLayer_Param => terrainTiledLayer_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

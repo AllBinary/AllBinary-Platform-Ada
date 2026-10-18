@@ -36,10 +36,10 @@ package body org.allbinary.business.user.commerce.money.payment.types.Transactio
       return This;
    end Create;
 
-   function isEqual (This : in out TransactionType; transactionType_Param : access TransactionType_Package.TransactionType'Class) return Boolean is
-      transactionType : constant TransactionType_Access := TransactionType_Access (transactionType_Param);
+   function isEqual (This : in out TransactionType; transactionType_Var_Param : access TransactionType_Package.TransactionType'Class) return Boolean is
+      transactionType_Var : constant TransactionType_Access := TransactionType_Access (transactionType_Var_Param);
    begin
-        if (Java_Compare_To (TransactionType'Class (This).toString, transactionType.toString)) = (0) then
+        if (Java_Compare_To (TransactionType'Class (This).toString, transactionType_Var.toString)) = (0) then
             return True;
         else
             return False;
@@ -52,8 +52,8 @@ package body org.allbinary.business.user.commerce.money.payment.types.Transactio
         return This.name;
    end toString;
 
-   procedure isEqual (This : in out TransactionType; transactionType_Param : access TransactionType_Package.TransactionType'Class) is
-      Java_Result : constant Boolean := TransactionType'Class (This).isEqual (transactionType_Param);
+   procedure isEqual (This : in out TransactionType; transactionType_Var_Param : access TransactionType_Package.TransactionType'Class) is
+      Java_Result : constant Boolean := TransactionType'Class (This).isEqual (transactionType_Var_Param => transactionType_Var_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

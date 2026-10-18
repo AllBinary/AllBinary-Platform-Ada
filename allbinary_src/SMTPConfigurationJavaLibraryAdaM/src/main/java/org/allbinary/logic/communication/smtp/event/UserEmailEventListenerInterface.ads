@@ -26,7 +26,7 @@ with org.allbinary.logic.communication.smtp.event.EmailEvent_Package; use org.al
 package org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package is
 
 
-   type UserEmailEventListenerInterface is interface and EventListener;
+   type UserEmailEventListenerInterface is interface;
    type UserEmailEventListenerInterface_Access is access all UserEmailEventListenerInterface'Class;
    type UserEmailEventListenerInterface_Access_Array is array (Natural range <>) of UserEmailEventListenerInterface_Access;
    type UserEmailEventListenerInterface_Access_Array_Access is access all UserEmailEventListenerInterface_Access_Array;

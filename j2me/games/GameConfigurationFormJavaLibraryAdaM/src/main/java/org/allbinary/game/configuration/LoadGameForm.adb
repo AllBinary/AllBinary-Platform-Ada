@@ -144,7 +144,7 @@ package body org.allbinary.game.configuration.LoadGameForm_Package is
    end getSelectedText;
 
    procedure getChoiceGroup (This : in out LoadGameForm; list_Param : access BasicArrayList_Package.BasicArrayList'Class; name : Unbounded_String; option : Integer) is
-      Java_Result : constant ChoiceGroup_Access := LoadGameForm'Class (This).getChoiceGroup (list_Param, name, option);
+      Java_Result : constant ChoiceGroup_Access := LoadGameForm'Class (This).getChoiceGroup (list_Param => list_Param, name => name, option => option);
       pragma Unreferenced (Java_Result);
    begin
       null;

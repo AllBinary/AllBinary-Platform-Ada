@@ -44,7 +44,7 @@ package body org.allbinary.media.image.cache.BufferedImageCacheableFactory_Packa
    end getInstance;
 
    procedure getInstance (This : in out BufferedImageCacheableFactory; key_Param : access Java_Object'Class) is
-      Java_Result : constant CacheableInterface_Access := BufferedImageCacheableFactory'Class (This).getInstance (key_Param);
+      Java_Result : constant CacheableInterface_Access := BufferedImageCacheableFactory'Class (This).getInstance (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

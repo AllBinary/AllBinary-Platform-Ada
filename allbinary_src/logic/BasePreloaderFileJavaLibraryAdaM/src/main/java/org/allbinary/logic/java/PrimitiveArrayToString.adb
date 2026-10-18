@@ -48,7 +48,7 @@ package body org.allbinary.logic.java.PrimitiveArrayToString_Package is
    end toString;
 
    procedure toString (floats : Float_Array_Access) is
-      Java_Result : constant Unbounded_String := toString (floats);
+      Java_Result : constant Unbounded_String := toString (floats => floats);
       pragma Unreferenced (Java_Result);
    begin
       null;

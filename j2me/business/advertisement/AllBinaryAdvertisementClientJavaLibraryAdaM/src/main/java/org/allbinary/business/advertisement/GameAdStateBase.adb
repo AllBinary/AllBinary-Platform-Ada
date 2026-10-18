@@ -156,7 +156,7 @@ package body org.allbinary.business.advertisement.GameAdStateBase_Package is
    end isEnabled;
 
    procedure isShowingAtLocation (This : in out GameAdStateBase; location : Integer) is
-      Java_Result : constant Boolean := GameAdStateBase'Class (This).isShowingAtLocation (location);
+      Java_Result : constant Boolean := GameAdStateBase'Class (This).isShowingAtLocation (location => location);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -53,7 +53,7 @@ package body org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
    end createFakeRTSLayerHashtable;
 
    procedure createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap_Package.BaseRaceTrackGeographicMap'Class) is
-      Java_Result : constant ABHashtable_Access := AdvancedRTSLayerUtil'Class (This).createFakeRTSLayerHashtable (baseRaceTrackGeographicMap_Param);
+      Java_Result : constant ABHashtable_Access := AdvancedRTSLayerUtil'Class (This).createFakeRTSLayerHashtable (baseRaceTrackGeographicMap_Param => baseRaceTrackGeographicMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

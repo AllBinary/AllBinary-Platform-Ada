@@ -33,7 +33,7 @@ package org.allbinary.logic.io.NullCloseable_Package is
    type NullCloseable_Access_Array_Access_Array is array (Natural range <>) of NullCloseable_Access_Array_Access;
    type NullCloseable_Access_Array_Access_Array_Access is access all NullCloseable_Access_Array_Access_Array;
 
-   type NullCloseable is new Java_Object and Closeable with null record;
+   type NullCloseable is new Java_Object with null record;
    NULL_CLOSEABLE : NullCloseable_Access;
 
    procedure Initialize (This : in out NullCloseable'Class);

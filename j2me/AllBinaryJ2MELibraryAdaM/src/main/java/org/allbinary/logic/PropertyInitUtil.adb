@@ -51,7 +51,7 @@ package body org.allbinary.logic.PropertyInitUtil_Package is
    end getInstance;
 
    procedure getInstance (value : Integer) is
-      Java_Result : constant PropertyInitUtil_Access := getInstance (value);
+      Java_Result : constant PropertyInitUtil_Access := getInstance (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;

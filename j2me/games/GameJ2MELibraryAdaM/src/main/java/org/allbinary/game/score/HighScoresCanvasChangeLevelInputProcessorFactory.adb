@@ -42,7 +42,7 @@ package body org.allbinary.game.score.HighScoresCanvasChangeLevelInputProcessorF
    end getInstance;
 
    procedure getInstance (This : in out HighScoresCanvasChangeLevelInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) is
-      Java_Result : constant HighScoresCanvasInputProcessor_Access := HighScoresCanvasChangeLevelInputProcessorFactory'Class (This).getInstance (highScoresCanvas_Param);
+      Java_Result : constant HighScoresCanvasInputProcessor_Access := HighScoresCanvasChangeLevelInputProcessorFactory'Class (This).getInstance (highScoresCanvas_Param => highScoresCanvas_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

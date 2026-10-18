@@ -112,7 +112,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end setGenericProfileActionScript;
 
    procedure toXmlNode (This : in out GenericProfileAction; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := GenericProfileAction'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := GenericProfileAction'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -37,7 +37,7 @@ package org.allbinary.business.user.username.UserName_Package is
 
    type UserName is new Java_Object with record
       logUtil : LogUtil_Access;
-      userName : Unbounded_String;
+      userName_Var : Unbounded_String;
    end record;
    instance : UserName_Access;
 

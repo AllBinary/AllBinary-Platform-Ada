@@ -66,7 +66,7 @@ package body org.allbinary.game.layer.LayerUtil_Package is
    end toString;
 
    procedure toString (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant Unbounded_String := toString (hashtable_Param, x, y, z);
+      Java_Result : constant Unbounded_String := toString (hashtable_Param => hashtable_Param, x => x, y => y, z => z);
       pragma Unreferenced (Java_Result);
    begin
       null;

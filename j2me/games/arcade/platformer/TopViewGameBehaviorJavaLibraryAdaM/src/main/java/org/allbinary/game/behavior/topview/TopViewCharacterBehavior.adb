@@ -68,7 +68,7 @@ package body org.allbinary.game.behavior.topview.TopViewCharacterBehavior_Packag
    end hasSolidBlock;
 
    procedure hasSolidBlock (This : in out TopViewCharacterBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access) is
-      Java_Result : constant Boolean := TopViewCharacterBehavior'Class (This).hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
+      Java_Result : constant Boolean := TopViewCharacterBehavior'Class (This).hasSolidBlock (geographicMapInterfaceArray => geographicMapInterfaceArray, geographicMapCellTypeArray => geographicMapCellTypeArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -58,7 +58,7 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Pack
    end getInstance;
 
    procedure getInstance (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle_Package.Rectangle'Class; formType_Param : access FormType_Package.FormType'Class; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant ScrollSelectionForm_Access := getInstance (title, items, rectangle_Param, formType_Param, border, moveForSmallScreen, backgroundBasicColor_Param, foregroundBasicColor_Param);
+      Java_Result : constant ScrollSelectionForm_Access := getInstance (title => title, items => items, rectangle_Param => rectangle_Param, formType_Param => formType_Param, border => border, moveForSmallScreen => moveForSmallScreen, backgroundBasicColor_Param => backgroundBasicColor_Param, foregroundBasicColor_Param => foregroundBasicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

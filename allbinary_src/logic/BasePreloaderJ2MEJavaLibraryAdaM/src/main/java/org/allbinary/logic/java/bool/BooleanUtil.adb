@@ -94,21 +94,21 @@ package body org.allbinary.logic.java.bool.BooleanUtil_Package is
    end toStringFromBooleanArray;
 
    procedure getFromString (This : in out BooleanUtil; booleanString : Unbounded_String) is
-      Java_Result : constant Boolean := BooleanUtil'Class (This).getFromString (booleanString);
+      Java_Result : constant Boolean := BooleanUtil'Class (This).getFromString (booleanString => booleanString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFromString;
 
    procedure isStringBoolean (This : in out BooleanUtil; booleanString : Unbounded_String) is
-      Java_Result : constant Boolean := BooleanUtil'Class (This).isStringBoolean (booleanString);
+      Java_Result : constant Boolean := BooleanUtil'Class (This).isStringBoolean (booleanString => booleanString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isStringBoolean;
 
    procedure toStringFromBooleanArray (This : in out BooleanUtil; booleanArray : Boolean_Array_Access) is
-      Java_Result : constant Unbounded_String := BooleanUtil'Class (This).toStringFromBooleanArray (booleanArray);
+      Java_Result : constant Unbounded_String := BooleanUtil'Class (This).toStringFromBooleanArray (booleanArray => booleanArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

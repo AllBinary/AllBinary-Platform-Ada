@@ -45,8 +45,8 @@ package org.allbinary.logic.visual.media.MediaData_Package is
    function getName (This : in out MediaData) return Unbounded_String;
    function getType (This : in out MediaData) return Unbounded_String;
    function getExtension (This : in out MediaData) return Unbounded_String;
-   function isConvertableTo (This : in out MediaData; mediaData_Param : access MediaData_Package.MediaData'Class) return Boolean;
-   procedure isConvertableTo (This : in out MediaData; mediaData_Param : access MediaData_Package.MediaData'Class);
+   function isConvertableTo (This : in out MediaData; mediaData_Var_Param : access MediaData_Package.MediaData'Class) return Boolean;
+   procedure isConvertableTo (This : in out MediaData; mediaData_Var_Param : access MediaData_Package.MediaData'Class);
    function toString (This : in out MediaData) return Unbounded_String;
    function get (a_Name : Unbounded_String) return MediaData_Access;
    procedure get (a_Name : Unbounded_String);

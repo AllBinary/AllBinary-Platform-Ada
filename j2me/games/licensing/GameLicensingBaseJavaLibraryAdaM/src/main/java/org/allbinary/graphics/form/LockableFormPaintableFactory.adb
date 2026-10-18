@@ -46,7 +46,7 @@ package body org.allbinary.graphics.form.LockableFormPaintableFactory_Package is
    end getInstanceItemPaintable;
 
    procedure getInstanceItemPaintable (This : in out LockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class) is
-      Java_Result : constant ItemPaintable_Access := LockableFormPaintableFactory'Class (This).getInstanceItemPaintable (paintableForm_Param);
+      Java_Result : constant ItemPaintable_Access := LockableFormPaintableFactory'Class (This).getInstanceItemPaintable (paintableForm_Param => paintableForm_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

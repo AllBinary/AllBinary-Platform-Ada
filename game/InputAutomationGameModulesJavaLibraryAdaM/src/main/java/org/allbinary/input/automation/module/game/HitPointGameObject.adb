@@ -101,7 +101,7 @@ package body org.allbinary.input.automation.module.game.HitPointGameObject_Packa
    end toString;
 
    procedure isMoreThan (This : in out HitPointGameObject; aFloat : Float) is
-      Java_Result : constant Boolean := HitPointGameObject'Class (This).isMoreThan (aFloat);
+      Java_Result : constant Boolean := HitPointGameObject'Class (This).isMoreThan (aFloat => aFloat);
       pragma Unreferenced (Java_Result);
    begin
       null;

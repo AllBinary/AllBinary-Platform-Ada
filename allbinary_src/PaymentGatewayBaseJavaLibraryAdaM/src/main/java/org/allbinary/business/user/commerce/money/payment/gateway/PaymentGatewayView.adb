@@ -86,7 +86,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end toXmlNode;
 
    procedure toXmlNode (This : in out PaymentGatewayView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := PaymentGatewayView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := PaymentGatewayView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -209,98 +209,98 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
    end removeNameFromPath;
 
    procedure getExtension (This : in out AbPathUtilOld; abFilePath_Param : access AbFilePath_Package.AbFilePath'Class) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getExtension (abFilePath_Param);
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getExtension (abFilePath_Param => abFilePath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getExtension;
 
    procedure getExtension (This : in out AbPathUtilOld; abPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getExtension (abPath_Param);
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getExtension (abPath_Param => abPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getExtension;
 
    procedure getExtension (This : in out AbPathUtilOld; filePath : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getExtension (filePath);
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getExtension (filePath => filePath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getExtension;
 
    procedure getWithoutExtension (This : in out AbPathUtilOld; abFilePath_Param : access AbFilePath_Package.AbFilePath'Class) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getWithoutExtension (abFilePath_Param);
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getWithoutExtension (abFilePath_Param => abFilePath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWithoutExtension;
 
    procedure getWithoutExtension (This : in out AbPathUtilOld; abPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getWithoutExtension (abPath_Param);
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getWithoutExtension (abPath_Param => abPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWithoutExtension;
 
    procedure getWithoutExtension (This : in out AbPathUtilOld; filePath : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getWithoutExtension (filePath);
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getWithoutExtension (filePath => filePath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWithoutExtension;
 
    procedure isValid (This : in out AbPathUtilOld; path : Unbounded_String) is
-      Java_Result : constant Boolean := AbPathUtilOld'Class (This).isValid (path);
+      Java_Result : constant Boolean := AbPathUtilOld'Class (This).isValid (path => path);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isValid;
 
    procedure isValidStart (This : in out AbPathUtilOld; path : Unbounded_String) is
-      Java_Result : constant Boolean := AbPathUtilOld'Class (This).isValidStart (path);
+      Java_Result : constant Boolean := AbPathUtilOld'Class (This).isValidStart (path => path);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isValidStart;
 
    procedure isValidEnd (This : in out AbPathUtilOld; path : Unbounded_String) is
-      Java_Result : constant Boolean := AbPathUtilOld'Class (This).isValidEnd (path);
+      Java_Result : constant Boolean := AbPathUtilOld'Class (This).isValidEnd (path => path);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isValidEnd;
 
    procedure adjustStart (This : in out AbPathUtilOld; path_Param : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjustStart (path_Param);
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjustStart (path_Param => path_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end adjustStart;
 
    procedure adjustEnd (This : in out AbPathUtilOld; path_Param : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjustEnd (path_Param);
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjustEnd (path_Param => path_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end adjustEnd;
 
    procedure adjust (This : in out AbPathUtilOld; path_Param : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjust (path_Param);
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).adjust (path_Param => path_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end adjust;
 
    procedure getNameFromPath (This : in out AbPathUtilOld; categoryPath : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getNameFromPath (categoryPath);
+      Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getNameFromPath (categoryPath => categoryPath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNameFromPath;
 
    procedure removeNameFromPath (This : in out AbPathUtilOld; categoryPath : Unbounded_String) is
-      Java_Result : constant AbPath_Access := AbPathUtilOld'Class (This).removeNameFromPath (categoryPath);
+      Java_Result : constant AbPath_Access := AbPathUtilOld'Class (This).removeNameFromPath (categoryPath => categoryPath);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -97,14 +97,14 @@ package body org.allbinary.math.AngleIncrementInfo_Package is
    end getClosestGeneralDirection;
 
    procedure getFrameAngle (This : in out AngleIncrementInfo; frame : Integer) is
-      Java_Result : constant Integer := AngleIncrementInfo'Class (This).getFrameAngle (frame);
+      Java_Result : constant Integer := AngleIncrementInfo'Class (This).getFrameAngle (frame => frame);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFrameAngle;
 
    procedure getClosestGeneralDirection (This : in out AngleIncrementInfo; angle : Short_Integer) is
-      Java_Result : constant Integer := AngleIncrementInfo'Class (This).getClosestGeneralDirection (angle);
+      Java_Result : constant Integer := AngleIncrementInfo'Class (This).getClosestGeneralDirection (angle => angle);
       pragma Unreferenced (Java_Result);
    begin
       null;

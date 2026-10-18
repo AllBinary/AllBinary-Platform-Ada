@@ -178,14 +178,14 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    end toggle;
 
    procedure isDefault (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
-      Java_Result : constant Boolean := Features'Class (This).isDefault (gameFeature_Param);
+      Java_Result : constant Boolean := Features'Class (This).isDefault (gameFeature_Param => gameFeature_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDefault;
 
    procedure isFeature (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
-      Java_Result : constant Boolean := Features'Class (This).isFeature (gameFeature_Param);
+      Java_Result : constant Boolean := Features'Class (This).isFeature (gameFeature_Param => gameFeature_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

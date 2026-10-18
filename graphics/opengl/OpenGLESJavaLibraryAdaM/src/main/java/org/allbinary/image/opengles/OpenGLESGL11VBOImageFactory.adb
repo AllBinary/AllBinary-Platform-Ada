@@ -45,7 +45,7 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out OpenGLESGL11VBOImageFactory; image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) is
-      Java_Result : constant Image_Access := OpenGLESGL11VBOImageFactory'Class (This).getInstance (image_Param, bitmapFactory_Param, textureFactory_Param);
+      Java_Result : constant Image_Access := OpenGLESGL11VBOImageFactory'Class (This).getInstance (image_Param => image_Param, bitmapFactory_Param => bitmapFactory_Param, textureFactory_Param => textureFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

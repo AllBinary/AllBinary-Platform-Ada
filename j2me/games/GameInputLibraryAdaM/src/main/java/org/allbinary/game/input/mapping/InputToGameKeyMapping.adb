@@ -79,15 +79,15 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
         InputToGameKeyMapping'Class (This).clear;
    end removeAll;
 
-   procedure addMapping (This : in out InputToGameKeyMapping; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
-      inputToGameKeyMapping : constant InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
+   procedure addMapping (This : in out InputToGameKeyMapping; inputToGameKeyMapping_Var_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
+      inputToGameKeyMapping_Var : constant InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Var_Param);
       input : Input_Access;
       index : Integer;
    begin
-        for index in reverse 0 .. (inputToGameKeyMapping.getMaxMappable) - (1) loop
-            input := inputToGameKeyMapping.getInstance (index);
+        for index in reverse 0 .. (inputToGameKeyMapping_Var.getMaxMappable) - (1) loop
+            input := inputToGameKeyMapping_Var.getInstance (index);
             if (input) /= (This.gameKeyFactory.NONE) then
-                InputToGameKeyMapping'Class (This).addAll (input, inputToGameKeyMapping.getMappedInput (input));
+                InputToGameKeyMapping'Class (This).addAll (input, inputToGameKeyMapping_Var.getMappedInput (input));
             end if;
         end loop;
    end addMapping;
@@ -252,28 +252,28 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    end getInstance;
 
    procedure getReverseInstance (This : in out InputToGameKeyMapping; id : Integer) is
-      Java_Result : constant BasicArrayList_Access := InputToGameKeyMapping'Class (This).getReverseInstance (id);
+      Java_Result : constant BasicArrayList_Access := InputToGameKeyMapping'Class (This).getReverseInstance (id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getReverseInstance;
 
    procedure getSmallestCanvasGameKeyCode (This : in out InputToGameKeyMapping; canvas_Param : access Canvas_Package.Canvas'Class) is
-      Java_Result : constant Integer := InputToGameKeyMapping'Class (This).getSmallestCanvasGameKeyCode (canvas_Param);
+      Java_Result : constant Integer := InputToGameKeyMapping'Class (This).getSmallestCanvasGameKeyCode (canvas_Param => canvas_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSmallestCanvasGameKeyCode;
 
    procedure getInstanceForCanvas (This : in out InputToGameKeyMapping; canvas_Param : access Canvas_Package.Canvas'Class; id : Integer) is
-      Java_Result : constant GameKey_Access := InputToGameKeyMapping'Class (This).getInstanceForCanvas (canvas_Param, id);
+      Java_Result : constant GameKey_Access := InputToGameKeyMapping'Class (This).getInstanceForCanvas (canvas_Param => canvas_Param, id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceForCanvas;
 
    procedure getInstance (This : in out InputToGameKeyMapping; id : Integer) is
-      Java_Result : constant GameKey_Access := InputToGameKeyMapping'Class (This).getInstance (id);
+      Java_Result : constant GameKey_Access := InputToGameKeyMapping'Class (This).getInstance (id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;

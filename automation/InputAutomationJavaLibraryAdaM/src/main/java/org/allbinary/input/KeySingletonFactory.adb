@@ -82,7 +82,7 @@ package body org.allbinary.input.KeySingletonFactory_Package is
    end getArray;
 
    procedure getInstance (index : Integer) is
-      Java_Result : constant Integer := getInstance (index);
+      Java_Result : constant Integer := getInstance (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

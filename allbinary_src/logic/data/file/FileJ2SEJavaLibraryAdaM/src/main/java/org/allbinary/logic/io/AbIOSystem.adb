@@ -55,7 +55,7 @@ package body org.allbinary.logic.io.AbIOSystem_Package is
    end isType;
 
    procedure isType (This : in out AbIOSystem; type_Id : Unbounded_String) is
-      Java_Result : constant Boolean := AbIOSystem'Class (This).isType (type_Id);
+      Java_Result : constant Boolean := AbIOSystem'Class (This).isType (type_Id => type_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

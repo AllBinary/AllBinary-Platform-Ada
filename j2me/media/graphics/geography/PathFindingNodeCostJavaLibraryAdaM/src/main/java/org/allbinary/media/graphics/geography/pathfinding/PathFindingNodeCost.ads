@@ -48,8 +48,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_P
    function Create (parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) return PathFindingNodeCost_Access;
    function getPathFindingNodeCostInfo (This : in out PathFindingNodeCost) return PathFindingNodeCostInfo_Access;
    procedure setPathFindingNodeCostInfo (This : in out PathFindingNodeCost; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class);
-   function compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Param : access PathFindingNodeCost_Package.PathFindingNodeCost'Class) return Integer;
-   procedure compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Param : access PathFindingNodeCost_Package.PathFindingNodeCost'Class);
+   function compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Var_Param : access PathFindingNodeCost_Package.PathFindingNodeCost'Class) return Integer;
+   procedure compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Var_Param : access PathFindingNodeCost_Package.PathFindingNodeCost'Class);
    function toString (This : in out PathFindingNodeCost) return Unbounded_String;
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package;

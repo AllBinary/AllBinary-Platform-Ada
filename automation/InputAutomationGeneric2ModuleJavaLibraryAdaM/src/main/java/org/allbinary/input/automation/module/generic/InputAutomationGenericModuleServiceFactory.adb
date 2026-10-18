@@ -54,12 +54,12 @@ package body org.allbinary.input.automation.module.generic_Id.InputAutomationGen
 
    function getInstance return InputAutomationGenericModuleServiceFactory_Access is
    begin
-        return InputAutomationGenericModuleServiceFactory_Package.inputAutomationGenericModuleServiceFactory;
+        return InputAutomationGenericModuleServiceFactory_Package.inputAutomationGenericModuleServiceFactory_Var;
    end getInstance;
 
 begin
    null;
-   inputAutomationGenericModuleServiceFactory := InputAutomationGenericModuleServiceFactory_Package.Create;
+   inputAutomationGenericModuleServiceFactory_Var := InputAutomationGenericModuleServiceFactory_Package.Create;
 
 end org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package;
 

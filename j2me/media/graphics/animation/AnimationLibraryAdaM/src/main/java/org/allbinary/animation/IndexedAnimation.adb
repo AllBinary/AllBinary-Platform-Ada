@@ -99,12 +99,12 @@ package body org.allbinary.animation.IndexedAnimation_Package is
         return PrimitiveIntUtil_Package.getArrayInstance;
    end getSequence;
 
-   procedure setState (This : in out IndexedAnimation; indexedAnimation_Param : access IndexedAnimation_Package.IndexedAnimation'Class) is
-      indexedAnimation : constant IndexedAnimation_Access := IndexedAnimation_Access (indexedAnimation_Param);
+   procedure setState (This : in out IndexedAnimation; indexedAnimation_Var_Param : access IndexedAnimation_Package.IndexedAnimation'Class) is
+      indexedAnimation_Var : constant IndexedAnimation_Access := IndexedAnimation_Access (indexedAnimation_Var_Param);
    begin
-        IndexedAnimation'Class (This).setFrame (indexedAnimation.getFrame);
-        IndexedAnimation'Class (This).setDx (indexedAnimation.getDx);
-        IndexedAnimation'Class (This).setDy (indexedAnimation.getDy);
+        IndexedAnimation'Class (This).setFrame (indexedAnimation_Var.getFrame);
+        IndexedAnimation'Class (This).setDx (indexedAnimation_Var.getDx);
+        IndexedAnimation'Class (This).setDy (indexedAnimation_Var.getDy);
    end setState;
 
    function getWidth (This : in out IndexedAnimation) return Integer is

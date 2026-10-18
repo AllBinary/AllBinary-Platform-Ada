@@ -81,7 +81,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package is
    end setDestroyed;
 
    procedure getDamage (This : in out MineLayer; damageType : Integer) is
-      Java_Result : constant Integer := MineLayer'Class (This).getDamage (damageType);
+      Java_Result : constant Integer := MineLayer'Class (This).getDamage (damageType => damageType);
       pragma Unreferenced (Java_Result);
    begin
       null;

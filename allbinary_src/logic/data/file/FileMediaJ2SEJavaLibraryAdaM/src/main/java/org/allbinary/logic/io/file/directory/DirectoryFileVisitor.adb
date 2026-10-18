@@ -60,14 +60,14 @@ package body org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package 
    end visit;
 
    procedure accept_Id (This : in out DirectoryFileVisitor; arg0_Param : access File_Package.File'Class) is
-      Java_Result : constant Boolean := DirectoryFileVisitor'Class (This).accept_Id (arg0_Param);
+      Java_Result : constant Boolean := DirectoryFileVisitor'Class (This).accept_Id (arg0_Param => arg0_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end accept_Id;
 
    procedure visit (This : in out DirectoryFileVisitor; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := DirectoryFileVisitor'Class (This).visit (anyType_Param);
+      Java_Result : constant Java_Object_Access := DirectoryFileVisitor'Class (This).visit (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -45,7 +45,7 @@ package org.allbinary.media.audio.PCClipWavPlayer_Package is
    type PCClipWavPlayer_Access_Array_Access_Array is array (Natural range <>) of PCClipWavPlayer_Access_Array_Access;
    type PCClipWavPlayer_Access_Array_Access_Array_Access is access all PCClipWavPlayer_Access_Array_Access_Array;
 
-   type PCClipWavPlayer is new BasicPlayer and LineListener with record
+   type PCClipWavPlayer is new BasicPlayer with record
       logUtil : LogUtil_Access;
       audioInputStream : AudioInputStream_Access;
       clip : Clip_Access;

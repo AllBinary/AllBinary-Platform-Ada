@@ -163,42 +163,42 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
    end getLock;
 
    procedure getAll (This : in out FileLockUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; isReturnOnFailure : Boolean) is
-      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAll (vector_Param, isReturnOnFailure);
+      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAll (vector_Param => vector_Param, isReturnOnFailure => isReturnOnFailure);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
    procedure getAllPossible (This : in out FileLockUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAllPossible (vector_Param);
+      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAllPossible (vector_Param => vector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAllPossible;
 
    procedure getAllOrNone (This : in out FileLockUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAllOrNone (vector_Param);
+      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAllOrNone (vector_Param => vector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAllOrNone;
 
    procedure getLock (This : in out FileLockUtil; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (file_Param);
+      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLock;
 
    procedure getLock (This : in out FileLockUtil; fileOutputStream_Param : access AbFileOutputStream_Package.AbFileOutputStream'Class) is
-      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (fileOutputStream_Param);
+      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (fileOutputStream_Param => fileOutputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLock;
 
    procedure getLock (This : in out FileLockUtil; fileChannel_Param : access FileChannel_Package.FileChannel'Class) is
-      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (fileChannel_Param);
+      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (fileChannel_Param => fileChannel_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

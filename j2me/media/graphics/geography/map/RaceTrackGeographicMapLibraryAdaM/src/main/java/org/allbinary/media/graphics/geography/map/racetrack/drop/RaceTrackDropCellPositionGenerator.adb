@@ -144,7 +144,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    end drop;
 
    procedure isDropAllowedAt (This : in out RaceTrackDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := RaceTrackDropCellPositionGenerator'Class (This).isDropAllowedAt (geographicMapCellPosition_Param);
+      Java_Result : constant Boolean := RaceTrackDropCellPositionGenerator'Class (This).isDropAllowedAt (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -87,7 +87,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.processo
    end getInstance;
 
    procedure getInstance (This : in out PaymentProcessorInterfaceFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
-      Java_Result : constant PaymentProcessorInterface_Access := PaymentProcessorInterfaceFactory'Class (This).getInstance (transformInfoInterface_Param);
+      Java_Result : constant PaymentProcessorInterface_Access := PaymentProcessorInterfaceFactory'Class (This).getInstance (transformInfoInterface_Param => transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

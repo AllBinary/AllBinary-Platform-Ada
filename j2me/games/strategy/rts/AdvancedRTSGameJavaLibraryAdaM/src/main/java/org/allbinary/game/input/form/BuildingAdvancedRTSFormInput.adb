@@ -124,7 +124,7 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
    end add;
 
    procedure isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerInterface_Param : access RTSLayer_Package.RTSLayer'Class) is
-      Java_Result : constant Boolean := BuildingAdvancedRTSFormInput'Class (This).isBuildAttemptValid (rtsPlayerLayerInterface_Param, layerInterface_Param);
+      Java_Result : constant Boolean := BuildingAdvancedRTSFormInput'Class (This).isBuildAttemptValid (rtsPlayerLayerInterface_Param => rtsPlayerLayerInterface_Param, layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

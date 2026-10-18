@@ -56,7 +56,7 @@ package body org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package 
    end updateMeasurement;
 
    procedure getInstance (maxscore : Integer; location : Integer; direction : Integer) is
-      Java_Result : constant ScoreHudWidget_Access := getInstance (maxscore, location, direction);
+      Java_Result : constant ScoreHudWidget_Access := getInstance (maxscore => maxscore, location => location, direction => direction);
       pragma Unreferenced (Java_Result);
    begin
       null;

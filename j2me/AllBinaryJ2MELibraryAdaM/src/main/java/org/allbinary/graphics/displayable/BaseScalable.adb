@@ -55,21 +55,21 @@ package body org.allbinary.graphics.displayable.BaseScalable_Package is
    end scale;
 
    procedure getRatio (This : in out BaseScalable; ratio : Float) is
-      Java_Result : constant Float := BaseScalable'Class (This).getRatio (ratio);
+      Java_Result : constant Float := BaseScalable'Class (This).getRatio (ratio => ratio);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRatio;
 
    procedure getLeft (This : in out BaseScalable; xOffset : Integer) is
-      Java_Result : constant Integer := BaseScalable'Class (This).getLeft (xOffset);
+      Java_Result : constant Integer := BaseScalable'Class (This).getLeft (xOffset => xOffset);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLeft;
 
    procedure getTop (This : in out BaseScalable; yOffset : Integer) is
-      Java_Result : constant Integer := BaseScalable'Class (This).getTop (yOffset);
+      Java_Result : constant Integer := BaseScalable'Class (This).getTop (yOffset => yOffset);
       pragma Unreferenced (Java_Result);
    begin
       null;

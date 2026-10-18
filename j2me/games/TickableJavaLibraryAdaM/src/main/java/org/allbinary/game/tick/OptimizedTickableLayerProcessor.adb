@@ -58,7 +58,7 @@ package body org.allbinary.game.tick.OptimizedTickableLayerProcessor_Package is
    end isProcessorLayer;
 
    procedure isProcessorLayer (This : in out OptimizedTickableLayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant Boolean := OptimizedTickableLayerProcessor'Class (This).isProcessorLayer (layerInterface_Param);
+      Java_Result : constant Boolean := OptimizedTickableLayerProcessor'Class (This).isProcessorLayer (layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

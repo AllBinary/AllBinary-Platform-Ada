@@ -41,7 +41,7 @@ package body org.allbinary.logic.control.crypt.jcehelper.KeySpecFactory_Package 
    end getInstance;
 
    procedure getInstance (algorithm : Unbounded_String; keyData : Short_Short_Integer_Array_Access) is
-      Java_Result : constant KeySpec_Access := getInstance (algorithm, keyData);
+      Java_Result : constant KeySpec_Access := getInstance (algorithm => algorithm, keyData => keyData);
       pragma Unreferenced (Java_Result);
    begin
       null;

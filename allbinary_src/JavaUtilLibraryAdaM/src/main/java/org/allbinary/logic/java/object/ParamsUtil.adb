@@ -54,7 +54,7 @@ package body org.allbinary.logic.java.anyType.ParamsUtil_Package is
    end viewParams;
 
    procedure viewParams (params : Ada_Tags_Tag_Array_Access) is
-      Java_Result : constant Unbounded_String := viewParams (params);
+      Java_Result : constant Unbounded_String := viewParams (params => params);
       pragma Unreferenced (Java_Result);
    begin
       null;

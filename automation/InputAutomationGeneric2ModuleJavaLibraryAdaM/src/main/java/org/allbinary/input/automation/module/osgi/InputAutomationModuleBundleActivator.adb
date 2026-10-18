@@ -170,7 +170,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
    end setServiceFactory;
 
    procedure getInputAutomationConfigurationModuleChangeListener (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class) is
-      Java_Result : constant InputAutomationConfigurationModuleChangeListener_Access := InputAutomationModuleBundleActivator'Class (This).getInputAutomationConfigurationModuleChangeListener (context_Param);
+      Java_Result : constant InputAutomationConfigurationModuleChangeListener_Access := InputAutomationModuleBundleActivator'Class (This).getInputAutomationConfigurationModuleChangeListener (context_Param => context_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -60,7 +60,7 @@ package org.allbinary.business.category.Category_Package is
       childCategoryVector : BasicArrayList_Access;
       typeVector : BasicArrayList_Access;
       PROPERTIES : Integer;
-      CATEGORY : Integer;
+      CATEGORY_Var : Integer;
    end record;
    NOT_ROOT : Unbounded_String;
 

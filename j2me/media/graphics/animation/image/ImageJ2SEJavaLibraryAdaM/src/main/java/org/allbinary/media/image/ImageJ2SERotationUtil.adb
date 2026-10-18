@@ -148,49 +148,49 @@ package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
    end createSpriteImage;
 
    procedure getRotatedImage (This : in out ImageJ2SERotationUtil; bufferedImage_Param : access Image_Package.Image'Class; totalAngle : Integer) is
-      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).getRotatedImage (bufferedImage_Param, totalAngle);
+      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).getRotatedImage (bufferedImage_Param => bufferedImage_Param, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRotatedImage;
 
    procedure getRotatedImageRadians (This : in out ImageJ2SERotationUtil; bufferedImage_Param : access Image_Package.Image'Class; radians : Long_Float) is
-      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).getRotatedImageRadians (bufferedImage_Param, radians);
+      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).getRotatedImageRadians (bufferedImage_Param => bufferedImage_Param, radians => radians);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRotatedImageRadians;
 
    procedure drawRotatedImageRadians (This : in out ImageJ2SERotationUtil; bufferedImage_Param : access Image_Package.Image'Class; newBufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; g_Param : access Graphics2D_Package.Graphics2D'Class; radians : Long_Float) is
-      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).drawRotatedImageRadians (bufferedImage_Param, newBufferedImage_Param, g_Param, radians);
+      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).drawRotatedImageRadians (bufferedImage_Param => bufferedImage_Param, newBufferedImage_Param => newBufferedImage_Param, g_Param => g_Param, radians => radians);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end drawRotatedImageRadians;
 
    procedure rotateImage (This : in out ImageJ2SERotationUtil; bufferedImage_Param : access Image_Package.Image'Class; newBufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; totalAngle : Integer) is
-      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).rotateImage (bufferedImage_Param, newBufferedImage_Param, totalAngle);
+      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).rotateImage (bufferedImage_Param => bufferedImage_Param, newBufferedImage_Param => newBufferedImage_Param, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end rotateImage;
 
    procedure createRotatedImage (This : in out ImageJ2SERotationUtil; bufferedImage_Param : access Image_Package.Image'Class; newBufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; totalAngle : Integer) is
-      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).createRotatedImage (bufferedImage_Param, newBufferedImage_Param, totalAngle);
+      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).createRotatedImage (bufferedImage_Param => bufferedImage_Param, newBufferedImage_Param => newBufferedImage_Param, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createRotatedImage;
 
    procedure getRotatedImages (This : in out ImageJ2SERotationUtil; bufferedImage_Param : access Image_Package.Image'Class; numberOfFrames : Integer; totalAngle : Integer) is
-      Java_Result : constant BufferedImage_Access_Array_Access := ImageJ2SERotationUtil'Class (This).getRotatedImages (bufferedImage_Param, numberOfFrames, totalAngle);
+      Java_Result : constant BufferedImage_Access_Array_Access := ImageJ2SERotationUtil'Class (This).getRotatedImages (bufferedImage_Param => bufferedImage_Param, numberOfFrames => numberOfFrames, totalAngle => totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRotatedImages;
 
    procedure createSpriteImage (This : in out ImageJ2SERotationUtil; bufferedImageArray : BufferedImage_Access_Array_Access) is
-      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).createSpriteImage (bufferedImageArray);
+      Java_Result : constant BufferedImage_Access := ImageJ2SERotationUtil'Class (This).createSpriteImage (bufferedImageArray => bufferedImageArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

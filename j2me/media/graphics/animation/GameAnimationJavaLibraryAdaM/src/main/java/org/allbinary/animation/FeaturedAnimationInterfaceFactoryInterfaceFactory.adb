@@ -180,35 +180,35 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
    end getBasicAnimationInterfaceFactoryInstance;
 
    procedure getRectangle (This : in out FeaturedAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) is
-      Java_Result : constant Rectangle_Access := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangle (resource);
+      Java_Result : constant Rectangle_Access := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangle (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRectangle;
 
    procedure getRectangleXY (This : in out FeaturedAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; x : Integer; y : Integer) is
-      Java_Result : constant Rectangle_Access := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangleXY (resource, x, y);
+      Java_Result : constant Rectangle_Access := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getRectangleXY (resource => resource, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRectangleXY;
 
    procedure getProcedural (This : in out FeaturedAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) is
-      Java_Result : constant ProceduralAnimationInterfaceFactoryInterface_Access := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getProcedural (resource);
+      Java_Result : constant ProceduralAnimationInterfaceFactoryInterface_Access := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getProcedural (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getProcedural;
 
    procedure get (This : in out FeaturedAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) is
-      Java_Result : constant AnimationInterfaceFactoryInterface_Access := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).get (resource);
+      Java_Result : constant AnimationInterfaceFactoryInterface_Access := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).get (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getBasicAnimationInterfaceFactoryInstance (This : in out FeaturedAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) is
-      Java_Result : constant BasicAnimationInterfaceFactoryInterface_Access := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getBasicAnimationInterfaceFactoryInstance (resource);
+      Java_Result : constant BasicAnimationInterfaceFactoryInterface_Access := FeaturedAnimationInterfaceFactoryInterfaceFactory'Class (This).getBasicAnimationInterfaceFactoryInstance (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;

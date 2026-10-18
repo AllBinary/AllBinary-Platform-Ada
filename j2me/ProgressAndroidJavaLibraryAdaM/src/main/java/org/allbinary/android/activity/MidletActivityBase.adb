@@ -97,7 +97,7 @@ package body org.allbinary.android.activity.MidletActivityBase_Package is
    end onGenericMotionEvent;
 
    procedure onGenericMotionEvent (This : in out MidletActivityBase; event_Param : access MotionEvent_Package.MotionEvent'Class) is
-      Java_Result : constant Boolean := MidletActivityBase'Class (This).onGenericMotionEvent (event_Param);
+      Java_Result : constant Boolean := MidletActivityBase'Class (This).onGenericMotionEvent (event_Param => event_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

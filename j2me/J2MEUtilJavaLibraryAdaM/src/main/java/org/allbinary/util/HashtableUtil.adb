@@ -95,14 +95,14 @@ package body org.allbinary.util.HashtableUtil_Package is
    end getKeysAsList;
 
    procedure getKeysAsArray (This : in out HashtableUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
-      Java_Result : constant Java_Object_Access_Array_Access := HashtableUtil'Class (This).getKeysAsArray (hashtable_Param);
+      Java_Result : constant Java_Object_Access_Array_Access := HashtableUtil'Class (This).getKeysAsArray (hashtable_Param => hashtable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getKeysAsArray;
 
    procedure getKeysAsList (This : in out HashtableUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
-      Java_Result : constant BasicArrayList_Access := HashtableUtil'Class (This).getKeysAsList (hashtable_Param);
+      Java_Result : constant BasicArrayList_Access := HashtableUtil'Class (This).getKeysAsList (hashtable_Param => hashtable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -34,7 +34,7 @@ package org.allbinary.business.user.role.BasicUserRole_Package is
    type BasicUserRole_Access_Array_Access_Array is array (Natural range <>) of BasicUserRole_Access_Array_Access;
    type BasicUserRole_Access_Array_Access_Array_Access is access all BasicUserRole_Access_Array_Access_Array;
 
-   type BasicUserRole is new Java_Object and Serializable with record
+   type BasicUserRole is new Java_Object with record
       m_int_RoleId : Integer;
       role : Unbounded_String;
       displayValue : Unbounded_String;
@@ -51,8 +51,8 @@ package org.allbinary.business.user.role.BasicUserRole_Package is
    function getRole (This : in out BasicUserRole) return Unbounded_String;
    function getSessionTimeout (This : in out BasicUserRole) return Long_Long_Integer;
    function getSessionInactivityTimeout (This : in out BasicUserRole) return Long_Long_Integer;
-   function equals (This : in out BasicUserRole; basicUserRole_Param : access BasicUserRole_Package.BasicUserRole'Class) return Boolean;
-   procedure equals (This : in out BasicUserRole; basicUserRole_Param : access BasicUserRole_Package.BasicUserRole'Class);
+   function equals (This : in out BasicUserRole; basicUserRole_Var_Param : access BasicUserRole_Package.BasicUserRole'Class) return Boolean;
+   procedure equals (This : in out BasicUserRole; basicUserRole_Var_Param : access BasicUserRole_Package.BasicUserRole'Class);
    function toString (This : in out BasicUserRole) return Unbounded_String;
    function getRole (role : Unbounded_String) return BasicUserRole_Access;
    procedure getRole (role : Unbounded_String);

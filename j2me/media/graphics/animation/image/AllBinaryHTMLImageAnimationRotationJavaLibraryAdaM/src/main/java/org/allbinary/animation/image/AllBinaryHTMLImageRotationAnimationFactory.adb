@@ -91,14 +91,14 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFa
    end getAngleIncrement;
 
    procedure createFactoryADXY (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant AllBinaryHTMLImageRotationAnimationFactory_Access := createFactoryADXY (image_Param, width, height, dx, dy, angleIncrement, animationBehaviorFactory_Param);
+      Java_Result : constant AllBinaryHTMLImageRotationAnimationFactory_Access := createFactoryADXY (image_Param => image_Param, width => width, height => height, dx => dx, dy => dy, angleIncrement => angleIncrement, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryADXY;
 
    procedure getInstance (This : in out AllBinaryHTMLImageRotationAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := AllBinaryHTMLImageRotationAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := AllBinaryHTMLImageRotationAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

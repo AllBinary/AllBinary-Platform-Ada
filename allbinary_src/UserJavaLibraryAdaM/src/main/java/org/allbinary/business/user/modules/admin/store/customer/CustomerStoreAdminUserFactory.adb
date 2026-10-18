@@ -50,7 +50,7 @@ package body org.allbinary.business.user.modules.admin.store.customer.CustomerSt
    end getInstance;
 
    procedure getInstance (This : in out CustomerStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant UserInterface_Access := CustomerStoreAdminUserFactory'Class (This).getInstance (hashMap_Param);
+      Java_Result : constant UserInterface_Access := CustomerStoreAdminUserFactory'Class (This).getInstance (hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -64,7 +64,7 @@ package body org.allbinary.image.ImageTypeUtil_Package is
    end getInstance;
 
    procedure isSupported (This : in out ImageTypeUtil; mediaFileType_Param : Unbounded_String) is
-      Java_Result : constant Boolean := ImageTypeUtil'Class (This).isSupported (mediaFileType_Param);
+      Java_Result : constant Boolean := ImageTypeUtil'Class (This).isSupported (mediaFileType_Param => mediaFileType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

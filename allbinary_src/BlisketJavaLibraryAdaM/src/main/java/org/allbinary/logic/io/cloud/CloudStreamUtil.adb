@@ -99,21 +99,21 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
    end getFileLocal;
 
    procedure getFile (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFile (file_Param);
+      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFile (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFile;
 
    procedure getFileAnyWhere (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFileAnyWhere (file_Param);
+      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFileAnyWhere (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFileAnyWhere;
 
    procedure getFileLocal (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFileLocal (file_Param);
+      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFileLocal (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

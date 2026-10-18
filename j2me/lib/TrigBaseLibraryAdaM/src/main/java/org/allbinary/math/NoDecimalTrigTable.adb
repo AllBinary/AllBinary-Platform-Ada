@@ -1281,35 +1281,35 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
    end antiTanDebug;
 
    procedure sin (This : in out NoDecimalTrigTable; angle : Integer) is
-      Java_Result : constant Long_Long_Integer := NoDecimalTrigTable'Class (This).sin (angle);
+      Java_Result : constant Long_Long_Integer := NoDecimalTrigTable'Class (This).sin (angle => angle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end sin;
 
    procedure cos (This : in out NoDecimalTrigTable; angle : Integer) is
-      Java_Result : constant Long_Long_Integer := NoDecimalTrigTable'Class (This).cos (angle);
+      Java_Result : constant Long_Long_Integer := NoDecimalTrigTable'Class (This).cos (angle => angle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end cos;
 
    procedure tan (This : in out NoDecimalTrigTable; angle : Integer) is
-      Java_Result : constant Long_Long_Integer := NoDecimalTrigTable'Class (This).tan (angle);
+      Java_Result : constant Long_Long_Integer := NoDecimalTrigTable'Class (This).tan (angle => angle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end tan;
 
    procedure antiTan (This : in out NoDecimalTrigTable; dx : Integer; dy : Integer) is
-      Java_Result : constant Short_Integer := NoDecimalTrigTable'Class (This).antiTan (dx, dy);
+      Java_Result : constant Short_Integer := NoDecimalTrigTable'Class (This).antiTan (dx => dx, dy => dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end antiTan;
 
    procedure antiTanDebug (This : in out NoDecimalTrigTable; screenX : Integer; screenY : Integer; targetX : Integer; targetY : Integer) is
-      Java_Result : constant Short_Integer := NoDecimalTrigTable'Class (This).antiTanDebug (screenX, screenY, targetX, targetY);
+      Java_Result : constant Short_Integer := NoDecimalTrigTable'Class (This).antiTanDebug (screenX => screenX, screenY => screenY, targetX => targetX, targetY => targetY);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -75,14 +75,14 @@ package body org.allbinary.math.RectangleCollisionPointUtil_Package is
    end allPointsInsideCell;
 
    procedure allPointsInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Boolean := allPointsInside (rectX1, rectY1, rectX2, rectY2, list_Param);
+      Java_Result : constant Boolean := allPointsInside (rectX1 => rectX1, rectY1 => rectY1, rectX2 => rectX2, rectY2 => rectY2, list_Param => list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end allPointsInside;
 
    procedure allPointsInsideCell (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList_Package.BasicArrayList'Class; xCellSize : Integer; yCellSize : Integer) is
-      Java_Result : constant Boolean := allPointsInsideCell (rectX1, rectY1, rectX2, rectY2, list_Param, xCellSize, yCellSize);
+      Java_Result : constant Boolean := allPointsInsideCell (rectX1 => rectX1, rectY1 => rectY1, rectX2 => rectX2, rectY2 => rectY2, list_Param => list_Param, xCellSize => xCellSize, yCellSize => yCellSize);
       pragma Unreferenced (Java_Result);
    begin
       null;

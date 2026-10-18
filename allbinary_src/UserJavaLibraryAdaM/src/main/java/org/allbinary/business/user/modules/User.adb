@@ -593,7 +593,7 @@ package body org.allbinary.business.user.modules.User_Package is
    end setUserConfigurationInterface;
 
    procedure toValidationInfoNode (This : in out User; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := User'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := User'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

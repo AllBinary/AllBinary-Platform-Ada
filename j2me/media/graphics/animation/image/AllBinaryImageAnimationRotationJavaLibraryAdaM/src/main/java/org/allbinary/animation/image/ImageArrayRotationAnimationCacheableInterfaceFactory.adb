@@ -45,7 +45,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationCacheableI
    end getInstance;
 
    procedure getInstance (This : in out ImageArrayRotationAnimationCacheableInterfaceFactory; key_Param : access Java_Object'Class) is
-      Java_Result : constant CacheableInterface_Access := ImageArrayRotationAnimationCacheableInterfaceFactory'Class (This).getInstance (key_Param);
+      Java_Result : constant CacheableInterface_Access := ImageArrayRotationAnimationCacheableInterfaceFactory'Class (This).getInstance (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

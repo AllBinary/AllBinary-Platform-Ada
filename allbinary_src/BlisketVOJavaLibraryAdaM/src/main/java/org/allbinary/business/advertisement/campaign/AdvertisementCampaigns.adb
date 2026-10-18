@@ -67,14 +67,14 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
    end search;
 
    procedure get (This : in out AdvertisementCampaigns; index : Integer) is
-      Java_Result : constant AdvertisementInterface_Access := AdvertisementCampaigns'Class (This).get (index);
+      Java_Result : constant AdvertisementInterface_Access := AdvertisementCampaigns'Class (This).get (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure search (This : in out AdvertisementCampaigns; advertisementSearchInterface_Param : access AdvertisementSearchInterface_Package.AdvertisementSearchInterface'Class) is
-      Java_Result : constant AdvertisementsInterface_Access := AdvertisementCampaigns'Class (This).search (advertisementSearchInterface_Param);
+      Java_Result : constant AdvertisementsInterface_Access := AdvertisementCampaigns'Class (This).search (advertisementSearchInterface_Param => advertisementSearchInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -65,14 +65,14 @@ package body org.allbinary.logic.communication.http.request.HttpRequestUtil_Pack
    end generateFileName;
 
    procedure getLastSeparatorIndex (This : in out HttpRequestUtil; requestPath : Unbounded_String) is
-      Java_Result : constant Integer := HttpRequestUtil'Class (This).getLastSeparatorIndex (requestPath);
+      Java_Result : constant Integer := HttpRequestUtil'Class (This).getLastSeparatorIndex (requestPath => requestPath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLastSeparatorIndex;
 
    procedure generateFileName (This : in out HttpRequestUtil; requestPath : Unbounded_String) is
-      Java_Result : constant Unbounded_String := HttpRequestUtil'Class (This).generateFileName (requestPath);
+      Java_Result : constant Unbounded_String := HttpRequestUtil'Class (This).generateFileName (requestPath => requestPath);
       pragma Unreferenced (Java_Result);
    begin
       null;

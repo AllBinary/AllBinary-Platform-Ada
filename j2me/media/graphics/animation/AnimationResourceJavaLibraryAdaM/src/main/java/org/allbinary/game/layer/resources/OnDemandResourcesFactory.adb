@@ -45,7 +45,7 @@ package body org.allbinary.game.layer.resources.OnDemandResourcesFactory_Package
    end remove;
 
    procedure remove (This : in out OnDemandResourcesFactory; layerId : Integer) is
-      Java_Result : constant OnDemandResources_Access := OnDemandResourcesFactory'Class (This).remove (layerId);
+      Java_Result : constant OnDemandResources_Access := OnDemandResourcesFactory'Class (This).remove (layerId => layerId);
       pragma Unreferenced (Java_Result);
    begin
       null;

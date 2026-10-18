@@ -115,7 +115,7 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
    end showLicenseDialog;
 
    procedure getDecryptedInputStream (This : in out CryptService; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; name : Unbounded_String; inputStream_Param : access InputStream_Package.InputStream'Class) is
-      Java_Result : constant InputStream_Access := CryptService'Class (This).getDecryptedInputStream (abeClientInformation_Param, name, inputStream_Param);
+      Java_Result : constant InputStream_Access := CryptService'Class (This).getDecryptedInputStream (abeClientInformation_Param => abeClientInformation_Param, name => name, inputStream_Param => inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

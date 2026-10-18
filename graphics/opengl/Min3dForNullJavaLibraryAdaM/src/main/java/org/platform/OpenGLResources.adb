@@ -72,35 +72,35 @@ package body org.platform.OpenGLResources_Package is
    end getPackageName;
 
    procedure isExcluded (This : in out OpenGLResources; name : Unbounded_String) is
-      Java_Result : constant Boolean := OpenGLResources'Class (This).isExcluded (name);
+      Java_Result : constant Boolean := OpenGLResources'Class (This).isExcluded (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isExcluded;
 
    procedure getIdentifier (This : in out OpenGLResources; name : Unbounded_String; defType : Unbounded_String; defPackage : Unbounded_String) is
-      Java_Result : constant Integer := OpenGLResources'Class (This).getIdentifier (name, defType, defPackage);
+      Java_Result : constant Integer := OpenGLResources'Class (This).getIdentifier (name => name, defType => defType, defPackage => defPackage);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getIdentifier;
 
    procedure openRawResource (This : in out OpenGLResources; id : Integer) is
-      Java_Result : constant InputStream_Access := OpenGLResources'Class (This).openRawResource (id);
+      Java_Result : constant InputStream_Access := OpenGLResources'Class (This).openRawResource (id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end openRawResource;
 
    procedure openRawResourceFromName (This : in out OpenGLResources; resourceName : Unbounded_String) is
-      Java_Result : constant InputStream_Access := OpenGLResources'Class (This).openRawResourceFromName (resourceName);
+      Java_Result : constant InputStream_Access := OpenGLResources'Class (This).openRawResourceFromName (resourceName => resourceName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end openRawResourceFromName;
 
    procedure getResourceAsStream (This : in out OpenGLResources; resourceName : Unbounded_String) is
-      Java_Result : constant InputStream_Access := OpenGLResources'Class (This).getResourceAsStream (resourceName);
+      Java_Result : constant InputStream_Access := OpenGLResources'Class (This).getResourceAsStream (resourceName => resourceName);
       pragma Unreferenced (Java_Result);
    begin
       null;

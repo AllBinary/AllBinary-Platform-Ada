@@ -50,7 +50,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package is
    end getInstanceWeaponLayer;
 
    procedure getInstanceWeaponLayer (This : in out WeaponLayerCircularPool; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer; z : Integer; angle : Integer; otherAngle : Integer; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class; scoreable_Param : access ScoreableInterface_Package.ScoreableInterface'Class) is
-      Java_Result : constant WeaponLayer_Access := WeaponLayerCircularPool'Class (This).getInstanceWeaponLayer (sourceLayerInterface_Param, x, y, z, angle, otherAngle, weaponProperties_Param, scoreable_Param);
+      Java_Result : constant WeaponLayer_Access := WeaponLayerCircularPool'Class (This).getInstanceWeaponLayer (sourceLayerInterface_Param => sourceLayerInterface_Param, x => x, y => y, z => z, angle => angle, otherAngle => otherAngle, weaponProperties_Param => weaponProperties_Param, scoreable_Param => scoreable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

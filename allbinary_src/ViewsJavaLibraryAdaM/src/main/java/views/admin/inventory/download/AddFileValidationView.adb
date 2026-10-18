@@ -397,14 +397,14 @@ package body views.admin.inventory.download.AddFileValidationView_Package is
    end validationInfo;
 
    procedure toValidationInfoNode (This : in out AddFileValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := AddFileValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := AddFileValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
    procedure isValid (This : in out AddFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer) is
-      Java_Result : constant Boolean := AddFileValidationView'Class (This).isValid (fileName, size);
+      Java_Result : constant Boolean := AddFileValidationView'Class (This).isValid (fileName => fileName, size => size);
       pragma Unreferenced (Java_Result);
    begin
       null;

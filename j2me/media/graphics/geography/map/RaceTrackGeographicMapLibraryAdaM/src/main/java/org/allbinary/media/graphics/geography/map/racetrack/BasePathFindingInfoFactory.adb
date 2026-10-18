@@ -84,7 +84,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BasePathFindin
    end getInstancePathFindingInfo;
 
    procedure getInstancePathFindingInfo (This : in out BasePathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access) is
-      Java_Result : constant PathFindingInfo_Access := BasePathFindingInfoFactory'Class (This).getInstancePathFindingInfo (geographicMapInterface_Param, graphArray);
+      Java_Result : constant PathFindingInfo_Access := BasePathFindingInfoFactory'Class (This).getInstancePathFindingInfo (geographicMapInterface_Param => geographicMapInterface_Param, graphArray => graphArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

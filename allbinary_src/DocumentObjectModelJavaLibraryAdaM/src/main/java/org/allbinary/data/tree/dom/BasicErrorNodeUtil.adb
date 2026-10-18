@@ -58,7 +58,7 @@ package body org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package is
    end get;
 
    procedure get (document_Param : access Document_Package.Document'Class; errorText : Unbounded_String) is
-      Java_Result : constant Node_Access := get (document_Param, errorText);
+      Java_Result : constant Node_Access := get (document_Param => document_Param, errorText => errorText);
       pragma Unreferenced (Java_Result);
    begin
       null;

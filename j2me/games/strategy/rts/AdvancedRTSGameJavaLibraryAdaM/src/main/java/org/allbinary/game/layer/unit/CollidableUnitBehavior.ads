@@ -42,7 +42,7 @@ package org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
 
    type CollidableUnitBehavior is new CollidableRTSBehavior with record
       layerPartialCellPositionsUtil : LayerPartialCellPositionsUtil_Access;
-      simpleSteeringVisitor : SimpleSteeringVisitor_Access;
+      simpleSteeringVisitor_Var : SimpleSteeringVisitor_Access;
    end record;
 
    procedure Initialize (This : in out CollidableUnitBehavior'Class; collidable : Boolean);

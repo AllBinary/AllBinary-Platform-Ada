@@ -64,21 +64,21 @@ package body org.allbinary.J2SEUtil_Package is
    end getSetAsArray;
 
    procedure getHashMapAsArray (This : in out J2SEUtil; hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getHashMapAsArray (hashMap_Param);
+      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getHashMapAsArray (hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getHashMapAsArray;
 
    procedure getMapAsArray (This : in out J2SEUtil; map_Param : access Map_Package.Map'Class) is
-      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getMapAsArray (map_Param);
+      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getMapAsArray (map_Param => map_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getMapAsArray;
 
    procedure getSetAsArray (This : in out J2SEUtil; set_Param : access Set_Package.Set'Class) is
-      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getSetAsArray (set_Param);
+      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getSetAsArray (set_Param => set_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

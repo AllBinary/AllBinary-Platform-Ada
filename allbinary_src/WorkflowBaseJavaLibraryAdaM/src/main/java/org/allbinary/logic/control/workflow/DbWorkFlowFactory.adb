@@ -83,7 +83,7 @@ package body org.allbinary.logic.control.workflow.DbWorkFlowFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out DbWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant WorkFlowInterface_Access := DbWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param, hashMap_Param);
+      Java_Result : constant WorkFlowInterface_Access := DbWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param => abeClientInformation_Param, hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

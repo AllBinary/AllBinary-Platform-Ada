@@ -64,7 +64,7 @@ package body org.allbinary.media.audio.PlayerStateUtil_Package is
    end convert;
 
    procedure convert (This : in out PlayerStateUtil; state : Integer) is
-      Java_Result : constant Unbounded_String := PlayerStateUtil'Class (This).convert (state);
+      Java_Result : constant Unbounded_String := PlayerStateUtil'Class (This).convert (state => state);
       pragma Unreferenced (Java_Result);
    begin
       null;

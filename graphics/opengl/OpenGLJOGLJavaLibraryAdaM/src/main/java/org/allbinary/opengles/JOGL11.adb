@@ -300,21 +300,21 @@ package body org.allbinary.opengles.JOGL11_Package is
    end glVertexPointer;
 
    procedure glIsBuffer (This : in out JOGL11; buffer : Integer) is
-      Java_Result : constant Boolean := JOGL11'Class (This).glIsBuffer (buffer);
+      Java_Result : constant Boolean := JOGL11'Class (This).glIsBuffer (buffer => buffer);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end glIsBuffer;
 
    procedure glIsEnabled (This : in out JOGL11; cap : Integer) is
-      Java_Result : constant Boolean := JOGL11'Class (This).glIsEnabled (cap);
+      Java_Result : constant Boolean := JOGL11'Class (This).glIsEnabled (cap => cap);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end glIsEnabled;
 
    procedure glIsTexture (This : in out JOGL11; texture : Integer) is
-      Java_Result : constant Boolean := JOGL11'Class (This).glIsTexture (texture);
+      Java_Result : constant Boolean := JOGL11'Class (This).glIsTexture (texture => texture);
       pragma Unreferenced (Java_Result);
    begin
       null;

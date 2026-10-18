@@ -58,7 +58,7 @@ package body org.allbinary.media.image.cache.BufferedImageInfoFactory_Package is
    end getInstance;
 
    procedure getInstance (width : Integer; height : Integer; type_Id : Integer) is
-      Java_Result : constant BufferedImageInfo_Access := getInstance (width, height, type_Id);
+      Java_Result : constant BufferedImageInfo_Access := getInstance (width => width, height => height, type_Id => type_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

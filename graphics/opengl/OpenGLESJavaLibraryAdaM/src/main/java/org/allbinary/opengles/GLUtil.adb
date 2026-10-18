@@ -126,28 +126,28 @@ package body org.allbinary.opengles.GLUtil_Package is
    end rotateUVs;
 
    procedure makeFloatBuffer3 (This : in out GLUtil; p_a : Float; p_b : Float; p_c : Float) is
-      Java_Result : constant FloatBuffer_Access := GLUtil'Class (This).makeFloatBuffer3 (p_a, p_b, p_c);
+      Java_Result : constant FloatBuffer_Access := GLUtil'Class (This).makeFloatBuffer3 (p_a => p_a, p_b => p_b, p_c => p_c);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end makeFloatBuffer3;
 
    procedure makeFloatBuffer4 (This : in out GLUtil; p_a : Float; p_b : Float; p_c : Float; p_d : Float) is
-      Java_Result : constant FloatBuffer_Access := GLUtil'Class (This).makeFloatBuffer4 (p_a, p_b, p_c, p_d);
+      Java_Result : constant FloatBuffer_Access := GLUtil'Class (This).makeFloatBuffer4 (p_a => p_a, p_b => p_b, p_c => p_c, p_d => p_d);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end makeFloatBuffer4;
 
    procedure makeFloatBuffer (This : in out GLUtil; byteBuffer_Param : access ByteBuffer_Package.ByteBuffer'Class) is
-      Java_Result : constant FloatBuffer_Access := GLUtil'Class (This).makeFloatBuffer (byteBuffer_Param);
+      Java_Result : constant FloatBuffer_Access := GLUtil'Class (This).makeFloatBuffer (byteBuffer_Param => byteBuffer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end makeFloatBuffer;
 
    procedure position (This : in out GLUtil; buffer_Param : access Buffer_Package.Buffer'Class; newPosition : Integer) is
-      Java_Result : constant Buffer_Access := GLUtil'Class (This).position (buffer_Param, newPosition);
+      Java_Result : constant Buffer_Access := GLUtil'Class (This).position (buffer_Param => buffer_Param, newPosition => newPosition);
       pragma Unreferenced (Java_Result);
    begin
       null;

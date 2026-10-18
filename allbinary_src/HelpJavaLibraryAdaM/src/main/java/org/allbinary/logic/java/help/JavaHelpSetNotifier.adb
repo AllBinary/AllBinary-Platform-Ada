@@ -66,7 +66,7 @@ package body org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
    end isNotified;
 
    procedure isNotified (helpSet_Param : access HelpSet_Package.HelpSet'Class) is
-      Java_Result : constant Boolean := isNotified (helpSet_Param);
+      Java_Result : constant Boolean := isNotified (helpSet_Param => helpSet_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

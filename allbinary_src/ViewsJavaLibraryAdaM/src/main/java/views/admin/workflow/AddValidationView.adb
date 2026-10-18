@@ -101,7 +101,7 @@ package body views.admin.workflow.AddValidationView_Package is
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out AddValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := AddValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := AddValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

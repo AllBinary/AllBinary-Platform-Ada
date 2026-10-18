@@ -434,7 +434,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    end getPortion;
 
    procedure getImage (This : in out AndroidBasicTitleProgressBar; index : Integer) is
-      Java_Result : constant Image_Access := AndroidBasicTitleProgressBar'Class (This).getImage (index);
+      Java_Result : constant Image_Access := AndroidBasicTitleProgressBar'Class (This).getImage (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

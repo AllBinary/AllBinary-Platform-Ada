@@ -54,14 +54,14 @@ package body org.platform.opengl.OpenGLGLU_Package is
    end glFrustumf;
 
    procedure gluProject (This : in out OpenGLGLU; gl_Param : access GL10_Package.GL10'Class; objX : Float; objY : Float; objZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; win : Float_Array_Access; winOffset : Integer) is
-      Java_Result : constant Integer := OpenGLGLU'Class (This).gluProject (gl_Param, objX, objY, objZ, model, modelOffset, project, projectOffset, view, viewOffset, win, winOffset);
+      Java_Result : constant Integer := OpenGLGLU'Class (This).gluProject (gl_Param => gl_Param, objX => objX, objY => objY, objZ => objZ, model => model, modelOffset => modelOffset, project => project, projectOffset => projectOffset, view => view, viewOffset => viewOffset, win => win, winOffset => winOffset);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end gluProject;
 
    procedure gluUnProject (This : in out OpenGLGLU; gl_Param : access GL10_Package.GL10'Class; winX : Float; winY : Float; winZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; obj : Float_Array_Access; objOffset : Integer) is
-      Java_Result : constant Integer := OpenGLGLU'Class (This).gluUnProject (gl_Param, winX, winY, winZ, model, modelOffset, project, projectOffset, view, viewOffset, obj, objOffset);
+      Java_Result : constant Integer := OpenGLGLU'Class (This).gluUnProject (gl_Param => gl_Param, winX => winX, winY => winY, winZ => winZ, model => model, modelOffset => modelOffset, project => project, projectOffset => projectOffset, view => view, viewOffset => viewOffset, obj => obj, objOffset => objOffset);
       pragma Unreferenced (Java_Result);
    begin
       null;

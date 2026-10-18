@@ -172,7 +172,7 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
    end toString;
 
    procedure isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) is
-      Java_Result : constant Boolean := BasicTopViewGeographicMapCellTypeFactory'Class (This).isPath (cellType_Param);
+      Java_Result : constant Boolean := BasicTopViewGeographicMapCellTypeFactory'Class (This).isPath (cellType_Param => cellType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

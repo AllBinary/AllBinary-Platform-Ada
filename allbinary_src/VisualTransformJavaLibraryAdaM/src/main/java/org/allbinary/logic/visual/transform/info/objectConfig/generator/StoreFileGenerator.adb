@@ -146,7 +146,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
    end process;
 
    procedure process (This : in out StoreFileGenerator; input : Unbounded_String) is
-      Java_Result : constant Unbounded_String := StoreFileGenerator'Class (This).process (input);
+      Java_Result : constant Unbounded_String := StoreFileGenerator'Class (This).process (input => input);
       pragma Unreferenced (Java_Result);
    begin
       null;

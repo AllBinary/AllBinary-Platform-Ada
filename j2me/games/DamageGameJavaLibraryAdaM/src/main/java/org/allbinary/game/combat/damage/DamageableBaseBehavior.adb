@@ -57,7 +57,7 @@ package body org.allbinary.game.combat.damage.DamageableBaseBehavior_Package is
    end getDamage;
 
    procedure getDamage (This : in out DamageableBaseBehavior; damageType : Integer) is
-      Java_Result : constant Integer := DamageableBaseBehavior'Class (This).getDamage (damageType);
+      Java_Result : constant Integer := DamageableBaseBehavior'Class (This).getDamage (damageType => damageType);
       pragma Unreferenced (Java_Result);
    begin
       null;

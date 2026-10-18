@@ -185,14 +185,14 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end save;
 
    procedure get (This : in out GenericProfiles; name : Unbounded_String) is
-      Java_Result : constant GenericProfile_Access := GenericProfiles'Class (This).get (name);
+      Java_Result : constant GenericProfile_Access := GenericProfiles'Class (This).get (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure toXmlNode (This : in out GenericProfiles; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := GenericProfiles'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := GenericProfiles'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

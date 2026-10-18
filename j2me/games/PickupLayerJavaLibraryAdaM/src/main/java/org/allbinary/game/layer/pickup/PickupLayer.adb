@@ -139,7 +139,7 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
    end set;
 
    procedure getDamage (This : in out PickupLayer; damageType : Integer) is
-      Java_Result : constant Integer := PickupLayer'Class (This).getDamage (damageType);
+      Java_Result : constant Integer := PickupLayer'Class (This).getDamage (damageType => damageType);
       pragma Unreferenced (Java_Result);
    begin
       null;

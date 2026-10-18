@@ -69,28 +69,28 @@ package body org.allbinary.image.ImageFactory_Package is
    end createImageFromInputStream;
 
    procedure createImageUrl (This : in out ImageFactory; url : Unbounded_String) is
-      Java_Result : constant Image_Access := ImageFactory'Class (This).createImageUrl (url);
+      Java_Result : constant Image_Access := ImageFactory'Class (This).createImageUrl (url => url);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageUrl;
 
    procedure createImage (This : in out ImageFactory; caller : Unbounded_String; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := ImageFactory'Class (This).createImage (caller, width, height);
+      Java_Result : constant Image_Access := ImageFactory'Class (This).createImage (caller => caller, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage;
 
    procedure createImageFromInputStream (This : in out ImageFactory; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) is
-      Java_Result : constant Image_Access := ImageFactory'Class (This).createImageFromInputStream (key_Param, inputStream_Param);
+      Java_Result : constant Image_Access := ImageFactory'Class (This).createImageFromInputStream (key_Param => key_Param, inputStream_Param => inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageFromInputStream;
 
    procedure createImageFromInputStream (This : in out ImageFactory; inputStream_Param : access InputStream_Package.InputStream'Class) is
-      Java_Result : constant Image_Access := ImageFactory'Class (This).createImageFromInputStream (inputStream_Param);
+      Java_Result : constant Image_Access := ImageFactory'Class (This).createImageFromInputStream (inputStream_Param => inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

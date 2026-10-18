@@ -47,14 +47,14 @@ package body org.allbinary.animation.NullRotationAnimation_Package is
    end getAnimationSize;
 
    procedure createTotalAngle (angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
-      Java_Result : constant NullRotationAnimation_Access := createTotalAngle (angleInfo_Param, totalAngle, animationBehavior_Param);
+      Java_Result : constant NullRotationAnimation_Access := createTotalAngle (angleInfo_Param => angleInfo_Param, totalAngle => totalAngle, animationBehavior_Param => animationBehavior_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createTotalAngle;
 
    procedure createQuarter (animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
-      Java_Result : constant NullRotationAnimation_Access := createQuarter (animationBehavior_Param);
+      Java_Result : constant NullRotationAnimation_Access := createQuarter (animationBehavior_Param => animationBehavior_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

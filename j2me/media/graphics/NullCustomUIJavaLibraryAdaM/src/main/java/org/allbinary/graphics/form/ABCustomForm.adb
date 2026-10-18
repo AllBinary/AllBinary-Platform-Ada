@@ -101,14 +101,14 @@ package body org.allbinary.graphics.form.ABCustomForm_Package is
    end getTitle;
 
    procedure append (This : in out ABCustomForm; item_Param : access ABCustomItem_Package.ABCustomItem'Class) is
-      Java_Result : constant Integer := ABCustomForm'Class (This).append (item_Param);
+      Java_Result : constant Integer := ABCustomForm'Class (This).append (item_Param => item_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end append;
 
    procedure get (This : in out ABCustomForm; itemNum : Integer) is
-      Java_Result : constant ABCustomItem_Access := ABCustomForm'Class (This).get (itemNum);
+      Java_Result : constant ABCustomItem_Access := ABCustomForm'Class (This).get (itemNum => itemNum);
       pragma Unreferenced (Java_Result);
    begin
       null;

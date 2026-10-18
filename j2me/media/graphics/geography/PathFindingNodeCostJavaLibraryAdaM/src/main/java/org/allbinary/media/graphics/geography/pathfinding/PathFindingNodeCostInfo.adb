@@ -74,10 +74,10 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
         This.costFromStartP := (This.costFromStartP) + (cost);
    end addCostFromStart;
 
-   function compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) return Integer is
-      pathFindingNodeCostInfo : constant PathFindingNodeCostInfo_Access := PathFindingNodeCostInfo_Access (pathFindingNodeCostInfo_Param);
+   function compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo_Var_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) return Integer is
+      pathFindingNodeCostInfo_Var : constant PathFindingNodeCostInfo_Access := PathFindingNodeCostInfo_Access (pathFindingNodeCostInfo_Var_Param);
    begin
-        return java_Package.lang.Long.compare (This.totalCostP, pathFindingNodeCostInfo.totalCostP);
+        return java_Package.lang.Long.compare (This.totalCostP, pathFindingNodeCostInfo_Var.totalCostP);
    end compareTo;
 
    function toString (This : in out PathFindingNodeCostInfo) return Unbounded_String is
@@ -95,8 +95,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
         return stringBuffer.toString;
    end toString;
 
-   procedure compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) is
-      Java_Result : constant Integer := PathFindingNodeCostInfo'Class (This).compareTo (pathFindingNodeCostInfo_Param);
+   procedure compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo_Var_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) is
+      Java_Result : constant Integer := PathFindingNodeCostInfo'Class (This).compareTo (pathFindingNodeCostInfo_Var_Param => pathFindingNodeCostInfo_Var_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

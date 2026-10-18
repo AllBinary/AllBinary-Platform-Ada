@@ -47,7 +47,7 @@ package body org.allbinary.game.layer.SpriteFactory_Package is
    end createSprite;
 
    procedure createSprite (This : in out SpriteFactory; image_Param : access Image_Package.Image'Class; frameWidth : Integer; frameHeight : Integer) is
-      Java_Result : constant Sprite_Access := SpriteFactory'Class (This).createSprite (image_Param, frameWidth, frameHeight);
+      Java_Result : constant Sprite_Access := SpriteFactory'Class (This).createSprite (image_Param => image_Param, frameWidth => frameWidth, frameHeight => frameHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;

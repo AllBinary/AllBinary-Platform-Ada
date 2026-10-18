@@ -426,7 +426,7 @@ package body org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
    end setSelectedRtsLayer;
 
    procedure processDraggingMotionInput (This : in out HumanRTSPlayerGameInput; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
-      Java_Result : constant Boolean := HumanRTSPlayerGameInput'Class (This).processDraggingMotionInput (layerManager_Param);
+      Java_Result : constant Boolean := HumanRTSPlayerGameInput'Class (This).processDraggingMotionInput (layerManager_Param => layerManager_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

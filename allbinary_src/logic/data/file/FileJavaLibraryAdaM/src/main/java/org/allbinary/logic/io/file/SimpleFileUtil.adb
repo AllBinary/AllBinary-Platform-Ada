@@ -262,21 +262,21 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
    end createStringFromArrayOfStrings;
 
    procedure loadFileAsList (This : in out SimpleFileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) is
-      Java_Result : constant BasicArrayList_Access := SimpleFileUtil'Class (This).loadFileAsList (inputStream_Param, max, byteArray1);
+      Java_Result : constant BasicArrayList_Access := SimpleFileUtil'Class (This).loadFileAsList (inputStream_Param => inputStream_Param, max => max, byteArray1 => byteArray1);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end loadFileAsList;
 
    procedure loadFileAsListReturnLine (This : in out SimpleFileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access; includeReturnLine : Integer) is
-      Java_Result : constant BasicArrayList_Access := SimpleFileUtil'Class (This).loadFileAsListReturnLine (inputStream_Param, max, byteArray1, includeReturnLine);
+      Java_Result : constant BasicArrayList_Access := SimpleFileUtil'Class (This).loadFileAsListReturnLine (inputStream_Param => inputStream_Param, max => max, byteArray1 => byteArray1, includeReturnLine => includeReturnLine);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end loadFileAsListReturnLine;
 
    procedure createStringFromArrayOfStrings (This : in out SimpleFileUtil; stringArray : Unbounded_String_Array_Access) is
-      Java_Result : constant Unbounded_String := SimpleFileUtil'Class (This).createStringFromArrayOfStrings (stringArray);
+      Java_Result : constant Unbounded_String := SimpleFileUtil'Class (This).createStringFromArrayOfStrings (stringArray => stringArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

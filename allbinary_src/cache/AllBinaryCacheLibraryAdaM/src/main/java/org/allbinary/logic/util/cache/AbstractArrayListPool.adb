@@ -72,7 +72,7 @@ package body org.allbinary.logic.util.cache.AbstractArrayListPool_Package is
    end addArray;
 
    procedure remove (This : in out AbstractArrayListPool; key_Param : access Java_Object'Class) is
-      Java_Result : constant CacheableInterface_Access := AbstractArrayListPool'Class (This).remove (key_Param);
+      Java_Result : constant CacheableInterface_Access := AbstractArrayListPool'Class (This).remove (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -266,14 +266,14 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    end log;
 
    procedure getPath (This : in out RootStoreCategoryProperties; categoryHierarchyInterface_Param : access CategoryHierarchyInterface_Package.CategoryHierarchyInterface'Class) is
-      Java_Result : constant AbPath_Access := RootStoreCategoryProperties'Class (This).getPath (categoryHierarchyInterface_Param);
+      Java_Result : constant AbPath_Access := RootStoreCategoryProperties'Class (This).getPath (categoryHierarchyInterface_Param => categoryHierarchyInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPath;
 
    procedure toValidationInfoNode (This : in out RootStoreCategoryProperties; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := RootStoreCategoryProperties'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := RootStoreCategoryProperties'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

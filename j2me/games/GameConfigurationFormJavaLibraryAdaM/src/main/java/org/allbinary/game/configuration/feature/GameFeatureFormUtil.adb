@@ -135,7 +135,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
    end setDefault;
 
    procedure getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; name : Unbounded_String; option : Integer) is
-      Java_Result : constant ChoiceGroup_Access := GameFeatureFormUtil'Class (This).getChoiceGroup (hashtable_Param, name, option);
+      Java_Result : constant ChoiceGroup_Access := GameFeatureFormUtil'Class (This).getChoiceGroup (hashtable_Param => hashtable_Param, name => name, option => option);
       pragma Unreferenced (Java_Result);
    begin
       null;

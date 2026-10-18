@@ -45,7 +45,7 @@ package body org.allbinary.game.input.event.GameKeyEventUtil_Package is
    end getKey;
 
    procedure getKey (anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := getKey (anyType_Param);
+      Java_Result : constant Integer := getKey (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

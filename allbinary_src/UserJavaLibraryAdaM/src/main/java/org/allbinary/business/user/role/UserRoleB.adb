@@ -72,7 +72,7 @@ package body org.allbinary.business.user.role.UserRoleB_Package is
    end getAll;
 
    procedure getRole (role : Unbounded_String) is
-      Java_Result : constant UserRole_Access := getRole (role);
+      Java_Result : constant UserRole_Access := getRole (role => role);
       pragma Unreferenced (Java_Result);
    begin
       null;

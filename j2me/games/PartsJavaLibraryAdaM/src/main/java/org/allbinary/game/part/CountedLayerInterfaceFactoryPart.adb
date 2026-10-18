@@ -143,7 +143,7 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
    end setCountedPickedUpLayerInterfaceFactory;
 
    procedure getInstance (This : in out CountedLayerInterfaceFactoryPart; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant AllBinaryLayer_Access := CountedLayerInterfaceFactoryPart'Class (This).getInstance (hashtable_Param, x, y, z);
+      Java_Result : constant AllBinaryLayer_Access := CountedLayerInterfaceFactoryPart'Class (This).getInstance (hashtable_Param => hashtable_Param, x => x, y => y, z => z);
       pragma Unreferenced (Java_Result);
    begin
       null;

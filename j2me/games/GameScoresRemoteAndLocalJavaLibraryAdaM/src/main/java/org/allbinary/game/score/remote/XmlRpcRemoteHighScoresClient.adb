@@ -103,7 +103,7 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
    end get;
 
    procedure get (This : in out XmlRpcRemoteHighScoresClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) is
-      Java_Result : constant Java_Object_Access := XmlRpcRemoteHighScoresClient'Class (This).get (anyType_Param, cryptInterface_Param);
+      Java_Result : constant Java_Object_Access := XmlRpcRemoteHighScoresClient'Class (This).get (anyType_Param => anyType_Param, cryptInterface_Param => cryptInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -39,7 +39,7 @@ package org.allbinary.data.tree.dom.CustomUriResolver_Package is
    type CustomUriResolver_Access_Array_Access_Array is array (Natural range <>) of CustomUriResolver_Access_Array_Access;
    type CustomUriResolver_Access_Array_Access_Array_Access is access all CustomUriResolver_Access_Array_Access_Array;
 
-   type CustomUriResolver is new Java_Object and URIResolver with record
+   type CustomUriResolver is new Java_Object with record
       logUtil : LogUtil_Access;
       uriResolverStrings : URIResolverStrings_Access;
       path : Unbounded_String;

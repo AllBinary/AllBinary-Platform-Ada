@@ -194,7 +194,7 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
    end get;
 
    procedure get (This : in out KeyValuePersistance; index : Integer) is
-      Java_Result : constant ABHashtable_Access := KeyValuePersistance'Class (This).get (index);
+      Java_Result : constant ABHashtable_Access := KeyValuePersistance'Class (This).get (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

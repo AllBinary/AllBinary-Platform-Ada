@@ -65,14 +65,14 @@ package body org.allbinary.business.init.db.InitDbHelperFactory_Package is
    end getInstance;
 
    procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class) is
-      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation_Param, databaseConnectionInfoInterface_Param);
+      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation_Param => abeClientInformation_Param, databaseConnectionInfoInterface_Param => databaseConnectionInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
-      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation_Param);
+      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation_Param => abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

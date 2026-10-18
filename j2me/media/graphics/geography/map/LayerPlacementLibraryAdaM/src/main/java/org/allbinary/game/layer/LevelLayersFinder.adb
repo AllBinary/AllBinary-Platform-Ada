@@ -75,7 +75,7 @@ package body org.allbinary.game.layer.LevelLayersFinder_Package is
    end get;
 
    procedure get (This : in out LevelLayersFinder; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
-      Java_Result : constant BasicArrayList_Access := LevelLayersFinder'Class (This).get (hashtable_Param);
+      Java_Result : constant BasicArrayList_Access := LevelLayersFinder'Class (This).get (hashtable_Param => hashtable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

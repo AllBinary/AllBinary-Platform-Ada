@@ -81,7 +81,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    end getInstance;
 
    procedure getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview_Param : access OrderHistory_Package.OrderHistory'Class) is
-      Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceFactory'Class (This).getInstance (orderReview_Param);
+      Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceFactory'Class (This).getInstance (orderReview_Param => orderReview_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

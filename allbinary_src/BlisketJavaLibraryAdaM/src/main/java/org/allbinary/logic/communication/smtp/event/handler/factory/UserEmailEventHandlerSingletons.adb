@@ -87,7 +87,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.UserEm
    end getInstance;
 
    procedure getInstance (This : in out UserEmailEventHandlerSingletons; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class) is
-      Java_Result : constant UserEmailEventHandler_Access := UserEmailEventHandlerSingletons'Class (This).getInstance (abeClientInformation_Param, userEmailEventNameData_Param, userInterface_Param);
+      Java_Result : constant UserEmailEventHandler_Access := UserEmailEventHandlerSingletons'Class (This).getInstance (abeClientInformation_Param => abeClientInformation_Param, userEmailEventNameData_Param => userEmailEventNameData_Param, userInterface_Param => userInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

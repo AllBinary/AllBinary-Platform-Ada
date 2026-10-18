@@ -429,35 +429,35 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    end toString;
 
    procedure containsView (This : in out TransformInfoObjectConfig; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
-      Java_Result : constant Boolean := TransformInfoObjectConfig'Class (This).containsView (transformInfoInterface_Param);
+      Java_Result : constant Boolean := TransformInfoObjectConfig'Class (This).containsView (transformInfoInterface_Param => transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsView;
 
    procedure getNodeVector (This : in out TransformInfoObjectConfig; nodeName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getNodeVector (nodeName);
+      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getNodeVector (nodeName => nodeName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNodeVector;
 
    procedure getTransformDomNodes (This : in out TransformInfoObjectConfig; nodeName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getTransformDomNodes (nodeName);
+      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getTransformDomNodes (nodeName => nodeName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTransformDomNodes;
 
    procedure getTransforms (This : in out TransformInfoObjectConfig; nodeName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getTransforms (nodeName);
+      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getTransforms (nodeName => nodeName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTransforms;
 
    procedure getTransformsGroup (This : in out TransformInfoObjectConfig; group : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getTransformsGroup (group);
+      Java_Result : constant BasicArrayList_Access := TransformInfoObjectConfig'Class (This).getTransformsGroup (group => group);
       pragma Unreferenced (Java_Result);
    begin
       null;

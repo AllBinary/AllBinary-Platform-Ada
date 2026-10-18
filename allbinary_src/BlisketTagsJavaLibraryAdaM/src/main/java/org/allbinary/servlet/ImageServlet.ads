@@ -40,7 +40,7 @@ package org.allbinary.servlet.ImageServlet_Package is
    type ImageServlet_Access_Array_Access_Array is array (Natural range <>) of ImageServlet_Access_Array_Access;
    type ImageServlet_Access_Array_Access_Array_Access is access all ImageServlet_Access_Array_Access_Array;
 
-   type ImageServlet is new HttpServlet with record
+   type ImageServlet is new Java_Object with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    end record;

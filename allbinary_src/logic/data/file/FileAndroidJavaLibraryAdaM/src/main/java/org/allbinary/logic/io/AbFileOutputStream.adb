@@ -96,28 +96,28 @@ package body org.allbinary.logic.io.AbFileOutputStream_Package is
    end write;
 
    procedure createFromAbFile (file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant AbFileOutputStream_Access := createFromAbFile (file_Param);
+      Java_Result : constant AbFileOutputStream_Access := createFromAbFile (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFromAbFile;
 
    procedure createFromAbFileAppend (file_Param : access AbFile_Package.AbFile'Class; append : Boolean) is
-      Java_Result : constant AbFileOutputStream_Access := createFromAbFileAppend (file_Param, append);
+      Java_Result : constant AbFileOutputStream_Access := createFromAbFileAppend (file_Param => file_Param, append => append);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFromAbFileAppend;
 
    procedure createFromFilePath (name : Unbounded_String) is
-      Java_Result : constant AbFileOutputStream_Access := createFromFilePath (name);
+      Java_Result : constant AbFileOutputStream_Access := createFromFilePath (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFromFilePath;
 
    procedure createFromFilePathAppend (name : Unbounded_String; append : Boolean) is
-      Java_Result : constant AbFileOutputStream_Access := createFromFilePathAppend (name, append);
+      Java_Result : constant AbFileOutputStream_Access := createFromFilePathAppend (name => name, append => append);
       pragma Unreferenced (Java_Result);
    begin
       null;

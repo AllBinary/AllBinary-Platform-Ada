@@ -117,7 +117,7 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUt
    end log;
 
    procedure isValid (This : in out HttpFileUploadUtil; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := HttpFileUploadUtil'Class (This).isValid (anyType_Param);
+      Java_Result : constant Boolean := HttpFileUploadUtil'Class (This).isValid (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

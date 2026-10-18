@@ -31,8 +31,8 @@ package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
         return OpenGLBitmapFactory_Package.instance;
    end getInstance;
 
-   function createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config_Package.Config'Class) return OpenGLBitmap_Access is
-      config : constant Config_Access := Config_Access (config_Param);
+   function createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Var_Param : access Config_Package.Config'Class) return OpenGLBitmap_Access is
+      config_Var : constant Config_Access := Config_Access (config_Var_Param);
    begin
         return OpenGLBitmap_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT);
    end createBitmap;
@@ -50,22 +50,22 @@ package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
         return PlatformBitmapBase_Access (OpenGLBitmap_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT));
    end createBitmap;
 
-   procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config_Package.Config'Class) is
-      Java_Result : constant OpenGLBitmap_Access := OpenGLBitmapFactory'Class (This).createBitmap (width, height, config_Param);
+   procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Var_Param : access Config_Package.Config'Class) is
+      Java_Result : constant OpenGLBitmap_Access := OpenGLBitmapFactory'Class (This).createBitmap (width => width, height => height, config_Var_Param => config_Var_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBitmap;
 
    procedure decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream_Package.InputStream'Class) is
-      Java_Result : constant OpenGLBitmap_Access := OpenGLBitmapFactory'Class (This).decodeStream (inputStream_Param);
+      Java_Result : constant OpenGLBitmap_Access := OpenGLBitmapFactory'Class (This).decodeStream (inputStream_Param => inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end decodeStream;
 
    procedure createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image_Package.Image'Class) is
-      Java_Result : constant PlatformBitmapBase_Access := OpenGLBitmapFactory'Class (This).createBitmap (image_Param);
+      Java_Result : constant PlatformBitmapBase_Access := OpenGLBitmapFactory'Class (This).createBitmap (image_Param => image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

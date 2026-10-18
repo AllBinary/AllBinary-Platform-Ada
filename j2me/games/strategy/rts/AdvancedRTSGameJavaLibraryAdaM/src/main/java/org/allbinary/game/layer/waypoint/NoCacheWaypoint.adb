@@ -197,28 +197,28 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
    end visit;
 
    procedure getPathsListFromCacheOnly (This : in out NoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).getPathsListFromCacheOnly (geographicMapCellPosition_Param);
+      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).getPathsListFromCacheOnly (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathsListFromCacheOnly;
 
    procedure getPathsListRunnable (This : in out NoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).getPathsListRunnable (geographicMapCellPosition_Param);
+      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).getPathsListRunnable (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathsListRunnable;
 
    procedure getEndGeographicMapCellPosition (This : in out NoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant GeographicMapCellPosition_Access := NoCacheWaypoint'Class (This).getEndGeographicMapCellPosition (startGeographicMapCellPosition_Param);
+      Java_Result : constant GeographicMapCellPosition_Access := NoCacheWaypoint'Class (This).getEndGeographicMapCellPosition (startGeographicMapCellPosition_Param => startGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getEndGeographicMapCellPosition;
 
    procedure createPaths (This : in out NoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).createPaths (startGeographicMapCellPosition_Param);
+      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).createPaths (startGeographicMapCellPosition_Param => startGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

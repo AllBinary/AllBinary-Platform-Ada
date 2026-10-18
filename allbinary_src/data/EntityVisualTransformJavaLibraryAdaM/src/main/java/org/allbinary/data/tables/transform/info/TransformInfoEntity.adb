@@ -231,21 +231,21 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
    end dropTable;
 
    procedure get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
-      Java_Result : constant TransformInfoInterface_Access := TransformInfoEntity'Class (This).get (name, propertiesHashMap_Param, pageContext_Param);
+      Java_Result : constant TransformInfoInterface_Access := TransformInfoEntity'Class (This).get (name => name, propertiesHashMap_Param => propertiesHashMap_Param, pageContext_Param => pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getObjectConfigs (This : in out TransformInfoEntity; storeName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := TransformInfoEntity'Class (This).getObjectConfigs (storeName);
+      Java_Result : constant BasicArrayList_Access := TransformInfoEntity'Class (This).getObjectConfigs (storeName => storeName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getObjectConfigs;
 
    procedure getNames (This : in out TransformInfoEntity; storeName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := TransformInfoEntity'Class (This).getNames (storeName);
+      Java_Result : constant BasicArrayList_Access := TransformInfoEntity'Class (This).getNames (storeName => storeName);
       pragma Unreferenced (Java_Result);
    begin
       null;

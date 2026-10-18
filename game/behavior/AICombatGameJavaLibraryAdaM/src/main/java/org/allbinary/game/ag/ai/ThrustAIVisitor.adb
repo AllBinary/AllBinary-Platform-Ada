@@ -67,7 +67,7 @@ package body org.allbinary.game.ag.ai.ThrustAIVisitor_Package is
    end visit;
 
    procedure visit (This : in out ThrustAIVisitor; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := ThrustAIVisitor'Class (This).visit (anyType_Param);
+      Java_Result : constant Java_Object_Access := ThrustAIVisitor'Class (This).visit (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

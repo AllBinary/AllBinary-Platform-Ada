@@ -56,7 +56,7 @@ package body org.allbinary.game.state.GameStateFactory_Package is
    end createGameState;
 
    procedure createGameState (This : in out GameStateFactory; name : Unbounded_String) is
-      Java_Result : constant GameState_Access := GameStateFactory'Class (This).createGameState (name);
+      Java_Result : constant GameState_Access := GameStateFactory'Class (This).createGameState (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

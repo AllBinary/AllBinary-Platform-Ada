@@ -93,21 +93,21 @@ package body org.allbinary.logic.string_Id.StringUtil_Package is
    end toString;
 
    procedure getNonNull (This : in out StringUtil; string_Id : Unbounded_String) is
-      Java_Result : constant Unbounded_String := StringUtil'Class (This).getNonNull (string_Id);
+      Java_Result : constant Unbounded_String := StringUtil'Class (This).getNonNull (string_Id => string_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNonNull;
 
    procedure count (This : in out StringUtil; string_Id : Unbounded_String; aChar : Character) is
-      Java_Result : constant Integer := StringUtil'Class (This).count (string_Id, aChar);
+      Java_Result : constant Integer := StringUtil'Class (This).count (string_Id => string_Id, aChar => aChar);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end count;
 
    procedure toString (This : in out StringUtil; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Unbounded_String := StringUtil'Class (This).toString (anyType_Param);
+      Java_Result : constant Unbounded_String := StringUtil'Class (This).toString (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

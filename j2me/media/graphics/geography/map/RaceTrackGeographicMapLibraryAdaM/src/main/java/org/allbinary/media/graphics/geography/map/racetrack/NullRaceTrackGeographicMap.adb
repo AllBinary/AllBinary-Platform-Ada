@@ -149,42 +149,42 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackG
    end setRaceTrackData;
 
    procedure getCellPositionsAt (This : in out NullRaceTrackGeographicMap; layer_Param : access Layer_Package.Layer'Class; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) is
-      Java_Result : constant Boolean := NullRaceTrackGeographicMap'Class (This).getCellPositionsAt (layer_Param, currentCellPositionArray, cellPositionArray);
+      Java_Result : constant Boolean := NullRaceTrackGeographicMap'Class (This).getCellPositionsAt (layer_Param => layer_Param, currentCellPositionArray => currentCellPositionArray, cellPositionArray => cellPositionArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionsAt;
 
    procedure getCellPositionAtXY (This : in out NullRaceTrackGeographicMap; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := NullRaceTrackGeographicMap'Class (This).getCellPositionAtXY (x, y);
+      Java_Result : constant GeographicMapCellPosition_Access := NullRaceTrackGeographicMap'Class (This).getCellPositionAtXY (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionAtXY;
 
    procedure getCellPositionAtXYNoThrow (This : in out NullRaceTrackGeographicMap; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := NullRaceTrackGeographicMap'Class (This).getCellPositionAtXYNoThrow (x, y);
+      Java_Result : constant GeographicMapCellPosition_Access := NullRaceTrackGeographicMap'Class (This).getCellPositionAtXYNoThrow (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionAtXYNoThrow;
 
    procedure getCellTypeFromMapCellTypeInt (This : in out NullRaceTrackGeographicMap; cellTypeId : Integer) is
-      Java_Result : constant Integer := NullRaceTrackGeographicMap'Class (This).getCellTypeFromMapCellTypeInt (cellTypeId);
+      Java_Result : constant Integer := NullRaceTrackGeographicMap'Class (This).getCellTypeFromMapCellTypeInt (cellTypeId => cellTypeId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellTypeFromMapCellTypeInt;
 
    procedure getCellTypeAtXY (This : in out NullRaceTrackGeographicMap; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellType_Access := NullRaceTrackGeographicMap'Class (This).getCellTypeAtXY (x, y);
+      Java_Result : constant GeographicMapCellType_Access := NullRaceTrackGeographicMap'Class (This).getCellTypeAtXY (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellTypeAtXY;
 
    procedure getCellTypeAt (This : in out NullRaceTrackGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant GeographicMapCellType_Access := NullRaceTrackGeographicMap'Class (This).getCellTypeAt (geographicMapCellPosition_Param);
+      Java_Result : constant GeographicMapCellType_Access := NullRaceTrackGeographicMap'Class (This).getCellTypeAt (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

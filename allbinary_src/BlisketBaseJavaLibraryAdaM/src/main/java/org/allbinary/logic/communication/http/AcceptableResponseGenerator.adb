@@ -88,7 +88,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponseGenerator_
    end get;
 
    procedure get (This : in out AcceptableResponseGenerator; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
-      Java_Result : constant Unbounded_String := AcceptableResponseGenerator'Class (This).get (httpServletRequest_Param);
+      Java_Result : constant Unbounded_String := AcceptableResponseGenerator'Class (This).get (httpServletRequest_Param => httpServletRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

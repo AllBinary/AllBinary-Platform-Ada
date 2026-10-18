@@ -71,7 +71,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    end getHashtable;
 
    procedure getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is
-      Java_Result : constant BasicGeographicMapCellPositionFactory_Access := GeographicMapCellPositionFactory'Class (This).getInstance (geographicMapInterface_Param);
+      Java_Result : constant BasicGeographicMapCellPositionFactory_Access := GeographicMapCellPositionFactory'Class (This).getInstance (geographicMapInterface_Param => geographicMapInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

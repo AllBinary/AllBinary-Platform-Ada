@@ -20,7 +20,7 @@ package org.allbinary.graph.E_Package is
    type E_Access_Array_Access_Array_Access is access all E_Access_Array_Access_Array;
 
    type E is new Java_Object with null record;
-   e : E_Access;
+   e_Var : E_Access;
 
    procedure Initialize (This : in out E'Class);
    function Create return E_Access;

@@ -662,28 +662,28 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    end setRotationAnimationInterface;
 
    procedure createSimulatedInstance (remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class) is
-      Java_Result : constant RTSLayer_Access := createSimulatedInstance (remoteInfo_Param);
+      Java_Result : constant RTSLayer_Access := createSimulatedInstance (remoteInfo_Param => remoteInfo_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createSimulatedInstance;
 
    procedure getMoveOutOfBuildAreaPath (This : in out RTSLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant BasicArrayList_Access := RTSLayer'Class (This).getMoveOutOfBuildAreaPath (geographicMapCellPosition_Param);
+      Java_Result : constant BasicArrayList_Access := RTSLayer'Class (This).getMoveOutOfBuildAreaPath (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getMoveOutOfBuildAreaPath;
 
    procedure buildingChase (This : in out RTSLayer; allbinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := RTSLayer'Class (This).buildingChase (allbinaryLayer_Param, cellPosition_Param);
+      Java_Result : constant Boolean := RTSLayer'Class (This).buildingChase (allbinaryLayer_Param => allbinaryLayer_Param, cellPosition_Param => cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end buildingChase;
 
    procedure isRTSLayer (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant Boolean := isRTSLayer (layerInterface_Param);
+      Java_Result : constant Boolean := isRTSLayer (layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

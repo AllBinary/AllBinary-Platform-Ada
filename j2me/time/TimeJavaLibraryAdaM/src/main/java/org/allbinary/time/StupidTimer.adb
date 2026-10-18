@@ -83,7 +83,7 @@ package body org.allbinary.time.StupidTimer_Package is
    end stopWaiting;
 
    procedure visitBool (This : in out StupidTimer; visitorInterface_Param : access Visitor_Package.Visitor'Class) is
-      Java_Result : constant Boolean := StupidTimer'Class (This).visitBool (visitorInterface_Param);
+      Java_Result : constant Boolean := StupidTimer'Class (This).visitBool (visitorInterface_Param => visitorInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

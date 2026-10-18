@@ -111,14 +111,14 @@ package body org.allbinary.graphics.CellPositionFactory_Package is
    end getRows;
 
    procedure getInstanceColRow (This : in out CellPositionFactory; i_column : Integer; i_row : Integer) is
-      Java_Result : constant CellPosition_Access := CellPositionFactory'Class (This).getInstanceColRow (i_column, i_row);
+      Java_Result : constant CellPosition_Access := CellPositionFactory'Class (This).getInstanceColRow (i_column => i_column, i_row => i_row);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceColRow;
 
    procedure createInstance (This : in out CellPositionFactory; i_column : Integer; i_row : Integer) is
-      Java_Result : constant CellPosition_Access := CellPositionFactory'Class (This).createInstance (i_column, i_row);
+      Java_Result : constant CellPosition_Access := CellPositionFactory'Class (This).createInstance (i_column => i_column, i_row => i_row);
       pragma Unreferenced (Java_Result);
    begin
       null;

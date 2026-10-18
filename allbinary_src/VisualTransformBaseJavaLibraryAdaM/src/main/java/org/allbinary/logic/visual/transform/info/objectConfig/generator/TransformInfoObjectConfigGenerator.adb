@@ -43,7 +43,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
    end process;
 
    procedure process (This : in out TransformInfoObjectConfigGenerator; input : Unbounded_String) is
-      Java_Result : constant Unbounded_String := TransformInfoObjectConfigGenerator'Class (This).process (input);
+      Java_Result : constant Unbounded_String := TransformInfoObjectConfigGenerator'Class (This).process (input => input);
       pragma Unreferenced (Java_Result);
    begin
       null;

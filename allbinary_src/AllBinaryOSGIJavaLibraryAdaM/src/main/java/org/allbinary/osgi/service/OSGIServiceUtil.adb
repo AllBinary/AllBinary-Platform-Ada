@@ -75,7 +75,7 @@ package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
    end getServicesObjectVector;
 
    procedure getServicesObjectVector (This : in out OSGIServiceUtil; bundleContext_Param : access BundleContext_Package.BundleContext'Class; serviceReferences : ServiceReference_Access_Array_Access) is
-      Java_Result : constant BasicArrayList_Access := OSGIServiceUtil'Class (This).getServicesObjectVector (bundleContext_Param, serviceReferences);
+      Java_Result : constant BasicArrayList_Access := OSGIServiceUtil'Class (This).getServicesObjectVector (bundleContext_Param => bundleContext_Param, serviceReferences => serviceReferences);
       pragma Unreferenced (Java_Result);
    begin
       null;

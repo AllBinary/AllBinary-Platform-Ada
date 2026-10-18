@@ -35,11 +35,11 @@ package body org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package i
 
    --  throws Exception
    function createCache (size : Integer) return IndexedBasicArrayListCache_Access is
-      indexedBasicArrayListCache : IndexedBasicArrayListCache_Access;
+      indexedBasicArrayListCache_Var : IndexedBasicArrayListCache_Access;
    begin
-        indexedBasicArrayListCache := IndexedBasicArrayListCache_Package.Create;
-        indexedBasicArrayListCache.init (size);
-        return indexedBasicArrayListCache;
+        indexedBasicArrayListCache_Var := IndexedBasicArrayListCache_Package.Create;
+        indexedBasicArrayListCache_Var.init (size);
+        return indexedBasicArrayListCache_Var;
    end createCache;
 
    procedure Initialize (This : in out IndexedBasicArrayListCache'Class) is
@@ -106,14 +106,14 @@ package body org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package i
    end clear;
 
    procedure createCache (size : Integer) is
-      Java_Result : constant IndexedBasicArrayListCache_Access := createCache (size);
+      Java_Result : constant IndexedBasicArrayListCache_Access := createCache (size => size);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createCache;
 
    procedure getAt (This : in out IndexedBasicArrayListCache; index : Integer) is
-      Java_Result : constant Java_Object_Access := IndexedBasicArrayListCache'Class (This).getAt (index);
+      Java_Result : constant Java_Object_Access := IndexedBasicArrayListCache'Class (This).getAt (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

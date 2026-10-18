@@ -681,42 +681,42 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
    end getRowsWhereBetween;
 
    procedure getValue (This : in out AbSqlRow; value : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbSqlRow'Class (This).getValue (value);
+      Java_Result : constant Unbounded_String := AbSqlRow'Class (This).getValue (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getValue;
 
    procedure getRow (This : in out AbSqlRow; keysAndValues_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant HashMap_Access := AbSqlRow'Class (This).getRow (keysAndValues_Param);
+      Java_Result : constant HashMap_Access := AbSqlRow'Class (This).getRow (keysAndValues_Param => keysAndValues_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRow;
 
    procedure getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRows (keysAndValues_Param);
+      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRows (keysAndValues_Param => keysAndValues_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRows;
 
    procedure getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap_Package.HashMap'Class; more : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRows (keysAndValues_Param, more);
+      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRows (keysAndValues_Param => keysAndValues_Param, more => more);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRows;
 
    procedure getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap_Package.HashMap'Class; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRowsWhereBetween (whereKeyValuePairs_Param, betweenColumn, smallest, largest);
+      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRowsWhereBetween (whereKeyValuePairs_Param => whereKeyValuePairs_Param, betweenColumn => betweenColumn, smallest => smallest, largest => largest);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRowsWhereBetween;
 
    procedure getRowsWhereBetween (This : in out AbSqlRow; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRowsWhereBetween (betweenColumn, smallest, largest);
+      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRowsWhereBetween (betweenColumn => betweenColumn, smallest => smallest, largest => largest);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -108,14 +108,14 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    end addResource;
 
    procedure getResourceAsStream (This : in out ResourceUtil; resource : Unbounded_String) is
-      Java_Result : constant InputStream_Access := ResourceUtil'Class (This).getResourceAsStream (resource);
+      Java_Result : constant InputStream_Access := ResourceUtil'Class (This).getResourceAsStream (resource => resource);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getResourceAsStream;
 
    procedure getResourceAsStreamAtStart (This : in out ResourceUtil; resource : Unbounded_String; startIndex : Integer) is
-      Java_Result : constant InputStream_Access := ResourceUtil'Class (This).getResourceAsStreamAtStart (resource, startIndex);
+      Java_Result : constant InputStream_Access := ResourceUtil'Class (This).getResourceAsStreamAtStart (resource => resource, startIndex => startIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;

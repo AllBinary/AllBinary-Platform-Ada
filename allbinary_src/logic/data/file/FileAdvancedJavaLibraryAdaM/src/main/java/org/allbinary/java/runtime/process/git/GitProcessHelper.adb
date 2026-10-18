@@ -119,21 +119,21 @@ package body org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
    end isTracked;
 
    procedure trackedFiles (This : in out GitProcessHelper; rootAsString : Unbounded_String; pathspec : Unbounded_String) is
-      Java_Result : constant List_Access := GitProcessHelper'Class (This).trackedFiles (rootAsString, pathspec);
+      Java_Result : constant List_Access := GitProcessHelper'Class (This).trackedFiles (rootAsString => rootAsString, pathspec => pathspec);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end trackedFiles;
 
    procedure trackedFiles (This : in out GitProcessHelper; rootAsString : Unbounded_String; pathspec : Unbounded_String; suffix : Unbounded_String) is
-      Java_Result : constant List_Access := GitProcessHelper'Class (This).trackedFiles (rootAsString, pathspec, suffix);
+      Java_Result : constant List_Access := GitProcessHelper'Class (This).trackedFiles (rootAsString => rootAsString, pathspec => pathspec, suffix => suffix);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end trackedFiles;
 
    procedure isTracked (This : in out GitProcessHelper; file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant Boolean := GitProcessHelper'Class (This).isTracked (file_Param);
+      Java_Result : constant Boolean := GitProcessHelper'Class (This).isTracked (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

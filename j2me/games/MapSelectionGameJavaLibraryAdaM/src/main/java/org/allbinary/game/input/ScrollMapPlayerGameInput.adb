@@ -289,28 +289,28 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
    end keepOnMapMinX;
 
    procedure keepOnMapMaxY (This : in out ScrollMapPlayerGameInput; newY : Integer) is
-      Java_Result : constant Boolean := ScrollMapPlayerGameInput'Class (This).keepOnMapMaxY (newY);
+      Java_Result : constant Boolean := ScrollMapPlayerGameInput'Class (This).keepOnMapMaxY (newY => newY);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end keepOnMapMaxY;
 
    procedure keepOnMapMinY (This : in out ScrollMapPlayerGameInput; newY : Integer) is
-      Java_Result : constant Boolean := ScrollMapPlayerGameInput'Class (This).keepOnMapMinY (newY);
+      Java_Result : constant Boolean := ScrollMapPlayerGameInput'Class (This).keepOnMapMinY (newY => newY);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end keepOnMapMinY;
 
    procedure keepOnMapMaxX (This : in out ScrollMapPlayerGameInput; newX : Integer) is
-      Java_Result : constant Boolean := ScrollMapPlayerGameInput'Class (This).keepOnMapMaxX (newX);
+      Java_Result : constant Boolean := ScrollMapPlayerGameInput'Class (This).keepOnMapMaxX (newX => newX);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end keepOnMapMaxX;
 
    procedure keepOnMapMinX (This : in out ScrollMapPlayerGameInput; newX : Integer) is
-      Java_Result : constant Boolean := ScrollMapPlayerGameInput'Class (This).keepOnMapMinX (newX);
+      Java_Result : constant Boolean := ScrollMapPlayerGameInput'Class (This).keepOnMapMinX (newX => newX);
       pragma Unreferenced (Java_Result);
    begin
       null;

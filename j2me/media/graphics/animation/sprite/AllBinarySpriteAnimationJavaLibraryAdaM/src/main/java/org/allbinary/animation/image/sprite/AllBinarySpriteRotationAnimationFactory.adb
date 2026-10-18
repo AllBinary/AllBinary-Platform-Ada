@@ -139,56 +139,56 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
    end getInstanceAnimation;
 
    procedure createWHDY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createWHDY (image_Param, dx, dy, animationBehaviorFactory_Param);
+      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createWHDY (image_Param => image_Param, dx => dx, dy => dy, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createWHDY;
 
    procedure createWH (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createWH (image_Param, animationBehaviorFactory_Param);
+      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createWH (image_Param => image_Param, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createWH;
 
    procedure createDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createDXY (image_Param, dx, dy, animationBehaviorFactory_Param);
+      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createDXY (image_Param => image_Param, dx => dx, dy => dy, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createDXY;
 
    procedure createDXYQ (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createDXYQ (image_Param, dx, dy, animationBehaviorFactory_Param);
+      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createDXYQ (image_Param => image_Param, dx => dx, dy => dy, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createDXYQ;
 
    procedure createQ (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createQ (image_Param, animationBehaviorFactory_Param);
+      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createQ (image_Param => image_Param, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createQ;
 
    procedure createWHF (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createWHF (image_Param, animationBehaviorFactory_Param);
+      Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createWHF (image_Param => image_Param, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createWHF;
 
    procedure getInstance (This : in out AllBinarySpriteRotationAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := AllBinarySpriteRotationAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := AllBinarySpriteRotationAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstanceAnimation (This : in out AllBinarySpriteRotationAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) is
-      Java_Result : constant Animation_Access := AllBinarySpriteRotationAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param);
+      Java_Result : constant Animation_Access := AllBinarySpriteRotationAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param => animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

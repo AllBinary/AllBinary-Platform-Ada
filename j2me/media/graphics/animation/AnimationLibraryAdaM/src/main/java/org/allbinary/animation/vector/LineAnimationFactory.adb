@@ -51,7 +51,7 @@ package body org.allbinary.animation.vector.LineAnimationFactory_Package is
    end setInitialScale;
 
    procedure getInstance (This : in out LineAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := LineAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := LineAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -126,56 +126,56 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
    end isEnter;
 
    procedure isSubmission (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isSubmission (input_Param);
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isSubmission (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isSubmission;
 
    procedure isDelete (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isDelete (input_Param);
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isDelete (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
    procedure isBackSpace (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isBackSpace (input_Param);
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isBackSpace (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isBackSpace;
 
    procedure isUp (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isUp (input_Param);
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isUp (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isUp;
 
    procedure isDown (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isDown (input_Param);
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isDown (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDown;
 
    procedure isLeft (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isLeft (input_Param);
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isLeft (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isLeft;
 
    procedure isRight (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isRight (input_Param);
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isRight (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isRight;
 
    procedure isEnter (This : in out J2MEKeyFactory; input_Param : access Input_Package.Input'Class) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isEnter (input_Param);
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isEnter (input_Param => input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -215,7 +215,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
    end setFileNames;
 
    procedure saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData_Param : access MediaData_Package.MediaData'Class) is
-      Java_Result : constant ItemInterface_Access := InventoryUploadMediaUtil'Class (This).saveFiles (byteArray, fileName, mediaData_Param);
+      Java_Result : constant ItemInterface_Access := InventoryUploadMediaUtil'Class (This).saveFiles (byteArray => byteArray, fileName => fileName, mediaData_Param => mediaData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

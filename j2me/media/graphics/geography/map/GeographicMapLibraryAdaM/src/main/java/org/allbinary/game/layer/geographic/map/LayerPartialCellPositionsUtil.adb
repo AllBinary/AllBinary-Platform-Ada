@@ -104,14 +104,14 @@ package body org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUt
    end getInstance;
 
    procedure getAll (This : in out LayerPartialCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; reusableList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := LayerPartialCellPositionsUtil'Class (This).getAll (geographicMapInterface_Param, layerInterface_Param, reusableList_Param);
+      Java_Result : constant BasicArrayList_Access := LayerPartialCellPositionsUtil'Class (This).getAll (geographicMapInterface_Param => geographicMapInterface_Param, layerInterface_Param => layerInterface_Param, reusableList_Param => reusableList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
    procedure getAllDXY (This : in out LayerPartialCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; dx : Integer; dy : Integer; reusableList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := LayerPartialCellPositionsUtil'Class (This).getAllDXY (geographicMapInterface_Param, layerInterface_Param, dx, dy, reusableList_Param);
+      Java_Result : constant BasicArrayList_Access := LayerPartialCellPositionsUtil'Class (This).getAllDXY (geographicMapInterface_Param => geographicMapInterface_Param, layerInterface_Param => layerInterface_Param, dx => dx, dy => dy, reusableList_Param => reusableList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

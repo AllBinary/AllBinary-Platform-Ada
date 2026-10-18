@@ -129,7 +129,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out InsertHeaderValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := InsertHeaderValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := InsertHeaderValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

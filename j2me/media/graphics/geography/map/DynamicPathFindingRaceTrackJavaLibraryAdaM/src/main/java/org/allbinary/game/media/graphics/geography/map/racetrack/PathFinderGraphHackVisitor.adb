@@ -209,7 +209,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
    end isValid;
 
    procedure isValid (This : in out PathFinderGraphHackVisitor; graphPath_Param : access GraphPath_Package.GraphPath'Class) is
-      Java_Result : constant Boolean := PathFinderGraphHackVisitor'Class (This).isValid (graphPath_Param);
+      Java_Result : constant Boolean := PathFinderGraphHackVisitor'Class (This).isValid (graphPath_Param => graphPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

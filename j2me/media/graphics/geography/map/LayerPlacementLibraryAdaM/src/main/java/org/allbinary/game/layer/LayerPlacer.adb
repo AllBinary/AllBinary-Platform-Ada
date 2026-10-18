@@ -133,7 +133,7 @@ package body org.allbinary.game.layer.LayerPlacer_Package is
    end getPoint;
 
    procedure getPoint (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface_Package.LayerPlacementInterface'Class) is
-      Java_Result : constant GPoint_Access := LayerPlacer'Class (This).getPoint (layerPlacementInterface_Param);
+      Java_Result : constant GPoint_Access := LayerPlacer'Class (This).getPoint (layerPlacementInterface_Param => layerPlacementInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

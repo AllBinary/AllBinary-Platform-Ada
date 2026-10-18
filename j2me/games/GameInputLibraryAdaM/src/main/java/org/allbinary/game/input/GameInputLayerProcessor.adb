@@ -57,7 +57,7 @@ package body org.allbinary.game.input.GameInputLayerProcessor_Package is
    end isProcessorLayer;
 
    procedure isProcessorLayer (This : in out GameInputLayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant Boolean := GameInputLayerProcessor'Class (This).isProcessorLayer (layerInterface_Param);
+      Java_Result : constant Boolean := GameInputLayerProcessor'Class (This).isProcessorLayer (layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

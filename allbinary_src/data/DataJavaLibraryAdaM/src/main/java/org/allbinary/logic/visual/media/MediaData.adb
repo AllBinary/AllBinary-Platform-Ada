@@ -60,10 +60,10 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
         return This.extension;
    end getExtension;
 
-   function isConvertableTo (This : in out MediaData; mediaData_Param : access MediaData_Package.MediaData'Class) return Boolean is
-      mediaData : constant MediaData_Access := MediaData_Access (mediaData_Param);
+   function isConvertableTo (This : in out MediaData; mediaData_Var_Param : access MediaData_Package.MediaData'Class) return Boolean is
+      mediaData_Var : constant MediaData_Access := MediaData_Access (mediaData_Var_Param);
    begin
-        if ((MediaData_Access'(This'Unchecked_Access)) = (MediaDataFactory_Package.getInstance.GIF)) and then ((mediaData) = (MediaDataFactory_Package.getInstance.JPG)) then
+        if ((MediaData_Access'(This'Unchecked_Access)) = (MediaDataFactory_Package.getInstance.GIF)) and then ((mediaData_Var) = (MediaDataFactory_Package.getInstance.JPG)) then
             return True;
         end if;
         return False;
@@ -76,11 +76,11 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
 
    --  throws Exception
    function get (a_Name : Unbounded_String) return MediaData_Access is
-      mediaData : MediaData_Access;
+      mediaData_Var : MediaData_Access;
    begin
-        mediaData := MediaData_Access (MediaData_Package.hashMap.get (Java_Box (a_Name)));
-        if (mediaData) /= (null) then
-            return mediaData;
+        mediaData_Var := MediaData_Access (MediaData_Package.hashMap.get (Java_Box (a_Name)));
+        if (mediaData_Var) /= (null) then
+            return mediaData_Var;
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such MediaData")));
         end if;
@@ -96,15 +96,15 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
         return MediaData_Package.hashMap;
    end toHashMap;
 
-   procedure isConvertableTo (This : in out MediaData; mediaData_Param : access MediaData_Package.MediaData'Class) is
-      Java_Result : constant Boolean := MediaData'Class (This).isConvertableTo (mediaData_Param);
+   procedure isConvertableTo (This : in out MediaData; mediaData_Var_Param : access MediaData_Package.MediaData'Class) is
+      Java_Result : constant Boolean := MediaData'Class (This).isConvertableTo (mediaData_Var_Param => mediaData_Var_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isConvertableTo;
 
    procedure get (a_Name : Unbounded_String) is
-      Java_Result : constant MediaData_Access := get (a_Name);
+      Java_Result : constant MediaData_Access := get (a_Name => a_Name);
       pragma Unreferenced (Java_Result);
    begin
       null;

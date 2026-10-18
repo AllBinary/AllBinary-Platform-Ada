@@ -48,7 +48,7 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    type GenericProfileActionScript_Access_Array_Access_Array is array (Natural range <>) of GenericProfileActionScript_Access_Array_Access;
    type GenericProfileActionScript_Access_Array_Access_Array_Access is access all GenericProfileActionScript_Access_Array_Access_Array;
 
-   type GenericProfileActionScript is new DefaultMutableTreeNode and ProfileActionScriptNodeInterface with record
+   type GenericProfileActionScript is new Java_Object and ProfileActionScriptNodeInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       genericProfileActionJPanel : GenericProfileActionJPanel_Access;

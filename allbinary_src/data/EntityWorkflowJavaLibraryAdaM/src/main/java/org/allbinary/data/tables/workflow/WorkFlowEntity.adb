@@ -206,14 +206,14 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
    end dropTable;
 
    procedure get (This : in out WorkFlowEntity; name : Unbounded_String; storeName : Unbounded_String) is
-      Java_Result : constant WorkFlowInterface_Access := WorkFlowEntity'Class (This).get (name, storeName);
+      Java_Result : constant WorkFlowInterface_Access := WorkFlowEntity'Class (This).get (name => name, storeName => storeName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure get (This : in out WorkFlowEntity; storeName : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := WorkFlowEntity'Class (This).get (storeName);
+      Java_Result : constant BasicArrayList_Access := WorkFlowEntity'Class (This).get (storeName => storeName);
       pragma Unreferenced (Java_Result);
    begin
       null;

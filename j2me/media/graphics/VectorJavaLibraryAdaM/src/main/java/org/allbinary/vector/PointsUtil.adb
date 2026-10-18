@@ -87,21 +87,21 @@ package body org.allbinary.vector.PointsUtil_Package is
    end adjust;
 
    procedure adjustXY (This : in out PointsUtil; points : Integer_Array_Access_Array_Access_Array_Access; x : Integer; y : Integer) is
-      Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := PointsUtil'Class (This).adjustXY (points, x, y);
+      Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := PointsUtil'Class (This).adjustXY (points => points, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end adjustXY;
 
    procedure adjust (This : in out PointsUtil; points : Integer_Array_Access_Array_Access; both : Integer) is
-      Java_Result : constant Integer_Array_Access_Array_Access := PointsUtil'Class (This).adjust (points, both);
+      Java_Result : constant Integer_Array_Access_Array_Access := PointsUtil'Class (This).adjust (points => points, both => both);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end adjust;
 
    procedure adjust (This : in out PointsUtil; points : Integer_Array_Access_Array_Access; x : Integer; y : Integer) is
-      Java_Result : constant Integer_Array_Access_Array_Access := PointsUtil'Class (This).adjust (points, x, y);
+      Java_Result : constant Integer_Array_Access_Array_Access := PointsUtil'Class (This).adjust (points => points, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

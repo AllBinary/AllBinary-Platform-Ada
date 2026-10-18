@@ -209,28 +209,28 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
    end getEightDirectionFromCellPositionToCellPosition;
 
    procedure getDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getDirectionFromCellPositionToAdjacentCellPosition (fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param);
+      Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getDirectionFromCellPositionToAdjacentCellPosition (fromGeographicMapCellPosition_Param => fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param => toGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDirectionFromCellPositionToAdjacentCellPosition;
 
    procedure getEightDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getEightDirectionFromCellPositionToAdjacentCellPosition (fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param);
+      Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getEightDirectionFromCellPositionToAdjacentCellPosition (fromGeographicMapCellPosition_Param => fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param => toGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getEightDirectionFromCellPositionToAdjacentCellPosition;
 
    procedure getDirectionFromCellPositionToCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getDirectionFromCellPositionToCellPosition (fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param);
+      Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getDirectionFromCellPositionToCellPosition (fromGeographicMapCellPosition_Param => fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param => toGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDirectionFromCellPositionToCellPosition;
 
    procedure getEightDirectionFromCellPositionToCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getEightDirectionFromCellPositionToCellPosition (fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param);
+      Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getEightDirectionFromCellPositionToCellPosition (fromGeographicMapCellPosition_Param => fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param => toGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -110,14 +110,14 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
    end generateComponentsFromObjectConfig;
 
    procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; group : Unbounded_String) is
-      Java_Result : constant Unbounded_String := TransformsGeneratorUtil'Class (This).generateComponentsFromObjectConfig (abeClientInformation_Param, transformInfoInterface_Param, group);
+      Java_Result : constant Unbounded_String := TransformsGeneratorUtil'Class (This).generateComponentsFromObjectConfig (abeClientInformation_Param => abeClientInformation_Param, transformInfoInterface_Param => transformInfoInterface_Param, group => group);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end generateComponentsFromObjectConfig;
 
    procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoObjectConfigInterface_Param : access TransformInfoObjectConfigInterface_Package.TransformInfoObjectConfigInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; group : Unbounded_String) is
-      Java_Result : constant Unbounded_String := TransformsGeneratorUtil'Class (This).generateComponentsFromObjectConfig (abeClientInformation_Param, transformInfoObjectConfigInterface_Param, transformInfoInterface_Param, group);
+      Java_Result : constant Unbounded_String := TransformsGeneratorUtil'Class (This).generateComponentsFromObjectConfig (abeClientInformation_Param => abeClientInformation_Param, transformInfoObjectConfigInterface_Param => transformInfoObjectConfigInterface_Param, transformInfoInterface_Param => transformInfoInterface_Param, group => group);
       pragma Unreferenced (Java_Result);
    begin
       null;

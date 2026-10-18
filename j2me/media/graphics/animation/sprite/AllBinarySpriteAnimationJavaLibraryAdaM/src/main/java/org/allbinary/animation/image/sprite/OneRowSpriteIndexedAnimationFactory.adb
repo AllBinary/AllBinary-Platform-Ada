@@ -35,22 +35,22 @@ package body org.allbinary.animation.image.sprite.OneRowSpriteIndexedAnimationFa
    function createFactoryDX (image_Param : access Image_Package.Image'Class; dx : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access is
       image : constant Image_Access := Image_Access (image_Param);
       animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
-      oneRowSpriteIndexedAnimationFactory : OneRowSpriteIndexedAnimationFactory_Access;
+      oneRowSpriteIndexedAnimationFactory_Var : OneRowSpriteIndexedAnimationFactory_Access;
    begin
-        oneRowSpriteIndexedAnimationFactory := OneRowSpriteIndexedAnimationFactory_Package.Create (image, PrimitiveIntUtil_Package.getArrayInstance, image.getHeight, image.getHeight, 0, 0, animationBehaviorFactory);
-        oneRowSpriteIndexedAnimationFactory.initW (dx);
-        return oneRowSpriteIndexedAnimationFactory;
+        oneRowSpriteIndexedAnimationFactory_Var := OneRowSpriteIndexedAnimationFactory_Package.Create (image, PrimitiveIntUtil_Package.getArrayInstance, image.getHeight, image.getHeight, 0, 0, animationBehaviorFactory);
+        oneRowSpriteIndexedAnimationFactory_Var.initW (dx);
+        return oneRowSpriteIndexedAnimationFactory_Var;
    end createFactoryDX;
 
    --  throws Exception
    function createFactoryDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access is
       image : constant Image_Access := Image_Access (image_Param);
       animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
-      oneRowSpriteIndexedAnimationFactory : OneRowSpriteIndexedAnimationFactory_Access;
+      oneRowSpriteIndexedAnimationFactory_Var : OneRowSpriteIndexedAnimationFactory_Access;
    begin
-        oneRowSpriteIndexedAnimationFactory := OneRowSpriteIndexedAnimationFactory_Package.Create (image, PrimitiveIntUtil_Package.getArrayInstance, image.getHeight, image.getHeight, 0, 0, animationBehaviorFactory);
-        oneRowSpriteIndexedAnimationFactory.init (dx, dy);
-        return oneRowSpriteIndexedAnimationFactory;
+        oneRowSpriteIndexedAnimationFactory_Var := OneRowSpriteIndexedAnimationFactory_Package.Create (image, PrimitiveIntUtil_Package.getArrayInstance, image.getHeight, image.getHeight, 0, 0, animationBehaviorFactory);
+        oneRowSpriteIndexedAnimationFactory_Var.init (dx, dy);
+        return oneRowSpriteIndexedAnimationFactory_Var;
    end createFactoryDXY;
 
    --  throws Exception
@@ -109,35 +109,35 @@ package body org.allbinary.animation.image.sprite.OneRowSpriteIndexedAnimationFa
    end getInstance;
 
    procedure createFactoryDX (image_Param : access Image_Package.Image'Class; dx : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant OneRowSpriteIndexedAnimationFactory_Access := createFactoryDX (image_Param, dx, animationBehaviorFactory_Param);
+      Java_Result : constant OneRowSpriteIndexedAnimationFactory_Access := createFactoryDX (image_Param => image_Param, dx => dx, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryDX;
 
    procedure createFactoryDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant OneRowSpriteIndexedAnimationFactory_Access := createFactoryDXY (image_Param, dx, dy, animationBehaviorFactory_Param);
+      Java_Result : constant OneRowSpriteIndexedAnimationFactory_Access := createFactoryDXY (image_Param => image_Param, dx => dx, dy => dy, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryDXY;
 
    procedure createFactoryWH (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant OneRowSpriteIndexedAnimationFactory_Access := createFactoryWH (image_Param, width, height, animationBehaviorFactory_Param);
+      Java_Result : constant OneRowSpriteIndexedAnimationFactory_Access := createFactoryWH (image_Param => image_Param, width => width, height => height, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryWH;
 
    procedure createFactory (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant OneRowSpriteIndexedAnimationFactory_Access := createFactory (image_Param, animationBehaviorFactory_Param);
+      Java_Result : constant OneRowSpriteIndexedAnimationFactory_Access := createFactory (image_Param => image_Param, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactory;
 
    procedure getInstance (This : in out OneRowSpriteIndexedAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := OneRowSpriteIndexedAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := OneRowSpriteIndexedAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -55,7 +55,7 @@ package body org.allbinary.logic.java.bool.BooleanFactory_Package is
    end toStringb;
 
    procedure toStringb (This : in out BooleanFactory; bool : Boolean) is
-      Java_Result : constant Unbounded_String := BooleanFactory'Class (This).toStringb (bool);
+      Java_Result : constant Unbounded_String := BooleanFactory'Class (This).toStringb (bool => bool);
       pragma Unreferenced (Java_Result);
    begin
       null;

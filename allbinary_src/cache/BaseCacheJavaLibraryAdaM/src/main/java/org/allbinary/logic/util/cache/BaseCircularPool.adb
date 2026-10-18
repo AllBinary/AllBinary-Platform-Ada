@@ -72,7 +72,7 @@ package body org.allbinary.logic.util.cache.BaseCircularPool_Package is
    end getInstance;
 
    procedure getInstance (This : in out BaseCircularPool; index : Integer) is
-      Java_Result : constant Java_Object_Access := BaseCircularPool'Class (This).getInstance (index);
+      Java_Result : constant Java_Object_Access := BaseCircularPool'Class (This).getInstance (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

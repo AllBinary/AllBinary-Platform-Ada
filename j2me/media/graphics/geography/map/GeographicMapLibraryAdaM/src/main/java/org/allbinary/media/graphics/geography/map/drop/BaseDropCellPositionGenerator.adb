@@ -62,7 +62,7 @@ package body org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositio
    end processTick;
 
    procedure isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant Boolean := BaseDropCellPositionGenerator'Class (This).isDropAllowedAt (geographicMapCellPosition_Param);
+      Java_Result : constant Boolean := BaseDropCellPositionGenerator'Class (This).isDropAllowedAt (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -84,7 +84,7 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
    end setInitialScale;
 
    procedure getInstance (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := AllBinaryFlickerAndroidImageRotationAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := AllBinaryFlickerAndroidImageRotationAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -55,14 +55,14 @@ package body org.allbinary.business.user.commerce.inventory.item.ItemFactoryUnus
    end getInstance;
 
    procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant TableMappingInterface_Access := getInstance (hashMap_Param);
+      Java_Result : constant TableMappingInterface_Access := getInstance (hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
-      Java_Result : constant TableMappingInterface_Access := getInstance (request_Param);
+      Java_Result : constant TableMappingInterface_Access := getInstance (request_Param => request_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

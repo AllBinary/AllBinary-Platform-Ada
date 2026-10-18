@@ -55,21 +55,21 @@ package body org.allbinary.logic.math.J2SEMath_Package is
    end absdouble;
 
    procedure round (This : in out J2SEMath; value : Float) is
-      Java_Result : constant Integer := J2SEMath'Class (This).round (value);
+      Java_Result : constant Integer := J2SEMath'Class (This).round (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end round;
 
    procedure abs_Id (This : in out J2SEMath; value : Float) is
-      Java_Result : constant Float := J2SEMath'Class (This).abs_Id (value);
+      Java_Result : constant Float := J2SEMath'Class (This).abs_Id (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end abs_Id;
 
    procedure absdouble (This : in out J2SEMath; value : Long_Float) is
-      Java_Result : constant Long_Float := J2SEMath'Class (This).absdouble (value);
+      Java_Result : constant Long_Float := J2SEMath'Class (This).absdouble (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;

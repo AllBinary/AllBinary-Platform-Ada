@@ -97,7 +97,7 @@ package body views.generic_Id.address.billing.BillingAddressView_Package is
    end view;
 
    procedure toXmlNode (This : in out BillingAddressView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := BillingAddressView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := BillingAddressView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -60,7 +60,7 @@ package body org.allbinary.math.AngleIncrementInfoFactory_Package is
    end getAt;
 
    procedure getAt (This : in out AngleIncrementInfoFactory; angleIncrement : Short_Integer) is
-      Java_Result : constant AngleIncrementInfo_Access := AngleIncrementInfoFactory'Class (This).getAt (angleIncrement);
+      Java_Result : constant AngleIncrementInfo_Access := AngleIncrementInfoFactory'Class (This).getAt (angleIncrement => angleIncrement);
       pragma Unreferenced (Java_Result);
    begin
       null;

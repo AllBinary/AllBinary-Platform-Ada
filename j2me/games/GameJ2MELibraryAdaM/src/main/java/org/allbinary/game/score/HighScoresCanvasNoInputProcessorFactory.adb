@@ -41,7 +41,7 @@ package body org.allbinary.game.score.HighScoresCanvasNoInputProcessorFactory_Pa
    end getInstance;
 
    procedure getInstance (This : in out HighScoresCanvasNoInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) is
-      Java_Result : constant HighScoresCanvasInputProcessor_Access := HighScoresCanvasNoInputProcessorFactory'Class (This).getInstance (highScoresCanvas_Param);
+      Java_Result : constant HighScoresCanvasInputProcessor_Access := HighScoresCanvasNoInputProcessorFactory'Class (This).getInstance (highScoresCanvas_Param => highScoresCanvas_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

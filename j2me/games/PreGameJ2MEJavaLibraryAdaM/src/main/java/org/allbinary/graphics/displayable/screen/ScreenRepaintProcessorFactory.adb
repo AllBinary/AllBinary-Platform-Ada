@@ -54,7 +54,7 @@ package body org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFac
    end create;
 
    procedure create (This : in out ScreenRepaintProcessorFactory; displayable_Param : access Displayable_Package.Displayable'Class) is
-      Java_Result : constant Processor_Access := ScreenRepaintProcessorFactory'Class (This).create (displayable_Param);
+      Java_Result : constant Processor_Access := ScreenRepaintProcessorFactory'Class (This).create (displayable_Param => displayable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

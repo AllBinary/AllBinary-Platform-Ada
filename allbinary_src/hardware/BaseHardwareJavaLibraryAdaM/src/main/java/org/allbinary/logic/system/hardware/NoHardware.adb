@@ -66,21 +66,21 @@ package body org.allbinary.logic.system.hardware.NoHardware_Package is
    end difference;
 
    procedure getComponent (This : in out NoHardware; index : Integer) is
-      Java_Result : constant HardwareComponentInterface_Access := NoHardware'Class (This).getComponent (index);
+      Java_Result : constant HardwareComponentInterface_Access := NoHardware'Class (This).getComponent (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getComponent;
 
    procedure compareTo (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) is
-      Java_Result : constant Boolean := NoHardware'Class (This).compareTo (hardwareInterface_Param);
+      Java_Result : constant Boolean := NoHardware'Class (This).compareTo (hardwareInterface_Param => hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
    procedure difference (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) is
-      Java_Result : constant ABHashtable_Access := NoHardware'Class (This).difference (hardwareInterface_Param);
+      Java_Result : constant ABHashtable_Access := NoHardware'Class (This).difference (hardwareInterface_Param => hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

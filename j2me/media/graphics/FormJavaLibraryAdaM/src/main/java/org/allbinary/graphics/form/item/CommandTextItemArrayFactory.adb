@@ -99,7 +99,7 @@ package body org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Packag
    end getInstance;
 
    procedure getInstance (This : in out CommandTextItemArrayFactory; vector_Param : access Java_Object'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant ABCustomItem_Access_Array_Access := CommandTextItemArrayFactory'Class (This).getInstance (vector_Param, backgroundBasicColor_Param, foregroundBasicColor_Param);
+      Java_Result : constant ABCustomItem_Access_Array_Access := CommandTextItemArrayFactory'Class (This).getInstance (vector_Param => vector_Param, backgroundBasicColor_Param => backgroundBasicColor_Param, foregroundBasicColor_Param => foregroundBasicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -96,7 +96,7 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
    end getInstance;
 
    procedure getInstance (This : in out InputAutomationModuleFactoryFactory; moduleName : Unbounded_String) is
-      Java_Result : constant InputAutomationModuleFactoryInterface_Access := InputAutomationModuleFactoryFactory'Class (This).getInstance (moduleName);
+      Java_Result : constant InputAutomationModuleFactoryInterface_Access := InputAutomationModuleFactoryFactory'Class (This).getInstance (moduleName => moduleName);
       pragma Unreferenced (Java_Result);
    begin
       null;

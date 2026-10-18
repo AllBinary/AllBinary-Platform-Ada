@@ -74,14 +74,14 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFac
    end getInstance;
 
    procedure getInstance (cssElementStyleNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant BasicArrayList_Access := getInstance (cssElementStyleNodeList_Param);
+      Java_Result : constant BasicArrayList_Access := getInstance (cssElementStyleNodeList_Param => cssElementStyleNodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant BasicArrayList_Access := getInstance (hashMap_Param);
+      Java_Result : constant BasicArrayList_Access := getInstance (hashMap_Param => hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

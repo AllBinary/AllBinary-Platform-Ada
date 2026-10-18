@@ -114,7 +114,7 @@ package body views.generic_Id.address.shipping.ShippingAddressesView_Package is
    end view;
 
    procedure toXmlNode (This : in out ShippingAddressesView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := ShippingAddressesView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := ShippingAddressesView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

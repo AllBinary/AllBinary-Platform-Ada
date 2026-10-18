@@ -64,7 +64,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntityFactory
    end getInstance;
 
    procedure getInstance (transformInfoObjectConfigGeneratorFactoryInterface_Param : access TransformInfoObjectConfigGeneratorFactoryInterface_Package.TransformInfoObjectConfigGeneratorFactoryInterface'Class; transformInfoObjectConfigAndManipulatorFactoryInterface_Param : access TransformInfoObjectConfigAndManipulatorFactoryBase_Package.TransformInfoObjectConfigAndManipulatorFactoryBase'Class; transformInfoFactoryInterface_Param : access TransformInfoFactoryInterface_Package.TransformInfoFactoryInterface'Class) is
-      Java_Result : constant TransformInfoEntity_Access := getInstance (transformInfoObjectConfigGeneratorFactoryInterface_Param, transformInfoObjectConfigAndManipulatorFactoryInterface_Param, transformInfoFactoryInterface_Param);
+      Java_Result : constant TransformInfoEntity_Access := getInstance (transformInfoObjectConfigGeneratorFactoryInterface_Param => transformInfoObjectConfigGeneratorFactoryInterface_Param, transformInfoObjectConfigAndManipulatorFactoryInterface_Param => transformInfoObjectConfigAndManipulatorFactoryInterface_Param, transformInfoFactoryInterface_Param => transformInfoFactoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

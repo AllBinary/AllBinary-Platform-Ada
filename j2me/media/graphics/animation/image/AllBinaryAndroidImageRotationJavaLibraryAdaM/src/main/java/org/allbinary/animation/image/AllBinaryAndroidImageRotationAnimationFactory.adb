@@ -144,42 +144,42 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
    end getInstance;
 
    procedure createFactory (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactory (image_Param, width, height, animationBehaviorFactory_Param);
+      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactory (image_Param => image_Param, width => width, height => height, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactory;
 
    procedure createFactoryA (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryA (image_Param, width, height, angleIncrement, animationBehaviorFactory_Param);
+      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryA (image_Param => image_Param, width => width, height => height, angleIncrement => angleIncrement, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryA;
 
    procedure createFactoryU (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryU (image_Param, animationBehaviorFactory_Param);
+      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryU (image_Param => image_Param, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryU;
 
    procedure createFactoryDXYU (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryDXYU (image_Param, dx, dy, animationBehaviorFactory_Param);
+      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryDXYU (image_Param => image_Param, dx => dx, dy => dy, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryDXYU;
 
    procedure createFactoryADXY (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) is
-      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryADXY (image_Param, width, height, dx, dy, angleIncrement, animationBehaviorFactory_Param, resizeCanvasForRotation);
+      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryADXY (image_Param => image_Param, width => width, height => height, dx => dx, dy => dy, angleIncrement => angleIncrement, animationBehaviorFactory_Param => animationBehaviorFactory_Param, resizeCanvasForRotation => resizeCanvasForRotation);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryADXY;
 
    procedure getInstance (This : in out AllBinaryAndroidImageRotationAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := AllBinaryAndroidImageRotationAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := AllBinaryAndroidImageRotationAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -355,7 +355,7 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package i
    end getPreSelectedRTSLayersList;
 
    procedure isSelected (This : in out SelectedRTSLayersPlayerGameInput; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
-      Java_Result : constant Boolean := SelectedRTSLayersPlayerGameInput'Class (This).isSelected (rtsLayer_Param);
+      Java_Result : constant Boolean := SelectedRTSLayersPlayerGameInput'Class (This).isSelected (rtsLayer_Param => rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

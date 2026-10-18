@@ -178,7 +178,7 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
    end paintXY;
 
    procedure createAnimation (animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer) is
-      Java_Result : constant TitleAnimation_Access := createAnimation (animationInterfaceArray, basicColorArray, dxArray, dyArray, y, width);
+      Java_Result : constant TitleAnimation_Access := createAnimation (animationInterfaceArray => animationInterfaceArray, basicColorArray => basicColorArray, dxArray => dxArray, dyArray => dyArray, y => y, width => width);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -132,7 +132,7 @@ package body org.allbinary.business.advertisement.Advertisements_Package is
    end stopAll;
 
    procedure getBanner (This : in out Advertisements; index : Integer) is
-      Java_Result : constant AdvertisementProcessorInterface_Access := Advertisements'Class (This).getBanner (index);
+      Java_Result : constant AdvertisementProcessorInterface_Access := Advertisements'Class (This).getBanner (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

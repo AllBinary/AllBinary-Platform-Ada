@@ -50,7 +50,7 @@ package body org.allbinary.logic.io.file.FileUnamedUtil_Package is
    end process;
 
    procedure process (This : in out FileUnamedUtil; string_Id : Unbounded_String) is
-      Java_Result : constant Unbounded_String := FileUnamedUtil'Class (This).process (string_Id);
+      Java_Result : constant Unbounded_String := FileUnamedUtil'Class (This).process (string_Id => string_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

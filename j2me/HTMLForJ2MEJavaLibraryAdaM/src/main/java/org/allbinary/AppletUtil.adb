@@ -42,7 +42,7 @@ package body org.allbinary.AppletUtil_Package is
    end isAppletLoader;
 
    procedure isAppletLoader (anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := isAppletLoader (anyType_Param);
+      Java_Result : constant Boolean := isAppletLoader (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

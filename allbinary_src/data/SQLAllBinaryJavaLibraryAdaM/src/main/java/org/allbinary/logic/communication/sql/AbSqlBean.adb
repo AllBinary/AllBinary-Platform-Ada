@@ -219,21 +219,21 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
    end isSubsetOfEntry;
 
    procedure getField (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; requestedField : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbSqlBean'Class (This).getField (key, value, requestedField);
+      Java_Result : constant Unbounded_String := AbSqlBean'Class (This).getField (key => key, value => value, requestedField => requestedField);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getField;
 
    procedure getField (This : in out AbSqlBean; keysAndValues_Param : access HashMap_Package.HashMap'Class; requestedField : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbSqlBean'Class (This).getField (keysAndValues_Param, requestedField);
+      Java_Result : constant Unbounded_String := AbSqlBean'Class (This).getField (keysAndValues_Param => keysAndValues_Param, requestedField => requestedField);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getField;
 
    procedure isSubsetOfEntry (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; columnsAndValues_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant Unbounded_String := AbSqlBean'Class (This).isSubsetOfEntry (key, value, columnsAndValues_Param);
+      Java_Result : constant Unbounded_String := AbSqlBean'Class (This).isSubsetOfEntry (key => key, value => value, columnsAndValues_Param => columnsAndValues_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

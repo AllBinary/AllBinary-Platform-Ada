@@ -123,21 +123,21 @@ package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Packa
    end getLayerInterface;
 
    procedure isCellPositionWithDrop (This : in out WaypointCellPositionHistory; cellPosition_Param : access CellPosition_Package.CellPosition'Class) is
-      Java_Result : constant Boolean := WaypointCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition_Param);
+      Java_Result : constant Boolean := WaypointCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition_Param => cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCellPositionWithDrop;
 
    procedure anyCellPositionWithDrop (This : in out WaypointCellPositionHistory; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Boolean := WaypointCellPositionHistory'Class (This).anyCellPositionWithDrop (list_Param);
+      Java_Result : constant Boolean := WaypointCellPositionHistory'Class (This).anyCellPositionWithDrop (list_Param => list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end anyCellPositionWithDrop;
 
    procedure getLayerInterface (This : in out WaypointCellPositionHistory; cellPosition_Param : access CellPosition_Package.CellPosition'Class) is
-      Java_Result : constant AllBinaryLayer_Access := WaypointCellPositionHistory'Class (This).getLayerInterface (cellPosition_Param);
+      Java_Result : constant AllBinaryLayer_Access := WaypointCellPositionHistory'Class (This).getLayerInterface (cellPosition_Param => cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

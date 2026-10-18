@@ -42,7 +42,7 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Pack
    end getInstance;
 
    procedure getInstance (basicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant Paintable_Access := getInstance (basicColor_Param);
+      Java_Result : constant Paintable_Access := getInstance (basicColor_Param => basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

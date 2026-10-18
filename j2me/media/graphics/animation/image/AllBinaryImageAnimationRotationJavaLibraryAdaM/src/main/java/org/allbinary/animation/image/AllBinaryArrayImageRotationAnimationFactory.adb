@@ -121,21 +121,21 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
    end getAngleIncrement;
 
    procedure createFactory (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer) is
-      Java_Result : constant AllBinaryArrayImageRotationAnimationFactory_Access := createFactory (image_Param, dx, dy);
+      Java_Result : constant AllBinaryArrayImageRotationAnimationFactory_Access := createFactory (image_Param => image_Param, dx => dx, dy => dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactory;
 
    procedure createFactoryA (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; angleIncrement : Integer) is
-      Java_Result : constant AllBinaryArrayImageRotationAnimationFactory_Access := createFactoryA (image_Param, dx, dy, angleIncrement);
+      Java_Result : constant AllBinaryArrayImageRotationAnimationFactory_Access := createFactoryA (image_Param => image_Param, dx => dx, dy => dy, angleIncrement => angleIncrement);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryA;
 
    procedure getInstance (This : in out AllBinaryArrayImageRotationAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := AllBinaryArrayImageRotationAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := AllBinaryArrayImageRotationAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -47,7 +47,7 @@ package body org.allbinary.data.tree.dom.ToDomHelper_Package is
    end convertNull;
 
    procedure convertNull (value_Param : Unbounded_String) is
-      Java_Result : constant Unbounded_String := convertNull (value_Param);
+      Java_Result : constant Unbounded_String := convertNull (value_Param => value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

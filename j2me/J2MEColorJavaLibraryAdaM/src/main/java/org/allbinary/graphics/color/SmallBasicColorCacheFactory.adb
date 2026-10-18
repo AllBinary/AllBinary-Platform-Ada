@@ -73,7 +73,7 @@ package body org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package is
    end getAndOrCreate;
 
    procedure getAndOrCreate (This : in out SmallBasicColorCacheFactory; colorAsInt : Integer) is
-      Java_Result : constant BasicColor_Access := SmallBasicColorCacheFactory'Class (This).getAndOrCreate (colorAsInt);
+      Java_Result : constant BasicColor_Access := SmallBasicColorCacheFactory'Class (This).getAndOrCreate (colorAsInt => colorAsInt);
       pragma Unreferenced (Java_Result);
    begin
       null;

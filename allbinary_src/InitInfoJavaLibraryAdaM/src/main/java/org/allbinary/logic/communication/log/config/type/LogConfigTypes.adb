@@ -107,7 +107,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
    end getInstance;
 
    procedure getInstance (node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant LogConfigType_Access := getInstance (node_Param);
+      Java_Result : constant LogConfigType_Access := getInstance (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -167,14 +167,14 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
    end toXmlNode;
 
    procedure getNumberOf (This : in out BasketReview; id : Unbounded_String) is
-      Java_Result : constant Integer := BasketReview'Class (This).getNumberOf (id);
+      Java_Result : constant Integer := BasketReview'Class (This).getNumberOf (id => id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNumberOf;
 
    procedure toXmlNode (This : in out BasketReview; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := BasketReview'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := BasketReview'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

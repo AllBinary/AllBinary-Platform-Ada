@@ -85,7 +85,7 @@ package body org.allbinary.game.input.GameKeyMappingFactory_Package is
    end setGameKey;
 
    procedure getGameKey (This : in out GameKeyMappingFactory; key : Integer) is
-      Java_Result : constant GameKey_Access := GameKeyMappingFactory'Class (This).getGameKey (key);
+      Java_Result : constant GameKey_Access := GameKeyMappingFactory'Class (This).getGameKey (key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;

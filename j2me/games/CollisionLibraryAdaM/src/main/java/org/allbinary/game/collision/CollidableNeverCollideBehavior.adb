@@ -64,14 +64,14 @@ package body org.allbinary.game.collision.CollidableNeverCollideBehavior_Package
    end isCollisionInterface;
 
    procedure isCollision (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
-      Java_Result : constant Boolean := CollidableNeverCollideBehavior'Class (This).isCollision (ownerLayer_Param, allbinaryCollidableLayer_Param);
+      Java_Result : constant Boolean := CollidableNeverCollideBehavior'Class (This).isCollision (ownerLayer_Param => ownerLayer_Param, allbinaryCollidableLayer_Param => allbinaryCollidableLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
    procedure isCollisionInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
-      Java_Result : constant Boolean := CollidableNeverCollideBehavior'Class (This).isCollisionInterface (ownerLayer_Param, collidableInterfaceCompositeInterface_Param);
+      Java_Result : constant Boolean := CollidableNeverCollideBehavior'Class (This).isCollisionInterface (ownerLayer_Param => ownerLayer_Param, collidableInterfaceCompositeInterface_Param => collidableInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

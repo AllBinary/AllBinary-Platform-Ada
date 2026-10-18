@@ -111,35 +111,35 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Pa
    end isValid;
 
    procedure getInstanceNoCache (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; totalPaths : Integer) is
-      Java_Result : constant BasicArrayList_Access := PathGenerator'Class (This).getInstanceNoCache (geographicMapInterface_Param, pathFindingInfo_Param, totalPaths);
+      Java_Result : constant BasicArrayList_Access := PathGenerator'Class (This).getInstanceNoCache (geographicMapInterface_Param => geographicMapInterface_Param, pathFindingInfo_Param => pathFindingInfo_Param, totalPaths => totalPaths);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceNoCache;
 
    procedure createList (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory_Package.GeographicMapCellHistory'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; totalPaths : Integer) is
-      Java_Result : constant BasicArrayList_Access := PathGenerator'Class (This).createList (geographicMapInterface_Param, geographicMapCellHistory_Param, pathFindingInfo_Param, totalPaths);
+      Java_Result : constant BasicArrayList_Access := PathGenerator'Class (This).createList (geographicMapInterface_Param => geographicMapInterface_Param, geographicMapCellHistory_Param => geographicMapCellHistory_Param, pathFindingInfo_Param => pathFindingInfo_Param, totalPaths => totalPaths);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createList;
 
    procedure create (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; totalPaths : Integer) is
-      Java_Result : constant BasicArrayList_Access := PathGenerator'Class (This).create (geographicMapInterface_Param, pathFindingInfo_Param, totalPaths);
+      Java_Result : constant BasicArrayList_Access := PathGenerator'Class (This).create (geographicMapInterface_Param => geographicMapInterface_Param, pathFindingInfo_Param => pathFindingInfo_Param, totalPaths => totalPaths);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end create;
 
    procedure createN (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; totalPaths : Integer; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
-      Java_Result : constant BasicArrayList_Access := PathGenerator'Class (This).createN (geographicMapInterface_Param, pathFindingInfo_Param, totalPaths, multipassState_Param);
+      Java_Result : constant BasicArrayList_Access := PathGenerator'Class (This).createN (geographicMapInterface_Param => geographicMapInterface_Param, pathFindingInfo_Param => pathFindingInfo_Param, totalPaths => totalPaths, multipassState_Param => multipassState_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createN;
 
    procedure isValid (This : in out PathGenerator; pathList_Param : access BasicArrayList_Package.BasicArrayList'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory_Package.GeographicMapCellHistory'Class) is
-      Java_Result : constant Boolean := PathGenerator'Class (This).isValid (pathList_Param, geographicMapCellHistory_Param);
+      Java_Result : constant Boolean := PathGenerator'Class (This).isValid (pathList_Param => pathList_Param, geographicMapCellHistory_Param => geographicMapCellHistory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

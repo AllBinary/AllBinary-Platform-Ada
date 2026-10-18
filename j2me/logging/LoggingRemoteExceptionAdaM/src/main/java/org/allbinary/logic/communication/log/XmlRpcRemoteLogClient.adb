@@ -90,7 +90,7 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
    end get;
 
    procedure get (This : in out XmlRpcRemoteLogClient; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := XmlRpcRemoteLogClient'Class (This).get (anyType_Param);
+      Java_Result : constant Java_Object_Access := XmlRpcRemoteLogClient'Class (This).get (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

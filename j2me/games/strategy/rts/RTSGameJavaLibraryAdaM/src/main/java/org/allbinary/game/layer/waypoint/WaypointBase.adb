@@ -122,28 +122,28 @@ package body org.allbinary.game.layer.waypoint.WaypointBase_Package is
    end getType;
 
    procedure getPathFindingInfo (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant PathFindingInfo_Access := WaypointBase'Class (This).getPathFindingInfo (geographicMapCellPosition_Param);
+      Java_Result : constant PathFindingInfo_Access := WaypointBase'Class (This).getPathFindingInfo (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathFindingInfo;
 
    procedure getPathsList (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
-      Java_Result : constant BasicArrayList_Access := WaypointBase'Class (This).getPathsList (geographicMapCellPosition_Param, pathFindingInfo_Param, multipassState_Param);
+      Java_Result : constant BasicArrayList_Access := WaypointBase'Class (This).getPathsList (geographicMapCellPosition_Param => geographicMapCellPosition_Param, pathFindingInfo_Param => pathFindingInfo_Param, multipassState_Param => multipassState_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathsList;
 
    procedure getPathsListRunnable (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant BasicArrayList_Access := WaypointBase'Class (This).getPathsListRunnable (geographicMapCellPosition_Param);
+      Java_Result : constant BasicArrayList_Access := WaypointBase'Class (This).getPathsListRunnable (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathsListRunnable;
 
    procedure getPathsListFromCacheOnly (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant BasicArrayList_Access := WaypointBase'Class (This).getPathsListFromCacheOnly (geographicMapCellPosition_Param);
+      Java_Result : constant BasicArrayList_Access := WaypointBase'Class (This).getPathsListFromCacheOnly (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

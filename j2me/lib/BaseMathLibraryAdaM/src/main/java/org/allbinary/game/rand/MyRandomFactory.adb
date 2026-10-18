@@ -186,21 +186,21 @@ package body org.allbinary.game.rand.MyRandomFactory_Package is
    end main;
 
    procedure getNextInt (This : in out MyRandomFactory; range_Id : Integer) is
-      Java_Result : constant Integer := MyRandomFactory'Class (This).getNextInt (range_Id);
+      Java_Result : constant Integer := MyRandomFactory'Class (This).getNextInt (range_Id => range_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNextInt;
 
    procedure getAbsoluteNextInt (This : in out MyRandomFactory; range_Id : Integer) is
-      Java_Result : constant Integer := MyRandomFactory'Class (This).getAbsoluteNextInt (range_Id);
+      Java_Result : constant Integer := MyRandomFactory'Class (This).getAbsoluteNextInt (range_Id => range_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAbsoluteNextInt;
 
    procedure getAbsoluteNextIntAllowZero (This : in out MyRandomFactory; range_Id : Integer) is
-      Java_Result : constant Integer := MyRandomFactory'Class (This).getAbsoluteNextIntAllowZero (range_Id);
+      Java_Result : constant Integer := MyRandomFactory'Class (This).getAbsoluteNextIntAllowZero (range_Id => range_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

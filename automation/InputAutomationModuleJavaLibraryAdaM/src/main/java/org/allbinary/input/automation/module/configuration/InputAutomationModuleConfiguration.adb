@@ -189,7 +189,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    end setInputAutomationModuleInterface;
 
    procedure toDomNode (This : in out InputAutomationModuleConfiguration; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := InputAutomationModuleConfiguration'Class (This).toDomNode (document_Param);
+      Java_Result : constant Node_Access := InputAutomationModuleConfiguration'Class (This).toDomNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

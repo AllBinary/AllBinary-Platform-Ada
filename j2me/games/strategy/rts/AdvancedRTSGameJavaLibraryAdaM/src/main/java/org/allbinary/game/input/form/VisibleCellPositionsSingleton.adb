@@ -189,7 +189,7 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
    end getSimpleTiledLayer;
 
    procedure isVisible (This : in out VisibleCellPositionsSingleton; cellPosition_Param : access CellPosition_Package.CellPosition'Class) is
-      Java_Result : constant Boolean := VisibleCellPositionsSingleton'Class (This).isVisible (cellPosition_Param);
+      Java_Result : constant Boolean := VisibleCellPositionsSingleton'Class (This).isVisible (cellPosition_Param => cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

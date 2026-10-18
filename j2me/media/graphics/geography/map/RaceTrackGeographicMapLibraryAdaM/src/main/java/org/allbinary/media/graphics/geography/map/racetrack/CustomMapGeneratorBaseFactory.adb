@@ -48,7 +48,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
    end create;
 
    procedure create (This : in out CustomMapGeneratorBaseFactory; raceTrackGeographicMap_Param : access RaceTrackGeographicMap_Package.RaceTrackGeographicMap'Class) is
-      Java_Result : constant CustomMapGeneratorBase_Access := CustomMapGeneratorBaseFactory'Class (This).create (raceTrackGeographicMap_Param);
+      Java_Result : constant CustomMapGeneratorBase_Access := CustomMapGeneratorBaseFactory'Class (This).create (raceTrackGeographicMap_Param => raceTrackGeographicMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

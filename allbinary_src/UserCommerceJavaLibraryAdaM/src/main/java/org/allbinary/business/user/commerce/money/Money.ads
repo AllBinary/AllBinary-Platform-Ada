@@ -36,8 +36,8 @@ package org.allbinary.business.user.commerce.money.Money_Package is
       DEFAULT_CURRENCY : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out Money'Class; money_Param : access Money_Package.Money'Class);
-   function Create (money_Param : access Money_Package.Money'Class) return Money_Access;
+   procedure Initialize (This : in out Money'Class; money_Var_Param : access Money_Package.Money'Class);
+   function Create (money_Var_Param : access Money_Package.Money'Class) return Money_Access;
    procedure Initialize (This : in out Money'Class);
    function Create return Money_Access;
    procedure Initialize (This : in out Money'Class; usDollarStr : Unbounded_String);

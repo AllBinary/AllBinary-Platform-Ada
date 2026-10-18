@@ -100,7 +100,7 @@ package body org.allbinary.game.part.weapon.StraightMultiProjectileWeaponPart_Pa
    end processScore;
 
    procedure createStraightMultiProjectileWeaponPart (animationInterface_Param : access Animation_Package.Animation'Class; weaponLayerCircularStaticPool_Param : access WeaponLayerCircularPool_Package.WeaponLayerCircularPool'Class) is
-      Java_Result : constant StraightMultiProjectileWeaponPart_Access := createStraightMultiProjectileWeaponPart (animationInterface_Param, weaponLayerCircularStaticPool_Param);
+      Java_Result : constant StraightMultiProjectileWeaponPart_Access := createStraightMultiProjectileWeaponPart (animationInterface_Param => animationInterface_Param, weaponLayerCircularStaticPool_Param => weaponLayerCircularStaticPool_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

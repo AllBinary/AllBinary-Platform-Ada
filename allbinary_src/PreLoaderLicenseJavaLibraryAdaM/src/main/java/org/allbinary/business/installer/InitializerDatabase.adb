@@ -317,14 +317,14 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
    end setAdminPort;
 
    procedure isJdbcDriverValid (This : in out InitializerDatabase; jdbcDriverClassPathString : Unbounded_String) is
-      Java_Result : constant Boolean := InitializerDatabase'Class (This).isJdbcDriverValid (jdbcDriverClassPathString);
+      Java_Result : constant Boolean := InitializerDatabase'Class (This).isJdbcDriverValid (jdbcDriverClassPathString => jdbcDriverClassPathString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isJdbcDriverValid;
 
    procedure getJdbcDriverValidationInfo (This : in out InitializerDatabase; jdbcDriver : Unbounded_String) is
-      Java_Result : constant Unbounded_String := InitializerDatabase'Class (This).getJdbcDriverValidationInfo (jdbcDriver);
+      Java_Result : constant Unbounded_String := InitializerDatabase'Class (This).getJdbcDriverValidationInfo (jdbcDriver => jdbcDriver);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -91,21 +91,21 @@ package body org.allbinary.animation.image.PooledImageArrayRotationAnimationFact
    end setInitialScale;
 
    procedure createFactory (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant PooledImageArrayRotationAnimationFactory_Access := createFactory (image_Param, animationBehaviorFactory_Param);
+      Java_Result : constant PooledImageArrayRotationAnimationFactory_Access := createFactory (image_Param => image_Param, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactory;
 
    procedure createDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
-      Java_Result : constant PooledImageArrayRotationAnimationFactory_Access := createDXY (image_Param, dx, dy, animationBehaviorFactory_Param);
+      Java_Result : constant PooledImageArrayRotationAnimationFactory_Access := createDXY (image_Param => image_Param, dx => dx, dy => dy, animationBehaviorFactory_Param => animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createDXY;
 
    procedure getInstance (This : in out PooledImageArrayRotationAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := PooledImageArrayRotationAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := PooledImageArrayRotationAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

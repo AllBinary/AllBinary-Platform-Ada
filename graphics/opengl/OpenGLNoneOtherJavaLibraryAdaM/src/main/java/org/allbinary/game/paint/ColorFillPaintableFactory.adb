@@ -58,7 +58,7 @@ package body org.allbinary.game.paint.ColorFillPaintableFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out ColorFillPaintableFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class; forThreedCanvas : Boolean) is
-      Java_Result : constant ColorFillBasePaintable_Access := ColorFillPaintableFactory'Class (This).getInstance (basicColor_Param, forThreedCanvas);
+      Java_Result : constant ColorFillBasePaintable_Access := ColorFillPaintableFactory'Class (This).getInstance (basicColor_Param => basicColor_Param, forThreedCanvas => forThreedCanvas);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -41,7 +41,7 @@ package body org.allbinary.logic.io.file.AbFileNativeUtil_Package is
    end get;
 
    procedure get (file_Param : access AbFile_Package.AbFile'Class) is
-      Java_Result : constant File_Access := get (file_Param);
+      Java_Result : constant File_Access := get (file_Param => file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

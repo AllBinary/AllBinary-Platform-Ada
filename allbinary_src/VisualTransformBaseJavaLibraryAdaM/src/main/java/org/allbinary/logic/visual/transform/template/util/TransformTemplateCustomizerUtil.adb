@@ -109,7 +109,7 @@ package body org.allbinary.logic.visual.transform.template.util.TransformTemplat
    end getPageNameHack;
 
    procedure getPageNameHack (This : in out TransformTemplateCustomizerUtil; viewName : Unbounded_String; storeName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := TransformTemplateCustomizerUtil'Class (This).getPageNameHack (viewName, storeName);
+      Java_Result : constant Unbounded_String := TransformTemplateCustomizerUtil'Class (This).getPageNameHack (viewName => viewName, storeName => storeName);
       pragma Unreferenced (Java_Result);
    begin
       null;

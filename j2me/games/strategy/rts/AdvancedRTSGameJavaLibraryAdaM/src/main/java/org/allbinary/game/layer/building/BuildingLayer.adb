@@ -438,14 +438,14 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
    end getStaticType;
 
    procedure getMoveOutOfBuildAreaPath (This : in out BuildingLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant BasicArrayList_Access := BuildingLayer'Class (This).getMoveOutOfBuildAreaPath (geographicMapCellPosition_Param);
+      Java_Result : constant BasicArrayList_Access := BuildingLayer'Class (This).getMoveOutOfBuildAreaPath (geographicMapCellPosition_Param => geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getMoveOutOfBuildAreaPath;
 
    procedure getDamage (This : in out BuildingLayer; damageType : Integer) is
-      Java_Result : constant Integer := BuildingLayer'Class (This).getDamage (damageType);
+      Java_Result : constant Integer := BuildingLayer'Class (This).getDamage (damageType => damageType);
       pragma Unreferenced (Java_Result);
    begin
       null;

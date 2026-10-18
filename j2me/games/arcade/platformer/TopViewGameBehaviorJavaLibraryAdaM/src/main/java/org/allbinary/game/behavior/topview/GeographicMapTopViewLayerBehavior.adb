@@ -138,42 +138,42 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewLayerBehavi
    end isOffMap;
 
    procedure getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewLayerBehavior'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (geographicMapInterfaceArray, geographicMapCellTypeArray, velocityProperties_Param, layer_Param, x, y);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewLayerBehavior'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (geographicMapInterfaceArray => geographicMapInterfaceArray, geographicMapCellTypeArray => geographicMapCellTypeArray, velocityProperties_Param => velocityProperties_Param, layer_Param => layer_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation;
 
    procedure getGeographicMapCellPositionIfNotSolidBlockOrOffMap (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewLayerBehavior'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMap (geographicMapInterfaceArray, geographicMapCellTypeArray, geographicMapCellPosition_Param, velocityProperties_Param, layer_Param);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewLayerBehavior'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMap (geographicMapInterfaceArray => geographicMapInterfaceArray, geographicMapCellTypeArray => geographicMapCellTypeArray, geographicMapCellPosition_Param => geographicMapCellPosition_Param, velocityProperties_Param => velocityProperties_Param, layer_Param => layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGeographicMapCellPositionIfNotSolidBlockOrOffMap;
 
    procedure getGeographicMapCellPositionFromListIfNotSolidBlockOrOffMap (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPositionList_Param : access BasicArrayList_Package.BasicArrayList'Class; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewLayerBehavior'Class (This).getGeographicMapCellPositionFromListIfNotSolidBlockOrOffMap (geographicMapInterfaceArray, geographicMapCellTypeArray, geographicMapCellPositionList_Param, velocityProperties_Param, layer_Param);
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewLayerBehavior'Class (This).getGeographicMapCellPositionFromListIfNotSolidBlockOrOffMap (geographicMapInterfaceArray => geographicMapInterfaceArray, geographicMapCellTypeArray => geographicMapCellTypeArray, geographicMapCellPositionList_Param => geographicMapCellPositionList_Param, velocityProperties_Param => velocityProperties_Param, layer_Param => layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGeographicMapCellPositionFromListIfNotSolidBlockOrOffMap;
 
    procedure move (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
-      Java_Result : constant Boolean := GeographicMapTopViewLayerBehavior'Class (This).move (geographicMapInterfaceArray, geographicMapCellTypeArray, velocityProperties_Param, layer_Param, x, y);
+      Java_Result : constant Boolean := GeographicMapTopViewLayerBehavior'Class (This).move (geographicMapInterfaceArray => geographicMapInterfaceArray, geographicMapCellTypeArray => geographicMapCellTypeArray, velocityProperties_Param => velocityProperties_Param, layer_Param => layer_Param, x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end move;
 
    procedure hasSolidBlock (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access) is
-      Java_Result : constant Boolean := GeographicMapTopViewLayerBehavior'Class (This).hasSolidBlock (geographicMapInterfaceArray, geographicMapCellTypeArray);
+      Java_Result : constant Boolean := GeographicMapTopViewLayerBehavior'Class (This).hasSolidBlock (geographicMapInterfaceArray => geographicMapInterfaceArray, geographicMapCellTypeArray => geographicMapCellTypeArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end hasSolidBlock;
 
    procedure isOffMap (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access) is
-      Java_Result : constant Boolean := GeographicMapTopViewLayerBehavior'Class (This).isOffMap (geographicMapInterfaceArray, geographicMapCellTypeArray);
+      Java_Result : constant Boolean := GeographicMapTopViewLayerBehavior'Class (This).isOffMap (geographicMapInterfaceArray => geographicMapInterfaceArray, geographicMapCellTypeArray => geographicMapCellTypeArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

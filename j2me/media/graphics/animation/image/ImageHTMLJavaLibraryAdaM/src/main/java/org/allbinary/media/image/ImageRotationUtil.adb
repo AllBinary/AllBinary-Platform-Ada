@@ -82,7 +82,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
    end createRotatedImage;
 
    procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; rotationInDegrees : Integer) is
-      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage_Param, rotationInDegrees);
+      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage_Param => originalImage_Param, rotationInDegrees => rotationInDegrees);
       pragma Unreferenced (Java_Result);
    begin
       null;

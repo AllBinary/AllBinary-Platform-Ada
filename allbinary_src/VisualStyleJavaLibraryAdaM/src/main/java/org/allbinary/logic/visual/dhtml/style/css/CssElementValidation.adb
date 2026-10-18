@@ -110,7 +110,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out CssElementValidation; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := CssElementValidation'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := CssElementValidation'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

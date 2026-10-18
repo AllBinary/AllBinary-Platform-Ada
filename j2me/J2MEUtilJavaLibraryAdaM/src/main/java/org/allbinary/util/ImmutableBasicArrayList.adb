@@ -58,7 +58,7 @@ package body org.allbinary.util.ImmutableBasicArrayList_Package is
    end toString;
 
    procedure add (This : in out ImmutableBasicArrayList; e_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := ImmutableBasicArrayList'Class (This).add (e_Param);
+      Java_Result : constant Boolean := ImmutableBasicArrayList'Class (This).add (e_Param => e_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

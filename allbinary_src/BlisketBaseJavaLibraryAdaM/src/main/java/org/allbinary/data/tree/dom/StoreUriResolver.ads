@@ -41,7 +41,7 @@ package org.allbinary.data.tree.dom.StoreUriResolver_Package is
    type StoreUriResolver_Access_Array_Access_Array is array (Natural range <>) of StoreUriResolver_Access_Array_Access;
    type StoreUriResolver_Access_Array_Access_Array_Access is access all StoreUriResolver_Access_Array_Access_Array;
 
-   type StoreUriResolver is new Java_Object and URIResolver with record
+   type StoreUriResolver is new Java_Object with record
       logUtil : LogUtil_Access;
       uriResolverStrings : URIResolverStrings_Access;
       basicURIResolver : BasicUriResolver_Access;

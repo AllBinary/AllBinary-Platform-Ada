@@ -67,28 +67,28 @@ package body org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
    end createImageFromInputStream;
 
    procedure paint (This : in out OpenGLImageUtilBase; alphaBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; index : Integer) is
-      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).paint (alphaBitmap_Param, originalBitmap_Param, index);
+      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).paint (alphaBitmap_Param => alphaBitmap_Param, originalBitmap_Param => originalBitmap_Param, index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end paint;
 
    procedure paint (This : in out OpenGLImageUtilBase; colorBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; alpha : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).paint (colorBitmap_Param, originalBitmap_Param, alpha, basicColor_Param);
+      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).paint (colorBitmap_Param => colorBitmap_Param, originalBitmap_Param => originalBitmap_Param, alpha => alpha, basicColor_Param => basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end paint;
 
    procedure createImage (This : in out OpenGLImageUtilBase; name : Unbounded_String) is
-      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).createImage (name);
+      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).createImage (name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage;
 
    procedure createImageFromInputStream (This : in out OpenGLImageUtilBase; inputStream_Param : access InputStream_Package.InputStream'Class) is
-      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).createImageFromInputStream (inputStream_Param);
+      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).createImageFromInputStream (inputStream_Param => inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

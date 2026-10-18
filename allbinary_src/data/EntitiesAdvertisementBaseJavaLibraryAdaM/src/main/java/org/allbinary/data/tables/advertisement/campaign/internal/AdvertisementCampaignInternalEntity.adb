@@ -150,14 +150,14 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
    end dropTable;
 
    procedure getCampaignsInStore (This : in out AdvertisementCampaignInternalEntity; storeName : Unbounded_String) is
-      Java_Result : constant AdvertisementCampaignsInterface_Access := AdvertisementCampaignInternalEntity'Class (This).getCampaignsInStore (storeName);
+      Java_Result : constant AdvertisementCampaignsInterface_Access := AdvertisementCampaignInternalEntity'Class (This).getCampaignsInStore (storeName => storeName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCampaignsInStore;
 
    procedure get (This : in out AdvertisementCampaignInternalEntity; storeName : Unbounded_String; name : Unbounded_String) is
-      Java_Result : constant AdvertisementCampaignInterface_Access := AdvertisementCampaignInternalEntity'Class (This).get (storeName, name);
+      Java_Result : constant AdvertisementCampaignInterface_Access := AdvertisementCampaignInternalEntity'Class (This).get (storeName => storeName, name => name);
       pragma Unreferenced (Java_Result);
    begin
       null;

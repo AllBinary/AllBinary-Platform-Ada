@@ -47,14 +47,14 @@ package body org.allbinary.game.GameInfoCopyFactory_Package is
    end getInstance;
 
    procedure getInstanceMaxLevel (gameInfo_Param : access GameInfo_Package.GameInfo'Class; maxLevel : Integer) is
-      Java_Result : constant GameInfo_Access := getInstanceMaxLevel (gameInfo_Param, maxLevel);
+      Java_Result : constant GameInfo_Access := getInstanceMaxLevel (gameInfo_Param => gameInfo_Param, maxLevel => maxLevel);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceMaxLevel;
 
    procedure getInstance (gameInfo_Param : access GameInfo_Package.GameInfo'Class) is
-      Java_Result : constant GameInfo_Access := getInstance (gameInfo_Param);
+      Java_Result : constant GameInfo_Access := getInstance (gameInfo_Param => gameInfo_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -224,7 +224,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out PageValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := PageValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := PageValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

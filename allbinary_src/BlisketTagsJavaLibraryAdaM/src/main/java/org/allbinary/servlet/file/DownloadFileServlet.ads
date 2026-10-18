@@ -40,7 +40,7 @@ package org.allbinary.servlet.file.DownloadFileServlet_Package is
    type DownloadFileServlet_Access_Array_Access_Array is array (Natural range <>) of DownloadFileServlet_Access_Array_Access;
    type DownloadFileServlet_Access_Array_Access_Array_Access is access all DownloadFileServlet_Access_Array_Access_Array;
 
-   type DownloadFileServlet is new HttpServlet with record
+   type DownloadFileServlet is new Java_Object with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       DOWNLOAD : Unbounded_String;

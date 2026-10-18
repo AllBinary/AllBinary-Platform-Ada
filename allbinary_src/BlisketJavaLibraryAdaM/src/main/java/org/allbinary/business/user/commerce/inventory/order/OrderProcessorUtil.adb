@@ -61,7 +61,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderProcessor
    end process;
 
    procedure process (This : in out OrderProcessorUtil; userName : Unbounded_String; order_Param : access Order_Package.Order'Class) is
-      Java_Result : constant Unbounded_String := OrderProcessorUtil'Class (This).process (userName, order_Param);
+      Java_Result : constant Unbounded_String := OrderProcessorUtil'Class (This).process (userName => userName, order_Param => order_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

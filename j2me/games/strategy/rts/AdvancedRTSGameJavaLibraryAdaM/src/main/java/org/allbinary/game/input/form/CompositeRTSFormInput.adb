@@ -158,7 +158,7 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    end setSelectedStickyItem;
 
    procedure processSticky (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; point_Param : access GPoint_Package.GPoint'Class) is
-      Java_Result : constant Boolean := CompositeRTSFormInput'Class (This).processSticky (associatedRtsLayer_Param, rtsPlayerLayerInterface_Param, layerManager_Param, point_Param);
+      Java_Result : constant Boolean := CompositeRTSFormInput'Class (This).processSticky (associatedRtsLayer_Param => associatedRtsLayer_Param, rtsPlayerLayerInterface_Param => rtsPlayerLayerInterface_Param, layerManager_Param => layerManager_Param, point_Param => point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

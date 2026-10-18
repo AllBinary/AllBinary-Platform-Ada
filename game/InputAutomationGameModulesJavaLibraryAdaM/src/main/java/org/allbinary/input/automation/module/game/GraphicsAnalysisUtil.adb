@@ -66,7 +66,7 @@ package body org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Pac
    end getNominator;
 
    procedure getNominator (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; min_x : Integer; max_x : Integer; y : Integer) is
-      Java_Result : constant Long_Float := getNominator (bufferedImage_Param, min_x, max_x, y);
+      Java_Result : constant Long_Float := getNominator (bufferedImage_Param => bufferedImage_Param, min_x => min_x, max_x => max_x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

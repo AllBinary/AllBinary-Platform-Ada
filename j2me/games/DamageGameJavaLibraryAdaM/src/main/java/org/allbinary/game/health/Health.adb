@@ -26,7 +26,7 @@ package body org.allbinary.game.health.Health_Package is
    procedure Initialize_Fields (This : in out Health'Class) is
    begin
       null;
-      This.health := 0;
+      This.health_Var := 0;
       This.maxHealth := 0;
       This.healthListenerInterface := NullHealthListener_Package.NULL_HEALTH_LISTENER;
    end Initialize_Fields;
@@ -73,7 +73,7 @@ package body org.allbinary.game.health.Health_Package is
 
    procedure damage (This : in out Health; ahealth : Integer) is
       stringBuffer : StringMaker_Access;
-      health : Integer;
+      health_Var : Integer;
    begin
         if (ahealth) < (0) then
             stringBuffer := StringMaker_Package.Create;
@@ -84,8 +84,8 @@ package body org.allbinary.game.health.Health_Package is
             ForcedLogUtil_Package.log (stringBuffer.toString, Health_Access'(This'Unchecked_Access));
             return;
         end if;
-        health := (Health'Class (This).getHealth) - (ahealth);
-        Health'Class (This).setHealth (health);
+        health_Var := (Health'Class (This).getHealth) - (ahealth);
+        Health'Class (This).setHealth (health_Var);
    end damage;
 
    function isAlive (This : in out Health) return Boolean is
@@ -107,14 +107,14 @@ package body org.allbinary.game.health.Health_Package is
         This.maxHealth := maxHealth;
    end setMaxHealth;
 
-   procedure setHealth (This : in out Health; health : Integer) is
+   procedure setHealth (This : in out Health; health_Var : Integer) is
    begin
-        if (health) > (Health'Class (This).getMaxHealth) then
-            This.health := Health'Class (This).getMaxHealth;
-        elsif (health) < (0) then
-            This.health := 0;
+        if (health_Var) > (Health'Class (This).getMaxHealth) then
+            This.health_Var := Health'Class (This).getMaxHealth;
+        elsif (health_Var) < (0) then
+            This.health_Var := 0;
         else
-            This.health := health;
+            This.health_Var := health_Var;
         end if;
         if (This.healthListenerInterface) /= (null) then
             This.healthListenerInterface.onHealthChange;
@@ -123,7 +123,7 @@ package body org.allbinary.game.health.Health_Package is
 
    function getHealth (This : in out Health) return Integer is
    begin
-        return This.health;
+        return This.health_Var;
    end getHealth;
 
    procedure addListener (This : in out Health; healthGraphic_Param : access HealthListenerInterface_Package.HealthListenerInterface'Class) is
@@ -137,7 +137,7 @@ package body org.allbinary.game.health.Health_Package is
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (Health_Package.HEALTH_LABEL);
-        stringBuffer.appendint (This.health);
+        stringBuffer.appendint (This.health_Var);
         stringBuffer.append (Health_Package.MAX_HEALTH_LABEL);
         stringBuffer.appendint (This.maxHealth);
         return stringBuffer.toString;

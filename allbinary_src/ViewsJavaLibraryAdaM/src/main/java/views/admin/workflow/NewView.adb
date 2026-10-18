@@ -100,7 +100,7 @@ package body views.admin.workflow.NewView_Package is
    end toValidationInfoNode;
 
    procedure toValidationInfoNode (This : in out NewView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := NewView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := NewView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

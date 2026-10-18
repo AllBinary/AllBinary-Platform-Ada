@@ -47,8 +47,8 @@ package org.allbinary.logic.io.file.directory.Directory_Package is
    function create (This : in out Directory; directoryAbPath_Param : access AbPath_Package.AbPath'Class) return Boolean;
    procedure create (This : in out Directory; directoryAbPath_Param : access AbPath_Package.AbPath'Class);
    procedure remove (This : in out Directory; existingDirectoryAbPath_Param : access AbPath_Package.AbPath'Class);
-   function create (This : in out Directory; directory : Unbounded_String) return Boolean;
-   procedure create (This : in out Directory; directory : Unbounded_String);
+   function create (This : in out Directory; directory_Var : Unbounded_String) return Boolean;
+   procedure create (This : in out Directory; directory_Var : Unbounded_String);
    procedure remove (This : in out Directory; existingDirectory : Unbounded_String);
    function search (This : in out Directory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access;
    procedure search (This : in out Directory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class);

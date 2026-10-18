@@ -97,14 +97,14 @@ package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFac
    end duplicate;
 
    procedure getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant BasicArrayList_Access := FeaturedResourceRelativeRelationshipFactory'Class (This).getRelativeRelationshipList (resource, layer_Param);
+      Java_Result : constant BasicArrayList_Access := FeaturedResourceRelativeRelationshipFactory'Class (This).getRelativeRelationshipList (resource => resource, layer_Param => layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRelativeRelationshipList;
 
    procedure duplicate (This : in out FeaturedResourceRelativeRelationshipFactory; list_Param : access BasicArrayList_Package.BasicArrayList'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant BasicArrayList_Access := FeaturedResourceRelativeRelationshipFactory'Class (This).duplicate (list_Param, layer_Param);
+      Java_Result : constant BasicArrayList_Access := FeaturedResourceRelativeRelationshipFactory'Class (This).duplicate (list_Param => list_Param, layer_Param => layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

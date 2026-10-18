@@ -54,7 +54,7 @@ package body org.allbinary.data.tree.dom.DomNodeListHelper_Package is
    end getVector;
 
    procedure getVector (nodeList_Param : access NodeList_Package.NodeList'Class) is
-      Java_Result : constant BasicArrayList_Access := getVector (nodeList_Param);
+      Java_Result : constant BasicArrayList_Access := getVector (nodeList_Param => nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

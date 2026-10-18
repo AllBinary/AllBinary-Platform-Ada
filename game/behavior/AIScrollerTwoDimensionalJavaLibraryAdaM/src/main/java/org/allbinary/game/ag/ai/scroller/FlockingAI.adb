@@ -121,7 +121,7 @@ package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
    end getXYDistance;
 
    procedure getXYDistance (This : in out FlockingAI; allBinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant Integer := FlockingAI'Class (This).getXYDistance (allBinaryLayer_Param);
+      Java_Result : constant Integer := FlockingAI'Class (This).getXYDistance (allBinaryLayer_Param => allBinaryLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -61,7 +61,7 @@ package body org.allbinary.media.image.filter.ImageFileFilter_Package is
    end getDescription;
 
    procedure accept_Id (This : in out ImageFileFilter; f_Param : access File_Package.File'Class) is
-      Java_Result : constant Boolean := ImageFileFilter'Class (This).accept_Id (f_Param);
+      Java_Result : constant Boolean := ImageFileFilter'Class (This).accept_Id (f_Param => f_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

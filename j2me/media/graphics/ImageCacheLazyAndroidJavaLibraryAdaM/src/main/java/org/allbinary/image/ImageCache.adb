@@ -146,28 +146,28 @@ package body org.allbinary.image.ImageCache_Package is
    end isLazy;
 
    procedure get (This : in out ImageCache; caller : Unbounded_String; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := ImageCache'Class (This).get (caller, width, height);
+      Java_Result : constant Image_Access := ImageCache'Class (This).get (caller => caller, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure get (This : in out ImageCache; key_Param : access Java_Object'Class) is
-      Java_Result : constant Image_Access := ImageCache'Class (This).get (key_Param);
+      Java_Result : constant Image_Access := ImageCache'Class (This).get (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getIndex (This : in out ImageCache; key_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := ImageCache'Class (This).getIndex (key_Param);
+      Java_Result : constant Integer := ImageCache'Class (This).getIndex (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getIndex;
 
    procedure createImage (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) is
-      Java_Result : constant Image_Access := ImageCache'Class (This).createImage (key_Param, inputStream_Param);
+      Java_Result : constant Image_Access := ImageCache'Class (This).createImage (key_Param => key_Param, inputStream_Param => inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

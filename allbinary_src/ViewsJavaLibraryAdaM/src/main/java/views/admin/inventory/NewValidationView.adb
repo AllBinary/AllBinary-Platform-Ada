@@ -73,7 +73,7 @@ package body views.admin.inventory.NewValidationView_Package is
    end validationInfo;
 
    procedure toValidationInfoNode (This : in out NewValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := NewValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := NewValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

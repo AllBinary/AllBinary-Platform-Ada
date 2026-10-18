@@ -784,7 +784,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    end getGrid;
 
    procedure logMouseEvent (This : in out CanvasJPanel; mouseEvent_Param : access MouseEvent_Package.MouseEvent'Class) is
-      Java_Result : constant Unbounded_String := CanvasJPanel'Class (This).logMouseEvent (mouseEvent_Param);
+      Java_Result : constant Unbounded_String := CanvasJPanel'Class (This).logMouseEvent (mouseEvent_Param => mouseEvent_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

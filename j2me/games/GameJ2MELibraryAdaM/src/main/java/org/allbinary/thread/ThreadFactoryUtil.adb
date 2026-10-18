@@ -104,21 +104,21 @@ package body org.allbinary.thread.ThreadFactoryUtil_Package is
    end start;
 
    procedure getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable_Param : access GameCanvasRunnableInterface_Package.GameCanvasRunnableInterface'Class) is
-      Java_Result : constant Thread_Access := ThreadFactoryUtil'Class (This).getInstanceGameCanvasRunnable (runnable_Param);
+      Java_Result : constant Thread_Access := ThreadFactoryUtil'Class (This).getInstanceGameCanvasRunnable (runnable_Param => runnable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceGameCanvasRunnable;
 
    procedure getInstanceForRunnable (This : in out ThreadFactoryUtil; runnable_Param : access ABRunnable_Package.ABRunnable'Class) is
-      Java_Result : constant Thread_Access := ThreadFactoryUtil'Class (This).getInstanceForRunnable (runnable_Param);
+      Java_Result : constant Thread_Access := ThreadFactoryUtil'Class (This).getInstanceForRunnable (runnable_Param => runnable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceForRunnable;
 
    procedure getInstanceType (This : in out ThreadFactoryUtil; runnable_Param : access Runnable_Package.Runnable'Class; type_Id : Integer) is
-      Java_Result : constant Thread_Access := ThreadFactoryUtil'Class (This).getInstanceType (runnable_Param, type_Id);
+      Java_Result : constant Thread_Access := ThreadFactoryUtil'Class (This).getInstanceType (runnable_Param => runnable_Param, type_Id => type_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

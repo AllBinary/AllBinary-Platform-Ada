@@ -35,7 +35,7 @@ package body org.allbinary.game.collision.CollisionThreedProcessor_Package is
    end isCollision;
 
    procedure isCollision (This : in out CollisionThreedProcessor; myLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant Boolean := CollisionThreedProcessor'Class (This).isCollision (myLayer_Param, myLayer2_Param);
+      Java_Result : constant Boolean := CollisionThreedProcessor'Class (This).isCollision (myLayer_Param => myLayer_Param, myLayer2_Param => myLayer2_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -58,14 +58,14 @@ package body org.allbinary.graphics.color.ColorUtil_Package is
    end isDark;
 
    procedure isGreyishOrWhiteLike (This : in out ColorUtil; color_Param : access Color_Package.Color'Class) is
-      Java_Result : constant Boolean := ColorUtil'Class (This).isGreyishOrWhiteLike (color_Param);
+      Java_Result : constant Boolean := ColorUtil'Class (This).isGreyishOrWhiteLike (color_Param => color_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isGreyishOrWhiteLike;
 
    procedure isDark (This : in out ColorUtil; color_Param : access Color_Package.Color'Class) is
-      Java_Result : constant Boolean := ColorUtil'Class (This).isDark (color_Param);
+      Java_Result : constant Boolean := ColorUtil'Class (This).isDark (color_Param => color_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -38,7 +38,7 @@ package org.allbinary.data.tree.dom.BasicUriResolver_Package is
    type BasicUriResolver_Access_Array_Access_Array is array (Natural range <>) of BasicUriResolver_Access_Array_Access;
    type BasicUriResolver_Access_Array_Access_Array_Access is access all BasicUriResolver_Access_Array_Access_Array;
 
-   type BasicUriResolver is new Java_Object and URIResolver with record
+   type BasicUriResolver is new Java_Object with record
       logUtil : LogUtil_Access;
       uriResolverStrings : URIResolverStrings_Access;
       extension : Unbounded_String;

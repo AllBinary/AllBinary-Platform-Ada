@@ -75,35 +75,35 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
       return This;
    end Create;
 
-   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) is
+   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Var_Param : access OrderHistory_Package.OrderHistory'Class) is
       basketInterface : constant BasketInterface_Access := BasketInterface_Access (basketInterface_Param);
-      orderHistory : constant OrderHistory_Access := OrderHistory_Access (orderHistory_Param);
+      orderHistory_Var : constant OrderHistory_Access := OrderHistory_Access (orderHistory_Var_Param);
    begin
-        Order_Package.Initialize (This, orderHistory.getStoreName, basketInterface, orderHistory.getId, orderHistory.getShippingMethod, orderHistory.getSpecial, orderHistory.getPaymentMethod);
+        Order_Package.Initialize (This, orderHistory_Var.getStoreName, basketInterface, orderHistory_Var.getId, orderHistory_Var.getShippingMethod, orderHistory_Var.getSpecial, orderHistory_Var.getPaymentMethod);
         Initialize_Fields (This);
-        This.userName := orderHistory.getUserName;
-        This.shippingAddress := orderHistory.getShippingAddress;
-        This.billingAddress := orderHistory.getBillingAddress;
-        This.payment := orderHistory.getPaymentInfo;
-        This.shipDate := orderHistory.getShipDate;
-        This.orderDate := orderHistory.getOrderDate;
-        This.transDate := orderHistory.getTransDate;
-        This.cancelDate := orderHistory.getCancelDate;
-        This.status := orderHistory.getStatus;
-        This.subTotal := orderHistory.getSubTotal;
-        This.shippingCost := orderHistory.getShippingCost;
-        This.taxes := orderHistory.getTaxes;
-        This.total := orderHistory.getTotal;
-        Order (This).setUserComments (Java_Unbox (orderHistory.getUserComments));
-        Order (This).setUserCancelComments (Java_Unbox (orderHistory.getUserCancelComments));
-        Order (This).setStoreComments (Java_Unbox (orderHistory.getStoreComments));
-        Order (This).setStoreCancelComments (Java_Unbox (orderHistory.getStoreCancelComments));
+        This.userName := orderHistory_Var.getUserName;
+        This.shippingAddress := orderHistory_Var.getShippingAddress;
+        This.billingAddress := orderHistory_Var.getBillingAddress;
+        This.payment := orderHistory_Var.getPaymentInfo;
+        This.shipDate := orderHistory_Var.getShipDate;
+        This.orderDate := orderHistory_Var.getOrderDate;
+        This.transDate := orderHistory_Var.getTransDate;
+        This.cancelDate := orderHistory_Var.getCancelDate;
+        This.status := orderHistory_Var.getStatus;
+        This.subTotal := orderHistory_Var.getSubTotal;
+        This.shippingCost := orderHistory_Var.getShippingCost;
+        This.taxes := orderHistory_Var.getTaxes;
+        This.total := orderHistory_Var.getTotal;
+        Order (This).setUserComments (Java_Unbox (orderHistory_Var.getUserComments));
+        Order (This).setUserCancelComments (Java_Unbox (orderHistory_Var.getUserCancelComments));
+        Order (This).setStoreComments (Java_Unbox (orderHistory_Var.getStoreComments));
+        Order (This).setStoreCancelComments (Java_Unbox (orderHistory_Var.getStoreCancelComments));
    end Initialize;
 
-   function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) return OrderHistory_Access is
+   function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Var_Param : access OrderHistory_Package.OrderHistory'Class) return OrderHistory_Access is
       This : constant OrderHistory_Access := new OrderHistory;
    begin
-      OrderHistory_Package.Initialize (This.all, basketInterface_Param, orderHistory_Param);
+      OrderHistory_Package.Initialize (This.all, basketInterface_Param, orderHistory_Var_Param);
       return This;
    end Create;
 
@@ -315,7 +315,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         keySet := hashMap.keySet;
         keyArray := keySet.toArray;
         size := keyArray'Length;
-        node := document.createElement (OrderHistoryData_Package.ORDERHISTORY);
+        node := document.createElement (OrderHistoryData_Package.ORDERHISTORY_Var);
         node.appendChild (Order (This).toXmlNode (document));
         billingAddressNode := document.createElement (BillingAddressData_Package.BILLINGADDRESS);
         billingAddressNode.appendChild (This.billingAddress.toXmlNode (document));
@@ -334,7 +334,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
    end toXmlNode;
 
    procedure toXmlNode (This : in out OrderHistory; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := OrderHistory'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := OrderHistory'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

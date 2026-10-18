@@ -87,14 +87,14 @@ package body org.allbinary.graphics.form.item.validation.TextItemUserIdentifierV
    end isLetter;
 
    procedure visit (This : in out TextItemUserIdentifierVisitor; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Java_Object_Access := TextItemUserIdentifierVisitor'Class (This).visit (anyType_Param);
+      Java_Result : constant Java_Object_Access := TextItemUserIdentifierVisitor'Class (This).visit (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
    procedure isLetter (This : in out TextItemUserIdentifierVisitor; charValue : Character) is
-      Java_Result : constant Boolean := TextItemUserIdentifierVisitor'Class (This).isLetter (charValue);
+      Java_Result : constant Boolean := TextItemUserIdentifierVisitor'Class (This).isLetter (charValue => charValue);
       pragma Unreferenced (Java_Result);
    begin
       null;

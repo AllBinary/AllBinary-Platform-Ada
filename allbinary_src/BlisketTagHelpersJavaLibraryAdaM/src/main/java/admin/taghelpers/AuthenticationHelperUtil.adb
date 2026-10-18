@@ -93,7 +93,7 @@ package body admin.taghelpers.AuthenticationHelperUtil_Package is
    end isAuthorized;
 
    procedure isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper_Param : access AuthenticationHelper_Package.AuthenticationHelper'Class; filePath : Unbounded_String) is
-      Java_Result : constant Boolean := AuthenticationHelperUtil'Class (This).isAuthorized (authenticationHelper_Param, filePath);
+      Java_Result : constant Boolean := AuthenticationHelperUtil'Class (This).isAuthorized (authenticationHelper_Param => authenticationHelper_Param, filePath => filePath);
       pragma Unreferenced (Java_Result);
    begin
       null;

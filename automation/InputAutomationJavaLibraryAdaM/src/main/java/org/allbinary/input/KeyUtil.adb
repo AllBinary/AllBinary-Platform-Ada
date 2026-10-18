@@ -46,7 +46,7 @@ package body org.allbinary.input.KeyUtil_Package is
    end isNormallyDisplayed;
 
    procedure isNormallyDisplayed (keyCode : Integer) is
-      Java_Result : constant Boolean := isNormallyDisplayed (keyCode);
+      Java_Result : constant Boolean := isNormallyDisplayed (keyCode => keyCode);
       pragma Unreferenced (Java_Result);
    begin
       null;

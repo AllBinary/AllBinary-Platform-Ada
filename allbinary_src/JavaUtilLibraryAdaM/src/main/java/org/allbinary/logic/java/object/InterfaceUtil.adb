@@ -118,35 +118,35 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    end isImplementedView;
 
    procedure viewAll (myClass : Ada.Tags.Tag; lineBreak : Unbounded_String) is
-      Java_Result : constant Unbounded_String := viewAll (myClass, lineBreak);
+      Java_Result : constant Unbounded_String := viewAll (myClass => myClass, lineBreak => lineBreak);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end viewAll;
 
    procedure getClass (interfaceName : Unbounded_String; interfaces : Ada_Tags_Tag_Array_Access) is
-      Java_Result : constant Ada.Tags.Tag := getClass (interfaceName, interfaces);
+      Java_Result : constant Ada.Tags.Tag := getClass (interfaceName => interfaceName, interfaces => interfaces);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getClass;
 
    procedure isImplemented (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := isImplemented (clazz, anyType_Param);
+      Java_Result : constant Boolean := isImplemented (clazz => clazz, anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isImplemented;
 
    procedure isImplemented (className : Unbounded_String; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := isImplemented (className, anyType_Param);
+      Java_Result : constant Boolean := isImplemented (className => className, anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isImplemented;
 
    procedure isImplementedView (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Unbounded_String := isImplementedView (clazz, anyType_Param);
+      Java_Result : constant Unbounded_String := isImplementedView (clazz => clazz, anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

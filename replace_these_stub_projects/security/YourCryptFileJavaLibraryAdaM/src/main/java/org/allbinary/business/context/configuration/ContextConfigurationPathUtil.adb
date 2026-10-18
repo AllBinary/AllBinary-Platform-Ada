@@ -46,21 +46,21 @@ package body org.allbinary.business.context.configuration.ContextConfigurationPa
    end getFileName;
 
    procedure getAbFile (contextName : Unbounded_String) is
-      Java_Result : constant AbFile_Access := getAbFile (contextName);
+      Java_Result : constant AbFile_Access := getAbFile (contextName => contextName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAbFile;
 
    procedure getAbPath (contextName : Unbounded_String) is
-      Java_Result : constant AbPath_Access := getAbPath (contextName);
+      Java_Result : constant AbPath_Access := getAbPath (contextName => contextName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAbPath;
 
    procedure getFileName (contextName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := getFileName (contextName);
+      Java_Result : constant Unbounded_String := getFileName (contextName => contextName);
       pragma Unreferenced (Java_Result);
    begin
       null;

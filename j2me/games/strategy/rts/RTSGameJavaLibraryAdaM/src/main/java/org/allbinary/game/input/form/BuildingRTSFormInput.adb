@@ -375,28 +375,28 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
    end isSurroundingCellsOffMap;
 
    procedure isDemoLocked (This : in out BuildingRTSFormInput; item_Param : access ABCustomItem_Package.ABCustomItem'Class) is
-      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isDemoLocked (item_Param);
+      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isDemoLocked (item_Param => item_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDemoLocked;
 
    procedure attemptBuild (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer_Package.RTSLayer'Class; itemIndex : Integer) is
-      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).attemptBuild (rtsPlayerLayerInterface_Param, layerManager_Param, layerInterface_Param, itemIndex);
+      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).attemptBuild (rtsPlayerLayerInterface_Param => rtsPlayerLayerInterface_Param, layerManager_Param => layerManager_Param, layerInterface_Param => layerInterface_Param, itemIndex => itemIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end attemptBuild;
 
    procedure isBuildAttemptValid (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerInterface_Param : access RTSLayer_Package.RTSLayer'Class) is
-      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isBuildAttemptValid (rtsPlayerLayerInterface_Param, layerInterface_Param);
+      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isBuildAttemptValid (rtsPlayerLayerInterface_Param => rtsPlayerLayerInterface_Param, layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isBuildAttemptValid;
 
    procedure isSurroundingCellsOffMap (This : in out BuildingRTSFormInput; layerInterface_Param : access RTSLayer_Package.RTSLayer'Class) is
-      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isSurroundingCellsOffMap (layerInterface_Param);
+      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isSurroundingCellsOffMap (layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

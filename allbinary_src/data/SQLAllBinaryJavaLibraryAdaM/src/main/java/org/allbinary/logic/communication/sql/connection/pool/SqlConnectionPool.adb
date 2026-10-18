@@ -159,7 +159,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
    end add;
 
    procedure get (This : in out SqlConnectionPool; url : Unbounded_String) is
-      Java_Result : constant Connection_Access := SqlConnectionPool'Class (This).get (url);
+      Java_Result : constant Connection_Access := SqlConnectionPool'Class (This).get (url => url);
       pragma Unreferenced (Java_Result);
    begin
       null;

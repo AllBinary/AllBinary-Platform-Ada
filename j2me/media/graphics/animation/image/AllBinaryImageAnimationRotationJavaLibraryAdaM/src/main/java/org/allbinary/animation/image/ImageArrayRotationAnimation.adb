@@ -68,7 +68,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimation_Package i
    end setImageArray;
 
    procedure createAnimation (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
-      Java_Result : constant ImageArrayRotationAnimation_Access := createAnimation (anyType_Param, animationBehavior_Param);
+      Java_Result : constant ImageArrayRotationAnimation_Access := createAnimation (anyType_Param => anyType_Param, animationBehavior_Param => animationBehavior_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -111,14 +111,14 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFa
    end getAngleIncrement;
 
    procedure createDXY (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) is
-      Java_Result : constant AllBinaryJ2SEImageRotationAnimationFactory_Access := createDXY (image_Param, width, height, dx, dy, angleIncrement, animationBehaviorFactory_Param, resizeCanvasForRotation);
+      Java_Result : constant AllBinaryJ2SEImageRotationAnimationFactory_Access := createDXY (image_Param => image_Param, width => width, height => height, dx => dx, dy => dy, angleIncrement => angleIncrement, animationBehaviorFactory_Param => animationBehaviorFactory_Param, resizeCanvasForRotation => resizeCanvasForRotation);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createDXY;
 
    procedure getInstance (This : in out AllBinaryJ2SEImageRotationAnimationFactory; instanceId : Integer) is
-      Java_Result : constant Animation_Access := AllBinaryJ2SEImageRotationAnimationFactory'Class (This).getInstance (instanceId);
+      Java_Result : constant Animation_Access := AllBinaryJ2SEImageRotationAnimationFactory'Class (This).getInstance (instanceId => instanceId);
       pragma Unreferenced (Java_Result);
    begin
       null;

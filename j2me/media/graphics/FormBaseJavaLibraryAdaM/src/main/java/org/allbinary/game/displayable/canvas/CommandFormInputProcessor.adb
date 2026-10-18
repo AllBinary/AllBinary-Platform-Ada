@@ -224,7 +224,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
    end toString;
 
    procedure processInput (This : in out CommandFormInputProcessor; key : Integer) is
-      Java_Result : constant Integer := CommandFormInputProcessor'Class (This).processInput (key);
+      Java_Result : constant Integer := CommandFormInputProcessor'Class (This).processInput (key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;

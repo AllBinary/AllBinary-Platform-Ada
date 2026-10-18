@@ -24,12 +24,12 @@ package body org.allbinary.graph.E_Package is
 
    function newInstance (This : in out E) return E_Access is
    begin
-        return E_Package.e;
+        return E_Package.e_Var;
    end newInstance;
 
 begin
    null;
-   e := E_Package.Create;
+   e_Var := E_Package.Create;
 
 end org.allbinary.graph.E_Package;
 

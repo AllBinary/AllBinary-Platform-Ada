@@ -54,7 +54,7 @@ package body org.allbinary.game.input.AndroidNumberKeyToJ2MECanvasNumberKey_Pack
    end getKey;
 
    procedure getKey (key : Integer) is
-      Java_Result : constant Integer := getKey (key);
+      Java_Result : constant Integer := getKey (key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;

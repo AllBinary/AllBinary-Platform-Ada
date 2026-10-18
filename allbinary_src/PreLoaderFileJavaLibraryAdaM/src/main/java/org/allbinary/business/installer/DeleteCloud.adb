@@ -122,7 +122,7 @@ package body org.allbinary.business.installer.DeleteCloud_Package is
    end delete;
 
    procedure delete (This : in out DeleteCloud; prePath : Unbounded_String; current : Integer; total : Integer) is
-      Java_Result : constant Boolean := DeleteCloud'Class (This).delete (prePath, current, total);
+      Java_Result : constant Boolean := DeleteCloud'Class (This).delete (prePath => prePath, current => current, total => total);
       pragma Unreferenced (Java_Result);
    begin
       null;

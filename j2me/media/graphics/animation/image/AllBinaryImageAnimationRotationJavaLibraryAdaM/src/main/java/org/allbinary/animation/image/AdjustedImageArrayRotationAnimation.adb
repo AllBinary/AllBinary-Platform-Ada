@@ -93,14 +93,14 @@ package body org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_P
    end getDy;
 
    procedure createAdjustedImageArrayRotationAnimationInfo (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
-      Java_Result : constant AdjustedImageArrayRotationAnimation_Access := createAdjustedImageArrayRotationAnimationInfo (anyType_Param, animationBehavior_Param);
+      Java_Result : constant AdjustedImageArrayRotationAnimation_Access := createAdjustedImageArrayRotationAnimationInfo (anyType_Param => anyType_Param, animationBehavior_Param => animationBehavior_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createAdjustedImageArrayRotationAnimationInfo;
 
    procedure createAnimation (imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
-      Java_Result : constant AdjustedImageArrayRotationAnimation_Access := createAnimation (imageArray, angleInfo_Param, totalAngle, animationBehavior_Param);
+      Java_Result : constant AdjustedImageArrayRotationAnimation_Access := createAnimation (imageArray => imageArray, angleInfo_Param => angleInfo_Param, totalAngle => totalAngle, animationBehavior_Param => animationBehavior_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

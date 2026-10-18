@@ -178,14 +178,14 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end generatePackagePropertiesHashMap;
 
    procedure getPackageProperties (This : in out NameSpaceRequestParam; packageIndex : Integer) is
-      Java_Result : constant HashMap_Access := NameSpaceRequestParam'Class (This).getPackageProperties (packageIndex);
+      Java_Result : constant HashMap_Access := NameSpaceRequestParam'Class (This).getPackageProperties (packageIndex => packageIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPackageProperties;
 
    procedure generatePackagePropertiesHashMap (This : in out NameSpaceRequestParam; properties : Unbounded_String) is
-      Java_Result : constant HashMap_Access := NameSpaceRequestParam'Class (This).generatePackagePropertiesHashMap (properties);
+      Java_Result : constant HashMap_Access := NameSpaceRequestParam'Class (This).generatePackagePropertiesHashMap (properties => properties);
       pragma Unreferenced (Java_Result);
    begin
       null;

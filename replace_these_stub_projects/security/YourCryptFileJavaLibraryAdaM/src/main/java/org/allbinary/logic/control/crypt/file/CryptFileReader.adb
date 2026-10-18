@@ -38,14 +38,14 @@ package body org.allbinary.logic.control.crypt.file.CryptFileReader_Package is
    end getInputStream;
 
    procedure get (This : in out CryptFileReader; fileAbPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant Unbounded_String := CryptFileReader'Class (This).get (fileAbPath_Param);
+      Java_Result : constant Unbounded_String := CryptFileReader'Class (This).get (fileAbPath_Param => fileAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
    procedure getInputStream (This : in out CryptFileReader; fileAbPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant InputStream_Access := CryptFileReader'Class (This).getInputStream (fileAbPath_Param);
+      Java_Result : constant InputStream_Access := CryptFileReader'Class (This).getInputStream (fileAbPath_Param => fileAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

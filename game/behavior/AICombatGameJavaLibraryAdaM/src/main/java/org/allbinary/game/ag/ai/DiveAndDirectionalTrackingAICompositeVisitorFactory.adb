@@ -41,7 +41,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAICompositeVisit
    end getInstance;
 
    procedure getInstance (This : in out DiveAndDirectionalTrackingAICompositeVisitorFactory; diveBombAI_Param : access DiveAndDirectionalTrackingAI_Package.DiveAndDirectionalTrackingAI'Class) is
-      Java_Result : constant Visitor_Access := DiveAndDirectionalTrackingAICompositeVisitorFactory'Class (This).getInstance (diveBombAI_Param);
+      Java_Result : constant Visitor_Access := DiveAndDirectionalTrackingAICompositeVisitorFactory'Class (This).getInstance (diveBombAI_Param => diveBombAI_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -19,7 +19,7 @@ package body org.allbinary.business.init.InitInfoDocument_Package is
    procedure Initialize_Fields (This : in out InitInfoDocument'Class) is
    begin
       null;
-      This.initInfoDocument := null;
+      This.initInfoDocument_Var := null;
    end Initialize_Fields;
 
 

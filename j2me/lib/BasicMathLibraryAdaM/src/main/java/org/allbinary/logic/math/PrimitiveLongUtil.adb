@@ -35,17 +35,17 @@ package body org.allbinary.logic.math.PrimitiveLongUtil_Package is
 
 
    function createPowerOfTen (powerOfTen : Integer) return PrimitiveLongUtil_Access is
-      primitiveLongUtil : PrimitiveLongUtil_Access;
+      primitiveLongUtil_Var : PrimitiveLongUtil_Access;
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    begin
-        primitiveLongUtil := PrimitiveLongUtil_Package.Create (powerOfTen, NullUtil_Package.getInstance.NULL_OBJECT);
+        primitiveLongUtil_Var := PrimitiveLongUtil_Package.Create (powerOfTen, NullUtil_Package.getInstance.NULL_OBJECT);
         if ((powerOfTen) rem (10)) /= (0) then
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
-            logUtil.put (commonStrings.EXCEPTION_Id, primitiveLongUtil, commonStrings.CONSTRUCTOR, Java_New_Exception ("Exception", To_Unbounded_String ("Max must be power of 10")));
+            logUtil.put (commonStrings.EXCEPTION_Id, primitiveLongUtil_Var, commonStrings.CONSTRUCTOR, Java_New_Exception ("Exception", To_Unbounded_String ("Max must be power of 10")));
         end if;
-        return primitiveLongUtil;
+        return primitiveLongUtil_Var;
    end createPowerOfTen;
 
    procedure Initialize (This : in out PrimitiveLongUtil'Class; powerOfTen : Integer; unused_Param : access Java_Object'Class) is
@@ -114,14 +114,14 @@ package body org.allbinary.logic.math.PrimitiveLongUtil_Package is
    end getMaxDigits;
 
    procedure createPowerOfTen (powerOfTen : Integer) is
-      Java_Result : constant PrimitiveLongUtil_Access := createPowerOfTen (powerOfTen);
+      Java_Result : constant PrimitiveLongUtil_Access := createPowerOfTen (powerOfTen => powerOfTen);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPowerOfTen;
 
    procedure getCharArray (This : in out PrimitiveLongUtil; value : Integer) is
-      Java_Result : constant Character_Array_Access := PrimitiveLongUtil'Class (This).getCharArray (value);
+      Java_Result : constant Character_Array_Access := PrimitiveLongUtil'Class (This).getCharArray (value => value);
       pragma Unreferenced (Java_Result);
    begin
       null;

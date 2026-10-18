@@ -66,18 +66,18 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_
 
    function toString (This : in out PathFindingNode) return Unbounded_String is
       stringBuffer : StringMaker_Access;
-      pathFindingNode : PathFindingNode_Access;
+      pathFindingNode_Var : PathFindingNode_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)));
         stringBuffer.append (CommonLabels_Package.getInstance.COLON_SEP);
         stringBuffer.append (To_Unbounded_String (" Path: "));
         stringBuffer.append (This.geographicMapCellPosition.toString);
-        pathFindingNode := PathFindingNode'Class (This).getParentP;
-        while (pathFindingNode) /= (null) loop
-            stringBuffer.append (pathFindingNode.geographicMapCellPosition.toString);
+        pathFindingNode_Var := PathFindingNode'Class (This).getParentP;
+        while (pathFindingNode_Var) /= (null) loop
+            stringBuffer.append (pathFindingNode_Var.geographicMapCellPosition.toString);
             stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
-            pathFindingNode := pathFindingNode.getParentP;
+            pathFindingNode_Var := pathFindingNode_Var.getParentP;
         end loop;
         return stringBuffer.toString;
    end toString;

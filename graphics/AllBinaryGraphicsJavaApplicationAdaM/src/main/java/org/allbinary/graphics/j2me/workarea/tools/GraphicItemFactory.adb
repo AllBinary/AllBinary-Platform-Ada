@@ -85,14 +85,14 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
    end getInstance;
 
    procedure getInstance (This : in out GraphicItemFactory; itemName : Unbounded_String) is
-      Java_Result : constant GraphicsItemInterfaceFactoryInterface_Access := GraphicItemFactory'Class (This).getInstance (itemName);
+      Java_Result : constant GraphicsItemInterfaceFactoryInterface_Access := GraphicItemFactory'Class (This).getInstance (itemName => itemName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out GraphicItemFactory; graphicItemNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant HashMap_Access := GraphicItemFactory'Class (This).getInstance (graphicItemNodeList_Param);
+      Java_Result : constant HashMap_Access := GraphicItemFactory'Class (This).getInstance (graphicItemNodeList_Param => graphicItemNodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

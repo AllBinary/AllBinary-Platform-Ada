@@ -58,7 +58,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Packa
    end remove;
 
    procedure remove (This : in out ImageArrayRotationAnimationPool; key_Param : access Java_Object'Class) is
-      Java_Result : constant CacheableInterface_Access := ImageArrayRotationAnimationPool'Class (This).remove (key_Param);
+      Java_Result : constant CacheableInterface_Access := ImageArrayRotationAnimationPool'Class (This).remove (key_Param => key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

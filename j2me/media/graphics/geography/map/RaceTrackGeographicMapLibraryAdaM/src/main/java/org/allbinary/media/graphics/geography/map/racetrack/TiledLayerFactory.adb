@@ -51,14 +51,14 @@ package body org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFact
    end getMiniInstance;
 
    procedure getInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is
-      Java_Result : constant TiledLayer_Access := TiledLayerFactory'Class (This).getInstance (raceTrackData_Param);
+      Java_Result : constant TiledLayer_Access := TiledLayerFactory'Class (This).getInstance (raceTrackData_Param => raceTrackData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getMiniInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is
-      Java_Result : constant TiledLayer_Access := TiledLayerFactory'Class (This).getMiniInstance (raceTrackData_Param);
+      Java_Result : constant TiledLayer_Access := TiledLayerFactory'Class (This).getMiniInstance (raceTrackData_Param => raceTrackData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

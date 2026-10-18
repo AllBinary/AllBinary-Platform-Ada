@@ -361,14 +361,14 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    end toString;
 
    procedure isExtension (This : in out OpenGLCapabilities; gameFeature_Param : access OpenGLFeature_Package.OpenGLFeature'Class) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isExtension (gameFeature_Param);
+      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isExtension (gameFeature_Param => gameFeature_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isExtension;
 
    procedure isTextureSizeValid (This : in out OpenGLCapabilities; widthAndHeight : Integer) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isTextureSizeValid (widthAndHeight);
+      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isTextureSizeValid (widthAndHeight => widthAndHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;

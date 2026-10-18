@@ -136,7 +136,7 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
    end view;
 
    procedure toXmlNode (This : in out OrderHistoryView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := OrderHistoryView'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := OrderHistoryView'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

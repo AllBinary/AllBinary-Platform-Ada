@@ -135,7 +135,7 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
    end setOrderStatus;
 
    procedure setOrderStatus (This : in out OrderHistoryRequestHelper; newStatus_Param : Unbounded_String) is
-      Java_Result : constant Unbounded_String := OrderHistoryRequestHelper'Class (This).setOrderStatus (newStatus_Param);
+      Java_Result : constant Unbounded_String := OrderHistoryRequestHelper'Class (This).setOrderStatus (newStatus_Param => newStatus_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

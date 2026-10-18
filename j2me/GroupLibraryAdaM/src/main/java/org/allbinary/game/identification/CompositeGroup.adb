@@ -86,7 +86,7 @@ package body org.allbinary.game.identification.CompositeGroup_Package is
    end getGroup;
 
    procedure isInGroup (This : in out CompositeGroup; groupInterface_Param : access Group_Package.Group'Class) is
-      Java_Result : constant Boolean := CompositeGroup'Class (This).isInGroup (groupInterface_Param);
+      Java_Result : constant Boolean := CompositeGroup'Class (This).isInGroup (groupInterface_Param => groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

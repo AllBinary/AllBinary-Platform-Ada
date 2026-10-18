@@ -39,10 +39,10 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
 
    function getInstance return BasicEmailQueue_Access is
    begin
-        if (BasicEmailQueue_Package.basicEmailQueue) = (null) then
-            BasicEmailQueue_Package.basicEmailQueue := BasicEmailQueue_Package.Create;
+        if (BasicEmailQueue_Package.basicEmailQueue_Var) = (null) then
+            BasicEmailQueue_Package.basicEmailQueue_Var := BasicEmailQueue_Package.Create;
         end if;
-        return BasicEmailQueue_Package.basicEmailQueue;
+        return BasicEmailQueue_Package.basicEmailQueue_Var;
    end getInstance;
 
    --  throws Exception
@@ -117,14 +117,14 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
    end send;
 
    procedure offer (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) is
-      Java_Result : constant Boolean := BasicEmailQueue'Class (This).offer (emailInterface_Param);
+      Java_Result : constant Boolean := BasicEmailQueue'Class (This).offer (emailInterface_Param => emailInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end offer;
 
    procedure send (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) is
-      Java_Result : constant Boolean := BasicEmailQueue'Class (This).send (emailInterface_Param);
+      Java_Result : constant Boolean := BasicEmailQueue'Class (This).send (emailInterface_Param => emailInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -133,7 +133,7 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
 begin
    null;
    instance := BasicEmailQueue_Package.Create;
-   basicEmailQueue := null;
+   basicEmailQueue_Var := null;
 
 end org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package;
 

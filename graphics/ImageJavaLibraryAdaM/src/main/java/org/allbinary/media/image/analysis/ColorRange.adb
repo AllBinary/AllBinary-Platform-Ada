@@ -145,7 +145,7 @@ package body org.allbinary.media.image.analysis.ColorRange_Package is
    end toString;
 
    procedure isInRange (This : in out ColorRange; color_Param : access Color_Package.Color'Class) is
-      Java_Result : constant Boolean := ColorRange'Class (This).isInRange (color_Param);
+      Java_Result : constant Boolean := ColorRange'Class (This).isInRange (color_Param => color_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

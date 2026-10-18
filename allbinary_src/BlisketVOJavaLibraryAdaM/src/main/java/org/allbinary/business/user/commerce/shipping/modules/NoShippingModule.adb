@@ -55,7 +55,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.NoShippingMod
    end getName;
 
    procedure getCost (This : in out NoShippingModule; order_Param : access OrderInterface_Package.OrderInterface'Class) is
-      Java_Result : constant Money_Access := NoShippingModule'Class (This).getCost (order_Param);
+      Java_Result : constant Money_Access := NoShippingModule'Class (This).getCost (order_Param => order_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

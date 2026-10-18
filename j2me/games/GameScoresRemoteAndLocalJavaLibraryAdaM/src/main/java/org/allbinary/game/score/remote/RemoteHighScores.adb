@@ -164,14 +164,14 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
    end getSoftwareInformation;
 
    procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; isAscending : Boolean) is
-      Java_Result : constant HighScores_Access := getInstance (abeClientInformation_Param, softwareInformation_Param, gameInfo_Param, heading, columnTwoHeading, isAscending);
+      Java_Result : constant HighScores_Access := getInstance (abeClientInformation_Param => abeClientInformation_Param, softwareInformation_Param => softwareInformation_Param, gameInfo_Param => gameInfo_Param, heading => heading, columnTwoHeading => columnTwoHeading, isAscending => isAscending);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstancePreload (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; isAscending : Boolean; preload : Boolean) is
-      Java_Result : constant HighScores_Access := getInstancePreload (abeClientInformation_Param, softwareInformation_Param, gameInfo_Param, heading, columnTwoHeading, isAscending, preload);
+      Java_Result : constant HighScores_Access := getInstancePreload (abeClientInformation_Param => abeClientInformation_Param, softwareInformation_Param => softwareInformation_Param, gameInfo_Param => gameInfo_Param, heading => heading, columnTwoHeading => columnTwoHeading, isAscending => isAscending, preload => preload);
       pragma Unreferenced (Java_Result);
    begin
       null;

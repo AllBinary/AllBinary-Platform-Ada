@@ -89,14 +89,14 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
    end scale;
 
    procedure scaleArray (This : in out ImageJ2MEScaleUtil; images : Image_Access_Array_Access; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access_Array_Access := ImageJ2MEScaleUtil'Class (This).scaleArray (images, width, height);
+      Java_Result : constant Image_Access_Array_Access := ImageJ2MEScaleUtil'Class (This).scaleArray (images => images, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end scaleArray;
 
    procedure scale (This : in out ImageJ2MEScaleUtil; image_Param : access Image_Package.Image'Class; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := ImageJ2MEScaleUtil'Class (This).scale (image_Param, width, height);
+      Java_Result : constant Image_Access := ImageJ2MEScaleUtil'Class (This).scale (image_Param => image_Param, width => width, height => height);
       pragma Unreferenced (Java_Result);
    begin
       null;

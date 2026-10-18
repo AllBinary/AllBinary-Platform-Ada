@@ -145,14 +145,14 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
    end processImageColorResults;
 
    procedure process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface_Param : access ColorRangeInterface_Package.ColorRangeInterface'Class) is
-      Java_Result : constant ImageAnalysisResults_Access_Array_Access := ImageAnalysis'Class (This).process (bufferedImageArray, colorRangeInterface_Param);
+      Java_Result : constant ImageAnalysisResults_Access_Array_Access := ImageAnalysis'Class (This).process (bufferedImageArray => bufferedImageArray, colorRangeInterface_Param => colorRangeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end process;
 
    procedure process (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; colorRangeInterface_Param : access ColorRangeInterface_Package.ColorRangeInterface'Class) is
-      Java_Result : constant ImageAnalysisResults_Access := process (bufferedImage_Param, colorRangeInterface_Param);
+      Java_Result : constant ImageAnalysisResults_Access := process (bufferedImage_Param => bufferedImage_Param, colorRangeInterface_Param => colorRangeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

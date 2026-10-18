@@ -92,7 +92,7 @@ package body org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Packa
    end getUpdated;
 
    procedure getUpdated (This : in out MakeCountedPartsSingletonArrayFactory; partInterfaceArray : PartInterface_Access_Array_Access) is
-      Java_Result : constant PartInterface_Access_Array_Access := MakeCountedPartsSingletonArrayFactory'Class (This).getUpdated (partInterfaceArray);
+      Java_Result : constant PartInterface_Access_Array_Access := MakeCountedPartsSingletonArrayFactory'Class (This).getUpdated (partInterfaceArray => partInterfaceArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

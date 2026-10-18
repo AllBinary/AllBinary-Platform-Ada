@@ -54,14 +54,14 @@ package body org.apache.xmlrpc.XmlRpcClient_Package is
    end execute;
 
    procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Java_Object_Access := XmlRpcClient'Class (This).execute (method, params_Param);
+      Java_Result : constant Java_Object_Access := XmlRpcClient'Class (This).execute (method => method, params_Param => params_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end execute;
 
    procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) is
-      Java_Result : constant Java_Object_Access := XmlRpcClient'Class (This).execute (method, params_Param, cryptInterface_Param);
+      Java_Result : constant Java_Object_Access := XmlRpcClient'Class (This).execute (method => method, params_Param => params_Param, cryptInterface_Param => cryptInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

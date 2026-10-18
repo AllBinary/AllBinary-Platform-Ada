@@ -237,49 +237,49 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
    end createFakeRTSLayerHashtable;
 
    procedure createWeaponProperties (This : in out RTSLayerUtil; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class; currentLevel : Integer; lastLevel : Integer) is
-      Java_Result : constant WeaponProperties_Access := RTSLayerUtil'Class (This).createWeaponProperties (weaponProperties_Param, currentLevel, lastLevel);
+      Java_Result : constant WeaponProperties_Access := RTSLayerUtil'Class (This).createWeaponProperties (weaponProperties_Param => weaponProperties_Param, currentLevel => currentLevel, lastLevel => lastLevel);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createWeaponProperties;
 
    procedure getCostExponential (This : in out RTSLayerUtil; cost : Long_Long_Integer) is
-      Java_Result : constant Long_Long_Integer := RTSLayerUtil'Class (This).getCostExponential (cost);
+      Java_Result : constant Long_Long_Integer := RTSLayerUtil'Class (This).getCostExponential (cost => cost);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCostExponential;
 
    procedure getWeaponPropertiesCost (This : in out RTSLayerUtil; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class) is
-      Java_Result : constant Integer := RTSLayerUtil'Class (This).getWeaponPropertiesCost (weaponProperties_Param);
+      Java_Result : constant Integer := RTSLayerUtil'Class (This).getWeaponPropertiesCost (weaponProperties_Param => weaponProperties_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWeaponPropertiesCost;
 
    procedure getCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
-      Java_Result : constant Integer := RTSLayerUtil'Class (This).getCost (rtsLayer_Param);
+      Java_Result : constant Integer := RTSLayerUtil'Class (This).getCost (rtsLayer_Param => rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCost;
 
    procedure getDowngradeCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
-      Java_Result : constant Integer := RTSLayerUtil'Class (This).getDowngradeCost (rtsLayer_Param);
+      Java_Result : constant Integer := RTSLayerUtil'Class (This).getDowngradeCost (rtsLayer_Param => rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDowngradeCost;
 
    procedure getUpgradeCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
-      Java_Result : constant Integer := RTSLayerUtil'Class (This).getUpgradeCost (rtsLayer_Param);
+      Java_Result : constant Integer := RTSLayerUtil'Class (This).getUpgradeCost (rtsLayer_Param => rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getUpgradeCost;
 
    procedure createFakeRTSLayerHashtable (This : in out RTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap_Package.BaseRaceTrackGeographicMap'Class) is
-      Java_Result : constant ABHashtable_Access := RTSLayerUtil'Class (This).createFakeRTSLayerHashtable (baseRaceTrackGeographicMap_Param);
+      Java_Result : constant ABHashtable_Access := RTSLayerUtil'Class (This).createFakeRTSLayerHashtable (baseRaceTrackGeographicMap_Param => baseRaceTrackGeographicMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

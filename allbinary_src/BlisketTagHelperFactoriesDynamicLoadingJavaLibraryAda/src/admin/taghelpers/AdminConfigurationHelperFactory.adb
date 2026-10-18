@@ -47,7 +47,7 @@ package body admin.taghelpers.AdminConfigurationHelperFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out AdminConfigurationHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
-      Java_Result : constant Java_Object_Access := AdminConfigurationHelperFactory'Class (This).getInstance (hashMap_Param, pageContext_Param);
+      Java_Result : constant Java_Object_Access := AdminConfigurationHelperFactory'Class (This).getInstance (hashMap_Param => hashMap_Param, pageContext_Param => pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

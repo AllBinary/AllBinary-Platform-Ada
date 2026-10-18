@@ -58,14 +58,14 @@ package body org.allbinary.logic.VectorUtil_Package is
    end elementAt;
 
    procedure getSize (This : in out VectorUtil; anyType_Param : access Java_Object'Class) is
-      Java_Result : constant Integer := VectorUtil'Class (This).getSize (anyType_Param);
+      Java_Result : constant Integer := VectorUtil'Class (This).getSize (anyType_Param => anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSize;
 
    procedure elementAt (This : in out VectorUtil; anyType_Param : access Java_Object'Class; index : Integer) is
-      Java_Result : constant Java_Object_Access := VectorUtil'Class (This).elementAt (anyType_Param, index);
+      Java_Result : constant Java_Object_Access := VectorUtil'Class (This).elementAt (anyType_Param => anyType_Param, index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -74,7 +74,7 @@ package body org.allbinary.layer.LayerProcessor_Package is
    end process;
 
    procedure isProcessorLayer (This : in out LayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
-      Java_Result : constant Boolean := LayerProcessor'Class (This).isProcessorLayer (layerInterface_Param);
+      Java_Result : constant Boolean := LayerProcessor'Class (This).isProcessorLayer (layerInterface_Param => layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

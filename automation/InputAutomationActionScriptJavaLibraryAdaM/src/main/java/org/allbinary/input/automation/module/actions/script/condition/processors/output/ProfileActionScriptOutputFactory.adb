@@ -54,7 +54,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    end getInstance;
 
    procedure getInstance (node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant ProfileActionScriptOutputInterface_Access := getInstance (node_Param);
+      Java_Result : constant ProfileActionScriptOutputInterface_Access := getInstance (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -95,21 +95,21 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
    end write;
 
    procedure getString (This : in out FileItemUtil; byteArray : Short_Short_Integer_Array_Access) is
-      Java_Result : constant Unbounded_String := FileItemUtil'Class (This).getString (byteArray);
+      Java_Result : constant Unbounded_String := FileItemUtil'Class (This).getString (byteArray => byteArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getString;
 
    procedure getString (This : in out FileItemUtil; fileItem_Param : access FileItemStream_Package.FileItemStream'Class) is
-      Java_Result : constant Unbounded_String := FileItemUtil'Class (This).getString (fileItem_Param);
+      Java_Result : constant Unbounded_String := FileItemUtil'Class (This).getString (fileItem_Param => fileItem_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getString;
 
    procedure getBytes (This : in out FileItemUtil; fileItem_Param : access FileItemStream_Package.FileItemStream'Class) is
-      Java_Result : constant Short_Short_Integer_Array_Access := FileItemUtil'Class (This).getBytes (fileItem_Param);
+      Java_Result : constant Short_Short_Integer_Array_Access := FileItemUtil'Class (This).getBytes (fileItem_Param => fileItem_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

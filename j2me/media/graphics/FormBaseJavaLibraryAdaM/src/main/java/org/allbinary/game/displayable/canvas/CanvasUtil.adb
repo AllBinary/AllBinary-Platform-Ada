@@ -58,7 +58,7 @@ package body org.allbinary.game.displayable.canvas.CanvasUtil_Package is
    end getKeyName;
 
    procedure getKeyName (key : Integer) is
-      Java_Result : constant Unbounded_String := getKeyName (key);
+      Java_Result : constant Unbounded_String := getKeyName (key => key);
       pragma Unreferenced (Java_Result);
    begin
       null;

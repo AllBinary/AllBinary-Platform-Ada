@@ -47,7 +47,7 @@ package body org.allbinary.input.automation.PointFactory_Package is
    end getInstance;
 
    procedure getInstance (x : Integer; y : Integer) is
-      Java_Result : constant Point_Access := getInstance (x, y);
+      Java_Result : constant Point_Access := getInstance (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

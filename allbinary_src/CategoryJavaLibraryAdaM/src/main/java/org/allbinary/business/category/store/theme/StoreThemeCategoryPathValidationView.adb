@@ -61,7 +61,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
    end validationInfo;
 
    procedure toValidationInfoNode (This : in out StoreThemeCategoryPathValidationView; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := StoreThemeCategoryPathValidationView'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := StoreThemeCategoryPathValidationView'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

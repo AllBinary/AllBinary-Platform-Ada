@@ -243,56 +243,56 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
    end getInstance;
 
    procedure getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath_Param : access AbPath_Package.AbPath'Class) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getRootInstance (categoryAbPath_Param);
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getRootInstance (categoryAbPath_Param => categoryAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRootInstance;
 
    procedure getRootInstanceFromNode (This : in out StoreThemeCategoryFactory; node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getRootInstanceFromNode (node_Param);
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getRootInstanceFromNode (node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRootInstanceFromNode;
 
    procedure getInstance (This : in out StoreThemeCategoryFactory; categoryPath : Unbounded_String; level : Integer) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (categoryPath, level);
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (categoryPath => categoryPath, level => level);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPath : Unbounded_String) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, categoryPath);
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface_Param => rootCategoryInterface_Param, parentCategoryInterface_Param => parentCategoryInterface_Param, categoryPath => categoryPath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out StoreThemeCategoryFactory; node_Param : access Node_Package.Node'Class; level : Integer) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (node_Param, level);
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (node_Param => node_Param, level => level);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; node_Param : access Node_Package.Node'Class) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, node_Param);
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface_Param => rootCategoryInterface_Param, parentCategoryInterface_Param => parentCategoryInterface_Param, node_Param => node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out StoreThemeCategoryFactory; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class; level : Integer) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (categoryPropertiesHashMap_Param, level);
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (categoryPropertiesHashMap_Param => categoryPropertiesHashMap_Param, level => level);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, categoryPropertiesHashMap_Param);
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface_Param => rootCategoryInterface_Param, parentCategoryInterface_Param => parentCategoryInterface_Param, categoryPropertiesHashMap_Param => categoryPropertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -194,14 +194,14 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
    end isValid;
 
    procedure getTaxRate (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress_Package.StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
-      Java_Result : constant Float := SimpleStateTaxModule'Class (This).getTaxRate (streetAddress_Param, storeFrontInterface_Param);
+      Java_Result : constant Float := SimpleStateTaxModule'Class (This).getTaxRate (streetAddress_Param => streetAddress_Param, storeFrontInterface_Param => storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTaxRate;
 
    procedure isValid (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress_Package.StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
-      Java_Result : constant Boolean := SimpleStateTaxModule'Class (This).isValid (streetAddress_Param, storeFrontInterface_Param);
+      Java_Result : constant Boolean := SimpleStateTaxModule'Class (This).isValid (streetAddress_Param => streetAddress_Param, storeFrontInterface_Param => storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

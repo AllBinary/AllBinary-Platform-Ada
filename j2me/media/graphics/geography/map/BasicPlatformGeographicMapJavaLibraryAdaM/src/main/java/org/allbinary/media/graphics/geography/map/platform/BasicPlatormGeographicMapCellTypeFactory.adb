@@ -117,7 +117,7 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
    end isPath;
 
    procedure isPath (This : in out BasicPlatormGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) is
-      Java_Result : constant Boolean := BasicPlatormGeographicMapCellTypeFactory'Class (This).isPath (cellType_Param);
+      Java_Result : constant Boolean := BasicPlatormGeographicMapCellTypeFactory'Class (This).isPath (cellType_Param => cellType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

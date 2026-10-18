@@ -200,14 +200,14 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
    end getCountedIndex;
 
    procedure getFirstAvailableCountedLayerInterfaceFactory (This : in out PickupBehavior; pickedUpLayerTypeArray : PickedUpLayerType_Access_Array_Access) is
-      Java_Result : constant CountedLayerInterfaceFactoryPart_Access := PickupBehavior'Class (This).getFirstAvailableCountedLayerInterfaceFactory (pickedUpLayerTypeArray);
+      Java_Result : constant CountedLayerInterfaceFactoryPart_Access := PickupBehavior'Class (This).getFirstAvailableCountedLayerInterfaceFactory (pickedUpLayerTypeArray => pickedUpLayerTypeArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFirstAvailableCountedLayerInterfaceFactory;
 
    procedure getCountedLayerInterfaceFactoryForSlot (This : in out PickupBehavior; slotIndex : Integer) is
-      Java_Result : constant CountedLayerInterfaceFactoryPart_Access := PickupBehavior'Class (This).getCountedLayerInterfaceFactoryForSlot (slotIndex);
+      Java_Result : constant CountedLayerInterfaceFactoryPart_Access := PickupBehavior'Class (This).getCountedLayerInterfaceFactoryForSlot (slotIndex => slotIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;

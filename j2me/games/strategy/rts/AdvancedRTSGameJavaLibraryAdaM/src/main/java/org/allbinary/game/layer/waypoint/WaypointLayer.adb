@@ -121,7 +121,7 @@ package body org.allbinary.game.layer.waypoint.WaypointLayer_Package is
    end isSelfUpgradeable;
 
    procedure getDamage (This : in out WaypointLayer; damageType : Integer) is
-      Java_Result : constant Integer := WaypointLayer'Class (This).getDamage (damageType);
+      Java_Result : constant Integer := WaypointLayer'Class (This).getDamage (damageType => damageType);
       pragma Unreferenced (Java_Result);
    begin
       null;

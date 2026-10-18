@@ -238,14 +238,14 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
    end getFontWidths;
 
    procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10_Package.GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
-      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmapGL (gl_Param, filename, cellSize, basicColor_Param);
+      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmapGL (gl_Param => gl_Param, filename => filename, cellSize => cellSize, basicColor_Param => basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFontBitmapGL;
 
    procedure getFontWidths (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer) is
-      Java_Result : constant Integer_Array_Access := TrueTypeFontUtil'Class (This).getFontWidths (filename, fontSize);
+      Java_Result : constant Integer_Array_Access := TrueTypeFontUtil'Class (This).getFontWidths (filename => filename, fontSize => fontSize);
       pragma Unreferenced (Java_Result);
    begin
       null;

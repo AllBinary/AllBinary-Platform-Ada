@@ -66,7 +66,7 @@ package body org.allbinary.media.image.BufferedImageUtil2_Package is
    end createSpriteImage;
 
    procedure createSpriteImage (This : in out BufferedImageUtil2; bufferedImageArray : BufferedImage_Access_Array_Access) is
-      Java_Result : constant BufferedImage_Access := BufferedImageUtil2'Class (This).createSpriteImage (bufferedImageArray);
+      Java_Result : constant BufferedImage_Access := BufferedImageUtil2'Class (This).createSpriteImage (bufferedImageArray => bufferedImageArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

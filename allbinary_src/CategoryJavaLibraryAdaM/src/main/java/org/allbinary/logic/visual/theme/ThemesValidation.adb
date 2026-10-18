@@ -111,14 +111,14 @@ package body org.allbinary.logic.visual.theme.ThemesValidation_Package is
    end toXmlNode;
 
    procedure toValidationInfoNode (This : in out ThemesValidation; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := ThemesValidation'Class (This).toValidationInfoNode (document_Param);
+      Java_Result : constant Node_Access := ThemesValidation'Class (This).toValidationInfoNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
    procedure toXmlNode (This : in out ThemesValidation; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := ThemesValidation'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := ThemesValidation'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

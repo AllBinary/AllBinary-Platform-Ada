@@ -109,14 +109,14 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
    end getImages;
 
    procedure getImage (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; verticle : Boolean; horizontal : Boolean) is
-      Java_Result : constant BufferedImage_Access := MirrorImageUtil'Class (This).getImage (bufferedImage_Param, verticle, horizontal);
+      Java_Result : constant BufferedImage_Access := MirrorImageUtil'Class (This).getImage (bufferedImage_Param => bufferedImage_Param, verticle => verticle, horizontal => horizontal);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getImage;
 
    procedure getImages (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; verticle : Boolean; horizontal : Boolean) is
-      Java_Result : constant BufferedImage_Access_Array_Access := MirrorImageUtil'Class (This).getImages (bufferedImage_Param, verticle, horizontal);
+      Java_Result : constant BufferedImage_Access_Array_Access := MirrorImageUtil'Class (This).getImages (bufferedImage_Param => bufferedImage_Param, verticle => verticle, horizontal => horizontal);
       pragma Unreferenced (Java_Result);
    begin
       null;

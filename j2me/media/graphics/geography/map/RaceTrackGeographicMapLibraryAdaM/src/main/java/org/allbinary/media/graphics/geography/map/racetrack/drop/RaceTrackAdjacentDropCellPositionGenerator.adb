@@ -175,7 +175,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    end drop;
 
    procedure getFirstNonRoadAdjacentCellPosition (This : in out RaceTrackAdjacentDropCellPositionGenerator; column : Integer; row : Integer) is
-      Java_Result : constant GeographicMapCellPosition_Access := RaceTrackAdjacentDropCellPositionGenerator'Class (This).getFirstNonRoadAdjacentCellPosition (column, row);
+      Java_Result : constant GeographicMapCellPosition_Access := RaceTrackAdjacentDropCellPositionGenerator'Class (This).getFirstNonRoadAdjacentCellPosition (column => column, row => row);
       pragma Unreferenced (Java_Result);
    begin
       null;

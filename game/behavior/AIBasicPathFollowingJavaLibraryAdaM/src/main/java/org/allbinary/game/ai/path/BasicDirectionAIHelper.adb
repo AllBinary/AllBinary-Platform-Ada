@@ -114,21 +114,21 @@ package body org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
    end getName;
 
    procedure turnAI (This : in out BasicDirectionAIHelper; frame : Integer) is
-      Java_Result : constant Integer := BasicDirectionAIHelper'Class (This).turnAI (frame);
+      Java_Result : constant Integer := BasicDirectionAIHelper'Class (This).turnAI (frame => frame);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end turnAI;
 
    procedure getAIKeyPressed (This : in out BasicDirectionAIHelper; frame : Integer) is
-      Java_Result : constant Integer := BasicDirectionAIHelper'Class (This).getAIKeyPressed (frame);
+      Java_Result : constant Integer := BasicDirectionAIHelper'Class (This).getAIKeyPressed (frame => frame);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAIKeyPressed;
 
    procedure getAIKeyPressedFromDirection (This : in out BasicDirectionAIHelper; geographicMapDirectionData_Param : access Direction_Package.Direction'Class) is
-      Java_Result : constant Integer := BasicDirectionAIHelper'Class (This).getAIKeyPressedFromDirection (geographicMapDirectionData_Param);
+      Java_Result : constant Integer := BasicDirectionAIHelper'Class (This).getAIKeyPressedFromDirection (geographicMapDirectionData_Param => geographicMapDirectionData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

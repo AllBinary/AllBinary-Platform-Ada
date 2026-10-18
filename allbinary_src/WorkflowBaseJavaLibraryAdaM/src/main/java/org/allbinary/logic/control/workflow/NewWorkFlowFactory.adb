@@ -117,14 +117,14 @@ package body org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
    end getInstance;
 
    procedure getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
-      Java_Result : constant WorkFlowInterface_Access := NewWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param, hashMap_Param, pageContext_Param);
+      Java_Result : constant WorkFlowInterface_Access := NewWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param => abeClientInformation_Param, hashMap_Param => hashMap_Param, pageContext_Param => pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; className : Unbounded_String) is
-      Java_Result : constant WorkFlowInterface_Access := NewWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param, className);
+      Java_Result : constant WorkFlowInterface_Access := NewWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param => abeClientInformation_Param, className => className);
       pragma Unreferenced (Java_Result);
    begin
       null;

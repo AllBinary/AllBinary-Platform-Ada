@@ -107,7 +107,7 @@ package body org.allbinary.game.configuration.event.BaseChangedGameFeatureListen
    end isChanged;
 
    procedure isChangedFeature (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature_Package.Feature'Class) is
-      Java_Result : constant Boolean := BaseChangedGameFeatureListener'Class (This).isChangedFeature (gameFeature_Param);
+      Java_Result : constant Boolean := BaseChangedGameFeatureListener'Class (This).isChangedFeature (gameFeature_Param => gameFeature_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

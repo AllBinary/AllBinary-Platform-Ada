@@ -186,7 +186,7 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
    end updatePathOnTargetMove;
 
    procedure isInSensorRange (This : in out WaypointBehaviorBase; layerInterface_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; targetDistance : Integer) is
-      Java_Result : constant Boolean := WaypointBehaviorBase'Class (This).isInSensorRange (layerInterface_Param, targetDistance);
+      Java_Result : constant Boolean := WaypointBehaviorBase'Class (This).isInSensorRange (layerInterface_Param => layerInterface_Param, targetDistance => targetDistance);
       pragma Unreferenced (Java_Result);
    begin
       null;

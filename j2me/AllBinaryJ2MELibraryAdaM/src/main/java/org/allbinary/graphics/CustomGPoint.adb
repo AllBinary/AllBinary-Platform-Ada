@@ -80,14 +80,14 @@ package body org.allbinary.graphics.CustomGPoint_Package is
    end getZ;
 
    procedure getInstance (point_Param : access GPoint_Package.GPoint'Class) is
-      Java_Result : constant CustomGPoint_Access := getInstance (point_Param);
+      Java_Result : constant CustomGPoint_Access := getInstance (point_Param => point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
    procedure getInstance3 (x : Integer; y : Integer) is
-      Java_Result : constant CustomGPoint_Access := getInstance3 (x, y);
+      Java_Result : constant CustomGPoint_Access := getInstance3 (x => x, y => y);
       pragma Unreferenced (Java_Result);
    begin
       null;

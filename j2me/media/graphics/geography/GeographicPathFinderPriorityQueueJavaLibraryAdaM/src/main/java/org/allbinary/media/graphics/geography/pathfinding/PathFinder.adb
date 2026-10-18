@@ -359,49 +359,49 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
    end extractPath;
 
    procedure searchTotalPath (This : in out PathFinder; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; totalPaths : Integer) is
-      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).searchTotalPath (startPathFindingNodeList_Param, endPathFindingNodeList_Param, totalPaths);
+      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).searchTotalPath (startPathFindingNodeList_Param => startPathFindingNodeList_Param, endPathFindingNodeList_Param => endPathFindingNodeList_Param, totalPaths => totalPaths);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end searchTotalPath;
 
    procedure searchTotalPathN (This : in out PathFinder; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; totalPaths : Integer; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
-      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).searchTotalPathN (startPathFindingNodeList_Param, endPathFindingNodeList_Param, totalPaths, multipassState_Param);
+      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).searchTotalPathN (startPathFindingNodeList_Param => startPathFindingNodeList_Param, endPathFindingNodeList_Param => endPathFindingNodeList_Param, totalPaths => totalPaths, multipassState_Param => multipassState_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end searchTotalPathN;
 
    procedure search (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class) is
-      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).search (startPathFindingNode_Param, endPathFindingNode_Param);
+      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).search (startPathFindingNode_Param => startPathFindingNode_Param, endPathFindingNode_Param => endPathFindingNode_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
    procedure searchN (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
-      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).searchN (startPathFindingNode_Param, endPathFindingNode_Param, multipassState_Param);
+      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).searchN (startPathFindingNode_Param => startPathFindingNode_Param, endPathFindingNode_Param => endPathFindingNode_Param, multipassState_Param => multipassState_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end searchN;
 
    procedure findPath (This : in out PathFinder; start_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
-      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).findPath (start_Param, target_Param);
+      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).findPath (start_Param => start_Param, target_Param => target_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end findPath;
 
    procedure findPathEnd (This : in out PathFinder; start_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
-      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).findPathEnd (start_Param, target_Param, multipassState_Param);
+      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).findPathEnd (start_Param => start_Param, target_Param => target_Param, multipassState_Param => multipassState_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end findPathEnd;
 
    procedure extractPath (This : in out PathFinder; start_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; current_Param : access PathFindingNodeCost_Package.PathFindingNodeCost'Class) is
-      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).extractPath (start_Param, current_Param);
+      Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).extractPath (start_Param => start_Param, current_Param => current_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

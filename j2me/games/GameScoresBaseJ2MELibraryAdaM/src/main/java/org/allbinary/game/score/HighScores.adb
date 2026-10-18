@@ -112,7 +112,7 @@ package body org.allbinary.game.score.HighScores_Package is
    end toString;
 
    procedure isBestScore (This : in out HighScores; newHighScore_Param : access HighScore_Package.HighScore'Class) is
-      Java_Result : constant Boolean := HighScores'Class (This).isBestScore (newHighScore_Param);
+      Java_Result : constant Boolean := HighScores'Class (This).isBestScore (newHighScore_Param => newHighScore_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

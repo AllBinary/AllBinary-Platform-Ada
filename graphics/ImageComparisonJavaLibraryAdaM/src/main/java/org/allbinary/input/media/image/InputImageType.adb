@@ -70,7 +70,7 @@ package body org.allbinary.input.media.image.InputImageType_Package is
    end getIndex;
 
    procedure getInstance (imageTypeString : Unbounded_String) is
-      Java_Result : constant InputImageType_Access := getInstance (imageTypeString);
+      Java_Result : constant InputImageType_Access := getInstance (imageTypeString => imageTypeString);
       pragma Unreferenced (Java_Result);
    begin
       null;

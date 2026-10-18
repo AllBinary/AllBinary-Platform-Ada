@@ -135,7 +135,7 @@ package body javax.microedition.lcdui.NullCanvas_Package is
    end pointerReleased;
 
    procedure isCommand (This : in out NullCanvas; command_Param : access Command_Package.Command'Class) is
-      Java_Result : constant Boolean := NullCanvas'Class (This).isCommand (command_Param);
+      Java_Result : constant Boolean := NullCanvas'Class (This).isCommand (command_Param => command_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

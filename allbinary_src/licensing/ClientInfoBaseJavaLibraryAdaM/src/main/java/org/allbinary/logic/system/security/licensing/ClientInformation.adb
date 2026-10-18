@@ -202,21 +202,21 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
    end toShortString;
 
    procedure getLicenseServer (This : in out ClientInformation; index : Integer) is
-      Java_Result : constant Unbounded_String := ClientInformation'Class (This).getLicenseServer (index);
+      Java_Result : constant Unbounded_String := ClientInformation'Class (This).getLicenseServer (index => index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLicenseServer;
 
    procedure isSameId (This : in out ClientInformation; alicenseId : Unbounded_String) is
-      Java_Result : constant Boolean := ClientInformation'Class (This).isSameId (alicenseId);
+      Java_Result : constant Boolean := ClientInformation'Class (This).isSameId (alicenseId => alicenseId);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isSameId;
 
    procedure isLargerOrDifferentServerList (This : in out ClientInformation; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
-      Java_Result : constant Boolean := ClientInformation'Class (This).isLargerOrDifferentServerList (list_Param);
+      Java_Result : constant Boolean := ClientInformation'Class (This).isLargerOrDifferentServerList (list_Param => list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

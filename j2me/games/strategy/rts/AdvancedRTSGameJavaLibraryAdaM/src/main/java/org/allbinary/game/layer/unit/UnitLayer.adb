@@ -1048,14 +1048,14 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    end getPartialpositionlist;
 
    procedure turnTo (This : in out UnitLayer; dx : Integer; dy : Integer; targetAngle_Param : Integer) is
-      Java_Result : constant Boolean := UnitLayer'Class (This).turnTo (dx, dy, targetAngle_Param);
+      Java_Result : constant Boolean := UnitLayer'Class (This).turnTo (dx => dx, dy => dy, targetAngle_Param => targetAngle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end turnTo;
 
    procedure getDamage (This : in out UnitLayer; damageType : Integer) is
-      Java_Result : constant Integer := UnitLayer'Class (This).getDamage (damageType);
+      Java_Result : constant Integer := UnitLayer'Class (This).getDamage (damageType => damageType);
       pragma Unreferenced (Java_Result);
    begin
       null;

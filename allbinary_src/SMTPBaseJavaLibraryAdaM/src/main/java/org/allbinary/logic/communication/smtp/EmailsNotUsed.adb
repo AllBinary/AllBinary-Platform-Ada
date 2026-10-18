@@ -88,7 +88,7 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
    end toXmlNode;
 
    procedure toXmlNode (This : in out EmailsNotUsed; document_Param : access Document_Package.Document'Class) is
-      Java_Result : constant Node_Access := EmailsNotUsed'Class (This).toXmlNode (document_Param);
+      Java_Result : constant Node_Access := EmailsNotUsed'Class (This).toXmlNode (document_Param => document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

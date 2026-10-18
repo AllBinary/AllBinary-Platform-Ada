@@ -102,7 +102,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoObjectFactor
    end getInstance;
 
    procedure getInstance (This : in out TransformInfoObjectFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
-      Java_Result : constant TransformInterface_Access := TransformInfoObjectFactory'Class (This).getInstance (abeClientInformation_Param, transformInfoInterface_Param);
+      Java_Result : constant TransformInterface_Access := TransformInfoObjectFactory'Class (This).getInstance (abeClientInformation_Param => abeClientInformation_Param, transformInfoInterface_Param => transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

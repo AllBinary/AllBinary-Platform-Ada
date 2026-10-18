@@ -67,14 +67,14 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphV
    end getInvalidReason;
 
    procedure isValid (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) is
-      Java_Result : constant Boolean := PathFinderGraphVisitorBase'Class (This).isValid (graphPath_Param);
+      Java_Result : constant Boolean := PathFinderGraphVisitorBase'Class (This).isValid (graphPath_Param => graphPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isValid;
 
    procedure getInvalidReason (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) is
-      Java_Result : constant Unbounded_String := PathFinderGraphVisitorBase'Class (This).getInvalidReason (graphPath_Param);
+      Java_Result : constant Unbounded_String := PathFinderGraphVisitorBase'Class (This).getInvalidReason (graphPath_Param => graphPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
